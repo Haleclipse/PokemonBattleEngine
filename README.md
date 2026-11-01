@@ -15,18 +15,27 @@ A Rust Pokémon battle engine for Generations 1–9, singles and doubles, differ
 
 ## 支持范围
 
-`cargo run --example support_matrix` 打印各世代的矩阵，Gen 9 当前：
+- **世代：** 第 1 到第 9 世代，各按该世代的规则与数据（Showdown 的 `gen1` … `gen9`）。
+- **对战模式：** 单打、双打。三打、轮转对战、多人对战、混战不支持。
+- **特殊机制：** 超级进化（第 6–7 世代，第 7 世代含究极爆发）、Z 招式（第 7 世代）、极巨化（第 8 世代）、太晶化（第 9 世代）。
+- **赛制：** 自定义对战（任意世代 × 单打 / 双打），以及 `data/formats/formats.json` 收录的 34 个赛制：第 1–9 世代的 OU 与 Ubers、第 3–9 世代的双打 OU、第 5–9 世代的 VGC。队伍按 Showdown 的规则校验。Let's Go、晶灿钻石 / 明亮珍珠、阿尔宙斯等非标准规则不在支持范围内。
+- **内容：** 各世代的招式、特性、道具（`cargo run --example support_matrix`）：
 
 <!-- support-summary:begin (generated: tests/docs.rs) -->
-| 对象 | 支持 | 总数 |
-|---|---|---|
-| 招式 Damage / Status / Custom | 474 / 104 / 111 | 689 |
-| 招式 Unsupported | 0 | |
-| 特性 implemented | 310 | 310 |
-| 道具 implemented | 249 | 249 |
+| 世代 | 招式 | Damage / Status / Custom | 不支持的招式 | 特性（已实现 / 全部） | 道具（已实现 / 全部） |
+|---|---|---|---|---|---|
+| Gen 1 | 165 | 109 / 40 / 16 | 0 | — | 9 / 9 |
+| Gen 2 | 251 | 157 / 56 / 38 | 0 | — | 62 / 62 |
+| Gen 3 | 354 | 215 / 79 / 60 | 0 | 76 / 76 | 106 / 106 |
+| Gen 4 | 467 | 296 / 91 / 80 | 0 | 123 / 123 | 210 / 210 |
+| Gen 5 | 559 | 363 / 99 / 97 | 0 | 164 / 164 | 239 / 239 |
+| Gen 6 | 618 | 392 / 107 / 119 | 0 | 191 / 191 | 284 / 284 |
+| Gen 7 | 709 | 468 / 114 / 127 | 0 | 233 / 233 | 339 / 339 |
+| Gen 8 | 665 | 445 / 103 / 117 | 0 | 267 / 267 | 354 / 354 |
+| Gen 9 | 689 | 474 / 104 / 111 | 0 | 310 / 310 | 249 / 249 |
 <!-- support-summary:end -->
 
-招式、特性、道具的行为数据来自 `data/dex/` 的快照；`cargo run --example unsupported_moves -- 9` 列出仍未支持的招式与原因。
+解析器对每个条目做保守的支持分类，未实现的行为在选择校验时就被拒绝，不会静默地按错误规则执行；`cargo run --example unsupported_moves -- 9` 列出某一世代仍未支持的招式与原因。
 
 ## 稳定 API
 
@@ -62,6 +71,8 @@ cargo run --example singles_turn
 - **伤害与能力值。** `@smogon/calc` 的伤害档位与能力值，Gen 1 到 Gen 9 逐值一致。
 - **随机差分。** `scripts/nightly.sh` 在限定时间内生成对局与 Showdown 比对（`tools/nightly.py`），新的分歧自动缩减成最小复现（`tools/minimize.py`）；`.github/workflows/nightly.yml` 每天运行一次。
 - **按卡带。** 有卡带证据（反汇编、实机测试）表明 Showdown 与原作不同的地方，引擎按原作实现，oracle 打补丁随之对齐；每一处都记在 `tools/oracle-node/src/cartridge.mjs` 的注释里。
+
+- **数据可复现。** `scripts/check-data.sh` 用 pin 住的导出器重新导出 dex、赛制与合法性数据，与仓库里提交的逐文件比对；云端 Nightly 每次都跑。
 
 重新生成数据或录制需要 Node：`cd tools/oracle-node && npm ci`，然后 `node src/export-dex.mjs ../../data/dex`（见 `data/dex/README.md`、`tools/oracle-node/README.md`）。
 

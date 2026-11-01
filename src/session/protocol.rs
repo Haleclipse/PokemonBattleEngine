@@ -184,6 +184,9 @@ fn other(side: SideId) -> SideId {
 }
 
 impl<'d> BattleSession<'d> {
+    /// A session in `format`, its battle's randomness all from `seed`: the same build, format,
+    /// seed and inputs give the same battle (the crate documentation's "Randomness and
+    /// reproducibility").
     pub fn new(format: SessionFormat<'d>, seed: u64) -> Self {
         Self {
             format,

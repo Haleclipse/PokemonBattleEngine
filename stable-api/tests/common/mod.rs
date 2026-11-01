@@ -95,8 +95,13 @@ fn team_set(input: &Value) -> TeamSet {
 
 /// The battle a session of `format_id` starts once both teams are registered and chosen.
 pub fn started(format_id: &str) -> BattleEngine {
+    started_seeded(format_id, 7)
+}
+
+/// `started`, the session seeded with `seed`.
+pub fn started_seeded(format_id: &str, seed: u64) -> BattleEngine {
     let format = SessionFormat::new(library(), format_id).expect("a target format");
-    let mut session = BattleSession::new(format, 7);
+    let mut session = BattleSession::new(format, seed);
     for (side, sets) in [SideId::P1, SideId::P2].into_iter().zip(teams(format_id)) {
         session
             .register(side, sets)

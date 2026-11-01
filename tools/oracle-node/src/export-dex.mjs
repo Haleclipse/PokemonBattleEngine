@@ -6,13 +6,14 @@
 // callback names are exported as a list so the engine can classify a move / ability / item as
 // unsupported instead of silently ignoring behaviour it has not implemented.
 //
-// Usage:  node src/export-dex.mjs ../../data/dex
+// Usage:  node src/export-dex.mjs ../../data/dex [--new-registry]
 import fs from 'node:fs';
 import path from 'node:path';
 import {Dex} from '@pkmn/sim';
 import {Generations} from '@pkmn/data';
 
-const outDir = process.argv[2] ?? path.join('..', '..', 'data', 'dex');
+const args = process.argv.slice(2);
+const outDir = args.find(arg => !arg.startsWith('--')) ?? path.join('..', '..', 'data', 'dex');
 fs.mkdirSync(outDir, {recursive: true});
 
 // `@pkmn/data`'s default existence check, but a move no Pokémon can learn that Metronome may still
@@ -42,6 +43,17 @@ const VERSION = JSON.parse(fs.readFileSync(new URL('../package.json', import.met
 // nine generations so the result does not depend on iteration order.
 const REGISTRY = path.join(outDir, 'ids.json');
 const OFFICIAL_INDEX = path.join(outDir, 'official-index.json');
+// An output directory without the registry would get every id assigned afresh (the reserved
+// range), silently unlike the committed one: refused, unless a new registry is what is wanted.
+if (!args.includes('--new-registry')) {
+  for (const file of [REGISTRY, OFFICIAL_INDEX]) {
+    if (!fs.existsSync(file)) {
+      console.error(`${file} is missing: copy data/dex/ids.json and data/dex/official-index.json into ` +
+        `the output directory first (ids are never renumbered), or pass --new-registry to start one`);
+      process.exit(2);
+    }
+  }
+}
 const official = fs.existsSync(OFFICIAL_INDEX)
   ? JSON.parse(fs.readFileSync(OFFICIAL_INDEX, 'utf8'))
   : {abilities: {}, moves: {}};

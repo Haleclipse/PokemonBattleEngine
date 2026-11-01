@@ -27,6 +27,12 @@ cd tools/oracle-node && npm ci
 node src/export-dex.mjs ../../data/dex
 ```
 
+The exporter reads the id registry (`ids.json`, `official-index.json`) from its output directory
+and refuses to run without it, since an empty directory would get every id assigned afresh;
+`--new-registry` starts a registry from nothing. `scripts/check-data.sh` exports into
+`target/data-refresh/` with the registry copied in and compares the result with the committed
+files (dex, formats, legality); the cloud Nightly runs it every time.
+
 Regenerate only together with an explicit oracle version bump (TESTING.md §8) — or, under the
 same oracle version, to add a field the exporter derives by a stated rule from data already in
 the snapshot's generation, or an upstream field it used to drop; the regeneration must then

@@ -60,6 +60,11 @@ jobs:
           --out target/m8/nightly
           --seed-base $(( 100000 + ${{ github.run_number }} * 100 ))
           --fail-on-new
+      # The committed data is what the pinned exporters give today (dex, formats, legality); after
+      # the campaigns, so that a drift fails the run without costing the night its battles.
+      - name: data reproduces
+        if: always()
+        run: scripts/check-data.sh
       - name: save coverage
         if: always()
         uses: actions/cache/save@v6

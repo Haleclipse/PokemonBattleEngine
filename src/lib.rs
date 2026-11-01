@@ -74,6 +74,22 @@
 //!
 //! The `stable-api` package's examples play whole battles this way: an AI's rollouts
 //! (`rollout`), a server's loop (`server_loop`), a counterfactual (`research`).
+//!
+//! # Randomness and reproducibility
+//!
+//! A battle's randomness comes from one seed, the one [`BattleSession::new`] takes: it draws the
+//! session's own random values (the genders a team leaves open) and is then handed on to the
+//! [`BattleEngine`], which draws everything else from it.
+//!
+//! - **Guaranteed:** with the same build of this crate, the same format, the same seed and the
+//!   same inputs in the same order (registrations, team choices, turn choices), a battle runs the
+//!   same — the same requests, views and outcome. A [`BattleEngine::snapshot`] holds the random
+//!   state too, so a [`BattleEngine::rewind`] or a clone goes on exactly as the original would;
+//!   a snapshot taken under other rules or another dex is refused.
+//! - **Not guaranteed:** the same battle across versions of this crate — a rule fixed or a draw
+//!   reordered changes what a seed gives, and the random generator itself is an implementation
+//!   detail; nor anything about Pokémon Showdown's seeds, whose generator this crate does not
+//!   use. A Showdown battle is not replayed from its seed but from its log.
 
 // The stable API alone, unless the `internals` feature opens the modules (DESIGN.md §47.0 item
 // 7, §47.5): a type the stable API reaches but does not name is an error. Code and re-exports
