@@ -25,10 +25,11 @@ pub fn sha256(bytes: &[u8]) -> [u8; 32] {
         message.push(0);
     }
     message.extend_from_slice(&((bytes.len() as u64).wrapping_mul(8)).to_be_bytes());
-    for block in message.chunks_exact(64) {
+    // The padding makes the message a whole number of 64-byte blocks.
+    for block in message.as_chunks::<64>().0 {
         let mut w = [0u32; 64];
-        for (word, chunk) in w.iter_mut().zip(block.chunks_exact(4)) {
-            *word = u32::from_be_bytes([chunk[0], chunk[1], chunk[2], chunk[3]]);
+        for (word, chunk) in w.iter_mut().zip(block.as_chunks::<4>().0) {
+            *word = u32::from_be_bytes(*chunk);
         }
         for i in 16..64 {
             let s0 = w[i - 15].rotate_right(7) ^ w[i - 15].rotate_right(18) ^ (w[i - 15] >> 3);
@@ -64,8 +65,8 @@ pub fn sha256(bytes: &[u8]) -> [u8; 32] {
         }
     }
     let mut out = [0u8; 32];
-    for (chunk, value) in out.chunks_exact_mut(4).zip(state) {
-        chunk.copy_from_slice(&value.to_be_bytes());
+    for (chunk, value) in out.as_chunks_mut::<4>().0.iter_mut().zip(state) {
+        *chunk = value.to_be_bytes();
     }
     out
 }
