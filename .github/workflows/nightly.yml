@@ -4,14 +4,22 @@ name: nightly
 # time. The run ends with pass metrics, the known (quarantined) disagreements and one minimized,
 # self-contained failure bundle per new signature — uploaded as the `m8-nightly` artifact; a new
 # signature turns the run red.
+# Four runs a day, the full time budget each (no --stop-on-new): a run never waits on another's
+# first new signature. Runs queue rather than overlap (`concurrency`), since each restores and saves
+# the seed state and the coverage; the seed base derives from the run number, so no two runs replay
+# the same battles.
 on:
   schedule:
-    - cron: '17 3 * * *'
+    - cron: '17 0,6,12,18 * * *'
   workflow_dispatch:
     inputs:
       minutes:
         description: time budget in minutes
         default: '60'
+
+concurrency:
+  group: nightly
+  cancel-in-progress: false
 
 env:
   CARGO_TERM_COLOR: always
@@ -22,23 +30,23 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 150
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: dtolnay/rust-toolchain@stable
       - uses: Swatinem/rust-cache@v2
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
-          node-version: 22
+          node-version: lts/*
           cache: npm
           cache-dependency-path: tools/oracle-node/package-lock.json
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
-          python-version: '3.12'
+          python-version: '3.13'
       - name: oracle dependencies (pinned @pkmn/sim)
         run: npm ci
         working-directory: tools/oracle-node
       # The mechanic coverage and the next seed per rotation slot carry over from earlier nights.
       - name: restore coverage
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v6
         with:
           path: |
             target/m8/coverage.json
@@ -54,7 +62,7 @@ jobs:
           --fail-on-new
       - name: save coverage
         if: always()
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v6
         with:
           path: |
             target/m8/coverage.json
@@ -62,7 +70,7 @@ jobs:
           key: m8-nightly-${{ github.run_id }}
       - name: report
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: m8-nightly
           path: |
