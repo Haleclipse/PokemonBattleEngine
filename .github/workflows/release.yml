@@ -1,0 +1,45 @@
+name: release
+
+# A version tag (`v0.2.0`) publishes a GitHub Release with the engine's fingerprints
+# (`examples/fingerprints.rs`: every generation's dex, the custom games' rules, every format's
+# session and battle rules, the version and commit), so a host can tell which releases restore
+# each other's snapshots. The tag must match the crate's version, and the checks run first. Not
+# published to crates.io.
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+env:
+  CARGO_TERM_COLOR: always
+  RUSTFLAGS: -D warnings
+
+jobs:
+  release:
+    name: checks, fingerprints, release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+      - uses: Swatinem/rust-cache@v2
+      - name: the tag is the crate's version
+        run: |
+          version=$(sed -n 's/^version = "\(.*\)"$/\1/p' Cargo.toml | head -1)
+          if [ "${GITHUB_REF_NAME}" != "v${version}" ]; then
+            echo "tag ${GITHUB_REF_NAME} is not the crate's version v${version}" >&2
+            exit 1
+          fi
+      - name: checks
+        run: scripts/check.sh
+      - name: fingerprints
+        run: cargo run --release --example fingerprints -- "${GITHUB_SHA}" > fingerprints.json
+      - name: release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: >-
+          gh release create "${GITHUB_REF_NAME}" fingerprints.json
+          --title "${GITHUB_REF_NAME}" --generate-notes --verify-tag

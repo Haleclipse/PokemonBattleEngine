@@ -279,6 +279,13 @@ pub enum RuleError {
         requested: BattleMode,
         required: BattleMode,
     },
+    /// A mode the generation never had: double battles begin in Gen 3, on the cartridges and in
+    /// Pokémon Showdown alike, so the engine has nothing to check a Gen 1-2 double battle against
+    /// and refuses it rather than run an unverified extrapolation.
+    ModeUnavailable {
+        generation: Generation,
+        mode: BattleMode,
+    },
 }
 
 pub struct RulesResolver;
@@ -315,6 +322,13 @@ impl RulesResolver {
             return Err(RuleError::ModeMismatch {
                 requested: spec.mode,
                 required,
+            });
+        }
+
+        if spec.mode == BattleMode::Doubles && spec.generation < Generation::Gen3 {
+            return Err(RuleError::ModeUnavailable {
+                generation: spec.generation,
+                mode: spec.mode,
             });
         }
 

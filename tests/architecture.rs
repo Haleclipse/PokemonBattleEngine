@@ -100,6 +100,34 @@ fn format_is_distinct_from_mode() {
     ));
 }
 
+/// Double battles begin in Gen 3 (the cartridges, Showdown's Doubles Custom Games): a Gen 1-2
+/// double battle has nothing to be checked against and is refused, Gen 3's is resolved.
+#[test]
+fn double_battles_begin_in_gen_3() {
+    for generation in [Generation::Gen1, Generation::Gen2] {
+        assert_eq!(
+            RulesResolver::resolve(&BattleSpec::new(generation, BattleMode::Doubles, "custom"))
+                .err(),
+            Some(RuleError::ModeUnavailable {
+                generation,
+                mode: BattleMode::Doubles,
+            })
+        );
+        assert!(
+            RulesResolver::resolve(&BattleSpec::new(generation, BattleMode::Singles, "custom"))
+                .is_ok()
+        );
+    }
+    assert!(
+        RulesResolver::resolve(&BattleSpec::new(
+            Generation::Gen3,
+            BattleMode::Doubles,
+            "custom"
+        ))
+        .is_ok()
+    );
+}
+
 /// `RulesResolver::resolve` knows the engine's own `custom` only: a real format's switches come
 /// from the format layer (DESIGN.md §45.5).
 #[test]

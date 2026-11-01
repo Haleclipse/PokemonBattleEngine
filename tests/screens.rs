@@ -136,9 +136,10 @@ fn strength_on_a_screened_mew(generation: Generation, partner: bool) -> Vec<(Str
         .collect()
 }
 
-/// The top of the generation's damage roll (the tape fixes it; its value does not matter here).
+/// The top of the generation's damage roll (the tape fixes it; its value does not matter here):
+/// the same in either mode, read off singles, which every generation has.
 fn rules_roll_max(generation: Generation) -> u16 {
-    RulesResolver::resolve(&BattleSpec::new(generation, BattleMode::Doubles, "custom"))
+    RulesResolver::resolve(&BattleSpec::new(generation, BattleMode::Singles, "custom"))
         .unwrap()
         .damage()
         .random_max

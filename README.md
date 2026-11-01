@@ -18,7 +18,7 @@ A Rust Pokémon battle engine for Generations 1–9, singles and doubles, differ
 - **世代：** 第 1 到第 9 世代，各按该世代的规则与数据（Showdown 的 `gen1` … `gen9`）。
 - **对战模式：** 单打、双打。三打、轮转对战、多人对战、混战不支持。
 - **特殊机制：** 超级进化（第 6–7 世代，第 7 世代含究极爆发）、Z 招式（第 7 世代）、极巨化（第 8 世代）、太晶化（第 9 世代）。
-- **赛制：** 自定义对战（任意世代 × 单打 / 双打），以及 `data/formats/formats.json` 收录的 34 个赛制：第 1–9 世代的 OU 与 Ubers、第 3–9 世代的双打 OU、第 5–9 世代的 VGC。队伍按 Showdown 的规则校验。Let's Go、晶灿钻石 / 明亮珍珠、阿尔宙斯等非标准规则不在支持范围内。
+- **赛制：** 自定义对战（单打第 1–9 世代，双打第 3–9 世代——原作与 Showdown 的双打都从第 3 世代开始），以及 `data/formats/formats.json` 收录的 34 个赛制：第 1–9 世代的 OU 与 Ubers、第 3–9 世代的双打 OU、第 5–9 世代的 VGC。队伍按 Showdown 的规则校验。Let's Go、晶灿钻石 / 明亮珍珠、阿尔宙斯等非标准规则不在支持范围内。
 - **内容：** 各世代的招式、特性、道具（`cargo run --example support_matrix`）：
 
 <!-- support-summary:begin (generated: tests/docs.rs) -->
@@ -75,6 +75,10 @@ cargo run --example singles_turn
 - **数据可复现。** `scripts/check-data.sh` 用 pin 住的导出器重新导出 dex、赛制与合法性数据，与仓库里提交的逐文件比对；云端 Nightly 每次都跑。
 
 重新生成数据或录制需要 Node：`cd tools/oracle-node && npm ci`，然后 `node src/export-dex.mjs ../../data/dex`（见 `data/dex/README.md`、`tools/oracle-node/README.md`）。
+
+## 发布
+
+推送与 `Cargo.toml` 版本号一致的 tag（如 `v0.1.0`）时，`.github/workflows/release.yml` 先跑全部检查，再创建 GitHub Release，附上指纹清单 `fingerprints.json`：各世代 dex 的指纹、自定义对战与 34 个赛制的规则指纹、版本与提交号（`cargo run --example fingerprints` 在本地生成同样的清单）。快照只能在指纹相同的构建之间恢复，所以两个版本的清单一比较，就知道彼此的快照能否互通、哪些规则或数据变了。不发布到 crates.io。
 
 ## 许可证
 
