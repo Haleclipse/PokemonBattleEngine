@@ -36,3 +36,24 @@ jobs:
         run: cargo test --doc
       - name: example
         run: cargo run --example singles_turn
+
+  instructions:
+    name: instruction counts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+      - name: valgrind
+        run: sudo apt-get update -q && sudo apt-get install -y -q valgrind
+      # The benchmark threshold (tools/bench_instructions.py): a workload more than 3% above
+      # benches/instructions.json fails, when taken with the baseline's rustc and Valgrind.
+      - name: instruction counts against the baseline
+        run: python3 tools/bench_instructions.py --check benches/instructions.json --repeat 2
+      - name: results
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: instruction-counts
+          path: target/bench-instructions/results.json
+          if-no-files-found: warn
