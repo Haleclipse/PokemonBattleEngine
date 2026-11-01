@@ -1,0 +1,626 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@pkmn/sim",
+    "version": "0.10.11",
+    "formatid": "gen4customgame",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "frames": [
+    {
+      "schema": 1,
+      "checkpoint": "initial",
+      "turn": 1,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 135,
+              "max_hp": 135,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "electric"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "species": "pachirisu",
+              "pp": [
+                24
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 145,
+              "max_hp": 145,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal",
+                "psychic"
+              ],
+              "ability": "noguard",
+              "item": "",
+              "species": "girafarig",
+              "pp": [
+                24
+              ]
+            },
+            {
+              "hp": 155,
+              "max_hp": 155,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "rock"
+              ],
+              "ability": "clearbody",
+              "item": "",
+              "species": "regirock",
+              "pp": [
+                64
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Pachirisu"
+          },
+          "details": "Pachirisu, L50, F",
+          "hp": 135,
+          "max_hp": 135,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Girafarig"
+          },
+          "details": "Girafarig, L50, F",
+          "hp": 145,
+          "max_hp": 145,
+          "status": null
+        },
+        {
+          "kind": "turn",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_1",
+      "turn": 2,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 135,
+              "max_hp": 135,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 1
+              },
+              "volatiles": {},
+              "types": [
+                "electric"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "species": "pachirisu",
+              "pp": [
+                23
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 145,
+              "max_hp": 145,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal",
+                "psychic"
+              ],
+              "ability": "noguard",
+              "item": "",
+              "species": "girafarig",
+              "pp": [
+                23
+              ]
+            },
+            {
+              "hp": 155,
+              "max_hp": 155,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "rock"
+              ],
+              "ability": "clearbody",
+              "item": "",
+              "species": "regirock",
+              "pp": [
+                64
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Pachirisu"
+          },
+          "move": "Double Team",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Pachirisu"
+          },
+          "from": null
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Pachirisu"
+          },
+          "stat": "evasion",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Girafarig"
+          },
+          "move": "Future Sight",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Pachirisu"
+          },
+          "from": null
+        },
+        {
+          "kind": "start",
+          "args": [
+            "p2a: Girafarig",
+            "Future Sight"
+          ]
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 2
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_2",
+      "turn": 3,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 135,
+              "max_hp": 135,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 2
+              },
+              "volatiles": {},
+              "types": [
+                "electric"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "species": "pachirisu",
+              "pp": [
+                22
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            1
+          ],
+          "party": [
+            {
+              "hp": 145,
+              "max_hp": 145,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal",
+                "psychic"
+              ],
+              "ability": "noguard",
+              "item": "",
+              "species": "girafarig",
+              "pp": [
+                23
+              ]
+            },
+            {
+              "hp": 155,
+              "max_hp": 155,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "rock"
+              ],
+              "ability": "clearbody",
+              "item": "",
+              "species": "regirock",
+              "pp": [
+                64
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Regirock"
+          },
+          "details": "Regirock, L50",
+          "hp": 155,
+          "max_hp": 155,
+          "status": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Pachirisu"
+          },
+          "move": "Double Team",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Pachirisu"
+          },
+          "from": null
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Pachirisu"
+          },
+          "stat": "evasion",
+          "amount": 1
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 3
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_3",
+      "turn": 4,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 135,
+              "max_hp": 135,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 3
+              },
+              "volatiles": {},
+              "types": [
+                "electric"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "species": "pachirisu",
+              "pp": [
+                21
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            1
+          ],
+          "party": [
+            {
+              "hp": 145,
+              "max_hp": 145,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal",
+                "psychic"
+              ],
+              "ability": "noguard",
+              "item": "",
+              "species": "girafarig",
+              "pp": [
+                23
+              ]
+            },
+            {
+              "hp": 155,
+              "max_hp": 155,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "rock"
+              ],
+              "ability": "clearbody",
+              "item": "",
+              "species": "regirock",
+              "pp": [
+                63
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Pachirisu"
+          },
+          "move": "Double Team",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Pachirisu"
+          },
+          "from": null
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Pachirisu"
+          },
+          "stat": "evasion",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Regirock"
+          },
+          "move": "Splash",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Regirock"
+          },
+          "from": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "end",
+          "args": [
+            "p1a: Pachirisu",
+            "move: Future Sight"
+          ]
+        },
+        {
+          "kind": "miss",
+          "pokemon": {
+            "side": 1,
+            "slot": null,
+            "name": "Girafarig"
+          },
+          "detail": "p1a: Pachirisu"
+        },
+        {
+          "kind": "turn",
+          "turn": 4
+        }
+      ]
+    }
+  ],
+  "debug_log": "|gametype|singles\n|player|p1|P1||\n|player|p2|P2||\n|gen|4\n|tier|[Gen 4] Custom Game\n|\n|teamsize|p1|1\n|teamsize|p2|2\n|start\n|switch|p1a: Pachirisu|Pachirisu, L50, F|135/135\n|switch|p2a: Girafarig|Girafarig, L50, F|145/145\n|turn|1\n|\n|move|p1a: Pachirisu|Double Team|p1a: Pachirisu\n|-boost|p1a: Pachirisu|evasion|1\n|move|p2a: Girafarig|Future Sight|p1a: Pachirisu\n|-start|p2a: Girafarig|Future Sight\n|\n|upkeep\n|turn|2\n|\n|switch|p2a: Regirock|Regirock, L50|155/155\n|move|p1a: Pachirisu|Double Team|p1a: Pachirisu\n|-boost|p1a: Pachirisu|evasion|1\n|\n|upkeep\n|turn|3\n|\n|move|p1a: Pachirisu|Double Team|p1a: Pachirisu\n|-boost|p1a: Pachirisu|evasion|1\n|move|p2a: Regirock|Splash|p2a: Regirock|[miss]\n|-nothing\n|\n|-end|p1a: Pachirisu|move: Future Sight\n|-miss|p2: Girafarig|p1a: Pachirisu\n|upkeep\n|turn|4"
+}

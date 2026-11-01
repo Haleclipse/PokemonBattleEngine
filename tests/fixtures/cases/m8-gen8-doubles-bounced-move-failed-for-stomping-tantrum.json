@@ -1,0 +1,85 @@
+{
+  "schema": 1,
+  "id": "m8-gen8-doubles-bounced-move-failed-for-stomping-tantrum",
+  "notes": [
+    "Nightly 53: a move Magic Bounce sent back failed for its user (hitStepTryHitEvent turns TryHit's null into false): its Stomping Tantrum next turn doubles (DESIGN.md R-M8-97)",
+    "promoted from m8-gen8-doubles-s513-001-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 8,
+    "mode": "doubles",
+    "format": "gen8doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Vespiquen",
+        "species": "Vespiquen",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Spite",
+          "Stomping Tantrum"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Drampa",
+        "species": "Drampa",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Spite",
+          "Power Trip"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Absol",
+        "species": "Absol",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Spite",
+          "Rising Voltage"
+        ],
+        "ability": "Magic Bounce",
+        "gender": "F"
+      },
+      {
+        "label": "Primarina",
+        "species": "Primarina",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Spite",
+          "Dragon Energy"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      14659,
+      61108,
+      19215,
+      31753
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Spite 1, move Spite 2",
+      "p2": "move Spite 1, move Spite 2"
+    },
+    {
+      "p1": "move Stomping Tantrum 1, move Power Trip 2",
+      "p2": "move Rising Voltage 1, move Dragon Energy"
+    }
+  ]
+}

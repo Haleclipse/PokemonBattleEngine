@@ -1,0 +1,94 @@
+{
+ "schema": 1,
+ "id": "gen4-slowing-items-slow-through-klutz-and-embargo",
+ "notes": [
+  "Gen 4 Speed-halving items (cartridge, issues.md I52): a Klutz Lopunny's Iron Ball still halves its Speed, so Absol moves first; once Embargo is on Jolteon its Power Anklet still halves its Speed, so Absol keeps moving first; a Klutz Lopunny's Choice Scarf still does nothing, so Absol moves first"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Lopunny",
+    "species": "Lopunny",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "ability": "Klutz",
+    "item": "Iron Ball"
+   },
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Volt Absorb",
+    "item": "Power Anklet"
+   },
+   {
+    "label": "Scarfer",
+    "species": "Lopunny",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Klutz",
+    "item": "Choice Scarf"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Absol",
+    "species": "Absol",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Embargo",
+     "Harden"
+    ],
+    "ability": "Pressure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Jolteon",
+   "p2": "move Embargo"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Scarfer",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

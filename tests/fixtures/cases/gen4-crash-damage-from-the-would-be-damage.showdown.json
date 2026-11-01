@@ -1,0 +1,645 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@pkmn/sim",
+    "version": "0.10.11",
+    "formatid": "gen4customgame",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "frames": [
+    {
+      "schema": 1,
+      "checkpoint": "initial",
+      "turn": 1,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 125,
+              "max_hp": 125,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "fighting"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                32
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 105,
+              "max_hp": 105,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ghost",
+                "poison"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                48
+              ]
+            },
+            {
+              "hp": 370,
+              "max_hp": 370,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                16,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Hitmonlee"
+          },
+          "details": "Hitmonlee, L50, M",
+          "hp": 125,
+          "max_hp": 125,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Gastly"
+          },
+          "details": "Gastly, L50, M",
+          "hp": 105,
+          "max_hp": 105,
+          "status": null
+        },
+        {
+          "kind": "turn",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_1",
+      "turn": 2,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 73,
+              "max_hp": 125,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "fighting"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                31
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 105,
+              "max_hp": 105,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ghost",
+                "poison"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                47
+              ]
+            },
+            {
+              "hp": 370,
+              "max_hp": 370,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                16,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Hitmonlee"
+          },
+          "move": "High Jump Kick",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Gastly"
+          }
+        },
+        {
+          "kind": "immune",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Gastly"
+          },
+          "detail": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Hitmonlee"
+          },
+          "hp": 73,
+          "max_hp": 125,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Gastly"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Gastly"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Gastly"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 2
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_2",
+      "turn": 3,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 73,
+              "max_hp": 125,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "fighting"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                30
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            1
+          ],
+          "party": [
+            {
+              "hp": 105,
+              "max_hp": 105,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ghost",
+                "poison"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                47
+              ]
+            },
+            {
+              "hp": 248,
+              "max_hp": 370,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                16,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "details": "Snorlax, L80, F",
+          "hp": 370,
+          "max_hp": 370,
+          "status": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Hitmonlee"
+          },
+          "move": "High Jump Kick",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "supereffective",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "detail": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "hp": 248,
+          "max_hp": 370,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 3
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_3",
+      "turn": 4,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 6,
+              "max_hp": 125,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "fighting"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                29
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            1
+          ],
+          "party": [
+            {
+              "hp": 105,
+              "max_hp": 105,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ghost",
+                "poison"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                47
+              ]
+            },
+            {
+              "hp": 248,
+              "max_hp": 370,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "stall": 1
+              },
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                15,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Protect",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "singleturn",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Protect"
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Hitmonlee"
+          },
+          "move": "High Jump Kick",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "activate",
+          "args": [
+            "p2a: Snorlax",
+            "Protect"
+          ]
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Hitmonlee"
+          },
+          "hp": 6,
+          "max_hp": 125,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 4
+        }
+      ]
+    }
+  ],
+  "debug_log": "|gametype|singles\n|player|p1|P1||\n|player|p2|P2||\n|gen|4\n|tier|[Gen 4] Custom Game\n|\n|teamsize|p1|1\n|teamsize|p2|2\n|start\n|switch|p1a: Hitmonlee|Hitmonlee, L50, M|125/125\n|switch|p2a: Gastly|Gastly, L50, M|105/105\n|turn|1\n|\n|move|p1a: Hitmonlee|High Jump Kick|p2a: Gastly\n|-immune|p2a: Gastly\n|-damage|p1a: Hitmonlee|73/125\n|move|p2a: Gastly|Harden|p2a: Gastly\n|-boost|p2a: Gastly|def|1\n|\n|upkeep\n|turn|2\n|\n|switch|p2a: Snorlax|Snorlax, L80, F|370/370\n|move|p1a: Hitmonlee|High Jump Kick|p2a: Snorlax\n|-supereffective|p2a: Snorlax\n|-damage|p2a: Snorlax|248/370\n|\n|upkeep\n|turn|3\n|\n|move|p2a: Snorlax|Protect|p2a: Snorlax\n|-singleturn|p2a: Snorlax|Protect\n|move|p1a: Hitmonlee|High Jump Kick|p2a: Snorlax\n|-activate|p2a: Snorlax|Protect\n|-damage|p1a: Hitmonlee|6/125\n|\n|upkeep\n|turn|4"
+}

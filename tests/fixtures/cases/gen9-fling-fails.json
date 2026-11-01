@@ -1,0 +1,143 @@
+{
+ "schema": 1,
+ "id": "gen9-fling-fails",
+ "notes": [
+  "Gen 9 Fling fails: from Klutz (Gen 5+, whatever the item), holding nothing, a Zacian-Crowned's Rusted Sword, under Magic Room; into Protect the Leftovers is thrown and lost all the same"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Fling",
+     "Harden"
+    ],
+    "ability": "Klutz",
+    "item": "Leftovers"
+   },
+   {
+    "label": "Mew2",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Fling",
+     "Harden"
+    ],
+    "ability": "Synchronize"
+   },
+   {
+    "label": "Zacian",
+    "species": "Zacian-Crowned",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Fling",
+     "Harden"
+    ],
+    "ability": "Intrepid Sword",
+    "item": "Rusted Sword"
+   },
+   {
+    "label": "Mew3",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Fling",
+     "Magic Room"
+    ],
+    "ability": "Synchronize",
+    "item": "Leftovers"
+   },
+   {
+    "label": "Mew4",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Fling",
+     "Harden"
+    ],
+    "ability": "Synchronize",
+    "item": "Leftovers"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Protect",
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Fling",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Mew2",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Fling",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Zacian",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Fling",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Mew4",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Fling",
+   "p2": "move Protect"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Mew3",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Magic Room",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Fling",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

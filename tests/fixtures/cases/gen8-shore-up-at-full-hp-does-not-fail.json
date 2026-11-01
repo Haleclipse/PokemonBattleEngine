@@ -1,0 +1,58 @@
+{
+ "schema": 1,
+ "id": "gen8-shore-up-at-full-hp-does-not-fail",
+ "notes": [
+  "Gen 8+ Shore Up at full HP returns `NOT_FAIL`: not a failed move, so the next turn's Stomping Tantrum is not doubled"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Shore Up",
+     "Stomping Tantrum"
+    ],
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Natural Cure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Shore Up",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Stomping Tantrum",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

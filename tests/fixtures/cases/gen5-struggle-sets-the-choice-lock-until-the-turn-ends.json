@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "gen5-struggle-sets-the-choice-lock-until-the-turn-ends",
+ "notes": [
+  "A Choice Band holder that has only a Taunted move struggles, and Struggle starts `choicelock` like any move (Showdown `choicelock.onStart`): a mid-turn frame (the foe's U-turn) shows it; the next turn's `DisableMove` pass drops it, since the holder does not know Struggle"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Scyther",
+    "species": "Scyther",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Swords Dance"
+    ],
+    "ability": "Swarm",
+    "item": "Choice Band"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Sableye",
+    "species": "Sableye",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Taunt",
+     "U-turn",
+     "Harden"
+    ],
+    "ability": "Prankster"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Swords Dance",
+   "p2": "move Taunt"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move U-turn"
+  },
+  {
+   "p2": "switch Snorlax"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

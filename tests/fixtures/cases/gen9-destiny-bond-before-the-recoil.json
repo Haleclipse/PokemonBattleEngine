@@ -1,0 +1,87 @@
+{
+ "schema": 1,
+ "id": "gen9-destiny-bond-before-the-recoil",
+ "notes": [
+  "Gen 9 Destiny Bond against Wild Charge with Life Orb: the knock-out's faint is processed as the hit loop ends (Showdown `hitStepMoveHitLoop` \u2192 `faintMessages`), so the bond takes the user down before its recoil and Life Orb, which then find it fainted; without the bond both hurt it (the 34th Nightly)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Bonder",
+    "species": "Gengar",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Destiny Bond",
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Bonder2",
+    "species": "Gengar",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Destiny Bond",
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Charger",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Wild Charge",
+     "Harden"
+    ],
+    "ability": "Run Away",
+    "item": "Life Orb"
+   },
+   {
+    "label": "Charger2",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Wild Charge",
+     "Harden"
+    ],
+    "ability": "Run Away",
+    "item": "Life Orb"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Destiny Bond",
+   "p2": "move Wild Charge"
+  },
+  {
+   "p1": "switch Bonder2",
+   "p2": "switch Charger2"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Wild Charge"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

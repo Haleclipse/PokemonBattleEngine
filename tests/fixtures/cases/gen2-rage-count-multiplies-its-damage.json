@@ -1,0 +1,70 @@
+{
+ "schema": 1,
+ "id": "gen2-rage-count-multiplies-its-damage",
+ "notes": [
+  "Gen 2 Rage (cartridge, I77): each foe's hit counts (Double Kick twice) and raises no Attack; Rage deals \u00d72, then \u00d74; choosing Harden ends the rage and its count, and Rage deals \u00d71 again"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Rager",
+    "species": "Primeape",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Rage",
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Wall",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Double Kick",
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Rage",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "move Double Kick"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

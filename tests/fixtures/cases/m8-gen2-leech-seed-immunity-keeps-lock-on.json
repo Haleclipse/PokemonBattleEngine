@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "id": "m8-gen2-leech-seed-immunity-keeps-lock-on",
+  "notes": [
+    "Nightly 63: Leech Seed on a Grass target stops at its onTryImmunity before the accuracy check, so the Lock-On on it stays (DESIGN.md R-M8-107)",
+    "promoted from m8-gen2-singles-s548-001-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 2,
+    "mode": "singles",
+    "format": "gen2customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Meganium",
+        "species": "Meganium",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Mind Reader",
+          "Belly Drum"
+        ],
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Weedle",
+        "species": "Weedle",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Mind Reader",
+          "Leech Seed"
+        ],
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      7257,
+      21884,
+      48639,
+      6114
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Mind Reader",
+      "p2": "move Mind Reader"
+    },
+    {
+      "p1": "move Belly Drum",
+      "p2": "move Leech Seed"
+    }
+  ]
+}

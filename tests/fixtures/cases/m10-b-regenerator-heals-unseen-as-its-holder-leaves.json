@@ -1,0 +1,74 @@
+{
+ "schema": 1,
+ "id": "m10-b-regenerator-heals-unseen-as-its-holder-leaves",
+ "notes": [
+  "R-M10-19: Regenerator heals its holder as it leaves the field (Showdown `onSwitchOut`: `pokemon.heal`, no message), so the other side last saw Slowbro with the HP Snorlax's Tackle left it: the view of a member off the field is how it left (`Sighting`, taken before its `SwitchOut`)."
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Slowbro",
+    "species": "Slowbro",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Regenerator",
+    "gender": "M"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Tackle",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Splash"
+  }
+ ]
+}

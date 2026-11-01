@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "gen1-transformed-mimic-copies-a-move",
+ "notes": [
+  "Gen 1: Mew transforms into Snorlax and its transformed Mimic copies Tackle into the slots Transform made (the gen1 `onHit` has no `transformed` check); the next `move 1` is that Tackle"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Transform",
+     "Splash"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Mimic",
+     "Tackle"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1",
+   "p2": "move 2"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 2"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 2"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   29,
+   30,
+   31,
+   32
+  ]
+ }
+}

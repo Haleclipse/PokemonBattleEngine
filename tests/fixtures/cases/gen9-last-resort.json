@@ -1,0 +1,93 @@
+{
+ "schema": 1,
+ "id": "gen9-last-resort",
+ "notes": [
+  "Gen 9 Last Resort fails until every other move was used since the user came in; switching out forgets them"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Resorter",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Last Resort",
+     "Harden",
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Bench",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Last Resort",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Last Resort",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Last Resort",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Bench",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Resorter",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Last Resort",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

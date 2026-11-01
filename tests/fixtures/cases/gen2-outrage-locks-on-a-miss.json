@@ -1,0 +1,89 @@
+{
+ "schema": 1,
+ "id": "gen2-outrage-locks-on-a-miss",
+ "notes": [
+  "Gen 2 Outrage starts its lock as the move starts, before the hit test (pokecrystal `rampage` ahead of `checkhit`; Showdown's gen2 `onMoveFail`): the first use misses against six Sand-Attacks and the user is locked all the same"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Raging",
+    "species": "Dragonite",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Outrage"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Sander",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Sand-Attack",
+     "Harden",
+     "Recover"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1",
+   "p2": "move Sand-Attack"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Sand-Attack"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Sand-Attack"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Sand-Attack"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Sand-Attack"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Sand-Attack"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

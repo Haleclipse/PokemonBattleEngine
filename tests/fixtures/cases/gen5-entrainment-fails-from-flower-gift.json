@@ -1,0 +1,56 @@
+{
+ "schema": 1,
+ "id": "gen5-entrainment-fails-from-flower-gift",
+ "notes": [
+  "Entrainment fails when its user's ability is `noentrain`: Cherrim keeps Flower Gift to itself"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Cherrim",
+    "species": "Cherrim",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Entrainment",
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Flower Gift"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Entrainment",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

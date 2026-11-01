@@ -1,0 +1,105 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-contrary-and-simple-pinch-berries",
+ "notes": [
+  "Gen 9 doubles: a berry's stat change goes through the holder's ability like any other (`this.boost`: ChangeBoost) \u2014 Contrary's Liechi Berry lowers Attack by 1, Simple's Ganlon Berry raises Defense by 2; a holder that already used Focus Energy eats its Lansat Berry for nothing"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Contrary",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Liechi Berry",
+    "ability": "Contrary"
+   },
+   {
+    "label": "Simple",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Ganlon Berry",
+    "ability": "Simple"
+   },
+   {
+    "label": "Focused",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Focus Energy",
+     "Harden"
+    ],
+    "item": "Lansat Berry",
+    "ability": "Volt Absorb"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Snorlax2",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Seismic Toss 1, move Seismic Toss 1"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Seismic Toss 2, move Seismic Toss 2"
+  },
+  {
+   "p1": "switch 3, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Focus Energy, move Harden",
+   "p2": "move Seismic Toss 1, move Seismic Toss 1"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,111 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-intimidate-against-guards",
+ "notes": [
+  "Intimidate against the guards (Gen 9): Hyper Cutter and Inner Focus refuse it, Big Pecks does not, Mirror Armor sends it back to the Intimidate holder"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Gyarados",
+    "species": "Gyarados",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Intimidate"
+   },
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Gyara",
+    "species": "Gyarados",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Intimidate"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Cutter",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Hyper Cutter"
+   },
+   {
+    "label": "Focus",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Inner Focus"
+   },
+   {
+    "label": "Armor",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Mirror Armor"
+   },
+   {
+    "label": "Pecks",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Big Pecks"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "switch 3, switch 4"
+  },
+  {
+   "p1": "switch 3, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

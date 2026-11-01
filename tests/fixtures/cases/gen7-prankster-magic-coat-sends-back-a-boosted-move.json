@@ -1,0 +1,88 @@
+{
+ "schema": 1,
+ "id": "gen7-prankster-magic-coat-sends-back-a-boosted-move",
+ "notes": [
+  "Gen 7: Sableye's Prankster boosts its Magic Coat; Umbreon's Thunder Wave comes back with that boost (`newMove.pranksterBoosted = this.effectState.pranksterBoosted`) and Umbreon, Dark, is immune to it. Without Prankster (Murkrow's Insomnia) the reflected Thunder Wave paralyses (issues.md I174, DESIGN.md R-M8-88)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sableye",
+    "species": "Sableye",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Magic Coat",
+     "Splash"
+    ],
+    "ability": "Prankster",
+    "gender": "M"
+   },
+   {
+    "label": "Murkrow",
+    "species": "Murkrow",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Magic Coat",
+     "Splash"
+    ],
+    "ability": "Insomnia",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Umbreon",
+    "species": "Umbreon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Thunder Wave",
+     "Splash"
+    ],
+    "ability": "Synchronize",
+    "gender": "M"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Magic Coat",
+   "p2": "move Thunder Wave"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Magic Coat",
+   "p2": "move Thunder Wave"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

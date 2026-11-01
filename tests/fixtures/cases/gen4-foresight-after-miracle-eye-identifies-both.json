@@ -1,0 +1,74 @@
+{
+ "schema": 1,
+ "id": "gen4-foresight-after-miracle-eye-identifies-both",
+ "notes": [
+  "Gen 4 on the cartridge (issues.md I89): Foresight after Miracle Eye succeeds — pokeplatinum sets each flag whatever the target has — so Body Slam and Psychic both hit Sableye; Foresight again succeeds too"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Miracle Eye",
+     "Foresight",
+     "Body Slam",
+     "Psychic"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Sableye",
+    "species": "Sableye",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Keen Eye"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Miracle Eye",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Foresight",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Psychic",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Foresight",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

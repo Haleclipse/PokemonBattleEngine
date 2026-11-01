@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "gen7-pursuit-evasion-intercept",
+ "notes": [
+  "Gen 7 Pursuit on a Minimized foe as it switches out: no accuracy check (onModifyMove), double power"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Pursuer",
+    "species": "Tyranitar",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Pursuit",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Evader",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Minimize",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Bench",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Minimize"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Minimize"
+  },
+  {
+   "p1": "move Pursuit",
+   "p2": "switch Bench"
+  },
+  {
+   "p1": "move Pursuit",
+   "p2": "switch Evader"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

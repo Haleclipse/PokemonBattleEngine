@@ -1,0 +1,81 @@
+{
+ "schema": 1,
+ "id": "gen9-quick-draw-rolls-while-recharging",
+ "notes": [
+  "A recharging Pok\u00e9mon acts with Showdown's `recharge`, which is not a real move and has no category: Quick Draw (anything but a Status move) still rolls, and a success puts the recharge turn first"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Slowbro",
+    "species": "Slowbro-Galar",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Hyper Beam"
+    ],
+    "ability": "Quick Draw"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Growl"
+    ],
+    "ability": "Natural Cure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   5
+  ]
+ }
+}

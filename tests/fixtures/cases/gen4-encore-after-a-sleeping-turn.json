@@ -1,0 +1,76 @@
+{
+ "schema": 1,
+ "id": "gen4-encore-after-a-sleeping-turn",
+ "notes": [
+  "Gen 4 Encore on a Pok\u00e9mon that spent its turn asleep after using Tackle fails: the sleeping turn left no last move (the cartridge, I67)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sleeper",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Caster",
+    "species": "Snorlax",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Spore",
+     "Encore",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Tackle",
+   "p2": "move Spore"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Encore"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

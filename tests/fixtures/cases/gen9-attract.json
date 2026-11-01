@@ -1,0 +1,142 @@
+{
+ "schema": 1,
+ "id": "gen9-attract",
+ "notes": [
+  "Attract: a male and a female only (the same gender and a genderless target are immune); the infatuated Pok\u00e9mon rolls 1 in 2 at each BeforeMove, before paralysis; Attract again fails; it ends once the Pok\u00e9mon it is infatuated with leaves the field"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Romeo",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Attract",
+     "Thunder Wave",
+     "Recover"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Bench",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Juliet",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Twin",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Robot",
+    "species": "Magnezone",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Thunder Wave",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Attract",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Attract",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "switch Bench",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "switch Romeo",
+   "p2": "switch Twin"
+  },
+  {
+   "p1": "move Attract",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "switch Robot"
+  },
+  {
+   "p1": "move Attract",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   2,
+   2,
+   3,
+   4
+  ]
+ }
+}

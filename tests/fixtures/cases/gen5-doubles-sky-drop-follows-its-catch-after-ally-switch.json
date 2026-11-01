@@ -1,0 +1,82 @@
+{
+ "schema": 1,
+ "id": "gen5-doubles-sky-drop-follows-its-catch-after-ally-switch",
+ "notes": [
+  "Gen 5 doubles: Lunatone's Sky Drop carries Drilbur up; Shuckle's Ally Switch then swaps the two slots, and the drop still lands on Drilbur, now in Shuckle's old place (`skydrop`'s `onRedirectTarget`, priority 99, DESIGN.md R-M8-81)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "doubles",
+  "format": "gen5doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Cherubi",
+    "species": "Cherubi",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Chlorophyll",
+    "gender": "F"
+   },
+   {
+    "label": "Lunatone",
+    "species": "Lunatone",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sky Drop",
+     "Splash"
+    ],
+    "ability": "Levitate"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Drilbur",
+    "species": "Drilbur",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Sand Rush",
+    "gender": "F"
+   },
+   {
+    "label": "Shuckle",
+    "species": "Shuckle",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Ally Switch",
+     "Splash"
+    ],
+    "ability": "Sturdy",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash, move Sky Drop 1",
+   "p2": "move Splash, move Splash"
+  },
+  {
+   "p1": "move Splash, move Sky Drop 1",
+   "p2": "move Splash, move Ally Switch"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

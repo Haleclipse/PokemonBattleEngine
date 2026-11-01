@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "gen3-doubles-metronome-into-magic-coat",
+ "notes": [
+  "Gen 3 doubles: Clefairy's Metronome calls Fake Tears, drawn at Mawile (the second of the two foes); Mawile's Magic Coat sends it back at Clefairy. The random target is the called Fake Tears' own, which its own `move` line names (Mawile), not the reflection's (Clefairy)"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "doubles",
+  "format": "gen3doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Clefairy",
+    "species": "Clefairy",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Metronome"
+    ],
+    "ability": "Cute Charm",
+    "gender": "F"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Zigzagoon",
+    "species": "Zigzagoon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Pickup",
+    "gender": "M"
+   },
+   {
+    "label": "Mawile",
+    "species": "Mawile",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Magic Coat"
+    ],
+    "ability": "Hyper Cutter",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1, move 1",
+   "p2": "move 1, move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   18,
+   19,
+   20,
+   21
+  ]
+ }
+}

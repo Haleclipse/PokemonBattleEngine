@@ -1,0 +1,196 @@
+{
+  "schema": 1,
+  "id": "gen1-haze-silent-cure-and-poison",
+  "notes": [
+    "Nightly 49: Gen 1 Haze cures the foe's sleep silently ([silent], an effect's cure, no wake-up), then the user's poison hurts it after its own move (DESIGN.md R-M8-93)",
+    "promoted from m8-gen1-singles-s495-019-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 1,
+    "mode": "singles",
+    "format": "gen1customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Kingler",
+        "species": "Kingler",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Spore",
+          "Haze",
+          "Sleep Powder"
+        ]
+      },
+      {
+        "label": "Squirtle",
+        "species": "Squirtle",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Peck",
+          "Haze",
+          "Gust",
+          "Toxic"
+        ]
+      },
+      {
+        "label": "Rhydon",
+        "species": "Rhydon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sky Attack",
+          "Wing Attack"
+        ]
+      },
+      {
+        "label": "Slowbro",
+        "species": "Slowbro",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fly",
+          "Drill Peck",
+          "Toxic"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "Gengar",
+        "species": "Gengar",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Headbutt",
+          "Hyper Fang"
+        ]
+      },
+      {
+        "label": "Psyduck",
+        "species": "Psyduck",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Low Kick",
+          "Haze",
+          "Lovely Kiss",
+          "Toxic"
+        ]
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      37566,
+      28450,
+      65478,
+      6919
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Spore",
+      "p2": "move Headbutt"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move Spore",
+      "p2": "move Headbutt"
+    },
+    {
+      "p1": "move Haze",
+      "p2": "move Headbutt"
+    },
+    {
+      "p1": "move Sleep Powder",
+      "p2": "move Hyper Fang"
+    },
+    {
+      "p1": "switch Squirtle",
+      "p2": "switch Psyduck"
+    },
+    {
+      "p1": "move Toxic",
+      "p2": "move Toxic"
+    },
+    {
+      "p1": "move Peck",
+      "p2": "move Low Kick"
+    },
+    {
+      "p1": "move Haze",
+      "p2": "move Haze"
+    },
+    {
+      "p1": "move Gust",
+      "p2": "move Lovely Kiss"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 4"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "switch Kingler",
+      "p2": "switch Gengar"
+    },
+    {
+      "p1": "move Spore",
+      "p2": "move Headbutt"
+    },
+    {
+      "p1": "move Haze",
+      "p2": "move Headbutt"
+    },
+    {
+      "p1": "switch Rhydon",
+      "p2": "switch Psyduck"
+    },
+    {
+      "p1": "move Wing Attack",
+      "p2": "move Lovely Kiss"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 4"
+    },
+    {
+      "p1": "switch Squirtle",
+      "p2": "switch Gengar"
+    },
+    {
+      "p1": "switch Slowbro",
+      "p2": "switch Psyduck"
+    },
+    {
+      "p1": "move Toxic",
+      "p2": "move Toxic"
+    },
+    {
+      "p1": "move Fly",
+      "p2": "move Low Kick"
+    },
+    {
+      "p1": "move Fly",
+      "p2": "move Haze"
+    },
+    {
+      "p1": "move Drill Peck",
+      "p2": "move Lovely Kiss"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 2"
+    }
+  ]
+}

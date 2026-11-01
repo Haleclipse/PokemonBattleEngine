@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen9-tera-step-before-every-move",
+ "notes": [
+  "Gen 9: the slower Snorlax Terastallizes into Ghost (`move 2 terastallize`) while the faster Charizard uses Body Slam: the step runs before every move of the turn, so the Normal-type hit meets the Ghost type it became immune to"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "ability": "Thick Fat",
+    "teraType": "Ghost"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Charizard",
+    "species": "Charizard",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Body Slam",
+     "Harden"
+    ],
+    "ability": "Blaze"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 2 terastallize",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

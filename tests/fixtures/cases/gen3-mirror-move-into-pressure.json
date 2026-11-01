@@ -1,0 +1,63 @@
+{
+ "schema": 1,
+ "id": "gen3-mirror-move-into-pressure",
+ "notes": [
+  "Gen 3: Pidgeot's Mirror Move copies Absol's Tackle back at it, and Absol's Pressure takes one more PP from Mirror Move (pokeemerald: `trymirrormove` jumps into Tackle's script, whose `ppreduce` takes 1 plus the Pressure from the action's slot; issues.md I167, the oracle is patched)"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Pidgeot",
+    "species": "Pidgeot",
+    "level": 35,
+    "nature": "Hardy",
+    "moves": [
+     "Mirror Move"
+    ],
+    "ability": "Keen Eye",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Absol",
+    "species": "Absol",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "ability": "Pressure",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Mirror Move",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Mirror Move",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Mirror Move",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

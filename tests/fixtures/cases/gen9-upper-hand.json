@@ -1,0 +1,73 @@
+{
+ "schema": 1,
+ "id": "gen9-upper-hand",
+ "notes": [
+  "Upper Hand hits a target about to use a damaging move of raised priority (Grassy Glide in Grassy Terrain) and flinches it; fails against Tackle and against a target that already protected itself (Stomping Tantrum doubles after)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hand",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Upper Hand",
+     "Stomping Tantrum",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Rillaboom",
+    "species": "Rillaboom",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Grassy Glide",
+     "Tackle",
+     "Protect"
+    ],
+    "ability": "Grassy Surge"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Upper Hand",
+   "p2": "move Grassy Glide"
+  },
+  {
+   "p1": "move Upper Hand",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Stomping Tantrum",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Upper Hand",
+   "p2": "move Protect"
+  },
+  {
+   "p1": "move Stomping Tantrum",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

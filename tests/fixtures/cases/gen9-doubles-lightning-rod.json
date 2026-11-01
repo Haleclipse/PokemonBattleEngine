@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "id": "gen9-doubles-lightning-rod",
+  "notes": [
+    "Lightning Rod: Thunderbolt declared at Metagross is pulled onto Pikachu (`-activate`), absorbed (no damage) and",
+    "raises its Special Attack (`-ability … boost`, `-boost`); Tackle on turn 2 is unaffected."
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "a",
+        "species": "Jolteon",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Thunderbolt",
+          "Tackle"
+        ]
+      },
+      {
+        "label": "c",
+        "species": "Garchomp",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "b",
+        "species": "Metagross",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Swords Dance"
+        ]
+      },
+      {
+        "label": "d",
+        "species": "Pikachu",
+        "ability": "Lightning Rod",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Swords Dance"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1 1, move 1 1",
+      "p2": "move 1, move 1"
+    },
+    {
+      "p1": "move 2 2, move 1 1",
+      "p2": "move 1, move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

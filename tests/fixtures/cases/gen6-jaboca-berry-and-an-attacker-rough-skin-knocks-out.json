@@ -1,0 +1,76 @@
+{
+ "schema": 1,
+ "id": "gen6-jaboca-berry-and-an-attacker-rough-skin-knocks-out",
+ "notes": [
+  "Gen 6 Jaboca Berry (issues.md I45): Shedinja's Scratch sets off Sharpedo's Rough Skin, which knocks it out; the gen6 mod eats the berry whatever, so Snorlax's Tackle a turn later finds nothing",
+  "Snorlax's second Tackle meets no berry either way"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sharpedo",
+    "species": "Sharpedo",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Agility"
+    ],
+    "item": "Jaboca Berry",
+    "ability": "Rough Skin"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Shedinja",
+    "species": "Shedinja",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Scratch"
+    ],
+    "ability": "Wonder Guard"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Agility",
+   "p2": "move Scratch"
+  },
+  {
+   "p2": "switch Snorlax"
+  },
+  {
+   "p1": "move Agility",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Agility",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

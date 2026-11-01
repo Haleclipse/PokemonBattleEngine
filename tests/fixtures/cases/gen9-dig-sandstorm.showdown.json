@@ -1,0 +1,843 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@pkmn/sim",
+    "version": "0.10.11",
+    "formatid": "gen9customgame",
+    "seed": [
+      4,
+      2,
+      3,
+      4
+    ]
+  },
+  "frames": [
+    {
+      "schema": 1,
+      "checkpoint": "team_preview",
+      "turn": 0,
+      "request": "team_preview|team_preview",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            null
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            null
+          ],
+          "party": [
+            {
+              "hp": 175,
+              "max_hp": 175,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "rock",
+                "dark"
+              ],
+              "ability": "sandstream",
+              "item": "",
+              "pp": [
+                32
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": []
+    },
+    {
+      "schema": 1,
+      "checkpoint": "initial",
+      "turn": 1,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 175,
+              "max_hp": 175,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "rock",
+                "dark"
+              ],
+              "ability": "sandstream",
+              "item": "",
+              "pp": [
+                32
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": {
+          "kind": "sandstorm",
+          "turns_remaining": 5
+        },
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "details": "Snorlax, L50, M",
+          "hp": 235,
+          "max_hp": 235,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "details": "Tyranitar, L50, F",
+          "hp": 175,
+          "max_hp": 175,
+          "status": null
+        },
+        {
+          "kind": "weather",
+          "args": [
+            "Sandstorm",
+            "[from] ability: Sand Stream",
+            "[of] p2a: b"
+          ]
+        },
+        {
+          "kind": "turn",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_1",
+      "turn": 2,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "twoturnmove": 1,
+                "dig": 1
+              },
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                15
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 175,
+              "max_hp": 175,
+              "status": null,
+              "boosts": {
+                "attack": 2,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "rock",
+                "dark"
+              ],
+              "ability": "sandstream",
+              "item": "",
+              "pp": [
+                31
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": {
+          "kind": "sandstorm",
+          "turns_remaining": 4
+        },
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "move": "Swords Dance",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "stat": "atk",
+          "amount": 2
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "move": "Dig",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          }
+        },
+        {
+          "kind": "prepare",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "move": "Dig"
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "weather",
+          "args": [
+            "Sandstorm",
+            "[upkeep]"
+          ]
+        },
+        {
+          "kind": "turn",
+          "turn": 2
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_2",
+      "turn": 3,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 221,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                15
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 101,
+              "max_hp": 175,
+              "status": null,
+              "boosts": {
+                "attack": 4,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "rock",
+                "dark"
+              ],
+              "ability": "sandstream",
+              "item": "",
+              "pp": [
+                30
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": {
+          "kind": "sandstorm",
+          "turns_remaining": 3
+        },
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "move": "Swords Dance",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "stat": "atk",
+          "amount": 2
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "move": "Dig",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          }
+        },
+        {
+          "kind": "supereffective",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "detail": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "hp": 101,
+          "max_hp": 175,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "weather",
+          "args": [
+            "Sandstorm",
+            "[upkeep]"
+          ]
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "hp": 221,
+          "max_hp": 235,
+          "status": null,
+          "from": "[from] Sandstorm",
+          "of": null
+        },
+        {
+          "kind": "turn",
+          "turn": 3
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_3",
+      "turn": 4,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 221,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "twoturnmove": 1,
+                "dig": 1
+              },
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                14
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 101,
+              "max_hp": 175,
+              "status": null,
+              "boosts": {
+                "attack": 6,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "rock",
+                "dark"
+              ],
+              "ability": "sandstream",
+              "item": "",
+              "pp": [
+                29
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": {
+          "kind": "sandstorm",
+          "turns_remaining": 2
+        },
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "move": "Swords Dance",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "stat": "atk",
+          "amount": 2
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "move": "Dig",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          }
+        },
+        {
+          "kind": "prepare",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "move": "Dig"
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "weather",
+          "args": [
+            "Sandstorm",
+            "[upkeep]"
+          ]
+        },
+        {
+          "kind": "turn",
+          "turn": 4
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_4",
+      "turn": 5,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 207,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                14
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 37,
+              "max_hp": 175,
+              "status": null,
+              "boosts": {
+                "attack": 6,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "rock",
+                "dark"
+              ],
+              "ability": "sandstream",
+              "item": "",
+              "pp": [
+                28
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": {
+          "kind": "sandstorm",
+          "turns_remaining": 1
+        },
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "move": "Swords Dance",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "stat": "atk",
+          "amount": 0
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "move": "Dig",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          }
+        },
+        {
+          "kind": "supereffective",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "detail": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "hp": 37,
+          "max_hp": 175,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "weather",
+          "args": [
+            "Sandstorm",
+            "[upkeep]"
+          ]
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "hp": 207,
+          "max_hp": 235,
+          "status": null,
+          "from": "[from] Sandstorm",
+          "of": null
+        },
+        {
+          "kind": "turn",
+          "turn": 5
+        }
+      ]
+    }
+  ],
+  "debug_log": "|gametype|singles\n|player|p1|P1||\n|player|p2|P2||\n|gen|9\n|tier|[Gen 9] Custom Game\n|clearpoke\n|poke|p1|Snorlax, L50, M|\n|poke|p2|Tyranitar, L50, F|\n|teampreview\n|\n|teamsize|p1|1\n|teamsize|p2|1\n|start\n|switch|p1a: a|Snorlax, L50, M|235/235\n|switch|p2a: b|Tyranitar, L50, F|175/175\n|-weather|Sandstorm|[from] ability: Sand Stream|[of] p2a: b\n|turn|1\n|\n|move|p2a: b|Swords Dance|p2a: b\n|-boost|p2a: b|atk|2\n|move|p1a: a|Dig||[still]\n|-prepare|p1a: a|Dig\n|\n|-weather|Sandstorm|[upkeep]\n|debug|natural status immunity\n|debug|weather immunity\n|debug|artificial status immunity\n|debug|weather immunity\n|upkeep\n|turn|2\n|\n|move|p2a: b|Swords Dance|p2a: b\n|-boost|p2a: b|atk|2\n|move|p1a: a|Dig|p2a: b|[from] lockedmove\n|-supereffective|p2a: b\n|-damage|p2a: b|101/175\n|\n|-weather|Sandstorm|[upkeep]\n|debug|natural status immunity\n|debug|weather immunity\n|-damage|p1a: a|221/235|[from] Sandstorm\n|upkeep\n|turn|3\n|\n|move|p2a: b|Swords Dance|p2a: b\n|-boost|p2a: b|atk|2\n|move|p1a: a|Dig||[still]\n|-prepare|p1a: a|Dig\n|\n|-weather|Sandstorm|[upkeep]\n|debug|natural status immunity\n|debug|weather immunity\n|debug|artificial status immunity\n|debug|weather immunity\n|upkeep\n|turn|4\n|\n|move|p2a: b|Swords Dance|p2a: b\n|-boost|p2a: b|atk|0\n|debug|move failed because it did nothing\n|move|p1a: a|Dig|p2a: b|[from] lockedmove\n|-supereffective|p2a: b\n|-damage|p2a: b|37/175\n|\n|-weather|Sandstorm|[upkeep]\n|debug|natural status immunity\n|debug|weather immunity\n|-damage|p1a: a|207/235|[from] Sandstorm\n|upkeep\n|turn|5"
+}

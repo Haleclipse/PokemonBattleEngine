@@ -1,0 +1,114 @@
+{
+ "schema": 1,
+ "id": "gen9-attract-drawn-genders",
+ "notes": [
+  "Sets that name no gender: Showdown draws one as it builds the teams (a species' fixed gender otherwise: Tauros is male, Magnezone genderless); the replay reads each from the Pok\u00e9mon's switch line"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Suitor",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Attract",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Bull",
+    "species": "Tauros",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Attract"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Lax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Fairy",
+    "species": "Clefable",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Robot",
+    "species": "Magnezone",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Attract",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "switch Fairy"
+  },
+  {
+   "p1": "move Attract",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "switch Bull",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Attract",
+   "p2": "switch Lax"
+  },
+  {
+   "p1": "move Attract",
+   "p2": "switch Robot"
+  },
+  {
+   "p1": "move Attract",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   8,
+   2,
+   3,
+   4
+  ]
+ }
+}

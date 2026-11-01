@@ -1,0 +1,97 @@
+{
+ "schema": 1,
+ "id": "gen2-reflect-light-screen",
+ "notes": [
+  "Gen 2: Reflect / Light Screen double Snorlax's Defense / Special Defense in getStat; a second Reflect fails; Slash's critical hits (physical: Normal) ignore Reflect at +0 but not after Swords Dance (+2 against +0); Snorlax's confusion self-hit reads its own doubled Defense"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Reflect",
+     "Light Screen",
+     "Recover"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Kingler",
+    "species": "Kingler",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Slash",
+     "Swords Dance",
+     "Surf",
+     "Confuse Ray"
+    ],
+    "item": "Scope Lens"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Reflect",
+   "p2": "move Slash"
+  },
+  {
+   "p1": "move Light Screen",
+   "p2": "move Surf"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Slash"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Slash"
+  },
+  {
+   "p1": "move Reflect",
+   "p2": "move Swords Dance"
+  },
+  {
+   "p1": "move Reflect",
+   "p2": "move Slash"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Slash"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Slash"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Confuse Ray"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Slash"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Slash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   42660,
+   3165,
+   4748,
+   53824
+  ]
+ }
+}

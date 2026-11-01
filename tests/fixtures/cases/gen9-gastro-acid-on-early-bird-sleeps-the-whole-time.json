@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "gen9-gastro-acid-on-early-bird-sleeps-the-whole-time",
+ "notes": [
+  "Dodrio's Early Bird under Gastro Acid: its sleep counts down one a turn, not two (the replay asks the ability in effect too)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Weezing",
+    "species": "Weezing",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Gastro Acid",
+     "Spore",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Levitate"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Dodrio",
+    "species": "Dodrio",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Early Bird"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Gastro Acid",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Spore",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

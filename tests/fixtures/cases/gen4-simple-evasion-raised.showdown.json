@@ -1,0 +1,946 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@pkmn/sim",
+    "version": "0.10.11",
+    "formatid": "gen4customgame",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "frames": [
+    {
+      "schema": 1,
+      "checkpoint": "initial",
+      "turn": 1,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 109,
+              "max_hp": 109,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "psychic"
+              ],
+              "ability": "compoundeyes",
+              "item": "widelens",
+              "pp": [
+                24,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 651,
+              "max_hp": 651,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "simple",
+              "item": "",
+              "pp": [
+                24,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Eyes"
+          },
+          "details": "Mew, L30",
+          "hp": 109,
+          "max_hp": 109,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Simp"
+          },
+          "details": "Blissey, F",
+          "hp": 651,
+          "max_hp": 651,
+          "status": null
+        },
+        {
+          "kind": "turn",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_1",
+      "turn": 2,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 109,
+              "max_hp": 109,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "psychic"
+              ],
+              "ability": "compoundeyes",
+              "item": "widelens",
+              "pp": [
+                24,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 651,
+              "max_hp": 651,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 1
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "simple",
+              "item": "",
+              "pp": [
+                23,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Simp"
+          },
+          "move": "Double Team",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Simp"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Simp"
+          },
+          "stat": "evasion",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Eyes"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Eyes"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Eyes"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 2
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_2",
+      "turn": 3,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 109,
+              "max_hp": 109,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "psychic"
+              ],
+              "ability": "compoundeyes",
+              "item": "widelens",
+              "pp": [
+                23,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 644,
+              "max_hp": 651,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 1
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "simple",
+              "item": "",
+              "pp": [
+                23,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Simp"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Simp"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Simp"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Eyes"
+          },
+          "move": "Surf",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Simp"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Simp"
+          },
+          "hp": 644,
+          "max_hp": 651,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 3
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_3",
+      "turn": 4,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 109,
+              "max_hp": 109,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "psychic"
+              ],
+              "ability": "compoundeyes",
+              "item": "widelens",
+              "pp": [
+                22,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 637,
+              "max_hp": 651,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 2,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 1
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "simple",
+              "item": "",
+              "pp": [
+                23,
+                46
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Simp"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Simp"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Simp"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Eyes"
+          },
+          "move": "Surf",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Simp"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Simp"
+          },
+          "hp": 637,
+          "max_hp": 651,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 4
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_4",
+      "turn": 5,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 109,
+              "max_hp": 109,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "psychic"
+              ],
+              "ability": "compoundeyes",
+              "item": "widelens",
+              "pp": [
+                21,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 637,
+              "max_hp": 651,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 3,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 1
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "simple",
+              "item": "",
+              "pp": [
+                23,
+                45
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Simp"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Simp"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Simp"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Eyes"
+          },
+          "move": "Surf",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Simp"
+          }
+        },
+        {
+          "kind": "miss",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Eyes"
+          },
+          "detail": "p2a: Simp"
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 5
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_5",
+      "turn": 6,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 109,
+              "max_hp": 109,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "psychic"
+              ],
+              "ability": "compoundeyes",
+              "item": "widelens",
+              "pp": [
+                20,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 631,
+              "max_hp": 651,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 4,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 1
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "simple",
+              "item": "",
+              "pp": [
+                23,
+                44
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Simp"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Simp"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Simp"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Eyes"
+          },
+          "move": "Surf",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Simp"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Simp"
+          },
+          "hp": 631,
+          "max_hp": 651,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 6
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_6",
+      "turn": 7,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 109,
+              "max_hp": 109,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "psychic"
+              ],
+              "ability": "compoundeyes",
+              "item": "widelens",
+              "pp": [
+                19,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 624,
+              "max_hp": 651,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 5,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 1
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "simple",
+              "item": "",
+              "pp": [
+                23,
+                43
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Simp"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Simp"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Simp"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Eyes"
+          },
+          "move": "Surf",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Simp"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Simp"
+          },
+          "hp": 624,
+          "max_hp": 651,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 7
+        }
+      ]
+    }
+  ],
+  "debug_log": "|gametype|singles\n|player|p1|P1||\n|player|p2|P2||\n|gen|4\n|tier|[Gen 4] Custom Game\n|\n|teamsize|p1|1\n|teamsize|p2|1\n|start\n|switch|p1a: Eyes|Mew, L30|109/109\n|switch|p2a: Simp|Blissey, F|651/651\n|turn|1\n|\n|move|p2a: Simp|Double Team|p2a: Simp\n|-boost|p2a: Simp|evasion|1\n|move|p1a: Eyes|Harden|p1a: Eyes\n|-boost|p1a: Eyes|def|1\n|\n|upkeep\n|turn|2\n|\n|move|p2a: Simp|Harden|p2a: Simp\n|-boost|p2a: Simp|def|1\n|move|p1a: Eyes|Surf|p2a: Simp\n|-damage|p2a: Simp|644/651\n|\n|upkeep\n|turn|3\n|\n|move|p2a: Simp|Harden|p2a: Simp\n|-boost|p2a: Simp|def|1\n|move|p1a: Eyes|Surf|p2a: Simp\n|-damage|p2a: Simp|637/651\n|\n|upkeep\n|turn|4\n|\n|move|p2a: Simp|Harden|p2a: Simp\n|-boost|p2a: Simp|def|1\n|move|p1a: Eyes|Surf|p2a: Simp|[miss]\n|-miss|p1a: Eyes|p2a: Simp\n|\n|upkeep\n|turn|5\n|\n|move|p2a: Simp|Harden|p2a: Simp\n|-boost|p2a: Simp|def|1\n|move|p1a: Eyes|Surf|p2a: Simp\n|-damage|p2a: Simp|631/651\n|\n|upkeep\n|turn|6\n|\n|move|p2a: Simp|Harden|p2a: Simp\n|-boost|p2a: Simp|def|1\n|move|p1a: Eyes|Surf|p2a: Simp\n|-damage|p2a: Simp|624/651\n|\n|upkeep\n|turn|7"
+}

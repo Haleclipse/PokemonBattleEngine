@@ -1,0 +1,90 @@
+{
+  "schema": 1,
+  "id": "gen5-doubles-contrary-intimidate-is-not-the-secondary",
+  "notes": [
+    "A stat secondary landed only if its own stat changed: a Contrary target Intimidated in the same action",
+    "promoted from m8-gen5-doubles-s102-014-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 5,
+    "mode": "doubles",
+    "format": "gen5doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Drifblim",
+        "species": "Drifblim",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Nasty Plot"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Zubat",
+        "species": "Zubat",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Acid Spray"
+        ],
+        "ability": "Run Away",
+        "item": "Red Card",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Azurill",
+        "species": "Azurill",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fire Punch"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Gloom",
+        "species": "Gloom",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Flash Cannon"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Weedle",
+        "species": "Weedle",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Vise Grip"
+        ],
+        "ability": "Intimidate",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      10063,
+      52014,
+      17363,
+      40941
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Nasty Plot, move Acid Spray 1",
+      "p2": "move Fire Punch 1, move Flash Cannon 2"
+    }
+  ]
+}

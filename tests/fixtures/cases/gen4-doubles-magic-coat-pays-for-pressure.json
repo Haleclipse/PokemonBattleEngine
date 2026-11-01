@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "gen4-doubles-magic-coat-pays-for-pressure",
+ "notes": [
+  "Gen 4 doubles: Mawile's Magic Coat sends Absol's Confuse Ray back, and Absol's Pressure takes one more PP from Magic Coat (pokeemerald `PressurePPLose`, pokeplatinum `BattleSystem_DecPPForPressure`; Showdown charges nothing — issues.md I169, the oracle is patched)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "doubles",
+  "format": "gen4doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mawile",
+    "species": "Mawile",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Magic Coat"
+    ],
+    "ability": "Hyper Cutter",
+    "gender": "F"
+   },
+   {
+    "label": "Zigzagoon",
+    "species": "Zigzagoon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Pickup",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Absol",
+    "species": "Absol",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Confuse Ray"
+    ],
+    "ability": "Pressure",
+    "gender": "M"
+   },
+   {
+    "label": "Pidgey",
+    "species": "Pidgey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Keen Eye",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1, move 1",
+   "p2": "move 1 1, move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

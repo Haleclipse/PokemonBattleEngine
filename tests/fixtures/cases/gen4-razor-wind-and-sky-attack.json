@@ -1,0 +1,76 @@
+{
+ "schema": 1,
+ "id": "gen4-razor-wind-and-sky-attack",
+ "notes": [
+  "Gen 4 Razor Wind (special, raised critical-hit ratio) and Sky Attack (30 % flinch): each charges a turn first"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Winder",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Razor Wind",
+     "Sky Attack",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Wall",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tail Whip",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Razor Wind",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Razor Wind",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Sky Attack",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Sky Attack",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Sky Attack",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Sky Attack",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

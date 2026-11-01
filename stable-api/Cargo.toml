@@ -1,0 +1,16 @@
+# The stable API's own consumer (DESIGN.md §47.5 item 7): a package of its own that depends on
+# the engine without the `internals` feature, so what it builds and runs uses the stable API
+# alone. `scripts/check.sh` builds and tests it (`--manifest-path stable-api/Cargo.toml`).
+[package]
+name = "pokemon-battle-engine-stable-api"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.97"
+publish = false
+license = "GPL-3.0-only"
+
+[dependencies]
+pokemon-battle-engine = { path = ".." }
+
+[dev-dependencies]
+serde_json = "1"

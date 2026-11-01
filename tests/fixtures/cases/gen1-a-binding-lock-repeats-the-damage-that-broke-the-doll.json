@@ -1,0 +1,70 @@
+{
+ "schema": 1,
+ "id": "gen1-a-binding-lock-repeats-the-damage-that-broke-the-doll",
+ "notes": [
+  "Gen 1: Pikachu puts up a Substitute; Arbok's Wrap breaks it — the doll took only its few HP, but the lock repeats the damage uncapped (gen1 `partialtrappinglock`: `this.lastDamage`; pokered keeps `wDamage`): the next turn's Wrap takes the whole of it from Pikachu, which shows the roll the doll hid (DESIGN.md R-M8-143)"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Pikachu",
+    "species": "Pikachu",
+    "level": 20,
+    "nature": "Hardy",
+    "moves": [
+     "Substitute",
+     "Splash"
+    ]
+   },
+   {
+    "label": "Rattata",
+    "species": "Rattata",
+    "level": 20,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Arbok",
+    "species": "Arbok",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Wrap",
+     "Splash"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Substitute",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Wrap"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   6,
+   7,
+   8,
+   9
+  ]
+ }
+}

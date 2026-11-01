@@ -1,0 +1,96 @@
+{
+ "schema": 1,
+ "id": "gen9-supreme-overlord",
+ "notes": [
+  "Supreme Overlord: Kingambit's Strength has no boost with nobody fallen, x1.1 (4506) after one Magikarp fainted and it came back, x1.2 (4915) after two"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Kingambit",
+    "species": "Kingambit",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Strength"
+    ],
+    "ability": "Supreme Overlord"
+   },
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 1,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Karp",
+    "species": "Magikarp",
+    "level": 1,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Body Slam"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Strength",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "switch Magikarp",
+   "p2": "move Body Slam"
+  },
+  {
+   "p1": "switch Kingambit"
+  },
+  {
+   "p1": "move Strength",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "switch Karp",
+   "p2": "move Body Slam"
+  },
+  {
+   "p1": "switch Kingambit"
+  },
+  {
+   "p1": "move Strength",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

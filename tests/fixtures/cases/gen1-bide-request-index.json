@@ -1,0 +1,69 @@
+{
+ "schema": 1,
+ "id": "gen1-bide-request-index",
+ "notes": [
+  "Gen 1 Bide: while it stores, the request lists Bide alone, so `move 1` is Bide whatever its slot; once released, `move 1` is the first move again"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Bider",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Rest",
+     "Bide"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Tail Whip"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Bide",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Tail Whip"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

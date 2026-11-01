@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "gen5-encore-overrides-an-assist-called-charge",
+ "notes": [
+  "Gen 5: Tyrogue's Assist calls Pidgey's Razor Wind, which charges; Snorlax's Encore holds Tyrogue to Assist. Next turn the charge's lock is overridden by Encore (onOverrideAction): Assist again, without PP (LockMove still holds), and it calls Tackle; the old charge ends with the turn (DESIGN.md R-M8-137)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Tyrogue",
+    "species": "Tyrogue",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Assist",
+     "Splash"
+    ],
+    "ability": "Guts",
+    "gender": "M"
+   },
+   {
+    "label": "Pidgey",
+    "species": "Pidgey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Razor Wind",
+     "Tackle"
+    ],
+    "ability": "Keen Eye",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Encore",
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Assist",
+   "p2": "move Encore"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Assist",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

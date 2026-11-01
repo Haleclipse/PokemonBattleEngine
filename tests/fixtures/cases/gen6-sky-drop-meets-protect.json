@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "gen6-sky-drop-meets-protect",
+ "notes": [
+  "Gen 6 Sky Drop against Protect: the carrying turn is stopped like any move (`protect` flag)"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Lifter",
+    "species": "Braviary",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sky Drop",
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Guard",
+    "species": "Machamp",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Protect",
+     "Tackle"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Sky Drop",
+   "p2": "move Protect"
+  },
+  {
+   "p1": "move Sky Drop",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

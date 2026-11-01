@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen7-magician-takes-a-shell-bell",
+ "notes": [
+  "Gen 7: Delphox with Magician takes Snorlax's Shell Bell with Psychic and is not healed by it that move (the event's handlers were gathered before Magician ran); its next Psychic heals an eighth"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Delphox",
+    "species": "Delphox",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Calm Mind",
+     "Psychic"
+    ],
+    "gender": "F",
+    "ability": "Magician"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 45,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat",
+    "item": "Shell Bell"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Calm Mind",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Psychic",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Psychic",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

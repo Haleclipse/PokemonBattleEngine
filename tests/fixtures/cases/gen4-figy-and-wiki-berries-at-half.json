@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "gen4-figy-and-wiki-berries-at-half",
+ "notes": [
+  "Gen 4: the confusion berries are eaten at half HP and restore an eighth (the gen6 mod); Figy Berry confuses the Modest Snorlax (its nature lowers Attack), Wiki Berry leaves the Hardy Lapras alone"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss"
+    ],
+    "ability": "Serene Grace"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Modest",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Figy Berry"
+   },
+   {
+    "label": "Lapras",
+    "species": "Lapras",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Shell Armor",
+    "item": "Wiki Berry"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Seismic Toss",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Seismic Toss",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Seismic Toss",
+   "p2": "switch Lapras"
+  },
+  {
+   "p1": "move Seismic Toss",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,88 @@
+{
+ "schema": 1,
+ "id": "gen9-zero-to-hero",
+ "notes": [
+  "Gen 9: Palafin leaving the field becomes its Hero forme for good (its stats change), and it announces the change as it comes back"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Palafin",
+    "species": "Palafin",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "gender": "M",
+    "ability": "Zero to Hero"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "switch 2",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

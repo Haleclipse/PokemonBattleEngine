@@ -1,0 +1,219 @@
+{
+  "schema": 1,
+  "id": "m8-gen7-doubles-innards-out-answers-a-bide-release",
+  "notes": [
+    "Gen 7 doubles: Quagsire's Bide release knocks Froakie out; Froakie's Innards Out deals Quagsire the HP it had left (the oracle's I188 patch: Showdown's handler adds move.totalDamage, which Bide's release moveData lacks, and deals NaN, DESIGN.md R-M8-116)",
+    "promoted from m8-gen7-doubles-s584-009-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 7,
+    "mode": "doubles",
+    "format": "gen7doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Crawdaunt",
+        "species": "Crawdaunt",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Rolling Kick",
+          "Toxic",
+          "Waterfall",
+          "Bide"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Raichu",
+        "species": "Raichu",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Flying Press",
+          "Toxic",
+          "Pluck",
+          "Whirlwind"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Quagsire",
+        "species": "Quagsire",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Wing Attack",
+          "Peck",
+          "Bide"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Pansear",
+        "species": "Pansear",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Aerial Ace",
+          "Dragon Pulse",
+          "Bide"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Kirlia",
+        "species": "Kirlia",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fly",
+          "Sky Drop"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Mantyke",
+        "species": "Mantyke",
+        "level": 54,
+        "nature": "Hardy",
+        "moves": [
+          "Gust",
+          "Toxic",
+          "Acrobatics",
+          "Bide"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Kangaskhan",
+        "species": "Kangaskhan",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Drill Peck",
+          "Toxic",
+          "Aura Sphere",
+          "Bide"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Froakie",
+        "species": "Froakie",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Dig",
+          "Phantom Force"
+        ],
+        "ability": "Innards Out",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      15915,
+      10153,
+      61994,
+      36217
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Rolling Kick 1, move Flying Press 2",
+      "p2": "move Fly 1, move Gust 2"
+    },
+    {
+      "p1": "move 2 1, move 2 2",
+      "p2": "move 1, move 2 1"
+    },
+    {
+      "p1": "move Waterfall 1, move Pluck 2",
+      "p2": "move Sky Drop 2, move Acrobatics 1"
+    },
+    {
+      "p2": "switch Kangaskhan, pass"
+    },
+    {
+      "p1": "move Bide, move Whirlwind 1",
+      "p2": "move Bide, move Bide"
+    },
+    {
+      "p1": "move 1, move 1 2",
+      "p2": "move 1 2, move 1"
+    },
+    {
+      "p2": "pass, switch Kangaskhan"
+    },
+    {
+      "p1": "move 1, move 2 1",
+      "p2": "move 1, move 2 1"
+    },
+    {
+      "p1": "switch Quagsire, pass"
+    },
+    {
+      "p1": "switch Pansear, move Pluck 2",
+      "p2": "move Phantom Force 2, move Aura Sphere 1"
+    },
+    {
+      "p1": "move 2 1, move 4 2",
+      "p2": "move 1, move 4"
+    },
+    {
+      "p1": "move 3, move 1 1",
+      "p2": "move 1 2, move 1"
+    },
+    {
+      "p1": "move 1, move 2 2",
+      "p2": "move 1, move 1"
+    },
+    {
+      "p1": "pass, switch Quagsire"
+    },
+    {
+      "p1": "move 1, move 2 1",
+      "p2": "move 2 1, move 3 2"
+    },
+    {
+      "p1": "move 2 2, move 3",
+      "p2": "move 1, move 4"
+    },
+    {
+      "p1": "move 3, move 1",
+      "p2": "move 1 1, move 1"
+    },
+    {
+      "p1": "move 1, move 1",
+      "p2": "move 1, move 1"
+    },
+    {
+      "p1": "pass, move Peck 1",
+      "p2": "move Phantom Force 2, pass"
+    },
+    {
+      "p1": "pass, move 3",
+      "p2": "move 1, pass"
+    },
+    {
+      "p1": "pass, move 1",
+      "p2": "move 1 2, pass"
+    },
+    {
+      "p1": "pass, move 1",
+      "p2": "move 1, pass"
+    }
+  ]
+}

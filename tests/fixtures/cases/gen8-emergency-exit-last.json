@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "gen8-emergency-exit-last",
+ "notes": [
+  "No Emergency Exit for the last Pok\u00e9mon standing \u2014 and the attacker's U-turn switch goes ahead"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Pod",
+    "species": "Golisopod",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Liquidation",
+     "Harden"
+    ],
+    "ability": "Emergency Exit"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Psychic",
+     "U-turn",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Mew2",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Liquidation",
+   "p2": "move Psychic"
+  },
+  {
+   "p1": "move Liquidation",
+   "p2": "move U-turn"
+  },
+  {
+   "p2": "switch Mew2"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

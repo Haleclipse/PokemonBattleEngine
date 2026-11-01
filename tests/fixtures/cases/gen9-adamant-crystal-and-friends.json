@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "gen9-adamant-crystal-and-friends",
+ "notes": [
+  "Gen 9: the Origin formes' crystals — an Adamant Crystal on Dialga-Origin, a Lustrous Globe on Palkia-Origin: the same 20 % to their own two types, and none of them can be taken off the Pokémon they are for"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Dialga",
+    "species": "Dialga-Origin",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Flash Cannon",
+     "Dragon Pulse"
+    ],
+    "gender": "M",
+    "ability": "Pressure",
+    "item": "Adamant Crystal"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Thief"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Flash Cannon",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Dragon Pulse",
+   "p2": "move Thief"
+  },
+  {
+   "p1": "move Flash Cannon",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

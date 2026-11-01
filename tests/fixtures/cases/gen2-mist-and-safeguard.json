@@ -1,0 +1,89 @@
+{
+ "schema": 1,
+ "id": "gen2-mist-and-safeguard",
+ "notes": [
+  "Gen 2: Mist is a volatile on Snorlax (target self) stopping Growl and Icy Wind's Speed drop; Safeguard (a side condition, onSideResidualOrder 8) stops Thunder Wave and Confuse Ray; switching out ends Mist"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Mist",
+     "Safeguard",
+     "Recover"
+    ]
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Soft-Boiled"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Lax",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Growl",
+     "Icy Wind",
+     "Thunder Wave",
+     "Confuse Ray"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Mist",
+   "p2": "move Growl"
+  },
+  {
+   "p1": "move Safeguard",
+   "p2": "move Icy Wind"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Thunder Wave"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Confuse Ray"
+  },
+  {
+   "p1": "switch Chansey",
+   "p2": "move Growl"
+  },
+  {
+   "p1": "switch Snorlax",
+   "p2": "move Growl"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Icy Wind"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

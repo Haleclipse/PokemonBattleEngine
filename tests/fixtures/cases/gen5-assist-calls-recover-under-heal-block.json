@@ -1,0 +1,74 @@
+{
+ "schema": 1,
+ "id": "gen5-assist-calls-recover-under-heal-block",
+ "notes": [
+  "Gen 5: Latios puts Snorlax under Heal Block; Snorlax's Assist then calls its benched partner's Recover, which Heal Block refuses as it is modified (`onModifyMove`: `cant|p1a: Snorlax|move: Heal Block|Recover`, no `move` line for Recover)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Assist"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   },
+   {
+    "label": "Starmie",
+    "species": "Starmie",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Recover"
+    ],
+    "ability": "Natural Cure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Latios",
+    "species": "Latios",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Heal Block",
+     "Tackle"
+    ],
+    "ability": "Levitate",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 2"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 2"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,71 @@
+{
+ "schema": 1,
+ "id": "gen5-assist-calls-explosion-into-damp",
+ "notes": [
+  "Gen 5: Snorlax's Assist calls its benched partner's Explosion, which Quagsire's Damp stops at TryMove (`cant|p2a: Quagsire|ability: Damp|Explosion|[of] p1a: Snorlax`): Assist's draw came first"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Assist"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   },
+   {
+    "label": "Electrode",
+    "species": "Electrode",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Thunderbolt",
+     "Explosion"
+    ],
+    "ability": "Static",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Quagsire",
+    "species": "Quagsire",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Damp",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   5,
+   6,
+   7,
+   8
+  ]
+ }
+}

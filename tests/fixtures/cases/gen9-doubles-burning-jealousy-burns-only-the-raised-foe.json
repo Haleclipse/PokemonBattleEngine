@@ -1,0 +1,74 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-burning-jealousy-burns-only-the-raised-foe",
+ "notes": [
+  "Burning Jealousy hits both foes and burns only the one that raised a stat this turn"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Arcanine",
+    "species": "Arcanine",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Burning Jealousy"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Swords Dance"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Growl"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Burning Jealousy, move Harden",
+   "p2": "move Swords Dance, move Growl"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

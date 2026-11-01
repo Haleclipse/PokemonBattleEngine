@@ -1,0 +1,68 @@
+{
+ "schema": 1,
+ "id": "m9-liquid-voice-perish-song-is-water-absorbed",
+ "notes": [
+  "R-M9-28: Liquid Voice makes Perish Song a Water move, so Water Absorb's `onTryHit` takes it in `onHitField`'s per-Pok\u00e9mon TryHit: the hurt Vaporeon heals a quarter and gets no perish count; Primarina does. Found (the immunity) by Nightly 20261020-092109 (gen8vgc2022)."
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Primarina",
+    "species": "Primarina",
+    "ability": "Liquid Voice",
+    "item": "Leftovers",
+    "moves": [
+     "Perish Song",
+     "Moonblast",
+     "Splash"
+    ],
+    "evs": {
+     "spa": 252,
+     "hp": 4
+    },
+    "nature": "Modest"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Vaporeon",
+    "species": "Vaporeon",
+    "ability": "Water Absorb",
+    "item": "Heavy-Duty Boots",
+    "moves": [
+     "Splash"
+    ],
+    "evs": {
+     "hp": 4
+    },
+    "nature": "Bold"
+   }
+  ]
+ },
+ "random": {
+  "seed": [
+   4,
+   3,
+   2,
+   1
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 2",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 3",
+   "p2": "move 1"
+  }
+ ]
+}

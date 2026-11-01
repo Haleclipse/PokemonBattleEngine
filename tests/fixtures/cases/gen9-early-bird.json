@@ -1,0 +1,79 @@
+{
+ "schema": 1,
+ "id": "gen9-early-bird",
+ "notes": [
+  "Gen 9 Early Bird: the sleep counter drops by two at each attempt to move, so the holder wakes about twice as soon"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Kanga",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Early Bird"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Spore",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Spore"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Spore"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

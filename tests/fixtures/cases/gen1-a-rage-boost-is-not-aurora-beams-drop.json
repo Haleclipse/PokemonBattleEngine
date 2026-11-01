@@ -1,0 +1,57 @@
+{
+ "schema": 1,
+ "id": "gen1-a-rage-boost-is-not-aurora-beams-drop",
+ "notes": [
+  "Gen 1: Alakazam's Rage starts; Lapras's Aurora Beam hits it, Rage raises its Attack (`-boost|…|atk|1|[from] Rage`) and the beam's Attack drop does not roll in. The replay read the Rage boost as the drop (a stat change of the secondary's stat, either way); a stage change now counts only in the secondary's direction (DESIGN.md R-M8-151)"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Alakazam",
+    "species": "Alakazam",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Rage",
+     "Splash"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Lapras",
+    "species": "Lapras",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Aurora Beam",
+     "Splash"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Rage",
+   "p2": "move Aurora Beam"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,64 @@
+{
+ "schema": 1,
+ "id": "gen2-conversion-2-reads-the-last-move",
+ "notes": [
+  "Gen 2: Conversion 2 reads the target's `lastMove`: after Snorlax's Body Slam (Normal) Porygon2 becomes Rock, Steel or Ghost"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Porygon2",
+    "species": "Porygon2",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Conversion 2",
+     "Harden"
+    ],
+    "ability": null
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Body Slam",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": null
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Body Slam"
+  },
+  {
+   "p1": "move Conversion 2",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Body Slam"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

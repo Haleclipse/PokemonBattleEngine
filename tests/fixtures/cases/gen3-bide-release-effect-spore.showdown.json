@@ -1,0 +1,669 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@pkmn/sim",
+    "version": "0.10.11",
+    "formatid": "gen3customgame",
+    "seed": [
+      362,
+      2,
+      3,
+      4
+    ]
+  },
+  "frames": [
+    {
+      "schema": 1,
+      "checkpoint": "initial",
+      "turn": 1,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 135,
+              "max_hp": 135,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "grass",
+                "fighting"
+              ],
+              "ability": "effectspore",
+              "item": "",
+              "pp": [
+                56,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 155,
+              "max_hp": 155,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "water",
+                "grass"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                16,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Spore"
+          },
+          "details": "Breloom, L50, M",
+          "hp": 135,
+          "max_hp": 135,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bider"
+          },
+          "details": "Ludicolo, L50, F",
+          "hp": 155,
+          "max_hp": 155,
+          "status": null
+        },
+        {
+          "kind": "turn",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_1",
+      "turn": 2,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 135,
+              "max_hp": 135,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "grass",
+                "fighting"
+              ],
+              "ability": "effectspore",
+              "item": "",
+              "pp": [
+                55,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 131,
+              "max_hp": 155,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "bide": 2
+              },
+              "types": [
+                "water",
+                "grass"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                15,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Spore"
+          },
+          "move": "Tackle",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bider"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bider"
+          },
+          "hp": 131,
+          "max_hp": 155,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bider"
+          },
+          "move": "Bide",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bider"
+          }
+        },
+        {
+          "kind": "start",
+          "args": [
+            "p2a: Bider",
+            "move: Bide"
+          ]
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 2
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_2",
+      "turn": 3,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 135,
+              "max_hp": 135,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "grass",
+                "fighting"
+              ],
+              "ability": "effectspore",
+              "item": "",
+              "pp": [
+                54,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 106,
+              "max_hp": 155,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "bide": 1
+              },
+              "types": [
+                "water",
+                "grass"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                15,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "activate",
+          "args": [
+            "p2a: Bider",
+            "move: Bide"
+          ]
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Spore"
+          },
+          "move": "Tackle",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bider"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bider"
+          },
+          "hp": 106,
+          "max_hp": 155,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 3
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_3",
+      "turn": 4,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 85,
+              "max_hp": 135,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "grass",
+                "fighting"
+              ],
+              "ability": "effectspore",
+              "item": "",
+              "pp": [
+                54,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 106,
+              "max_hp": 155,
+              "status": {
+                "kind": "slp"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": -1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "water",
+                "grass"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                15,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Spore"
+          },
+          "move": "Tail Whip",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bider"
+          }
+        },
+        {
+          "kind": "unboost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bider"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "end",
+          "args": [
+            "p2a: Bider",
+            "move: Bide"
+          ]
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Spore"
+          },
+          "hp": 85,
+          "max_hp": 135,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "status",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bider"
+          },
+          "status": "slp",
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "end",
+          "args": [
+            "p2a: Bider",
+            "move: Bide",
+            "[silent]"
+          ]
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 4
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_4",
+      "turn": 5,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 85,
+              "max_hp": 135,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "grass",
+                "fighting"
+              ],
+              "ability": "effectspore",
+              "item": "",
+              "pp": [
+                54,
+                46
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 106,
+              "max_hp": 155,
+              "status": {
+                "kind": "slp"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": -2,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "water",
+                "grass"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                15,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "cant",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bider"
+          },
+          "detail": "slp"
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Spore"
+          },
+          "move": "Tail Whip",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bider"
+          }
+        },
+        {
+          "kind": "unboost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bider"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 5
+        }
+      ]
+    }
+  ],
+  "debug_log": "|gametype|singles\n|player|p1|P1||\n|player|p2|P2||\n|gen|3\n|tier|[Gen 3] Custom Game\n|rule|HP Percentage Mod: HP is shown in percentages\n|\n|teamsize|p1|1\n|teamsize|p2|1\n|start\n|switch|p1a: Spore|Breloom, L50, M|135/135\n|switch|p2a: Bider|Ludicolo, L50, F|155/155\n|turn|1\n|\n|move|p1a: Spore|Tackle|p2a: Bider\n|-damage|p2a: Bider|131/155\n|move|p2a: Bider|Bide|p2a: Bider\n|-start|p2a: Bider|move: Bide\n|\n|upkeep\n|turn|2\n|\n|-activate|p2a: Bider|move: Bide\n|move|p1a: Spore|Tackle|p2a: Bider\n|-damage|p2a: Bider|106/155\n|\n|upkeep\n|turn|3\n|\n|move|p1a: Spore|Tail Whip|p2a: Bider\n|-unboost|p2a: Bider|def|1\n|-end|p2a: Bider|move: Bide\n|-damage|p1a: Spore|85/135\n|-status|p2a: Bider|slp\n|-end|p2a: Bider|move: Bide|[silent]\n|\n|upkeep\n|turn|4\n|\n|cant|p2a: Bider|slp\n|move|p1a: Spore|Tail Whip|p2a: Bider\n|-unboost|p2a: Bider|def|1\n|\n|upkeep\n|turn|5"
+}

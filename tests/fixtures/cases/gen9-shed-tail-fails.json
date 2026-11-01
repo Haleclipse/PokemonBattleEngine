@@ -1,0 +1,87 @@
+{
+ "schema": 1,
+ "id": "gen9-shed-tail-fails",
+ "notes": [
+  "Shed Tail fails at exactly half HP rounded up (Super Fang from full HP leaves that) and, back at full HP, with a Substitute up (Stomping Tantrum doubles after each)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Cyclizar",
+    "species": "Cyclizar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Shed Tail",
+     "Substitute",
+     "Stomping Tantrum",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Taker",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Jolteon",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Super Fang",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Shed Tail",
+   "p2": "move Super Fang"
+  },
+  {
+   "p1": "move Stomping Tantrum",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Substitute",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Shed Tail",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Stomping Tantrum",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

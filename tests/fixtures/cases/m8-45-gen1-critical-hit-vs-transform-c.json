@@ -1,0 +1,109 @@
+{
+ "schema": 1,
+ "id": "m8-45-gen1-critical-hit-vs-transform-c",
+ "notes": [
+  "Nightly 39 gen1-singles-s455-003, minimized: Gen 1: the same rule from another move"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Wartortle",
+    "species": "Wartortle",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Transform",
+     "Conversion",
+     "Screech"
+    ]
+   },
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 53,
+    "nature": "Hardy",
+    "moves": [
+     "Transform",
+     "Conversion",
+     "Kinesis"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Cubone",
+    "species": "Cubone",
+    "level": 52,
+    "nature": "Hardy",
+    "moves": [
+     "Transform",
+     "Conversion",
+     "Hydro Pump"
+    ]
+   },
+   {
+    "label": "Shellder",
+    "species": "Shellder",
+    "level": 53,
+    "nature": "Hardy",
+    "moves": [
+     "Transform",
+     "Conversion",
+     "Rage"
+    ]
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   2640,
+   38766,
+   15509,
+   43444
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Transform",
+   "p2": "move Transform"
+  },
+  {
+   "p1": "move Conversion",
+   "p2": "move Conversion"
+  },
+  {
+   "p1": "move 3",
+   "p2": "move 3"
+  },
+  {
+   "p1": "move Transform",
+   "p2": "move Transform"
+  },
+  {
+   "p1": "move Conversion",
+   "p2": "move Conversion"
+  },
+  {
+   "p1": "switch Magikarp",
+   "p2": "switch Shellder"
+  },
+  {
+   "p1": "move Transform",
+   "p2": "move Transform"
+  },
+  {
+   "p1": "move Conversion",
+   "p2": "move Conversion"
+  },
+  {
+   "p1": "move 3",
+   "p2": "move 3"
+  }
+ ]
+}

@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "gen1-counter-answers-a-charging-turn",
+ "notes": [
+  "Gen 1 Counter after a Skull Bash charge: the charging turn is the side's last move (the gen1 `useMove`) and leaves the last damage alone (it returns before `lastDamage = 0`), so Counter pays back the Tackle the charger took the turn before"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Charger",
+    "species": "Persian",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Skull Bash",
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Counterer",
+    "species": "Snorlax",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Counter"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Skull Bash",
+   "p2": "move Counter"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

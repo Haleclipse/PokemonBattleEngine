@@ -1,0 +1,90 @@
+{
+ "schema": 1,
+ "id": "gen9-jaboca-rowap-and-ripen",
+ "notes": [
+  "Gen 9 Jaboca Berry (physical) and Rowap Berry (special) (Showdown `onDamagingHit`): Hariyama's Tackle on Snorlax and Swift on Blissey cost it an eighth of its max HP each",
+  "Appletun's Ripen makes its Jaboca Berry cost Hariyama a quarter"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Jaboca Berry",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Rowap Berry",
+    "ability": "Natural Cure"
+   },
+   {
+    "label": "Appletun",
+    "species": "Appletun",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Jaboca Berry",
+    "ability": "Ripen"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Hariyama",
+    "species": "Hariyama",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Swift"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "switch Blissey",
+   "p2": "move Swift"
+  },
+  {
+   "p1": "switch Appletun",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Swift"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

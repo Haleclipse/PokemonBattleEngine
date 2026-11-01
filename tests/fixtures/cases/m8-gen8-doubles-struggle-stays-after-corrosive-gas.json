@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "id": "m8-gen8-doubles-struggle-stays-after-corrosive-gas",
+  "notes": [
+    "Nightly 56: Malamar struggles as the turn begins (Assault Vest, status moves only); Corrosive Gas takes the vest before it acts, and the Gen 8 re-sort keeps its action Struggle at priority 0, not Endure's +4 (DESIGN.md R-M8-100)",
+    "promoted from m8-gen8-doubles-s524-016-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 8,
+    "mode": "doubles",
+    "format": "gen8doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Charmander",
+        "species": "Charmander",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Corrosive Gas"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Shuckle",
+        "species": "Shuckle",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Corrosive Gas"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Malamar",
+        "species": "Malamar",
+        "level": 45,
+        "nature": "Hardy",
+        "moves": [
+          "Endure"
+        ],
+        "ability": "Run Away",
+        "item": "Assault Vest",
+        "gender": "M"
+      },
+      {
+        "label": "Dragapult",
+        "species": "Dragapult",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Corrosive Gas"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      34796,
+      12830,
+      63867,
+      53448
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1, move 1",
+      "p2": "move 1, move 1"
+    }
+  ]
+}

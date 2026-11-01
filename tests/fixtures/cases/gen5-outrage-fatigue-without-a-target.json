@@ -1,0 +1,79 @@
+{
+ "schema": 1,
+ "id": "gen5-outrage-fatigue-without-a-target",
+ "notes": [
+  "Gen 5 Outrage: the lock's third turn finds no target (the foe exploded first, `[notarget]`) and still ends the lock with its fatigue \u2014 the replay plans the confusion's duration (the 32nd Nightly)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Golem",
+    "species": "Golem",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Outrage"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Exploud",
+    "species": "Exploud",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Explosion"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Pad",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Outrage",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Outrage",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Outrage",
+   "p2": "move Explosion"
+  },
+  {
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Outrage",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

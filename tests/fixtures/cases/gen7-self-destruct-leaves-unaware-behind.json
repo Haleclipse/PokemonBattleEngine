@@ -1,0 +1,72 @@
+{
+ "schema": 1,
+ "id": "gen7-self-destruct-leaves-unaware-behind",
+ "notes": [
+  "Gen 7: Snorlax Minimizes; Amoonguss (Unaware) uses Self-Destruct. The user faints before the hit steps (`selfdestruct: 'always'`), its Unaware with it, so Snorlax's evasion counts and the accuracy is drawn (DESIGN.md R-M8-146)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Amoonguss",
+    "species": "Amoonguss",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Self-Destruct",
+     "Splash"
+    ],
+    "ability": "Unaware",
+    "gender": "M"
+   },
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Swift Swim",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Minimize",
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash",
+   "p2": "move Minimize"
+  },
+  {
+   "p1": "move Self-Destruct",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   3,
+   4,
+   5,
+   6
+  ]
+ }
+}

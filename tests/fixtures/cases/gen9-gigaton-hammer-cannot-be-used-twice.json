@@ -1,0 +1,67 @@
+{
+ "schema": 1,
+ "id": "gen9-gigaton-hammer-cannot-be-used-twice",
+ "notes": [
+  "Gigaton Hammer (`cantusetwice`) is off the request right after it was used: encored into it, the user has nothing left and struggles; after Struggle it may swing again"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Tinkaton",
+    "species": "Tinkaton",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Gigaton Hammer",
+     "Growl"
+    ],
+    "ability": "Mold Breaker"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Corviknight",
+    "species": "Corviknight",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Encore",
+     "Harden"
+    ],
+    "ability": "Pressure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Gigaton Hammer",
+   "p2": "move Encore"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Gigaton Hammer",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

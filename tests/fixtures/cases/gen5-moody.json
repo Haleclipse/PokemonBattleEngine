@@ -1,0 +1,73 @@
+{
+ "schema": 1,
+ "id": "gen5-moody",
+ "notes": [
+  "Gen 5 Moody: at the end of every turn a random stat below +6 rises by 2 and another above -6 falls by 1 (accuracy and evasion included)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mood",
+    "species": "Bibarel",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Moody"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

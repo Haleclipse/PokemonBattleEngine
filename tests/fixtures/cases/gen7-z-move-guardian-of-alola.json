@@ -1,0 +1,59 @@
+{
+ "schema": 1,
+ "id": "gen7-z-move-guardian-of-alola",
+ "notes": [
+  "Gen 7: Tapu Koko with a Tapunium Z turns Nature's Madness into 巨人卫士・阿罗拉 (Guardian of Alola): three quarters of Snorlax's HP as fixed damage, then the plain Nature's Madness halves what is left"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Tapu Koko",
+    "species": "Tapu Koko",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Nature's Madness",
+     "Harden"
+    ],
+    "ability": "Electric Surge",
+    "item": "Tapunium Z"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1 zmove",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,69 @@
+{
+ "schema": 1,
+ "id": "gen7-copycat-refuses-a-z-move",
+ "notes": [
+  "Gen 7: Copycat after Snorlax's Breakneck Blitz fails (`move.isZ`, no base move to read); after a plain Tackle it copies"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Copycat",
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Normalium Z"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 2",
+   "p2": "move 1 zmove"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

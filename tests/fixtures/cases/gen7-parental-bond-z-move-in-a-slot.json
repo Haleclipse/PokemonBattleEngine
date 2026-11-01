@@ -1,0 +1,55 @@
+{
+ "schema": 1,
+ "id": "gen7-parental-bond-z-move-in-a-slot",
+ "notes": [
+  "Gen 7: Drampa's Parental Bond leaves alone the Devastating Drake it knows as a move of its own (`move.isZ`): one hit (DESIGN.md R-M8-80)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Drampa",
+    "species": "Drampa",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Devastating Drake"
+    ],
+    "ability": "Parental Bond",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Devastating Drake",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

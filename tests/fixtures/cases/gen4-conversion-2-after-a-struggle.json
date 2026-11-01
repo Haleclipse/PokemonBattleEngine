@@ -1,0 +1,64 @@
+{
+ "schema": 1,
+ "id": "gen4-conversion-2-after-a-struggle",
+ "notes": [
+  "Gen 4: Snorlax disables Mankey's only move, so Mankey Struggles; Conversion 2 then reads it as Normal (the gen4 `lastMoveUsed.id === 'struggle'`) and draws a type resisting Normal"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Disable",
+     "Conversion 2"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Mankey",
+    "species": "Mankey",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "gender": "M",
+    "ability": "Vital Spirit"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Disable",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Conversion 2",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Conversion 2",
+   "p2": "move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,75 @@
+{
+ "schema": 1,
+ "id": "gen4-snore-asleep-and-confused",
+ "notes": [
+  "Gen 4: Snorlax, asleep from Rest and confused by Swagger, snores: the confusion roll still comes after the sleep"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Rest",
+     "Snore",
+     "Tackle"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Swagger",
+     "Tackle"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Rest",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Snore",
+   "p2": "move Swagger"
+  },
+  {
+   "p1": "move Snore",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Snore",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Snore",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

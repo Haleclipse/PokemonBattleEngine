@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen4-custap-berry-ahead-of-stall",
+ "notes": [
+  "Gen 4 Custap Berry (Showdown gen4 `onBeforeTurn` / `onCustap`; issues.md I43: pokeplatinum's `battlerQuickClaw` flag is compared before Stall): brought to a quarter by Night Shade, the Stall Sableye, slower than Jolteon, goes first in its bracket and eats the berry as its move begins",
+  "Unpatched, Showdown's `Custap` event takes the action's priority + 0.1, which already holds Stall's \u22120.1: the event lands at 0 and Jolteon moves first"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sableye",
+    "species": "Sableye",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Harden"
+    ],
+    "item": "Custap Berry",
+    "ability": "Stall"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 55,
+    "nature": "Hardy",
+    "moves": [
+     "Night Shade",
+     "Harden"
+    ],
+    "ability": "Volt Absorb"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Night Shade"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Night Shade"
+  },
+  {
+   "p1": "move Seismic Toss",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,57 @@
+{
+ "schema": 1,
+ "id": "gen8-refrigerate-body-slam",
+ "notes": [
+  "Refrigerate turns Body Slam Ice with a 4915/4096 boost"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Glalie",
+    "species": "Glalie",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Body Slam"
+    ],
+    "ability": "Refrigerate"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Body Slam",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

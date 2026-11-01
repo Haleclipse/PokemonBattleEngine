@@ -1,0 +1,82 @@
+{
+ "schema": 1,
+ "id": "gen7-doubles-lightning-rod-takes-a-thunder-wave",
+ "notes": [
+  "Gen 7 doubles: Ducklett's Thunder Wave at a foe goes to its partner Eelektrik's Lightning Rod, which takes it at TryHit before the accuracy check: no roll, though an Electric type would have shown its paralysis immunity only after one (the replay plan; R-M8-108's guard check had dropped the TryHit condition, DESIGN.md R-M8-109)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Ducklett",
+    "species": "Ducklett",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Thunder Wave",
+     "Splash"
+    ],
+    "ability": "Keen Eye",
+    "gender": "M"
+   },
+   {
+    "label": "Eelektrik",
+    "species": "Eelektrik",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Lightning Rod",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Zigzagoon",
+    "species": "Zigzagoon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Pickup",
+    "gender": "M"
+   },
+   {
+    "label": "Wingull",
+    "species": "Wingull",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Keen Eye",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Thunder Wave 1, move Splash",
+   "p2": "move Splash, move Splash"
+  },
+  {
+   "p1": "move Thunder Wave 2, move Splash",
+   "p2": "move Splash, move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,85 @@
+{
+ "schema": 1,
+ "id": "gen8-stakeout-against-a-switch-in",
+ "notes": [
+  "Stakeout doubles the attacking stat against a Pok\u00e9mon that came in this turn (activeTurns 0): the switched-in Steelix takes \u00d72 Body Slams and Psychics, not the lead on turn 1 nor Steelix on the turns after"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Body Slam",
+     "Psychic"
+    ],
+    "ability": "Stakeout"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Steelix",
+    "species": "Steelix",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Body Slam",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "switch Steelix"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Psychic",
+   "p2": "switch Snorlax"
+  },
+  {
+   "p1": "move Psychic",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Psychic",
+   "p2": "switch Steelix"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

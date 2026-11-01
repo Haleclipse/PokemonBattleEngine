@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "gen4-doom-desire-at-a-fallen-foe",
+ "notes": [
+  "Gen 4: Murkrow's Memento takes it down before Jirachi's Doom Desire, which goes on at the fallen Murkrow (`p2: Murkrow`, no place): Gen 4 computes its damage then, against Murkrow, and the strike two turns later deals it to Snorlax in that slot (the replay plans the roll from the strike, DESIGN.md R-M8-89)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Jirachi",
+    "species": "Jirachi",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Doom Desire",
+     "Splash"
+    ],
+    "ability": "Serene Grace"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Murkrow",
+    "species": "Murkrow",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Memento"
+    ],
+    "ability": "Insomnia",
+    "gender": "M"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Doom Desire",
+   "p2": "move Memento"
+  },
+  {
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   25,
+   26,
+   27,
+   28
+  ]
+ }
+}

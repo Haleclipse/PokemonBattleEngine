@@ -1,0 +1,134 @@
+{
+ "schema": 1,
+ "id": "gen8-evasion-items",
+ "notes": [
+  "Gen 8: Bright Powder and Lax Incense ([3686, 4096]: 100 \u2192 90) make Body Slam miss"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Body Slam",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Powder",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away",
+    "item": "Bright Powder"
+   },
+   {
+    "label": "Lax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away",
+    "item": "Lax Incense"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Body Slam",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "switch Lax"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Slack Off"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

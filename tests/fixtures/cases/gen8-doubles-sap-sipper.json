@@ -1,0 +1,85 @@
+{
+ "schema": 1,
+ "id": "gen8-doubles-sap-sipper",
+ "notes": [
+  "Sap Sipper refuses a foe's Grass move for +1 Attack; its partner's Aromatherapy (a Grass move aimed at their side) raises its Attack too and leaves its bad poison (Gen 8: Aromatherapy skips a partner with Sap Sipper); its own Aromatherapy cures it and raises nothing"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "doubles",
+  "format": "gen8doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sap",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Aromatherapy"
+    ],
+    "ability": "Sap Sipper"
+   },
+   {
+    "label": "Pal",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Aromatherapy",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "F1",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Energy Ball",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "F2",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Toxic",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Energy Ball 1, move Toxic 1"
+  },
+  {
+   "p1": "move Harden, move Aromatherapy",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Aromatherapy, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

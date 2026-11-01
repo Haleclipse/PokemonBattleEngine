@@ -1,0 +1,67 @@
+{
+ "schema": 1,
+ "id": "gen1-counter",
+ "notes": [
+  "Gen 1 Counter: twice the battle's last damage when the foe last used and selected a Normal or Fighting move with power; after Thunderbolt and after Rock Slide (physical, but Rock) it fails"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Counter",
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Snorlax",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Thunderbolt",
+     "Karate Chop",
+     "Rock Slide"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Counter",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Counter",
+   "p2": "move Thunderbolt"
+  },
+  {
+   "p1": "move Counter",
+   "p2": "move Rock Slide"
+  },
+  {
+   "p1": "move Counter",
+   "p2": "move Karate Chop"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

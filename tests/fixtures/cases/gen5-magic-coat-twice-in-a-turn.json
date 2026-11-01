@@ -1,0 +1,80 @@
+{
+ "schema": 1,
+ "id": "gen5-magic-coat-twice-in-a-turn",
+ "notes": [
+  "Gen 5 doubles: Clefable's coat meets both foes' Thunder Wave in one turn — Gen 4 reflects the first and ends, Gen 5+ reflects both"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "doubles",
+  "format": "gen5doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Clefable",
+    "species": "Clefable",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Magic Coat",
+     "Psychic"
+    ],
+    "gender": "F",
+    "ability": "Magic Guard"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Thunder Wave",
+     "Tackle"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Ninetales",
+    "species": "Ninetales",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Thunder Wave",
+     "Tackle"
+    ],
+    "gender": "M",
+    "ability": "Flash Fire"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Magic Coat, move Harden",
+   "p2": "move Thunder Wave 1, move Thunder Wave 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

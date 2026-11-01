@@ -1,0 +1,90 @@
+{
+ "schema": 1,
+ "id": "gen4-doubles-uproar-dream-eater-after-it",
+ "notes": [
+  "Gen 4 doubles Uproar (cartridge, I63): its hit wakes nobody, so the ally's Dream Eater still finds the foe asleep; that foe wakes as it is about to move"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "doubles",
+  "format": "gen4doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Uproarer",
+    "species": "Blissey",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Uproar",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Eater",
+    "species": "Hypno",
+    "level": 55,
+    "nature": "Hardy",
+    "moves": [
+     "Dream Eater",
+     "Spore",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Sleeper",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Other",
+    "species": "Snorlax",
+    "level": 45,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Spore 1",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Uproar, move Dream Eater 1",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Uproar 1, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Uproar 1, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

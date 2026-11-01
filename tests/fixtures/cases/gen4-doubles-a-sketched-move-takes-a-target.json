@@ -1,0 +1,82 @@
+{
+ "schema": 1,
+ "id": "gen4-doubles-a-sketched-move-takes-a-target",
+ "notes": [
+  "Gen 4 doubles: Smeargle's Sketch copies Jolteon's Tackle, and Smeargle then aims it at Zigzagoon. pokeplatinum writes the move into the slot and it is chosen like any other; Showdown's gen4 `sketch` builds the slot without `target`, so its request offers Tackle with none and a target is a choice error (the oracle is patched, issues.md I168)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "doubles",
+  "format": "gen4doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Smeargle",
+    "species": "Smeargle",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sketch",
+     "Splash"
+    ],
+    "ability": "Own Tempo",
+    "gender": "M"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "ability": "Volt Absorb",
+    "gender": "M"
+   },
+   {
+    "label": "Zigzagoon",
+    "species": "Zigzagoon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Pickup",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1 1, move 1",
+   "p2": "move 1 1, move 1"
+  },
+  {
+   "p1": "move 1 2, move 1",
+   "p2": "move 1 1, move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   5,
+   6,
+   7,
+   8
+  ]
+ }
+}

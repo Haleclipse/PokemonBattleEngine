@@ -1,0 +1,64 @@
+{
+ "schema": 1,
+ "id": "gen9-libero-on-a-charge-turn",
+ "notes": [
+  "Gen 9: Cinderace with Libero charges Solar Beam: the charge's `onStart` runs `PrepareHit`, so Libero makes it Grass on the charging turn and Blissey's Ember is super effective; the release changes nothing more"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Cinderace",
+    "species": "Cinderace",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Solar Beam",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Libero"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Ember"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Solar Beam",
+   "p2": "move Ember"
+  },
+  {
+   "p1": "move Solar Beam",
+   "p2": "move Ember"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Ember"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

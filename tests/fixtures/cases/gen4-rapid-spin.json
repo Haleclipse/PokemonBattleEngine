@@ -1,0 +1,140 @@
+{
+ "schema": 1,
+ "id": "gen4-rapid-spin",
+ "notes": [
+  "Gen 4 Rapid Spin (power 20, no Speed boost) clears the user's side, Leech Seed and bind as its self effect lands, before Rough Skin: a spinner Rough Skin knocks out has cleared its side all the same"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Starmie",
+    "species": "Starmie",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Rapid Spin",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Forretress",
+    "species": "Forretress",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Rapid Spin",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Garchomp",
+    "species": "Garchomp",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spikes",
+     "Stealth Rock",
+     "Seismic Toss",
+     "Recover"
+    ],
+    "ability": "Rough Skin"
+   },
+   {
+    "label": "Seeder",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Toxic Spikes",
+     "Leech Seed",
+     "Wrap",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Spikes"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Stealth Rock"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Seeder"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Toxic Spikes"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Leech Seed"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Wrap"
+  },
+  {
+   "p1": "move Rapid Spin",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Garchomp"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Spikes"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Stealth Rock"
+  },
+  {
+   "p1": "switch Forretress",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Rapid Spin",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "switch Starmie"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

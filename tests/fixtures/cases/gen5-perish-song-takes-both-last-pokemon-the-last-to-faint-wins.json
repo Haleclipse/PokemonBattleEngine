@@ -1,0 +1,66 @@
+{
+ "schema": 1,
+ "id": "gen5-perish-song-takes-both-last-pokemon-the-last-to-faint-wins",
+ "notes": [
+  "Both last Pok\u00e9mon's Perish Song counts run out in one residual: both faint together, and from Gen 5 the side whose Pok\u00e9mon fainted last (the slower one's handler runs last) wins"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Perish Song",
+     "Harden"
+    ],
+    "ability": "Volt Absorb"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Immunity"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Perish Song",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

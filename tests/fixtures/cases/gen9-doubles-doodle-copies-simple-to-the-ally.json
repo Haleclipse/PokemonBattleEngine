@@ -1,0 +1,86 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-doodle-copies-simple-to-the-ally",
+ "notes": [
+  "Gen 9 doubles: Arceus's Doodle on Chansey gives its ally Gyarados Simple; Arceus keeps Multitype (`cantsuppress`)",
+  "Swords Dance: Arceus +2, Gyarados +4; Doodle on Wonder Guard (`failroleplay`) gives nobody anything"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Arceus",
+    "species": "Arceus",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Doodle",
+     "Swords Dance"
+    ],
+    "ability": "Multitype"
+   },
+   {
+    "label": "Gyarados",
+    "species": "Gyarados",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Swords Dance"
+    ],
+    "gender": "M",
+    "ability": "Intimidate"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Simple"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Wonder Guard"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Doodle 1, move Swords Dance",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Swords Dance, move Swords Dance",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Doodle 2, move Swords Dance",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

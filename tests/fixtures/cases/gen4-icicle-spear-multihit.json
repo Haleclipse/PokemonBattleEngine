@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "id": "gen4-singles-icicle-spear-multihit",
+  "notes": [
+    "Gen 4 multi-hit: the 2-5 count follows the 3/8, 3/8, 1/8, 1/8 distribution and every hit still rolls its own critical",
+    "and damage (only Gen 1 repeats the first hit). Icicle Spear is 10 BP here."
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "singles",
+    "format": "gen4customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "a",
+        "species": "Cloyster",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Icicle Spear"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "b",
+        "species": "Snorlax",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

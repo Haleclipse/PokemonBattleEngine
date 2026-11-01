@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "m9-a-mirror-coat-sleep-talk-calls-strikes-back",
+ "notes": [
+  "R-M9-50 / issues.md I209: a Counter or Mirror Coat another move calls strikes back at the turn's hits, as the cartridges read them (pokeemerald `Cmd_mirrorcoatdamagecalculator`, pokeplatinum `BtlCmd_MirrorCoat`); Showdown's `onTry` fails it for want of the `mirrorcoat` volatile only a chosen Mirror Coat gets (`beforeTurnCallback`). Turn 1: Breloom's Spore, then Glaceon's Sleep Talk calls Mirror Coat with nothing to answer: it fails. Turn 2: Flamethrower, then the Mirror Coat Sleep Talk calls strikes back for twice the damage."
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Glaceon",
+    "species": "Glaceon",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Sleep Talk",
+     "Mirror Coat"
+    ],
+    "ability": "Snow Cloak",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Breloom",
+    "species": "Breloom",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Spore",
+     "Flamethrower"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Sleep Talk",
+   "p2": "move Spore"
+  },
+  {
+   "p1": "move Sleep Talk",
+   "p2": "move Flamethrower"
+  }
+ ]
+}

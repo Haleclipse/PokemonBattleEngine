@@ -1,0 +1,79 @@
+{
+ "schema": 1,
+ "id": "gen6-doubles-follow-me-does-not-draw-the-carrying",
+ "notes": [
+  "Gen 6 doubles: the carrying turn is not redirected (`isCharging`): Sky Drop aimed at the foe beside a Follow Me user carries the one it was aimed at"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "doubles",
+  "format": "gen6doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Lifter",
+    "species": "Braviary",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sky Drop",
+     "Harden"
+    ]
+   },
+   {
+    "label": "Mate",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Leader",
+    "species": "Jolteon",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Follow Me",
+     "Harden"
+    ]
+   },
+   {
+    "label": "Other",
+    "species": "Machamp",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Sky Drop 2, move Harden",
+   "p2": "move Follow Me, move Harden"
+  },
+  {
+   "p1": "move 1, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

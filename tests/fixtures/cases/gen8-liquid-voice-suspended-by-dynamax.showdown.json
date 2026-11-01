@@ -1,0 +1,515 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@pkmn/sim",
+    "version": "0.10.11",
+    "formatid": "gen8customgame",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "frames": [
+    {
+      "schema": 1,
+      "checkpoint": "team_preview",
+      "turn": 0,
+      "request": "team_preview|team_preview",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            null
+          ],
+          "party": [
+            {
+              "hp": 155,
+              "max_hp": 155,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "water",
+                "fairy"
+              ],
+              "ability": "liquidvoice",
+              "item": "",
+              "species": "primarina",
+              "pp": [
+                16,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            null
+          ],
+          "party": [
+            {
+              "hp": 153,
+              "max_hp": 153,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "fire",
+                "flying"
+              ],
+              "ability": "blaze",
+              "item": "",
+              "species": "charizard",
+              "pp": [
+                48,
+                56
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": []
+    },
+    {
+      "schema": 1,
+      "checkpoint": "initial",
+      "turn": 1,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 155,
+              "max_hp": 155,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "water",
+                "fairy"
+              ],
+              "ability": "liquidvoice",
+              "item": "",
+              "species": "primarina",
+              "pp": [
+                16,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 153,
+              "max_hp": 153,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "fire",
+                "flying"
+              ],
+              "ability": "blaze",
+              "item": "",
+              "species": "charizard",
+              "pp": [
+                48,
+                56
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Primarina"
+          },
+          "details": "Primarina, L50, M",
+          "hp": 155,
+          "max_hp": 155,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Charizard"
+          },
+          "details": "Charizard, L50, F",
+          "hp": 153,
+          "max_hp": 153,
+          "status": null
+        },
+        {
+          "kind": "turn",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_1",
+      "turn": 2,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 310,
+              "max_hp": 310,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "dynamax": null
+              },
+              "types": [
+                "water",
+                "fairy"
+              ],
+              "ability": "liquidvoice",
+              "item": "",
+              "species": "primarina",
+              "pp": [
+                15,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 74,
+              "max_hp": 153,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": -1,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "fire",
+                "flying"
+              ],
+              "ability": "blaze",
+              "item": "",
+              "species": "charizard",
+              "pp": [
+                47,
+                56
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "start",
+          "args": [
+            "p1a: Primarina",
+            "Dynamax",
+            ""
+          ]
+        },
+        {
+          "kind": "heal",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Primarina"
+          },
+          "hp": 310,
+          "max_hp": 310,
+          "status": null,
+          "from": "[silent]",
+          "of": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Charizard"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Charizard"
+          },
+          "from": null
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Charizard"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Primarina"
+          },
+          "move": "Max Strike",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Charizard"
+          },
+          "from": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Charizard"
+          },
+          "hp": 74,
+          "max_hp": 153,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "unboost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Charizard"
+          },
+          "stat": "spe",
+          "amount": 1
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 2
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_2",
+      "turn": 2,
+      "request": "finished",
+      "outcome": "winner(p1)",
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 310,
+              "max_hp": 310,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "dynamax": null
+              },
+              "types": [
+                "water",
+                "fairy"
+              ],
+              "ability": "liquidvoice",
+              "item": "",
+              "species": "primarina",
+              "pp": [
+                14,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            null
+          ],
+          "party": [
+            {
+              "hp": 0,
+              "max_hp": 153,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "fire",
+                "flying"
+              ],
+              "ability": "blaze",
+              "item": "",
+              "species": "charizard",
+              "pp": [
+                47,
+                56
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Primarina"
+          },
+          "move": "Max Strike",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Charizard"
+          },
+          "from": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Charizard"
+          },
+          "hp": 0,
+          "max_hp": null,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "faint",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Charizard"
+          },
+          "detail": null
+        },
+        {
+          "kind": "residual"
+        }
+      ]
+    }
+  ],
+  "debug_log": "|gametype|singles\n|player|p1|P1||\n|player|p2|P2||\n|gen|8\n|tier|[Gen 8] Custom Game\n|clearpoke\n|poke|p1|Primarina, L50, M|\n|poke|p2|Charizard, L50, F|\n|teampreview\n|\n|teamsize|p1|1\n|teamsize|p2|1\n|start\n|switch|p1a: Primarina|Primarina, L50, M|155/155\n|switch|p2a: Charizard|Charizard, L50, F|153/153\n|turn|1\n|\n|-start|p1a: Primarina|Dynamax|\n|-heal|p1a: Primarina|310/310|[silent]\n|move|p2a: Charizard|Harden|p2a: Charizard\n|-boost|p2a: Charizard|def|1\n|move|p1a: Primarina|Max Strike|p2a: Charizard\n|-damage|p2a: Charizard|74/153\n|-unboost|p2a: Charizard|spe|1\n|\n|upkeep\n|turn|2\n|\n|move|p1a: Primarina|Max Strike|p2a: Charizard\n|-damage|p2a: Charizard|0 fnt\n|faint|p2a: Charizard\n|\n|win|P1"
+}

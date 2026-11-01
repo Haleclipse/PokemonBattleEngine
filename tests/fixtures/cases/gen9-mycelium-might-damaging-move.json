@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen9-mycelium-might-damaging-move",
+ "notes": [
+  "Gen 9: Toedscruel's Mycelium Might ignores abilities only for status moves: its Mud Shot does not reach Bronzong's Levitate"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Toedscruel",
+    "species": "Toedscruel",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Mud Shot",
+     "Spore"
+    ],
+    "gender": "M",
+    "ability": "Mycelium Might"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Bronzong",
+    "species": "Bronzong",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Levitate"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Mud Shot",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Mud Shot",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

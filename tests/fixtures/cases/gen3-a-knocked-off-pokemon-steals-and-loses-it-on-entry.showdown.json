@@ -1,0 +1,997 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@pkmn/sim",
+    "version": "0.10.11",
+    "formatid": "gen3customgame",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "frames": [
+    {
+      "schema": 1,
+      "checkpoint": "initial",
+      "turn": 1,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 271,
+              "max_hp": 271,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "dark"
+              ],
+              "ability": "pressure",
+              "item": "leftovers",
+              "pp": [
+                32,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 261,
+              "max_hp": 261,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "dark",
+                "flying"
+              ],
+              "ability": "insomnia",
+              "item": "blackbelt",
+              "pp": [
+                16,
+                48
+              ]
+            },
+            {
+              "hp": 461,
+              "max_hp": 461,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "thickfat",
+              "item": "",
+              "pp": [
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Absol"
+          },
+          "details": "Absol, M",
+          "hp": 271,
+          "max_hp": 271,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Murkrow"
+          },
+          "details": "Murkrow, F",
+          "hp": 261,
+          "max_hp": 261,
+          "status": null
+        },
+        {
+          "kind": "ability",
+          "args": [
+            "p1a: Absol",
+            "Pressure",
+            "[silent]"
+          ]
+        },
+        {
+          "kind": "turn",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_1",
+      "turn": 2,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 271,
+              "max_hp": 271,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "dark"
+              ],
+              "ability": "pressure",
+              "item": "leftovers",
+              "pp": [
+                31,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 244,
+              "max_hp": 261,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "dark",
+                "flying"
+              ],
+              "ability": "insomnia",
+              "item": "",
+              "pp": [
+                16,
+                47
+              ]
+            },
+            {
+              "hp": 461,
+              "max_hp": 461,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "thickfat",
+              "item": "",
+              "pp": [
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Murkrow"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Murkrow"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Murkrow"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Absol"
+          },
+          "move": "Knock Off",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Murkrow"
+          }
+        },
+        {
+          "kind": "resisted",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Murkrow"
+          },
+          "detail": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Murkrow"
+          },
+          "hp": 244,
+          "max_hp": 261,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "enditem",
+          "args": [
+            "p2a: Murkrow",
+            "Black Belt",
+            "[from] move: Knock Off",
+            "[of] p1a: Absol"
+          ]
+        },
+        {
+          "kind": "hint",
+          "text": "In Gens 3-4, Knock Off only makes the target's item unusable; it cannot obtain a new item."
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 2
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_2",
+      "turn": 3,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 238,
+              "max_hp": 271,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "dark"
+              ],
+              "ability": "pressure",
+              "item": "",
+              "pp": [
+                31,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 260,
+              "max_hp": 261,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "dark",
+                "flying"
+              ],
+              "ability": "insomnia",
+              "item": "leftovers",
+              "pp": [
+                14,
+                47
+              ]
+            },
+            {
+              "hp": 461,
+              "max_hp": 461,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "thickfat",
+              "item": "",
+              "pp": [
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Murkrow"
+          },
+          "move": "Thief",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Absol"
+          }
+        },
+        {
+          "kind": "resisted",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Absol"
+          },
+          "detail": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Absol"
+          },
+          "hp": 238,
+          "max_hp": 271,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "enditem",
+          "args": [
+            "p1a: Absol",
+            "Leftovers",
+            "[silent]",
+            "[from] move: Thief",
+            "[of] p2a: Murkrow"
+          ]
+        },
+        {
+          "kind": "item",
+          "args": [
+            "p2a: Murkrow",
+            "Leftovers",
+            "[from] move: Thief",
+            "[of] p1a: Absol"
+          ]
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Absol"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Absol"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Absol"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "heal",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Murkrow"
+          },
+          "hp": 260,
+          "max_hp": 261,
+          "status": null,
+          "from": "[from] item: Leftovers",
+          "of": null
+        },
+        {
+          "kind": "turn",
+          "turn": 3
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_3",
+      "turn": 4,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 238,
+              "max_hp": 271,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 2,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "dark"
+              ],
+              "ability": "pressure",
+              "item": "",
+              "pp": [
+                31,
+                46
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            1
+          ],
+          "party": [
+            {
+              "hp": 260,
+              "max_hp": 261,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "dark",
+                "flying"
+              ],
+              "ability": "insomnia",
+              "item": "leftovers",
+              "pp": [
+                14,
+                47
+              ]
+            },
+            {
+              "hp": 461,
+              "max_hp": 461,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "thickfat",
+              "item": "",
+              "pp": [
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "details": "Snorlax, F",
+          "hp": 461,
+          "max_hp": 461,
+          "status": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Absol"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Absol"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Absol"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 4
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_4",
+      "turn": 5,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 238,
+              "max_hp": 271,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 3,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "dark"
+              ],
+              "ability": "pressure",
+              "item": "",
+              "pp": [
+                31,
+                45
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 260,
+              "max_hp": 261,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "dark",
+                "flying"
+              ],
+              "ability": "insomnia",
+              "item": "",
+              "pp": [
+                14,
+                47
+              ]
+            },
+            {
+              "hp": 461,
+              "max_hp": 461,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "thickfat",
+              "item": "",
+              "pp": [
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Murkrow"
+          },
+          "details": "Murkrow, F",
+          "hp": 260,
+          "max_hp": 261,
+          "status": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Absol"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Absol"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Absol"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 5
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_5",
+      "turn": 6,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 238,
+              "max_hp": 271,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 4,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "dark"
+              ],
+              "ability": "pressure",
+              "item": "",
+              "pp": [
+                31,
+                44
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 260,
+              "max_hp": 261,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "dark",
+                "flying"
+              ],
+              "ability": "insomnia",
+              "item": "",
+              "pp": [
+                14,
+                46
+              ]
+            },
+            {
+              "hp": 461,
+              "max_hp": 461,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "thickfat",
+              "item": "",
+              "pp": [
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Murkrow"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Murkrow"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Murkrow"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Absol"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Absol"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Absol"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 6
+        }
+      ]
+    }
+  ],
+  "debug_log": "|gametype|singles\n|player|p1|P1||\n|player|p2|P2||\n|gen|3\n|tier|[Gen 3] Custom Game\n|rule|HP Percentage Mod: HP is shown in percentages\n|\n|teamsize|p1|1\n|teamsize|p2|2\n|start\n|switch|p1a: Absol|Absol, M|271/271\n|switch|p2a: Murkrow|Murkrow, F|261/261\n|-ability|p1a: Absol|Pressure|[silent]\n|turn|1\n|\n|move|p2a: Murkrow|Harden|p2a: Murkrow\n|-boost|p2a: Murkrow|def|1\n|move|p1a: Absol|Knock Off|p2a: Murkrow\n|-resisted|p2a: Murkrow\n|-damage|p2a: Murkrow|244/261\n|-enditem|p2a: Murkrow|Black Belt|[from] move: Knock Off|[of] p1a: Absol\n|-hint|In Gens 3-4, Knock Off only makes the target's item unusable; it cannot obtain a new item.\n|\n|upkeep\n|turn|2\n|\n|move|p2a: Murkrow|Thief|p1a: Absol\n|-resisted|p1a: Absol\n|-damage|p1a: Absol|238/271\n|-enditem|p1a: Absol|Leftovers|[silent]|[from] move: Thief|[of] p2a: Murkrow\n|-item|p2a: Murkrow|Leftovers|[from] move: Thief|[of] p1a: Absol\n|move|p1a: Absol|Harden|p1a: Absol\n|-boost|p1a: Absol|def|1\n|\n|-heal|p2a: Murkrow|260/261|[from] item: Leftovers\n|upkeep\n|turn|3\n|\n|switch|p2a: Snorlax|Snorlax, F|461/461\n|move|p1a: Absol|Harden|p1a: Absol\n|-boost|p1a: Absol|def|1\n|\n|upkeep\n|turn|4\n|\n|switch|p2a: Murkrow|Murkrow, F|260/261\n|move|p1a: Absol|Harden|p1a: Absol\n|-boost|p1a: Absol|def|1\n|\n|upkeep\n|turn|5\n|\n|move|p2a: Murkrow|Harden|p2a: Murkrow\n|-boost|p2a: Murkrow|def|1\n|move|p1a: Absol|Harden|p1a: Absol\n|-boost|p1a: Absol|def|1\n|\n|upkeep\n|turn|6"
+}

@@ -1,0 +1,67 @@
+{
+ "schema": 1,
+ "id": "gen2-haze-and-psych-up",
+ "notes": [
+  "Gen 2 Psych Up copies every stage (zeros too); Haze (the gen3 mod's onHitField) clears everyone's"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "User",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Swords Dance",
+     "Haze",
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Amnesia",
+     "Psych Up",
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Swords Dance",
+   "p2": "move Amnesia"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Psych Up"
+  },
+  {
+   "p1": "move Haze",
+   "p2": "move Amnesia"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

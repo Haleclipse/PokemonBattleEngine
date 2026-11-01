@@ -1,0 +1,63 @@
+{
+ "schema": 1,
+ "id": "gen8-screens-count-down-after-the-weather",
+ "notes": [
+  "Gen 5+ screens count down at onSideResidualOrder 26, after the weather (1): Shedinja falls to the sandstorm and ends the battle before Reflect and Light Screen tick"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Reflect",
+     "Light Screen",
+     "Sandstorm"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Shedinja",
+    "species": "Shedinja",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Reflect",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Light Screen",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Sandstorm",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

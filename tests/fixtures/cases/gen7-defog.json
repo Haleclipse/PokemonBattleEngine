@@ -1,0 +1,75 @@
+{
+ "schema": 1,
+ "id": "gen7-defog",
+ "notes": [
+  "Gen 7 Defog also clears the user's side of hazards but leaves Electric Terrain; Mist stops its evasion drop and ends \u2014 which is no success: with no hazard left it fails, and Stomping Tantrum doubles next turn"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Togekiss",
+    "species": "Togekiss",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Defog",
+     "Spikes",
+     "Stomping Tantrum",
+     "Electric Terrain"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spikes",
+     "Mist",
+     "Recover",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Spikes",
+   "p2": "move Spikes"
+  },
+  {
+   "p1": "move Electric Terrain",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Defog",
+   "p2": "move Mist"
+  },
+  {
+   "p1": "move Defog",
+   "p2": "move Mist"
+  },
+  {
+   "p1": "move Stomping Tantrum",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

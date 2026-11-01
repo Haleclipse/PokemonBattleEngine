@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "id": "gen3-struggle-recoil-past-rock-head",
+  "notes": [
+    "Gen 3: Lunatone (Rock Head), its moves sealed by Imprison, Struggles; Struggle's recoil (Gen 3's recoil [1, 4]) still hurts it — Rock Head spares only other moves' recoil (Showdown rockhead.onDamage, pokeemerald BattleScript_MoveEffectRecoil). Minimized from the 31st Nightly's m8-gen3-singles-s424-013.",
+    "promoted from m8-gen3-singles-s424-013-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 3,
+    "mode": "singles",
+    "format": "gen3customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Lunatone",
+        "species": "Lunatone",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Imprison",
+          "Torment"
+        ],
+        "ability": "Rock Head"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Salamence",
+        "species": "Salamence",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Imprison",
+          "Torment"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      2819,
+      7835,
+      14008,
+      54026
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Imprison",
+      "p2": "move Imprison"
+    },
+    {
+      "p1": "move Torment",
+      "p2": "move Torment"
+    }
+  ]
+}

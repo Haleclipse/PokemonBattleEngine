@@ -1,0 +1,73 @@
+{
+ "schema": 1,
+ "id": "gen6-charge-kept-when-focus-punch-loses-focus",
+ "notes": [
+  "Gen 6 Charge ends after any other move (onAfterMove / onMoveAborted), but not after a Focus Punch that lost its focus: its beforeMoveCallback stops the move before either event, and the next Thunderbolt is still doubled; a sleeping user's aborted move (onMoveAborted) ends it"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Rai",
+    "species": "Raichu",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Charge",
+     "Focus Punch",
+     "Thunderbolt"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden",
+     "Spore"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Charge",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Focus Punch",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Thunderbolt",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Charge",
+   "p2": "move Spore"
+  },
+  {
+   "p1": "move Thunderbolt",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

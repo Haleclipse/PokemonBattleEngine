@@ -1,0 +1,134 @@
+{
+ "schema": 1,
+ "id": "gen4-sniper-tinted-lens-adaptability",
+ "notes": [
+  "Sniper: a critical hit triples, right after the + 2 (the cartridge's `BattleSystem_CalcCriticalMulti`, issues.md I16; Slash with a Scope Lens); Tinted Lens: ×2 on a resisted hit (Body Slam on Skarmory); Adaptability: STAB ×2"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sniper",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Slash"
+    ],
+    "ability": "Sniper",
+    "item": "Scope Lens"
+   },
+   {
+    "label": "Tinted",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Body Slam",
+     "Psychic"
+    ],
+    "ability": "Tinted Lens"
+   },
+   {
+    "label": "Adapt",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Psychic",
+     "Body Slam"
+    ],
+    "ability": "Adaptability"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Skarmory",
+    "species": "Skarmory",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Slash",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Slash",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Slash",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Slash",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Slash",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Slash",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "switch Tinted",
+   "p2": "switch Skarmory"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Psychic",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "switch Adapt",
+   "p2": "switch Snorlax"
+  },
+  {
+   "p1": "move Psychic",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Soft-Boiled"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

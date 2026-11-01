@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "id": "m10-c-spite-refuses-a-z-move-in-a-slot-a-leppa-berry-refilled",
+  "notes": [
+    "R-M10-20: Snorlax's Light That Burns the Sky, a Z-Move in its slot, spends its one PP on Umbreon (immune) and a Leppa Berry gives it back; Umbreon's Spite then fails (Showdown spite.onHit: lastMove.isZ) — the engine had taken the PP, reasoning such a slot empty — and Snorlax uses the move again.",
+    "promoted from spite (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 7,
+    "mode": "singles",
+    "format": "gen7customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Snorlax",
+        "species": "Snorlax",
+        "level": 100,
+        "nature": "Hardy",
+        "moves": [
+          "Light That Burns the Sky",
+          "Splash"
+        ],
+        "ability": "Thick Fat",
+        "gender": "M",
+        "item": "Leppa Berry"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Umbreon",
+        "species": "Umbreon",
+        "level": 100,
+        "nature": "Hardy",
+        "moves": [
+          "Spite",
+          "Splash"
+        ],
+        "ability": "Synchronize",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Light That Burns the Sky",
+      "p2": "move Splash"
+    },
+    {
+      "p1": "move Splash",
+      "p2": "move Spite"
+    },
+    {
+      "p1": "move Light That Burns the Sky",
+      "p2": "move Splash"
+    }
+  ]
+}

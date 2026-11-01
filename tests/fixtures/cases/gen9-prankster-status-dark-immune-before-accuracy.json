@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "id": "gen9-prankster-status-dark-immune-before-accuracy",
+  "notes": [
+    "Prankster Will-O-Wisp into a Dark / Fire type: the Gen 7+ Dark immunity (`hitStepTryImmunity`) comes before the accuracy check, so no accuracy is drawn — unlike the burn immunity of a Fire type, which only shows once the move hit",
+    "promoted from m8-gen9-singles-s118-016-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Drednaw",
+        "species": "Drednaw",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Will-O-Wisp"
+        ],
+        "ability": "Prankster",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Houndour",
+        "species": "Houndour",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Will-O-Wisp"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      40224,
+      12176,
+      21990,
+      43262
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Will-O-Wisp",
+      "p2": "move Will-O-Wisp"
+    }
+  ]
+}

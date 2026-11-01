@@ -1,0 +1,73 @@
+{
+ "schema": 1,
+ "id": "gen5-mean-look",
+ "notes": [
+  "Gen 5 Mean Look is stopped by Protect (the gen5 mod's `protect` flag) and traps a Ghost type (no immunity before Gen 6)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Looker",
+    "species": "Mew",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Mean Look",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gengar",
+    "species": "Gengar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Protect",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Foe2",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Mean Look",
+   "p2": "move Protect"
+  },
+  {
+   "p1": "move Mean Look",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

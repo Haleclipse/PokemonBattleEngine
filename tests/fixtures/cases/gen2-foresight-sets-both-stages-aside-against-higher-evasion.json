@@ -1,0 +1,79 @@
+{
+ "schema": 1,
+ "id": "gen2-foresight-sets-both-stages-aside-against-higher-evasion",
+ "notes": [
+  "Gen 2 on the cartridge (issues.md I87): Gengar raises its evasion three times; once identified, its evasion stage being at least Snorlax's accuracy stage, neither stage applies: Body Slam (100 %) never misses"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Foresight",
+     "Body Slam"
+    ],
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gengar",
+    "species": "Gengar",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Double Team",
+     "Harden"
+    ],
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Foresight",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move Foresight",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move Foresight",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

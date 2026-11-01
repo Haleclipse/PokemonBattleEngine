@@ -1,0 +1,82 @@
+{
+  "schema": 1,
+  "id": "gen9-singles-natural-cure-heal-bell",
+  "notes": [
+    "Natural Cure cures the status of a Pokémon that switches out (`-curestatus … [from] ability: Natural Cure`); Heal Bell cures the whole team, bench included, and fails when nobody is statused."
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "a",
+        "species": "Blissey",
+        "ability": "Natural Cure",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Heal Bell",
+          "Tackle"
+        ]
+      },
+      {
+        "label": "c",
+        "species": "Chansey",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "b",
+        "species": "Snorlax",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Thunder Wave",
+          "Toxic",
+          "Tackle"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 2",
+      "p2": "move 1"
+    },
+    {
+      "p1": "switch 2",
+      "p2": "move 2"
+    },
+    {
+      "p1": "switch 2",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 3"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 3"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      6,
+      2,
+      3,
+      4
+    ]
+  }
+}

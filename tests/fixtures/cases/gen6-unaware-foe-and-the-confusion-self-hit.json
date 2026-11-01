@@ -1,0 +1,71 @@
+{
+ "schema": 1,
+ "id": "gen6-unaware-foe-and-the-confusion-self-hit",
+ "notes": [
+  "A confused Pokémon at +2 Attack hits itself with its stages in play although the foe has Unaware (issues.md I30)"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Scizor",
+    "species": "Scizor",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Swords Dance",
+     "Iron Head"
+    ],
+    "ability": "Technician"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Quagsire",
+    "species": "Quagsire",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Confuse Ray",
+     "Harden"
+    ],
+    "ability": "Unaware"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Swords Dance",
+   "p2": "move Confuse Ray"
+  },
+  {
+   "p1": "move Iron Head",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Iron Head",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Iron Head",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Iron Head",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

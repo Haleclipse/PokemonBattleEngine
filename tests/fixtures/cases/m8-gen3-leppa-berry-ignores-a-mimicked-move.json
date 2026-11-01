@@ -1,0 +1,273 @@
+{
+  "schema": 1,
+  "id": "m8-gen3-leppa-berry-ignores-a-mimicked-move",
+  "notes": [
+    "Gen 3: Onix's Mimic copies Synthesis and spends its five PP; its Leppa Berry is not eaten — pokeemerald's HOLD_EFFECT_RESTORE_PP reads the party's moves (Mimic, with PP left), which a mimicked slot never writes back to (the oracle's I185 patch; Showdown reads moveSlots and restores the copy, DESIGN.md R-M8-109)",
+    "promoted from m8-gen3-singles-s558-019-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 3,
+    "mode": "singles",
+    "format": "gen3customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Elekid",
+        "species": "Elekid",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Synthesis",
+          "Ingrain",
+          "Moonlight",
+          "Mimic"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Aipom",
+        "species": "Aipom",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Morning Sun",
+          "Ingrain",
+          "Sweet Kiss",
+          "Mimic"
+        ],
+        "ability": "Trace",
+        "gender": "M"
+      },
+      {
+        "label": "Flaaffy",
+        "species": "Flaaffy",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Confuse Ray"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Koffing",
+        "species": "Koffing",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Dream Eater"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Onix",
+        "species": "Onix",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sludge Bomb",
+          "Ingrain",
+          "Poison Tail",
+          "Mimic"
+        ],
+        "ability": "Hustle",
+        "item": "Leppa Berry",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      13798,
+      2604,
+      7796,
+      33548
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Ingrain",
+      "p2": "move Ingrain"
+    },
+    {
+      "p1": "move Moonlight",
+      "p2": "move Poison Tail"
+    },
+    {
+      "p1": "move Mimic",
+      "p2": "move Mimic"
+    },
+    {
+      "p1": "move Synthesis",
+      "p2": "move Sludge Bomb"
+    },
+    {
+      "p1": "move Moonlight",
+      "p2": "move Poison Tail"
+    },
+    {
+      "p1": "move 4",
+      "p2": "move 4"
+    },
+    {
+      "p1": "move Synthesis",
+      "p2": "move Sludge Bomb"
+    },
+    {
+      "p1": "move Ingrain",
+      "p2": "move Ingrain"
+    },
+    {
+      "p1": "move Moonlight",
+      "p2": "move Poison Tail"
+    },
+    {
+      "p1": "move 4",
+      "p2": "move 4"
+    },
+    {
+      "p1": "move Synthesis",
+      "p2": "move Sludge Bomb"
+    },
+    {
+      "p1": "move Ingrain",
+      "p2": "move Ingrain"
+    },
+    {
+      "p1": "move Moonlight",
+      "p2": "move Poison Tail"
+    },
+    {
+      "p1": "move 4",
+      "p2": "move 4"
+    },
+    {
+      "p1": "move Synthesis",
+      "p2": "move Sludge Bomb"
+    },
+    {
+      "p1": "move Moonlight",
+      "p2": "move Poison Tail"
+    },
+    {
+      "p1": "move 4",
+      "p2": "move 4"
+    },
+    {
+      "p1": "move Synthesis",
+      "p2": "move Sludge Bomb"
+    },
+    {
+      "p1": "move Moonlight",
+      "p2": "move Poison Tail"
+    },
+    {
+      "p1": "move 4",
+      "p2": "move 4"
+    },
+    {
+      "p1": "move Synthesis",
+      "p2": "move Sludge Bomb"
+    },
+    {
+      "p1": "move Ingrain",
+      "p2": "move Ingrain"
+    },
+    {
+      "p1": "move Moonlight",
+      "p2": "move Poison Tail"
+    },
+    {
+      "p1": "move Synthesis",
+      "p2": "move Mimic"
+    },
+    {
+      "p1": "move Ingrain",
+      "p2": "move Sludge Bomb"
+    },
+    {
+      "p1": "move Moonlight",
+      "p2": "move Ingrain"
+    },
+    {
+      "p1": "move Ingrain",
+      "p2": "move Poison Tail"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 4"
+    },
+    {
+      "p1": "move Ingrain",
+      "p2": "move Sludge Bomb"
+    },
+    {
+      "p1": "switch Aipom"
+    },
+    {
+      "p1": "move Ingrain",
+      "p2": "move Ingrain"
+    },
+    {
+      "p1": "move Sweet Kiss",
+      "p2": "move Poison Tail"
+    },
+    {
+      "p1": "move 4",
+      "p2": "move 4"
+    },
+    {
+      "p1": "move Morning Sun",
+      "p2": "move Sludge Bomb"
+    },
+    {
+      "p1": "move Ingrain",
+      "p2": "move Ingrain"
+    },
+    {
+      "p1": "move Sweet Kiss",
+      "p2": "move Poison Tail"
+    },
+    {
+      "p1": "move 4",
+      "p2": "move 4"
+    },
+    {
+      "p1": "move Morning Sun",
+      "p2": "move Sludge Bomb"
+    },
+    {
+      "p1": "move Ingrain",
+      "p2": "move Ingrain"
+    },
+    {
+      "p1": "move Sweet Kiss",
+      "p2": "move Poison Tail"
+    },
+    {
+      "p1": "move 4",
+      "p2": "move 4"
+    },
+    {
+      "p1": "move Sweet Kiss",
+      "p2": "move Poison Tail"
+    },
+    {
+      "p1": "switch Flaaffy"
+    },
+    {
+      "p1": "switch Koffing",
+      "p2": "move 4"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 4"
+    }
+  ]
+}

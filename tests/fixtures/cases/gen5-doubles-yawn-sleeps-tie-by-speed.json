@@ -1,0 +1,87 @@
+{
+ "schema": 1,
+ "id": "gen5-doubles-yawn-sleeps-tie-by-speed",
+ "notes": [
+  "Two Pok\u00e9mon of the same speed Yawned the same turn fall asleep in the same residual: their order is a speed tie (shuffled), and each draws its own sleep length"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "doubles",
+  "format": "gen5doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Slowbro",
+    "species": "Slowbro",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Yawn",
+     "Harden"
+    ],
+    "ability": "Own Tempo"
+   },
+   {
+    "label": "Slowking",
+    "species": "Slowking",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Yawn",
+     "Harden"
+    ],
+    "ability": "Own Tempo"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Immunity"
+   },
+   {
+    "label": "Munchlax",
+    "species": "Munchlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Pickup"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Yawn 1, move Yawn 2",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

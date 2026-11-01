@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "id": "m8-gen1-a-thawed-pokemon-uses-its-last-selected-move",
+  "notes": [
+    "Nightly 104: a Gen 1 Pokémon frozen by Ice Beam picks Fight (its only choice) and, thawed by Ember later that turn, uses the move its side last selected (Ice Beam), not the menu's first move (Showdown commitChoices: choice.moveid = lastSelectedMove; DESIGN.md R-M8-145)",
+    "promoted from m8-gen1-singles-s720-008-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 1,
+    "mode": "singles",
+    "format": "gen1customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Pikachu",
+        "species": "Pikachu",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Rock Throw",
+          "Ice Beam",
+          "Ember"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "Jigglypuff",
+        "species": "Jigglypuff",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Dream Eater",
+          "Ice Beam"
+        ]
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      57754,
+      18046,
+      464,
+      15683
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Rock Throw",
+      "p2": "move Dream Eater"
+    },
+    {
+      "p1": "move Ice Beam",
+      "p2": "move Ice Beam"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 1"
+    }
+  ]
+}

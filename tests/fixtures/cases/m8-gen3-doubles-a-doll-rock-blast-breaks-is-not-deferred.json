@@ -1,0 +1,259 @@
+{
+  "schema": 1,
+  "id": "m8-gen3-doubles-a-doll-rock-blast-breaks-is-not-deferred",
+  "notes": [
+    "Gen 3 doubles, from campaign gen3-doubles-s378 (battle 9), which diverged in R-M8-183's pre-commit replay. On boundary 24 Natu's Rock Blast strikes Skarmory's Substitute (`-activate`), breaks it with the second hit (`-end`) and hits Skarmory twice; Skarmory then makes a new doll, which Regirock's Tri Attack strikes. The first hit's `-activate` with a later strike on the holder made Skarmory a deferred doll, which R-M8-183 requires to stand after the action: a holder whose doll this action breaks is not deferred (DESIGN.md R-M8-183)."
+  ],
+  "battle": {
+    "generation": 3,
+    "mode": "doubles",
+    "format": "gen3doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Natu",
+        "species": "Natu",
+        "level": 46,
+        "nature": "Hardy",
+        "moves": [
+          "Rock Blast",
+          "Substitute",
+          "Barrage",
+          "Tri Attack"
+        ],
+        "ability": "Natural Cure",
+        "item": "Leftovers"
+      },
+      {
+        "label": "Meowth",
+        "species": "Meowth",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Arm Thrust",
+          "Substitute",
+          "Double Slap",
+          "Tri Attack"
+        ],
+        "ability": "Volt Absorb",
+        "item": "Timer Ball"
+      },
+      {
+        "label": "Regirock",
+        "species": "Regirock",
+        "level": 53,
+        "nature": "Hardy",
+        "moves": [
+          "Bone Rush",
+          "Substitute",
+          "Icicle Spear",
+          "Tri Attack"
+        ],
+        "ability": "Shell Armor",
+        "item": "Dome Fossil"
+      },
+      {
+        "label": "Vileplume",
+        "species": "Vileplume",
+        "level": 46,
+        "nature": "Hardy",
+        "moves": [
+          "Bonemerang",
+          "Substitute",
+          "Comet Punch",
+          "Tri Attack"
+        ],
+        "ability": "Flame Body"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Moltres",
+        "species": "Moltres",
+        "level": 51,
+        "nature": "Hardy",
+        "moves": [
+          "Fury Attack",
+          "Substitute",
+          "Bullet Seed",
+          "Tri Attack"
+        ],
+        "ability": "Suction Cups",
+        "item": "Mystic Water"
+      },
+      {
+        "label": "Parasect",
+        "species": "Parasect",
+        "level": 53,
+        "nature": "Hardy",
+        "moves": [
+          "Fury Swipes",
+          "Substitute",
+          "Rock Tomb",
+          "Tri Attack"
+        ],
+        "ability": "Shed Skin",
+        "item": "Scope Lens"
+      },
+      {
+        "label": "Pidgeot",
+        "species": "Pidgeot",
+        "level": 54,
+        "nature": "Hardy",
+        "moves": [
+          "Constrict",
+          "Substitute",
+          "Aurora Beam",
+          "Tri Attack"
+        ],
+        "ability": "Serene Grace"
+      },
+      {
+        "label": "Skarmory",
+        "species": "Skarmory",
+        "level": 45,
+        "nature": "Hardy",
+        "moves": [
+          "Psychic",
+          "Substitute",
+          "Acid",
+          "Tri Attack"
+        ],
+        "ability": "Sturdy",
+        "item": "Hard Stone"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      58382,
+      64027,
+      16567,
+      45170
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1 1, move 1 2",
+      "p2": "move 1 1, move 1 2"
+    },
+    {
+      "p1": "move 2, move 2",
+      "p2": "move 2, move 2"
+    },
+    {
+      "p1": "move 3 1, move 3 2",
+      "p2": "move 3 1, move 3 2"
+    },
+    {
+      "p1": "move 4 1, move 4 2",
+      "p2": "move 4 1, move 4 2"
+    },
+    {
+      "p1": "pass, switch 3"
+    },
+    {
+      "p1": "switch 4, move 1 1",
+      "p2": "switch 3, move 1 1"
+    },
+    {
+      "p1": "move 1 2, move 2",
+      "p2": "move 1 2, move 2"
+    },
+    {
+      "p1": "move 2, move 3 1",
+      "p2": "move 2, move 3 1"
+    },
+    {
+      "p1": "move 3 2, move 4 1",
+      "p2": "move 3 2, move 4 1"
+    },
+    {
+      "p1": "move 4 2, move 1 1",
+      "p2": "move 4 2, move 1 1"
+    },
+    {
+      "p1": "switch 4, move 2",
+      "p2": "switch 3, move 2"
+    },
+    {
+      "p1": "move 1 2, move 3 1",
+      "p2": "move 1 2, move 3 1"
+    },
+    {
+      "p2": "pass, switch 3"
+    },
+    {
+      "p1": "move 2, move 4 2",
+      "p2": "move 2, move 4 2"
+    },
+    {
+      "p1": "move 3 1, move 1 2",
+      "p2": "move 3 1, move 1 2"
+    },
+    {
+      "p1": "move 4 1, move 2",
+      "p2": "move 4 1, move 2"
+    },
+    {
+      "p2": "switch 4, pass"
+    },
+    {
+      "p1": "switch 4, move 3 2",
+      "p2": "move 1 2, move 3 1"
+    },
+    {
+      "p1": "move 1 1, move 4 2",
+      "p2": "move 2, move 4 2"
+    },
+    {
+      "p1": "move 2, move 1 1",
+      "p2": "move 3, move 1 1"
+    },
+    {
+      "p1": "switch 4, pass"
+    },
+    {
+      "p1": "move 3 2, move 2",
+      "p2": "move 4 2, move 2"
+    },
+    {
+      "p1": "move 4 1, move 3 1",
+      "p2": "move 1 1, pass"
+    },
+    {
+      "p1": "move 1 1, move 4 1",
+      "p2": "move 2, pass"
+    },
+    {
+      "p1": "move 2, move 1 1",
+      "p2": "move 3, pass"
+    },
+    {
+      "p1": "move 3 1, move 2",
+      "p2": "move 4 2, pass"
+    },
+    {
+      "p1": "move 4 1, move 3 1",
+      "p2": "move 1 1, pass"
+    },
+    {
+      "p1": "move 1 1, move 4 1",
+      "p2": "move 2, pass"
+    },
+    {
+      "p1": "move 2, move 1 1",
+      "p2": "move 3, pass"
+    },
+    {
+      "p1": "move 3 1, move 2",
+      "p2": "move 4 2, pass"
+    },
+    {
+      "p1": "move 4 1, move 3 1",
+      "p2": "move 1 1, pass"
+    }
+  ]
+}

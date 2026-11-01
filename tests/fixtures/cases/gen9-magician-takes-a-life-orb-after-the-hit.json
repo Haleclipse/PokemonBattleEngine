@@ -1,0 +1,95 @@
+{
+ "schema": 1,
+ "id": "gen9-magician-takes-a-life-orb-after-the-hit",
+ "notes": [
+  "Gen 9 Magician: Delphox's Hyper Voice with a Normal Gem takes nothing (the move used a gem); its Flamethrower then takes Snorlax's Life Orb — no recoil this move (the event's handlers were gathered first), recoil the next; holding it, Delphox takes nothing from Blissey; Sticky Hold keeps Muk's item"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Delphox",
+    "species": "Delphox",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Hyper Voice",
+     "Flamethrower",
+     "Harden"
+    ],
+    "ability": "Magician",
+    "item": "Normal Gem"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Life Orb"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Natural Cure",
+    "item": "Leftovers"
+   },
+   {
+    "label": "Muk",
+    "species": "Muk",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Sticky Hold",
+    "item": "Black Sludge"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Hyper Voice",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Flamethrower",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Flamethrower",
+   "p2": "switch Blissey"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Muk"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

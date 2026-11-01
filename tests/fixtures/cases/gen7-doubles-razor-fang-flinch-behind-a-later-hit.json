@@ -1,0 +1,82 @@
+{
+ "schema": 1,
+ "id": "gen7-doubles-razor-fang-flinch-behind-a-later-hit",
+ "notes": [
+  "A flinch is silent: the Razor Fang holder's Hyper Voice flinched Carnivine, whose partner's later Hyper Voice (no flinch of its own) also hit it \u2014 the replay gives the flinch to the hit that could cause it"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Carnivine",
+    "species": "Carnivine",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Levitate"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Natural Cure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Swanna",
+    "species": "Swanna",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Hyper Voice"
+    ],
+    "ability": "Keen Eye",
+    "item": "Razor Fang"
+   },
+   {
+    "label": "Zekrom",
+    "species": "Zekrom",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Hyper Voice"
+    ],
+    "ability": "Teravolt"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Hyper Voice, move Hyper Voice"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Hyper Voice, move Hyper Voice"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Hyper Voice, move Hyper Voice"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

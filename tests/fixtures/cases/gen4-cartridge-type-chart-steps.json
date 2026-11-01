@@ -1,0 +1,78 @@
+{
+ "schema": 1,
+ "id": "gen4-cartridge-type-chart-steps",
+ "notes": [
+  "Gen 4 on the cartridge (issues.md I18): a dual type's multipliers one at a time in the type chart's order \u2014 Fire meets Ludicolo's Water (\u00bd, floored) before its Grass (\u00d72), Electric its Water (\u00d72) before its Grass (\u00bd) \u2014 then Filter's \u00d7\u00be and the Expert Belt's \u00d7 120 / 100 on a super-effective hit, and a resist berry halving the final damage last"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Belt",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Flamethrower",
+     "Thunderbolt"
+    ],
+    "ability": "Synchronize",
+    "item": "Expert Belt"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Ludi",
+    "species": "Ludicolo",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Swift Swim"
+   },
+   {
+    "label": "Scizor",
+    "species": "Scizor",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Filter",
+    "item": "Occa Berry"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

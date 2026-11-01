@@ -1,0 +1,78 @@
+{
+ "schema": 1,
+ "id": "gen5-imprison-without-a-shared-move",
+ "notes": [
+  "Gen 5 Imprison against a foe that knows none of its moves still takes (no such check from Gen 5)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Imprisoner",
+    "species": "Blissey",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Imprison",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Stranger",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Growl"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Twin",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Imprison",
+   "p2": "move Growl"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Imprison",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

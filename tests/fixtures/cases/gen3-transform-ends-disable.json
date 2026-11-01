@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen3-transform-ends-disable",
+ "notes": [
+  "Gen 3: faster Snorlax disables Mew's Tackle, then Mew transforms into Snorlax, which knows Tackle too, and Tackle is usable (pokeemerald `Cmd_transformdataexecution` clears `disabledMove`; 按卡带 I112)"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 15,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Transform"
+    ],
+    "ability": "Synchronize"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Disable",
+     "Tackle",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Transform",
+   "p2": "move Disable"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   9,
+   10,
+   11,
+   12
+  ]
+ }
+}

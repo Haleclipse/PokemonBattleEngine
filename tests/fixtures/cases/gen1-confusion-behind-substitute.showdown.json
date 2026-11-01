@@ -1,0 +1,811 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@pkmn/sim",
+    "version": "0.10.11",
+    "formatid": "gen1customgame",
+    "seed": [
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  "frames": [
+    {
+      "schema": 1,
+      "checkpoint": "initial",
+      "turn": 1,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "pp": [
+                16,
+                61
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 150,
+              "max_hp": 150,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "poison",
+                "flying"
+              ],
+              "pp": [
+                16,
+                16,
+                61
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "details": "Snorlax, L50",
+          "hp": 235,
+          "max_hp": 235,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Golbat"
+          },
+          "details": "Golbat, L50",
+          "hp": 150,
+          "max_hp": 150,
+          "status": null
+        },
+        {
+          "kind": "turn",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_1",
+      "turn": 2,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 177,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "confusion": 3,
+                "substitute": 59
+              },
+              "types": [
+                "normal"
+              ],
+              "pp": [
+                15,
+                61
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 150,
+              "max_hp": 150,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "poison",
+                "flying"
+              ],
+              "pp": [
+                15,
+                16,
+                61
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Golbat"
+          },
+          "move": "Confuse Ray",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "start",
+          "args": [
+            "p1a: Snorlax",
+            "confusion"
+          ]
+        },
+        {
+          "kind": "activate",
+          "args": [
+            "p1a: Snorlax",
+            "confusion"
+          ]
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Substitute",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "start",
+          "args": [
+            "p1a: Snorlax",
+            "Substitute"
+          ]
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "hp": 177,
+          "max_hp": 235,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 2
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_2",
+      "turn": 3,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 177,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "confusion": 2,
+                "substitute": 59
+              },
+              "types": [
+                "normal"
+              ],
+              "pp": [
+                14,
+                61
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 150,
+              "max_hp": 150,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "poison",
+                "flying"
+              ],
+              "pp": [
+                15,
+                16,
+                60
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Golbat"
+          },
+          "move": "Growl",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "fail",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "detail": null
+        },
+        {
+          "kind": "activate",
+          "args": [
+            "p1a: Snorlax",
+            "confusion"
+          ]
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Substitute",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "fail",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "detail": "move: Substitute"
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 3
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_3",
+      "turn": 4,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 177,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "confusion": 1,
+                "substitute": 59
+              },
+              "types": [
+                "normal"
+              ],
+              "pp": [
+                14,
+                61
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 150,
+              "max_hp": 150,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "poison",
+                "flying"
+              ],
+              "pp": [
+                15,
+                16,
+                59
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Golbat"
+          },
+          "move": "Growl",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "fail",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "detail": null
+        },
+        {
+          "kind": "activate",
+          "args": [
+            "p1a: Snorlax",
+            "confusion"
+          ]
+        },
+        {
+          "kind": "hint",
+          "text": "In Gen 1, if a Pokemon with a Substitute hurts itself due to confusion or Jump Kick/Hi Jump Kick recoil and the target does not have a Substitute there is no damage dealt."
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 4
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_4",
+      "turn": 5,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 177,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "substitute": 59
+              },
+              "types": [
+                "normal"
+              ],
+              "pp": [
+                14,
+                60
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 150,
+              "max_hp": 150,
+              "status": null,
+              "boosts": {
+                "attack": -1,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "poison",
+                "flying"
+              ],
+              "pp": [
+                15,
+                16,
+                58
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Golbat"
+          },
+          "move": "Growl",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "fail",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "detail": null
+        },
+        {
+          "kind": "end",
+          "args": [
+            "p1a: Snorlax",
+            "confusion"
+          ]
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Growl",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Golbat"
+          }
+        },
+        {
+          "kind": "unboost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Golbat"
+          },
+          "stat": "atk",
+          "amount": 1
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 5
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_5",
+      "turn": 6,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 177,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "substitute": 59
+              },
+              "types": [
+                "normal"
+              ],
+              "pp": [
+                14,
+                59
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 150,
+              "max_hp": 150,
+              "status": null,
+              "boosts": {
+                "attack": -2,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "poison",
+                "flying"
+              ],
+              "pp": [
+                15,
+                16,
+                57
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Golbat"
+          },
+          "move": "Growl",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "fail",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "detail": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Growl",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Golbat"
+          }
+        },
+        {
+          "kind": "unboost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Golbat"
+          },
+          "stat": "atk",
+          "amount": 1
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 6
+        }
+      ]
+    }
+  ],
+  "debug_log": "|gametype|singles\n|player|p1|P1||\n|player|p2|P2||\n|gen|1\n|tier|[Gen 1] Custom Game\n|rule|HP Percentage Mod: HP is shown in percentages\n|rule|Desync Clause Mod: Desyncs changed to move failure.\n|\n|teamsize|p1|1\n|teamsize|p2|1\n|start\n|switch|p1a: Snorlax|Snorlax, L50|235/235\n|switch|p2a: Golbat|Golbat, L50|150/150\n|turn|1\n|\n|move|p2a: Golbat|Confuse Ray|p1a: Snorlax\n|-start|p1a: Snorlax|confusion\n|-activate|p1a: Snorlax|confusion\n|move|p1a: Snorlax|Substitute|p1a: Snorlax\n|-start|p1a: Snorlax|Substitute\n|-damage|p1a: Snorlax|177/235\n|\n|upkeep\n|turn|2\n|\n|move|p2a: Golbat|Growl|p1a: Snorlax\n|-fail|p1a: Snorlax\n|-activate|p1a: Snorlax|confusion\n|move|p1a: Snorlax|Substitute|p1a: Snorlax\n|-fail|p1a: Snorlax|move: Substitute\n|\n|upkeep\n|turn|3\n|\n|move|p2a: Golbat|Growl|p1a: Snorlax\n|-fail|p1a: Snorlax\n|-activate|p1a: Snorlax|confusion\n|-hint|In Gen 1, if a Pokemon with a Substitute hurts itself due to confusion or Jump Kick/Hi Jump Kick recoil and the target does not have a Substitute there is no damage dealt.\n|\n|upkeep\n|turn|4\n|\n|move|p2a: Golbat|Growl|p1a: Snorlax\n|-fail|p1a: Snorlax\n|-end|p1a: Snorlax|confusion\n|move|p1a: Snorlax|Growl|p2a: Golbat\n|-unboost|p2a: Golbat|atk|1\n|\n|upkeep\n|turn|5\n|\n|move|p2a: Golbat|Growl|p1a: Snorlax\n|-fail|p1a: Snorlax\n|move|p1a: Snorlax|Growl|p2a: Golbat\n|-unboost|p2a: Golbat|atk|1\n|\n|upkeep\n|turn|6"
+}

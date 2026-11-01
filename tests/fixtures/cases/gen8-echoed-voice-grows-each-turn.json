@@ -1,0 +1,90 @@
+{
+ "schema": 1,
+ "id": "gen8-echoed-voice-grows-each-turn",
+ "notes": [
+  "Echoed Voice: a field condition (2 turns) whose multiplier grows by 1 each consecutive turn it is used, up to 5 (40 to 200 power); a turn without it lets it run out"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Exploud",
+    "species": "Exploud",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Echoed Voice",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 90,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Echoed Voice",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Echoed Voice",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Echoed Voice",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Echoed Voice",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Echoed Voice",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Echoed Voice",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Echoed Voice",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Echoed Voice",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

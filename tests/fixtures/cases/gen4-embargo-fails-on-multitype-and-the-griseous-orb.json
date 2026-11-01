@@ -1,0 +1,112 @@
+{
+ "schema": 1,
+ "id": "gen4-embargo-fails-on-multitype-and-the-griseous-orb",
+ "notes": [
+  "Gen 4 Embargo fails on a Multitype Arceus and on a Giratina holding the Griseous Orb (the gen4 mod's onTryHit); on Snorlax it stops Leftovers for five turns (residual 10.18)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Absol",
+    "species": "Absol",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Embargo",
+     "Seismic Toss"
+    ],
+    "ability": "Pressure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Arceus",
+    "species": "Arceus",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Multitype"
+   },
+   {
+    "label": "Giratina",
+    "species": "Giratina-Origin",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Levitate",
+    "item": "Griseous Orb"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Leftovers"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Embargo",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Seismic Toss",
+   "p2": "switch Giratina"
+  },
+  {
+   "p1": "move Embargo",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Seismic Toss",
+   "p2": "switch Snorlax"
+  },
+  {
+   "p1": "move Embargo",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Seismic Toss",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Seismic Toss",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Seismic Toss",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Seismic Toss",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Seismic Toss",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

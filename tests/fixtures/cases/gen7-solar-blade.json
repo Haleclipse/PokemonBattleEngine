@@ -1,0 +1,68 @@
+{
+ "schema": 1,
+ "id": "gen7-solar-blade",
+ "notes": [
+  "Gen 7 Solar Blade: in the sun it strikes at once; in the rain it charges and then deals half"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Blade",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Solar Blade",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Weather",
+    "species": "Jolteon",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Sunny Day",
+     "Rain Dance",
+     "Tail Whip"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Solar Blade",
+   "p2": "move Sunny Day"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Rain Dance"
+  },
+  {
+   "p1": "move Solar Blade",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Solar Blade",
+   "p2": "move Tail Whip"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

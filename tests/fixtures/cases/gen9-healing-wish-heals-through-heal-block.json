@@ -1,0 +1,98 @@
+{
+ "schema": 1,
+ "id": "gen9-healing-wish-heals-through-heal-block",
+ "notes": [
+  "Gen 9: Clefable's Healing Wish waits for a Pokémon that needs it; Slowbro, its healing blocked by Psychic Noise, passes that on to the hurt Chansey, which the wish still heals in full: `target.heal(target.maxhp)` runs no `TryHeal` (`HealRequest::direct`, DESIGN.md R-M8-91)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   },
+   {
+    "label": "Clefable",
+    "species": "Clefable",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Healing Wish"
+    ],
+    "ability": "Magic Guard",
+    "gender": "F"
+   },
+   {
+    "label": "Slowbro",
+    "species": "Slowbro",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Baton Pass",
+     "Splash"
+    ],
+    "ability": "Oblivious",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Dragonite",
+    "species": "Dragonite",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Psychic Noise",
+     "Splash"
+    ],
+    "ability": "Inner Focus",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Healing Wish",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "switch 3"
+  },
+  {
+   "p1": "move Baton Pass",
+   "p2": "move Psychic Noise"
+  },
+  {
+   "p1": "switch 2"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

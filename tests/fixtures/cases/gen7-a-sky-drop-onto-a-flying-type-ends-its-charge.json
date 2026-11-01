@@ -1,0 +1,83 @@
+{
+ "schema": 1,
+ "id": "gen7-a-sky-drop-onto-a-flying-type-ends-its-charge",
+ "notes": [
+  "Gen 7 doubles: Hawlucha's Sky Drop carries Pidgey up, and next turn drops it, a Flying type, for `-immune`. The move's `onMoveFail` ends the charge (`twoturnmove`) at once, which shows as Golem's Rock Slide ends the battle before the residual (DESIGN.md R-M8-157)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hawlucha",
+    "species": "Hawlucha",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sky Drop",
+     "Splash"
+    ],
+    "ability": "Limber",
+    "gender": "M"
+   },
+   {
+    "label": "Golem",
+    "species": "Golem",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Rock Slide",
+     "Splash"
+    ],
+    "ability": "Sturdy",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Pidgey",
+    "species": "Pidgey",
+    "level": 1,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Keen Eye",
+    "gender": "M"
+   },
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 1,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Swift Swim",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Sky Drop 1, move Splash",
+   "p2": "move Splash, move Splash"
+  },
+  {
+   "p1": "move Sky Drop 1, move Rock Slide",
+   "p2": "move Splash, move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

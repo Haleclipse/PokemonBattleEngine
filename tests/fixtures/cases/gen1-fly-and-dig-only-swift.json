@@ -1,0 +1,74 @@
+{
+ "schema": 1,
+ "id": "gen1-fly-and-dig-only-swift",
+ "notes": [
+  "Gen 1 Fly and Dig: the user is out of reach of everything but Swift (Showdown gen1 `invulnerability`); no move deals it extra damage"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Flyer",
+    "species": "Dodrio",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fly",
+     "Dig"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Shooter",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Swift",
+     "Earthquake"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Fly",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Fly",
+   "p2": "move Swift"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Dig",
+   "p2": "move Earthquake"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

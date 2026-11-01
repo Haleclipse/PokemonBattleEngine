@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen5-sleep-talk-twineedle-while-asleep",
+ "notes": [
+  "Gen 5: Snorlax's Spore puts Beedrill to sleep; its Sleep Talk calls Twineedle, which strikes twice — a move Sleep Talk called goes on hitting a sleeping user (`isSleepUsable`) (DESIGN.md R-M8-81)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Beedrill",
+    "species": "Beedrill",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sleep Talk",
+     "Twineedle"
+    ],
+    "ability": "Swarm",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spore",
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Twineedle",
+   "p2": "move Spore"
+  },
+  {
+   "p1": "move Sleep Talk",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Sleep Talk",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

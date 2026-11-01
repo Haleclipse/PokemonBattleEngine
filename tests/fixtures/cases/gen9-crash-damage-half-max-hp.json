@@ -1,0 +1,110 @@
+{
+ "schema": 1,
+ "id": "gen9-crash-damage-half-max-hp",
+ "notes": [
+  "Gen 5+ crash: half the user's max HP — Axe Kick into Protect, Supercell Slam into a Ground type; Magic Guard refuses High Jump Kick's crash against Gastly"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hitmonlee",
+    "species": "Hitmonlee",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Axe Kick"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Pikachu",
+    "species": "Pikachu",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Supercell Slam"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Clefable",
+    "species": "Clefable",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "High Jump Kick"
+    ],
+    "ability": "Magic Guard"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Protect",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Dugtrio",
+    "species": "Dugtrio",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Gastly",
+    "species": "Gastly",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Axe Kick",
+   "p2": "move Protect"
+  },
+  {
+   "p1": "switch Pikachu",
+   "p2": "switch Dugtrio"
+  },
+  {
+   "p1": "move Supercell Slam",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Clefable",
+   "p2": "switch Gastly"
+  },
+  {
+   "p1": "move High Jump Kick",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

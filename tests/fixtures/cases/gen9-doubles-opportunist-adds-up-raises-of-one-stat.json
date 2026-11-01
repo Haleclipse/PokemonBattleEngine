@@ -1,0 +1,76 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-opportunist-adds-up-raises-of-one-stat",
+ "notes": [
+  "Gen 9 doubles: Blissey's Growl lowers both foes' Attack and each one's Defiant raises it by 2; Espathra's Opportunist keeps both raises of Attack, adds them up and copies +4 once the move is over"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Espathra",
+    "species": "Espathra",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Opportunist"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Growl"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Defiant"
+   },
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Defiant"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Growl",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

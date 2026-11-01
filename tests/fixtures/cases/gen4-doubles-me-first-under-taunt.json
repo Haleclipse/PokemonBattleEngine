@@ -1,0 +1,78 @@
+{
+ "schema": 1,
+ "id": "gen4-doubles-me-first-under-taunt",
+ "notes": [
+  "Gen 4 doubles: Jolteon taunts Clefable before it moves; Clefable's Me First at Snorlax is refused by Taunt as any status move (`cant|p1a: Clefable|move: Taunt|Me First`)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "doubles",
+  "format": "gen4doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Clefable",
+    "species": "Clefable",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Me First",
+     "Harden"
+    ],
+    "ability": "Magic Guard",
+    "gender": "F"
+   },
+   {
+    "label": "Zigzagoon",
+    "species": "Zigzagoon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Protect"
+    ],
+    "ability": "Pickup",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Taunt"
+    ],
+    "ability": "Volt Absorb",
+    "gender": "M"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1 2, move 1",
+   "p2": "move 1 1, move 1 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

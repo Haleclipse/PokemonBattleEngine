@@ -1,0 +1,86 @@
+{
+ "schema": 1,
+ "id": "gen6-doubles-perish-counts-of-tied-pokemon-in-shuffled-order",
+ "notes": [
+  "Two Pok\u00e9mon of the same speed count their Perish Song down in the residual in the order Showdown's speed-tie shuffle gave them (`-start|p|perishN`, perish0 included): all four last Pok\u00e9mon go down in the same residual, and in Gen 6 the side of the last to faint wins \u2014 the replay reads the tied order from the log"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "doubles",
+  "format": "gen6doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Perish Song",
+     "Harden"
+    ],
+    "ability": "Immunity"
+   },
+   {
+    "label": "Lapras",
+    "species": "Lapras",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Water Absorb"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Lapras",
+    "species": "Lapras",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Shell Armor"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Perish Song, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   2,
+   2,
+   3,
+   4
+  ]
+ }
+}

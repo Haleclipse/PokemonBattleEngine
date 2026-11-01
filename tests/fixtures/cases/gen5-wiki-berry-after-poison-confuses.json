@@ -1,0 +1,68 @@
+{
+ "schema": 1,
+ "id": "gen5-wiki-berry-after-poison-confuses",
+ "notes": [
+  "Gen 5: poison takes the Adamant Snorlax to half HP in the residual; the residual's Update feeds it its Wiki Berry, which heals an eighth and confuses it"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Adamant",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Wiki Berry"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gengar",
+    "species": "Gengar",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Poison Gas",
+     "Harden"
+    ],
+    "ability": "Levitate"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Poison Gas"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

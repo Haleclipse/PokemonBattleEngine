@@ -1,0 +1,84 @@
+{
+ "schema": 1,
+ "id": "gen6-doubles-snatched-rest-heals-the-snatcher",
+ "notes": [
+  "Gen 6 doubles: Jolteon's Tackle hurts Palkia, Chansey's Pound Quilladin; next turn Palkia's Snatch takes Quilladin's Rest and heals Palkia silently (`-heal … [silent]` for the snatcher, the replay's Rest heal, DESIGN.md R-M8-81)"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "doubles",
+  "format": "gen6doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Quilladin",
+    "species": "Quilladin",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Rest",
+     "Splash"
+    ],
+    "ability": "Overgrow",
+    "gender": "M"
+   },
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Splash"
+    ],
+    "ability": "Volt Absorb",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Palkia",
+    "species": "Palkia",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Snatch",
+     "Splash"
+    ],
+    "ability": "Pressure"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Pound",
+     "Splash"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash, move Tackle 1",
+   "p2": "move Splash, move Pound 1"
+  },
+  {
+   "p1": "move Rest, move Splash",
+   "p2": "move Snatch, move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

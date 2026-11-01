@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen3-rest-and-the-chesto-berry-at-the-moves-end",
+ "notes": [
+  "Gen 3 (pokeemerald `ItemBattleEffects(ITEMEFFECT_MOVE_END)` after each move; Showdown's gen3 `onUpdate` at the action's end): Jolteon's Rest puts it to sleep and it eats its Chesto Berry at once, so the slower Slowbro's Dream Eater fails on the awake Jolteon"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Rest",
+     "Harden"
+    ],
+    "item": "Chesto Berry",
+    "ability": "Volt Absorb"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Slowbro",
+    "species": "Slowbro",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Dream Eater",
+     "Harden"
+    ],
+    "ability": "Oblivious"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Rest",
+   "p2": "move Dream Eater"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,89 @@
+{
+ "schema": 1,
+ "id": "gen7-quash",
+ "notes": [
+  "Gen 7 doubles: Jolteon and the faster Raichu Quash Snorlax and Ninetales: the quashed ones move last — Gen 5-7: in the order they were quashed (moved to the end of the queue)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Quash",
+     "Thunder Shock"
+    ],
+    "gender": "M",
+    "ability": "Volt Absorb"
+   },
+   {
+    "label": "Raichu",
+    "species": "Raichu",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Quash",
+     "Thunder Shock"
+    ],
+    "gender": "M",
+    "ability": "Static"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Ninetales",
+    "species": "Ninetales",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Ember",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Flash Fire"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Quash 1, move Quash 2",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Quash 2, move Quash 1",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Thunder Shock 1, move Quash 2",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

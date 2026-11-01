@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen9-opportunist-does-not-copy-a-copy",
+ "notes": [
+  "Gen 9: two Opportunists — Snorlax's Swords Dance is copied by Espathra, whose raise is not copied back (`effect.name === 'Opportunist'`); Espathra's own Swords Dance is copied by Snorlax"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Espathra",
+    "species": "Espathra",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Swords Dance",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Opportunist"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Swords Dance",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Opportunist"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Swords Dance"
+  },
+  {
+   "p1": "move Swords Dance",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

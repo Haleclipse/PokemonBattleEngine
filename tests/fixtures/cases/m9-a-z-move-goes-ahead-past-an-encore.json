@@ -1,0 +1,475 @@
+{
+ "schema": 1,
+ "id": "m9-a-z-move-goes-ahead-past-an-encore",
+ "notes": [
+  "R-M9-31: Aurorus's Encore lands on Doublade (its last move Shadow Claw) before Doublade's Z-Return; Showdown's `runMove` asks `OverrideAction` only for an action that is no Z-Move and no Max Move, so Breakneck Blitz goes ahead and Return pays the PP. The engine used to let the Encore turn it into Shadow Claw. Minimized from Nightly 20261020-143204 (m9-gen7ubers-s115-016)."
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7ubers"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Doublade",
+    "species": "Doublade",
+    "item": "Normalium Z",
+    "ability": "No Guard",
+    "moves": [
+     "Shadow Claw",
+     "Return"
+    ],
+    "nature": "Rash",
+    "gender": "M",
+    "shiny": false,
+    "level": 94,
+    "evs": {
+     "hp": 100,
+     "atk": 60,
+     "def": 0,
+     "spa": 0,
+     "spd": 252,
+     "spe": 96
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Ducklett",
+    "species": "Ducklett",
+    "ability": "Keen Eye",
+    "moves": [
+     "Hail",
+     "Pluck"
+    ],
+    "nature": "Bold",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 20,
+     "atk": 156,
+     "def": 0,
+     "spa": 252,
+     "spd": 44,
+     "spe": 36
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 7,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Nick66",
+    "species": "Shuckle",
+    "ability": "Sturdy",
+    "moves": [
+     "Gastro Acid",
+     "Sandstorm"
+    ],
+    "nature": "Quiet",
+    "gender": "M",
+    "shiny": false,
+    "level": 76,
+    "evs": {
+     "hp": 120,
+     "atk": 120,
+     "def": 0,
+     "spa": 0,
+     "spd": 28,
+     "spe": 240
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Nick57",
+    "species": "Feebas",
+    "item": "Rocky Helmet",
+    "ability": "Oblivious",
+    "moves": [
+     "Natural Gift",
+     "Confuse Ray",
+     "Hail",
+     "Swagger"
+    ],
+    "nature": "Hasty",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 88,
+     "atk": 116,
+     "def": 0,
+     "spa": 60,
+     "spd": 120,
+     "spe": 124
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Crustle",
+    "species": "Crustle",
+    "ability": "Sturdy",
+    "moves": [
+     "Snore"
+    ],
+    "nature": "Relaxed",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 88,
+     "atk": 60,
+     "def": 88,
+     "spa": 112,
+     "spd": 56,
+     "spe": 104
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 30,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Nick41",
+    "species": "Mienshao",
+    "ability": "Regenerator",
+    "moves": [
+     "Laser Focus",
+     "Smelling Salts",
+     "Power-Up Punch"
+    ],
+    "nature": "Bold",
+    "gender": "F",
+    "shiny": false,
+    "level": 64,
+    "evs": {
+     "hp": 96,
+     "atk": 96,
+     "def": 0,
+     "spa": 252,
+     "spd": 20,
+     "spe": 44
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 17
+    }
+   }
+  ],
+  "p2": [
+   {
+    "label": "Aurorus",
+    "species": "Aurorus",
+    "ability": "Refrigerate",
+    "moves": [
+     "Encore"
+    ],
+    "nature": "Lax",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 136,
+     "atk": 0,
+     "def": 0,
+     "spa": 88,
+     "spd": 132,
+     "spe": 152
+    },
+    "ivs": {
+     "hp": 11,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 80
+   },
+   {
+    "label": "Grubbin",
+    "species": "Grubbin",
+    "ability": "Swarm",
+    "moves": [
+     "Volt Switch",
+     "Round"
+    ],
+    "nature": "Careful",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 80,
+     "atk": 180,
+     "def": 0,
+     "spa": 96,
+     "spd": 0,
+     "spe": 152
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Gothorita",
+    "species": "Gothorita",
+    "ability": "Competitive",
+    "moves": [
+     "Rock Tomb"
+    ],
+    "nature": "Brave",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 156,
+     "atk": 100,
+     "def": 44,
+     "spa": 12,
+     "spd": 172,
+     "spe": 24
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 3,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Salazzle",
+    "species": "Salazzle-Totem",
+    "ability": "Corrosion",
+    "moves": [
+     "Foul Play",
+     "Swagger",
+     "Hidden Power"
+    ],
+    "nature": "Naive",
+    "gender": "",
+    "shiny": false,
+    "level": 63,
+    "evs": {
+     "hp": 8,
+     "atk": 128,
+     "def": 12,
+     "spa": 96,
+     "spd": 48,
+     "spe": 216
+    },
+    "ivs": {
+     "hp": 2,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Pichu",
+    "species": "Pichu",
+    "ability": "Static",
+    "moves": [
+     "Present"
+    ],
+    "nature": "Calm",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 44,
+     "atk": 244,
+     "def": 0,
+     "spa": 32,
+     "spd": 128,
+     "spe": 60
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Durant",
+    "species": "Durant",
+    "ability": "Hustle",
+    "moves": [
+     "Aerial Ace"
+    ],
+    "nature": "Modest",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 120,
+     "atk": 4,
+     "def": 20,
+     "spa": 44,
+     "spd": 176,
+     "spe": 144
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   }
+  ]
+ },
+ "preview": {
+  "p1": "team 234651",
+  "p2": "team 241365"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   26887,
+   115,
+   1016,
+   31
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Hail",
+   "p2": "move Volt Switch"
+  },
+  {
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Pluck",
+   "p2": "move Foul Play"
+  },
+  {
+   "p1": "switch 2"
+  },
+  {
+   "p1": "move Gastro Acid",
+   "p2": "move Swagger"
+  },
+  {
+   "p1": "move Sandstorm",
+   "p2": "move Hidden Power"
+  },
+  {
+   "p1": "switch 3",
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Natural Gift",
+   "p2": "move Volt Switch"
+  },
+  {
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Confuse Ray",
+   "p2": "move Foul Play"
+  },
+  {
+   "p1": "move Hail",
+   "p2": "move Swagger"
+  },
+  {
+   "p1": "move Swagger",
+   "p2": "move Hidden Power"
+  },
+  {
+   "p1": "switch 3"
+  },
+  {
+   "p1": "switch 4",
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Laser Focus",
+   "p2": "move Volt Switch"
+  },
+  {
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Smelling Salts",
+   "p2": "move Foul Play"
+  },
+  {
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Power-Up Punch",
+   "p2": "move Round"
+  },
+  {
+   "p1": "switch 4"
+  },
+  {
+   "p1": "switch 5",
+   "p2": "switch 3"
+  },
+  {
+   "p1": "switch 6",
+   "p2": "switch 3"
+  },
+  {
+   "p1": "move Shadow Claw",
+   "p2": "move Volt Switch"
+  },
+  {
+   "p2": "switch 3"
+  },
+  {
+   "p1": "move 2 zmove",
+   "p2": "move Encore"
+  }
+ ]
+}

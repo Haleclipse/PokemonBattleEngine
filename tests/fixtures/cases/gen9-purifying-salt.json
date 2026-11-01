@@ -1,0 +1,73 @@
+{
+ "schema": 1,
+ "id": "gen9-purifying-salt",
+ "notes": [
+  "Purifying Salt: no status and no Yawn; Ghost moves hit it with half the attacking stat (physical and special)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Salt",
+    "species": "Garganacl",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Purifying Salt"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Toxic",
+     "Yawn",
+     "Shadow Ball",
+     "Shadow Claw"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Toxic"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Yawn"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Shadow Ball"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Shadow Claw"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Shadow Ball"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

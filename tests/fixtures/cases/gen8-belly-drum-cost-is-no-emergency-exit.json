@@ -1,0 +1,72 @@
+{
+ "schema": 1,
+ "id": "gen8-belly-drum-cost-is-no-emergency-exit",
+ "notes": [
+  "Gen 8: Golisopod, hit by Jolteon's Tackle but still above half, pays Belly Drum's cost down below half; Emergency Exit answers a move's damage, not an HP cost — Showdown's `hitStepMoveHitLoop` takes `hurtThisTurn` (the HP the Tackle left) as the HP before Belly Drum and switches Golisopod out, which the oracle patch stops (issues.md I183, user's decision; DESIGN.md R-M8-104)"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Golisopod",
+    "species": "Golisopod",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Belly Drum",
+     "Splash"
+    ],
+    "ability": "Emergency Exit",
+    "gender": "M"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Splash"
+    ],
+    "ability": "Volt Absorb",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Belly Drum",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

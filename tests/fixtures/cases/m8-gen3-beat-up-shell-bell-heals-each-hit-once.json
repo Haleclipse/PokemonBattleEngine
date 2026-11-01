@@ -1,0 +1,208 @@
+{
+  "schema": 1,
+  "id": "m8-gen3-beat-up-shell-bell-heals-each-hit-once",
+  "notes": [
+    "Nightly 54: Gen 3 Shell Bell heals each of Beat Up's hits as it lands and nothing more once the move is over: Beat Up is a multi-strike move (move.multihit set by its onModifyMove) (DESIGN.md R-M8-98)",
+    "promoted from m8-gen3-singles-s515-002-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 3,
+    "mode": "singles",
+    "format": "gen3customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Cradily",
+        "species": "Cradily",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Bone Club",
+          "Psych Up",
+          "Rolling Kick",
+          "Toxic"
+        ],
+        "ability": "Run Away",
+        "item": "Aguav Berry",
+        "gender": "F"
+      },
+      {
+        "label": "Milotic",
+        "species": "Milotic",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Psych Up",
+          "Headbutt",
+          "Block"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Ponyta",
+        "species": "Ponyta",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Stomp",
+          "Psych Up"
+        ],
+        "ability": "Pure Power",
+        "gender": "M"
+      },
+      {
+        "label": "Grumpig",
+        "species": "Grumpig",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Beat Up",
+          "Psych Up"
+        ],
+        "ability": "Run Away",
+        "item": "Shell Bell",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Mareep",
+        "species": "Mareep",
+        "level": 54,
+        "nature": "Hardy",
+        "moves": [
+          "Low Kick",
+          "Toxic",
+          "Rollout"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Arbok",
+        "species": "Arbok",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Toxic",
+          "Psych Up"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Totodile",
+        "species": "Totodile",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Ice Ball"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Relicanth",
+        "species": "Relicanth",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Toxic",
+          "Return",
+          "Psych Up"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      9309,
+      10076,
+      58231,
+      51716
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Bone Club",
+      "p2": "move Low Kick"
+    },
+    {
+      "p1": "move Psych Up",
+      "p2": "move Toxic"
+    },
+    {
+      "p1": "move Rolling Kick",
+      "p2": "move Rollout"
+    },
+    {
+      "p1": "move 4",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p2": "switch Arbok"
+    },
+    {
+      "p1": "move Psych Up",
+      "p2": "move Toxic"
+    },
+    {
+      "p1": "switch Milotic"
+    },
+    {
+      "p1": "switch Ponyta",
+      "p2": "switch Totodile"
+    },
+    {
+      "p1": "move Stomp",
+      "p2": "move Ice Ball"
+    },
+    {
+      "p2": "switch Arbok"
+    },
+    {
+      "p1": "move Psych Up",
+      "p2": "move Psych Up"
+    },
+    {
+      "p1": "switch Milotic",
+      "p2": "switch Relicanth"
+    },
+    {
+      "p1": "move Psych Up",
+      "p2": "move Toxic"
+    },
+    {
+      "p1": "move Headbutt",
+      "p2": "move Return"
+    },
+    {
+      "p1": "move Block",
+      "p2": "move Psych Up"
+    },
+    {
+      "p1": "move Psych Up",
+      "p2": "move Return"
+    },
+    {
+      "p1": "switch Grumpig"
+    },
+    {
+      "p1": "move Psych Up",
+      "p2": "move Return"
+    },
+    {
+      "p1": "move Beat Up",
+      "p2": "move Psych Up"
+    }
+  ]
+}

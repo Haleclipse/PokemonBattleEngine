@@ -1,0 +1,104 @@
+{
+ "schema": 1,
+ "id": "gen7-doubles-field-boosts",
+ "notes": [
+  "Flower Shield: +1 Defense to both Grass types on the field; Rototiller: +1 Attack / Special Attack to grounded Venusaur, airborne Tropius immune; Gear Up and Magnetic Flux raise the user's Plus partner; with no Plus / Minus holder left on its side Gear Up fails (the next Stomping Tantrum is doubled)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "User",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Flower Shield",
+     "Rototiller",
+     "Gear Up",
+     "Magnetic Flux"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Plus",
+    "species": "Plusle",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Stomping Tantrum"
+    ],
+    "ability": "Plus"
+   },
+   {
+    "label": "Bench",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Stomping Tantrum"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Venu",
+    "species": "Venusaur",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Trop",
+    "species": "Tropius",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Flower Shield, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Rototiller, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Gear Up, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Magnetic Flux, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Gear Up, switch Bench",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

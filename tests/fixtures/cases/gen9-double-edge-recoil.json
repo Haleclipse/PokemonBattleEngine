@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "id": "gen9-singles-double-edge-recoil",
+  "notes": [
+    "Recoil (ROADMAP §6.5): Double-Edge takes back 33/100 of the damage dealt, rounded half up, never below 1; the",
+    "`-damage … [from] Recoil` commit is compared like any other HP change."
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "a",
+        "species": "Tauros",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Double-Edge"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "b",
+        "species": "Snorlax",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

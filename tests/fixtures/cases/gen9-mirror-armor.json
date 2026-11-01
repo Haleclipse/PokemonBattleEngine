@@ -1,0 +1,132 @@
+{
+ "schema": 1,
+ "id": "gen9-mirror-armor",
+ "notes": [
+  "Mirror Armor sends a drop back to whoever caused it \u2014 a status move's, a secondary's (Rock Smash's 50 %, Snarl's certain one), Sticky Web's (Gen 9: from the entrant's foe in the first slot, the setter benched) \u2014 and never sends back one it received (Mew holds Mirror Armor too); with Clear Amulet the item refuses first and nothing goes back"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mirror",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Growl",
+     "Rock Smash",
+     "Snarl",
+     "Recover"
+    ],
+    "ability": "Mirror Armor"
+   },
+   {
+    "label": "Webber",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Sticky Web",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Armor",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Mirror Armor"
+   },
+   {
+    "label": "Amulet",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Mirror Armor",
+    "item": "Clear Amulet"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Growl",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Rock Smash",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Snarl",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Rock Smash",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Rock Smash",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Growl",
+   "p2": "switch Amulet"
+  },
+  {
+   "p1": "move Rock Smash",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Webber",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Sticky Web",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Armor"
+  },
+  {
+   "p1": "switch Mirror",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Growl",
+   "p2": "switch Amulet"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "switch Armor"
+  },
+  {
+   "p1": "move Growl",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

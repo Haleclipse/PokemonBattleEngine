@@ -1,0 +1,64 @@
+{
+ "schema": 1,
+ "id": "gen7-mega-reorders-the-move",
+ "notes": [
+  "Gen 7: Mega Gengar (base 110 → 130) takes its move action out of the queue and puts it back at the new speed after the Mega step: it outruns the 125-Speed Swellow that went first before (`insertChoice`, and the draw when the new order ties)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Gengar",
+    "species": "Gengar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "ability": "Cursed Body",
+    "item": "Gengarite"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Swellow",
+    "species": "Swellow",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "ability": "Guts"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 2 mega",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

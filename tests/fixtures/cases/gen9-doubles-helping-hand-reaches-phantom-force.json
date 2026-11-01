@@ -1,0 +1,79 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-helping-hand-reaches-phantom-force",
+ "notes": [
+  "Gen 9 doubles: the partner's Helping Hand reaches a Pok\u00e9mon vanished by Phantom Force"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Phantom",
+    "species": "Dragapult",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Phantom Force",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Helper",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Helping Hand",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Corviknight",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Foe2",
+    "species": "Corviknight",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Phantom Force 1, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Phantom Force 1, move Helping Hand -1",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

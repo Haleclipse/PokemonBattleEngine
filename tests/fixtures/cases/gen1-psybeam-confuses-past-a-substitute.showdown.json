@@ -1,0 +1,822 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@pkmn/sim",
+    "version": "0.10.11",
+    "formatid": "gen1customgame",
+    "seed": [
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  "frames": [
+    {
+      "schema": 1,
+      "checkpoint": "initial",
+      "turn": 1,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 136,
+              "max_hp": 136,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "psychic"
+              ],
+              "species": "kadabra",
+              "pp": [
+                16,
+                61
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 91,
+              "max_hp": 91,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "bug",
+                "poison"
+              ],
+              "species": "venomoth",
+              "pp": [
+                32,
+                61
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Kadabra"
+          },
+          "details": "Kadabra, L60",
+          "hp": 136,
+          "max_hp": 136,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Venomoth"
+          },
+          "details": "Venomoth, L30",
+          "hp": 91,
+          "max_hp": 91,
+          "status": null
+        },
+        {
+          "kind": "turn",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_1",
+      "turn": 2,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 102,
+              "max_hp": 136,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "substitute": 35
+              },
+              "types": [
+                "psychic"
+              ],
+              "species": "kadabra",
+              "pp": [
+                15,
+                61
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 91,
+              "max_hp": 91,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "bug",
+                "poison"
+              ],
+              "species": "venomoth",
+              "pp": [
+                32,
+                60
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Kadabra"
+          },
+          "move": "Substitute",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Kadabra"
+          },
+          "from": null
+        },
+        {
+          "kind": "start",
+          "args": [
+            "p1a: Kadabra",
+            "Substitute"
+          ]
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Kadabra"
+          },
+          "hp": 102,
+          "max_hp": 136,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Venomoth"
+          },
+          "move": "Splash",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Venomoth"
+          },
+          "from": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 2
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_2",
+      "turn": 3,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 102,
+              "max_hp": 136,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "substitute": 32
+              },
+              "types": [
+                "psychic"
+              ],
+              "species": "kadabra",
+              "pp": [
+                15,
+                60
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 91,
+              "max_hp": 91,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "bug",
+                "poison"
+              ],
+              "species": "venomoth",
+              "pp": [
+                31,
+                60
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Kadabra"
+          },
+          "move": "Splash",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Kadabra"
+          },
+          "from": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Venomoth"
+          },
+          "move": "Psybeam",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Kadabra"
+          },
+          "from": null
+        },
+        {
+          "kind": "resisted",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Kadabra"
+          },
+          "detail": null
+        },
+        {
+          "kind": "activate",
+          "args": [
+            "p1a: Kadabra",
+            "Substitute",
+            "[damage]"
+          ]
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 3
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_3",
+      "turn": 4,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 102,
+              "max_hp": 136,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "substitute": 29
+              },
+              "types": [
+                "psychic"
+              ],
+              "species": "kadabra",
+              "pp": [
+                15,
+                59
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 91,
+              "max_hp": 91,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "bug",
+                "poison"
+              ],
+              "species": "venomoth",
+              "pp": [
+                30,
+                60
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Kadabra"
+          },
+          "move": "Splash",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Kadabra"
+          },
+          "from": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Venomoth"
+          },
+          "move": "Psybeam",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Kadabra"
+          },
+          "from": null
+        },
+        {
+          "kind": "resisted",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Kadabra"
+          },
+          "detail": null
+        },
+        {
+          "kind": "activate",
+          "args": [
+            "p1a: Kadabra",
+            "Substitute",
+            "[damage]"
+          ]
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 4
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_4",
+      "turn": 5,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 102,
+              "max_hp": 136,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "substitute": 26,
+                "confusion": 2
+              },
+              "types": [
+                "psychic"
+              ],
+              "species": "kadabra",
+              "pp": [
+                15,
+                58
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 91,
+              "max_hp": 91,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "bug",
+                "poison"
+              ],
+              "species": "venomoth",
+              "pp": [
+                29,
+                60
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Kadabra"
+          },
+          "move": "Splash",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Kadabra"
+          },
+          "from": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Venomoth"
+          },
+          "move": "Psybeam",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Kadabra"
+          },
+          "from": null
+        },
+        {
+          "kind": "resisted",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Kadabra"
+          },
+          "detail": null
+        },
+        {
+          "kind": "activate",
+          "args": [
+            "p1a: Kadabra",
+            "Substitute",
+            "[damage]"
+          ]
+        },
+        {
+          "kind": "start",
+          "args": [
+            "p1a: Kadabra",
+            "confusion"
+          ]
+        },
+        {
+          "kind": "hint",
+          "text": "In Gen 1, moves that inflict confusion as a secondary effect can confuse targets with a Substitute, as long as the move does not break the Substitute."
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 5
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_5",
+      "turn": 6,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 102,
+              "max_hp": 136,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "substitute": 23,
+                "confusion": 1
+              },
+              "types": [
+                "psychic"
+              ],
+              "species": "kadabra",
+              "pp": [
+                15,
+                57
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 91,
+              "max_hp": 91,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "bug",
+                "poison"
+              ],
+              "species": "venomoth",
+              "pp": [
+                28,
+                60
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "activate",
+          "args": [
+            "p1a: Kadabra",
+            "confusion"
+          ]
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Kadabra"
+          },
+          "move": "Splash",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Kadabra"
+          },
+          "from": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Venomoth"
+          },
+          "move": "Psybeam",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Kadabra"
+          },
+          "from": null
+        },
+        {
+          "kind": "resisted",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Kadabra"
+          },
+          "detail": null
+        },
+        {
+          "kind": "activate",
+          "args": [
+            "p1a: Kadabra",
+            "Substitute",
+            "[damage]"
+          ]
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 6
+        }
+      ]
+    }
+  ],
+  "debug_log": "|gametype|singles\n|player|p1|P1||\n|player|p2|P2||\n|gen|1\n|tier|[Gen 1] Custom Game\n|rule|HP Percentage Mod: HP is shown in percentages\n|rule|Desync Clause Mod: Desyncs changed to move failure.\n|\n|teamsize|p1|1\n|teamsize|p2|1\n|start\n|switch|p1a: Kadabra|Kadabra, L60|136/136\n|switch|p2a: Venomoth|Venomoth, L30|91/91\n|turn|1\n|\n|move|p1a: Kadabra|Substitute|p1a: Kadabra\n|-start|p1a: Kadabra|Substitute\n|-damage|p1a: Kadabra|102/136\n|move|p2a: Venomoth|Splash|p2a: Venomoth\n|-nothing\n|\n|upkeep\n|turn|2\n|\n|move|p1a: Kadabra|Splash|p1a: Kadabra\n|-nothing\n|move|p2a: Venomoth|Psybeam|p1a: Kadabra\n|-resisted|p1a: Kadabra\n|-activate|p1a: Kadabra|Substitute|[damage]\n|\n|upkeep\n|turn|3\n|\n|move|p1a: Kadabra|Splash|p1a: Kadabra\n|-nothing\n|move|p2a: Venomoth|Psybeam|p1a: Kadabra\n|-resisted|p1a: Kadabra\n|-activate|p1a: Kadabra|Substitute|[damage]\n|\n|upkeep\n|turn|4\n|\n|move|p1a: Kadabra|Splash|p1a: Kadabra\n|-nothing\n|move|p2a: Venomoth|Psybeam|p1a: Kadabra\n|-resisted|p1a: Kadabra\n|-activate|p1a: Kadabra|Substitute|[damage]\n|-start|p1a: Kadabra|confusion\n|-hint|In Gen 1, moves that inflict confusion as a secondary effect can confuse targets with a Substitute, as long as the move does not break the Substitute.\n|\n|upkeep\n|turn|5\n|\n|-activate|p1a: Kadabra|confusion\n|move|p1a: Kadabra|Splash|p1a: Kadabra\n|-nothing\n|move|p2a: Venomoth|Psybeam|p1a: Kadabra\n|-resisted|p1a: Kadabra\n|-activate|p1a: Kadabra|Substitute|[damage]\n|\n|upkeep\n|turn|6"
+}

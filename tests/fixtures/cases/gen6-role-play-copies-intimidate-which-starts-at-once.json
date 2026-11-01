@@ -1,0 +1,56 @@
+{
+ "schema": 1,
+ "id": "gen6-role-play-copies-intimidate-which-starts-at-once",
+ "notes": [
+  "Role Play copies Gyarados's Intimidate, which starts at once (Gen 5+ `setAbility`'s `Start`): Gyarados's Attack drops"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Role Play",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gyarados",
+    "species": "Gyarados",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Intimidate"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Role Play",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

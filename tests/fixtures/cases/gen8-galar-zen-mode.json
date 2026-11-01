@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "gen8-galar-zen-mode",
+ "notes": [
+  "Gen 8: Galar Darmanitan's Zen Mode is its Galar Zen forme (Ice/Fire), not the Unovan one"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Darmanitan",
+    "species": "Darmanitan-Galar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Flare Blitz",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Zen Mode"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Flare Blitz",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Flare Blitz",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Flare Blitz",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

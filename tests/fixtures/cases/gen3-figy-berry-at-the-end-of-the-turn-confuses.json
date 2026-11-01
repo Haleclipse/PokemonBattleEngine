@@ -1,0 +1,67 @@
+{
+ "schema": 1,
+ "id": "gen3-figy-berry-at-the-end-of-the-turn-confuses",
+ "notes": [
+  "Gen 3: the Modest Snorlax, below half after Seismic Toss, eats its Figy Berry at the end of the turn: it restores an eighth and confuses it (a duration drawn at the berry's place in the residual)"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Modest",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Figy Berry"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gengar",
+    "species": "Gengar",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Harden"
+    ],
+    "ability": "Levitate"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

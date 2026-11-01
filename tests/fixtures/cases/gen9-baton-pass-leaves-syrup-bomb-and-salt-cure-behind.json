@@ -1,0 +1,81 @@
+{
+ "schema": 1,
+ "id": "gen9-baton-pass-leaves-syrup-bomb-and-salt-cure-behind",
+ "notes": [
+  "Syrup Bomb and Salt Cure are `noCopy`: Baton Pass leaves both behind, so the receiver neither slows down nor loses HP in the residual (so are Yawn and Nightmare; tests/baton_pass_tables.rs checks every table)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Baton Pass",
+     "Harden"
+    ],
+    "ability": "Volt Absorb"
+   },
+   {
+    "label": "Vaporeon",
+    "species": "Vaporeon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Water Absorb"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Dipplin",
+    "species": "Dipplin",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Syrup Bomb",
+     "Salt Cure",
+     "Harden"
+    ],
+    "ability": "Supersweet Syrup"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Syrup Bomb"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Salt Cure"
+  },
+  {
+   "p1": "move Baton Pass",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Vaporeon"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

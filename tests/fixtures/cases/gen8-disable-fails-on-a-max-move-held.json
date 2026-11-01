@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen8-disable-fails-on-a-max-move-held",
+ "notes": [
+  "Gen 8: Jolteon knows Max Strike outright (a custom game) and uses it; Slowbro's Disable then fails — Disable's onTryHit refuses a Max Move, a Z-Move or Struggle as the last move whether the target holds it or not. After Jolteon's Tackle the next Disable seals it (DESIGN.md R-M8-123)"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Slowbro",
+    "species": "Slowbro",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Disable",
+     "Splash"
+    ],
+    "ability": "Own Tempo",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Max Strike",
+     "Tackle"
+    ],
+    "ability": "Volt Absorb",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Disable",
+   "p2": "move Max Strike"
+  },
+  {
+   "p1": "move Disable",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Max Strike"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

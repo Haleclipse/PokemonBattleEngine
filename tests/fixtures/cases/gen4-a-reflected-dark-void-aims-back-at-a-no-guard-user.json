@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen4-a-reflected-dark-void-aims-back-at-a-no-guard-user",
+ "notes": [
+  "Gen 4 singles: Darkrai (No Guard) uses Dark Void, a spread move, into Medicham's Magic Coat. The reflection aims back at Darkrai, whose No Guard makes it a sure hit, and puts Darkrai to sleep. The replay reads the reflection's fate on Darkrai, not on the reflector, so it plans no accuracy roll (DESIGN.md R-M8-152)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Darkrai",
+    "species": "Darkrai",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Dark Void",
+     "Splash"
+    ],
+    "ability": "No Guard"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Medicham",
+    "species": "Medicham",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Magic Coat",
+     "Splash"
+    ],
+    "ability": "Pure Power",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Dark Void",
+   "p2": "move Magic Coat"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

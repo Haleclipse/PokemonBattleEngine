@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "id": "gen2-polkadot-bow",
+  "notes": [
+    "Gen 2's Polkadot Bow boosts Normal moves (its onModifyDamage)"
+  ],
+  "battle": {
+    "generation": 2,
+    "mode": "singles",
+    "format": "gen2customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Snorlax",
+        "species": "Snorlax",
+        "level": 60,
+        "nature": "Hardy",
+        "moves": [
+          "Body Slam",
+          "Tackle"
+        ],
+        "item": "Polkadot Bow"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Blissey",
+        "species": "Blissey",
+        "level": 60,
+        "nature": "Hardy",
+        "moves": [
+          "Growl",
+          "Agility"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 2",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 2"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      3,
+      4,
+      5,
+      6
+    ]
+  }
+}

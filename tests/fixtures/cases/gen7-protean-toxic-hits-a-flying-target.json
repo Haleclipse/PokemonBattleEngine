@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "gen7-protean-toxic-hits-a-flying-target",
+ "notes": [
+  "Gen 7: Snorlax flies up; Greninja's Protean Toxic hits it in the air — a Poison-type user's Toxic ignores semi-invulnerability (Bulbapedia; the I194 patch lets it past where Showdown missed without a draw) (issues.md I194, DESIGN.md R-M8-134)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Greninja",
+    "species": "Greninja",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Toxic",
+     "Splash"
+    ],
+    "ability": "Protean",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fly",
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash",
+   "p2": "move Fly"
+  },
+  {
+   "p1": "move Toxic",
+   "p2": "move Fly"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

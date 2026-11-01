@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "id": "m8-gen9-an-echoed-voice-desolate-land-stops-still-starts-the-echo",
+  "notes": [
+    "Gen 9 singles, minimized from Nightly 155's m8-gen9-singles-s1505-002. Under Shroodle's Desolate Land, Terrakion's Liquid Voice makes its Echoed Voice Water, and the strong weather stops it (`-fail|…|Echoed Voice|[from] Desolate Land`). Echoed Voice's own `onTryMove` (`singleEvent('TryMove', move)`) runs before the `TryMove` event's handlers, the weather's included, so the field's echoedvoice condition starts all the same (DESIGN.md R-M8-181)."
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Larvitar",
+        "species": "Larvitar",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Payback",
+          "Last Respects"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Terrakion",
+        "species": "Terrakion",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Echoed Voice"
+        ],
+        "ability": "Liquid Voice"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Shroodle",
+        "species": "Shroodle",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Iron Tail",
+          "Focus Blast"
+        ],
+        "ability": "Desolate Land",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      24626,
+      31860,
+      45572,
+      50551
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Payback",
+      "p2": "move Iron Tail"
+    },
+    {
+      "p1": "move Last Respects",
+      "p2": "move Focus Blast"
+    },
+    {
+      "p1": "switch Terrakion"
+    },
+    {
+      "p1": "move Echoed Voice",
+      "p2": "move Focus Blast"
+    }
+  ]
+}

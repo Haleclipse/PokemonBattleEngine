@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen4-klutz-bug-bite-holding-a-macho-brace",
+ "notes": [
+  "Gen 4 (cartridge, issues.md I59): Scizor with Klutz, holding a Macho Brace, Bug Bites Snorlax's Sitrus Berry and heals nothing — the cartridge asks the ability alone; Showdown's ignoringItem() spares a holder of an ignoreKlutz item"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Scizor",
+    "species": "Scizor",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Bug Bite",
+     "Harden"
+    ],
+    "ability": "Klutz",
+    "item": "Macho Brace"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Sitrus Berry"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Bug Bite",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

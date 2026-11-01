@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "gen7-hyperspace-hole-and-fury",
+ "notes": [
+  "Hyperspace Hole breaks Protect; Hyperspace Fury does too for Hoopa-Unbound (Defense -1) and fails for anyone else"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hoopa",
+    "species": "Hoopa-Unbound",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Hyperspace Hole",
+     "Hyperspace Fury"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Hyperspace Fury"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Protect",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Hyperspace Hole",
+   "p2": "move Protect"
+  },
+  {
+   "p1": "move Hyperspace Fury",
+   "p2": "move Protect"
+  },
+  {
+   "p1": "switch Mew",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Hyperspace Fury",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

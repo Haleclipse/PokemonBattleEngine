@@ -1,0 +1,69 @@
+{
+ "schema": 1,
+ "id": "gen8-gulp-missile-and-dive",
+ "notes": [
+  "Gen 8: Dive's charging turn is the dive: Cramorant comes up Gulping as it charges (its `onTryMove`), and the release hits with the catch still in its mouth"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Cramorant",
+    "species": "Cramorant",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Dive",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Gulp Missile"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Bite"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Dive",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Dive",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Bite"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

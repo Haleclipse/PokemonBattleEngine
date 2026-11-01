@@ -1,0 +1,150 @@
+{
+ "schema": 1,
+ "id": "gen9-status-berries",
+ "notes": [
+  "Gen 9: each status berry is eaten at the Update after the move that gave its status (Cheri Berry: paralysis, Chesto Berry: sleep, Pecha Berry: poison, Rawst Berry: burn, Persim Berry: confusion, Lum Berry: confusion), and cures it"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Smeargle",
+    "species": "Smeargle",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Thunder Wave",
+     "Spore",
+     "Toxic",
+     "Will-O-Wisp"
+    ],
+    "ability": "Technician"
+   },
+   {
+    "label": "Gengar",
+    "species": "Gengar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Confuse Ray"
+    ],
+    "ability": "Cursed Body"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Cheri Berry"
+   },
+   {
+    "label": "Dragonite",
+    "species": "Dragonite",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Inner Focus",
+    "item": "Chesto Berry"
+   },
+   {
+    "label": "Lapras",
+    "species": "Lapras",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Shell Armor",
+    "item": "Pecha Berry"
+   },
+   {
+    "label": "Garchomp",
+    "species": "Garchomp",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Rough Skin",
+    "item": "Rawst Berry"
+   },
+   {
+    "label": "Corviknight",
+    "species": "Corviknight",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Pressure",
+    "item": "Persim Berry"
+   },
+   {
+    "label": "Clodsire",
+    "species": "Clodsire",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Unaware",
+    "item": "Lum Berry"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Thunder Wave",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Spore",
+   "p2": "switch Dragonite"
+  },
+  {
+   "p1": "move Toxic",
+   "p2": "switch Lapras"
+  },
+  {
+   "p1": "move Will-O-Wisp",
+   "p2": "switch Garchomp"
+  },
+  {
+   "p1": "switch Gengar",
+   "p2": "switch Corviknight"
+  },
+  {
+   "p1": "move Confuse Ray",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Confuse Ray",
+   "p2": "switch Clodsire"
+  },
+  {
+   "p1": "move Confuse Ray",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,102 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-primordial-sea",
+ "notes": [
+  "Doubles: two Primordial Sea holders \u2014 the faster sets the heavy rain; it switching out leaves the rain with the other; the second leaving ends it"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Kyogre",
+    "species": "Kyogre",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Primordial Sea"
+   },
+   {
+    "label": "Kyogre2",
+    "species": "Kyogre",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Primordial Sea"
+   },
+   {
+    "label": "Bench",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Bench2",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Ember"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Foe2",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, switch Bench",
+   "p2": "move Ember 2, move Harden"
+  },
+  {
+   "p1": "switch Bench2, move Harden",
+   "p2": "move Ember 2, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Ember 2, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

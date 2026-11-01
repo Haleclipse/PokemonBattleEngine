@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "id": "gen9-singles-icicle-spear-multihit",
+  "notes": [
+    "Multi-hit (ROADMAP §6.4): Icicle Spear's 2-5 hits, each with its own critical and damage roll. The replay driver fixes the",
+    "count from `-hitcount`, attaches each `-crit` to its hit, and recovers the rolls hit by hit from the HP sequence."
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "a",
+        "species": "Cloyster",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Icicle Spear"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "b",
+        "species": "Snorlax",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      9,
+      2,
+      3,
+      4
+    ]
+  }
+}

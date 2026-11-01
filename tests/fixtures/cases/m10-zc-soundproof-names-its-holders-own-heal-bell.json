@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "id": "m10-zc-soundproof-names-its-holders-own-heal-bell",
+  "notes": [
+    "Gen 8 Singles: Wynaut's Heal Bell; Soundproof's onAllyTryHitSide runs for its own holder too (alliesAndSelf), -immune|Wynaut|[from] ability: Soundproof (R-M10-53)",
+    "promoted from m8-gen8-singles-s1660-012-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 8,
+    "mode": "singles",
+    "format": "gen8customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Swoobat",
+        "species": "Swoobat",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Solar Blade",
+          "Grav Apple"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Chansey",
+        "species": "Chansey",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Max Quake",
+          "Heal Bell",
+          "Max Overgrowth"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Wynaut",
+        "species": "Wynaut",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Heal Bell"
+        ],
+        "ability": "Soundproof",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      10812,
+      17217,
+      33233,
+      45925
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Grav Apple",
+      "p2": "move Max Overgrowth"
+    },
+    {
+      "p1": "move Solar Blade",
+      "p2": "move Max Quake"
+    },
+    {
+      "p1": "move Solar Blade",
+      "p2": "move Heal Bell"
+    },
+    {
+      "p2": "switch Wynaut"
+    },
+    {
+      "p1": "move Solar Blade",
+      "p2": "move Heal Bell"
+    }
+  ]
+}

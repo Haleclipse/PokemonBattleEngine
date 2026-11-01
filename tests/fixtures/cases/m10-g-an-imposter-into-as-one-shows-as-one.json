@@ -1,0 +1,147 @@
+{
+  "schema": 1,
+  "id": "m10-g-an-imposter-into-as-one-shows-as-one",
+  "notes": [
+    "Imposter's transform into an As One holder shows As One, then Unnerve, its part: the ability is As One (DESIGN.md R-M10-27)",
+    "promoted from m8-gen8-singles-s1635-001-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 8,
+    "mode": "singles",
+    "format": "gen8customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Weezing",
+        "species": "Weezing",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Ice Punch",
+          "Powder Snow"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Lileep",
+        "species": "Lileep",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Ice Beam"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Gallade",
+        "species": "Gallade",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Freezing Glare"
+        ],
+        "ability": "Imposter"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Butterfree",
+        "species": "Butterfree",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Volt Tackle",
+          "Submission"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Igglybuff",
+        "species": "Igglybuff",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sludge Wave",
+          "Cross Poison"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Wimpod",
+        "species": "Wimpod",
+        "level": 51,
+        "nature": "Hardy",
+        "moves": [
+          "Sludge"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Mr. Mime",
+        "species": "Mr. Mime",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Poison Sting"
+        ],
+        "ability": "As One (Glastrier)",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      44356,
+      39450,
+      37294,
+      25004
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Ice Punch",
+      "p2": "move Volt Tackle"
+    },
+    {
+      "p1": "move Powder Snow",
+      "p2": "move Submission"
+    },
+    {
+      "p2": "switch Igglybuff"
+    },
+    {
+      "p1": "move Ice Punch",
+      "p2": "move Sludge Wave"
+    },
+    {
+      "p1": "move Powder Snow",
+      "p2": "move Cross Poison"
+    },
+    {
+      "p1": "switch Lileep",
+      "p2": "switch Wimpod"
+    },
+    {
+      "p1": "switch Weezing",
+      "p2": "switch Igglybuff"
+    },
+    {
+      "p1": "move Powder Snow",
+      "p2": "move Cross Poison"
+    },
+    {
+      "p2": "switch Wimpod"
+    },
+    {
+      "p1": "switch Gallade",
+      "p2": "switch Mr. Mime"
+    }
+  ]
+}

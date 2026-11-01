@@ -1,0 +1,96 @@
+{
+ "schema": 1,
+ "id": "gen9-rollout",
+ "notes": [
+  "Gen 9 Rollout after Defense Curl: 60, 120, 240, 480, 960 on five turns in a row, the user locked in (no PP), then free; a Protect breaks a new chain and the next use starts over"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Roller",
+    "species": "Mew",
+    "level": 35,
+    "nature": "Hardy",
+    "moves": [
+     "Rollout",
+     "Defense Curl",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Wall",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tail Whip",
+     "Protect"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Defense Curl",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Rollout",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Rollout",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Rollout",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Rollout",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Rollout",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Rollout",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Rollout",
+   "p2": "move Protect"
+  },
+  {
+   "p1": "move Rollout",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Rollout",
+   "p2": "move Tail Whip"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

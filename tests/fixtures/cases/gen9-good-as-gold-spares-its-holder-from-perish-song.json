@@ -1,0 +1,78 @@
+{
+ "schema": 1,
+ "id": "gen9-good-as-gold-spares-its-holder-from-perish-song",
+ "notes": [
+  "Perish Song's `onHitField` runs TryHit on every Pok\u00e9mon: Good as Gold refuses another Pok\u00e9mon's status move (`-immune`), so its holder starts no count; the others do"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Lapras",
+    "species": "Lapras",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Perish Song",
+     "Harden"
+    ],
+    "ability": "Water Absorb"
+   },
+   {
+    "label": "Gholdengo",
+    "species": "Gholdengo",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Good as Gold"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Immunity"
+   },
+   {
+    "label": "Munchlax",
+    "species": "Munchlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Perish Song, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

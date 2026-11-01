@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen6-technician-sees-dark-aura-first",
+ "notes": [
+  "Gen 6: Scizor (Technician) Bites Snorlax, whose Dark Aura lifts Bite's 60 to 80 first: through Gen 7 Technician's priority (19) is below the aura's (20), so it sees 80 and stays out (DESIGN.md R-M8-150)"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Scizor",
+    "species": "Scizor",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Bite",
+     "Splash"
+    ],
+    "ability": "Technician",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Dark Aura",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Bite",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

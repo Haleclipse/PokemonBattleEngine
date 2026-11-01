@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "id": "gen4-ingrain-grounds-flying",
+  "notes": [
+    "From Gen 4 Ingrain grounds a Flying type: Earthquake hits it, the Flying type neutral"
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "singles",
+    "format": "gen4customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Skarmory",
+        "species": "Skarmory",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Ingrain",
+          "Growl"
+        ],
+        "ability": "Keen Eye"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Marowak",
+        "species": "Marowak",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Growl",
+          "Earthquake"
+        ],
+        "ability": "Rock Head"
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 2"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

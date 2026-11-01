@@ -1,0 +1,163 @@
+{
+  "schema": 1,
+  "id": "m8-gen3-a-rampage-drawn-as-the-battle-ends-in-the-residual",
+  "notes": [
+    "Gen 3 doubles: Numel's Outrage draws its lock; Leech Seed knocks the last Ho-Oh out in the residual before the lock's count-down, so the final frame shows the drawn count unticked — the replay reads it so (DESIGN.md R-M8-121)",
+    "promoted from m8-gen3-doubles-s601-003-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 3,
+    "mode": "doubles",
+    "format": "gen3doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Feebas",
+        "species": "Feebas",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Recover",
+          "Leech Seed",
+          "Slack Off"
+        ],
+        "ability": "Effect Spore",
+        "gender": "M"
+      },
+      {
+        "label": "Azurill",
+        "species": "Azurill",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Silver Wind"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Goldeen",
+        "species": "Goldeen",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Leech Seed",
+          "Steel Wing",
+          "Mean Look"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Ho-Oh",
+        "species": "Ho-Oh",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Psycho Boost",
+          "Leech Seed",
+          "Metal Claw",
+          "Mean Look"
+        ],
+        "ability": "Run Away"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Wartortle",
+        "species": "Wartortle",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Overheat",
+          "Leech Seed",
+          "Meteor Mash",
+          "Mean Look"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Armaldo",
+        "species": "Armaldo",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Thrash",
+          "Petal Dance"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Numel",
+        "species": "Numel",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Outrage",
+          "Mean Look"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      59188,
+      12612,
+      17782,
+      15192
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Recover, move Silver Wind 1",
+      "p2": "move Overheat 1, move Thrash"
+    },
+    {
+      "p1": "pass, switch Goldeen"
+    },
+    {
+      "p1": "move 2 2, move 1 1",
+      "p2": "move 2 2, move 1"
+    },
+    {
+      "p1": "move Slack Off, move Steel Wing 2",
+      "p2": "move Meteor Mash 1, move Petal Dance"
+    },
+    {
+      "p1": "switch Ho-Oh, pass"
+    },
+    {
+      "p1": "move 4 1, move 3 2",
+      "p2": "move 4 2, move 1"
+    },
+    {
+      "p1": "move Psycho Boost 1, pass",
+      "p2": "move Overheat 1, move Thrash"
+    },
+    {
+      "p1": "move 2 2, pass",
+      "p2": "move 2 1, move 1"
+    },
+    {
+      "p1": "move Metal Claw 1, pass",
+      "p2": "move Meteor Mash 1, move Petal Dance"
+    },
+    {
+      "p2": "pass, switch Numel"
+    },
+    {
+      "p1": "move Mean Look 2, pass",
+      "p2": "move Mean Look 1, move Mean Look 1"
+    },
+    {
+      "p1": "move Psycho Boost 1, pass",
+      "p2": "move Overheat 1, move Outrage"
+    }
+  ]
+}

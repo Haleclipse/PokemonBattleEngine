@@ -1,0 +1,104 @@
+{
+ "schema": 1,
+ "id": "gen9-custap-berry-and-unnerve",
+ "notes": [
+  "Gen 9 Custap Berry (Showdown `onFractionalPriority`: eaten as the turn's actions are ordered): tossed to a quarter, the slower Snorlax eats it as turn 3 begins and Seismic Tosses first",
+  "Then the other Snorlax, at a quarter too, faces the Unnerve Slowbro: it cannot eat its berry and moves last"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Harden"
+    ],
+    "item": "Custap Berry",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Snorlax2",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Harden"
+    ],
+    "item": "Custap Berry",
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Harden"
+    ],
+    "ability": "Volt Absorb"
+   },
+   {
+    "label": "Slowbro",
+    "species": "Slowbro",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Harden"
+    ],
+    "ability": "Unnerve"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Seismic Toss",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Seismic Toss",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

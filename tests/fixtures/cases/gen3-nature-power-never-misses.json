@@ -1,0 +1,95 @@
+{
+ "schema": 1,
+ "id": "gen3-nature-power-never-misses",
+ "notes": [
+  "Gen 3: Dunsparce's accuracy is down six stages when it uses Nature Power: the move never misses — pokeemerald's `BattleScript_EffectNaturePower` has no `accuracycheck` (Showdown's gen3 mod rolls its 95, patched: issues.md I166) — and the Swift it turns into never misses either"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Dunsparce",
+    "species": "Dunsparce",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Nature Power",
+     "Harden"
+    ],
+    "ability": "Serene Grace"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sand Attack",
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Sand Attack"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Sand Attack"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Sand Attack"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Sand Attack"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Sand Attack"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Sand Attack"
+  },
+  {
+   "p1": "move Nature Power",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Nature Power",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Nature Power",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Nature Power",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Nature Power",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

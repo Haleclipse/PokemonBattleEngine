@@ -1,0 +1,117 @@
+{
+ "schema": 1,
+ "id": "gen9-justified-rattled-stamina",
+ "notes": [
+  "Gen 9: Justified (+1 Attack from a Dark hit), Rattled (+1 Speed from a Bug hit, and \u2014 Gen 8+ \u2014 from Intimidate lowering its Attack), Stamina (+1 Defense from any damaging hit)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Crunch",
+     "Bug Buzz",
+     "Scald",
+     "Growl"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Dog",
+    "species": "Arcanine",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Intimidate"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Just",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Justified"
+   },
+   {
+    "label": "Ratt",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Rattled"
+   },
+   {
+    "label": "Stam",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Stamina"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Scald",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Crunch",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Bug Buzz",
+   "p2": "switch Ratt"
+  },
+  {
+   "p1": "move Growl",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Dog",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Mew",
+   "p2": "switch Stam"
+  },
+  {
+   "p1": "move Scald",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Crunch",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

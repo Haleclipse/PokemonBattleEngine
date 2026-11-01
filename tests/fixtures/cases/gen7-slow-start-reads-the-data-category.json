@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen7-slow-start-reads-the-data-category",
+ "notes": [
+  "Gen 7: Regigigas under Slow Start uses Photon Geyser, physical as its Attack beats its Special Attack: the gen7 mod's Slow Start reads the move's data (special) and leaves the Attack whole; Hyper Voice through Normalium Z is Breakneck Blitz, physical in its data: the Special Attack is halved (DESIGN.md R-M8-90)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Regigigas",
+    "species": "Regigigas",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Photon Geyser",
+     "Hyper Voice"
+    ],
+    "item": "Normalium Z",
+    "ability": "Slow Start"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Photon Geyser",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Hyper Voice zmove",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

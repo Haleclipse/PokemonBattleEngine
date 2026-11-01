@@ -1,0 +1,108 @@
+{
+ "schema": 1,
+ "id": "gen9-brick-break-psychic-fangs-raging-bull",
+ "notes": [
+  "Brick Break, Psychic Fangs and Raging Bull (Fire from Tauros-Paldea-Blaze) break Reflect / Light Screen / Aurora Veil on the target's side as they hit \u2014 through a Substitute too \u2014 but not when Protect stops them or Gengar is immune to Brick Break"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Tauros",
+    "species": "Tauros-Paldea-Blaze",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Brick Break",
+     "Psychic Fangs",
+     "Raging Bull",
+     "Strength"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Reflect",
+     "Light Screen",
+     "Substitute",
+     "Protect"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Gengar",
+    "species": "Gengar",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Reflect",
+     "Light Screen",
+     "Recover",
+     "Snowscape"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Brick Break",
+   "p2": "move Reflect"
+  },
+  {
+   "p1": "move Psychic Fangs",
+   "p2": "move Light Screen"
+  },
+  {
+   "p1": "move Strength",
+   "p2": "move Reflect"
+  },
+  {
+   "p1": "move Raging Bull",
+   "p2": "move Substitute"
+  },
+  {
+   "p1": "move Strength",
+   "p2": "move Reflect"
+  },
+  {
+   "p1": "move Brick Break",
+   "p2": "move Protect"
+  },
+  {
+   "p1": "move Strength",
+   "p2": "switch Gengar"
+  },
+  {
+   "p1": "move Brick Break",
+   "p2": "move Light Screen"
+  },
+  {
+   "p1": "move Raging Bull",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Strength",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

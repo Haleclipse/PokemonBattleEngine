@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "gen3-macho-brace",
+ "notes": [
+  "Macho Brace halves its holder's Speed (a level-100 Mew moves after a level-70 one) (Gen 3)"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Brace",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Recover"
+    ],
+    "ability": "Run Away",
+    "item": "Macho Brace"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Pacer",
+    "species": "Mew",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Tackle",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Slack Off"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,105 @@
+{
+ "schema": 1,
+ "id": "gen9-sticky-barb",
+ "notes": [
+  "Gen 9 Sticky Barb (Showdown `onHit`, `onResidual` 28.3): Golurk's Tackle touches Snorlax and takes its barb, as it held nothing; Klutz keeps the barb's damage off it",
+  "Muk's barb hurts it by an eighth at the end of the turn",
+  "Swablu's Knock Off touches Muk: the barb goes to Swablu first (Sticky Hold lets a Sticky Barb go: `pokemon.item === 'stickybarb'`), and Knock Off finds nothing left to knock off",
+  "Golurk, holding the barb it took, Tackles Swablu: a user holding something takes nothing; Muk's Swift does not touch Swablu: no barb for a move without contact"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Golurk",
+    "species": "Golurk",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Klutz"
+   },
+   {
+    "label": "Muk",
+    "species": "Muk",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Swift"
+    ],
+    "item": "Sticky Barb",
+    "ability": "Sticky Hold"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Sticky Barb",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Swablu",
+    "species": "Swablu",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Knock Off",
+     "Harden"
+    ],
+    "ability": "Natural Cure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Muk",
+   "p2": "switch Swablu"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Knock Off"
+  },
+  {
+   "p1": "switch Golurk",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Muk",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Swift",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

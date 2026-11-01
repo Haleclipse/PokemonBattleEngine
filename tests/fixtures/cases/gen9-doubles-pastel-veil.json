@@ -1,0 +1,102 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-pastel-veil",
+ "notes": [
+  "Gen 9 doubles: Toxic poisons Snorlax and Blissey; Clefable comes in with Pastel Veil and cures its partner Snorlax (`onStart`); the poisoned Blissey comes back next to it and is cured (`onAnySwitchIn`); Toxic on its partner is then blocked (`onAllySetStatus`, `-block`)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Serene Grace"
+   },
+   {
+    "label": "Clefable",
+    "species": "Clefable",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Pastel Veil"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gengar",
+    "species": "Gengar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Toxic",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Cursed Body"
+   },
+   {
+    "label": "Muk",
+    "species": "Muk",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Toxic",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Stench"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Toxic 1, move Toxic 2"
+  },
+  {
+   "p1": "move Harden, switch 3",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "switch 3, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Toxic 1, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

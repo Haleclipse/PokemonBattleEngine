@@ -1,0 +1,79 @@
+{
+ "schema": 1,
+ "id": "gen9-metal-burst",
+ "notes": [
+  "Metal Burst returns one and a half times the last hit the user took this turn from a foe (at least 1); moving first, it has nothing to answer and fails"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Metagross",
+    "species": "Metagross",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Metal Burst",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Jolteon",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Swift",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Slow",
+    "species": "Snorlax",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Metal Burst",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Metal Burst",
+   "p2": "move Swift"
+  },
+  {
+   "p1": "move Metal Burst",
+   "p2": "switch Slow"
+  },
+  {
+   "p1": "move Metal Burst",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

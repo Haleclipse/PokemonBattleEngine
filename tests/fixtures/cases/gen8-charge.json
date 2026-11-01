@@ -1,0 +1,79 @@
+{
+ "schema": 1,
+ "id": "gen8-charge",
+ "notes": [
+  "Gen 8 Charge: +1 Special Defense; it ends after any move but Charge (the Tackle); the next Thunderbolt's power is doubled; used again while charged it starts over"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Volt",
+    "species": "Jolteon",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Charge",
+     "Thunderbolt",
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Charge",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Thunderbolt",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Charge",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Charge",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Thunderbolt",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Thunderbolt",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

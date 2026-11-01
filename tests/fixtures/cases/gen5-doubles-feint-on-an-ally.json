@@ -1,0 +1,81 @@
+{
+ "schema": 1,
+ "id": "gen5-doubles-feint-on-an-ally",
+ "notes": [
+  "Feint on the partner: its side's Wide Guard stays up (Gen 5), so the foe's Rock Slide is stopped"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "doubles",
+  "format": "gen5doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Feint",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Wide Guard",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Golem",
+    "species": "Golem",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Rock Slide",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Feint -2, move Wide Guard",
+   "p2": "move Rock Slide, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

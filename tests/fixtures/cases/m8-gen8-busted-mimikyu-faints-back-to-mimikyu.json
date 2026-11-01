@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "id": "m8-gen8-busted-mimikyu-faints-back-to-mimikyu",
+  "notes": [
+    "Gen 8: Mimikyu's Disguise breaks (Mimikyu-Busted for good) and a Sticky Barb knocks it out: the gen8 mod's Disguise marks the change formeRegression, so the fainted Pokémon is the set's Mimikyu again (Gen 9's base Disguise does not, DESIGN.md R-M8-116)",
+    "promoted from m8-gen8-singles-s581-005-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 8,
+    "mode": "singles",
+    "format": "gen8customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Psyduck",
+        "species": "Psyduck",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Mind Blown"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Pelipper",
+        "species": "Pelipper",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Surf",
+          "Petal Blizzard",
+          "Aurora Veil"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Braviary",
+        "species": "Braviary",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Flame Charge"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Mimikyu",
+        "species": "Mimikyu",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Charge Beam",
+          "Fiery Dance",
+          "Aurora Veil"
+        ],
+        "ability": "Disguise",
+        "item": "Sticky Barb",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      41462,
+      44599,
+      18810,
+      50650
+    ]
+  },
+  "script": [
+    {
+      "p1": "switch Pelipper",
+      "p2": "switch Mimikyu"
+    },
+    {
+      "p1": "move Petal Blizzard",
+      "p2": "move Fiery Dance"
+    },
+    {
+      "p1": "move Aurora Veil",
+      "p2": "move Aurora Veil"
+    },
+    {
+      "p1": "move Surf",
+      "p2": "move Charge Beam"
+    }
+  ]
+}

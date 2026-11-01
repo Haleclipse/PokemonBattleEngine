@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "gen9-poison-heal",
+ "notes": [
+  "Poison Heal: badly poisoned, the holder loses nothing \u2014 at full HP nothing happens, hurt it heals 1/8; under Psychic Noise's Heal Block it neither heals nor loses HP"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Heal",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Poison Heal"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Toxic",
+     "Tackle",
+     "Psychic Noise",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Toxic"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Psychic Noise"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

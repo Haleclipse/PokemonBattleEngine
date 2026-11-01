@@ -1,0 +1,74 @@
+{
+  "schema": 1,
+  "id": "gen9-same-terrain-fails",
+  "notes": [
+    "A terrain move under the same terrain fails and leaves its turns alone (setTerrain)"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Pikachu",
+        "species": "Pikachu",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Electric Terrain",
+          "Growl"
+        ],
+        "ability": "Static"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Blissey",
+        "species": "Blissey",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Growl"
+        ],
+        "ability": "Natural Cure"
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

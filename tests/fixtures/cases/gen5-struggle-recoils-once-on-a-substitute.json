@@ -1,0 +1,63 @@
+{
+ "schema": 1,
+ "id": "gen5-struggle-recoils-once-on-a-substitute",
+ "notes": [
+  "Struggle into a Substitute recoils its quarter once, after the hit (not the Substitute's damage-based recoil as well)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Scyther",
+    "species": "Scyther",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Swords Dance"
+    ],
+    "ability": "Swarm"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Sableye",
+    "species": "Sableye",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Taunt",
+     "Substitute",
+     "Harden"
+    ],
+    "ability": "Prankster"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Swords Dance",
+   "p2": "move Taunt"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Substitute"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

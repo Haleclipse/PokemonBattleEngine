@@ -1,0 +1,139 @@
+{
+  "schema": 1,
+  "id": "gen9-mirror-armor-returns-a-drop-before-mist",
+  "notes": [
+    "Mirror Armor sends Tangling Hair's Speed drop back to Gastrodon before the Mist on its own side can refuse it (Showdown sorts a Pokémon's TryBoost handlers before a side's)",
+    "promoted from m8-gen9-singles-s399-009-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Volcanion",
+        "species": "Volcanion",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Mist"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Furret",
+        "species": "Furret",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Psychic Fangs",
+          "Mist"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Chandelure",
+        "species": "Chandelure",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Raging Bull"
+        ],
+        "ability": "Mirror Armor",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Cosmoem",
+        "species": "Cosmoem",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Mist"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Corphish",
+        "species": "Corphish",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Raging Bull",
+          "Mist"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Persian",
+        "species": "Persian",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Safeguard"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Gastrodon",
+        "species": "Gastrodon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Psychic Fangs"
+        ],
+        "ability": "Tangling Hair",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      47436,
+      18047,
+      45668,
+      17512
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Mist",
+      "p2": "move Mist"
+    },
+    {
+      "p1": "switch Furret",
+      "p2": "switch Corphish"
+    },
+    {
+      "p1": "move Mist",
+      "p2": "move Mist"
+    },
+    {
+      "p1": "move Psychic Fangs",
+      "p2": "move Raging Bull"
+    },
+    {
+      "p1": "switch Volcanion",
+      "p2": "switch Persian"
+    },
+    {
+      "p1": "move Mist",
+      "p2": "move Safeguard"
+    },
+    {
+      "p1": "switch Chandelure",
+      "p2": "switch Gastrodon"
+    },
+    {
+      "p1": "move Raging Bull",
+      "p2": "move Psychic Fangs"
+    }
+  ]
+}

@@ -1,0 +1,199 @@
+{
+  "schema": 1,
+  "id": "m8-gen5-doubles-outrage-stopped-by-disable-tires",
+  "notes": [
+    "Nightly 61: Zapdos's Outrage, Disabled by Cursed Body, is stopped the next turn and its lock ends with that turn's residual in a fatigue; a Baton Pass request mid-turn shows the lock still there (replay: the stopped action waits for the end of the turn) (DESIGN.md R-M8-105)",
+    "promoted from m8-gen5-doubles-s539-002-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 5,
+    "mode": "doubles",
+    "format": "gen5doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Clefable",
+        "species": "Clefable",
+        "level": 46,
+        "nature": "Hardy",
+        "moves": [
+          "Chatter",
+          "Baton Pass",
+          "Confusion",
+          "Foresight"
+        ],
+        "ability": "Cursed Body",
+        "gender": "M"
+      },
+      {
+        "label": "Combee",
+        "species": "Combee",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Rock Climb",
+          "Heal Bell",
+          "Dizzy Punch",
+          "Baton Pass"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Poliwhirl",
+        "species": "Poliwhirl",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Water Pulse",
+          "Dynamic Punch"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Burmy",
+        "species": "Burmy",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Signal Beam",
+          "Baton Pass"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Lombre",
+        "species": "Lombre",
+        "level": 54,
+        "nature": "Hardy",
+        "moves": [
+          "Thrash",
+          "Counter",
+          "Heal Bell"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Kabuto",
+        "species": "Kabuto",
+        "level": 48,
+        "nature": "Hardy",
+        "moves": [
+          "Metal Burst",
+          "Baton Pass",
+          "Heal Bell"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Zapdos",
+        "species": "Zapdos",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Mirror Coat",
+          "Baton Pass",
+          "Outrage"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Shelgon",
+        "species": "Shelgon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Uproar"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      9404,
+      29397,
+      27274,
+      11002
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Chatter 1, move Rock Climb 2",
+      "p2": "move Thrash, move Metal Burst"
+    },
+    {
+      "p1": "move 2, move 2",
+      "p2": "move 1, move 2"
+    },
+    {
+      "p1": "switch Poliwhirl, pass"
+    },
+    {
+      "p2": "pass, switch Zapdos"
+    },
+    {
+      "p1": "move Dynamic Punch 1, move Dizzy Punch 2",
+      "p2": "move Heal Bell, move Outrage"
+    },
+    {
+      "p1": "switch Clefable, move 4",
+      "p2": "switch Kabuto, move 1"
+    },
+    {
+      "p1": "pass, switch Poliwhirl"
+    },
+    {
+      "p1": "move Foresight 1, move Water Pulse 2",
+      "p2": "move Heal Bell, move Mirror Coat"
+    },
+    {
+      "p1": "pass, switch Combee"
+    },
+    {
+      "p1": "move Chatter 1, move Heal Bell",
+      "p2": "move Metal Burst, move Baton Pass"
+    },
+    {
+      "p2": "pass, switch Lombre"
+    },
+    {
+      "p1": "move Baton Pass, move Dizzy Punch 2",
+      "p2": "move Heal Bell, move Counter"
+    },
+    {
+      "p1": "switch Burmy, pass"
+    },
+    {
+      "p1": "switch Clefable, move Baton Pass",
+      "p2": "switch Zapdos, move Heal Bell"
+    },
+    {
+      "p1": "pass, switch Burmy"
+    },
+    {
+      "p1": "move Confusion 1, move Signal Beam 2",
+      "p2": "move Outrage, move Thrash"
+    },
+    {
+      "p1": "switch Combee, pass",
+      "p2": "pass, switch Kabuto"
+    },
+    {
+      "p1": "move 4, move 2",
+      "p2": "move 1, move 2"
+    },
+    {
+      "p2": "pass, switch Shelgon"
+    }
+  ]
+}

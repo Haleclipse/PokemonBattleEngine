@@ -1,0 +1,80 @@
+{
+ "schema": 1,
+ "id": "gen7-powder",
+ "notes": [
+  "Gen 7: Vivillon's Powder on Arcanine: its Flamethrower blows up (`-activate … move: Powder`, a quarter of its HP, rounded: 171 → 43) and fails; Bite then goes ahead; on Magic Guard Clefable the Fire move fails without the damage"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Vivillon",
+    "species": "Vivillon",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Powder",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Shield Dust"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Arcanine",
+    "species": "Arcanine",
+    "level": 52,
+    "nature": "Hardy",
+    "moves": [
+     "Flamethrower",
+     "Bite"
+    ],
+    "gender": "M",
+    "ability": "Intimidate"
+   },
+   {
+    "label": "Clefable",
+    "species": "Clefable",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Flamethrower"
+    ],
+    "gender": "F",
+    "ability": "Magic Guard"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Powder",
+   "p2": "move Flamethrower"
+  },
+  {
+   "p1": "move Powder",
+   "p2": "move Bite"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Powder",
+   "p2": "move Flamethrower"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

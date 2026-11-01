@@ -1,0 +1,75 @@
+{
+ "schema": 1,
+ "id": "gen4-arceus-forme-goes-back-on-the-bench",
+ "notes": [
+  "Gen 4: Arceus holding an Insect Plate comes in as Arceus-Bug (`formeChange`, not permanent) and is Arceus again once it switches out (`setSpecies(baseSpecies)`, DESIGN.md R-M8-81)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Arceus",
+    "species": "Arceus",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Judgment",
+     "Splash"
+    ],
+    "item": "Insect Plate",
+    "ability": "Multitype"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

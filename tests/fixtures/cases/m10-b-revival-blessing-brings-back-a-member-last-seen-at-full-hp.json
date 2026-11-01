@@ -1,0 +1,90 @@
+{
+ "schema": 1,
+ "id": "m10-b-revival-blessing-brings-back-a-member-last-seen-at-full-hp",
+ "notes": [
+  "R-M10-19: Magikarp left the field at full HP, came back and fainted; Pawmot's Revival Blessing brings it back with half its HP (`-heal|p2: Magikarp|…|[from] move: Revival Blessing`), which the other side sees: its view of Magikarp off the field is the revived one, not the one that left."
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Great Tusk",
+    "species": "Great Tusk",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Close Combat",
+     "Splash"
+    ],
+    "ability": "Protosynthesis",
+    "gender": "N"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 5,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Swift Swim",
+    "gender": "M"
+   },
+   {
+    "label": "Pawmot",
+    "species": "Pawmot",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Revival Blessing",
+     "Splash"
+    ],
+    "ability": "Volt Absorb",
+    "gender": "M"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash",
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Close Combat",
+   "p2": "move Splash"
+  },
+  {
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Revival Blessing"
+  },
+  {
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  }
+ ]
+}

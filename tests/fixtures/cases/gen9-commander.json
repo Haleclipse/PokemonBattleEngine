@@ -1,0 +1,88 @@
+{
+ "schema": 1,
+ "id": "gen9-commander",
+ "notes": [
+  "Gen 9 doubles: Dondozo beside a Tatsugiri takes it into its mouth as the battle starts — Commander announces itself, the Dondozo's five stats rise two stages each, and the Tatsugiri acts no more (its choice is cancelled) and neither can be switched out; leaving the field releases it"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Dondozo",
+    "species": "Dondozo",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Order Up",
+     "Wave Crash",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Unaware"
+   },
+   {
+    "label": "Tatsugiri",
+    "species": "Tatsugiri-Droopy",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "gender": "M",
+    "ability": "Commander"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Order Up 1, pass",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Order Up 1, pass",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, pass",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,76 @@
+{
+ "schema": 1,
+ "id": "gen3-rage-ends-as-another-move-is-chosen",
+ "notes": [
+  "Gen 3 Rage (cartridge, I77): the turn the user chooses Harden it is no longer raging as the turn starts \u2014 the faster foe's Quick Attack builds nothing (Showdown: the rage lasts until Harden starts); a Rage that Protect stops ends the rage too"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Rager",
+    "species": "Primeape",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Rage",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Guard",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Protect",
+     "Quick Attack",
+     "Harden"
+    ],
+    "ability": "Volt Absorb"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Rage",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Quick Attack"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "move Protect"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "move Quick Attack"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "move Quick Attack"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

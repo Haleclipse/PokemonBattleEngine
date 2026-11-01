@@ -1,0 +1,71 @@
+{
+ "schema": 1,
+ "id": "gen3-disable-unticked-when-the-residual-decides",
+ "notes": [
+  "Gen 3's Disable has no residual order and ticks last: the disabler's poison ends the battle first, so the Disable it just put on the foe keeps its rolled duration (plus the turn it already acted), and the replay reads it unticked"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Poison Powder"
+    ],
+    "ability": "Volt Absorb"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Disable"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 2",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 2"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   5
+  ]
+ }
+}

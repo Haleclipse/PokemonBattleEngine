@@ -1,0 +1,120 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-neighs",
+ "notes": [
+  "Chilling Neigh and Grim Neigh count every Pok\u00e9mon their move knocked out: a Rock Slide taking two foes down raises Attack (Chilling Neigh) or Special Attack (Grim Neigh) by 2"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Chill",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Rock Slide",
+     "Harden"
+    ],
+    "ability": "Chilling Neigh"
+   },
+   {
+    "label": "Grim",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Rock Slide",
+     "Harden"
+    ],
+    "ability": "Grim Neigh"
+   }
+  ],
+  "p2": [
+   {
+    "label": "F1",
+    "species": "Magikarp",
+    "level": 1,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "F2",
+    "species": "Magikarp",
+    "level": 1,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "F3",
+    "species": "Magikarp",
+    "level": 1,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "F4",
+    "species": "Magikarp",
+    "level": 1,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Wall",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Rock Slide, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p2": "switch F3, switch F4"
+  },
+  {
+   "p1": "move Harden, move Rock Slide",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p2": "switch Wall, pass"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,67 @@
+{
+ "schema": 1,
+ "id": "gen7-dancer-after-a-petal-dance-fatigue",
+ "notes": [
+  "Gen 7: Togetic's Petal Dance; Steelix's Dancer dances along after it (its own lock dropped, `noLock`). On the lock's last turn Togetic's fatigue confuses it in AfterMove, before Steelix dances (Showdown's `runMove` runs `AfterMove` ahead of the Dancer block — DESIGN.md R-M8-78)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Togetic",
+    "species": "Togetic",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Petal Dance"
+    ],
+    "ability": "Serene Grace",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Steelix",
+    "species": "Steelix",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Dancer",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Petal Dance",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

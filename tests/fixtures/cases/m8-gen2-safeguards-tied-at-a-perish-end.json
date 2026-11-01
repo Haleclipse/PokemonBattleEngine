@@ -1,0 +1,334 @@
+{
+  "schema": 1,
+  "id": "m8-gen2-safeguards-tied-at-a-perish-end",
+  "notes": [
+    "Gen 2: Perish Song decides the battle in the residual; both sides' Safeguards tie (order 8) and only the one Showdown shuffled first counted down before the end (DESIGN.md R-M8-95)",
+    "promoted from m8-gen2-singles-s505-011-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 2,
+    "mode": "singles",
+    "format": "gen2customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Vulpix",
+        "species": "Vulpix",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Lick",
+          "Safeguard",
+          "Thunder Punch",
+          "Perish Song"
+        ],
+        "gender": "M"
+      },
+      {
+        "label": "Mantine",
+        "species": "Mantine",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Dragon Breath",
+          "Safeguard",
+          "Perish Song"
+        ],
+        "gender": "M"
+      },
+      {
+        "label": "Wooper",
+        "species": "Wooper",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Barrage",
+          "Safeguard",
+          "Double Slap",
+          "Perish Song"
+        ],
+        "gender": "F"
+      },
+      {
+        "label": "Nidoran-F",
+        "species": "Nidoran-F",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Pin Missile",
+          "Safeguard",
+          "Bonemerang",
+          "Perish Song"
+        ]
+      },
+      {
+        "label": "Machamp",
+        "species": "Machamp",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Spike Cannon",
+          "Safeguard",
+          "Double Kick",
+          "Perish Song"
+        ],
+        "gender": "F"
+      },
+      {
+        "label": "Porygon2",
+        "species": "Porygon2",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Comet Punch",
+          "Safeguard"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "Dratini",
+        "species": "Dratini",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fury Swipes",
+          "Safeguard",
+          "Bone Rush",
+          "Perish Song"
+        ],
+        "gender": "M"
+      },
+      {
+        "label": "Gastly",
+        "species": "Gastly",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Psychic",
+          "Safeguard",
+          "Perish Song"
+        ],
+        "gender": "F"
+      },
+      {
+        "label": "Nidoran-M",
+        "species": "Nidoran-M",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Icy Wind",
+          "Safeguard",
+          "Bubble",
+          "Perish Song"
+        ]
+      },
+      {
+        "label": "Ekans",
+        "species": "Ekans",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Bubble Beam",
+          "Safeguard",
+          "Aurora Beam",
+          "Perish Song"
+        ],
+        "gender": "M"
+      },
+      {
+        "label": "Gligar",
+        "species": "Gligar",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Shadow Ball",
+          "Safeguard",
+          "Iron Tail",
+          "Perish Song"
+        ],
+        "gender": "F"
+      },
+      {
+        "label": "Machoke",
+        "species": "Machoke",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Constrict",
+          "Safeguard",
+          "Octazooka",
+          "Perish Song"
+        ],
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      58546,
+      43053,
+      65074,
+      29892
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Lick",
+      "p2": "move Fury Swipes"
+    },
+    {
+      "p1": "move Safeguard",
+      "p2": "move Safeguard"
+    },
+    {
+      "p1": "move Thunder Punch",
+      "p2": "move Bone Rush"
+    },
+    {
+      "p1": "move Perish Song",
+      "p2": "move Perish Song"
+    },
+    {
+      "p1": "move Lick",
+      "p2": "move Fury Swipes"
+    },
+    {
+      "p1": "move Safeguard",
+      "p2": "move Safeguard"
+    },
+    {
+      "p1": "move Thunder Punch",
+      "p2": "move Bone Rush"
+    },
+    {
+      "p1": "switch Mantine"
+    },
+    {
+      "p2": "switch Gastly"
+    },
+    {
+      "p1": "switch Wooper",
+      "p2": "switch Nidoran-M"
+    },
+    {
+      "p1": "move Perish Song",
+      "p2": "move Perish Song"
+    },
+    {
+      "p1": "move Barrage",
+      "p2": "move Icy Wind"
+    },
+    {
+      "p1": "move Safeguard",
+      "p2": "move Safeguard"
+    },
+    {
+      "p1": "move Double Slap",
+      "p2": "move Bubble"
+    },
+    {
+      "p1": "switch Mantine",
+      "p2": "switch Gastly"
+    },
+    {
+      "p1": "move Perish Song",
+      "p2": "move Perish Song"
+    },
+    {
+      "p1": "move Dragon Breath",
+      "p2": "move Psychic"
+    },
+    {
+      "p1": "move Safeguard",
+      "p2": "move Safeguard"
+    },
+    {
+      "p1": "switch Nidoran-F",
+      "p2": "switch Ekans"
+    },
+    {
+      "p1": "move Bonemerang",
+      "p2": "move Aurora Beam"
+    },
+    {
+      "p1": "move Perish Song",
+      "p2": "move Perish Song"
+    },
+    {
+      "p1": "move Pin Missile",
+      "p2": "move Bubble Beam"
+    },
+    {
+      "p1": "move Safeguard",
+      "p2": "move Safeguard"
+    },
+    {
+      "p1": "move Bonemerang",
+      "p2": "move Aurora Beam"
+    },
+    {
+      "p2": "switch Gastly"
+    },
+    {
+      "p1": "switch Mantine"
+    },
+    {
+      "p1": "move Perish Song",
+      "p2": "move Perish Song"
+    },
+    {
+      "p1": "move Dragon Breath",
+      "p2": "move Psychic"
+    },
+    {
+      "p2": "switch Gligar"
+    },
+    {
+      "p1": "switch Machamp",
+      "p2": "switch Machoke"
+    },
+    {
+      "p1": "move Safeguard",
+      "p2": "move Safeguard"
+    },
+    {
+      "p1": "move Perish Song",
+      "p2": "move Perish Song"
+    },
+    {
+      "p1": "move Spike Cannon",
+      "p2": "move Constrict"
+    },
+    {
+      "p1": "move Safeguard",
+      "p2": "move Safeguard"
+    },
+    {
+      "p1": "move Double Kick",
+      "p2": "move Octazooka"
+    },
+    {
+      "p1": "switch Mantine",
+      "p2": "switch Gligar"
+    },
+    {
+      "p1": "move Perish Song",
+      "p2": "move Perish Song"
+    },
+    {
+      "p1": "switch Porygon2",
+      "p2": "move Shadow Ball"
+    },
+    {
+      "p1": "move Comet Punch",
+      "p2": "move Safeguard"
+    },
+    {
+      "p1": "move Safeguard",
+      "p2": "move Iron Tail"
+    }
+  ]
+}

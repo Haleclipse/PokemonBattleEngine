@@ -1,0 +1,69 @@
+{
+ "schema": 1,
+ "id": "gen6-parental-bond",
+ "notes": [
+  "Parental Bond: Body Slam twice (second hit x0.5), Seismic Toss twice in full, Double-Edge's recoil from both hits, Power-Up Punch's boost on each hit"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Body Slam",
+     "Seismic Toss",
+     "Double-Edge",
+     "Power-Up Punch"
+    ],
+    "ability": "Parental Bond"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Body Slam",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Seismic Toss",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Double-Edge",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Power-Up Punch",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,96 @@
+{
+ "schema": 1,
+ "id": "gen8-emergency-exit",
+ "notes": [
+  "Emergency Exit: a hit that takes the holder from above half its HP to half or less sends it out at once for a replacement its trainer picks \u2014 the attacker's U-turn switch is called off and the holder's own pending move is lost; coming back in below half does nothing"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Pod",
+    "species": "Golisopod",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Liquidation"
+    ],
+    "ability": "Emergency Exit"
+   },
+   {
+    "label": "Pal",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Psychic",
+     "U-turn",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Mew2",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Liquidation",
+   "p2": "move Psychic"
+  },
+  {
+   "p1": "move Liquidation",
+   "p2": "move U-turn"
+  },
+  {
+   "p1": "switch Pal"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Pod",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,131 @@
+{
+  "schema": 1,
+  "id": "gen4-doubles-encore-before-replacement",
+  "notes": [
+    "A frame taken at an end-of-turn replacement comes after the residual even when the residual printed nothing: Encore's rolled duration is read with its tick",
+    "promoted from m8-gen4-doubles-s107-016-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "doubles",
+    "format": "gen4doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Sandslash",
+        "species": "Sandslash",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Mist Ball",
+          "Encore"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Garchomp",
+        "species": "Garchomp",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Crunch",
+          "Encore",
+          "Psychic",
+          "Taunt"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Spoink",
+        "species": "Spoink",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "String Shot",
+          "Encore",
+          "Twister",
+          "Taunt"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Cubone",
+        "species": "Cubone",
+        "level": 54,
+        "nature": "Hardy",
+        "moves": [
+          "Leer",
+          "Encore"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Ledyba",
+        "species": "Ledyba",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Encore"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Tentacool",
+        "species": "Tentacool",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Astonish"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      49899,
+      57176,
+      50712,
+      25162
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Mist Ball 1, move Crunch 2",
+      "p2": "move String Shot, move Leer"
+    },
+    {
+      "p1": "move Encore 1, move Encore 2",
+      "p2": "move Encore 1, move Encore 2"
+    },
+    {
+      "p1": "move Mist Ball 1, move Psychic 2",
+      "p2": "move Twister, move Leer"
+    },
+    {
+      "p1": "move Mist Ball 1, move Taunt 2",
+      "p2": "move Taunt 1, move Leer"
+    },
+    {
+      "p1": "move 1 1, move 1 2",
+      "p2": "move 1, move 1"
+    },
+    {
+      "p2": "pass, switch Ledyba"
+    },
+    {
+      "p1": "move Mist Ball 1, move Encore 2",
+      "p2": "move Encore 2, move Encore 1"
+    }
+  ]
+}

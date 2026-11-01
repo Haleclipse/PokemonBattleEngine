@@ -1,0 +1,102 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-hospitality-after-hazards",
+ "notes": [
+  "Two replacements come in together over Stealth Rock: the faster Chansey's Hospitality (onSwitchInPriority -2) runs after the slower Snorlax took its Stealth Rock damage, and heals it"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "M1",
+    "species": "Magikarp",
+    "level": 1,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "M2",
+    "species": "Magikarp",
+    "level": 1,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Host",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Hospitality"
+   },
+   {
+    "label": "Pal",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Rock",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Stealth Rock",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Voice",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Hyper Voice",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Stealth Rock, move Hyper Voice"
+  },
+  {
+   "p1": "switch Host, switch Pal"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen2-mimic",
+ "notes": [
+  "Gen 2: Snorlax's Tackle, then Clefable's Mimic copies it into its own Mimic slot and uses it"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Clefable",
+    "species": "Clefable",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Mimic",
+     "Psychic"
+    ],
+    "gender": "F",
+    "ability": null
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": null
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Psychic",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Mimic",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

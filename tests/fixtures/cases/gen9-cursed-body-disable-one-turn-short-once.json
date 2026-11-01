@@ -1,0 +1,373 @@
+{
+  "schema": 1,
+  "id": "gen9-cursed-body-disable-one-turn-short-once",
+  "notes": [
+    "Nightly 49: an instructed Clanging Scales knocks out the Cursed Body holder, whose Disable takes one turn off for the target that still moves and is moving now — once (DESIGN.md R-M8-93)",
+    "promoted from m8-gen9-singles-s497-011-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Stantler",
+        "species": "Stantler",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Steel Wing",
+          "Instruct",
+          "Flame Charge"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Cranidos",
+        "species": "Cranidos",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Trailblaze",
+          "Instruct",
+          "Power Trick"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Muk",
+        "species": "Muk",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Ancient Power",
+          "Instruct",
+          "Spin Out"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Koffing",
+        "species": "Koffing",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Leaf Storm",
+          "Metal Claw"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Magmortar",
+        "species": "Magmortar",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Close Combat",
+          "Instruct",
+          "Overheat",
+          "Power Trick"
+        ],
+        "ability": "Cursed Body",
+        "gender": "F"
+      },
+      {
+        "label": "Grovyle",
+        "species": "Grovyle",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Armor Cannon",
+          "Instruct",
+          "Headlong Rush"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Hawlucha",
+        "species": "Hawlucha",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Ice Hammer",
+          "Instruct",
+          "Mystical Power",
+          "Power Trick"
+        ],
+        "ability": "Neuroforce",
+        "gender": "M"
+      },
+      {
+        "label": "Ivysaur",
+        "species": "Ivysaur",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Draco Meteor",
+          "Instruct",
+          "Fleur Cannon"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Venusaur",
+        "species": "Venusaur",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Make It Rain",
+          "Instruct",
+          "Fiery Dance"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Toedscool",
+        "species": "Toedscool",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Meteor Mash",
+          "Instruct",
+          "Hammer Arm"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Iron Boulder",
+        "species": "Iron Boulder",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Aura Wheel",
+          "Instruct",
+          "Hyperspace Fury",
+          "Power Trick"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Chimecho",
+        "species": "Chimecho",
+        "level": 49,
+        "nature": "Hardy",
+        "moves": [
+          "Clanging Scales",
+          "Instruct",
+          "Superpower"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      46781,
+      3919,
+      9562,
+      14628
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Steel Wing",
+      "p2": "move Ice Hammer"
+    },
+    {
+      "p1": "move Instruct",
+      "p2": "move Instruct"
+    },
+    {
+      "p1": "move Flame Charge",
+      "p2": "move Mystical Power"
+    },
+    {
+      "p1": "switch Cranidos"
+    },
+    {
+      "p1": "move Power Trick",
+      "p2": "move Power Trick"
+    },
+    {
+      "p1": "move Trailblaze",
+      "p2": "move Ice Hammer"
+    },
+    {
+      "p1": "move Instruct",
+      "p2": "move Instruct"
+    },
+    {
+      "p1": "switch Muk",
+      "p2": "switch Ivysaur"
+    },
+    {
+      "p1": "move Spin Out",
+      "p2": "move Fleur Cannon"
+    },
+    {
+      "p1": "move Ancient Power",
+      "p2": "move Draco Meteor"
+    },
+    {
+      "p1": "move Instruct",
+      "p2": "move Instruct"
+    },
+    {
+      "p1": "move Spin Out",
+      "p2": "move Fleur Cannon"
+    },
+    {
+      "p2": "switch Hawlucha"
+    },
+    {
+      "p1": "switch Cranidos",
+      "p2": "switch Venusaur"
+    },
+    {
+      "p1": "move Trailblaze",
+      "p2": "move Make It Rain"
+    },
+    {
+      "p1": "switch Muk"
+    },
+    {
+      "p1": "move Spin Out",
+      "p2": "move Fiery Dance"
+    },
+    {
+      "p1": "move Ancient Power",
+      "p2": "move Make It Rain"
+    },
+    {
+      "p1": "move Instruct",
+      "p2": "move Instruct"
+    },
+    {
+      "p1": "switch Koffing",
+      "p2": "switch Hawlucha"
+    },
+    {
+      "p1": "move Metal Claw",
+      "p2": "move Mystical Power"
+    },
+    {
+      "p1": "move Leaf Storm",
+      "p2": "move Ice Hammer"
+    },
+    {
+      "p1": "switch Muk"
+    },
+    {
+      "p1": "move Spin Out",
+      "p2": "move Mystical Power"
+    },
+    {
+      "p1": "switch Magmortar"
+    },
+    {
+      "p1": "switch Grovyle",
+      "p2": "switch Venusaur"
+    },
+    {
+      "p1": "move Armor Cannon",
+      "p2": "move Make It Rain"
+    },
+    {
+      "p2": "switch Hawlucha"
+    },
+    {
+      "p1": "move Instruct",
+      "p2": "move Instruct"
+    },
+    {
+      "p1": "move Headlong Rush",
+      "p2": "move Mystical Power"
+    },
+    {
+      "p1": "move Armor Cannon",
+      "p2": "move Ice Hammer"
+    },
+    {
+      "p2": "switch Toedscool"
+    },
+    {
+      "p1": "switch Magmortar",
+      "p2": "switch Iron Boulder"
+    },
+    {
+      "p1": "move Overheat",
+      "p2": "move Hyperspace Fury"
+    },
+    {
+      "p1": "move Power Trick",
+      "p2": "move Power Trick"
+    },
+    {
+      "p1": "move Close Combat",
+      "p2": "move Aura Wheel"
+    },
+    {
+      "p1": "move Instruct",
+      "p2": "move Instruct"
+    },
+    {
+      "p1": "move Overheat",
+      "p2": "move Hyperspace Fury"
+    },
+    {
+      "p1": "switch Grovyle",
+      "p2": "switch Toedscool"
+    },
+    {
+      "p1": "move Armor Cannon",
+      "p2": "move Meteor Mash"
+    },
+    {
+      "p1": "switch Magmortar"
+    },
+    {
+      "p1": "move Instruct",
+      "p2": "move Instruct"
+    },
+    {
+      "p1": "move Overheat",
+      "p2": "move Hammer Arm"
+    },
+    {
+      "p2": "switch Iron Boulder"
+    },
+    {
+      "p1": "move Close Combat",
+      "p2": "move Aura Wheel"
+    },
+    {
+      "p2": "switch Chimecho"
+    },
+    {
+      "p1": "move Overheat",
+      "p2": "move Superpower"
+    },
+    {
+      "p1": "move Close Combat",
+      "p2": "move Clanging Scales"
+    },
+    {
+      "p1": "move Instruct",
+      "p2": "move Instruct"
+    }
+  ]
+}

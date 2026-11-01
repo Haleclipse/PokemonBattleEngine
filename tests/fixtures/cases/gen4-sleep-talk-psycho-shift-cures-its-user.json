@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen4-sleep-talk-psycho-shift-cures-its-user",
+ "notes": [
+  "Gen 4: Parasect's Spore puts Omastar to sleep; next turn Omastar's Sleep Talk calls Psycho Shift, which passes the sleep to Parasect and cures Omastar (`-curestatus …|slp|[msg]`, like a wake-up), then Parasect sleeps — the replay reads the cure as the move's, not a wake-up starting an action of Omastar's ahead of Parasect's (DESIGN.md R-M8-141)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Omastar",
+    "species": "Omastar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sleep Talk",
+     "Psycho Shift"
+    ],
+    "ability": "Swift Swim",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Parasect",
+    "species": "Parasect",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spore",
+     "Splash"
+    ],
+    "ability": "Dry Skin",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Sleep Talk",
+   "p2": "move Spore"
+  },
+  {
+   "p1": "move Sleep Talk",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Sleep Talk",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

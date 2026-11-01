@@ -1,0 +1,561 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@pkmn/sim",
+    "version": "0.10.11",
+    "formatid": "gen2customgame",
+    "seed": [
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  "frames": [
+    {
+      "schema": 1,
+      "checkpoint": "initial",
+      "turn": 1,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 136,
+              "max_hp": 136,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "water",
+                "ice"
+              ],
+              "item": "",
+              "pp": [
+                8,
+                8
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 155,
+              "max_hp": 155,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "rock",
+                "ground"
+              ],
+              "item": "",
+              "pp": [
+                56
+              ]
+            },
+            {
+              "hp": 280,
+              "max_hp": 280,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "item": "",
+              "pp": [
+                56
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "details": "Cloyster, L55, F",
+          "hp": 136,
+          "max_hp": 136,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "details": "Golem, L50, F",
+          "hp": 155,
+          "max_hp": 155,
+          "status": null
+        },
+        {
+          "kind": "turn",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_1",
+      "turn": 1,
+      "request": "wait|forced_switch",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 136,
+              "max_hp": 136,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "water",
+                "ice"
+              ],
+              "item": "",
+              "pp": [
+                7,
+                8
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            null
+          ],
+          "party": [
+            {
+              "hp": 0,
+              "max_hp": 155,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "rock",
+                "ground"
+              ],
+              "item": "",
+              "pp": [
+                56
+              ]
+            },
+            {
+              "hp": 280,
+              "max_hp": 280,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "item": "",
+              "pp": [
+                56
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "move": "Horn Drill",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "hp": 0,
+          "max_hp": null,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "faint",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "detail": null
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_2",
+      "turn": 2,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 136,
+              "max_hp": 136,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "water",
+                "ice"
+              ],
+              "item": "",
+              "pp": [
+                7,
+                8
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            1
+          ],
+          "party": [
+            {
+              "hp": 0,
+              "max_hp": 155,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "rock",
+                "ground"
+              ],
+              "item": "",
+              "pp": [
+                56
+              ]
+            },
+            {
+              "hp": 280,
+              "max_hp": 280,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "item": "",
+              "pp": [
+                56
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "c"
+          },
+          "details": "Snorlax, L60, M",
+          "hp": 280,
+          "max_hp": 280,
+          "status": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 2
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_3",
+      "turn": 3,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 116,
+              "max_hp": 136,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "water",
+                "ice"
+              ],
+              "item": "",
+              "pp": [
+                6,
+                8
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            1
+          ],
+          "party": [
+            {
+              "hp": 0,
+              "max_hp": 155,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "rock",
+                "ground"
+              ],
+              "item": "",
+              "pp": [
+                56
+              ]
+            },
+            {
+              "hp": 280,
+              "max_hp": 280,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "item": "",
+              "pp": [
+                55
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "move": "Horn Drill",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "c"
+          }
+        },
+        {
+          "kind": "immune",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "c"
+          },
+          "detail": "[ohko]"
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "c"
+          },
+          "move": "Tackle",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "hp": 116,
+          "max_hp": 136,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 3
+        }
+      ]
+    }
+  ],
+  "debug_log": "|gametype|singles\n|player|p1|P1||\n|player|p2|P2||\n|gen|2\n|tier|[Gen 2] Custom Game\n|rule|HP Percentage Mod: HP is shown in percentages\n|\n|teamsize|p1|1\n|teamsize|p2|2\n|start\n|switch|p1a: a|Cloyster, L55, F|136/136\n|switch|p2a: b|Golem, L50, F|155/155\n|turn|1\n|\n|move|p1a: a|Horn Drill|p2a: b\n|-damage|p2a: b|0 fnt\n|-ohko\n|faint|p2a: b\n|\n|switch|p2a: c|Snorlax, L60, M|280/280\n|\n|upkeep\n|turn|2\n|\n|move|p1a: a|Horn Drill|p2a: c\n|-immune|p2a: c|[ohko]\n|move|p2a: c|Tackle|p1a: a\n|-damage|p1a: a|116/136\n|\n|upkeep\n|turn|3"
+}

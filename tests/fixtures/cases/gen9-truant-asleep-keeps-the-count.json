@@ -1,0 +1,78 @@
+{
+ "schema": 1,
+ "id": "gen9-truant-asleep-keeps-the-count",
+ "notes": [
+  "Gen 9 Truant through sleep: the sleep check comes first (10 over 9) and stops the move before Truant's, which flips nothing \u2014 Slaking, put to sleep before its loafing turn, wakes into it and loafs"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Slacker",
+    "species": "Slaking",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "ability": "Truant"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Sleeper",
+    "species": "Breloom",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Spore",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Spore"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

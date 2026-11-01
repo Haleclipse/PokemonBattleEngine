@@ -1,0 +1,95 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-gas-dragged-out-by-mold-breaker-restarts-wind-rider",
+ "notes": [
+  "Gen 9 doubles: Excadrill's Mold Breaker (kept by its Ability Shield through the gas) makes Roar ignore abilities; the Roar drags Weezing out, and its Neutralizing Gas ends within the move, starting Brambleghast's Wind Rider again (`singleEvent('Start')`, no breakable check): +1 Attack under Tailwind"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Excadrill",
+    "species": "Excadrill",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Roar",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Mold Breaker",
+    "item": "Ability Shield"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Weezing",
+    "species": "Weezing",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Neutralizing Gas"
+   },
+   {
+    "label": "Brambleghast",
+    "species": "Brambleghast",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tailwind",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Wind Rider"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Tailwind"
+  },
+  {
+   "p1": "move Roar 1, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

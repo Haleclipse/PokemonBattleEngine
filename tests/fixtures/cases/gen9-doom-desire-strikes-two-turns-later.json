@@ -1,0 +1,64 @@
+{
+ "schema": 1,
+ "id": "gen9-doom-desire-strikes-two-turns-later",
+ "notes": [
+  "Gen 9 Doom Desire: foreseen as it is used, it strikes at the end of the second turn after (the move itself, Steel)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Wisher",
+    "species": "Jirachi",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Doom Desire",
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Wall",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Doom Desire",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

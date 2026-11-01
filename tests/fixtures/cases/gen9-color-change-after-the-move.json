@@ -1,0 +1,69 @@
+{
+ "schema": 1,
+ "id": "gen9-color-change-after-the-move",
+ "notes": [
+  "Gen 9: a damaging move makes Snorlax its type once the move is over (`onAfterMoveSecondary`): Water after Water Pulse, then Rock Slide (super effective on Flying… neutral here) makes it Rock; Harden, a status move, changes nothing"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Color Change"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Golem",
+    "species": "Golem",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Water Pulse",
+     "Rock Slide",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Sturdy"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Water Pulse"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Water Pulse"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Rock Slide"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

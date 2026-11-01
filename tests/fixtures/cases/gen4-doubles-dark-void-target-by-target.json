@@ -1,0 +1,94 @@
+{
+ "schema": 1,
+ "id": "gen4-doubles-dark-void-target-by-target",
+ "notes": [
+  "Gen 4 doubles: Smeargle's Dark Void at Snorlax and Chansey rolls each target's accuracy and, when it lands, its sleep turns in turn (the hit gate target by target: Gen 4 rolls the accuracy before TryHit, so no stage of it goes over every target first — DESIGN.md R-M8-78)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "doubles",
+  "format": "gen4doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Smeargle",
+    "species": "Smeargle",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Dark Void",
+     "Splash"
+    ],
+    "ability": "Own Tempo",
+    "gender": "M"
+   },
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Volt Absorb",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Dark Void, move Splash",
+   "p2": "move Splash, move Splash"
+  },
+  {
+   "p1": "move Splash, move Splash",
+   "p2": "move Splash, move Splash"
+  },
+  {
+   "p1": "move Splash, move Splash",
+   "p2": "move Splash, move Splash"
+  },
+  {
+   "p1": "move Splash, move Splash",
+   "p2": "move Splash, move Splash"
+  },
+  {
+   "p1": "move Splash, move Splash",
+   "p2": "move Splash, move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   5,
+   6,
+   7,
+   8
+  ]
+ }
+}

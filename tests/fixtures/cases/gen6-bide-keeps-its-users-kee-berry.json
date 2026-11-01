@@ -1,0 +1,64 @@
+{
+ "schema": 1,
+ "id": "gen6-bide-keeps-its-users-kee-berry",
+ "notes": [
+  "Gen 6 Kee Berry and its holder's own Bide (issues.md I46): Bide is a physical move aimed at its user, and Showdown's `onAfterMoveSecondary` checks the category alone, so Lombre would eat its Kee Berry as it starts storing energy; the oracle's patch (a Showdown bug, by the user's decision) and the engine keep it",
+  "Boldore's Rock Throw then hits Lombre: the berry goes off (+1 Defense); Bide strikes back"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Lombre",
+    "species": "Lombre",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Bide"
+    ],
+    "item": "Kee Berry",
+    "ability": "Swift Swim"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Boldore",
+    "species": "Boldore",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Rock Throw",
+     "Harden"
+    ],
+    "ability": "Sturdy"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Bide",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Bide",
+   "p2": "move Rock Throw"
+  },
+  {
+   "p1": "move Bide",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

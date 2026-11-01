@@ -1,0 +1,66 @@
+{
+ "schema": 1,
+ "id": "gen6-air-balloon-pops-on-a-hit",
+ "notes": [
+  "Gen 6: Snorlax's Air Balloon keeps Earthquake off it; Tackle pops it (`-enditem … Air Balloon`), and Earthquake then hits; a balloon's pop on the Substitute too"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Substitute"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat",
+    "item": "Air Balloon"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Hippowdon",
+    "species": "Hippowdon",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Earthquake",
+     "Tackle"
+    ],
+    "gender": "M",
+    "ability": "Sand Stream"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Earthquake"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Earthquake"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

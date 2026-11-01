@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "gen1-wrap-confusion",
+ "notes": [
+  "Gen 1 Wrap: a user that hurts itself in confusion drops its lock (`confusion`'s `onBeforeMove`)"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Wrapper",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Wrap",
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Jolteon",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Supersonic",
+     "Tackle"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Wrap",
+   "p2": "move Supersonic"
+  },
+  {
+   "p1": "move Wrap",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   88,
+   2,
+   3,
+   4
+  ]
+ }
+}

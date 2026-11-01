@@ -1,0 +1,72 @@
+{
+ "schema": 1,
+ "id": "gen5-a-called-charge-goes-out-under-a-choice-lock",
+ "notes": [
+  "Gen 5: Tyrogue, holding a Choice Scarf, uses Assist: Pidgey's Razor Wind charges and the Scarf locks Assist. The charge goes out next turn — the gen6 mod's choicelock (Gen 3-6) has no onBeforeMove to refuse it (DESIGN.md R-M8-139)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Tyrogue",
+    "species": "Tyrogue",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Assist",
+     "Splash"
+    ],
+    "item": "Choice Scarf",
+    "ability": "Guts",
+    "gender": "M"
+   },
+   {
+    "label": "Pidgey",
+    "species": "Pidgey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Razor Wind"
+    ],
+    "ability": "Keen Eye",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Assist",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

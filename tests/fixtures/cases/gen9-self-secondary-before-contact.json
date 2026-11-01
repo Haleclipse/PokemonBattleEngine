@@ -1,0 +1,69 @@
+{
+  "schema": 1,
+  "id": "gen9-self-secondary-before-contact",
+  "notes": [
+    "A secondary's self part (Metal Claw's Attack boost) rolls in the secondaries step, per hit, before the target's contact reaction (Static)"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Scizor",
+        "species": "Scizor",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Metal Claw"
+        ],
+        "ability": "Technician"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Raichu",
+        "species": "Raichu",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Growl"
+        ],
+        "ability": "Static"
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

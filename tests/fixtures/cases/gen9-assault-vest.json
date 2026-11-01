@@ -1,0 +1,72 @@
+{
+ "schema": 1,
+ "id": "gen9-assault-vest",
+ "notes": [
+  "Assault Vest: its holder takes less from Psychic (Special Defense \u00d71.5), not from Body Slam; knowing only Harden, it struggles"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Vest",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away",
+    "item": "Assault Vest"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Psychic",
+     "Body Slam",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1",
+   "p2": "move Psychic"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Body Slam"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Psychic"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Body Slam"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

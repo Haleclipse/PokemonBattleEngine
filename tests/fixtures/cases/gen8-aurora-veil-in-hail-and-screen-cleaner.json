@@ -1,0 +1,86 @@
+{
+ "schema": 1,
+ "id": "gen8-aurora-veil-in-hail-and-screen-cleaner",
+ "notes": [
+  "Gen 8: Aurora Veil fails without hail and halves Strength / Hyper Voice under it; Screen Cleaner ends it"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Aurora Veil",
+     "Hail",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Cleaner",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover"
+    ],
+    "ability": "Screen Cleaner"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Lax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Strength",
+     "Hyper Voice"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Aurora Veil",
+   "p2": "move Strength"
+  },
+  {
+   "p1": "move Hail",
+   "p2": "move Strength"
+  },
+  {
+   "p1": "move Aurora Veil",
+   "p2": "move Strength"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Hyper Voice"
+  },
+  {
+   "p1": "switch Cleaner",
+   "p2": "move Strength"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Hyper Voice"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

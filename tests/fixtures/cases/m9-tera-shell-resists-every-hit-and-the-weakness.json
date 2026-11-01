@@ -1,0 +1,46 @@
+{
+ "schema": 1,
+ "id": "m9-tera-shell-resists-every-hit-and-the-weakness",
+ "notes": [
+  "R-M9-45: Tera Shell (Showdown `Pokemon#runEffectiveness`). Turn 1: Close Combat at a full-HP Terapagos-Terastal is resisted, so its Weakness Policy (`getMoveHitData(move).typeMod > 0`) stays. Turn 2: Recover first, then Collision Course gets no super-effective boost (`onBasePower` asks `runEffectiveness`). Turn 3: Recover, then every hit of Bullet Seed is resisted, the later ones below full HP (`abilityState.resisted`)."
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Terapagos",
+    "species": "Terapagos",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": ["Recover"],
+    "ability": "Tera Shift",
+    "item": "Weakness Policy",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Breloom",
+    "species": "Breloom",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": ["Close Combat", "Collision Course", "Bullet Seed"],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [1, 2, 3, 4]
+ },
+ "script": [
+  {"p1": "move Recover", "p2": "move Close Combat"},
+  {"p1": "move Recover", "p2": "move Collision Course"},
+  {"p1": "move Recover", "p2": "move Bullet Seed"}
+ ]
+}

@@ -1,0 +1,107 @@
+{
+ "schema": 1,
+ "id": "gen3-doubles-pinch-berries-at-the-end-of-the-turn",
+ "notes": [
+  "Gen 3 (Showdown gen3 `onResidual`, pokeemerald `ENDTURN_ITEMS1`): the pinch berries are eaten at the end of the turn, not after the hit \u2014 Slowbro, tossed to 30 / 170, uses Swift with its Attack unchanged and eats its Liechi Berry in the residual; the next turn Slowbro's Starf Berry partner is tossed down and gets its random +2 in the residual, and a Lansat Berry holder Focus Energy"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "doubles",
+  "format": "gen3doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Liechi",
+    "species": "Slowbro",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Swift",
+     "Harden"
+    ],
+    "item": "Liechi Berry",
+    "ability": "Oblivious"
+   },
+   {
+    "label": "Starf",
+    "species": "Slowbro",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Swift",
+     "Harden"
+    ],
+    "item": "Starf Berry",
+    "ability": "Oblivious"
+   },
+   {
+    "label": "Lansat",
+    "species": "Slowbro",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Swift",
+     "Harden"
+    ],
+    "item": "Lansat Berry",
+    "ability": "Oblivious"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Harden"
+    ],
+    "ability": "Volt Absorb"
+   },
+   {
+    "label": "Jolteon2",
+    "species": "Jolteon",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Harden"
+    ],
+    "ability": "Volt Absorb"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Swift, move Harden",
+   "p2": "move Seismic Toss 1, move Seismic Toss 1"
+  },
+  {
+   "p1": "move Harden, move Swift",
+   "p2": "move Seismic Toss 2, move Seismic Toss 2"
+  },
+  {
+   "p1": "switch 3, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Swift, move Harden",
+   "p2": "move Seismic Toss 1, move Seismic Toss 1"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

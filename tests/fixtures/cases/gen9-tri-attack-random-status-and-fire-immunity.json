@@ -1,0 +1,81 @@
+{
+ "schema": 1,
+ "id": "gen9-tri-attack-random-status-and-fire-immunity",
+ "notes": [
+  "Tri Attack's 20 % secondary draws one of burn, paralysis, freeze once the chance succeeds (here a freeze on Arcanine)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Porygon-Z",
+    "species": "Porygon-Z",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tri Attack"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Arcanine",
+    "species": "Arcanine",
+    "level": 90,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Tri Attack",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tri Attack",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tri Attack",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tri Attack",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tri Attack",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tri Attack",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tri Attack",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tri Attack",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

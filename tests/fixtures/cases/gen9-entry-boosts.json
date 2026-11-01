@@ -1,0 +1,132 @@
+{
+ "schema": 1,
+ "id": "gen9-entry-boosts",
+ "notes": [
+  "Gen 9: Intrepid Sword (+1 Attack) and Dauntless Shield (+1 Defense) as they enter \u2014 only the first time in the battle; Download against Chansey (Special Defense higher: +1 Attack), against Skarmory (Defense higher: +1 Special Attack) and against Mew (a tie: +1 Special Attack)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sword",
+    "species": "Zacian",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Intrepid Sword"
+   },
+   {
+    "label": "Shield",
+    "species": "Zamazenta",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Dauntless Shield"
+   },
+   {
+    "label": "Pz",
+    "species": "Porygon-Z",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Download"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Chan",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Skar",
+    "species": "Skarmory",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Roost"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Even",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Shield",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Sword",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Shield",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Pz",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Skar"
+  },
+  {
+   "p1": "switch Sword",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Pz",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Sword",
+   "p2": "switch Even"
+  },
+  {
+   "p1": "switch Pz",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

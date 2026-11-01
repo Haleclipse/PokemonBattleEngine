@@ -1,0 +1,68 @@
+{
+ "schema": 1,
+ "id": "gen4-unburden-on-a-refused-theft-and-a-knock-off",
+ "notes": [
+  "Gen 4 Unburden: Thief cannot take Drifblim's Mail (issues.md I53) yet Unburden's onTakeItem starts its volatile — no boost while it holds the Mail; Knock Off takes the Mail and Drifblim then moves first"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sneasel",
+    "species": "Sneasel",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Thief",
+     "Knock Off",
+     "Harden"
+    ],
+    "ability": "Inner Focus"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Drifblim",
+    "species": "Drifblim",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Unburden",
+    "item": "Mail"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Thief",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Knock Off",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,82 @@
+{
+ "schema": 1,
+ "id": "gen9-guts-and-pure-power",
+ "notes": [
+  "Guts: \u00d71.5 Attack once statused, and a burn does not halve its physical damage; Pure Power doubles Attack"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Guts",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Body Slam"
+    ],
+    "ability": "Guts"
+   },
+   {
+    "label": "Pure",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Body Slam"
+    ],
+    "ability": "Pure Power"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Will-O-Wisp",
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Body Slam",
+   "p2": "move Will-O-Wisp"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "switch Pure",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

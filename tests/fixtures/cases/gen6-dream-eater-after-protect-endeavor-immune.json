@@ -1,0 +1,73 @@
+{
+ "schema": 1,
+ "id": "gen6-dream-eater-after-protect-endeavor-immune",
+ "notes": [
+  "Gen 6 checks Dream Eater's own immunity after Protect (TryHit); Endeavor leaves a target with less HP than the user immune; Sing (sound) puts the target to sleep behind its Substitute and Dream Eater hits the Substitute (no Gen 1-4 immunity)"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hypno",
+    "species": "Hypno",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Dream Eater",
+     "Endeavor",
+     "Sing"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Protect",
+     "Substitute",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Dream Eater",
+   "p2": "move Protect"
+  },
+  {
+   "p1": "move Endeavor",
+   "p2": "move Substitute"
+  },
+  {
+   "p1": "move Endeavor",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Sing",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Dream Eater",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   6,
+   2,
+   3,
+   4
+  ]
+ }
+}

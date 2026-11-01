@@ -1,0 +1,86 @@
+{
+  "schema": 1,
+  "id": "gen9-doubles-spread-miss",
+  "notes": [
+    "Spread move with per-target accuracy: Icy Wind (95 %) against two foes; at least one turn misses one target and hits",
+    "the other (`-miss|user|target`), so the tape carries a separate Accuracy decision per target in target order."
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "a",
+        "species": "Snorlax",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Icy Wind"
+        ]
+      },
+      {
+        "label": "c",
+        "species": "Garchomp",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "b",
+        "species": "Metagross",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ]
+      },
+      {
+        "label": "d",
+        "species": "Clefable",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1, move 1 1",
+      "p2": "move 1 1, move 1 2"
+    },
+    {
+      "p1": "move 1, move 1 1",
+      "p2": "move 1 1, move 1 2"
+    },
+    {
+      "p1": "move 1, move 1 1",
+      "p2": "move 1 1, move 1 2"
+    },
+    {
+      "p1": "move 1, move 1 1",
+      "p2": "move 1 1, move 1 2"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      2,
+      2,
+      3,
+      4
+    ]
+  }
+}

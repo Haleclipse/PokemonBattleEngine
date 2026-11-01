@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen9-poison-touch-ignores-the-attackers-protective-pads",
+ "notes": [
+  "Gen 9: Croagunk's Poison Touch rolls on every Tackle, the attacker holding Protective Pads; Pads spare their holder what contact does to it, they take no contact away (Sun / Moon research, Smogon #424; Bulbapedia). Showdown checks the target's Pads (`checkMoveMakesContact(move, target, source)`), which the oracle patch stops (issues.md I8, user's decision; DESIGN.md R-M8-104)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Croagunk",
+    "species": "Croagunk",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Splash"
+    ],
+    "item": "Protective Pads",
+    "ability": "Poison Touch",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Tackle",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

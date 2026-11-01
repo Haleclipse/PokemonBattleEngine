@@ -1,0 +1,131 @@
+{
+  "schema": 1,
+  "id": "m8-gen4-fling-throws-a-focus-sash",
+  "notes": [
+    "Replay R-M8-96: Buizel flings its Focus Sash; the sash goes with the throw, which the damage search must not read as a hold (DESIGN.md R-M8-97)",
+    "promoted from m8-gen4-singles-s510-008-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "singles",
+    "format": "gen4customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Kabuto",
+        "species": "Kabuto",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sky Uppercut",
+          "Aqua Tail"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Illumise",
+        "species": "Illumise",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Jump Kick"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Oddish",
+        "species": "Oddish",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Bug Bite"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Cacnea",
+        "species": "Cacnea",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Rock Throw",
+          "Seed Bomb"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Azelf",
+        "species": "Azelf",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Pay Day"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Buizel",
+        "species": "Buizel",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fling"
+        ],
+        "ability": "Run Away",
+        "item": "Focus Sash",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      13106,
+      58877,
+      20498,
+      60149
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Sky Uppercut",
+      "p2": "move Rock Throw"
+    },
+    {
+      "p1": "move Aqua Tail",
+      "p2": "move Seed Bomb"
+    },
+    {
+      "p1": "switch Illumise"
+    },
+    {
+      "p1": "switch Oddish",
+      "p2": "switch Azelf"
+    },
+    {
+      "p1": "switch Illumise",
+      "p2": "switch Cacnea"
+    },
+    {
+      "p1": "move Jump Kick",
+      "p2": "move Rock Throw"
+    },
+    {
+      "p2": "switch Azelf"
+    },
+    {
+      "p1": "switch Oddish",
+      "p2": "switch Buizel"
+    },
+    {
+      "p1": "move Bug Bite",
+      "p2": "move Fling"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "schema": 1,
+  "id": "gen9-doubles-friend-guard-telepathy",
+  "notes": [
+    "Earthquake from Garchomp: its Telepathy partner is not touched (`-activate … ability: Telepathy`, no accuracy or damage decision); the foe beside a Friend Guard holder takes ×0.75 at the ModifyDamage step, the holder itself full damage."
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "a",
+        "species": "Garchomp",
+        "ability": "Rough Skin",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Earthquake",
+          "Dragon Claw"
+        ]
+      },
+      {
+        "label": "b",
+        "species": "Metagross",
+        "ability": "Telepathy",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Swords Dance"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "c",
+        "species": "Snorlax",
+        "ability": "Friend Guard",
+        "level": 100,
+        "nature": "Hardy",
+        "moves": [
+          "Swords Dance"
+        ]
+      },
+      {
+        "label": "d",
+        "species": "Blissey",
+        "ability": "Run Away",
+        "level": 100,
+        "nature": "Hardy",
+        "moves": [
+          "Swords Dance"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1, move 1",
+      "p2": "move 1, move 1"
+    },
+    {
+      "p1": "move 2 2, move 1",
+      "p2": "move 1, move 1"
+    },
+    {
+      "p1": "move 2 1, move 1",
+      "p2": "move 1, move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

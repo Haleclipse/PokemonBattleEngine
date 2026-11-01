@@ -1,0 +1,73 @@
+{
+ "schema": 1,
+ "id": "gen2-petal-dance-safeguard-spares-the-fatigue",
+ "notes": [
+  "Gen 2 Petal Dance under Safeguard: the last use confuses nobody (pokecrystal `SafeCheckSafeguard`, Showdown's gen2 `lockedmove` alike)"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Dancer",
+    "species": "Bellossom",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Petal Dance",
+     "Safeguard"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Wall",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Safeguard",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

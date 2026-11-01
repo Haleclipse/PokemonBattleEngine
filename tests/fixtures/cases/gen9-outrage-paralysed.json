@@ -1,0 +1,104 @@
+{
+ "schema": 1,
+ "id": "gen9-outrage-paralysed",
+ "notes": [
+  "Gen 9 Outrage while paralysed: a full paralysis on the lock's last turn confuses at the end of the turn; on an earlier turn the lock ends without confusion"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Rager",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Outrage",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Wall",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Thunder Wave",
+     "Recover",
+     "Tail Whip"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Thunder Wave"
+  },
+  {
+   "p1": "move Outrage",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Outrage",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Outrage",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Outrage",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Outrage",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Outrage",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Outrage",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Outrage",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Outrage",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Outrage",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Outrage",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Outrage",
+   "p2": "move Tail Whip"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   2,
+   2,
+   3,
+   4
+  ]
+ }
+}

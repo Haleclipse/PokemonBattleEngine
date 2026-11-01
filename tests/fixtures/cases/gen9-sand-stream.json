@@ -1,0 +1,74 @@
+{
+  "schema": 1,
+  "id": "gen9-singles-sand-stream",
+  "notes": [
+    "Sand Stream: sandstorm from the lead's entry (5 turns from Gen 6), 1/16 chip on Snorlax at every upkeep and none on the Rock type, a Rock type's Special Defense x1.5 against Gust, the weather ending on the fifth upkeep."
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "a",
+        "species": "Tyranitar",
+        "ability": "Sand Stream",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "b",
+        "species": "Snorlax",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle",
+          "Gust"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      4,
+      2,
+      3,
+      4
+    ]
+  }
+}

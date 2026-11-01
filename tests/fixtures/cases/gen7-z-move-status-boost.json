@@ -1,0 +1,55 @@
+{
+ "schema": 1,
+ "id": "gen7-z-move-status-boost",
+ "notes": [
+  "Gen 7: a Normalium Z Harden (`move 1 zmove`) runs Harden powered: the Z power's boost (+1 Defense) lands first, then the move itself raises it again"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Normalium Z"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Charizard",
+    "species": "Charizard",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Blaze"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1 zmove",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

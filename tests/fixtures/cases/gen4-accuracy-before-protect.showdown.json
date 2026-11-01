@@ -1,0 +1,1220 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@pkmn/sim",
+    "version": "0.10.11",
+    "formatid": "gen4customgame",
+    "seed": [
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  "frames": [
+    {
+      "schema": 1,
+      "checkpoint": "initial",
+      "turn": 1,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                16,
+                64
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 135,
+              "max_hp": 135,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "water",
+                "psychic"
+              ],
+              "ability": "naturalcure",
+              "item": "",
+              "pp": [
+                16,
+                64
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "details": "Snorlax, L50, M",
+          "hp": 235,
+          "max_hp": 235,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Starmie"
+          },
+          "details": "Starmie, L50",
+          "hp": 135,
+          "max_hp": 135,
+          "status": null
+        },
+        {
+          "kind": "turn",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_1",
+      "turn": 2,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                15,
+                64
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 135,
+              "max_hp": 135,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "stall": 1
+              },
+              "types": [
+                "water",
+                "psychic"
+              ],
+              "ability": "naturalcure",
+              "item": "",
+              "pp": [
+                15,
+                64
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Starmie"
+          },
+          "move": "Protect",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Starmie"
+          }
+        },
+        {
+          "kind": "singleturn",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Starmie"
+          },
+          "move": "Protect"
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Rock Slide",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Starmie"
+          }
+        },
+        {
+          "kind": "activate",
+          "args": [
+            "p2a: Starmie",
+            "Protect"
+          ]
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 2
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_2",
+      "turn": 3,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": -1,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                14,
+                64
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 108,
+              "max_hp": 135,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "water",
+                "psychic"
+              ],
+              "ability": "naturalcure",
+              "item": "",
+              "pp": [
+                15,
+                63
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Starmie"
+          },
+          "move": "Growl",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "unboost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "stat": "atk",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Rock Slide",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Starmie"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Starmie"
+          },
+          "hp": 108,
+          "max_hp": 135,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 3
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_3",
+      "turn": 4,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": -1,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                13,
+                64
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 108,
+              "max_hp": 135,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "stall": 1
+              },
+              "types": [
+                "water",
+                "psychic"
+              ],
+              "ability": "naturalcure",
+              "item": "",
+              "pp": [
+                14,
+                63
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Starmie"
+          },
+          "move": "Protect",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Starmie"
+          }
+        },
+        {
+          "kind": "singleturn",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Starmie"
+          },
+          "move": "Protect"
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Rock Slide",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Starmie"
+          }
+        },
+        {
+          "kind": "activate",
+          "args": [
+            "p2a: Starmie",
+            "Protect"
+          ]
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 4
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_4",
+      "turn": 5,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": -2,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                12,
+                64
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 89,
+              "max_hp": 135,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "water",
+                "psychic"
+              ],
+              "ability": "naturalcure",
+              "item": "",
+              "pp": [
+                14,
+                62
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Starmie"
+          },
+          "move": "Growl",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "unboost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "stat": "atk",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Rock Slide",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Starmie"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Starmie"
+          },
+          "hp": 89,
+          "max_hp": 135,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 5
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_5",
+      "turn": 6,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": -2,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                11,
+                64
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 89,
+              "max_hp": 135,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "stall": 1
+              },
+              "types": [
+                "water",
+                "psychic"
+              ],
+              "ability": "naturalcure",
+              "item": "",
+              "pp": [
+                13,
+                62
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Starmie"
+          },
+          "move": "Protect",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Starmie"
+          }
+        },
+        {
+          "kind": "singleturn",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Starmie"
+          },
+          "move": "Protect"
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Rock Slide",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Starmie"
+          }
+        },
+        {
+          "kind": "miss",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "detail": "p2a: Starmie"
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 6
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_6",
+      "turn": 7,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": -3,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                10,
+                64
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 74,
+              "max_hp": 135,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "water",
+                "psychic"
+              ],
+              "ability": "naturalcure",
+              "item": "",
+              "pp": [
+                13,
+                61
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Starmie"
+          },
+          "move": "Growl",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "unboost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "stat": "atk",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Rock Slide",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Starmie"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Starmie"
+          },
+          "hp": 74,
+          "max_hp": 135,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 7
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_7",
+      "turn": 8,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": -3,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                9,
+                64
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 74,
+              "max_hp": 135,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "stall": 1
+              },
+              "types": [
+                "water",
+                "psychic"
+              ],
+              "ability": "naturalcure",
+              "item": "",
+              "pp": [
+                12,
+                61
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Starmie"
+          },
+          "move": "Protect",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Starmie"
+          }
+        },
+        {
+          "kind": "singleturn",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Starmie"
+          },
+          "move": "Protect"
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Rock Slide",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Starmie"
+          }
+        },
+        {
+          "kind": "activate",
+          "args": [
+            "p2a: Starmie",
+            "Protect"
+          ]
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 8
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_8",
+      "turn": 9,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": -4,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                8,
+                64
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 61,
+              "max_hp": 135,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "water",
+                "psychic"
+              ],
+              "ability": "naturalcure",
+              "item": "",
+              "pp": [
+                12,
+                60
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Starmie"
+          },
+          "move": "Growl",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "unboost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "stat": "atk",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Rock Slide",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Starmie"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Starmie"
+          },
+          "hp": 61,
+          "max_hp": 135,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 9
+        }
+      ]
+    }
+  ],
+  "debug_log": "|gametype|singles\n|player|p1|P1||\n|player|p2|P2||\n|gen|4\n|tier|[Gen 4] Custom Game\n|\n|teamsize|p1|1\n|teamsize|p2|1\n|start\n|switch|p1a: Snorlax|Snorlax, L50, M|235/235\n|switch|p2a: Starmie|Starmie, L50|135/135\n|turn|1\n|\n|move|p2a: Starmie|Protect|p2a: Starmie\n|-singleturn|p2a: Starmie|Protect\n|move|p1a: Snorlax|Rock Slide|p2a: Starmie\n|-activate|p2a: Starmie|Protect\n|\n|upkeep\n|turn|2\n|\n|move|p2a: Starmie|Growl|p1a: Snorlax\n|-unboost|p1a: Snorlax|atk|1\n|move|p1a: Snorlax|Rock Slide|p2a: Starmie\n|-damage|p2a: Starmie|108/135\n|\n|upkeep\n|turn|3\n|\n|move|p2a: Starmie|Protect|p2a: Starmie\n|-singleturn|p2a: Starmie|Protect\n|move|p1a: Snorlax|Rock Slide|p2a: Starmie\n|-activate|p2a: Starmie|Protect\n|\n|upkeep\n|turn|4\n|\n|move|p2a: Starmie|Growl|p1a: Snorlax\n|-unboost|p1a: Snorlax|atk|1\n|move|p1a: Snorlax|Rock Slide|p2a: Starmie\n|-damage|p2a: Starmie|89/135\n|\n|upkeep\n|turn|5\n|\n|move|p2a: Starmie|Protect|p2a: Starmie\n|-singleturn|p2a: Starmie|Protect\n|move|p1a: Snorlax|Rock Slide|p2a: Starmie|[miss]\n|-miss|p1a: Snorlax|p2a: Starmie\n|\n|upkeep\n|turn|6\n|\n|move|p2a: Starmie|Growl|p1a: Snorlax\n|-unboost|p1a: Snorlax|atk|1\n|move|p1a: Snorlax|Rock Slide|p2a: Starmie\n|-damage|p2a: Starmie|74/135\n|\n|upkeep\n|turn|7\n|\n|move|p2a: Starmie|Protect|p2a: Starmie\n|-singleturn|p2a: Starmie|Protect\n|move|p1a: Snorlax|Rock Slide|p2a: Starmie\n|-activate|p2a: Starmie|Protect\n|\n|upkeep\n|turn|8\n|\n|move|p2a: Starmie|Growl|p1a: Snorlax\n|-unboost|p1a: Snorlax|atk|1\n|move|p1a: Snorlax|Rock Slide|p2a: Starmie\n|-damage|p2a: Starmie|61/135\n|\n|upkeep\n|turn|9"
+}

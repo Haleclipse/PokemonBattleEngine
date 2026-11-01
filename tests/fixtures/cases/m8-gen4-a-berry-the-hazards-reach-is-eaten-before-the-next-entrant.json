@@ -1,0 +1,137 @@
+{
+  "schema": 1,
+  "id": "m8-gen4-a-berry-the-hazards-reach-is-eaten-before-the-next-entrant",
+  "notes": [
+    "Gen 4 singles: after a double knock-out both sides send in their last Pokémon. Gloom takes Spikes and Stealth Rock down to a quarter and eats its Liechi Berry; then Munchlax takes the hazards and faints, ending the battle. Showdown's runAction ends each Gen 1-4 runSwitch with an Update once its faints are settled, so the berry is eaten before the next entrant comes in (DESIGN.md R-M8-172).",
+    "promoted from m8-gen4-singles-s850-015-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "singles",
+    "format": "gen4customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Sealeo",
+        "species": "Sealeo",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Mud Bomb",
+          "Stealth Rock",
+          "Aurora Beam",
+          "Spikes"
+        ],
+        "ability": "Download",
+        "gender": "F"
+      },
+      {
+        "label": "Munchlax",
+        "species": "Munchlax",
+        "level": 53,
+        "nature": "Hardy",
+        "moves": [
+          "Constrict",
+          "Bubble Beam",
+          "Spikes"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Kingdra",
+        "species": "Kingdra",
+        "level": 46,
+        "nature": "Hardy",
+        "moves": [
+          "Aerial Ace",
+          "Stealth Rock",
+          "Aura Sphere",
+          "Spikes"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Gloom",
+        "species": "Gloom",
+        "level": 54,
+        "nature": "Hardy",
+        "moves": [
+          "Extrasensory",
+          "Bite",
+          "Spikes"
+        ],
+        "ability": "Run Away",
+        "item": "Liechi Berry",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      43921,
+      46515,
+      26639,
+      4207
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Mud Bomb",
+      "p2": "move Aerial Ace"
+    },
+    {
+      "p1": "move Aurora Beam",
+      "p2": "move Aura Sphere"
+    },
+    {
+      "p1": "move Spikes",
+      "p2": "move Spikes"
+    },
+    {
+      "p1": "move Mud Bomb",
+      "p2": "move Aerial Ace"
+    },
+    {
+      "p1": "move Stealth Rock",
+      "p2": "move Stealth Rock"
+    },
+    {
+      "p1": "switch Munchlax",
+      "p2": "switch Gloom"
+    },
+    {
+      "p1": "move Bubble Beam",
+      "p2": "move Bite"
+    },
+    {
+      "p1": "move Spikes",
+      "p2": "move Spikes"
+    },
+    {
+      "p1": "move Constrict",
+      "p2": "move Extrasensory"
+    },
+    {
+      "p1": "move Bubble Beam",
+      "p2": "move Bite"
+    },
+    {
+      "p1": "move Spikes",
+      "p2": "move Spikes"
+    },
+    {
+      "p1": "switch Sealeo",
+      "p2": "switch Kingdra"
+    },
+    {
+      "p1": "switch Munchlax",
+      "p2": "switch Gloom"
+    }
+  ]
+}

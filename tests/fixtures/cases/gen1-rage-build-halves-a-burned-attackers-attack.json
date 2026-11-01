@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen1-rage-build-halves-a-burned-attackers-attack",
+ "notes": [
+  "Gen 1 Rage (cartridge, I79): the build is the raging Pok\u00e9mon's Attack-up effect, which halves its burned foe's Attack again (pokered StatModifierUpEffect's HalveAttackDueToBurn) \u2014 the foe's next Tackle does less"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Rager",
+    "species": "Primeape",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fire Blast",
+     "Rage"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Burned",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Fire Blast",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

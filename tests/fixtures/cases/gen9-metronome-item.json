@@ -1,0 +1,105 @@
+{
+ "schema": 1,
+ "id": "gen9-metronome-item",
+ "notes": [
+  "Gen 9 Metronome (the item, Showdown's `metronome` condition): Swift counts one more while it succeeds (at most [8192, 4096] from the fifth on), a Protect's `null` starts the next Swift over, and Solar Beam's attacking turn counts from 1, then on"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Beat",
+    "species": "Mew",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Swift",
+     "Solar Beam"
+    ],
+    "ability": "Run Away",
+    "item": "Metronome"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Wall",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Soft-Boiled",
+     "Protect",
+     "Harden"
+    ],
+    "ability": "Natural Cure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1",
+   "p2": "move 3"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 3"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 3"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 3"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 3"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 2"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 3"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 3"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 3"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

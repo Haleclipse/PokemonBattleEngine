@@ -1,0 +1,79 @@
+{
+ "schema": 1,
+ "id": "gen9-a-confused-dancer-hurts-itself-before-the-dance",
+ "notes": [
+  "Gen 9 doubles: Altaria (Dancer), confused by Decidueye's Confuse Ray, dances its partner Camerupt's Petal Dance and hurts itself instead \u2014 its random target was drawn first (runMove's getTarget before BeforeMove); the replay plans the dance with the action's move although no move line shows (DESIGN.md R-M8-122)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Decidueye",
+    "species": "Decidueye",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Confuse Ray",
+     "Splash"
+    ],
+    "ability": "Overgrow",
+    "gender": "F"
+   },
+   {
+    "label": "Cacturne",
+    "species": "Cacturne",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Sand Veil",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Camerupt",
+    "species": "Camerupt",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Petal Dance",
+     "Splash"
+    ],
+    "ability": "Solid Rock",
+    "gender": "F"
+   },
+   {
+    "label": "Altaria",
+    "species": "Altaria",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Dancer",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Confuse Ray 2, move Splash",
+   "p2": "move Petal Dance, move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   5,
+   35,
+   65,
+   155
+  ]
+ }
+}

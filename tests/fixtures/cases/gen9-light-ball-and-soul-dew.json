@@ -1,0 +1,187 @@
+{
+ "schema": 1,
+ "id": "gen9-light-ball-and-soul-dew",
+ "notes": [
+  "Gen 9: Light Ball doubles Pikachu's (and a cap Pikachu's) Attack and Special Attack; Soul Dew \u00d71.2 to Latios' Psychic and Dragon Pulse, not its Surf, nothing for Mew; Latias holding it takes the usual damage; a Mew holding a Light Ball gets nothing"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Pikachu",
+    "species": "Pikachu",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Thunderbolt",
+     "Body Slam"
+    ],
+    "ability": "Run Away",
+    "item": "Light Ball"
+   },
+   {
+    "label": "Cap",
+    "species": "Pikachu-Alola",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Thunderbolt",
+     "Body Slam"
+    ],
+    "ability": "Run Away",
+    "item": "Light Ball"
+   },
+   {
+    "label": "Latios",
+    "species": "Latios",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Psychic",
+     "Dragon Pulse",
+     "Surf"
+    ],
+    "ability": "Run Away",
+    "item": "Soul Dew"
+   },
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Psychic",
+     "Thunderbolt"
+    ],
+    "ability": "Run Away",
+    "item": "Soul Dew"
+   },
+   {
+    "label": "Ball",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Thunderbolt",
+     "Body Slam"
+    ],
+    "ability": "Run Away",
+    "item": "Light Ball"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Latias",
+    "species": "Latias",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away",
+    "item": "Soul Dew"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Thunderbolt",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "switch Cap",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Thunderbolt",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "switch Latios",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Psychic",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Dragon Pulse",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Surf",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Psychic",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "switch Mew",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Psychic",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Psychic",
+   "p2": "switch Latias"
+  },
+  {
+   "p1": "move Thunderbolt",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Thunderbolt",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "switch Ball",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Thunderbolt",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Slack Off"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

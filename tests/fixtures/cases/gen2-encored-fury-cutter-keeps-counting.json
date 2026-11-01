@@ -1,0 +1,63 @@
+{
+ "schema": 1,
+ "id": "gen2-encored-fury-cutter-keeps-counting",
+ "notes": [
+  "Gen 2: Scyther's Fury Cutter, then Jolteon's faster Encore locks it onto Fury Cutter while it chose Encore: the turn uses Fury Cutter, so the count goes on and the damage doubles (pokecrystal counts the move used; the oracle's I75 patch read the move chosen before `encore.onOverrideAction`, DESIGN.md R-M8-106)"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Scyther",
+    "species": "Scyther",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fury Cutter",
+     "Encore"
+    ],
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Encore",
+     "Splash"
+    ],
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Fury Cutter",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Encore",
+   "p2": "move Encore"
+  },
+  {
+   "p1": "move Fury Cutter",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   3,
+   4,
+   5,
+   6
+  ]
+ }
+}

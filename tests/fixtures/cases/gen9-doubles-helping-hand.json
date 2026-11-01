@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "id": "gen9-doubles-helping-hand",
+  "notes": [
+    "Helping Hand (priority +5, `-singleturn … Helping Hand|[of] …`): the partner's Dragon Claw gets ×1.5 in its BasePower chain; when both partners use Helping Hand on each other, the first succeeds (its target still has to move) and the second fails (its target already moved)."
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "a",
+        "species": "Clefable",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Helping Hand",
+          "Moonblast"
+        ]
+      },
+      {
+        "label": "b",
+        "species": "Garchomp",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Dragon Claw",
+          "Helping Hand"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "c",
+        "species": "Snorlax",
+        "ability": "Run Away",
+        "level": 100,
+        "nature": "Hardy",
+        "moves": [
+          "Swords Dance"
+        ]
+      },
+      {
+        "label": "d",
+        "species": "Blissey",
+        "ability": "Run Away",
+        "level": 100,
+        "nature": "Hardy",
+        "moves": [
+          "Swords Dance"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1 -2, move 1 1",
+      "p2": "move 1, move 1"
+    },
+    {
+      "p1": "move 2 1, move 1 1",
+      "p2": "move 1, move 1"
+    },
+    {
+      "p1": "move 1 -2, move 2 -1",
+      "p2": "move 1, move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+# Pin the channel used by local development and CI. `stable` is used rather than an exact
+# patch version so contributors are not forced to install a second toolchain; CI resolves the
+# same channel. `rust-version` in Cargo.toml records the minimum the crate is tested against.
+[toolchain]
+channel = "stable"
+components = ["rustfmt", "clippy"]

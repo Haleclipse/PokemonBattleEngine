@@ -1,0 +1,67 @@
+{
+ "schema": 1,
+ "id": "gen4-minimize",
+ "notes": [
+  "Gen 4 Minimize: +1 evasion; Stomp against it has double power (the cartridge's move multiplier, as the oracle's Gen 4 damage has it)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mini",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Minimize",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Stomp",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Minimize",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Stomp"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Stomp"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Stomp"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

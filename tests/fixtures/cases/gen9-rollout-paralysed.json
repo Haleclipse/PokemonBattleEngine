@@ -1,0 +1,79 @@
+{
+ "schema": 1,
+ "id": "gen9-rollout-paralysed",
+ "notes": [
+  "Gen 9 Rollout: a full paralysis mid-chain breaks it; the next use starts again at 30"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Roller",
+    "species": "Mew",
+    "level": 35,
+    "nature": "Hardy",
+    "moves": [
+     "Rollout",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Wall",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Thunder Wave",
+     "Tail Whip"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Thunder Wave"
+  },
+  {
+   "p1": "move Rollout",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Rollout",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Rollout",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Rollout",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Rollout",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Rollout",
+   "p2": "move Tail Whip"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

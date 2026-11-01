@@ -1,0 +1,67 @@
+{
+ "schema": 1,
+ "id": "gen9-ogerpon-tera-formes-2",
+ "notes": [
+  "Gen 9: Ogerpon-Hearthflame and Ogerpon-Cornerstone Terastallize: Attack and Defense are what their Embody Aspects raise"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Ogerpon-Hearthflame",
+    "species": "Ogerpon-Hearthflame",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "ability": "Embody Aspect (Hearthflame)",
+    "item": "Hearthflame Mask",
+    "teraType": "Fire"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Ogerpon-Cornerstone",
+    "species": "Ogerpon-Cornerstone",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "ability": "Embody Aspect (Cornerstone)",
+    "item": "Cornerstone Mask",
+    "teraType": "Rock"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1 terastallize",
+   "p2": "move 1 terastallize"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 2"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

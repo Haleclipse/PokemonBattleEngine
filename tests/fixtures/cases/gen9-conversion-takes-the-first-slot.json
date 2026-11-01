@@ -1,0 +1,64 @@
+{
+ "schema": 1,
+ "id": "gen9-conversion-takes-the-first-slot",
+ "notes": [
+  "Gen 6+: Conversion gives the first slot's type (Thunderbolt: Electric); used again it fails, Porygon2 having Electric — so Stomping Tantrum doubles"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Porygon2",
+    "species": "Porygon2",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Thunderbolt",
+     "Conversion",
+     "Stomping Tantrum"
+    ],
+    "ability": "Trace"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Conversion",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Conversion",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Stomping Tantrum",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

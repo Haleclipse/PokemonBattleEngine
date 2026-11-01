@@ -1,0 +1,127 @@
+{
+  "schema": 1,
+  "id": "m8-gen3-doubles-snatch-takes-a-swallow-with-nothing-stockpiled",
+  "notes": [
+    "Nightly 58: Gen 3 runs PrepareHit (Snatch) before the move's Try: Totodile's Snatch takes Spinda's Swallow with nothing stockpiled, which then fails for Totodile (gen3 tryMoveHit; pokeemerald attackcanceler before stockpiletohpheal) (DESIGN.md R-M8-102)",
+    "promoted from m8-gen3-doubles-s528-006-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 3,
+    "mode": "doubles",
+    "format": "gen3doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Totodile",
+        "species": "Totodile",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Snatch"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Skarmory",
+        "species": "Skarmory",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Octazooka",
+          "Disable",
+          "Iron Tail"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Dugtrio",
+        "species": "Dugtrio",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Mud Shot",
+          "Swallow",
+          "Disable"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Flaaffy",
+        "species": "Flaaffy",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Bubble"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Persian",
+        "species": "Persian",
+        "level": 53,
+        "nature": "Hardy",
+        "moves": [
+          "Icy Wind",
+          "Swallow",
+          "Shadow Ball"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Spinda",
+        "species": "Spinda",
+        "level": 52,
+        "nature": "Hardy",
+        "moves": [
+          "Luster Purge",
+          "Swallow",
+          "Disable"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      64455,
+      44397,
+      60191,
+      29592
+    ]
+  },
+  "script": [
+    {
+      "p1": "switch Dugtrio, move Disable 1",
+      "p2": "switch Spinda, move Swallow"
+    },
+    {
+      "p1": "move Swallow, move Iron Tail 2",
+      "p2": "move Swallow, move Shadow Ball 1"
+    },
+    {
+      "p1": "move Disable 2, move Octazooka 1",
+      "p2": "move Disable 2, move Icy Wind"
+    },
+    {
+      "p1": "move Mud Shot 2, move Disable 1",
+      "p2": "move Luster Purge 1, move Swallow"
+    },
+    {
+      "p1": "switch Totodile, pass"
+    },
+    {
+      "p1": "move Snatch, move Iron Tail 2",
+      "p2": "move Swallow, move Shadow Ball 2"
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+ "schema": 1,
+ "id": "gen9-pickpocket-takes-from-a-contact-attacker",
+ "notes": [
+  "Gen 9 Pickpocket: Weavile takes the Leftovers of the Snorlax whose Tackle hit it; a Weavile already holding something takes nothing; a Pickpocket Sneasel the Tackle knocks out takes nothing either (setItem fails, the item stays)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Weavile",
+    "species": "Weavile",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Pickpocket"
+   },
+   {
+    "label": "Holder",
+    "species": "Weavile",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Pickpocket",
+    "item": "Black Belt"
+   },
+   {
+    "label": "Sneasel",
+    "species": "Sneasel",
+    "level": 5,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Pickpocket"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Leftovers"
+   },
+   {
+    "label": "Second",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Shell Bell"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "switch Holder",
+   "p2": "switch Second"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "switch Sneasel",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

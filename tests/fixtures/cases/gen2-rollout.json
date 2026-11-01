@@ -1,0 +1,86 @@
+{
+ "schema": 1,
+ "id": "gen2-rollout",
+ "notes": [
+  "Gen 2 Rollout after Defense Curl: doubling on each of five hits, the user locked in, then free (Gen 2: no [from] lockedmove)"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Roller",
+    "species": "Snorlax",
+    "level": 35,
+    "nature": "Hardy",
+    "moves": [
+     "Rollout",
+     "Defense Curl",
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Wall",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tail Whip",
+     "Protect"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Defense Curl",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Rollout",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Rollout",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Rollout",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Rollout",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Rollout",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Rollout",
+   "p2": "move Protect"
+  },
+  {
+   "p1": "move Rollout",
+   "p2": "move Tail Whip"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

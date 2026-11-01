@@ -1,0 +1,75 @@
+{
+ "schema": 1,
+ "id": "gen3-bind-untouched-when-battle-ends-in-residual",
+ "notes": [
+  "A battle decided in the residual before the bind handler: Swellow's burn knocks out P1's last Pok\u00e9mon ahead of the Wrap it just started (Gen 3 burn 10.6, bind 10.9), so the bind duration took no tick",
+  "Written by hand for I35 (DESIGN.md R146): the battle promoted from m8-gen3-singles-s103-000-min used Twineedle, whose poison the Gen 3 patch rolls once, and no longer fits its script"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Swellow",
+    "species": "Swellow",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Wrap",
+     "Harden"
+    ],
+    "ability": "Guts",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Furret",
+    "species": "Furret",
+    "level": 55,
+    "nature": "Hardy",
+    "moves": [
+     "Will-O-Wisp",
+     "Seismic Toss",
+     "Harden"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Will-O-Wisp"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Wrap",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   3,
+   2,
+   3,
+   4
+  ]
+ }
+}

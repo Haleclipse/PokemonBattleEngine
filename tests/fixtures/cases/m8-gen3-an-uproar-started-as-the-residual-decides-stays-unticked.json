@@ -1,0 +1,318 @@
+{
+  "schema": 1,
+  "id": "m8-gen3-an-uproar-started-as-the-residual-decides-stays-unticked",
+  "notes": [
+    "Gen 3: Remoraid starts Uproar on the turn the sandstorm knocks out Chimecho, the foe's last Pokemon; the residual decides the battle before Uproar's turn-end tick, so the frame shows the turns it drew (DESIGN.md R-M8-163)",
+    "promoted from m8-gen3-singles-s800-011-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 3,
+    "mode": "singles",
+    "format": "gen3customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Gligar",
+        "species": "Gligar",
+        "level": 45,
+        "nature": "Hardy",
+        "moves": [
+          "Milk Drink",
+          "Spite",
+          "Slack Off",
+          "Role Play"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Ninjask",
+        "species": "Ninjask",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Recover",
+          "Spite",
+          "Ancient Power"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Exploud",
+        "species": "Exploud",
+        "level": 48,
+        "nature": "Hardy",
+        "moves": [
+          "Silver Wind",
+          "Spite",
+          "Overheat",
+          "Role Play"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Psyduck",
+        "species": "Psyduck",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Meteor Mash",
+          "Role Play"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Entei",
+        "species": "Entei",
+        "level": 45,
+        "nature": "Hardy",
+        "moves": [
+          "Superpower",
+          "Spite",
+          "Metal Claw"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Chimecho",
+        "species": "Chimecho",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Psycho Boost",
+          "Spite",
+          "Blaze Kick",
+          "Role Play"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Parasect",
+        "species": "Parasect",
+        "level": 51,
+        "nature": "Hardy",
+        "moves": [
+          "Fire Blast",
+          "Spite",
+          "Fire Punch",
+          "Role Play"
+        ],
+        "ability": "Sand Stream",
+        "gender": "M"
+      },
+      {
+        "label": "Whismur",
+        "species": "Whismur",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Flamethrower",
+          "Spite",
+          "Ember",
+          "Role Play"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Donphan",
+        "species": "Donphan",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Heat Wave",
+          "Spite",
+          "Thrash"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Remoraid",
+        "species": "Remoraid",
+        "level": 51,
+        "nature": "Hardy",
+        "moves": [
+          "Uproar",
+          "Role Play"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      48842,
+      49888,
+      4603,
+      58996
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Milk Drink",
+      "p2": "move Fire Blast"
+    },
+    {
+      "p1": "move Spite",
+      "p2": "move Spite"
+    },
+    {
+      "p1": "move Slack Off",
+      "p2": "move Fire Punch"
+    },
+    {
+      "p1": "move Role Play",
+      "p2": "move Role Play"
+    },
+    {
+      "p1": "switch Ninjask",
+      "p2": "switch Whismur"
+    },
+    {
+      "p1": "move Recover",
+      "p2": "move Flamethrower"
+    },
+    {
+      "p1": "move Spite",
+      "p2": "move Spite"
+    },
+    {
+      "p1": "move Ancient Power",
+      "p2": "move Ember"
+    },
+    {
+      "p1": "switch Gligar"
+    },
+    {
+      "p1": "move Role Play",
+      "p2": "move Role Play"
+    },
+    {
+      "p1": "switch Exploud",
+      "p2": "switch Parasect"
+    },
+    {
+      "p1": "move Silver Wind",
+      "p2": "move Fire Blast"
+    },
+    {
+      "p1": "move Spite",
+      "p2": "move Spite"
+    },
+    {
+      "p1": "move Overheat",
+      "p2": "move Fire Punch"
+    },
+    {
+      "p2": "switch Whismur"
+    },
+    {
+      "p1": "move Role Play",
+      "p2": "move Role Play"
+    },
+    {
+      "p1": "switch Gligar",
+      "p2": "switch Donphan"
+    },
+    {
+      "p1": "switch Exploud"
+    },
+    {
+      "p1": "move Silver Wind",
+      "p2": "move Heat Wave"
+    },
+    {
+      "p1": "move Spite",
+      "p2": "move Spite"
+    },
+    {
+      "p1": "move Overheat",
+      "p2": "move Thrash"
+    },
+    {
+      "p1": "move 4",
+      "p2": "move 1"
+    },
+    {
+      "p1": "switch Psyduck"
+    },
+    {
+      "p1": "switch Entei",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move Superpower",
+      "p2": "move Spite"
+    },
+    {
+      "p1": "move Spite",
+      "p2": "move Thrash"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 1"
+    },
+    {
+      "p1": "switch Psyduck"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 1"
+    },
+    {
+      "p1": "switch Chimecho",
+      "p2": "switch Whismur"
+    },
+    {
+      "p1": "move Psycho Boost",
+      "p2": "move Spite"
+    },
+    {
+      "p2": "switch Donphan"
+    },
+    {
+      "p1": "move Spite",
+      "p2": "move Thrash"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 1"
+    },
+    {
+      "p2": "switch Remoraid"
+    },
+    {
+      "p1": "move Role Play",
+      "p2": "move Uproar"
+    },
+    {
+      "p1": "switch Psyduck",
+      "p2": "move Uproar"
+    },
+    {
+      "p1": "move Meteor Mash",
+      "p2": "move Uproar"
+    },
+    {
+      "p1": "switch Chimecho"
+    },
+    {
+      "p1": "move Spite",
+      "p2": "move Role Play"
+    },
+    {
+      "p1": "move Blaze Kick",
+      "p2": "move Uproar"
+    }
+  ]
+}

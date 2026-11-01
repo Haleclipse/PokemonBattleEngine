@@ -1,0 +1,85 @@
+{
+ "schema": 1,
+ "id": "gen3-destiny-bond-after-the-recoil",
+ "notes": [
+  "Gen 3 Destiny Bond against Volt Tackle: the gen3 mod's `tryMoveHit` processes no faint before the recoil \u2014 the user takes its recoil, then the bond knocks it out after the move"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Bonder",
+    "species": "Gengar",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Destiny Bond",
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Bonder2",
+    "species": "Gengar",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Destiny Bond",
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Charger",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Volt Tackle",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Charger2",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Volt Tackle",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Destiny Bond",
+   "p2": "move Volt Tackle"
+  },
+  {
+   "p1": "switch Bonder2",
+   "p2": "switch Charger2"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Volt Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

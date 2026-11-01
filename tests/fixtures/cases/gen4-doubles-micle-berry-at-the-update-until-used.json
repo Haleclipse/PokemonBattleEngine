@@ -1,0 +1,99 @@
+{
+ "schema": 1,
+ "id": "gen4-doubles-micle-berry-at-the-update-until-used",
+ "notes": [
+  "Gen 4 doubles Micle Berry (issues.md I42: pokeplatinum `BattleSystem_TriggerHeldItem`, `moveEffectsData.micleBerry`, `CheckMoveHitAccuracy`): Slowbro, tossed to a quarter by both Jolteon, eats it after the second toss and its Screech that turn uses the boost up",
+  "Turn 2: the other Slowbro eats its own the same way; its Swift (no accuracy to check) leaves the boost, which waits without a time limit until turn 5's Screech",
+  "Unpatched, Showdown eats both in the residual, keeps each boost two turns, and lets the Swift use one up"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "doubles",
+  "format": "gen4doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Slowbro",
+    "species": "Slowbro",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Screech",
+     "Harden",
+     "Swift"
+    ],
+    "item": "Micle Berry",
+    "ability": "Oblivious"
+   },
+   {
+    "label": "Slowbro2",
+    "species": "Slowbro",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Screech",
+     "Harden",
+     "Swift"
+    ],
+    "item": "Micle Berry",
+    "ability": "Oblivious"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 65,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Harden"
+    ],
+    "ability": "Volt Absorb"
+   },
+   {
+    "label": "Jolteon2",
+    "species": "Jolteon",
+    "level": 65,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Harden"
+    ],
+    "ability": "Volt Absorb"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Screech 1, move Harden",
+   "p2": "move Seismic Toss 1, move Seismic Toss 1"
+  },
+  {
+   "p1": "move Harden, move Swift",
+   "p2": "move Seismic Toss 2, move Seismic Toss 2"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Screech 2",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

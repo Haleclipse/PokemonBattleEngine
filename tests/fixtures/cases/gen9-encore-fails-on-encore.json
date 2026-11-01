@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "id": "gen9-encore-fails-on-encore",
+  "notes": [
+    "Encore cannot lock a target into a failencore move (Encore itself)",
+    "promoted from m8-gen9-singles-s201-010-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Iron Thorns",
+        "species": "Iron Thorns",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Encore"
+        ],
+        "ability": "Run Away"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Terrakion",
+        "species": "Terrakion",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Encore"
+        ],
+        "ability": "Run Away"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      59782,
+      64656,
+      37018,
+      1483
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Encore",
+      "p2": "move Encore"
+    }
+  ]
+}

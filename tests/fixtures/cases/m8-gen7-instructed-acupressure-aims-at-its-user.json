@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "id": "m8-gen7-instructed-acupressure-aims-at-its-user",
+  "notes": [
+    "Gen 7: Tentacruel's Acupressure (no position chosen in singles) is instructed by Riolu and runs again on Tentacruel: Showdown's moveUsed writes lastMoveTargetLoc = 0 for it, where the engine kept the Wild Charge's position from the turn before and the instructed Acupressure found no target (DESIGN.md R-M8-111)",
+    "promoted from m8-gen7-singles-s564-019-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 7,
+    "mode": "singles",
+    "format": "gen7customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Tentacruel",
+        "species": "Tentacruel",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Wild Charge",
+          "Acupressure"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Riolu",
+        "species": "Riolu",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Chatter",
+          "Instruct"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      22163,
+      31721,
+      46657,
+      57248
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Wild Charge",
+      "p2": "move Chatter"
+    },
+    {
+      "p1": "move Acupressure",
+      "p2": "move Instruct"
+    }
+  ]
+}

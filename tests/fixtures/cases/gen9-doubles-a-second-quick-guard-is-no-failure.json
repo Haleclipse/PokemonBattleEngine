@@ -1,0 +1,82 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-a-second-quick-guard-is-no-failure",
+ "notes": [
+  "Gen 9 doubles: Darkrai's Quick Guard guards the side; Staraptor's Quick Guard after it finds it up, yet does not fail — its `onHitSide` (the stall volatile) is what it did — so Staraptor's Temper Flare next turn is not doubled (DESIGN.md R-M8-146)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Slaking",
+    "species": "Slaking",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Truant",
+    "gender": "M"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Darkrai",
+    "species": "Darkrai",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Quick Guard",
+     "Splash"
+    ],
+    "ability": "Bad Dreams"
+   },
+   {
+    "label": "Staraptor",
+    "species": "Staraptor",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Quick Guard",
+     "Temper Flare"
+    ],
+    "ability": "Intimidate",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash, move Splash",
+   "p2": "move Quick Guard, move Quick Guard"
+  },
+  {
+   "p1": "move Splash, move Splash",
+   "p2": "move Splash, move Temper Flare 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   3,
+   4,
+   5,
+   6
+  ]
+ }
+}

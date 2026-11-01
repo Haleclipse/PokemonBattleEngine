@@ -1,0 +1,59 @@
+{
+ "schema": 1,
+ "id": "gen6-poison-jab-past-shield-dust-with-mold-breaker-a",
+ "notes": [
+  "Gen 6: Excadrill's Mold Breaker sets Vivillon's Shield Dust aside, so Poison Jab's 30 % poison is rolled (the replay asks the roll with the move under way)"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Excadrill",
+    "species": "Excadrill",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Poison Jab"
+    ],
+    "gender": "M",
+    "ability": "Mold Breaker"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Vivillon",
+    "species": "Vivillon",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Shield Dust"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Poison Jab",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Poison Jab",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   3,
+   5,
+   7
+  ]
+ }
+}

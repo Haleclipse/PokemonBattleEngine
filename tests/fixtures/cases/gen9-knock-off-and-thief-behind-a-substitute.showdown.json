@@ -1,0 +1,945 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@pkmn/sim",
+    "version": "0.10.11",
+    "formatid": "gen9customgame",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "frames": [
+    {
+      "schema": 1,
+      "checkpoint": "team_preview",
+      "turn": 0,
+      "request": "team_preview|team_preview",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            null
+          ],
+          "party": [
+            {
+              "hp": 281,
+              "max_hp": 281,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "dark",
+                "ice"
+              ],
+              "ability": "pressure",
+              "item": "",
+              "pp": [
+                32,
+                40,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            null
+          ],
+          "party": [
+            {
+              "hp": 461,
+              "max_hp": 461,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "thickfat",
+              "item": "metronome",
+              "pp": [
+                16,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": []
+    },
+    {
+      "schema": 1,
+      "checkpoint": "initial",
+      "turn": 1,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 281,
+              "max_hp": 281,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "dark",
+                "ice"
+              ],
+              "ability": "pressure",
+              "item": "",
+              "pp": [
+                32,
+                40,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 461,
+              "max_hp": 461,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "metronome": null
+              },
+              "types": [
+                "normal"
+              ],
+              "ability": "thickfat",
+              "item": "metronome",
+              "pp": [
+                16,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Weavile"
+          },
+          "details": "Weavile, M",
+          "hp": 281,
+          "max_hp": 281,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "details": "Snorlax, F",
+          "hp": 461,
+          "max_hp": 461,
+          "status": null
+        },
+        {
+          "kind": "ability",
+          "args": [
+            "p1a: Weavile",
+            "Pressure"
+          ]
+        },
+        {
+          "kind": "turn",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_1",
+      "turn": 2,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 281,
+              "max_hp": 281,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "dark",
+                "ice"
+              ],
+              "ability": "pressure",
+              "item": "",
+              "pp": [
+                32,
+                40,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 346,
+              "max_hp": 461,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "metronome": null,
+                "substitute": 115
+              },
+              "types": [
+                "normal"
+              ],
+              "ability": "thickfat",
+              "item": "metronome",
+              "pp": [
+                15,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Weavile"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Weavile"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Weavile"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Substitute",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "start",
+          "args": [
+            "p2a: Snorlax",
+            "Substitute"
+          ]
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "hp": 346,
+          "max_hp": 461,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 2
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_2",
+      "turn": 3,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 281,
+              "max_hp": 281,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "dark",
+                "ice"
+              ],
+              "ability": "pressure",
+              "item": "",
+              "pp": [
+                31,
+                40,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 346,
+              "max_hp": 461,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "metronome": null
+              },
+              "types": [
+                "normal"
+              ],
+              "ability": "thickfat",
+              "item": "metronome",
+              "pp": [
+                15,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Weavile"
+          },
+          "move": "Knock Off",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "end",
+          "args": [
+            "p2a: Snorlax",
+            "Substitute"
+          ]
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 3
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_3",
+      "turn": 4,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 281,
+              "max_hp": 281,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "metronome": null
+              },
+              "types": [
+                "dark",
+                "ice"
+              ],
+              "ability": "pressure",
+              "item": "metronome",
+              "pp": [
+                31,
+                39,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 267,
+              "max_hp": 461,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 2,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "thickfat",
+              "item": "",
+              "pp": [
+                15,
+                46
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Weavile"
+          },
+          "move": "Thief",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "hp": 267,
+          "max_hp": 461,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "enditem",
+          "args": [
+            "p2a: Snorlax",
+            "Metronome",
+            "[silent]",
+            "[from] move: Thief",
+            "[of] p1a: Weavile"
+          ]
+        },
+        {
+          "kind": "item",
+          "args": [
+            "p1a: Weavile",
+            "Metronome",
+            "[from] move: Thief",
+            "[of] p2a: Snorlax"
+          ]
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 4
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_4",
+      "turn": 5,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 281,
+              "max_hp": 281,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "metronome": null
+              },
+              "types": [
+                "dark",
+                "ice"
+              ],
+              "ability": "pressure",
+              "item": "metronome",
+              "pp": [
+                31,
+                38,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 204,
+              "max_hp": 461,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 3,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "thickfat",
+              "item": "",
+              "pp": [
+                15,
+                45
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Weavile"
+          },
+          "move": "Thief",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "hp": 204,
+          "max_hp": 461,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 5
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_5",
+      "turn": 6,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 281,
+              "max_hp": 281,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 2,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "metronome": null
+              },
+              "types": [
+                "dark",
+                "ice"
+              ],
+              "ability": "pressure",
+              "item": "metronome",
+              "pp": [
+                31,
+                38,
+                46
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 204,
+              "max_hp": 461,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 4,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "thickfat",
+              "item": "",
+              "pp": [
+                15,
+                44
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Weavile"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Weavile"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Weavile"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 6
+        }
+      ]
+    }
+  ],
+  "debug_log": "|gametype|singles\n|player|p1|P1||\n|player|p2|P2||\n|gen|9\n|tier|[Gen 9] Custom Game\n|clearpoke\n|poke|p1|Weavile, M|\n|poke|p2|Snorlax, F|\n|teampreview\n|\n|teamsize|p1|1\n|teamsize|p2|1\n|start\n|switch|p1a: Weavile|Weavile, M|281/281\n|switch|p2a: Snorlax|Snorlax, F|461/461\n|-ability|p1a: Weavile|Pressure\n|turn|1\n|\n|move|p1a: Weavile|Harden|p1a: Weavile\n|-boost|p1a: Weavile|def|1\n|move|p2a: Snorlax|Substitute|p2a: Snorlax\n|-start|p2a: Snorlax|Substitute\n|-damage|p2a: Snorlax|346/461\n|\n|upkeep\n|turn|2\n|\n|move|p1a: Weavile|Knock Off|p2a: Snorlax\n|-end|p2a: Snorlax|Substitute\n|move|p2a: Snorlax|Harden|p2a: Snorlax\n|-boost|p2a: Snorlax|def|1\n|\n|upkeep\n|turn|3\n|\n|move|p1a: Weavile|Thief|p2a: Snorlax\n|-damage|p2a: Snorlax|267/461\n|-enditem|p2a: Snorlax|Metronome|[silent]|[from] move: Thief|[of] p1a: Weavile\n|-item|p1a: Weavile|Metronome|[from] move: Thief|[of] p2a: Snorlax\n|move|p2a: Snorlax|Harden|p2a: Snorlax\n|-boost|p2a: Snorlax|def|1\n|\n|upkeep\n|turn|4\n|\n|move|p1a: Weavile|Thief|p2a: Snorlax\n|debug|Current Metronome boost: 4096/4096\n|-damage|p2a: Snorlax|204/461\n|move|p2a: Snorlax|Harden|p2a: Snorlax\n|-boost|p2a: Snorlax|def|1\n|\n|upkeep\n|turn|5\n|\n|move|p1a: Weavile|Harden|p1a: Weavile\n|-boost|p1a: Weavile|def|1\n|move|p2a: Snorlax|Harden|p2a: Snorlax\n|-boost|p2a: Snorlax|def|1\n|\n|upkeep\n|turn|6"
+}

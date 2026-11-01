@@ -1,0 +1,761 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@pkmn/sim",
+    "version": "0.10.11",
+    "formatid": "gen3customgame",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "frames": [
+    {
+      "schema": 1,
+      "checkpoint": "initial",
+      "turn": 1,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 213,
+              "max_hp": 213,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "soundproof",
+              "item": "",
+              "pp": [
+                16,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                24,
+                32
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Exploud"
+          },
+          "details": "Exploud, L60, M",
+          "hp": 213,
+          "max_hp": 213,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sporer"
+          },
+          "details": "Snorlax, L50, F",
+          "hp": 235,
+          "max_hp": 235,
+          "status": null
+        },
+        {
+          "kind": "turn",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_1",
+      "turn": 2,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 213,
+              "max_hp": 213,
+              "status": {
+                "kind": "slp"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "soundproof",
+              "item": "",
+              "pp": [
+                15,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 178,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                23,
+                32
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Exploud"
+          },
+          "move": "Uproar",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sporer"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sporer"
+          },
+          "hp": 178,
+          "max_hp": 235,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "start",
+          "args": [
+            "p1a: Exploud",
+            "Uproar"
+          ]
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sporer"
+          },
+          "move": "Spore",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Exploud"
+          }
+        },
+        {
+          "kind": "status",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Exploud"
+          },
+          "status": "slp",
+          "from": "[from] move: Spore",
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 2
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_2",
+      "turn": 3,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 213,
+              "max_hp": 213,
+              "status": {
+                "kind": "slp"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "soundproof",
+              "item": "",
+              "pp": [
+                15,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                23,
+                31
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "cant",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Exploud"
+          },
+          "detail": "slp"
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sporer"
+          },
+          "move": "Recover",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sporer"
+          }
+        },
+        {
+          "kind": "heal",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sporer"
+          },
+          "hp": 235,
+          "max_hp": 235,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 3
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_3",
+      "turn": 4,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 213,
+              "max_hp": 213,
+              "status": {
+                "kind": "slp"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "soundproof",
+              "item": "",
+              "pp": [
+                15,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                23,
+                30
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "cant",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Exploud"
+          },
+          "detail": "slp"
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sporer"
+          },
+          "move": "Recover",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sporer"
+          }
+        },
+        {
+          "kind": "fail",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sporer"
+          },
+          "detail": "heal"
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 4
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_4",
+      "turn": 5,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 213,
+              "max_hp": 213,
+              "status": {
+                "kind": "slp"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "soundproof",
+              "item": "",
+              "pp": [
+                15,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                23,
+                29
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "cant",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Exploud"
+          },
+          "detail": "slp"
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sporer"
+          },
+          "move": "Recover",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sporer"
+          }
+        },
+        {
+          "kind": "fail",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sporer"
+          },
+          "detail": "heal"
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 5
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_5",
+      "turn": 6,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 213,
+              "max_hp": 213,
+              "status": {
+                "kind": "slp"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "soundproof",
+              "item": "",
+              "pp": [
+                15,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                23,
+                28
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "cant",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Exploud"
+          },
+          "detail": "slp"
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sporer"
+          },
+          "move": "Recover",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sporer"
+          }
+        },
+        {
+          "kind": "fail",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sporer"
+          },
+          "detail": "heal"
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 6
+        }
+      ]
+    }
+  ],
+  "debug_log": "|gametype|singles\n|player|p1|P1||\n|player|p2|P2||\n|gen|3\n|tier|[Gen 3] Custom Game\n|rule|HP Percentage Mod: HP is shown in percentages\n|\n|teamsize|p1|1\n|teamsize|p2|1\n|start\n|switch|p1a: Exploud|Exploud, L60, M|213/213\n|switch|p2a: Sporer|Snorlax, L50, F|235/235\n|turn|1\n|\n|move|p1a: Exploud|Uproar|p2a: Sporer\n|-damage|p2a: Sporer|178/235\n|-start|p1a: Exploud|Uproar\n|move|p2a: Sporer|Spore|p1a: Exploud\n|-status|p1a: Exploud|slp|[from] move: Spore\n|\n|upkeep\n|turn|2\n|\n|cant|p1a: Exploud|slp\n|move|p2a: Sporer|Recover|p2a: Sporer\n|-heal|p2a: Sporer|235/235\n|\n|upkeep\n|turn|3\n|\n|cant|p1a: Exploud|slp\n|move|p2a: Sporer|Recover||[still]\n|-fail|p2a: Sporer|heal\n|debug|move failed because it did nothing\n|\n|upkeep\n|turn|4\n|\n|cant|p1a: Exploud|slp\n|move|p2a: Sporer|Recover||[still]\n|-fail|p2a: Sporer|heal\n|debug|move failed because it did nothing\n|\n|upkeep\n|turn|5\n|\n|cant|p1a: Exploud|slp\n|move|p2a: Sporer|Recover||[still]\n|-fail|p2a: Sporer|heal\n|debug|move failed because it did nothing\n|\n|upkeep\n|turn|6"
+}

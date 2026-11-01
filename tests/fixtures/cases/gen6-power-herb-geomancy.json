@@ -1,0 +1,59 @@
+{
+ "schema": 1,
+ "id": "gen6-power-herb-geomancy",
+ "notes": [
+  "Gen 6 Power Herb with Geomancy: the +2 Special Attack, Special Defense and Speed on the first turn"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Xerneas",
+    "species": "Xerneas",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Geomancy",
+     "Harden"
+    ],
+    "ability": "Run Away",
+    "item": "Power Herb"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Wall",
+    "species": "Snorlax",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Geomancy",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

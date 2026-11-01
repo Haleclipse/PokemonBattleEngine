@@ -1,0 +1,86 @@
+{
+ "schema": 1,
+ "id": "m9-a-status-z-move-is-no-last-move-to-encore-disable-or-spite",
+ "notes": [
+  "R-M9-36: a status move used as a Z-Move is the move itself with `isZ` set (`getActiveZMove`), and it is the user's `lastMove`: Liepard's Disable, Smeargle's Encore and the ally Chansey's Spite on Ambipom after its Z-Harden all fail. The engine kept no Z mark on a status Z-Move's last move."
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Ambipom",
+    "species": "Ambipom",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Swift"
+    ],
+    "gender": "M",
+    "ability": "Technician",
+    "item": "Normalium Z"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spite",
+     "Softboiled"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Smeargle",
+    "species": "Smeargle",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Encore",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Own Tempo"
+   },
+   {
+    "label": "Liepard",
+    "species": "Liepard",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Disable",
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Limber"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1 zmove, move Spite -1",
+   "p2": "move Encore 1, move Disable 1"
+  },
+  {
+   "p1": "move Harden, move Softboiled",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

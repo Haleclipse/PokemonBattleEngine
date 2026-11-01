@@ -1,0 +1,78 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-snipe-shot-ignores-redirection",
+ "notes": [
+  "Snipe Shot (tracksTarget) is not redirected: Follow Me and Storm Drain leave it on its target"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Inteleon",
+    "species": "Inteleon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Snipe Shot"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Clefable",
+    "species": "Clefable",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Follow Me",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Gastrodon",
+    "species": "Gastrodon",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Storm Drain"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Snipe Shot 2, move Harden",
+   "p2": "move Follow Me, move Harden"
+  },
+  {
+   "p1": "move Snipe Shot 1, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

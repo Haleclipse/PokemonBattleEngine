@@ -1,0 +1,64 @@
+{
+ "schema": 1,
+ "id": "gen5-sheer-force-life-orb",
+ "notes": [
+  "Sheer Force with Life Orb: Flame Charge x1.3, no Speed boost, no recoil; Earthquake (no secondaries) unboosted and with the recoil"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Flame Charge",
+     "Earthquake"
+    ],
+    "ability": "Sheer Force",
+    "item": "Life Orb"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Flame Charge",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Earthquake",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Flame Charge",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

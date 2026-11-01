@@ -1,0 +1,93 @@
+{
+ "schema": 1,
+ "id": "m9-tera-adaptability-rounds-half-down",
+ "notes": [
+  "R-M9-19: a Terastallized Adaptability Porygon-Z's own-type STAB is 2.25, applied with Showdown's `modify`: a product ending in .75 rounds up."
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Porygon-Z",
+    "species": "Porygon-Z",
+    "ability": "Adaptability",
+    "item": "Leftovers",
+    "moves": [
+     "Tackle",
+     "Swift",
+     "Hyper Voice",
+     "Facade"
+    ],
+    "teraType": "Normal",
+    "evs": {
+     "atk": 252,
+     "spa": 252,
+     "hp": 4
+    },
+    "nature": "Hardy"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "ability": "Natural Cure",
+    "item": "Leftovers",
+    "moves": [
+     "Soft-Boiled",
+     "Splash"
+    ],
+    "evs": {
+     "hp": 252,
+     "def": 252,
+     "spd": 4
+    },
+    "nature": "Bold"
+   }
+  ]
+ },
+ "random": {
+  "seed": [
+   3,
+   1,
+   4,
+   1
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1 terastallize",
+   "p2": "move 2"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 2"
+  },
+  {
+   "p1": "move 3",
+   "p2": "move 2"
+  },
+  {
+   "p1": "move 4",
+   "p2": "move 2"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 2"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 2"
+  },
+  {
+   "p1": "move 3",
+   "p2": "move 2"
+  }
+ ],
+ "corpus": {
+  "mechanics": true
+ }
+}

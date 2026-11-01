@@ -1,0 +1,79 @@
+{
+ "schema": 1,
+ "id": "gen4-doubles-encored-move-redirected-after-its-random-target",
+ "notes": [
+  "Encore turns Manaphy's Tackle into Thunder Fang: the move draws a random foe (Showdown `getRandomTarget`), then Lightning Rod redirects it to the ally, so the log never names the drawn foe"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "doubles",
+  "format": "gen4doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Manaphy",
+    "species": "Manaphy",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Thunder Fang",
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Skiploom",
+    "species": "Skiploom",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Lightning Rod"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Encore",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Thunder Fang 1, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Tackle 2, move Harden",
+   "p2": "move Encore 1, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

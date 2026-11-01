@@ -1,0 +1,73 @@
+{
+ "schema": 1,
+ "id": "gen4-bide",
+ "notes": [
+  "Gen 4 Bide: the release hits a Ghost type (its data ignores immunity); falling asleep ends it at once (onAfterSetStatus): the next choice is free"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Bider",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Bide",
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Ghost",
+    "species": "Gengar",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Astonish",
+     "Harden",
+     "Spore"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Bide",
+   "p2": "move Astonish"
+  },
+  {
+   "p1": "move Bide",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Bide",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Bide",
+   "p2": "move Spore"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

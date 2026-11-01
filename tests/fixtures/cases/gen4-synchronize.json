@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "id": "gen4-singles-synchronize",
+  "notes": [
+    "Gen 4 Synchronize passes a burn from Will-O-Wisp back to its user (the Gen 3-4 downgrade of bad poison to poison is covered by the rule tests: Gen 4's Toxic carries an unmodelled condition)."
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "singles",
+    "format": "gen4customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "a",
+        "species": "Umbreon",
+        "ability": "Synchronize",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Swords Dance"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "b",
+        "species": "Snorlax",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Will-O-Wisp",
+          "Tackle"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 2"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

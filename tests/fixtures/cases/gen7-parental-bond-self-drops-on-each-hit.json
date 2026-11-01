@@ -1,0 +1,59 @@
+{
+ "schema": 1,
+ "id": "gen7-parental-bond-self-drops-on-each-hit",
+ "notes": [
+  "A multi-hit move's own self effect lands on every hit (Showdown selfDrops): Parental Bond Superpower drops Attack and Defense twice, Hammer Arm Speed twice"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Kangaskhan",
+    "species": "Kangaskhan",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Superpower",
+     "Hammer Arm"
+    ],
+    "ability": "Parental Bond"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Eviolite"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Superpower",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Hammer Arm",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

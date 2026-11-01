@@ -1,0 +1,66 @@
+{
+ "schema": 1,
+ "id": "gen4-conversion-counts-curse-as-ghost-for-a-ghost",
+ "notes": [
+  "Gen 4 (§41.10 A1, cartridge): Misdreavus's Curse counts as Ghost, which it has, so Conversion takes Electric; then, Electric, Curse counts as Normal and Conversion takes it (Showdown's gen4 Conversion leaves Curse out and fails, I85)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Misdreavus",
+    "species": "Misdreavus",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Conversion",
+     "Curse",
+     "Thunderbolt"
+    ],
+    "gender": "F",
+    "ability": "Levitate"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Body Slam"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Conversion",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Conversion",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Thunderbolt",
+   "p2": "move Body Slam"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

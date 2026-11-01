@@ -1,0 +1,72 @@
+{
+ "schema": 1,
+ "id": "gen8-poltergeist-fails-without-an-item",
+ "notes": [
+  "Poltergeist fails (-fail) against a target with no item: once Focus Sash is used up, and against a Pok\u00e9mon holding none; it announces the item it hits (-activate)"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Dusknoir",
+    "species": "Dusknoir",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Poltergeist"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Alakazam",
+    "species": "Alakazam",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away",
+    "item": "Focus Sash"
+   },
+   {
+    "label": "Blastoise",
+    "species": "Blastoise",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Poltergeist",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Poltergeist",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Poltergeist",
+   "p2": "switch 2"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

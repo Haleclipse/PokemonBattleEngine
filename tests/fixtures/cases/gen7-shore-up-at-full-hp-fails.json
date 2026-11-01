@@ -1,0 +1,58 @@
+{
+ "schema": 1,
+ "id": "gen7-shore-up-at-full-hp-fails",
+ "notes": [
+  "Gen 7 (gen7 mod `onHit` returns `null`): Shore Up at full HP is a failed move, so the next turn's Stomping Tantrum is doubled"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Shore Up",
+     "Stomping Tantrum"
+    ],
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Natural Cure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Shore Up",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Stomping Tantrum",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

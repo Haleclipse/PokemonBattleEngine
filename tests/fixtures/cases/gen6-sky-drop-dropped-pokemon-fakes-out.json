@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "gen6-sky-drop-dropped-pokemon-fakes-out",
+ "notes": [
+  "Gen 6: the carried Pok\u00e9mon's nullified actions do not count (`activeMoveActions--`): its Fake Out while carried comes to nothing, and the one after the drop still works"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Lifter",
+    "species": "Braviary",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sky Drop",
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Prey",
+    "species": "Machamp",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Fake Out",
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Sky Drop",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Fake Out"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Fake Out"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

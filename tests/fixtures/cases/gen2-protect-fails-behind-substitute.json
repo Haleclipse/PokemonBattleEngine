@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "id": "gen2-protect-fails-behind-substitute",
+  "notes": [
+    "Gen 2: Protect fails for a user behind its own Substitute, so the foe's Blizzard breaks the doll",
+    "promoted from m8-gen2-singles-s107-002-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 2,
+    "mode": "singles",
+    "format": "gen2customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Yanma",
+        "species": "Yanma",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Substitute",
+          "Protect"
+        ],
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Qwilfish",
+        "species": "Qwilfish",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Substitute",
+          "Blizzard"
+        ],
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      26107,
+      9589,
+      29852,
+      19907
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Substitute",
+      "p2": "move Substitute"
+    },
+    {
+      "p1": "move Protect",
+      "p2": "move Blizzard"
+    }
+  ]
+}

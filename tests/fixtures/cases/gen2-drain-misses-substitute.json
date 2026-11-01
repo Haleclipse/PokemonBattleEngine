@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "id": "gen2-drain-misses-substitute",
+  "notes": [
+    "Gen 2 Substitute: a draining move misses the Pokémon behind it (gen2 substitute onTryPrimaryHit)",
+    "promoted from m8-gen2-singles-s105-014-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 2,
+    "mode": "singles",
+    "format": "gen2customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Sneasel",
+        "species": "Sneasel",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Substitute",
+          "Bite"
+        ],
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Zapdos",
+        "species": "Zapdos",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Substitute",
+          "Mega Drain"
+        ]
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      55416,
+      2230,
+      22093,
+      15211
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Substitute",
+      "p2": "move Substitute"
+    },
+    {
+      "p1": "move Bite",
+      "p2": "move Mega Drain"
+    }
+  ]
+}

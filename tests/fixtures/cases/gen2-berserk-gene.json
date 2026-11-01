@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "id": "gen2-berserk-gene",
+  "notes": ["Gen 2 Berserk Gene (R-M9-17): as the holder comes in, its `onUpdate` uses the gene up — +2 Attack — and confuses it; a later switch-in holding one does the same. The engine's dex had dropped the item (`num` 0 upstream)."],
+  "battle": {"generation": 2, "mode": "singles", "format": "gen2customgame"},
+  "teams": {
+    "p1": [
+      {"label": "Snorlax", "species": "Snorlax", "level": 100, "item": "Berserk Gene", "moves": ["Body Slam", "Rest"]},
+      {"label": "Tauros", "species": "Tauros", "level": 100, "item": "Berserk Gene", "moves": ["Body Slam"]}
+    ],
+    "p2": [
+      {"label": "Skarmory", "species": "Skarmory", "level": 100, "item": "Leftovers", "moves": ["Drill Peck", "Whirlwind"]}
+    ]
+  },
+  "random": {"seed": [1, 2, 3, 4]},
+  "script": [
+    {"p1": "move 1", "p2": "move 1"},
+    {"p1": "switch 2", "p2": "move 1"},
+    {"p1": "move 1", "p2": "move 1"},
+    {"p1": "move 1", "p2": "move 1"}
+  ]
+}

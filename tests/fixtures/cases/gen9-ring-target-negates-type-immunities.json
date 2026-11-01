@@ -1,0 +1,158 @@
+{
+ "schema": 1,
+ "id": "gen9-ring-target-negates-type-immunities",
+ "notes": [
+  "Ring Target (onNegateImmunity: false): Body Slam hits a Gengar holding it neutrally (not one without), Psychic hits an Umbreon, Earthquake a Skarmory (\u00d72 for Steel); a Levitate Bronzong holding it still avoids Earthquake"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Body Slam",
+     "Psychic",
+     "Earthquake",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gengar",
+    "species": "Gengar",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away",
+    "item": "Ring Target"
+   },
+   {
+    "label": "Ghost",
+    "species": "Gengar",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Umbreon",
+    "species": "Umbreon",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away",
+    "item": "Ring Target"
+   },
+   {
+    "label": "Skarmory",
+    "species": "Skarmory",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away",
+    "item": "Ring Target"
+   },
+   {
+    "label": "Bronzong",
+    "species": "Bronzong",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Levitate",
+    "item": "Ring Target"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Body Slam",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "switch Ghost"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "switch Umbreon"
+  },
+  {
+   "p1": "move Psychic",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Psychic",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "switch Skarmory"
+  },
+  {
+   "p1": "move Earthquake",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Earthquake",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "switch Bronzong"
+  },
+  {
+   "p1": "move Earthquake",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Earthquake",
+   "p2": "move Soft-Boiled"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,72 @@
+{
+ "schema": 1,
+ "id": "gen1-a-multi-hit-that-breaks-the-doll-stops",
+ "notes": [
+  "Gen 1: a multi-hit move whose first hit breaks the target's Substitute stops there, whether Mirror Move called it (turn 3: Starmie's copied Bonemerang breaks Cubone's doll, -hitcount 1) or the user chose it (turn 5: Double Kick) — pokered's AttackSubstitute zeroes the move's effect as the doll breaks; the I189 patch, which clears an earlier break's mark as a called move starts, keeps this one's (DESIGN.md R-M8-116)"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Starmie",
+    "species": "Starmie",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Mirror Move",
+     "Splash",
+     "Double Kick"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Cubone",
+    "species": "Cubone",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Bonemerang",
+     "Substitute",
+     "Splash"
+    ],
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash",
+   "p2": "move Substitute"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Bonemerang"
+  },
+  {
+   "p1": "move Mirror Move",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Substitute"
+  },
+  {
+   "p1": "move Double Kick",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

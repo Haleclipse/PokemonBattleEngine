@@ -1,0 +1,121 @@
+{
+ "schema": 1,
+ "id": "gen4-slow-start",
+ "notes": [
+  "Slow Start: Regigigas moves after Arcanine with halved Speed and hits with halved Attack for five turns, then first at full; Flamethrower is never halved; switching out and back starts the countdown over"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Regigigas",
+    "species": "Regigigas",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Body Slam",
+     "Flamethrower"
+    ],
+    "ability": "Slow Start"
+   },
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Arcanine",
+    "species": "Arcanine",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Body Slam",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Flamethrower",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "switch Mew",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "switch Regigigas",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

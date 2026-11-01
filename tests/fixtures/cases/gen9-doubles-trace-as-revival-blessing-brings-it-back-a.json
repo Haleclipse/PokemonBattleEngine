@@ -1,0 +1,80 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-trace-as-revival-blessing-brings-it-back-a",
+ "notes": [
+  "Gen 9 doubles: Ralts (Trace) falls; Nuzleaf's Revival Blessing brings it back into its slot at once (the Gen 9 re-sort), and Trace draws one of the two foes again"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Ralts",
+    "species": "Ralts",
+    "level": 5,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Trace"
+   },
+   {
+    "label": "Nuzleaf",
+    "species": "Nuzleaf",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Revival Blessing",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Pickup"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Arceus",
+    "species": "Arceus",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "ability": "Berserk"
+   },
+   {
+    "label": "Victreebel",
+    "species": "Victreebel",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Iron Fist"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Revival Blessing",
+   "p2": "move Tackle 1, move Harden"
+  },
+  {
+   "p1": "pass, switch 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   2,
+   5,
+   8,
+   12
+  ]
+ }
+}

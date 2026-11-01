@@ -1,0 +1,92 @@
+{
+ "schema": 1,
+ "id": "gen4-doubles-lightning-rod",
+ "notes": [
+  "Gen 4 Lightning Rod (redirection only, no immunity yet): a foe's Thunderbolt at its partner is pulled onto it; so is the partner's own Thunderbolt at a foe (onAnyRedirectTarget) and an Electric Hidden Power"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "doubles",
+  "format": "gen4doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Rod",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Lightning Rod"
+   },
+   {
+    "label": "Pal",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Thunderbolt",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Zap",
+    "species": "Jolteon",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Thunderbolt",
+     "Hidden Power",
+     "Harden"
+    ],
+    "ability": "Run Away",
+    "ivs": {
+     "hp": 30,
+     "atk": 31,
+     "def": 30,
+     "spa": 31,
+     "spd": 31,
+     "spe": 30
+    }
+   },
+   {
+    "label": "Mate",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Thunderbolt 2",
+   "p2": "move Thunderbolt 2, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Hidden Power 2, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

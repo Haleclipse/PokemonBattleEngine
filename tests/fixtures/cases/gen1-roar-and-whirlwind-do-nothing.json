@@ -1,0 +1,73 @@
+{
+ "schema": 1,
+ "id": "gen1-roar-and-whirlwind-do-nothing",
+ "notes": [
+  "Gen 1 Roar and Whirlwind do nothing, and check no accuracy (cartridge, I74): Showdown's Whirlwind may miss"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "User",
+    "species": "Pidgeot",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Roar",
+     "Whirlwind"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "A",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   },
+   {
+    "label": "B",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Whirlwind",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Whirlwind",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Roar",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Whirlwind",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

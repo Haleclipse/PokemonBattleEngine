@@ -1,0 +1,95 @@
+{
+ "schema": 1,
+ "id": "gen7-doubles-instructed-last-pp-then-nopp",
+ "notes": [
+  "Gen 7 doubles: Luxray's Trump Card is down to 1 PP; Ninjask's Instruct makes it use that last PP, and Luxray's own Trump Card that turn, right after, has none left (`cant|Luxray|nopp`): Luxray's own action, not part of the instructed move's (DESIGN.md R-M8-84)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "SnorlaxA",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   },
+   {
+    "label": "SnorlaxB",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Luxray",
+    "species": "Luxray",
+    "level": 35,
+    "nature": "Hardy",
+    "moves": [
+     "Trump Card",
+     "Splash"
+    ],
+    "ability": "Intimidate",
+    "gender": "M"
+   },
+   {
+    "label": "Ninjask",
+    "species": "Ninjask",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Instruct",
+     "Splash"
+    ],
+    "ability": "Infiltrator",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash, move Splash",
+   "p2": "move Trump Card 1, move Splash"
+  },
+  {
+   "p1": "move Splash, move Splash",
+   "p2": "move Trump Card 1, move Splash"
+  },
+  {
+   "p1": "move Splash, move Splash",
+   "p2": "move Trump Card 2, move Splash"
+  },
+  {
+   "p1": "move Splash, move Splash",
+   "p2": "move Trump Card 2, move Splash"
+  },
+  {
+   "p1": "move Splash, move Splash",
+   "p2": "move Trump Card 1, move Instruct -1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

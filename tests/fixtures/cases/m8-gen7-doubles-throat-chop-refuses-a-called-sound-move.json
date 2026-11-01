@@ -1,0 +1,109 @@
+{
+  "schema": 1,
+  "id": "m8-gen7-doubles-throat-chop-refuses-a-called-sound-move",
+  "notes": [
+    "Nightly 107: Hakamo-o under Throat Chop uses Metronome, which calls a sound move: Throat Chop refuses it (cant|p2b: Hakamo-o|move: Throat Chop) without naming it; the replay plans a sound move for Metronome's draw (DESIGN.md R-M8-148)",
+    "promoted from m8-gen7-doubles-s732-016-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 7,
+    "mode": "doubles",
+    "format": "gen7doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Xurkitree",
+        "species": "Xurkitree",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Savage Spin-Out",
+          "Metronome",
+          "Splintered Stormshards",
+          "Throat Chop"
+        ],
+        "ability": "Trace"
+      },
+      {
+        "label": "Ludicolo",
+        "species": "Ludicolo",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Black Hole Eclipse",
+          "Metronome",
+          "Acid Downpour",
+          "Throat Chop"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Spritzee",
+        "species": "Spritzee",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Corkscrew Crash",
+          "Metronome",
+          "Present",
+          "Throat Chop"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Hakamo-o",
+        "species": "Hakamo-o",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Hydro Vortex",
+          "Metronome",
+          "Gigavolt Havoc",
+          "Throat Chop"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      36837,
+      34407,
+      52322,
+      21218
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Savage Spin-Out 1, move Black Hole Eclipse 2",
+      "p2": "move Corkscrew Crash 1, move Hydro Vortex 2"
+    },
+    {
+      "p1": "move Splintered Stormshards 1, move Acid Downpour 2",
+      "p2": "move Present 1, move Metronome"
+    },
+    {
+      "p1": "move Metronome, move Metronome",
+      "p2": "move Throat Chop 2, move Gigavolt Havoc 1"
+    },
+    {
+      "p1": "move Metronome, move Metronome",
+      "p2": "move Present 1, move Metronome"
+    },
+    {
+      "p1": "move Throat Chop 1, move Throat Chop 2",
+      "p2": "move Throat Chop 2, move Throat Chop 1"
+    },
+    {
+      "p1": "move Metronome, move Metronome",
+      "p2": "move Metronome, move Metronome"
+    }
+  ]
+}

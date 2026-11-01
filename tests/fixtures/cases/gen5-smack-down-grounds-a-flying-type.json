@@ -1,0 +1,64 @@
+{
+ "schema": 1,
+ "id": "gen5-smack-down-grounds-a-flying-type",
+ "notes": [
+  "Gen 5: Smack Down hits Skarmory and grounds it (`smackdown`): Earthquake then hits it, neutrally"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Golem",
+    "species": "Golem",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Smack Down",
+     "Earthquake"
+    ],
+    "gender": "M",
+    "ability": "Sturdy"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Skarmory",
+    "species": "Skarmory",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Sturdy"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Earthquake",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Smack Down",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Earthquake",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,80 @@
+{
+ "schema": 1,
+ "id": "gen9-magician-takes-from-the-faster-dart-target",
+ "notes": [
+  "Gen 9 doubles: Dragapult (Magician, empty-handed) splits Dragon Darts over Jolteon (Leftovers) and Snorlax (Lum Berry), and Magician takes from the faster, Jolteon: it weighs every target a dart struck (the user's decision, issues.md I200; Showdown's hit loop leaves `move.hitTargets` with the second dart's target alone, which the oracle patches; DESIGN.md R-M8-170)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Volt Absorb",
+    "gender": "M",
+    "item": "Leftovers"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M",
+    "item": "Lum Berry"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Dragapult",
+    "species": "Dragapult",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Dragon Darts",
+     "Splash"
+    ],
+    "ability": "Magician",
+    "gender": "M"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash, move Splash",
+   "p2": "move Dragon Darts 1, move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

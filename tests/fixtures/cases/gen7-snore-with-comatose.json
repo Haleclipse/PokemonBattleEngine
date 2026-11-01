@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen7-snore-with-comatose",
+ "notes": [
+  "Gen 7: Komala's Comatose lets it snore while awake (`hasAbility('comatose')`), its flinch included"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Komala",
+    "species": "Komala",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Snore",
+     "Tackle"
+    ],
+    "gender": "M",
+    "ability": "Comatose"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Gastro Acid",
+     "Tackle"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Snore",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Snore",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Snore",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,227 @@
+{
+  "schema": 1,
+  "id": "gen5-doubles-multi-hit-breaks-substitute-before-poison-point",
+  "notes": [
+    "Nightly 11: Arm Thrust breaks Vaporeon's Substitute on its third hit and meets Poison Point on the last two; the replay's search must survive candidate rolls that break the Substitute sooner (the minimized battle does not try those, so the whole battle is kept)",
+    "promoted from m8-gen5-doubles-s344-008 (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 5,
+    "mode": "doubles",
+    "format": "gen5doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Trubbish",
+        "species": "Trubbish",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Arm Thrust",
+          "Substitute",
+          "Bonemerang",
+          "Quick Guard"
+        ],
+        "ability": "Honey Gather",
+        "item": "Hard Stone"
+      },
+      {
+        "label": "Swampert",
+        "species": "Swampert",
+        "level": 48,
+        "nature": "Hardy",
+        "moves": [
+          "Rock Blast",
+          "Substitute",
+          "Tail Slap",
+          "Quick Guard"
+        ],
+        "ability": "Super Luck",
+        "item": "Silk Scarf"
+      },
+      {
+        "label": "Reuniclus",
+        "species": "Reuniclus",
+        "level": 48,
+        "nature": "Hardy",
+        "moves": [
+          "Bone Rush",
+          "Substitute",
+          "Fury Swipes",
+          "Quick Guard"
+        ],
+        "ability": "Lightning Rod",
+        "item": "Friend Ball"
+      },
+      {
+        "label": "Klink",
+        "species": "Klink",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Icicle Spear",
+          "Substitute",
+          "Fury Attack",
+          "Quick Guard"
+        ],
+        "ability": "Synchronize",
+        "item": "Razor Claw"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Vaporeon",
+        "species": "Vaporeon",
+        "level": 46,
+        "nature": "Hardy",
+        "moves": [
+          "Double Hit",
+          "Substitute",
+          "Dual Chop",
+          "Quick Guard"
+        ],
+        "ability": "Poison Point"
+      },
+      {
+        "label": "Swablu",
+        "species": "Swablu",
+        "level": 46,
+        "nature": "Hardy",
+        "moves": [
+          "Double Slap",
+          "Substitute",
+          "Barrage",
+          "Quick Guard"
+        ],
+        "ability": "Stall"
+      },
+      {
+        "label": "Mightyena",
+        "species": "Mightyena",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Pin Missile",
+          "Substitute",
+          "Bullet Seed",
+          "Quick Guard"
+        ],
+        "ability": "Illuminate",
+        "item": "Poke Ball"
+      },
+      {
+        "label": "Solosis",
+        "species": "Solosis",
+        "level": 45,
+        "nature": "Hardy",
+        "moves": [
+          "Double Kick",
+          "Substitute",
+          "Comet Punch",
+          "Quick Guard"
+        ],
+        "ability": "Simple"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      32959,
+      45319,
+      7666,
+      23858
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1 1, move 1 2",
+      "p2": "move 1 1, move 1 2"
+    },
+    {
+      "p1": "move 2, move 2",
+      "p2": "move 2, move 2"
+    },
+    {
+      "p1": "move 3 1, move 3 2",
+      "p2": "move 3 1, move 3 2"
+    },
+    {
+      "p1": "move 4, move 4",
+      "p2": "move 4, move 4"
+    },
+    {
+      "p1": "move 1 1, move 1 2",
+      "p2": "move 1 1, move 1 2"
+    },
+    {
+      "p2": "pass, switch 3"
+    },
+    {
+      "p1": "move 2, move 2",
+      "p2": "move 2, move 2"
+    },
+    {
+      "p1": "move 3 1, move 3 2",
+      "p2": "move 3 1, move 3 2"
+    },
+    {
+      "p1": "pass, switch 3"
+    },
+    {
+      "p1": "switch 4, move 4",
+      "p2": "switch 4, move 4"
+    },
+    {
+      "p1": "move 4, move 1 1",
+      "p2": "move 4, move 1 1"
+    },
+    {
+      "p1": "move 1 2, move 2",
+      "p2": "move 1 2, move 2"
+    },
+    {
+      "p1": "move 2, move 3 1",
+      "p2": "move 2, move 3 1"
+    },
+    {
+      "p2": "switch 4, pass"
+    },
+    {
+      "p1": "move 3 2, move 4",
+      "p2": "move 3 2, move 4"
+    },
+    {
+      "p1": "move 4, move 1 1",
+      "p2": "move 4, move 1 1"
+    },
+    {
+      "p1": "move 1 2, move 2",
+      "p2": "move 1 2, move 2"
+    },
+    {
+      "p1": "move 2, move 3 1",
+      "p2": "move 2, move 3 1"
+    },
+    {
+      "p1": "switch 4, move 4",
+      "p2": "move 3 2, move 4"
+    },
+    {
+      "p1": "move 3 2, move 1 1",
+      "p2": "move 4, move 1 1"
+    },
+    {
+      "p1": "switch 4, pass"
+    },
+    {
+      "p1": "move 4, move 2",
+      "p2": "pass, move 2"
+    },
+    {
+      "p1": "move 1 2, pass",
+      "p2": "pass, move 3 1"
+    }
+  ]
+}

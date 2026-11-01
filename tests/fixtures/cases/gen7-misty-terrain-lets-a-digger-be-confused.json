@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "gen7-misty-terrain-lets-a-digger-be-confused",
+ "notes": [
+  "Gen 7: Dugtrio is underground in Misty Terrain when No Guard's Dynamic Punch reaches it: the terrain's `onTryAddVolatile` spares a semi-invulnerable Pokémon, so Dugtrio is confused (DESIGN.md R-M8-94)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Dugtrio",
+    "species": "Dugtrio",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Splash",
+     "Dig"
+    ],
+    "ability": "Arena Trap",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Machamp",
+    "species": "Machamp",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Misty Terrain",
+     "Dynamic Punch"
+    ],
+    "ability": "No Guard",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash",
+   "p2": "move Misty Terrain"
+  },
+  {
+   "p1": "move Dig",
+   "p2": "move Dynamic Punch"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

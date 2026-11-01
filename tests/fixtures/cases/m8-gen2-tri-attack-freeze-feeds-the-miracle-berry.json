@@ -1,0 +1,144 @@
+{
+  "schema": 1,
+  "id": "m8-gen2-tri-attack-freeze-feeds-the-miracle-berry",
+  "notes": [
+    "Gen 2: Charmeleon's Tri Attack freezes Remoraid, whose Miracle Berry is eaten at once and lets it use Splash: pokecrystal's BattleCommand_TriStatusChance jumps to FreezeTarget, which calls UseHeldStatusHealingItem as the status lands; the oracle's I33 patch fed it only for a move's own status, not one Tri Attack's secondary sets (DESIGN.md R-M8-114)",
+    "promoted from m8-gen2-singles-s574-017-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 2,
+    "mode": "singles",
+    "format": "gen2customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Arbok",
+        "species": "Arbok",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Hidden Power",
+          "Splash",
+          "Rollout"
+        ],
+        "gender": "F"
+      },
+      {
+        "label": "Remoraid",
+        "species": "Remoraid",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Triple Kick",
+          "Splash",
+          "Light Screen"
+        ],
+        "item": "Miracle Berry",
+        "gender": "M"
+      },
+      {
+        "label": "Starmie",
+        "species": "Starmie",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Return",
+          "Conversion 2",
+          "Pursuit",
+          "Tri Attack"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "Charmeleon",
+        "species": "Charmeleon",
+        "level": 53,
+        "nature": "Hardy",
+        "moves": [
+          "Rock Slide",
+          "Tri Attack",
+          "Bone Club",
+          "Light Screen"
+        ],
+        "gender": "M"
+      },
+      {
+        "label": "Donphan",
+        "species": "Donphan",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Rolling Kick",
+          "Tri Attack",
+          "Bite",
+          "Light Screen"
+        ],
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      47354,
+      53738,
+      61625,
+      33417
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Hidden Power",
+      "p2": "move Rock Slide"
+    },
+    {
+      "p1": "move Splash",
+      "p2": "move Tri Attack"
+    },
+    {
+      "p1": "move Rollout",
+      "p2": "move Bone Club"
+    },
+    {
+      "p1": "switch Remoraid"
+    },
+    {
+      "p1": "move Light Screen",
+      "p2": "move Light Screen"
+    },
+    {
+      "p1": "switch Starmie",
+      "p2": "switch Donphan"
+    },
+    {
+      "p1": "move Return",
+      "p2": "move Rolling Kick"
+    },
+    {
+      "p1": "move Conversion 2",
+      "p2": "move Tri Attack"
+    },
+    {
+      "p1": "move Pursuit",
+      "p2": "move Bite"
+    },
+    {
+      "p1": "move Tri Attack",
+      "p2": "move Light Screen"
+    },
+    {
+      "p1": "switch Remoraid",
+      "p2": "switch Charmeleon"
+    },
+    {
+      "p1": "move Triple Kick",
+      "p2": "move Rock Slide"
+    },
+    {
+      "p1": "move Splash",
+      "p2": "move Tri Attack"
+    }
+  ]
+}

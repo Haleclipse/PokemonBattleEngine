@@ -1,0 +1,139 @@
+{
+ "schema": 1,
+ "id": "gen2-mystery-berry-waits-for-the-end-of-the-turn",
+ "notes": [
+  "Gen 2 Mystery Berry (issues.md I49; pokecrystal `HandleMysteryberry` at the end of the turn, after Leftovers): Jolteon's Mean Look runs out of PP on the turn Misdreavus's Perish Song takes it \u2014 the count ends before the berry's check, so Jolteon faints still holding it (Showdown eats it as the move runs out)",
+  "Snorlax's Mean Look runs out of PP; at the end of the turn the berry restores 5 PP to it"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Mean Look",
+     "Harden"
+    ],
+    "item": "Mystery Berry"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Mean Look",
+     "Harden"
+    ],
+    "item": "Mystery Berry"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Misdreavus",
+    "species": "Misdreavus",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Perish Song",
+     "Harden"
+    ]
+   },
+   {
+    "label": "Slowpoke",
+    "species": "Slowpoke",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Mean Look",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Mean Look",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Mean Look",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Mean Look",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Mean Look",
+   "p2": "move Perish Song"
+  },
+  {
+   "p1": "move Mean Look",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Mean Look",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Mean Look",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Snorlax",
+   "p2": "switch Slowpoke"
+  },
+  {
+   "p1": "move Mean Look",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Mean Look",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Mean Look",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Mean Look",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Mean Look",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Mean Look",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Mean Look",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Mean Look",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

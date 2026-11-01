@@ -1,0 +1,63 @@
+{
+ "schema": 1,
+ "id": "gen9-glaive-rush-drawback-until-the-next-move",
+ "notes": [
+  "Gen 9 Glaive Rush: after its hit, every move at the user hits (the slower foe's Focus Blast draws no accuracy) and deals double damage, until the user's next move attempt; Harden ends it, and the next Focus Blasts roll again"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Rusher",
+    "species": "Baxcalibur",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Glaive Rush",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blaster",
+    "species": "Corviknight",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Focus Blast",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Glaive Rush",
+   "p2": "move Focus Blast"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Focus Blast"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Focus Blast"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

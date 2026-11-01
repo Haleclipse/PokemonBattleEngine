@@ -1,0 +1,93 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-sticky-web-from-an-empty-first-slot",
+ "notes": [
+  "Gen 9 Sticky Web's drop comes from the entrant's foe in the first slot: with that Pok\u00e9mon down and no one to replace it, Mirror Armor still refuses the drop and sends it to no one \u2014 not to the setter standing in the second slot"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Karp",
+    "species": "Magikarp",
+    "level": 1,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Webber",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Sticky Web",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Striker",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Lax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Armor",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Mirror Armor"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Sticky Web",
+   "p2": "move Tackle 1, move Harden"
+  },
+  {
+   "p1": "pass, move Harden",
+   "p2": "switch 3, move Harden"
+  },
+  {
+   "p1": "pass, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen8-turboblaze-reflection-ignores-wonder-skin",
+ "notes": [
+  "Gen 8: Sigilyph's Charm (Wonder Skin on the user's side matters not) bounces off Reshiram's Magic Coat; the reflected Charm is Reshiram's, shaped by its Turboblaze (`ignoreAbility`), so Sigilyph's Wonder Skin does not make it a 50% roll (the replay plans the taken-over move as its new user's, DESIGN.md R-M8-92)"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sigilyph",
+    "species": "Sigilyph",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Charm",
+     "Splash"
+    ],
+    "ability": "Wonder Skin",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Reshiram",
+    "species": "Reshiram",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Magic Coat",
+     "Splash"
+    ],
+    "ability": "Turboblaze"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Charm",
+   "p2": "move Magic Coat"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,158 @@
+{
+  "schema": 1,
+  "id": "m10-q-baton-pass-hands-on-a-trap-seen-after-its-trapper-left",
+  "notes": [
+    "Gen 2: Pineco's Spider Web traps Togetic; Baton Passes hand the trap on to Mewtwo and its trapper's part to Shellder, whose faint ends it with no line; Mewtwo, still seen trapped, Baton Passes back to Togetic, seen trapped too, as Showdown's client copies what it saw (R-M10-41)",
+    "promoted from m8-gen2-singles-s1645-013-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 2,
+    "mode": "singles",
+    "format": "gen2customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Tyranitar",
+        "species": "Tyranitar",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Rock Throw"
+        ],
+        "gender": "F"
+      },
+      {
+        "label": "Weedle",
+        "species": "Weedle",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Self-Destruct"
+        ],
+        "gender": "M"
+      },
+      {
+        "label": "Pineco",
+        "species": "Pineco",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Spider Web",
+          "Baton Pass"
+        ],
+        "gender": "F"
+      },
+      {
+        "label": "Shellder",
+        "species": "Shellder",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sweet Kiss"
+        ],
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Jynx",
+        "species": "Jynx",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Soft-Boiled"
+        ]
+      },
+      {
+        "label": "Kakuna",
+        "species": "Kakuna",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Moonlight"
+        ],
+        "gender": "F"
+      },
+      {
+        "label": "Togetic",
+        "species": "Togetic",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Morning Sun",
+          "Spider Web",
+          "Baton Pass"
+        ],
+        "gender": "F"
+      },
+      {
+        "label": "Mewtwo",
+        "species": "Mewtwo",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Confusion",
+          "Baton Pass"
+        ]
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      43098,
+      2244,
+      13090,
+      15511
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Rock Throw",
+      "p2": "move Soft-Boiled"
+    },
+    {
+      "p2": "switch Kakuna"
+    },
+    {
+      "p1": "switch Weedle",
+      "p2": "switch Togetic"
+    },
+    {
+      "p1": "move Self-Destruct",
+      "p2": "move Morning Sun"
+    },
+    {
+      "p1": "switch Pineco"
+    },
+    {
+      "p1": "move Spider Web",
+      "p2": "move Spider Web"
+    },
+    {
+      "p1": "move Baton Pass",
+      "p2": "move Baton Pass"
+    },
+    {
+      "p2": "switch Mewtwo"
+    },
+    {
+      "p1": "switch Shellder"
+    },
+    {
+      "p1": "move Sweet Kiss",
+      "p2": "move Confusion"
+    },
+    {
+      "p1": "switch Pineco"
+    },
+    {
+      "p1": "move Baton Pass",
+      "p2": "move Baton Pass"
+    },
+    {
+      "p2": "switch Togetic"
+    }
+  ]
+}

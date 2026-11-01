@@ -1,0 +1,93 @@
+{
+ "schema": 1,
+ "id": "gen5-ally-switch",
+ "notes": [
+  "Gen 5 doubles: Clefable trades places with Blissey (Ally Switch) and the foes' single-target moves follow the slot"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "doubles",
+  "format": "gen5doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Clefable",
+    "species": "Clefable",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Ally Switch",
+     "Psychic"
+    ],
+    "gender": "F",
+    "ability": "Magic Guard"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Ally Switch",
+     "Psychic"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Ally Switch, move Psychic 1",
+   "p2": "move Tackle 1, move Tackle 2"
+  },
+  {
+   "p1": "move Ally Switch, move Psychic 1",
+   "p2": "move Tackle 1, move Tackle 1"
+  },
+  {
+   "p1": "move Ally Switch, move Psychic 2",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Ally Switch, move Psychic 1",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

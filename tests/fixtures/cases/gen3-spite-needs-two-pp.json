@@ -1,0 +1,63 @@
+{
+ "schema": 1,
+ "id": "gen3-spite-needs-two-pp",
+ "notes": [
+  "Gen 3 Spite (cartridge, I71) after the target's Destiny Bond: it takes the drawn 5; the next Destiny Bond leaves 1 PP, which Spite cannot take (it needs 2), so the target keeps it"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Spiter",
+    "species": "Misdreavus",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spite",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Target",
+    "species": "Arcanine",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Destiny Bond",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Spite",
+   "p2": "move Destiny Bond"
+  },
+  {
+   "p1": "move Spite",
+   "p2": "move Destiny Bond"
+  },
+  {
+   "p1": "move Spite",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

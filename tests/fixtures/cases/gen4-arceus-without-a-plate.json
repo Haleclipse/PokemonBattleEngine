@@ -1,0 +1,59 @@
+{
+ "schema": 1,
+ "id": "gen4-arceus-without-a-plate",
+ "notes": [
+  "Gen 4: an Arceus with no Plate is a plain Normal-type Arceus, and its Judgment is Normal"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Arceus",
+    "species": "Arceus",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Judgment",
+     "Harden"
+    ],
+    "ability": "Multitype"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Judgment",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Judgment",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,106 @@
+{
+ "schema": 1,
+ "id": "gen2-pursuit",
+ "notes": [
+  "Gen 2 Pursuit: a switching target is struck first at double power; Baton Pass is not; with the pursuer slower, the switching Pok\u00e9mon's Destiny Bond ends; knocked out, its switch still happens"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Pursuer",
+    "species": "Tyranitar",
+    "level": 48,
+    "nature": "Hardy",
+    "moves": [
+     "Pursuit",
+     "Harden"
+    ]
+   },
+   {
+    "label": "Backup",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Thunder Wave",
+     "Harden",
+     "Baton Pass",
+     "Destiny Bond"
+    ]
+   },
+   {
+    "label": "Vaporeon",
+    "species": "Vaporeon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Baton Pass",
+     "Tackle"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Pursuit",
+   "p2": "switch Vaporeon"
+  },
+  {
+   "p1": "move Pursuit",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Jolteon"
+  },
+  {
+   "p1": "move Pursuit",
+   "p2": "move Baton Pass"
+  },
+  {
+   "p2": "switch Vaporeon"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Jolteon"
+  },
+  {
+   "p1": "move Pursuit",
+   "p2": "move Destiny Bond"
+  },
+  {
+   "p1": "move Pursuit",
+   "p2": "switch Vaporeon"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,983 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@pkmn/sim",
+    "version": "0.10.11",
+    "formatid": "gen4customgame",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "frames": [
+    {
+      "schema": 1,
+      "checkpoint": "initial",
+      "turn": 1,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 641,
+              "max_hp": 641,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "serenegrace",
+              "item": "",
+              "pp": [
+                32,
+                24
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "thickfat",
+              "item": "sitrusberry",
+              "pp": [
+                48
+              ]
+            },
+            {
+              "hp": 205,
+              "max_hp": 205,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "water",
+                "ice"
+              ],
+              "ability": "shellarmor",
+              "item": "oranberry",
+              "pp": [
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Chansey"
+          },
+          "details": "Chansey, F",
+          "hp": 641,
+          "max_hp": 641,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "details": "Snorlax, L50, M",
+          "hp": 235,
+          "max_hp": 235,
+          "status": null
+        },
+        {
+          "kind": "turn",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_1",
+      "turn": 2,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 641,
+              "max_hp": 641,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "serenegrace",
+              "item": "",
+              "pp": [
+                32,
+                23
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "healblock": 4
+              },
+              "types": [
+                "normal"
+              ],
+              "ability": "thickfat",
+              "item": "sitrusberry",
+              "pp": [
+                47
+              ]
+            },
+            {
+              "hp": 205,
+              "max_hp": 205,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "water",
+                "ice"
+              ],
+              "ability": "shellarmor",
+              "item": "oranberry",
+              "pp": [
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Chansey"
+          },
+          "move": "Heal Block",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "start",
+          "args": [
+            "p2a: Snorlax",
+            "move: Heal Block"
+          ]
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 2
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_2",
+      "turn": 3,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 641,
+              "max_hp": 641,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "serenegrace",
+              "item": "",
+              "pp": [
+                31,
+                23
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 135,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 2,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "healblock": 3
+              },
+              "types": [
+                "normal"
+              ],
+              "ability": "thickfat",
+              "item": "sitrusberry",
+              "pp": [
+                46
+              ]
+            },
+            {
+              "hp": 205,
+              "max_hp": 205,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "water",
+                "ice"
+              ],
+              "ability": "shellarmor",
+              "item": "oranberry",
+              "pp": [
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Chansey"
+          },
+          "move": "Seismic Toss",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "hp": 135,
+          "max_hp": 235,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 3
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_3",
+      "turn": 4,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 641,
+              "max_hp": 641,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "serenegrace",
+              "item": "",
+              "pp": [
+                30,
+                23
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 93,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 3,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "healblock": 2
+              },
+              "types": [
+                "normal"
+              ],
+              "ability": "thickfat",
+              "item": "",
+              "pp": [
+                45
+              ]
+            },
+            {
+              "hp": 205,
+              "max_hp": 205,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "water",
+                "ice"
+              ],
+              "ability": "shellarmor",
+              "item": "oranberry",
+              "pp": [
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Chansey"
+          },
+          "move": "Seismic Toss",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "hp": 35,
+          "max_hp": 235,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "enditem",
+          "args": [
+            "p2a: Snorlax",
+            "Sitrus Berry",
+            "[eat]"
+          ]
+        },
+        {
+          "kind": "heal",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "hp": 93,
+          "max_hp": 235,
+          "status": null,
+          "from": "[from] item: Sitrus Berry",
+          "of": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 4
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_4",
+      "turn": 5,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 641,
+              "max_hp": 641,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "serenegrace",
+              "item": "",
+              "pp": [
+                29,
+                23
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            1
+          ],
+          "party": [
+            {
+              "hp": 93,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "thickfat",
+              "item": "",
+              "pp": [
+                45
+              ]
+            },
+            {
+              "hp": 105,
+              "max_hp": 205,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "water",
+                "ice"
+              ],
+              "ability": "shellarmor",
+              "item": "oranberry",
+              "pp": [
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Lapras"
+          },
+          "details": "Lapras, L50, F",
+          "hp": 205,
+          "max_hp": 205,
+          "status": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Chansey"
+          },
+          "move": "Seismic Toss",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Lapras"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Lapras"
+          },
+          "hp": 105,
+          "max_hp": 205,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 5
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_5",
+      "turn": 6,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 641,
+              "max_hp": 641,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "serenegrace",
+              "item": "",
+              "pp": [
+                28,
+                23
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            1
+          ],
+          "party": [
+            {
+              "hp": 93,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "thickfat",
+              "item": "",
+              "pp": [
+                45
+              ]
+            },
+            {
+              "hp": 15,
+              "max_hp": 205,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "water",
+                "ice"
+              ],
+              "ability": "shellarmor",
+              "item": "",
+              "pp": [
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Chansey"
+          },
+          "move": "Seismic Toss",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Lapras"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Lapras"
+          },
+          "hp": 5,
+          "max_hp": 205,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "enditem",
+          "args": [
+            "p2a: Lapras",
+            "Oran Berry",
+            "[eat]"
+          ]
+        },
+        {
+          "kind": "heal",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Lapras"
+          },
+          "hp": 15,
+          "max_hp": 205,
+          "status": null,
+          "from": "[from] item: Oran Berry",
+          "of": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Lapras"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Lapras"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Lapras"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 6
+        }
+      ]
+    }
+  ],
+  "debug_log": "|gametype|singles\n|player|p1|P1||\n|player|p2|P2||\n|gen|4\n|tier|[Gen 4] Custom Game\n|\n|teamsize|p1|1\n|teamsize|p2|2\n|start\n|switch|p1a: Chansey|Chansey, F|641/641\n|switch|p2a: Snorlax|Snorlax, L50, M|235/235\n|turn|1\n|\n|move|p1a: Chansey|Heal Block|p2a: Snorlax\n|-start|p2a: Snorlax|move: Heal Block\n|move|p2a: Snorlax|Harden|p2a: Snorlax\n|-boost|p2a: Snorlax|def|1\n|\n|upkeep\n|turn|2\n|\n|move|p1a: Chansey|Seismic Toss|p2a: Snorlax\n|-damage|p2a: Snorlax|135/235\n|move|p2a: Snorlax|Harden|p2a: Snorlax\n|-boost|p2a: Snorlax|def|1\n|\n|upkeep\n|turn|3\n|\n|move|p1a: Chansey|Seismic Toss|p2a: Snorlax\n|-damage|p2a: Snorlax|35/235\n|-enditem|p2a: Snorlax|Sitrus Berry|[eat]\n|-heal|p2a: Snorlax|93/235|[from] item: Sitrus Berry\n|move|p2a: Snorlax|Harden|p2a: Snorlax\n|-boost|p2a: Snorlax|def|1\n|\n|upkeep\n|turn|4\n|\n|switch|p2a: Lapras|Lapras, L50, F|205/205\n|move|p1a: Chansey|Seismic Toss|p2a: Lapras\n|-damage|p2a: Lapras|105/205\n|\n|upkeep\n|turn|5\n|\n|move|p1a: Chansey|Seismic Toss|p2a: Lapras\n|-damage|p2a: Lapras|5/205\n|-enditem|p2a: Lapras|Oran Berry|[eat]\n|-heal|p2a: Lapras|15/205|[from] item: Oran Berry\n|move|p2a: Lapras|Harden|p2a: Lapras\n|-boost|p2a: Lapras|def|1\n|\n|upkeep\n|turn|6"
+}

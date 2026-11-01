@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "gen8-transistor-boosts-by-half",
+ "notes": [
+  "Gen 8 Transistor: \u00d71.5 to Electric moves"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Volt",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Thunderbolt",
+     "Ice Beam"
+    ],
+    "ability": "Transistor"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled",
+     "Seismic Toss"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Thunderbolt",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Ice Beam",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

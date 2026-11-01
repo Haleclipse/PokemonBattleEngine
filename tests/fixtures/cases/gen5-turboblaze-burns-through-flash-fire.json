@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen5-turboblaze-burns-through-flash-fire",
+ "notes": [
+  "Gen 5: Reshiram's Turboblaze ignores Heatran's Flash Fire (breakable `onTryHit`): its Flamethrower hits instead of being absorbed"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Reshiram",
+    "species": "Reshiram",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Flamethrower",
+     "Harden"
+    ],
+    "gender": "N",
+    "ability": "Turboblaze"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Heatran",
+    "species": "Heatran",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Flash Fire"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Flamethrower",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Flamethrower",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

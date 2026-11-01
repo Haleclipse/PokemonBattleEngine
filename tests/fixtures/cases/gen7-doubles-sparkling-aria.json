@@ -1,0 +1,90 @@
+{
+ "schema": 1,
+ "id": "gen7-doubles-sparkling-aria",
+ "notes": [
+  "Sparkling Aria against several targets: every target it hit is cured of a burn, a Shield Dust holder too"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Aria",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Will-O-Wisp",
+     "Sparkling Aria",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Pal",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Dust",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Shield Dust"
+   },
+   {
+    "label": "Lax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Will-O-Wisp 1, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Will-O-Wisp 2, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Sparkling Aria, move Harden",
+   "p2": "move Recover, move Recover"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

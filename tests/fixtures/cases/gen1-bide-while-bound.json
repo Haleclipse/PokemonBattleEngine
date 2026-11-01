@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "gen1-bide-while-bound",
+ "notes": [
+  "Gen 1 Bide caught by Wrap: the Bide user's turns are Bide, not cannotmove, so each is stopped by the bind (cant partiallytrapped) and the store does not count down"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Bider",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Bide",
+     "Tail Whip"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Binder",
+    "species": "Ekans",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Wrap",
+     "Tail Whip"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Bide",
+   "p2": "move Wrap"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

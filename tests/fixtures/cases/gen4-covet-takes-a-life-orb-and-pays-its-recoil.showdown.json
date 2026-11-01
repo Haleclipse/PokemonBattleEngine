@@ -1,0 +1,423 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@pkmn/sim",
+    "version": "0.10.11",
+    "formatid": "gen4customgame",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "frames": [
+    {
+      "schema": 1,
+      "checkpoint": "initial",
+      "turn": 1,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 150,
+              "max_hp": 150,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "technician",
+              "item": "",
+              "species": "ambipom",
+              "pp": [
+                64,
+                64
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "thickfat",
+              "item": "lifeorb",
+              "species": "snorlax",
+              "pp": [
+                64
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Ambipom"
+          },
+          "details": "Ambipom, L50, M",
+          "hp": 150,
+          "max_hp": 150,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "details": "Snorlax, L50, M",
+          "hp": 235,
+          "max_hp": 235,
+          "status": null
+        },
+        {
+          "kind": "turn",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_1",
+      "turn": 2,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 135,
+              "max_hp": 150,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "technician",
+              "item": "lifeorb",
+              "species": "ambipom",
+              "pp": [
+                63,
+                64
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 183,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "thickfat",
+              "item": "",
+              "species": "snorlax",
+              "pp": [
+                63
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Ambipom"
+          },
+          "move": "Covet",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "from": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "hp": 183,
+          "max_hp": 235,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "item",
+          "args": [
+            "p1a: Ambipom",
+            "Life Orb",
+            "[from] move: Covet",
+            "[of] p2a: Snorlax"
+          ]
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Ambipom"
+          },
+          "hp": 135,
+          "max_hp": 150,
+          "status": null,
+          "from": "[from] item: Life Orb",
+          "of": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Splash",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "from": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 2
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_2",
+      "turn": 3,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 120,
+              "max_hp": 150,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "technician",
+              "item": "lifeorb",
+              "species": "ambipom",
+              "pp": [
+                62,
+                64
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 116,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "thickfat",
+              "item": "",
+              "species": "snorlax",
+              "pp": [
+                62
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Ambipom"
+          },
+          "move": "Covet",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "from": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "hp": 116,
+          "max_hp": 235,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Ambipom"
+          },
+          "hp": 120,
+          "max_hp": 150,
+          "status": null,
+          "from": "[from] item: Life Orb",
+          "of": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Splash",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "from": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 3
+        }
+      ]
+    }
+  ],
+  "debug_log": "|gametype|singles\n|player|p1|P1||\n|player|p2|P2||\n|gen|4\n|tier|[Gen 4] Custom Game\n|\n|teamsize|p1|1\n|teamsize|p2|1\n|start\n|switch|p1a: Ambipom|Ambipom, L50, M|150/150\n|switch|p2a: Snorlax|Snorlax, L50, M|235/235\n|turn|1\n|\n|move|p1a: Ambipom|Covet|p2a: Snorlax\n|debug|Base Power: 40\n|debug|Technician boost\n|-damage|p2a: Snorlax|183/235\n|-item|p1a: Ambipom|Life Orb|[from] move: Covet|[of] p2a: Snorlax\n|-damage|p1a: Ambipom|135/150|[from] item: Life Orb\n|move|p2a: Snorlax|Splash|p2a: Snorlax\n|-nothing\n|\n|upkeep\n|turn|2\n|\n|move|p1a: Ambipom|Covet|p2a: Snorlax\n|debug|Base Power: 40\n|debug|Technician boost\n|-damage|p2a: Snorlax|116/235\n|-damage|p1a: Ambipom|120/150|[from] item: Life Orb\n|move|p2a: Snorlax|Splash|p2a: Snorlax\n|-nothing\n|\n|upkeep\n|turn|3"
+}

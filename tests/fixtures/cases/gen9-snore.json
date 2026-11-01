@@ -1,0 +1,78 @@
+{
+ "schema": 1,
+ "id": "gen9-snore",
+ "notes": [
+  "Gen 9: Snorlax rests and snores through its sleep (`cant|p|slp` then Snore, 50 power, 30 % flinch); awake, Snore fails (`-fail`)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Rest",
+     "Snore",
+     "Tackle"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Tackle"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Snore",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Rest",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Snore",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Snore",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Snore",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Snore",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

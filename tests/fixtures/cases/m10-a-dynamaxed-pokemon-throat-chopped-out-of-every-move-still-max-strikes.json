@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "m10-a-dynamaxed-pokemon-throat-chopped-out-of-every-move-still-max-strikes",
+ "notes": [
+  "R-M10-5: Showdown's `getMoves` for a Dynamaxed Pok\u00e9mon keeps a slot off only by `maxMoveDisabled` (no PP; a status move under an Assault Vest or Taunt) or by Encore, Disable, Taunt, Assault Vest, Belch, Stuff Cheeks (`canCauseStruggle`). Exploud knows only sound moves; Dynamaxed, it uses Max Strike and then takes Grimmsnarl's Throat Chop on turn 1, and on turn 2 it still uses Max Strike: Throat Chop leaves it no Struggle."
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Exploud",
+    "species": "Exploud",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Boomburst",
+     "Hyper Voice"
+    ],
+    "ability": "Soundproof",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Grimmsnarl",
+    "species": "Grimmsnarl",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Throat Chop"
+    ],
+    "ability": "Frisk",
+    "gender": "M"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1 dynamax",
+   "p2": "move Throat Chop"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Throat Chop"
+  }
+ ]
+}

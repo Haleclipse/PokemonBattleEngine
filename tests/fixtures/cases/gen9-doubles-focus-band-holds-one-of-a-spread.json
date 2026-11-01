@@ -1,0 +1,76 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-focus-band-holds-one-of-a-spread",
+ "notes": [
+  "Gen 9 doubles: Golem's Rock Slide would knock both Magikarp out; one Focus Band holds (a roll only where the hit would knock its holder out, when the hits land)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 10,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Focus Band"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Focus Band"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Golem",
+    "species": "Golem",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Rock Slide",
+     "Harden"
+    ]
+   },
+   {
+    "label": "Golem2",
+    "species": "Golem",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Rock Slide, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   5,
+   12,
+   18,
+   34
+  ]
+ }
+}

@@ -1,0 +1,76 @@
+{
+ "schema": 1,
+ "id": "gen7-berserk-leaves-berry-juice-alone",
+ "notes": [
+  "Gen 7 Berserk: Berry Juice is used, not eaten (`useItem`: no `TryEatItem`), so Berserk's list naming it holds nothing back \u2014 the third Seismic Toss takes Drampa to 66 / 153, Berry Juice heals it to 86 at the hit's `Update`, and at the move's end Berserk finds it above half",
+  "The fourth Seismic Toss takes it from 86 to 57: Special Attack +1; the fifth from 57 to 28 changes nothing, the Toss did not take it from above half"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Drampa",
+    "species": "Drampa",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Berry Juice",
+    "ability": "Berserk"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 29,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

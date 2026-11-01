@@ -1,0 +1,117 @@
+{
+ "schema": 1,
+ "id": "gen4-fling-and-natural-gift",
+ "notes": [
+  "Gen 4: a Klutz Lopunny still flings its Leftovers (pokeplatinum reads the held item itself; Showdown's ignoringItem(true) only from Gen 5); Fling of a Light Ball paralyzes; Natural Gift with a Sitrus Berry; under Embargo Fling fails"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Lopunny",
+    "species": "Lopunny",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Fling",
+     "Harden"
+    ],
+    "ability": "Klutz",
+    "item": "Leftovers"
+   },
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Fling",
+     "Natural Gift",
+     "Harden"
+    ],
+    "ability": "Synchronize",
+    "item": "Light Ball"
+   },
+   {
+    "label": "Mew2",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Natural Gift",
+     "Harden"
+    ],
+    "ability": "Synchronize",
+    "item": "Sitrus Berry"
+   },
+   {
+    "label": "Mew3",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Fling",
+     "Harden"
+    ],
+    "ability": "Synchronize",
+    "item": "Iron Ball"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Embargo"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Fling",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Mew",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Fling",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Mew2",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Natural Gift",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Mew3",
+   "p2": "move Embargo"
+  },
+  {
+   "p1": "move Fling",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

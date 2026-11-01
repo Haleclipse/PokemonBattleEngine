@@ -1,0 +1,193 @@
+{
+  "schema": 1,
+  "id": "m8-gen1-recharge-cleared-uses-hyper-beam-again",
+  "notes": [
+    "Nightly 63: a Fire Spin that missed clears the recharge; the Gen 1 action is the side's last selected move (commitChoices), so Hyper Beam again whatever the slot named (DESIGN.md R-M8-107)",
+    "promoted from m8-gen1-singles-s548-003-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 1,
+    "mode": "singles",
+    "format": "gen1customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Voltorb",
+        "species": "Voltorb",
+        "level": 46,
+        "nature": "Hardy",
+        "moves": [
+          "Leech Life",
+          "Counter",
+          "Mega Drain",
+          "Hyper Beam"
+        ]
+      },
+      {
+        "label": "Charmeleon",
+        "species": "Charmeleon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Poison Sting",
+          "Hyper Beam"
+        ]
+      },
+      {
+        "label": "Lapras",
+        "species": "Lapras",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Bubble Beam",
+          "Counter",
+          "Aurora Beam",
+          "Hyper Beam"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "Metapod",
+        "species": "Metapod",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Petal Dance",
+          "Hyper Beam"
+        ]
+      },
+      {
+        "label": "Venusaur",
+        "species": "Venusaur",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "String Shot",
+          "Counter"
+        ]
+      },
+      {
+        "label": "Hitmonlee",
+        "species": "Hitmonlee",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Swift",
+          "Counter",
+          "Surf",
+          "Hyper Beam"
+        ]
+      },
+      {
+        "label": "Aerodactyl",
+        "species": "Aerodactyl",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fire Spin"
+        ]
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      9921,
+      62928,
+      44571,
+      49497
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Leech Life",
+      "p2": "move Petal Dance"
+    },
+    {
+      "p1": "move Counter",
+      "p2": "move Petal Dance"
+    },
+    {
+      "p1": "move Mega Drain",
+      "p2": "move Petal Dance"
+    },
+    {
+      "p1": "move Hyper Beam",
+      "p2": "move Petal Dance"
+    },
+    {
+      "p1": "move Leech Life",
+      "p2": "move Petal Dance"
+    },
+    {
+      "p1": "move Counter",
+      "p2": "move Petal Dance"
+    },
+    {
+      "p1": "move Mega Drain",
+      "p2": "move Petal Dance"
+    },
+    {
+      "p1": "move Hyper Beam",
+      "p2": "move Hyper Beam"
+    },
+    {
+      "p2": "switch Venusaur"
+    },
+    {
+      "p1": "move Leech Life",
+      "p2": "move String Shot"
+    },
+    {
+      "p1": "move Counter",
+      "p2": "move Counter"
+    },
+    {
+      "p1": "switch Charmeleon",
+      "p2": "switch Hitmonlee"
+    },
+    {
+      "p1": "move Poison Sting",
+      "p2": "move Surf"
+    },
+    {
+      "p1": "move Hyper Beam",
+      "p2": "move Hyper Beam"
+    },
+    {
+      "p1": "switch Voltorb"
+    },
+    {
+      "p1": "move Leech Life",
+      "p2": "move Swift"
+    },
+    {
+      "p1": "switch Lapras"
+    },
+    {
+      "p1": "move Counter",
+      "p2": "move Counter"
+    },
+    {
+      "p1": "move Aurora Beam",
+      "p2": "move Surf"
+    },
+    {
+      "p1": "move Hyper Beam",
+      "p2": "move Hyper Beam"
+    },
+    {
+      "p2": "switch Venusaur"
+    },
+    {
+      "p1": "move Hyper Beam",
+      "p2": "switch Aerodactyl"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    }
+  ]
+}

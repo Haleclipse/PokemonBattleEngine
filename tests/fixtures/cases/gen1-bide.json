@@ -1,0 +1,86 @@
+{
+ "schema": 1,
+ "id": "gen1-bide",
+ "notes": [
+  "Gen 1 Bide: each of its turns stores the battle's last damage and counts its time (2 or 3) down; the release strikes a random foe with twice the store, Ghost or not; with nothing stored it fails; the holder can switch out"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Bider",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Bide",
+     "Harden"
+    ]
+   },
+   {
+    "label": "Bench",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Ghost",
+    "species": "Gengar",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Sonic Boom",
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Bide",
+   "p2": "move Sonic Boom"
+  },
+  {
+   "p1": "move Bide",
+   "p2": "move Sonic Boom"
+  },
+  {
+   "p1": "move Bide",
+   "p2": "move Sonic Boom"
+  },
+  {
+   "p1": "move Bide",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Bide",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Bide",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Bench",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

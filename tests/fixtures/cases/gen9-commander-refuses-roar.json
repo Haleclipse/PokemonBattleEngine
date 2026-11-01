@@ -1,0 +1,111 @@
+{
+ "schema": 1,
+ "id": "gen9-commander-refuses-roar",
+ "notes": [
+  "Gen 9 doubles: Roar cannot drag either half of the pair out (`onDragOut` at priority 2), so the Tatsugiri stays in its mouth"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Dondozo",
+    "species": "Dondozo",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Order Up",
+     "Wave Crash",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Unaware"
+   },
+   {
+    "label": "Tatsugiri",
+    "species": "Tatsugiri-Droopy",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "gender": "M",
+    "ability": "Commander"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Roar",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   },
+   {
+    "label": "Hariyama",
+    "species": "Hariyama",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Guts"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, pass",
+   "p2": "move Roar 1, move Harden"
+  },
+  {
+   "p1": "move Harden, pass",
+   "p2": "move Roar 2, move Harden"
+  },
+  {
+   "p1": "move Harden, pass",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,136 @@
+{
+ "schema": 1,
+ "id": "m8-43-gen3-doubles-s447-013",
+ "notes": [
+  "Nightly 37 gen3-doubles-s447-013, minimized: a foreseen strike (Focus Band, a pinch berry, a gem, AfterMoveSecondary) as Showdown runs it"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "doubles",
+  "format": "gen3doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Luvdisc",
+    "species": "Luvdisc",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Future Sight",
+     "Conversion 2",
+     "Doom Desire",
+     "Endure"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Solrock",
+    "species": "Solrock",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Future Sight",
+     "Conversion 2",
+     "Doom Desire",
+     "Endure"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Clefable",
+    "species": "Clefable",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Future Sight",
+     "Conversion 2"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Wooper",
+    "species": "Wooper",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Future Sight",
+     "Conversion 2",
+     "Doom Desire",
+     "Endure"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Houndoom",
+    "species": "Houndoom",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Future Sight",
+     "Conversion 2",
+     "Doom Desire",
+     "Endure"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Octillery",
+    "species": "Octillery",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Future Sight",
+     "Conversion 2"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   51695,
+   37416,
+   21910,
+   37538
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Future Sight 1, move Future Sight 2",
+   "p2": "move Future Sight 1, move Future Sight 2"
+  },
+  {
+   "p1": "move Conversion 2 1, move Conversion 2 2",
+   "p2": "move Conversion 2 1, move Conversion 2 2"
+  },
+  {
+   "p1": "move Doom Desire 1, move Doom Desire 2",
+   "p2": "move Doom Desire 1, move Doom Desire 2"
+  },
+  {
+   "p1": "move Endure, move Endure",
+   "p2": "move Endure, move Endure"
+  },
+  {
+   "p1": "switch Clefable, move Future Sight 1",
+   "p2": "switch Octillery, move Future Sight 1"
+  },
+  {
+   "p1": "move Future Sight 2, move Conversion 2 1",
+   "p2": "move Future Sight 2, move Conversion 2 1"
+  },
+  {
+   "p1": "move Conversion 2 2, move Doom Desire 1",
+   "p2": "move Conversion 2 2, move Doom Desire 1"
+  }
+ ]
+}

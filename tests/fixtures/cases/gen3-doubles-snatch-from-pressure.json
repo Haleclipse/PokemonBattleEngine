@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "gen3-doubles-snatch-from-pressure",
+ "notes": [
+  "Gen 3 doubles: Sneasel snatches Absol's Swords Dance; Absol's Pressure takes one more PP from Snatch (pokeemerald `PressurePPLose`; Showdown's gen4 handler, which Gen 3 inherits)"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "doubles",
+  "format": "gen3doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sneasel",
+    "species": "Sneasel",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Snatch"
+    ],
+    "ability": "Inner Focus",
+    "gender": "M"
+   },
+   {
+    "label": "Zigzagoon",
+    "species": "Zigzagoon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Pickup",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Absol",
+    "species": "Absol",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Swords Dance"
+    ],
+    "ability": "Pressure",
+    "gender": "M"
+   },
+   {
+    "label": "Pidgey",
+    "species": "Pidgey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Keen Eye",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1, move 1",
+   "p2": "move 1, move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "id": "gen5-dragon-tail-substitute",
+  "notes": [
+    "Dragon Tail drags out only a target whose own HP took the hit, not one behind a Substitute"
+  ],
+  "battle": {
+    "generation": 5,
+    "mode": "singles",
+    "format": "gen5customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Dragonite",
+        "species": "Dragonite",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Dragon Tail"
+        ],
+        "ability": "Inner Focus"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Snorlax",
+        "species": "Snorlax",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Substitute",
+          "Growl"
+        ],
+        "ability": "Thick Fat"
+      },
+      {
+        "label": "Chansey",
+        "species": "Chansey",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Growl"
+        ],
+        "ability": "Natural Cure"
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      3,
+      4,
+      5,
+      6
+    ]
+  }
+}

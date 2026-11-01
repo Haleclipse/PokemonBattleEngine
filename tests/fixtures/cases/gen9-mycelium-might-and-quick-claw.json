@@ -1,0 +1,71 @@
+{
+ "schema": 1,
+ "id": "gen9-mycelium-might-and-quick-claw",
+ "notes": [
+  "Gen 9: Toedscruel with Mycelium Might and a Quick Claw: its status move never rolls the claw"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Toedscruel",
+    "species": "Toedscruel",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spore",
+     "Mud Shot",
+     "Growth"
+    ],
+    "gender": "M",
+    "ability": "Mycelium Might",
+    "item": "Quick Claw"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Growth",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Growth",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Mud Shot",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Growth",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

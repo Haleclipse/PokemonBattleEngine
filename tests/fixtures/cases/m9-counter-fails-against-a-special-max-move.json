@@ -1,0 +1,383 @@
+{
+ "schema": 1,
+ "id": "m9-counter-fails-against-a-special-max-move",
+ "notes": [
+  "R-M9-40: Kartana's Max Overgrowth (from Giga Drain) hits Skwovet, whose Counter then fails: Counter's `onDamagingHit` asks `getCategory(move)`, the ActiveMove's category, which a Max Move takes from its base move (Special). The engine recorded the dex's (Max Moves are Physical there) and countered. Minimized from Nightly 20261021-035526 (m9-gen8vgc2021-s128-000)."
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "doubles",
+  "format": "gen8vgc2021"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Skwovet",
+    "species": "Skwovet",
+    "ability": "Cheek Pouch",
+    "moves": [
+     "Bullet Seed",
+     "Counter"
+    ],
+    "nature": "Relaxed",
+    "gender": "M",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 92,
+     "atk": 0,
+     "def": 0,
+     "spa": 116,
+     "spd": 116,
+     "spe": 184
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 15,
+     "spd": 31,
+     "spe": 31
+    },
+    "hpType": "Ice"
+   },
+   {
+    "label": "Ferroseed",
+    "species": "Ferroseed",
+    "ability": "Iron Barbs",
+    "moves": [
+     "Bullet Seed"
+    ],
+    "nature": "Sassy",
+    "gender": "F",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 168,
+     "atk": 0,
+     "def": 120,
+     "spa": 52,
+     "spd": 28,
+     "spe": 140
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 25
+    }
+   },
+   {
+    "label": "Durant",
+    "species": "Durant",
+    "ability": "Truant",
+    "moves": [
+     "Superpower",
+     "Sleep Talk"
+    ],
+    "nature": "Naughty",
+    "gender": "F",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 228,
+     "atk": 160,
+     "def": 0,
+     "spa": 92,
+     "spd": 28,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 178
+   },
+   {
+    "label": "Dragapult",
+    "species": "Dragapult",
+    "ability": "Cursed Body",
+    "moves": [
+     "Giga Impact"
+    ],
+    "nature": "Brave",
+    "gender": "F",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 40,
+     "atk": 64,
+     "def": 188,
+     "spa": 20,
+     "spd": 72,
+     "spe": 124
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 12
+    }
+   },
+   {
+    "label": "Toxapex",
+    "species": "Toxapex",
+    "ability": "Regenerator",
+    "moves": [
+     "Pin Missile"
+    ],
+    "nature": "Naive",
+    "gender": "F",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 252,
+     "atk": 0,
+     "def": 32,
+     "spa": 224,
+     "spd": 0,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 27,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Lycanroc",
+    "species": "Lycanroc",
+    "ability": "Keen Eye",
+    "moves": [
+     "Snore"
+    ],
+    "nature": "Lonely",
+    "gender": "F",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 76,
+     "atk": 0,
+     "def": 116,
+     "spa": 96,
+     "spd": 80,
+     "spe": 140
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 21
+    }
+   }
+  ],
+  "p2": [
+   {
+    "label": "Piloswine",
+    "species": "Piloswine",
+    "ability": "Thick Fat",
+    "moves": [
+     "Stealth Rock"
+    ],
+    "nature": "Hardy",
+    "gender": "F",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 24,
+     "atk": 220,
+     "def": 252,
+     "spa": 0,
+     "spd": 0,
+     "spe": 12
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 27,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Morpeko",
+    "species": "Morpeko",
+    "ability": "Hunger Switch",
+    "moves": [
+     "Bullet Seed",
+     "Assurance"
+    ],
+    "nature": "Bashful",
+    "gender": "F",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 108,
+     "atk": 120,
+     "def": 140,
+     "spa": 108,
+     "spd": 32,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 1,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Silvally",
+    "species": "Silvally",
+    "ability": "RKS System",
+    "moves": [
+     "Metal Sound"
+    ],
+    "nature": "Sassy",
+    "gender": "",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 20,
+     "atk": 44,
+     "def": 56,
+     "spa": 160,
+     "spd": 228,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 4
+    }
+   },
+   {
+    "label": "Kartana",
+    "species": "Kartana",
+    "ability": "Beast Boost",
+    "moves": [
+     "Defog",
+     "Giga Drain"
+    ],
+    "nature": "Naughty",
+    "gender": "",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 120,
+     "atk": 0,
+     "def": 76,
+     "spa": 232,
+     "spd": 80,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 25
+    }
+   },
+   {
+    "label": "Nick78",
+    "species": "Scolipede",
+    "ability": "Swarm",
+    "moves": [
+     "Defense Curl"
+    ],
+    "nature": "Docile",
+    "gender": "F",
+    "shiny": true,
+    "level": 50,
+    "evs": {
+     "hp": 68,
+     "atk": 96,
+     "def": 52,
+     "spa": 100,
+     "spd": 120,
+     "spe": 72
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 1,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Dracozolt",
+    "species": "Dracozolt",
+    "ability": "Sand Rush",
+    "moves": [
+     "Facade"
+    ],
+    "nature": "Gentle",
+    "gender": "",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 164,
+     "atk": 0,
+     "def": 24,
+     "spa": 252,
+     "spd": 0,
+     "spe": 16
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   }
+  ]
+ },
+ "preview": {
+  "p1": "team 315642",
+  "p2": "team 426153"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   29609,
+   128,
+   1000,
+   31
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1 1 dynamax, move Bullet Seed 2",
+   "p2": "move 1 dynamax, move Bullet Seed 1"
+  },
+  {
+   "p1": "move Sleep Talk, move Counter",
+   "p2": "move Giga Drain 2, move Assurance 1"
+  }
+ ]
+}

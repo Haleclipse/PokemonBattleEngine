@@ -1,0 +1,126 @@
+{
+ "schema": 1,
+ "id": "gen9-memento-and-a-lost-target",
+ "notes": [
+  "Gen 9: Memento knocks its user out; Snorlax's Explosion with no target still knocks Snorlax out (before the target check); Memento into Protect or a Substitute costs nothing, into Clear Body it still faints"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Explosion",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Mom",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Memento",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Mom2",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Memento",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Crobat",
+    "species": "Murkrow",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Memento",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Wall",
+    "species": "Blissey",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Protect",
+     "Substitute",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Metagross",
+    "species": "Metagross",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Clear Body"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Explosion",
+   "p2": "move Memento"
+  },
+  {
+   "p1": "switch Mom",
+   "p2": "switch Wall"
+  },
+  {
+   "p1": "move Memento",
+   "p2": "move Protect"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Substitute"
+  },
+  {
+   "p1": "move Memento",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Memento",
+   "p2": "switch Metagross"
+  },
+  {
+   "p1": "switch Mom2"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

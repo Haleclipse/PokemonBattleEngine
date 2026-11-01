@@ -1,0 +1,76 @@
+{
+ "schema": 1,
+ "id": "gen8-field-boosts-fail",
+ "notes": [
+  "Gear Up with no Plus / Minus holder, Venom Drench on a foe that is not poisoned and Flower Shield with no Grass type on the field each fail: the Stomping Tantrum after each is doubled"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "User",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Gear Up",
+     "Venom Drench",
+     "Flower Shield",
+     "Stomping Tantrum"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Gear Up",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Stomping Tantrum",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Venom Drench",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Stomping Tantrum",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Flower Shield",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Stomping Tantrum",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

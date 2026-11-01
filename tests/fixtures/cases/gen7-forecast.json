@@ -1,0 +1,129 @@
+{
+ "schema": 1,
+ "id": "gen7-forecast",
+ "notes": [
+  "Gen 7 Forecast: Castform turns Fire in sun, Water in rain, Ice in hail (no hail damage), and back to Normal when the weather ends or Cloud Nine suppresses it \u2014 again Fire once Cloud Nine leaves, and Fire as it enters the sun; another species with Forecast stays as it is (Water Gun, Thunderbolt super effective in turn; Lick does not affect a Normal type)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Castform",
+    "species": "Castform",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sunny Day",
+     "Rain Dance",
+     "Hail",
+     "Harden"
+    ],
+    "ability": "Forecast"
+   },
+   {
+    "label": "Bench",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Forecast"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Hitter",
+    "species": "Snorlax",
+    "level": 25,
+    "nature": "Hardy",
+    "moves": [
+     "Water Gun",
+     "Thunderbolt",
+     "Karate Chop",
+     "Lick"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Golduck",
+    "species": "Golduck",
+    "level": 25,
+    "nature": "Hardy",
+    "moves": [
+     "Lick",
+     "Water Gun",
+     "Harden"
+    ],
+    "ability": "Cloud Nine"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Sunny Day",
+   "p2": "move Water Gun"
+  },
+  {
+   "p1": "move Rain Dance",
+   "p2": "move Thunderbolt"
+  },
+  {
+   "p1": "move Hail",
+   "p2": "move Karate Chop"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Lick"
+  },
+  {
+   "p1": "move Sunny Day",
+   "p2": "switch Golduck"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Lick"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Hitter"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Water Gun"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Lick"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Lick"
+  },
+  {
+   "p1": "move Sunny Day",
+   "p2": "move Water Gun"
+  },
+  {
+   "p1": "switch Bench",
+   "p2": "move Lick"
+  },
+  {
+   "p1": "switch Castform",
+   "p2": "move Water Gun"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

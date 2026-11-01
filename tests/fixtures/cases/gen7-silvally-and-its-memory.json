@@ -1,0 +1,75 @@
+{
+ "schema": 1,
+ "id": "gen7-silvally-and-its-memory",
+ "notes": [
+  "Gen 7: a Silvally with a Bug Memory is a Bug type (its species condition) and its Multi-Attack is Bug (2x on a Psychic foe)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Silvally",
+    "species": "Silvally",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Multi-Attack",
+     "Harden"
+    ],
+    "ability": "RKS System",
+    "item": "Bug Memory"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Espeon",
+    "species": "Espeon",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Synchronize"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Multi-Attack",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Multi-Attack",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

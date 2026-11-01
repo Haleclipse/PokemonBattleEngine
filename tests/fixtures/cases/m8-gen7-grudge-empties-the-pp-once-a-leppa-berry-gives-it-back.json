@@ -1,0 +1,162 @@
+{
+  "schema": 1,
+  "id": "m8-gen7-grudge-empties-the-pp-once-a-leppa-berry-gives-it-back",
+  "notes": [
+    "Gen 7 singles, minimized from Nightly 163's m8-gen7-singles-s1530-005. Bergmite and Genesect both use Grudge; next turn Genesect's Steam Eruption knocks Bergmite out: Grudge empties Steam Eruption's PP, and Genesect's Leppa Berry gives it back (8). The engine ran the faint's own handlers at the hit loop's end and again as the faint finished, after the berry, emptying the PP twice; they run once now (`FaintCause::bonds_run`, DESIGN.md R-M8-185)."
+  ],
+  "battle": {
+    "generation": 7,
+    "mode": "singles",
+    "format": "gen7customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Sunkern",
+        "species": "Sunkern",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Floral Healing"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Shelmet",
+        "species": "Shelmet",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Confuse Ray"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Bergmite",
+        "species": "Bergmite",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Grudge",
+          "Sweet Kiss"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Electrike",
+        "species": "Electrike",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Volt Switch"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Aggron",
+        "species": "Aggron",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fusion Flare"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Starly",
+        "species": "Starly",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sacred Fire",
+          "Flare Blitz"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Genesect",
+        "species": "Genesect",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Flame Wheel",
+          "Grudge",
+          "Steam Eruption"
+        ],
+        "ability": "Run Away",
+        "item": "Leppa Berry"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      54067,
+      44010,
+      34787,
+      12055
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Floral Healing",
+      "p2": "move Fusion Flare"
+    },
+    {
+      "p1": "switch Shelmet"
+    },
+    {
+      "p1": "switch Bergmite",
+      "p2": "switch Starly"
+    },
+    {
+      "p1": "move Sweet Kiss",
+      "p2": "move Flare Blitz"
+    },
+    {
+      "p1": "switch Shelmet",
+      "p2": "switch Aggron"
+    },
+    {
+      "p1": "switch Electrike",
+      "p2": "switch Starly"
+    },
+    {
+      "p1": "move Volt Switch",
+      "p2": "move Sacred Fire"
+    },
+    {
+      "p1": "switch Bergmite"
+    },
+    {
+      "p2": "switch Aggron"
+    },
+    {
+      "p1": "switch Electrike",
+      "p2": "switch Genesect"
+    },
+    {
+      "p1": "move Volt Switch",
+      "p2": "move Flame Wheel"
+    },
+    {
+      "p1": "switch Bergmite"
+    },
+    {
+      "p1": "move Grudge",
+      "p2": "move Grudge"
+    },
+    {
+      "p1": "move Sweet Kiss",
+      "p2": "move Steam Eruption"
+    }
+  ]
+}

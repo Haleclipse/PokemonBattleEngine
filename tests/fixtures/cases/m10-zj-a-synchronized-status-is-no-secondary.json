@@ -1,0 +1,217 @@
+{
+  "schema": 1,
+  "id": "m10-zj-a-synchronized-status-is-no-secondary",
+  "notes": [
+    "Gen 3 Ubers: Kadabra's Thunder Punch rolls no paralysis, Raichu's Static paralyses Kadabra and Kadabra's Synchronize paralyses Raichu (-status|Raichu|par|[from] ability: Synchronize): the status an ability gives is no roll of the move's (R-M10-60)",
+    "promoted from m9-gen3ubers-s231-017-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 3,
+    "mode": "singles",
+    "format": "gen3ubers"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Nick82",
+        "species": "Spinda",
+        "ability": "Own Tempo",
+        "moves": [
+          "Substitute",
+          "Return",
+          "Dream Eater",
+          "Thunder Punch"
+        ],
+        "nature": "Quiet",
+        "gender": "M",
+        "shiny": false,
+        "level": 100,
+        "evs": {
+          "hp": 116,
+          "atk": 68,
+          "def": 252,
+          "spa": 0,
+          "spd": 0,
+          "spe": 72
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 2,
+          "spd": 31,
+          "spe": 31
+        }
+      },
+      {
+        "label": "Kadabra",
+        "species": "Kadabra",
+        "ability": "Synchronize",
+        "moves": [
+          "Body Slam",
+          "Thunder Punch"
+        ],
+        "nature": "Serious",
+        "gender": "F",
+        "shiny": true,
+        "level": 100,
+        "evs": {
+          "hp": 48,
+          "atk": 0,
+          "def": 80,
+          "spa": 0,
+          "spd": 204,
+          "spe": 176
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        },
+        "happiness": 13
+      }
+    ],
+    "p2": [
+      {
+        "label": "Pidgeotto",
+        "species": "Pidgeotto",
+        "ability": "Keen Eye",
+        "moves": [
+          "Frustration",
+          "Refresh",
+          "Toxic",
+          "Steel Wing"
+        ],
+        "nature": "Brave",
+        "gender": "F",
+        "shiny": false,
+        "level": 100,
+        "evs": {
+          "hp": 36,
+          "atk": 84,
+          "def": 60,
+          "spa": 92,
+          "spd": 92,
+          "spe": 144
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        }
+      },
+      {
+        "label": "Raichu",
+        "species": "Raichu",
+        "ability": "Static",
+        "moves": [
+          "Strength"
+        ],
+        "nature": "Timid",
+        "gender": "M",
+        "shiny": false,
+        "level": 53,
+        "evs": {
+          "hp": 84,
+          "atk": 52,
+          "def": 72,
+          "spa": 188,
+          "spd": 88,
+          "spe": 24
+        },
+        "ivs": {
+          "hp": 29,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        }
+      },
+      {
+        "label": "Mantine",
+        "species": "Mantine",
+        "ability": "Swift Swim",
+        "moves": [
+          "Tackle"
+        ],
+        "nature": "Lax",
+        "gender": "F",
+        "shiny": false,
+        "level": 30,
+        "evs": {
+          "hp": 112,
+          "atk": 0,
+          "def": 100,
+          "spa": 0,
+          "spd": 204,
+          "spe": 92
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        },
+        "happiness": 2
+      }
+    ]
+  },
+  "preview": {
+    "p1": "team 265431",
+    "p2": "team 362415"
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      40991,
+      231,
+      1017,
+      31
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Substitute",
+      "p2": "move Frustration"
+    },
+    {
+      "p1": "move Return",
+      "p2": "move Refresh"
+    },
+    {
+      "p1": "move Dream Eater",
+      "p2": "move Toxic"
+    },
+    {
+      "p1": "move Thunder Punch",
+      "p2": "move Steel Wing"
+    },
+    {
+      "p2": "switch Raichu"
+    },
+    {
+      "p1": "switch Kadabra",
+      "p2": "switch Mantine"
+    },
+    {
+      "p1": "move Body Slam",
+      "p2": "move Tackle"
+    },
+    {
+      "p2": "switch Raichu"
+    },
+    {
+      "p1": "move Thunder Punch",
+      "p2": "move Strength"
+    }
+  ]
+}

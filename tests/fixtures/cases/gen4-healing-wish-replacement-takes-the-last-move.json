@@ -1,0 +1,72 @@
+{
+ "schema": 1,
+ "id": "gen4-healing-wish-replacement-takes-the-last-move",
+ "notes": [
+  "Gen 4 Healing Wish: the Pok\u00e9mon it heals as it enters takes Healing Wish as its last move (the gen4 slot condition's onSwitchIn; pokeplatinum writes the slot's last move once the move is over) \u2014 a Spite before it moves takes 4 PP of its own Healing Wish (the 33rd Nightly)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Spiter",
+    "species": "Mareep",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Spite"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Wisher",
+    "species": "Kyogre",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Healing Wish"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Heir",
+    "species": "Loudred",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Healing Wish"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Healing Wish"
+  },
+  {
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Spite",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

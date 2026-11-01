@@ -1,0 +1,102 @@
+{
+ "schema": 1,
+ "id": "gen4-beat-up-hits-once-per-healthy-member",
+ "notes": [
+  "Gen 4 Beat Up: one hit per party member neither fainted nor statused, and the user whatever its status (pokeplatinum `BeatUpEligibleMon`, issues.md I20); each hit is the cartridge's own formula (`BtlCmd_BeatUp`): the member's base Attack and level against the target's base Defense at power 10, + 2, the critical hit, Helping Hand, the roll — no burn, item or ability; the poisoned Pikachu sits out, the user once burned still hits"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sneasel",
+    "species": "Sneasel",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Beat Up",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Machamp",
+    "species": "Machamp",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Pikachu",
+    "species": "Pikachu",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Toxic",
+     "Harden",
+     "Will-O-Wisp"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "switch Pikachu",
+   "p2": "move Toxic"
+  },
+  {
+   "p1": "switch Sneasel",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Beat Up",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Beat Up",
+   "p2": "move Will-O-Wisp"
+  },
+  {
+   "p1": "move Beat Up",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

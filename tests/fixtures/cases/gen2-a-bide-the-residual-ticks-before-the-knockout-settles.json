@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "gen2-a-bide-the-residual-ticks-before-the-knockout-settles",
+ "notes": [
+  "Gen 2: Misdreavus's Perish Song counts down; Snorlax steps out and back in to shed its count, then starts Bide on the turn Misdreavus's count runs out. Perish Song's `onEnd` knocks Misdreavus out without a faint message, so the next residual handler, Snorlax's Bide `duration`, still ticks before the battle is decided (DESIGN.md R-M8-158)"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Misdreavus",
+    "species": "Misdreavus",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Perish Song",
+     "Splash"
+    ],
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Bide",
+     "Splash"
+    ],
+    "gender": "M"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Perish Song",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "switch Chansey"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "switch Snorlax"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Bide"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

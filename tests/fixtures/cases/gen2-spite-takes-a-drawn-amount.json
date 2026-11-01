@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen2-spite-takes-a-drawn-amount",
+ "notes": [
+  "Gen 2 Spite: before the target has moved it fails; after the target's Tackle it takes the drawn 2-5 PP (the replay reads the draw from -activate)"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Spiter",
+    "species": "Misdreavus",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Spite",
+     "Tackle"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Target",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Spite",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Spite",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

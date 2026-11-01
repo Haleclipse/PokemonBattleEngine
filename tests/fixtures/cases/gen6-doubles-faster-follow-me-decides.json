@@ -1,0 +1,77 @@
+{
+  "schema": 1,
+  "id": "gen6-doubles-faster-follow-me-decides",
+  "notes": [
+    "Two Follow Me users: the faster one decides, even for a move already aimed at it",
+    "promoted from m8-gen6-doubles-s201-004-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 6,
+    "mode": "doubles",
+    "format": "gen6doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Sawk",
+        "species": "Sawk",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Follow Me"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Empoleon",
+        "species": "Empoleon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Follow Me"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Audino",
+        "species": "Audino",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Helping Hand"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Mawile",
+        "species": "Mawile",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Encore"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      32864,
+      44711,
+      37063,
+      29972
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Follow Me, move Follow Me",
+      "p2": "move Helping Hand -2, move Encore 1"
+    }
+  ]
+}

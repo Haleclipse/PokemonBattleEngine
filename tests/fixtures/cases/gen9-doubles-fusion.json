@@ -1,0 +1,92 @@
+{
+  "schema": 1,
+  "id": "gen9-doubles-fusion",
+  "notes": [
+    "Fusion Flare / Fusion Bolt double after the partner move was the turn's last successful move: another successful move in between clears it, a Pok\u00e9mon that cannot act (full paralysis) leaves it, and a Fusion Flare stopped by Protect clears it"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Arcanine",
+        "species": "Arcanine",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fusion Flare",
+          "Thunder Wave"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Blissey",
+        "species": "Blissey",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fusion Bolt"
+        ],
+        "ability": "Run Away"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Dragapult",
+        "species": "Dragapult",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Growl",
+          "Recover"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Snorlax",
+        "species": "Snorlax",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Recover",
+          "Protect"
+        ],
+        "ability": "Run Away"
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1 2, move 1 2",
+      "p2": "move 2, move 1"
+    },
+    {
+      "p1": "move 1 2, move 1 1",
+      "p2": "move 2, move 2"
+    },
+    {
+      "p1": "move 2 1, move 1 2",
+      "p2": "move 1, move 1"
+    },
+    {
+      "p1": "move 1 2, move 1 2",
+      "p2": "move 1, move 1"
+    },
+    {
+      "p1": "move 1 2, move 1 2",
+      "p2": "move 1, move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      5,
+      6,
+      7,
+      8
+    ]
+  }
+}

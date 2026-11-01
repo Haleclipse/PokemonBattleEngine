@@ -1,0 +1,95 @@
+{
+  "schema": 1,
+  "id": "gen9-rage-fist",
+  "notes": [
+    "Rage Fist: 50 + 50 per hit taken from damaging moves (each hit of a multi-hit move), kept across switches; status moves and hits on a Substitute do not count"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Annihilape",
+        "species": "Annihilape",
+        "level": 30,
+        "nature": "Hardy",
+        "moves": [
+          "Rage Fist",
+          "Substitute"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Snorlax",
+        "species": "Snorlax",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ],
+        "ability": "Run Away"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Skarmory",
+        "species": "Skarmory",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "X-Scissor",
+          "Rock Blast",
+          "Growl",
+          "Recover"
+        ],
+        "ability": "Run Away"
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 2"
+    },
+    {
+      "p1": "switch 2",
+      "p2": "move 1"
+    },
+    {
+      "p1": "switch 2",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 3"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 3"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 4"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

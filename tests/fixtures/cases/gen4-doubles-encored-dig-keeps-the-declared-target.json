@@ -1,0 +1,87 @@
+{
+ "schema": 1,
+ "id": "gen4-doubles-encored-dig-keeps-the-declared-target",
+ "notes": [
+  "Encore turns Eevee's Tackle (declared at Jolteon) into Dig mid-turn: the charge draws a random target (Showdown `runMove` → `getRandomTarget`), but the release two turns later attacks the declared slot (`lastMoveTargetLoc` is the action's `targetLoc`) without drawing again"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "doubles",
+  "format": "gen4doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Eevee",
+    "species": "Eevee",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Dig",
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Encore",
+     "Harden"
+    ],
+    "ability": "Volt Absorb"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Dig 1, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move 1, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Tackle 1, move Harden",
+   "p2": "move Encore 1, move Harden"
+  },
+  {
+   "p1": "move 1, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

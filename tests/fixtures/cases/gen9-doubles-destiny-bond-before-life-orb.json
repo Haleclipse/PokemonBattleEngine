@@ -1,0 +1,76 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-destiny-bond-before-life-orb",
+ "notes": [
+  "Gen 9 doubles: Rock Slide with Life Orb knocks out a foe holding Destiny Bond \u2014 the spread hit loop's `faintMessages` takes the user down before Life Orb, which then finds it fainted (the 34th Nightly)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Bonder",
+    "species": "Gengar",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Destiny Bond",
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Partner",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Slider",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Rock Slide",
+     "Harden"
+    ],
+    "ability": "Run Away",
+    "item": "Life Orb"
+   },
+   {
+    "label": "Ally",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Destiny Bond, move Harden",
+   "p2": "move Rock Slide, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

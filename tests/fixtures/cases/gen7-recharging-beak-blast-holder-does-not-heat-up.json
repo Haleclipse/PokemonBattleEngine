@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "gen7-recharging-beak-blast-holder-does-not-heat-up",
+ "notes": [
+  "Gen 7: Toucannon's Hyper Beam leaves it to recharge; its recharge turn's action is Showdown's `recharge` (the request's only move), so its Beak Blast does not heat up and Snorlax's Tackle burns nothing (DESIGN.md R-M8-81)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Toucannon",
+    "species": "Toucannon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Beak Blast",
+     "Hyper Beam"
+    ],
+    "ability": "Keen Eye",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 2",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

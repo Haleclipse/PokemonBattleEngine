@@ -1,0 +1,85 @@
+{
+ "schema": 1,
+ "id": "gen7-oblivious-and-own-tempo-against-intimidate",
+ "notes": [
+  "Gen 7: Gyarados's Intimidate on Slowbro (Oblivious), then on Mudbray (Own Tempo): Attack drops (the gen7 mod has no `onTryBoost`)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Slowbro",
+    "species": "Slowbro",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Oblivious"
+   },
+   {
+    "label": "Mudbray",
+    "species": "Mudbray",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Own Tempo"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gyarados",
+    "species": "Gyarados",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Intimidate"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "switch 2"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "id": "gen4-singles-defrost-user",
+  "notes": [
+    "Gen 4 thawing: a frozen user of Flame Wheel (defrost) rolls to thaw first; failing that, the move thaws it as it starts."
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "singles",
+    "format": "gen4customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "a",
+        "species": "Glaceon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Ice Beam"
+        ],
+        "ability": "Run Away"
+      }
+    ],
+    "p2": [
+      {
+        "label": "b",
+        "species": "Slowbro",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Flame Wheel"
+        ],
+        "ability": "Run Away"
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      5,
+      6,
+      7,
+      8
+    ]
+  }
+}

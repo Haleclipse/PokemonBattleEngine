@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "m8-45-gen1-critical-hit-vs-transform",
+ "notes": [
+  "Nightly 39 gen1-singles-s455-000, minimized: Gen 1: a critical hit reads the Pokemon's own Defense and Attack (Showdown `getStat(stat, unmodified)`), not Transform's copy"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sandshrew",
+    "species": "Sandshrew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Transform",
+     "Conversion",
+     "Sing",
+     "Counter"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Bellsprout",
+    "species": "Bellsprout",
+    "level": 48,
+    "nature": "Hardy",
+    "moves": [
+     "Transform",
+     "Conversion",
+     "Thunder Shock",
+     "Counter"
+    ]
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1512,
+   26004,
+   2066,
+   62913
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Transform",
+   "p2": "move Transform"
+  },
+  {
+   "p1": "move Conversion",
+   "p2": "move Conversion"
+  },
+  {
+   "p1": "move 3",
+   "p2": "move 3"
+  },
+  {
+   "p1": "move Counter",
+   "p2": "move Counter"
+  },
+  {
+   "p1": "move Conversion",
+   "p2": "move Conversion"
+  },
+  {
+   "p1": "move 3",
+   "p2": "move 3"
+  }
+ ]
+}

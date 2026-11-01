@@ -1,0 +1,101 @@
+{
+ "schema": 1,
+ "id": "gen7-doubles-a-quieted-delta-stream-holders-rain-outlasts-it",
+ "notes": [
+  "Gen 7 doubles: Pyroar's Gastro Acid quiets Volcanion's Delta Stream (the strong winds end); Volcanion's Rain Dance then starts a rain whose source it is, and the rain outlasts Volcanion as it switches out: a strong weather's holder leaving ends only that ability's strong weather (the user's decision, issues.md I198; Showdown's `onEnd` asks only whose the weather is, which the oracle patches; DESIGN.md R-M8-170)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Pyroar",
+    "species": "Pyroar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Gastro Acid",
+     "Splash"
+    ],
+    "ability": "Unnerve",
+    "gender": "M"
+   },
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Swift Swim",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Volcanion",
+    "species": "Volcanion",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Rain Dance",
+     "Splash"
+    ],
+    "ability": "Delta Stream"
+   },
+   {
+    "label": "Shuckle",
+    "species": "Shuckle",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Sturdy",
+    "gender": "M"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Gastro Acid 1, move Splash",
+   "p2": "move Splash, move Splash"
+  },
+  {
+   "p1": "move Splash, move Splash",
+   "p2": "move Rain Dance, move Splash"
+  },
+  {
+   "p1": "move Splash, move Splash",
+   "p2": "switch 3, move Splash"
+  },
+  {
+   "p1": "move Splash, move Splash",
+   "p2": "move Splash, move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

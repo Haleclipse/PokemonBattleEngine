@@ -1,0 +1,142 @@
+{
+ "schema": 1,
+ "id": "gen2-status-berries",
+ "notes": [
+  "Gen 2 (pokecrystal, issues.md I33): each status berry is eaten as another Pok\u00e9mon's move inflicts the status it cures (PRZ Cure Berry: paralysis, Mint Berry: sleep, PSN Cure Berry: poison, Ice Berry: burn) or the confusion (Bitter Berry, Miracle Berry), and cures it"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Smeargle",
+    "species": "Smeargle",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Thunder Wave",
+     "Spore",
+     "Toxic",
+     "Sacred Fire"
+    ]
+   },
+   {
+    "label": "Gengar",
+    "species": "Gengar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Confuse Ray"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "PRZ Cure Berry"
+   },
+   {
+    "label": "Dragonite",
+    "species": "Dragonite",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Mint Berry"
+   },
+   {
+    "label": "Lapras",
+    "species": "Lapras",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "PSN Cure Berry"
+   },
+   {
+    "label": "Tyranitar",
+    "species": "Tyranitar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Ice Berry"
+   },
+   {
+    "label": "Machamp",
+    "species": "Machamp",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Bitter Berry"
+   },
+   {
+    "label": "Skarmory",
+    "species": "Skarmory",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Miracle Berry"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Thunder Wave",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Spore",
+   "p2": "switch Dragonite"
+  },
+  {
+   "p1": "move Toxic",
+   "p2": "switch Lapras"
+  },
+  {
+   "p1": "move Sacred Fire",
+   "p2": "switch Tyranitar"
+  },
+  {
+   "p1": "switch Gengar",
+   "p2": "switch Machamp"
+  },
+  {
+   "p1": "move Confuse Ray",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Confuse Ray",
+   "p2": "switch Skarmory"
+  },
+  {
+   "p1": "move Confuse Ray",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   3,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,63 @@
+{
+ "schema": 1,
+ "id": "gen4-shadow-force-through-detect",
+ "notes": [
+  "Gen 4 Shadow Force: vanished, then through Detect"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Shadow",
+    "species": "Giratina",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Shadow Force",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Machamp",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Detect",
+     "Earthquake"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Shadow Force",
+   "p2": "move Earthquake"
+  },
+  {
+   "p1": "move Shadow Force",
+   "p2": "move Detect"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Detect"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

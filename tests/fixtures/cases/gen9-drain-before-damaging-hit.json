@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "id": "gen9-drain-before-damaging-hit",
+  "notes": [
+    "The drain heals inside spreadDamage, before the target's DamagingHit reactions: a full-HP Horn Leech user heals nothing, then takes Iron Barbs"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Meowscarada",
+        "species": "Meowscarada",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Horn Leech"
+        ],
+        "ability": "Run Away"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Orthworm",
+        "species": "Orthworm",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Iron Defense"
+        ],
+        "ability": "Iron Barbs"
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

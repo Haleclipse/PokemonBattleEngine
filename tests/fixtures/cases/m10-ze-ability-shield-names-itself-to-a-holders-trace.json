@@ -1,0 +1,119 @@
+{
+  "schema": 1,
+  "id": "m10-ze-ability-shield-names-itself-to-a-holders-trace",
+  "notes": [
+    "Gen 9 Doubles: Dewott comes in with Trace and Ability Shield; Trace's onStart writes -block|Dewott|item: Ability Shield and seeks nothing (R-M10-55)",
+    "promoted from m8-gen9-doubles-s1664-003-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Rhyperior",
+        "species": "Rhyperior",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Earthquake"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Rolycoly",
+        "species": "Rolycoly",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Surf"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Latias",
+        "species": "Latias",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Lunar Dance"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Dewott",
+        "species": "Dewott",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Boomburst"
+        ],
+        "ability": "Trace",
+        "item": "Ability Shield",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Finneon",
+        "species": "Finneon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Shadow Claw"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Vaporeon",
+        "species": "Vaporeon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Triple Arrows",
+          "Lunar Dance"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Venusaur",
+        "species": "Venusaur",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Drill Run"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      6673,
+      20360,
+      55573,
+      62884
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Earthquake, move Surf",
+      "p2": "move Shadow Claw 1, move Triple Arrows 2"
+    },
+    {
+      "p1": "pass, switch Latias"
+    },
+    {
+      "p1": "switch Dewott, move Lunar Dance",
+      "p2": "switch Venusaur, move Lunar Dance"
+    }
+  ]
+}

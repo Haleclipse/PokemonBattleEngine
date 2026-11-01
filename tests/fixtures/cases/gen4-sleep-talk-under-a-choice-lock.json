@@ -1,0 +1,66 @@
+{
+ "schema": 1,
+ "id": "gen4-sleep-talk-under-a-choice-lock",
+ "notes": [
+  "Gen 4: Snorlax, asleep with a Choice Band, talks in its sleep twice — the Choice lock on Sleep Talk itself fails the second one (Gen 4's `onTryHit`)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sleep Talk",
+     "Tackle"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat",
+    "item": "Choice Band"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spore",
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Sleep Talk",
+   "p2": "move Spore"
+  },
+  {
+   "p1": "move Sleep Talk",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Sleep Talk",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

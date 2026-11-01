@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "id": "m8-gen4-future-sight-on-a-struck-doll-deals-its-stored-damage",
+  "notes": [
+    "Gen 4 Future Sight stores its damage at use: Shock Wave strikes Stantler's Substitute, then the residual's Future Sight strikes it again, so the frame's doll HP is after both. The replay plans Shock Wave's roll on the frame's HP plus the stored damage, and the Future Sight roll that stores it is an open choice (R-M8-164).",
+    "promoted from m8-gen4-singles-s814-018-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "singles",
+    "format": "gen4customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Stantler",
+        "species": "Stantler",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sharpen",
+          "Substitute",
+          "Nasty Plot",
+          "Haze"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Cranidos",
+        "species": "Cranidos",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Shock Wave",
+          "Substitute",
+          "Future Sight",
+          "Haze"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      56989,
+      40507,
+      30548,
+      9834
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Sharpen",
+      "p2": "move Shock Wave"
+    },
+    {
+      "p1": "move Substitute",
+      "p2": "move Substitute"
+    },
+    {
+      "p1": "move Nasty Plot",
+      "p2": "move Future Sight"
+    },
+    {
+      "p1": "move Haze",
+      "p2": "move Haze"
+    },
+    {
+      "p1": "move Sharpen",
+      "p2": "move Shock Wave"
+    }
+  ]
+}

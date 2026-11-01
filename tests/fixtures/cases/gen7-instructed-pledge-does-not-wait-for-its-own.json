@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "gen7-instructed-pledge-does-not-wait-for-its-own",
+ "notes": [
+  "Gen 7: Squirtle uses Water Pledge; next turn Jolteon's Instruct makes it use Water Pledge again while its own Fire Pledge is still queued. The instructed Water Pledge strikes alone and the Fire Pledge follows as Squirtle's own move: a Pledge combines with a partner's, not its user's (issues.md I172, the oracle's patch; Showdown's `isAlly` takes the user as its own ally, DESIGN.md R-M8-83)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Squirtle",
+    "species": "Squirtle",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Water Pledge",
+     "Fire Pledge"
+    ],
+    "ability": "Torrent",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Instruct",
+     "Splash"
+    ],
+    "ability": "Volt Absorb",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Water Pledge",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Fire Pledge",
+   "p2": "move Instruct"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

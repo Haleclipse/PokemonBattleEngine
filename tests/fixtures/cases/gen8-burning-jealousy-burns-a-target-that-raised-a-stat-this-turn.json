@@ -1,0 +1,63 @@
+{
+ "schema": 1,
+ "id": "gen8-burning-jealousy-burns-a-target-that-raised-a-stat-this-turn",
+ "notes": [
+  "Burning Jealousy burns only a target whose stats rose this turn (statsRaisedThisTurn): not after a raise the turn before, then after Swords Dance the same turn"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Arcanine",
+    "species": "Arcanine",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Burning Jealousy",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Swords Dance",
+     "Growl"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Swords Dance"
+  },
+  {
+   "p1": "move Burning Jealousy",
+   "p2": "move Growl"
+  },
+  {
+   "p1": "move Burning Jealousy",
+   "p2": "move Swords Dance"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

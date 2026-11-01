@@ -1,0 +1,197 @@
+{
+ "schema": 1,
+ "id": "gen3-species-items-attacking",
+ "notes": [
+  "Gen 3: Light Ball doubles Pikachu's Special Attack only (Body Slam is not boosted), Thick Club Marowak's Attack, Deep Sea Tooth Clamperl's Special Attack, Soul Dew \u00d71.5 Latios' Special Attack; Sea Incense \u00d71.05 (onModifySpA) to Water moves"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Pikachu",
+    "species": "Pikachu",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Thunderbolt",
+     "Body Slam"
+    ],
+    "ability": "Run Away",
+    "item": "Light Ball"
+   },
+   {
+    "label": "Marowak",
+    "species": "Marowak",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Earthquake",
+     "Psychic"
+    ],
+    "ability": "Run Away",
+    "item": "Thick Club"
+   },
+   {
+    "label": "Clamperl",
+    "species": "Clamperl",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Surf",
+     "Body Slam"
+    ],
+    "ability": "Run Away",
+    "item": "Deep Sea Tooth"
+   },
+   {
+    "label": "Latios",
+    "species": "Latios",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Psychic",
+     "Body Slam"
+    ],
+    "ability": "Run Away",
+    "item": "Soul Dew"
+   },
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Surf",
+     "Body Slam"
+    ],
+    "ability": "Run Away",
+    "item": "Sea Incense"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Thunderbolt",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Thunderbolt",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "switch Marowak",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Earthquake",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Psychic",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Earthquake",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "switch Clamperl",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Surf",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Surf",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "switch Latios",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Psychic",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Psychic",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "switch Mew",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Surf",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Surf",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Surf",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Surf",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Surf",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Surf",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Surf",
+   "p2": "move Soft-Boiled"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   31,
+   32,
+   33,
+   34
+  ]
+ }
+}

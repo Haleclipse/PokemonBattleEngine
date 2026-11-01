@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen9-splash",
+ "notes": [
+  "Gen 9: Magikarp's Splash does nothing (`-nothing`); the foe's Tackle lands as usual"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash",
+     "Tackle"
+    ],
+    "gender": "M",
+    "ability": "Swift Swim"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

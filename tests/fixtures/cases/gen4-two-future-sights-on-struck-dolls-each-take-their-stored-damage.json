@@ -1,0 +1,87 @@
+{
+ "schema": 1,
+ "id": "gen4-two-future-sights-on-struck-dolls-each-take-their-stored-damage",
+ "notes": [
+  "Gen 4 singles, twice over: Cranidos foresees Stantler (Future Sight stores its damage at use), then Shock Wave strikes Stantler's Substitute in the turn the attack lands, so each frame shows the doll after both hits (37 -> 5). Neither stored damage is the highest roll's, and the second Future Sight's open choice only comes up once the first is taken right: the replay keeps a pin that gets further and tries the choices met after it on top (DESIGN.md R-M8-164)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Stantler",
+    "species": "Stantler",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Substitute",
+     "Sharpen",
+     "Haze"
+    ],
+    "ability": "Frisk",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Cranidos",
+    "species": "Cranidos",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Shock Wave",
+     "Future Sight",
+     "Haze"
+    ],
+    "ability": "Mold Breaker",
+    "gender": "F"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1147,
+   1148,
+   1149,
+   1150
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Substitute",
+   "p2": "move Haze"
+  },
+  {
+   "p1": "move Sharpen",
+   "p2": "move Future Sight"
+  },
+  {
+   "p1": "move Sharpen",
+   "p2": "move Haze"
+  },
+  {
+   "p1": "move Sharpen",
+   "p2": "move Shock Wave"
+  },
+  {
+   "p1": "move Sharpen",
+   "p2": "move Shock Wave"
+  },
+  {
+   "p1": "move Substitute",
+   "p2": "move Future Sight"
+  },
+  {
+   "p1": "move Sharpen",
+   "p2": "move Haze"
+  },
+  {
+   "p1": "move Sharpen",
+   "p2": "move Shock Wave"
+  }
+ ]
+}

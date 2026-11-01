@@ -1,0 +1,74 @@
+{
+ "schema": 1,
+ "id": "gen8-room-service",
+ "notes": [
+  "Gen 8 Room Service (Showdown `onAnyPseudoWeatherChange` / `onStart` \u2192 `useItem`, Speed \u22121): Snorlax's Trick Room makes Jolteon use its Room Service; Vaporeon, coming in under Trick Room, uses its own as it enters"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Room Service",
+    "ability": "Volt Absorb"
+   },
+   {
+    "label": "Vaporeon",
+    "species": "Vaporeon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Room Service",
+    "ability": "Water Absorb"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Trick Room",
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Trick Room"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

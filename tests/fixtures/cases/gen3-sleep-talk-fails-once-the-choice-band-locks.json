@@ -1,0 +1,62 @@
+{
+ "schema": 1,
+ "id": "gen3-sleep-talk-fails-once-the-choice-band-locks",
+ "notes": [
+  "Gen 3: Jolteon's Spore puts Snorlax (Choice Band) to sleep. Its first Sleep Talk calls Tackle, the lock coming only after the move (the gen4 `onAfterMove` the gen3 mod inherits; pokeemerald `MOVEEND_CHOICE_MOVE`); the next one fails, locked (the inherited `onTryHit`; pokeemerald `CheckMoveLimitations`) (DESIGN.md R-M8-158)"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spore",
+     "Splash"
+    ],
+    "ability": "Volt Absorb",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sleep Talk",
+     "Tackle"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M",
+    "item": "Choice Band"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Spore",
+   "p2": "move Sleep Talk"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Sleep Talk"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

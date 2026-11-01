@@ -1,0 +1,132 @@
+{
+ "schema": 1,
+ "id": "gen3-leppa-berry-waits-for-the-end-of-the-turn",
+ "notes": [
+  "Gen 3 Leppa Berry (issues.md I49; pokeemerald `ENDTURN_ITEMS1`, `HOLD_EFFECT_RESTORE_PP` only `!moveTurn`): Ninjask's Mean Look runs out of PP and Shuckle's Seismic Toss knocks it out later in the turn \u2014 it faints still holding the berry (Showdown eats it as the move runs out)",
+  "Snorlax's Mean Look runs out of PP; at the end of the turn the berry restores it"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Ninjask",
+    "species": "Ninjask",
+    "level": 28,
+    "nature": "Hardy",
+    "moves": [
+     "Mean Look",
+     "Harden"
+    ],
+    "item": "Leppa Berry",
+    "ability": "Speed Boost"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Mean Look",
+     "Harden"
+    ],
+    "item": "Leppa Berry",
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Shuckle",
+    "species": "Shuckle",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Seismic Toss"
+    ],
+    "ability": "Sturdy"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Mean Look",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Mean Look",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Mean Look",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Mean Look",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Mean Look",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Mean Look",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Mean Look",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Mean Look",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "switch Snorlax"
+  },
+  {
+   "p1": "move Mean Look",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Mean Look",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Mean Look",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Mean Look",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Mean Look",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Mean Look",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Mean Look",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Mean Look",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,62 @@
+{
+ "schema": 1,
+ "id": "gen2-curse-after-its-holders-move",
+ "notes": [
+  "Gen 2 Curse: the cursed Snorlax loses a quarter after its own move, after Leech Seed's eighth"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Ghost",
+    "species": "Gengar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Curse",
+     "Leech Seed",
+     "Recover"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Target",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Leech Seed",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Curse",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

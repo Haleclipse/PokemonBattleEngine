@@ -1,0 +1,67 @@
+{
+ "schema": 1,
+ "id": "gen3-bide-release-evasion-miss",
+ "notes": [
+  "Gen 3 Bide's release against a target that Minimized while it stored: the accuracy check (100 against +1 evasion) \u2014 here a miss"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Bider",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Bide",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Minimize"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Bide",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Bide",
+   "p2": "move Minimize"
+  },
+  {
+   "p1": "move Bide",
+   "p2": "move Minimize"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,117 @@
+{
+ "schema": 1,
+ "id": "gen9-weather-upkeep-abilities",
+ "notes": [
+  "In the weather's upkeep: Dry Skin heals 1/8 in rain and loses 1/8 in sun, takes Water moves (a quarter back) and Fire moves \u00d71.25; Rain Dish heals 1/16 in rain; Hydration cures a status in rain (residual 5.3); Ice Body heals 1/16 in snow"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Rainer",
+    "species": "Mew",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Rain Dance",
+     "Sunny Day",
+     "Snowscape",
+     "Thunder Wave"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Toxicroak",
+    "species": "Toxicroak",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Water Gun",
+     "Recover"
+    ],
+    "ability": "Dry Skin"
+   },
+   {
+    "label": "Icy",
+    "species": "Cetitan",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Recover"
+    ],
+    "ability": "Ice Body"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Ludicolo",
+    "species": "Ludicolo",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Ember",
+     "Recover"
+    ],
+    "ability": "Rain Dish"
+   },
+   {
+    "label": "Vaporeon",
+    "species": "Vaporeon",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Water Gun",
+     "Recover"
+    ],
+    "ability": "Hydration"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Thunder Wave 2, move Water Gun 1",
+   "p2": "move Ember 2, move Recover"
+  },
+  {
+   "p1": "move Rain Dance, move Recover",
+   "p2": "move Ember 2, move Water Gun 2"
+  },
+  {
+   "p1": "move Thunder Wave 2, move Recover",
+   "p2": "move Ember 2, move Recover"
+  },
+  {
+   "p1": "move Sunny Day, move Recover",
+   "p2": "move Recover, move Recover"
+  },
+  {
+   "p1": "move Snowscape, move Recover",
+   "p2": "move Recover, move Recover"
+  },
+  {
+   "p1": "switch Icy, move Recover",
+   "p2": "move Recover, move Recover"
+  },
+  {
+   "p1": "move Recover, move Recover",
+   "p2": "move Ember 1, move Recover"
+  },
+  {
+   "p1": "move Recover, move Recover",
+   "p2": "move Recover, move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

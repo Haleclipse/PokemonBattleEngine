@@ -1,0 +1,63 @@
+{
+ "schema": 1,
+ "id": "gen7-kings-shield-rolls-the-stall-counter",
+ "notes": [
+  "King's Shield is a stalling move: used again right after a success it rolls the stall counter (1/3, then 1/9) before protecting"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Aegislash",
+    "species": "Aegislash",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "King's Shield",
+     "Swords Dance"
+    ],
+    "ability": "Stance Change"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Body Slam"
+    ],
+    "ability": "Immunity"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move King's Shield",
+   "p2": "move Body Slam"
+  },
+  {
+   "p1": "move King's Shield",
+   "p2": "move Body Slam"
+  },
+  {
+   "p1": "move King's Shield",
+   "p2": "move Body Slam"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

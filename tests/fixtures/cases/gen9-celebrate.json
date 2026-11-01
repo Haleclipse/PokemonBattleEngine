@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen9-celebrate",
+ "notes": [
+  "Gen 9: Pikachu's Celebrate congratulates (`-activate|p|move: Celebrate`) and changes nothing"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Pikachu",
+    "species": "Pikachu",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Celebrate",
+     "Thunder Shock"
+    ],
+    "gender": "M",
+    "ability": "Static"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Celebrate",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Thunder Shock",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

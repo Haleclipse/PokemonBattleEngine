@@ -1,0 +1,55 @@
+{
+ "schema": 1,
+ "id": "m10-b-own-tempo-rockruff-shows-itself-as-rockruff",
+ "notes": [
+  "R-M10-19: Showdown's details show Rockruff-Dusk as Rockruff (`getUpdatedDetails`: Greninja-Bond and Rockruff-Dusk show their base species), so the other side and the spectators see a Rockruff; its own side sees Rockruff-Dusk."
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Rockruff",
+    "species": "Rockruff-Dusk",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "ability": "Own Tempo",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Tackle",
+   "p2": "move Splash"
+  }
+ ]
+}

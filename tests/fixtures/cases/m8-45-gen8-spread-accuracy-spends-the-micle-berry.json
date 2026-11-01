@@ -1,0 +1,244 @@
+{
+ "schema": 1,
+ "id": "m8-45-gen8-spread-accuracy-spends-the-micle-berry",
+ "notes": [
+  "Nightly 39 gen8-doubles-s455-006, recorded as it stands: a spread move's per-target accuracy checks spend the Micle Berry in turn: the second target rolls"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "doubles",
+  "format": "gen8doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Slowbro",
+    "species": "Slowbro",
+    "level": 45,
+    "nature": "Hardy",
+    "moves": [
+     "Cotton Spore",
+     "Transform",
+     "Overheat",
+     "Reflect"
+    ],
+    "ability": "Sand Veil",
+    "item": "Power Band"
+   },
+   {
+    "label": "Rookidee",
+    "species": "Rookidee",
+    "level": 46,
+    "nature": "Hardy",
+    "moves": [
+     "Hammer Arm",
+     "Transform",
+     "Ancient Power",
+     "Magnet Rise"
+    ],
+    "ability": "Truant",
+    "item": "Rawst Berry"
+   },
+   {
+    "label": "Goodra",
+    "species": "Goodra",
+    "level": 48,
+    "nature": "Hardy",
+    "moves": [
+     "Diamond Storm",
+     "Transform",
+     "Draco Meteor",
+     "Teatime"
+    ],
+    "ability": "Steadfast",
+    "item": "Micle Berry"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 53,
+    "nature": "Hardy",
+    "moves": [
+     "Rapid Spin",
+     "Transform",
+     "Power-Up Punch",
+     "Reflect"
+    ],
+    "ability": "Tough Claws"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Bagon",
+    "species": "Bagon",
+    "level": 52,
+    "nature": "Hardy",
+    "moves": [
+     "Close Combat",
+     "Transform",
+     "Leaf Storm",
+     "Reflect"
+    ],
+    "ability": "Scrappy",
+    "item": "Normal Gem"
+   },
+   {
+    "label": "Amoonguss",
+    "species": "Amoonguss",
+    "level": 49,
+    "nature": "Hardy",
+    "moves": [
+     "Flame Charge",
+     "Transform",
+     "Fleur Cannon",
+     "Reflect"
+    ],
+    "ability": "Beast Boost",
+    "item": "Misty Seed"
+   },
+   {
+    "label": "Doublade",
+    "species": "Doublade",
+    "level": 54,
+    "nature": "Hardy",
+    "moves": [
+     "Clanging Scales",
+     "Transform",
+     "V-create",
+     "Reflect"
+    ],
+    "ability": "Flower Veil",
+    "item": "Odd Incense"
+   },
+   {
+    "label": "Nihilego",
+    "species": "Nihilego",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Charge Beam",
+     "Transform",
+     "Metal Claw",
+     "Reflect"
+    ],
+    "ability": "Grassy Surge",
+    "item": "Jaboca Berry"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   27477,
+   43033,
+   57843,
+   64773
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1, move 1 1",
+   "p2": "move 1 1, move 1 2"
+  },
+  {
+   "p1": "move 2 2, move 2 1",
+   "p2": "move 2 1, move 2 2"
+  },
+  {
+   "p1": "move 3 2, move 3 1",
+   "p2": "move 3 1, move 3 2"
+  },
+  {
+   "p1": "move 4, move 4",
+   "p2": "move 4, move 4"
+  },
+  {
+   "p1": "move 1, move 1 2",
+   "p2": "move 1, move 1 1"
+  },
+  {
+   "p1": "move 2 1, move 2 2",
+   "p2": "move 2 2, move 2 1"
+  },
+  {
+   "p1": "switch 3, move 3 1",
+   "p2": "switch 3, move 3 2"
+  },
+  {
+   "p1": "move 3 2, move 4",
+   "p2": "move 3 1, move 4"
+  },
+  {
+   "p2": "pass, switch 3"
+  },
+  {
+   "p1": "move 4, move 1 1",
+   "p2": "move 4, move 1 2"
+  },
+  {
+   "p1": "move 1, move 2 2",
+   "p2": "move 1, move 2 1"
+  },
+  {
+   "p1": "pass, switch 3"
+  },
+  {
+   "p1": "move 2 1, move 3 2",
+   "p2": "move 2 2, move 3 1"
+  },
+  {
+   "p1": "move 3 1, move 4",
+   "p2": "move 3 2, move 4"
+  },
+  {
+   "p1": "move 4, move 1",
+   "p2": "move 4, move 1"
+  },
+  {
+   "p1": "switch 4, move 2 2",
+   "p2": "switch 4, move 2 1"
+  },
+  {
+   "p1": "move 1 1, move 3 2",
+   "p2": "move 1 2, move 3 1"
+  },
+  {
+   "p1": "pass, switch 4"
+  },
+  {
+   "p1": "move 2 1, move 4",
+   "p2": "move 2 2, move 4"
+  },
+  {
+   "p1": "move 3 2, move 1",
+   "p2": "move 3 1, move 1"
+  },
+  {
+   "p2": "pass, switch 4"
+  },
+  {
+   "p1": "move 4, move 2 1",
+   "p2": "move 4, move 2 2"
+  },
+  {
+   "p1": "move 1 2, move 3 1",
+   "p2": "move 1, move 3 1"
+  },
+  {
+   "p1": "move 2 2, move 4",
+   "p2": "move 2 2, move 4"
+  },
+  {
+   "p1": "move 3 1, move 1",
+   "p2": "move 3 1, move 1"
+  },
+  {
+   "p1": "pass, move 2 2",
+   "p2": "move 4, move 2 2"
+  },
+  {
+   "p1": "pass, move 3 1",
+   "p2": "move 1, move 3 2"
+  }
+ ]
+}

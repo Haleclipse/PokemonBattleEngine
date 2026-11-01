@@ -1,0 +1,269 @@
+{
+ "schema": 1,
+ "id": "m9-gen1-psywave-breaking-a-substitute-feeds-bide-in-full",
+ "notes": [
+  "R-M9-48: Mr. Mime's Psywave breaks Moltres's Substitute while Moltres stores Bide; Gen 1 keeps the roll uncapped as `lastDamage` (Showdown's gen1 Substitute), which the Bide release doubles. Nothing shows the roll until the release; the replay's open choice (R-M8-102) tried the damage formula's random factors only, not Psywave's own range. Minimized from Nightly 20261022-031045 (m9-gen1ou-s145-011)."
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1ou"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Nick43",
+    "species": "Tentacruel",
+    "ability": "",
+    "moves": [
+     "Swords Dance",
+     "Cut",
+     "Water Gun"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": true,
+    "level": 94
+   },
+   {
+    "label": "Clefable",
+    "species": "Clefable",
+    "ability": "",
+    "moves": [
+     "Double Slap",
+     "Ice Beam",
+     "Mega Punch",
+     "Water Gun"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": false,
+    "level": 100
+   },
+   {
+    "label": "Nick77",
+    "species": "Mr. Mime",
+    "ability": "",
+    "moves": [
+     "Hyper Beam",
+     "Double-Edge",
+     "Psywave",
+     "Meditate"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": false,
+    "level": 100,
+    "happiness": 127
+   }
+  ],
+  "p2": [
+   {
+    "label": "Nick97",
+    "species": "Snorlax",
+    "ability": "",
+    "moves": [
+     "Surf",
+     "Strength",
+     "Harden"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": false,
+    "level": 100,
+    "happiness": 127
+   },
+   {
+    "label": "Nidorina",
+    "species": "Nidorina",
+    "ability": "",
+    "moves": [
+     "Body Slam",
+     "Rest",
+     "Fury Swipes"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": false,
+    "level": 92
+   },
+   {
+    "label": "Spearow",
+    "species": "Spearow",
+    "ability": "",
+    "moves": [
+     "Rage"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": true,
+    "level": 58
+   },
+   {
+    "label": "Tentacool",
+    "species": "Tentacool",
+    "ability": "",
+    "moves": [
+     "Skull Bash"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": false,
+    "level": 100,
+    "happiness": 65
+   },
+   {
+    "label": "Moltres",
+    "species": "Moltres",
+    "ability": "",
+    "moves": [
+     "Rest",
+     "Substitute",
+     "Bide"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": false,
+    "level": 100
+   }
+  ]
+ },
+ "preview": {
+  "p1": "team 132645",
+  "p2": "team 326415"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   10861,
+   145,
+   1011,
+   31
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Swords Dance",
+   "p2": "move Surf"
+  },
+  {
+   "p1": "move Cut",
+   "p2": "move Strength"
+  },
+  {
+   "p1": "move Water Gun",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Swords Dance",
+   "p2": "move Surf"
+  },
+  {
+   "p1": "move Cut",
+   "p2": "move Strength"
+  },
+  {
+   "p1": "move Water Gun",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Clefable",
+   "p2": "switch Nidorina"
+  },
+  {
+   "p1": "move Water Gun",
+   "p2": "move Fury Swipes"
+  },
+  {
+   "p1": "move Double Slap",
+   "p2": "move Body Slam"
+  },
+  {
+   "p1": "move Mega Punch",
+   "p2": "move Body Slam"
+  },
+  {
+   "p1": "move Water Gun",
+   "p2": "move Body Slam"
+  },
+  {
+   "p1": "move Double Slap",
+   "p2": "move Body Slam"
+  },
+  {
+   "p1": "move Ice Beam",
+   "p2": "move Rest"
+  },
+  {
+   "p2": "switch Nick97"
+  },
+  {
+   "p1": "switch Nick43",
+   "p2": "switch Spearow"
+  },
+  {
+   "p1": "move Water Gun",
+   "p2": "move Rage"
+  },
+  {
+   "p2": "switch Nick97"
+  },
+  {
+   "p1": "move Swords Dance",
+   "p2": "move Surf"
+  },
+  {
+   "p1": "switch Clefable"
+  },
+  {
+   "p1": "move Ice Beam",
+   "p2": "move Strength"
+  },
+  {
+   "p1": "move 3",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 4",
+   "p2": "move 1"
+  },
+  {
+   "p2": "switch Tentacool"
+  },
+  {
+   "p1": "move Double Slap",
+   "p2": "move Skull Bash"
+  },
+  {
+   "p1": "switch Nick77",
+   "p2": "move Skull Bash"
+  },
+  {
+   "p1": "move Hyper Beam",
+   "p2": "move Skull Bash"
+  },
+  {
+   "p2": "switch Moltres"
+  },
+  {
+   "p1": "move Double-Edge",
+   "p2": "move Substitute"
+  },
+  {
+   "p1": "move Psywave",
+   "p2": "move Bide"
+  },
+  {
+   "p1": "move 4",
+   "p2": "move 1"
+  },
+  {
+   "p1": "switch Clefable",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  }
+ ]
+}

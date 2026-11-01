@@ -1,0 +1,76 @@
+{
+ "schema": 1,
+ "id": "gen8-eerie-spell-takes-three",
+ "notes": [
+  "Gen 8 Eerie Spell: the hit that knocks Jolteon out takes no PP from it; the next takes 3 from the replacement's last move (Tackle), and again"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Caster",
+    "species": "Slowking-Galar",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Eerie Spell",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Target",
+    "species": "Jolteon",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Zap Cannon",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Back",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Eerie Spell",
+   "p2": "move Zap Cannon"
+  },
+  {
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Eerie Spell",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Eerie Spell",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

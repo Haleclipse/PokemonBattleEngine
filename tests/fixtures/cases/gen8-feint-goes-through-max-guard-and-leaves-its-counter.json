@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "gen8-feint-goes-through-max-guard-and-leaves-its-counter",
+ "notes": [
+  "Gen 8: Dynamaxed Snorlax's Max Guard is up as Weavile's Feint strikes it. Feint is on Max Guard's list of moves that go through, but Max Guard is not among the protections `hitStepBreakProtect` breaks: it stays up, and Snorlax's stall counter is kept (DESIGN.md R-M8-159)"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Protect",
+     "Tackle"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Weavile",
+    "species": "Weavile",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Feint",
+     "Splash"
+    ],
+    "ability": "Inner Focus",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1 dynamax",
+   "p2": "move Feint"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

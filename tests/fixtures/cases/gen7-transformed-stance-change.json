@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen7-transformed-stance-change",
+ "notes": [
+  "Gen 7: Ditto's Imposter copies Aegislash and its Stance Change; Ditto's Shadow Ball changes no forme (`attacker.transformed`)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Ditto",
+    "species": "Ditto",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Transform"
+    ],
+    "ability": "Imposter"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Aegislash",
+    "species": "Aegislash",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "King's Shield",
+     "Swords Dance",
+     "Shadow Ball"
+    ],
+    "gender": "F",
+    "ability": "Stance Change"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Shadow Ball",
+   "p2": "move Swords Dance"
+  },
+  {
+   "p1": "move Shadow Ball",
+   "p2": "move Swords Dance"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

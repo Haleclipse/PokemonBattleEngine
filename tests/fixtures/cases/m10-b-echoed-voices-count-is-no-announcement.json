@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "id": "m10-b-echoed-voices-count-is-no-announcement",
+  "notes": [
+    "R-M10-19: Showdown keeps Echoed Voice's count as a field condition it adds without a word (`echoedvoice`'s `onFieldStart` sends nothing); the views do not show it.",
+    "promoted from m8-gen5-singles-s1626-015-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 5,
+    "mode": "singles",
+    "format": "gen5customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Beartic",
+        "species": "Beartic",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Rock Smash"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Sawk",
+        "species": "Sawk",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Echoed Voice"
+        ],
+        "ability": "Run Away"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      62308,
+      53462,
+      59478,
+      25207
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Rock Smash",
+      "p2": "move Echoed Voice"
+    }
+  ]
+}

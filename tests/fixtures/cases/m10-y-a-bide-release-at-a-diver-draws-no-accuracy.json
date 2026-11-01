@@ -1,0 +1,210 @@
+{
+  "schema": 1,
+  "id": "m10-y-a-bide-release-at-a-diver-draws-no-accuracy",
+  "notes": [
+    "Gen 3 Doubles: Regice's Bide releases at Solrock underwater (Dive): the invulnerability step misses it before any accuracy check (R-M10-49)",
+    "promoted from m8-gen3-doubles-s1654-003-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 3,
+    "mode": "doubles",
+    "format": "gen3doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Flaaffy",
+        "species": "Flaaffy",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Rolling Kick",
+          "Bide"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Solrock",
+        "species": "Solrock",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Dig",
+          "Dive"
+        ],
+        "ability": "Run Away",
+        "item": "Bright Powder"
+      },
+      {
+        "label": "Sharpedo",
+        "species": "Sharpedo",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Aurora Beam",
+          "Bide",
+          "Skill Swap"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Butterfree",
+        "species": "Butterfree",
+        "level": 46,
+        "nature": "Hardy",
+        "moves": [
+          "Icy Wind",
+          "Bide"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Snorunt",
+        "species": "Snorunt",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Muddy Water",
+          "Bide"
+        ],
+        "ability": "Run Away",
+        "item": "Wiki Berry",
+        "gender": "M"
+      },
+      {
+        "label": "Chikorita",
+        "species": "Chikorita",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Crush Claw",
+          "Bide"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Zapdos",
+        "species": "Zapdos",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Iron Tail",
+          "Bide",
+          "Bubble",
+          "Skill Swap"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Regice",
+        "species": "Regice",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Bubble Beam",
+          "Bide"
+        ],
+        "ability": "Run Away"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      8269,
+      52437,
+      17119,
+      9183
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Rolling Kick 1, move Dig 2",
+      "p2": "move Muddy Water, move Crush Claw 1"
+    },
+    {
+      "p1": "move 2, move 1",
+      "p2": "move 2, move 2"
+    },
+    {
+      "p1": "move 1, move 2 1",
+      "p2": "move 1, move 1"
+    },
+    {
+      "p1": "move 1, move 1",
+      "p2": "move 1, move 1"
+    },
+    {
+      "p1": "switch Sharpedo, move Dig 2",
+      "p2": "switch Zapdos, move Crush Claw 2"
+    },
+    {
+      "p1": "move 1 1, move 1",
+      "p2": "move 1 1, move 2"
+    },
+    {
+      "p1": "move 2, move 2 2",
+      "p2": "move 2, move 1"
+    },
+    {
+      "p1": "move 1, move 1",
+      "p2": "move 1, move 1"
+    },
+    {
+      "p1": "move 1, move 1 1",
+      "p2": "move 1, move 1 2"
+    },
+    {
+      "p1": "switch Flaaffy, move 1",
+      "p2": "switch Snorunt, move 2"
+    },
+    {
+      "p1": "move 1 2, move 2 1",
+      "p2": "move 1, move 1"
+    },
+    {
+      "p1": "move 2, move 1",
+      "p2": "move 2, move 1"
+    },
+    {
+      "p2": "switch Zapdos, pass"
+    },
+    {
+      "p1": "move 1, move 1 2",
+      "p2": "move 3, move 1 1"
+    },
+    {
+      "p1": "switch Sharpedo, pass"
+    },
+    {
+      "p1": "move 3 1, move 1",
+      "p2": "move 4 2, move 2"
+    },
+    {
+      "p1": "switch Butterfree, move 2 2",
+      "p2": "switch Regice, move 1"
+    },
+    {
+      "p1": "move 1, move 1",
+      "p2": "move 1 1, move 1"
+    },
+    {
+      "p1": "move Bide, move Dig 1",
+      "p2": "move Bide, move Crush Claw 2"
+    },
+    {
+      "p1": "move 1, move 1",
+      "p2": "move 1, move 2"
+    },
+    {
+      "p1": "move 1, move 2 2",
+      "p2": "move 1, move 1"
+    }
+  ]
+}

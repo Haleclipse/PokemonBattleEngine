@@ -1,0 +1,83 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-rollout",
+ "notes": [
+  "Gen 9 doubles Rollout: the chain keeps to the position it started on whatever the later choice names \u2014 Follow Me draws one hit away, the next goes back"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Roller",
+    "species": "Mew",
+    "level": 35,
+    "nature": "Hardy",
+    "moves": [
+     "Rollout",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Ally",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Wall",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tail Whip",
+     "Follow Me"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Wall2",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tail Whip"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Rollout 2, move Harden",
+   "p2": "move Tail Whip, move Tail Whip"
+  },
+  {
+   "p1": "move Rollout 1, move Harden",
+   "p2": "move Follow Me, move Tail Whip"
+  },
+  {
+   "p1": "move Rollout 1, move Harden",
+   "p2": "move Tail Whip, move Tail Whip"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,233 @@
+{
+  "schema": 1,
+  "id": "m10-z-an-encored-metronome-misses-its-user-in-the-air",
+  "notes": [
+    "Gen 6 Doubles: Oshawott's Encore keeps Metronome on the turn after its Metronome's Bounce; it misses Oshawott itself in the air, drawing nothing (R-M10-50)",
+    "promoted from m8-gen6-doubles-s1655-003-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 6,
+    "mode": "doubles",
+    "format": "gen6doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Jigglypuff",
+        "species": "Jigglypuff",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Bulk Up",
+          "Lock-On",
+          "Double Team",
+          "Metronome"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Chansey",
+        "species": "Chansey",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Feather Dance",
+          "Lock-On",
+          "Shell Smash",
+          "Metronome"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Porygon",
+        "species": "Porygon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Meditate",
+          "Lock-On",
+          "Metal Sound",
+          "Metronome"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Oshawott",
+        "species": "Oshawott",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Smokescreen",
+          "Lock-On",
+          "Tickle",
+          "Metronome"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Cascoon",
+        "species": "Cascoon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Harden",
+          "Lock-On",
+          "Barrier",
+          "Metronome"
+        ],
+        "ability": "Flame Body",
+        "gender": "F"
+      },
+      {
+        "label": "Crustle",
+        "species": "Crustle",
+        "level": 51,
+        "nature": "Hardy",
+        "moves": [
+          "Howl",
+          "Lock-On",
+          "Calm Mind",
+          "Metronome"
+        ],
+        "ability": "Hustle",
+        "item": "Toxic Orb",
+        "gender": "M"
+      },
+      {
+        "label": "Starmie",
+        "species": "Starmie",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Withdraw",
+          "Lock-On",
+          "Amnesia",
+          "Metronome"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Abra",
+        "species": "Abra",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Lock-On"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      65129,
+      34774,
+      64629,
+      47273
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Bulk Up, move Feather Dance 1",
+      "p2": "move Harden, move Howl"
+    },
+    {
+      "p1": "move Lock-On 2, move Lock-On 1",
+      "p2": "move Lock-On 1, move Lock-On 2"
+    },
+    {
+      "p1": "move Double Team, move Shell Smash",
+      "p2": "move Barrier, move Calm Mind"
+    },
+    {
+      "p1": "move Metronome, move Metronome",
+      "p2": "move Metronome, move Metronome"
+    },
+    {
+      "p1": "switch Porygon, pass"
+    },
+    {
+      "p1": "switch Oshawott, move 1 2",
+      "p2": "move 1, move 1"
+    },
+    {
+      "p1": "move Smokescreen 1, move Lock-On 2",
+      "p2": "move Lock-On 1, move Lock-On 2"
+    },
+    {
+      "p2": "pass, switch Starmie"
+    },
+    {
+      "p1": "move Lock-On 1, move Shell Smash",
+      "p2": "move Barrier, move Amnesia"
+    },
+    {
+      "p1": "move Tickle 2, move Metronome",
+      "p2": "move Metronome, move Metronome"
+    },
+    {
+      "p1": "move Metronome, move Feather Dance 1",
+      "p2": "move Harden, move Withdraw"
+    },
+    {
+      "p1": "switch Porygon, move Lock-On 2",
+      "p2": "switch Abra, move Lock-On 1"
+    },
+    {
+      "p1": "move Meditate, move Shell Smash",
+      "p2": "move Lock-On 2, move Amnesia"
+    },
+    {
+      "p1": "move Lock-On 1, move Metronome",
+      "p2": "move Lock-On 1, move Metronome"
+    },
+    {
+      "p1": "move 3 2, move 1",
+      "p2": "move 1 2, move 1"
+    },
+    {
+      "p2": "switch Cascoon, pass"
+    },
+    {
+      "p1": "move 4, move 1",
+      "p2": "move 1, move 2 1"
+    },
+    {
+      "p1": "switch Oshawott, move 1",
+      "p2": "pass, move 3"
+    },
+    {
+      "p1": "move Smokescreen 2, move Metronome",
+      "p2": "pass, move Metronome"
+    },
+    {
+      "p1": "move 2 2, move 1 2",
+      "p2": "pass, move 1"
+    },
+    {
+      "p1": "pass, switch Porygon"
+    },
+    {
+      "p1": "move Metronome, move Metal Sound 2",
+      "p2": "pass, move Amnesia"
+    },
+    {
+      "p1": "move Smokescreen 2, move Metronome",
+      "p2": "pass, move Metronome"
+    },
+    {
+      "p1": "move Metronome, move Meditate",
+      "p2": "pass, move Withdraw"
+    },
+    {
+      "p1": "move 1, move 2 2",
+      "p2": "pass, move 2 1"
+    }
+  ]
+}

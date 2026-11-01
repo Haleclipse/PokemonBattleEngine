@@ -1,0 +1,59 @@
+{
+ "schema": 1,
+ "id": "gen6-liquid-ooze-dream-eater",
+ "notes": [
+  "Gen 6 Liquid Ooze turns Dream Eater's drain into damage too (the gen6 mod)"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Drain",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Spore",
+     "Dream Eater",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Ooze",
+    "species": "Tentacruel",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Liquid Ooze"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Spore",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Dream Eater",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

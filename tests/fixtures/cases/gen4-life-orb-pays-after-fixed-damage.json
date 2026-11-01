@@ -1,0 +1,71 @@
+{
+ "schema": 1,
+ "id": "gen4-life-orb-pays-after-fixed-damage",
+ "notes": [
+  "Gen 4 Life Orb: Giratina pays the recoil after Seismic Toss — pokeplatinum reads the item once the move is over and fixed damage takes real HP (issues.md I193; re-recorded from gen4-life-orb-skips-fixed-damage, DESIGN.md R-M8-131)",
+  "promoted from m8-gen4-singles-s105-003-min (tools/minimize.py, tools/promote.py)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Entei",
+    "species": "Entei",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Drain Punch",
+     "Spikes"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Granbull",
+    "species": "Granbull",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Flame Wheel"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Giratina",
+    "species": "Giratina",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss"
+    ],
+    "ability": "Run Away",
+    "item": "Life Orb"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   44963,
+   60960,
+   48782,
+   28721
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Drain Punch",
+   "p2": "switch Giratina"
+  },
+  {
+   "p1": "move Spikes",
+   "p2": "move Seismic Toss"
+  }
+ ]
+}

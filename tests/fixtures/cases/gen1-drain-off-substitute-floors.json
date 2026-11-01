@@ -1,0 +1,100 @@
+{
+  "schema": 1,
+  "id": "gen1-drain-off-substitute-floors",
+  "notes": [
+    "Gen 1 drains floor(damage / 2), at least 1, off a Substitute",
+    "promoted from m8-gen1-singles-s100-012-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 1,
+    "mode": "singles",
+    "format": "gen1customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Raticate",
+        "species": "Raticate",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Body Slam"
+        ]
+      },
+      {
+        "label": "Growlithe",
+        "species": "Growlithe",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Poison Powder",
+          "Absorb"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "Diglett",
+        "species": "Diglett",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sleep Powder"
+        ]
+      },
+      {
+        "label": "Dodrio",
+        "species": "Dodrio",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Leer"
+        ]
+      },
+      {
+        "label": "Dragonair",
+        "species": "Dragonair",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Substitute",
+          "Leech Life"
+        ]
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      35878,
+      32968,
+      47177,
+      65122
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Body Slam",
+      "p2": "move Sleep Powder"
+    },
+    {
+      "p2": "switch Dodrio"
+    },
+    {
+      "p1": "move Body Slam",
+      "p2": "move Leer"
+    },
+    {
+      "p1": "switch Growlithe",
+      "p2": "switch Dragonair"
+    },
+    {
+      "p1": "move Poison Powder",
+      "p2": "move Substitute"
+    },
+    {
+      "p1": "move Absorb",
+      "p2": "move Leech Life"
+    }
+  ]
+}

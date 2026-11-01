@@ -1,0 +1,76 @@
+{
+ "schema": 1,
+ "id": "gen4-simple-evasion-raised",
+ "notes": [
+  "Gen 4 Simple on the target: its Double Team's +1 evasion reads +2 \u2014 Compound Eyes and Wide Lens' Surf is 100 x 60/100 x 130/100 x 110/100 = 85 and misses with this seed (read once, +1 would give 106, sure to hit)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Eyes",
+    "species": "Mew",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Surf",
+     "Harden"
+    ],
+    "ability": "Compound Eyes",
+    "item": "Wide Lens"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Simp",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Double Team",
+     "Harden"
+    ],
+    "ability": "Simple"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move Surf",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Surf",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Surf",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Surf",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Surf",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

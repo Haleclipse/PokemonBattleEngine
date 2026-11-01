@@ -1,0 +1,78 @@
+{
+ "schema": 1,
+ "id": "gen9-tera-shift-on-entry",
+ "notes": [
+  "Gen 9: Terapagos comes in — Tera Shift (`onSwitchInPriority` 2) announces itself (`-activate`) and changes it into Terapagos-Terastal (its ability becomes Tera Shell, its max HP the forme's); coming back in later in that forme announces nothing (the forme is already Terastal), and a Snorlax beside it does nothing"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Terapagos",
+    "species": "Terapagos",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "ability": "Tera Shift"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "switch Blissey",
+   "p2": "move 1"
+  },
+  {
+   "p1": "switch Terapagos",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

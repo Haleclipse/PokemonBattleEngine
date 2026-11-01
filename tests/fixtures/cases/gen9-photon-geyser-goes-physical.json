@@ -1,0 +1,64 @@
+{
+ "schema": 1,
+ "id": "gen9-photon-geyser-goes-physical",
+ "notes": [
+  "Photon Geyser is physical when the user's Attack beats its Special Attack, both at their stages (`getStat(.., false, true)`): after Swords Dance it hits Blissey's low Defense"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Necrozma",
+    "species": "Necrozma",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Photon Geyser",
+     "Swords Dance"
+    ],
+    "gender": "N",
+    "ability": "Prism Armor"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Photon Geyser",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Swords Dance",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Photon Geyser",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

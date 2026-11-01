@@ -1,0 +1,78 @@
+{
+ "schema": 1,
+ "id": "gen8-emergency-exit-life-orb",
+ "notes": [
+  "Emergency Exit after the holder's own move: Life Orb's recoil takes it from above half to half or less"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Pod",
+    "species": "Golisopod",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Liquidation"
+    ],
+    "ability": "Emergency Exit",
+    "item": "Life Orb"
+   },
+   {
+    "label": "Pal",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Super Fang",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Super Fang"
+  },
+  {
+   "p1": "move Liquidation",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Pal"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

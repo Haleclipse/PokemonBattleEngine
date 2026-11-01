@@ -1,0 +1,224 @@
+{
+  "schema": 1,
+  "id": "m8-gen8-foe-thaws-after-jungle-healing",
+  "notes": [
+    "Gen 8: Entei's Jungle Healing, then frozen Kabutops thaws at its own BeforeMove (-curestatus right after the heal) and uses Jungle Healing: a move on the user's own side cures no foe, so the thaw is Kabutops's own roll (the replay plan, DESIGN.md R-M8-113)",
+    "promoted from m8-gen8-singles-s571-004-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 8,
+    "mode": "singles",
+    "format": "gen8customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Stoutland",
+        "species": "Stoutland",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Psychic",
+          "Magic Powder",
+          "Low Sweep",
+          "Jungle Healing"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Rookidee",
+        "species": "Rookidee",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Moonblast",
+          "Nature Power",
+          "Crush Claw",
+          "Jungle Healing"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Dracozolt",
+        "species": "Dracozolt",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Drum Beating",
+          "Jungle Healing",
+          "Crunch",
+          "Nature Power"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Kabutops",
+        "species": "Kabutops",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Apple Acid",
+          "Jungle Healing",
+          "Thunderous Kick",
+          "Nature Power"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Magnezone",
+        "species": "Magnezone",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Spirit Break",
+          "Jungle Healing",
+          "Fire Lash",
+          "Nature Power"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Entei",
+        "species": "Entei",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Lunge",
+          "Jungle Healing",
+          "Mist Ball",
+          "Nature Power"
+        ],
+        "ability": "Magic Bounce"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      44355,
+      3628,
+      61195,
+      22460
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Psychic",
+      "p2": "move Spirit Break"
+    },
+    {
+      "p1": "move Magic Powder",
+      "p2": "move Jungle Healing"
+    },
+    {
+      "p1": "move Low Sweep",
+      "p2": "move Fire Lash"
+    },
+    {
+      "p1": "move Jungle Healing",
+      "p2": "move Nature Power"
+    },
+    {
+      "p1": "switch Rookidee",
+      "p2": "switch Entei"
+    },
+    {
+      "p1": "move Moonblast",
+      "p2": "move Lunge"
+    },
+    {
+      "p1": "move Nature Power",
+      "p2": "move Jungle Healing"
+    },
+    {
+      "p1": "move Crush Claw",
+      "p2": "move Mist Ball"
+    },
+    {
+      "p1": "move Jungle Healing",
+      "p2": "move Nature Power"
+    },
+    {
+      "p1": "switch Stoutland"
+    },
+    {
+      "p1": "switch Dracozolt",
+      "p2": "switch Magnezone"
+    },
+    {
+      "p1": "move Drum Beating",
+      "p2": "move Spirit Break"
+    },
+    {
+      "p1": "move Jungle Healing",
+      "p2": "move Jungle Healing"
+    },
+    {
+      "p1": "move Crunch",
+      "p2": "move Fire Lash"
+    },
+    {
+      "p1": "move Nature Power",
+      "p2": "move Nature Power"
+    },
+    {
+      "p1": "switch Stoutland",
+      "p2": "switch Entei"
+    },
+    {
+      "p1": "move Psychic",
+      "p2": "move Lunge"
+    },
+    {
+      "p1": "move Magic Powder",
+      "p2": "move Jungle Healing"
+    },
+    {
+      "p1": "move Low Sweep",
+      "p2": "move Mist Ball"
+    },
+    {
+      "p1": "switch Dracozolt"
+    },
+    {
+      "p1": "move Nature Power",
+      "p2": "move Nature Power"
+    },
+    {
+      "p1": "switch Kabutops",
+      "p2": "switch Magnezone"
+    },
+    {
+      "p1": "move Apple Acid",
+      "p2": "move Spirit Break"
+    },
+    {
+      "p1": "move Thunderous Kick",
+      "p2": "move Fire Lash"
+    },
+    {
+      "p1": "move Nature Power",
+      "p2": "move Nature Power"
+    },
+    {
+      "p1": "switch Dracozolt",
+      "p2": "switch Entei"
+    },
+    {
+      "p1": "move Drum Beating",
+      "p2": "move Lunge"
+    },
+    {
+      "p1": "switch Kabutops"
+    },
+    {
+      "p1": "move Jungle Healing",
+      "p2": "move Jungle Healing"
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+ "schema": 1,
+ "id": "gen7-beat-up-follows-the-in-battle-order",
+ "notes": [
+  "Beat Up's hits follow the party's in-battle order (Showdown side.pokemon): Sneasel coming in for the lead Pikachu takes the first place, Pikachu Sneasel's, so the hits go Sneasel, Machamp, Pikachu, Snorlax"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Pikachu",
+    "species": "Pikachu",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Machamp",
+    "species": "Machamp",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Sneasel",
+    "species": "Sneasel",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Beat Up"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "switch Sneasel",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Beat Up",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Beat Up",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,68 @@
+{
+  "schema": 1,
+  "id": "gen4-ability-callbacks",
+  "notes": [
+    "Abilities as Gen 4 declares them: Lightning Rod only redirects (an Electric move still hits its holder) and Sturdy only stops one-hit KO moves (a knockout from full HP stands)"
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "singles",
+    "format": "gen4customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Garchomp",
+        "species": "Garchomp",
+        "level": 100,
+        "nature": "Hardy",
+        "moves": [
+          "Thunderbolt",
+          "Earthquake"
+        ],
+        "ability": "Run Away"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Manectric",
+        "species": "Manectric",
+        "level": 60,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ],
+        "ability": "Lightning Rod"
+      },
+      {
+        "label": "Geodude",
+        "species": "Geodude",
+        "level": 20,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ],
+        "ability": "Sturdy"
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 2",
+      "p2": "switch 2"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

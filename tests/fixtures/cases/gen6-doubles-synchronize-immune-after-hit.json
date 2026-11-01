@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "id": "gen6-doubles-synchronize-immune-after-hit",
+  "notes": [
+    "An -immune on a target the move already hit is a reaction (Synchronize into an Electric type), not the move s immunity",
+    "promoted from m8-gen6-doubles-s201-018-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 6,
+    "mode": "doubles",
+    "format": "gen6doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Solrock",
+        "species": "Solrock",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Frost Breath"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Zekrom",
+        "species": "Zekrom",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Storm Throw"
+        ],
+        "ability": "Static"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Rhyperior",
+        "species": "Rhyperior",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Storm Throw"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Rufflet",
+        "species": "Rufflet",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Storm Throw"
+        ],
+        "ability": "Synchronize"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      30627,
+      56759,
+      3827,
+      47151
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Frost Breath 1, move Storm Throw 2",
+      "p2": "move Storm Throw 1, move Storm Throw 2"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "gen4-absorbing-boosts",
+ "notes": [
+  "Gen 4: Motor Drive refuses an Electric move and gains +1 Speed"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Thunderbolt",
+     "Flamethrower",
+     "Earthquake",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Motor",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Motor Drive"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Thunderbolt",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Thunderbolt",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

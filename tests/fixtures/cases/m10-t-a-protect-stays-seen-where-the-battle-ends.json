@@ -1,0 +1,522 @@
+{
+  "schema": 1,
+  "id": "m10-t-a-protect-stays-seen-where-the-battle-ends",
+  "notes": [
+    "Gen 3 OU: Beautifly's Protect stays seen as the battle ends in the turn's residual (Perish Song), before any upkeep (R-M10-44)",
+    "promoted from m9-gen3ou-s206-003-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 3,
+    "mode": "singles",
+    "format": "gen3ou"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Crobat",
+        "species": "Crobat",
+        "ability": "Inner Focus",
+        "moves": [
+          "Hyper Beam",
+          "Giga Drain"
+        ],
+        "nature": "Serious",
+        "gender": "M",
+        "shiny": false,
+        "level": 57,
+        "evs": {
+          "hp": 80,
+          "atk": 0,
+          "def": 84,
+          "spa": 0,
+          "spd": 92,
+          "spe": 252
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        },
+        "happiness": 194
+      },
+      {
+        "label": "Remoraid",
+        "species": "Remoraid",
+        "ability": "Hustle",
+        "moves": [
+          "Bubble Beam",
+          "Substitute",
+          "Attract"
+        ],
+        "nature": "Bold",
+        "gender": "F",
+        "shiny": false,
+        "level": 33,
+        "evs": {
+          "hp": 84,
+          "atk": 120,
+          "def": 40,
+          "spa": 0,
+          "spd": 188,
+          "spe": 76
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 9,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        },
+        "happiness": 71
+      },
+      {
+        "label": "Kangaskhan",
+        "species": "Kangaskhan",
+        "ability": "Early Bird",
+        "moves": [
+          "Rock Smash",
+          "Brick Break",
+          "Rage",
+          "Icy Wind"
+        ],
+        "nature": "Gentle",
+        "gender": "",
+        "shiny": false,
+        "level": 100,
+        "evs": {
+          "hp": 0,
+          "atk": 0,
+          "def": 0,
+          "spa": 252,
+          "spd": 196,
+          "spe": 60
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 15,
+          "spd": 31,
+          "spe": 31
+        }
+      },
+      {
+        "label": "Nick40",
+        "species": "Carvanha",
+        "ability": "Rough Skin",
+        "moves": [
+          "Icy Wind"
+        ],
+        "nature": "Brave",
+        "gender": "F",
+        "shiny": true,
+        "level": 28,
+        "evs": {
+          "hp": 0,
+          "atk": 20,
+          "def": 188,
+          "spa": 0,
+          "spd": 144,
+          "spe": 156
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 21,
+          "spd": 31,
+          "spe": 31
+        }
+      },
+      {
+        "label": "Persian",
+        "species": "Persian",
+        "ability": "Limber",
+        "moves": [
+          "Cut",
+          "Fury Swipes",
+          "Snatch",
+          "Swift"
+        ],
+        "nature": "Timid",
+        "gender": "F",
+        "shiny": false,
+        "level": 100,
+        "evs": {
+          "hp": 0,
+          "atk": 32,
+          "def": 72,
+          "spa": 16,
+          "spd": 252,
+          "spe": 136
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 12,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        }
+      },
+      {
+        "label": "Cloyster",
+        "species": "Cloyster",
+        "ability": "Shell Armor",
+        "moves": [
+          "Rest",
+          "Tackle",
+          "Endure",
+          "Icicle Spear"
+        ],
+        "nature": "Lax",
+        "gender": "F",
+        "shiny": false,
+        "level": 100,
+        "evs": {
+          "hp": 128,
+          "atk": 224,
+          "def": 0,
+          "spa": 76,
+          "spd": 0,
+          "spe": 80
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        }
+      }
+    ],
+    "p2": [
+      {
+        "label": "Beautifly",
+        "species": "Beautifly",
+        "ability": "Swarm",
+        "moves": [
+          "Toxic",
+          "Protect",
+          "Sleep Talk",
+          "Sunny Day"
+        ],
+        "nature": "Quirky",
+        "gender": "M",
+        "shiny": true,
+        "level": 100,
+        "evs": {
+          "hp": 32,
+          "atk": 72,
+          "def": 116,
+          "spa": 120,
+          "spd": 168,
+          "spe": 0
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 18,
+          "spd": 31,
+          "spe": 31
+        }
+      },
+      {
+        "label": "Donphan",
+        "species": "Donphan",
+        "ability": "Sturdy",
+        "moves": [
+          "Mimic",
+          "Rollout",
+          "Counter"
+        ],
+        "nature": "Sassy",
+        "gender": "M",
+        "shiny": false,
+        "level": 100,
+        "evs": {
+          "hp": 104,
+          "atk": 104,
+          "def": 16,
+          "spa": 124,
+          "spd": 0,
+          "spe": 160
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 20,
+          "spe": 31
+        }
+      },
+      {
+        "label": "Nick7",
+        "species": "Swablu",
+        "ability": "Natural Cure",
+        "moves": [
+          "Sleep Talk",
+          "Mimic",
+          "Dream Eater",
+          "Perish Song"
+        ],
+        "nature": "Docile",
+        "gender": "M",
+        "shiny": false,
+        "level": 100,
+        "evs": {
+          "hp": 112,
+          "atk": 116,
+          "def": 28,
+          "spa": 140,
+          "spd": 0,
+          "spe": 112
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 12,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        }
+      }
+    ]
+  },
+  "preview": {
+    "p1": "team 546132",
+    "p2": "team 345261"
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      12783,
+      206,
+      1003,
+      31
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Hyper Beam",
+      "p2": "move Toxic"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move Giga Drain",
+      "p2": "move Sleep Talk"
+    },
+    {
+      "p1": "switch Remoraid",
+      "p2": "switch Donphan"
+    },
+    {
+      "p1": "move Attract",
+      "p2": "move Counter"
+    },
+    {
+      "p1": "move Bubble Beam",
+      "p2": "move Mimic"
+    },
+    {
+      "p1": "move Substitute",
+      "p2": "move Rollout"
+    },
+    {
+      "p1": "switch Crobat"
+    },
+    {
+      "p1": "switch Kangaskhan",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move Rage",
+      "p2": "move Counter"
+    },
+    {
+      "p1": "move 4",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move Rock Smash",
+      "p2": "move Rollout"
+    },
+    {
+      "p1": "switch Crobat",
+      "p2": "move 1"
+    },
+    {
+      "p1": "switch Kangaskhan"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 1"
+    },
+    {
+      "p1": "switch Nick40"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "switch Persian"
+    },
+    {
+      "p1": "switch Cloyster",
+      "p2": "switch Beautifly"
+    },
+    {
+      "p1": "move Rest",
+      "p2": "move Sleep Talk"
+    },
+    {
+      "p1": "move Tackle",
+      "p2": "move Sunny Day"
+    },
+    {
+      "p1": "move Endure",
+      "p2": "move Toxic"
+    },
+    {
+      "p1": "switch Persian",
+      "p2": "switch Donphan"
+    },
+    {
+      "p1": "move Swift",
+      "p2": "move Rollout"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move Fury Swipes",
+      "p2": "move Counter"
+    },
+    {
+      "p1": "switch Cloyster",
+      "p2": "switch Beautifly"
+    },
+    {
+      "p1": "move Endure",
+      "p2": "move Toxic"
+    },
+    {
+      "p1": "move Icicle Spear",
+      "p2": "move Protect"
+    },
+    {
+      "p1": "move Rest",
+      "p2": "move Sleep Talk"
+    },
+    {
+      "p1": "switch Persian",
+      "p2": "switch Donphan"
+    },
+    {
+      "p1": "move Fury Swipes",
+      "p2": "move Counter"
+    },
+    {
+      "p2": "switch Beautifly"
+    },
+    {
+      "p1": "move Snatch",
+      "p2": "move Toxic"
+    },
+    {
+      "p1": "move Swift",
+      "p2": "move Protect"
+    },
+    {
+      "p1": "switch Cloyster",
+      "p2": "switch Nick7"
+    },
+    {
+      "p1": "move Rest",
+      "p2": "move Dream Eater"
+    },
+    {
+      "p1": "move Tackle",
+      "p2": "move Perish Song"
+    },
+    {
+      "p1": "move Endure",
+      "p2": "move Sleep Talk"
+    },
+    {
+      "p1": "switch Persian",
+      "p2": "switch Beautifly"
+    },
+    {
+      "p1": "move Swift",
+      "p2": "move Protect"
+    },
+    {
+      "p1": "move Cut",
+      "p2": "move Sleep Talk"
+    },
+    {
+      "p1": "move Fury Swipes",
+      "p2": "move Sunny Day"
+    },
+    {
+      "p1": "switch Cloyster",
+      "p2": "switch Nick7"
+    },
+    {
+      "p1": "move Icicle Spear",
+      "p2": "move Mimic"
+    },
+    {
+      "p1": "move Rest",
+      "p2": "move Dream Eater"
+    },
+    {
+      "p1": "switch Persian",
+      "p2": "switch Beautifly"
+    },
+    {
+      "p1": "move Fury Swipes",
+      "p2": "move Sunny Day"
+    },
+    {
+      "p1": "switch Cloyster"
+    },
+    {
+      "p1": "move Rest",
+      "p2": "switch Nick7"
+    },
+    {
+      "p1": "move Endure",
+      "p2": "move Perish Song"
+    },
+    {
+      "p1": "move Icicle Spear",
+      "p2": "move Sleep Talk"
+    },
+    {
+      "p1": "move Rest",
+      "p2": "switch Beautifly"
+    },
+    {
+      "p1": "move Tackle",
+      "p2": "move Protect"
+    }
+  ]
+}

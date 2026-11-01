@@ -1,0 +1,69 @@
+{
+ "schema": 1,
+ "id": "gen3-magnitude-power-drawn-as-it-starts",
+ "notes": [
+  "Magnitude draws its magnitude as it starts (onModifyMove) and announces it; power 10-150"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Graveler",
+    "species": "Graveler",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Magnitude"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Magnitude",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Magnitude",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Magnitude",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Magnitude",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Magnitude",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

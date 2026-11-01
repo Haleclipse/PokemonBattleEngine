@@ -1,0 +1,64 @@
+{
+ "schema": 1,
+ "id": "gen7-miracle-eye-lets-psychic-hit-a-dark-type",
+ "notes": [
+  "Gen 7: Alakazam's Psychic does not affect Umbreon; after Miracle Eye (`-start … Miracle Eye`) it hits"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Alakazam",
+    "species": "Alakazam",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Psychic",
+     "Miracle Eye"
+    ],
+    "gender": "M",
+    "ability": "Synchronize"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Umbreon",
+    "species": "Umbreon",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Inner Focus"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Psychic",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Miracle Eye",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Psychic",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

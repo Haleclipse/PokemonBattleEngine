@@ -1,0 +1,72 @@
+{
+ "schema": 1,
+ "id": "gen5-wake-up-slap-and-smelling-salts",
+ "notes": [
+  "Wake-Up Slap doubles against a sleeping target and wakes it; Smelling Salts doubles against a paralysed one and cures it (both `onHit`)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Breloom",
+    "species": "Breloom",
+    "level": 25,
+    "nature": "Hardy",
+    "moves": [
+     "Spore",
+     "Wake-Up Slap",
+     "Thunder Wave",
+     "Smelling Salts"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Spore",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Wake-Up Slap",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Thunder Wave",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Smelling Salts",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Smelling Salts",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

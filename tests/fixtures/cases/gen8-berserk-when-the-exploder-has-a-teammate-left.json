@@ -1,0 +1,73 @@
+{
+ "schema": 1,
+ "id": "gen8-berserk-when-the-exploder-has-a-teammate-left",
+ "notes": [
+  "Gen 8: as gen8-berserk-after-the-last-foe-explodes, but P2 has a Pokémon left: Berserk raises Drampa's Special Attack as it drops below half"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Drampa",
+    "species": "Drampa",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Berserk"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Weezing",
+    "species": "Weezing",
+    "level": 62,
+    "nature": "Hardy",
+    "moves": [
+     "Explosion"
+    ],
+    "gender": "M",
+    "ability": "Levitate"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Explosion"
+  },
+  {
+   "p2": "switch Snorlax"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

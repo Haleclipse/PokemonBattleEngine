@@ -1,0 +1,75 @@
+{
+ "schema": 1,
+ "id": "gen4-griseous-orb",
+ "notes": [
+  "Gen 4: Giratina's Griseous Orb boosts its Ghost and Dragon moves; in Gen 4 it cannot be taken at all (`onTakeItem: false`), while Showdown Gen 5 lets Thief take it"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Giratina",
+    "species": "Giratina",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Shadow Ball",
+     "Dragon Pulse",
+     "Tackle"
+    ],
+    "gender": "M",
+    "ability": "Pressure",
+    "item": "Griseous Orb"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Thief"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Shadow Ball",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Dragon Pulse",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Thief"
+  },
+  {
+   "p1": "move Shadow Ball",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

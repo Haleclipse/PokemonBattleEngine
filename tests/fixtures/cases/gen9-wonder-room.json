@@ -1,0 +1,89 @@
+{
+ "schema": 1,
+ "id": "gen9-wonder-room",
+ "notes": [
+  "Wonder Room swaps the stored Defense and Special Defense: Tackle meets Blissey's Special Defense, Body Press takes Iron Treads' Defense with its Special Defense stage, a confused self-hit its stored Special Defense, and Quark Drive's best stat reads the other defense's stage (Attack, not Defense); used again it ends"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Treads",
+    "species": "Iron Treads",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Body Press"
+    ],
+    "ability": "Quark Drive"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Wonder Room",
+     "Electric Terrain",
+     "Metal Sound",
+     "Confuse Ray"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Tackle",
+   "p2": "move Metal Sound"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Wonder Room"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Metal Sound"
+  },
+  {
+   "p1": "move Body Press",
+   "p2": "move Electric Terrain"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Confuse Ray"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Metal Sound"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Wonder Room"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Wonder Room"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Metal Sound"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

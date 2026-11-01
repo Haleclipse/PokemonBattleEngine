@@ -1,0 +1,76 @@
+{
+ "schema": 1,
+ "id": "gen4-figy-berry-on-a-replacement-into-stealth-rock",
+ "notes": [
+  "Gen 4: the Modest Charizard replacing the fallen Magikarp takes half its HP from Stealth Rock; the switch-in's Update feeds it its Figy Berry, which heals an eighth and confuses it"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Skarmory",
+    "species": "Skarmory",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Stealth Rock",
+     "Tackle"
+    ],
+    "ability": "Keen Eye"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 1,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Swift Swim"
+   },
+   {
+    "label": "Charizard",
+    "species": "Charizard",
+    "level": 51,
+    "nature": "Modest",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Blaze",
+    "item": "Figy Berry"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Stealth Rock",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  },
+  {
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

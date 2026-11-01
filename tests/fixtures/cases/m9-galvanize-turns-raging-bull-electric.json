@@ -1,0 +1,76 @@
+{
+ "schema": 1,
+ "id": "m9-galvanize-turns-raging-bull-electric",
+ "notes": [
+  "R-M9-49: Politoed's Galvanize turns its Raging Bull Electric (and boosts it), super effective on Pikipek. Showdown's `-ate` abilities spare only the moves in their `noModifyType` (Judgment, Multi-Attack, Natural Gift, Revelation Dance, Techno Blast, Terrain Pulse, Weather Ball); Raging Bull, typed by its user only as Tauros-Paldea, is not among them. The engine spared every move with a type of its own. Minimized from Nightly 20261022-054840 (m8-gen9-doubles-s1588-016)."
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Koraidon",
+    "species": "Koraidon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Smart Strike"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Politoed",
+    "species": "Politoed",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Raging Bull"
+    ],
+    "ability": "Galvanize",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Torchic",
+    "species": "Torchic",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sunsteel Strike"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Pikipek",
+    "species": "Pikipek",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Foul Play"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   14866,
+   3,
+   3840,
+   15207
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Smart Strike 1, move Raging Bull 2",
+   "p2": "move Sunsteel Strike 1, move Foul Play 2"
+  }
+ ]
+}

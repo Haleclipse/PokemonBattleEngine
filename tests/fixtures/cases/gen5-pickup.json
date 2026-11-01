@@ -1,0 +1,78 @@
+{
+ "schema": 1,
+ "id": "gen5-pickup",
+ "notes": [
+  "Gen 5 Pickup: Snorlax eats its Sitrus Berry while Linoone holds its Leftovers, so Linoone picks nothing; once Knock Off took the Leftovers, the Sitrus Berry eaten a turn before is not there to pick (used this turn only); Snorlax's Recycle brings it back and eats it at once, and at the end of that turn Linoone picks it up, so Snorlax's next Recycle fails"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Linoone",
+    "species": "Linoone",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Harden"
+    ],
+    "ability": "Pickup",
+    "item": "Leftovers"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Recycle",
+     "Knock Off",
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Sitrus Berry"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Seismic Toss",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Seismic Toss",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Knock Off"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Recycle"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Recycle"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

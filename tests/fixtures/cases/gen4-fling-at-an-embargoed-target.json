@@ -1,0 +1,104 @@
+{
+ "schema": 1,
+ "id": "gen4-fling-at-an-embargoed-target",
+ "notes": [
+  "Gen 4 (cartridge, issues.md I92): a Flame Orb flung at Snorlax under Embargo does not burn it; a Sitrus Berry flung at it heals nothing (as in Showdown); once Embargo ends, a second Flame Orb does burn it"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Honchkrow",
+    "species": "Honchkrow",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Embargo",
+     "Fling",
+     "Harden"
+    ],
+    "ability": "Insomnia",
+    "item": "Flame Orb"
+   },
+   {
+    "label": "Clefable",
+    "species": "Clefable",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Fling",
+     "Harden"
+    ],
+    "ability": "Cute Charm",
+    "item": "Sitrus Berry"
+   },
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Fling",
+     "Harden"
+    ],
+    "ability": "Synchronize",
+    "item": "Flame Orb"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Embargo",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Fling",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Clefable",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Fling",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Mew",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Fling",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

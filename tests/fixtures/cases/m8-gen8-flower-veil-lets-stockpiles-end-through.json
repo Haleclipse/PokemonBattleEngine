@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "id": "m8-gen8-flower-veil-lets-stockpiles-end-through",
+  "notes": [
+    "Nightly 63: Dartrix's Swallow ends its Stockpile and lowers its own Defense and Special Defense; the holder's own doing (this.boost(…, pokemon, pokemon)), so Flower Veil lets it through (DESIGN.md R-M8-107)",
+    "promoted from m8-gen8-singles-s547-006-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 8,
+    "mode": "singles",
+    "format": "gen8customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Scrafty",
+        "species": "Scrafty",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Stockpile",
+          "Swallow"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Dartrix",
+        "species": "Dartrix",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Stockpile",
+          "Swallow"
+        ],
+        "ability": "Flower Veil",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      45589,
+      22397,
+      62818,
+      42909
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Stockpile",
+      "p2": "move Stockpile"
+    },
+    {
+      "p1": "move Swallow",
+      "p2": "move Swallow"
+    }
+  ]
+}

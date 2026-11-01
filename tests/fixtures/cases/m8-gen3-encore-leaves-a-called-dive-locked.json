@@ -1,0 +1,337 @@
+{
+  "schema": 1,
+  "id": "m8-gen3-encore-leaves-a-called-dive-locked",
+  "notes": [
+    "Nightly 56: Gen 3 Sandslash, encored on Metronome, charges the Dive Metronome called: the locked Dive goes on (pokeemerald HandleAction_UseMove takes gLockedMoves before the encored move); Showdown's Encore override is patched (issues.md I182, DESIGN.md R-M8-100)",
+    "promoted from m8-gen3-singles-s523-002-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 3,
+    "mode": "singles",
+    "format": "gen3customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Kingdra",
+        "species": "Kingdra",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Night Shade",
+          "Swallow",
+          "Psywave",
+          "Metronome"
+        ],
+        "ability": "Run Away",
+        "item": "Iapapa Berry",
+        "gender": "F"
+      },
+      {
+        "label": "Sunflora",
+        "species": "Sunflora",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Super Fang",
+          "Swallow",
+          "Seismic Toss",
+          "Metronome"
+        ],
+        "ability": "Hustle",
+        "gender": "M"
+      },
+      {
+        "label": "Muk",
+        "species": "Muk",
+        "level": 45,
+        "nature": "Hardy",
+        "moves": [
+          "Spit Up",
+          "Swallow",
+          "Snore",
+          "Metronome"
+        ],
+        "ability": "Wonder Guard",
+        "gender": "F"
+      },
+      {
+        "label": "Makuhita",
+        "species": "Makuhita",
+        "level": 45,
+        "nature": "Hardy",
+        "moves": [
+          "Cross Chop",
+          "Metronome"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Sandslash",
+        "species": "Sandslash",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Air Cutter",
+          "Swallow",
+          "Slash",
+          "Metronome"
+        ],
+        "ability": "Run Away",
+        "item": "Macho Brace",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Gyarados",
+        "species": "Gyarados",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Crabhammer",
+          "Swallow",
+          "Karate Chop",
+          "Metronome"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Clefairy",
+        "species": "Clefairy",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Razor Wind",
+          "Aeroblast",
+          "Metronome"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Mawile",
+        "species": "Mawile",
+        "level": 45,
+        "nature": "Hardy",
+        "moves": [
+          "Bounce",
+          "Peck",
+          "Metronome"
+        ],
+        "ability": "Effect Spore",
+        "gender": "M"
+      },
+      {
+        "label": "Plusle",
+        "species": "Plusle",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Wing Attack",
+          "Swallow",
+          "Drill Peck",
+          "Metronome"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Silcoon",
+        "species": "Silcoon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Swallow"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Octillery",
+        "species": "Octillery",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Aerial Ace"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      2623,
+      56618,
+      29498,
+      21063
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Night Shade",
+      "p2": "move Crabhammer"
+    },
+    {
+      "p1": "move Swallow",
+      "p2": "move Swallow"
+    },
+    {
+      "p1": "move Psywave",
+      "p2": "move Karate Chop"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Metronome"
+    },
+    {
+      "p1": "move Night Shade",
+      "p2": "move Crabhammer"
+    },
+    {
+      "p1": "move Swallow",
+      "p2": "move Swallow"
+    },
+    {
+      "p1": "switch Sunflora",
+      "p2": "switch Clefairy"
+    },
+    {
+      "p1": "move Seismic Toss",
+      "p2": "move Aeroblast"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Metronome"
+    },
+    {
+      "p1": "move Super Fang",
+      "p2": "move Razor Wind"
+    },
+    {
+      "p1": "move Swallow",
+      "p2": "move Razor Wind"
+    },
+    {
+      "p1": "switch Kingdra"
+    },
+    {
+      "p1": "move Psywave",
+      "p2": "move Aeroblast"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Metronome"
+    },
+    {
+      "p1": "move Night Shade",
+      "p2": "switch Gyarados"
+    },
+    {
+      "p2": "switch Clefairy"
+    },
+    {
+      "p1": "move Swallow",
+      "p2": "move Razor Wind"
+    },
+    {
+      "p1": "move Psywave",
+      "p2": "move Razor Wind"
+    },
+    {
+      "p2": "switch Mawile"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Peck"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 3"
+    },
+    {
+      "p1": "switch Muk"
+    },
+    {
+      "p1": "move Swallow",
+      "p2": "move Bounce"
+    },
+    {
+      "p1": "move Snore",
+      "p2": "move Bounce"
+    },
+    {
+      "p1": "switch Makuhita",
+      "p2": "switch Plusle"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Drill Peck"
+    },
+    {
+      "p1": "move Cross Chop",
+      "p2": "move Metronome"
+    },
+    {
+      "p1": "switch Muk"
+    },
+    {
+      "p1": "move Swallow",
+      "p2": "move Wing Attack"
+    },
+    {
+      "p1": "move Snore",
+      "p2": "move Swallow"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Drill Peck"
+    },
+    {
+      "p1": "move Spit Up",
+      "p2": "move Metronome"
+    },
+    {
+      "p1": "switch Sandslash",
+      "p2": "switch Mawile"
+    },
+    {
+      "p1": "move Swallow",
+      "p2": "move Bounce"
+    },
+    {
+      "p1": "move Slash",
+      "p2": "move Bounce"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Peck"
+    },
+    {
+      "p2": "switch Plusle"
+    },
+    {
+      "p1": "move Air Cutter",
+      "p2": "move Metronome"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Wing Attack"
+    },
+    {
+      "p2": "switch Silcoon"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Swallow"
+    },
+    {
+      "p1": "move 1",
+      "p2": "switch Octillery"
+    }
+  ]
+}

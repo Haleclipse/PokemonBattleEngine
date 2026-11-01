@@ -1,0 +1,82 @@
+{
+ "schema": 1,
+ "id": "gen8-doubles-steely-spirit",
+ "notes": [
+  "Steely Spirit (onAllyBasePower, the holder included): Steel moves by the holder and by its partner get \u00d71.5"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "doubles",
+  "format": "gen8doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Spirit",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Iron Head"
+    ],
+    "ability": "Steely Spirit"
+   },
+   {
+    "label": "Clefable",
+    "species": "Clefable",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Iron Head"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Iron Head 1, move Iron Head 1",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Iron Head 2, move Iron Head 2",
+   "p2": "move Recover, move Harden"
+  },
+  {
+   "p1": "move Iron Head 1, move Iron Head 2",
+   "p2": "move Recover, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

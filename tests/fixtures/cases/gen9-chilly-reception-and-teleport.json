@@ -1,0 +1,87 @@
+{
+ "schema": 1,
+ "id": "gen9-chilly-reception-and-teleport",
+ "notes": [
+  "Chilly Reception starts snow and sends its user out (also with the snow already up); Teleport (\u22126) sends its user out after the foe moved"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Slowking",
+    "species": "Slowking-Galar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Chilly Reception",
+     "Teleport"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Teleport"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Chilly Reception",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Mew"
+  },
+  {
+   "p1": "switch Slowking",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Chilly Reception",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Mew"
+  },
+  {
+   "p1": "move Teleport",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "switch Slowking"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,59 @@
+{
+ "schema": 1,
+ "id": "gen9-glaive-rush-against-a-substitute",
+ "notes": [
+  "Gen 9 Glaive Rush: a hit on a Substitute leaves the drawback too (Showdown `self`); the foe's Focus Blast then draws no accuracy"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Rusher",
+    "species": "Baxcalibur",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Glaive Rush",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blaster",
+    "species": "Blissey",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Substitute",
+     "Focus Blast"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Substitute"
+  },
+  {
+   "p1": "move Glaive Rush",
+   "p2": "move Focus Blast"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

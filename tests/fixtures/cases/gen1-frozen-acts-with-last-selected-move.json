@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "id": "gen1-frozen-acts-with-last-selected-move",
+  "notes": [
+    "Gen 1: a frozen Pokémon acts with the move its side last selected from the menu, here Quick Attack's +1 priority"
+  ],
+  "battle": {
+    "generation": 1,
+    "mode": "singles",
+    "format": "gen1customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Jolteon",
+        "species": "Jolteon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Ice Beam",
+          "Growl"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "Slowbro",
+        "species": "Slowbro",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Growl"
+        ]
+      },
+      {
+        "label": "Tauros",
+        "species": "Tauros",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Quick Attack",
+          "Growl"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 2",
+      "p2": "switch 2"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 2",
+      "p2": "switch 2"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      2,
+      3,
+      4,
+      5
+    ]
+  }
+}

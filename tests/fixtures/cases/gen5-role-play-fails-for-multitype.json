@@ -1,0 +1,55 @@
+{
+ "schema": 1,
+ "id": "gen5-role-play-fails-for-multitype",
+ "notes": [
+  "Role Play fails when its user's ability cannot be suppressed (`onTryHit`: `cantsuppress`): Arceus keeps Multitype"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Arceus",
+    "species": "Arceus",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Role Play",
+     "Harden"
+    ],
+    "ability": "Multitype"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Role Play",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,87 @@
+{
+  "schema": 1,
+  "id": "gen9-doubles-fly-follow-me",
+  "notes": [
+    "Doubles: Fly's attacking turn aims where the charge was declared (Metagross) and is then pulled onto the Follow Me user, as any single-target move would be; the charging turn is not redirected. A Tackle at the airborne user misses.",
+    "The locked turn is answered with `move 1` alone: Showdown's request lists only the locked move, without a target type, and fills the target itself."
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "a",
+        "species": "Talonflame",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fly"
+        ]
+      },
+      {
+        "label": "c",
+        "species": "Garchomp",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "b",
+        "species": "Snorlax",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Follow Me",
+          "Tackle"
+        ]
+      },
+      {
+        "label": "d",
+        "species": "Metagross",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1 2, move 1 1",
+      "p2": "move 1, move 1 2"
+    },
+    {
+      "p1": "move 1, move 1 1",
+      "p2": "move 1, move 1 2"
+    },
+    {
+      "p1": "move 1 2, move 1 2",
+      "p2": "move 2 1, move 1 2"
+    },
+    {
+      "p1": "move 1, move 1 2",
+      "p2": "move 2 1, move 1 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      4,
+      2,
+      3,
+      4
+    ]
+  }
+}

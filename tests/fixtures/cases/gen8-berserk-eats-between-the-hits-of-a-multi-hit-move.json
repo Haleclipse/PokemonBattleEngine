@@ -1,0 +1,64 @@
+{
+ "schema": 1,
+ "id": "gen8-berserk-eats-between-the-hits-of-a-multi-hit-move",
+ "notes": [
+  "Gen 8 Berserk: a multi-hit move (`move.multihit`) holds no berry back \u2014 Drampa eats its Sitrus Berry after the Double Kick hit that takes it to half or below, and at the move's end its HP is above half again: no boost"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Drampa",
+    "species": "Drampa",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Sitrus Berry",
+    "ability": "Berserk"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Hitmonlee",
+    "species": "Hitmonlee",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Double Kick",
+     "Harden"
+    ],
+    "ability": "Limber"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Double Kick"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

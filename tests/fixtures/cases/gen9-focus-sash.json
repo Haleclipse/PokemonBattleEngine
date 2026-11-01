@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "id": "gen9-singles-focus-sash",
+  "notes": [
+    "Focus Sash (damage resolution, after Sturdy): same 1 HP survival, the sash is consumed (`-enditem`). The frame",
+    "does not carry items, so consumption is checked by the local rule test; the HP sequence is compared here."
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "a",
+        "species": "Snorlax",
+        "ability": "Run Away",
+        "level": 100,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "b",
+        "species": "Magnemite",
+        "ability": "Run Away",
+        "level": 5,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ],
+        "item": "Focus Sash"
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

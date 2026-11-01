@@ -1,0 +1,63 @@
+{
+ "schema": 1,
+ "id": "gen7-shell-trap",
+ "notes": [
+  "Shell Trap: only a foe's physical hit arms it; unarmed it stops (`cant`, Stomping Tantrum not doubled after)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Turtonator",
+    "species": "Turtonator",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Shell Trap",
+     "Stomping Tantrum"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Swift"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Shell Trap",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Shell Trap",
+   "p2": "move Swift"
+  },
+  {
+   "p1": "move Stomping Tantrum",
+   "p2": "move Swift"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

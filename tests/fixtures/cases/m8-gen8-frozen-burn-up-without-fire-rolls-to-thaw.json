@@ -1,0 +1,405 @@
+{
+  "schema": 1,
+  "id": "m8-gen8-frozen-burn-up-without-fire-rolls-to-thaw",
+  "notes": [
+    "Nightly 50: a frozen user without the Fire type choosing Burn Up rolls to thaw like any other move (frz.onBeforeMove's burnup exception) and stays frozen on a miss (DESIGN.md R-M8-94)",
+    "promoted from m8-gen8-singles-s502-010-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 8,
+    "mode": "singles",
+    "format": "gen8customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Wartortle",
+        "species": "Wartortle",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Whirlpool",
+          "Switcheroo",
+          "Sand Tomb"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Meltan",
+        "species": "Meltan",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Snap Trap",
+          "Switcheroo"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Ludicolo",
+        "species": "Ludicolo",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fire Spin",
+          "Switcheroo",
+          "Thunder Cage"
+        ],
+        "ability": "Run Away",
+        "item": "Custap Berry",
+        "gender": "F"
+      },
+      {
+        "label": "Smoochum",
+        "species": "Smoochum",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Scald",
+          "Switcheroo",
+          "Scorching Sands"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Stunfisk",
+        "species": "Stunfisk",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Burn Up",
+          "Switcheroo",
+          "Pyro Ball"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Mewtwo",
+        "species": "Mewtwo",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Flame Wheel",
+          "Switcheroo",
+          "Sacred Fire"
+        ],
+        "ability": "Run Away"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Ferrothorn",
+        "species": "Ferrothorn",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Steam Eruption",
+          "Switcheroo",
+          "Fusion Flare"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Nincada",
+        "species": "Nincada",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Ice Punch",
+          "Switcheroo"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Dedenne",
+        "species": "Dedenne",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Powder Snow",
+          "Switcheroo",
+          "Freeze-Dry"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Popplio",
+        "species": "Popplio",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Freezing Glare",
+          "Switcheroo",
+          "Ice Beam"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Skorupi",
+        "species": "Skorupi",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Rock Wrecker",
+          "Switcheroo",
+          "Roar of Time"
+        ],
+        "ability": "Harvest",
+        "gender": "M"
+      },
+      {
+        "label": "Mareanie",
+        "species": "Mareanie",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Prismatic Laser",
+          "Switcheroo",
+          "Hydro Cannon"
+        ],
+        "ability": "Desolate Land",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      64205,
+      64264,
+      16822,
+      63340
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Whirlpool",
+      "p2": "move Steam Eruption"
+    },
+    {
+      "p1": "move Switcheroo",
+      "p2": "move Switcheroo"
+    },
+    {
+      "p1": "move Sand Tomb",
+      "p2": "move Fusion Flare"
+    },
+    {
+      "p1": "switch Meltan",
+      "p2": "move Steam Eruption"
+    },
+    {
+      "p1": "move Snap Trap",
+      "p2": "move Switcheroo"
+    },
+    {
+      "p1": "move Switcheroo",
+      "p2": "move Fusion Flare"
+    },
+    {
+      "p1": "switch Wartortle"
+    },
+    {
+      "p1": "move Sand Tomb",
+      "p2": "move Steam Eruption"
+    },
+    {
+      "p1": "switch Ludicolo",
+      "p2": "move Switcheroo"
+    },
+    {
+      "p1": "move Fire Spin",
+      "p2": "move Steam Eruption"
+    },
+    {
+      "p2": "switch Nincada"
+    },
+    {
+      "p1": "move Switcheroo",
+      "p2": "move Ice Punch"
+    },
+    {
+      "p1": "move Thunder Cage",
+      "p2": "move Switcheroo"
+    },
+    {
+      "p1": "switch Wartortle",
+      "p2": "switch Dedenne"
+    },
+    {
+      "p1": "move Whirlpool",
+      "p2": "move Freeze-Dry"
+    },
+    {
+      "p1": "move Switcheroo",
+      "p2": "move Powder Snow"
+    },
+    {
+      "p1": "move Sand Tomb",
+      "p2": "move Switcheroo"
+    },
+    {
+      "p1": "switch Ludicolo",
+      "p2": "move Freeze-Dry"
+    },
+    {
+      "p1": "move Fire Spin",
+      "p2": "move Powder Snow"
+    },
+    {
+      "p1": "move Switcheroo",
+      "p2": "move Switcheroo"
+    },
+    {
+      "p1": "move Thunder Cage",
+      "p2": "move Freeze-Dry"
+    },
+    {
+      "p1": "switch Wartortle"
+    },
+    {
+      "p1": "switch Smoochum",
+      "p2": "switch Nincada"
+    },
+    {
+      "p1": "move Scald",
+      "p2": "move Ice Punch"
+    },
+    {
+      "p2": "switch Dedenne"
+    },
+    {
+      "p1": "move Switcheroo",
+      "p2": "move Switcheroo"
+    },
+    {
+      "p1": "move Scorching Sands",
+      "p2": "move Freeze-Dry"
+    },
+    {
+      "p2": "switch Popplio"
+    },
+    {
+      "p1": "switch Wartortle",
+      "p2": "switch Skorupi"
+    },
+    {
+      "p1": "move Whirlpool",
+      "p2": "move Rock Wrecker"
+    },
+    {
+      "p1": "switch Smoochum"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move Scorching Sands",
+      "p2": "move Roar of Time"
+    },
+    {
+      "p1": "switch Stunfisk",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move Burn Up",
+      "p2": "move Switcheroo"
+    },
+    {
+      "p1": "move Switcheroo",
+      "p2": "move Roar of Time"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 1"
+    },
+    {
+      "p1": "switch Smoochum",
+      "p2": "switch Popplio"
+    },
+    {
+      "p1": "move Scald",
+      "p2": "move Switcheroo"
+    },
+    {
+      "p1": "move Switcheroo",
+      "p2": "move Ice Beam"
+    },
+    {
+      "p1": "move Scorching Sands",
+      "p2": "move Freezing Glare"
+    },
+    {
+      "p1": "switch Stunfisk",
+      "p2": "switch Skorupi"
+    },
+    {
+      "p1": "move Burn Up",
+      "p2": "move Switcheroo"
+    },
+    {
+      "p1": "move Switcheroo",
+      "p2": "move Roar of Time"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 1"
+    },
+    {
+      "p2": "switch Popplio"
+    },
+    {
+      "p1": "switch Smoochum",
+      "p2": "switch Mareanie"
+    },
+    {
+      "p1": "move Scald",
+      "p2": "move Switcheroo"
+    },
+    {
+      "p1": "move Switcheroo",
+      "p2": "move Hydro Cannon"
+    },
+    {
+      "p1": "move Scorching Sands",
+      "p2": "move Prismatic Laser"
+    },
+    {
+      "p1": "switch Stunfisk"
+    },
+    {
+      "p1": "switch Mewtwo",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move Flame Wheel",
+      "p2": "move Hydro Cannon"
+    },
+    {
+      "p1": "move Switcheroo",
+      "p2": "move Prismatic Laser"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 1"
+    },
+    {
+      "p2": "switch Popplio"
+    },
+    {
+      "p1": "switch Stunfisk",
+      "p2": "move Ice Beam"
+    },
+    {
+      "p1": "move Burn Up",
+      "p2": "move Freezing Glare"
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "schema": 1,
+  "id": "gen9-doubles-retarget",
+  "notes": [
+    "Execution-time targeting (ROADMAP §6.3): Garchomp knocks the L5 Pikachu out first; Snorlax's Tackle was declared",
+    "at Pikachu's slot and is retargeted to Metagross (Showdown getRandomTarget). Turn 2 fills the slot and continues."
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "a",
+        "species": "Snorlax",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ]
+      },
+      {
+        "label": "c",
+        "species": "Garchomp",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "b",
+        "species": "Metagross",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Swords Dance"
+        ]
+      },
+      {
+        "label": "d",
+        "species": "Pikachu",
+        "ability": "Run Away",
+        "level": 5,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ]
+      },
+      {
+        "label": "e",
+        "species": "Clefable",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1 2, move 1 2",
+      "p2": "move 1, move 1 1"
+    },
+    {
+      "p2": "switch 3"
+    },
+    {
+      "p1": "move 1 1, move 1 2",
+      "p2": "move 1, move 1 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

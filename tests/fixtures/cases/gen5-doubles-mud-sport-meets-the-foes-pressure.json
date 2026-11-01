@@ -1,0 +1,76 @@
+{
+ "schema": 1,
+ "id": "gen5-doubles-mud-sport-meets-the-foes-pressure",
+ "notes": [
+  "Gen 5 Mud Sport and Water Sport, aimed at their user (issues.md I23), meet the foes' Pressure as Showdown's field move does, not the ally's"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "doubles",
+  "format": "gen5doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sporter",
+    "species": "Wooper",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Mud Sport",
+     "Water Sport"
+    ]
+   },
+   {
+    "label": "Ally",
+    "species": "Weavile",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Pressure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "FoeA",
+    "species": "Absol",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Pressure"
+   },
+   {
+    "label": "FoeB",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Mud Sport, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Water Sport, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

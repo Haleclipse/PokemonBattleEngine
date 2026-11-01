@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "gen8-emergency-exit-recoil",
+ "notes": [
+  "Emergency Exit after the holder's own recoil (Double-Edge)"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Pod",
+    "species": "Golisopod",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Double-Edge",
+     "Harden"
+    ],
+    "ability": "Emergency Exit"
+   },
+   {
+    "label": "Pal",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Super Fang",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Super Fang"
+  },
+  {
+   "p1": "move Double-Edge",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Pal"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,71 @@
+{
+ "schema": 1,
+ "id": "gen2-thief-takes-all-but-mail",
+ "notes": [
+  "Gen 2 Thief's secondary takes nothing from a Mail holder (pokecrystal ItemIsMail, issues.md I53), then takes the Leftovers"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sneasel",
+    "species": "Sneasel",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Thief",
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Lapras",
+    "species": "Lapras",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Mail"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Leftovers"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Thief",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Snorlax"
+  },
+  {
+   "p1": "move Thief",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

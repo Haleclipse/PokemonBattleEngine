@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen1-sky-attack-disabled-mid-charge",
+ "notes": [
+  "Gen 1 Sky Attack disabled mid-charge: the attack is stopped (`cant \u2026 Disable`) and the charge goes (pokered `PrintMoveIsDisabledText` clears `CHARGING_UP`); with nothing else to use, the user struggles"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Charger",
+    "species": "Pidgeot",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sky Attack"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Disabler",
+    "species": "Slowbro",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Disable",
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Sky Attack",
+   "p2": "move Disable"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

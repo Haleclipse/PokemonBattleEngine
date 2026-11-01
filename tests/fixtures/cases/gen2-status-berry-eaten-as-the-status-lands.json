@@ -1,0 +1,80 @@
+{
+ "schema": 1,
+ "id": "gen2-status-berry-eaten-as-the-status-lands",
+ "notes": [
+  "Gen 2 (pokecrystal `BattleCommand_Paralyze` \u2192 `UseHeldStatusHealingItem`, issues.md I33): Jolteon's Thunder Wave paralyses Snorlax, which eats its PRZ Cure Berry at once; Jolteon then falls to its own Toxic damage and the replacement request shows Snorlax cured",
+  "Unpatched, Showdown feeds the berry only at the action's Update, which the Gen 2 replacement request cuts: the request still shows Snorlax paralysed"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 20,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Thunder Wave"
+    ]
+   },
+   {
+    "label": "Lapras",
+    "species": "Lapras",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 54,
+    "nature": "Hardy",
+    "moves": [
+     "Toxic",
+     "Seismic Toss",
+     "Harden"
+    ],
+    "item": "PRZ Cure Berry"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Toxic"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Thunder Wave",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Lapras"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

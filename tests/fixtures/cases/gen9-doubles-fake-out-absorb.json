@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "id": "gen9-doubles-fake-out-absorb",
+  "notes": [
+    "Fake Out (priority +3) flinches on the user's first action and fails on the next (`-fail`); Water Absorb and Volt Absorb refuse Water / Electric moves at TryHit and heal a quarter (or show `-immune` at full HP), no accuracy decision drawn."
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "a",
+        "species": "Incineroar",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fake Out",
+          "Flare Blitz"
+        ]
+      },
+      {
+        "label": "b",
+        "species": "Rotom",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Hydro Pump",
+          "Thunderbolt"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "c",
+        "species": "Vaporeon",
+        "ability": "Water Absorb",
+        "level": 100,
+        "nature": "Hardy",
+        "moves": [
+          "Swords Dance"
+        ]
+      },
+      {
+        "label": "d",
+        "species": "Lanturn",
+        "ability": "Volt Absorb",
+        "level": 100,
+        "nature": "Hardy",
+        "moves": [
+          "Swords Dance"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1 1, move 1 1",
+      "p2": "move 1, move 1"
+    },
+    {
+      "p1": "move 1 2, move 2 2",
+      "p2": "move 1, move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

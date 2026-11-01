@@ -1,0 +1,87 @@
+{
+ "schema": 1,
+ "id": "gen4-destiny-bond-before-the-recoil",
+ "notes": [
+  "Gen 4 Destiny Bond against Flare Blitz with Life Orb: as from Gen 4 on (the base `hitStepMoveHitLoop`), the bond takes the user down before its recoil and Life Orb; without the bond both hurt it"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Bonder",
+    "species": "Gengar",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Destiny Bond",
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Bonder2",
+    "species": "Gengar",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Destiny Bond",
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Charger",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Flare Blitz",
+     "Harden"
+    ],
+    "ability": "Run Away",
+    "item": "Life Orb"
+   },
+   {
+    "label": "Charger2",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Flare Blitz",
+     "Harden"
+    ],
+    "ability": "Run Away",
+    "item": "Life Orb"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Destiny Bond",
+   "p2": "move Flare Blitz"
+  },
+  {
+   "p1": "switch Bonder2",
+   "p2": "switch Charger2"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Flare Blitz"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

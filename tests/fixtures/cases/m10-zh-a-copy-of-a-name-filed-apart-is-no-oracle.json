@@ -1,0 +1,168 @@
+{
+  "schema": 1,
+  "id": "m10-zh-a-copy-of-a-name-filed-apart-is-no-oracle",
+  "notes": [
+    "Gen 9 Doubles: Magmortar transforms into the real Fennekin (L55); Cryogonal's Illusion later comes in as Fennekin L50 and uses Aromatic Mist, which the client files on the disguise's entry and the engine on the Fennekin it shows: the copy's moves are no oracle (R-M10-58)",
+    "promoted from m8-gen9-doubles-s1671-010-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Charmander",
+        "species": "Charmander",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Blizzard",
+          "Thunder",
+          "Transform"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Magmortar",
+        "species": "Magmortar",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Wildbolt Storm",
+          "Stuff Cheeks",
+          "Freezing Glare",
+          "Transform"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Litten",
+        "species": "Litten",
+        "level": 48,
+        "nature": "Hardy",
+        "moves": [
+          "Freeze-Dry",
+          "Transform"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Cryogonal",
+        "species": "Cryogonal",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Ice Fang",
+          "Stuff Cheeks",
+          "Aromatic Mist",
+          "Transform"
+        ],
+        "ability": "Illusion",
+        "item": "Hondew Berry"
+      },
+      {
+        "label": "Typhlosion",
+        "species": "Typhlosion",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Coaching",
+          "Stuff Cheeks",
+          "Recover",
+          "Transform"
+        ],
+        "ability": "Cloud Nine",
+        "item": "Mago Berry",
+        "gender": "F"
+      },
+      {
+        "label": "Sandygast",
+        "species": "Sandygast",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Slack Off",
+          "Soft-Boiled",
+          "Transform"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Fennekin",
+        "species": "Fennekin",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Milk Drink",
+          "Stuff Cheeks",
+          "Pyro Ball",
+          "Transform"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      39441,
+      38853,
+      21150,
+      2258
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Blizzard, move Wildbolt Storm",
+      "p2": "move Ice Fang 1, move Coaching -1"
+    },
+    {
+      "p1": "move Thunder 1, move Freezing Glare 2",
+      "p2": "move Stuff Cheeks, move Stuff Cheeks"
+    },
+    {
+      "p1": "move Transform 1, move Transform 2",
+      "p2": "move Transform 2, move Transform 1"
+    },
+    {
+      "p1": "move 1, move 1",
+      "p2": "move 1, move 1"
+    },
+    {
+      "p1": "move 2 1, move 3 2",
+      "p2": "move 3 2, move 3 1"
+    },
+    {
+      "p2": "pass, switch Sandygast"
+    },
+    {
+      "p1": "switch Litten, move Transform 1",
+      "p2": "switch Fennekin, move Transform 2"
+    },
+    {
+      "p1": "move 2 2, move 1",
+      "p2": "move 4 1, move 1"
+    },
+    {
+      "p1": "move 1, move 3 1",
+      "p2": "move 1 2, move 2"
+    },
+    {
+      "p1": "switch Charmander, move Transform 1",
+      "p2": "switch Cryogonal, move Transform 1"
+    },
+    {
+      "p1": "move 2 2, move 1",
+      "p2": "move 3 -2, move 1"
+    }
+  ]
+}

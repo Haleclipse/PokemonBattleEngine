@@ -1,0 +1,82 @@
+{
+ "schema": 1,
+ "id": "gen1-fly-full-paralysis-keeps-the-hiding",
+ "notes": [
+  "Gen 1 Fly fully paralysed as it would attack: the charge goes but the hiding stays (pokered `MonHurtItselfOrFullyParalysed` leaves `INVULNERABLE`): Tackle misses the flyer while it hardens, Swift reaches it, and the next Fly charges and attacks from the air as usual"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Flyer",
+    "species": "Dodrio",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fly",
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Zapper",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Thunder Wave",
+     "Tackle",
+     "Swift"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Thunder Wave"
+  },
+  {
+   "p1": "move Fly",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Swift"
+  },
+  {
+   "p1": "move Fly",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   10,
+   11,
+   12,
+   13
+  ]
+ }
+}

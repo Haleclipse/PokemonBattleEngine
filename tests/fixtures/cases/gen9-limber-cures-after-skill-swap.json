@@ -1,0 +1,69 @@
+{
+ "schema": 1,
+ "id": "gen9-limber-cures-after-skill-swap",
+ "notes": [
+  "Gen 9: Persian paralyses Snorlax, then Snorlax takes Persian's Limber with Skill Swap: the action's `Update` cures the paralysis (`-activate|…|ability: Limber`); Thunder Wave then does not affect it"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Skill Swap",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Persian",
+    "species": "Persian",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Thunder Wave",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Limber"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Thunder Wave"
+  },
+  {
+   "p1": "move Skill Swap",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Thunder Wave"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

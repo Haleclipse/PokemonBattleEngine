@@ -1,0 +1,70 @@
+{
+ "schema": 1,
+ "id": "gen5-assist-calls-high-jump-kick-under-gravity",
+ "notes": [
+  "Gen 5: under Gravity, Snorlax's Assist calls its benched partner's High Jump Kick, which Gravity refuses as it is modified (`cant|p1a: Snorlax|move: Gravity|High Jump Kick`): no crash, no `move` line"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Assist"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   },
+   {
+    "label": "Hitmonlee",
+    "species": "Hitmonlee",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "High Jump Kick"
+    ],
+    "ability": "Limber",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Bronzong",
+    "species": "Bronzong",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Gravity",
+     "Harden"
+    ],
+    "ability": "Levitate"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 2"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

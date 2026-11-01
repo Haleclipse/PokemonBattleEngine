@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "gen3-an-uproar-woken-sleeper-snores-no-more",
+ "notes": [
+  "Gen 3: Jolteon's Spore puts Snorlax to sleep and Snorlax snores; next turn Jolteon's Uproar starts first. Snorlax wakes as it is about to move (the cartridge's `CANCELLER_ASLEEP`, issues.md I63; Showdown prints the cure with the uproar), so its Snore, an awake user's, fails and draws nothing (DESIGN.md R-M8-160)"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spore",
+     "Uproar"
+    ],
+    "ability": "Volt Absorb",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Snore",
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Spore",
+   "p2": "move Snore"
+  },
+  {
+   "p1": "move Uproar",
+   "p2": "move Snore"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "id": "gen9-singles-uturn-midturn",
+  "notes": [
+    "First scenario with a request boundary inside a turn (DESIGN.md §30). Jolteon (130 Spe) U-turns before Snorlax moves;",
+    "both engines stop at the ForcedSwitch request, entry 2 answers it with `switch 2` (Vaporeon), and Snorlax's pending",
+    "Tackle then lands on the Pokémon that came in. Turn 2 checks that the resumed turn left both engines in step."
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "a",
+        "species": "Jolteon",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "U-turn"
+        ]
+      },
+      {
+        "label": "c",
+        "species": "Vaporeon",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "b",
+        "species": "Snorlax",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "switch 2"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

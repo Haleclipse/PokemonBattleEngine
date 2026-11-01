@@ -1,0 +1,71 @@
+{
+ "schema": 1,
+ "id": "gen9-magic-room-used-again-ends-it",
+ "notes": [
+  "Gen 9 Magic Room stops Leftovers; used again while it is up it ends at once (onFieldRestart), and Leftovers heals that turn"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Magic Room",
+     "Seismic Toss"
+    ],
+    "ability": "Synchronize"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Leftovers"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Seismic Toss",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Magic Room",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Seismic Toss",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Magic Room",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Seismic Toss",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

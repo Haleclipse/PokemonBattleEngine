@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "id": "gen9-singles-magic-guard",
+  "notes": [
+    "Magic Guard (damage resolution): only move damage reaches Clefable. Will-O-Wisp's burn is applied but never ticks,",
+    "Double-Edge's recoil and Garchomp's Rough Skin (`-activate … ability: Rough Skin`) are refused; Tackle still lands."
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "a",
+        "species": "Garchomp",
+        "ability": "Rough Skin",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Will-O-Wisp",
+          "Tackle"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "b",
+        "species": "Clefable",
+        "ability": "Magic Guard",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Double-Edge"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

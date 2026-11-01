@@ -1,0 +1,80 @@
+{
+ "schema": 1,
+ "id": "gen3-truant-cancels-the-lock",
+ "notes": [
+  "Gen 3 Truant's loafing turn cancels Thrash's lock and Uproar at once (pokeemerald `CANCELER_TRUANT`: `CancelMultiTurnMoves`), with no confusion, and a Fury Cutter count"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Slacker",
+    "species": "Slaking",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Thrash",
+     "Uproar",
+     "Fury Cutter"
+    ],
+    "ability": "Truant"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Wall",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Thrash",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Thrash",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Uproar",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Uproar",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Fury Cutter",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Fury Cutter",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Fury Cutter",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   17,
+   18,
+   19,
+   20
+  ]
+ }
+}

@@ -1,0 +1,69 @@
+{
+ "schema": 1,
+ "id": "gen4-bide-fly",
+ "notes": [
+  "Gen 4 Bide: the release (tryMoveHit: no hit steps) strikes a Pok\u00e9mon in the air"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Bider",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Bide",
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Flyer",
+    "species": "Pidgeot",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Fly",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Bide",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Bide",
+   "p2": "move Fly"
+  },
+  {
+   "p1": "move Bide",
+   "p2": "move Fly"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

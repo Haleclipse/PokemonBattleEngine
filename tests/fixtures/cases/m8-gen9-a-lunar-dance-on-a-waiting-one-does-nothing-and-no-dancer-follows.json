@@ -1,0 +1,105 @@
+{
+  "schema": 1,
+  "id": "m8-gen9-a-lunar-dance-on-a-waiting-one-does-nothing-and-no-dancer-follows",
+  "notes": [
+    "Gen 9 singles, minimized from Nightly 146's m8-gen9-singles-s1477-019. Persian's Lunar Dance (turn 1) leaves its wish on its slot, and Cryogonal comes in at full HP, so the wish waits (Gen 8+). On turn 2 Cryogonal's own Lunar Dance adds nothing to the slot (Showdown `addSlotCondition` without `onRestart`): the move fails, Cryogonal fainting all the same (`selfdestruct: 'ifHit'` asks only for the hit), and Staravia's Dancer does not follow a move that did nothing. Staravia then uses its own Lunar Dance (DESIGN.md R-M8-177)."
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Toxtricity",
+        "species": "Toxtricity",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Lunar Dance"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Crawdaunt",
+        "species": "Crawdaunt",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Play Nice"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Staravia",
+        "species": "Staravia",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Lunar Dance"
+        ],
+        "ability": "Dancer",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Persian",
+        "species": "Persian",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Lunar Dance"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Volcanion",
+        "species": "Volcanion",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Bulk Up"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Cryogonal",
+        "species": "Cryogonal",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Lunar Dance"
+        ],
+        "ability": "Run Away"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      27352,
+      47561,
+      56167,
+      29633
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Lunar Dance",
+      "p2": "move Lunar Dance"
+    },
+    {
+      "p1": "switch Staravia",
+      "p2": "switch Cryogonal"
+    },
+    {
+      "p1": "move Lunar Dance",
+      "p2": "move Lunar Dance"
+    }
+  ]
+}

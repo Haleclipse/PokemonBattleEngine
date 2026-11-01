@@ -1,0 +1,71 @@
+{
+ "schema": 1,
+ "id": "gen5-fury-cutter-caps-at-160",
+ "notes": [
+  "Gen 5 Fury Cutter: 20, 40, 80, 160, 160"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Cutter",
+    "species": "Scizor",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fury Cutter",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Wall",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Fury Cutter",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Fury Cutter",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Fury Cutter",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Fury Cutter",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Fury Cutter",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,53 @@
+{
+ "schema": 1,
+ "id": "gen9-shell-side-arm-shows-its-category-into-a-spiky-shield",
+ "notes": [
+  "Gen 9 singles: Registeel (equal Attack and Special Attack) uses Shell Side Arm on Diancie (equal Defense and Special Defense) behind Spiky Shield: the category is a coin flip (seed 2: physical). The move line shows it (`[anim] Shell Side Arm Physical`, its `onPrepareHit`); the `-hint` comes only with a hit, which the protection stops. Physical, it makes contact, and Spiky Shield hurts Registeel (DESIGN.md R-M8-166)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   2,
+   3,
+   4,
+   5
+  ]
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Registeel",
+    "species": "Registeel",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Shell Side Arm"
+    ],
+    "ability": "Clear Body"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Diancie",
+    "species": "Diancie",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spiky Shield"
+    ],
+    "ability": "Clear Body"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Shell Side Arm",
+   "p2": "move Spiky Shield"
+  }
+ ]
+}

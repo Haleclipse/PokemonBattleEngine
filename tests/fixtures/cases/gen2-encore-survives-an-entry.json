@@ -1,0 +1,73 @@
+{
+ "schema": 1,
+ "id": "gen2-encore-survives-an-entry",
+ "notes": [
+  "Gen 2 Encore reads `lastMoveEncore`, which the Gen 1-2 entry reset (`runSwitch` clearing every `lastMove`) leaves alone: after the foe's replacement enters, Encore still locks Snorlax into Body Slam"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Body Slam",
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 5,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   },
+   {
+    "label": "Wigglytuff",
+    "species": "Wigglytuff",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Encore",
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 2"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

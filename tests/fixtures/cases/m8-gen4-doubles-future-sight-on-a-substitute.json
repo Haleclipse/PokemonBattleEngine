@@ -1,0 +1,174 @@
+{
+  "schema": 1,
+  "id": "m8-gen4-doubles-future-sight-on-a-substitute",
+  "notes": [
+    "Nightly 57: a Gen 4 Future Sight (damage drawn at use) strikes Wailord's Substitute: the roll at use is the one that leaves the doll the HP the frame shows (DESIGN.md R-M8-101)",
+    "promoted from m8-gen4-doubles-s526-012-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "doubles",
+    "format": "gen4doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Leafeon",
+        "species": "Leafeon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Howl",
+          "Mirror Move",
+          "Bulk Up",
+          "Substitute"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Ariados",
+        "species": "Ariados",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Feather Dance",
+          "Mirror Move",
+          "Memento",
+          "Flatter"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Drifloon",
+        "species": "Drifloon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Future Sight",
+          "Miracle Eye",
+          "Doom Desire",
+          "Substitute"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Yanmega",
+        "species": "Yanmega",
+        "level": 48,
+        "nature": "Hardy",
+        "moves": [
+          "Judgment"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Dunsparce",
+        "species": "Dunsparce",
+        "level": 53,
+        "nature": "Hardy",
+        "moves": [
+          "Water Gun",
+          "Power Gem",
+          "Swagger"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Wailord",
+        "species": "Wailord",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Weather Ball",
+          "Substitute",
+          "Hydro Pump",
+          "Flatter"
+        ],
+        "ability": "Run Away",
+        "item": "King's Rock",
+        "gender": "F"
+      },
+      {
+        "label": "Totodile",
+        "species": "Totodile",
+        "level": 45,
+        "nature": "Hardy",
+        "moves": [
+          "Magical Leaf",
+          "Substitute",
+          "Swagger"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      4985,
+      63522,
+      44701,
+      11139
+    ]
+  },
+  "script": [
+    {
+      "p1": "switch Drifloon, move Flatter 1",
+      "p2": "switch Totodile, move Flatter 1"
+    },
+    {
+      "p1": "move Substitute, move Feather Dance 2",
+      "p2": "move Swagger 2, move Weather Ball 1"
+    },
+    {
+      "p1": "move Future Sight 1, move Mirror Move",
+      "p2": "move Magical Leaf 2, move Substitute"
+    },
+    {
+      "p1": "move Miracle Eye 2, move Memento 1",
+      "p2": "move Substitute, move Hydro Pump 1"
+    },
+    {
+      "p1": "pass, switch Leafeon"
+    },
+    {
+      "p1": "switch Yanmega, move Substitute",
+      "p2": "switch Dunsparce, move Flatter 2"
+    },
+    {
+      "p1": "move Judgment 2, move Howl",
+      "p2": "move Power Gem 1, move Weather Ball 2"
+    },
+    {
+      "p1": "switch Drifloon, pass"
+    },
+    {
+      "p1": "move Substitute, move Mirror Move",
+      "p2": "move Swagger 1, move Substitute"
+    },
+    {
+      "p1": "move Miracle Eye 2, move Substitute",
+      "p2": "switch Totodile, move Flatter 2"
+    },
+    {
+      "p1": "move Future Sight 2, move Bulk Up",
+      "p2": "move Swagger 1, move Hydro Pump 2"
+    },
+    {
+      "p1": "move Miracle Eye 1, move Substitute",
+      "p2": "switch Dunsparce, move Flatter 1"
+    },
+    {
+      "p1": "move Doom Desire 2, move Howl",
+      "p2": "move Water Gun 2, move Weather Ball 1"
+    }
+  ]
+}

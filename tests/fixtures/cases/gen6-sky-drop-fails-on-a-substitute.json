@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "gen6-sky-drop-fails-on-a-substitute",
+ "notes": [
+  "Gen 6 Sky Drop against a Substitute: the carrying fails"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Lifter",
+    "species": "Braviary",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sky Drop",
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Doll",
+    "species": "Machamp",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Substitute",
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Substitute"
+  },
+  {
+   "p1": "move Sky Drop",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

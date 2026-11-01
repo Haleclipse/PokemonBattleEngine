@@ -1,0 +1,86 @@
+{
+ "schema": 1,
+ "id": "gen2-belly-drum",
+ "notes": [
+  "Gen 2 Belly Drum climbs two stages at a time while the stage it leaves reads under 999: Tyranitar stops one short of the stage that reads 999, and its Swords Dance then changes nothing (a raise at 999); Snorlax reaches +6; after Haze, at exactly half HP, Belly Drum raises Attack by 2 and fails"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Tyr",
+    "species": "Tyranitar",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Belly Drum",
+     "Swords Dance"
+    ],
+    "evs": {
+     "atk": 252
+    }
+   },
+   {
+    "label": "Lax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Belly Drum",
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Haze"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Belly Drum",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Swords Dance",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Lax",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Belly Drum",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Belly Drum",
+   "p2": "move Haze"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

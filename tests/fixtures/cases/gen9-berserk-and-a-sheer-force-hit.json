@@ -1,0 +1,64 @@
+{
+ "schema": 1,
+ "id": "gen9-berserk-and-a-sheer-force-hit",
+ "notes": [
+  "Gen 9 Berserk: a move Sheer Force boosted has no `AfterMoveSecondary` events, and holds no berry back (`onDamage`: `hasSheerForce`) \u2014 Arcanine eats its Sitrus Berry at the hit's `Update` and Berserk never checks"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Arcanine",
+    "species": "Arcanine",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Sitrus Berry",
+    "ability": "Berserk"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Krookodile",
+    "species": "Krookodile",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Sludge Bomb",
+     "Harden"
+    ],
+    "ability": "Sheer Force"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Sludge Bomb"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

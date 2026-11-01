@@ -1,0 +1,153 @@
+{
+ "schema": 1,
+ "id": "m8-44-gen9-singles-s453-007",
+ "notes": [
+  "Nightly 38 gen9-singles-s453-007, minimized: a Starf Berry eaten after a confusion self-hit draws its stat"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Zekrom",
+    "species": "Zekrom",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Strange Steam",
+     "Speed Swap",
+     "Dynamic Punch",
+     "Baneful Bunker"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Scraggy",
+    "species": "Scraggy",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Confusion",
+     "Axe Kick",
+     "Baneful Bunker"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gothitelle",
+    "species": "Gothitelle",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Magma Storm",
+     "Speed Swap",
+     "Wrap",
+     "Baneful Bunker"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Armarouge",
+    "species": "Armarouge",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fire Spin"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Snivy",
+    "species": "Snivy",
+    "level": 53,
+    "nature": "Hardy",
+    "moves": [
+     "Flare Blitz",
+     "Speed Swap",
+     "Head Smash",
+     "Baneful Bunker"
+    ],
+    "ability": "Run Away",
+    "item": "Starf Berry",
+    "gender": "F"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1159,
+   11420,
+   3315,
+   48999
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Strange Steam",
+   "p2": "move Magma Storm"
+  },
+  {
+   "p1": "move Speed Swap",
+   "p2": "move Speed Swap"
+  },
+  {
+   "p1": "move Dynamic Punch",
+   "p2": "move Wrap"
+  },
+  {
+   "p1": "move Baneful Bunker",
+   "p2": "move Baneful Bunker"
+  },
+  {
+   "p1": "move Strange Steam",
+   "p2": "move Magma Storm"
+  },
+  {
+   "p1": "move Dynamic Punch",
+   "p2": "move Wrap"
+  },
+  {
+   "p2": "switch Armarouge"
+  },
+  {
+   "p1": "switch Scraggy",
+   "p2": "switch Snivy"
+  },
+  {
+   "p1": "move Baneful Bunker",
+   "p2": "move Baneful Bunker"
+  },
+  {
+   "p1": "move Confusion",
+   "p2": "move Flare Blitz"
+  },
+  {
+   "p1": "move Axe Kick",
+   "p2": "move Head Smash"
+  },
+  {
+   "p1": "move Baneful Bunker",
+   "p2": "move Baneful Bunker"
+  },
+  {
+   "p1": "move Confusion",
+   "p2": "move Flare Blitz"
+  },
+  {
+   "p1": "switch Zekrom"
+  },
+  {
+   "p1": "move Speed Swap",
+   "p2": "move Speed Swap"
+  }
+ ]
+}

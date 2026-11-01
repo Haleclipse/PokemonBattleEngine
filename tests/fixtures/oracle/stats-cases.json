@@ -1,0 +1,148 @@
+{
+  "schema": 1,
+  "notes": [
+    "Stat formula cases. Missing evs/ivs mean calc defaults (Gen 3+: 0 EV / 31 IV; Gen 1-2: max stat exp / DV 15).",
+    "Mega formes are not in the Gen 9 @pkmn/data snapshot (no Z-A data at 0.10.11), so the Mega case runs in Gen 7.",
+    "Shedinja is not in the Gen 9 dex either, so its HP-1 case runs in Gen 7.",
+    "@smogon/calc fixes Gen 1-2 stat experience at its maximum regardless of the evs input, so old-generation cases only vary DVs (ivs); 0 EV in Gen 1-2 is not oracle-testable with calc."
+  ],
+  "cases": [
+    {
+      "id": "gen9-pikachu-l50-neutral",
+      "generation": 9,
+      "species": "Pikachu",
+      "level": 50,
+      "nature": "Hardy"
+    },
+    {
+      "id": "gen9-garchomp-l100-jolly-252",
+      "generation": 9,
+      "species": "Garchomp",
+      "level": 100,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 4,
+        "atk": 252,
+        "spe": 252
+      }
+    },
+    {
+      "id": "gen7-charizard-megax-l50-adamant",
+      "generation": 7,
+      "species": "Charizard-Mega-X",
+      "level": 50,
+      "nature": "Adamant",
+      "evs": {
+        "hp": 252,
+        "atk": 252,
+        "spd": 4
+      }
+    },
+    {
+      "id": "gen7-shedinja-l100",
+      "generation": 7,
+      "species": "Shedinja",
+      "level": 100,
+      "nature": "Hardy"
+    },
+    {
+      "id": "gen9-blissey-l50-bold-0iv",
+      "generation": 9,
+      "species": "Blissey",
+      "level": 50,
+      "nature": "Bold",
+      "evs": {
+        "hp": 252,
+        "def": 252
+      },
+      "ivs": {
+        "atk": 0,
+        "spe": 0
+      }
+    },
+    {
+      "id": "gen9-pikachu-l1",
+      "generation": 9,
+      "species": "Pikachu",
+      "level": 1,
+      "nature": "Timid"
+    },
+    {
+      "id": "gen7-raichu-alola-l50-timid",
+      "generation": 7,
+      "species": "Raichu-Alola",
+      "level": 50,
+      "nature": "Timid",
+      "evs": {
+        "spa": 252,
+        "spe": 252,
+        "hp": 4
+      }
+    },
+    {
+      "id": "gen4-garchomp-l100-jolly",
+      "generation": 4,
+      "species": "Garchomp",
+      "level": 100,
+      "nature": "Jolly",
+      "evs": {
+        "atk": 252,
+        "spe": 252,
+        "hp": 4
+      }
+    },
+    {
+      "id": "gen3-blaziken-l100-adamant-0iv",
+      "generation": 3,
+      "species": "Blaziken",
+      "level": 100,
+      "nature": "Adamant",
+      "ivs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    },
+    {
+      "id": "gen2-mew-l100-max",
+      "generation": 2,
+      "species": "Mew",
+      "level": 100
+    },
+    {
+      "id": "gen2-pikachu-l50-max",
+      "generation": 2,
+      "species": "Pikachu",
+      "level": 50
+    },
+    {
+      "id": "gen1-mewtwo-l100-max",
+      "generation": 1,
+      "species": "Mewtwo",
+      "level": 100
+    },
+    {
+      "id": "gen1-pikachu-l5-max",
+      "generation": 1,
+      "species": "Pikachu",
+      "level": 5
+    },
+    {
+      "id": "gen1-tauros-l100-dv0",
+      "generation": 1,
+      "species": "Tauros",
+      "level": 100,
+      "ivs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+ "schema": 1,
+ "id": "gen9-follow-me-draws-comeuppance",
+ "notes": [
+  "Gen 9 doubles: Giratina's Night Shade hits Rhydon; Rhydon's Comeuppance turns to Giratina (onModifyTarget) and Greavard's Follow Me draws it away (RedirectTarget: validTargetLoc lets a scripted move go to any adjacent foe) (DESIGN.md R-M8-135)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Rhydon",
+    "species": "Rhydon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Comeuppance",
+     "Splash"
+    ],
+    "ability": "Rock Head",
+    "gender": "M"
+   },
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Swift Swim",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Greavard",
+    "species": "Greavard",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Follow Me",
+     "Splash"
+    ],
+    "ability": "Pickup",
+    "gender": "M"
+   },
+   {
+    "label": "Giratina",
+    "species": "Giratina",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Night Shade",
+     "Splash"
+    ],
+    "ability": "Pressure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Comeuppance, move Splash",
+   "p2": "move Follow Me, move Night Shade 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

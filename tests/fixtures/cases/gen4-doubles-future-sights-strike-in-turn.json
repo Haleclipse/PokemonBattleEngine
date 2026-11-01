@@ -1,0 +1,83 @@
+{
+ "schema": 1,
+ "id": "gen4-doubles-future-sights-strike-in-turn",
+ "notes": [
+  "Gen 4 doubles: two Future Sights strike the foes in one end of turn \u2014 by speed: the faster right foe first"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "doubles",
+  "format": "gen4doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "SeerA",
+    "species": "Slowbro",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Future Sight",
+     "Harden"
+    ]
+   },
+   {
+    "label": "SeerB",
+    "species": "Slowking",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Future Sight",
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Slow",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   },
+   {
+    "label": "Fast",
+    "species": "Blissey",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Future Sight 1, move Future Sight 2",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

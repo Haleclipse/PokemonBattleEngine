@@ -1,0 +1,59 @@
+{
+ "schema": 1,
+ "id": "gen9-liquid-ooze-heal-block-first",
+ "notes": [
+  "Liquid Ooze: a seeder under Heal Block and faster than the holder is stopped by its Heal Block first \u2014 no heal and no damage"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Drain",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Leech Seed",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Ooze",
+    "species": "Swalot",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Psychic Noise",
+     "Harden"
+    ],
+    "ability": "Liquid Ooze"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Leech Seed",
+   "p2": "move Psychic Noise"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

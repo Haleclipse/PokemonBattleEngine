@@ -1,0 +1,83 @@
+{
+ "schema": 1,
+ "id": "gen7-doubles-follow-me-by-the-turn-start-speed",
+ "notes": [
+  "Two Follow Me users: the faster draws the moves (priorityEvent). Scary Face slows Jolteon below Mew this turn; until Gen 8 the handlers keep the speed of the turn start, so Jolteon still draws Snorlax's Body Slam. Turn 2: Mew slowed below Jolteon; the residual refreshes the speed first, so Jolteon's Leftovers heal before Mew's"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Follow Me",
+     "Harden"
+    ],
+    "ability": "Run Away",
+    "item": "Leftovers"
+   },
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Follow Me",
+     "Harden"
+    ],
+    "ability": "Run Away",
+    "item": "Leftovers"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Pikachu",
+    "species": "Pikachu",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Scary Face",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Body Slam",
+     "Surf"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Follow Me, move Follow Me",
+   "p2": "move Scary Face 1, move Body Slam 2"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Scary Face 2, move Surf"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,70 @@
+{
+ "schema": 1,
+ "id": "gen8-hp-reading-moves-vs-dynamax",
+ "notes": [
+  "Gen 8: Super Fang and Nature's Madness against a Dynamaxed Snorlax each take half of its undynamaxed HP from the doubled HP, and Pain Split averages the undynamaxed HP"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Super Fang",
+     "Nature's Madness",
+     "Pain Split",
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1",
+   "p2": "move 1 dynamax"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 2"
+  },
+  {
+   "p1": "move 3",
+   "p2": "move 2"
+  },
+  {
+   "p1": "move 4",
+   "p2": "move 2"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

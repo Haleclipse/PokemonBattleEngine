@@ -1,0 +1,95 @@
+{
+ "schema": 1,
+ "id": "gen4-doubles-assist-aims-at-a-random-foe",
+ "notes": [
+  "Gen 4 doubles: Ambipom's Assist draws Snorlax's Tackle or Pound (`sample`), and the move it calls has no target of its own — Showdown's `useMove` draws one of the two foes (`getRandomTarget`), after the move was picked; the called move then hits it"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "doubles",
+  "format": "gen4doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Ambipom",
+    "species": "Ambipom",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Assist",
+     "Harden"
+    ],
+    "ability": "Technician",
+    "gender": "F"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Pound",
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Assist, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Assist, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Assist, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Assist, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Assist, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

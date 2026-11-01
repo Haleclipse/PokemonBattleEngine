@@ -1,0 +1,1774 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@pkmn/sim",
+    "version": "0.10.11",
+    "formatid": "gen4customgame",
+    "seed": [
+      7,
+      2,
+      3,
+      4
+    ]
+  },
+  "frames": [
+    {
+      "schema": 1,
+      "checkpoint": "initial",
+      "turn": 1,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 40,
+              "max_hp": 40,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "psychic"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                24,
+                32,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 370,
+              "max_hp": 370,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                16,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Hypno"
+          },
+          "details": "Hypno, L10, F",
+          "hp": 40,
+          "max_hp": 40,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "details": "Snorlax, L80, M",
+          "hp": 370,
+          "max_hp": 370,
+          "status": null
+        },
+        {
+          "kind": "turn",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_1",
+      "turn": 2,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 40,
+              "max_hp": 40,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "psychic"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                24,
+                32,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 278,
+              "max_hp": 370,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "substitute": 92
+              },
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                15,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Substitute",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "start",
+          "args": [
+            "p2a: Snorlax",
+            "Substitute"
+          ]
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "hp": 278,
+          "max_hp": 370,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Hypno"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Hypno"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Hypno"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 2
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_2",
+      "turn": 3,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 40,
+              "max_hp": 40,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "psychic"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                23,
+                32,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 278,
+              "max_hp": 370,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "substitute": 80.8
+              },
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                15,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Hypno"
+          },
+          "move": "Psywave",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "activate",
+          "args": [
+            "p2a: Snorlax",
+            "Substitute",
+            "[damage]"
+          ]
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 3
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_3",
+      "turn": 4,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 40,
+              "max_hp": 40,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "psychic"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                23,
+                31,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 278,
+              "max_hp": 370,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 2,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "substitute": 70.8
+              },
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                15,
+                46
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Hypno"
+          },
+          "move": "Seismic Toss",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "activate",
+          "args": [
+            "p2a: Snorlax",
+            "Substitute",
+            "[damage]"
+          ]
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 4
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_4",
+      "turn": 5,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 40,
+              "max_hp": 40,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "psychic"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                23,
+                30,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 278,
+              "max_hp": 370,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 3,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "substitute": 60.8
+              },
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                15,
+                45
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Hypno"
+          },
+          "move": "Seismic Toss",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "activate",
+          "args": [
+            "p2a: Snorlax",
+            "Substitute",
+            "[damage]"
+          ]
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 5
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_5",
+      "turn": 6,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 40,
+              "max_hp": 40,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "psychic"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                23,
+                29,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 278,
+              "max_hp": 370,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 4,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "substitute": 50.8
+              },
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                15,
+                44
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Hypno"
+          },
+          "move": "Seismic Toss",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "activate",
+          "args": [
+            "p2a: Snorlax",
+            "Substitute",
+            "[damage]"
+          ]
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 6
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_6",
+      "turn": 7,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 40,
+              "max_hp": 40,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "psychic"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                23,
+                28,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 278,
+              "max_hp": 370,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 5,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "substitute": 40.8
+              },
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                15,
+                43
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Hypno"
+          },
+          "move": "Seismic Toss",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "activate",
+          "args": [
+            "p2a: Snorlax",
+            "Substitute",
+            "[damage]"
+          ]
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 7
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_7",
+      "turn": 8,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 40,
+              "max_hp": 40,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "psychic"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                23,
+                27,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 278,
+              "max_hp": 370,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 6,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "substitute": 30.799999999999997
+              },
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                15,
+                42
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Hypno"
+          },
+          "move": "Seismic Toss",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "activate",
+          "args": [
+            "p2a: Snorlax",
+            "Substitute",
+            "[damage]"
+          ]
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 8
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_8",
+      "turn": 9,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 40,
+              "max_hp": 40,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "psychic"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                23,
+                26,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 278,
+              "max_hp": 370,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 6,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "substitute": 20.799999999999997
+              },
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                15,
+                41
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "stat": "def",
+          "amount": 0
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Hypno"
+          },
+          "move": "Seismic Toss",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "activate",
+          "args": [
+            "p2a: Snorlax",
+            "Substitute",
+            "[damage]"
+          ]
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 9
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_9",
+      "turn": 10,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 40,
+              "max_hp": 40,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "psychic"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                23,
+                25,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 278,
+              "max_hp": 370,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 6,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "substitute": 10.799999999999997
+              },
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                15,
+                40
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "stat": "def",
+          "amount": 0
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Hypno"
+          },
+          "move": "Seismic Toss",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "activate",
+          "args": [
+            "p2a: Snorlax",
+            "Substitute",
+            "[damage]"
+          ]
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 10
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_10",
+      "turn": 11,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 40,
+              "max_hp": 40,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "psychic"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                23,
+                24,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 278,
+              "max_hp": 370,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 6,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "substitute": 0.7999999999999972
+              },
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                15,
+                39
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "stat": "def",
+          "amount": 0
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Hypno"
+          },
+          "move": "Seismic Toss",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "activate",
+          "args": [
+            "p2a: Snorlax",
+            "Substitute",
+            "[damage]"
+          ]
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 11
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_11",
+      "turn": 12,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 40,
+              "max_hp": 40,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "psychic"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                23,
+                23,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 278,
+              "max_hp": 370,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 6,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "substitutebroken": null
+              },
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                15,
+                38
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "stat": "def",
+          "amount": 0
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Hypno"
+          },
+          "move": "Seismic Toss",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "end",
+          "args": [
+            "p2a: Snorlax",
+            "Substitute"
+          ]
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 12
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_12",
+      "turn": 13,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 40,
+              "max_hp": 40,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "psychic"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                23,
+                22,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 268,
+              "max_hp": 370,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 6,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "substitutebroken": null
+              },
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                15,
+                37
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "stat": "def",
+          "amount": 0
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Hypno"
+          },
+          "move": "Seismic Toss",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "hp": 268,
+          "max_hp": 370,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 13
+        }
+      ]
+    }
+  ],
+  "debug_log": "|gametype|singles\n|player|p1|P1||\n|player|p2|P2||\n|gen|4\n|tier|[Gen 4] Custom Game\n|\n|teamsize|p1|1\n|teamsize|p2|1\n|start\n|switch|p1a: Hypno|Hypno, L10, F|40/40\n|switch|p2a: Snorlax|Snorlax, L80, M|370/370\n|turn|1\n|\n|move|p2a: Snorlax|Substitute|p2a: Snorlax\n|-start|p2a: Snorlax|Substitute\n|-damage|p2a: Snorlax|278/370\n|move|p1a: Hypno|Harden|p1a: Hypno\n|-boost|p1a: Hypno|def|1\n|\n|upkeep\n|turn|2\n|\n|move|p2a: Snorlax|Harden|p2a: Snorlax\n|-boost|p2a: Snorlax|def|1\n|move|p1a: Hypno|Psywave|p2a: Snorlax\n|-activate|p2a: Snorlax|Substitute|[damage]\n|\n|upkeep\n|turn|3\n|\n|move|p2a: Snorlax|Harden|p2a: Snorlax\n|-boost|p2a: Snorlax|def|1\n|move|p1a: Hypno|Seismic Toss|p2a: Snorlax\n|-activate|p2a: Snorlax|Substitute|[damage]\n|\n|upkeep\n|turn|4\n|\n|move|p2a: Snorlax|Harden|p2a: Snorlax\n|-boost|p2a: Snorlax|def|1\n|move|p1a: Hypno|Seismic Toss|p2a: Snorlax\n|-activate|p2a: Snorlax|Substitute|[damage]\n|\n|upkeep\n|turn|5\n|\n|move|p2a: Snorlax|Harden|p2a: Snorlax\n|-boost|p2a: Snorlax|def|1\n|move|p1a: Hypno|Seismic Toss|p2a: Snorlax\n|-activate|p2a: Snorlax|Substitute|[damage]\n|\n|upkeep\n|turn|6\n|\n|move|p2a: Snorlax|Harden|p2a: Snorlax\n|-boost|p2a: Snorlax|def|1\n|move|p1a: Hypno|Seismic Toss|p2a: Snorlax\n|-activate|p2a: Snorlax|Substitute|[damage]\n|\n|upkeep\n|turn|7\n|\n|move|p2a: Snorlax|Harden|p2a: Snorlax\n|-boost|p2a: Snorlax|def|1\n|move|p1a: Hypno|Seismic Toss|p2a: Snorlax\n|-activate|p2a: Snorlax|Substitute|[damage]\n|\n|upkeep\n|turn|8\n|\n|move|p2a: Snorlax|Harden|p2a: Snorlax\n|-boost|p2a: Snorlax|def|0\n|debug|move failed because it did nothing\n|move|p1a: Hypno|Seismic Toss|p2a: Snorlax\n|-activate|p2a: Snorlax|Substitute|[damage]\n|\n|upkeep\n|turn|9\n|\n|move|p2a: Snorlax|Harden|p2a: Snorlax\n|-boost|p2a: Snorlax|def|0\n|debug|move failed because it did nothing\n|move|p1a: Hypno|Seismic Toss|p2a: Snorlax\n|-activate|p2a: Snorlax|Substitute|[damage]\n|\n|upkeep\n|turn|10\n|\n|move|p2a: Snorlax|Harden|p2a: Snorlax\n|-boost|p2a: Snorlax|def|0\n|debug|move failed because it did nothing\n|move|p1a: Hypno|Seismic Toss|p2a: Snorlax\n|-activate|p2a: Snorlax|Substitute|[damage]\n|\n|upkeep\n|turn|11\n|\n|move|p2a: Snorlax|Harden|p2a: Snorlax\n|-boost|p2a: Snorlax|def|0\n|debug|move failed because it did nothing\n|move|p1a: Hypno|Seismic Toss|p2a: Snorlax\n|-end|p2a: Snorlax|Substitute\n|\n|upkeep\n|turn|12\n|\n|move|p2a: Snorlax|Harden|p2a: Snorlax\n|-boost|p2a: Snorlax|def|0\n|debug|move failed because it did nothing\n|move|p1a: Hypno|Seismic Toss|p2a: Snorlax\n|-damage|p2a: Snorlax|268/370\n|\n|upkeep\n|turn|13"
+}

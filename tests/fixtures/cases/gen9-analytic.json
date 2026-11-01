@@ -1,0 +1,66 @@
+{
+ "schema": 1,
+ "id": "gen9-analytic",
+ "notes": [
+  "Analytic: 5325/4096 when every other active Pok\u00e9mon has already moved; not when the foe's -6 Roar still comes after"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Body Slam"
+    ],
+    "ability": "Analytic"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Soft-Boiled",
+     "Roar"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Body Slam",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Roar"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Roar"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,73 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-costar-after-intimidate-and-download",
+ "notes": [
+  "Leads: Arcanine's Intimidate and Porygon2's Download (priority 0) come before Flamigo's Costar (onSwitchInPriority -2), though Flamigo is faster than Porygon2: Costar copies Porygon2's Attack after both (-1 then +1: 0), overwriting Flamigo's own -1"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Flam",
+    "species": "Flamigo",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Costar"
+   },
+   {
+    "label": "Pory",
+    "species": "Porygon2",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Download"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Dog",
+    "species": "Arcanine",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Intimidate"
+   },
+   {
+    "label": "Chan",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

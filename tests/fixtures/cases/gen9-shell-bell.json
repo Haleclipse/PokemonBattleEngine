@@ -1,0 +1,64 @@
+{
+ "schema": 1,
+ "id": "gen9-shell-bell",
+ "notes": [
+  "Gen 9 Shell Bell (Showdown `onAfterMoveSecondarySelf`): Hariyama's Double Kick heals an eighth of the hits' total, once; behind Jolteon's Substitute it heals nothing"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hariyama",
+    "species": "Hariyama",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Double Kick",
+     "Close Combat"
+    ],
+    "item": "Shell Bell",
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Substitute"
+    ],
+    "ability": "Volt Absorb"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Double Kick",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Double Kick",
+   "p2": "move Substitute"
+  },
+  {
+   "p1": "move Close Combat",
+   "p2": "move Seismic Toss"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

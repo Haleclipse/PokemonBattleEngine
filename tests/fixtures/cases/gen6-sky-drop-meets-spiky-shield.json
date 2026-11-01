@@ -1,0 +1,57 @@
+{
+ "schema": 1,
+ "id": "gen6-sky-drop-meets-spiky-shield",
+ "notes": [
+  "Gen 6 Sky Drop's carrying turn against Spiky Shield: stopped, and without contact (`onModifyMove`) the user is not hurt"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Lifter",
+    "species": "Braviary",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sky Drop",
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Spiky",
+    "species": "Chesnaught",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Spiky Shield",
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Sky Drop",
+   "p2": "move Spiky Shield"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

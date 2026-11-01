@@ -1,0 +1,71 @@
+{
+ "schema": 1,
+ "id": "gen4-endeavor-fails-and-dream-eater-needs-sleep",
+ "notes": [
+  "Endeavor fails (onTry) once the user has as much HP as the target; Dream Eater leaves an awake target immune and hits a sleeping one"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hypno",
+    "species": "Hypno",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Endeavor",
+     "Dream Eater",
+     "Spore"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Endeavor",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Endeavor",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Dream Eater",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Spore",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Dream Eater",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

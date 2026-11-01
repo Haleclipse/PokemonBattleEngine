@@ -1,0 +1,770 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@pkmn/sim",
+    "version": "0.10.11",
+    "formatid": "gen9customgame",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "frames": [
+    {
+      "schema": 1,
+      "checkpoint": "team_preview",
+      "turn": 0,
+      "request": "team_preview|team_preview",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            null
+          ],
+          "party": [
+            {
+              "hp": 140,
+              "max_hp": 140,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "electric"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            null
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                56
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": []
+    },
+    {
+      "schema": 1,
+      "checkpoint": "initial",
+      "turn": 1,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 140,
+              "max_hp": 140,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "electric"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                56
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "details": "Jolteon, L50, M",
+          "hp": 140,
+          "max_hp": 140,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "details": "Snorlax, L50, F",
+          "hp": 235,
+          "max_hp": 235,
+          "status": null
+        },
+        {
+          "kind": "turn",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_1",
+      "turn": 2,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 98,
+              "max_hp": 140,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "electric"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                15
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "confusion": 1
+              },
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                55
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "move": "Confuse Ray",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          }
+        },
+        {
+          "kind": "start",
+          "args": [
+            "p2a: b",
+            "confusion"
+          ]
+        },
+        {
+          "kind": "activate",
+          "args": [
+            "p2a: b",
+            "confusion"
+          ]
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "move": "Tackle",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "hp": 98,
+          "max_hp": 140,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 2
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_2",
+      "turn": 3,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 55,
+              "max_hp": 140,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "electric"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                14
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                54
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "move": "Confuse Ray",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          }
+        },
+        {
+          "kind": "fail",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "detail": null
+        },
+        {
+          "kind": "end",
+          "args": [
+            "p2a: b",
+            "confusion"
+          ]
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "move": "Tackle",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "hp": 55,
+          "max_hp": 140,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 3
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_3",
+      "turn": 4,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 55,
+              "max_hp": 140,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "electric"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                13
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 211,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "confusion": 4
+              },
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                54
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "move": "Confuse Ray",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          }
+        },
+        {
+          "kind": "start",
+          "args": [
+            "p2a: b",
+            "confusion"
+          ]
+        },
+        {
+          "kind": "activate",
+          "args": [
+            "p2a: b",
+            "confusion"
+          ]
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "hp": 211,
+          "max_hp": 235,
+          "status": null,
+          "from": "[from] confusion",
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 4
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_4",
+      "turn": 4,
+      "request": "finished",
+      "outcome": "winner(p2)",
+      "sides": [
+        {
+          "active": [
+            null
+          ],
+          "party": [
+            {
+              "hp": 0,
+              "max_hp": 140,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "electric"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                12
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 211,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "confusion": 3
+              },
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                53
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "move": "Confuse Ray",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          }
+        },
+        {
+          "kind": "fail",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "detail": null
+        },
+        {
+          "kind": "activate",
+          "args": [
+            "p2a: b",
+            "confusion"
+          ]
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "move": "Tackle",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          }
+        },
+        {
+          "kind": "crit",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "detail": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "hp": 0,
+          "max_hp": null,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "faint",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "detail": null
+        },
+        {
+          "kind": "residual"
+        }
+      ]
+    }
+  ],
+  "debug_log": "|gametype|singles\n|player|p1|P1||\n|player|p2|P2||\n|gen|9\n|tier|[Gen 9] Custom Game\n|clearpoke\n|poke|p1|Jolteon, L50, M|\n|poke|p2|Snorlax, L50, F|\n|teampreview\n|\n|teamsize|p1|1\n|teamsize|p2|1\n|start\n|switch|p1a: a|Jolteon, L50, M|140/140\n|switch|p2a: b|Snorlax, L50, F|235/235\n|turn|1\n|\n|move|p1a: a|Confuse Ray|p2a: b\n|-start|p2a: b|confusion\n|-activate|p2a: b|confusion\n|move|p2a: b|Tackle|p1a: a\n|-damage|p1a: a|98/140\n|\n|upkeep\n|turn|2\n|\n|move|p1a: a|Confuse Ray||[still]\n|-fail|p1a: a\n|debug|move failed because it did nothing\n|-end|p2a: b|confusion\n|move|p2a: b|Tackle|p1a: a\n|-damage|p1a: a|55/140\n|\n|upkeep\n|turn|3\n|\n|move|p1a: a|Confuse Ray|p2a: b\n|-start|p2a: b|confusion\n|-activate|p2a: b|confusion\n|-damage|p2a: b|211/235|[from] confusion\n|\n|upkeep\n|turn|4\n|\n|move|p1a: a|Confuse Ray||[still]\n|-fail|p1a: a\n|debug|move failed because it did nothing\n|-activate|p2a: b|confusion\n|move|p2a: b|Tackle|p1a: a\n|-crit|p1a: a\n|-damage|p1a: a|0 fnt\n|faint|p1a: a\n|\n|win|P2"
+}

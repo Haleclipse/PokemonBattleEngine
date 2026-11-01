@@ -1,0 +1,72 @@
+{
+ "schema": 1,
+ "id": "gen4-truant-loafer-marks-no-pursuit",
+ "notes": [
+  "Gen 4 Pursuit chosen by Slaking on its loafing turn marks nobody (pokeplatinum `Battler_CheckTruant`): the foe switches out unharmed and Slaking loafs; on its acting turn the Pursuit strikes the switching foe"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Slacker",
+    "species": "Slaking",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Pursuit",
+     "Tackle"
+    ],
+    "ability": "Truant"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Runner",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Runner2",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Pursuit",
+   "p2": "switch Runner2"
+  },
+  {
+   "p1": "move Pursuit",
+   "p2": "switch Runner"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

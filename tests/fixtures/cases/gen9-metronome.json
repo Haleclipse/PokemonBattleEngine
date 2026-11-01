@@ -1,0 +1,69 @@
+{
+ "schema": 1,
+ "id": "gen9-metronome",
+ "notes": [
+  "Gen 9: Clefable's Metronome draws a different move every turn (Gyro Ball, Stomping Tantrum, a doubles-only Aromatic Mist that fails, Smart Strike)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Clefable",
+    "species": "Clefable",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Metronome",
+     "Moonblast"
+    ],
+    "gender": "F",
+    "ability": "Magic Guard"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Metronome",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Metronome",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Metronome",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Metronome",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

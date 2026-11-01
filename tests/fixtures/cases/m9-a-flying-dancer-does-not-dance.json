@@ -1,0 +1,500 @@
+{
+ "schema": 1,
+ "id": "m9-a-flying-dancer-does-not-dance",
+ "notes": [
+  "R-M9-30: Oricorio (Dancer) in Fly's semi-invulnerable charge does not dance along with its ally's Swords Dance (Showdown's Dancer passes over `isSemiInvulnerable()`). The engine used to dance it. Minimized from Nightly 20261020-131033 (m9-gen9doublesou-s113-006)."
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublesou"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Houndstone",
+    "species": "Houndstone",
+    "ability": "Fluffy",
+    "moves": [
+     "Trick",
+     "Bulldoze"
+    ],
+    "nature": "Serious",
+    "gender": "F",
+    "shiny": false,
+    "level": 15,
+    "evs": {
+     "hp": 32,
+     "atk": 0,
+     "def": 80,
+     "spa": 80,
+     "spd": 252,
+     "spe": 64
+    },
+    "ivs": {
+     "hp": 27,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Dragon"
+   },
+   {
+    "label": "Armarouge",
+    "species": "Armarouge",
+    "ability": "Weak Armor",
+    "moves": [
+     "Trick Room"
+    ],
+    "nature": "Modest",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 64,
+     "atk": 36,
+     "def": 4,
+     "spa": 0,
+     "spd": 252,
+     "spe": 152
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 169,
+    "teraType": "Ground",
+    "hpType": "Dark"
+   },
+   {
+    "label": "Polteageist",
+    "species": "Polteageist-Antique",
+    "ability": "Cursed Body",
+    "moves": [
+     "Pain Split",
+     "Night Shade"
+    ],
+    "nature": "Modest",
+    "gender": "",
+    "shiny": true,
+    "level": 27,
+    "evs": {
+     "hp": 104,
+     "atk": 76,
+     "def": 160,
+     "spa": 140,
+     "spd": 28,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Poison"
+   },
+   {
+    "label": "Rillaboom",
+    "species": "Rillaboom",
+    "ability": "Overgrow",
+    "moves": [
+     "Slam",
+     "Solar Blade",
+     "Work Up",
+     "Sunny Day"
+    ],
+    "nature": "Impish",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 52,
+     "atk": 0,
+     "def": 124,
+     "spa": 208,
+     "spd": 124,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Ice"
+   },
+   {
+    "label": "Combee",
+    "species": "Combee",
+    "ability": "Hustle",
+    "moves": [
+     "Snore",
+     "Swift",
+     "String Shot"
+    ],
+    "nature": "Lonely",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 0,
+     "atk": 0,
+     "def": 212,
+     "spa": 88,
+     "spd": 180,
+     "spe": 28
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 30,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Fairy"
+   },
+   {
+    "label": "Sylveon",
+    "species": "Sylveon",
+    "ability": "Pixilate",
+    "moves": [
+     "Pay Day",
+     "Detect",
+     "Rain Dance",
+     "Take Down"
+    ],
+    "nature": "Impish",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 160,
+     "atk": 88,
+     "def": 72,
+     "spa": 76,
+     "spd": 0,
+     "spe": 112
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Flying"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Oricorio",
+    "species": "Oricorio-Sensu",
+    "ability": "Dancer",
+    "moves": [
+     "Fly",
+     "Revelation Dance",
+     "Swords Dance"
+    ],
+    "nature": "Timid",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 72,
+     "atk": 200,
+     "def": 0,
+     "spa": 124,
+     "spd": 8,
+     "spe": 104
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Steel"
+   },
+   {
+    "label": "Nick90",
+    "species": "Sunkern",
+    "ability": "Solar Power",
+    "moves": [
+     "Swords Dance"
+    ],
+    "nature": "Hardy",
+    "gender": "F",
+    "shiny": false,
+    "level": 23,
+    "evs": {
+     "hp": 60,
+     "atk": 28,
+     "def": 236,
+     "spa": 0,
+     "spd": 128,
+     "spe": 56
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 12,
+     "spe": 31
+    },
+    "teraType": "Flying"
+   },
+   {
+    "label": "Rotom",
+    "species": "Rotom-Frost",
+    "ability": "Levitate",
+    "moves": [
+     "Light Screen",
+     "Facade",
+     "Sleep Talk",
+     "Trick"
+    ],
+    "nature": "Careful",
+    "gender": "",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 64,
+     "atk": 80,
+     "def": 44,
+     "spa": 0,
+     "spd": 68,
+     "spe": 252
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 204,
+    "teraType": "Water"
+   },
+   {
+    "label": "Minccino",
+    "species": "Minccino",
+    "ability": "Technician",
+    "moves": [
+     "Play Rough",
+     "Trailblaze"
+    ],
+    "nature": "Hardy",
+    "gender": "M",
+    "shiny": true,
+    "level": 100,
+    "evs": {
+     "hp": 96,
+     "atk": 116,
+     "def": 132,
+     "spa": 0,
+     "spd": 8,
+     "spe": 156
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Ground"
+   },
+   {
+    "label": "Seadra",
+    "species": "Seadra",
+    "ability": "Poison Point",
+    "moves": [
+     "Outrage",
+     "Surf"
+    ],
+    "nature": "Serious",
+    "gender": "F",
+    "shiny": false,
+    "level": 51,
+    "evs": {
+     "hp": 116,
+     "atk": 120,
+     "def": 232,
+     "spa": 0,
+     "spd": 40,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 25,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Ghost"
+   },
+   {
+    "label": "Wo-Chien",
+    "species": "Wo-Chien",
+    "ability": "Tablets of Ruin",
+    "moves": [
+     "Ruination",
+     "Power Whip",
+     "Stun Spore",
+     "Scary Face"
+    ],
+    "nature": "Bashful",
+    "gender": "",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 116,
+     "atk": 0,
+     "def": 192,
+     "spa": 0,
+     "spd": 0,
+     "spe": 200
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 43,
+    "teraType": "Normal"
+   }
+  ]
+ },
+ "preview": {
+  "p1": "team 143652",
+  "p2": "team 635412"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   18996,
+   113,
+   1006,
+   31
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1 1 terastallize, move Slam 2",
+   "p2": "move 1 1 terastallize, move Light Screen"
+  },
+  {
+   "p1": "move Bulldoze, move Solar Blade 1",
+   "p2": "move Power Whip 2, move Facade 1"
+  },
+  {
+   "p1": "switch 3, pass"
+  },
+  {
+   "p1": "move 1 2, move 1",
+   "p2": "move 3 2, move 3"
+  },
+  {
+   "p1": "move Night Shade 1, move Sunny Day",
+   "p2": "move Scary Face 1, move Trick 2"
+  },
+  {
+   "p1": "switch 4, move Slam 2",
+   "p2": "switch 3, move Light Screen"
+  },
+  {
+   "p1": "move Pay Day 1, move Solar Blade 2",
+   "p2": "move Outrage, move Facade 1"
+  },
+  {
+   "p2": "pass, switch 3"
+  },
+  {
+   "p1": "move 2, move 3",
+   "p2": "move 1, move 3 2"
+  },
+  {
+   "p1": "move 3, move 4",
+   "p2": "move 1, move 4 1"
+  },
+  {
+   "p1": "move Take Down 1, move Slam 2",
+   "p2": "move Surf, move Ruination 2"
+  },
+  {
+   "p2": "switch 4, pass"
+  },
+  {
+   "p1": "switch 4, move Solar Blade 1",
+   "p2": "switch 5, move Power Whip 1"
+  },
+  {
+   "p1": "switch 4, pass"
+  },
+  {
+   "p1": "move 1 2, move 1",
+   "p2": "move 1 2, move 3 1"
+  },
+  {
+   "p1": "move 2, move 4",
+   "p2": "move 1, move 4 2"
+  },
+  {
+   "p1": "move Rain Dance, move Slam 1",
+   "p2": "move Revelation Dance 1, move Ruination 2"
+  },
+  {
+   "p1": "move Take Down 2, move Solar Blade 1",
+   "p2": "move Swords Dance, move Power Whip 1"
+  },
+  {
+   "p1": "switch 5, move 1",
+   "p2": "switch 5, move 3 2"
+  },
+  {
+   "p1": "move Snore 2, move Sunny Day",
+   "p2": "move Play Rough 1, move Scary Face 2"
+  },
+  {
+   "p1": "move Swift, move Slam 1",
+   "p2": "move Trailblaze 1, move Ruination 2"
+  },
+  {
+   "p2": "switch 5, pass"
+  },
+  {
+   "p1": "move String Shot, move Solar Blade 2",
+   "p2": "move Revelation Dance 1, move Power Whip 2"
+  },
+  {
+   "p1": "switch 5, pass",
+   "p2": "pass, switch 6"
+  },
+  {
+   "p1": "switch 6, move Sunny Day",
+   "p2": "move Fly 2, move Swords Dance"
+  }
+ ]
+}

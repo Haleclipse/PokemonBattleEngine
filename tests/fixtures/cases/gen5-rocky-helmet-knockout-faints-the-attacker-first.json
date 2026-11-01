@@ -1,0 +1,67 @@
+{
+ "schema": 1,
+ "id": "gen5-rocky-helmet-knockout-faints-the-attacker-first",
+ "notes": [
+  "Gen 5 (inheriting the gen6 mod's `damage(…, true)`): Rocky Helmet knocks out the attacker, which faints first — the holder fainted last, so P2 wins"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Scyther",
+    "species": "Scyther",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Swords Dance",
+     "X-Scissor"
+    ],
+    "ability": "Swarm"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Sharpedo",
+    "species": "Sharpedo",
+    "level": 47,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss"
+    ],
+    "ability": "Swift Swim",
+    "item": "Rocky Helmet"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Swords Dance",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Swords Dance",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Swords Dance",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move X-Scissor",
+   "p2": "move Seismic Toss"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,79 @@
+{
+ "schema": 1,
+ "id": "gen7-lucky-chant",
+ "notes": [
+  "Lucky Chant (onCriticalHit: false): Frost Breath and Storm Throw, which always crit, do not while it lasts (5 turns); after it ends they crit again"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Lucky Chant",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Lax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Frost Breath",
+     "Storm Throw"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Lucky Chant",
+   "p2": "move Frost Breath"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Storm Throw"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Frost Breath"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Storm Throw"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Frost Breath"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Storm Throw"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Frost Breath"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

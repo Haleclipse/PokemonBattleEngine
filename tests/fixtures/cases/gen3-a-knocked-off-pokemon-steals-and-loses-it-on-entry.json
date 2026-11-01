@@ -1,0 +1,83 @@
+{
+ "schema": 1,
+ "id": "gen3-a-knocked-off-pokemon-steals-and-loses-it-on-entry",
+ "notes": [
+  "Gen 3 link battle (pokeemerald, issues.md I54): Murkrow, its item knocked off, still steals the Leftovers with Thief; switched out and back in it enters holding nothing"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Absol",
+    "species": "Absol",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Knock Off",
+     "Harden"
+    ],
+    "ability": "Pressure",
+    "item": "Leftovers"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Murkrow",
+    "species": "Murkrow",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Thief",
+     "Harden"
+    ],
+    "ability": "Insomnia",
+    "item": "Black Belt"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Knock Off",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Thief"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Snorlax"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Murkrow"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,58 @@
+{
+ "schema": 1,
+ "id": "gen6-parental-bond-infestation-binds-once",
+ "notes": [
+  "Parental Bond Infestation binds on its first hit; the second finds the target bound and rolls no duration"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Kangaskhan",
+    "species": "Kangaskhan",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Infestation"
+    ],
+    "ability": "Parental Bond"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Natural Cure",
+    "item": "Eviolite"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Infestation",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Infestation",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,86 @@
+{
+ "schema": 1,
+ "id": "gen7-nightmare",
+ "notes": [
+  "Nightmare (Gen 5+ residual order 11, after Leftovers at 5.4 and Leech Seed at 8): fails on an awake target, lands on a sleeping one, a quarter of max HP each turn; Purify's cure of the sleep ends it too"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Nightmare",
+     "Spore",
+     "Leech Seed",
+     "Purify"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Lax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Run Away",
+    "item": "Leftovers"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Nightmare",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Spore",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Nightmare",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Leech Seed",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Purify",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Nightmare",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Leech Seed",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Leech Seed",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   3,
+   2,
+   3,
+   4
+  ]
+ }
+}

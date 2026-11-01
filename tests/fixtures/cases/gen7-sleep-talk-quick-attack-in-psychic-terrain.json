@@ -1,0 +1,64 @@
+{
+ "schema": 1,
+ "id": "gen7-sleep-talk-quick-attack-in-psychic-terrain",
+ "notes": [
+  "Gen 7: Tapu Lele's Psychic Surge sets Psychic Terrain; Smeargle's Quick Attack does not reach the grounded Tapu Lele, but the one its Sleep Talk calls does: a move used inside another takes that move's priority (Showdown `useMoveInner`'s `activeMove.priority`, DESIGN.md R-M8-81)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Smeargle",
+    "species": "Smeargle",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Quick Attack",
+     "Sleep Talk"
+    ],
+    "ability": "Own Tempo",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Tapu Lele",
+    "species": "Tapu Lele",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spore",
+     "Splash"
+    ],
+    "ability": "Psychic Surge"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Quick Attack",
+   "p2": "move Spore"
+  },
+  {
+   "p1": "move Sleep Talk",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Sleep Talk",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

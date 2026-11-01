@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "gen4-figy-berry-after-stealth-rock-confuses",
+ "notes": [
+  "Gen 4: Stealth Rock takes the Modest Charizard to half HP as it comes in; the switch-in's Update feeds it its Figy Berry, which heals an eighth and confuses it"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Skarmory",
+    "species": "Skarmory",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Stealth Rock",
+     "Harden"
+    ],
+    "ability": "Keen Eye"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Charizard",
+    "species": "Charizard",
+    "level": 51,
+    "nature": "Modest",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Blaze",
+    "item": "Figy Berry"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Stealth Rock",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Charizard"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

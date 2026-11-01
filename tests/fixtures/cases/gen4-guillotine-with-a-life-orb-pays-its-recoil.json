@@ -1,0 +1,75 @@
+{
+ "schema": 1,
+ "id": "gen4-guillotine-with-a-life-orb-pays-its-recoil",
+ "notes": [
+  "Gen 4: Ambipom's Guillotine with a Life Orb knocks out the level-30 Magikarp and pays the tenth: a one-hit KO takes real HP (pokeplatinum spares nothing; Showdown's gen4 volatile never set), unlike Gen 5-6 (issues.md I193, DESIGN.md R-M8-131)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Ambipom",
+    "species": "Ambipom",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Guillotine",
+     "Splash"
+    ],
+    "item": "Life Orb",
+    "ability": "Technician",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Swift Swim",
+    "gender": "M"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Guillotine",
+   "p2": "move Splash"
+  },
+  {
+   "p2": "switch Snorlax"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "gen6-silver-wind-boosts-past-a-maxed-attack",
+ "notes": [
+  "Gen 6: Anger Point maxed Tentacruel's Attack; its Silver Wind's one roll for five boosts lands showing only the four it can still raise, and Kingdra's Charge Beam then meets the higher Special Defense"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Tentacruel",
+    "species": "Tentacruel",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Silver Wind",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Anger Point"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Kingdra",
+    "species": "Kingdra",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Storm Throw",
+     "Charge Beam"
+    ],
+    "gender": "M",
+    "ability": "Sniper"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Storm Throw"
+  },
+  {
+   "p1": "move Silver Wind",
+   "p2": "move Charge Beam"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   3,
+   10,
+   23,
+   36
+  ]
+ }
+}

@@ -1,0 +1,173 @@
+{
+ "schema": 1,
+ "id": "gen9-poison-touch-toxic-chain-and-shield-dust",
+ "notes": [
+  "Poison Touch (a contact hit) and Toxic Chain (any hit) may status their target 3 in 10, rolled per hit (Double Kick) \u2014 never against Shield Dust or Covert Cloak, which also drop Nuzzle's paralysis and Fake Out's flinch before any roll (Flame Charge's own Speed boost stays)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Toucher",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Double Kick",
+     "Swift"
+    ],
+    "ability": "Poison Touch"
+   },
+   {
+    "label": "Chainer",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Swift"
+    ],
+    "ability": "Toxic Chain"
+   },
+   {
+    "label": "Nuzzler",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Fake Out",
+     "Nuzzle",
+     "Body Slam",
+     "Flame Charge"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Lax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Heal Bell"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Dusty",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Heal Bell"
+    ],
+    "ability": "Shield Dust"
+   },
+   {
+    "label": "Cloaked",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Heal Bell"
+    ],
+    "ability": "Run Away",
+    "item": "Covert Cloak"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Double Kick",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Double Kick",
+   "p2": "move Heal Bell"
+  },
+  {
+   "p1": "move Double Kick",
+   "p2": "move Heal Bell"
+  },
+  {
+   "p1": "move Swift",
+   "p2": "move Heal Bell"
+  },
+  {
+   "p1": "move Double Kick",
+   "p2": "switch Dusty"
+  },
+  {
+   "p1": "move Double Kick",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Double Kick",
+   "p2": "switch Cloaked"
+  },
+  {
+   "p1": "switch Chainer",
+   "p2": "switch Lax"
+  },
+  {
+   "p1": "move Swift",
+   "p2": "move Heal Bell"
+  },
+  {
+   "p1": "move Swift",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Swift",
+   "p2": "switch Dusty"
+  },
+  {
+   "p1": "move Swift",
+   "p2": "switch Cloaked"
+  },
+  {
+   "p1": "switch Nuzzler",
+   "p2": "switch Dusty"
+  },
+  {
+   "p1": "move Fake Out",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Nuzzle",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Flame Charge",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "switch Cloaked"
+  },
+  {
+   "p1": "move Nuzzle",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

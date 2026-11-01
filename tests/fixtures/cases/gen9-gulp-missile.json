@@ -1,0 +1,79 @@
+{
+ "schema": 1,
+ "id": "gen9-gulp-missile",
+ "notes": [
+  "Gen 9: Cramorant's Surf makes it dive and come up with a Gulping Cramorant above half HP (its form in the frames); the next hit spits it out — a quarter of the attacker's max HP and a Defense drop — and it is a plain Cramorant again"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Cramorant",
+    "species": "Cramorant",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Surf",
+     "Harden",
+     "Dive",
+     "Bite"
+    ],
+    "gender": "M",
+    "ability": "Gulp Missile"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Surf",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Bite",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Surf",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

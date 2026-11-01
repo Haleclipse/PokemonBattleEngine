@@ -1,0 +1,63 @@
+{
+ "schema": 1,
+ "id": "gen5-transform-and-focus-energy",
+ "notes": [
+  "Gen 5: Mew's Focus Energy, then its Transform into Snorlax, which keeps Mew's Focus Energy (Gen 5)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Focus Energy",
+     "Transform"
+    ],
+    "ability": "Synchronize"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Focus Energy",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Transform",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

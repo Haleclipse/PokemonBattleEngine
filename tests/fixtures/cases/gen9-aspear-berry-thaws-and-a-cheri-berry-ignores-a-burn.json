@@ -1,0 +1,74 @@
+{
+ "schema": 1,
+ "id": "gen9-aspear-berry-thaws-and-a-cheri-berry-ignores-a-burn",
+ "notes": [
+  "Gen 9: Ice Beam freezes Snorlax, whose Aspear Berry thaws it at the Update; a Cheri Berry does nothing for a burn and stays held"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Smeargle",
+    "species": "Smeargle",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Ice Beam",
+     "Will-O-Wisp"
+    ],
+    "ability": "Technician"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Aspear Berry"
+   },
+   {
+    "label": "Lapras",
+    "species": "Lapras",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Shell Armor",
+    "item": "Cheri Berry"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Ice Beam",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Will-O-Wisp",
+   "p2": "switch Lapras"
+  },
+  {
+   "p1": "move Ice Beam",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   9,
+   2,
+   3,
+   4
+  ]
+ }
+}

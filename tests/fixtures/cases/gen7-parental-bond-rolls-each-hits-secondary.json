@@ -1,0 +1,62 @@
+{
+ "schema": 1,
+ "id": "gen7-parental-bond-rolls-each-hits-secondary",
+ "notes": [
+  "Parental Bond Crunch rolls its Defense drop after each hit; a drop shows after the hit that rolled it"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Kangaskhan",
+    "species": "Kangaskhan",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Crunch"
+    ],
+    "ability": "Parental Bond"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Natural Cure",
+    "item": "Eviolite"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Crunch",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Crunch",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Crunch",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

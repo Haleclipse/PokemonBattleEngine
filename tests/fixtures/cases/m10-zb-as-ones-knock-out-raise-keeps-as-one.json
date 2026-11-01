@@ -1,0 +1,186 @@
+{
+  "schema": 1,
+  "id": "m10-zb-as-ones-knock-out-raise-keeps-as-one",
+  "notes": [
+    "Gen 8 Singles: Yveltal transformed into an As One Loudred knocks it out; the -ability|p|Chilling Neigh|boost line leaves the ability As One (R-M10-52)",
+    "promoted from m8-gen8-singles-s1659-002-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 8,
+    "mode": "singles",
+    "format": "gen8customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Starmie",
+        "species": "Starmie",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tar Shot",
+          "Leaf Storm"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Barraskewda",
+        "species": "Barraskewda",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Power-Up Punch",
+          "Tar Shot",
+          "Meteor Mash",
+          "Transform"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Rhyhorn",
+        "species": "Rhyhorn",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Rapid Spin",
+          "Transform"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Yveltal",
+        "species": "Yveltal",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "V-create",
+          "Boomburst",
+          "Transform"
+        ],
+        "ability": "Run Away"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Xurkitree",
+        "species": "Xurkitree",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Earthquake",
+          "Tar Shot",
+          "Surf",
+          "Transform"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Nickit",
+        "species": "Nickit",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Explosion",
+          "Petal Blizzard",
+          "Transform"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Pheromosa",
+        "species": "Pheromosa",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Self-Destruct"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Loudred",
+        "species": "Loudred",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Heat Wave",
+          "Flamethrower",
+          "Transform"
+        ],
+        "ability": "As One (Glastrier)",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      11991,
+      18748,
+      11202,
+      29861
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Tar Shot",
+      "p2": "move Tar Shot"
+    },
+    {
+      "p1": "move Leaf Storm",
+      "p2": "move Surf"
+    },
+    {
+      "p1": "switch Rhyhorn",
+      "p2": "switch Nickit"
+    },
+    {
+      "p1": "move Transform",
+      "p2": "move Transform"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "switch Barraskewda",
+      "p2": "switch Xurkitree"
+    },
+    {
+      "p1": "move Transform",
+      "p2": "move Transform"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p2": "switch Nickit"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 2"
+    },
+    {
+      "p2": "switch Pheromosa"
+    },
+    {
+      "p1": "switch Yveltal",
+      "p2": "switch Loudred"
+    },
+    {
+      "p1": "move Boomburst",
+      "p2": "move Flamethrower"
+    },
+    {
+      "p1": "move Transform",
+      "p2": "move Transform"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    }
+  ]
+}

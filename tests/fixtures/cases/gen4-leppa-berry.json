@@ -1,0 +1,102 @@
+{
+ "schema": 1,
+ "id": "gen4-leppa-berry",
+ "notes": [
+  "Gen 4 Leppa Berry (Showdown `onUpdate`; pokeplatinum `BattleSystem_TriggerHeldItem` after the move): Ninjask's Mean Look runs out of PP and Ninjask eats the berry at once \u2014 before Shuckle's Seismic Toss knocks it out"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Ninjask",
+    "species": "Ninjask",
+    "level": 28,
+    "nature": "Hardy",
+    "moves": [
+     "Mean Look",
+     "Harden"
+    ],
+    "item": "Leppa Berry",
+    "ability": "Speed Boost"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Mean Look",
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Shuckle",
+    "species": "Shuckle",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Seismic Toss"
+    ],
+    "ability": "Sturdy"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Mean Look",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Mean Look",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Mean Look",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Mean Look",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Mean Look",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Mean Look",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Mean Look",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Mean Look",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "switch Snorlax"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

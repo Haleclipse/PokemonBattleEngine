@@ -1,0 +1,96 @@
+{
+ "schema": 1,
+ "id": "gen9-klutz-sets-life-orb-and-leftovers-aside-but-not-power-anklet",
+ "notes": [
+  "Gen 9 Klutz: Life Orb neither boosts nor recoils, Leftovers does not heal; Power Anklet (ignoreKlutz) still halves the holder's Speed, so Snorlax moves before Capsakid"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Golurk",
+    "species": "Golurk",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Klutz",
+    "item": "Life Orb"
+   },
+   {
+    "label": "Fidough",
+    "species": "Fidough",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Klutz",
+    "item": "Leftovers"
+   },
+   {
+    "label": "Capsakid",
+    "species": "Capsakid",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Klutz",
+    "item": "Power Anklet"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Tackle",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "switch Fidough",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Capsakid",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

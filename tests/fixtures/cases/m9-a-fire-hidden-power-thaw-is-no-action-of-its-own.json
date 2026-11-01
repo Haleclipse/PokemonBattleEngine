@@ -1,0 +1,454 @@
+{
+ "schema": 1,
+ "id": "m9-a-fire-hidden-power-thaw-is-no-action-of-its-own",
+ "notes": [
+  "R-M9-52: minimized from the fortieth M9.6 Nightly's m9-gen7doublesou-s156-010. Last turn: Skuntank, frozen, cannot move (`cant|frz`); Burmy's Hidden Power (Fire by its IVs) thaws it (`-curestatus|frz|[msg]` after the hit). Hidden Power is Normal in the dex, so the replay took the thaw for Skuntank's own and gave it a second action. A thaw that does not start the cured Pok\u00e9mon's own action (its `move` or `cant` next) is the hit's (`own_action_follows`)."
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublesou"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Typhlosion",
+    "species": "Typhlosion",
+    "ability": "Blaze",
+    "moves": [
+     "Burn Up"
+    ],
+    "nature": "Quiet",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 216,
+     "atk": 184,
+     "def": 92,
+     "spa": 0,
+     "spd": 16,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 15,
+    "hpType": "Fighting"
+   },
+   {
+    "label": "Mandibuzz",
+    "species": "Mandibuzz",
+    "ability": "Overcoat",
+    "moves": [
+     "Sky Attack",
+     "Rain Dance",
+     "Tailwind"
+    ],
+    "nature": "Quirky",
+    "gender": "",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 0,
+     "atk": 188,
+     "def": 212,
+     "spa": 0,
+     "spd": 0,
+     "spe": 108
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 1,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Minior",
+    "species": "Minior-Green",
+    "ability": "Shields Down",
+    "moves": [
+     "Ancient Power"
+    ],
+    "nature": "Timid",
+    "gender": "",
+    "shiny": false,
+    "level": 4,
+    "evs": {
+     "hp": 84,
+     "atk": 120,
+     "def": 0,
+     "spa": 188,
+     "spd": 64,
+     "spe": 52
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 150
+   },
+   {
+    "label": "Pelipper",
+    "species": "Pelipper",
+    "ability": "Rain Dish",
+    "moves": [
+     "Echoed Voice",
+     "Defog"
+    ],
+    "nature": "Mild",
+    "gender": "F",
+    "shiny": true,
+    "level": 100,
+    "evs": {
+     "hp": 72,
+     "atk": 152,
+     "def": 0,
+     "spa": 168,
+     "spd": 32,
+     "spe": 84
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Skuntank",
+    "species": "Skuntank",
+    "ability": "Stench",
+    "moves": [
+     "Venoshock",
+     "Taunt",
+     "Confide",
+     "Attract"
+    ],
+    "nature": "Jolly",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 132,
+     "atk": 0,
+     "def": 28,
+     "spa": 252,
+     "spd": 0,
+     "spe": 96
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Sliggoo",
+    "species": "Sliggoo",
+    "ability": "Hydration",
+    "moves": [
+     "Curse",
+     "Sleep Talk",
+     "Poison Tail",
+     "Thunderbolt"
+    ],
+    "nature": "Timid",
+    "gender": "F",
+    "shiny": false,
+    "level": 78,
+    "evs": {
+     "hp": 0,
+     "atk": 100,
+     "def": 0,
+     "spa": 136,
+     "spd": 108,
+     "spe": 164
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 2
+    }
+   }
+  ],
+  "p2": [
+   {
+    "label": "Burmy",
+    "species": "Burmy-Sandy",
+    "ability": "Overcoat",
+    "moves": [
+     "Tackle",
+     "Hidden Power",
+     "Protect"
+    ],
+    "nature": "Quirky",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 76,
+     "atk": 0,
+     "def": 252,
+     "spa": 0,
+     "spd": 136,
+     "spe": 44
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 129,
+    "hpType": "Fire"
+   },
+   {
+    "label": "Castform",
+    "species": "Castform",
+    "ability": "Forecast",
+    "moves": [
+     "Powder Snow",
+     "Body Slam",
+     "Water Pulse",
+     "Rain Dance"
+    ],
+    "nature": "Lonely",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 124,
+     "atk": 96,
+     "def": 0,
+     "spa": 52,
+     "spd": 0,
+     "spe": 236
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 19,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 144
+   },
+   {
+    "label": "Meowstic",
+    "species": "Meowstic",
+    "ability": "Prankster",
+    "moves": [
+     "Thunder Wave"
+    ],
+    "nature": "Modest",
+    "gender": "",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 100,
+     "atk": 0,
+     "def": 124,
+     "spa": 32,
+     "spd": 144,
+     "spe": 108
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Quilladin",
+    "species": "Quilladin",
+    "ability": "Bulletproof",
+    "moves": [
+     "Vine Whip",
+     "Worry Seed"
+    ],
+    "nature": "Gentle",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 152,
+     "atk": 8,
+     "def": 36,
+     "spa": 104,
+     "spd": 0,
+     "spe": 208
+    },
+    "ivs": {
+     "hp": 4,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 29
+   },
+   {
+    "label": "Nick12",
+    "species": "Dhelmise",
+    "ability": "Steelworker",
+    "moves": [
+     "Slam",
+     "Flash Cannon",
+     "Synthesis",
+     "Astonish"
+    ],
+    "nature": "Gentle",
+    "gender": "",
+    "shiny": false,
+    "level": 87,
+    "evs": {
+     "hp": 36,
+     "atk": 172,
+     "def": 172,
+     "spa": 128,
+     "spd": 0,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 19,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 64
+   },
+   {
+    "label": "Deerling",
+    "species": "Deerling-Autumn",
+    "ability": "Sap Sipper",
+    "moves": [
+     "Nature Power"
+    ],
+    "nature": "Relaxed",
+    "gender": "M",
+    "shiny": false,
+    "level": 2,
+    "evs": {
+     "hp": 148,
+     "atk": 0,
+     "def": 48,
+     "spa": 0,
+     "spd": 96,
+     "spe": 216
+    },
+    "ivs": {
+     "hp": 26,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   }
+  ]
+ },
+ "preview": {
+  "p1": "team 265431",
+  "p2": "team 425163"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   32730,
+   156,
+   1010,
+   31
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Sky Attack 1, move Curse",
+   "p2": "move Vine Whip 1, move Powder Snow"
+  },
+  {
+   "p1": "move 1, move 2",
+   "p2": "move 2 2, move 2 1"
+  },
+  {
+   "p2": "switch 3, pass"
+  },
+  {
+   "p1": "move Rain Dance, move Poison Tail 2",
+   "p2": "move Synthesis, move Water Pulse 2"
+  },
+  {
+   "p1": "move Tailwind, move Thunderbolt 1",
+   "p2": "move Astonish 1, move Rain Dance"
+  },
+  {
+   "p1": "move Sky Attack 2, move Curse",
+   "p2": "move Slam 2, move Powder Snow"
+  },
+  {
+   "p1": "pass, switch 3"
+  },
+  {
+   "p1": "move 1, move 2 1",
+   "p2": "move 2 1, move 2 2"
+  },
+  {
+   "p1": "move Rain Dance, move Confide 2",
+   "p2": "move Slam 1, move Water Pulse 2"
+  },
+  {
+   "p1": "switch 4, pass"
+  },
+  {
+   "p1": "switch 5, move Attract 1",
+   "p2": "switch 4, move Rain Dance"
+  },
+  {
+   "p1": "move Ancient Power 2, move Venoshock 1",
+   "p2": "move Protect, move Powder Snow"
+  },
+  {
+   "p1": "switch 5, pass"
+  },
+  {
+   "p1": "move Echoed Voice 2, move Taunt 1",
+   "p2": "move Tackle 1, move Body Slam 2"
+  },
+  {
+   "p2": "pass, switch 4"
+  },
+  {
+   "p1": "move Defog 1, move Attract 2",
+   "p2": "move Hidden Power 2, move Astonish 1"
+  }
+ ]
+}

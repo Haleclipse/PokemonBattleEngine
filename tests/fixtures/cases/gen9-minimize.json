@@ -1,0 +1,86 @@
+{
+ "schema": 1,
+ "id": "gen9-minimize",
+ "notes": [
+  "Minimize: +2 evasion and its mark; Body Slam (a minimize move) is sure to hit it and doubled (Gen 6+), Tackle rolls against the evasion; Baton Pass hands the evasion on but not the mark"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mini",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Minimize",
+     "Baton Pass",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Heir",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Snorlax",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Body Slam",
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Minimize",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Body Slam"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Baton Pass",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Heir"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Body Slam"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

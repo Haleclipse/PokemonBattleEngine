@@ -1,0 +1,66 @@
+{
+ "schema": 1,
+ "id": "gen8-dynamax-doubles-hp-and-max-moves",
+ "notes": [
+  "Gen 8: Snorlax Dynamaxes (`move 1 dynamax`): its max HP and HP are multiplied by 1.5 + 0.05 × level (level 10: 1.5), the frames show the new max HP, and its Tackle runs as 极巨攻击 (Max Strike) with Tackle's power (40 → 90); after the Dynamax ends the HP comes back"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Charizard",
+    "species": "Charizard",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Blaze"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1 dynamax",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

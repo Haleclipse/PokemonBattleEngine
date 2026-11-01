@@ -1,0 +1,55 @@
+{
+ "schema": 1,
+ "id": "gen5-metronome-calls-a-move-damp-stops",
+ "notes": [
+  "Gen 5: Clefable's Metronome draws Explosion or Self-Destruct, which Quagsire's Damp stops at TryMove: Metronome's draw among its candidates came first, and the replay plans it"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Clefable",
+    "species": "Clefable",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Metronome"
+    ],
+    "ability": "Magic Guard",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Quagsire",
+    "species": "Quagsire",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Damp",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   411,
+   412,
+   413,
+   414
+  ]
+ }
+}

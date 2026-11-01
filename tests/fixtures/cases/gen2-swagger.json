@@ -1,0 +1,83 @@
+{
+ "schema": 1,
+ "id": "gen2-swagger",
+ "notes": [
+  "Gen 2 Swagger: behind a Substitute the Attack boost goes through and the confusion is dropped; in the open it boosts and confuses"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Swagger",
+     "Recover"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Doll",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Substitute",
+     "Harden"
+    ]
+   },
+   {
+    "label": "Lax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Recover",
+   "p2": "move Substitute"
+  },
+  {
+   "p1": "move Swagger",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Swagger",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "switch Lax"
+  },
+  {
+   "p1": "move Swagger",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Swagger",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

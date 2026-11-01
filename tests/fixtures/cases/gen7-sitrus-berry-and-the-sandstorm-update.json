@@ -1,0 +1,64 @@
+{
+ "schema": 1,
+ "id": "gen7-sitrus-berry-and-the-sandstorm-update",
+ "notes": [
+  "Gen 7: the Update right after the weather (`eachEvent('Weather')`) feeds Snorlax its Sitrus Berry as soon as the sandstorm takes it to half HP, before Ingrain"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Ingrain",
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Sitrus Berry"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Tyranitar",
+    "species": "Tyranitar",
+    "level": 55,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Harden"
+    ],
+    "ability": "Sand Stream"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Ingrain",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

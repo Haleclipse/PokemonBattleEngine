@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "id": "m10-m-cheek-pouch-on-a-flung-berry-is-the-eaters",
+  "notes": [
+    "Gen 7: Tyrantrum Flings a Kebia Berry at Karrablast, whose Cheek Pouch heals it — the line's [of] is the Fling's user, the ability Karrablast's (views.mjs, R-M10-37)",
+    "promoted from m8-gen7-singles-s1640-014-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 7,
+    "mode": "singles",
+    "format": "gen7customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Karrablast",
+        "species": "Karrablast",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Seed Bomb"
+        ],
+        "ability": "Cheek Pouch",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Tyrantrum",
+        "species": "Tyrantrum",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fling"
+        ],
+        "ability": "Run Away",
+        "item": "Kebia Berry",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      6897,
+      1865,
+      11143,
+      3230
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Seed Bomb",
+      "p2": "move Fling"
+    }
+  ]
+}

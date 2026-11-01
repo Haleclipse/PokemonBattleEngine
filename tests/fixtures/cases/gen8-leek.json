@@ -1,0 +1,101 @@
+{
+ "schema": 1,
+ "id": "gen8-leek",
+ "notes": [
+  "Leek (+2 critical stages) for Sirfetch'd and a Galarian Farfetch'd: with Leaf Blade (+1) every hit is critical; Brutal Swing (+2 only) is not always"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sirfetch'd",
+    "species": "Sirfetch'd",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Leaf Blade",
+     "Brutal Swing"
+    ],
+    "ability": "Run Away",
+    "item": "Leek"
+   },
+   {
+    "label": "Farfetch'd",
+    "species": "Farfetch'd-Galar",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Leaf Blade",
+     "Brutal Swing"
+    ],
+    "ability": "Run Away",
+    "item": "Leek"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Leaf Blade",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Brutal Swing",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Leaf Blade",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Brutal Swing",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "switch Farfetch'd",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Leaf Blade",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Brutal Swing",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Leaf Blade",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Brutal Swing",
+   "p2": "move Soft-Boiled"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,76 @@
+{
+ "schema": 1,
+ "id": "gen2-baton-pass-hands-foresight-on",
+ "notes": [
+  "Gen 2: Foresight identifies Gengar, which Baton Passes to Misdreavus; the identification goes with it (the gen2 condition's `noCopy: false`), so Body Slam hits Misdreavus"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Foresight",
+     "Body Slam"
+    ],
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gengar",
+    "species": "Gengar",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Baton Pass"
+    ],
+    "gender": "M"
+   },
+   {
+    "label": "Misdreavus",
+    "species": "Misdreavus",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Foresight",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Baton Pass"
+  },
+  {
+   "p2": "switch Misdreavus"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,33 @@
+[package]
+name = "pokemon-battle-engine"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.97"
+license = "GPL-3.0-only"
+description = "A Pokémon battle engine for Generations 1-9, differentially tested against Pokémon Showdown"
+
+[dependencies]
+# data/dex/*.json snapshots are embedded and parsed once per generation; this is the engine's
+# only dependency.
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[build-dependencies]
+# build.rs generates the id constants from data/dex/ids.json.
+serde_json = "1"
+
+[features]
+# The crate's internal modules, for its own tests, the replay driver and tools (DESIGN.md §47.0
+# item 7): no compatibility promise. Without it the crate offers its stable API alone.
+internals = []
+
+[dev-dependencies]
+# The benches' harness (M10.1, DESIGN.md §47): its plotting and parallelism stay off.
+criterion = { version = "0.8", default-features = false, features = ["cargo_bench_support"] }
+# The tests, benches and examples see the internals (M10.4a): the crate depends on itself with
+# the feature on.
+pokemon-battle-engine = { path = ".", features = ["internals"] }
+
+[[bench]]
+name = "engine"
+harness = false

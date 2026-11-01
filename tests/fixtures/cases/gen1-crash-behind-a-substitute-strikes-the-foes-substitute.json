@@ -1,0 +1,69 @@
+{
+ "schema": 1,
+ "id": "gen1-crash-behind-a-substitute-strikes-the-foes-substitute",
+ "notes": [
+  "Gen 1 directDamage: High Jump Kick's 1 HP crash behind the user's Substitute strikes the foe's Substitute, or nothing when the foe has none"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hitmonlee",
+    "species": "Hitmonlee",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "High Jump Kick",
+     "Substitute"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gengar",
+    "species": "Gengar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Agility",
+     "Substitute"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move High Jump Kick",
+   "p2": "move Agility"
+  },
+  {
+   "p1": "move Substitute",
+   "p2": "move Agility"
+  },
+  {
+   "p1": "move High Jump Kick",
+   "p2": "move Agility"
+  },
+  {
+   "p1": "move High Jump Kick",
+   "p2": "move Substitute"
+  },
+  {
+   "p1": "move High Jump Kick",
+   "p2": "move Agility"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

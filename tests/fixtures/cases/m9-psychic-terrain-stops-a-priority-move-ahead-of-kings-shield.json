@@ -1,0 +1,75 @@
+{
+ "schema": 1,
+ "id": "m9-psychic-terrain-stops-a-priority-move-ahead-of-kings-shield",
+ "notes": [
+  "R-M9-43: Klefki's Psychic Surge sets Psychic Terrain; its Extreme Speed at Kartana, under King's Shield, is stopped by the terrain (`onTryHit` priority 4) before the shield (priority 3) could lower its Attack. The engine ran Protect and its variants first. Minimized from Nightly 20261021-110733 (m8-gen8-doubles-s1577-001)."
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "doubles",
+  "format": "gen8doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Klefki",
+    "species": "Klefki",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Extreme Speed"
+    ],
+    "ability": "Psychic Surge",
+    "gender": "M"
+   },
+   {
+    "label": "Staryu",
+    "species": "Staryu",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Minimize"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Kingdra",
+    "species": "Kingdra",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Calm Mind"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Kartana",
+    "species": "Kartana",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "King's Shield"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   30331,
+   43882,
+   7478,
+   38889
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Extreme Speed 2, move Minimize",
+   "p2": "move Calm Mind, move King's Shield"
+  }
+ ]
+}

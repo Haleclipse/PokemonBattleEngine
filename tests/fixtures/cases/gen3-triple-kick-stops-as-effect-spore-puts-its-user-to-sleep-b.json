@@ -1,0 +1,67 @@
+{
+ "schema": 1,
+ "id": "gen3-triple-kick-stops-as-effect-spore-puts-its-user-to-sleep-b",
+ "notes": [
+  "Gen 3: Hitmontop's Triple Kick on Breloom; once Effect Spore puts Hitmontop to sleep the sequence stops before the next hit's accuracy check (the gen3 loop's `pokemon.status === 'slp'`)"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hitmontop",
+    "species": "Hitmontop",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Triple Kick"
+    ],
+    "gender": "M",
+    "ability": "Intimidate"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Breloom",
+    "species": "Breloom",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Effect Spore"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Triple Kick",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Triple Kick",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Triple Kick",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Triple Kick",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   14,
+   29,
+   44,
+   72
+  ]
+ }
+}

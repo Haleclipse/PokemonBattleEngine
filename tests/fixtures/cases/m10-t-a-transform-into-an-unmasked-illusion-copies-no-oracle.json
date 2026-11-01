@@ -1,0 +1,161 @@
+{
+  "schema": 1,
+  "id": "m10-t-a-transform-into-an-unmasked-illusion-copies-no-oracle",
+  "notes": [
+    "Gen 7 Doubles: Octillery's Imposter transforms into a Poliwrath whose Illusion broke; what Poliwrath showed in the disguise (Catastropika) the client keeps on the disguise, so its copy is no oracle (R-M10-44)",
+    "promoted from m8-gen7-doubles-s1648-003-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 7,
+    "mode": "doubles",
+    "format": "gen7doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Octillery",
+        "species": "Octillery",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Photon Geyser"
+        ],
+        "ability": "Imposter",
+        "item": "Choice Scarf",
+        "gender": "F"
+      },
+      {
+        "label": "Cubone",
+        "species": "Cubone",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Hidden Power",
+          "Parting Shot"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Wishiwashi",
+        "species": "Wishiwashi",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fairy Wind",
+          "Parting Shot",
+          "Water Gun"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Sunflora",
+        "species": "Sunflora",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Parting Shot"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Nidorino",
+        "species": "Nidorino",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Secret Sword",
+          "Parting Shot"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Poliwrath",
+        "species": "Poliwrath",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Catastropika",
+          "Parting Shot",
+          "Aqua Tail",
+          "Spiky Shield"
+        ],
+        "ability": "Illusion",
+        "gender": "F"
+      },
+      {
+        "label": "Shellder",
+        "species": "Shellder",
+        "level": 49,
+        "nature": "Hardy",
+        "moves": [
+          "Megahorn"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Cinccino",
+        "species": "Cinccino",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Rapid Spin",
+          "Parting Shot",
+          "Multi-Attack"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      5499,
+      7530,
+      59739,
+      17888
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Photon Geyser 1, move Hidden Power 2",
+      "p2": "move Secret Sword 1, move Catastropika 2"
+    },
+    {
+      "p1": "move Photon Geyser 1, move Parting Shot 2",
+      "p2": "move Parting Shot 1, move Aqua Tail 2"
+    },
+    {
+      "p1": "pass, switch Wishiwashi",
+      "p2": "switch Shellder, pass"
+    },
+    {
+      "p1": "move Photon Geyser 1, move Water Gun 2",
+      "p2": "move Megahorn 1, move Spiky Shield"
+    },
+    {
+      "p2": "switch Cinccino, pass"
+    },
+    {
+      "p1": "move Photon Geyser 2, move Fairy Wind 1",
+      "p2": "move Rapid Spin 1, move Aqua Tail 2"
+    },
+    {
+      "p1": "switch Sunflora, move Parting Shot 2",
+      "p2": "move Parting Shot 1, move Spiky Shield"
+    },
+    {
+      "p1": "move Parting Shot 1, move Water Gun 2",
+      "p2": "move Multi-Attack 2, move Parting Shot 1"
+    },
+    {
+      "p1": "switch Octillery, pass"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+ "schema": 1,
+ "id": "gen9-soak-fails-on-pure-water-and-on-arceus",
+ "notes": [
+  "Gen 6+ Soak fails on a Pokémon that is pure Water already (`-fail|target`, `null`: it counts as failed, so Stomping Tantrum doubles) and on Arceus, whose types are locked"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Slowbro",
+    "species": "Slowbro",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Soak",
+     "Stomping Tantrum"
+    ],
+    "gender": "M",
+    "ability": "Oblivious"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Vaporeon",
+    "species": "Vaporeon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Hydration"
+   },
+   {
+    "label": "Arceus",
+    "species": "Arceus",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Multitype"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Soak",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Stomping Tantrum",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Stomping Tantrum",
+   "p2": "switch Arceus"
+  },
+  {
+   "p1": "move Soak",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Stomping Tantrum",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

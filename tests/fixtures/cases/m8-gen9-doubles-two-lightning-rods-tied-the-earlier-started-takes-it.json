@@ -1,0 +1,158 @@
+{
+  "schema": 1,
+  "id": "m8-gen9-doubles-two-lightning-rods-tied-the-earlier-started-takes-it",
+  "notes": [
+    "Gen 9 doubles, minimized from Nightly 158's m8-gen9-doubles-s1512-006. Latios transformed into Geodude (Lightning Rod), so two Lightning Rods stand at the same Speed (Transform copies the stats). Hippopotas's Electro Drift is aimed at Geodude: Showdown's `priorityEvent('RedirectTarget')` sorts the handlers by priority, then speed, then the holder's `abilityState.effectOrder` (`compareRedirectOrder`), and the first that names a target decides. Geodude's ability state started before Latios's (the Transform started a new one), so Geodude keeps the move itself and Latios's handler never runs (DESIGN.md R-M8-182)."
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Salandit",
+        "species": "Salandit",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Explosion"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Latios",
+        "species": "Latios",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Brutal Swing",
+          "Conversion 2",
+          "Bulldoze",
+          "Transform"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Cryogonal",
+        "species": "Cryogonal",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Self-Destruct",
+          "Conversion 2",
+          "Boomburst",
+          "Transform"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Hippopotas",
+        "species": "Hippopotas",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Electro Drift"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Cyndaquil",
+        "species": "Cyndaquil",
+        "level": 54,
+        "nature": "Hardy",
+        "moves": [
+          "Venoshock",
+          "Conversion 2",
+          "Grav Apple"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Barraskewda",
+        "species": "Barraskewda",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Psyblade",
+          "Conversion 2",
+          "Retaliate"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Mismagius",
+        "species": "Mismagius",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Brine",
+          "Transform"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Geodude",
+        "species": "Geodude",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fusion Bolt",
+          "Conversion 2",
+          "Transform"
+        ],
+        "ability": "Lightning Rod",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      54984,
+      35216,
+      37830,
+      10110
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Explosion, move Brutal Swing",
+      "p2": "move Venoshock 1, move Psyblade 2"
+    },
+    {
+      "p1": "switch Cryogonal, pass"
+    },
+    {
+      "p1": "move Conversion 2 1, move Conversion 2 2",
+      "p2": "move Conversion 2 1, move Conversion 2 2"
+    },
+    {
+      "p1": "move Boomburst, move Bulldoze",
+      "p2": "move Grav Apple 1, move Retaliate 2"
+    },
+    {
+      "p2": "switch Mismagius, switch Geodude"
+    },
+    {
+      "p1": "move Transform 1, move Transform 2",
+      "p2": "move Transform 1, move Transform 2"
+    },
+    {
+      "p1": "switch Hippopotas, move 1 1",
+      "p2": "move 1, move 1 1"
+    },
+    {
+      "p1": "move Electro Drift 2, move Conversion 2 2",
+      "p2": "pass, move Conversion 2 2"
+    }
+  ]
+}

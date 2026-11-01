@@ -1,0 +1,59 @@
+{
+ "schema": 1,
+ "id": "gen7-z-move-genesis-supernova",
+ "notes": [
+  "Gen 7: Mew with a Mewnium Z turns Psychic into 起源超新星大爆炸 (Genesis Supernova): after the hit the field becomes Psychic Terrain (its `secondary.self.onHit`), which shows in the frames and boosts the next Psychic"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Psychic",
+     "Harden"
+    ],
+    "ability": "Synchronize",
+    "item": "Mewnium Z"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1 zmove",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,152 @@
+{
+ "schema": 1,
+ "id": "gen9-bug-bite-and-pluck-eat-the-targets-berry",
+ "notes": [
+  "Gen 9: Scizor's Bug Bite takes Snorlax's Sitrus Berry and eats it (Scizor heals a quarter), so Belch is open to it; Pluck takes nothing from Sticky Hold; Pluck eats Chansey's Cheri Berry and cures Scizor's paralysis; Bug Bite leaves Lapras's Leftovers (not a berry); a Rawst Berry Pluck eats does nothing for a paralysis"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Scizor",
+    "species": "Scizor",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Bug Bite",
+     "Pluck",
+     "Belch",
+     "Harden"
+    ],
+    "ability": "Light Metal"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Sitrus Berry"
+   },
+   {
+    "label": "Muk",
+    "species": "Muk",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Sticky Hold",
+    "item": "Lum Berry"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Thunder Wave",
+     "Harden"
+    ],
+    "ability": "Natural Cure",
+    "item": "Cheri Berry"
+   },
+   {
+    "label": "Lapras",
+    "species": "Lapras",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Thunder Wave",
+     "Harden"
+    ],
+    "ability": "Water Absorb",
+    "item": "Leftovers"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Natural Cure",
+    "item": "Rawst Berry"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Bug Bite",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Belch",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Muk"
+  },
+  {
+   "p1": "move Pluck",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Chansey"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Thunder Wave"
+  },
+  {
+   "p1": "move Pluck",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Lapras"
+  },
+  {
+   "p1": "move Bug Bite",
+   "p2": "move Thunder Wave"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Blissey"
+  },
+  {
+   "p1": "move Pluck",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

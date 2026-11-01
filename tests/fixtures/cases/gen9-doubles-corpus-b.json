@@ -1,0 +1,319 @@
+{
+  "schema": 1,
+  "id": "gen9-doubles-corpus-b",
+  "notes": [
+    "M5 corpus B: a second full six-on-six doubles battle from the deterministic policy, built around partner interactions: Helping Hand, Battery and Power Spot boosting the partner's BasePower chain, Friend Guard at the ModifyDamage step, Telepathy against the partner's Earthquake and Discharge, Follow Me, Tailwind, spread moves and simultaneous replacements.",
+    "corpus: 32 script entries, 25 turns, winner P2"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "gar",
+        "species": "Garchomp",
+        "ability": "Rough Skin",
+        "item": "Life Orb",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Earthquake",
+          "Dragon Claw",
+          "Protect",
+          "Rock Slide"
+        ]
+      },
+      {
+        "label": "meta",
+        "species": "Metagross",
+        "ability": "Telepathy",
+        "item": "Leftovers",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Iron Head",
+          "Helping Hand",
+          "Protect",
+          "Zen Headbutt"
+        ]
+      },
+      {
+        "label": "pika",
+        "species": "Raichu",
+        "ability": "Battery",
+        "item": "Magnet",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Thunderbolt",
+          "Discharge",
+          "Helping Hand",
+          "Protect"
+        ]
+      },
+      {
+        "label": "clef",
+        "species": "Clefable",
+        "ability": "Friend Guard",
+        "item": "Leftovers",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Follow Me",
+          "Moonblast",
+          "Helping Hand",
+          "Icy Wind"
+        ]
+      },
+      {
+        "label": "talon",
+        "species": "Talonflame",
+        "ability": "Flame Body",
+        "item": "Heavy-Duty Boots",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tailwind",
+          "Brave Bird",
+          "Heat Wave",
+          "Protect"
+        ]
+      },
+      {
+        "label": "rotom",
+        "species": "Rotom",
+        "ability": "Levitate",
+        "item": "Leftovers",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Thunderbolt",
+          "Will-O-Wisp",
+          "Protect",
+          "Discharge"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "gyara",
+        "species": "Gyarados",
+        "ability": "Intimidate",
+        "item": "Leftovers",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Waterfall",
+          "Icy Wind",
+          "Helping Hand",
+          "Protect"
+        ]
+      },
+      {
+        "label": "stone",
+        "species": "Tyranitar",
+        "ability": "Power Spot",
+        "item": "Leftovers",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Rock Slide",
+          "Crunch",
+          "Helping Hand",
+          "Protect"
+        ]
+      },
+      {
+        "label": "swamp",
+        "species": "Gastrodon",
+        "ability": "Storm Drain",
+        "item": "Leftovers",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Muddy Water",
+          "Earth Power",
+          "Protect",
+          "Icy Wind"
+        ]
+      },
+      {
+        "label": "inci",
+        "species": "Incineroar",
+        "ability": "Intimidate",
+        "item": "Leftovers",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Flare Blitz",
+          "Snarl",
+          "Protect",
+          "U-turn"
+        ]
+      },
+      {
+        "label": "lax",
+        "species": "Snorlax",
+        "ability": "Friend Guard",
+        "item": "Silk Scarf",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Body Slam",
+          "Crunch",
+          "Protect",
+          "Earthquake"
+        ]
+      },
+      {
+        "label": "hatt",
+        "species": "Hatterene",
+        "ability": "Telepathy",
+        "item": "Leftovers",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Dazzling Gleam",
+          "Psychic",
+          "Trick Room",
+          "Protect"
+        ]
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      31,
+      32,
+      33,
+      34
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1, move 1 1",
+      "p2": "move 1 1, move 1"
+    },
+    {
+      "p1": "move 2 2, move 2 -1",
+      "p2": "move 2, move 2 2"
+    },
+    {
+      "p1": "switch 3, pass"
+    },
+    {
+      "p1": "move 3 -2, move 3",
+      "p2": "move 3 -2, move 3 -1"
+    },
+    {
+      "p1": "move 4, move 4 1",
+      "p2": "move 4, move 4"
+    },
+    {
+      "p1": "switch 4, move 1 2",
+      "p2": "switch 3, move 1"
+    },
+    {
+      "p2": "pass, switch 3"
+    },
+    {
+      "p1": "move 1, move 2 -1",
+      "p2": "move 1, move 2"
+    },
+    {
+      "p1": "move 2 1, move 3",
+      "p2": "move 2 1, move 3 -1"
+    },
+    {
+      "p1": "switch 4, pass"
+    },
+    {
+      "p1": "move 3 -2, move 4 2",
+      "p2": "move 3, move 4"
+    },
+    {
+      "p1": "move 4, move 1 1",
+      "p2": "move 4, move 1 2"
+    },
+    {
+      "p1": "switch 5, move 2 -1",
+      "p2": "switch 4, move 2"
+    },
+    {
+      "p1": "move 1, move 3",
+      "p2": "move 1 1, move 3 -1"
+    },
+    {
+      "p1": "move 2 2, move 4 1",
+      "p2": "move 2, move 4"
+    },
+    {
+      "p1": "move 3, move 1 2",
+      "p2": "move 3, move 1 2"
+    },
+    {
+      "p1": "pass, switch 5"
+    },
+    {
+      "p1": "move 4, move 2",
+      "p2": "move 4 1, move 2"
+    },
+    {
+      "p1": "switch 6, move 3 -1",
+      "p2": "switch 4, move 3 -1"
+    },
+    {
+      "p1": "move 1 1, move 4",
+      "p2": "move 1, move 4"
+    },
+    {
+      "p1": "move 2 2, move 1 1",
+      "p2": "move 2 2, move 1 1"
+    },
+    {
+      "p1": "pass, switch 6"
+    },
+    {
+      "p1": "move 3, move 2 2",
+      "p2": "move 3, move 2"
+    },
+    {
+      "p2": "pass, switch 4"
+    },
+    {
+      "p1": "move 4, move 3",
+      "p2": "move 4, move 3"
+    },
+    {
+      "p1": "move 1 1, pass",
+      "p2": "switch 5, move 4 1"
+    },
+    {
+      "p2": "pass, switch 5"
+    },
+    {
+      "p1": "move 2 2, pass",
+      "p2": "move 1 1, move 1"
+    },
+    {
+      "p1": "move 3, pass",
+      "p2": "move 2 1, move 2 1"
+    },
+    {
+      "p1": "move 4, pass",
+      "p2": "move 3, move 3"
+    },
+    {
+      "p1": "move 1 1, pass",
+      "p2": "move 4, move 4"
+    },
+    {
+      "p1": "move 2 2, pass",
+      "p2": "switch 5, move 1"
+    }
+  ]
+}

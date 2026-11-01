@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "gen8-doubles-mold-breaker-context-ends-with-the-move",
+ "notes": [
+  "Gen 8 doubles: Excadrill's Mold Breaker Flamethrower ignores Snorlax's Thick Fat; its partner's Flamethrower right after is halved again (the move's context ended with its action)"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "doubles",
+  "format": "gen8doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Excadrill",
+    "species": "Excadrill",
+    "level": 55,
+    "nature": "Hardy",
+    "moves": [
+     "Flamethrower"
+    ],
+    "gender": "M",
+    "ability": "Mold Breaker"
+   },
+   {
+    "label": "Partner",
+    "species": "Excadrill",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Flamethrower"
+    ],
+    "gender": "M",
+    "ability": "Sand Rush"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Flamethrower 1, move Flamethrower 1",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

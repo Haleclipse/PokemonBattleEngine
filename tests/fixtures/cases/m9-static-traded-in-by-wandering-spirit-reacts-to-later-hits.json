@@ -1,0 +1,152 @@
+{
+ "schema": 1,
+ "id": "m9-static-traded-in-by-wandering-spirit-reacts-to-later-hits",
+ "notes": [
+  "R-M9-35: Joltik's Arm Thrust hits Mudbray, holding Wandering Spirit, whose trade on the first hit hands it Joltik's Static: the later hits meet Static's contact reaction. The replay planned none. Minimized from Nightly 20261020-213753 (m8-gen8-doubles-s1562-017)."
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "doubles",
+  "format": "gen8doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Slowpoke",
+    "species": "Slowpoke",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Pin Missile",
+     "Poison Fang",
+     "Fury Attack"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Umbreon",
+    "species": "Umbreon",
+    "level": 45,
+    "nature": "Hardy",
+    "moves": [
+     "Triple Axel",
+     "Poison Fang",
+     "Rock Blast"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Mudbray",
+    "species": "Mudbray",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Water Shuriken",
+     "Poison Fang",
+     "Fury Swipes"
+    ],
+    "ability": "Static",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Porygon2",
+    "species": "Porygon2",
+    "level": 49,
+    "nature": "Hardy",
+    "moves": [
+     "Icicle Spear",
+     "Poison Fang",
+     "Dragon Darts"
+    ],
+    "ability": "Run Away",
+    "item": "Power Band"
+   },
+   {
+    "label": "Shelgon",
+    "species": "Shelgon",
+    "level": 48,
+    "nature": "Hardy",
+    "moves": [
+     "Bonemerang",
+     "Poison Fang",
+     "Tail Slap"
+    ],
+    "ability": "Solid Rock",
+    "item": "Berry Juice",
+    "gender": "M"
+   },
+   {
+    "label": "Morelull",
+    "species": "Morelull",
+    "level": 48,
+    "nature": "Hardy",
+    "moves": [
+     "Dual Wingbeat"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Joltik",
+    "species": "Joltik",
+    "level": 45,
+    "nature": "Hardy",
+    "moves": [
+     "Poison Fang",
+     "Arm Thrust"
+    ],
+    "ability": "Wandering Spirit",
+    "gender": "F"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   61126,
+   28740,
+   46987,
+   8608
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Pin Missile 1, move Triple Axel 2",
+   "p2": "move Icicle Spear 1, move Bonemerang 2"
+  },
+  {
+   "p1": "move Poison Fang 1, move Poison Fang 2",
+   "p2": "move Poison Fang 1, move Poison Fang 2"
+  },
+  {
+   "p1": "move Fury Attack 1, move Rock Blast 2",
+   "p2": "move Dragon Darts 1, move Tail Slap 2"
+  },
+  {
+   "p1": "switch Mudbray, move Triple Axel 1",
+   "p2": "switch Morelull, move Bonemerang 1"
+  },
+  {
+   "p2": "switch Porygon2, pass"
+  },
+  {
+   "p1": "move Water Shuriken 2, move Poison Fang 1",
+   "p2": "move Icicle Spear 2, move Poison Fang 1"
+  },
+  {
+   "p2": "pass, switch Joltik"
+  },
+  {
+   "p1": "move Poison Fang 2, move Rock Blast 1",
+   "p2": "move Poison Fang 2, move Poison Fang 1"
+  },
+  {
+   "p1": "move Fury Swipes 2, move Triple Axel 1",
+   "p2": "move Dragon Darts 2, move Arm Thrust 1"
+  }
+ ]
+}

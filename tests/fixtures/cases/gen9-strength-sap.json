@@ -1,0 +1,82 @@
+{
+ "schema": 1,
+ "id": "gen9-strength-sap",
+ "notes": [
+  "Strength Sap: the user heals by the target's Attack at its stage (read before the drop), which then falls by 1 \u2014 at -1 it heals less; against Clear Body the drop is refused but the heal stays"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sap",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Strength Sap",
+     "Belly Drum",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Super Fang",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Guard",
+    "species": "Metagross",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Clear Body"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Belly Drum",
+   "p2": "move Super Fang"
+  },
+  {
+   "p1": "move Strength Sap",
+   "p2": "move Super Fang"
+  },
+  {
+   "p1": "move Strength Sap",
+   "p2": "move Super Fang"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Guard"
+  },
+  {
+   "p1": "move Strength Sap",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

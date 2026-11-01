@@ -1,0 +1,84 @@
+{
+ "schema": 1,
+ "id": "gen9-enigma-berry",
+ "notes": [
+  "Gen 9 Enigma Berry (Showdown `onHit`): Hariyama's Double Kick is super effective on Snorlax; after its first hit Snorlax eats the berry and restores a quarter of its max HP, then takes the second",
+  "Appletun's Ripen doubles its Enigma Berry's heal against Hariyama's super effective Poison Jab; Tackle sets off nothing"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Enigma Berry",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Appletun",
+    "species": "Appletun",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Enigma Berry",
+    "ability": "Ripen"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Hariyama",
+    "species": "Hariyama",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Double Kick",
+     "Poison Jab",
+     "Tackle"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Double Kick"
+  },
+  {
+   "p1": "switch Appletun",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Poison Jab"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

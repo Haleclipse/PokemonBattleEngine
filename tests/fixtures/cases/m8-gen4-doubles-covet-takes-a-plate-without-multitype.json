@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "id": "m8-gen4-doubles-covet-takes-a-plate-without-multitype",
+  "notes": [
+    "Nightly 61: Treecko's Covet takes the Fist Plate from an Arceus without Multitype (gen4 Plates onTakeItem: true; pokeplatinum BtlCmd_TryStealItem refuses only Multitype) (DESIGN.md R-M8-105)",
+    "promoted from m8-gen4-doubles-s539-000-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "doubles",
+    "format": "gen4doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Arceus",
+        "species": "Arceus",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Hydro Pump"
+        ],
+        "ability": "Run Away",
+        "item": "Fist Plate"
+      },
+      {
+        "label": "Poliwhirl",
+        "species": "Poliwhirl",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Magical Leaf"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Treecko",
+        "species": "Treecko",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Covet"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Victreebel",
+        "species": "Victreebel",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Rage"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      2326,
+      15828,
+      53827,
+      36558
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Hydro Pump 1, move Magical Leaf 2",
+      "p2": "move Covet 1, move Rage 2"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "id": "gen8-petal-dance-lock-lost-to-sleep",
+  "notes": [
+    "Gen 8 Petal Dance: the lock goes on into the end of its second turn, where Yawn puts its user to sleep and the lock is gone silently (lockedmove.onResidual) — the replay reads its length as 3, not 2 (the 32nd Nightly)",
+    "promoted from m8-gen8-singles-s429-004-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 8,
+    "mode": "singles",
+    "format": "gen8customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Skrelp",
+        "species": "Skrelp",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Yawn",
+          "Torment"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Suicune",
+        "species": "Suicune",
+        "level": 45,
+        "nature": "Hardy",
+        "moves": [
+          "Petal Dance"
+        ],
+        "ability": "Run Away"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      32092,
+      28892,
+      40260,
+      48437
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Yawn",
+      "p2": "move Petal Dance"
+    },
+    {
+      "p1": "move Torment",
+      "p2": "move Petal Dance"
+    }
+  ]
+}

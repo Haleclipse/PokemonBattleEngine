@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "id": "gen9-singles-shed-skin",
+  "notes": [
+    "Shed Skin: a 33 % end-of-turn roll cures the holder's status (`-activate … ability: Shed Skin`, `-curestatus`), before Leftovers would heal; the replay plans the roll from the turn's closing events."
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "a",
+        "species": "Seviper",
+        "ability": "Shed Skin",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Swords Dance"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "b",
+        "species": "Snorlax",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Thunder Wave"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      7,
+      2,
+      3,
+      4
+    ]
+  }
+}

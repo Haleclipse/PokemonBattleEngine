@@ -1,0 +1,89 @@
+{
+ "schema": 1,
+ "id": "gen6-weakness-policy",
+ "notes": [
+  "Gen 6 Weakness Policy (Showdown `onDamagingHit`: a super-effective hit that is not fixed damage, `useItem`, Attack and Special Attack +2): Machamp's Seismic Toss on Snorlax leaves it held; its Karate Chop spends it; then on Lapras behind a Substitute nothing happens"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Weakness Policy",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Lapras",
+    "species": "Lapras",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Substitute",
+     "Harden"
+    ],
+    "item": "Weakness Policy",
+    "ability": "Water Absorb"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Machamp",
+    "species": "Machamp",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Karate Chop",
+     "Thunder Shock",
+     "Harden"
+    ],
+    "ability": "Guts"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Karate Chop"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Substitute",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Thunder Shock"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

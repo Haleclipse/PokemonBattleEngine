@@ -1,0 +1,86 @@
+{
+ "schema": 1,
+ "id": "gen9-eject-pack-waits-for-an-eject-button",
+ "notes": [
+  "Gen 9 Eject Pack refused (Showdown `onUseItem`: a `switchFlag` of `true` on the field): Hydreigon's Draco Meteor lowers its own Special Attack, but Snorlax's Eject Button has already ordered Snorlax out, so the pack waits \u2014 and is used as Gyarados comes in for Snorlax (`onAnySwitchIn`)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hydreigon",
+    "species": "Hydreigon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Draco Meteor",
+     "Harden"
+    ],
+    "item": "Eject Pack",
+    "ability": "Levitate"
+   },
+   {
+    "label": "Corviknight",
+    "species": "Corviknight",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Pressure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Eject Button",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Gyarados",
+    "species": "Gyarados",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Moxie"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Draco Meteor",
+   "p2": "move Harden"
+  },
+  {
+   "p2": "switch Gyarados"
+  },
+  {
+   "p1": "switch Corviknight"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

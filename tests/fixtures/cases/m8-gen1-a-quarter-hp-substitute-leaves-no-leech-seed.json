@@ -1,0 +1,300 @@
+{
+  "schema": 1,
+  "id": "m8-gen1-a-quarter-hp-substitute-leaves-no-leech-seed",
+  "notes": [
+    "Gen 1: Farfetch'd, seeded, uses Substitute at exactly a quarter of its HP and faints at 0; useMove runs AfterMoveSelf only while the move's target — the user, for a move aimed at it — stands, so Leech Seed heals Blastoise nothing (DESIGN.md R-M8-127)",
+    "promoted from m8-gen1-singles-s635-001-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 1,
+    "mode": "singles",
+    "format": "gen1customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Kadabra",
+        "species": "Kadabra",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Pay Day",
+          "Substitute",
+          "Self-Destruct",
+          "Leech Seed"
+        ]
+      },
+      {
+        "label": "Rhyhorn",
+        "species": "Rhyhorn",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Egg Bomb",
+          "Substitute",
+          "Rock Throw",
+          "Leech Seed"
+        ]
+      },
+      {
+        "label": "Farfetch’d",
+        "species": "Farfetch’d",
+        "level": 49,
+        "nature": "Hardy",
+        "moves": [
+          "Tri Attack",
+          "Substitute",
+          "Recover",
+          "Leech Seed"
+        ]
+      },
+      {
+        "label": "Magneton",
+        "species": "Magneton",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Soft-Boiled",
+          "Substitute",
+          "Dream Eater"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "Blastoise",
+        "species": "Blastoise",
+        "level": 45,
+        "nature": "Hardy",
+        "moves": [
+          "Stun Spore",
+          "Substitute",
+          "Thunder Wave",
+          "Leech Seed"
+        ]
+      },
+      {
+        "label": "Dodrio",
+        "species": "Dodrio",
+        "level": 48,
+        "nature": "Hardy",
+        "moves": [
+          "Smog",
+          "Substitute",
+          "Sludge",
+          "Leech Seed"
+        ]
+      },
+      {
+        "label": "Vileplume",
+        "species": "Vileplume",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Substitute",
+          "Poison Sting"
+        ]
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      58067,
+      58455,
+      57910,
+      55091
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Pay Day",
+      "p2": "move Stun Spore"
+    },
+    {
+      "p1": "move Substitute",
+      "p2": "move Substitute"
+    },
+    {
+      "p1": "move Self-Destruct",
+      "p2": "move Thunder Wave"
+    },
+    {
+      "p1": "switch Rhyhorn",
+      "p2": "switch Dodrio"
+    },
+    {
+      "p1": "move Leech Seed",
+      "p2": "move Leech Seed"
+    },
+    {
+      "p1": "move Egg Bomb",
+      "p2": "move Smog"
+    },
+    {
+      "p1": "move Substitute",
+      "p2": "move Substitute"
+    },
+    {
+      "p1": "switch Kadabra",
+      "p2": "switch Blastoise"
+    },
+    {
+      "p1": "move Self-Destruct",
+      "p2": "move Thunder Wave"
+    },
+    {
+      "p1": "move Leech Seed",
+      "p2": "move Leech Seed"
+    },
+    {
+      "p1": "move Pay Day",
+      "p2": "move Stun Spore"
+    },
+    {
+      "p1": "switch Rhyhorn",
+      "p2": "switch Dodrio"
+    },
+    {
+      "p1": "move Substitute",
+      "p2": "move Substitute"
+    },
+    {
+      "p1": "move Rock Throw",
+      "p2": "move Sludge"
+    },
+    {
+      "p1": "move Leech Seed",
+      "p2": "move Leech Seed"
+    },
+    {
+      "p1": "switch Kadabra",
+      "p2": "switch Blastoise"
+    },
+    {
+      "p1": "move Pay Day",
+      "p2": "move Stun Spore"
+    },
+    {
+      "p1": "move Substitute",
+      "p2": "move Substitute"
+    },
+    {
+      "p1": "move Self-Destruct",
+      "p2": "move Thunder Wave"
+    },
+    {
+      "p1": "switch Rhyhorn",
+      "p2": "switch Dodrio"
+    },
+    {
+      "p1": "move Leech Seed",
+      "p2": "move Leech Seed"
+    },
+    {
+      "p1": "move Egg Bomb",
+      "p2": "move Smog"
+    },
+    {
+      "p1": "move Substitute",
+      "p2": "move Substitute"
+    },
+    {
+      "p1": "switch Kadabra"
+    },
+    {
+      "p1": "switch Farfetch’d",
+      "p2": "switch Blastoise"
+    },
+    {
+      "p1": "move Recover",
+      "p2": "move Thunder Wave"
+    },
+    {
+      "p1": "move Leech Seed",
+      "p2": "move Leech Seed"
+    },
+    {
+      "p1": "move Tri Attack",
+      "p2": "move Stun Spore"
+    },
+    {
+      "p1": "switch Kadabra",
+      "p2": "switch Dodrio"
+    },
+    {
+      "p1": "move Self-Destruct",
+      "p2": "move Sludge"
+    },
+    {
+      "p1": "switch Farfetch’d"
+    },
+    {
+      "p1": "move Leech Seed",
+      "p2": "move Leech Seed"
+    },
+    {
+      "p1": "switch Magneton",
+      "p2": "switch Blastoise"
+    },
+    {
+      "p1": "move Soft-Boiled",
+      "p2": "move Stun Spore"
+    },
+    {
+      "p1": "move Dream Eater",
+      "p2": "move Thunder Wave"
+    },
+    {
+      "p1": "switch Farfetch’d",
+      "p2": "switch Dodrio"
+    },
+    {
+      "p1": "move Leech Seed",
+      "p2": "move Leech Seed"
+    },
+    {
+      "p1": "move Tri Attack",
+      "p2": "move Smog"
+    },
+    {
+      "p2": "switch Blastoise"
+    },
+    {
+      "p1": "move Substitute",
+      "p2": "move Substitute"
+    },
+    {
+      "p1": "move Leech Seed",
+      "p2": "move Leech Seed"
+    },
+    {
+      "p1": "switch Magneton",
+      "p2": "switch Vileplume"
+    },
+    {
+      "p1": "move Substitute",
+      "p2": "move Substitute"
+    },
+    {
+      "p1": "move Dream Eater",
+      "p2": "move Poison Sting"
+    },
+    {
+      "p1": "switch Farfetch’d",
+      "p2": "switch Blastoise"
+    },
+    {
+      "p1": "move Leech Seed",
+      "p2": "move Leech Seed"
+    },
+    {
+      "p1": "move Tri Attack",
+      "p2": "move Stun Spore"
+    },
+    {
+      "p1": "move Substitute",
+      "p2": "move Substitute"
+    }
+  ]
+}

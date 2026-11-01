@@ -1,0 +1,115 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-supreme-overlord-counts-on-entry",
+ "notes": [
+  "Supreme Overlord counts the fallen as it comes in: the partner Magikarp fainting beside Kingambit leaves its Strength unboosted until it switches out and back (x1.1)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Kingambit",
+    "species": "Kingambit",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Strength",
+     "Protect"
+    ],
+    "ability": "Supreme Overlord"
+   },
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 1,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Body Slam"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Soft-Boiled",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Strength 1, move Harden",
+   "p2": "move Body Slam 2, move Harden"
+  },
+  {
+   "p1": "switch Mew"
+  },
+  {
+   "p1": "move Strength 1, move Harden",
+   "p2": "move Recover, move Harden"
+  },
+  {
+   "p1": "switch Blissey, move Harden",
+   "p2": "move Recover, move Harden"
+  },
+  {
+   "p1": "switch Kingambit, move Harden",
+   "p2": "move Recover, move Harden"
+  },
+  {
+   "p1": "move Strength 1, move Harden",
+   "p2": "move Recover, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

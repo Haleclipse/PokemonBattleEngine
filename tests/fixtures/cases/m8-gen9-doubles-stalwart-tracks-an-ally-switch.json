@@ -1,0 +1,228 @@
+{
+  "schema": 1,
+  "id": "m8-gen9-doubles-stalwart-tracks-an-ally-switch",
+  "notes": [
+    "Nightly 62: Klawf's Stalwart Hurricane goes at Tentacruel, its target when the action was queued (originalTarget), after Tentacruel's Ally Switch (DESIGN.md R-M8-106)",
+    "promoted from m8-gen9-doubles-s545-003-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Hitmontop",
+        "species": "Hitmontop",
+        "level": 52,
+        "nature": "Hardy",
+        "moves": [
+          "Jungle Healing",
+          "Mist",
+          "Strength Sap"
+        ],
+        "ability": "Motor Drive"
+      },
+      {
+        "label": "Eternatus",
+        "species": "Eternatus",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Reflect Type",
+          "Mist",
+          "Stockpile"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Rillaboom",
+        "species": "Rillaboom",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Aqua Ring",
+          "Mist",
+          "Magic Powder",
+          "Stuff Cheeks"
+        ],
+        "ability": "Solid Rock",
+        "item": "Iapapa Berry",
+        "gender": "F"
+      },
+      {
+        "label": "Tentacruel",
+        "species": "Tentacruel",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Ally Switch",
+          "Mist",
+          "Floral Healing"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Solosis",
+        "species": "Solosis",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Heal Pulse",
+          "Mist",
+          "Bleakwind Storm"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Klawf",
+        "species": "Klawf",
+        "level": 48,
+        "nature": "Hardy",
+        "moves": [
+          "Hurricane",
+          "Mist",
+          "Wildbolt Storm"
+        ],
+        "ability": "Stalwart",
+        "gender": "F"
+      },
+      {
+        "label": "Yanmega",
+        "species": "Yanmega",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Thunder",
+          "Mist",
+          "Sandsear Storm"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      49851,
+      29042,
+      1421,
+      37880
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Jungle Healing, move Reflect Type 1",
+      "p2": "move Heal Pulse 1, move Hurricane 2"
+    },
+    {
+      "p1": "move Mist, move Mist",
+      "p2": "move Mist, move Mist"
+    },
+    {
+      "p1": "move Strength Sap 2, move Stockpile",
+      "p2": "move Bleakwind Storm, move Wildbolt Storm"
+    },
+    {
+      "p1": "move Jungle Healing, move Reflect Type 1",
+      "p2": "move Heal Pulse 1, move Hurricane 2"
+    },
+    {
+      "p1": "move Mist, move Mist",
+      "p2": "move Mist, move Mist"
+    },
+    {
+      "p1": "move Strength Sap 2, move Stockpile",
+      "p2": "move Bleakwind Storm, move Wildbolt Storm"
+    },
+    {
+      "p1": "move Jungle Healing, move Reflect Type 1",
+      "p2": "move Heal Pulse 1, move Hurricane 2"
+    },
+    {
+      "p1": "move Mist, move Mist",
+      "p2": "move Mist, move Mist"
+    },
+    {
+      "p1": "switch Rillaboom, move Stockpile",
+      "p2": "switch Yanmega, move Wildbolt Storm"
+    },
+    {
+      "p1": "move Aqua Ring, move Reflect Type 2",
+      "p2": "move Sandsear Storm, move Hurricane 1"
+    },
+    {
+      "p1": "move Mist, move Mist",
+      "p2": "move Thunder 2, move Mist"
+    },
+    {
+      "p1": "move Magic Powder 1, move Stockpile",
+      "p2": "move Mist, move Wildbolt Storm"
+    },
+    {
+      "p1": "move Stuff Cheeks, move Reflect Type 2",
+      "p2": "move Sandsear Storm, move Hurricane 1"
+    },
+    {
+      "p1": "move Mist, move Stockpile",
+      "p2": "move Mist, move Wildbolt Storm"
+    },
+    {
+      "p1": "move Magic Powder 1, move Reflect Type 2",
+      "p2": "move Sandsear Storm, move Hurricane 1"
+    },
+    {
+      "p1": "switch Hitmontop, move Stockpile",
+      "p2": "switch Solosis, move Wildbolt Storm"
+    },
+    {
+      "p1": "move Mist, move Reflect Type 1",
+      "p2": "move Mist, move Hurricane 1"
+    },
+    {
+      "p1": "move Jungle Healing, move Stockpile",
+      "p2": "move Heal Pulse 2, move Wildbolt Storm"
+    },
+    {
+      "p1": "move Strength Sap 2, move Mist",
+      "p2": "move Bleakwind Storm, move Mist"
+    },
+    {
+      "p1": "switch Rillaboom, move Stockpile",
+      "p2": "switch Yanmega, move Wildbolt Storm"
+    },
+    {
+      "p1": "move Aqua Ring, move Reflect Type 1",
+      "p2": "move Thunder 2, move Hurricane 1"
+    },
+    {
+      "p1": "move Magic Powder 2, move Stockpile",
+      "p2": "move Sandsear Storm, move Wildbolt Storm"
+    },
+    {
+      "p1": "switch Hitmontop, pass"
+    },
+    {
+      "p1": "switch Tentacruel, move Stockpile",
+      "p2": "switch Solosis, move Wildbolt Storm"
+    },
+    {
+      "p1": "move Ally Switch, move Mist",
+      "p2": "move Heal Pulse 1, move Mist"
+    },
+    {
+      "p1": "move 2, move 3 2",
+      "p2": "move 2, move 3"
+    },
+    {
+      "p1": "move 3, move 1",
+      "p2": "move 3, move 1 2"
+    }
+  ]
+}

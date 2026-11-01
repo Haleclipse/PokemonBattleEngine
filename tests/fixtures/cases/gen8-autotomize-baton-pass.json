@@ -1,0 +1,76 @@
+{
+ "schema": 1,
+ "id": "gen8-autotomize-baton-pass",
+ "notes": [
+  "Autotomize's weight loss is not handed on by Baton Pass (the partner Bronzong takes Grass Knot at 100 power)"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Bronze",
+    "species": "Bronzong",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Autotomize",
+     "Baton Pass"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Heir",
+    "species": "Bronzong",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Grass Knot",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Autotomize",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Baton Pass",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Heir"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Grass Knot"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

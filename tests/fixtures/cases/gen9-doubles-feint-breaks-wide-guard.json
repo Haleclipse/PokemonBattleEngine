@@ -1,0 +1,81 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-feint-breaks-wide-guard",
+ "notes": [
+  "Gen 9 doubles: Feint on a foe takes its side's Wide Guard down, so the partner's Rock Slide lands"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Feint",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Golem",
+    "species": "Golem",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Rock Slide",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Wide Guard",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Feint 1, move Rock Slide",
+   "p2": "move Wide Guard, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

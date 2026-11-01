@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen6-fury-attack-on-a-focus-band-holder-a",
+ "notes": [
+  "Gen 6: Spearow holds Focus Band at low HP; Fury Attack's hits may each knock it out, so each may draw the band (planned optional on every hit: the damage-roll search tries rolls that would)"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Fury Attack"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Spearow",
+    "species": "Spearow",
+    "level": 37,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Keen Eye",
+    "item": "Focus Band"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Seismic Toss",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Fury Attack",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Fury Attack",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   8,
+   17,
+   26,
+   42
+  ]
+ }
+}

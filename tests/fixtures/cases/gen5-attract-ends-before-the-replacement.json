@@ -1,0 +1,92 @@
+{
+ "schema": 1,
+ "id": "gen5-attract-ends-before-the-replacement",
+ "notes": [
+  "From Gen 5 the residual's Update runs before the replacement request: the infatuation with the fallen Gardevoir is gone by then"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Lucario",
+    "species": "Lucario",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Leech Seed",
+     "Harden"
+    ],
+    "ability": "Inner Focus",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gardevoir",
+    "species": "Gardevoir",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Attract",
+     "Harden"
+    ],
+    "ability": "Synchronize",
+    "gender": "F",
+    "item": "Flame Orb"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Leech Seed",
+   "p2": "move Attract"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

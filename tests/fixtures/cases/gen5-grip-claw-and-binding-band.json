@@ -1,0 +1,122 @@
+{
+ "schema": 1,
+ "id": "gen5-grip-claw-and-binding-band",
+ "notes": [
+  "Gen 5 Grip Claw (Showdown `durationCallback`: 8, no roll): Magmortar's Fire Spin binds Snorlax for seven turns of chip",
+  "Binding Band (`boundDivisor` 8): Flareon's Fire Spin on the other Snorlax chips more"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Magmortar",
+    "species": "Magmortar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fire Spin",
+     "Harden"
+    ],
+    "item": "Grip Claw",
+    "ability": "Vital Spirit"
+   },
+   {
+    "label": "Flareon",
+    "species": "Flareon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fire Spin",
+     "Harden"
+    ],
+    "item": "Binding Band",
+    "ability": "Guts"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Snorlax2",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Fire Spin",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Flareon",
+   "p2": "switch Snorlax2"
+  },
+  {
+   "p1": "move Fire Spin",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

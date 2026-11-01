@@ -1,0 +1,77 @@
+{
+  "schema": 1,
+  "id": "m8-gen8-zoom-lens-on-a-move-reflected-at-its-user",
+  "notes": [
+    "Gen 8 doubles: Milcery's Leech Seed meets Clawitzer's Magic Coat and comes back at Milcery, inside Milcery's own action: Milcery has moved (no longer queued), so Clawitzer's Zoom Lens raises the 90% to 108% and no accuracy is drawn — the replay plans on a state where the actor's action has started (DESIGN.md R-M8-125)",
+    "promoted from m8-gen8-doubles-s626-001-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 8,
+    "mode": "doubles",
+    "format": "gen8doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Clawitzer",
+        "species": "Clawitzer",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Magic Coat"
+        ],
+        "ability": "Run Away",
+        "item": "Zoom Lens",
+        "gender": "F"
+      },
+      {
+        "label": "Cryogonal",
+        "species": "Cryogonal",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Leech Seed"
+        ],
+        "ability": "Run Away"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Milcery",
+        "species": "Milcery",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Leech Seed"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Noivern",
+        "species": "Noivern",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Leech Seed"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      40856,
+      43927,
+      18031,
+      4156
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Magic Coat, move Leech Seed 2",
+      "p2": "move Leech Seed 1, move Leech Seed 2"
+    }
+  ]
+}

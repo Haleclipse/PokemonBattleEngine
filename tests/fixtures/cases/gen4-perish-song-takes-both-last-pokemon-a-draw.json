@@ -1,0 +1,66 @@
+{
+ "schema": 1,
+ "id": "gen4-perish-song-takes-both-last-pokemon-a-draw",
+ "notes": [
+  "Perish Song's count runs out for both last Pok\u00e9mon in the same residual: the faints wait for the next handler's settling (Showdown `fieldEvent` calls `end` and moves on), so both go down together and Gen 4 calls it a draw"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Lapras",
+    "species": "Lapras",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Perish Song",
+     "Harden"
+    ],
+    "ability": "Water Absorb"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Immunity"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Perish Song",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,79 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-copycat-bite-flinches-before-another-hit",
+ "notes": [
+  "Gen 9 doubles: Mightyena's Bite, then Braixen's Copycat calls Bite at Lanturn, then Moltres's Hammer Arm hits it; Lanturn's `cant \u2026 flinch` is the Copycat's Bite's (the move the action used), not the Hammer Arm's (DESIGN.md R-M8-86)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Braixen",
+    "species": "Braixen",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Copycat",
+     "Splash"
+    ],
+    "ability": "Blaze",
+    "gender": "F"
+   },
+   {
+    "label": "Moltres",
+    "species": "Moltres",
+    "level": 35,
+    "nature": "Hardy",
+    "moves": [
+     "Hammer Arm",
+     "Splash"
+    ],
+    "ability": "Pressure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Mightyena",
+    "species": "Mightyena",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Bite",
+     "Splash"
+    ],
+    "ability": "Intimidate",
+    "gender": "M"
+   },
+   {
+    "label": "Lanturn",
+    "species": "Lanturn",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Volt Absorb",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Copycat, move Hammer Arm 2",
+   "p2": "move Bite 2, move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   17,
+   18,
+   19,
+   20
+  ]
+ }
+}

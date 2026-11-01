@@ -1,0 +1,62 @@
+{
+ "schema": 1,
+ "id": "gen1-haze-sleep",
+ "notes": [
+  "Gen 1 Haze on a slower sleeping foe: cured, it loses its action this turn (cannotmove); it attacks the next"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hazer",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Hypnosis",
+     "Haze",
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Hypnosis",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Haze",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

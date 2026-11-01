@@ -1,0 +1,67 @@
+{
+ "schema": 1,
+ "id": "gen8-autotomize-heavy-metal",
+ "notes": [
+  "Autotomize on a Heavy Metal Bronzong: 187 kg \u2192 87 kg \u2192 0.1 kg, which Heavy Metal doubles to 0.2 kg (the floor comes first); Joltik's Heat Crash (0.6 kg) goes from 40 to 80 power"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Bronze",
+    "species": "Bronzong",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Autotomize",
+     "Harden"
+    ],
+    "ability": "Heavy Metal"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Tick",
+    "species": "Joltik",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Heat Crash",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Heat Crash"
+  },
+  {
+   "p1": "move Autotomize",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Autotomize",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Heat Crash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

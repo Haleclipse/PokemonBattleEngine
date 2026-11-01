@@ -1,0 +1,55 @@
+{
+ "schema": 1,
+ "id": "gen7-z-move-signature-pikashunium",
+ "notes": [
+  "Gen 7: Pikachu-Original (the only forme a Pikashunium Z belongs to) uses Thunderbolt as 1000 万伏特 (10,000,000 Volt Thunderbolt), a 195-power special Z-Move"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Pikachu",
+    "species": "Pikachu-Original",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Thunderbolt",
+     "Harden"
+    ],
+    "ability": "Static",
+    "item": "Pikashunium Z"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1 zmove",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

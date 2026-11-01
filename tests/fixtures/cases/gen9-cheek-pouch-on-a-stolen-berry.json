@@ -1,0 +1,84 @@
+{
+ "schema": 1,
+ "id": "gen9-cheek-pouch-on-a-stolen-berry",
+ "notes": [
+  "Gen 9: Dedenne's Bug Bite on a Pomeg Berry (onEat: false) gives no Cheek Pouch heal and counts for nothing; on a Sitrus Berry it heals a quarter and Cheek Pouch a third, and Belch opens"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Dedenne",
+    "species": "Dedenne",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Bug Bite",
+     "Belch",
+     "Harden"
+    ],
+    "ability": "Cheek Pouch"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Harden"
+    ],
+    "ability": "Natural Cure",
+    "item": "Pomeg Berry"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Sitrus Berry"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Bug Bite",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Snorlax"
+  },
+  {
+   "p1": "move Bug Bite",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Belch",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

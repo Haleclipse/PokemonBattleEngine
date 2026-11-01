@@ -1,0 +1,72 @@
+{
+ "schema": 1,
+ "id": "gen4-crash-damage-from-the-would-be-damage",
+ "notes": [
+  "Gen 4 crash: half the damage High Jump Kick would have dealt when Protect stops it, and half Gastly's max HP when it is immune (`damage = target.maxhp`), capped at half the target's max HP"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hitmonlee",
+    "species": "Hitmonlee",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "High Jump Kick"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gastly",
+    "species": "Gastly",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Protect",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move High Jump Kick",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move High Jump Kick",
+   "p2": "switch Snorlax"
+  },
+  {
+   "p1": "move High Jump Kick",
+   "p2": "move Protect"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,58 @@
+{
+ "schema": 1,
+ "id": "gen9-conversion-2-on-good-as-gold-draws-nothing",
+ "notes": [
+  "Gen 9: Gholdengo's Good as Gold stops Conversion 2 (`-immune … [from] ability: Good as Gold`) before its `onHit`: no type is drawn though several would resist Gholdengo's last move"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Conversion 2"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gholdengo",
+    "species": "Gholdengo",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "ability": "Good as Gold"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Conversion 2",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Conversion 2",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

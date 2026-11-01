@@ -1,0 +1,86 @@
+{
+ "schema": 1,
+ "id": "gen4-gastro-acid-grounds-levitate-and-fails-on-a-substitute",
+ "notes": [
+  "Gen 4: Gastro Acid sets Gengar's Levitate aside, and Earthquake hits it (pokeplatinum `subscript_suppress_target_ability`, the same as Showdown)",
+  "Behind Bronzong's Substitute it fails: the Earthquake after it does not affect Bronzong (Levitate still counts)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Slowbro",
+    "species": "Slowbro",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Gastro Acid",
+     "Earthquake",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Own Tempo"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gengar",
+    "species": "Gengar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Levitate"
+   },
+   {
+    "label": "Bronzong",
+    "species": "Bronzong",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Substitute",
+     "Harden"
+    ],
+    "gender": "N",
+    "ability": "Levitate"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Gastro Acid",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Earthquake",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Bronzong"
+  },
+  {
+   "p1": "move Gastro Acid",
+   "p2": "move Substitute"
+  },
+  {
+   "p1": "move Earthquake",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

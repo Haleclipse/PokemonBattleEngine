@@ -1,0 +1,72 @@
+{
+ "schema": 1,
+ "id": "gen9-as-one-spectrier-boosts-special-attack-on-a-knockout",
+ "notes": [
+  "Gen 9: As One (Spectrier) announces As One and Unnerve and raises Special Attack when its move knocks a Pok\u00e9mon out (Grim Neigh); the Lum Berry of the next foe stays uneaten through its confusion"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Calyrex",
+    "species": "Calyrex-Shadow",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Confuse Ray"
+    ],
+    "ability": "As One (Spectrier)"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 1,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Swift Swim"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Lum Berry"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  },
+  {
+   "p2": "switch Snorlax"
+  },
+  {
+   "p1": "move Confuse Ray",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

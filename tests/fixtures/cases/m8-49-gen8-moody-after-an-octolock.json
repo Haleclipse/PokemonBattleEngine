@@ -1,0 +1,78 @@
+{
+ "schema": 1,
+ "id": "m8-49-gen8-moody-after-an-octolock",
+ "notes": [
+  "minimized from m8-gen8-singles-s465-000 (tools/minimize.py): boundary_5: Fling by Rhydon: semantic random override 3 for Sample outside [0, 2]"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Rhydon",
+    "species": "Rhydon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fling",
+     "Octolock",
+     "Present",
+     "Transform"
+    ],
+    "ability": "Moody",
+    "item": "Metronome",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Cramorant",
+    "species": "Cramorant",
+    "level": 52,
+    "nature": "Hardy",
+    "moves": [
+     "Autotomize",
+     "Transform",
+     "Guard Split",
+     "Worry Seed"
+    ],
+    "ability": "Pickup",
+    "gender": "F"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   116,
+   8203,
+   22554,
+   31361
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Fling",
+   "p2": "move Autotomize"
+  },
+  {
+   "p1": "move Octolock",
+   "p2": "move Transform"
+  },
+  {
+   "p1": "move 3",
+   "p2": "move 3"
+  },
+  {
+   "p1": "move 4",
+   "p2": "move 4"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  }
+ ]
+}

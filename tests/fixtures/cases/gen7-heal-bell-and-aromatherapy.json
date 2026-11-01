@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "gen7-heal-bell-and-aromatherapy",
+ "notes": [
+  "Gen 7: a Soundproof user's Heal Bell leaves its own bad poison (the gen7 mod skips every Soundproof holder) and, curing nobody, fails \u2014 the next Stomping Tantrum is doubled; Aromatherapy cures it, and with nothing left to cure fails too (the base's, from Gen 6)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Bell",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Heal Bell",
+     "Aromatherapy",
+     "Stomping Tantrum",
+     "Harden"
+    ],
+    "ability": "Soundproof"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Toxic",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Toxic"
+  },
+  {
+   "p1": "move Heal Bell",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Stomping Tantrum",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Aromatherapy",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Aromatherapy",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Stomping Tantrum",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

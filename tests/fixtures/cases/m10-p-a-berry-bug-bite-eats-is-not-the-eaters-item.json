@@ -1,0 +1,152 @@
+{
+  "schema": 1,
+  "id": "m10-p-a-berry-bug-bite-eats-is-not-the-eaters-item",
+  "notes": [
+    "Gen 4 doubles: Burmy's Bug Bite eats Kangaskhan's Mago Berry, whose heal names it on Burmy, which holds nothing of it (R-M10-40)",
+    "promoted from m9-gen4doublesou-s201-012-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "doubles",
+    "format": "gen4doublesou"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Kricketot",
+        "species": "Kricketot",
+        "ability": "Shed Skin",
+        "moves": [
+          "Endeavor"
+        ],
+        "nature": "Gentle",
+        "gender": "M",
+        "shiny": true,
+        "level": 100,
+        "evs": {
+          "hp": 196,
+          "atk": 4,
+          "def": 116,
+          "spa": 96,
+          "spd": 96,
+          "spe": 0
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        }
+      },
+      {
+        "label": "Burmy",
+        "species": "Burmy-Trash",
+        "ability": "Shed Skin",
+        "moves": [
+          "Bug Bite"
+        ],
+        "nature": "Serious",
+        "gender": "M",
+        "shiny": false,
+        "level": 100,
+        "evs": {
+          "hp": 108,
+          "atk": 0,
+          "def": 220,
+          "spa": 144,
+          "spd": 0,
+          "spe": 36
+        },
+        "ivs": {
+          "hp": 28,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        }
+      }
+    ],
+    "p2": [
+      {
+        "label": "Shedinja",
+        "species": "Shedinja",
+        "ability": "Wonder Guard",
+        "moves": [
+          "Scratch"
+        ],
+        "nature": "Quirky",
+        "gender": "",
+        "shiny": false,
+        "level": 100,
+        "evs": {
+          "hp": 220,
+          "atk": 36,
+          "def": 0,
+          "spa": 0,
+          "spd": 252,
+          "spe": 0
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 3,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        }
+      },
+      {
+        "label": "Kangaskhan",
+        "species": "Kangaskhan",
+        "item": "Mago Berry",
+        "ability": "Scrappy",
+        "moves": [
+          "Reversal"
+        ],
+        "nature": "Bashful",
+        "gender": "",
+        "shiny": false,
+        "level": 100,
+        "evs": {
+          "hp": 48,
+          "atk": 232,
+          "def": 24,
+          "spa": 116,
+          "spd": 88,
+          "spe": 0
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        },
+        "happiness": 133
+      }
+    ]
+  },
+  "preview": {
+    "p1": "team 146253",
+    "p2": "team 645231"
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      53331,
+      201,
+      1012,
+      31
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Endeavor 1, move Bug Bite 2",
+      "p2": "move Scratch 1, move Reversal 2"
+    }
+  ]
+}

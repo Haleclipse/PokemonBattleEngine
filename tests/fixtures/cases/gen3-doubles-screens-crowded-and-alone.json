@@ -1,0 +1,94 @@
+{
+ "schema": 1,
+ "id": "gen3-doubles-screens-crowded-and-alone",
+ "notes": [
+  "Doubles: Reflect / Light Screen on Mew's side weaken Strength and the spread Hyper Voice by chainModify(2, 3) in ModifyDamagePhase1; Magikarp faints and Mew meets them alone (alliesAndSelf (partners with HP): \u00d70.5 once Magikarp is down \u2014 already for the Hyper Voice (physical in Gen 3) that knocked it out first, target by target)"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "doubles",
+  "format": "gen3doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 10,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Reflect",
+     "Light Screen",
+     "Recover",
+     "Strength"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Lax",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Strength",
+     "Hyper Voice"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Lax2",
+    "species": "Snorlax",
+    "level": 59,
+    "nature": "Hardy",
+    "moves": [
+     "Strength",
+     "Hyper Voice"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Reflect",
+   "p2": "move Strength 2, move Strength 2"
+  },
+  {
+   "p1": "move Harden, move Light Screen",
+   "p2": "move Hyper Voice, move Strength 1"
+  },
+  {
+   "p1": "pass, move Recover",
+   "p2": "move Strength 2, move Hyper Voice"
+  },
+  {
+   "p1": "pass, move Recover",
+   "p2": "move Hyper Voice, move Strength 2"
+  },
+  {
+   "p1": "pass, move Recover",
+   "p2": "move Strength 2, move Strength 2"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   21223,
+   62120,
+   9887,
+   25876
+  ]
+ }
+}

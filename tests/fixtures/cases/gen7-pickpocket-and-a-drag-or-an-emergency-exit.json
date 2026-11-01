@@ -1,0 +1,113 @@
+{
+  "schema": 1,
+  "id": "gen7-pickpocket-and-a-drag-or-an-emergency-exit",
+  "notes": [
+    "Gen 7 Pickpocket takes nothing from Swift (no contact); Circle Throw drags Weavile out (forceSwitchFlag) before it can take anything; Golisopod's Double-Edge recoil sets off its Emergency Exit (switchFlag) and a fresh Weavile takes nothing"
+  ],
+  "battle": {
+    "generation": 7,
+    "mode": "singles",
+    "format": "gen7customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Weavile",
+        "species": "Weavile",
+        "level": 100,
+        "nature": "Hardy",
+        "moves": [
+          "Super Fang",
+          "Harden"
+        ],
+        "ability": "Pickpocket"
+      },
+      {
+        "label": "Fresh",
+        "species": "Weavile",
+        "level": 100,
+        "nature": "Hardy",
+        "moves": [
+          "Super Fang",
+          "Harden"
+        ],
+        "ability": "Pickpocket"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Snorlax",
+        "species": "Snorlax",
+        "level": 100,
+        "nature": "Hardy",
+        "moves": [
+          "Swift",
+          "Circle Throw",
+          "Harden"
+        ],
+        "ability": "Thick Fat",
+        "item": "Leftovers"
+      },
+      {
+        "label": "Golisopod",
+        "species": "Golisopod",
+        "level": 100,
+        "nature": "Hardy",
+        "moves": [
+          "Double-Edge",
+          "Harden"
+        ],
+        "ability": "Emergency Exit",
+        "item": "Leftovers"
+      },
+      {
+        "label": "Chansey",
+        "species": "Chansey",
+        "level": 100,
+        "nature": "Hardy",
+        "moves": [
+          "Harden"
+        ],
+        "ability": "Natural Cure"
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Harden",
+      "p2": "move Swift"
+    },
+    {
+      "p1": "move Harden",
+      "p2": "move Circle Throw"
+    },
+    {
+      "p1": "move Harden",
+      "p2": "move Harden"
+    },
+    {
+      "p1": "move Super Fang",
+      "p2": "switch Golisopod"
+    },
+    {
+      "p1": "move Harden",
+      "p2": "move Double-Edge"
+    },
+    {
+      "p2": "switch Chansey"
+    },
+    {
+      "p1": "move Harden",
+      "p2": "move Harden"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      3,
+      4,
+      5,
+      6
+    ]
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "schema": 1,
+  "id": "m8-gen6-doubles-parental-bond-ancient-power-boost-on-second-hit",
+  "notes": [
+    "Gen 6 doubles: Nidoran-F's Parental Bond Ancient Power raises its stats after the second hit: the shared roll of the five boosts is the second hit's, so the second hit uses the unboosted Special Attack (the replay plan, DESIGN.md R-M8-108)",
+    "promoted from m8-gen6-doubles-s550-004-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 6,
+    "mode": "doubles",
+    "format": "gen6doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Alomomola",
+        "species": "Alomomola",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Ominous Wind",
+          "Fiery Dance"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Exploud",
+        "species": "Exploud",
+        "level": 45,
+        "nature": "Hardy",
+        "moves": [
+          "Steel Wing",
+          "Meteor Mash"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Nidoran-F",
+        "species": "Nidoran-F",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Ancient Power"
+        ],
+        "ability": "Parental Bond"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Dusclops",
+        "species": "Dusclops",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Spit Up",
+          "Sucker Punch"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Tentacruel",
+        "species": "Tentacruel",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Bullet Seed",
+          "Bonemerang"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      10205,
+      11989,
+      39731,
+      61068
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Ominous Wind 1, move Steel Wing 2",
+      "p2": "move Spit Up 1, move Bullet Seed 2"
+    },
+    {
+      "p1": "move Fiery Dance 1, move Meteor Mash 2",
+      "p2": "move Sucker Punch 1, move Bonemerang 2"
+    },
+    {
+      "p1": "move Ominous Wind 1, move Steel Wing 2",
+      "p2": "move Spit Up 1, move Bullet Seed 2"
+    },
+    {
+      "p1": "move Ominous Wind 2, move Steel Wing 1",
+      "p2": "move Sucker Punch 1, move Bonemerang 2"
+    },
+    {
+      "p1": "pass, switch Nidoran-F"
+    },
+    {
+      "p1": "move Ominous Wind 1, move Ancient Power 2",
+      "p2": "move Spit Up 1, move Bullet Seed 2"
+    }
+  ]
+}

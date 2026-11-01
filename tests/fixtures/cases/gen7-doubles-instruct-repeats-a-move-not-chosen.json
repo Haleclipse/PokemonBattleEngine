@@ -1,0 +1,97 @@
+{
+ "schema": 1,
+ "id": "gen7-doubles-instruct-repeats-a-move-not-chosen",
+ "notes": [
+  "Gen 7 doubles: Oranguru instructs Snorlax, who chose Harden this turn: the injected action is Snorlax's last move, Tackle, at the foe it aimed at last time (`lastMoveTargetLoc`) — a damaging move with its own roll — and then Snorlax's Harden"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Oranguru",
+    "species": "Oranguru",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Instruct",
+     "Harden"
+    ],
+    "ability": "Inner Focus"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Tackle 2",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Instruct -2, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Tackle 2",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Instruct -2, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Tackle 2",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Instruct -2, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

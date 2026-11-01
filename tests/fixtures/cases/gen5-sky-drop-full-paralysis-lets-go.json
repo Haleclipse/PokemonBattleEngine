@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen5-sky-drop-full-paralysis-lets-go",
+ "notes": [
+  "Gen 5 Sky Drop's user fully paralysed on the dropping turn: the lock goes and with it the carried Pok\u00e9mon, down again without damage"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Lifter",
+    "species": "Braviary",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sky Drop",
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Prey",
+    "species": "Machamp",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Thunder Wave",
+     "Tackle"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Thunder Wave"
+  },
+  {
+   "p1": "move Sky Drop",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   3,
+   4,
+   5,
+   6
+  ]
+ }
+}

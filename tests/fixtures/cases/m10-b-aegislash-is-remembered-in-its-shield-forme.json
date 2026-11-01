@@ -1,0 +1,75 @@
+{
+ "schema": 1,
+ "id": "m10-b-aegislash-is-remembered-in-its-shield-forme",
+ "notes": [
+  "R-M10-19: Stance Change puts Aegislash in its Blade Forme for a move (`formeChange`, not permanent: `-formechange`), which leaving the field undoes: the other side remembers the Aegislash its details show, in its Shield Forme (the `Sighting` takes the species it battles as for good, not the forme of the moment)."
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Aegislash",
+    "species": "Aegislash",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Splash"
+    ],
+    "ability": "Stance Change",
+    "gender": "M"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  }
+ ]
+}

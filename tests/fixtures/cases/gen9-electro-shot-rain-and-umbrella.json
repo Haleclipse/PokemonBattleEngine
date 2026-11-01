@@ -1,0 +1,87 @@
+{
+ "schema": 1,
+ "id": "gen9-electro-shot-rain-and-umbrella",
+ "notes": [
+  "Gen 9 Electro Shot: without rain it charges (+1 Special Attack) and attacks the next turn; in the rain it still raises the stat and attacks at once; a Utility Umbrella holder does not see the rain and charges"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Shooter",
+    "species": "Archaludon",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Electro Shot",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Umbrella",
+    "species": "Archaludon",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Electro Shot",
+     "Harden"
+    ],
+    "ability": "Run Away",
+    "item": "Utility Umbrella"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Rainer",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Rain Dance",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Electro Shot",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Electro Shot",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Electro Shot",
+   "p2": "move Rain Dance"
+  },
+  {
+   "p1": "switch Umbrella",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Electro Shot",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Electro Shot",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

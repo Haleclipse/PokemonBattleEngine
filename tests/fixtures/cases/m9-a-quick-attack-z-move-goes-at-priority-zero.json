@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "m9-a-quick-attack-z-move-goes-at-priority-zero",
+ "notes": [
+  "R-M9-35: Showdown orders a Z-Move's action by the Z-Move's own priority (`getActionSpeed`: `dex.moves.get(zMove.id).priority`): Snorlax's Z-Quick Attack (Breakneck Blitz) goes at 0, after the faster Ambipom's Harden, though Quick Attack is +1."
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Quick Attack",
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Thick Fat",
+    "item": "Normalium Z"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Ambipom",
+    "species": "Ambipom",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Technician"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1 zmove",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,66 @@
+{
+ "schema": 1,
+ "id": "m9-a-flinched-z-move-keeps-the-z-power",
+ "notes": [
+  "R-M9-29: Showdown spends the Z power in `runMove` once BeforeMove and the PP let the move through (`-zpower`, `side.zMoveUsed`), and runs a status move's Z effect after the `move` line. Snorlax's Z-Splash is stopped by Ambipom's Fake Out flinch: no +3 Attack, and the side keeps its Z power, so its Z-Splash the next turn goes through."
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash",
+     "Tackle"
+    ],
+    "gender": "F",
+    "ability": "Thick Fat",
+    "item": "Normalium Z"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Ambipom",
+    "species": "Ambipom",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fake Out",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Technician"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1 zmove",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1 zmove",
+   "p2": "move 2"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 2"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

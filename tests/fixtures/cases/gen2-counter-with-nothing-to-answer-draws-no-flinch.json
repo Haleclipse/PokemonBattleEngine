@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "gen2-counter-with-nothing-to-answer-draws-no-flinch",
+ "notes": [
+  "Gen 2 Counter with King's Rock against a foe that has not hit it this turn fails (a bare `-fail|target`: the gen2 `moveHit` returns before the secondaries), so King's Rock draws no flinch; once it answers a hit it draws one (the 34th Nightly)"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Counterer",
+    "species": "Feraligatr",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Counter"
+    ],
+    "item": "King's Rock"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Hitter",
+    "species": "Dodrio",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Growl"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Counter",
+   "p2": "move Growl"
+  },
+  {
+   "p1": "move Counter",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Counter",
+   "p2": "move Growl"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

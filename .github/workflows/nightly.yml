@@ -1,0 +1,77 @@
+name: nightly
+
+# M8 DoD (ROADMAP §12, TESTING.md §6.5): differential campaigns against Showdown for a fixed
+# time. The run ends with pass metrics, the known (quarantined) disagreements and one minimized,
+# self-contained failure bundle per new signature — uploaded as the `m8-nightly` artifact; a new
+# signature turns the run red.
+on:
+  schedule:
+    - cron: '17 3 * * *'
+  workflow_dispatch:
+    inputs:
+      minutes:
+        description: time budget in minutes
+        default: '60'
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  differential:
+    name: differential campaigns
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: tools/oracle-node/package-lock.json
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: oracle dependencies (pinned @pkmn/sim)
+        run: npm ci
+        working-directory: tools/oracle-node
+      # The mechanic coverage and the next seed per rotation slot carry over from earlier nights.
+      - name: restore coverage
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            target/m8/coverage.json
+            target/m8/nightly-state.json
+          key: m8-nightly-${{ github.run_id }}
+          restore-keys: m8-nightly-
+      - name: campaigns
+        run: >-
+          python3 tools/nightly.py
+          --minutes ${{ inputs.minutes || 60 }}
+          --out target/m8/nightly
+          --seed-base $(( 100000 + ${{ github.run_number }} * 100 ))
+          --fail-on-new
+      - name: save coverage
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            target/m8/coverage.json
+            target/m8/nightly-state.json
+          key: m8-nightly-${{ github.run_id }}
+      - name: report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: m8-nightly
+          path: |
+            target/m8/nightly/nightly.md
+            target/m8/nightly/nightly.json
+            target/m8/nightly/*/summary.md
+            target/m8/nightly/*/results.json
+            target/m8/nightly/*/failures/
+          if-no-files-found: warn
+      - name: summary
+        if: always()
+        run: cat target/m8/nightly/nightly.md >> "$GITHUB_STEP_SUMMARY" || true

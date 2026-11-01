@@ -1,0 +1,73 @@
+{
+ "schema": 1,
+ "id": "gen5-sky-drop-misses-the-drop",
+ "notes": [
+  "Gen 5 Sky Drop against an evasive target: the carrying turn is sure to hit (`onModifyMove`), the drop is not \u2014 a missed drop lets the carried Pok\u00e9mon down (`onMoveFail`)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Lifter",
+    "species": "Braviary",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sky Drop",
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Dodger",
+    "species": "Machamp",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Double Team",
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move Sky Drop",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

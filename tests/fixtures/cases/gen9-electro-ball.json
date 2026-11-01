@@ -1,0 +1,80 @@
+{
+  "schema": 1,
+  "id": "gen9-singles-electro-ball",
+  "notes": [
+    "Electro Ball (DESIGN.md \u00a722.7): [40, 60, 80, 120, 150][min(user speed / target speed, 4)] against a slow Snorlax, after Agility, and against a faster Gengar."
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "a",
+        "species": "Jolteon",
+        "ability": "Volt Absorb",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Electro Ball",
+          "Agility"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "b",
+        "species": "Snorlax",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Swords Dance"
+        ]
+      },
+      {
+        "label": "c",
+        "species": "Gengar",
+        "ability": "Levitate",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Swords Dance"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "switch 2"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

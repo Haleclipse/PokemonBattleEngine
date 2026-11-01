@@ -1,0 +1,56 @@
+{
+ "schema": 1,
+ "id": "gen3-cute-charm-again-after-a-mental-herb",
+ "notes": [
+  "Gen 3: Illumise's Double Slap meets Clefairy's Cute Charm; its Mental Herb cures the infatuation at once and the later slaps' Cute Charm rolls fail — the replay plans the reaction that took on the hit it followed only (DESIGN.md R-M8-134)"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Clefairy",
+    "species": "Clefairy",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Cute Charm",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Illumise",
+    "species": "Illumise",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Double Slap"
+    ],
+    "item": "Mental Herb",
+    "ability": "Swarm",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash",
+   "p2": "move Double Slap"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   10,
+   11,
+   12,
+   13
+  ]
+ }
+}

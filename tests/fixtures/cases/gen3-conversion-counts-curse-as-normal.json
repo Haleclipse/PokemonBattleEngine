@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen3-conversion-counts-curse-as-normal",
+ "notes": [
+  "Gen 3 (§41.10 A1, cartridge): Curse counts as Normal, which Porygon2 has, so it becomes Electric; then, Electric, it becomes Normal — Curse's or Conversion's own slot, which Gen 3 does not leave out (I85: no patch, Showdown leaving Curse out comes to the same types)"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Porygon2",
+    "species": "Porygon2",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Conversion",
+     "Curse",
+     "Thunderbolt"
+    ],
+    "ability": "Trace"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Thunderbolt"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Conversion",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Conversion",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Thunderbolt",
+   "p2": "move Thunderbolt"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

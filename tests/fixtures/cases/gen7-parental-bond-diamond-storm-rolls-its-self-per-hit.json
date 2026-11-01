@@ -1,0 +1,66 @@
+{
+ "schema": 1,
+ "id": "gen7-parental-bond-diamond-storm-rolls-its-self-per-hit",
+ "notes": [
+  "Diamond Storm's 50% self boost (Showdown self.chance) rolls on each Parental Bond hit"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Diancie",
+    "species": "Diancie",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Diamond Storm"
+    ],
+    "ability": "Parental Bond"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Eviolite"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Diamond Storm",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Diamond Storm",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Diamond Storm",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Diamond Storm",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   17,
+   18,
+   19,
+   20
+  ]
+ }
+}

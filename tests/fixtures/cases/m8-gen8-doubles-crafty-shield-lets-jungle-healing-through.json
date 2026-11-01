@@ -1,0 +1,85 @@
+{
+  "schema": 1,
+  "id": "m8-gen8-doubles-crafty-shield-lets-jungle-healing-through",
+  "notes": [
+    "Gen 8 doubles: both sides put up Crafty Shield, then Raboot's and Spritzee's Jungle Healing heal their side: a move on the user's whole party goes through Crafty Shield (Bulbapedia's Howl: not blocked by protection moves, Crafty Shield included; the oracle's I186 patch — Showdown stops it on every member, the engine stopped it on the partner alone, DESIGN.md R-M8-110)",
+    "promoted from m8-gen8-doubles-s559-003-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 8,
+    "mode": "doubles",
+    "format": "gen8doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Metagross",
+        "species": "Metagross",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Muddy Water",
+          "Crafty Shield"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Raboot",
+        "species": "Raboot",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Jungle Healing",
+          "Breaking Swipe"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Frosmoth",
+        "species": "Frosmoth",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Aurora Beam",
+          "Crafty Shield"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Spritzee",
+        "species": "Spritzee",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Jungle Healing",
+          "Acid"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      58808,
+      59679,
+      37681,
+      36036
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Muddy Water, move Breaking Swipe",
+      "p2": "move Aurora Beam 2, move Acid"
+    },
+    {
+      "p1": "move Crafty Shield, move Jungle Healing",
+      "p2": "move Crafty Shield, move Jungle Healing"
+    }
+  ]
+}

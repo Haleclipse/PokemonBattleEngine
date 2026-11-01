@@ -1,0 +1,69 @@
+{
+ "schema": 1,
+ "id": "gen7-protean-protect-in-a-row-a",
+ "notes": [
+  "Gen 7: Greninja with Protean uses Protect (Normal by Protean), then Detect: the second stalling move rolls 1/3 in its own `onPrepareHit`, before Protean's — failed, it leaves Greninja Normal, not Fighting"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Greninja",
+    "species": "Greninja",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Protect",
+     "Detect",
+     "Water Gun"
+    ],
+    "gender": "M",
+    "ability": "Protean"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Water Gun",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Protect",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Detect",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Detect",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

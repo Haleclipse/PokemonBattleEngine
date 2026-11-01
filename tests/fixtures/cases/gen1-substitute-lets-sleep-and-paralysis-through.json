@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "id": "gen1-substitute-lets-sleep-and-paralysis-through",
+  "notes": [
+    "Gen 1's Substitute stops poison, stat drops and confusion only: paralysis goes through"
+  ],
+  "battle": {
+    "generation": 1,
+    "mode": "singles",
+    "format": "gen1customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Jolteon",
+        "species": "Jolteon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Substitute",
+          "Growl"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "Snorlax",
+        "species": "Snorlax",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Stun Spore",
+          "Growl"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

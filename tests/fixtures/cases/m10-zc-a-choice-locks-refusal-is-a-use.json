@@ -1,0 +1,106 @@
+{
+  "schema": 1,
+  "id": "m10-zc-a-choice-locks-refusal-is-a-use",
+  "notes": [
+    "Gen 7 Doubles: Axew's Choice Band lock refuses Psychic Terrain once Magic Room ends: a move line, [still], -fail — a use as anyone sees it (R-M10-53)",
+    "promoted from m8-gen7-doubles-s1660-006-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 7,
+    "mode": "doubles",
+    "format": "gen7doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Larvesta",
+        "species": "Larvesta",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Black Hole Eclipse"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Axew",
+        "species": "Axew",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Acid Downpour",
+          "Psychic Terrain"
+        ],
+        "ability": "Run Away",
+        "item": "Choice Band",
+        "gender": "F"
+      },
+      {
+        "label": "Igglybuff",
+        "species": "Igglybuff",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Seed Bomb",
+          "Magic Room"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Exeggutor",
+        "species": "Exeggutor",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Splintered Stormshards",
+          "Psychic Terrain",
+          "Magic Room"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Voltorb",
+        "species": "Voltorb",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Egg Bomb",
+          "Rock Throw",
+          "Magic Room"
+        ],
+        "ability": "Run Away"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      13876,
+      35969,
+      59262,
+      60334
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Black Hole Eclipse 1, move Acid Downpour 2",
+      "p2": "move Splintered Stormshards 1, move Egg Bomb 2"
+    },
+    {
+      "p1": "switch Igglybuff, pass"
+    },
+    {
+      "p1": "move 1 1, move 1",
+      "p2": "move 3, move 2 2"
+    },
+    {
+      "p1": "move Magic Room, move Psychic Terrain",
+      "p2": "move Psychic Terrain, move Magic Room"
+    }
+  ]
+}

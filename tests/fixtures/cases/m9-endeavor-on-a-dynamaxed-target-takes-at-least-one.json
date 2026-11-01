@@ -1,0 +1,326 @@
+{
+ "schema": 1,
+ "id": "m9-endeavor-on-a-dynamaxed-target-takes-at-least-one",
+ "notes": [
+  "R-M9-38: Slurpuff's Endeavor on the Dynamaxed Ditto (272/272, 136 without the doubling): the immunity reads the doubled HP (174 < 272), the damage `getUndynamaxedHP() - pokemon.hp` is negative, and `spreadDamage` clamps any damage but 0 to at least 1. The engine dealt 0. Minimized from Nightly 20261021-022953 (m9-gen8vgc2021-s127-010)."
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "doubles",
+  "format": "gen8vgc2021"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Nick19",
+    "species": "Litwick",
+    "ability": "Flash Fire",
+    "moves": [
+     "Payback",
+     "Skitter Smack"
+    ],
+    "nature": "Quiet",
+    "gender": "F",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 120,
+     "atk": 144,
+     "def": 8,
+     "spa": 0,
+     "spd": 236,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Porygon",
+    "species": "Porygon",
+    "ability": "Download",
+    "moves": [
+     "Zen Headbutt"
+    ],
+    "nature": "Careful",
+    "gender": "",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 100,
+     "atk": 28,
+     "def": 0,
+     "spa": 16,
+     "spd": 224,
+     "spe": 140
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 17,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Glastrier",
+    "species": "Glastrier",
+    "ability": "Chilling Neigh",
+    "moves": [
+     "Endure"
+    ],
+    "nature": "Calm",
+    "gender": "",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 100,
+     "atk": 20,
+     "def": 92,
+     "spa": 72,
+     "spd": 72,
+     "spe": 152
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Marshtomp",
+    "species": "Marshtomp",
+    "ability": "Torrent",
+    "moves": [
+     "Surf"
+    ],
+    "nature": "Mild",
+    "gender": "F",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 84,
+     "atk": 124,
+     "def": 0,
+     "spa": 152,
+     "spd": 4,
+     "spe": 144
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 13,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Marowak",
+    "species": "Marowak",
+    "ability": "Rock Head",
+    "moves": [
+     "Stomping Tantrum"
+    ],
+    "nature": "Bashful",
+    "gender": "F",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 0,
+     "atk": 0,
+     "def": 0,
+     "spa": 224,
+     "spd": 160,
+     "spe": 124
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Ditto",
+    "species": "Ditto",
+    "ability": "Imposter",
+    "moves": [
+     "Transform"
+    ],
+    "nature": "Brave",
+    "gender": "",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 104,
+     "atk": 32,
+     "def": 76,
+     "spa": 200,
+     "spd": 76,
+     "spe": 20
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 150
+   }
+  ],
+  "p2": [
+   {
+    "label": "Nick28",
+    "species": "Slurpuff",
+    "ability": "Unburden",
+    "moves": [
+     "Protect",
+     "Endeavor"
+    ],
+    "nature": "Adamant",
+    "gender": "M",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 132,
+     "atk": 68,
+     "def": 64,
+     "spa": 0,
+     "spd": 196,
+     "spe": 48
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 27,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 229
+   },
+   {
+    "label": "Aegislash",
+    "species": "Aegislash",
+    "ability": "Stance Change",
+    "moves": [
+     "Iron Head"
+    ],
+    "nature": "Serious",
+    "gender": "M",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 116,
+     "atk": 0,
+     "def": 120,
+     "spa": 0,
+     "spd": 108,
+     "spe": 164
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Dracovish",
+    "species": "Dracovish",
+    "ability": "Water Absorb",
+    "moves": [
+     "Snore"
+    ],
+    "nature": "Jolly",
+    "gender": "",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 92,
+     "atk": 84,
+     "def": 252,
+     "spa": 0,
+     "spd": 80,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "hpType": "Dragon"
+   },
+   {
+    "label": "Hatenna",
+    "species": "Hatenna",
+    "ability": "Healer",
+    "moves": [
+     "Giga Drain"
+    ],
+    "nature": "Bashful",
+    "gender": "",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 60,
+     "atk": 0,
+     "def": 116,
+     "spa": 0,
+     "spd": 124,
+     "spe": 208
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   }
+  ]
+ },
+ "preview": {
+  "p1": "team 613425",
+  "p2": "team 314265"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   29609,
+   127,
+   1010,
+   31
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1 dynamax, move Payback 1",
+   "p2": "move 1 1 dynamax, move Protect"
+  },
+  {
+   "p1": "move 2 2, move Skitter Smack 1",
+   "p2": "move Snore 2, move Endeavor 1"
+  }
+ ]
+}

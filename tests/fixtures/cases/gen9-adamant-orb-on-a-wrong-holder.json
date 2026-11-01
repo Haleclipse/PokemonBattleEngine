@@ -1,0 +1,70 @@
+{
+ "schema": 1,
+ "id": "gen9-adamant-orb-on-a-wrong-holder",
+ "notes": [
+  "Gen 9: a Snorlax holding an Adamant Orb is not Dialga, so nothing is boosted, and Thief takes it"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Dragon Tail",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat",
+    "item": "Adamant Orb"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Thief",
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Dragon Tail",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Dragon Tail",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Thief"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

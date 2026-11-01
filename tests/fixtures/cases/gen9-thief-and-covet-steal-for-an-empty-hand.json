@@ -1,0 +1,114 @@
+{
+ "schema": 1,
+ "id": "gen9-thief-and-covet-steal-for-an-empty-hand",
+ "notes": [
+  "Gen 9: Covet from a user that already holds something takes nothing; Thief takes a Choice Scarf from a Pokémon locked into Tackle (its lock goes at the end of the turn, Harden is free again); Thief on Sticky Hold takes nothing (-activate)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Persian",
+    "species": "Persian",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Covet",
+     "Harden"
+    ],
+    "ability": "Limber",
+    "item": "Leftovers"
+   },
+   {
+    "label": "Sneasel",
+    "species": "Sneasel",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Thief",
+     "Harden"
+    ],
+    "ability": "Inner Focus"
+   },
+   {
+    "label": "Murkrow",
+    "species": "Murkrow",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Thief",
+     "Harden"
+    ],
+    "ability": "Insomnia"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Choice Scarf"
+   },
+   {
+    "label": "Muk",
+    "species": "Muk",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Sticky Hold",
+    "item": "Black Sludge"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Covet",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "switch Sneasel",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Thief",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Muk"
+  },
+  {
+   "p1": "switch Murkrow",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Thief",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

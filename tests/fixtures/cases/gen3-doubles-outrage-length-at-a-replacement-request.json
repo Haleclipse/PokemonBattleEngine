@@ -1,0 +1,89 @@
+{
+  "schema": 1,
+  "id": "gen3-doubles-outrage-length-at-a-replacement-request",
+  "notes": [
+    "Gen 3 doubles (I61, the cartridge's count): Bayleef's Outrage starts its lock (2 turns drawn) and knocks Cacnea out; at the replacement request before the end of the turn the count is still the drawn 2, not one less (the replay's length hint adds the turn-end tick only once it ran). Minimized from the 30th Nightly's m8-gen3-doubles-s421-016.",
+    "promoted from m8-gen3-doubles-s421-016-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 3,
+    "mode": "doubles",
+    "format": "gen3doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Forretress",
+        "species": "Forretress",
+        "level": 45,
+        "nature": "Hardy",
+        "moves": [
+          "Petal Dance"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Bayleef",
+        "species": "Bayleef",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Outrage"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Cacnea",
+        "species": "Cacnea",
+        "level": 49,
+        "nature": "Hardy",
+        "moves": [
+          "Uproar"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Shelgon",
+        "species": "Shelgon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Thief"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Kakuna",
+        "species": "Kakuna",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Covet"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      44175,
+      18767,
+      27542,
+      48002
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Petal Dance, move Outrage",
+      "p2": "move Uproar, move Thief 1"
+    }
+  ]
+}

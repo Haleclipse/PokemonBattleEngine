@@ -1,0 +1,29 @@
+{
+ "schema": 1,
+ "id": "gen7-doubles-guardian-of-alola-through-a-mat-block-deals-a-quarter",
+ "notes": [
+  "Gen 7 doubles: Ninjask's Mat Block covers its side on its first turn; Charmander's Guardian of Alola at Chansey breaks through it for a quarter of the three quarters (Showdown's callback checks the side's `matblock` as well as the target's protections; `Math.ceil(hp75 / 4 - 0.5)`) (DESIGN.md R-M8-184)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [1, 2, 3, 4]
+ },
+ "teams": {
+  "p1": [
+   {"label": "Ninjask", "species": "Ninjask", "level": 50, "nature": "Hardy", "moves": ["Mat Block"], "ability": "Infiltrator", "gender": "M"},
+   {"label": "Chansey", "species": "Chansey", "level": 50, "nature": "Hardy", "moves": ["Splash"], "ability": "Natural Cure", "gender": "F"}
+  ],
+  "p2": [
+   {"label": "Charmander", "species": "Charmander", "level": 50, "nature": "Hardy", "moves": ["Guardian of Alola"], "ability": "Blaze", "gender": "M"},
+   {"label": "Snorlax", "species": "Snorlax", "level": 50, "nature": "Hardy", "moves": ["Splash"], "ability": "Thick Fat", "gender": "M"}
+  ]
+ },
+ "script": [
+  {"p1": "move Mat Block, move Splash", "p2": "move Guardian of Alola 2, move Splash"}
+ ]
+}

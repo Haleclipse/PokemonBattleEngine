@@ -1,0 +1,98 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-revival-blessing",
+ "notes": [
+  "In doubles a partner knocked out earlier in the turn comes back into its slot once the turn's residual is over (the sandstorm does not reach it), its fresh poison gone; nobody is left to replace at the end of the turn"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Frail",
+    "species": "Mew",
+    "level": 20,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Blesser",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Revival Blessing",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Third",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Killer",
+    "species": "Snorlax",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Idle",
+    "species": "Mew",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Sandstorm",
+     "Toxic"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Sandstorm"
+  },
+  {
+   "p1": "move Harden, move Revival Blessing",
+   "p2": "move Tackle 1, move Toxic 1"
+  },
+  {
+   "p1": "pass, switch Frail"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

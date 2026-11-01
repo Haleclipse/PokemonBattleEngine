@@ -1,0 +1,92 @@
+{
+ "schema": 1,
+ "id": "gen7-memory-cannot-be-taken",
+ "notes": [
+  "Gen 7: Knock Off takes nothing off a Silvally holding a Memory (nor does an empty-handed Silvally steal one), while the same move takes it off another holder"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Silvally",
+    "species": "Silvally",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "RKS System",
+    "item": "Bug Memory"
+   },
+   {
+    "label": "Thiefvally",
+    "species": "Silvally",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Thief",
+     "Harden"
+    ],
+    "ability": "RKS System"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure",
+    "item": "Bug Memory"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Knock Off",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat",
+    "item": "Bug Memory"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Knock Off"
+  },
+  {
+   "p1": "switch Thiefvally",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Thief",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Blissey",
+   "p2": "move Knock Off"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

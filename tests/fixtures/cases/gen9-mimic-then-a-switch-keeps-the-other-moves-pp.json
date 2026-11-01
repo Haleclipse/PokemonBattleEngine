@@ -1,0 +1,86 @@
+{
+ "schema": 1,
+ "id": "gen9-mimic-then-a-switch-keeps-the-other-moves-pp",
+ "notes": [
+  "Gen 9: Clefable's Mimic rewrites one slot; the Psychic it uses afterwards spends the own slot's PP (Showdown's `moveSlots` shares every slot Mimic did not rewrite with `baseMoveSlots`), so the PP is still gone once Clefable has left and come back, while the copied move is forgotten"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Clefable",
+    "species": "Clefable",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Mimic",
+     "Psychic"
+    ],
+    "ability": "Magic Guard",
+    "gender": "F"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Psychic",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Mimic",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Psychic",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,229 @@
+{
+  "schema": 1,
+  "id": "m10-v-a-forewarn-a-transform-starts-draws-its-warning",
+  "notes": [
+    "Gen 5: Persian transforms into Sewaddle and takes its Forewarn, which draws between Aerial Ace and Pluck; the replay plans the draw the log shows (R-M10-46)",
+    "promoted from m8-gen5-singles-s1652-010-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 5,
+    "mode": "singles",
+    "format": "gen5customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Kabuto",
+        "species": "Kabuto",
+        "level": 51,
+        "nature": "Hardy",
+        "moves": [
+          "Force Palm",
+          "Transform",
+          "Thunderbolt",
+          "Copycat"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Dodrio",
+        "species": "Dodrio",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Shadow Force",
+          "Dive",
+          "Copycat"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Minccino",
+        "species": "Minccino",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Dig",
+          "Skull Bash"
+        ],
+        "ability": "Drizzle",
+        "gender": "F"
+      },
+      {
+        "label": "Ditto",
+        "species": "Ditto",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Dark Pulse"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Sewaddle",
+        "species": "Sewaddle",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Aerial Ace",
+          "Pluck"
+        ],
+        "ability": "Forewarn",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Porygon2",
+        "species": "Porygon2",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Peck",
+          "Transform",
+          "Sky Drop",
+          "Copycat"
+        ],
+        "ability": "Run Away",
+        "item": "Electric Gem"
+      },
+      {
+        "label": "Gloom",
+        "species": "Gloom",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Acrobatics",
+          "Transform",
+          "Wing Attack",
+          "Copycat"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Kabutops",
+        "species": "Kabutops",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Gust"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Persian",
+        "species": "Persian",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Dragon Pulse",
+          "Transform"
+        ],
+        "ability": "Stall",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      4517,
+      24575,
+      6723,
+      15040
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Force Palm",
+      "p2": "move Peck"
+    },
+    {
+      "p1": "move Transform",
+      "p2": "move Transform"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 3"
+    },
+    {
+      "p1": "switch Dodrio"
+    },
+    {
+      "p1": "move Copycat",
+      "p2": "move Copycat"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move Shadow Force",
+      "p2": "move Transform"
+    },
+    {
+      "p2": "switch Gloom"
+    },
+    {
+      "p1": "move Dive",
+      "p2": "move Wing Attack"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 4"
+    },
+    {
+      "p1": "switch Minccino",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move Dig",
+      "p2": "move Transform"
+    },
+    {
+      "p1": "move Dig",
+      "p2": "move Wing Attack"
+    },
+    {
+      "p1": "move Skull Bash",
+      "p2": "move Copycat"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "switch Dodrio"
+    },
+    {
+      "p1": "move Shadow Force",
+      "p2": "move Transform"
+    },
+    {
+      "p1": "move Shadow Force",
+      "p2": "move Wing Attack"
+    },
+    {
+      "p1": "switch Ditto"
+    },
+    {
+      "p1": "move Dark Pulse",
+      "p2": "move Copycat"
+    },
+    {
+      "p2": "switch Kabutops"
+    },
+    {
+      "p1": "switch Sewaddle",
+      "p2": "switch Persian"
+    },
+    {
+      "p1": "move Aerial Ace",
+      "p2": "move Transform"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-gastro-acid-on-one-desolate-land-keeps-the-sun",
+ "notes": [
+  "Two Desolate Land holders: Gastro Acid on the one whose weather it is hands the weather to the other (its `onEnd`: `hasAbility('desolateland')`), and the harsh sun stays",
+  "Gastro Acid on the other then ends it: no active Pokémon has Desolate Land in effect"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Groudon",
+    "species": "Groudon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "N",
+    "ability": "Desolate Land"
+   },
+   {
+    "label": "Camerupt",
+    "species": "Camerupt",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Desolate Land"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Weezing",
+    "species": "Weezing",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Gastro Acid",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Levitate"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Gastro Acid 1, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Gastro Acid 2, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

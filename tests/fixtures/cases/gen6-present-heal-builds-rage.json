@@ -1,0 +1,67 @@
+{
+ "schema": 1,
+ "id": "gen6-present-heal-builds-rage",
+ "notes": [
+  "Gen 6 Rage: a foe's Present that heals the raging user builds its rage too (the heal is the hit's `Hit` event)"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Rager",
+    "species": "Primeape",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Rage",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gifter",
+    "species": "Delibird",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Present",
+     "Harden"
+    ],
+    "ability": "Hustle"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Rage",
+   "p2": "move Present"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "move Present"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "move Present"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "move Present"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   15,
+   2,
+   3,
+   4
+  ]
+ }
+}

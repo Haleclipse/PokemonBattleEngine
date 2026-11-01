@@ -1,0 +1,81 @@
+{
+ "schema": 1,
+ "id": "gen9-curse-ghost",
+ "notes": [
+  "Gen 9 Curse from a Ghost type: the target is cursed and the user pays half its max HP; the curse takes a quarter at the end of every turn, after Leftovers; Curse again fails (no HP paid); Baton Pass hands the curse on"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Ghost",
+    "species": "Gengar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Curse",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Target",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Baton Pass",
+     "Harden"
+    ],
+    "ability": "Run Away",
+    "item": "Leftovers"
+   },
+   {
+    "label": "Back",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Curse",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Curse",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Baton Pass"
+  },
+  {
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Curse",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

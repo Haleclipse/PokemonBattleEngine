@@ -1,0 +1,94 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-destiny-bond",
+ "notes": [
+  "Doubles: Destiny Bond spares an ally that knocks its holder out, and takes a foe that does"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Gengar",
+    "species": "Gengar",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Destiny Bond",
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Ally",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Crunch",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Gengar2",
+    "species": "Gengar",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Destiny Bond",
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Crunch",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Foe2",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Destiny Bond, move Crunch -1",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "switch Gengar2"
+  },
+  {
+   "p1": "move Destiny Bond, move Harden",
+   "p2": "move Crunch 1, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

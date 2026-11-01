@@ -1,0 +1,91 @@
+{
+ "schema": 1,
+ "id": "gen6-doubles-ejected-pokemon-dragged-back-does-not-act",
+ "notes": [
+  "Eject Button sends Klink out before it acts, which cancels its action (Showdown `switchIn` → `queue.cancelAction`); Circle Throw then drags it back in, and it still does not act"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "doubles",
+  "format": "gen6doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Infernape",
+    "species": "Infernape",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "ability": "Blaze"
+   },
+   {
+    "label": "Rayquaza",
+    "species": "Rayquaza",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Circle Throw"
+    ],
+    "ability": "Air Lock"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Klink",
+    "species": "Klink",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Circle Throw"
+    ],
+    "ability": "Clear Body",
+    "item": "Eject Button"
+   },
+   {
+    "label": "Tentacool",
+    "species": "Tentacool",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Clear Body"
+   },
+   {
+    "label": "Miltank",
+    "species": "Miltank",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Tackle 1, move Circle Throw 2",
+   "p2": "move Circle Throw 2, move Harden"
+  },
+  {
+   "p2": "switch Miltank, pass"
+  },
+  {
+   "p1": "move Tackle 1, move Circle Throw 1",
+   "p2": "move Harden, move Circle Throw 2"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

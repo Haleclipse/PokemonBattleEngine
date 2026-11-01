@@ -1,0 +1,181 @@
+{
+ "schema": 1,
+ "id": "gen9-power-items-halve-speed",
+ "notes": [
+  "Power Anklet / Band / Belt / Bracer / Lens / Weight (onModifySpe, \u00d70.5): a level-100 Mew holding one (149) moves after a level-70 Mew (166)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Anklet",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Recover"
+    ],
+    "ability": "Run Away",
+    "item": "Power Anklet"
+   },
+   {
+    "label": "Band",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Recover"
+    ],
+    "ability": "Run Away",
+    "item": "Power Band"
+   },
+   {
+    "label": "Belt",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Recover"
+    ],
+    "ability": "Run Away",
+    "item": "Power Belt"
+   },
+   {
+    "label": "Bracer",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Recover"
+    ],
+    "ability": "Run Away",
+    "item": "Power Bracer"
+   },
+   {
+    "label": "Lens",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Recover"
+    ],
+    "ability": "Run Away",
+    "item": "Power Lens"
+   },
+   {
+    "label": "Weight",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Recover"
+    ],
+    "ability": "Run Away",
+    "item": "Power Weight"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Pacer",
+    "species": "Mew",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Tackle",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "switch Band",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "switch Belt",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "switch Bracer",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "switch Lens",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "switch Weight",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Slack Off"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

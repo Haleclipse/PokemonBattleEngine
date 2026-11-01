@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "gen4-doubles-silent-frisk-draws-before-trace",
+ "notes": [
+  "Gen 4 doubles: Buneary's Frisk finds no item on its foes (no line) but still draws one (`side.randomFoe()`), before the slower Politoed's Trace draws the foe it copies: the replay plans the silent draw in its turn (DESIGN.md R-M8-84)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "doubles",
+  "format": "gen4doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Buneary",
+    "species": "Buneary",
+    "level": 51,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Frisk",
+    "gender": "F"
+   },
+   {
+    "label": "Koffing",
+    "species": "Koffing",
+    "level": 45,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Chlorophyll",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Politoed",
+    "species": "Politoed",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Trace",
+    "gender": "M"
+   },
+   {
+    "label": "Eevee",
+    "species": "Eevee",
+    "level": 46,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Shadow Tag",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash, move Splash",
+   "p2": "move Splash, move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   9,
+   10,
+   11,
+   12
+  ]
+ }
+}

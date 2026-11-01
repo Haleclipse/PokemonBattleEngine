@@ -1,0 +1,79 @@
+{
+ "schema": 1,
+ "id": "gen8-doubles-encored-helping-hand-helps-the-ally",
+ "notes": [
+  "Encore turns Gothitelle's Tackle into Helping Hand: with no target chosen it takes the adjacent ally (getRandomTarget), whose Tackle is boosted"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "doubles",
+  "format": "gen8doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Gothitelle",
+    "species": "Gothitelle",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Helping Hand",
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Carbink",
+    "species": "Carbink",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Encore",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Helping Hand -2, move Tackle 2",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Tackle 2, move Tackle 2",
+   "p2": "move Encore 1, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

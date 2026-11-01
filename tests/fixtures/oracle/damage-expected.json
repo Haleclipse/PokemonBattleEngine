@@ -1,0 +1,5156 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@smogon/calc",
+    "version": "0.11.0"
+  },
+  "cases": [
+    {
+      "id": "gen9-tackle-stab-neutral",
+      "generation": 9,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "move": "Tackle",
+      "field": {},
+      "expected": {
+        "damage": [
+          24,
+          24,
+          24,
+          24,
+          24,
+          25,
+          25,
+          25,
+          25,
+          25,
+          27,
+          27,
+          27,
+          27,
+          27,
+          28
+        ],
+        "range": [
+          24,
+          28
+        ]
+      },
+      "description": "0 Atk Mew Tackle vs. 0 HP / 0 Def Mew: 24-28 (8 - 9.3%)",
+      "calc_inputs": {
+        "attacker": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 300,
+            "atk": 100,
+            "def": 100,
+            "spa": 100,
+            "spd": 100,
+            "spe": 100
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Normal"
+          ]
+        },
+        "defender": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 300,
+            "atk": 100,
+            "def": 100,
+            "spa": 100,
+            "spd": 100,
+            "spe": 90
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Normal"
+          ]
+        },
+        "move": {
+          "name": "Tackle",
+          "bp": 40,
+          "type": "Normal",
+          "category": "Physical"
+        },
+        "field": {
+          "weather": null,
+          "terrain": null,
+          "gameType": "Singles"
+        }
+      }
+    },
+    {
+      "id": "gen9-earthquake-super-effective",
+      "generation": 9,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Ground"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Electric"
+        ],
+        "ability": "None"
+      },
+      "move": "Earthquake",
+      "field": {},
+      "expected": {
+        "damage": [
+          116,
+          116,
+          120,
+          120,
+          120,
+          122,
+          122,
+          126,
+          126,
+          128,
+          128,
+          132,
+          132,
+          134,
+          134,
+          138
+        ],
+        "range": [
+          116,
+          138
+        ]
+      },
+      "description": "0 Atk Mew Earthquake vs. 0 HP / 0 Def Mew: 116-138 (38.6 - 46%) -- guaranteed 3HKO",
+      "calc_inputs": {
+        "attacker": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 300,
+            "atk": 100,
+            "def": 100,
+            "spa": 100,
+            "spd": 100,
+            "spe": 100
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Ground"
+          ]
+        },
+        "defender": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 300,
+            "atk": 100,
+            "def": 100,
+            "spa": 100,
+            "spd": 100,
+            "spe": 90
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Electric"
+          ]
+        },
+        "move": {
+          "name": "Earthquake",
+          "bp": 100,
+          "type": "Ground",
+          "category": "Physical"
+        },
+        "field": {
+          "weather": null,
+          "terrain": null,
+          "gameType": "Singles"
+        }
+      }
+    },
+    {
+      "id": "gen9-flamethrower-sun",
+      "generation": 9,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Fire"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "move": "Flamethrower",
+      "field": {
+        "weather": "Sun"
+      },
+      "expected": {
+        "damage": [
+          76,
+          78,
+          79,
+          79,
+          81,
+          81,
+          82,
+          84,
+          84,
+          85,
+          85,
+          87,
+          88,
+          88,
+          90,
+          91
+        ],
+        "range": [
+          76,
+          91
+        ]
+      },
+      "description": "0 SpA Mew Flamethrower vs. 0 HP / 0 SpD Mew in Sun: 76-91 (25.3 - 30.3%) -- guaranteed 4HKO",
+      "calc_inputs": {
+        "attacker": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 300,
+            "atk": 100,
+            "def": 100,
+            "spa": 100,
+            "spd": 100,
+            "spe": 100
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Fire"
+          ]
+        },
+        "defender": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 300,
+            "atk": 100,
+            "def": 100,
+            "spa": 100,
+            "spd": 100,
+            "spe": 90
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Normal"
+          ]
+        },
+        "move": {
+          "name": "Flamethrower",
+          "bp": 90,
+          "type": "Fire",
+          "category": "Special"
+        },
+        "field": {
+          "weather": "Sun",
+          "terrain": null,
+          "gameType": "Singles"
+        }
+      }
+    },
+    {
+      "id": "gen9-thunderbolt-electric-terrain",
+      "generation": 9,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Electric"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "move": "Thunderbolt",
+      "field": {
+        "terrain": "Electric"
+      },
+      "expected": {
+        "damage": [
+          67,
+          67,
+          69,
+          69,
+          70,
+          70,
+          72,
+          72,
+          73,
+          73,
+          75,
+          75,
+          76,
+          76,
+          78,
+          79
+        ],
+        "range": [
+          67,
+          79
+        ]
+      },
+      "description": "0 SpA Mew Thunderbolt vs. 0 HP / 0 SpD Mew in Electric Terrain: 67-79 (22.3 - 26.3%) -- 10.4% chance to 4HKO",
+      "calc_inputs": {
+        "attacker": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 300,
+            "atk": 100,
+            "def": 100,
+            "spa": 100,
+            "spd": 100,
+            "spe": 100
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Electric"
+          ]
+        },
+        "defender": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 300,
+            "atk": 100,
+            "def": 100,
+            "spa": 100,
+            "spd": 100,
+            "spe": 90
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Normal"
+          ]
+        },
+        "move": {
+          "name": "Thunderbolt",
+          "bp": 90,
+          "type": "Electric",
+          "category": "Special"
+        },
+        "field": {
+          "weather": null,
+          "terrain": "Electric",
+          "gameType": "Singles"
+        }
+      }
+    },
+    {
+      "id": "gen9-acrobatics-no-item",
+      "generation": 9,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Flying"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "move": "Acrobatics",
+      "field": {},
+      "expected": {
+        "damage": [
+          63,
+          64,
+          64,
+          66,
+          66,
+          67,
+          67,
+          69,
+          69,
+          70,
+          70,
+          72,
+          72,
+          73,
+          73,
+          75
+        ],
+        "range": [
+          63,
+          75
+        ]
+      },
+      "description": "0 Atk Mew Acrobatics (110 BP) vs. 0 HP / 0 Def Mew: 63-75 (21 - 25%) -- 0.1% chance to 4HKO",
+      "calc_inputs": {
+        "attacker": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 300,
+            "atk": 100,
+            "def": 100,
+            "spa": 100,
+            "spd": 100,
+            "spe": 100
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Flying"
+          ]
+        },
+        "defender": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 300,
+            "atk": 100,
+            "def": 100,
+            "spa": 100,
+            "spd": 100,
+            "spe": 90
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Normal"
+          ]
+        },
+        "move": {
+          "name": "Acrobatics",
+          "bp": 55,
+          "type": "Flying",
+          "category": "Physical"
+        },
+        "field": {
+          "weather": null,
+          "terrain": null,
+          "gameType": "Singles"
+        }
+      }
+    },
+    {
+      "id": "gen9-technician-tackle",
+      "generation": 9,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "Technician"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "move": "Tackle",
+      "field": {},
+      "expected": {
+        "damage": [
+          34,
+          36,
+          36,
+          36,
+          36,
+          37,
+          37,
+          37,
+          39,
+          39,
+          39,
+          39,
+          40,
+          40,
+          40,
+          42
+        ],
+        "range": [
+          34,
+          42
+        ]
+      },
+      "description": "0 Atk Technician Mew Tackle vs. 0 HP / 0 Def Mew: 34-42 (11.3 - 14%) -- possible 8HKO",
+      "calc_inputs": {
+        "attacker": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 300,
+            "atk": 100,
+            "def": 100,
+            "spa": 100,
+            "spd": 100,
+            "spe": 100
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Technician",
+          "types": [
+            "Normal"
+          ]
+        },
+        "defender": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 300,
+            "atk": 100,
+            "def": 100,
+            "spa": 100,
+            "spd": 100,
+            "spe": 90
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Normal"
+          ]
+        },
+        "move": {
+          "name": "Tackle",
+          "bp": 40,
+          "type": "Normal",
+          "category": "Physical"
+        },
+        "field": {
+          "weather": null,
+          "terrain": null,
+          "gameType": "Singles"
+        }
+      }
+    },
+    {
+      "id": "gen9-huge-power-tackle",
+      "generation": 9,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "Huge Power"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "move": "Tackle",
+      "field": {},
+      "expected": {
+        "damage": [
+          46,
+          46,
+          48,
+          48,
+          48,
+          49,
+          49,
+          51,
+          51,
+          51,
+          52,
+          52,
+          52,
+          54,
+          54,
+          55
+        ],
+        "range": [
+          46,
+          55
+        ]
+      },
+      "description": "0 Atk Huge Power Mew Tackle vs. 0 HP / 0 Def Mew: 46-55 (15.3 - 18.3%) -- possible 6HKO",
+      "calc_inputs": {
+        "attacker": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 300,
+            "atk": 100,
+            "def": 100,
+            "spa": 100,
+            "spd": 100,
+            "spe": 100
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Huge Power",
+          "types": [
+            "Normal"
+          ]
+        },
+        "defender": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 300,
+            "atk": 100,
+            "def": 100,
+            "spa": 100,
+            "spd": 100,
+            "spe": 90
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Normal"
+          ]
+        },
+        "move": {
+          "name": "Tackle",
+          "bp": 40,
+          "type": "Normal",
+          "category": "Physical"
+        },
+        "field": {
+          "weather": null,
+          "terrain": null,
+          "gameType": "Singles"
+        }
+      }
+    },
+    {
+      "id": "gen9-choice-band-tackle",
+      "generation": 9,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None",
+        "item": "Choice Band"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "move": "Tackle",
+      "field": {},
+      "expected": {
+        "damage": [
+          34,
+          36,
+          36,
+          36,
+          36,
+          37,
+          37,
+          37,
+          39,
+          39,
+          39,
+          39,
+          40,
+          40,
+          40,
+          42
+        ],
+        "range": [
+          34,
+          42
+        ]
+      },
+      "description": "0 Atk Choice Band Mew Tackle vs. 0 HP / 0 Def Mew: 34-42 (11.3 - 14%) -- possible 8HKO",
+      "calc_inputs": {
+        "attacker": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 300,
+            "atk": 100,
+            "def": 100,
+            "spa": 100,
+            "spd": 100,
+            "spe": 100
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": "Choice Band",
+          "ability": "Illuminate",
+          "types": [
+            "Normal"
+          ]
+        },
+        "defender": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 300,
+            "atk": 100,
+            "def": 100,
+            "spa": 100,
+            "spd": 100,
+            "spe": 90
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Normal"
+          ]
+        },
+        "move": {
+          "name": "Tackle",
+          "bp": 40,
+          "type": "Normal",
+          "category": "Physical"
+        },
+        "field": {
+          "weather": null,
+          "terrain": null,
+          "gameType": "Singles"
+        }
+      }
+    },
+    {
+      "id": "gen9-burned-tackle",
+      "generation": 9,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None",
+        "status": "brn"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "move": "Tackle",
+      "field": {},
+      "expected": {
+        "damage": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          13,
+          13,
+          13,
+          13,
+          13,
+          14
+        ],
+        "range": [
+          12,
+          14
+        ]
+      },
+      "description": "0 Atk burned Mew Tackle vs. 0 HP / 0 Def Mew: 12-14 (4 - 4.6%)",
+      "calc_inputs": {
+        "attacker": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 300,
+            "atk": 100,
+            "def": 100,
+            "spa": 100,
+            "spd": 100,
+            "spe": 100
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "brn",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Normal"
+          ]
+        },
+        "defender": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 300,
+            "atk": 100,
+            "def": 100,
+            "spa": 100,
+            "spd": 100,
+            "spe": 90
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Normal"
+          ]
+        },
+        "move": {
+          "name": "Tackle",
+          "bp": 40,
+          "type": "Normal",
+          "category": "Physical"
+        },
+        "field": {
+          "weather": null,
+          "terrain": null,
+          "gameType": "Singles"
+        }
+      }
+    },
+    {
+      "id": "gen9-earthquake-doubles-spread",
+      "generation": 9,
+      "mode": "doubles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Ground"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "move": "Earthquake",
+      "field": {},
+      "expected": {
+        "damage": [
+          42,
+          43,
+          43,
+          43,
+          45,
+          45,
+          45,
+          46,
+          46,
+          46,
+          48,
+          48,
+          48,
+          49,
+          49,
+          51
+        ],
+        "range": [
+          42,
+          51
+        ]
+      },
+      "description": "0 Atk Mew Earthquake vs. 0 HP / 0 Def Mew: 42-51 (14 - 17%) -- possible 6HKO",
+      "calc_inputs": {
+        "attacker": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 300,
+            "atk": 100,
+            "def": 100,
+            "spa": 100,
+            "spd": 100,
+            "spe": 100
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Ground"
+          ]
+        },
+        "defender": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 300,
+            "atk": 100,
+            "def": 100,
+            "spa": 100,
+            "spd": 100,
+            "spe": 90
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Normal"
+          ]
+        },
+        "move": {
+          "name": "Earthquake",
+          "bp": 100,
+          "type": "Ground",
+          "category": "Physical"
+        },
+        "field": {
+          "weather": null,
+          "terrain": null,
+          "gameType": "Doubles"
+        }
+      }
+    },
+    {
+      "id": "gen9-earthquake-doubles-spread-rounding",
+      "generation": 9,
+      "mode": "doubles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 185,
+          "atk": 150,
+          "def": 100,
+          "spa": 90,
+          "spd": 80,
+          "spe": 100
+        },
+        "types": [
+          "Ice",
+          "Ground"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 175,
+          "atk": 140,
+          "def": 120,
+          "spa": 170,
+          "spd": 140,
+          "spe": 110
+        },
+        "types": [
+          "Dragon",
+          "Fire"
+        ],
+        "ability": "None"
+      },
+      "move": "Earthquake",
+      "field": {},
+      "expected": {
+        "damage": [
+          108,
+          108,
+          110,
+          110,
+          114,
+          114,
+          116,
+          116,
+          116,
+          120,
+          120,
+          122,
+          122,
+          126,
+          126,
+          128
+        ],
+        "range": [
+          108,
+          128
+        ]
+      },
+      "description": "0 Atk Mew Earthquake vs. 0 HP / 0 Def Mew: 108-128 (61.7 - 73.1%) -- guaranteed 2HKO",
+      "calc_inputs": {
+        "attacker": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 185,
+            "atk": 150,
+            "def": 100,
+            "spa": 90,
+            "spd": 80,
+            "spe": 100
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Ice",
+            "Ground"
+          ]
+        },
+        "defender": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 175,
+            "atk": 140,
+            "def": 120,
+            "spa": 170,
+            "spd": 140,
+            "spe": 110
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Dragon",
+            "Fire"
+          ]
+        },
+        "move": {
+          "name": "Earthquake",
+          "bp": 100,
+          "type": "Ground",
+          "category": "Physical"
+        },
+        "field": {
+          "weather": null,
+          "terrain": null,
+          "gameType": "Doubles"
+        }
+      }
+    },
+    {
+      "id": "gen9-close-combat-uneven-stats",
+      "generation": 9,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 167,
+          "def": 90,
+          "spa": 100,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Fighting"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 400,
+          "atk": 100,
+          "def": 123,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "move": "Close Combat",
+      "field": {},
+      "expected": {
+        "damage": [
+          186,
+          186,
+          188,
+          192,
+          192,
+          194,
+          198,
+          200,
+          200,
+          204,
+          206,
+          210,
+          210,
+          212,
+          216,
+          218
+        ],
+        "range": [
+          186,
+          218
+        ]
+      },
+      "description": "0 Atk Mew Close Combat vs. 0 HP / 0 Def Mew: 186-218 (46.5 - 54.5%) -- 55.1% chance to 2HKO",
+      "calc_inputs": {
+        "attacker": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 300,
+            "atk": 167,
+            "def": 90,
+            "spa": 100,
+            "spd": 100,
+            "spe": 100
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Fighting"
+          ]
+        },
+        "defender": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 400,
+            "atk": 100,
+            "def": 123,
+            "spa": 100,
+            "spd": 100,
+            "spe": 90
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Normal"
+          ]
+        },
+        "move": {
+          "name": "Close Combat",
+          "bp": 120,
+          "type": "Fighting",
+          "category": "Physical"
+        },
+        "field": {
+          "weather": null,
+          "terrain": null,
+          "gameType": "Singles"
+        }
+      }
+    },
+    {
+      "id": "gen4-tackle-overlay",
+      "generation": 4,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "move": "Tackle",
+      "field": {},
+      "expected": {
+        "damage": [
+          21,
+          21,
+          21,
+          21,
+          22,
+          22,
+          22,
+          22,
+          22,
+          22,
+          24,
+          24,
+          24,
+          24,
+          24,
+          25
+        ],
+        "range": [
+          21,
+          25
+        ]
+      },
+      "description": "0 Atk Mew Tackle vs. 0 HP / 0 Def Mew: 21-25 (7 - 8.3%)",
+      "calc_inputs": {
+        "attacker": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 300,
+            "atk": 100,
+            "def": 100,
+            "spa": 100,
+            "spd": 100,
+            "spe": 100
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Normal"
+          ]
+        },
+        "defender": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 300,
+            "atk": 100,
+            "def": 100,
+            "spa": 100,
+            "spd": 100,
+            "spe": 90
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Normal"
+          ]
+        },
+        "move": {
+          "name": "Tackle",
+          "bp": 35,
+          "type": "Normal",
+          "category": "Physical"
+        },
+        "field": {
+          "weather": null,
+          "terrain": null,
+          "gameType": "Singles"
+        }
+      }
+    },
+    {
+      "id": "gen4-flamethrower-sun",
+      "generation": 4,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Fire"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "move": "Flamethrower",
+      "field": {
+        "weather": "Sun"
+      },
+      "expected": {
+        "damage": [
+          79,
+          81,
+          81,
+          82,
+          84,
+          84,
+          85,
+          85,
+          87,
+          88,
+          88,
+          90,
+          91,
+          91,
+          93,
+          94
+        ],
+        "range": [
+          79,
+          94
+        ]
+      },
+      "description": "0 SpA Mew Flamethrower vs. 0 HP / 0 SpD Mew in Sun: 79-94 (26.3 - 31.3%) -- guaranteed 4HKO",
+      "calc_inputs": {
+        "attacker": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 300,
+            "atk": 100,
+            "def": 100,
+            "spa": 100,
+            "spd": 100,
+            "spe": 100
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Fire"
+          ]
+        },
+        "defender": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 300,
+            "atk": 100,
+            "def": 100,
+            "spa": 100,
+            "spd": 100,
+            "spe": 90
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Normal"
+          ]
+        },
+        "move": {
+          "name": "Flamethrower",
+          "bp": 95,
+          "type": "Fire",
+          "category": "Special"
+        },
+        "field": {
+          "weather": "Sun",
+          "terrain": null,
+          "gameType": "Singles"
+        }
+      }
+    },
+    {
+      "id": "gen3-flamethrower-sun",
+      "generation": 3,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Fire"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "move": "Flamethrower",
+      "field": {
+        "weather": "Sun"
+      },
+      "expected": {
+        "damage": [
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94
+        ],
+        "range": [
+          79,
+          94
+        ]
+      },
+      "description": "0 SpA Mew Flamethrower vs. 0 HP / 0 SpD Mew in Sun: 79-94 (26.3 - 31.3%) -- guaranteed 4HKO",
+      "calc_inputs": {
+        "attacker": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 300,
+            "atk": 100,
+            "def": 100,
+            "spa": 100,
+            "spd": 100,
+            "spe": 100
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Fire"
+          ]
+        },
+        "defender": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 300,
+            "atk": 100,
+            "def": 100,
+            "spa": 100,
+            "spd": 100,
+            "spe": 90
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Normal"
+          ]
+        },
+        "move": {
+          "name": "Flamethrower",
+          "bp": 95,
+          "type": "Fire",
+          "category": "Special"
+        },
+        "field": {
+          "weather": "Sun",
+          "terrain": null,
+          "gameType": "Singles"
+        }
+      }
+    },
+    {
+      "id": "gen3-tackle-overlay",
+      "generation": 3,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "move": "Tackle",
+      "field": {},
+      "expected": {
+        "damage": [
+          21,
+          21,
+          21,
+          22,
+          22,
+          22,
+          22,
+          23,
+          23,
+          23,
+          23,
+          24,
+          24,
+          24,
+          24,
+          25
+        ],
+        "range": [
+          21,
+          25
+        ]
+      },
+      "description": "0 Atk Mew Tackle vs. 0 HP / 0 Def Mew: 21-25 (7 - 8.3%)",
+      "calc_inputs": {
+        "attacker": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 300,
+            "atk": 100,
+            "def": 100,
+            "spa": 100,
+            "spd": 100,
+            "spe": 100
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Normal"
+          ]
+        },
+        "defender": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 300,
+            "atk": 100,
+            "def": 100,
+            "spa": 100,
+            "spd": 100,
+            "spe": 90
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Normal"
+          ]
+        },
+        "move": {
+          "name": "Tackle",
+          "bp": 35,
+          "type": "Normal",
+          "category": "Physical"
+        },
+        "field": {
+          "weather": null,
+          "terrain": null,
+          "gameType": "Singles"
+        }
+      }
+    },
+    {
+      "id": "gen4-burned-tackle",
+      "generation": 4,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None",
+        "status": "brn"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "move": "Tackle",
+      "field": {},
+      "expected": {
+        "damage": [
+          10,
+          10,
+          10,
+          10,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          13
+        ],
+        "range": [
+          10,
+          13
+        ]
+      },
+      "description": "0 Atk burned Mew Tackle vs. 0 HP / 0 Def Mew: 10-13 (3.3 - 4.3%)",
+      "calc_inputs": {
+        "attacker": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 300,
+            "atk": 100,
+            "def": 100,
+            "spa": 100,
+            "spd": 100,
+            "spe": 100
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "brn",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Normal"
+          ]
+        },
+        "defender": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 300,
+            "atk": 100,
+            "def": 100,
+            "spa": 100,
+            "spd": 100,
+            "spe": 90
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Normal"
+          ]
+        },
+        "move": {
+          "name": "Tackle",
+          "bp": 35,
+          "type": "Normal",
+          "category": "Physical"
+        },
+        "field": {
+          "weather": null,
+          "terrain": null,
+          "gameType": "Singles"
+        }
+      }
+    },
+    {
+      "id": "gen2-body-slam-stab-neutral",
+      "generation": 2,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 200,
+          "atk": 150,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 200,
+          "atk": 100,
+          "def": 120,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Water"
+        ],
+        "ability": "None"
+      },
+      "move": "Body Slam",
+      "field": {},
+      "expected": {
+        "damage": [
+          61,
+          61,
+          61,
+          62,
+          62,
+          62,
+          62,
+          63,
+          63,
+          63,
+          64,
+          64,
+          64,
+          64,
+          65,
+          65,
+          65,
+          66,
+          66,
+          66,
+          66,
+          67,
+          67,
+          67,
+          68,
+          68,
+          68,
+          68,
+          69,
+          69,
+          69,
+          70,
+          70,
+          70,
+          70,
+          71,
+          71,
+          71,
+          72
+        ],
+        "range": [
+          61,
+          72
+        ]
+      },
+      "description": "Mew Body Slam vs. Mew: 61-72 (30.5 - 36%) -- 43% chance to 3HKO",
+      "calc_inputs": {
+        "attacker": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 200,
+            "atk": 150,
+            "def": 100,
+            "spa": 100,
+            "spd": 100,
+            "spe": 100
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Normal"
+          ]
+        },
+        "defender": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 200,
+            "atk": 100,
+            "def": 120,
+            "spa": 100,
+            "spd": 100,
+            "spe": 90
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Water"
+          ]
+        },
+        "move": {
+          "name": "Body Slam",
+          "bp": 85,
+          "type": "Normal",
+          "category": "Physical"
+        },
+        "field": {
+          "weather": null,
+          "terrain": null,
+          "gameType": "Singles"
+        }
+      }
+    },
+    {
+      "id": "gen2-surf-rain-mystic-water-super-effective",
+      "generation": 2,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 200,
+          "atk": 100,
+          "def": 100,
+          "spa": 180,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Water"
+        ],
+        "ability": "None",
+        "item": "Mystic Water"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 400,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 120,
+          "spe": 90
+        },
+        "types": [
+          "Fire"
+        ],
+        "ability": "None"
+      },
+      "move": "Surf",
+      "field": {
+        "weather": "Rain"
+      },
+      "expected": {
+        "damage": [
+          267,
+          268,
+          269,
+          270,
+          272,
+          273,
+          274,
+          275,
+          277,
+          278,
+          279,
+          280,
+          281,
+          283,
+          284,
+          285,
+          286,
+          288,
+          289,
+          290,
+          291,
+          293,
+          294,
+          295,
+          296,
+          297,
+          299,
+          300,
+          301,
+          302,
+          304,
+          305,
+          306,
+          307,
+          309,
+          310,
+          311,
+          312,
+          314
+        ],
+        "range": [
+          267,
+          314
+        ]
+      },
+      "description": "Mystic Water Mew Surf vs. Mew in Rain: 267-314 (66.7 - 78.5%) -- guaranteed 2HKO",
+      "calc_inputs": {
+        "attacker": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 200,
+            "atk": 100,
+            "def": 100,
+            "spa": 180,
+            "spd": 100,
+            "spe": 100
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": "Mystic Water",
+          "ability": "Illuminate",
+          "types": [
+            "Water"
+          ]
+        },
+        "defender": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 400,
+            "atk": 100,
+            "def": 100,
+            "spa": 100,
+            "spd": 120,
+            "spe": 90
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Fire"
+          ]
+        },
+        "move": {
+          "name": "Surf",
+          "bp": 95,
+          "type": "Water",
+          "category": "Special"
+        },
+        "field": {
+          "weather": "Rain",
+          "terrain": null,
+          "gameType": "Singles"
+        }
+      }
+    },
+    {
+      "id": "gen2-thunderbolt-double-resisted-magnet",
+      "generation": 2,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 200,
+          "atk": 100,
+          "def": 100,
+          "spa": 160,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Electric"
+        ],
+        "ability": "None",
+        "item": "Magnet"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 200,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 110,
+          "spe": 90
+        },
+        "types": [
+          "Grass",
+          "Dragon"
+        ],
+        "ability": "None"
+      },
+      "move": "Thunderbolt",
+      "field": {},
+      "expected": {
+        "damage": [
+          21,
+          21,
+          21,
+          21,
+          21,
+          21,
+          21,
+          21,
+          22,
+          22,
+          22,
+          22,
+          22,
+          22,
+          22,
+          22,
+          22,
+          22,
+          23,
+          23,
+          23,
+          23,
+          23,
+          23,
+          23,
+          23,
+          23,
+          23,
+          24,
+          24,
+          24,
+          24,
+          24,
+          24,
+          24,
+          24,
+          24,
+          24,
+          25
+        ],
+        "range": [
+          21,
+          25
+        ]
+      },
+      "description": "Magnet Mew Thunderbolt vs. Mew: 21-25 (10.5 - 12.5%) -- possible 8HKO",
+      "calc_inputs": {
+        "attacker": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 200,
+            "atk": 100,
+            "def": 100,
+            "spa": 160,
+            "spd": 100,
+            "spe": 100
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": "Magnet",
+          "ability": "Illuminate",
+          "types": [
+            "Electric"
+          ]
+        },
+        "defender": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 200,
+            "atk": 100,
+            "def": 100,
+            "spa": 100,
+            "spd": 110,
+            "spe": 90
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Grass",
+            "Dragon"
+          ]
+        },
+        "move": {
+          "name": "Thunderbolt",
+          "bp": 95,
+          "type": "Electric",
+          "category": "Special"
+        },
+        "field": {
+          "weather": null,
+          "terrain": null,
+          "gameType": "Singles"
+        }
+      }
+    },
+    {
+      "id": "gen2-earthquake-high-stat-rollover",
+      "generation": 2,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 200,
+          "atk": 300,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Ground"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 400,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "move": "Earthquake",
+      "field": {},
+      "expected": {
+        "damage": [
+          171,
+          171,
+          172,
+          173,
+          174,
+          174,
+          175,
+          176,
+          177,
+          178,
+          178,
+          179,
+          180,
+          181,
+          182,
+          182,
+          183,
+          184,
+          185,
+          186,
+          186,
+          187,
+          188,
+          189,
+          189,
+          190,
+          191,
+          192,
+          193,
+          193,
+          194,
+          195,
+          196,
+          197,
+          197,
+          198,
+          199,
+          200,
+          201
+        ],
+        "range": [
+          171,
+          201
+        ]
+      },
+      "description": "Mew Earthquake vs. Mew: 171-201 (42.7 - 50.2%) -- 0.4% chance to 2HKO",
+      "calc_inputs": {
+        "attacker": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 200,
+            "atk": 300,
+            "def": 100,
+            "spa": 100,
+            "spd": 100,
+            "spe": 100
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Ground"
+          ]
+        },
+        "defender": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 400,
+            "atk": 100,
+            "def": 100,
+            "spa": 100,
+            "spd": 100,
+            "spe": 90
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Normal"
+          ]
+        },
+        "move": {
+          "name": "Earthquake",
+          "bp": 100,
+          "type": "Ground",
+          "category": "Physical"
+        },
+        "field": {
+          "weather": null,
+          "terrain": null,
+          "gameType": "Singles"
+        }
+      }
+    },
+    {
+      "id": "gen2-tackle-minimal-damage-no-roll",
+      "generation": 2,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 200,
+          "atk": 10,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 200,
+          "atk": 100,
+          "def": 300,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Rock",
+          "Steel"
+        ],
+        "ability": "None"
+      },
+      "move": "Tackle",
+      "field": {},
+      "expected": {
+        "damage": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "range": [
+          1,
+          1
+        ]
+      },
+      "description": "Mew Tackle vs. Mew: 1-1 (0.5 - 0.5%)",
+      "calc_inputs": {
+        "attacker": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 200,
+            "atk": 10,
+            "def": 100,
+            "spa": 100,
+            "spd": 100,
+            "spe": 100
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Normal"
+          ]
+        },
+        "defender": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 200,
+            "atk": 100,
+            "def": 300,
+            "spa": 100,
+            "spd": 100,
+            "spe": 90
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Rock",
+            "Steel"
+          ]
+        },
+        "move": {
+          "name": "Tackle",
+          "bp": 35,
+          "type": "Normal",
+          "category": "Physical"
+        },
+        "field": {
+          "weather": null,
+          "terrain": null,
+          "gameType": "Singles"
+        }
+      }
+    },
+    {
+      "id": "gen2-twister-dragon-fang-inert",
+      "generation": 2,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 200,
+          "atk": 100,
+          "def": 100,
+          "spa": 150,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Dragon"
+        ],
+        "ability": "None",
+        "item": "Dragon Fang"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 200,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 120,
+          "spe": 90
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "move": "Twister",
+      "field": {},
+      "expected": {
+        "damage": [
+          30,
+          30,
+          30,
+          31,
+          31,
+          31,
+          31,
+          31,
+          31,
+          31,
+          32,
+          32,
+          32,
+          32,
+          32,
+          32,
+          32,
+          33,
+          33,
+          33,
+          33,
+          33,
+          33,
+          33,
+          34,
+          34,
+          34,
+          34,
+          34,
+          34,
+          34,
+          35,
+          35,
+          35,
+          35,
+          35,
+          35,
+          35,
+          36
+        ],
+        "range": [
+          30,
+          36
+        ]
+      },
+      "description": "Mew Twister vs. Mew: 30-36 (15 - 18%) -- possible 6HKO",
+      "calc_inputs": {
+        "attacker": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 200,
+            "atk": 100,
+            "def": 100,
+            "spa": 150,
+            "spd": 100,
+            "spe": 100
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": "Dragon Fang",
+          "ability": "Illuminate",
+          "types": [
+            "Dragon"
+          ]
+        },
+        "defender": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 200,
+            "atk": 100,
+            "def": 100,
+            "spa": 100,
+            "spd": 120,
+            "spe": 90
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Normal"
+          ]
+        },
+        "move": {
+          "name": "Twister",
+          "bp": 40,
+          "type": "Dragon",
+          "category": "Special"
+        },
+        "field": {
+          "weather": null,
+          "terrain": null,
+          "gameType": "Singles"
+        }
+      }
+    },
+    {
+      "id": "gen1-body-slam-stab",
+      "generation": 1,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 200,
+          "atk": 155,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 120
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 400,
+          "atk": 100,
+          "def": 118,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Water"
+        ],
+        "ability": "None"
+      },
+      "move": "Body Slam",
+      "field": {},
+      "expected": {
+        "damage": [
+          64,
+          64,
+          65,
+          65,
+          65,
+          66,
+          66,
+          66,
+          67,
+          67,
+          67,
+          67,
+          68,
+          68,
+          68,
+          69,
+          69,
+          69,
+          70,
+          70,
+          70,
+          70,
+          71,
+          71,
+          71,
+          72,
+          72,
+          72,
+          73,
+          73,
+          73,
+          73,
+          74,
+          74,
+          74,
+          75,
+          75,
+          75,
+          76
+        ],
+        "range": [
+          64,
+          76
+        ]
+      },
+      "description": "Mew Body Slam vs. Mew: 64-76 (16 - 19%) -- possible 6HKO",
+      "calc_inputs": {
+        "attacker": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 200,
+            "atk": 155,
+            "def": 100,
+            "spa": 100,
+            "spd": 100,
+            "spe": 120
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Normal"
+          ]
+        },
+        "defender": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 400,
+            "atk": 100,
+            "def": 118,
+            "spa": 100,
+            "spd": 100,
+            "spe": 90
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Water"
+          ]
+        },
+        "move": {
+          "name": "Body Slam",
+          "bp": 85,
+          "type": "Normal",
+          "category": "Physical"
+        },
+        "field": {
+          "weather": null,
+          "terrain": null,
+          "gameType": "Singles"
+        }
+      }
+    },
+    {
+      "id": "gen1-thunderbolt-special-super-effective",
+      "generation": 1,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 200,
+          "atk": 100,
+          "def": 100,
+          "spa": 165,
+          "spd": 165,
+          "spe": 120
+        },
+        "types": [
+          "Electric"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 400,
+          "atk": 100,
+          "def": 100,
+          "spa": 111,
+          "spd": 111,
+          "spe": 90
+        },
+        "types": [
+          "Water",
+          "Flying"
+        ],
+        "ability": "None"
+      },
+      "move": "Thunderbolt",
+      "field": {},
+      "expected": {
+        "damage": [
+          326,
+          328,
+          329,
+          331,
+          332,
+          334,
+          335,
+          337,
+          338,
+          340,
+          341,
+          343,
+          344,
+          346,
+          347,
+          349,
+          350,
+          352,
+          353,
+          355,
+          356,
+          358,
+          359,
+          361,
+          362,
+          364,
+          365,
+          367,
+          368,
+          370,
+          371,
+          373,
+          374,
+          376,
+          377,
+          379,
+          380,
+          382,
+          384
+        ],
+        "range": [
+          326,
+          384
+        ]
+      },
+      "description": "Mew Thunderbolt vs. Mew: 326-384 (81.5 - 96%) -- guaranteed 2HKO",
+      "calc_inputs": {
+        "attacker": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 200,
+            "atk": 100,
+            "def": 100,
+            "spa": 165,
+            "spd": 165,
+            "spe": 120
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Electric"
+          ]
+        },
+        "defender": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 400,
+            "atk": 100,
+            "def": 100,
+            "spa": 111,
+            "spd": 111,
+            "spe": 90
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Water",
+            "Flying"
+          ]
+        },
+        "move": {
+          "name": "Thunderbolt",
+          "bp": 95,
+          "type": "Electric",
+          "category": "Special"
+        },
+        "field": {
+          "weather": null,
+          "terrain": null,
+          "gameType": "Singles"
+        }
+      }
+    },
+    {
+      "id": "gen1-earthquake-per-type-rounding",
+      "generation": 1,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 200,
+          "atk": 137,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 120
+        },
+        "types": [
+          "Ground"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 400,
+          "atk": 100,
+          "def": 93,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Grass",
+          "Poison"
+        ],
+        "ability": "None"
+      },
+      "move": "Earthquake",
+      "field": {},
+      "expected": {
+        "damage": [
+          83,
+          83,
+          84,
+          84,
+          84,
+          85,
+          85,
+          86,
+          86,
+          86,
+          87,
+          87,
+          88,
+          88,
+          88,
+          89,
+          89,
+          89,
+          90,
+          90,
+          91,
+          91,
+          91,
+          92,
+          92,
+          93,
+          93,
+          93,
+          94,
+          94,
+          94,
+          95,
+          95,
+          96,
+          96,
+          96,
+          97,
+          97,
+          98
+        ],
+        "range": [
+          83,
+          98
+        ]
+      },
+      "description": "Mew Earthquake vs. Mew: 83-98 (20.7 - 24.5%) -- guaranteed 5HKO",
+      "calc_inputs": {
+        "attacker": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 200,
+            "atk": 137,
+            "def": 100,
+            "spa": 100,
+            "spd": 100,
+            "spe": 120
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Ground"
+          ]
+        },
+        "defender": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 400,
+            "atk": 100,
+            "def": 93,
+            "spa": 100,
+            "spd": 100,
+            "spe": 90
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Grass",
+            "Poison"
+          ]
+        },
+        "move": {
+          "name": "Earthquake",
+          "bp": 100,
+          "type": "Ground",
+          "category": "Physical"
+        },
+        "field": {
+          "weather": null,
+          "terrain": null,
+          "gameType": "Singles"
+        }
+      }
+    },
+    {
+      "id": "gen1-rock-slide-rollover",
+      "generation": 1,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 200,
+          "atk": 290,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 120
+        },
+        "types": [
+          "Rock"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 400,
+          "atk": 100,
+          "def": 105,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Fire"
+        ],
+        "ability": "None"
+      },
+      "move": "Rock Slide",
+      "field": {},
+      "expected": {
+        "damage": [
+          236,
+          237,
+          238,
+          239,
+          240,
+          242,
+          243,
+          244,
+          245,
+          246,
+          247,
+          248,
+          249,
+          250,
+          251,
+          252,
+          254,
+          255,
+          256,
+          257,
+          258,
+          259,
+          260,
+          261,
+          262,
+          263,
+          264,
+          266,
+          267,
+          268,
+          269,
+          270,
+          271,
+          272,
+          273,
+          274,
+          275,
+          276,
+          278
+        ],
+        "range": [
+          236,
+          278
+        ]
+      },
+      "description": "Mew Rock Slide vs. Mew: 236-278 (59 - 69.5%) -- guaranteed 2HKO",
+      "calc_inputs": {
+        "attacker": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 200,
+            "atk": 290,
+            "def": 100,
+            "spa": 100,
+            "spd": 100,
+            "spe": 120
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Rock"
+          ]
+        },
+        "defender": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 400,
+            "atk": 100,
+            "def": 105,
+            "spa": 100,
+            "spd": 100,
+            "spe": 90
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Fire"
+          ]
+        },
+        "move": {
+          "name": "Rock Slide",
+          "bp": 75,
+          "type": "Rock",
+          "category": "Physical"
+        },
+        "field": {
+          "weather": null,
+          "terrain": null,
+          "gameType": "Singles"
+        }
+      }
+    },
+    {
+      "id": "gen5-crunch-uneven-stats",
+      "generation": 5,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 147,
+          "def": 90,
+          "spa": 100,
+          "spd": 100,
+          "spe": 110
+        },
+        "types": [
+          "Dark"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 400,
+          "atk": 100,
+          "def": 121,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Psychic"
+        ],
+        "ability": "None"
+      },
+      "move": "Crunch",
+      "field": {},
+      "expected": {
+        "damage": [
+          110,
+          110,
+          114,
+          114,
+          116,
+          116,
+          120,
+          120,
+          120,
+          122,
+          122,
+          126,
+          126,
+          128,
+          128,
+          132
+        ],
+        "range": [
+          110,
+          132
+        ]
+      },
+      "description": "0 Atk Mew Crunch vs. 0 HP / 0 Def Mew: 110-132 (27.5 - 33%) -- guaranteed 4HKO",
+      "calc_inputs": {
+        "attacker": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 300,
+            "atk": 147,
+            "def": 90,
+            "spa": 100,
+            "spd": 100,
+            "spe": 110
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Dark"
+          ]
+        },
+        "defender": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 400,
+            "atk": 100,
+            "def": 121,
+            "spa": 100,
+            "spd": 100,
+            "spe": 90
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Psychic"
+          ]
+        },
+        "move": {
+          "name": "Crunch",
+          "bp": 80,
+          "type": "Dark",
+          "category": "Physical"
+        },
+        "field": {
+          "weather": null,
+          "terrain": null,
+          "gameType": "Singles"
+        }
+      }
+    },
+    {
+      "id": "gen5-surf-rain-doubles-spread",
+      "generation": 5,
+      "mode": "doubles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 90,
+          "spa": 139,
+          "spd": 100,
+          "spe": 110
+        },
+        "types": [
+          "Water"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 400,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 117,
+          "spe": 90
+        },
+        "types": [
+          "Rock"
+        ],
+        "ability": "None"
+      },
+      "move": "Surf",
+      "field": {
+        "weather": "Rain"
+      },
+      "expected": {
+        "damage": [
+          144,
+          146,
+          146,
+          150,
+          150,
+          152,
+          152,
+          156,
+          158,
+          158,
+          162,
+          162,
+          164,
+          164,
+          168,
+          170
+        ],
+        "range": [
+          144,
+          170
+        ]
+      },
+      "description": "0 SpA Mew Surf vs. 0 HP / 0 SpD Mew in Rain: 144-170 (36 - 42.5%) -- guaranteed 3HKO",
+      "calc_inputs": {
+        "attacker": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 300,
+            "atk": 100,
+            "def": 90,
+            "spa": 139,
+            "spd": 100,
+            "spe": 110
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Water"
+          ]
+        },
+        "defender": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 400,
+            "atk": 100,
+            "def": 100,
+            "spa": 100,
+            "spd": 117,
+            "spe": 90
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Rock"
+          ]
+        },
+        "move": {
+          "name": "Surf",
+          "bp": 95,
+          "type": "Water",
+          "category": "Special"
+        },
+        "field": {
+          "weather": "Rain",
+          "terrain": null,
+          "gameType": "Doubles"
+        }
+      }
+    },
+    {
+      "id": "gen6-flamethrower-uneven-stats",
+      "generation": 6,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 90,
+          "spa": 151,
+          "spd": 100,
+          "spe": 110
+        },
+        "types": [
+          "Fire"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 400,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 109,
+          "spe": 90
+        },
+        "types": [
+          "Grass",
+          "Steel"
+        ],
+        "ability": "None"
+      },
+      "move": "Flamethrower",
+      "field": {},
+      "expected": {
+        "damage": [
+          280,
+          288,
+          288,
+          292,
+          292,
+          300,
+          300,
+          304,
+          312,
+          312,
+          316,
+          316,
+          324,
+          324,
+          328,
+          336
+        ],
+        "range": [
+          280,
+          336
+        ]
+      },
+      "description": "0 SpA Mew Flamethrower vs. 0 HP / 0 SpD Mew: 280-336 (70 - 84%) -- guaranteed 2HKO",
+      "calc_inputs": {
+        "attacker": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 300,
+            "atk": 100,
+            "def": 90,
+            "spa": 151,
+            "spd": 100,
+            "spe": 110
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Fire"
+          ]
+        },
+        "defender": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 400,
+            "atk": 100,
+            "def": 100,
+            "spa": 100,
+            "spd": 109,
+            "spe": 90
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Grass",
+            "Steel"
+          ]
+        },
+        "move": {
+          "name": "Flamethrower",
+          "bp": 90,
+          "type": "Fire",
+          "category": "Special"
+        },
+        "field": {
+          "weather": null,
+          "terrain": null,
+          "gameType": "Singles"
+        }
+      }
+    },
+    {
+      "id": "gen6-earthquake-resisted",
+      "generation": 6,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 163,
+          "def": 90,
+          "spa": 100,
+          "spd": 100,
+          "spe": 110
+        },
+        "types": [
+          "Ground"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 400,
+          "atk": 100,
+          "def": 97,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Bug"
+        ],
+        "ability": "None"
+      },
+      "move": "Earthquake",
+      "field": {},
+      "expected": {
+        "damage": [
+          47,
+          48,
+          48,
+          49,
+          49,
+          50,
+          51,
+          51,
+          51,
+          52,
+          53,
+          54,
+          54,
+          54,
+          55,
+          56
+        ],
+        "range": [
+          47,
+          56
+        ]
+      },
+      "description": "0 Atk Mew Earthquake vs. 0 HP / 0 Def Mew: 47-56 (11.7 - 14%) -- possible 8HKO",
+      "calc_inputs": {
+        "attacker": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 300,
+            "atk": 163,
+            "def": 90,
+            "spa": 100,
+            "spd": 100,
+            "spe": 110
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Ground"
+          ]
+        },
+        "defender": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 400,
+            "atk": 100,
+            "def": 97,
+            "spa": 100,
+            "spd": 100,
+            "spe": 90
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Bug"
+          ]
+        },
+        "move": {
+          "name": "Earthquake",
+          "bp": 100,
+          "type": "Ground",
+          "category": "Physical"
+        },
+        "field": {
+          "weather": null,
+          "terrain": null,
+          "gameType": "Singles"
+        }
+      }
+    },
+    {
+      "id": "gen7-thunderbolt-electric-terrain",
+      "generation": 7,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 90,
+          "spa": 143,
+          "spd": 100,
+          "spe": 110
+        },
+        "types": [
+          "Electric"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 400,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 126,
+          "spe": 90
+        },
+        "types": [
+          "Water"
+        ],
+        "ability": "None"
+      },
+      "move": "Thunderbolt",
+      "field": {
+        "terrain": "Electric"
+      },
+      "expected": {
+        "damage": [
+          174,
+          176,
+          180,
+          180,
+          182,
+          186,
+          186,
+          188,
+          192,
+          192,
+          194,
+          198,
+          198,
+          200,
+          204,
+          206
+        ],
+        "range": [
+          174,
+          206
+        ]
+      },
+      "description": "0 SpA Mew Thunderbolt vs. 0 HP / 0 SpD Mew in Electric Terrain: 174-206 (43.5 - 51.5%) -- 7.4% chance to 2HKO",
+      "calc_inputs": {
+        "attacker": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 300,
+            "atk": 100,
+            "def": 90,
+            "spa": 143,
+            "spd": 100,
+            "spe": 110
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Electric"
+          ]
+        },
+        "defender": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 400,
+            "atk": 100,
+            "def": 100,
+            "spa": 100,
+            "spd": 126,
+            "spe": 90
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Water"
+          ]
+        },
+        "move": {
+          "name": "Thunderbolt",
+          "bp": 90,
+          "type": "Electric",
+          "category": "Special"
+        },
+        "field": {
+          "weather": null,
+          "terrain": "Electric",
+          "gameType": "Singles"
+        }
+      }
+    },
+    {
+      "id": "gen7-body-slam-uneven-stats",
+      "generation": 7,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 158,
+          "def": 90,
+          "spa": 100,
+          "spd": 100,
+          "spe": 110
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 400,
+          "atk": 100,
+          "def": 113,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Fighting"
+        ],
+        "ability": "None"
+      },
+      "move": "Body Slam",
+      "field": {},
+      "expected": {
+        "damage": [
+          67,
+          69,
+          69,
+          70,
+          72,
+          72,
+          73,
+          73,
+          75,
+          75,
+          76,
+          76,
+          78,
+          78,
+          79,
+          81
+        ],
+        "range": [
+          67,
+          81
+        ]
+      },
+      "description": "0 Atk Mew Body Slam vs. 0 HP / 0 Def Mew: 67-81 (16.7 - 20.2%) -- possible 5HKO",
+      "calc_inputs": {
+        "attacker": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 300,
+            "atk": 158,
+            "def": 90,
+            "spa": 100,
+            "spd": 100,
+            "spe": 110
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Normal"
+          ]
+        },
+        "defender": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 400,
+            "atk": 100,
+            "def": 113,
+            "spa": 100,
+            "spd": 100,
+            "spe": 90
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Fighting"
+          ]
+        },
+        "move": {
+          "name": "Body Slam",
+          "bp": 85,
+          "type": "Normal",
+          "category": "Physical"
+        },
+        "field": {
+          "weather": null,
+          "terrain": null,
+          "gameType": "Singles"
+        }
+      }
+    },
+    {
+      "id": "gen8-thunderbolt-electric-terrain",
+      "generation": 8,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 90,
+          "spa": 143,
+          "spd": 100,
+          "spe": 110
+        },
+        "types": [
+          "Electric"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 400,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 126,
+          "spe": 90
+        },
+        "types": [
+          "Water"
+        ],
+        "ability": "None"
+      },
+      "move": "Thunderbolt",
+      "field": {
+        "terrain": "Electric"
+      },
+      "expected": {
+        "damage": [
+          152,
+          152,
+          156,
+          156,
+          158,
+          162,
+          162,
+          164,
+          164,
+          168,
+          170,
+          170,
+          174,
+          174,
+          176,
+          180
+        ],
+        "range": [
+          152,
+          180
+        ]
+      },
+      "description": "0 SpA Mew Thunderbolt vs. 0 HP / 0 SpD Mew in Electric Terrain: 152-180 (38 - 45%) -- guaranteed 3HKO",
+      "calc_inputs": {
+        "attacker": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 300,
+            "atk": 100,
+            "def": 90,
+            "spa": 143,
+            "spd": 100,
+            "spe": 110
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Electric"
+          ]
+        },
+        "defender": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 400,
+            "atk": 100,
+            "def": 100,
+            "spa": 100,
+            "spd": 126,
+            "spe": 90
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Water"
+          ]
+        },
+        "move": {
+          "name": "Thunderbolt",
+          "bp": 90,
+          "type": "Electric",
+          "category": "Special"
+        },
+        "field": {
+          "weather": null,
+          "terrain": "Electric",
+          "gameType": "Singles"
+        }
+      }
+    },
+    {
+      "id": "gen8-ice-beam-uneven-stats",
+      "generation": 8,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 90,
+          "spa": 152,
+          "spd": 100,
+          "spe": 110
+        },
+        "types": [
+          "Ice"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 400,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 104,
+          "spe": 90
+        },
+        "types": [
+          "Dragon",
+          "Ground"
+        ],
+        "ability": "None"
+      },
+      "move": "Ice Beam",
+      "field": {},
+      "expected": {
+        "damage": [
+          300,
+          300,
+          304,
+          304,
+          312,
+          316,
+          316,
+          324,
+          324,
+          328,
+          336,
+          336,
+          340,
+          340,
+          348,
+          352
+        ],
+        "range": [
+          300,
+          352
+        ]
+      },
+      "description": "0 SpA Mew Ice Beam vs. 0 HP / 0 SpD Mew: 300-352 (75 - 88%) -- guaranteed 2HKO",
+      "calc_inputs": {
+        "attacker": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 300,
+            "atk": 100,
+            "def": 90,
+            "spa": 152,
+            "spd": 100,
+            "spe": 110
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Ice"
+          ]
+        },
+        "defender": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 400,
+            "atk": 100,
+            "def": 100,
+            "spa": 100,
+            "spd": 104,
+            "spe": 90
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Dragon",
+            "Ground"
+          ]
+        },
+        "move": {
+          "name": "Ice Beam",
+          "bp": 90,
+          "type": "Ice",
+          "category": "Special"
+        },
+        "field": {
+          "weather": null,
+          "terrain": null,
+          "gameType": "Singles"
+        }
+      }
+    },
+    {
+      "id": "gen9-foul-play-target-attack",
+      "generation": 9,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 80,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 110
+        },
+        "types": [
+          "Dark"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 400,
+          "atk": 171,
+          "def": 113,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Psychic"
+        ],
+        "ability": "None"
+      },
+      "move": "Foul Play",
+      "field": {},
+      "expected": {
+        "damage": [
+          164,
+          164,
+          168,
+          170,
+          170,
+          174,
+          176,
+          176,
+          180,
+          182,
+          182,
+          186,
+          188,
+          188,
+          192,
+          194
+        ],
+        "range": [
+          164,
+          194
+        ]
+      },
+      "description": "0 Atk Mew Foul Play vs. 0 HP / 0 Def Mew: 164-194 (41 - 48.5%) -- guaranteed 3HKO",
+      "calc_inputs": {
+        "attacker": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 300,
+            "atk": 80,
+            "def": 100,
+            "spa": 100,
+            "spd": 100,
+            "spe": 110
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Dark"
+          ]
+        },
+        "defender": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 400,
+            "atk": 171,
+            "def": 113,
+            "spa": 100,
+            "spd": 100,
+            "spe": 90
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Psychic"
+          ]
+        },
+        "move": {
+          "name": "Foul Play",
+          "bp": 95,
+          "type": "Dark",
+          "category": "Physical"
+        },
+        "field": {
+          "weather": null,
+          "terrain": null,
+          "gameType": "Singles"
+        }
+      }
+    },
+    {
+      "id": "gen9-body-press-user-defense",
+      "generation": 9,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 90,
+          "def": 157,
+          "spa": 100,
+          "spd": 100,
+          "spe": 110
+        },
+        "types": [
+          "Fighting",
+          "Steel"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 400,
+          "atk": 100,
+          "def": 119,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "move": "Body Press",
+      "field": {},
+      "expected": {
+        "damage": [
+          120,
+          122,
+          122,
+          126,
+          126,
+          128,
+          128,
+          132,
+          132,
+          134,
+          134,
+          138,
+          138,
+          140,
+          140,
+          144
+        ],
+        "range": [
+          120,
+          144
+        ]
+      },
+      "description": "0 Def Mew Body Press vs. 0 HP / 0 Def Mew: 120-144 (30 - 36%) -- 36.3% chance to 3HKO",
+      "calc_inputs": {
+        "attacker": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 300,
+            "atk": 90,
+            "def": 157,
+            "spa": 100,
+            "spd": 100,
+            "spe": 110
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Fighting",
+            "Steel"
+          ]
+        },
+        "defender": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 400,
+            "atk": 100,
+            "def": 119,
+            "spa": 100,
+            "spd": 100,
+            "spe": 90
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Normal"
+          ]
+        },
+        "move": {
+          "name": "Body Press",
+          "bp": 80,
+          "type": "Fighting",
+          "category": "Physical"
+        },
+        "field": {
+          "weather": null,
+          "terrain": null,
+          "gameType": "Singles"
+        }
+      }
+    },
+    {
+      "id": "gen9-psyshock-target-defense",
+      "generation": 9,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 90,
+          "spa": 152,
+          "spd": 100,
+          "spe": 110
+        },
+        "types": [
+          "Psychic"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 400,
+          "atk": 100,
+          "def": 87,
+          "spa": 100,
+          "spd": 163,
+          "spe": 90
+        },
+        "types": [
+          "Poison"
+        ],
+        "ability": "None"
+      },
+      "move": "Psyshock",
+      "field": {},
+      "expected": {
+        "damage": [
+          158,
+          162,
+          162,
+          164,
+          168,
+          168,
+          170,
+          170,
+          174,
+          176,
+          176,
+          180,
+          182,
+          182,
+          186,
+          188
+        ],
+        "range": [
+          158,
+          188
+        ]
+      },
+      "description": "0 SpA Mew Psyshock vs. 0 HP / 0 Def Mew: 158-188 (39.5 - 47%) -- guaranteed 3HKO",
+      "calc_inputs": {
+        "attacker": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 300,
+            "atk": 100,
+            "def": 90,
+            "spa": 152,
+            "spd": 100,
+            "spe": 110
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Psychic"
+          ]
+        },
+        "defender": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 400,
+            "atk": 100,
+            "def": 87,
+            "spa": 100,
+            "spd": 163,
+            "spe": 90
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Poison"
+          ]
+        },
+        "move": {
+          "name": "Psyshock",
+          "bp": 80,
+          "type": "Psychic",
+          "category": "Special"
+        },
+        "field": {
+          "weather": null,
+          "terrain": null,
+          "gameType": "Singles"
+        }
+      }
+    },
+    {
+      "id": "gen5-psyshock-sandstorm-rock",
+      "generation": 5,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 90,
+          "spa": 152,
+          "spd": 100,
+          "spe": 110
+        },
+        "types": [
+          "Psychic"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 400,
+          "atk": 100,
+          "def": 97,
+          "spa": 100,
+          "spd": 121,
+          "spe": 90
+        },
+        "types": [
+          "Rock"
+        ],
+        "ability": "None"
+      },
+      "move": "Psyshock",
+      "field": {
+        "weather": "Sand"
+      },
+      "expected": {
+        "damage": [
+          72,
+          73,
+          73,
+          75,
+          75,
+          76,
+          76,
+          78,
+          79,
+          79,
+          81,
+          81,
+          82,
+          82,
+          84,
+          85
+        ],
+        "range": [
+          72,
+          85
+        ]
+      },
+      "description": "0 SpA Mew Psyshock vs. 0 HP / 0 Def Mew: 72-85 (18 - 21.2%) -- possible 5HKO",
+      "calc_inputs": {
+        "attacker": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 300,
+            "atk": 100,
+            "def": 90,
+            "spa": 152,
+            "spd": 100,
+            "spe": 110
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Psychic"
+          ]
+        },
+        "defender": {
+          "level": 50,
+          "raw_stats": {
+            "hp": 400,
+            "atk": 100,
+            "def": 97,
+            "spa": 100,
+            "spd": 121,
+            "spe": 90
+          },
+          "boosts": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "status": "",
+          "item": null,
+          "ability": "Illuminate",
+          "types": [
+            "Rock"
+          ]
+        },
+        "move": {
+          "name": "Psyshock",
+          "bp": 80,
+          "type": "Psychic",
+          "category": "Special"
+        },
+        "field": {
+          "weather": "Sand",
+          "terrain": null,
+          "gameType": "Singles"
+        }
+      }
+    }
+  ]
+}

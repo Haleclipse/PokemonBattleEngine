@@ -1,0 +1,74 @@
+{
+ "schema": 1,
+ "id": "gen9-meloetta-transformed-into-a-meloetta",
+ "notes": [
+  "Gen 9: Meloetta's Transform copies a foe Meloetta; its Relic Song changes no forme afterwards (`pokemon.transformed`) and it keeps the copied Aria Forme"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Meloetta",
+    "species": "Meloetta",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Transform",
+     "Harden"
+    ],
+    "ability": "Natural Cure"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Meloetta",
+    "species": "Meloetta",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Relic Song",
+     "Harden"
+    ],
+    "ability": "Natural Cure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Transform",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Relic Song",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Relic Song",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

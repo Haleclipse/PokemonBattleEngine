@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen9-arceus-and-its-plate",
+ "notes": [
+  "Gen 9: an Arceus with a Sky Plate is a Flying type and its Judgment is Flying, but its species stays Arceus (only Gen 4 switches the forme)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Arceus",
+    "species": "Arceus",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Judgment",
+     "Harden"
+    ],
+    "ability": "Multitype",
+    "item": "Sky Plate"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Judgment",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Judgment",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

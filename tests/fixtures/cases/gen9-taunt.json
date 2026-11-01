@@ -1,0 +1,68 @@
+{
+  "schema": 1,
+  "id": "gen9-singles-taunt",
+  "notes": [
+    "Taunt (BeforeMove batch 2): Garchomp taunts first; Snorlax's Swords Dance is refused (`cant … move: Taunt`) and",
+    "cannot be chosen for two more turns (Showdown's request disables it), the condition ends at the third turn's end."
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "a",
+        "species": "Garchomp",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Taunt",
+          "Tackle"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "b",
+        "species": "Snorlax",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Swords Dance",
+          "Tackle"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

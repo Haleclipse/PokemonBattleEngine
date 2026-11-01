@@ -1,0 +1,91 @@
+{
+  "schema": 1,
+  "id": "gen9-doubles-uturn",
+  "notes": [
+    "Doubles mid-turn replacement: Jolteon's U-turn suspends the turn with the other three actions pending; the",
+    "ForcedSwitch request names only Jolteon's slot, entry 2 answers `switch 3` (Vaporeon), and the rest of the turn runs."
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "a",
+        "species": "Jolteon",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "U-turn"
+        ]
+      },
+      {
+        "label": "c",
+        "species": "Snorlax",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ]
+      },
+      {
+        "label": "e",
+        "species": "Vaporeon",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "b",
+        "species": "Metagross",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ]
+      },
+      {
+        "label": "d",
+        "species": "Clefable",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1 1, move 1 2",
+      "p2": "move 1 1, move 1 2"
+    },
+    {
+      "p1": "switch 3"
+    },
+    {
+      "p1": "move 1 1, move 1 2",
+      "p2": "move 1 1, move 1 2"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

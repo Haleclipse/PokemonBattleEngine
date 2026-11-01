@@ -1,0 +1,72 @@
+{
+ "schema": 1,
+ "id": "gen1-mirror-move-after-the-foe-froze",
+ "notes": [
+  "Gen 1: Snorlax used Tackle, then Jolteon's Blizzard freezes it — the turn the freeze takes leaves it no last move (the gen1 `frz` `onBeforeMove`: `lastMove = null`), so Jolteon's Mirror Move then fails"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 25,
+    "nature": "Hardy",
+    "moves": [
+     "Blizzard",
+     "Mirror Move"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   8,
+   9,
+   10,
+   11
+  ]
+ }
+}

@@ -1,0 +1,55 @@
+{
+ "schema": 1,
+ "id": "gen9-cotton-down-against-ancient-power",
+ "notes": [
+  "Gen 9 (Nightly 36, minimized): Cotton Down lowers the attacker's Speed as Ancient Power hits; the replay reads that `-unboost` as the ability's, not as the move's secondary"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Kleavor",
+    "species": "Kleavor",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Ancient Power"
+    ],
+    "ability": "Earth Eater",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Donphan",
+    "species": "Donphan",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Headlong Rush"
+    ],
+    "ability": "Cotton Down",
+    "gender": "F"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   35156,
+   49748,
+   9161,
+   11816
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Ancient Power",
+   "p2": "move Headlong Rush"
+  }
+ ]
+}

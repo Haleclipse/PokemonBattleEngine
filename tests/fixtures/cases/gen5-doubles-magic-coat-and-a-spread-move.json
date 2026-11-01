@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "gen5-doubles-magic-coat-and-a-spread-move",
+ "notes": [
+  "Gen 5 doubles: Absol's Leer meets Mawile's Magic Coat and Zigzagoon: Mawile sends its part back at both foes, and Leer goes on to Zigzagoon — Showdown runs the reflection inside Mawile's `TryHit`, and the move keeps its other targets"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "doubles",
+  "format": "gen5doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mawile",
+    "species": "Mawile",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Magic Coat"
+    ],
+    "ability": "Hyper Cutter",
+    "gender": "F"
+   },
+   {
+    "label": "Zigzagoon",
+    "species": "Zigzagoon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Pickup",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Absol",
+    "species": "Absol",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Leer"
+    ],
+    "ability": "Pressure",
+    "gender": "M"
+   },
+   {
+    "label": "Pidgey",
+    "species": "Pidgey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Keen Eye",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1, move 1",
+   "p2": "move 1, move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

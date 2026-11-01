@@ -1,0 +1,562 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@pkmn/sim",
+    "version": "0.10.11",
+    "formatid": "gen9customgame",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "frames": [
+    {
+      "schema": 1,
+      "checkpoint": "team_preview",
+      "turn": 0,
+      "request": "team_preview|team_preview",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            null
+          ],
+          "party": [
+            {
+              "hp": 173,
+              "max_hp": 173,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "flying",
+                "steel"
+              ],
+              "ability": "pressure",
+              "item": "",
+              "species": "corviknight",
+              "pp": [
+                8,
+                64
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            null
+          ],
+          "party": [
+            {
+              "hp": 166,
+              "max_hp": 166,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ground"
+              ],
+              "ability": "sandstream",
+              "item": "",
+              "species": "hippowdon",
+              "pp": [
+                24,
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": []
+    },
+    {
+      "schema": 1,
+      "checkpoint": "initial",
+      "turn": 1,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 173,
+              "max_hp": 173,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "flying",
+                "steel"
+              ],
+              "ability": "pressure",
+              "item": "",
+              "species": "corviknight",
+              "pp": [
+                8,
+                64
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 166,
+              "max_hp": 166,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ground"
+              ],
+              "ability": "sandstream",
+              "item": "",
+              "species": "hippowdon",
+              "pp": [
+                24,
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": {
+          "kind": "sandstorm",
+          "turns_remaining": 5
+        },
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Corviknight"
+          },
+          "details": "Corviknight, L50, M",
+          "hp": 173,
+          "max_hp": 173,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Hippowdon"
+          },
+          "details": "Hippowdon, L45, M",
+          "hp": 166,
+          "max_hp": 166,
+          "status": null
+        },
+        {
+          "kind": "ability",
+          "args": [
+            "p1a: Corviknight",
+            "Pressure"
+          ]
+        },
+        {
+          "kind": "weather",
+          "args": [
+            "Sandstorm",
+            "[from] ability: Sand Stream",
+            "[of] p2a: Hippowdon"
+          ]
+        },
+        {
+          "kind": "turn",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_1",
+      "turn": 2,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 117,
+              "max_hp": 173,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "flying"
+              ],
+              "ability": "pressure",
+              "item": "",
+              "species": "corviknight",
+              "pp": [
+                8,
+                63
+              ],
+              "terastallized": "flying"
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 166,
+              "max_hp": 166,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ground"
+              ],
+              "ability": "sandstream",
+              "item": "",
+              "species": "hippowdon",
+              "pp": [
+                22,
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": {
+          "kind": "sandstorm",
+          "turns_remaining": 4
+        },
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Corviknight"
+          },
+          "move": "Splash",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Corviknight"
+          },
+          "from": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Hippowdon"
+          },
+          "move": "Ice Fang",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Corviknight"
+          },
+          "from": null
+        },
+        {
+          "kind": "supereffective",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Corviknight"
+          },
+          "detail": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Corviknight"
+          },
+          "hp": 127,
+          "max_hp": 173,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "weather",
+          "args": [
+            "Sandstorm",
+            "[upkeep]"
+          ]
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Corviknight"
+          },
+          "hp": 117,
+          "max_hp": 173,
+          "status": null,
+          "from": "[from] Sandstorm",
+          "of": null
+        },
+        {
+          "kind": "turn",
+          "turn": 2
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_2",
+      "turn": 3,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 163,
+              "max_hp": 173,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "flying"
+              ],
+              "ability": "pressure",
+              "item": "",
+              "species": "corviknight",
+              "pp": [
+                7,
+                63
+              ],
+              "terastallized": "flying"
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 166,
+              "max_hp": 166,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ground"
+              ],
+              "ability": "sandstream",
+              "item": "",
+              "species": "hippowdon",
+              "pp": [
+                22,
+                14
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": {
+          "kind": "sandstorm",
+          "turns_remaining": 3
+        },
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Corviknight"
+          },
+          "move": "Roost",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Corviknight"
+          },
+          "from": null
+        },
+        {
+          "kind": "heal",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Corviknight"
+          },
+          "hp": 173,
+          "max_hp": 173,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "hint",
+          "text": "If a Terastallized Pokemon uses Roost, it remains Flying-type."
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Hippowdon"
+          },
+          "move": "Earthquake",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Corviknight"
+          },
+          "from": null
+        },
+        {
+          "kind": "immune",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Corviknight"
+          },
+          "detail": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "weather",
+          "args": [
+            "Sandstorm",
+            "[upkeep]"
+          ]
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Corviknight"
+          },
+          "hp": 163,
+          "max_hp": 173,
+          "status": null,
+          "from": "[from] Sandstorm",
+          "of": null
+        },
+        {
+          "kind": "turn",
+          "turn": 3
+        }
+      ]
+    }
+  ],
+  "debug_log": "|gametype|singles\n|player|p1|P1||\n|player|p2|P2||\n|gen|9\n|tier|[Gen 9] Custom Game\n|clearpoke\n|poke|p1|Corviknight, L50, M|\n|poke|p2|Hippowdon, L45, M|\n|teampreview\n|\n|teamsize|p1|1\n|teamsize|p2|1\n|start\n|switch|p1a: Corviknight|Corviknight, L50, M|173/173\n|switch|p2a: Hippowdon|Hippowdon, L45, M|166/166\n|-ability|p1a: Corviknight|Pressure\n|-weather|Sandstorm|[from] ability: Sand Stream|[of] p2a: Hippowdon\n|turn|1\n|\n|-terastallize|p1a: Corviknight|Flying\n|move|p1a: Corviknight|Splash|p1a: Corviknight\n|-nothing\n|move|p2a: Hippowdon|Ice Fang|p1a: Corviknight\n|-supereffective|p1a: Corviknight\n|-damage|p1a: Corviknight|127/173\n|\n|-weather|Sandstorm|[upkeep]\n|-damage|p1a: Corviknight|117/173|[from] Sandstorm\n|debug|natural status immunity\n|debug|weather immunity\n|upkeep\n|turn|2\n|\n|move|p1a: Corviknight|Roost|p1a: Corviknight\n|-heal|p1a: Corviknight|173/173\n|-hint|If a Terastallized Pokemon uses Roost, it remains Flying-type.\n|debug|move failed because it did nothing\n|move|p2a: Hippowdon|Earthquake|p1a: Corviknight\n|-immune|p1a: Corviknight\n|\n|-weather|Sandstorm|[upkeep]\n|-damage|p1a: Corviknight|163/173|[from] Sandstorm\n|debug|natural status immunity\n|debug|weather immunity\n|upkeep\n|turn|3"
+}

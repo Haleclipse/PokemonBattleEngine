@@ -1,0 +1,76 @@
+{
+ "schema": 1,
+ "id": "gen5-a-flying-magic-bounce-reflects-spikes",
+ "notes": [
+  "Gen 5: Espeon, up in the air with Fly, still reflects Smeargle's Spikes with its Magic Bounce (the gen5 mod's `onAllyTryHitSide` has no semi-invulnerability check): they land on Smeargle's side"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Smeargle",
+    "species": "Smeargle",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spikes",
+     "Splash"
+    ],
+    "ability": "Own Tempo",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Espeon",
+    "species": "Espeon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fly",
+     "Splash"
+    ],
+    "ability": "Magic Bounce",
+    "gender": "F"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Spikes",
+   "p2": "move Fly"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Fly"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "switch 2"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

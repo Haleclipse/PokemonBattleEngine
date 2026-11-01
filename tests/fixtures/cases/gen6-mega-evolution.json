@@ -1,0 +1,64 @@
+{
+ "schema": 1,
+ "id": "gen6-mega-evolution",
+ "notes": [
+  "Gen 6: Venusaur Mega Evolves with its stone (`move 1 mega`): the step runs before the moves (`-mega`), the forme and its ability (Thick Fat) arrive, and the seed's order is unchanged (Gen 6 does not re-queue)"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Venusaur",
+    "species": "Venusaur",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "ability": "Overgrow",
+    "item": "Venusaurite"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1 mega",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 2"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

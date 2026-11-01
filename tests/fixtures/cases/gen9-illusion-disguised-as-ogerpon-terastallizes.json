@@ -1,0 +1,71 @@
+{
+ "schema": 1,
+ "id": "gen9-illusion-disguised-as-ogerpon-terastallizes",
+ "notes": [
+  "Gen 9: Zoroark's Illusion wears the Ogerpon in its party; Terastallizing ends the disguise first (Showdown's `singleEvent('End', Illusion)` for an Ogerpon or Terapagos face), so the `-terastallize` line and the frames name Zoroark"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Zoroark",
+    "species": "Zoroark",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "ability": "Illusion",
+    "teraType": "Normal"
+   },
+   {
+    "label": "Ogerpon",
+    "species": "Ogerpon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Defiant",
+    "teraType": "Grass"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1 terastallize",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,342 @@
+{
+  "schema": 1,
+  "id": "m8-gen7-genesis-supernova-terrain-before-innards-out",
+  "notes": [
+    "Nightly 52: Genesis Supernova's Psychic Terrain (secondary.self.onHit) lands among the secondaries, before the hit's DamagingHit, so Innards Out knocking the user out does not stop it (DESIGN.md R-M8-96)",
+    "promoted from m8-gen7-singles-s507-008-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 7,
+    "mode": "singles",
+    "format": "gen7customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Pelipper",
+        "species": "Pelipper",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Mach Punch",
+          "Mean Look",
+          "Hyperspace Hole",
+          "Entrainment"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Feraligatr",
+        "species": "Feraligatr",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Spectral Thief",
+          "Mean Look",
+          "Menacing Moonraze Maelstrom",
+          "Entrainment"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Gumshoos",
+        "species": "Gumshoos",
+        "level": 53,
+        "nature": "Hardy",
+        "moves": [
+          "Weather Ball",
+          "Psyshock",
+          "Entrainment"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Pidgeot",
+        "species": "Pidgeot",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Genesis Supernova",
+          "Fairy Wind",
+          "Entrainment"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Vigoroth",
+        "species": "Vigoroth",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Power Gem",
+          "Light That Burns the Sky"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Cyndaquil",
+        "species": "Cyndaquil",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Oceanic Operetta",
+          "Mean Look",
+          "Future Sight",
+          "Entrainment"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Luxio",
+        "species": "Luxio",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Photon Geyser",
+          "Water Gun",
+          "Entrainment"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Elgyem",
+        "species": "Elgyem",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Techno Blast",
+          "Fire Pledge",
+          "Entrainment"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Starly",
+        "species": "Starly",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Clear Smog",
+          "Water Pledge",
+          "Entrainment"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Porygon2",
+        "species": "Porygon2",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Psystrike",
+          "Mean Look",
+          "Doom Desire",
+          "Entrainment"
+        ],
+        "ability": "Innards Out"
+      },
+      {
+        "label": "Ledian",
+        "species": "Ledian",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Mean Look",
+          "Magical Leaf"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      14928,
+      33772,
+      4865,
+      36296
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Mach Punch",
+      "p2": "move Oceanic Operetta"
+    },
+    {
+      "p1": "move Mean Look",
+      "p2": "move Future Sight"
+    },
+    {
+      "p1": "move Hyperspace Hole",
+      "p2": "move Entrainment"
+    },
+    {
+      "p1": "move Entrainment",
+      "p2": "move Mean Look"
+    },
+    {
+      "p1": "move Mach Punch",
+      "p2": "move Future Sight"
+    },
+    {
+      "p1": "move Mean Look",
+      "p2": "move Entrainment"
+    },
+    {
+      "p1": "move Hyperspace Hole",
+      "p2": "move Mean Look"
+    },
+    {
+      "p2": "switch Luxio"
+    },
+    {
+      "p1": "move Entrainment",
+      "p2": "move Entrainment"
+    },
+    {
+      "p1": "move Mach Punch",
+      "p2": "move Photon Geyser"
+    },
+    {
+      "p1": "switch Feraligatr"
+    },
+    {
+      "p1": "move Menacing Moonraze Maelstrom",
+      "p2": "move Water Gun"
+    },
+    {
+      "p1": "move Entrainment",
+      "p2": "move Entrainment"
+    },
+    {
+      "p1": "move Spectral Thief",
+      "p2": "move Photon Geyser"
+    },
+    {
+      "p2": "switch Elgyem"
+    },
+    {
+      "p1": "move Entrainment",
+      "p2": "move Fire Pledge"
+    },
+    {
+      "p1": "move Spectral Thief",
+      "p2": "move Entrainment"
+    },
+    {
+      "p1": "move Mean Look",
+      "p2": "move Techno Blast"
+    },
+    {
+      "p1": "move Spectral Thief",
+      "p2": "move Fire Pledge"
+    },
+    {
+      "p2": "switch Starly"
+    },
+    {
+      "p1": "move Entrainment",
+      "p2": "move Clear Smog"
+    },
+    {
+      "p1": "move Mean Look",
+      "p2": "move Water Pledge"
+    },
+    {
+      "p1": "move Spectral Thief",
+      "p2": "move Clear Smog"
+    },
+    {
+      "p1": "move Entrainment",
+      "p2": "move Water Pledge"
+    },
+    {
+      "p1": "move Mean Look",
+      "p2": "move Clear Smog"
+    },
+    {
+      "p1": "move Spectral Thief",
+      "p2": "move Water Pledge"
+    },
+    {
+      "p1": "switch Gumshoos"
+    },
+    {
+      "p1": "move Entrainment",
+      "p2": "move Entrainment"
+    },
+    {
+      "p1": "move Weather Ball",
+      "p2": "move Clear Smog"
+    },
+    {
+      "p1": "move Psyshock",
+      "p2": "move Water Pledge"
+    },
+    {
+      "p1": "move Weather Ball",
+      "p2": "move Clear Smog"
+    },
+    {
+      "p2": "switch Porygon2"
+    },
+    {
+      "p1": "move Psyshock",
+      "p2": "move Doom Desire"
+    },
+    {
+      "p1": "move Entrainment",
+      "p2": "move Entrainment"
+    },
+    {
+      "p1": "move Weather Ball",
+      "p2": "move Psystrike"
+    },
+    {
+      "p1": "switch Pidgeot"
+    },
+    {
+      "p1": "switch Vigoroth",
+      "p2": "switch Ledian"
+    },
+    {
+      "p1": "move Light That Burns the Sky",
+      "p2": "move Magical Leaf"
+    },
+    {
+      "p1": "move Power Gem",
+      "p2": "move Mean Look"
+    },
+    {
+      "p2": "switch Porygon2"
+    },
+    {
+      "p1": "switch Pidgeot",
+      "p2": "move Doom Desire"
+    },
+    {
+      "p1": "move Fairy Wind",
+      "p2": "move Entrainment"
+    },
+    {
+      "p1": "move Entrainment",
+      "p2": "move Psystrike"
+    },
+    {
+      "p1": "move Genesis Supernova",
+      "p2": "move Mean Look"
+    }
+  ]
+}

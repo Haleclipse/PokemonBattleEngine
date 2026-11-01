@@ -1,0 +1,262 @@
+{
+ "schema": 1,
+ "id": "m9-a-thaw-before-confusion-wears-off-is-its-own-action",
+ "notes": [
+  "R-M9-52: the first 17 steps of m8-gen7-singles-s519-015 (M8). Deerling's Nature Power calls Tri Attack, which freezes Beldum; at Beldum's own turn it thaws (`-curestatus|frz|[msg]`), its confusion wears off (`-end|p|confusion`), then Guard Split. The thaw is Beldum's own, not Tri Attack's: the events after a thaw, up to the Pok\u00e9mon's `move`, are all its own (`own_action_follows`)."
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Shuckle",
+    "species": "Shuckle",
+    "level": 48,
+    "nature": "Hardy",
+    "moves": [
+     "Hydro Vortex",
+     "Forest's Curse",
+     "All-Out Pummeling",
+     "Guard Split"
+    ],
+    "ability": "Download",
+    "item": "Ghost Memory"
+   },
+   {
+    "label": "Weepinbell",
+    "species": "Weepinbell",
+    "level": 49,
+    "nature": "Hardy",
+    "moves": [
+     "Inferno Overdrive",
+     "Nature Power",
+     "Magnet Bomb",
+     "Guard Split"
+    ],
+    "ability": "Magician",
+    "item": "Douse Drive"
+   },
+   {
+    "label": "Beldum",
+    "species": "Beldum",
+    "level": 48,
+    "nature": "Hardy",
+    "moves": [
+     "Continental Crush",
+     "Guard Split",
+     "Fling",
+     "Grudge"
+    ],
+    "ability": "Solar Power",
+    "item": "Pikanium Z"
+   },
+   {
+    "label": "Cubchoo",
+    "species": "Cubchoo",
+    "level": 48,
+    "nature": "Hardy",
+    "moves": [
+     "Rock Throw",
+     "Nature Power",
+     "Supersonic Skystrike",
+     "Guard Split"
+    ],
+    "ability": "Regenerator",
+    "item": "Slowbronite"
+   },
+   {
+    "label": "Sandygast",
+    "species": "Sandygast",
+    "level": 47,
+    "nature": "Hardy",
+    "moves": [
+     "Seed Bomb",
+     "Nature Power",
+     "Twinkle Tackle",
+     "Guard Split"
+    ],
+    "ability": "Illusion",
+    "item": "Lustrous Orb"
+   },
+   {
+    "label": "Oshawott",
+    "species": "Oshawott",
+    "level": 49,
+    "nature": "Hardy",
+    "moves": [
+     "Savage Spin-Out",
+     "Nature Power",
+     "Flatter",
+     "Grudge"
+    ],
+    "ability": "Berserk",
+    "item": "Beedrillite"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Deerling",
+    "species": "Deerling",
+    "level": 49,
+    "nature": "Hardy",
+    "moves": [
+     "Swagger",
+     "Nature Power",
+     "Floral Healing",
+     "Grudge"
+    ],
+    "ability": "Scrappy",
+    "item": "Cameruptite"
+   },
+   {
+    "label": "Rattata",
+    "species": "Rattata",
+    "level": 47,
+    "nature": "Hardy",
+    "moves": [
+     "Heal Pulse",
+     "Nature Power",
+     "Blast Burn",
+     "Grudge"
+    ],
+    "ability": "Guts"
+   },
+   {
+    "label": "Swalot",
+    "species": "Swalot",
+    "level": 53,
+    "nature": "Hardy",
+    "moves": [
+     "Giga Impact",
+     "Grudge",
+     "Frenzy Plant",
+     "Nature Power"
+    ],
+    "ability": "Big Pecks",
+    "item": "White Herb"
+   },
+   {
+    "label": "Sudowoodo",
+    "species": "Sudowoodo",
+    "level": 55,
+    "nature": "Hardy",
+    "moves": [
+     "Prismatic Laser",
+     "Grudge",
+     "Hyper Beam",
+     "Nature Power"
+    ],
+    "ability": "Desolate Land",
+    "item": "Icicle Plate"
+   },
+   {
+    "label": "Croagunk",
+    "species": "Croagunk",
+    "level": 54,
+    "nature": "Hardy",
+    "moves": [
+     "Rock Wrecker",
+     "Grudge",
+     "Roar of Time",
+     "Nature Power"
+    ],
+    "ability": "Swarm",
+    "item": "Kangaskhanite"
+   },
+   {
+    "label": "Woobat",
+    "species": "Woobat",
+    "level": 46,
+    "nature": "Hardy",
+    "moves": [
+     "Hydro Cannon",
+     "Grudge",
+     "Ally Switch",
+     "Nature Power"
+    ],
+    "ability": "Protean"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   16708,
+   22335,
+   19069,
+   35518
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 2"
+  },
+  {
+   "p1": "move 3",
+   "p2": "move 3"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 4"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 4",
+   "p2": "move 2"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move 3",
+   "p2": "move 3"
+  },
+  {
+   "p1": "move 4",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 2"
+  },
+  {
+   "p1": "move 3",
+   "p2": "move 3"
+  },
+  {
+   "p1": "switch 2"
+  },
+  {
+   "p1": "move 4",
+   "p2": "move 1"
+  },
+  {
+   "p1": "switch 3",
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 2"
+  }
+ ]
+}

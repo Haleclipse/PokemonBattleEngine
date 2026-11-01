@@ -1,0 +1,73 @@
+{
+ "schema": 1,
+ "id": "gen9-knock-off-and-thief-behind-a-substitute",
+ "notes": [
+  "Gen 9: Knock Off on a Substitute takes nothing (onAfterHit is not onAfterSubDamage); Thief on the body takes the Metronome, whose Start gives Weavile its metronome volatile"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Weavile",
+    "species": "Weavile",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Knock Off",
+     "Thief",
+     "Harden"
+    ],
+    "ability": "Pressure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Substitute",
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Metronome"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Substitute"
+  },
+  {
+   "p1": "move Knock Off",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Thief",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Thief",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

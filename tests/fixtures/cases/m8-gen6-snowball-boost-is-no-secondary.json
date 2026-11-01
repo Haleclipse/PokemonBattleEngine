@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "id": "m8-gen6-snowball-boost-is-no-secondary",
+  "notes": [
+    "Nightly 55: Aurora Beam strikes a Snowball holder; the Attack boost after -enditem Snowball is the item's, not the move's secondary, whose 10% drop did not happen (DESIGN.md R-M8-99)",
+    "promoted from m8-gen6-singles-s521-000-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 6,
+    "mode": "singles",
+    "format": "gen6customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Houndoom",
+        "species": "Houndoom",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Aurora Beam"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Sunflora",
+        "species": "Sunflora",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Luster Purge"
+        ],
+        "ability": "Run Away",
+        "item": "Snowball",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      9941,
+      64100,
+      20558,
+      21475
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Aurora Beam",
+      "p2": "move Luster Purge"
+    }
+  ]
+}

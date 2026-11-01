@@ -1,0 +1,208 @@
+{
+  "schema": 1,
+  "id": "m10-v-a-transform-into-a-mimic-user-copies-no-oracle",
+  "notes": [
+    "Gen 4 Doubles OU: Ditto transformed into Electivire, which then Mimics Endeavor; the client counts the Mimic's Endeavor among Electivire's moves and so Ditto's, no oracle (R-M10-46)",
+    "promoted from m9-gen4doublesou-s209-004-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "doubles",
+    "format": "gen4doublesou"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Electivire",
+        "species": "Electivire",
+        "ability": "Motor Drive",
+        "moves": [
+          "Rock Climb",
+          "Charge Beam",
+          "Mimic",
+          "Cross Chop"
+        ],
+        "nature": "Calm",
+        "gender": "F",
+        "shiny": false,
+        "level": 100,
+        "evs": {
+          "hp": 0,
+          "atk": 48,
+          "def": 148,
+          "spa": 0,
+          "spd": 216,
+          "spe": 96
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        },
+        "happiness": 227
+      },
+      {
+        "label": "Venusaur",
+        "species": "Venusaur",
+        "ability": "Overgrow",
+        "moves": [
+          "Headbutt",
+          "Sweet Scent",
+          "Secret Power",
+          "Charm"
+        ],
+        "nature": "Modest",
+        "gender": "F",
+        "shiny": false,
+        "level": 100,
+        "evs": {
+          "hp": 8,
+          "atk": 252,
+          "def": 148,
+          "spa": 0,
+          "spd": 12,
+          "spe": 88
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        },
+        "happiness": 147
+      }
+    ],
+    "p2": [
+      {
+        "label": "Ditto",
+        "species": "Ditto",
+        "ability": "Limber",
+        "moves": [
+          "Transform"
+        ],
+        "nature": "Jolly",
+        "gender": "",
+        "shiny": false,
+        "level": 82,
+        "evs": {
+          "hp": 140,
+          "atk": 24,
+          "def": 176,
+          "spa": 0,
+          "spd": 72,
+          "spe": 96
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        }
+      },
+      {
+        "label": "Roselia",
+        "species": "Roselia",
+        "ability": "Natural Cure",
+        "moves": [
+          "Spikes"
+        ],
+        "nature": "Adamant",
+        "gender": "M",
+        "shiny": true,
+        "level": 52,
+        "evs": {
+          "hp": 80,
+          "atk": 148,
+          "def": 28,
+          "spa": 0,
+          "spd": 0,
+          "spe": 252
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 15
+        },
+        "happiness": 142
+      },
+      {
+        "label": "Combee",
+        "species": "Combee",
+        "ability": "Honey Gather",
+        "moves": [
+          "Endeavor",
+          "Mud-Slap",
+          "Snore"
+        ],
+        "nature": "Naughty",
+        "gender": "F",
+        "shiny": false,
+        "level": 100,
+        "evs": {
+          "hp": 0,
+          "atk": 172,
+          "def": 0,
+          "spa": 240,
+          "spd": 4,
+          "spe": 92
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        }
+      }
+    ]
+  },
+  "preview": {
+    "p1": "team 246135",
+    "p2": "team 513462"
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      53331,
+      209,
+      1004,
+      31
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Rock Climb 1, move Headbutt 2",
+      "p2": "move Transform 1, move Spikes"
+    },
+    {
+      "p2": "pass, switch Combee"
+    },
+    {
+      "p1": "move Charge Beam 1, move Sweet Scent",
+      "p2": "move 2 2, move Endeavor 1"
+    },
+    {
+      "p1": "move Mimic 2, move Secret Power 1",
+      "p2": "move 3 2, move Mud-Slap 1"
+    },
+    {
+      "p1": "move Cross Chop 2, move Charm 1",
+      "p2": "move 4 2, move Snore 1"
+    },
+    {
+      "p1": "move 3 1, move 3 2",
+      "p2": "move 3 1, move 2 2"
+    }
+  ]
+}

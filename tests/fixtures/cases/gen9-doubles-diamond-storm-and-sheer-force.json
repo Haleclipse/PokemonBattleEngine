@@ -1,0 +1,83 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-diamond-storm-and-sheer-force",
+ "notes": [
+  "Gen 9 Diamond Storm rolls its Defense +2 once whatever it hits; with Sheer Force it never raises it and hits x1.3"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Diamond Storm"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Forceful",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Diamond Storm"
+    ],
+    "ability": "Sheer Force"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Corviknight",
+    "species": "Corviknight",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Diamond Storm, move Diamond Storm",
+   "p2": "move Recover, move Recover"
+  },
+  {
+   "p1": "move Diamond Storm, move Diamond Storm",
+   "p2": "move Recover, move Recover"
+  },
+  {
+   "p1": "move Diamond Storm, move Diamond Storm",
+   "p2": "move Recover, move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

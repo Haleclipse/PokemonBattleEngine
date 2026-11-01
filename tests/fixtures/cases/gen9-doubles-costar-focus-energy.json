@@ -1,0 +1,97 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-costar-focus-energy",
+ "notes": [
+  "Costar on entry copies its partner's stages (Swords Dance's +2) and its Focus Energy"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Lead",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Pal",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Swords Dance",
+     "Focus Energy",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Flam",
+    "species": "Flamigo",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Costar"
+   }
+  ],
+  "p2": [
+   {
+    "label": "F1",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "F2",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Swords Dance",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Focus Energy",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "switch Flam, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

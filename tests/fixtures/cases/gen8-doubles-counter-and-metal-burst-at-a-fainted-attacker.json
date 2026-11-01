@@ -1,0 +1,73 @@
+{
+ "schema": 1,
+ "id": "gen8-doubles-counter-and-metal-burst-at-a-fainted-attacker",
+ "notes": [
+  "Gen 8 doubles: after Self-Destruct knocks its user out, Counter has no target ([notarget]) while Metal Burst turns to the other foe"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "doubles",
+  "format": "gen8doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Counterer",
+    "species": "Ponyta",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Counter"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Burster",
+    "species": "Aggron",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Metal Burst"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Bomber",
+    "species": "Magearna",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Self-Destruct"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Other",
+    "species": "Gurdurr",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Counter, move Metal Burst",
+   "p2": "move Self-Destruct, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

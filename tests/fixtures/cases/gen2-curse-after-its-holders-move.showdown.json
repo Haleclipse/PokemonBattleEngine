@@ -1,0 +1,630 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@pkmn/sim",
+    "version": "0.10.11",
+    "formatid": "gen2customgame",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "frames": [
+    {
+      "schema": 1,
+      "checkpoint": "initial",
+      "turn": 1,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 135,
+              "max_hp": 135,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ghost",
+                "poison"
+              ],
+              "item": "",
+              "pp": [
+                16,
+                16,
+                32
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 280,
+              "max_hp": 280,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "item": "",
+              "pp": [
+                32,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Ghost"
+          },
+          "details": "Gengar, L50, M",
+          "hp": 135,
+          "max_hp": 135,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Target"
+          },
+          "details": "Snorlax, L60, F",
+          "hp": 280,
+          "max_hp": 280,
+          "status": null
+        },
+        {
+          "kind": "turn",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_1",
+      "turn": 2,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 135,
+              "max_hp": 135,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ghost",
+                "poison"
+              ],
+              "item": "",
+              "pp": [
+                16,
+                15,
+                32
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 245,
+              "max_hp": 280,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "leechseed": null
+              },
+              "types": [
+                "normal"
+              ],
+              "item": "",
+              "pp": [
+                32,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Ghost"
+          },
+          "move": "Leech Seed",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Target"
+          }
+        },
+        {
+          "kind": "start",
+          "args": [
+            "p2a: Target",
+            "move: Leech Seed"
+          ]
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Target"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Target"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Target"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Target"
+          },
+          "hp": 245,
+          "max_hp": 280,
+          "status": null,
+          "from": "[from] Leech Seed",
+          "of": "[of] p1a: Ghost"
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 2
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_2",
+      "turn": 3,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 103,
+              "max_hp": 135,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ghost",
+                "poison"
+              ],
+              "item": "",
+              "pp": [
+                15,
+                15,
+                32
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 140,
+              "max_hp": 280,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 2,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "leechseed": null,
+                "curse": null
+              },
+              "types": [
+                "normal"
+              ],
+              "item": "",
+              "pp": [
+                32,
+                46
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Ghost"
+          },
+          "move": "Curse",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Target"
+          }
+        },
+        {
+          "kind": "start",
+          "args": [
+            "p2a: Target",
+            "Curse",
+            "[of] p1a: Ghost"
+          ]
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Ghost"
+          },
+          "hp": 68,
+          "max_hp": 135,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Target"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Target"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Target"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Target"
+          },
+          "hp": 210,
+          "max_hp": 280,
+          "status": null,
+          "from": "[from] Leech Seed",
+          "of": "[of] p1a: Ghost"
+        },
+        {
+          "kind": "heal",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Ghost"
+          },
+          "hp": 103,
+          "max_hp": 135,
+          "status": null,
+          "from": "[silent]",
+          "of": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Target"
+          },
+          "hp": 140,
+          "max_hp": 280,
+          "status": null,
+          "from": "[from] Curse",
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 3
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_3",
+      "turn": 4,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 135,
+              "max_hp": 135,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ghost",
+                "poison"
+              ],
+              "item": "",
+              "pp": [
+                15,
+                15,
+                31
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 175,
+              "max_hp": 280,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 2,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "leechseed": null,
+                "curse": null
+              },
+              "types": [
+                "normal"
+              ],
+              "item": "",
+              "pp": [
+                31,
+                46
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Ghost"
+          },
+          "move": "Recover",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Ghost"
+          }
+        },
+        {
+          "kind": "heal",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Ghost"
+          },
+          "hp": 135,
+          "max_hp": 135,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Target"
+          },
+          "move": "Recover",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Target"
+          }
+        },
+        {
+          "kind": "heal",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Target"
+          },
+          "hp": 280,
+          "max_hp": 280,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Target"
+          },
+          "hp": 245,
+          "max_hp": 280,
+          "status": null,
+          "from": "[from] Leech Seed",
+          "of": "[of] p1a: Ghost"
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Target"
+          },
+          "hp": 175,
+          "max_hp": 280,
+          "status": null,
+          "from": "[from] Curse",
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 4
+        }
+      ]
+    }
+  ],
+  "debug_log": "|gametype|singles\n|player|p1|P1||\n|player|p2|P2||\n|gen|2\n|tier|[Gen 2] Custom Game\n|rule|HP Percentage Mod: HP is shown in percentages\n|\n|teamsize|p1|1\n|teamsize|p2|1\n|start\n|switch|p1a: Ghost|Gengar, L50, M|135/135\n|switch|p2a: Target|Snorlax, L60, F|280/280\n|turn|1\n|\n|move|p1a: Ghost|Leech Seed|p2a: Target\n|-start|p2a: Target|move: Leech Seed\n|move|p2a: Target|Harden|p2a: Target\n|-boost|p2a: Target|def|1\n|-damage|p2a: Target|245/280|[from] Leech Seed|[of] p1a: Ghost\n|\n|upkeep\n|turn|2\n|\n|move|p1a: Ghost|Curse|p2a: Target\n|-start|p2a: Target|Curse|[of] p1a: Ghost\n|-damage|p1a: Ghost|68/135\n|move|p2a: Target|Harden|p2a: Target\n|-boost|p2a: Target|def|1\n|-damage|p2a: Target|210/280|[from] Leech Seed|[of] p1a: Ghost\n|-heal|p1a: Ghost|103/135|[silent]\n|-damage|p2a: Target|140/280|[from] Curse\n|\n|upkeep\n|turn|3\n|\n|move|p1a: Ghost|Recover|p1a: Ghost\n|-heal|p1a: Ghost|135/135\n|move|p2a: Target|Recover|p2a: Target\n|-heal|p2a: Target|280/280\n|-damage|p2a: Target|245/280|[from] Leech Seed|[of] p1a: Ghost\n|-damage|p2a: Target|175/280|[from] Curse\n|\n|upkeep\n|turn|4"
+}

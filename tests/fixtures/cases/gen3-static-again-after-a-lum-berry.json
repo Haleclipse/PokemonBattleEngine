@@ -1,0 +1,56 @@
+{
+ "schema": 1,
+ "id": "gen3-static-again-after-a-lum-berry",
+ "notes": [
+  "Gen 3: Spearow's Fury Attack meets Pikachu's Static; its Lum Berry cures the paralysis at once and the later hits' Static rolls fail — the replay plans the contact reaction that took on the hit it followed only (DESIGN.md R-M8-134)"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Pikachu",
+    "species": "Pikachu",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Static",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Spearow",
+    "species": "Spearow",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fury Attack"
+    ],
+    "item": "Lum Berry",
+    "ability": "Keen Eye",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash",
+   "p2": "move Fury Attack"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   10,
+   11,
+   12,
+   13
+  ]
+ }
+}

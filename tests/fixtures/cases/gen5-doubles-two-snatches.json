@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "gen5-doubles-two-snatches",
+ "notes": [
+  "Gen 5 doubles: Sneasel and Absol both snatch; Sneasel, the faster, takes Snorlax's Swords Dance, and Sneasel keeps it: a move Snatch called is not taken again (`move.sourceEffect === 'snatch'`)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "doubles",
+  "format": "gen5doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Swords Dance"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   },
+   {
+    "label": "Zigzagoon",
+    "species": "Zigzagoon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Pickup",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Absol",
+    "species": "Absol",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Snatch"
+    ],
+    "ability": "Pressure",
+    "gender": "M"
+   },
+   {
+    "label": "Sneasel",
+    "species": "Sneasel",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Snatch"
+    ],
+    "ability": "Inner Focus",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1, move 1",
+   "p2": "move 1, move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

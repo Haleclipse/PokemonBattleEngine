@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen5-transformed-ditto-and-metal-powder",
+ "notes": [
+  "Gen 5: Ditto holding Metal Powder transforms into Snorlax: no more Defense boost (`species.name === 'Ditto' && !transformed`)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Ditto",
+    "species": "Ditto",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Transform"
+    ],
+    "ability": "Limber",
+    "item": "Metal Powder"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Transform",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

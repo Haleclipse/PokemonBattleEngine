@@ -1,0 +1,78 @@
+{
+ "schema": 1,
+ "id": "gen3-sleep-talk-draws-a-move-without-pp",
+ "notes": [
+  "Gen 3: asleep from Breloom's Spore, Smeargle's Sleep Talk draws Sketch, whose one PP its first use spent: `cant|p1a: Smeargle|nopp|sketch` belongs to the Sleep Talk action (issues.md I116)"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Smeargle",
+    "species": "Smeargle",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sleep Talk",
+     "Sketch",
+     "Tackle"
+    ],
+    "ability": "Own Tempo",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Breloom",
+    "species": "Breloom",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spore",
+     "Harden"
+    ],
+    "ability": "Effect Spore",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 2",
+   "p2": "move 2"
+  },
+  {
+   "p1": "move 3",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 2"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 2"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 2"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 2"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   5,
+   6,
+   7,
+   8
+  ]
+ }
+}

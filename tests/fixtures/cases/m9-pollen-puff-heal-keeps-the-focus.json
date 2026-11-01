@@ -1,0 +1,84 @@
+{
+ "schema": 1,
+ "id": "m9-pollen-puff-heal-keeps-the-focus",
+ "notes": [
+  "R-M9-33, I207 (Bulbapedia, standing decision): Focus Punch fails only if its user has taken damage from a move that turn. Ribombee's Pollen Puff heals its ally Hariyama, which is tightening its focus; the heal is no damage, so the punch goes ahead. Showdown's `focuspunch` condition lost the focus to any damaging move's hit, a heal included."
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hariyama",
+    "species": "Hariyama",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Focus Punch",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Ribombee",
+    "species": "Ribombee",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Pollen Puff",
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Sweet Veil"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Tackle 1, move Harden"
+  },
+  {
+   "p1": "move Focus Punch 1, move Pollen Puff -1",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

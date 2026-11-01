@@ -1,0 +1,82 @@
+{
+ "schema": 1,
+ "id": "gen1-wrap-substitute",
+ "notes": [
+  "Gen 1 Wrap on a Substitute: the doll takes the hits, but the lock starts and the target is caught all the same"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Wrapper",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Wrap",
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Jolteon",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Substitute",
+     "Tackle"
+    ]
+   },
+   {
+    "label": "Foe2",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Substitute"
+  },
+  {
+   "p1": "move Wrap",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Wrap",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Wrap",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

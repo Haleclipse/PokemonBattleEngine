@@ -1,0 +1,96 @@
+{
+ "schema": 1,
+ "id": "gen5-starf-berry-midway-through-comet-punch",
+ "notes": [
+  "Gen 5 doubles (Nightly 36, minimized): Comet Punch hits Jellicent three times and its Starf Berry is eaten after the third; the replay's damage search tries roll sets that feed the berry after the second hit, which desynchronise the plan — those are candidates that do not reproduce the move, not a failure"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "doubles",
+  "format": "gen5doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Jellicent",
+    "species": "Jellicent",
+    "level": 48,
+    "nature": "Hardy",
+    "moves": [
+     "Bone Rush",
+     "Conversion",
+     "Fury Attack"
+    ],
+    "ability": "Run Away",
+    "item": "Starf Berry",
+    "gender": "F"
+   },
+   {
+    "label": "Ludicolo",
+    "species": "Ludicolo",
+    "level": 48,
+    "nature": "Hardy",
+    "moves": [
+     "Spike Cannon",
+     "Conversion",
+     "Tail Slap"
+    ],
+    "ability": "Run Away",
+    "item": "Macho Brace",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gligar",
+    "species": "Gligar",
+    "level": 53,
+    "nature": "Hardy",
+    "moves": [
+     "Bullet Seed",
+     "Conversion",
+     "Comet Punch",
+     "Lunar Dance"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Vaporeon",
+    "species": "Vaporeon",
+    "level": 51,
+    "nature": "Hardy",
+    "moves": [
+     "Arm Thrust",
+     "Conversion",
+     "Barrage"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   47499,
+   35955,
+   33116,
+   11881
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Bone Rush 1, move Spike Cannon 2",
+   "p2": "move Bullet Seed 1, move Arm Thrust 2"
+  },
+  {
+   "p1": "move Conversion, move Conversion",
+   "p2": "move Conversion, move Conversion"
+  },
+  {
+   "p1": "move Fury Attack 1, move Tail Slap 2",
+   "p2": "move Comet Punch 1, move Barrage 2"
+  }
+ ]
+}

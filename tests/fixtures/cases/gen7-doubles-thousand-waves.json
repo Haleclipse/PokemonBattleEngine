@@ -1,0 +1,89 @@
+{
+ "schema": 1,
+ "id": "gen7-doubles-thousand-waves",
+ "notes": [
+  "Thousand Waves traps every foe it hits on the body (`onHit`), not one behind a Substitute"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Waver",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Thousand Waves",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Ally",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Subber",
+    "species": "Mew",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Substitute",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Foe3",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Thousand Waves, move Harden",
+   "p2": "move Harden, move Substitute"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, switch Foe3"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

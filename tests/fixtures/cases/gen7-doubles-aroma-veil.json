@@ -1,0 +1,98 @@
+{
+ "schema": 1,
+ "id": "gen7-doubles-aroma-veil",
+ "notes": [
+  "Aroma Veil keeps Taunt, Encore, Disable, Heal Block and Attract off its holder and its partner (Cute Charm's infatuation too, after its roll)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Aroma",
+    "species": "Aromatisse",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "ability": "Aroma Veil",
+    "gender": "M"
+   },
+   {
+    "label": "Pal",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Tease",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Taunt",
+     "Encore",
+     "Disable",
+     "Heal Block"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Love",
+    "species": "Clefable",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Attract",
+     "Harden"
+    ],
+    "ability": "Cute Charm",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Taunt 1, move Attract 2"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Encore 2, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Disable 1, move Attract 1"
+  },
+  {
+   "p1": "move Harden, move Tackle 2",
+   "p2": "move Heal Block, move Harden"
+  },
+  {
+   "p1": "move Tackle 2, move Tackle 2",
+   "p2": "move Taunt 2, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

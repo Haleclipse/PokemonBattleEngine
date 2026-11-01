@@ -1,0 +1,91 @@
+{
+  "schema": 1,
+  "id": "gen9-singles-ohko",
+  "notes": [
+    "One-hit KO moves (DESIGN.md \u00a722.6): Sturdy blocks Fissure, Sheer Cold cannot affect an Ice type, Horn Drill lands at 30 + level gap, a higher-level target is immune."
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "a",
+        "species": "Cloyster",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Sheer Cold",
+          "Fissure",
+          "Horn Drill",
+          "Protect"
+        ],
+        "ability": "Shell Armor"
+      }
+    ],
+    "p2": [
+      {
+        "label": "b",
+        "species": "Golem",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ],
+        "ability": "Sturdy"
+      },
+      {
+        "label": "c",
+        "species": "Mamoswine",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "d",
+        "species": "Snorlax",
+        "level": 60,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ],
+        "ability": "Run Away"
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 2",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "switch 2"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 1"
+    },
+    {
+      "p2": "switch 3"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

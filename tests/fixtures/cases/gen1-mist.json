@@ -1,0 +1,85 @@
+{
+ "schema": 1,
+ "id": "gen1-mist",
+ "notes": [
+  "Gen 1 Mist (a volatile on its user) stops Growl's drop but not Bubble Beam's Speed drop (its gen1 onTryBoost lets a damaging move through)"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Lax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Mist",
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Starmie",
+    "species": "Starmie",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Growl",
+     "Bubble Beam"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Mist",
+   "p2": "move Growl"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Bubble Beam"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Growl"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Bubble Beam"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Growl"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Bubble Beam"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Growl"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Bubble Beam"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Growl"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

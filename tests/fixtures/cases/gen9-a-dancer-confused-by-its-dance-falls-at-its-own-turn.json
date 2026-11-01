@@ -1,0 +1,88 @@
+{
+ "schema": 1,
+ "id": "gen9-a-dancer-confused-by-its-dance-falls-at-its-own-turn",
+ "notes": [
+  "Gen 9 doubles: Jolteon's Teeter Dance confuses its ally Oricorio (Dancer, worn down by Belly Drum and Seismic Toss). Its dance passes the confusion check; at its own action the second check hits it and it faints, still confused. The confusion's time is above the two checks (DESIGN.md R-M8-156)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Teeter Dance",
+     "Splash"
+    ],
+    "ability": "Volt Absorb",
+    "gender": "M"
+   },
+   {
+    "label": "Oricorio",
+    "species": "Oricorio",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Belly Drum",
+     "Splash"
+    ],
+    "ability": "Dancer",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash",
+     "Seismic Toss"
+    ],
+    "ability": "Own Tempo",
+    "gender": "M"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Own Tempo",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash, move Belly Drum",
+   "p2": "move Splash, move Splash"
+  },
+  {
+   "p1": "move Splash, move Splash",
+   "p2": "move Seismic Toss 2, move Splash"
+  },
+  {
+   "p1": "move Teeter Dance, move Splash",
+   "p2": "move Splash, move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   3,
+   4,
+   5,
+   6
+  ]
+ }
+}

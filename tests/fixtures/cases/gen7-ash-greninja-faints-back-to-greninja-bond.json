@@ -1,0 +1,85 @@
+{
+ "schema": 1,
+ "id": "gen7-ash-greninja-faints-back-to-greninja-bond",
+ "notes": [
+  "Gen 7: Greninja-Bond knocks Magikarp out with Hydro Pump and becomes Ash-Greninja; Machamp's Close Combat knocks it out the next turn: the gen8 mod's Battle Bond (Gen 7-8) marks the change `formeRegression`, so the fainted Pokémon is Greninja-Bond again, with its own max HP (DESIGN.md R-M8-111)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Greninja",
+    "species": "Greninja-Bond",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Hydro Pump",
+     "Splash"
+    ],
+    "ability": "Battle Bond",
+    "gender": "M"
+   },
+   {
+    "label": "Pichu",
+    "species": "Pichu",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Static",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 1,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Swift Swim",
+    "gender": "M"
+   },
+   {
+    "label": "Machamp",
+    "species": "Machamp",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Close Combat"
+    ],
+    "ability": "No Guard",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Hydro Pump",
+   "p2": "move Splash"
+  },
+  {
+   "p2": "switch Machamp"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Close Combat"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen2-reflect-doubles-the-capped-stat",
+ "notes": [
+  "Gen 2: Reflect doubles the Defense getStat returns after its 999 cap: Steelix at +2 (870) counts 1740, which the high-stat rollover turns into 179 (capping the doubled stat at 999 would give 249)"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Steelix",
+    "species": "Steelix",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Barrier",
+     "Reflect",
+     "Recover"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Machamp",
+    "species": "Machamp",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Earthquake"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Barrier",
+   "p2": "move Earthquake"
+  },
+  {
+   "p1": "move Reflect",
+   "p2": "move Earthquake"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Earthquake"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Earthquake"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

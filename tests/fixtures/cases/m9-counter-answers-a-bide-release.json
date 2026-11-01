@@ -1,0 +1,461 @@
+{
+ "schema": 1,
+ "id": "m9-counter-answers-a-bide-release",
+ "notes": [
+  "R-M9-28: Gen 5+ Bide's release is no attack (`tryMoveHit` skips `gotAttacked`, R-M8-90) but a physical damaging hit all the same: Donphan's Counter (its own `onDamagingHit`) answers the 30 Bewear's Bide dealt with 60. Minimized from Nightly 20261020-092109 (gen7vgc2018)."
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7vgc2018"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Larvitar",
+    "species": "Larvitar",
+    "item": "Choice Scarf",
+    "ability": "Guts",
+    "moves": [
+     "Scary Face"
+    ],
+    "nature": "Adamant",
+    "gender": "M",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 0,
+     "atk": 40,
+     "def": 40,
+     "spa": 36,
+     "spd": 208,
+     "spe": 184
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 26,
+     "spe": 31
+    },
+    "hpType": "Dark"
+   },
+   {
+    "label": "Vivillon",
+    "species": "Vivillon-Sun",
+    "ability": "Friend Guard",
+    "moves": [
+     "Gust",
+     "String Shot",
+     "Frustration",
+     "Hyper Beam"
+    ],
+    "nature": "Hasty",
+    "gender": "F",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 168,
+     "atk": 0,
+     "def": 124,
+     "spa": 44,
+     "spd": 124,
+     "spe": 48
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Nick84",
+    "species": "Gliscor",
+    "ability": "Hyper Cutter",
+    "moves": [
+     "Attract"
+    ],
+    "nature": "Hardy",
+    "gender": "F",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 100,
+     "atk": 252,
+     "def": 88,
+     "spa": 68,
+     "spd": 0,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 14,
+     "spd": 31,
+     "spe": 31
+    },
+    "hpType": "Flying"
+   },
+   {
+    "label": "Tranquill",
+    "species": "Tranquill",
+    "ability": "Big Pecks",
+    "moves": [
+     "Air Slash"
+    ],
+    "nature": "Jolly",
+    "gender": "M",
+    "shiny": true,
+    "level": 50,
+    "evs": {
+     "hp": 0,
+     "atk": 128,
+     "def": 252,
+     "spa": 0,
+     "spd": 104,
+     "spe": 24
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 23,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Nick51",
+    "species": "Donphan",
+    "ability": "Sand Veil",
+    "moves": [
+     "Counter",
+     "Frustration",
+     "Return",
+     "Rock Slide"
+    ],
+    "nature": "Bashful",
+    "gender": "M",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 116,
+     "atk": 60,
+     "def": 148,
+     "spa": 4,
+     "spd": 64,
+     "spe": 116
+    },
+    "ivs": {
+     "hp": 17,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Vanillish",
+    "species": "Vanillish",
+    "ability": "Ice Body",
+    "moves": [
+     "Attract",
+     "Light Screen",
+     "Flash Cannon",
+     "Snore"
+    ],
+    "nature": "Docile",
+    "gender": "M",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 104,
+     "atk": 104,
+     "def": 120,
+     "spa": 0,
+     "spd": 0,
+     "spe": 180
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   }
+  ],
+  "p2": [
+   {
+    "label": "Bewear",
+    "species": "Bewear",
+    "ability": "Fluffy",
+    "moves": [
+     "Dragon Claw",
+     "Wide Guard",
+     "Payback",
+     "Bide"
+    ],
+    "nature": "Naive",
+    "gender": "M",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 84,
+     "atk": 68,
+     "def": 4,
+     "spa": 0,
+     "spd": 180,
+     "spe": 172
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 3,
+     "spe": 31
+    },
+    "happiness": 15,
+    "hpType": "Grass"
+   },
+   {
+    "label": "Croagunk",
+    "species": "Croagunk",
+    "ability": "Dry Skin",
+    "moves": [
+     "Low Kick",
+     "Round",
+     "Work Up",
+     "Mud Bomb"
+    ],
+    "nature": "Docile",
+    "gender": "M",
+    "shiny": true,
+    "level": 50,
+    "evs": {
+     "hp": 28,
+     "atk": 232,
+     "def": 108,
+     "spa": 32,
+     "spd": 96,
+     "spe": 12
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Seadra",
+    "species": "Seadra",
+    "ability": "Damp",
+    "moves": [
+     "Confide"
+    ],
+    "nature": "Calm",
+    "gender": "M",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 0,
+     "atk": 184,
+     "def": 24,
+     "spa": 104,
+     "spd": 4,
+     "spe": 192
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 24,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Weedle",
+    "species": "Weedle",
+    "ability": "Run Away",
+    "moves": [
+     "Electroweb"
+    ],
+    "nature": "Lonely",
+    "gender": "F",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 252,
+     "atk": 192,
+     "def": 0,
+     "spa": 64,
+     "spd": 0,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 1
+    }
+   },
+   {
+    "label": "Nick80",
+    "species": "Mienfoo",
+    "ability": "Inner Focus",
+    "moves": [
+     "Taunt"
+    ],
+    "nature": "Timid",
+    "gender": "M",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 0,
+     "atk": 192,
+     "def": 108,
+     "spa": 172,
+     "spd": 0,
+     "spe": 36
+    },
+    "ivs": {
+     "hp": 26,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Musharna",
+    "species": "Musharna",
+    "ability": "Telepathy",
+    "moves": [
+     "Worry Seed",
+     "Heal Bell",
+     "Baton Pass",
+     "Safeguard"
+    ],
+    "nature": "Sassy",
+    "gender": "F",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 112,
+     "atk": 44,
+     "def": 24,
+     "spa": 108,
+     "spd": 172,
+     "spe": 48
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 110
+   }
+  ]
+ },
+ "preview": {
+  "p1": "team 126534",
+  "p2": "team 241653"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   10979,
+   110,
+   1011,
+   31
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Scary Face 1, move Gust 2",
+   "p2": "move Low Kick 1, move Electroweb"
+  },
+  {
+   "p2": "pass, switch 3"
+  },
+  {
+   "p1": "move Scary Face 1, move String Shot",
+   "p2": "move Round 2, move Wide Guard"
+  },
+  {
+   "p1": "move Scary Face 2, move Frustration 1",
+   "p2": "move Work Up, move Payback 1"
+  },
+  {
+   "p1": "switch 3, pass"
+  },
+  {
+   "p1": "move Snore 2, move Hyper Beam 1",
+   "p2": "move Mud Bomb 2, move Bide"
+  },
+  {
+   "p1": "move 1 2, move 1",
+   "p2": "move 1 1, move 1"
+  },
+  {
+   "p1": "move 2, move 2",
+   "p2": "move 2 2, move 1"
+  },
+  {
+   "p1": "move Flash Cannon 1, move Frustration 2",
+   "p2": "move Work Up, move Payback 1"
+  },
+  {
+   "p2": "switch 4, pass"
+  },
+  {
+   "p1": "move Snore 1, move Hyper Beam 2",
+   "p2": "move Safeguard, move Bide"
+  },
+  {
+   "p1": "switch 4, move 1",
+   "p2": "move 1 2, move 1"
+  },
+  {
+   "p1": "move 1, move 2",
+   "p2": "move 2, move 1"
+  },
+  {
+   "p1": "pass, switch 4"
+  },
+  {
+   "p1": "move Frustration 1, move Flash Cannon 2",
+   "p2": "move Baton Pass, move Payback 1"
+  },
+  {
+   "p1": "move Return 1, move Snore 2",
+   "p2": "move Safeguard, move Bide"
+  },
+  {
+   "p1": "move 4, move 1 1",
+   "p2": "move 1 2, move 1"
+  },
+  {
+   "p1": "move 1, move 2",
+   "p2": "move 2, move 1"
+  }
+ ]
+}

@@ -1,0 +1,83 @@
+{
+ "schema": 1,
+ "id": "m9-gen3-a-counter-sleep-talk-calls-turns-on-the-hidden-power-user",
+ "notes": [
+  "R-M9-50 / issues.md I209: in a Gen 3 double battle a Counter Sleep Talk calls strikes back at Hidden Power, physical for Counter in Gen 3 (pokeemerald `Cmd_counterdamagecalculator` reads `physicalDmg`, whatever was chosen), and turns on the Pokémon that dealt it from the random foe it first aims at. Turn 1: Breloom's Spore, then Snorlax's Sleep Talk calls Counter with nothing to answer: it fails. Turn 2: Hidden Power, then the Counter strikes back at Breloom."
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "doubles",
+  "format": "gen3doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sleep Talk",
+     "Counter"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   },
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Swift Swim",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Breloom",
+    "species": "Breloom",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spore",
+     "Hidden Power"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Feebas",
+    "species": "Feebas",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Swift Swim",
+    "gender": "F"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Sleep Talk, move Splash",
+   "p2": "move Spore 1, move Splash"
+  },
+  {
+   "p1": "move Sleep Talk, move Splash",
+   "p2": "move Hidden Power 1, move Splash"
+  }
+ ]
+}

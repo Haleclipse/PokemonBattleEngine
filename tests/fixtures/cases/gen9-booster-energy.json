@@ -1,0 +1,72 @@
+{
+ "schema": 1,
+ "id": "gen9-booster-energy",
+ "notes": [
+  "Gen 9 Booster Energy (Showdown `onStart` at switch-in priority -2, `onUpdate`): out of the sun and Electric Terrain, Great Tusk and Iron Treads use it up as the battle starts \u2014 Protosynthesis and Quark Drive start from the item (`fromBooster`)",
+  "Great Tusk's Sunny Day and then its Rain Dance: the volatile it got from the item stays when the sun goes",
+  "Its Electric Terrain and then its Misty Terrain: Iron Treads's Quark Drive from the item stays when Electric Terrain goes"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Great Tusk",
+    "species": "Great Tusk",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sunny Day",
+     "Rain Dance",
+     "Electric Terrain",
+     "Misty Terrain"
+    ],
+    "item": "Booster Energy",
+    "ability": "Protosynthesis"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Iron Treads",
+    "species": "Iron Treads",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Booster Energy",
+    "ability": "Quark Drive"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Sunny Day",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Rain Dance",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Electric Terrain",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Misty Terrain",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

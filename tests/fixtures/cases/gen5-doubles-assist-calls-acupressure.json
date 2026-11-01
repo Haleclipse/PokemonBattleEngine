@@ -1,0 +1,88 @@
+{
+ "schema": 1,
+ "id": "gen5-doubles-assist-calls-acupressure",
+ "notes": [
+  "Gen 5 doubles: Snorlax's Assist calls its benched partner's Acupressure; with no target named, it goes to Snorlax itself (`getRandomTarget`: `adjacentAllyOrSelf` is the user) and draws the stat it raises"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "doubles",
+  "format": "gen5doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Assist"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   },
+   {
+    "label": "Zigzagoon",
+    "species": "Zigzagoon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Protect"
+    ],
+    "ability": "Pickup",
+    "gender": "M"
+   },
+   {
+    "label": "Shuckle",
+    "species": "Shuckle",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Acupressure"
+    ],
+    "ability": "Sturdy",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1, move 1",
+   "p2": "move 1, move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

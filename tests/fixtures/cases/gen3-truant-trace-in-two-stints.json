@@ -1,0 +1,85 @@
+{
+ "schema": 1,
+ "id": "gen3-truant-trace-in-two-stints",
+ "notes": [
+  "Gen 3 Trace takes Slaking's Truant in two stints: pokeemerald clears `truantCounter` as Gardevoir comes in again (issues.md I107), so it acts on its next turn; Showdown's gen3 `truantTurn` keeps the value it left with"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Tracer",
+    "species": "Gardevoir",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Growl",
+     "Harden"
+    ],
+    "ability": "Trace"
+   },
+   {
+    "label": "Bench",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Slacker",
+    "species": "Slaking",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Growl"
+    ],
+    "ability": "Truant"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Growl",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Bench",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Tracer",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Growl",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Growl",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Growl",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

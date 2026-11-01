@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "m10-a-taunted-pokemon-of-status-moves-keeps-its-moves-priority-in-the-resort",
+ "notes": [
+  "R-M10-8: a Gen 8+ re-sort keeps a move action's chosen move (Showdown's `getActionSpeed` reads `action.move`; Struggle is decided by `chooseMove`, as the action is chosen). Whimsicott's Prankster Taunt seals every move of Bronzong (Whirlwind, Protect); the queue re-sorts, and Bronzong's Whirlwind keeps its -6, after the slower Snorlax's Tackle. The engine re-sorted it as Struggle (0), ahead of Snorlax."
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "doubles",
+  "format": "gen8doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Whimsicott",
+    "species": "Whimsicott",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Taunt"
+    ],
+    "ability": "Prankster",
+    "gender": "F"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Bronzong",
+    "species": "Bronzong",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Whirlwind",
+     "Protect"
+    ],
+    "ability": "Levitate"
+   },
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Swift Swim",
+    "gender": "M"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Taunt 1, move Tackle 2",
+   "p2": "move Whirlwind 1, move Splash"
+  }
+ ]
+}

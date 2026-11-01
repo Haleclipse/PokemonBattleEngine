@@ -1,0 +1,98 @@
+{
+ "schema": 1,
+ "id": "gen4-wish",
+ "notes": [
+  "Gen 4 Wish heals the Pok\u00e9mon in the wisher's slot at the end of the next turn by half the recipient's max HP (residual 7); used again while pending it fails"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Wish",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Strength",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Strength"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Strength"
+  },
+  {
+   "p1": "switch Blissey",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Wish",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Wish",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Wish",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Mew",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

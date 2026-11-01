@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "gen4-sticky-barb-stays-with-a-rough-skin-holder",
+ "notes": [
+  "Gen 4 Sticky Barb (issues.md I100 (a); pokeplatinum `BattleSystem_TriggerHeldItemOnHit` after the contact abilities, the attacker still standing): Shedinja's Scratch touches Carvanha, whose Rough Skin knocks Shedinja out first \u2014 the barb stays with Carvanha (Showdown hands it over before Rough Skin)",
+  "Snorlax's Tackle touches Carvanha: Rough Skin, then the barb goes to Snorlax, which loses an eighth at the end of the turn"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Shedinja",
+    "species": "Shedinja",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Scratch"
+    ],
+    "ability": "Wonder Guard"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Carvanha",
+    "species": "Carvanha",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Sticky Barb",
+    "ability": "Rough Skin"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Scratch",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Snorlax"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

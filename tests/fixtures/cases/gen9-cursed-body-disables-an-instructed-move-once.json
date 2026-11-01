@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen9-cursed-body-disables-an-instructed-move-once",
+ "notes": [
+  "Gen 9: Froslass instructs the slower Gengar, whose Sludge Bomb strikes her and Cursed Body disables it. Gengar still moves this turn and is moving now: `willMove || activePokemon` takes one turn off the Disable — once (DESIGN.md R-M8-93)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Froslass",
+    "species": "Froslass",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Instruct",
+     "Splash"
+    ],
+    "ability": "Cursed Body",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gengar",
+    "species": "Gengar",
+    "level": 15,
+    "nature": "Hardy",
+    "moves": [
+     "Sludge Bomb",
+     "Splash"
+    ],
+    "ability": "Cursed Body",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash",
+   "p2": "move Sludge Bomb"
+  },
+  {
+   "p1": "move Instruct",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

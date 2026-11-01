@@ -1,0 +1,76 @@
+{
+ "schema": 1,
+ "id": "m9-max-move-effect-through-a-substitute",
+ "notes": [
+  "R-M9-20: a Max Move's `self.onHit` runs on a Substitute's hit too (Showdown `selfDrops` skips only a `false` target, not the `null` a Substitute leaves). Dynamaxed Snorlax's Max Strike hits Chansey's Substitute; Chansey's Speed drops all the same. Found by the gen8vgc2021 real-format campaign."
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "ability": "Thick Fat",
+    "item": "Leftovers",
+    "moves": [
+     "Tackle",
+     "Splash"
+    ],
+    "evs": {
+     "atk": 252,
+     "hp": 4
+    },
+    "nature": "Adamant"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "ability": "Natural Cure",
+    "item": "Eviolite",
+    "moves": [
+     "Substitute",
+     "Splash"
+    ],
+    "evs": {
+     "hp": 252,
+     "def": 252
+    },
+    "nature": "Bold"
+   }
+  ]
+ },
+ "random": {
+  "seed": [
+   5,
+   6,
+   7,
+   8
+  ]
+ },
+ "corpus": {
+  "mechanics": true
+ },
+ "script": [
+  {
+   "p1": "move 2",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1 dynamax",
+   "p2": "move 2"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 2"
+  }
+ ]
+}

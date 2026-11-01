@@ -1,0 +1,54 @@
+{
+ "schema": 1,
+ "id": "gen9-mimicry-leaves-arceus-normal",
+ "notes": [
+  "Gen 9: Arceus with Mimicry meets Pincurchin's Electric Surge. Mimicry goes through `setType`, which refuses Arceus (and Silvally, and a Terastallized holder), so Arceus stays Normal (DESIGN.md R-M8-156)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Arceus",
+    "species": "Arceus",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Mimicry"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Pincurchin",
+    "species": "Pincurchin",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Electric Surge",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,110 @@
+{
+ "schema": 1,
+ "id": "gen3-rain-dish-and-hydration",
+ "notes": [
+  "Gen 3 Rain Dish heals 1/16 in rain as a residual (10.3, before the poison's 10.6); Cloud Nine stops it; Vaporeon's Rain Dish heals again once Cloud Nine leaves"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Rainer",
+    "species": "Kyogre",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Toxic",
+     "Recover",
+     "Water Gun"
+    ],
+    "ability": "Drizzle"
+   },
+   {
+    "label": "Nine",
+    "species": "Golduck",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Toxic"
+    ],
+    "ability": "Cloud Nine"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Ludicolo",
+    "species": "Ludicolo",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Harden"
+    ],
+    "ability": "Rain Dish"
+   },
+   {
+    "label": "Vaporeon",
+    "species": "Vaporeon",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Harden"
+    ],
+    "ability": "Rain Dish"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Water Gun",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Toxic",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Nine",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "switch Vaporeon"
+  },
+  {
+   "p1": "move Toxic",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Rainer",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Water Gun",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

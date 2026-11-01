@@ -1,0 +1,29 @@
+{
+ "schema": 1,
+ "id": "gen6-doubles-a-confused-pokemon-ticks-in-the-slot-ally-switch-gave-it",
+ "notes": [
+  "Gen 6 doubles: Whimsicott's Prankster Sweet Kiss (+1, the faster) confuses Snorlax in slot a; Kadabra's Ally Switch (+1) then moves Snorlax to slot b, where its Tackle goes through the confusion check (one tick, named p1b). The rolled time is the boundary's plus that tick: the replay counts the victim's actions by side and name, and reads it in the frame by its party index, not by the slot it was confused in (DESIGN.md R-M8-175)"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "doubles",
+  "format": "gen6doublescustomgame"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [1, 2, 3, 4]
+ },
+ "teams": {
+  "p1": [
+   {"label": "Snorlax", "species": "Snorlax", "level": 50, "nature": "Hardy", "moves": ["Tackle"], "ability": "Thick Fat", "gender": "M"},
+   {"label": "Kadabra", "species": "Kadabra", "level": 50, "nature": "Hardy", "moves": ["Ally Switch"], "ability": "Synchronize", "gender": "M"}
+  ],
+  "p2": [
+   {"label": "Whimsicott", "species": "Whimsicott", "level": 50, "nature": "Hardy", "moves": ["Sweet Kiss"], "ability": "Prankster", "gender": "F"},
+   {"label": "Chansey", "species": "Chansey", "level": 50, "nature": "Hardy", "moves": ["Splash"], "ability": "Natural Cure", "gender": "F"}
+  ]
+ },
+ "script": [
+  {"p1": "move Tackle 1, move Ally Switch", "p2": "move Sweet Kiss 1, move Splash"}
+ ]
+}

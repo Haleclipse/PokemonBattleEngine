@@ -1,0 +1,80 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-magician-picks-among-tied-targets",
+ "notes": [
+  "Gen 9 doubles Magician after Heat Wave hits two Snorlax of the same Speed holding different items: Showdown's speedSort shuffles them, and the item comes from the one drawn first (a SpeedTie decision)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Delphox",
+    "species": "Delphox",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Heat Wave",
+     "Harden"
+    ],
+    "ability": "Magician"
+   },
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Synchronize"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Left",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Leftovers"
+   },
+   {
+    "label": "Right",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Shell Bell"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Heat Wave, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

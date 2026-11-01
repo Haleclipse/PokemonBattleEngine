@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen3-transformed-mew-cannot-mimic",
+ "notes": [
+  "Gen 3: Mew transforms into Snorlax, whose Metronome called a move it does not know; Mew's transformed Mimic then fails (`if (source.transformed …) return false`; pokeemerald `Cmd_mimicattackcopy` checks `STATUS2_TRANSFORMED`)"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Transform",
+     "Splash"
+    ],
+    "ability": "Synchronize"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Mimic",
+     "Metronome"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1",
+   "p2": "move 2"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 2"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

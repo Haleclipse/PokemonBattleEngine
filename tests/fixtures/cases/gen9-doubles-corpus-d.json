@@ -1,0 +1,208 @@
+{
+  "schema": 1,
+  "id": "gen9-doubles-corpus-d",
+  "notes": [
+    "M6 corpus: a full six-on-six Gen 9 singles battle from the deterministic policy (tools/oracle-node/src/corpus.mjs), a Gen 9 roster covering its historical mechanics.",
+    "corpus: 17 script entries, 15 turns, winner P1"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "arcanine",
+        "species": "Arcanine",
+        "item": "Leftovers",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Flare Blitz",
+          "Howl",
+          "Protect",
+          "Crunch"
+        ],
+        "ability": "Intimidate"
+      },
+      {
+        "label": "slowbro",
+        "species": "Slowbro",
+        "item": "Leftovers",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Life Dew",
+          "Psyshock",
+          "Scald",
+          "Protect"
+        ],
+        "ability": "Natural Cure"
+      },
+      {
+        "label": "honch",
+        "species": "Honchkrow",
+        "item": "Scope Lens",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Night Slash",
+          "Foul Play",
+          "Drill Peck",
+          "Protect"
+        ],
+        "ability": "Super Luck"
+      },
+      {
+        "label": "golem",
+        "species": "Golem",
+        "item": "Leftovers",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Rock Slide",
+          "Earthquake",
+          "Fissure",
+          "Body Press"
+        ],
+        "ability": "Sturdy"
+      }
+    ],
+    "p2": [
+      {
+        "label": "corv",
+        "species": "Corviknight",
+        "item": "Leftovers",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Body Press",
+          "Iron Head",
+          "Drill Peck",
+          "Protect"
+        ],
+        "ability": "Battle Armor"
+      },
+      {
+        "label": "chansey",
+        "species": "Chansey",
+        "item": "Leftovers",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Seismic Toss",
+          "Life Dew",
+          "Thunder Wave",
+          "Protect"
+        ],
+        "ability": "Natural Cure"
+      },
+      {
+        "label": "kingambit",
+        "species": "Kingambit",
+        "item": "Razor Claw",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Night Slash",
+          "Iron Head",
+          "Ruination",
+          "Protect"
+        ],
+        "ability": "Battle Armor"
+      },
+      {
+        "label": "pex",
+        "species": "Toxapex",
+        "item": "Black Sludge",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Scald",
+          "Night Shade",
+          "Toxic",
+          "Protect"
+        ],
+        "ability": "Shell Armor"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      181,
+      182,
+      183,
+      184
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1 1, move 1",
+      "p2": "move 1 1, move 1 2"
+    },
+    {
+      "p1": "move 2, move 2 2",
+      "p2": "move 2 1, move 2"
+    },
+    {
+      "p1": "move 3, move 3 1",
+      "p2": "move 3 2, move 3 1"
+    },
+    {
+      "p1": "move 4 2, move 4",
+      "p2": "move 4, move 4"
+    },
+    {
+      "p1": "move 1 1, move 1",
+      "p2": "move 1 2, move 1 1"
+    },
+    {
+      "p2": "switch 3, pass"
+    },
+    {
+      "p1": "switch 3, move 2 2",
+      "p2": "switch 4, move 2"
+    },
+    {
+      "p1": "move 2 1, move 3 2",
+      "p2": "move 2 2, move 3 1"
+    },
+    {
+      "p2": "pass, switch 4"
+    },
+    {
+      "p1": "move 3 1, move 4",
+      "p2": "move 3 2, move 4"
+    },
+    {
+      "p1": "move 4, move 1",
+      "p2": "move 4, move 1 1"
+    },
+    {
+      "p1": "move 1 2, move 2 1",
+      "p2": "move 1 2, move 2 1"
+    },
+    {
+      "p1": "move 2 2, move 3 1",
+      "p2": "move 2 2, move 3 1"
+    },
+    {
+      "p1": "switch 3, move 4",
+      "p2": "move 3 2, move 4"
+    },
+    {
+      "p1": "move 3, move 1",
+      "p2": "move 4, move 1 1"
+    },
+    {
+      "p1": "move 4 2, move 2 1",
+      "p2": "move 1 2, move 2 1"
+    },
+    {
+      "p1": "move 1 2, move 3 2",
+      "p2": "pass, move 3 2"
+    }
+  ]
+}

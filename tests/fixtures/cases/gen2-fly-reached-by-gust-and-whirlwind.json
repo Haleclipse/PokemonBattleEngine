@@ -1,0 +1,84 @@
+{
+ "schema": 1,
+ "id": "gen2-fly-reached-by-gust-and-whirlwind",
+ "notes": [
+  "Gen 2 Fly: in the air only Gust / Twister (doubled), Thunder and Whirlwind reach the user \u2014 Tackle misses, Gust strikes twice as hard, Whirlwind drags the flyer out"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Flyer",
+    "species": "Pidgeot",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fly",
+     "Harden"
+    ]
+   },
+   {
+    "label": "Bench",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gusty",
+    "species": "Pidgeot",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Gust",
+     "Whirlwind",
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Fly",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Fly",
+   "p2": "move Gust"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Gust"
+  },
+  {
+   "p1": "move Fly",
+   "p2": "move Whirlwind"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

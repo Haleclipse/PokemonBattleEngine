@@ -1,0 +1,113 @@
+{
+ "schema": 1,
+ "id": "gen9-hustle-and-wonder-skin",
+ "notes": [
+  "Hustle: \u00d71.5 Attack and \u00d70.8 accuracy for physical moves (Body Slam misses); Wonder Skin: a status move aimed at its holder has 50 % accuracy (Sand Attack misses)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hustler",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Body Slam"
+    ],
+    "ability": "Hustle"
+   },
+   {
+    "label": "Skin",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Sand Attack"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Wonder Skin"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Body Slam",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "switch Skin",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Sand Attack",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Sand Attack",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Sand Attack",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Sand Attack",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Sand Attack",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Sand Attack",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

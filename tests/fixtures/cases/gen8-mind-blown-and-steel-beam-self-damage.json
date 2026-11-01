@@ -1,0 +1,75 @@
+{
+ "schema": 1,
+ "id": "gen8-mind-blown-and-steel-beam-self-damage",
+ "notes": [
+  "Mind Blown and Steel Beam (`mindBlownRecoil`, `onAfterMove`): the user loses half its max HP, rounded, once the move is over — even when Protect stopped it; Magic Guard refuses the loss"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Blacephalon",
+    "species": "Blacephalon",
+    "level": 52,
+    "nature": "Hardy",
+    "moves": [
+     "Mind Blown"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Clefable",
+    "species": "Clefable",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Steel Beam"
+    ],
+    "ability": "Magic Guard"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Protect",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Mind Blown",
+   "p2": "move Protect"
+  },
+  {
+   "p1": "move Mind Blown",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Clefable"
+  },
+  {
+   "p1": "move Steel Beam",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

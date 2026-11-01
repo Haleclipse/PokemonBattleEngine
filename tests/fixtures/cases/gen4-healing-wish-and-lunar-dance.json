@@ -1,0 +1,127 @@
+{
+ "schema": 1,
+ "id": "gen4-healing-wish-and-lunar-dance",
+ "notes": [
+  "Gen 4: Healing Wish knocks its user out and its slot is filled at once, mid-turn; the newcomer (at full HP) uses the heal up, so the hurt Pok\u00e9mon that comes in later is not healed; Lunar Dance heals the next one, its PP restored too \u2014 after Stealth Rock hurt it"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Wisher",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Healing Wish",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Hurt",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Dancer",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Lunar Dance",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Full",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Toxic",
+     "Tackle",
+     "Harden",
+     "Stealth Rock"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "switch Hurt",
+   "p2": "move Toxic"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "switch Wisher",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Healing Wish",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Full"
+  },
+  {
+   "p1": "switch Hurt",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Stealth Rock"
+  },
+  {
+   "p1": "switch Dancer",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Lunar Dance",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Hurt"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

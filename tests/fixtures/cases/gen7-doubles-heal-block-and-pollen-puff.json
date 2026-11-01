@@ -1,0 +1,92 @@
+{
+ "schema": 1,
+ "id": "gen7-doubles-heal-block-and-pollen-puff",
+ "notes": [
+  "Gen 7 doubles: Heal Block hits both foes (a Substitute keeps one out); a Pollen Puff aimed at an ally (through its Substitute) before its user was heal-blocked fails at TryMove; a Pollen Puff at a heal-blocked ally heals nothing and fails (Gen 7: Stomping Tantrum then doubles)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Zap",
+    "species": "Jolteon",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Heal Block",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Lax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Puff",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Pollen Puff",
+     "Stomping Tantrum",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Pal",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Substitute",
+     "Pollen Puff",
+     "Stomping Tantrum",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Substitute"
+  },
+  {
+   "p1": "move Heal Block, move Tackle 1",
+   "p2": "move Pollen Puff -2, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Stomping Tantrum 2, move Pollen Puff -1"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Stomping Tantrum 2"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

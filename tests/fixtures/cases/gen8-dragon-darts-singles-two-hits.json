@@ -1,0 +1,57 @@
+{
+ "schema": 1,
+ "id": "gen8-dragon-darts-singles-two-hits",
+ "notes": [
+  "Dragon Darts in singles: two hits on the one target"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Dragapult",
+    "species": "Dragapult",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Dragon Darts"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Dragon Darts",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Dragon Darts",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,146 @@
+{
+ "schema": 1,
+ "id": "gen9-destiny-bond",
+ "notes": [
+  "Gen 9 Destiny Bond: a foe's move knocking the holder out knocks the foe out too; the bond goes at the holder's next move attempt (another move, or a Destiny Bond sleep stops); used again while up it fails and the bond goes (Gen 7+)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Gengar",
+    "species": "Gengar",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Destiny Bond",
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Gengar2",
+    "species": "Gengar",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Destiny Bond",
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Gengar3",
+    "species": "Gengar",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Destiny Bond",
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Gengar4",
+    "species": "Gengar",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Destiny Bond",
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Crunch",
+     "Harden",
+     "Spore"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Foe2",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Crunch",
+     "Harden",
+     "Spore"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Foe3",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Crunch",
+     "Harden",
+     "Spore"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Destiny Bond",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Destiny Bond",
+   "p2": "move Crunch"
+  },
+  {
+   "p1": "switch Gengar2"
+  },
+  {
+   "p1": "move Destiny Bond",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Crunch"
+  },
+  {
+   "p1": "switch Gengar3"
+  },
+  {
+   "p1": "move Destiny Bond",
+   "p2": "move Spore"
+  },
+  {
+   "p1": "move Destiny Bond",
+   "p2": "move Crunch"
+  },
+  {
+   "p1": "switch Gengar4"
+  },
+  {
+   "p1": "move Destiny Bond",
+   "p2": "move Crunch"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "id": "gen9-singles-dig-sandstorm",
+  "notes": [
+    "Dig under sandstorm: the user underground takes no chip at the upkeep (the condition's `onImmunity`), and takes it once it has come up."
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "a",
+        "species": "Snorlax",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Dig"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "b",
+        "species": "Tyranitar",
+        "ability": "Sand Stream",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Swords Dance"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      4,
+      2,
+      3,
+      4
+    ]
+  }
+}

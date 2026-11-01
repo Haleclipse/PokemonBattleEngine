@@ -1,0 +1,85 @@
+{
+  "schema": 1,
+  "id": "m8-gen5-an-ally-switched-outrage-user-keeps-its-lock",
+  "notes": [
+    "Gen 5 doubles: Cyndaquil starts a 3-turn Outrage; next turn Tympole's Ally Switch moves it to the other slot before its second Outrage. The replay follows the user by its place in the party, not its slot, to read the lock still there after that turn (DESIGN.md R-M8-152)",
+    "promoted from m8-gen5-doubles-s750-017-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 5,
+    "mode": "doubles",
+    "format": "gen5doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Grovyle",
+        "species": "Grovyle",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Dizzy Punch",
+          "Ally Switch"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Dewott",
+        "species": "Dewott",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Psybeam",
+          "Ally Switch"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Tympole",
+        "species": "Tympole",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Mirror Coat",
+          "Ally Switch"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Cyndaquil",
+        "species": "Cyndaquil",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Outrage"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1807,
+      33586,
+      32295,
+      15689
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Dizzy Punch 1, move Psybeam 2",
+      "p2": "move Mirror Coat, move Outrage"
+    },
+    {
+      "p1": "move 2, move 2",
+      "p2": "move 2, move 1"
+    }
+  ]
+}

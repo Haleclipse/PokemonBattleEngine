@@ -1,0 +1,63 @@
+{
+ "schema": 1,
+ "id": "gen9-meteor-beam",
+ "notes": [
+  "Gen 9 Meteor Beam: the charging turn raises the user's Special Attack (-boost after -prepare; frame meteorbeam without a count), the attack comes the next turn; a Contrary user's Special Attack falls instead"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Beamer",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Meteor Beam",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Contrary",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Meteor Beam",
+     "Harden"
+    ],
+    "ability": "Contrary"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Meteor Beam",
+   "p2": "move Meteor Beam"
+  },
+  {
+   "p1": "move Meteor Beam",
+   "p2": "move Meteor Beam"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,175 @@
+{
+ "schema": 1,
+ "id": "m8-43-gen5-doubles-s447-006",
+ "notes": [
+  "Nightly 37 gen5-doubles-s447-006, minimized: a foreseen strike (Focus Band, a pinch berry, a gem, AfterMoveSecondary) as Showdown runs it"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "doubles",
+  "format": "gen5doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Lickilicky",
+    "species": "Lickilicky",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Future Sight",
+     "Magnet Rise",
+     "Doom Desire",
+     "Worry Seed"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Munchlax",
+    "species": "Munchlax",
+    "level": 54,
+    "nature": "Hardy",
+    "moves": [
+     "Smack Down",
+     "Magnet Rise",
+     "Future Sight",
+     "Worry Seed"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Flaaffy",
+    "species": "Flaaffy",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Doom Desire",
+     "Smack Down"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Tropius",
+    "species": "Tropius",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Smack Down",
+     "Magnet Rise",
+     "Future Sight",
+     "Worry Seed"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Skiploom",
+    "species": "Skiploom",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Doom Desire",
+     "Magnet Rise",
+     "Smack Down",
+     "Worry Seed"
+    ],
+    "ability": "Run Away",
+    "item": "Sticky Barb",
+    "gender": "M"
+   },
+   {
+    "label": "Natu",
+    "species": "Natu",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Future Sight",
+     "Magnet Rise",
+     "Worry Seed"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Mightyena",
+    "species": "Mightyena",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Smack Down",
+     "Magnet Rise",
+     "Future Sight",
+     "Worry Seed"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   62189,
+   17448,
+   50398,
+   48070
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Future Sight 1, move Smack Down 2",
+   "p2": "move Smack Down 1, move Doom Desire 2"
+  },
+  {
+   "p1": "move Magnet Rise, move Magnet Rise",
+   "p2": "move Magnet Rise, move Magnet Rise"
+  },
+  {
+   "p1": "move Doom Desire 1, move Future Sight 2",
+   "p2": "move Future Sight 1, move Smack Down 2"
+  },
+  {
+   "p1": "move Worry Seed 1, move Worry Seed 2",
+   "p2": "move Worry Seed 1, move Worry Seed 2"
+  },
+  {
+   "p2": "pass, switch Natu"
+  },
+  {
+   "p1": "switch Flaaffy, move Smack Down 1",
+   "p2": "switch Mightyena, move Future Sight 1"
+  },
+  {
+   "p1": "move Doom Desire 2, move Magnet Rise",
+   "p2": "move Smack Down 2, move Magnet Rise"
+  },
+  {
+   "p1": "move Smack Down 2, move Worry Seed 1",
+   "p2": "move Future Sight 2, move Worry Seed 1"
+  },
+  {
+   "p2": "pass, switch Tropius"
+  },
+  {
+   "p1": "switch Lickilicky, move Magnet Rise",
+   "p2": "move Smack Down 2, move Magnet Rise"
+  },
+  {
+   "p1": "move Future Sight 2, move Future Sight 1",
+   "p2": "move Magnet Rise, move Future Sight 1"
+  },
+  {
+   "p1": "move Magnet Rise, move Worry Seed 2",
+   "p2": "move Future Sight 2, move Worry Seed 1"
+  },
+  {
+   "p1": "move Doom Desire 1, move Smack Down 2",
+   "p2": "move Worry Seed 2, move Smack Down 1"
+  }
+ ]
+}

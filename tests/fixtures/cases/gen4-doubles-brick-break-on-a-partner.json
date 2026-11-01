@@ -1,0 +1,84 @@
+{
+ "schema": 1,
+ "id": "gen4-doubles-brick-break-on-a-partner",
+ "notes": [
+  "Brick Break aimed at its own partner: Gen 4 (pokemon.side) breaks the partner's side's Reflect and leaves the foes'; Machamp's Strength on Mew then shows which Reflect is left"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "doubles",
+  "format": "gen4doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Machamp",
+    "species": "Machamp",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Brick Break",
+     "Strength"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Reflect",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Reflect",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Brick Break -2, move Reflect",
+   "p2": "move Reflect, move Soft-Boiled"
+  },
+  {
+   "p1": "move Strength 1, move Recover",
+   "p2": "move Recover, move Soft-Boiled"
+  },
+  {
+   "p1": "move Strength 1, move Recover",
+   "p2": "move Recover, move Soft-Boiled"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

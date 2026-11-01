@@ -1,0 +1,68 @@
+{
+  "schema": 1,
+  "id": "gen1-singles-ohko",
+  "notes": [
+    "Gen 1 one-hit KO moves: they fail against a faster target (modified Speed); ordinary accuracy otherwise."
+  ],
+  "battle": {
+    "generation": 1,
+    "mode": "singles",
+    "format": "gen1customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "a",
+        "species": "Dugtrio",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fissure",
+          "Slash"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "b",
+        "species": "Golem",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ]
+      },
+      {
+        "label": "c",
+        "species": "Jolteon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p2": "switch 2"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      3,
+      4,
+      5,
+      6
+    ]
+  }
+}

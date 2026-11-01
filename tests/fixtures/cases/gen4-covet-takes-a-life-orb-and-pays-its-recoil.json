@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "gen4-covet-takes-a-life-orb-and-pays-its-recoil",
+ "notes": [
+  "Gen 4: Ambipom's Covet takes Snorlax's Life Orb and pays its recoil on the same move: pokeplatinum reads the attacker's item once the move is over (AFTER_MOVE_HIT_STATE_LIFE_ORB). Its next Covet, Life Orb held, pays again (issues.md I193, DESIGN.md R-M8-131; replaces R-M8-128's no-recoil scenario)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Ambipom",
+    "species": "Ambipom",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Covet",
+     "Splash"
+    ],
+    "ability": "Technician",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "item": "Life Orb",
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Covet",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Covet",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

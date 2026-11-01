@@ -1,0 +1,79 @@
+{
+ "schema": 1,
+ "id": "gen8-doubles-disguise-bust-is-a-hurt",
+ "notes": [
+  "Gen 8: Mimikyu's Disguise breaks on Jolteon's Thunder Shock and the bust costs an eighth of its HP through `this.damage` (not `directDamage`): Mimikyu is hurt this turn, so Sableye's Assurance doubles (DESIGN.md R-M8-91)"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "doubles",
+  "format": "gen8doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mimikyu",
+    "species": "Mimikyu",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Disguise",
+    "gender": "F"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Thunder Shock",
+     "Splash"
+    ],
+    "ability": "Volt Absorb",
+    "gender": "M"
+   },
+   {
+    "label": "Sableye",
+    "species": "Sableye",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Assurance",
+     "Splash"
+    ],
+    "ability": "Keen Eye",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash, move Splash",
+   "p2": "move Thunder Shock 1, move Assurance 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

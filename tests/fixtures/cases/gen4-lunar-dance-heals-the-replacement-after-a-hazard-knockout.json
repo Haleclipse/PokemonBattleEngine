@@ -1,0 +1,92 @@
+{
+ "schema": 1,
+ "id": "gen4-lunar-dance-heals-the-replacement-after-a-hazard-knockout",
+ "notes": [
+  "Gen 4: Phanpy's Lunar Dance calls a replacement at once; Shedinja falls to Stealth Rock before the heal, and the gen4 condition's onSwitchIn sets its switchFlag: Chikorita comes in at once, mid-turn, before Snorlax moves, and takes the heal (DESIGN.md R-M8-136)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Phanpy",
+    "species": "Phanpy",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Lunar Dance",
+     "Splash"
+    ],
+    "ability": "Pickup",
+    "gender": "M"
+   },
+   {
+    "label": "Shedinja",
+    "species": "Shedinja",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Wonder Guard"
+   },
+   {
+    "label": "Chikorita",
+    "species": "Chikorita",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Overgrow",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Stealth Rock",
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash",
+   "p2": "move Stealth Rock"
+  },
+  {
+   "p1": "move Lunar Dance",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "switch Shedinja"
+  },
+  {
+   "p1": "switch Chikorita"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

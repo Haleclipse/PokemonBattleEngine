@@ -1,0 +1,144 @@
+{
+  "schema": 1,
+  "id": "m8-gen7-guardian-of-alola-through-detect-rounds-the-quarter-half-down",
+  "notes": [
+    "Gen 7 doubles, minimized from Nightly 161's m8-gen7-doubles-s1523-004. Goodra (156 HP) uses Detect; Charmander's Guardian of Alola breaks through for a quarter of the three quarters: three quarters is 117, and Showdown's callback takes `Math.ceil(117 / 4 - 0.5)` = 29 (the quarter rounded half down), not 30 (DESIGN.md R-M8-184)."
+  ],
+  "battle": {
+    "generation": 7,
+    "mode": "doubles",
+    "format": "gen7doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Numel",
+        "species": "Numel",
+        "level": 54,
+        "nature": "Hardy",
+        "moves": [
+          "Fusion Bolt",
+          "Knock Off"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Camerupt",
+        "species": "Camerupt",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Retaliate",
+          "Facade",
+          "Detect"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Goodra",
+        "species": "Goodra",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Detect"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Kecleon",
+        "species": "Kecleon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Focus Punch",
+          "Vital Throw"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Wurmple",
+        "species": "Wurmple",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Shell Trap",
+          "Revenge"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Wailmer",
+        "species": "Wailmer",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Beak Blast",
+          "Nature's Madness",
+          "Detect"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Charmander",
+        "species": "Charmander",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Guardian of Alola",
+          "Detect"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      9483,
+      15249,
+      11880,
+      52388
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Fusion Bolt 1, move Retaliate 2",
+      "p2": "move Focus Punch 1, move Shell Trap"
+    },
+    {
+      "p1": "move Knock Off 1, move Facade 2",
+      "p2": "move Vital Throw 2, move Revenge 1"
+    },
+    {
+      "p1": "move Fusion Bolt 1, move Retaliate 2",
+      "p2": "move Focus Punch 2, move Shell Trap"
+    },
+    {
+      "p2": "pass, switch Wailmer"
+    },
+    {
+      "p1": "move Knock Off 1, move Facade 2",
+      "p2": "move Vital Throw 1, move Nature's Madness 2"
+    },
+    {
+      "p2": "switch Charmander, pass"
+    },
+    {
+      "p1": "switch Goodra, move Detect",
+      "p2": "move Detect, move Detect"
+    },
+    {
+      "p1": "move Detect, move Retaliate 1",
+      "p2": "move Guardian of Alola 1, move Beak Blast 2"
+    }
+  ]
+}

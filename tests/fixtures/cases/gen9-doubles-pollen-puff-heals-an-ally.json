@@ -1,0 +1,81 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-pollen-puff-heals-an-ally",
+ "notes": [
+  "Pollen Puff on an ally heals half its max HP instead of hitting it (no critical-hit check or damage roll); on a full-HP ally Gen 8+ does nothing (NOT_FAIL); on a foe it is an ordinary hit"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Ribombee",
+    "species": "Ribombee",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Pollen Puff"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Garchomp",
+    "species": "Garchomp",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Pollen Puff -2, move Harden",
+   "p2": "move Seismic Toss 2, move Harden"
+  },
+  {
+   "p1": "move Pollen Puff -2, move Harden",
+   "p2": "move Seismic Toss 2, move Harden"
+  },
+  {
+   "p1": "move Pollen Puff 1, move Harden",
+   "p2": "move Seismic Toss 2, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

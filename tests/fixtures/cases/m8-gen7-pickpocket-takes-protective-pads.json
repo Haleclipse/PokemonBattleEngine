@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "id": "m8-gen7-pickpocket-takes-protective-pads",
+  "notes": [
+    "Gen 7: Pansage's Plasma Fists, a contact move, hits Kangaskhan's Pickpocket while Pansage holds Protective Pads: Pickpocket takes the Pads (Showdown reads move.flags['contact']; the Sword / Shield research: Protective Pads can be stolen by Pickpocket, Long Reach is what stops it), DESIGN.md R-M8-112",
+    "promoted from m8-gen7-singles-s567-001-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 7,
+    "mode": "singles",
+    "format": "gen7customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Kangaskhan",
+        "species": "Kangaskhan",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Catastropika"
+        ],
+        "ability": "Pickpocket"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Pansage",
+        "species": "Pansage",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Plasma Fists"
+        ],
+        "ability": "Run Away",
+        "item": "Protective Pads",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      62970,
+      65256,
+      60781,
+      35203
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Catastropika",
+      "p2": "move Plasma Fists"
+    }
+  ]
+}

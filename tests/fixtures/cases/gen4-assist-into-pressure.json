@@ -1,0 +1,73 @@
+{
+ "schema": 1,
+ "id": "gen4-assist-into-pressure",
+ "notes": [
+  "Gen 4: Delcatty's Assist calls its benched partner's Tackle at Absol, whose Pressure takes one more PP — from Assist, the caller (`useMoveInner`'s `callerMoveForPressure`)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Delcatty",
+    "species": "Delcatty",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Assist",
+     "Harden"
+    ],
+    "ability": "Cute Charm",
+    "gender": "F"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Absol",
+    "species": "Absol",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Pressure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Assist",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Assist",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Assist",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

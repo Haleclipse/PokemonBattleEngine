@@ -1,0 +1,66 @@
+{
+ "schema": 1,
+ "id": "gen3-mirror-move-after-a-failed-mimic",
+ "notes": [
+  "Gen 3: Snorlax's Tackle hits Pidgeot; next turn its Mimic at Pidgeot fails (it knows the Splash it would copy). A failed move is no attack Mirror Move can copy — pokeemerald's `MOVEEND_MIRROR_MOVE` skips `MOVE_RESULT_NO_EFFECT` — so Pidgeot's Mirror Move copies the Tackle; Showdown's gen3 `tryMoveHit` recorded the failed Mimic, and the I173 patch records no failure (issues.md I173, DESIGN.md R-M8-143; R-M8-80 pinned Showdown's behavior)"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Pidgeot",
+    "species": "Pidgeot",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Mirror Move",
+     "Splash"
+    ],
+    "ability": "Keen Eye",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Mimic",
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Mimic"
+  },
+  {
+   "p1": "move Mirror Move",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

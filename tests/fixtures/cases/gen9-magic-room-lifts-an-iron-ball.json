@@ -1,0 +1,63 @@
+{
+ "schema": 1,
+ "id": "gen9-magic-room-lifts-an-iron-ball",
+ "notes": [
+  "Gen 9 Magic Room sets an Iron Ball aside: its Skarmory is no longer grounded (Earthquake misses it, `-immune`) nor slowed (it now moves before Snorlax); before the room the ball grounds it and Earthquake is neutral"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Skarmory",
+    "species": "Skarmory",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Keen Eye",
+    "item": "Iron Ball"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Earthquake",
+     "Magic Room"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Earthquake"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Magic Room"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Earthquake"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

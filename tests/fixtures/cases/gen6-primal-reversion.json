@@ -1,0 +1,85 @@
+{
+ "schema": 1,
+ "id": "gen6-primal-reversion",
+ "notes": [
+  "Gen 6: Kyogre holding the Blue Orb reverts to its Primal forme as it comes in — Primordial Sea starts with it, its stats change, and the orb cannot be taken off a Kyogre"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Kyogre",
+    "species": "Kyogre",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Water Pulse",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Drizzle",
+    "item": "Blue Orb"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Water Pulse",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Water Pulse",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

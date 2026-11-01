@@ -1,0 +1,104 @@
+{
+ "schema": 1,
+ "id": "gen4-compound-eyes-against-a-lowered-evasion",
+ "notes": [
+  "Gen 4 cartridge accuracy (issues.md I5): after Sweet Scent (evasion \u22121), Compound Eyes' Thunder is 70 \u00d7 133/100 \u00d7 130/100 = 120 and never misses (unpatched Showdown: 93.33, Compound Eyes dropped, misses)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Sweet Scent",
+     "Thunder"
+    ],
+    "ability": "Compound Eyes"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Sweet Scent",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Thunder",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Thunder",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Thunder",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Thunder",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Thunder",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Thunder",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Thunder",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Thunder",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Thunder",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Thunder",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Thunder",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Thunder",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

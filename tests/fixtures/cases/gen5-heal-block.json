@@ -1,0 +1,83 @@
+{
+ "schema": 1,
+ "id": "gen5-heal-block",
+ "notes": [
+  "Gen 5 Heal Block (5 turns, residual 20): a move that heals chosen the turn it lands is stopped at BeforeMove and is off the request after; every heal fails: Leftovers, Leech Seed, a drain; Heal Block again fails; once it ends Recover works again"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Heal Block",
+     "Seismic Toss",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Lax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Leech Seed",
+     "Giga Drain",
+     "Harden"
+    ],
+    "ability": "Run Away",
+    "item": "Leftovers"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Seismic Toss",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Heal Block",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Seismic Toss",
+   "p2": "move Leech Seed"
+  },
+  {
+   "p1": "move Seismic Toss",
+   "p2": "move Giga Drain"
+  },
+  {
+   "p1": "move Heal Block",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,79 @@
+{
+ "schema": 1,
+ "id": "gen3-baton-pass-leaves-foresight-behind",
+ "notes": [
+  "Gen 3: as gen2-baton-pass-hands-foresight-on, but the identification stays behind (`noCopy`): Body Slam does not affect Misdreavus"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Foresight",
+     "Body Slam"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gengar",
+    "species": "Gengar",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Baton Pass"
+    ],
+    "gender": "M",
+    "ability": "Levitate"
+   },
+   {
+    "label": "Misdreavus",
+    "species": "Misdreavus",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Levitate"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Foresight",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Baton Pass"
+  },
+  {
+   "p2": "switch Misdreavus"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

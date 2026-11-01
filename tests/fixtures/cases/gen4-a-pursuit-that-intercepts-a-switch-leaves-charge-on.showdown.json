@@ -1,0 +1,493 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@pkmn/sim",
+    "version": "0.10.11",
+    "formatid": "gen4customgame",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "frames": [
+    {
+      "schema": 1,
+      "checkpoint": "initial",
+      "turn": 1,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 170,
+              "max_hp": 170,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "water",
+                "flying"
+              ],
+              "ability": "intimidate",
+              "item": "",
+              "species": "gyarados",
+              "pp": [
+                32,
+                32
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 125,
+              "max_hp": 125,
+              "status": null,
+              "boosts": {
+                "attack": -1,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "fire"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "species": "ponyta",
+              "pp": [
+                64
+              ]
+            },
+            {
+              "hp": 136,
+              "max_hp": 136,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "dragon"
+              ],
+              "ability": "shedskin",
+              "item": "",
+              "species": "dragonair",
+              "pp": [
+                64
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Gyarados"
+          },
+          "details": "Gyarados, L50, M",
+          "hp": 170,
+          "max_hp": 170,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Ponyta"
+          },
+          "details": "Ponyta, L50, M",
+          "hp": 125,
+          "max_hp": 125,
+          "status": null
+        },
+        {
+          "kind": "ability",
+          "args": [
+            "p1a: Gyarados",
+            "Intimidate",
+            "boost"
+          ]
+        },
+        {
+          "kind": "unboost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Ponyta"
+          },
+          "stat": "atk",
+          "amount": 1
+        },
+        {
+          "kind": "turn",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_1",
+      "turn": 2,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 170,
+              "max_hp": 170,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 1,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "charge": null
+              },
+              "types": [
+                "water",
+                "flying"
+              ],
+              "ability": "intimidate",
+              "item": "",
+              "species": "gyarados",
+              "pp": [
+                31,
+                32
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 125,
+              "max_hp": 125,
+              "status": null,
+              "boosts": {
+                "attack": -1,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "fire"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "species": "ponyta",
+              "pp": [
+                63
+              ]
+            },
+            {
+              "hp": 136,
+              "max_hp": 136,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "dragon"
+              ],
+              "ability": "shedskin",
+              "item": "",
+              "species": "dragonair",
+              "pp": [
+                64
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Ponyta"
+          },
+          "move": "Splash",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Ponyta"
+          },
+          "from": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Gyarados"
+          },
+          "move": "Charge",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Gyarados"
+          },
+          "from": null
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Gyarados"
+          },
+          "stat": "spd",
+          "amount": 1
+        },
+        {
+          "kind": "start",
+          "args": [
+            "p1a: Gyarados",
+            "Charge"
+          ]
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 2
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_2",
+      "turn": 3,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 170,
+              "max_hp": 170,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 1,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "charge": null
+              },
+              "types": [
+                "water",
+                "flying"
+              ],
+              "ability": "intimidate",
+              "item": "",
+              "species": "gyarados",
+              "pp": [
+                31,
+                31
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            1
+          ],
+          "party": [
+            {
+              "hp": 65,
+              "max_hp": 125,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "fire"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "species": "ponyta",
+              "pp": [
+                63
+              ]
+            },
+            {
+              "hp": 136,
+              "max_hp": 136,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "dragon"
+              ],
+              "ability": "shedskin",
+              "item": "",
+              "species": "dragonair",
+              "pp": [
+                64
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "activate",
+          "args": [
+            "p2a: Ponyta",
+            "move: Pursuit"
+          ]
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Gyarados"
+          },
+          "move": "Pursuit",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Ponyta"
+          },
+          "from": "[from] Pursuit"
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Ponyta"
+          },
+          "hp": 65,
+          "max_hp": 125,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Dragonair"
+          },
+          "details": "Dragonair, L50, M",
+          "hp": 136,
+          "max_hp": 136,
+          "status": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 3
+        }
+      ]
+    }
+  ],
+  "debug_log": "|gametype|singles\n|player|p1|P1||\n|player|p2|P2||\n|gen|4\n|tier|[Gen 4] Custom Game\n|\n|teamsize|p1|1\n|teamsize|p2|2\n|start\n|switch|p1a: Gyarados|Gyarados, L50, M|170/170\n|switch|p2a: Ponyta|Ponyta, L50, M|125/125\n|-ability|p1a: Gyarados|Intimidate|boost\n|-unboost|p2a: Ponyta|atk|1\n|turn|1\n|\n|move|p2a: Ponyta|Splash|p2a: Ponyta\n|-nothing\n|move|p1a: Gyarados|Charge|p1a: Gyarados\n|-boost|p1a: Gyarados|spd|1\n|-start|p1a: Gyarados|Charge\n|\n|upkeep\n|turn|2\n|\n|debug|before turn callback: pursuit\n|debug|Pursuit start\n|-activate|p2a: Ponyta|move: Pursuit\n|move|p1a: Gyarados|Pursuit|p2a: Ponyta|[from] Pursuit\n|debug|Pursuit damage boost\n|-damage|p2a: Ponyta|65/125\n|switch|p2a: Dragonair|Dragonair, L50, M|136/136\n|\n|upkeep\n|turn|3"
+}

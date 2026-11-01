@@ -1,0 +1,67 @@
+{
+ "schema": 1,
+ "id": "gen4-double-kick-stops-as-effect-spore-puts-its-user-to-sleep-b",
+ "notes": [
+  "Gen 4: Hitmonlee's Double Kick on Breloom; Effect Spore may put Hitmonlee to sleep after a hit, and a user asleep does not go on (`pokemon.status === 'slp'`)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hitmonlee",
+    "species": "Hitmonlee",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Double Kick"
+    ],
+    "gender": "M",
+    "ability": "Limber"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Breloom",
+    "species": "Breloom",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Effect Spore"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Double Kick",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Double Kick",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Double Kick",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Double Kick",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   13,
+   27,
+   41,
+   67
+  ]
+ }
+}

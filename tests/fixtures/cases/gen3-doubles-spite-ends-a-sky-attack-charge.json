@@ -1,0 +1,80 @@
+{
+ "schema": 1,
+ "id": "gen3-doubles-spite-ends-a-sky-attack-charge",
+ "notes": [
+  "Gen 3 doubles Spite (cartridge, I71): two Spites after Aerodactyl charges Sky Attack leave it no PP, which ends the charge; the next turn it is free to choose (Showdown would release the Sky Attack)"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "doubles",
+  "format": "gen3doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "SpiterA",
+    "species": "Misdreavus",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spite",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "SpiterB",
+    "species": "Sableye",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spite",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Target",
+    "species": "Aerodactyl",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Sky Attack"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Partner",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Spite 1, move Spite 1",
+   "p2": "move Sky Attack 1, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move 1, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen5-color-change-and-bide",
+ "notes": [
+  "Gen 5: Ampharos's Bide starts on itself; its Color Change does not take Bide's Normal type (the user's own move is not a hit — issues.md I171, the oracle patched: Showdown's `onAfterMoveSecondary` saw Ampharos as Bide's target). Snorlax's Tackle then turns it Normal"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Ampharos",
+    "species": "Ampharos",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Bide",
+     "Harden"
+    ],
+    "ability": "Color Change",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Bide",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Bide",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Bide",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

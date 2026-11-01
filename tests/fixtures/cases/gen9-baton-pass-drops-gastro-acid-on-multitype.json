@@ -1,0 +1,79 @@
+{
+ "schema": 1,
+ "id": "gen9-baton-pass-drops-gastro-acid-on-multitype",
+ "notes": [
+  "Gastro Acid's `onCopy`: Baton Pass hands it to Arceus, whose Multitype cannot be suppressed, and it is gone"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Weezing",
+    "species": "Weezing",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Gastro Acid",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Levitate"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Baton Pass"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Arceus",
+    "species": "Arceus",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "N",
+    "ability": "Multitype"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Gastro Acid",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Baton Pass"
+  },
+  {
+   "p2": "switch Arceus"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

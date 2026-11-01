@@ -1,0 +1,64 @@
+{
+ "schema": 1,
+ "id": "gen7-disable-fails-on-a-struggle",
+ "notes": [
+  "Gen 7: Alakazam's Taunt leaves Magikarp only Struggle; Alakazam's Disable then fails on it — Disable's onTryHit refuses a last move that is Struggle, a Z-Move or a Max Move, while a Sketch that became another move is still sealed (R-M8-115's Gen 5+ rule had let Struggle through, DESIGN.md R-M8-117)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Alakazam",
+    "species": "Alakazam",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Taunt",
+     "Disable"
+    ],
+    "ability": "Synchronize",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Swift Swim",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Taunt",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Disable",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Disable",
+   "p2": "move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

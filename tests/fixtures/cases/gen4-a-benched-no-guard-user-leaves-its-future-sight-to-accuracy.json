@@ -1,0 +1,73 @@
+{
+ "schema": 1,
+ "id": "gen4-a-benched-no-guard-user-leaves-its-future-sight-to-accuracy",
+ "notes": [
+  "Gen 4 singles: Girafarig (No Guard) foresees Pachirisu, then Regirock takes its place; Pachirisu's Double Team (+3) faces the strike alone. No Guard's `onAnyAccuracy` is a handler of the Pok\u00e9mon on the field (`findEventHandlers`: the target's allies and foes), so the benched user's ability does not make the strike sure to hit: it misses (DESIGN.md R-M8-165)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Pachirisu",
+    "species": "Pachirisu",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Double Team"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Girafarig",
+    "species": "Girafarig",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Future Sight"
+    ],
+    "ability": "No Guard",
+    "gender": "F"
+   },
+   {
+    "label": "Regirock",
+    "species": "Regirock",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Clear Body"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Double Team",
+   "p2": "move Future Sight"
+  },
+  {
+   "p1": "move Double Team",
+   "p2": "switch Regirock"
+  },
+  {
+   "p1": "move Double Team",
+   "p2": "move Splash"
+  }
+ ]
+}

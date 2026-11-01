@@ -1,0 +1,54 @@
+{
+ "schema": 1,
+ "id": "gen3-twineedle-poisons-once-after-both-hits",
+ "notes": [
+  "Gen 3 (pokeemerald `BattleScript_MultiHitEnd`, issues.md I35): Twineedle rolls its poison once, after both hits; Snorlax's Pecha Berry then cures it. Unpatched, Showdown rolls each hit: in this battle it poisons after the first hit too, Snorlax eats the berry and the second hit poisons it again"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Beedrill",
+    "species": "Beedrill",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Twineedle"
+    ],
+    "ability": "Swarm"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Pecha Berry"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Twineedle",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   17,
+   2,
+   3,
+   4
+  ]
+ }
+}

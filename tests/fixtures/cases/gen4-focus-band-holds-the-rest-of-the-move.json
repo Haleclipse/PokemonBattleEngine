@@ -1,0 +1,63 @@
+{
+ "schema": 1,
+ "id": "gen4-focus-band-holds-the-rest-of-the-move",
+ "notes": [
+  "Gen 4 Focus Band (issues.md I38: pokeplatinum `focusItemActivated` until `MoveEnd`): every hit of Golem's Rock Blast would knock Magikarp out; the band holds the first and, having succeeded, every later one of the move",
+  "Unpatched, Showdown rolls each hit on its own and Magikarp falls to a later hit"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 10,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Focus Band"
+   },
+   {
+    "label": "Lapras",
+    "species": "Lapras",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Golem",
+    "species": "Golem",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Rock Blast",
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Rock Blast"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   7,
+   14,
+   20,
+   36
+  ]
+ }
+}

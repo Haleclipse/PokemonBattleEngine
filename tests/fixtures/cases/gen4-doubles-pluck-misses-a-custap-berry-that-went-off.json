@@ -1,0 +1,85 @@
+{
+ "schema": 1,
+ "id": "gen4-doubles-pluck-misses-a-custap-berry-that-went-off",
+ "notes": [
+  "Gen 4 doubles (cartridge, issues.md I56): Snorlax at 4 HP has its Custap Berry put Vital Throw first in its bracket; before it moves, Starly's Pluck knocks it out and leaves the berry in its hands"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "doubles",
+  "format": "gen4doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Absol",
+    "species": "Absol",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Harden"
+    ],
+    "ability": "Pressure"
+   },
+   {
+    "label": "Starly",
+    "species": "Starly",
+    "level": 31,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Pluck",
+     "Harden"
+    ],
+    "ability": "Keen Eye"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Vital Throw"
+    ],
+    "ability": "Thick Fat",
+    "item": "Custap Berry"
+   },
+   {
+    "label": "Munchlax",
+    "species": "Munchlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Seismic Toss 1, move Harden",
+   "p2": "move Vital Throw 1, move Harden"
+  },
+  {
+   "p1": "move Seismic Toss 1, move Seismic Toss 1",
+   "p2": "move Vital Throw 1, move Harden"
+  },
+  {
+   "p1": "move Harden, move Pluck 1",
+   "p2": "move Vital Throw 1, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

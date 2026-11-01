@@ -1,0 +1,80 @@
+{
+ "schema": 1,
+ "id": "gen2-tri-attack-burn-draw-thaws",
+ "notes": [
+  "Gen 2: Tri Attack's statusRoll drawn as a burn thaws a frozen target (frz.onAfterMoveSecondary), whether or not the secondary lands"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Porygon2",
+    "species": "Porygon2",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Ice Beam",
+     "Tri Attack"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 90,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Ice Beam",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Ice Beam",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Ice Beam",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Ice Beam",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tri Attack",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tri Attack",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tri Attack",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tri Attack",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

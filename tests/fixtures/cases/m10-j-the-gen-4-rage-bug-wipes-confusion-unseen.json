@@ -1,0 +1,229 @@
+{
+  "schema": 1,
+  "id": "m10-j-the-gen-4-rage-bug-wipes-confusion-unseen",
+  "notes": [
+    "Gen 4: Walrein, confused, used Rage and then another move: the Rage bug (issues.md I78) clears its confusion silently as the turn starts, and the observers still see it confused",
+    "promoted from m8-gen4-singles-s1638-003-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "singles",
+    "format": "gen4customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Drifblim",
+        "species": "Drifblim",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "False Swipe",
+          "Power Whip",
+          "Flame Wheel"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Walrein",
+        "species": "Walrein",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Slam",
+          "Splash",
+          "Rage",
+          "Sacred Fire"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Masquerain",
+        "species": "Masquerain",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Present",
+          "Magnet Bomb",
+          "Flame Wheel"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Metapod",
+        "species": "Metapod",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Glare",
+          "Sacred Fire"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Tentacool",
+        "species": "Tentacool",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Thunder Wave",
+          "Splash",
+          "U-turn"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Illumise",
+        "species": "Illumise",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Flare Blitz"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Victreebel",
+        "species": "Victreebel",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Synthesis",
+          "Splash",
+          "Confuse Ray",
+          "Sacred Fire"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      57701,
+      62096,
+      46861,
+      42789
+    ]
+  },
+  "script": [
+    {
+      "p1": "move False Swipe",
+      "p2": "move Present"
+    },
+    {
+      "p1": "move Power Whip",
+      "p2": "move Magnet Bomb"
+    },
+    {
+      "p1": "move Flame Wheel",
+      "p2": "move Flame Wheel"
+    },
+    {
+      "p1": "move False Swipe",
+      "p2": "move Present"
+    },
+    {
+      "p1": "move Power Whip",
+      "p2": "move Magnet Bomb"
+    },
+    {
+      "p1": "move Flame Wheel",
+      "p2": "move Flame Wheel"
+    },
+    {
+      "p2": "switch Metapod"
+    },
+    {
+      "p1": "switch Walrein",
+      "p2": "switch Tentacool"
+    },
+    {
+      "p1": "move Slam",
+      "p2": "move Thunder Wave"
+    },
+    {
+      "p1": "move Splash",
+      "p2": "move Splash"
+    },
+    {
+      "p1": "move Rage",
+      "p2": "move U-turn"
+    },
+    {
+      "p2": "switch Metapod"
+    },
+    {
+      "p1": "move Sacred Fire",
+      "p2": "move Sacred Fire"
+    },
+    {
+      "p1": "move Slam",
+      "p2": "move Glare"
+    },
+    {
+      "p2": "switch Tentacool"
+    },
+    {
+      "p1": "move Splash",
+      "p2": "move Splash"
+    },
+    {
+      "p1": "move Rage",
+      "p2": "move U-turn"
+    },
+    {
+      "p2": "switch Illumise"
+    },
+    {
+      "p1": "move Sacred Fire",
+      "p2": "move Flare Blitz"
+    },
+    {
+      "p2": "switch Tentacool"
+    },
+    {
+      "p1": "switch Drifblim",
+      "p2": "switch Victreebel"
+    },
+    {
+      "p1": "move False Swipe",
+      "p2": "move Synthesis"
+    },
+    {
+      "p1": "move Power Whip",
+      "p2": "move Confuse Ray"
+    },
+    {
+      "p1": "move Flame Wheel",
+      "p2": "move Sacred Fire"
+    },
+    {
+      "p1": "move False Swipe",
+      "p2": "move Synthesis"
+    },
+    {
+      "p1": "switch Walrein"
+    },
+    {
+      "p1": "move Splash",
+      "p2": "move Splash"
+    },
+    {
+      "p1": "move Rage",
+      "p2": "move Confuse Ray"
+    },
+    {
+      "p1": "move Sacred Fire",
+      "p2": "move Sacred Fire"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+ "schema": 1,
+ "id": "gen1-thrash-full-paralysis",
+ "notes": [
+  "Gen 1 Petal Dance: a full paralysis ends the lock without confusion"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Dancer",
+    "species": "Vileplume",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Petal Dance",
+     "Growl"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Wall",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Thunder Wave",
+     "Softboiled"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Growl",
+   "p2": "move Thunder Wave"
+  },
+  {
+   "p1": "move Petal Dance",
+   "p2": "move Softboiled"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Softboiled"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Softboiled"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Softboiled"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Softboiled"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Softboiled"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Softboiled"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Softboiled"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   2,
+   2,
+   3,
+   4
+  ]
+ }
+}

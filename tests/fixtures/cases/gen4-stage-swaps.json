@@ -1,0 +1,71 @@
+{
+ "schema": 1,
+ "id": "gen4-stage-swaps",
+ "notes": [
+  "Gen 4 Heart Swap trades every stage; Psych Up copies the user's after it; Haze clears both"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "User",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Swords Dance",
+     "Heart Swap",
+     "Haze",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Calm Mind",
+     "Psych Up",
+     "Amnesia",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Swords Dance",
+   "p2": "move Calm Mind"
+  },
+  {
+   "p1": "move Heart Swap",
+   "p2": "move Psych Up"
+  },
+  {
+   "p1": "move Haze",
+   "p2": "move Amnesia"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

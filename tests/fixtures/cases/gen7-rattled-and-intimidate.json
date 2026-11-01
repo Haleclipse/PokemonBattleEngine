@@ -1,0 +1,73 @@
+{
+ "schema": 1,
+ "id": "gen7-rattled-and-intimidate",
+ "notes": [
+  "Gen 7 Rattled: a Dark hit raises Speed, Intimidate does not (the gen7 mod has no onAfterBoost)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Crunch",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Dog",
+    "species": "Arcanine",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Intimidate"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Ratt",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Rattled"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Crunch",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Dog",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

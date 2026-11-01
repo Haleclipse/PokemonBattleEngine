@@ -1,0 +1,106 @@
+{
+ "schema": 1,
+ "id": "gen8-doubles-corrosive-gas-takes-from-everyone-around",
+ "notes": [
+  "Gen 8 doubles Corrosive Gas takes the items of both foes and of the user's partner; a Sticky Hold Gastrodon keeps its item, a Zacian-Crowned its Rusted Sword, and one holding nothing shows -fail; the move still counts as done"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "doubles",
+  "format": "gen8doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Salazzle",
+    "species": "Salazzle",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Corrosive Gas",
+     "Harden"
+    ],
+    "ability": "Corrosion"
+   },
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Synchronize",
+    "item": "Leftovers"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Leftovers"
+   },
+   {
+    "label": "Gastrodon",
+    "species": "Gastrodon",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Sticky Hold",
+    "item": "Leftovers"
+   },
+   {
+    "label": "Zacian",
+    "species": "Zacian-Crowned",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Intrepid Sword",
+    "item": "Rusted Sword"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Natural Cure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Corrosive Gas, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "switch Zacian, switch Blissey"
+  },
+  {
+   "p1": "move Corrosive Gas, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

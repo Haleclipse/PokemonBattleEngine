@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "gen9-population-bomb-ten-accuracy-checks",
+ "notes": [
+  "Population Bomb: up to ten hits, each after the first checking accuracy; a miss ends it"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Maushold",
+    "species": "Maushold",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Population Bomb"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 90,
+    "nature": "Hardy",
+    "moves": [
+     "Double Team"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Population Bomb",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move Population Bomb",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move Population Bomb",
+   "p2": "move Double Team"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

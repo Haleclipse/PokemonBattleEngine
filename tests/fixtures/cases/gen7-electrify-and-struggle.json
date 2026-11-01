@@ -1,0 +1,55 @@
+{
+ "schema": 1,
+ "id": "gen7-electrify-and-struggle",
+ "notes": [
+  "Gen 7: Electrify does not make Struggle Electric (`move.id !== 'struggle'`): Snorlax's Struggle still hits Jolteon"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Electrify"
+    ],
+    "gender": "M",
+    "ability": "Volt Absorb"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Struggle"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Electrify",
+   "p2": "move Struggle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

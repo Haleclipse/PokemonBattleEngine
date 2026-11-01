@@ -1,0 +1,74 @@
+{
+ "schema": 1,
+ "id": "gen4-thief-fails-with-a-multitype-user",
+ "notes": [
+  "Gen 4 Thief from a Multitype Arceus takes nothing (pokeplatinum BtlCmd_TryStealItem, issues.md I53); Sneasel's Thief takes the Leftovers"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Arceus",
+    "species": "Arceus",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Thief",
+     "Harden"
+    ],
+    "ability": "Multitype"
+   },
+   {
+    "label": "Sneasel",
+    "species": "Sneasel",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Thief",
+     "Harden"
+    ],
+    "ability": "Inner Focus"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Leftovers"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Thief",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Sneasel",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Thief",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

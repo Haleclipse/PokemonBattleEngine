@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen7-disguise-and-status",
+ "notes": [
+  "Gen 7: Disguise only stops damaging moves: Snorlax's Toxic sets in while the disguise is whole, and the disguise is still there for the next Tackle"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mimikyu",
+    "species": "Mimikyu",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "gender": "M",
+    "ability": "Disguise"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Toxic",
+     "Bite"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Toxic"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Bite"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Bite"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,106 @@
+{
+ "schema": 1,
+ "id": "gen6-doubles-tied-replacements-trace-draws-its-foe",
+ "notes": [
+  "Gen 6 doubles: Voltorb's Explosion knocks out itself and Magikarp; Kakuna (Trace) and Numel replace them at the same speed. The two draw their order before Trace picks between Numel and Munna \u2014 the replay plans the order first, or the first SpeedTie passes over Trace's planned pick (DESIGN.md R-M8-140)"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "doubles",
+  "format": "gen6doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Voltorb",
+    "species": "Voltorb",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Explosion"
+    ],
+    "ability": "Soundproof"
+   },
+   {
+    "label": "Steelix",
+    "species": "Steelix",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Sturdy",
+    "gender": "M"
+   },
+   {
+    "label": "Kakuna",
+    "species": "Kakuna",
+    "level": 49,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Trace",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 1,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Swift Swim",
+    "gender": "M"
+   },
+   {
+    "label": "Munna",
+    "species": "Munna",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Leaf Guard",
+    "gender": "F"
+   },
+   {
+    "label": "Numel",
+    "species": "Numel",
+    "level": 49,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Rain Dish",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Explosion, move Splash",
+   "p2": "move Splash, move Splash"
+  },
+  {
+   "p1": "switch 3, pass",
+   "p2": "switch 3, pass"
+  },
+  {
+   "p1": "move Harden, move Splash",
+   "p2": "move Splash, move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   4,
+   5,
+   6,
+   7
+  ]
+ }
+}

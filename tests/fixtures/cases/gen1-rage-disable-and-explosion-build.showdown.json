@@ -1,0 +1,775 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@pkmn/sim",
+    "version": "0.10.11",
+    "formatid": "gen1customgame",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "frames": [
+    {
+      "schema": 1,
+      "checkpoint": "initial",
+      "turn": 1,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 140,
+              "max_hp": 140,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "fighting"
+              ],
+              "pp": [
+                32,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 160,
+              "max_hp": 160,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "psychic"
+              ],
+              "pp": [
+                32,
+                48
+              ]
+            },
+            {
+              "hp": 135,
+              "max_hp": 135,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "electric"
+              ],
+              "pp": [
+                8
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Rager"
+          },
+          "details": "Primeape, L50",
+          "hp": 140,
+          "max_hp": 140,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Disabler"
+          },
+          "details": "Hypno, L50",
+          "hp": 160,
+          "max_hp": 160,
+          "status": null
+        },
+        {
+          "kind": "turn",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_1",
+      "turn": 2,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 140,
+              "max_hp": 140,
+              "status": null,
+              "boosts": {
+                "attack": 1,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "rage": null,
+                "disable": 5
+              },
+              "types": [
+                "fighting"
+              ],
+              "pp": [
+                31,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 147,
+              "max_hp": 160,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "psychic"
+              ],
+              "pp": [
+                31,
+                48
+              ]
+            },
+            {
+              "hp": 135,
+              "max_hp": 135,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "electric"
+              ],
+              "pp": [
+                8
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Rager"
+          },
+          "move": "Rage",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Disabler"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Disabler"
+          },
+          "hp": 147,
+          "max_hp": 160,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Disabler"
+          },
+          "move": "Disable",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Rager"
+          }
+        },
+        {
+          "kind": "start",
+          "args": [
+            "p1a: Rager",
+            "Disable",
+            "Harden"
+          ]
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Rager"
+          },
+          "stat": "atk",
+          "amount": 1
+        },
+        {
+          "kind": "hint",
+          "text": "In Gen 1, using Disable causes the target to build Rage, even if it misses or fails"
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 2
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_2",
+      "turn": 3,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 140,
+              "max_hp": 140,
+              "status": null,
+              "boosts": {
+                "attack": 2,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "rage": null,
+                "disable": 4
+              },
+              "types": [
+                "fighting"
+              ],
+              "pp": [
+                31,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 128,
+              "max_hp": 160,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "psychic"
+              ],
+              "pp": [
+                30,
+                48
+              ]
+            },
+            {
+              "hp": 135,
+              "max_hp": 135,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "electric"
+              ],
+              "pp": [
+                8
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Rager"
+          },
+          "move": "Rage",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Disabler"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Disabler"
+          },
+          "hp": 128,
+          "max_hp": 160,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Disabler"
+          },
+          "move": "Disable",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Rager"
+          }
+        },
+        {
+          "kind": "miss",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Disabler"
+          },
+          "detail": null
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Rager"
+          },
+          "stat": "atk",
+          "amount": 1
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 3
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_3",
+      "turn": 4,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 140,
+              "max_hp": 140,
+              "status": null,
+              "boosts": {
+                "attack": 2,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "rage": null,
+                "disable": 3
+              },
+              "types": [
+                "fighting"
+              ],
+              "pp": [
+                31,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            1
+          ],
+          "party": [
+            {
+              "hp": 128,
+              "max_hp": 160,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "psychic"
+              ],
+              "pp": [
+                30,
+                48
+              ]
+            },
+            {
+              "hp": 113,
+              "max_hp": 135,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "electric"
+              ],
+              "pp": [
+                8
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bomber"
+          },
+          "details": "Electrode, L50",
+          "hp": 135,
+          "max_hp": 135,
+          "status": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Rager"
+          },
+          "move": "Rage",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bomber"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bomber"
+          },
+          "hp": 113,
+          "max_hp": 135,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 4
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_4",
+      "turn": 4,
+      "request": "wait|forced_switch",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 11,
+              "max_hp": 140,
+              "status": null,
+              "boosts": {
+                "attack": 3,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "rage": null,
+                "disable": 3
+              },
+              "types": [
+                "fighting"
+              ],
+              "pp": [
+                31,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            null
+          ],
+          "party": [
+            {
+              "hp": 128,
+              "max_hp": 160,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "psychic"
+              ],
+              "pp": [
+                30,
+                48
+              ]
+            },
+            {
+              "hp": 0,
+              "max_hp": 135,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "electric"
+              ],
+              "pp": [
+                7
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bomber"
+          },
+          "move": "Explosion",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Rager"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Rager"
+          },
+          "hp": 11,
+          "max_hp": 140,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Rager"
+          },
+          "stat": "atk",
+          "amount": 1
+        },
+        {
+          "kind": "hint",
+          "text": "In Gen 1, using Explosion causes the target to build Rage, even if it misses or fails"
+        },
+        {
+          "kind": "faint",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bomber"
+          },
+          "detail": null
+        }
+      ]
+    }
+  ],
+  "debug_log": "|gametype|singles\n|player|p1|P1||\n|player|p2|P2||\n|gen|1\n|tier|[Gen 1] Custom Game\n|rule|HP Percentage Mod: HP is shown in percentages\n|rule|Desync Clause Mod: Desyncs changed to move failure.\n|\n|teamsize|p1|1\n|teamsize|p2|2\n|start\n|switch|p1a: Rager|Primeape, L50|140/140\n|switch|p2a: Disabler|Hypno, L50|160/160\n|turn|1\n|\n|move|p1a: Rager|Rage|p2a: Disabler\n|-damage|p2a: Disabler|147/160\n|move|p2a: Disabler|Disable|p1a: Rager\n|debug|Disable: disabling move Harden in slot 1\n|-start|p1a: Rager|Disable|Harden\n|-boost|p1a: Rager|atk|1|[from] Rage\n|-hint|In Gen 1, using Disable causes the target to build Rage, even if it misses or fails\n|\n|upkeep\n|turn|2\n|\n|move|p1a: Rager|Rage|p2a: Disabler|[from] Rage\n|-damage|p2a: Disabler|128/160\n|move|p2a: Disabler|Disable|p1a: Rager|[miss]\n|-miss|p2a: Disabler\n|-boost|p1a: Rager|atk|1|[from] Rage\n|\n|upkeep\n|turn|3\n|\n|switch|p2a: Bomber|Electrode, L50|135/135\n|move|p1a: Rager|Rage|p2a: Bomber|[from] Rage\n|-damage|p2a: Bomber|113/135\n|\n|upkeep\n|turn|4\n|\n|move|p2a: Bomber|Explosion|p1a: Rager\n|-damage|p1a: Rager|11/140\n|-boost|p1a: Rager|atk|1|[from] Rage\n|-hint|In Gen 1, using Explosion causes the target to build Rage, even if it misses or fails\n|faint|p2a: Bomber"
+}

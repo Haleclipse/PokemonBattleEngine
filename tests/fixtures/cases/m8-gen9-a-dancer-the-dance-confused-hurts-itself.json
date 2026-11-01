@@ -1,0 +1,127 @@
+{
+  "schema": 1,
+  "id": "m8-gen9-a-dancer-the-dance-confused-hurts-itself",
+  "notes": [
+    "Gen 9 doubles: Shroodle's Teeter Dance confuses Primeape (Dancer), whose dance then hurts itself in that confusion; the stopped dance plans no accuracy check (Shroodle's Bright Powder) and meets the confusion the move gave it (DESIGN.md R-M8-126)",
+    "promoted from m8-gen9-doubles-s627-018-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Riolu",
+        "species": "Riolu",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Scratch"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Primeape",
+        "species": "Primeape",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fling",
+          "Silk Trap"
+        ],
+        "ability": "Dancer",
+        "gender": "M"
+      },
+      {
+        "label": "Wo-Chien",
+        "species": "Wo-Chien",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Pay Day"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Cacnea",
+        "species": "Cacnea",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Gigaton Hammer"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Golurk",
+        "species": "Golurk",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Seed Bomb"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Geodude",
+        "species": "Geodude",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Confuse Ray",
+          "Silk Trap"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Shroodle",
+        "species": "Shroodle",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Teeter Dance"
+        ],
+        "ability": "Run Away",
+        "item": "Bright Powder",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      27355,
+      18953,
+      58732,
+      24846
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Scratch 1, move Fling 2",
+      "p2": "move Seed Bomb 1, move Confuse Ray 2"
+    },
+    {
+      "p1": "move Scratch 1, move Fling 2",
+      "p2": "move Seed Bomb 1, move Confuse Ray 2"
+    },
+    {
+      "p1": "switch Wo-Chien, pass"
+    },
+    {
+      "p1": "switch Cacnea, move Silk Trap",
+      "p2": "switch Shroodle, move Silk Trap"
+    },
+    {
+      "p1": "move Gigaton Hammer 1, move Silk Trap",
+      "p2": "move Teeter Dance, move Silk Trap"
+    }
+  ]
+}

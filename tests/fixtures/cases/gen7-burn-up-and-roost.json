@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen7-burn-up-and-roost",
+ "notes": [
+  "Gen 7: after Burn Up, Moltres is ???/Flying; roosting it is ??? alone — Hippowdon's Earthquake hits it neutrally"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Moltres",
+    "species": "Moltres",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Burn Up",
+     "Roost"
+    ],
+    "ability": "Pressure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Hippowdon",
+    "species": "Hippowdon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Earthquake"
+    ],
+    "gender": "M",
+    "ability": "Sand Stream",
+    "item": "Leftovers"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Burn Up",
+   "p2": "move Earthquake"
+  },
+  {
+   "p1": "move Roost",
+   "p2": "move Earthquake"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

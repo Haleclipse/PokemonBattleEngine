@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen2-focus-band-and-a-burn-chance",
+ "notes": [
+  "Gen 2 Focus Band and a secondary's chance (DESIGN.md R-M8-35.A2, from the 29th Nightly's m8-gen2-singles-s420-011): Nidoran-F's Fire Punch leaves Exeggcute standing (the burn chance rolled, the band drew nothing); its Fire Blast knocks Exeggcute out \u2014 the band's roll failed",
+  "The replay's search over Fire Blast's damage rolls tries rolls that would not knock Exeggcute out: the engine draws no band there and goes on to the burn chance, so the band's planned decision is optional"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Nidoran-F",
+    "species": "Nidoran-F",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fire Punch",
+     "Fire Blast"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Exeggcute",
+    "species": "Exeggcute",
+    "level": 53,
+    "nature": "Hardy",
+    "moves": [
+     "Hidden Power",
+     "Pursuit"
+    ],
+    "item": "Focus Band",
+    "gender": "F"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   48038,
+   56296,
+   13356,
+   59201
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Fire Punch",
+   "p2": "move Hidden Power"
+  },
+  {
+   "p1": "move Fire Blast",
+   "p2": "move Pursuit"
+  }
+ ]
+}

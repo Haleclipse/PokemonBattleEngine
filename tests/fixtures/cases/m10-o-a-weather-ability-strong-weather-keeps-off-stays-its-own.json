@@ -1,0 +1,77 @@
+{
+  "schema": 1,
+  "id": "m10-o-a-weather-ability-strong-weather-keeps-off-stays-its-own",
+  "notes": [
+    "Gen 8 doubles: Trevenant's Sand Stream kept off by a strong weather names it ([fail]); the client keeps it as Trevenant's own (R-M10-39)",
+    "promoted from m8-gen8-doubles-s1640-004-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 8,
+    "mode": "doubles",
+    "format": "gen8doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Calyrex",
+        "species": "Calyrex",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Gastro Acid"
+        ],
+        "ability": "Delta Stream"
+      },
+      {
+        "label": "Trevenant",
+        "species": "Trevenant",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Gastro Acid"
+        ],
+        "ability": "Sand Stream",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Cottonee",
+        "species": "Cottonee",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Gastro Acid"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Crustle",
+        "species": "Crustle",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Gastro Acid"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      63239,
+      37619,
+      52098,
+      39402
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Gastro Acid 2, move Gastro Acid 1",
+      "p2": "move Gastro Acid 2, move Gastro Acid 1"
+    }
+  ]
+}

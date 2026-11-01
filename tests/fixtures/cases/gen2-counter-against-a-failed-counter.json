@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "gen2-counter-against-a-failed-counter",
+ "notes": [
+  "Gen 2 Counter / Mirror Coat fail against the foe's Counter / Mirror Coat (EFFECT_COUNTER / EFFECT_MIRROR_COAT) and against an attack that dealt nothing (a Tackle that missed), as pokecrystal has it (issues.md I40)"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Slow",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Counter",
+     "Mirror Coat",
+     "Sand Attack",
+     "Tackle"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Fast",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Counter",
+     "Mirror Coat",
+     "Tackle",
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Counter",
+   "p2": "move Counter"
+  },
+  {
+   "p1": "move Mirror Coat",
+   "p2": "move Mirror Coat"
+  },
+  {
+   "p1": "move Sand Attack",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Sand Attack",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Counter",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Counter",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   2,
+   2,
+   3,
+   4
+  ]
+ }
+}

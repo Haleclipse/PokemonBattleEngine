@@ -1,0 +1,88 @@
+{
+ "schema": 1,
+ "id": "gen3-an-encored-rollout-keeps-aiming-at-the-action-slot",
+ "notes": [
+  "Gen 3 doubles: Golem's Rollout meets Smeargle's Protect, which ends the chain; Smeargle's Encore turns Golem's Tackle at Snorlax into Rollout. The chain's later turns aim at the action's slot (lastMoveTargetLoc: the declared one, through the Encore), not the one the next turn names (DESIGN.md R-M8-135)"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "doubles",
+  "format": "gen3doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Golem",
+    "species": "Golem",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Rollout",
+     "Tackle"
+    ],
+    "ability": "Rock Head",
+    "gender": "M"
+   },
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Swift Swim",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Smeargle",
+    "species": "Smeargle",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Protect",
+     "Encore",
+     "Splash"
+    ],
+    "ability": "Own Tempo",
+    "gender": "M"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Rollout 1, move Splash",
+   "p2": "move Protect, move Splash"
+  },
+  {
+   "p1": "move Tackle 2, move Splash",
+   "p2": "move Encore 1, move Splash"
+  },
+  {
+   "p1": "move Rollout 1, move Splash",
+   "p2": "move Splash, move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

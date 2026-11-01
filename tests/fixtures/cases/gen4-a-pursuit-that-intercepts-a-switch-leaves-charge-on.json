@@ -1,0 +1,71 @@
+{
+ "schema": 1,
+ "id": "gen4-a-pursuit-that-intercepts-a-switch-leaves-charge-on",
+ "notes": [
+  "Gen 4 singles: Gyarados uses Charge, then its Pursuit strikes Ponyta as Ponyta switches out. Showdown's gen4 Pursuit condition runs `useMove` alone, not `runMove`, so none of the `AfterMove` events fire: Charge's `onAfterMove` (it ends after the holder's next move, Gen 4-8) does not end it, and Gyarados keeps it (DESIGN.md R-M8-168)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Gyarados",
+    "species": "Gyarados",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Charge",
+     "Pursuit"
+    ],
+    "ability": "Intimidate",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Ponyta",
+    "species": "Ponyta",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Dragonair",
+    "species": "Dragonair",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Shed Skin",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Charge",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Pursuit",
+   "p2": "switch Dragonair"
+  }
+ ]
+}

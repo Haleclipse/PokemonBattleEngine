@@ -1,0 +1,87 @@
+{
+ "schema": 1,
+ "id": "gen5-present-heal-against-a-substitute",
+ "notes": [
+  "Gen 3-5: Present's heal against a Substitute fails with -fail|user (Substitute ignores infiltrates)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Delibird",
+    "species": "Delibird",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Present",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Substitute",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Substitute"
+  },
+  {
+   "p1": "move Present",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Present",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Present",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Present",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Present",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Present",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Present",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Present",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

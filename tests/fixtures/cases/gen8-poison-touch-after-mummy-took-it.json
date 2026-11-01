@@ -1,0 +1,59 @@
+{
+ "schema": 1,
+ "id": "gen8-poison-touch-after-mummy-took-it",
+ "notes": [
+  "Gen 8: Toxicroak's Pound on a Mummy Snorlax: Mummy gives Toxicroak its ability first (`-activate … ability: Mummy`), yet the Poison Touch the event had already collected still rolls and poisons Snorlax (`[from] ability: Poison Touch|[of] p1a: Toxicroak`); the next Pound rolls nothing"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Toxicroak",
+    "species": "Toxicroak",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Pound"
+    ],
+    "gender": "M",
+    "ability": "Poison Touch"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Mummy"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Pound",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Pound",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   4,
+   9,
+   14,
+   22
+  ]
+ }
+}

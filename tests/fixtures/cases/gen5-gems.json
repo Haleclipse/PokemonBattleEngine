@@ -1,0 +1,168 @@
+{
+ "schema": 1,
+ "id": "gen5-gems",
+ "notes": [
+  "Gen 5 gems (\u00d71.5, the move that uses them up): Fire Gem's Flamethrower boosted once; a Water Gem stays through Flamethrower; Flying Gem's Acrobatics is boosted and doubled (the gem is gone before the power is read); Grass Gem boosts every hit of one Bullet Seed; a Normal Gem goes on a hit into a Substitute"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Fire",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Flamethrower"
+    ],
+    "ability": "Run Away",
+    "item": "Fire Gem"
+   },
+   {
+    "label": "Water",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Flamethrower"
+    ],
+    "ability": "Run Away",
+    "item": "Water Gem"
+   },
+   {
+    "label": "Flying",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Acrobatics"
+    ],
+    "ability": "Run Away",
+    "item": "Flying Gem"
+   },
+   {
+    "label": "Grass",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Bullet Seed"
+    ],
+    "ability": "Run Away",
+    "item": "Grass Gem"
+   },
+   {
+    "label": "Normal",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Body Slam",
+     "Tackle"
+    ],
+    "ability": "Run Away",
+    "item": "Normal Gem"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Sub",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Substitute",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Flamethrower",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Flamethrower",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "switch Water",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Flamethrower",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Flamethrower",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "switch Flying",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Acrobatics",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Acrobatics",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "switch Grass",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Bullet Seed",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Bullet Seed",
+   "p2": "switch Sub"
+  },
+  {
+   "p1": "switch Normal",
+   "p2": "move Substitute"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

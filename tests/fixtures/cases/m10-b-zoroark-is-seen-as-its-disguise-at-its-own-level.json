@@ -1,0 +1,95 @@
+{
+ "schema": 1,
+ "id": "m10-b-zoroark-is-seen-as-its-disguise-at-its-own-level",
+ "notes": [
+  "R-M10-19: Zoroark comes in as Snorlax, the last of its party (Illusion's `onBeforeSwitchIn`), at its own level 60 (`getFullDetails`: the disguise's species and gender, the wearer's level), is badly poisoned and leaves as Snorlax: the other side's team is the Pokémon it saw — a Snorlax at Zoroark's HP, poisoned, while the real one is unhurt — until Tackle breaks the Illusion (`replace`) and Zoroark shows itself."
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Machamp",
+    "species": "Machamp",
+    "level": 20,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Splash",
+     "Toxic"
+    ],
+    "ability": "Guts",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Zoroark",
+    "species": "Zoroark",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Illusion",
+    "gender": "M"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Toxic",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  }
+ ]
+}

@@ -1,0 +1,81 @@
+{
+ "schema": 1,
+ "id": "gen8-doubles-propeller-tail-ignores-follow-me",
+ "notes": [
+  "Propeller Tail (tracksTarget): the holder's Body Slam at Chansey goes to Chansey past Steelix's Follow Me; its partner's is drawn"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "doubles",
+  "format": "gen8doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Body Slam"
+    ],
+    "ability": "Propeller Tail"
+   },
+   {
+    "label": "Lax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Body Slam"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Steelix",
+    "species": "Steelix",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Follow Me"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Body Slam 2, move Body Slam 2",
+   "p2": "move Follow Me, move Soft-Boiled"
+  },
+  {
+   "p1": "move Body Slam 2, move Body Slam 2",
+   "p2": "move Follow Me, move Soft-Boiled"
+  },
+  {
+   "p1": "move Body Slam 2, move Body Slam 2",
+   "p2": "move Follow Me, move Soft-Boiled"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

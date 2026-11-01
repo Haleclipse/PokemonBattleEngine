@@ -1,0 +1,88 @@
+{
+ "schema": 1,
+ "id": "gen1-mirror-move-copies-a-jump-kick-that-crashes",
+ "notes": [
+  "Gen 1: Jolteon's Sand Attacks lower Hitmonlee's accuracy; Hitmonlee's Mirror Move then copies Jolteon's Jump Kick, which misses and crashes — the crash is the called move's (1 HP in Gen 1)"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hitmonlee",
+    "species": "Hitmonlee",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Mirror Move"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Jump Kick",
+     "Sand Attack"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1",
+   "p2": "move Sand Attack"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Sand Attack"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Sand Attack"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Sand Attack"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Jump Kick"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Jump Kick"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Jump Kick"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Jump Kick"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Jump Kick"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Jump Kick"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen1-dig-confusion-self-hit-clears-both",
+ "notes": [
+  "Gen 1 Dig: a confusion self-hit as the digger would attack ends the charge and brings it back within reach (the gen1 `confusion`, pokered's self-hit clearing both flags)"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Digger",
+    "species": "Sandslash",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Dig",
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Confuser",
+    "species": "Gengar",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Confuse Ray",
+     "Tackle"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Confuse Ray"
+  },
+  {
+   "p1": "move Dig",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   16,
+   17,
+   18,
+   19
+  ]
+ }
+}

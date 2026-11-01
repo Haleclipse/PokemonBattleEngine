@@ -1,0 +1,57 @@
+{
+ "schema": 1,
+ "id": "gen4-pay-day-scatters-coins",
+ "notes": [
+  "Gen 4 Pay Day: -fieldactivate after the hit"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Persian",
+    "species": "Persian",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Pay Day"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Pay Day",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Pay Day",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

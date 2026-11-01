@@ -1,0 +1,146 @@
+{
+  "schema": 1,
+  "id": "gen6-life-orb-spares-ohko",
+  "notes": [
+    "Gen 5-6 Life Orb: no recoil after a one-hit KO move (gen6 lifeorb)",
+    "promoted from m8-gen6-singles-s108-000-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 6,
+    "mode": "singles",
+    "format": "gen6customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Meloetta",
+        "species": "Meloetta",
+        "level": 54,
+        "nature": "Hardy",
+        "moves": [
+          "Wing Attack",
+          "Sheer Cold",
+          "Aura Sphere",
+          "Aromatherapy"
+        ],
+        "ability": "Run Away",
+        "item": "Life Orb"
+      },
+      {
+        "label": "Hippowdon",
+        "species": "Hippowdon",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Gust",
+          "Guillotine",
+          "Aerial Ace",
+          "Horn Drill"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Mankey",
+        "species": "Mankey",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Flash Cannon",
+          "Leaf Tornado"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Chimecho",
+        "species": "Chimecho",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Mist Ball",
+          "Horn Drill"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Salamence",
+        "species": "Salamence",
+        "level": 45,
+        "nature": "Hardy",
+        "moves": [
+          "Muddy Water",
+          "Aromatherapy",
+          "Acid",
+          "Guillotine"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      39740,
+      29241,
+      13071,
+      34774
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Wing Attack",
+      "p2": "move Flash Cannon"
+    },
+    {
+      "p1": "move Aura Sphere",
+      "p2": "move Leaf Tornado"
+    },
+    {
+      "p2": "switch Chimecho"
+    },
+    {
+      "p1": "move Aura Sphere",
+      "p2": "move Mist Ball"
+    },
+    {
+      "p1": "move Aromatherapy",
+      "p2": "move Horn Drill"
+    },
+    {
+      "p1": "switch Hippowdon",
+      "p2": "switch Salamence"
+    },
+    {
+      "p1": "move Gust",
+      "p2": "move Muddy Water"
+    },
+    {
+      "p1": "move Guillotine",
+      "p2": "move Aromatherapy"
+    },
+    {
+      "p1": "move Aerial Ace",
+      "p2": "move Acid"
+    },
+    {
+      "p1": "move Horn Drill",
+      "p2": "move Guillotine"
+    },
+    {
+      "p1": "move Gust",
+      "p2": "move Muddy Water"
+    },
+    {
+      "p1": "switch Meloetta"
+    },
+    {
+      "p1": "move Sheer Cold",
+      "p2": "move Aromatherapy"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+ "schema": 1,
+ "id": "m9-stellar-boost-rounds-half-down",
+ "notes": [
+  "R-M9-19: STAB is Showdown's `modify` (4096-based, rounded half down). Stellar Mew's first move of each of four types takes the 60-power floor and the 4915/4096 boost; a product like 71.99 rounds to 72, where the floored product was 71 (found by the first real-format campaign, gen9ou)."
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "ability": "Synchronize",
+    "item": "Leftovers",
+    "moves": [
+     "Tackle",
+     "Ember",
+     "Water Gun",
+     "Thunder Shock"
+    ],
+    "teraType": "Stellar",
+    "evs": {
+     "atk": 252,
+     "spa": 252,
+     "hp": 4
+    },
+    "nature": "Hardy"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "ability": "Natural Cure",
+    "item": "Leftovers",
+    "moves": [
+     "Soft-Boiled",
+     "Splash"
+    ],
+    "evs": {
+     "hp": 252,
+     "def": 252,
+     "spd": 4
+    },
+    "nature": "Bold"
+   }
+  ]
+ },
+ "random": {
+  "seed": [
+   1,
+   7,
+   3,
+   11
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1 terastallize",
+   "p2": "move 2"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 2"
+  },
+  {
+   "p1": "move 3",
+   "p2": "move 2"
+  },
+  {
+   "p1": "move 4",
+   "p2": "move 2"
+  }
+ ],
+ "corpus": {
+  "mechanics": true
+ }
+}

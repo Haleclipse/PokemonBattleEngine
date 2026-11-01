@@ -1,0 +1,82 @@
+{
+ "schema": 1,
+ "id": "gen9-perish-body",
+ "notes": [
+  "Perish Body: a contact hit starts Perish Song on the attacker and the holder; an attacker already counting sets off nothing (the holder, back from the bench without a count, stays without); a non-contact hit neither"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hitter",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Swift",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Cursola",
+    "species": "Mew",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Perish Body"
+   },
+   {
+    "label": "Bench",
+    "species": "Mew",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Swift",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Bench"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Cursola"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

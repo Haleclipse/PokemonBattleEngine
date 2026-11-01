@@ -1,0 +1,82 @@
+{
+ "schema": 1,
+ "id": "gen6-normalize-moves-ion-deluge-and-electrify-turn-electric",
+ "notes": [
+  "Gen 6 doubles: Kingler (Normalize) uses Power Whip on Golem, first under Jolteon's Ion Deluge, then under its Electrify. Normalize makes the move Normal and they make it Electric (Bulbapedia's Ion Deluge, Generation VI: a Normalize user's Flying Press under it deals Electric/Flying damage), so Golem is immune both times. Showdown's gen6 Normalize makes it Normal again in its `onModifyMove`; the oracle is patched (issues.md I202; DESIGN.md R-M8-168)"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "doubles",
+  "format": "gen6doublescustomgame"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Kingler",
+    "species": "Kingler",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Power Whip"
+    ],
+    "ability": "Normalize",
+    "gender": "M"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Ion Deluge",
+     "Electrify"
+    ],
+    "ability": "Volt Absorb",
+    "gender": "M"
+   },
+   {
+    "label": "Golem",
+    "species": "Golem",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Sturdy",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Power Whip 2, move Splash",
+   "p2": "move Ion Deluge, move Splash"
+  },
+  {
+   "p1": "move Power Whip 2, move Splash",
+   "p2": "move Electrify 1, move Splash"
+  }
+ ]
+}

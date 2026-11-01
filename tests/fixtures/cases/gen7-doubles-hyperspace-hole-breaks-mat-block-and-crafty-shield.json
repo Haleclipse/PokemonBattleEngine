@@ -1,0 +1,81 @@
+{
+ "schema": 1,
+ "id": "gen7-doubles-hyperspace-hole-breaks-mat-block-and-crafty-shield",
+ "notes": [
+  "Hyperspace Hole takes down Mat Block (Snorlax's Body Slam then lands) and, the next turn, Crafty Shield (Thunder Wave then lands)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hoopa",
+    "species": "Hoopa-Unbound",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Hyperspace Hole",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Body Slam",
+     "Thunder Wave"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Mat Block",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Crafty Shield",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Hyperspace Hole 1, move Body Slam 2",
+   "p2": "move Mat Block, move Harden"
+  },
+  {
+   "p1": "move Hyperspace Hole 2, move Thunder Wave 2",
+   "p2": "move Harden, move Crafty Shield"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

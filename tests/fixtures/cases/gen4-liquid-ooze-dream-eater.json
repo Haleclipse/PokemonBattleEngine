@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen4-liquid-ooze-dream-eater",
+ "notes": [
+  "Gen 4 Liquid Ooze leaves Dream Eater's drain alone (the gen4 mod), and turns Giga Drain's into damage"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Drain",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Spore",
+     "Dream Eater",
+     "Giga Drain",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Ooze",
+    "species": "Tentacruel",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "ability": "Liquid Ooze"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Spore",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Dream Eater",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Giga Drain",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,77 @@
+{
+  "schema": 1,
+  "id": "m8-gen2-spider-web-through-a-substitute",
+  "notes": [
+    "Gen 2: Electrode and Onix each behind a Substitute trap each other with Spider Web: the gen2 Substitute stops a status move only for a status, stages, confusion or its named few, and pokecrystal's ArenaTrap checks no Substitute (DESIGN.md R-M8-115)",
+    "promoted from m8-gen2-singles-s579-019-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 2,
+    "mode": "singles",
+    "format": "gen2customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Machoke",
+        "species": "Machoke",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Explosion"
+        ],
+        "gender": "M"
+      },
+      {
+        "label": "Electrode",
+        "species": "Electrode",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Spider Web",
+          "Substitute"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "Onix",
+        "species": "Onix",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Spider Web",
+          "Snore",
+          "Substitute"
+        ],
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      55525,
+      35698,
+      48910,
+      36451
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Explosion",
+      "p2": "move Snore"
+    },
+    {
+      "p1": "switch Electrode"
+    },
+    {
+      "p1": "move Substitute",
+      "p2": "move Substitute"
+    },
+    {
+      "p1": "move Spider Web",
+      "p2": "move Spider Web"
+    }
+  ]
+}

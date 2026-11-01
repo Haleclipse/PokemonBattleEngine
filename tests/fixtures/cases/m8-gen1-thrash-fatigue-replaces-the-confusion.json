@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "id": "m8-gen1-thrash-fatigue-replaces-the-confusion",
+  "notes": [
+    "Nightly 52: Gen 1 Thrash's fatigue confuses its confused user afresh ([silent]); Confuse Ray's earlier time only had to outlast the checks up to it (DESIGN.md R-M8-96)",
+    "promoted from m8-gen1-singles-s508-010-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 1,
+    "mode": "singles",
+    "format": "gen1customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Wigglytuff",
+        "species": "Wigglytuff",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Bubble Beam",
+          "Thunder",
+          "Bubble",
+          "Confuse Ray"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "Drowzee",
+        "species": "Drowzee",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Thrash"
+        ]
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      14266,
+      6907,
+      52634,
+      33617
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Bubble Beam",
+      "p2": "move Thrash"
+    },
+    {
+      "p1": "move Thunder",
+      "p2": "move Thrash"
+    },
+    {
+      "p1": "move Bubble",
+      "p2": "move Thrash"
+    },
+    {
+      "p1": "move Confuse Ray",
+      "p2": "move Thrash"
+    }
+  ]
+}

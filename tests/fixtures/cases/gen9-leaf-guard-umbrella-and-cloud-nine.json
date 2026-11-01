@@ -1,0 +1,95 @@
+{
+ "schema": 1,
+ "id": "gen9-leaf-guard-umbrella-and-cloud-nine",
+ "notes": [
+  "Leaf Guard reads the holder's own weather (Showdown effectiveWeather): a Utility Umbrella holder has no sun, and Cloud Nine takes the sun away from everyone"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Umb",
+    "species": "Leafeon",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Leaf Guard",
+    "item": "Utility Umbrella"
+   },
+   {
+    "label": "Leafy",
+    "species": "Leafeon",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Leaf Guard"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Sunny Day",
+     "Thunder Wave",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Duck",
+    "species": "Golduck",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Thunder Wave",
+     "Harden"
+    ],
+    "ability": "Cloud Nine"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Sunny Day"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Thunder Wave"
+  },
+  {
+   "p1": "switch Leafy",
+   "p2": "move Thunder Wave"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Duck"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Thunder Wave"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   2,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,82 @@
+{
+  "schema": 1,
+  "id": "gen9-doubles-teeter-dance-already-confused",
+  "notes": [
+    "An already confused target draws no confusion duration (addVolatile fails before onStart rolls it)"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Grumpig",
+        "species": "Grumpig",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Confuse Ray",
+          "Teeter Dance"
+        ],
+        "ability": "Thick Fat"
+      },
+      {
+        "label": "Blissey",
+        "species": "Blissey",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Growl"
+        ],
+        "ability": "Natural Cure"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Snorlax",
+        "species": "Snorlax",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Growl"
+        ],
+        "ability": "Thick Fat"
+      },
+      {
+        "label": "Chansey",
+        "species": "Chansey",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Growl"
+        ],
+        "ability": "Natural Cure"
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1 -2, move 1",
+      "p2": "move 1, move 1"
+    },
+    {
+      "p1": "move 2, move 1",
+      "p2": "move 1, move 1"
+    },
+    {
+      "p1": "move 1 1, move 1",
+      "p2": "move 1, move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

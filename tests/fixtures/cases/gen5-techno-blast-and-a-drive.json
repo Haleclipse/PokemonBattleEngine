@@ -1,0 +1,75 @@
+{
+ "schema": 1,
+ "id": "gen5-techno-blast-and-a-drive",
+ "notes": [
+  "Gen 5 (the Drives' own generation): a Burn Drive's Techno Blast is Fire (2x on a Grass foe)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Genesect",
+    "species": "Genesect",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Techno Blast",
+     "Harden"
+    ],
+    "ability": "Download",
+    "item": "Burn Drive"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Venusaur",
+    "species": "Venusaur",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Overgrow"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Techno Blast",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Techno Blast",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

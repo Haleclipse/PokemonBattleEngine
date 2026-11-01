@@ -1,0 +1,78 @@
+{
+ "schema": 1,
+ "id": "gen3-uproar-flinched-ends-it",
+ "notes": [
+  "Gen 3 Uproar (cartridge, I63): Fake Out flinches the holder on a locked turn; Gen 3 ends the uproar at once, silently"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Uproarer",
+    "species": "Blissey",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Uproar",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Wall",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Persian",
+    "species": "Persian",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fake Out",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Uproar",
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Uproar",
+   "p2": "move Fake Out"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

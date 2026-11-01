@@ -1,0 +1,72 @@
+{
+ "schema": 1,
+ "id": "gen9-uproar-keeps-everyone-awake",
+ "notes": [
+  "Gen 9 Uproar: 3 turns; Spore on the uproar's holder and on the foe, and the foe's Rest, all fail while it goes on; once it is over Spore works"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Uproarer",
+    "species": "Blissey",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Uproar",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Sporer",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spore",
+     "Rest",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Uproar",
+   "p2": "move Spore"
+  },
+  {
+   "p1": "move Uproar",
+   "p2": "move Rest"
+  },
+  {
+   "p1": "move Uproar",
+   "p2": "move Spore"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Spore"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

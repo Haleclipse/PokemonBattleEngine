@@ -1,0 +1,68 @@
+{
+ "schema": 1,
+ "id": "gen7-moves-ignoring-defense-and-evasion-stages",
+ "notes": [
+  "Chip Away, Darkest Lariat and Sacred Sword (`ignoreDefensive`, `ignoreEvasion`): Snorlax's Iron Defense and Double Team change neither their damage nor their accuracy (no accuracy check at +2 evasion)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Lucario",
+    "species": "Lucario",
+    "level": 25,
+    "nature": "Hardy",
+    "moves": [
+     "Chip Away",
+     "Darkest Lariat",
+     "Sacred Sword"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Iron Defense",
+     "Double Team"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Chip Away",
+   "p2": "move Iron Defense"
+  },
+  {
+   "p1": "move Darkest Lariat",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move Sacred Sword",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move Chip Away",
+   "p2": "move Iron Defense"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

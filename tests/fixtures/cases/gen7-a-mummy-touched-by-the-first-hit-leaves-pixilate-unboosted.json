@@ -1,0 +1,55 @@
+{
+ "schema": 1,
+ "id": "gen7-a-mummy-touched-by-the-first-hit-leaves-pixilate-unboosted",
+ "notes": [
+  "Gen 7 singles: Sylveon (Pixilate) uses Double Hit on Cofagrigus (Mummy). The first hit's contact turns Sylveon's ability into Mummy; the second hit stays Fairy (the type was set as the move started, so it still strikes the Ghost) but loses the 1.2 boost: Pixilate's `onBasePower` (`typeChangerBoosted === this.effect`) is a handler of the ability the user has at each hit (DESIGN.md R-M8-166)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sylveon",
+    "species": "Sylveon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Double Hit"
+    ],
+    "ability": "Pixilate",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Cofagrigus",
+    "species": "Cofagrigus",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Mummy",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Double Hit",
+   "p2": "move Splash"
+  }
+ ]
+}

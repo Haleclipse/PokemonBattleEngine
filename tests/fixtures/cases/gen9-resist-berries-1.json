@@ -1,0 +1,199 @@
+{
+ "schema": 1,
+ "id": "gen9-resist-berries-1",
+ "notes": [
+  "Occa / Passho / Wacan / Rindo / Yache / Chople Berry: the first super-effective hit of their type is halved and eats the berry, the second is not"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "First",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Flamethrower",
+     "Surf",
+     "Thunderbolt",
+     "Energy Ball"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Second",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Ice Beam",
+     "Aura Sphere"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Occa",
+    "species": "Skarmory",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away",
+    "item": "Occa Berry"
+   },
+   {
+    "label": "Passho",
+    "species": "Hippowdon",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away",
+    "item": "Passho Berry"
+   },
+   {
+    "label": "Wacan",
+    "species": "Lapras",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away",
+    "item": "Wacan Berry"
+   },
+   {
+    "label": "Rindo",
+    "species": "Dondozo",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away",
+    "item": "Rindo Berry"
+   },
+   {
+    "label": "Yache",
+    "species": "Goodra",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away",
+    "item": "Yache Berry"
+   },
+   {
+    "label": "Chople",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away",
+    "item": "Chople Berry"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Flamethrower",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Flamethrower",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Flamethrower",
+   "p2": "switch Passho"
+  },
+  {
+   "p1": "move Surf",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Surf",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Flamethrower",
+   "p2": "switch Wacan"
+  },
+  {
+   "p1": "move Thunderbolt",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Thunderbolt",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Flamethrower",
+   "p2": "switch Rindo"
+  },
+  {
+   "p1": "move Energy Ball",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Energy Ball",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "switch Second",
+   "p2": "switch Yache"
+  },
+  {
+   "p1": "move Ice Beam",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Ice Beam",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Ice Beam",
+   "p2": "switch Chople"
+  },
+  {
+   "p1": "move Aura Sphere",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Aura Sphere",
+   "p2": "move Soft-Boiled"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

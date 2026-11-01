@@ -1,0 +1,64 @@
+{
+ "schema": 1,
+ "id": "gen6-wake-up-slap-wakes-a-sleeper-that-moved",
+ "notes": [
+  "Gen 6: Jolteon, asleep, loses its turn; Hariyama's Wake-Up Slap then wakes it (`-curestatus|…|slp|[msg]`, the same line as a wake-up of its own): the cure is the slap's, no action of Jolteon's (DESIGN.md R-M8-93)"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Volt Absorb",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Hariyama",
+    "species": "Hariyama",
+    "level": 15,
+    "nature": "Hardy",
+    "moves": [
+     "Spore",
+     "Wake-Up Slap"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash",
+   "p2": "move Spore"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Wake-Up Slap"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Spore"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

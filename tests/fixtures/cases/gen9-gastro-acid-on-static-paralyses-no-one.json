@@ -1,0 +1,68 @@
+{
+ "schema": 1,
+ "id": "gen9-gastro-acid-on-static-paralyses-no-one",
+ "notes": [
+  "Pikachu's Static under Gastro Acid: Weezing's contact moves draw no paralysis chance (the replay plans none either)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Weezing",
+    "species": "Weezing",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Gastro Acid",
+     "Tackle"
+    ],
+    "gender": "M",
+    "ability": "Levitate"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Pikachu",
+    "species": "Pikachu",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Static"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Gastro Acid",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

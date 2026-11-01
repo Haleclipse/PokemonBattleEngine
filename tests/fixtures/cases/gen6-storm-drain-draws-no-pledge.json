@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "gen6-storm-drain-draws-no-pledge",
+ "notes": [
+  "Gen 6 doubles: Bidoof's Water Pledge at Snorlax goes past both Storm Drains, the foe's Gastrodon and its own ally Lumineon. Storm Drain's `onAnyRedirectTarget` skips a move with the `pledgecombo` flag (DESIGN.md R-M8-154)"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "doubles",
+  "format": "gen6doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   },
+   {
+    "label": "Gastrodon",
+    "species": "Gastrodon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Storm Drain",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Bidoof",
+    "species": "Bidoof",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Water Pledge"
+    ],
+    "ability": "Simple",
+    "gender": "M"
+   },
+   {
+    "label": "Lumineon",
+    "species": "Lumineon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Storm Drain",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash, move Splash",
+   "p2": "move Water Pledge 1, move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

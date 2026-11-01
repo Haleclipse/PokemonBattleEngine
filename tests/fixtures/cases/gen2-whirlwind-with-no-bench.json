@@ -1,0 +1,51 @@
+{
+ "schema": 1,
+ "id": "gen2-whirlwind-with-no-bench",
+ "notes": [
+  "Gen 2 Whirlwind against a foe with nobody left to come in fails"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "User",
+    "species": "Pidgeot",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Whirlwind"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "A",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Whirlwind",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

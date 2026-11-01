@@ -1,0 +1,80 @@
+{
+ "schema": 1,
+ "id": "gen9-blunder-policy",
+ "notes": [
+  "Gen 9 Blunder Policy (Showdown `hitStepAccuracy`): Snorlax's Focus Blast misses \u2014 it uses the policy up for +2 Speed",
+  "Lapras's Sheer Cold misses too, but a one-hit KO move's miss leaves its policy alone"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Focus Blast",
+     "Harden"
+    ],
+    "item": "Blunder Policy",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Lapras",
+    "species": "Lapras",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Sheer Cold",
+     "Harden"
+    ],
+    "item": "Blunder Policy",
+    "ability": "Water Absorb"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Natural Cure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Focus Blast",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Lapras",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Sheer Cold",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   3,
+   10,
+   16,
+   32
+  ]
+ }
+}

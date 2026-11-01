@@ -1,0 +1,756 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@pkmn/sim",
+    "version": "0.10.11",
+    "formatid": "gen9customgame",
+    "seed": [
+      14,
+      2,
+      3,
+      4
+    ]
+  },
+  "frames": [
+    {
+      "schema": 1,
+      "checkpoint": "team_preview",
+      "turn": 0,
+      "request": "team_preview|team_preview",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            null
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "serenegrace",
+              "item": "silkscarf",
+              "pp": [
+                24
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            null
+          ],
+          "party": [
+            {
+              "hp": 183,
+              "max_hp": 183,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ground"
+              ],
+              "ability": "sandstream",
+              "item": "leftovers",
+              "pp": [
+                8
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": []
+    },
+    {
+      "schema": 1,
+      "checkpoint": "initial",
+      "turn": 1,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "serenegrace",
+              "item": "silkscarf",
+              "pp": [
+                24
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 183,
+              "max_hp": 183,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ground"
+              ],
+              "ability": "sandstream",
+              "item": "leftovers",
+              "pp": [
+                8
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": {
+          "kind": "sandstorm",
+          "turns_remaining": 5
+        },
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "details": "Snorlax, L50, M",
+          "hp": 235,
+          "max_hp": 235,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "details": "Hippowdon, L50, M",
+          "hp": 183,
+          "max_hp": 183,
+          "status": null
+        },
+        {
+          "kind": "weather",
+          "args": [
+            "Sandstorm",
+            "[from] ability: Sand Stream",
+            "[of] p2a: b"
+          ]
+        },
+        {
+          "kind": "turn",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_1",
+      "turn": 2,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 221,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "serenegrace",
+              "item": "silkscarf",
+              "pp": [
+                23
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 101,
+              "max_hp": 183,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ground"
+              ],
+              "ability": "sandstream",
+              "item": "leftovers",
+              "pp": [
+                7
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": {
+          "kind": "sandstorm",
+          "turns_remaining": 4
+        },
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "move": "Slack Off",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          }
+        },
+        {
+          "kind": "fail",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "detail": "heal"
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "move": "Body Slam",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          }
+        },
+        {
+          "kind": "crit",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "detail": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "hp": 90,
+          "max_hp": 183,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "weather",
+          "args": [
+            "Sandstorm",
+            "[upkeep]"
+          ]
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "hp": 221,
+          "max_hp": 235,
+          "status": null,
+          "from": "[from] Sandstorm",
+          "of": null
+        },
+        {
+          "kind": "heal",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "hp": 101,
+          "max_hp": 183,
+          "status": null,
+          "from": "[from] item: Leftovers",
+          "of": null
+        },
+        {
+          "kind": "turn",
+          "turn": 2
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_2",
+      "turn": 3,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 207,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "serenegrace",
+              "item": "silkscarf",
+              "pp": [
+                22
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 136,
+              "max_hp": 183,
+              "status": {
+                "kind": "par"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ground"
+              ],
+              "ability": "sandstream",
+              "item": "leftovers",
+              "pp": [
+                6
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": {
+          "kind": "sandstorm",
+          "turns_remaining": 3
+        },
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "move": "Slack Off",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          }
+        },
+        {
+          "kind": "heal",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "hp": 183,
+          "max_hp": 183,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "move": "Body Slam",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "hp": 125,
+          "max_hp": 183,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "status",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "status": "par",
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "weather",
+          "args": [
+            "Sandstorm",
+            "[upkeep]"
+          ]
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "hp": 207,
+          "max_hp": 235,
+          "status": null,
+          "from": "[from] Sandstorm",
+          "of": null
+        },
+        {
+          "kind": "heal",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "hp": 136,
+          "max_hp": 183,
+          "status": "par",
+          "from": "[from] item: Leftovers",
+          "of": null
+        },
+        {
+          "kind": "turn",
+          "turn": 3
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_3",
+      "turn": 4,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 193,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "serenegrace",
+              "item": "silkscarf",
+              "pp": [
+                21
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 176,
+              "max_hp": 183,
+              "status": {
+                "kind": "par"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ground"
+              ],
+              "ability": "sandstream",
+              "item": "leftovers",
+              "pp": [
+                5
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": {
+          "kind": "sandstorm",
+          "turns_remaining": 2
+        },
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "move": "Body Slam",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "hp": 73,
+          "max_hp": 183,
+          "status": "par",
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "move": "Slack Off",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          }
+        },
+        {
+          "kind": "heal",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "hp": 165,
+          "max_hp": 183,
+          "status": "par",
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "weather",
+          "args": [
+            "Sandstorm",
+            "[upkeep]"
+          ]
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "hp": 193,
+          "max_hp": 235,
+          "status": null,
+          "from": "[from] Sandstorm",
+          "of": null
+        },
+        {
+          "kind": "heal",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "hp": 176,
+          "max_hp": 183,
+          "status": "par",
+          "from": "[from] item: Leftovers",
+          "of": null
+        },
+        {
+          "kind": "turn",
+          "turn": 4
+        }
+      ]
+    }
+  ],
+  "debug_log": "|gametype|singles\n|player|p1|P1||\n|player|p2|P2||\n|gen|9\n|tier|[Gen 9] Custom Game\n|clearpoke\n|poke|p1|Snorlax, L50, M|\n|poke|p2|Hippowdon, L50, M|\n|teampreview\n|\n|teamsize|p1|1\n|teamsize|p2|1\n|start\n|switch|p1a: a|Snorlax, L50, M|235/235\n|switch|p2a: b|Hippowdon, L50, M|183/183\n|-weather|Sandstorm|[from] ability: Sand Stream|[of] p2a: b\n|turn|1\n|\n|move|p2a: b|Slack Off||[still]\n|-fail|p2a: b|heal\n|debug|move failed because it did nothing\n|debug|doubling secondary chance\n|move|p1a: a|Body Slam|p2a: b\n|-crit|p2a: b\n|-damage|p2a: b|90/183\n|\n|-weather|Sandstorm|[upkeep]\n|debug|natural status immunity\n|debug|weather immunity\n|-damage|p1a: a|221/235|[from] Sandstorm\n|-heal|p2a: b|101/183|[from] item: Leftovers\n|upkeep\n|turn|2\n|\n|move|p2a: b|Slack Off|p2a: b\n|-heal|p2a: b|183/183\n|debug|doubling secondary chance\n|move|p1a: a|Body Slam|p2a: b\n|-damage|p2a: b|125/183\n|-status|p2a: b|par\n|\n|-weather|Sandstorm|[upkeep]\n|-damage|p1a: a|207/235|[from] Sandstorm\n|debug|natural status immunity\n|debug|weather immunity\n|-heal|p2a: b|136/183 par|[from] item: Leftovers\n|upkeep\n|turn|3\n|\n|debug|doubling secondary chance\n|move|p1a: a|Body Slam|p2a: b\n|-damage|p2a: b|73/183 par\n|debug|move failed because it did nothing\n|move|p2a: b|Slack Off|p2a: b\n|-heal|p2a: b|165/183 par\n|\n|-weather|Sandstorm|[upkeep]\n|-damage|p1a: a|193/235|[from] Sandstorm\n|debug|natural status immunity\n|debug|weather immunity\n|-heal|p2a: b|176/183 par|[from] item: Leftovers\n|upkeep\n|turn|4"
+}

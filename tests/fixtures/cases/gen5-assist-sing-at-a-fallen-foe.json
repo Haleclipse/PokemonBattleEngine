@@ -1,0 +1,80 @@
+{
+ "schema": 1,
+ "id": "gen5-assist-sing-at-a-fallen-foe",
+ "notes": [
+  "Gen 5: Mareep's Healing Wish takes it down; Snorlax's Assist then calls Chansey's Sing at the empty place (`p2: Mareep|[notarget]`): the called move draws nothing (DESIGN.md R-M8-86)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Assist"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sing"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Mareep",
+    "species": "Mareep",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Healing Wish"
+    ],
+    "ability": "Static",
+    "gender": "F"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Assist",
+   "p2": "move Healing Wish"
+  },
+  {
+   "p2": "switch 2"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

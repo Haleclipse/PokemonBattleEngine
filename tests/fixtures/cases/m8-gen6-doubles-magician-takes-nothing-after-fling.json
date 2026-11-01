@@ -1,0 +1,125 @@
+{
+  "schema": 1,
+  "id": "m8-gen6-doubles-magician-takes-nothing-after-fling",
+  "notes": [
+    "Nightly 58: Phione's Magician takes no item after its Fling hit Vanillite (Showdown Magician: move.id === 'fling'; the thrower is empty-handed by then) (DESIGN.md R-M8-102)",
+    "promoted from m8-gen6-doubles-s527-006-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 6,
+    "mode": "doubles",
+    "format": "gen6doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Nosepass",
+        "species": "Nosepass",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Vise Grip"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Skuntank",
+        "species": "Skuntank",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sky Uppercut",
+          "Sleep Talk"
+        ],
+        "ability": "Run Away",
+        "item": "Macho Brace",
+        "gender": "F"
+      },
+      {
+        "label": "Vanillite",
+        "species": "Vanillite",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sleep Talk"
+        ],
+        "ability": "Run Away",
+        "item": "Power Weight",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Luxio",
+        "species": "Luxio",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Strength"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Poochyena",
+        "species": "Poochyena",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Cut"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Phione",
+        "species": "Phione",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fling",
+          "Sleep Talk"
+        ],
+        "ability": "Magician",
+        "item": "Sea Incense"
+      },
+      {
+        "label": "Unown",
+        "species": "Unown",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sleep Talk"
+        ],
+        "ability": "Run Away"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      62073,
+      5692,
+      29215,
+      47419
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Vise Grip 1, move Sky Uppercut 2",
+      "p2": "move Strength 1, move Cut 2"
+    },
+    {
+      "p2": "pass, switch Phione"
+    },
+    {
+      "p1": "switch Vanillite, move Sleep Talk",
+      "p2": "switch Unown, move Sleep Talk"
+    },
+    {
+      "p1": "move Sleep Talk, move Sky Uppercut 1",
+      "p2": "move Sleep Talk, move Fling 1"
+    }
+  ]
+}

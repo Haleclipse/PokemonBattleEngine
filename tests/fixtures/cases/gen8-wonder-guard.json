@@ -1,0 +1,100 @@
+{
+ "schema": 1,
+ "id": "gen8-wonder-guard",
+ "notes": [
+  "Gen 8: Shedinja's Wonder Guard: Surf (neutral) is refused, Tackle does not affect it, Toxic (a status move) lands, Shadow Ball (super effective) knocks it out"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Shedinja",
+    "species": "Shedinja",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Wonder Guard"
+   },
+   {
+    "label": "Shedinja2",
+    "species": "Shedinja",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Wonder Guard"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gengar",
+    "species": "Gengar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Surf",
+     "Tackle",
+     "Toxic",
+     "Shadow Ball"
+    ],
+    "gender": "M",
+    "ability": "Cursed Body"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Surf"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Shadow Ball"
+  },
+  {
+   "p1": "switch 2"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Toxic"
+  },
+  {
+   "p1": "switch 3"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Surf"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

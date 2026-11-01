@@ -1,0 +1,92 @@
+{
+ "schema": 1,
+ "id": "gen3-petal-dance-protect-ends-it",
+ "notes": [
+  "Gen 3 Petal Dance on the cartridge: the foe's Protect ends the lock at once, silently; a miss leaves it going"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Dancer",
+    "species": "Bellossom",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Petal Dance",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Wall",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Protect",
+     "Double Team",
+     "Softboiled"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Petal Dance",
+   "p2": "move Softboiled"
+  },
+  {
+   "p1": "move Petal Dance",
+   "p2": "move Protect"
+  },
+  {
+   "p1": "move Petal Dance",
+   "p2": "move Softboiled"
+  },
+  {
+   "p1": "move Petal Dance",
+   "p2": "move Softboiled"
+  },
+  {
+   "p1": "move Petal Dance",
+   "p2": "move Softboiled"
+  },
+  {
+   "p1": "move Petal Dance",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move Petal Dance",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move Petal Dance",
+   "p2": "move Softboiled"
+  },
+  {
+   "p1": "move Petal Dance",
+   "p2": "move Softboiled"
+  },
+  {
+   "p1": "move Petal Dance",
+   "p2": "move Softboiled"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

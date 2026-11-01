@@ -1,0 +1,80 @@
+{
+ "schema": 1,
+ "id": "gen2-roar-only-as-the-last-action",
+ "notes": [
+  "Gen 2 Roar (priority -1): last in the turn it drags the bench Pok\u00e9mon in \u2014 Spikes hurt it, but its poison does not as it enters (draggedIn); before the foe's Counter it fails (onTryHit: a move still queued)"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "User",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Toxic",
+     "Roar",
+     "Spikes",
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "A",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Counter"
+    ]
+   },
+   {
+    "label": "B",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Toxic",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Spikes",
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Roar",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Roar",
+   "p2": "move Counter"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

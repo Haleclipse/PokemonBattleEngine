@@ -1,0 +1,83 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-revived-pokemon-does-not-act",
+ "notes": [
+  "Revival Blessing brings back a partner knocked out earlier in the turn; it returns to its slot (Gen 9: at once) and the move it chose is not used (Showdown's switchIn cancels the replaced Pok\u00e9mon's action \u2014 here itself)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Fast",
+    "species": "Jolteon",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Thunderbolt",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Wall",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Frail",
+    "species": "Magikarp",
+    "level": 10,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Rev",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Revival Blessing",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Thunderbolt 1, move Harden",
+   "p2": "move Tackle 1, move Revival Blessing"
+  },
+  {
+   "p2": "pass, switch 1"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

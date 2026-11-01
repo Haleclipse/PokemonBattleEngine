@@ -1,0 +1,118 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-items-used-up-by-a-move-type",
+ "notes": [
+  "Gen 9 doubles (Showdown `onDamagingHit` \u2192 `useItem`, the item's `boosts`): Vaporeon's Water Gun makes Snorlax use its Absorb Bulb (Special Attack +1) and Chansey its Luminous Moss (Special Defense +1)",
+  "Turn 2: Jolteon's Thunder Shock spends Snorlax2's Cell Battery (Attack +1), Glaceon's Ice Shard Chansey2's Snowball (Attack +1); turn 3 a second Water Gun on the new Snorlax2 changes nothing"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Absorb Bulb",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Luminous Moss",
+    "ability": "Natural Cure"
+   },
+   {
+    "label": "Snorlax2",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Cell Battery",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Chansey2",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Snowball",
+    "ability": "Natural Cure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Vaporeon",
+    "species": "Vaporeon",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Water Gun",
+     "Harden"
+    ],
+    "ability": "Water Absorb"
+   },
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Thunder Shock",
+     "Ice Shard",
+     "Water Gun",
+     "Harden"
+    ],
+    "ability": "Volt Absorb"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Water Gun 1, move Water Gun 2"
+  },
+  {
+   "p1": "switch 3, switch 4",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Thunder Shock 1"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Ice Shard 2"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Water Gun 1, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,78 @@
+{
+ "schema": 1,
+ "id": "gen2-conversion-2-after-beat-up-and-hidden-power",
+ "notes": [
+  "Gen 2: Espeon's Conversion 2 reads the type the move table gives Gyarados's last move — Beat Up is Dark, Hidden Power Normal (pokecrystal `BattleCommand_Conversion2`); Showdown read the ActiveMove's (Beat Up `???`: a failure). The oracle's I176 patch reads the table's (DESIGN.md R-M8-86)"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Gyarados",
+    "species": "Gyarados",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Beat Up",
+     "Hidden Power",
+     "Splash"
+    ],
+    "gender": "F"
+   },
+   {
+    "label": "Spinarak",
+    "species": "Spinarak",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Espeon",
+    "species": "Espeon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Conversion 2",
+     "Splash"
+    ],
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Beat Up",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Conversion 2"
+  },
+  {
+   "p1": "move Hidden Power",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Conversion 2"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

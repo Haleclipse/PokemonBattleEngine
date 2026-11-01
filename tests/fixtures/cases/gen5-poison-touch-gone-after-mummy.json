@@ -1,0 +1,54 @@
+{
+ "schema": 1,
+ "id": "gen5-poison-touch-gone-after-mummy",
+ "notes": [
+  "Gen 5: Regice's Fury Attack hits Sneasel; Sneasel's Mummy takes Regice's Poison Touch on the first hit, and the Poison Touch the hit's `DamagingHit` already holds still rolls; the second hit rolls none (the replay reads `-activate|…|ability: Mummy`, DESIGN.md R-M8-86)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Regice",
+    "species": "Regice",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fury Attack"
+    ],
+    "ability": "Poison Touch"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Sneasel",
+    "species": "Sneasel",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Mummy",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Fury Attack",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

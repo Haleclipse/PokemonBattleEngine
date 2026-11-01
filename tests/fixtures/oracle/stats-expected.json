@@ -1,0 +1,692 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@smogon/calc",
+    "version": "0.11.0"
+  },
+  "cases": [
+    {
+      "id": "gen9-pikachu-l50-neutral",
+      "generation": 9,
+      "species": "Pikachu",
+      "level": 50,
+      "nature": "Hardy",
+      "expected": {
+        "raw_stats": {
+          "hp": 110,
+          "atk": 75,
+          "def": 60,
+          "spa": 70,
+          "spd": 70,
+          "spe": 110
+        },
+        "max_hp": 110
+      },
+      "calc_inputs": {
+        "base_stats": {
+          "hp": 35,
+          "atk": 55,
+          "def": 40,
+          "spa": 50,
+          "spd": 50,
+          "spe": 90
+        },
+        "nature": "Hardy",
+        "evs": {
+          "hp": 0,
+          "atk": 0,
+          "def": 0,
+          "spa": 0,
+          "spd": 0,
+          "spe": 0
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        },
+        "level": 50
+      }
+    },
+    {
+      "id": "gen9-garchomp-l100-jolly-252",
+      "generation": 9,
+      "species": "Garchomp",
+      "level": 100,
+      "nature": "Jolly",
+      "evs": {
+        "hp": 4,
+        "atk": 252,
+        "spe": 252
+      },
+      "expected": {
+        "raw_stats": {
+          "hp": 358,
+          "atk": 359,
+          "def": 226,
+          "spa": 176,
+          "spd": 206,
+          "spe": 333
+        },
+        "max_hp": 358
+      },
+      "calc_inputs": {
+        "base_stats": {
+          "hp": 108,
+          "atk": 130,
+          "def": 95,
+          "spa": 80,
+          "spd": 85,
+          "spe": 102
+        },
+        "nature": "Jolly",
+        "evs": {
+          "hp": 4,
+          "atk": 252,
+          "def": 0,
+          "spa": 0,
+          "spd": 0,
+          "spe": 252
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        },
+        "level": 100
+      }
+    },
+    {
+      "id": "gen7-charizard-megax-l50-adamant",
+      "generation": 7,
+      "species": "Charizard-Mega-X",
+      "level": 50,
+      "nature": "Adamant",
+      "evs": {
+        "hp": 252,
+        "atk": 252,
+        "spd": 4
+      },
+      "expected": {
+        "raw_stats": {
+          "hp": 185,
+          "atk": 200,
+          "def": 131,
+          "spa": 135,
+          "spd": 106,
+          "spe": 120
+        },
+        "max_hp": 185
+      },
+      "calc_inputs": {
+        "base_stats": {
+          "hp": 78,
+          "atk": 130,
+          "def": 111,
+          "spa": 130,
+          "spd": 85,
+          "spe": 100
+        },
+        "nature": "Adamant",
+        "evs": {
+          "hp": 252,
+          "atk": 252,
+          "def": 0,
+          "spa": 0,
+          "spd": 4,
+          "spe": 0
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        },
+        "level": 50
+      }
+    },
+    {
+      "id": "gen7-shedinja-l100",
+      "generation": 7,
+      "species": "Shedinja",
+      "level": 100,
+      "nature": "Hardy",
+      "expected": {
+        "raw_stats": {
+          "hp": 1,
+          "atk": 216,
+          "def": 126,
+          "spa": 96,
+          "spd": 96,
+          "spe": 116
+        },
+        "max_hp": 1
+      },
+      "calc_inputs": {
+        "base_stats": {
+          "hp": 1,
+          "atk": 90,
+          "def": 45,
+          "spa": 30,
+          "spd": 30,
+          "spe": 40
+        },
+        "nature": "Hardy",
+        "evs": {
+          "hp": 0,
+          "atk": 0,
+          "def": 0,
+          "spa": 0,
+          "spd": 0,
+          "spe": 0
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        },
+        "level": 100
+      }
+    },
+    {
+      "id": "gen9-blissey-l50-bold-0iv",
+      "generation": 9,
+      "species": "Blissey",
+      "level": 50,
+      "nature": "Bold",
+      "evs": {
+        "hp": 252,
+        "def": 252
+      },
+      "ivs": {
+        "atk": 0,
+        "spe": 0
+      },
+      "expected": {
+        "raw_stats": {
+          "hp": 362,
+          "atk": 13,
+          "def": 68,
+          "spa": 95,
+          "spd": 155,
+          "spe": 60
+        },
+        "max_hp": 362
+      },
+      "calc_inputs": {
+        "base_stats": {
+          "hp": 255,
+          "atk": 10,
+          "def": 10,
+          "spa": 75,
+          "spd": 135,
+          "spe": 55
+        },
+        "nature": "Bold",
+        "evs": {
+          "hp": 252,
+          "atk": 0,
+          "def": 252,
+          "spa": 0,
+          "spd": 0,
+          "spe": 0
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 0,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 0
+        },
+        "level": 50
+      }
+    },
+    {
+      "id": "gen9-pikachu-l1",
+      "generation": 9,
+      "species": "Pikachu",
+      "level": 1,
+      "nature": "Timid",
+      "expected": {
+        "raw_stats": {
+          "hp": 12,
+          "atk": 5,
+          "def": 6,
+          "spa": 6,
+          "spd": 6,
+          "spe": 7
+        },
+        "max_hp": 12
+      },
+      "calc_inputs": {
+        "base_stats": {
+          "hp": 35,
+          "atk": 55,
+          "def": 40,
+          "spa": 50,
+          "spd": 50,
+          "spe": 90
+        },
+        "nature": "Timid",
+        "evs": {
+          "hp": 0,
+          "atk": 0,
+          "def": 0,
+          "spa": 0,
+          "spd": 0,
+          "spe": 0
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        },
+        "level": 1
+      }
+    },
+    {
+      "id": "gen7-raichu-alola-l50-timid",
+      "generation": 7,
+      "species": "Raichu-Alola",
+      "level": 50,
+      "nature": "Timid",
+      "evs": {
+        "spa": 252,
+        "spe": 252,
+        "hp": 4
+      },
+      "expected": {
+        "raw_stats": {
+          "hp": 136,
+          "atk": 94,
+          "def": 70,
+          "spa": 147,
+          "spd": 105,
+          "spe": 178
+        },
+        "max_hp": 136
+      },
+      "calc_inputs": {
+        "base_stats": {
+          "hp": 60,
+          "atk": 85,
+          "def": 50,
+          "spa": 95,
+          "spd": 85,
+          "spe": 110
+        },
+        "nature": "Timid",
+        "evs": {
+          "hp": 4,
+          "atk": 0,
+          "def": 0,
+          "spa": 252,
+          "spd": 0,
+          "spe": 252
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        },
+        "level": 50
+      }
+    },
+    {
+      "id": "gen4-garchomp-l100-jolly",
+      "generation": 4,
+      "species": "Garchomp",
+      "level": 100,
+      "nature": "Jolly",
+      "evs": {
+        "atk": 252,
+        "spe": 252,
+        "hp": 4
+      },
+      "expected": {
+        "raw_stats": {
+          "hp": 358,
+          "atk": 359,
+          "def": 226,
+          "spa": 176,
+          "spd": 206,
+          "spe": 333
+        },
+        "max_hp": 358
+      },
+      "calc_inputs": {
+        "base_stats": {
+          "hp": 108,
+          "atk": 130,
+          "def": 95,
+          "spa": 80,
+          "spd": 85,
+          "spe": 102
+        },
+        "nature": "Jolly",
+        "evs": {
+          "hp": 4,
+          "atk": 252,
+          "def": 0,
+          "spa": 0,
+          "spd": 0,
+          "spe": 252
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        },
+        "level": 100
+      }
+    },
+    {
+      "id": "gen3-blaziken-l100-adamant-0iv",
+      "generation": 3,
+      "species": "Blaziken",
+      "level": 100,
+      "nature": "Adamant",
+      "ivs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      },
+      "expected": {
+        "raw_stats": {
+          "hp": 270,
+          "atk": 269,
+          "def": 145,
+          "spa": 202,
+          "spd": 145,
+          "spe": 165
+        },
+        "max_hp": 270
+      },
+      "calc_inputs": {
+        "base_stats": {
+          "hp": 80,
+          "atk": 120,
+          "def": 70,
+          "spa": 110,
+          "spd": 70,
+          "spe": 80
+        },
+        "nature": "Adamant",
+        "evs": {
+          "hp": 0,
+          "atk": 0,
+          "def": 0,
+          "spa": 0,
+          "spd": 0,
+          "spe": 0
+        },
+        "ivs": {
+          "hp": 0,
+          "atk": 0,
+          "def": 0,
+          "spa": 0,
+          "spd": 0,
+          "spe": 0
+        },
+        "level": 100
+      }
+    },
+    {
+      "id": "gen2-mew-l100-max",
+      "generation": 2,
+      "species": "Mew",
+      "level": 100,
+      "expected": {
+        "raw_stats": {
+          "hp": 403,
+          "atk": 298,
+          "def": 298,
+          "spa": 298,
+          "spd": 298,
+          "spe": 298
+        },
+        "max_hp": 403
+      },
+      "calc_inputs": {
+        "base_stats": {
+          "hp": 100,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 100
+        },
+        "nature": "Serious",
+        "evs": {
+          "hp": 252,
+          "atk": 252,
+          "def": 252,
+          "spa": 252,
+          "spd": 252,
+          "spe": 252
+        },
+        "ivs": {
+          "hp": 30,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        },
+        "level": 100
+      }
+    },
+    {
+      "id": "gen2-pikachu-l50-max",
+      "generation": 2,
+      "species": "Pikachu",
+      "level": 50,
+      "expected": {
+        "raw_stats": {
+          "hp": 141,
+          "atk": 106,
+          "def": 81,
+          "spa": 101,
+          "spd": 91,
+          "spe": 141
+        },
+        "max_hp": 141
+      },
+      "calc_inputs": {
+        "base_stats": {
+          "hp": 35,
+          "atk": 55,
+          "def": 30,
+          "spa": 50,
+          "spd": 40,
+          "spe": 90
+        },
+        "nature": "Serious",
+        "evs": {
+          "hp": 252,
+          "atk": 252,
+          "def": 252,
+          "spa": 252,
+          "spd": 252,
+          "spe": 252
+        },
+        "ivs": {
+          "hp": 30,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        },
+        "level": 50
+      }
+    },
+    {
+      "id": "gen1-mewtwo-l100-max",
+      "generation": 1,
+      "species": "Mewtwo",
+      "level": 100,
+      "expected": {
+        "raw_stats": {
+          "hp": 415,
+          "atk": 318,
+          "def": 278,
+          "spa": 406,
+          "spd": 406,
+          "spe": 358
+        },
+        "max_hp": 415
+      },
+      "calc_inputs": {
+        "base_stats": {
+          "hp": 106,
+          "atk": 110,
+          "def": 90,
+          "spa": 154,
+          "spd": 154,
+          "spe": 130
+        },
+        "nature": "Serious",
+        "evs": {
+          "hp": 252,
+          "atk": 252,
+          "def": 252,
+          "spa": 252,
+          "spd": 252,
+          "spe": 252
+        },
+        "ivs": {
+          "hp": 30,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        },
+        "level": 100
+      }
+    },
+    {
+      "id": "gen1-pikachu-l5-max",
+      "generation": 1,
+      "species": "Pikachu",
+      "level": 5,
+      "expected": {
+        "raw_stats": {
+          "hp": 23,
+          "atk": 15,
+          "def": 12,
+          "spa": 14,
+          "spd": 14,
+          "spe": 18
+        },
+        "max_hp": 23
+      },
+      "calc_inputs": {
+        "base_stats": {
+          "hp": 35,
+          "atk": 55,
+          "def": 30,
+          "spa": 50,
+          "spd": 50,
+          "spe": 90
+        },
+        "nature": "Serious",
+        "evs": {
+          "hp": 252,
+          "atk": 252,
+          "def": 252,
+          "spa": 252,
+          "spd": 252,
+          "spe": 252
+        },
+        "ivs": {
+          "hp": 30,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        },
+        "level": 5
+      }
+    },
+    {
+      "id": "gen1-tauros-l100-dv0",
+      "generation": 1,
+      "species": "Tauros",
+      "level": 100,
+      "ivs": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "spa": 0,
+        "spd": 0,
+        "spe": 0
+      },
+      "expected": {
+        "raw_stats": {
+          "hp": 323,
+          "atk": 268,
+          "def": 258,
+          "spa": 208,
+          "spd": 208,
+          "spe": 288
+        },
+        "max_hp": 323
+      },
+      "calc_inputs": {
+        "base_stats": {
+          "hp": 75,
+          "atk": 100,
+          "def": 95,
+          "spa": 70,
+          "spd": 70,
+          "spe": 110
+        },
+        "nature": "Serious",
+        "evs": {
+          "hp": 252,
+          "atk": 252,
+          "def": 252,
+          "spa": 252,
+          "spd": 252,
+          "spe": 252
+        },
+        "ivs": {
+          "hp": 0,
+          "atk": 0,
+          "def": 0,
+          "spa": 0,
+          "spd": 0,
+          "spe": 0
+        },
+        "level": 100
+      }
+    }
+  ]
+}

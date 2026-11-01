@@ -1,0 +1,79 @@
+{
+ "schema": 1,
+ "id": "gen4-frozen-shaymin-sky",
+ "notes": [
+  "Gen 4: Shaymin-Sky frozen by Ice Beam becomes Shaymin for good (Grass, Natural Cure: `frz` `onStart`, a permanent `formeChange`); switched out, Natural Cure thaws it and it comes back as Shaymin"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Shaymin",
+    "species": "Shaymin-Sky",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "ability": "Serene Grace"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Lapras",
+    "species": "Lapras",
+    "level": 10,
+    "nature": "Hardy",
+    "moves": [
+     "Ice Beam",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Shell Armor"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Ice Beam"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   2,
+   2,
+   3,
+   4
+  ]
+ }
+}

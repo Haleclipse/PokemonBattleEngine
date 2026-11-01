@@ -1,0 +1,74 @@
+{
+ "schema": 1,
+ "id": "gen1-recovery-255-short",
+ "notes": [
+  "Gen 1 Soft-Boiled: at full HP it fails; 255 HP short of the max (Chansey 385 / 640, not a multiple of 256) it fails too; 340 short it heals half the max HP. Recover heals half the max HP"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Chan",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Soft-Boiled",
+     "Harden",
+     "Seismic Toss"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Toss",
+    "species": "Snorlax",
+    "level": 85,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Recover"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Soft-Boiled",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Soft-Boiled",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Soft-Boiled",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Seismic Toss",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

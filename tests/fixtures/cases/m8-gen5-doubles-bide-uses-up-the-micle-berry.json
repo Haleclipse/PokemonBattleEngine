@@ -1,0 +1,95 @@
+{
+  "schema": 1,
+  "id": "m8-gen5-doubles-bide-uses-up-the-micle-berry",
+  "notes": [
+    "Nightly 52: Bide is a move on its user that is not a status move: hitStepAccuracy still runs the Accuracy event, and the user's Micle Berry boost goes (DESIGN.md R-M8-96)",
+    "promoted from m8-gen5-doubles-s508-004-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 5,
+    "mode": "doubles",
+    "format": "gen5doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Palpitoad",
+        "species": "Palpitoad",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Power Whip",
+          "Aqua Tail",
+          "Bide"
+        ],
+        "ability": "Wonder Guard",
+        "gender": "F"
+      },
+      {
+        "label": "Sigilyph",
+        "species": "Sigilyph",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Horn Attack",
+          "Foul Play",
+          "Bide"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Scolipede",
+        "species": "Scolipede",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Jump Kick",
+          "Sky Uppercut",
+          "Bide"
+        ],
+        "ability": "Run Away",
+        "item": "Micle Berry",
+        "gender": "M"
+      },
+      {
+        "label": "Sandslash",
+        "species": "Sandslash",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "False Swipe",
+          "Bug Bite",
+          "Bide"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      54657,
+      12414,
+      34538,
+      1531
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Power Whip 1, move Horn Attack 2",
+      "p2": "move Jump Kick 1, move False Swipe 2"
+    },
+    {
+      "p1": "move Aqua Tail 1, move Foul Play 2",
+      "p2": "move Sky Uppercut 1, move Bug Bite 2"
+    },
+    {
+      "p1": "move Bide, move Bide",
+      "p2": "move Bide, move Bide"
+    }
+  ]
+}

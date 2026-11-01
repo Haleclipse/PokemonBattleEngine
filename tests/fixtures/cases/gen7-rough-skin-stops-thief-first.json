@@ -1,0 +1,71 @@
+{
+ "schema": 1,
+ "id": "gen7-rough-skin-stops-thief-first",
+ "notes": [
+  "Gen 7 (DamagingHit before onAfterHit): Rough Skin knocks Shedinja out before its Thief can take the Leftovers"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Shedinja",
+    "species": "Shedinja",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Thief"
+    ],
+    "ability": "Wonder Guard"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Sharpedo",
+    "species": "Sharpedo",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Rough Skin",
+    "item": "Leftovers"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Thief",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Snorlax"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

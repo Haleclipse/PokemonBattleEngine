@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "id": "gen9-doubles-encore-random-target",
+  "notes": [
+    "An Encore that overrides the chosen move re-chooses the target at random among the adjacent foes (getRandomTarget)"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Weavile",
+        "species": "Weavile",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Iron Head",
+          "Swords Dance"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Blissey",
+        "species": "Blissey",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Growl"
+        ],
+        "ability": "Natural Cure"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Espeon",
+        "species": "Espeon",
+        "level": 100,
+        "nature": "Hardy",
+        "moves": [
+          "Encore",
+          "Growl"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Snorlax",
+        "species": "Snorlax",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Growl"
+        ],
+        "ability": "Run Away"
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1 1, move 1",
+      "p2": "move 2, move 1"
+    },
+    {
+      "p1": "move 2, move 1",
+      "p2": "move 1 1, move 1"
+    },
+    {
+      "p1": "move 1 1, move 1",
+      "p2": "move 2, move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      2,
+      3,
+      4,
+      5
+    ]
+  }
+}

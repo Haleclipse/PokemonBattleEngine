@@ -1,0 +1,140 @@
+{
+  "schema": 1,
+  "id": "gen4-doubles-retarget-drawn-for-a-paralysed-user",
+  "notes": [
+    "A fully paralysed user whose target fainted still drew its random retarget",
+    "promoted from m8-gen4-doubles-s103-010-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "doubles",
+    "format": "gen4doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Igglybuff",
+        "species": "Igglybuff",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Wrap",
+          "Fire Spin",
+          "Sunny Day",
+          "Detect"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Koffing",
+        "species": "Koffing",
+        "level": 53,
+        "nature": "Hardy",
+        "moves": [
+          "Whirlwind",
+          "X-Scissor",
+          "Draco Meteor"
+        ],
+        "ability": "Speed Boost",
+        "gender": "F"
+      },
+      {
+        "label": "Aggron",
+        "species": "Aggron",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Seismic Toss",
+          "Encore",
+          "Heat Wave"
+        ],
+        "ability": "Poison Point",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Victreebel",
+        "species": "Victreebel",
+        "level": 54,
+        "nature": "Hardy",
+        "moves": [
+          "Sleep Powder",
+          "Frenzy Plant",
+          "Razor Leaf"
+        ],
+        "ability": "Shed Skin",
+        "gender": "M"
+      },
+      {
+        "label": "Spinarak",
+        "species": "Spinarak",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Moonlight",
+          "Muddy Water"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Poliwag",
+        "species": "Poliwag",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Astonish",
+          "Disable",
+          "Discharge",
+          "Slash"
+        ],
+        "ability": "Run Away",
+        "item": "Magnet",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      35041,
+      54431,
+      4928,
+      30078
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Wrap 1, move Whirlwind 2",
+      "p2": "move Sleep Powder 1, move Moonlight"
+    },
+    {
+      "p1": "move Fire Spin 1, move X-Scissor 2",
+      "p2": "move Frenzy Plant 2, move Disable 1"
+    },
+    {
+      "p1": "move 3, move 3 1",
+      "p2": "move 1, move 3"
+    },
+    {
+      "p1": "pass, switch Aggron"
+    },
+    {
+      "p1": "move Detect, move Heat Wave",
+      "p2": "move Razor Leaf, move Slash 2"
+    },
+    {
+      "p1": "move Wrap 2, move Seismic Toss 1",
+      "p2": "move Sleep Powder 1, move Astonish 2"
+    },
+    {
+      "p2": "pass, switch Spinarak"
+    },
+    {
+      "p1": "move Fire Spin 2, move Encore 1",
+      "p2": "move Frenzy Plant 1, move Muddy Water"
+    }
+  ]
+}

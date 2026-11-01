@@ -1,0 +1,78 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-instructed-protect-holds",
+ "notes": [
+  "Gen 9 doubles: Luxray's Silk Trap goes up; Electrode's Instruct (a status move, which Silk Trap lets through) makes it use Silk Trap again while someone still has to act. Its stall roll holds: the protection is already up, so no `-singleturn` and no `-fail` \u2014 and the stall counter stays (DESIGN.md R-M8-84)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Volt Absorb",
+    "gender": "M"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Luxray",
+    "species": "Luxray",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Silk Trap",
+     "Splash"
+    ],
+    "ability": "Intimidate",
+    "gender": "M"
+   },
+   {
+    "label": "Electrode",
+    "species": "Electrode",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Instruct",
+     "Splash"
+    ],
+    "ability": "Static"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash, move Splash",
+   "p2": "move Silk Trap, move Instruct -1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   33,
+   34,
+   35,
+   36
+  ]
+ }
+}

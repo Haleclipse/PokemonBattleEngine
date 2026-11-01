@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen9-future-sight-strikes-a-substitute-in-the-residual",
+ "notes": [
+  "Gen 9: Snorlax's Substitute takes Sandile's Tackles and stands; the Future Sight Sandile foresaw strikes it in the residual and it still stands. The frame's Substitute HP is after that strike: the Tackle's roll is left open and the strike's is searched against it (DESIGN.md R-M8-84)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sandile",
+    "species": "Sandile",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Future Sight",
+     "Tackle"
+    ],
+    "ability": "Intimidate",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Substitute",
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Future Sight",
+   "p2": "move Substitute"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

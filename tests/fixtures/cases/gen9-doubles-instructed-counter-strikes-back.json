@@ -1,0 +1,84 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-instructed-counter-strikes-back",
+ "notes": [
+  "Gen 9: Snorlax used Counter last turn; this turn Gyarados's Waterfall hits it, then Indeedee instructs it: Snorlax uses Counter again and strikes Gyarados back for twice the damage. Showdown only re-ran Counter's `beforeTurnCallback` (`resolveAction(…)[0]`); the user decided to treat that as a defect (oracle patch, issues.md I180)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Counter",
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gyarados",
+    "species": "Gyarados",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Waterfall",
+     "Splash"
+    ],
+    "ability": "Intimidate",
+    "gender": "M"
+   },
+   {
+    "label": "Indeedee",
+    "species": "Indeedee",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Instruct",
+     "Splash"
+    ],
+    "ability": "Inner Focus",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Counter, move Splash",
+   "p2": "move Splash, move Splash"
+  },
+  {
+   "p1": "move Splash, move Splash",
+   "p2": "move Waterfall 1, move Instruct 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

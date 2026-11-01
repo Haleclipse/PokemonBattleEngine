@@ -1,0 +1,201 @@
+{
+ "schema": 1,
+ "id": "m8-43-gen9-doubles-s448-003",
+ "notes": [
+  "Nightly 37 gen9-doubles-s448-003, minimized: a status move an ability refuses as the status is set (Pastel Veil and its kin) rolled its accuracy first, a hit; the replay plans that check"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Toxel",
+    "species": "Toxel",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Agility",
+     "Tar Shot",
+     "Feather Dance",
+     "Toxic Thread"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Drilbur",
+    "species": "Drilbur",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Lunar Dance"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Magby",
+    "species": "Magby",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Memento",
+     "Toxic Thread"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Duosion",
+    "species": "Duosion",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Shell Smash",
+     "Tar Shot",
+     "Smokescreen",
+     "Toxic Thread"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Ogerpon",
+    "species": "Ogerpon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sand Attack",
+     "Tar Shot",
+     "Victory Dance",
+     "Toxic Thread"
+    ],
+    "ability": "Immunity"
+   },
+   {
+    "label": "Kricketot",
+    "species": "Kricketot",
+    "level": 45,
+    "nature": "Hardy",
+    "moves": [
+     "Cotton Guard",
+     "Tar Shot",
+     "Growth",
+     "Toxic Thread"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Froslass",
+    "species": "Froslass",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Hone Claws",
+     "Tar Shot",
+     "Toxic Thread"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Mightyena",
+    "species": "Mightyena",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Defend Order",
+     "Decorate",
+     "Toxic Thread"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   8489,
+   17700,
+   19277,
+   39752
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Tar Shot 2, move Lunar Dance",
+   "p2": "move Tar Shot 2, move Tar Shot 1"
+  },
+  {
+   "p1": "pass, switch Magby"
+  },
+  {
+   "p1": "switch Duosion, move Toxic Thread 1",
+   "p2": "switch Froslass, move Toxic Thread 2"
+  },
+  {
+   "p1": "move Toxic Thread 2, move Memento 1",
+   "p2": "move Toxic Thread 1, move Cotton Guard"
+  },
+  {
+   "p1": "pass, switch Toxel"
+  },
+  {
+   "p1": "move Shell Smash, move Tar Shot 2",
+   "p2": "move Hone Claws, move Tar Shot 2"
+  },
+  {
+   "p1": "move Tar Shot 1, move Feather Dance 2",
+   "p2": "move Tar Shot 1, move Growth"
+  },
+  {
+   "p1": "move Smokescreen 1, move Toxic Thread 2",
+   "p2": "switch Ogerpon, move Toxic Thread 2"
+  },
+  {
+   "p1": "move Toxic Thread 1, move Agility",
+   "p2": "move Victory Dance, move Cotton Guard"
+  },
+  {
+   "p1": "move Shell Smash, move Tar Shot 2",
+   "p2": "move Toxic Thread 1, move Tar Shot 2"
+  },
+  {
+   "p1": "move Tar Shot 1, move Feather Dance 2",
+   "p2": "move Sand Attack 1, move Growth"
+  },
+  {
+   "p1": "move Smokescreen 1, move Toxic Thread 2",
+   "p2": "switch Froslass, move Toxic Thread 2"
+  },
+  {
+   "p1": "move Toxic Thread 1, move Agility",
+   "p2": "move Tar Shot 1, move Cotton Guard"
+  },
+  {
+   "p2": "pass, switch Ogerpon"
+  },
+  {
+   "p1": "pass, move Toxic Thread 2",
+   "p2": "switch Mightyena, move Toxic Thread 2"
+  },
+  {
+   "p1": "pass, move Agility",
+   "p2": "move Defend Order, move Sand Attack 2"
+  },
+  {
+   "p1": "pass, move Agility",
+   "p2": "move Toxic Thread 2, move Sand Attack 2"
+  },
+  {
+   "p1": "pass, move Toxic Thread 2",
+   "p2": "move Decorate 2, move Toxic Thread 2"
+  }
+ ]
+}

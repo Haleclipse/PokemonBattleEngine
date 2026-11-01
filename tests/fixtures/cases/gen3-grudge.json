@@ -1,0 +1,108 @@
+{
+ "schema": 1,
+ "id": "gen3-grudge",
+ "notes": [
+  "Gen 3 Grudge: the move knocking the holder out loses all its PP (its user Struggles next); the volatile goes at the holder's next move attempt"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Banette",
+    "species": "Banette",
+    "level": 35,
+    "nature": "Hardy",
+    "moves": [
+     "Grudge",
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Banette2",
+    "species": "Banette",
+    "level": 35,
+    "nature": "Hardy",
+    "moves": [
+     "Grudge",
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Banette3",
+    "species": "Banette",
+    "level": 35,
+    "nature": "Hardy",
+    "moves": [
+     "Grudge",
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Crunch"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Foe2",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Crunch"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Grudge",
+   "p2": "move Crunch"
+  },
+  {
+   "p1": "switch Banette2"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Grudge",
+   "p2": "switch Foe2"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Crunch"
+  },
+  {
+   "p1": "switch Banette3"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Crunch"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

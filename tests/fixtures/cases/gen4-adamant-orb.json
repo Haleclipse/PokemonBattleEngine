@@ -1,0 +1,86 @@
+{
+ "schema": 1,
+ "id": "gen4-adamant-orb",
+ "notes": [
+  "Gen 4: Dialga's Adamant Orb boosts its Steel and Dragon moves by 20 % (Gen 4 reads the species it battles as), and nothing else; Trick takes it (an Adamant Orb has no `onTakeItem`)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Dialga",
+    "species": "Dialga",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Flash Cannon",
+     "Dragon Pulse",
+     "Tackle"
+    ],
+    "gender": "M",
+    "ability": "Pressure",
+    "item": "Adamant Orb"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Trick"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Flash Cannon",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Dragon Pulse",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Trick"
+  },
+  {
+   "p1": "move Flash Cannon",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

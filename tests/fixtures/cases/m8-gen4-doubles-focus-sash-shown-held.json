@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "id": "m8-gen4-doubles-focus-sash-shown-held",
+  "notes": [
+    "Nightly 52: a hit leaves a full-HP Focus Sash holder on 1 either by itself or through the sash; the log's -enditem Focus Sash picks the damage roll that sets the sash off (DESIGN.md R-M8-96)",
+    "promoted from m8-gen4-doubles-s507-000-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "doubles",
+    "format": "gen4doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Zigzagoon",
+        "species": "Zigzagoon",
+        "level": 52,
+        "nature": "Hardy",
+        "moves": [
+          "Punishment"
+        ],
+        "ability": "Run Away",
+        "item": "Focus Sash",
+        "gender": "M"
+      },
+      {
+        "label": "Darkrai",
+        "species": "Darkrai",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Return"
+        ],
+        "ability": "Run Away"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Pikachu",
+        "species": "Pikachu",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Wake-Up Slap"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Golbat",
+        "species": "Golbat",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Swift"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      6122,
+      37618,
+      61007,
+      24628
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Punishment 1, move Return 2",
+      "p2": "move Wake-Up Slap 1, move Swift"
+    }
+  ]
+}

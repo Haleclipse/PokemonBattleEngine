@@ -1,0 +1,81 @@
+{
+ "schema": 1,
+ "id": "gen7-doubles-a-dancer-draws-petal-dances-target",
+ "notes": [
+  "Gen 7 doubles: Togetic's Petal Dance (`randomNormal`) strikes a random foe; Steelix's Dancer dances along, its Petal Dance drawn at one of Steelix's foes too (`getTarget` ignores the location it is given for a `randomNormal` move: `getRandomTarget`, DESIGN.md R-M8-78)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Togetic",
+    "species": "Togetic",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Petal Dance"
+    ],
+    "ability": "Serene Grace",
+    "gender": "F"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Steelix",
+    "species": "Steelix",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Dancer",
+    "gender": "M"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Petal Dance, move Splash",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move 1, move Splash",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "id": "gen4-payback",
+  "notes": [
+    "Gen 4 Payback only asks whether the target is about to move: a target that switched in this turn counts as having moved (doubled), unlike Gen 5+"
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "singles",
+    "format": "gen4customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Umbreon",
+        "species": "Umbreon",
+        "level": 70,
+        "nature": "Hardy",
+        "moves": [
+          "Payback"
+        ],
+        "ability": "Synchronize"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Jolteon",
+        "species": "Jolteon",
+        "level": 100,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ],
+        "ability": "Volt Absorb"
+      },
+      {
+        "label": "Snorlax",
+        "species": "Snorlax",
+        "level": 80,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ],
+        "ability": "Run Away"
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "switch 2"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

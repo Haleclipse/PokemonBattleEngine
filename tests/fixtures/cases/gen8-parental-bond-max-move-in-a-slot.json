@@ -1,0 +1,55 @@
+{
+ "schema": 1,
+ "id": "gen8-parental-bond-max-move-in-a-slot",
+ "notes": [
+  "Gen 8: Drampa's Parental Bond leaves alone the Max Flare it knows as a move of its own (`move.isMax`): one hit (DESIGN.md R-M8-80)"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Drampa",
+    "species": "Drampa",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Max Flare"
+    ],
+    "ability": "Parental Bond",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Max Flare",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

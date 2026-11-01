@@ -1,0 +1,55 @@
+{
+ "schema": 1,
+ "id": "gen8-slow-start-halves-the-attack-it-reads",
+ "notes": [
+  "Gen 8: Regigigas under Slow Start uses Photon Geyser, physical as its Attack beats its Special Attack: Slow Start's `onModifyAtk` halves the Attack whatever the data says (DESIGN.md R-M8-90)"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Regigigas",
+    "species": "Regigigas",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Photon Geyser",
+     "Splash"
+    ],
+    "ability": "Slow Start"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Photon Geyser",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

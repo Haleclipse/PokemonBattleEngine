@@ -1,0 +1,54 @@
+{
+ "schema": 1,
+ "id": "gen7-choice-scarf-orders-the-leads-weather",
+ "notes": [
+  "The leads' switch-ins run fastest first by action speed: Tyranitar's Choice Scarf puts its Sand Stream before the faster-looking Politoed's Drizzle, so rain stays (Showdown `start` → queued `runSwitch` sorted by `getActionSpeed`)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Politoed",
+    "species": "Politoed",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Growl"
+    ],
+    "ability": "Drizzle"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Tyranitar",
+    "species": "Tyranitar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Growl"
+    ],
+    "ability": "Sand Stream",
+    "item": "Choice Scarf"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Growl",
+   "p2": "move Growl"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

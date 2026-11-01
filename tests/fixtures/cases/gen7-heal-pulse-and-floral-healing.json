@@ -1,0 +1,140 @@
+{
+ "schema": 1,
+ "id": "gen7-heal-pulse-and-floral-healing",
+ "notes": [
+  "Gen 7: Heal Pulse on a foe Super Fang halved twice heals half its max HP (rounded up), then what is left to full; at full HP it heals nothing \u2014 null, a failure: the next Stomping Tantrum is doubled. Floral Healing heals half, in Grassy Terrain 0.667; a Mega Launcher user's Heal Pulse heals 0.75"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Plain",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Heal Pulse",
+     "Super Fang",
+     "Stomping Tantrum",
+     "Floral Healing"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Launcher",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Heal Pulse",
+     "Super Fang",
+     "Grassy Terrain"
+    ],
+    "ability": "Mega Launcher"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Super Fang",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Super Fang",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Heal Pulse",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Heal Pulse",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Heal Pulse",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Stomping Tantrum",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Super Fang",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Floral Healing",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Launcher",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Super Fang",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Super Fang",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Super Fang",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Heal Pulse",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Super Fang",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Grassy Terrain",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Super Fang",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Super Fang",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Plain",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Floral Healing",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

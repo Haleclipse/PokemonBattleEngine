@@ -1,0 +1,82 @@
+{
+ "schema": 1,
+ "id": "gen8-doubles-magic-coat-reflects-at-the-user",
+ "notes": [
+  "Gen 8 doubles: Espeon's Magic Coat sends Persian's Thunder Wave back at Persian — a reflection names its target (the move's user), so nothing is drawn for it even with two foes to choose from"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "doubles",
+  "format": "gen8doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Espeon",
+    "species": "Espeon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Magic Coat",
+     "Harden"
+    ],
+    "ability": "Synchronize",
+    "gender": "F"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Persian",
+    "species": "Persian",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Thunder Wave",
+     "Harden"
+    ],
+    "ability": "Technician"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Magic Coat, move Harden",
+   "p2": "move Thunder Wave 1, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

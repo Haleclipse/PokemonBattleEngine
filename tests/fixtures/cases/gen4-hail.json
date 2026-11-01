@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "id": "gen4-singles-hail",
+  "notes": [
+    "Gen 4 hail from Snow Warning: permanent (duration 0), 1/16 chip on Snorlax before its Leftovers heal (Gen 4 residual order: weather 8, Leftovers 10.4), the Ice type immune."
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "singles",
+    "format": "gen4customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "a",
+        "species": "Abomasnow",
+        "ability": "Snow Warning",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "b",
+        "species": "Snorlax",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ],
+        "item": "Leftovers"
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      4,
+      2,
+      3,
+      4
+    ]
+  }
+}

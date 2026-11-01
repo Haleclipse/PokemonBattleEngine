@@ -1,0 +1,272 @@
+{
+  "schema": 1,
+  "id": "m8-gen4-starf-berry-at-a-replacement",
+  "notes": [
+    "Nightly 63: Grotle eats its Starf Berry in the Update after a replacement came in; the stat it drew is planned with the entry (replay: any eater at an entry) (DESIGN.md R-M8-107)",
+    "promoted from m8-gen4-singles-s550-007-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "singles",
+    "format": "gen4customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Burmy",
+        "species": "Burmy",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fake Tears",
+          "Heal Block"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Dewgong",
+        "species": "Dewgong",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Flash",
+          "Swords Dance",
+          "Sacred Fire"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Shroomish",
+        "species": "Shroomish",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Flare Blitz"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Gabite",
+        "species": "Gabite",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Scary Face",
+          "Flare Blitz",
+          "Flame Wheel"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Lanturn",
+        "species": "Lanturn",
+        "level": 53,
+        "nature": "Hardy",
+        "moves": [
+          "Water Gun",
+          "Sacred Fire",
+          "Magical Leaf",
+          "Flare Blitz"
+        ],
+        "ability": "Download",
+        "gender": "F"
+      },
+      {
+        "label": "Regice",
+        "species": "Regice",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Judgment"
+        ],
+        "ability": "Run Away"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Lapras",
+        "species": "Lapras",
+        "level": 51,
+        "nature": "Hardy",
+        "moves": [
+          "Doom Desire",
+          "Sacred Fire",
+          "Weather Ball",
+          "Flame Wheel"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Jynx",
+        "species": "Jynx",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Flare Blitz"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Wormadam",
+        "species": "Wormadam",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sacred Fire",
+          "Horn Attack"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Prinplup",
+        "species": "Prinplup",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Megahorn",
+          "Flame Wheel",
+          "Shadow Punch",
+          "Flare Blitz"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Grotle",
+        "species": "Grotle",
+        "level": 46,
+        "nature": "Hardy",
+        "moves": [
+          "Strength",
+          "Sacred Fire",
+          "Flame Wheel"
+        ],
+        "ability": "Run Away",
+        "item": "Starf Berry",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      11450,
+      21825,
+      34710,
+      46264
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Fake Tears",
+      "p2": "move Doom Desire"
+    },
+    {
+      "p1": "move Heal Block",
+      "p2": "move Sacred Fire"
+    },
+    {
+      "p1": "switch Dewgong"
+    },
+    {
+      "p1": "move Swords Dance",
+      "p2": "move Weather Ball"
+    },
+    {
+      "p1": "move Sacred Fire",
+      "p2": "move Flame Wheel"
+    },
+    {
+      "p1": "move Flash",
+      "p2": "move Doom Desire"
+    },
+    {
+      "p1": "switch Shroomish",
+      "p2": "switch Jynx"
+    },
+    {
+      "p1": "move Flare Blitz",
+      "p2": "move Flare Blitz"
+    },
+    {
+      "p1": "switch Dewgong",
+      "p2": "switch Lapras"
+    },
+    {
+      "p1": "move Swords Dance",
+      "p2": "move Weather Ball"
+    },
+    {
+      "p1": "switch Gabite"
+    },
+    {
+      "p1": "move Flame Wheel",
+      "p2": "move Flame Wheel"
+    },
+    {
+      "p1": "move Scary Face",
+      "p2": "move Doom Desire"
+    },
+    {
+      "p2": "switch Wormadam"
+    },
+    {
+      "p1": "move Flare Blitz",
+      "p2": "move Sacred Fire"
+    },
+    {
+      "p1": "switch Lanturn",
+      "p2": "switch Prinplup"
+    },
+    {
+      "p1": "move Magical Leaf",
+      "p2": "move Shadow Punch"
+    },
+    {
+      "p1": "move Flare Blitz",
+      "p2": "move Flare Blitz"
+    },
+    {
+      "p1": "move Water Gun",
+      "p2": "move Megahorn"
+    },
+    {
+      "p1": "move Sacred Fire",
+      "p2": "move Flame Wheel"
+    },
+    {
+      "p2": "switch Wormadam"
+    },
+    {
+      "p1": "move Magical Leaf",
+      "p2": "move Horn Attack"
+    },
+    {
+      "p1": "switch Gabite",
+      "p2": "switch Grotle"
+    },
+    {
+      "p1": "move Flame Wheel",
+      "p2": "move Flame Wheel"
+    },
+    {
+      "p1": "move Scary Face",
+      "p2": "move Strength"
+    },
+    {
+      "p1": "switch Lanturn"
+    },
+    {
+      "p1": "move Sacred Fire",
+      "p2": "move Sacred Fire"
+    },
+    {
+      "p1": "switch Regice"
+    }
+  ]
+}

@@ -1,0 +1,357 @@
+{
+  "schema": 1,
+  "id": "m10-zj-a-second-torment-fails-past-aroma-veil",
+  "notes": [
+    "Gen 8 VGC 2022: Liepard's second Torment on a tormented Smoochum, Alcremie's Aroma Veil beside it: addVolatile refuses the volatile Smoochum has before TryAddVolatile, -fail and no -block (R-M10-60)",
+    "promoted from m9-gen8vgc2022-s232-014-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 8,
+    "mode": "doubles",
+    "format": "gen8vgc2022"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Solrock",
+        "species": "Solrock",
+        "ability": "Levitate",
+        "moves": [
+          "Sandstorm"
+        ],
+        "nature": "Adamant",
+        "gender": "",
+        "shiny": true,
+        "level": 50,
+        "evs": {
+          "hp": 84,
+          "atk": 108,
+          "def": 96,
+          "spa": 56,
+          "spd": 20,
+          "spe": 144
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        },
+        "happiness": 251
+      },
+      {
+        "label": "Frosmoth",
+        "species": "Frosmoth",
+        "ability": "Shield Dust",
+        "moves": [
+          "Icy Wind",
+          "Rest",
+          "Dazzling Gleam",
+          "Mist"
+        ],
+        "nature": "Lonely",
+        "gender": "F",
+        "shiny": true,
+        "level": 50,
+        "evs": {
+          "hp": 192,
+          "atk": 24,
+          "def": 40,
+          "spa": 28,
+          "spd": 36,
+          "spe": 152
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        }
+      },
+      {
+        "label": "Liepard",
+        "species": "Liepard",
+        "ability": "Prankster",
+        "moves": [
+          "Torment",
+          "Endure",
+          "Facade"
+        ],
+        "nature": "Docile",
+        "gender": "M",
+        "shiny": false,
+        "level": 50,
+        "evs": {
+          "hp": 132,
+          "atk": 152,
+          "def": 20,
+          "spa": 152,
+          "spd": 28,
+          "spe": 24
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        }
+      },
+      {
+        "label": "Dottler",
+        "species": "Dottler",
+        "ability": "Compound Eyes",
+        "moves": [
+          "Substitute"
+        ],
+        "nature": "Quiet",
+        "gender": "F",
+        "shiny": false,
+        "level": 50,
+        "evs": {
+          "hp": 208,
+          "atk": 12,
+          "def": 64,
+          "spa": 88,
+          "spd": 116,
+          "spe": 20
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        }
+      },
+      {
+        "label": "Greedent",
+        "species": "Greedent",
+        "ability": "Cheek Pouch",
+        "moves": [
+          "Bullet Seed"
+        ],
+        "nature": "Hardy",
+        "gender": "F",
+        "shiny": true,
+        "level": 50,
+        "evs": {
+          "hp": 4,
+          "atk": 0,
+          "def": 96,
+          "spa": 128,
+          "spd": 56,
+          "spe": 224
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        }
+      },
+      {
+        "label": "Nick2",
+        "species": "Metapod",
+        "ability": "Shed Skin",
+        "moves": [
+          "Electroweb",
+          "String Shot"
+        ],
+        "nature": "Mild",
+        "gender": "M",
+        "shiny": false,
+        "level": 50,
+        "evs": {
+          "hp": 44,
+          "atk": 108,
+          "def": 188,
+          "spa": 12,
+          "spd": 24,
+          "spe": 112
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        }
+      }
+    ],
+    "p2": [
+      {
+        "label": "Alcremie",
+        "species": "Alcremie-Mint-Cream",
+        "ability": "Aroma Veil",
+        "moves": [
+          "Play Rough"
+        ],
+        "nature": "Rash",
+        "gender": "",
+        "shiny": true,
+        "level": 50,
+        "evs": {
+          "hp": 168,
+          "atk": 0,
+          "def": 0,
+          "spa": 56,
+          "spd": 124,
+          "spe": 160
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 21,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        }
+      },
+      {
+        "label": "Smoochum",
+        "species": "Smoochum",
+        "ability": "Oblivious",
+        "moves": [
+          "Trick Room",
+          "Magic Room",
+          "Trick",
+          "Rain Dance"
+        ],
+        "nature": "Quirky",
+        "gender": "",
+        "shiny": false,
+        "level": 50,
+        "evs": {
+          "hp": 68,
+          "atk": 216,
+          "def": 124,
+          "spa": 0,
+          "spd": 96,
+          "spe": 4
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        }
+      },
+      {
+        "label": "Pumpkaboo",
+        "species": "Pumpkaboo",
+        "ability": "Frisk",
+        "moves": [
+          "Mystical Fire"
+        ],
+        "nature": "Brave",
+        "gender": "F",
+        "shiny": false,
+        "level": 50,
+        "evs": {
+          "hp": 116,
+          "atk": 164,
+          "def": 108,
+          "spa": 48,
+          "spd": 20,
+          "spe": 52
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        }
+      },
+      {
+        "label": "Nick50",
+        "species": "Trevenant",
+        "ability": "Harvest",
+        "moves": [
+          "Poison Jab",
+          "Energy Ball",
+          "Shadow Ball",
+          "Drain Punch"
+        ],
+        "nature": "Mild",
+        "gender": "F",
+        "shiny": false,
+        "level": 50,
+        "evs": {
+          "hp": 152,
+          "atk": 120,
+          "def": 12,
+          "spa": 164,
+          "spd": 60,
+          "spe": 0
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 10,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        }
+      }
+    ]
+  },
+  "preview": {
+    "p1": "team 263451",
+    "p2": "team 421356"
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      29610,
+      232,
+      1014,
+      31
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1 1 dynamax, move Electroweb",
+      "p2": "move 1 1 dynamax, move Trick Room"
+    },
+    {
+      "p1": "move Rest, move String Shot",
+      "p2": "move Energy Ball 2, move Magic Room"
+    },
+    {
+      "p1": "pass, switch 3"
+    },
+    {
+      "p1": "move Dazzling Gleam 2, move Endure",
+      "p2": "move Shadow Ball 1, move Trick 2"
+    },
+    {
+      "p1": "move Mist, move Facade 1",
+      "p2": "move Drain Punch 1, move Rain Dance"
+    },
+    {
+      "p1": "switch 4, pass"
+    },
+    {
+      "p1": "move Substitute, move Torment 2",
+      "p2": "move Poison Jab 2, move Trick Room"
+    },
+    {
+      "p1": "move Substitute, move Torment 2",
+      "p2": "switch 3, move Rain Dance"
+    }
+  ]
+}

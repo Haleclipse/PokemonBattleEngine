@@ -1,0 +1,131 @@
+{
+ "schema": 1,
+ "id": "gen4-iron-ball-grounds-its-holder",
+ "notes": [
+  "Iron Ball grounds its holder: Earthquake hits a Skarmory (Flying) and a Bronzong (Levitate) holding it, not those without; it halves Speed (the Skarmory with it, 88, moves after Snorlax, 96; without it, 176, before) (Gen 4: no onEffectiveness)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Earthquake",
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Ball",
+    "species": "Skarmory",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled",
+     "Ingrain"
+    ],
+    "ability": "Run Away",
+    "item": "Iron Ball"
+   },
+   {
+    "label": "Bird",
+    "species": "Skarmory",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Bronzong",
+    "species": "Bronzong",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Levitate",
+    "item": "Iron Ball"
+   },
+   {
+    "label": "Float",
+    "species": "Bronzong",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Levitate"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Earthquake",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Earthquake",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "switch Bird"
+  },
+  {
+   "p1": "move Earthquake",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "switch Bronzong"
+  },
+  {
+   "p1": "move Earthquake",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Earthquake",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "switch Float"
+  },
+  {
+   "p1": "move Earthquake",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   21,
+   22,
+   23,
+   24
+  ]
+ }
+}

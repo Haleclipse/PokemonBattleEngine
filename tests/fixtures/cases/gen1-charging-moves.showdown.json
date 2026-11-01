@@ -1,0 +1,1188 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@pkmn/sim",
+    "version": "0.10.11",
+    "formatid": "gen1customgame",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "frames": [
+    {
+      "schema": 1,
+      "checkpoint": "initial",
+      "turn": 1,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "pp": [
+                24,
+                16,
+                8,
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 640,
+              "max_hp": 640,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "pp": [
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Charger"
+          },
+          "details": "Snorlax, L50",
+          "hp": 235,
+          "max_hp": 235,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "details": "Chansey",
+          "hp": 640,
+          "max_hp": 640,
+          "status": null
+        },
+        {
+          "kind": "turn",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_1",
+      "turn": 2,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "twoturnmove": null
+              },
+              "types": [
+                "normal"
+              ],
+              "pp": [
+                24,
+                16,
+                8,
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 640,
+              "max_hp": 640,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "pp": [
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Charger"
+          },
+          "move": "Skull Bash",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          }
+        },
+        {
+          "kind": "prepare",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Charger"
+          },
+          "move": "Skull Bash"
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 2
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_2",
+      "turn": 3,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "pp": [
+                23,
+                16,
+                8,
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 548,
+              "max_hp": 640,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 2,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "pp": [
+                46
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Charger"
+          },
+          "move": "Skull Bash",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "hp": 548,
+          "max_hp": 640,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 3
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_3",
+      "turn": 4,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "twoturnmove": null
+              },
+              "types": [
+                "normal"
+              ],
+              "pp": [
+                23,
+                16,
+                8,
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 548,
+              "max_hp": 640,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 3,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "pp": [
+                45
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Charger"
+          },
+          "move": "Razor Wind",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          }
+        },
+        {
+          "kind": "prepare",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Charger"
+          },
+          "move": "Razor Wind"
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 4
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_4",
+      "turn": 5,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "pp": [
+                23,
+                15,
+                8,
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 500,
+              "max_hp": 640,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 4,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "pp": [
+                44
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Charger"
+          },
+          "move": "Razor Wind",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "hp": 500,
+          "max_hp": 640,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 5
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_5",
+      "turn": 6,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "twoturnmove": null
+              },
+              "types": [
+                "normal"
+              ],
+              "pp": [
+                23,
+                15,
+                8,
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 500,
+              "max_hp": 640,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 5,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "pp": [
+                43
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Charger"
+          },
+          "move": "Sky Attack",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          }
+        },
+        {
+          "kind": "prepare",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Charger"
+          },
+          "move": "Sky Attack"
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 6
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_6",
+      "turn": 7,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "pp": [
+                23,
+                15,
+                7,
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 500,
+              "max_hp": 640,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 6,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "pp": [
+                42
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Charger"
+          },
+          "move": "Sky Attack",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          }
+        },
+        {
+          "kind": "miss",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Charger"
+          },
+          "detail": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 7
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_7",
+      "turn": 8,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "twoturnmove": null
+              },
+              "types": [
+                "normal"
+              ],
+              "pp": [
+                23,
+                15,
+                7,
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 500,
+              "max_hp": 640,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 6,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "pp": [
+                41
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          }
+        },
+        {
+          "kind": "fail",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "detail": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Charger"
+          },
+          "move": "Solar Beam",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          }
+        },
+        {
+          "kind": "prepare",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Charger"
+          },
+          "move": "Solar Beam"
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 8
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_8",
+      "turn": 9,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "pp": [
+                23,
+                15,
+                7,
+                15
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 481,
+              "max_hp": 640,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 6,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "pp": [
+                40
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          }
+        },
+        {
+          "kind": "fail",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "detail": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Charger"
+          },
+          "move": "Solar Beam",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "hp": 481,
+          "max_hp": 640,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 9
+        }
+      ]
+    }
+  ],
+  "debug_log": "|gametype|singles\n|player|p1|P1||\n|player|p2|P2||\n|gen|1\n|tier|[Gen 1] Custom Game\n|rule|HP Percentage Mod: HP is shown in percentages\n|rule|Desync Clause Mod: Desyncs changed to move failure.\n|\n|teamsize|p1|1\n|teamsize|p2|1\n|start\n|switch|p1a: Charger|Snorlax, L50|235/235\n|switch|p2a: Wall|Chansey|640/640\n|turn|1\n|\n|move|p2a: Wall|Harden|p2a: Wall\n|-boost|p2a: Wall|def|1\n|move|p1a: Charger|Skull Bash||[still]\n|-prepare|p1a: Charger|Skull Bash\n|\n|upkeep\n|turn|2\n|\n|move|p2a: Wall|Harden|p2a: Wall\n|-boost|p2a: Wall|def|1\n|move|p1a: Charger|Skull Bash|p2a: Wall|[from] Skull Bash\n|-damage|p2a: Wall|548/640\n|\n|upkeep\n|turn|3\n|\n|move|p2a: Wall|Harden|p2a: Wall\n|-boost|p2a: Wall|def|1\n|move|p1a: Charger|Razor Wind||[still]\n|-prepare|p1a: Charger|Razor Wind\n|\n|upkeep\n|turn|4\n|\n|move|p2a: Wall|Harden|p2a: Wall\n|-boost|p2a: Wall|def|1\n|move|p1a: Charger|Razor Wind|p2a: Wall|[from] Razor Wind\n|-damage|p2a: Wall|500/640\n|\n|upkeep\n|turn|5\n|\n|move|p2a: Wall|Harden|p2a: Wall\n|-boost|p2a: Wall|def|1\n|move|p1a: Charger|Sky Attack||[still]\n|-prepare|p1a: Charger|Sky Attack\n|\n|upkeep\n|turn|6\n|\n|move|p2a: Wall|Harden|p2a: Wall\n|-boost|p2a: Wall|def|1\n|move|p1a: Charger|Sky Attack|p2a: Wall|[from] Sky Attack|[miss]\n|-miss|p1a: Charger\n|\n|upkeep\n|turn|7\n|\n|move|p2a: Wall|Harden|p2a: Wall\n|-fail|p2a: Wall\n|move|p1a: Charger|Solar Beam||[still]\n|-prepare|p1a: Charger|Solar Beam\n|\n|upkeep\n|turn|8\n|\n|move|p2a: Wall|Harden|p2a: Wall\n|-fail|p2a: Wall\n|move|p1a: Charger|Solar Beam|p2a: Wall|[from] Solar Beam\n|-damage|p2a: Wall|481/640\n|\n|upkeep\n|turn|9"
+}

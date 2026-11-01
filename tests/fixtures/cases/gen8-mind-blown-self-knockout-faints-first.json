@@ -1,0 +1,66 @@
+{
+ "schema": 1,
+ "id": "gen8-mind-blown-self-knockout-faints-first",
+ "notes": [
+  "Mind Blown's self damage is `damage(…, true)`: the user it knocks out faints at once, before the Pikachu it knocked out, so Pikachu fainted last and P2 wins"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Arcanine",
+    "species": "Arcanine",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Growl",
+     "Mind Blown"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Pikachu",
+    "species": "Pikachu",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Growl",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Growl",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Growl",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Mind Blown",
+   "p2": "move Seismic Toss"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

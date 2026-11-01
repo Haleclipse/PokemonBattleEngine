@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "gen3-thrash-into-a-wonder-guard-ghost-ends-quietly",
+ "notes": [
+  "Gen 3: Tauros's Thrash knocks out the level-1 Magikarp; locked, it meets Shedinja: the type chart makes it no effect before Wonder Guard turns it away (pokeemerald Cmd_typecalc), so targetNotAffected ends the lock at the end of the turn without confusion (DESIGN.md R-M8-135)"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Tauros",
+    "species": "Tauros",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Thrash",
+     "Splash"
+    ],
+    "ability": "Intimidate",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 1,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Swift Swim",
+    "gender": "M"
+   },
+   {
+    "label": "Shedinja",
+    "species": "Shedinja",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Wonder Guard"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Thrash",
+   "p2": "move Splash"
+  },
+  {
+   "p2": "switch Shedinja"
+  },
+  {
+   "p1": "move Thrash",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

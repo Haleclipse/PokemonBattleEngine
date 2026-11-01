@@ -1,0 +1,76 @@
+{
+ "schema": 1,
+ "id": "gen3-a-reflected-sweet-scent-misses-the-other-foe-by-hustle",
+ "notes": [
+  "Gen 3 doubles: Shiftry (Hustle) uses Sweet Scent on Magby and Lunatone; Lunatone's Magic Coat sends it back. Gen 3 rolls each target's accuracy before its TryHit: Shiftry's own check on Magby (Hustle takes a fifth off a move of a physical type, status or not: pokeemerald's accuracy check) misses, its check on Lunatone hits, then Lunatone's Sweet Scent strikes Shiftry and Wooper with Lunatone's accuracy. The replay plans the user's checks on its own targets and the reflector's on those sent back (DESIGN.md R-M8-173)"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "doubles",
+  "format": "gen3doublescustomgame"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Shiftry",
+    "species": "Shiftry",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sweet Scent"
+    ],
+    "ability": "Hustle",
+    "gender": "M"
+   },
+   {
+    "label": "Wooper",
+    "species": "Wooper",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Damp",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Magby",
+    "species": "Magby",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Flame Body",
+    "gender": "M"
+   },
+   {
+    "label": "Lunatone",
+    "species": "Lunatone",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Magic Coat"
+    ],
+    "ability": "Levitate"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Sweet Scent, move Splash",
+   "p2": "move Splash, move Magic Coat"
+  }
+ ]
+}

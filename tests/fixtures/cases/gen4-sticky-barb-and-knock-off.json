@@ -1,0 +1,90 @@
+{
+ "schema": 1,
+ "id": "gen4-sticky-barb-and-knock-off",
+ "notes": [
+  "Gen 4 Sticky Barb and Knock Off (issues.md I100 (b), (c); pokeplatinum: no transfer for Knock Off, nor to an attacker a Knock Off took an item from): Murkrow's Knock Off knocks Snorlax's barb off (Showdown hands it to Murkrow first, and Knock Off finds nothing)",
+  "Snorlax's Knock Off takes Honchkrow's Leftovers; Honchkrow's Peck then touches Slowbro and the barb stays with Slowbro (Showdown hands it over: the gen4 `takeItem` asks only the holder whether a Knock Off marked it)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Murkrow",
+    "species": "Murkrow",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Knock Off"
+    ],
+    "ability": "Insomnia"
+   },
+   {
+    "label": "Honchkrow",
+    "species": "Honchkrow",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Peck"
+    ],
+    "item": "Leftovers",
+    "ability": "Insomnia"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Knock Off"
+    ],
+    "item": "Sticky Barb",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Slowbro",
+    "species": "Slowbro",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Sticky Barb",
+    "ability": "Oblivious"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Knock Off",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Honchkrow",
+   "p2": "move Knock Off"
+  },
+  {
+   "p1": "move Peck",
+   "p2": "switch Slowbro"
+  },
+  {
+   "p1": "move Peck",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

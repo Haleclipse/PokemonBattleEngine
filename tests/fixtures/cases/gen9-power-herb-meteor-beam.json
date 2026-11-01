@@ -1,0 +1,63 @@
+{
+ "schema": 1,
+ "id": "gen9-power-herb-meteor-beam",
+ "notes": [
+  "Gen 9 Power Herb with Meteor Beam: -prepare, the Special Attack boost, -enditem and the attack in one turn"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Beamer",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Meteor Beam",
+     "Harden"
+    ],
+    "ability": "Run Away",
+    "item": "Power Herb"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Wall",
+    "species": "Snorlax",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Meteor Beam",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Meteor Beam",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Meteor Beam",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

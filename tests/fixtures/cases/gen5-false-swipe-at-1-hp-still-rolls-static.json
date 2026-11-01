@@ -1,0 +1,59 @@
+{
+ "schema": 1,
+ "id": "gen5-false-swipe-at-1-hp-still-rolls-static",
+ "notes": [
+  "Gen 5: Scizor's False Swipe takes Pikachu to 1 HP, then deals 0 to it: Static has no `damage &&` from Gen 5 and rolls after both hits"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Scizor",
+    "species": "Scizor",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "False Swipe"
+    ],
+    "gender": "M",
+    "ability": "Swarm"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Pikachu",
+    "species": "Pikachu",
+    "level": 20,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Static"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move False Swipe",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move False Swipe",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

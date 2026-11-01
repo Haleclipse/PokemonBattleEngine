@@ -1,0 +1,62 @@
+{
+ "schema": 1,
+ "id": "gen4-mirror-move-refuses-the-listed-moves",
+ "notes": [
+  "Gen 4: Snorlax's Chatter at Clefable (the last move that attacked it, and on the gen4 `noMirror` list), then Clefable's Mirror Move fails"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Clefable",
+    "species": "Clefable",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Mirror Move",
+     "Psychic"
+    ],
+    "gender": "F",
+    "ability": "Magic Guard"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Chatter",
+     "Tackle",
+     "Psychic"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Psychic",
+   "p2": "move Chatter"
+  },
+  {
+   "p1": "move Mirror Move",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

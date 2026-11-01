@@ -1,0 +1,70 @@
+{
+ "schema": 1,
+ "id": "gen4-failed-protect-keeps-its-counter",
+ "notes": [
+  "Gen 3-5 (the gen5 mod's onStallMove): a failed Protect leaves the stall counter to run out, seen at the U-turn request"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Protect"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Scizor",
+    "species": "Scizor",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "U-turn"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Protect",
+   "p2": "move U-turn"
+  },
+  {
+   "p1": "move Protect",
+   "p2": "move U-turn"
+  },
+  {
+   "p2": "switch 2"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

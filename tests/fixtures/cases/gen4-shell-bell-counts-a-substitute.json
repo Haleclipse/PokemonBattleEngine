@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen4-shell-bell-counts-a-substitute",
+ "notes": [
+  "Gen 4 Shell Bell (issues.md I47; pokeplatinum `shellBellDamageDealt`): Machamp's Double Kick into Jolteon's Substitute heals an eighth of the damage the doll took (Showdown's gen4 counts only damage to HP)",
+  "On Jolteon's body the hits heal an eighth of their total, once"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Machamp",
+    "species": "Machamp",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Double Kick",
+     "Karate Chop"
+    ],
+    "item": "Shell Bell",
+    "ability": "Guts"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Substitute"
+    ],
+    "ability": "Volt Absorb"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Karate Chop",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Double Kick",
+   "p2": "move Substitute"
+  },
+  {
+   "p1": "move Double Kick",
+   "p2": "move Seismic Toss"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

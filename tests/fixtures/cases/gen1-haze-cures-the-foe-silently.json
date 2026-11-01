@@ -1,0 +1,57 @@
+{
+ "schema": 1,
+ "id": "gen1-haze-cures-the-foe-silently",
+ "notes": [
+  "Gen 1: Slowbro, poisoned, uses Haze: Snorlax's sleep ends silently (`-curestatus|\u2026|slp|[silent]`, an effect's, not a wake-up), and Slowbro's poison hurts it after its own move (DESIGN.md R-M8-93)"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Poison Powder",
+     "Splash"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Slowbro",
+    "species": "Slowbro",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Haze",
+     "Hypnosis"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Poison Powder",
+   "p2": "move Hypnosis"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Haze"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

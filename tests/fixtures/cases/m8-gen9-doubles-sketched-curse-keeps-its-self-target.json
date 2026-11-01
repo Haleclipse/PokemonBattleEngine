@@ -1,0 +1,108 @@
+{
+  "schema": 1,
+  "id": "m8-gen9-doubles-sketched-curse-keeps-its-self-target",
+  "notes": [
+    "Nightly 53: Lunala sketches the Curse a non-Ghost used on itself: the slot keeps that use's target (moveSlot.target 'self'), so the request asks none; as a Ghost it then curses a random foe (getTarget with no target: getRandomTarget) (DESIGN.md R-M8-97)",
+    "promoted from m8-gen9-doubles-s511-017-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Timburr",
+        "species": "Timburr",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Gigaton Hammer",
+          "Sketch",
+          "Present",
+          "Guard Split"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Lunala",
+        "species": "Lunala",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Pay Day",
+          "Sketch",
+          "Seed Bomb",
+          "Guard Split"
+        ],
+        "ability": "Run Away"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Psyduck",
+        "species": "Psyduck",
+        "level": 48,
+        "nature": "Hardy",
+        "moves": [
+          "Splash",
+          "Sketch",
+          "Strength Sap",
+          "Transform"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Klefki",
+        "species": "Klefki",
+        "level": 48,
+        "nature": "Hardy",
+        "moves": [
+          "Curse",
+          "Sketch",
+          "Transform"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      54432,
+      53011,
+      48722,
+      64684
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Gigaton Hammer 1, move Pay Day 2",
+      "p2": "move Splash, move Curse"
+    },
+    {
+      "p1": "move Present 1, move Sketch 2",
+      "p2": "move Sketch 1, move Sketch 2"
+    },
+    {
+      "p1": "move Present 1, move Seed Bomb 2",
+      "p2": "move Strength Sap 1, move Transform 2"
+    },
+    {
+      "p1": "move 4 1, move 4 2",
+      "p2": "move 4 1, move 3 2"
+    },
+    {
+      "p1": "move 1 1, move 1 2",
+      "p2": "move 1 1, move 1 2"
+    },
+    {
+      "p1": "move 4 1, move 2",
+      "p2": "move 4 1, move 2"
+    }
+  ]
+}

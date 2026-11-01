@@ -1,0 +1,62 @@
+{
+ "schema": 1,
+ "id": "gen4-role-play-gluttony-eats-at-once",
+ "notes": [
+  "Gen 4: Wooper Role Plays Snorlax's Gluttony at half HP and eats its Liechi Berry at once (pokeplatinum's berry check reads the ability; Showdown's needs Gluttony's `onStart` flag, which the I82 patch lets run)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Wooper",
+    "species": "Wooper",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Role Play",
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Damp",
+    "item": "Liechi Berry"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Super Fang",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Gluttony"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Super Fang"
+  },
+  {
+   "p1": "move Role Play",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

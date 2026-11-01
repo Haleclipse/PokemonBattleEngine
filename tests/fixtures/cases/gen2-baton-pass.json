@@ -1,0 +1,93 @@
+{
+ "schema": 1,
+ "id": "gen2-baton-pass",
+ "notes": [
+  "Gen 2 Baton Pass hands on the stat stages, Mist and Toxic's counter (`residualdmg`), which then scales the taker's poison as it comes in; the passer takes no after-action residual"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Passer",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Baton Pass",
+     "Swords Dance",
+     "Mist",
+     "Harden"
+    ]
+   },
+   {
+    "label": "Taker",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Toxic",
+     "Poison Powder",
+     "Harden",
+     "Growl"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "switch Taker",
+   "p2": "move Poison Powder"
+  },
+  {
+   "p1": "switch Passer",
+   "p2": "move Toxic"
+  },
+  {
+   "p1": "move Swords Dance",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Mist",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Baton Pass",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Taker"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Growl"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

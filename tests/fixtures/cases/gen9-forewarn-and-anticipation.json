@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "gen9-forewarn-and-anticipation",
+ "notes": [
+  "Gen 9: Hypno's Forewarn draws among Hariyama's strongest moves (the draw is among the tie at the top); Lucario's Anticipation names Hariyama's Fighting moves"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hypno",
+    "species": "Hypno",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Forewarn"
+   },
+   {
+    "label": "Lucario",
+    "species": "Lucario",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Anticipation"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Hariyama",
+    "species": "Hariyama",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Close Combat",
+     "Superpower",
+     "Cross Chop",
+     "Bulk Up"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Bulk Up"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "move Bulk Up"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Bulk Up"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   5,
+   6,
+   7,
+   8
+  ]
+ }
+}

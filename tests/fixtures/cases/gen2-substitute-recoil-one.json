@@ -1,0 +1,151 @@
+{
+  "schema": 1,
+  "id": "gen2-substitute-recoil-one",
+  "notes": [
+    "Gen 2 recoil off a Substitute is exactly 1 HP",
+    "promoted from m8-gen2-singles-s100-001-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 2,
+    "mode": "singles",
+    "format": "gen2customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Raichu",
+        "species": "Raichu",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Comet Punch",
+          "Sacred Fire"
+        ],
+        "gender": "F"
+      },
+      {
+        "label": "Poliwag",
+        "species": "Poliwag",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Dragon Breath",
+          "Octazooka",
+          "Sleep Powder"
+        ],
+        "gender": "M"
+      },
+      {
+        "label": "Jigglypuff",
+        "species": "Jigglypuff",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Low Kick",
+          "Hydro Pump",
+          "Double-Edge"
+        ],
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Donphan",
+        "species": "Donphan",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Megahorn",
+          "Psychic",
+          "Dizzy Punch",
+          "Poison Sting"
+        ],
+        "gender": "F"
+      },
+      {
+        "label": "Pineco",
+        "species": "Pineco",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Dragon Rage"
+        ],
+        "gender": "F"
+      },
+      {
+        "label": "Magneton",
+        "species": "Magneton",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Substitute"
+        ]
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      34332,
+      25737,
+      50778,
+      7318
+    ]
+  },
+  "script": [
+    {
+      "p1": "switch Poliwag",
+      "p2": "move Poison Sting"
+    },
+    {
+      "p1": "move Sleep Powder",
+      "p2": "move Megahorn"
+    },
+    {
+      "p1": "move Dragon Breath",
+      "p2": "move Psychic"
+    },
+    {
+      "p1": "move Octazooka",
+      "p2": "move Dizzy Punch"
+    },
+    {
+      "p1": "switch Raichu",
+      "p2": "switch Pineco"
+    },
+    {
+      "p1": "move Sacred Fire",
+      "p2": "move Dragon Rage"
+    },
+    {
+      "p2": "switch Donphan"
+    },
+    {
+      "p1": "move Comet Punch",
+      "p2": "move Psychic"
+    },
+    {
+      "p1": "switch Poliwag",
+      "p2": "switch Magneton"
+    },
+    {
+      "p1": "switch Jigglypuff",
+      "p2": "switch Donphan"
+    },
+    {
+      "p1": "move Low Kick",
+      "p2": "move Psychic"
+    },
+    {
+      "p1": "move Hydro Pump",
+      "p2": "move Dizzy Punch"
+    },
+    {
+      "p2": "switch Magneton"
+    },
+    {
+      "p1": "move Double-Edge",
+      "p2": "move Substitute"
+    }
+  ]
+}

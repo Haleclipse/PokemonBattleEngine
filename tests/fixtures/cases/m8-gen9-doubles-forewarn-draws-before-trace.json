@@ -1,0 +1,197 @@
+{
+  "schema": 1,
+  "id": "m8-gen9-doubles-forewarn-draws-before-trace",
+  "notes": [
+    "Nightly 59: the leads' Forewarn draws among tied strongest moves before Prinplup's Trace draws its foe (replay: Forewarn's -activate planned in log order, lead_ability_tape / forewarn_draws) (DESIGN.md R-M8-103)",
+    "promoted from m8-gen9-doubles-s531-010-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Hatenna",
+        "species": "Hatenna",
+        "level": 49,
+        "nature": "Hardy",
+        "moves": [
+          "Focus Blast",
+          "Metronome",
+          "Pounce"
+        ],
+        "ability": "Run Away",
+        "item": "Power Belt"
+      },
+      {
+        "label": "Dudunsparce",
+        "species": "Dudunsparce",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Fire Lash",
+          "Mean Look",
+          "Bitter Malice",
+          "Sleep Talk"
+        ],
+        "ability": "Forewarn",
+        "gender": "M"
+      },
+      {
+        "label": "Vigoroth",
+        "species": "Vigoroth",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sleep Talk",
+          "Trop Kick"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Sandygast",
+        "species": "Sandygast",
+        "level": 53,
+        "nature": "Hardy",
+        "moves": [
+          "Mist Ball",
+          "Mean Look",
+          "Icy Wind",
+          "Sleep Talk"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Prinplup",
+        "species": "Prinplup",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Flash Cannon",
+          "Mean Look",
+          "Snarl"
+        ],
+        "ability": "Trace",
+        "gender": "F"
+      },
+      {
+        "label": "Krokorok",
+        "species": "Krokorok",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Lunge",
+          "Mean Look",
+          "Breaking Swipe"
+        ],
+        "ability": "Run Away",
+        "item": "Power Bracer",
+        "gender": "M"
+      },
+      {
+        "label": "Grimer",
+        "species": "Grimer",
+        "level": 46,
+        "nature": "Hardy",
+        "moves": [
+          "Aurora Beam",
+          "Mean Look",
+          "Sleep Talk"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Vulpix",
+        "species": "Vulpix",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Luster Purge",
+          "Mean Look",
+          "Rock Tomb",
+          "Sleep Talk"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      5296,
+      52579,
+      4378,
+      11448
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Focus Blast 1, move Fire Lash 2",
+      "p2": "move Flash Cannon 1, move Lunge 2"
+    },
+    {
+      "p1": "move Metronome, move Mean Look 1",
+      "p2": "move Mean Look 1, move Mean Look 2"
+    },
+    {
+      "p1": "move Pounce 2, move Bitter Malice 1",
+      "p2": "move Snarl, move Breaking Swipe"
+    },
+    {
+      "p1": "move Focus Blast 2, move Fire Lash 1",
+      "p2": "move Flash Cannon 1, move Lunge 2"
+    },
+    {
+      "p1": "switch Vigoroth, pass"
+    },
+    {
+      "p1": "move Trop Kick 1, move Bitter Malice 2",
+      "p2": "move Snarl, move Breaking Swipe"
+    },
+    {
+      "p2": "switch Grimer, pass"
+    },
+    {
+      "p1": "switch Sandygast, move Fire Lash 2",
+      "p2": "switch Vulpix, move Lunge 1"
+    },
+    {
+      "p1": "move Mist Ball 1, move Mean Look 2",
+      "p2": "move Luster Purge 2, move Mean Look 1"
+    },
+    {
+      "p1": "move Mean Look 1, move Bitter Malice 2",
+      "p2": "move Mean Look 2, move Breaking Swipe"
+    },
+    {
+      "p2": "pass, switch Grimer"
+    },
+    {
+      "p1": "move Icy Wind, move Sleep Talk",
+      "p2": "move Rock Tomb 1, move Sleep Talk"
+    },
+    {
+      "p1": "move Sleep Talk, move Fire Lash 1",
+      "p2": "move Sleep Talk, move Aurora Beam 2"
+    },
+    {
+      "p1": "pass, switch Vigoroth"
+    },
+    {
+      "p1": "move Mist Ball 2, move Sleep Talk",
+      "p2": "move Luster Purge 1, move Mean Look 2"
+    },
+    {
+      "p1": "move Mean Look 1, move Trop Kick 1",
+      "p2": "move Mean Look 1, pass"
+    }
+  ]
+}

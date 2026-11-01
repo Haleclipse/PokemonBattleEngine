@@ -1,0 +1,96 @@
+{
+  "schema": 1,
+  "id": "gen5-sleep-resets-on-switch-in",
+  "notes": [
+    "Gen 5: a sleeper's counter goes back to the rolled time when it switches in (slp.onSwitchIn)"
+  ],
+  "battle": {
+    "generation": 5,
+    "mode": "singles",
+    "format": "gen5customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Jigglypuff",
+        "species": "Jigglypuff",
+        "level": 60,
+        "nature": "Hardy",
+        "moves": [
+          "Sing",
+          "Growl"
+        ],
+        "ability": "Run Away"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Snorlax",
+        "species": "Snorlax",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Chansey",
+        "species": "Chansey",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Growl"
+        ],
+        "ability": "Natural Cure"
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 2",
+      "p2": "switch 2"
+    },
+    {
+      "p1": "move 2",
+      "p2": "switch 2"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      10,
+      11,
+      12,
+      13
+    ]
+  }
+}

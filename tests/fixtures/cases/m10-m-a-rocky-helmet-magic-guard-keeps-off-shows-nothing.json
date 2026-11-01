@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "id": "m10-m-a-rocky-helmet-magic-guard-keeps-off-shows-nothing",
+  "notes": [
+    "Gen 8: a Magic Guard Qwilfish's Leech Life on Blacephalon — Rocky Helmet's damage is kept off and Showdown shows nothing; the helmet stays unknown to P1 (R-M10-37)",
+    "promoted from m8-gen8-singles-s1639-016-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 8,
+    "mode": "singles",
+    "format": "gen8customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Kingdra",
+        "species": "Kingdra",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Absorb",
+          "Poison Gas"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Qwilfish",
+        "species": "Qwilfish",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Leech Life"
+        ],
+        "ability": "Magic Guard",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Blacephalon",
+        "species": "Blacephalon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Revenge",
+          "Poison Powder"
+        ],
+        "ability": "Run Away",
+        "item": "Rocky Helmet"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      6036,
+      58320,
+      43952,
+      37583
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Absorb",
+      "p2": "move Revenge"
+    },
+    {
+      "p1": "move Poison Gas",
+      "p2": "move Poison Powder"
+    },
+    {
+      "p1": "move Absorb",
+      "p2": "move Revenge"
+    },
+    {
+      "p1": "switch Qwilfish"
+    },
+    {
+      "p1": "move Leech Life",
+      "p2": "move Revenge"
+    }
+  ]
+}

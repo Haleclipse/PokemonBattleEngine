@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen2-hidden-power-type-and-power-from-dvs",
+ "notes": [
+  "Gen 2 Hidden Power takes its type and power from the DVs (Attack DV 14, Defense DV 12: Fire 70), special by type; the HP DV (3) is the one the other DVs give, as a legal set has it"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Porygon2",
+    "species": "Porygon2",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Hidden Power"
+    ],
+    "ivs": {
+     "hp": 6,
+     "atk": 28,
+     "def": 24
+    }
+   }
+  ],
+  "p2": [
+   {
+    "label": "Parasect",
+    "species": "Parasect",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Hidden Power",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Hidden Power",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

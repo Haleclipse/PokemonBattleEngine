@@ -1,0 +1,88 @@
+{
+ "schema": 1,
+ "id": "gen4-simple-speed-and-damage",
+ "notes": [
+  "Gen 4 Simple reads its stages doubled (the gen4 mod's onModifyBoost): after Agility (+2, read +4) the Lv. 50 Bibarel outspeeds the Lv. 70 Ninjask it was slower than; after Swords Dance (+2, read +4) its Tackle hits harder; Intimidate's -1 reads -2; Harden's +1 Defense reads +2 against Arcanine's Tackle"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Simp",
+    "species": "Bibarel",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Agility",
+     "Swords Dance",
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Simple"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Bug",
+    "species": "Ninjask",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Protect"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Cat",
+    "species": "Arcanine",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "ability": "Intimidate"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Agility",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Swords Dance",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Cat"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   4,
+   2,
+   3,
+   4
+  ]
+ }
+}

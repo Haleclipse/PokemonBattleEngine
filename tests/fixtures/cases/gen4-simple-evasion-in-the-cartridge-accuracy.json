@@ -1,0 +1,74 @@
+{
+ "schema": 1,
+ "id": "gen4-simple-evasion-in-the-cartridge-accuracy",
+ "notes": [
+  "Gen 4 Simple on the target: after one Sweet Scent its evasion reads -2 (pokeplatinum doubles the stage, then clamps the sum): Compound Eyes' Zap Cannon is 50 x 166/100 x 130/100 = 107, sure to hit. The I5 patch without Simple has 85 and unpatched Showdown 83.33 (Compound Eyes dropped on a fraction): both miss with this seed"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Eyes",
+    "species": "Mew",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Sweet Scent",
+     "Zap Cannon"
+    ],
+    "ability": "Compound Eyes"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Simp",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Simple"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Sweet Scent",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Zap Cannon",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Zap Cannon",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Zap Cannon",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Zap Cannon",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Zap Cannon",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

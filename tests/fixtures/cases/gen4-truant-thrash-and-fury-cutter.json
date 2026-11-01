@@ -1,0 +1,83 @@
+{
+ "schema": 1,
+ "id": "gen4-truant-thrash-and-fury-cutter",
+ "notes": [
+  "Gen 4 Truant's loafing turn ends a Fury Cutter count (pokeplatinum `subscript_loafing_around`: `UnlockMoveChoice`) but not a Thrash lock (no `moveFailFlags`): the lock counts the loafing turn and ends after it with confusion, as an ordinary last turn does"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Slacker",
+    "species": "Slaking",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fury Cutter",
+     "Thrash"
+    ],
+    "ability": "Truant"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Wall",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Fury Cutter",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Fury Cutter",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Fury Cutter",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Thrash",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Thrash",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Thrash",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Fury Cutter",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Fury Cutter",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

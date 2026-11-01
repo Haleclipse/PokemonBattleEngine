@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen3-mind-reader-sheer-cold",
+ "notes": [
+  "Gen 3 Mind Reader then Sheer Cold: the level check still first, then no accuracy draw"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Reader",
+    "species": "Lapras",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Mind Reader",
+     "Sheer Cold",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Evader",
+    "species": "Blissey",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Double Team",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Mind Reader",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move Sheer Cold",
+   "p2": "move Double Team"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

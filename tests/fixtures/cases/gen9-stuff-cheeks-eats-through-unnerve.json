@@ -1,0 +1,105 @@
+{
+ "schema": 1,
+ "id": "gen9-stuff-cheeks-eats-through-unnerve",
+ "notes": [
+  "Gen 9: Unnerve keeps Greedent's Sitrus Berry uneaten at half HP; Stuff Cheeks raises its Defense by two and eats it anyway (a quarter back, Cheek Pouch a third more), and Belch opens; at +6 Defense another Greedent's Stuff Cheeks fails and its Oran Berry stays"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Greedent",
+    "species": "Greedent",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Stuff Cheeks",
+     "Belch",
+     "Harden"
+    ],
+    "ability": "Cheek Pouch",
+    "item": "Sitrus Berry"
+   },
+   {
+    "label": "Greedent2",
+    "species": "Greedent",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Stuff Cheeks",
+     "Iron Defense"
+    ],
+    "ability": "Cheek Pouch",
+    "item": "Oran Berry"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Harden"
+    ],
+    "ability": "Unnerve"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Stuff Cheeks",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Belch",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Greedent2",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Iron Defense",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Iron Defense",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Iron Defense",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Stuff Cheeks",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Iron Defense",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

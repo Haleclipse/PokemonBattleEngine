@@ -1,0 +1,93 @@
+{
+ "schema": 1,
+ "id": "gen3-attract-ends-when-its-source-is-blown-away",
+ "notes": [
+  "Gen 3: Whirlwind's action ends with an Update that ends Skarmory's infatuation with the Gardevoir it blew away; Shedinja falls to Spikes on entry and the replacement request no longer shows it"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Skarmory",
+    "species": "Skarmory",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Spikes",
+     "Whirlwind"
+    ],
+    "ability": "Keen Eye",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gardevoir",
+    "species": "Gardevoir",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Attract",
+     "Harden"
+    ],
+    "ability": "Synchronize",
+    "gender": "F"
+   },
+   {
+    "label": "Shedinja",
+    "species": "Shedinja",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Wonder Guard"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Spikes",
+   "p2": "move Attract"
+  },
+  {
+   "p1": "move Spikes",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Whirlwind",
+   "p2": "move Harden"
+  },
+  {
+   "p2": "switch 3"
+  },
+  {
+   "p1": "move Spikes",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   7,
+   8,
+   9,
+   10
+  ]
+ }
+}

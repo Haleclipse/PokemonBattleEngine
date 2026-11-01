@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen5-teravolt-paralyses-through-leaf-guard",
+ "notes": [
+  "Gen 5: in the sun Leaf Guard keeps paralysis off; Zekrom's Teravolt ignores it, and Thunder Wave paralyses Leafeon"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Zekrom",
+    "species": "Zekrom",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sunny Day",
+     "Thunder Wave"
+    ],
+    "gender": "N",
+    "ability": "Teravolt"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Leafeon",
+    "species": "Leafeon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Leaf Guard"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Sunny Day",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Thunder Wave",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

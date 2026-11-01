@@ -1,0 +1,59 @@
+{
+ "schema": 1,
+ "id": "gen7-z-move-splintered-stormshards",
+ "notes": [
+  "Gen 7: Lycanroc with a Lycanium Z turns Stone Edge into 狼啸石牙飓风暴 (Splintered Stormshards): the terrain is up from Tapu Koko's Electric Surge, and the Z-Move's `onHit` takes it away"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Lycanroc",
+    "species": "Lycanroc",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Stone Edge",
+     "Harden"
+    ],
+    "ability": "Keen Eye",
+    "item": "Lycanium Z"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Tapu Koko",
+    "species": "Tapu Koko",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Electric Surge"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1 zmove",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

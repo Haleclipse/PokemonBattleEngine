@@ -1,0 +1,71 @@
+{
+ "schema": 1,
+ "id": "gen2-focus-band-and-the-confusion-self-hit",
+ "notes": [
+  "Gen 2 (Showdown gen2 `directDamage`, pokecrystal `HitConfusion` \u2192 `DoPlayerDamage`): the confusion self-hit goes straight to the HP \u2014 Slowbro's Focus Band, which would roll against a move's damage, never sees it and Slowbro faints"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Slowbro",
+    "species": "Slowbro",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Focus Band"
+   },
+   {
+    "label": "Lapras",
+    "species": "Lapras",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 84,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Confuse Ray",
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Confuse Ray"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   2,
+   9,
+   15,
+   31
+  ]
+ }
+}

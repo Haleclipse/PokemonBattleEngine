@@ -1,0 +1,86 @@
+{
+ "schema": 1,
+ "id": "gen9-flying-press-and-freeze-dry-effectiveness",
+ "notes": [
+  "Flying Press adds Flying's effectiveness to Fighting's per type (4× on Breloom, still immune Gengar through Fighting); Freeze-Dry is super effective on Water (4× on Swampert) — Showdown `onEffectiveness`"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hawlucha",
+    "species": "Hawlucha",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Flying Press",
+     "Freeze-Dry"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Breloom",
+    "species": "Breloom",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Swampert",
+    "species": "Swampert",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Gengar",
+    "species": "Gengar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Flying Press",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Freeze-Dry",
+   "p2": "switch Swampert"
+  },
+  {
+   "p1": "move Flying Press",
+   "p2": "switch Gengar"
+  },
+  {
+   "p1": "move Flying Press",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

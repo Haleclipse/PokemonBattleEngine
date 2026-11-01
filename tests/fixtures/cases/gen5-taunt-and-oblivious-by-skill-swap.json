@@ -1,0 +1,70 @@
+{
+ "schema": 1,
+ "id": "gen5-taunt-and-oblivious-by-skill-swap",
+ "notes": [
+  "Gen 5: Slowbro taunts Snorlax, then gives it Oblivious by Skill Swap: the Taunt stays (the gen5 Oblivious ends an infatuation alone)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Slowbro",
+    "species": "Slowbro",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Taunt",
+     "Skill Swap",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Oblivious"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Tackle",
+   "p2": "move Taunt"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Skill Swap"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

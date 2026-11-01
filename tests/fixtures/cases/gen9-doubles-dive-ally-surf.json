@@ -1,0 +1,79 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-dive-ally-surf",
+ "notes": [
+  "Gen 9 doubles: the partner's Surf (all adjacent) reaches the diving ally and deals it double"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Diver",
+    "species": "Kingdra",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Dive",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Surfer",
+    "species": "Golduck",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Surf",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Foe2",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Dive 1, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Dive 1, move Surf",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

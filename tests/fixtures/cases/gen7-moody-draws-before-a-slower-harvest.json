@@ -1,0 +1,69 @@
+{
+ "schema": 1,
+ "id": "gen7-moody-draws-before-a-slower-harvest",
+ "notes": [
+  "Gen 7: Octillery's Moody and Exeggutor's Harvest both run at residual order 28.2, faster first: Moody's two stat draws come before Harvest's roll, which brings the eaten Sitrus Berry back (the replay places Moody's draws among the residual decisions by speed, DESIGN.md R-M8-92)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Exeggutor",
+    "species": "Exeggutor",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "item": "Sitrus Berry",
+    "ability": "Harvest",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Octillery",
+    "species": "Octillery",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Super Fang",
+     "Splash"
+    ],
+    "ability": "Moody",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash",
+   "p2": "move Super Fang"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

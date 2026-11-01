@@ -1,0 +1,137 @@
+{
+ "schema": 1,
+ "id": "gen9-aftermath-and-innards-out",
+ "notes": [
+  "Aftermath: a contact hit that knocks its holder out costs the attacker a quarter of its HP \u2014 not a non-contact one, not while Damp is active; Innards Out costs the attacker the HP its holder lost"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hitter",
+    "species": "Snorlax",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Close Combat",
+     "Aura Sphere",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Damp",
+    "species": "Quagsire",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Close Combat"
+    ],
+    "ability": "Damp"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Skunk",
+    "species": "Skuntank",
+    "level": 20,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Aftermath"
+   },
+   {
+    "label": "Skunk2",
+    "species": "Skuntank",
+    "level": 20,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Aftermath"
+   },
+   {
+    "label": "Pyuku",
+    "species": "Mew",
+    "level": 15,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Innards Out"
+   },
+   {
+    "label": "Skunk3",
+    "species": "Skuntank",
+    "level": 20,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Aftermath"
+   },
+   {
+    "label": "Last",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Close Combat",
+   "p2": "move Harden"
+  },
+  {
+   "p2": "switch Skunk2"
+  },
+  {
+   "p1": "move Aura Sphere",
+   "p2": "move Harden"
+  },
+  {
+   "p2": "switch Pyuku"
+  },
+  {
+   "p1": "move Close Combat",
+   "p2": "move Harden"
+  },
+  {
+   "p2": "switch Skunk3"
+  },
+  {
+   "p1": "switch Damp",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Close Combat",
+   "p2": "move Harden"
+  },
+  {
+   "p2": "switch Last"
+  },
+  {
+   "p1": "move Close Combat",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen7-mental-herb-cures-torment",
+ "notes": [
+  "Gen 7 Mental Herb cures Torment as it starts (Showdown's list: attract, taunt, encore, torment, disable, healblock)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Tormenter",
+    "species": "Togekiss",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Torment",
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Holder",
+    "species": "Mimikyu",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Run Away",
+    "item": "Mental Herb"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Torment",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

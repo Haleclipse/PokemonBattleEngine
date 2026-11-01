@@ -1,0 +1,86 @@
+{
+ "schema": 1,
+ "id": "gen3-doubles-spite-ends-a-rolling-ice-ball",
+ "notes": [
+  "Gen 3 doubles: Ditto Transforms into Raichu (5 PP a move); its Ice Ball starts rolling and Slowpoke's Spite empties it — pokeemerald's `Cmd_tryspiteppreduce` cancels the multi-turn move at 0 PP, so Ditto picks Splash next turn. The I71 patch left out Ice Ball's own `iceball` volatile and let the roll go on (issues.md I71, DESIGN.md R-M8-147)"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "doubles",
+  "format": "gen3doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Ditto",
+    "species": "Ditto",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Transform"
+    ],
+    "ability": "Limber"
+   },
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Swift Swim",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Raichu",
+    "species": "Raichu",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Ice Ball",
+     "Splash"
+    ],
+    "ability": "Static",
+    "gender": "M"
+   },
+   {
+    "label": "Slowpoke",
+    "species": "Slowpoke",
+    "level": 20,
+    "nature": "Hardy",
+    "moves": [
+     "Spite",
+     "Splash"
+    ],
+    "ability": "Oblivious",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Transform 1, move Splash",
+   "p2": "move Splash, move Splash"
+  },
+  {
+   "p1": "move Ice Ball 1, move Splash",
+   "p2": "move Splash, move Spite 1"
+  },
+  {
+   "p1": "move Splash, move Splash",
+   "p2": "move Splash, move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

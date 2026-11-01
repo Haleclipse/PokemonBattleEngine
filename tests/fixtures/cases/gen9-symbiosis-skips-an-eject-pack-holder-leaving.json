@@ -1,0 +1,98 @@
+{
+ "schema": 1,
+ "id": "gen9-symbiosis-skips-an-eject-pack-holder-leaving",
+ "notes": [
+  "Gen 9 doubles: Smeargle's Sand Attack sets off Dewott's Eject Pack; Oranguru's Symbiosis hands it nothing — the pack's onUse sets switchFlag before AfterUseItem (DESIGN.md R-M8-135)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Dewott",
+    "species": "Dewott",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "item": "Eject Pack",
+    "ability": "Torrent",
+    "gender": "F"
+   },
+   {
+    "label": "Oranguru",
+    "species": "Oranguru",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "item": "Cell Battery",
+    "ability": "Symbiosis",
+    "gender": "M"
+   },
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Swift Swim",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Smeargle",
+    "species": "Smeargle",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sand Attack",
+     "Splash"
+    ],
+    "ability": "Own Tempo",
+    "gender": "M"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash, move Splash",
+   "p2": "move Sand Attack 1, move Splash"
+  },
+  {
+   "p1": "switch Magikarp, pass"
+  },
+  {
+   "p1": "move Splash, move Splash",
+   "p2": "move Splash, move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,144 @@
+{
+  "schema": 1,
+  "id": "m10-a-grudge-reaches-a-foe-rough-skin-felled-after-its-hit",
+  "notes": [
+    "R-M10-11: minimized from the M10.3c Nightly's m8-gen4-singles-s1618-007. Quilava used Grudge; Beautifly's Waterfall knocks it out and Quilava's Rough Skin takes Beautifly to 0 HP. Showdown processes Quilava's faint first: Grudge's `onFaint` returns only for a source already `fainted` (set after the Faint event), so Waterfall's PP goes to 0, then Beautifly faints. The engine read the source's 0 HP as fainted."
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "singles",
+    "format": "gen4customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Jigglypuff",
+        "species": "Jigglypuff",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Earth Power",
+          "Constrict",
+          "Camouflage"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Quilava",
+        "species": "Quilava",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Aurora Beam",
+          "Grudge",
+          "Camouflage"
+        ],
+        "ability": "Rough Skin",
+        "item": "Black Sludge",
+        "gender": "F"
+      },
+      {
+        "label": "Swellow",
+        "species": "Swellow",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Grudge"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Bronzor",
+        "species": "Bronzor",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Bone Club",
+          "Extrasensory",
+          "Camouflage"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Beautifly",
+        "species": "Beautifly",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Iron Head",
+          "Grudge",
+          "Waterfall",
+          "Camouflage"
+        ],
+        "ability": "Hustle",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      59157,
+      2427,
+      10789,
+      17040
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Earth Power",
+      "p2": "move Bone Club"
+    },
+    {
+      "p1": "move Constrict",
+      "p2": "move Extrasensory"
+    },
+    {
+      "p1": "switch Quilava",
+      "p2": "move Camouflage"
+    },
+    {
+      "p1": "move Camouflage",
+      "p2": "move Bone Club"
+    },
+    {
+      "p1": "switch Jigglypuff",
+      "p2": "switch Beautifly"
+    },
+    {
+      "p1": "move Constrict",
+      "p2": "move Camouflage"
+    },
+    {
+      "p1": "move Camouflage",
+      "p2": "move Iron Head"
+    },
+    {
+      "p1": "switch Quilava"
+    },
+    {
+      "p1": "move Aurora Beam",
+      "p2": "move Grudge"
+    },
+    {
+      "p1": "switch Swellow",
+      "p2": "switch Bronzor"
+    },
+    {
+      "p1": "switch Quilava",
+      "p2": "switch Beautifly"
+    },
+    {
+      "p1": "move Aurora Beam",
+      "p2": "move Grudge"
+    },
+    {
+      "p1": "move Grudge",
+      "p2": "move Waterfall"
+    }
+  ]
+}

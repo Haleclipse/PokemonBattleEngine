@@ -1,0 +1,88 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-resist-berries-spread",
+ "notes": [
+  "A spread Earthquake: each foe holding a Shuca Berry eats its own and takes half; the next Earthquake is full"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Earthquake",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Ally",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Protect",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Tyranitar",
+    "species": "Tyranitar",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away",
+    "item": "Shuca Berry"
+   },
+   {
+    "label": "Arcanine",
+    "species": "Arcanine",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Protect"
+    ],
+    "ability": "Run Away",
+    "item": "Shuca Berry"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Earthquake, move Protect",
+   "p2": "move Recover, move Recover"
+  },
+  {
+   "p1": "move Earthquake, move Recover",
+   "p2": "move Slack Off, move Recover"
+  },
+  {
+   "p1": "move Earthquake, move Protect",
+   "p2": "move Soft-Boiled, move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,64 @@
+{
+ "schema": 1,
+ "id": "gen8-an-instructed-detect-rolls-before-its-users-own-turn",
+ "notes": [
+  "Gen 8: Bronzor Detects; next turn Smoochum's Instruct makes it Detect again before its own move. Detect's `willAct` sees Bronzor's own action still to come, so the stall counter is rolled (1/3) — the replay counted only the others' actions (DESIGN.md R-M8-149)"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Smoochum",
+    "species": "Smoochum",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Instruct",
+     "Splash"
+    ],
+    "ability": "Oblivious",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Bronzor",
+    "species": "Bronzor",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Detect",
+     "Splash"
+    ],
+    "ability": "Levitate"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash",
+   "p2": "move Detect"
+  },
+  {
+   "p1": "move Instruct",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   2,
+   3,
+   4,
+   5
+  ]
+ }
+}

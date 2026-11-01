@@ -1,0 +1,59 @@
+{
+ "schema": 1,
+ "id": "gen4-arceus-forme-comes-in-normal",
+ "notes": [
+  "Gen 4: an Arceus-Fire that is not Multitype enters Normal (the gen4 condition's `onBeforeSwitchIn`), and a Conversion still retypes it from there"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Arceus",
+    "species": "Arceus-Fire",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Conversion",
+     "Harden"
+    ],
+    "ability": "Intimidate"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Conversion",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

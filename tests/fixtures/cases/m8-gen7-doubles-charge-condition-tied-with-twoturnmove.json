@@ -1,0 +1,183 @@
+{
+  "schema": 1,
+  "id": "m8-gen7-doubles-charge-condition-tied-with-twoturnmove",
+  "notes": [
+    "A battle decided in the residual while a Pokémon charges a hiding move: its move's condition (phantomforce / fly …) and twoturnmove count down as tied handlers of their own; the one shuffled first ran (DESIGN.md R-M8-95)",
+    "promoted from m8-gen7-doubles-s463-018-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 7,
+    "mode": "doubles",
+    "format": "gen7doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Remoraid",
+        "species": "Remoraid",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Zing Zap",
+          "Spotlight",
+          "Needle Arm"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Paras",
+        "species": "Paras",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Iron Head",
+          "Perish Song",
+          "Waterfall",
+          "Purify"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Zangoose",
+        "species": "Zangoose",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Heart Stamp",
+          "Purify",
+          "Dragon Rush",
+          "Spiky Shield"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Jellicent",
+        "species": "Jellicent",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Twister",
+          "Perish Song",
+          "Bite",
+          "Purify"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Arbok",
+        "species": "Arbok",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Bone Club",
+          "Perish Song",
+          "Hyper Fang"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Raichu",
+        "species": "Raichu",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Stomp",
+          "Perish Song",
+          "Zen Headbutt",
+          "Purify"
+        ],
+        "ability": "Slow Start",
+        "gender": "F"
+      },
+      {
+        "label": "Sableye",
+        "species": "Sableye",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Phantom Force",
+          "Dive",
+          "Purify"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Zorua",
+        "species": "Zorua",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fly",
+          "Purify"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      6493,
+      31563,
+      7687,
+      4920
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Zing Zap 1, move Iron Head 2",
+      "p2": "move Bone Club 1, move Stomp 2"
+    },
+    {
+      "p1": "move Spotlight 1, move Perish Song",
+      "p2": "move Perish Song, move Perish Song"
+    },
+    {
+      "p1": "move Needle Arm 2, move Waterfall 1",
+      "p2": "move Hyper Fang 1, move Zen Headbutt 2"
+    },
+    {
+      "p1": "switch Zangoose, pass"
+    },
+    {
+      "p1": "switch Jellicent, move Purify 2",
+      "p2": "switch Sableye, move Purify 1"
+    },
+    {
+      "p1": "move Purify 1, move Iron Head 2",
+      "p2": "move Purify 2, move Stomp 1"
+    },
+    {
+      "p1": "pass, switch Zangoose",
+      "p2": "pass, switch Arbok"
+    },
+    {
+      "p1": "move Twister, move Purify 1",
+      "p2": "move Phantom Force 2, move Perish Song"
+    },
+    {
+      "p1": "move 2, move 3 2",
+      "p2": "move 1, move 3 1"
+    },
+    {
+      "p2": "pass, switch Zorua"
+    },
+    {
+      "p1": "move Bite 1, move Spiky Shield",
+      "p2": "move Dive 2, move Purify 1"
+    },
+    {
+      "p1": "move 4 2, move 1 1",
+      "p2": "move 1, move 1 2"
+    }
+  ]
+}

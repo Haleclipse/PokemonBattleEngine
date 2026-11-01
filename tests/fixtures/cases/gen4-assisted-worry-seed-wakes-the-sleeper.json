@@ -1,0 +1,71 @@
+{
+ "schema": 1,
+ "id": "gen4-assisted-worry-seed-wakes-the-sleeper",
+ "notes": [
+  "Gen 4: Jumpluff, asleep, loses its turn; Togekiss's Assist then calls its partner's Worry Seed onto it: Insomnia wakes it (`-curestatus|…|slp|[msg]`) — the called move's cure, no action of Jumpluff's (DESIGN.md R-M8-93)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Togekiss",
+    "species": "Togekiss",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spore",
+     "Assist"
+    ],
+    "ability": "Hustle",
+    "gender": "F"
+   },
+   {
+    "label": "Sunflora",
+    "species": "Sunflora",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Worry Seed"
+    ],
+    "ability": "Chlorophyll",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jumpluff",
+    "species": "Jumpluff",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Chlorophyll",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Spore",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Assist",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

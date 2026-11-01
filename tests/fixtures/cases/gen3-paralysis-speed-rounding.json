@@ -1,0 +1,74 @@
+{
+  "schema": 1,
+  "id": "gen3-paralysis-speed-rounding",
+  "notes": [
+    "Gen 3-4 paralysis is one factor of the ModifySpe chain (chainModify(0.25), then modify): a paralysed Speed of 51 is 13, not 12, so it ties with Shuckle's 13"
+  ],
+  "battle": {
+    "generation": 3,
+    "mode": "singles",
+    "format": "gen3customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Snorlax",
+        "species": "Snorlax",
+        "level": 51,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ],
+        "ability": "Run Away"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Shuckle",
+        "species": "Shuckle",
+        "level": 20,
+        "nature": "Hardy",
+        "moves": [
+          "Thunder Wave",
+          "Withdraw"
+        ],
+        "ability": "Sturdy"
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 2"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

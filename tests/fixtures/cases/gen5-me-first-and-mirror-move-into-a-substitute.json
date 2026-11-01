@@ -1,0 +1,67 @@
+{
+ "schema": 1,
+ "id": "gen5-me-first-and-mirror-move-into-a-substitute",
+ "notes": [
+  "Gen 5: Snorlax hides behind a Substitute; Smeargle's Me First copies Snorlax's Tackle and its Mirror Move Snorlax's last move: both call from their `onTryHit` (`callsMove`), and the Tackle they call strikes the Substitute (DESIGN.md R-M8-81)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Smeargle",
+    "species": "Smeargle",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Me First",
+     "Mirror Move",
+     "Splash"
+    ],
+    "ability": "Own Tempo",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Substitute",
+     "Tackle",
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash",
+   "p2": "move Substitute"
+  },
+  {
+   "p1": "move Me First",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Mirror Move",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

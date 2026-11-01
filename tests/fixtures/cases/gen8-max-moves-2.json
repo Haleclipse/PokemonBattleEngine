@@ -1,0 +1,96 @@
+{
+ "schema": 1,
+ "id": "gen8-max-moves-2",
+ "notes": [
+  "Gen 8 doubles: the leads Dynamax and use Max Moves (poison / grass / rock against fairy / steel / dragon): each Max Move's own `self.onHit` — the weather, the terrain, the side's boosts and the foes' drops — runs only while its user is Dynamaxed"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "doubles",
+  "format": "gen8doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Charizard",
+    "species": "Charizard",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Max Ooze",
+     "Max Overgrowth",
+     "Max Rockfall",
+     "Harden"
+    ],
+    "ability": "Blaze"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Max Starfall",
+     "Max Steelspike",
+     "Max Wyrmwind",
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Synchronize"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 4 dynamax, move Harden",
+   "p2": "move 4 dynamax, move Harden"
+  },
+  {
+   "p1": "move 1 1, move Harden",
+   "p2": "move 1 1, move Harden"
+  },
+  {
+   "p1": "move 2 1, move Harden",
+   "p2": "move 2 1, move Harden"
+  },
+  {
+   "p1": "move 3 1, move Harden",
+   "p2": "move 3 1, move Harden"
+  },
+  {
+   "p1": "move 4, move Harden",
+   "p2": "move 4, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

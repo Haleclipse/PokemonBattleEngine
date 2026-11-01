@@ -1,0 +1,947 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@pkmn/sim",
+    "version": "0.10.11",
+    "formatid": "gen9customgame",
+    "seed": [
+      4,
+      2,
+      3,
+      4
+    ]
+  },
+  "frames": [
+    {
+      "schema": 1,
+      "checkpoint": "team_preview",
+      "turn": 0,
+      "request": "team_preview|team_preview",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            null
+          ],
+          "party": [
+            {
+              "hp": 155,
+              "max_hp": 155,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "grass",
+                "poison"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                16,
+                8
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            null
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                56
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": []
+    },
+    {
+      "schema": 1,
+      "checkpoint": "initial",
+      "turn": 1,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 155,
+              "max_hp": 155,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "grass",
+                "poison"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                16,
+                8
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                56
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "details": "Venusaur, L50, M",
+          "hp": 155,
+          "max_hp": 155,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "details": "Snorlax, L50, F",
+          "hp": 235,
+          "max_hp": 235,
+          "status": null
+        },
+        {
+          "kind": "turn",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_1",
+      "turn": 2,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 124,
+              "max_hp": 155,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "twoturnmove": 1,
+                "solarbeam": null
+              },
+              "types": [
+                "grass",
+                "poison"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                15,
+                8
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                55
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "move": "Solar Beam",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          }
+        },
+        {
+          "kind": "prepare",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "move": "Solar Beam"
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "move": "Tackle",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "hp": 124,
+          "max_hp": 155,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 2
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_2",
+      "turn": 3,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 90,
+              "max_hp": 155,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "grass",
+                "poison"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                15,
+                8
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 162,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                54
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "move": "Solar Beam",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "hp": 162,
+          "max_hp": 235,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "move": "Tackle",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "hp": 90,
+          "max_hp": 155,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 3
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_3",
+      "turn": 4,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 57,
+              "max_hp": 155,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "grass",
+                "poison"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                15,
+                7
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 162,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                53
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": {
+          "kind": "sunnyday",
+          "turns_remaining": 4
+        },
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "move": "Sunny Day",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          }
+        },
+        {
+          "kind": "weather",
+          "args": [
+            "SunnyDay"
+          ]
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "move": "Tackle",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "hp": 57,
+          "max_hp": 155,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "weather",
+          "args": [
+            "SunnyDay",
+            "[upkeep]"
+          ]
+        },
+        {
+          "kind": "turn",
+          "turn": 4
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_4",
+      "turn": 5,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 24,
+              "max_hp": 155,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "grass",
+                "poison"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                14,
+                7
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 92,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                52
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": {
+          "kind": "sunnyday",
+          "turns_remaining": 3
+        },
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "move": "Solar Beam",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          }
+        },
+        {
+          "kind": "prepare",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "move": "Solar Beam"
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "hp": 92,
+          "max_hp": 235,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "move": "Tackle",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "hp": 24,
+          "max_hp": 155,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "weather",
+          "args": [
+            "SunnyDay",
+            "[upkeep]"
+          ]
+        },
+        {
+          "kind": "turn",
+          "turn": 5
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_5",
+      "turn": 5,
+      "request": "finished",
+      "outcome": "winner(p2)",
+      "sides": [
+        {
+          "active": [
+            null
+          ],
+          "party": [
+            {
+              "hp": 0,
+              "max_hp": 155,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "grass",
+                "poison"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                13,
+                7
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 22,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                51
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": {
+          "kind": "sunnyday",
+          "turns_remaining": 3
+        },
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "move": "Solar Beam",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          }
+        },
+        {
+          "kind": "prepare",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "move": "Solar Beam"
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "hp": 22,
+          "max_hp": 235,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "b"
+          },
+          "move": "Tackle",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "hp": 0,
+          "max_hp": null,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "faint",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "a"
+          },
+          "detail": null
+        },
+        {
+          "kind": "residual"
+        }
+      ]
+    }
+  ],
+  "debug_log": "|gametype|singles\n|player|p1|P1||\n|player|p2|P2||\n|gen|9\n|tier|[Gen 9] Custom Game\n|clearpoke\n|poke|p1|Venusaur, L50, M|\n|poke|p2|Snorlax, L50, F|\n|teampreview\n|\n|teamsize|p1|1\n|teamsize|p2|1\n|start\n|switch|p1a: a|Venusaur, L50, M|155/155\n|switch|p2a: b|Snorlax, L50, F|235/235\n|turn|1\n|\n|move|p1a: a|Solar Beam||[still]\n|-prepare|p1a: a|Solar Beam\n|move|p2a: b|Tackle|p1a: a\n|-damage|p1a: a|124/155\n|\n|upkeep\n|turn|2\n|\n|move|p1a: a|Solar Beam|p2a: b|[from] lockedmove\n|-damage|p2a: b|162/235\n|move|p2a: b|Tackle|p1a: a\n|-damage|p1a: a|90/155\n|\n|upkeep\n|turn|3\n|\n|move|p1a: a|Sunny Day|p1a: a\n|-weather|SunnyDay\n|move|p2a: b|Tackle|p1a: a\n|-damage|p1a: a|57/155\n|\n|-weather|SunnyDay|[upkeep]\n|upkeep\n|turn|4\n|\n|move|p1a: a|Solar Beam||[still]\n|-prepare|p1a: a|Solar Beam\n|-anim|p1a: a|Solar Beam|p2a: b\n|-damage|p2a: b|92/235\n|move|p2a: b|Tackle|p1a: a\n|-damage|p1a: a|24/155\n|\n|-weather|SunnyDay|[upkeep]\n|upkeep\n|turn|5\n|\n|move|p1a: a|Solar Beam||[still]\n|-prepare|p1a: a|Solar Beam\n|-anim|p1a: a|Solar Beam|p2a: b\n|-damage|p2a: b|22/235\n|move|p2a: b|Tackle|p1a: a\n|-damage|p1a: a|0 fnt\n|faint|p1a: a\n|\n|win|P2"
+}

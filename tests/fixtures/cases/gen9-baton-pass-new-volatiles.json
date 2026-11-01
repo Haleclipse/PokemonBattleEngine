@@ -1,0 +1,103 @@
+{
+ "schema": 1,
+ "id": "gen9-baton-pass-new-volatiles",
+ "notes": [
+  "Baton Pass hands on Aqua Ring and Power Trick \u2014 whose onCopy swaps the Toxapex's own Attack and Defense, so its Tackle hits hard \u2014 but not Stockpile or Defense Curl's mark (noCopy); their stages go with the rest"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Passer",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Power Trick",
+     "Aqua Ring",
+     "Stockpile",
+     "Baton Pass"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Recv",
+    "species": "Toxapex",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Defense Curl",
+     "Baton Pass"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Super Fang"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Power Trick",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Aqua Ring",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Stockpile",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Baton Pass",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Recv"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Super Fang"
+  },
+  {
+   "p1": "move Defense Curl",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Baton Pass",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Passer"
+  },
+  {
+   "p1": "move Aqua Ring",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

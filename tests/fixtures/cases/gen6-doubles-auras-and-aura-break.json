@@ -1,0 +1,92 @@
+{
+ "schema": 1,
+ "id": "gen6-doubles-auras-and-aura-break",
+ "notes": [
+  "Dark Aura / Fairy Aura: a Dark / Fairy move gets \u00d75448/4096 whoever uses it and wherever the holder stands (the holder's own, its partner's, a foe's); once an Aura Break is active, \u00d73072/4096 instead"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "doubles",
+  "format": "gen6doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Dark",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Dark Pulse"
+    ],
+    "ability": "Dark Aura"
+   },
+   {
+    "label": "Clefable",
+    "species": "Clefable",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Moonblast"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Breaker",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover"
+    ],
+    "ability": "Aura Break"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Crunch",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Fairy",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Moonblast"
+    ],
+    "ability": "Fairy Aura"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Dark Pulse 1, move Moonblast 1",
+   "p2": "move Crunch 2, move Moonblast 2"
+  },
+  {
+   "p1": "move Dark Pulse 1, switch 3",
+   "p2": "move Crunch 2, move Moonblast 1"
+  },
+  {
+   "p1": "move Dark Pulse 1, move Recover",
+   "p2": "move Recover, move Moonblast 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,84 @@
+{
+ "schema": 1,
+ "id": "gen9-kee-and-maranga-berries",
+ "notes": [
+  "Gen 9 Kee Berry and Maranga Berry (Showdown `onAfterMoveSecondary` \u2192 `eatItem`, `onEat` +1): Lucario's Tackle makes the Kee Berry holder eat it, Defense +1; Ripen doubles it; its Ember the Maranga Berry holder, Special Defense +1",
+  "Then a Tackle on the second holder, a physical move, leaves its Maranga Berry held"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Kee",
+    "species": "Appletun",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Kee Berry",
+    "ability": "Ripen"
+   },
+   {
+    "label": "Maranga",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Maranga Berry",
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Lucario",
+    "species": "Lucario",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Ember",
+     "Harden"
+    ],
+    "ability": "Steadfast"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Ember"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

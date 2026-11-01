@@ -1,0 +1,94 @@
+{
+ "schema": 1,
+ "id": "gen3-doubles-beat-up-ends-with-the-move",
+ "notes": [
+  "Gen 3 Beat Up reads base Attack and base Defense for its own hits only: Lapras's Water Gun right after it, on the same Blissey, meets Blissey's Special Defense and Amnesia (Showdown keeps its `beatup` volatile and replaces Special Defense with base Defense until the turn ends \u2014 issues.md I4, patched out of the oracle)"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "doubles",
+  "format": "gen3doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sneasel",
+    "species": "Sneasel",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Beat Up",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Lapras",
+    "species": "Lapras",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Water Gun",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Pikachu",
+    "species": "Pikachu",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Amnesia",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Beat Up 1, move Water Gun 1",
+   "p2": "move Amnesia, move Harden"
+  },
+  {
+   "p1": "move Beat Up 1, move Water Gun 1",
+   "p2": "move Soft-Boiled, move Harden"
+  },
+  {
+   "p1": "move Beat Up 1, move Water Gun 1",
+   "p2": "move Soft-Boiled, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

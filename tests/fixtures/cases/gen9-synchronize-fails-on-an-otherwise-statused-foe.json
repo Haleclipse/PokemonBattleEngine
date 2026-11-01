@@ -1,0 +1,66 @@
+{
+ "schema": 1,
+ "id": "gen9-synchronize-fails-on-an-otherwise-statused-foe",
+ "notes": [
+  "Static paralyses the Synchronize holder's Extreme Speed user; Synchronize passes paralysis back to the burned Static holder and Showdown's `setStatus` refuses it with a bare `-fail|holder` and `[still]` on the holder's move line \u2014 the Extreme Speed still hit and rolled its damage"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Espeon",
+    "species": "Espeon",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Will-O-Wisp",
+     "Extreme Speed"
+    ],
+    "ability": "Synchronize"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Pikachu",
+    "species": "Pikachu",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Static"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Will-O-Wisp",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Extreme Speed",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Extreme Speed",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Extreme Speed",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   8
+  ]
+ }
+}

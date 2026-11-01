@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "id": "gen9-singles-toxic-leftovers",
+  "notes": [
+    "Residual order between an item and a status: Leftovers (5.4) heals before the toxic tick (9) grows 1/16, 2/16, 3/16."
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "a",
+        "species": "Snorlax",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ],
+        "item": "Leftovers"
+      }
+    ],
+    "p2": [
+      {
+        "label": "b",
+        "species": "Garchomp",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Toxic"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      2,
+      2,
+      3,
+      4
+    ]
+  }
+}

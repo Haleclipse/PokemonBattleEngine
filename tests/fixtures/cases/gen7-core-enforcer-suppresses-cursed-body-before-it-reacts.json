@@ -1,0 +1,59 @@
+{
+ "schema": 1,
+ "id": "gen7-core-enforcer-suppresses-cursed-body-before-it-reacts",
+ "notes": [
+  "Gen 7: Gengar has moved when Magnezone's Core Enforcer strikes it: the move's `onHit` (`runMoveEffects`) suppresses Cursed Body before the `DamagingHit` it would answer, so no Cursed Body chance is drawn (DESIGN.md R-M8-94)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Gengar",
+    "species": "Gengar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Cursed Body",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Magnezone",
+    "species": "Magnezone",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Core Enforcer",
+     "Splash"
+    ],
+    "ability": "Sturdy"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash",
+   "p2": "move Core Enforcer"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Core Enforcer"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

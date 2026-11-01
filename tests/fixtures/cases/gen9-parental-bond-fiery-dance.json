@@ -1,0 +1,74 @@
+{
+ "schema": 1,
+ "id": "gen9-parental-bond-fiery-dance",
+ "notes": [
+  "Gen 9: Volcarona with Parental Bond uses Fiery Dance: each strike rolls the 50 % Special Attack raise; a raise after the second strike follows it (the first strike's damage stands)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Volcarona",
+    "species": "Volcarona",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fiery Dance"
+    ],
+    "gender": "M",
+    "ability": "Parental Bond"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Fiery Dance",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Fiery Dance",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Fiery Dance",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

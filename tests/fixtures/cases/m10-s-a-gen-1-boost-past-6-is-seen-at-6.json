@@ -1,0 +1,68 @@
+{
+  "schema": 1,
+  "id": "m10-s-a-gen-1-boost-past-6-is-seen-at-6",
+  "notes": [
+    "Gen 1: Acid Armor at +5 Defense names +2 (the gen1 mod's boost names what it asked for); the client's stage stays at 6 (R-M10-43)",
+    "promoted from m8-gen1-singles-s1648-009-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 1,
+    "mode": "singles",
+    "format": "gen1customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Nidorino",
+        "species": "Nidorino",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Acid Armor",
+          "Mirror Move",
+          "Harden"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "Seadra",
+        "species": "Seadra",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Dizzy Punch",
+          "Mirror Move",
+          "Mega Kick"
+        ]
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      13388,
+      61014,
+      40505,
+      54808
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Acid Armor",
+      "p2": "move Dizzy Punch"
+    },
+    {
+      "p1": "move Mirror Move",
+      "p2": "move Mirror Move"
+    },
+    {
+      "p1": "move Harden",
+      "p2": "move Mega Kick"
+    },
+    {
+      "p1": "move Acid Armor",
+      "p2": "move Dizzy Punch"
+    }
+  ]
+}

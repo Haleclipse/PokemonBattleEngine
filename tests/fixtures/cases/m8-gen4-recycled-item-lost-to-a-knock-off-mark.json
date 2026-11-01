@@ -1,0 +1,255 @@
+{
+  "schema": 1,
+  "id": "m8-gen4-recycled-item-lost-to-a-knock-off-mark",
+  "notes": [
+    "Gen 4: Lumineon, its Muscle Band knocked off, gets a Micle Berry back with Recycle (the slot's last item, which Luxray ate); switched out and in again it enters holding nothing — pokeplatinum's BattleSystem_InitBattleMon clears a slot in knockedOffItemsMask (the oracle's I54 patch, now for Gen 4 too, DESIGN.md R-M8-117)",
+    "promoted from m8-gen4-singles-s586-009-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "singles",
+    "format": "gen4customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Lumineon",
+        "species": "Lumineon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Power Gem",
+          "Wish",
+          "Shock Wave",
+          "Recycle"
+        ],
+        "ability": "Run Away",
+        "item": "Muscle Band",
+        "gender": "M"
+      },
+      {
+        "label": "Luxray",
+        "species": "Luxray",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Judgment",
+          "Gastro Acid",
+          "Magical Leaf",
+          "Recycle"
+        ],
+        "ability": "Run Away",
+        "item": "Micle Berry",
+        "gender": "M"
+      },
+      {
+        "label": "Rayquaza",
+        "species": "Rayquaza",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Doom Desire"
+        ],
+        "ability": "Run Away"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Ponyta",
+        "species": "Ponyta",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Aqua Tail",
+          "Shadow Punch",
+          "Gastro Acid"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Suicune",
+        "species": "Suicune",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Knock Off",
+          "Recycle",
+          "Vise Grip",
+          "Gastro Acid"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Lapras",
+        "species": "Lapras",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Pound",
+          "Recycle",
+          "Vine Whip",
+          "Gastro Acid"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Seviper",
+        "species": "Seviper",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Jump Kick",
+          "Thief",
+          "Gastro Acid"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Wartortle",
+        "species": "Wartortle",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Recycle"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      17198,
+      59363,
+      59653,
+      63876
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Power Gem",
+      "p2": "move Aqua Tail"
+    },
+    {
+      "p1": "move Shock Wave",
+      "p2": "move Shadow Punch"
+    },
+    {
+      "p1": "move Recycle",
+      "p2": "move Gastro Acid"
+    },
+    {
+      "p1": "move Power Gem",
+      "p2": "move Aqua Tail"
+    },
+    {
+      "p2": "switch Suicune"
+    },
+    {
+      "p1": "move Shock Wave",
+      "p2": "move Vise Grip"
+    },
+    {
+      "p1": "switch Luxray",
+      "p2": "switch Lapras"
+    },
+    {
+      "p1": "move Judgment",
+      "p2": "move Pound"
+    },
+    {
+      "p1": "move Magical Leaf",
+      "p2": "move Vine Whip"
+    },
+    {
+      "p1": "move Recycle",
+      "p2": "move Gastro Acid"
+    },
+    {
+      "p1": "move Judgment",
+      "p2": "move Pound"
+    },
+    {
+      "p1": "switch Lumineon",
+      "p2": "switch Suicune"
+    },
+    {
+      "p1": "move Shock Wave",
+      "p2": "move Vise Grip"
+    },
+    {
+      "p1": "move Power Gem",
+      "p2": "move Knock Off"
+    },
+    {
+      "p1": "move Wish",
+      "p2": "move Recycle"
+    },
+    {
+      "p1": "move Shock Wave",
+      "p2": "move Vise Grip"
+    },
+    {
+      "p1": "move Recycle",
+      "p2": "move Gastro Acid"
+    },
+    {
+      "p1": "move Power Gem",
+      "p2": "move Knock Off"
+    },
+    {
+      "p1": "switch Luxray",
+      "p2": "switch Lapras"
+    },
+    {
+      "p1": "move Gastro Acid",
+      "p2": "move Recycle"
+    },
+    {
+      "p1": "move Magical Leaf",
+      "p2": "move Vine Whip"
+    },
+    {
+      "p1": "move Recycle",
+      "p2": "move Gastro Acid"
+    },
+    {
+      "p1": "move Judgment",
+      "p2": "move Pound"
+    },
+    {
+      "p2": "switch Seviper"
+    },
+    {
+      "p1": "move Recycle",
+      "p2": "move Gastro Acid"
+    },
+    {
+      "p1": "move Judgment",
+      "p2": "move Jump Kick"
+    },
+    {
+      "p1": "move Magical Leaf",
+      "p2": "move Thief"
+    },
+    {
+      "p1": "switch Lumineon"
+    },
+    {
+      "p1": "move Recycle",
+      "p2": "move Gastro Acid"
+    },
+    {
+      "p1": "switch Rayquaza",
+      "p2": "switch Wartortle"
+    },
+    {
+      "p1": "switch Lumineon",
+      "p2": "move Recycle"
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+ "schema": 1,
+ "id": "gen6-doubles-tied-replacements-weather-in-the-logs-order",
+ "notes": [
+  "Gen 6 doubles: Voltorb's Explosion knocks out itself and Magikarp; a Drizzle Growlithe and a Drought Growlithe replace them at the same speed. Their weathers go in the order the tie drew \u2014 the later one stays \u2014 and the log shows it: the replay plans the tie from the log (DESIGN.md R-M8-140)"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "doubles",
+  "format": "gen6doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Voltorb",
+    "species": "Voltorb",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Explosion"
+    ],
+    "ability": "Soundproof"
+   },
+   {
+    "label": "Steelix",
+    "species": "Steelix",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Sturdy",
+    "gender": "M"
+   },
+   {
+    "label": "Growlithe",
+    "species": "Growlithe",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Drizzle",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 1,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Swift Swim",
+    "gender": "M"
+   },
+   {
+    "label": "Munna",
+    "species": "Munna",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Leaf Guard",
+    "gender": "F"
+   },
+   {
+    "label": "Growlithe",
+    "species": "Growlithe",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Drought",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Explosion, move Splash",
+   "p2": "move Splash, move Splash"
+  },
+  {
+   "p1": "switch 3, pass",
+   "p2": "switch 3, pass"
+  },
+  {
+   "p1": "move Splash, move Splash",
+   "p2": "move Splash, move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   3,
+   4,
+   5,
+   6
+  ]
+ }
+}

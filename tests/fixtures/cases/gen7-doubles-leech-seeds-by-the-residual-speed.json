@@ -1,0 +1,80 @@
+{
+ "schema": 1,
+ "id": "gen7-doubles-leech-seeds-by-the-residual-speed",
+ "notes": [
+  "Jolteon and Mew seeded by each other. Turn 2: Mew recovers to full, Scary Face slows Jolteon below Mew; the residual refreshes the speed first, so Mew's seed drains first (its heal goes to Jolteon), then Jolteon's seed heals Mew back up \u2014 by the turn start's speed Jolteon's heal would have been lost on a full Mew"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Leech Seed",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Clefable",
+    "species": "Clefable",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Leech Seed",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Pikachu",
+    "species": "Pikachu",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Scary Face",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Leech Seed 1, move Harden",
+   "p2": "move Leech Seed 1, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Recover, move Scary Face 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

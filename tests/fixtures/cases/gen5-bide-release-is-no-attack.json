@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen5-bide-release-is-no-attack",
+ "notes": [
+  "Gen 5: Snorlax's Bide releases on Steelix, whose Metal Burst then fails: Gen 4+ `tryMoveHit` goes straight to `moveHit`, so the release records no attack (`attackedBy`) (DESIGN.md R-M8-90)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Bide",
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Steelix",
+    "species": "Steelix",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Metal Burst"
+    ],
+    "ability": "Sturdy",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Bide",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Bide",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Bide",
+   "p2": "move Metal Burst"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

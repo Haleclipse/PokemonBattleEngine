@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen8-triple-axel-power-per-hit",
+ "notes": [
+  "Triple Axel: 20, 40, 60 power over three hits, each after the first checking accuracy"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Weavile",
+    "species": "Weavile",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Triple Axel"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Double Team"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Triple Axel",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move Triple Axel",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move Triple Axel",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move Triple Axel",
+   "p2": "move Double Team"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

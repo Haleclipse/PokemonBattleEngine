@@ -1,0 +1,70 @@
+{
+ "schema": 1,
+ "id": "gen5-life-orb-takes-nothing-for-bide",
+ "notes": [
+  "Gen 5: Bouffalant holds a Life Orb and uses Bide: neither the turn Bide starts (aimed at its user: Life Orb's onAfterMoveSecondarySelf wants source !== target) nor its release (run inside onBeforeMove, the move going no further) costs it a tenth (DESIGN.md R-M8-123)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Bouffalant",
+    "species": "Bouffalant",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Bide",
+     "Tackle"
+    ],
+    "item": "Life Orb",
+    "ability": "Sap Sipper",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Bide",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Bide",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Bide",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

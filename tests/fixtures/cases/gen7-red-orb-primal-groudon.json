@@ -1,0 +1,66 @@
+{
+ "schema": 1,
+ "id": "gen7-red-orb-primal-groudon",
+ "notes": [
+  "Gen 7: Groudon holding the Red Orb reverts to its Primal forme as it comes in — Desolate Land starts, and the orb cannot be taken off it"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Groudon",
+    "species": "Groudon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Precipice Blades",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Drought",
+    "item": "Red Orb"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Thief"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Precipice Blades",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Thief"
+  },
+  {
+   "p1": "move Precipice Blades",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

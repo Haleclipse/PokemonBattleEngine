@@ -1,0 +1,108 @@
+{
+ "schema": 1,
+ "id": "gen8-doubles-wimp-out-after-the-first-dragon-dart",
+ "notes": [
+  "Nightly 20261020-092109 (m8-gen8-doubles-s1552-016, minimized): Dragon Darts splits its darts between Runerigus and Kommo-o; the first dart takes Runerigus from above half to half or less, and its Wimp Out switches it out (issues.md I206: Showdown's smart-target loop loses the first target's damage entry, the oracle patch checks it). DESIGN.md R-M9-28."
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "doubles",
+  "format": "gen8doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Runerigus",
+    "species": "Runerigus",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Discharge",
+     "Bulldoze"
+    ],
+    "ability": "Wimp Out",
+    "gender": "M"
+   },
+   {
+    "label": "Vanillite",
+    "species": "Vanillite",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Self-Destruct"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Kommo-o",
+    "species": "Kommo-o",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Searing Shot"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Golurk",
+    "species": "Golurk",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Boomburst"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Sableye",
+    "species": "Sableye",
+    "level": 45,
+    "nature": "Hardy",
+    "moves": [
+     "Icicle Spear",
+     "Dragon Darts"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Wooper",
+    "species": "Wooper",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fury Swipes",
+     "Triple Axel"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   45157,
+   17444,
+   57613,
+   62140
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Discharge, move Self-Destruct",
+   "p2": "move Icicle Spear 1, move Fury Swipes 2"
+  },
+  {
+   "p1": "pass, switch Kommo-o"
+  },
+  {
+   "p1": "move Bulldoze, move Searing Shot",
+   "p2": "move Dragon Darts 1, move Triple Axel 2"
+  }
+ ]
+}

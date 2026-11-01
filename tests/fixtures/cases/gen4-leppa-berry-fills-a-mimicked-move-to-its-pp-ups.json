@@ -1,0 +1,82 @@
+{
+ "schema": 1,
+ "id": "gen4-leppa-berry-fills-a-mimicked-move-to-its-pp-ups",
+ "notes": [
+  "Gen 4: Slowpoke's Mimic copies Bellossom's Synthesis with 5 PP; once the copy runs out its Leppa Berry gives 10 back up to the copy's max, which has the slot's three PP Ups — 8 (Showdown's gen4 Mimic `calculatePP(move, ppUps[mimicIndex])`, pokeplatinum `MoveTable_CalcMaxPP(move, ppUps)`), not Synthesis's own 5 (DESIGN.md R-M8-109)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Slowpoke",
+    "species": "Slowpoke",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Mimic",
+     "Yawn"
+    ],
+    "item": "Leppa Berry",
+    "ability": "Oblivious",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Bellossom",
+    "species": "Bellossom",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Synthesis",
+     "Splash"
+    ],
+    "ability": "Chlorophyll",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Mimic",
+   "p2": "move Synthesis"
+  },
+  {
+   "p1": "move Synthesis",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Synthesis",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Synthesis",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Synthesis",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Synthesis",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Synthesis",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,91 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-tidy-up",
+ "notes": [
+  "Tidy Up: every Substitute ends and the entry hazards leave both sides, then +1 Attack and Speed; with nothing to clear it still raises the stats"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Tidy",
+    "species": "Maushold",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tidy Up",
+     "Spikes",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Pal",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Substitute",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "F1",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Stealth Rock",
+     "Substitute",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "F2",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Sticky Web",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Spikes, move Substitute",
+   "p2": "move Stealth Rock, move Sticky Web"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Substitute, move Harden"
+  },
+  {
+   "p1": "move Tidy Up, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Tidy Up, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

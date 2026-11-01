@@ -1,0 +1,73 @@
+{
+ "schema": 1,
+ "id": "gen2-crash-damage-from-the-would-be-damage",
+ "notes": [
+  "Gen 2 crash: Jump Kick into Protect costs the user 1/8 of the damage it would have dealt (a fresh critical-hit check and damage roll); against the immune Gastly there is no crash"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hitmonlee",
+    "species": "Hitmonlee",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Jump Kick"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Protect",
+     "Harden"
+    ]
+   },
+   {
+    "label": "Gastly",
+    "species": "Gastly",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Jump Kick",
+   "p2": "move Protect"
+  },
+  {
+   "p1": "move Jump Kick",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Jump Kick",
+   "p2": "switch Gastly"
+  },
+  {
+   "p1": "move Jump Kick",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "id": "gen9-doubles-spread-stages",
+  "notes": [
+    "A spread move resolves stage by stage: every target's damage lands (with the drain) before any Rough Skin, and the Substitute's hit comes first"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Sceptile",
+        "species": "Sceptile",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Brutal Swing",
+          "Matcha Gotcha"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Blissey",
+        "species": "Blissey",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Growl"
+        ],
+        "ability": "Natural Cure"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Garchomp",
+        "species": "Garchomp",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Growl",
+          "Substitute"
+        ],
+        "ability": "Rough Skin"
+      },
+      {
+        "label": "Snorlax",
+        "species": "Snorlax",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Substitute",
+          "Growl"
+        ],
+        "ability": "Run Away"
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1, move 1",
+      "p2": "move 1, move 1"
+    },
+    {
+      "p1": "move 2, move 1",
+      "p2": "move 1, move 2"
+    },
+    {
+      "p1": "move 1, move 1",
+      "p2": "move 1, move 2"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

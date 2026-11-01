@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "m9-hunger-switch-stops-once-terastallized",
+ "notes": [
+  "R-M9-20: Hunger Switch's `onResidual` returns for a Terastallized Morpeko (`|| pokemon.terastallized`): it keeps the forme it Terastallized in. Turn 1 ends with Morpeko Hangry; it Terastallizes on turn 2 and stays Hangry. Found by the gen9ubers and gen9vgc2025regi real-format campaigns."
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Morpeko",
+    "species": "Morpeko",
+    "ability": "Hunger Switch",
+    "item": "Leftovers",
+    "moves": [
+     "Aura Wheel",
+     "Protect"
+    ],
+    "evs": {
+     "atk": 252,
+     "spe": 252
+    },
+    "nature": "Jolly",
+    "teraType": "Dark"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "ability": "Natural Cure",
+    "item": "Leftovers",
+    "moves": [
+     "Soft-Boiled",
+     "Splash"
+    ],
+    "evs": {
+     "hp": 252,
+     "def": 252
+    },
+    "nature": "Bold"
+   }
+  ]
+ },
+ "random": {
+  "seed": [
+   9,
+   8,
+   7,
+   6
+  ]
+ },
+ "corpus": {
+  "mechanics": true
+ },
+ "script": [
+  {
+   "p1": "move 2",
+   "p2": "move 2"
+  },
+  {
+   "p1": "move 1 terastallize",
+   "p2": "move 2"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 2"
+  }
+ ]
+}

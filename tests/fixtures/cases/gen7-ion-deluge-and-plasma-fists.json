@@ -1,0 +1,88 @@
+{
+ "schema": 1,
+ "id": "gen7-ion-deluge-and-plasma-fists",
+ "notes": [
+  "Ion Deluge (+1) turns the turn's Normal moves Electric (Tackle into a Ground type: immune), after Pixilate (Hyper Voice stays Fairy); Plasma Fists' hit does the same for the moves after it"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Quagsire",
+    "species": "Quagsire",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Ion Deluge",
+     "Plasma Fists",
+     "Tackle",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Sylveon",
+    "species": "Sylveon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Hyper Voice",
+     "Harden"
+    ],
+    "ability": "Pixilate"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Ion Deluge",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Plasma Fists",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "switch Sylveon"
+  },
+  {
+   "p1": "move Ion Deluge",
+   "p2": "move Hyper Voice"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Hyper Voice"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

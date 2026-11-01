@@ -1,0 +1,56 @@
+{
+ "schema": 1,
+ "id": "gen1-counter-last-damage",
+ "notes": [
+  "Gen 1 Counter reads the battle's last damage, reset as a move is used: the user's own Night Shade, then the foe's Tackle that cannot touch a Ghost type \u2014 Counter fails"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Gengar",
+    "species": "Gengar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Night Shade",
+     "Counter"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Snorlax",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Night Shade",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Counter",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

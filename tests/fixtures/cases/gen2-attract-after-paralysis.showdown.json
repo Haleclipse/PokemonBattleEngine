@@ -1,0 +1,1437 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@pkmn/sim",
+    "version": "0.10.11",
+    "formatid": "gen2customgame",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "frames": [
+    {
+      "schema": 1,
+      "checkpoint": "initial",
+      "turn": 1,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 460,
+              "max_hp": 460,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "item": "",
+              "pp": [
+                32,
+                24,
+                32
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "item": "",
+              "pp": [
+                56,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Beau"
+          },
+          "details": "Snorlax, M",
+          "hp": 460,
+          "max_hp": 460,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Belle"
+          },
+          "details": "Snorlax, L50, F",
+          "hp": 235,
+          "max_hp": 235,
+          "status": null
+        },
+        {
+          "kind": "turn",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_1",
+      "turn": 2,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 460,
+              "max_hp": 460,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "item": "",
+              "pp": [
+                31,
+                24,
+                32
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": {
+                "kind": "par"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "item": "",
+              "pp": [
+                56,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Beau"
+          },
+          "move": "Thunder Wave",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Belle"
+          }
+        },
+        {
+          "kind": "status",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Belle"
+          },
+          "status": "par",
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Belle"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Belle"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Belle"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 2
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_2",
+      "turn": 3,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 460,
+              "max_hp": 460,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "item": "",
+              "pp": [
+                31,
+                23,
+                32
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": {
+                "kind": "par"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "attract": null
+              },
+              "types": [
+                "normal"
+              ],
+              "item": "",
+              "pp": [
+                56,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Beau"
+          },
+          "move": "Attract",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Belle"
+          }
+        },
+        {
+          "kind": "start",
+          "args": [
+            "p2a: Belle",
+            "Attract"
+          ]
+        },
+        {
+          "kind": "cant",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Belle"
+          },
+          "detail": "par"
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 3
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_3",
+      "turn": 4,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 440,
+              "max_hp": 460,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "item": "",
+              "pp": [
+                31,
+                23,
+                31
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": {
+                "kind": "par"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "attract": null
+              },
+              "types": [
+                "normal"
+              ],
+              "item": "",
+              "pp": [
+                55,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Beau"
+          },
+          "move": "Recover",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Beau"
+          }
+        },
+        {
+          "kind": "fail",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Beau"
+          },
+          "detail": null
+        },
+        {
+          "kind": "activate",
+          "args": [
+            "p2a: Belle",
+            "move: Attract",
+            "[of] p1a: Beau"
+          ]
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Belle"
+          },
+          "move": "Tackle",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Beau"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Beau"
+          },
+          "hp": 440,
+          "max_hp": 460,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 4
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_4",
+      "turn": 5,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 460,
+              "max_hp": 460,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "item": "",
+              "pp": [
+                31,
+                23,
+                30
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": {
+                "kind": "par"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "attract": null
+              },
+              "types": [
+                "normal"
+              ],
+              "item": "",
+              "pp": [
+                55,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Beau"
+          },
+          "move": "Recover",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Beau"
+          }
+        },
+        {
+          "kind": "heal",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Beau"
+          },
+          "hp": 460,
+          "max_hp": 460,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "cant",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Belle"
+          },
+          "detail": "par"
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 5
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_5",
+      "turn": 6,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 460,
+              "max_hp": 460,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "item": "",
+              "pp": [
+                31,
+                23,
+                29
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": {
+                "kind": "par"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "attract": null
+              },
+              "types": [
+                "normal"
+              ],
+              "item": "",
+              "pp": [
+                55,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Beau"
+          },
+          "move": "Recover",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Beau"
+          }
+        },
+        {
+          "kind": "fail",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Beau"
+          },
+          "detail": null
+        },
+        {
+          "kind": "activate",
+          "args": [
+            "p2a: Belle",
+            "move: Attract",
+            "[of] p1a: Beau"
+          ]
+        },
+        {
+          "kind": "cant",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Belle"
+          },
+          "detail": "Attract"
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 6
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_6",
+      "turn": 7,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 460,
+              "max_hp": 460,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "item": "",
+              "pp": [
+                31,
+                23,
+                28
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": {
+                "kind": "par"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "attract": null
+              },
+              "types": [
+                "normal"
+              ],
+              "item": "",
+              "pp": [
+                55,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Beau"
+          },
+          "move": "Recover",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Beau"
+          }
+        },
+        {
+          "kind": "fail",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Beau"
+          },
+          "detail": null
+        },
+        {
+          "kind": "cant",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Belle"
+          },
+          "detail": "par"
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 7
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_7",
+      "turn": 8,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 460,
+              "max_hp": 460,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "item": "",
+              "pp": [
+                31,
+                23,
+                27
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": {
+                "kind": "par"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "attract": null
+              },
+              "types": [
+                "normal"
+              ],
+              "item": "",
+              "pp": [
+                55,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Beau"
+          },
+          "move": "Recover",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Beau"
+          }
+        },
+        {
+          "kind": "fail",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Beau"
+          },
+          "detail": null
+        },
+        {
+          "kind": "cant",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Belle"
+          },
+          "detail": "par"
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 8
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_8",
+      "turn": 9,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 460,
+              "max_hp": 460,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "item": "",
+              "pp": [
+                31,
+                23,
+                26
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": {
+                "kind": "par"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "attract": null
+              },
+              "types": [
+                "normal"
+              ],
+              "item": "",
+              "pp": [
+                55,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Beau"
+          },
+          "move": "Recover",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Beau"
+          }
+        },
+        {
+          "kind": "fail",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Beau"
+          },
+          "detail": null
+        },
+        {
+          "kind": "activate",
+          "args": [
+            "p2a: Belle",
+            "move: Attract",
+            "[of] p1a: Beau"
+          ]
+        },
+        {
+          "kind": "cant",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Belle"
+          },
+          "detail": "Attract"
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 9
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_9",
+      "turn": 10,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 460,
+              "max_hp": 460,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "item": "",
+              "pp": [
+                31,
+                23,
+                25
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": {
+                "kind": "par"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "attract": null
+              },
+              "types": [
+                "normal"
+              ],
+              "item": "",
+              "pp": [
+                55,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Beau"
+          },
+          "move": "Recover",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Beau"
+          }
+        },
+        {
+          "kind": "fail",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Beau"
+          },
+          "detail": null
+        },
+        {
+          "kind": "activate",
+          "args": [
+            "p2a: Belle",
+            "move: Attract",
+            "[of] p1a: Beau"
+          ]
+        },
+        {
+          "kind": "cant",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Belle"
+          },
+          "detail": "Attract"
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 10
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_10",
+      "turn": 11,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 440,
+              "max_hp": 460,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "item": "",
+              "pp": [
+                31,
+                23,
+                24
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": {
+                "kind": "par"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "attract": null
+              },
+              "types": [
+                "normal"
+              ],
+              "item": "",
+              "pp": [
+                54,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Beau"
+          },
+          "move": "Recover",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Beau"
+          }
+        },
+        {
+          "kind": "fail",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Beau"
+          },
+          "detail": null
+        },
+        {
+          "kind": "activate",
+          "args": [
+            "p2a: Belle",
+            "move: Attract",
+            "[of] p1a: Beau"
+          ]
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Belle"
+          },
+          "move": "Tackle",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Beau"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Beau"
+          },
+          "hp": 440,
+          "max_hp": 460,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 11
+        }
+      ]
+    }
+  ],
+  "debug_log": "|gametype|singles\n|player|p1|P1||\n|player|p2|P2||\n|gen|2\n|tier|[Gen 2] Custom Game\n|rule|HP Percentage Mod: HP is shown in percentages\n|\n|teamsize|p1|1\n|teamsize|p2|1\n|start\n|switch|p1a: Beau|Snorlax, M|460/460\n|switch|p2a: Belle|Snorlax, L50, F|235/235\n|turn|1\n|\n|move|p1a: Beau|Thunder Wave|p2a: Belle\n|-status|p2a: Belle|par\n|move|p2a: Belle|Harden|p2a: Belle\n|-boost|p2a: Belle|def|1\n|\n|upkeep\n|turn|2\n|\n|move|p1a: Beau|Attract|p2a: Belle\n|-start|p2a: Belle|Attract\n|cant|p2a: Belle|par\n|\n|upkeep\n|turn|3\n|\n|move|p1a: Beau|Recover|p1a: Beau\n|-fail|p1a: Beau\n|debug|heal interrupted\n|-activate|p2a: Belle|move: Attract|[of] p1a: Beau\n|move|p2a: Belle|Tackle|p1a: Beau\n|-damage|p1a: Beau|440/460\n|\n|upkeep\n|turn|4\n|\n|move|p1a: Beau|Recover|p1a: Beau\n|-heal|p1a: Beau|460/460\n|cant|p2a: Belle|par\n|\n|upkeep\n|turn|5\n|\n|move|p1a: Beau|Recover|p1a: Beau\n|-fail|p1a: Beau\n|debug|heal interrupted\n|-activate|p2a: Belle|move: Attract|[of] p1a: Beau\n|cant|p2a: Belle|Attract\n|\n|upkeep\n|turn|6\n|\n|move|p1a: Beau|Recover|p1a: Beau\n|-fail|p1a: Beau\n|debug|heal interrupted\n|cant|p2a: Belle|par\n|\n|upkeep\n|turn|7\n|\n|move|p1a: Beau|Recover|p1a: Beau\n|-fail|p1a: Beau\n|debug|heal interrupted\n|cant|p2a: Belle|par\n|\n|upkeep\n|turn|8\n|\n|move|p1a: Beau|Recover|p1a: Beau\n|-fail|p1a: Beau\n|debug|heal interrupted\n|-activate|p2a: Belle|move: Attract|[of] p1a: Beau\n|cant|p2a: Belle|Attract\n|\n|upkeep\n|turn|9\n|\n|move|p1a: Beau|Recover|p1a: Beau\n|-fail|p1a: Beau\n|debug|heal interrupted\n|-activate|p2a: Belle|move: Attract|[of] p1a: Beau\n|cant|p2a: Belle|Attract\n|\n|upkeep\n|turn|10\n|\n|move|p1a: Beau|Recover|p1a: Beau\n|-fail|p1a: Beau\n|debug|heal interrupted\n|-activate|p2a: Belle|move: Attract|[of] p1a: Beau\n|move|p2a: Belle|Tackle|p1a: Beau\n|-damage|p1a: Beau|440/460\n|\n|upkeep\n|turn|11"
+}

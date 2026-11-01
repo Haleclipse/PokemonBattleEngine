@@ -1,0 +1,71 @@
+{
+ "schema": 1,
+ "id": "gen3-two-locks-end-in-one-residual",
+ "notes": [
+  "Gen 3: two Snorlax of one Speed both Outrage; the locks end in the same residual (`ResidualKind::Rampage`, speed-tied: Showdown's shuffle), each fatigue drawing its confusion — the replay orders the tie and the durations by the `-start|p|confusion|[fatigue]` lines (named in their first argument, DESIGN.md R-M8-79)"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Outrage"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Munchlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Outrage"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   49,
+   50,
+   51,
+   52
+  ]
+ }
+}

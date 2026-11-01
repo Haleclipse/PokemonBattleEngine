@@ -1,0 +1,119 @@
+{
+  "schema": 1,
+  "id": "m10-q-a-leppa-berry-pluck-eats-is-not-the-eaters-item",
+  "notes": [
+    "Gen 4: Magikarp's Pluck eats Ralts's Leppa Berry, whose -activate on Magikarp names the berry; the client files it as Magikarp's item (R-M10-41)",
+    "promoted from m8-gen4-singles-s1645-006-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "singles",
+    "format": "gen4customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Dialga",
+        "species": "Dialga",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Lunar Dance"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Lickilicky",
+        "species": "Lickilicky",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Lunar Dance"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Magikarp",
+        "species": "Magikarp",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Pluck"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Vaporeon",
+        "species": "Vaporeon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Lunar Dance"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Giratina",
+        "species": "Giratina",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Lunar Dance"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Ralts",
+        "species": "Ralts",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Aurora Beam"
+        ],
+        "ability": "Run Away",
+        "item": "Leppa Berry",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      22778,
+      14627,
+      39135,
+      34624
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Lunar Dance",
+      "p2": "move Lunar Dance"
+    },
+    {
+      "p1": "switch Lickilicky"
+    },
+    {
+      "p2": "switch Giratina"
+    },
+    {
+      "p1": "move Lunar Dance",
+      "p2": "move Lunar Dance"
+    },
+    {
+      "p2": "switch Ralts"
+    },
+    {
+      "p1": "switch Magikarp"
+    },
+    {
+      "p1": "move Pluck",
+      "p2": "move Aurora Beam"
+    }
+  ]
+}

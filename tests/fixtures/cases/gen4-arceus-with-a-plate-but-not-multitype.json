@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen4-arceus-with-a-plate-but-not-multitype",
+ "notes": [
+  "Gen 4: an Arceus that is not Multitype (a custom game) takes no forme and is Normal, whatever Plate it holds (both the cartridge's `Battler_MonType` and Showdown ask the ability)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Arceus",
+    "species": "Arceus",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Judgment",
+     "Harden"
+    ],
+    "ability": "Intimidate",
+    "item": "Flame Plate"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Judgment",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Judgment",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

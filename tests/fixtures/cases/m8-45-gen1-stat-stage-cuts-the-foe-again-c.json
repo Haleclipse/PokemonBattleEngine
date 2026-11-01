@@ -1,0 +1,109 @@
+{
+ "schema": 1,
+ "id": "m8-45-gen1-stat-stage-cuts-the-foe-again-c",
+ "notes": [
+  "Nightly 39 gen1-singles-s455-016, minimized: Gen 1: a stage change cuts the foe's Speed again, from another move"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Exeggutor",
+    "species": "Exeggutor",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Transform",
+     "Conversion",
+     "Wrap"
+    ]
+   },
+   {
+    "label": "Rapidash",
+    "species": "Rapidash",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Transform",
+     "Conversion",
+     "Rest"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Spearow",
+    "species": "Spearow",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Transform",
+     "Conversion",
+     "Bubble Beam"
+    ]
+   },
+   {
+    "label": "Haunter",
+    "species": "Haunter",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Transform",
+     "Conversion",
+     "Rest"
+    ]
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   50173,
+   30325,
+   18147,
+   51288
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Wrap",
+   "p2": "move Bubble Beam"
+  },
+  {
+   "p1": "switch Rapidash",
+   "p2": "switch Haunter"
+  },
+  {
+   "p1": "move Transform",
+   "p2": "move Transform"
+  },
+  {
+   "p1": "move Conversion",
+   "p2": "move Conversion"
+  },
+  {
+   "p1": "move Rest",
+   "p2": "move Rest"
+  },
+  {
+   "p1": "switch Exeggutor",
+   "p2": "switch Spearow"
+  },
+  {
+   "p1": "move Transform",
+   "p2": "move Transform"
+  },
+  {
+   "p1": "move Transform",
+   "p2": "move Conversion"
+  },
+  {
+   "p1": "move 3",
+   "p2": "move 3"
+  }
+ ]
+}

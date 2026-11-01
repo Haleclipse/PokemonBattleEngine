@@ -1,0 +1,73 @@
+{
+ "schema": 1,
+ "id": "gen9-jaboca-berry-and-an-attacker-rough-skin-knocks-out",
+ "notes": [
+  "Gen 9 Jaboca Berry (Showdown `source.hp && source.isActive`): Garchomp's Seismic Toss leaves Pikachu with less than an eighth of its HP; its Tackle sets off Rough Skin, which knocks it out, and the berry stays",
+  "Snorlax's Tackle then sets it off: Snorlax loses an eighth of its max HP"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Garchomp",
+    "species": "Garchomp",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Swords Dance"
+    ],
+    "item": "Jaboca Berry",
+    "ability": "Rough Skin"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Pikachu",
+    "species": "Pikachu",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "ability": "Lightning Rod"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Seismic Toss",
+   "p2": "move Tackle"
+  },
+  {
+   "p2": "switch Snorlax"
+  },
+  {
+   "p1": "move Swords Dance",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

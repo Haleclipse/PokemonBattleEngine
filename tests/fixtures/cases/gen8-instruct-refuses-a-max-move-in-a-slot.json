@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen8-instruct-refuses-a-max-move-in-a-slot",
+ "notes": [
+  "Gen 8: Magmar knows Max Quake as a move of its own (a custom game's) and uses it; Jolteon's Instruct on it then fails (`lastMove.isMax`), the slot's PP notwithstanding (DESIGN.md R-M8-80)"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Magmar",
+    "species": "Magmar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Max Quake",
+     "Harden"
+    ],
+    "ability": "Flame Body",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Instruct"
+    ],
+    "ability": "Volt Absorb",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Max Quake",
+   "p2": "move Instruct"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Instruct"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

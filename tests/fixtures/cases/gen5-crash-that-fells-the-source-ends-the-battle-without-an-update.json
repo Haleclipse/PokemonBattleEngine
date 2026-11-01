@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen5-crash-that-fells-the-source-ends-the-battle-without-an-update",
+ "notes": [
+  "A move that strikes nothing runs no Update inside it: Gardevoir's High Jump Kick fails on Gengar, the crash knocks Gardevoir out and the battle ends, so Gengar's infatuation stays in the last frame"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Gengar",
+    "species": "Gengar",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Night Shade"
+    ],
+    "ability": "Levitate",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gardevoir",
+    "species": "Gardevoir",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Attract",
+     "High Jump Kick"
+    ],
+    "ability": "Synchronize",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Night Shade",
+   "p2": "move Attract"
+  },
+  {
+   "p1": "move Night Shade",
+   "p2": "move High Jump Kick"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

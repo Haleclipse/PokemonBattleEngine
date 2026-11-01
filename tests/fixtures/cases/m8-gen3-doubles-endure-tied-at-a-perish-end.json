@@ -1,0 +1,163 @@
+{
+  "schema": 1,
+  "id": "m8-gen3-doubles-endure-tied-at-a-perish-end",
+  "notes": [
+    "Gen 3 doubles: Perish Song decides the battle in the residual; Corsola's tied Protect and Endure counters ran in Showdown's shuffled order up to the end (DESIGN.md R-M8-95)",
+    "promoted from m8-gen3-doubles-s495-016-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 3,
+    "mode": "doubles",
+    "format": "gen3doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Victreebel",
+        "species": "Victreebel",
+        "level": 53,
+        "nature": "Hardy",
+        "moves": [
+          "Present",
+          "Metronome",
+          "Mirror Move",
+          "Endure"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Hitmonchan",
+        "species": "Hitmonchan",
+        "level": 49,
+        "nature": "Hardy",
+        "moves": [
+          "Assist",
+          "Endure",
+          "Sleep Talk",
+          "Metronome"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Corsola",
+        "species": "Corsola",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Nature Power",
+          "Endure"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Sunflora",
+        "species": "Sunflora",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Synthesis",
+          "Moonlight",
+          "Perish Song"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Houndoom",
+        "species": "Houndoom",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Morning Sun"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Regice",
+        "species": "Regice",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Self-Destruct"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Igglybuff",
+        "species": "Igglybuff",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Magic Coat",
+          "Endure",
+          "Supersonic",
+          "Perish Song"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Golbat",
+        "species": "Golbat",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Confuse Ray",
+          "Endure",
+          "Sweet Kiss",
+          "Perish Song"
+        ],
+        "ability": "Rain Dish",
+        "item": "Mago Berry",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      18485,
+      15606,
+      53678,
+      18993
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Present 1, move Assist",
+      "p2": "move Morning Sun, move Self-Destruct"
+    },
+    {
+      "p2": "switch Igglybuff, switch Golbat"
+    },
+    {
+      "p1": "move Metronome, move Endure",
+      "p2": "move Endure, move Endure"
+    },
+    {
+      "p1": "move Mirror Move, move Sleep Talk",
+      "p2": "move Supersonic 1, move Sweet Kiss 2"
+    },
+    {
+      "p1": "move Endure, move Metronome",
+      "p2": "move Perish Song, move Perish Song"
+    },
+    {
+      "p1": "move Present 2, move Assist",
+      "p2": "move Magic Coat, move Confuse Ray 1"
+    },
+    {
+      "p1": "switch Corsola, move Endure",
+      "p2": "move Endure, move Endure"
+    },
+    {
+      "p1": "move Endure, move Sleep Talk",
+      "p2": "move Supersonic 2, move Sweet Kiss 1"
+    }
+  ]
+}

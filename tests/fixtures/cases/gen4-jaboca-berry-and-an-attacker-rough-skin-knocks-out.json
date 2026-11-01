@@ -1,0 +1,76 @@
+{
+ "schema": 1,
+ "id": "gen4-jaboca-berry-and-an-attacker-rough-skin-knocks-out",
+ "notes": [
+  "Gen 4 Jaboca Berry (issues.md I45): Shedinja's Scratch sets off Sharpedo's Rough Skin, which knocks it out; pokeplatinum asks the attacker's HP (`BattleSystem_TriggerHeldItemOnHit`), so the berry stays \u2014 and Snorlax's Tackle sets it off a turn later (the oracle's gen4 patch; unpatched Showdown eats it with Shedinja down)",
+  "Snorlax's second Tackle meets no berry either way"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sharpedo",
+    "species": "Sharpedo",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Agility"
+    ],
+    "item": "Jaboca Berry",
+    "ability": "Rough Skin"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Shedinja",
+    "species": "Shedinja",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Scratch"
+    ],
+    "ability": "Wonder Guard"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Agility",
+   "p2": "move Scratch"
+  },
+  {
+   "p2": "switch Snorlax"
+  },
+  {
+   "p1": "move Agility",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Agility",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

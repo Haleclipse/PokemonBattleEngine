@@ -1,0 +1,68 @@
+{
+ "schema": 1,
+ "id": "gen9-tera-changes-type-and-stab",
+ "notes": [
+  "Gen 9: Charizard Terastallizes into Electric (`move 2 terastallize`): Terastallization is its own step before the moves (a Flamethrower would have gone first by speed otherwise), its types read Electric alone (`types` in the frames), and Thunderbolt/Surf now read the doubled STAB while Flamethrower is no longer a same-type move"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Charizard",
+    "species": "Charizard",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Flamethrower",
+     "Thunderbolt",
+     "Harden"
+    ],
+    "ability": "Blaze",
+    "teraType": "Electric"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 2 terastallize",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move 3",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,54 @@
+{
+ "schema": 1,
+ "id": "gen4-twineedle-poisons-again-after-the-pecha-berry",
+ "notes": [
+  "Gen 4: the Update after each hit (`hitStepMoveHitLoop`) lets Snorlax eat its Pecha Berry after Twineedle's first hit poisons it, so the second hit poisons it again"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Beedrill",
+    "species": "Beedrill",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Twineedle"
+    ],
+    "ability": "Swarm"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Pecha Berry"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Twineedle",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   10,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,149 @@
+{
+  "schema": 1,
+  "id": "m10-zw-an-encored-moves-random-target-is-its-own-lines",
+  "notes": [
+    "Gen 5 doubles: Herdier's Encore turns Dusknoir's chosen Encore into Whirlwind, whose target is drawn anew (getRandomTarget): Simisage, whose Magic Bounce sends it back at Dusknoir; the draw is the one the action's own move line names (R-M10-73)",
+    "promoted from m8-gen5-doubles-s1697-007-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 5,
+    "mode": "doubles",
+    "format": "gen5doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Dewott",
+        "species": "Dewott",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Seed Bomb",
+          "Me First"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Xatu",
+        "species": "Xatu",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fling",
+          "Me First",
+          "Stun Spore",
+          "Encore"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Herdier",
+        "species": "Herdier",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Thunder Wave",
+          "Encore"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Simisage",
+        "species": "Simisage",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Me First"
+        ],
+        "ability": "Magic Bounce",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Dusknoir",
+        "species": "Dusknoir",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Dragon Tail",
+          "Whirlwind",
+          "Encore"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Rhydon",
+        "species": "Rhydon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Moonlight",
+          "Me First",
+          "Synthesis",
+          "Encore"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Palkia",
+        "species": "Palkia",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Morning Sun",
+          "Me First"
+        ],
+        "ability": "Run Away"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      61987,
+      25905,
+      15877,
+      43844
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Seed Bomb 1, move Fling 2",
+      "p2": "move Dragon Tail 1, move Moonlight"
+    },
+    {
+      "p1": "move Thunder Wave 1, move Stun Spore 2",
+      "p2": "move Whirlwind 2, move Synthesis"
+    },
+    {
+      "p1": "switch Dewott, move Encore 1",
+      "p2": "switch Palkia, move Encore 1"
+    },
+    {
+      "p1": "move Seed Bomb 2, move Me First 1",
+      "p2": "move Morning Sun, move Me First 1"
+    },
+    {
+      "p1": "move Me First 2, move Stun Spore 1",
+      "p2": "move Me First 2, move Synthesis"
+    },
+    {
+      "p1": "switch Herdier, move Encore 2",
+      "p2": "switch Dusknoir, move Encore 1"
+    },
+    {
+      "p1": "move Thunder Wave 1, move Fling 2",
+      "p2": "move Whirlwind 2, move Synthesis"
+    },
+    {
+      "p1": "move Encore 1, move Me First 2",
+      "p2": "move Encore 1, move Synthesis"
+    }
+  ]
+}

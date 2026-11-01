@@ -1,0 +1,64 @@
+{
+ "schema": 1,
+ "id": "gen9-bounce-paralysis",
+ "notes": [
+  "Gen 9 Bounce: the attack's 30 % paralysis"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Bouncer",
+    "species": "Swanna",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Bounce",
+     "Fly",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gale",
+    "species": "Weavile",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Gust",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Bounce",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Bounce",
+   "p2": "move Gust"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   2,
+   2,
+   3,
+   4
+  ]
+ }
+}

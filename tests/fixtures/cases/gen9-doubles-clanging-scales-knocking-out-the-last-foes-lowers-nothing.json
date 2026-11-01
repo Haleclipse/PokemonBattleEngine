@@ -1,0 +1,73 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-clanging-scales-knocking-out-the-last-foes-lowers-nothing",
+ "notes": [
+  "Clanging Scales knocking out both of the foe's last Pok\u00e9mon lowers no Defense (foePokemonLeft)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Kommo-o",
+    "species": "Kommo-o",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Clanging Scales"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 5,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Feebas",
+    "species": "Feebas",
+    "level": 5,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Clanging Scales, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,85 @@
+{
+ "schema": 1,
+ "id": "gen6-geomancy",
+ "notes": [
+  "Gen 6 Geomancy: charges (geomancy without a count), then +2 Special Attack, Special Defense and Speed; a flinch (Fake Out) on the second turn drops the charge and the next use charges again"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Xerneas",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Geomancy",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Wall",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tail Whip"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Outer",
+    "species": "Ambipom",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Fake Out",
+     "Tail Whip"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Geomancy",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Geomancy",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Geomancy",
+   "p2": "switch Outer"
+  },
+  {
+   "p1": "move Geomancy",
+   "p2": "move Fake Out"
+  },
+  {
+   "p1": "move Geomancy",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Geomancy",
+   "p2": "move Tail Whip"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

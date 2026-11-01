@@ -1,0 +1,56 @@
+{
+ "schema": 1,
+ "id": "gen5-skill-swap-fails-on-the-same-ability",
+ "notes": [
+  "Gen 5: Skill Swap between two Intimidate Pokémon fails (`gen <= 5` and the same ability)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Gyarados",
+    "species": "Gyarados",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Skill Swap",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Intimidate"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Arcanine",
+    "species": "Arcanine",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Intimidate"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Skill Swap",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

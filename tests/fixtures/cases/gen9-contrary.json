@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "id": "gen9-singles-contrary",
+  "notes": [
+    "Contrary (ChangeBoost): Intimidate on entry becomes +1 Attack, Swords Dance -2, Growl +1. Boosts are compared in the",
+    "frame; the protocol shows the inverted amounts."
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "a",
+        "species": "Gyarados",
+        "ability": "Intimidate",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Growl"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "b",
+        "species": "Serperior",
+        "ability": "Contrary",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Swords Dance"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

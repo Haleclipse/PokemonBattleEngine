@@ -1,0 +1,177 @@
+{
+  "schema": 1,
+  "id": "gen1-asleep-pokemon-may-name-a-disabled-move",
+  "notes": [
+    "Gen 1: an asleep or frozen Pokémon is offered the Fight button alone, so the move it names may be one Disable sealed",
+    "promoted from m8-gen1-singles-s114-001-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 1,
+    "mode": "singles",
+    "format": "gen1customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Staryu",
+        "species": "Staryu",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Disable",
+          "Supersonic",
+          "Tail Whip",
+          "Confuse Ray"
+        ]
+      },
+      {
+        "label": "Hitmonchan",
+        "species": "Hitmonchan",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Disable",
+          "Confuse Ray",
+          "Spore",
+          "Supersonic"
+        ]
+      },
+      {
+        "label": "Parasect",
+        "species": "Parasect",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Disable",
+          "Confuse Ray",
+          "Sleep Powder",
+          "Supersonic"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "Geodude",
+        "species": "Geodude",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Disable",
+          "Supersonic",
+          "Headbutt",
+          "Confuse Ray"
+        ]
+      },
+      {
+        "label": "Mankey",
+        "species": "Mankey",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Disable",
+          "Confuse Ray",
+          "Low Kick",
+          "Supersonic"
+        ]
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      54558,
+      61615,
+      60537,
+      36874
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Disable",
+      "p2": "move Disable"
+    },
+    {
+      "p1": "move Supersonic",
+      "p2": "move Supersonic"
+    },
+    {
+      "p1": "move Tail Whip",
+      "p2": "move Headbutt"
+    },
+    {
+      "p1": "move Disable",
+      "p2": "move Disable"
+    },
+    {
+      "p1": "switch Hitmonchan",
+      "p2": "switch Mankey"
+    },
+    {
+      "p1": "move Spore",
+      "p2": "move Low Kick"
+    },
+    {
+      "p1": "move 4",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 1"
+    },
+    {
+      "p1": "switch Staryu",
+      "p2": "switch Geodude"
+    },
+    {
+      "p1": "move Tail Whip",
+      "p2": "move Headbutt"
+    },
+    {
+      "p1": "move Confuse Ray",
+      "p2": "move Confuse Ray"
+    },
+    {
+      "p1": "move Disable",
+      "p2": "move Disable"
+    },
+    {
+      "p1": "move Supersonic",
+      "p2": "move Supersonic"
+    },
+    {
+      "p1": "move Tail Whip",
+      "p2": "move Headbutt"
+    },
+    {
+      "p1": "switch Hitmonchan"
+    },
+    {
+      "p1": "switch Parasect",
+      "p2": "switch Mankey"
+    },
+    {
+      "p1": "move 4",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move Confuse Ray",
+      "p2": "move Supersonic"
+    },
+    {
+      "p1": "move Sleep Powder",
+      "p2": "move Confuse Ray"
+    },
+    {
+      "p1": "move 4",
+      "p2": "move 1"
+    }
+  ]
+}

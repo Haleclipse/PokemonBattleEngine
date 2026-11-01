@@ -1,0 +1,89 @@
+{
+  "schema": 1,
+  "id": "gen9-doubles-lightning-rod-takes-a-move-with-no-target",
+  "notes": [
+    "Both foes faint before Rising Voltage: Showdown aims it at a fainted foe slot for any possible redirection (`getRandomTarget`), and the partner's Lightning Rod takes it (+1 SpA) instead of the move failing",
+    "promoted from m8-gen9-doubles-s118-010-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Terapagos",
+        "species": "Terapagos",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Rising Voltage"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Milotic",
+        "species": "Milotic",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Water Spout"
+        ],
+        "ability": "Lightning Rod",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Vulpix",
+        "species": "Vulpix",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Dragon Energy"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Slakoth",
+        "species": "Slakoth",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Flail"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Swalot",
+        "species": "Swalot",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Reversal"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      29984,
+      65288,
+      35173,
+      34048
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Rising Voltage 1, move Water Spout",
+      "p2": "move Dragon Energy, move Flail 1"
+    }
+  ]
+}

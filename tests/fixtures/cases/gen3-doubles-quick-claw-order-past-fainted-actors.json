@@ -1,0 +1,181 @@
+{
+  "schema": 1,
+  "id": "gen3-doubles-quick-claw-order-past-fainted-actors",
+  "notes": [
+    "Gen 3 Quick Claw inference in a turn where Pokémon faint before acting and a recoil faint ends an action: a fainted Pokémon that never acted only bounds the actors after it from below (an open span), one that acted is its exact position",
+    "promoted from m8-gen3-doubles-s116-015-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 3,
+    "mode": "doubles",
+    "format": "gen3doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Seviper",
+        "species": "Seviper",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Octazooka",
+          "Double-Edge"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Shroomish",
+        "species": "Shroomish",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Crunch",
+          "Submission",
+          "Bubble Beam",
+          "Double-Edge"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Grumpig",
+        "species": "Grumpig",
+        "level": 46,
+        "nature": "Hardy",
+        "moves": [
+          "Rock Tomb",
+          "Take Down",
+          "Luster Purge",
+          "Volt Tackle"
+        ],
+        "ability": "Speed Boost",
+        "gender": "F"
+      },
+      {
+        "label": "Cubone",
+        "species": "Cubone",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Submission",
+          "Rock Smash",
+          "Take Down"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Latias",
+        "species": "Latias",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Iron Tail",
+          "Volt Tackle",
+          "Constrict",
+          "Double-Edge"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Seaking",
+        "species": "Seaking",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Barrage",
+          "Take Down",
+          "Fury Swipes",
+          "Volt Tackle"
+        ],
+        "ability": "Water Absorb",
+        "item": "Quick Claw",
+        "gender": "M"
+      },
+      {
+        "label": "Wailord",
+        "species": "Wailord",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Submission"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Cleffa",
+        "species": "Cleffa",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Double Kick"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      25927,
+      64148,
+      5755,
+      4206
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Octazooka 1, move Crunch 2",
+      "p2": "move Iron Tail 1, move Barrage 2"
+    },
+    {
+      "p1": "move Double-Edge 1, move Submission 2",
+      "p2": "move Volt Tackle 1, move Take Down 2"
+    },
+    {
+      "p1": "switch Grumpig, pass"
+    },
+    {
+      "p1": "move Luster Purge 1, move Bubble Beam 2",
+      "p2": "move Constrict 1, move Fury Swipes 2"
+    },
+    {
+      "p1": "move Volt Tackle 1, move Double-Edge 2",
+      "p2": "move Double-Edge 1, move Volt Tackle 2"
+    },
+    {
+      "p1": "move Rock Tomb 1, move Crunch 2",
+      "p2": "move Iron Tail 1, move Barrage 2"
+    },
+    {
+      "p1": "move Take Down 1, move Submission 2",
+      "p2": "move Volt Tackle 1, move Take Down 2"
+    },
+    {
+      "p1": "pass, switch Cubone"
+    },
+    {
+      "p2": "switch Wailord, pass"
+    },
+    {
+      "p1": "move Volt Tackle 1, move Take Down 2",
+      "p2": "switch Cleffa, move Volt Tackle 1"
+    },
+    {
+      "p1": "pass, move Submission 1",
+      "p2": "move Double Kick 2, move Take Down 2"
+    },
+    {
+      "p2": "switch Wailord, pass"
+    },
+    {
+      "p1": "pass, move Rock Smash 2",
+      "p2": "move Submission 2, move Fury Swipes 2"
+    }
+  ]
+}

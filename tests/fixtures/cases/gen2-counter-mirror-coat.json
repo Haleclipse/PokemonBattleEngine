@@ -1,0 +1,87 @@
+{
+ "schema": 1,
+ "id": "gen2-counter-mirror-coat",
+ "notes": [
+  "Gen 2 Counter and Mirror Coat: the category is the type's (Normal physical, Fire special; Hidden Power counts as physical); a Baton Pass shows the Gen 3 Counter's volatile at the mid-turn request"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Wobbuffet",
+    "species": "Wobbuffet",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Counter",
+     "Mirror Coat"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Snorlax",
+    "level": 45,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Ember",
+     "Hidden Power",
+     "Baton Pass"
+    ]
+   },
+   {
+    "label": "Foe2",
+    "species": "Snorlax",
+    "level": 45,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Counter",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Counter",
+   "p2": "move Hidden Power"
+  },
+  {
+   "p1": "move Mirror Coat",
+   "p2": "move Ember"
+  },
+  {
+   "p1": "move Mirror Coat",
+   "p2": "move Hidden Power"
+  },
+  {
+   "p1": "move Counter",
+   "p2": "move Ember"
+  },
+  {
+   "p1": "move Counter",
+   "p2": "move Baton Pass"
+  },
+  {
+   "p2": "switch Foe2"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

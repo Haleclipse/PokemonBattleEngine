@@ -1,0 +1,80 @@
+{
+ "schema": 1,
+ "id": "gen9-tera-doubles-spread-and-target",
+ "notes": [
+  "Gen 9 doubles: a Terastallized Charizard's Heat Wave keeps its spread; the step runs before the partner's own move of the turn"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Charizard",
+    "species": "Charizard",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Heat Wave",
+     "Harden"
+    ],
+    "ability": "Blaze",
+    "teraType": "Fire"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Synchronize"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 2 terastallize, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move 1, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

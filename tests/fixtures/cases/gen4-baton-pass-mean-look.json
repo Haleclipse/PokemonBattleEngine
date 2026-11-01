@@ -1,0 +1,102 @@
+{
+ "schema": 1,
+ "id": "gen4-baton-pass-mean-look",
+ "notes": [
+  "Gen 4 Baton Pass hands Mean Look's links on (the gen4 conditions' `noCopy: false`): the trapper's taker keeps the target trapped, the trapped target's taker is trapped by it, and the taker leaving lets it go"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Looker",
+    "species": "Mew",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Mean Look",
+     "Baton Pass",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Taker",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Passer",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Baton Pass"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Taker2",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Mean Look",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Baton Pass",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Taker"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Baton Pass"
+  },
+  {
+   "p2": "switch Taker2"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Looker",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Passer"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen9-ally-switch-in-singles-does-not-fail",
+ "notes": [
+  "Gen 9 singles: Arcanine's Ally Switch has no partner (-fail), yet returns NOT_FAIL: its Temper Flare next turn is not doubled (moveLastTurnResult is not false) (DESIGN.md R-M8-130)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Arcanine",
+    "species": "Arcanine",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Ally Switch",
+     "Temper Flare"
+    ],
+    "ability": "Intimidate",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Ally Switch",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Temper Flare",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

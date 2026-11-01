@@ -1,0 +1,85 @@
+{
+ "schema": 1,
+ "id": "gen9-after-you",
+ "notes": [
+  "Gen 9 doubles: Clefable's After You on its slower partner Snorlax: Snorlax moves right after it, ahead of the foes; then After You on a foe that has moved already fails"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Clefable",
+    "species": "Clefable",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "After You",
+     "Moonblast"
+    ],
+    "gender": "F",
+    "ability": "Magic Guard"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Thunder Shock",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Volt Absorb"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move After You -2, move Tackle 2",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move After You 1, move Tackle 2",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

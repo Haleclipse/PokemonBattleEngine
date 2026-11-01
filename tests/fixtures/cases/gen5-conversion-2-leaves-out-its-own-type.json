@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen5-conversion-2-leaves-out-its-own-type",
+ "notes": [
+  "Gen 5: before Fairy, only Steel resists Dragon: Skarmory (Steel/Flying) has it already, so Conversion 2 after Dragonite's Dragon Claw has nothing left (Gen 4+ leave the user's own types out) and fails"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Skarmory",
+    "species": "Skarmory",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Conversion 2",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Sturdy"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Dragonite",
+    "species": "Dragonite",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Dragon Claw"
+    ],
+    "gender": "M",
+    "ability": "Inner Focus"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Dragon Claw"
+  },
+  {
+   "p1": "move Conversion 2",
+   "p2": "move Dragon Claw"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

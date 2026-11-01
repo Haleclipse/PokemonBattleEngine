@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "gen7-protective-pads-keep-flame-body-from-rolling",
+ "notes": [
+  "Gen 7: Litten holds Protective Pads and uses Tackle on Magcargo (Flame Body). The pads take the contact away (`checkMoveMakesContact`), so Flame Body rolls nothing; the replay reads contact as the engine has it (DESIGN.md R-M8-153)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Litten",
+    "species": "Litten",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Splash"
+    ],
+    "ability": "Blaze",
+    "item": "Protective Pads",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Magcargo",
+    "species": "Magcargo",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Flame Body",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Tackle",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

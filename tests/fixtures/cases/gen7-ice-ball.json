@@ -1,0 +1,88 @@
+{
+ "schema": 1,
+ "id": "gen7-ice-ball",
+ "notes": [
+  "Gen 7 Ice Ball after Defense Curl: doubling on each of five hits, the user locked in, then free"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Roller",
+    "species": "Mew",
+    "level": 35,
+    "nature": "Hardy",
+    "moves": [
+     "Ice Ball",
+     "Defense Curl",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Wall",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tail Whip",
+     "Protect"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Defense Curl",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Ice Ball",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Ice Ball",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Ice Ball",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Ice Ball",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Ice Ball",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Ice Ball",
+   "p2": "move Protect"
+  },
+  {
+   "p1": "move Ice Ball",
+   "p2": "move Tail Whip"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

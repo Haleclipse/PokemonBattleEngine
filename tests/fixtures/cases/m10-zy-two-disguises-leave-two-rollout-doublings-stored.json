@@ -1,0 +1,107 @@
+{
+  "schema": 1,
+  "id": "m10-zy-two-disguises-leave-two-rollout-doublings-stored",
+  "notes": [
+    "Gen 7: two Mimikyu's Disguises take a Rollout chain's first two hits: x8 and x16 stored, kept through status moves and used one each by the next moves that compute a power, Gyro Ball at its raw power of 1 (R-M10-75, issues.md I212)",
+    "promoted from rollout-storage-two-disguises (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 7,
+    "mode": "singles",
+    "format": "gen7customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Marshtomp",
+        "level": 30,
+        "nature": "Hardy",
+        "species": "Marshtomp",
+        "ability": "Compound Eyes",
+        "moves": [
+          "Rollout",
+          "Harden",
+          "Gyro Ball",
+          "Water Gun"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "MimikyuA",
+        "level": 100,
+        "nature": "Hardy",
+        "species": "Mimikyu",
+        "ability": "Disguise",
+        "moves": [
+          "Splash"
+        ]
+      },
+      {
+        "label": "MimikyuB",
+        "level": 100,
+        "nature": "Hardy",
+        "species": "Mimikyu",
+        "ability": "Disguise",
+        "moves": [
+          "Splash"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Rollout",
+      "p2": "move Splash"
+    },
+    {
+      "p1": "move Rollout",
+      "p2": "switch 2"
+    },
+    {
+      "p1": "move Rollout",
+      "p2": "move Splash"
+    },
+    {
+      "p1": "move Rollout",
+      "p2": "move Splash"
+    },
+    {
+      "p1": "move Rollout",
+      "p2": "move Splash"
+    },
+    {
+      "p1": "move Harden",
+      "p2": "move Splash"
+    },
+    {
+      "p1": "move Harden",
+      "p2": "move Splash"
+    },
+    {
+      "p1": "move Gyro Ball",
+      "p2": "move Splash"
+    },
+    {
+      "p1": "move Harden",
+      "p2": "move Splash"
+    },
+    {
+      "p1": "move Water Gun",
+      "p2": "move Splash"
+    },
+    {
+      "p1": "move Water Gun",
+      "p2": "move Splash"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      7,
+      5,
+      2,
+      12
+    ]
+  }
+}

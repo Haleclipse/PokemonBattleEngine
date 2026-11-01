@@ -1,0 +1,63 @@
+{
+ "schema": 1,
+ "id": "gen7-normalize-boosts-and-spares-weather-ball",
+ "notes": [
+  "Gen 7 Normalize boosts the moves it retypes (4915/4096) and leaves Weather Ball alone: Water in rain"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Delcatty",
+    "species": "Delcatty",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Ember",
+     "Weather Ball",
+     "Rain Dance"
+    ],
+    "ability": "Normalize"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Ember",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Rain Dance",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Weather Ball",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

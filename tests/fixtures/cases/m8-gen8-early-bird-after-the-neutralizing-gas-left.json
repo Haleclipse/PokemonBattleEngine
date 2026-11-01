@@ -1,0 +1,289 @@
+{
+  "schema": 1,
+  "id": "m8-gen8-early-bird-after-the-neutralizing-gas-left",
+  "notes": [
+    "Gen 8 doubles: Ribombee (Early Bird) falls asleep to Yawn in the residual of the turn Popplio's Neutralizing Gas fainted; its later sleep turns count two each — the replay reads Early Bird turn by turn from the frames, gas gone (DESIGN.md R-M8-126)",
+    "promoted from m8-gen8-doubles-s627-007-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 8,
+    "mode": "doubles",
+    "format": "gen8doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Umbreon",
+        "species": "Umbreon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Max Starfall",
+          "Yawn",
+          "Max Flare",
+          "Mist"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Stunfisk",
+        "species": "Stunfisk",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Max Airstream"
+        ],
+        "ability": "Run Away",
+        "item": "Choice Scarf",
+        "gender": "F"
+      },
+      {
+        "label": "Popplio",
+        "species": "Popplio",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Max Flutterby",
+          "Yawn",
+          "Max Quake",
+          "Mist"
+        ],
+        "ability": "Neutralizing Gas",
+        "gender": "F"
+      },
+      {
+        "label": "Croagunk",
+        "species": "Croagunk",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Max Strike",
+          "Yawn",
+          "Max Geyser",
+          "Mist"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Onix",
+        "species": "Onix",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Max Overgrowth",
+          "Yawn",
+          "Mist"
+        ],
+        "ability": "Run Away",
+        "item": "Focus Band",
+        "gender": "F"
+      },
+      {
+        "label": "Pidove",
+        "species": "Pidove",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "First Impression",
+          "Yawn",
+          "Snore",
+          "Mist"
+        ],
+        "ability": "Hydration",
+        "gender": "F"
+      },
+      {
+        "label": "Ribombee",
+        "species": "Ribombee",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Last Resort",
+          "Yawn",
+          "Sucker Punch",
+          "Mist"
+        ],
+        "ability": "Early Bird",
+        "item": "Quick Claw",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      12241,
+      18332,
+      41808,
+      61102
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Max Starfall 1, move Max Airstream 2",
+      "p2": "move Max Overgrowth 1, move First Impression 2"
+    },
+    {
+      "p1": "move Yawn 1, move Max Airstream 2",
+      "p2": "move Yawn 1, move Yawn 2"
+    },
+    {
+      "p1": "move Max Flare 1, move Max Airstream 2",
+      "p2": "move Mist, move Snore 1"
+    },
+    {
+      "p1": "move Mist, move Max Airstream 1",
+      "p2": "move Max Overgrowth 2, move Mist"
+    },
+    {
+      "p1": "move Max Starfall 2, move Max Airstream 1",
+      "p2": "move Yawn 1, move First Impression 2"
+    },
+    {
+      "p1": "move Yawn 2, move Max Airstream 1",
+      "p2": "move Mist, move Yawn 1"
+    },
+    {
+      "p1": "move Max Flare 2, move Max Airstream 1",
+      "p2": "move Max Overgrowth 2, move Snore 1"
+    },
+    {
+      "p1": "switch Popplio, move Max Airstream 2",
+      "p2": "switch Ribombee, move Mist"
+    },
+    {
+      "p1": "move Mist, move Max Airstream 1",
+      "p2": "move Mist, move First Impression 2"
+    },
+    {
+      "p1": "move Max Flutterby 2, move Max Airstream 1",
+      "p2": "move Last Resort 1, move Yawn 2"
+    },
+    {
+      "p1": "move Yawn 2, move Max Airstream 1",
+      "p2": "move Yawn 1, move Snore 2"
+    },
+    {
+      "p1": "move Max Quake 2, move Max Airstream 1",
+      "p2": "move Sucker Punch 1, move Mist"
+    },
+    {
+      "p1": "move Mist, move Max Airstream 2",
+      "p2": "move Mist, move First Impression 2"
+    },
+    {
+      "p1": "move Max Flutterby 1, move Max Airstream 2",
+      "p2": "move Last Resort 1, move Yawn 2"
+    },
+    {
+      "p1": "move Yawn 1, move Max Airstream 2",
+      "p2": "move Yawn 1, move Snore 2"
+    },
+    {
+      "p1": "switch Umbreon, move Max Airstream 1",
+      "p2": "switch Onix, move Mist"
+    },
+    {
+      "p1": "move Max Flare 2, move Max Airstream 1",
+      "p2": "move Mist, move First Impression 1"
+    },
+    {
+      "p1": "move Mist, move Max Airstream 2",
+      "p2": "move Max Overgrowth 2, move Yawn 1"
+    },
+    {
+      "p1": "move Max Starfall 1, move Max Airstream 2",
+      "p2": "move Yawn 2, move Snore 1"
+    },
+    {
+      "p1": "move Yawn 1, move Max Airstream 2",
+      "p2": "move Mist, move Mist"
+    },
+    {
+      "p1": "move 3 1, move 1",
+      "p2": "move 1 2, move 1 1"
+    },
+    {
+      "p1": "move 4, move 1",
+      "p2": "move 2 2, move 2 1"
+    },
+    {
+      "p1": "move 1 2, move 1",
+      "p2": "move 3, move 3 2"
+    },
+    {
+      "p1": "switch Popplio, move 1",
+      "p2": "switch Ribombee, move 4"
+    },
+    {
+      "p1": "move 2 1, move 1",
+      "p2": "move 2 1, move 1 2"
+    },
+    {
+      "p1": "pass, switch Umbreon"
+    },
+    {
+      "p1": "move Max Quake 2, move Yawn 1",
+      "p2": "move Sucker Punch 1, move Yawn 2"
+    },
+    {
+      "p1": "move Mist, move Max Flare 2",
+      "p2": "move Mist, move Snore 1"
+    },
+    {
+      "p1": "move Max Flutterby 1, move Mist",
+      "p2": "move Last Resort 2, move Mist"
+    },
+    {
+      "p1": "move Yawn 2, move Max Starfall 1",
+      "p2": "move Yawn 1, move First Impression 2"
+    },
+    {
+      "p1": "move Max Quake 2, move Yawn 1",
+      "p2": "move Sucker Punch 1, move Yawn 2"
+    },
+    {
+      "p1": "move Mist, move Max Flare 2",
+      "p2": "move Mist, move Snore 1"
+    },
+    {
+      "p1": "switch Croagunk, pass"
+    },
+    {
+      "p1": "move Max Strike 1, move Mist",
+      "p2": "switch Onix, move Mist"
+    },
+    {
+      "p1": "move Mist, move Max Flare 2",
+      "p2": "move Max Overgrowth 1, move Snore 2"
+    },
+    {
+      "p1": "move Max Strike 1, move Mist",
+      "p2": "move Yawn 1, move Mist"
+    },
+    {
+      "p1": "move Yawn 2, move Max Starfall 1",
+      "p2": "move Mist, move First Impression 2"
+    },
+    {
+      "p1": "move Max Geyser 2, move Yawn 1",
+      "p2": "move Max Overgrowth 1, move Yawn 2"
+    },
+    {
+      "p1": "move Mist, move Max Flare 2",
+      "p2": "move Yawn 1, move Snore 2"
+    },
+    {
+      "p1": "move Max Strike 1, move Mist",
+      "p2": "switch Ribombee, move Mist"
+    },
+    {
+      "p1": "move Yawn 2, move Max Starfall 1",
+      "p2": "move Mist, move First Impression 1"
+    }
+  ]
+}

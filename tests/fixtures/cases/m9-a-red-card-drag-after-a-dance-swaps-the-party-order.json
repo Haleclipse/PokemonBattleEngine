@@ -1,0 +1,145 @@
+{
+ "schema": 1,
+ "id": "m9-a-red-card-drag-after-a-dance-swaps-the-party-order",
+ "notes": [
+  "R-M9-53: minimized from the forty-first M9.6 Nightly's m8-gen8-doubles-s1599-014. Turn 5: Darmanitan's Petal Dance hits Zweilous, whose Red Card goes; Trapinch (Dancer) dances along, then the Red Card drags Darmanitan out for Abomasnow, the bench's only one. The log shows the `drag` after the dance, so it was read off the dance, and the replay left the Showdown party order as it was: after Trapinch fell, `switch 4` (Darmanitan, which the drag had moved there) named Abomasnow, on the field."
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "doubles",
+  "format": "gen8doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Trapinch",
+    "species": "Trapinch",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Absorb",
+     "Forest's Curse",
+     "Uproar"
+    ],
+    "ability": "Dancer",
+    "gender": "M"
+   },
+   {
+    "label": "Budew",
+    "species": "Budew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Outrage"
+    ],
+    "ability": "Stall",
+    "gender": "M"
+   },
+   {
+    "label": "Darmanitan",
+    "species": "Darmanitan",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Petal Dance",
+     "Focus Punch",
+     "Mind Reader"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Abomasnow",
+    "species": "Abomasnow",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Forest's Curse"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Heliolisk",
+    "species": "Heliolisk",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Revenge",
+     "Forest's Curse",
+     "Shell Trap",
+     "Mind Reader"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Arctovish",
+    "species": "Arctovish",
+    "level": 48,
+    "nature": "Hardy",
+    "moves": [
+     "Sky Attack",
+     "Drill Run",
+     "Mind Reader"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Zweilous",
+    "species": "Zweilous",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Stone Edge"
+    ],
+    "ability": "Run Away",
+    "item": "Red Card",
+    "gender": "M"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   20870,
+   11797,
+   14554,
+   60863
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1 1, move 1",
+   "p2": "move 1 1, move 1 2"
+  },
+  {
+   "p1": "move 2 2, move 1",
+   "p2": "move 2 1, move 1"
+  },
+  {
+   "p1": "pass, switch 3"
+  },
+  {
+   "p1": "move 3, move 2 1",
+   "p2": "move 3, move 2 2"
+  },
+  {
+   "p1": "move 1, move 3 2",
+   "p2": "move 4 1, move 3 2"
+  },
+  {
+   "p1": "move 1, move 1",
+   "p2": "switch 3, move 1 1"
+  },
+  {
+   "p1": "move 2 1, move 1 2",
+   "p2": "move 1 2, move 1"
+  },
+  {
+   "p1": "switch 4, pass"
+  }
+ ]
+}

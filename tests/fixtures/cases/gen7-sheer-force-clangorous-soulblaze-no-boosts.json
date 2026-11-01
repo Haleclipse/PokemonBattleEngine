@@ -1,0 +1,56 @@
+{
+ "schema": 1,
+ "id": "gen7-sheer-force-clangorous-soulblaze-no-boosts",
+ "notes": [
+  "Gen 7: Timburr's Sheer Force takes Clangorous Soulblaze's (a custom game's move in a slot) secondaries away, and its `selfBoost` with them: no stat rises (DESIGN.md R-M8-84)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Timburr",
+    "species": "Timburr",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Clangorous Soulblaze",
+     "Splash"
+    ],
+    "ability": "Sheer Force",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Clangorous Soulblaze",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

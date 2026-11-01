@@ -1,0 +1,81 @@
+{
+ "schema": 1,
+ "id": "gen1-cannotmove-sleeping-switch-in",
+ "notes": [
+  "Gen 1: a Pok\u00e9mon partially trapped when the choices are made leaves its side's last selected move at cannotmove; the sleeping teammate sent in after it faints acts with that and loses its turns (no cant slp, the sleep does not count down)"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Bound",
+    "species": "Rattata",
+    "level": 10,
+    "nature": "Hardy",
+    "moves": [
+     "Tail Whip"
+    ]
+   },
+   {
+    "label": "Sleeper",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Tail Whip"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Binder",
+    "species": "Parasect",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Wrap",
+     "Spore",
+     "Tail Whip"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "switch Sleeper",
+   "p2": "move Spore"
+  },
+  {
+   "p1": "switch Bound",
+   "p2": "move Wrap"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "switch Sleeper"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Tail Whip"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,180 @@
+{
+  "schema": 1,
+  "id": "gen4-doubles-metronome-worry-seed-cure",
+  "notes": [
+    "Nightly 49: a Worry Seed Metronome called wakes the sleeper; the cure is the called move's (the replay reads the move used), not the sleeper's wake-up (DESIGN.md R-M8-93)",
+    "promoted from m8-gen4-doubles-s497-014-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "doubles",
+    "format": "gen4doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Crawdaunt",
+        "species": "Crawdaunt",
+        "level": 46,
+        "nature": "Hardy",
+        "moves": [
+          "Gust",
+          "Metronome",
+          "Dark Pulse",
+          "Yawn"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Giratina",
+        "species": "Giratina",
+        "level": 52,
+        "nature": "Hardy",
+        "moves": [
+          "Drill Peck",
+          "Metronome",
+          "Astonish",
+          "Yawn"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Absol",
+        "species": "Absol",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Rock Slide",
+          "Metronome",
+          "Stomp",
+          "Yawn"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Misdreavus",
+        "species": "Misdreavus",
+        "level": 53,
+        "nature": "Hardy",
+        "moves": [
+          "Bone Club",
+          "Metronome",
+          "Waterfall",
+          "Yawn"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Electrode",
+        "species": "Electrode",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Zen Headbutt",
+          "Metronome",
+          "Extrasensory",
+          "Yawn"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Magnezone",
+        "species": "Magnezone",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Metronome"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Prinplup",
+        "species": "Prinplup",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Bite",
+          "Metronome",
+          "Headbutt",
+          "Yawn"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      5399,
+      27518,
+      48609,
+      31571
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Gust 1, move Drill Peck 2",
+      "p2": "move Bone Club 1, move Zen Headbutt 2"
+    },
+    {
+      "p1": "move Metronome, move Metronome",
+      "p2": "move Metronome, move Metronome"
+    },
+    {
+      "p1": "move Dark Pulse 1, move Astonish 2",
+      "p2": "move Waterfall 1, move Extrasensory 2"
+    },
+    {
+      "p1": "move Yawn 1, move Yawn 2",
+      "p2": "move Yawn 1, move Yawn 2"
+    },
+    {
+      "p1": "move Gust 1, move Drill Peck 2",
+      "p2": "move Bone Club 1, move Zen Headbutt 2"
+    },
+    {
+      "p1": "switch Absol, move Metronome",
+      "p2": "switch Magnezone, move Metronome"
+    },
+    {
+      "p1": "move Metronome, move Astonish 1",
+      "p2": "move Metronome, move Extrasensory 1"
+    },
+    {
+      "p2": "switch Misdreavus, pass"
+    },
+    {
+      "p1": "move Stomp 2, move Yawn 1",
+      "p2": "move Waterfall 2, move Yawn 1"
+    },
+    {
+      "p2": "pass, switch Prinplup"
+    },
+    {
+      "p1": "move Yawn 2, move Drill Peck 1",
+      "p2": "move Yawn 2, move Bite 1"
+    },
+    {
+      "p1": "move Rock Slide, move Metronome",
+      "p2": "pass, move Metronome"
+    },
+    {
+      "p1": "move Metronome, move Astonish 2",
+      "p2": "pass, move Headbutt 2"
+    },
+    {
+      "p1": "switch Crawdaunt, move Yawn 2",
+      "p2": "pass, move Yawn 1"
+    },
+    {
+      "p1": "move Dark Pulse 2, move Drill Peck 2",
+      "p2": "pass, move Bite 2"
+    }
+  ]
+}

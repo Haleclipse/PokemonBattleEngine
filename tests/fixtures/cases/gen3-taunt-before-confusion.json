@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "id": "gen3-taunt-before-confusion",
+  "notes": [
+    "Gen 3 Taunt refuses a status move before the confusion and paralysis checks (the cartridge's order, issues.md I66; Showdown's gen3 mod checks it last)"
+  ],
+  "battle": {
+    "generation": 3,
+    "mode": "singles",
+    "format": "gen3customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Gengar",
+        "species": "Gengar",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Thunder Wave",
+          "Confuse Ray",
+          "Taunt"
+        ],
+        "ability": "Levitate"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Snorlax",
+        "species": "Snorlax",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Growl",
+          "Tackle"
+        ],
+        "ability": "Thick Fat"
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 2"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      2,
+      3,
+      4,
+      5
+    ]
+  }
+}

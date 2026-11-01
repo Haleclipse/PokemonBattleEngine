@@ -1,0 +1,235 @@
+{
+ "schema": 1,
+ "id": "m9-an-instructed-mirror-coat-carries-its-volatile",
+ "notes": [
+  "R-M9-32: Chinchou instructs Turtonator, whose last move was Mirror Coat; I180's oracle patch gives the instructed Mirror Coat the `mirrorcoat` volatile it would have had since the turn began, and it lasts to the turn's end, which the mid-turn frame of Lairon's U-turn shows. The engine now sets it up as Instruct lands too. Minimized from Nightly 20261020-154242 (m8-gen8-doubles-s1558-019)."
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "doubles",
+  "format": "gen8doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Grimmsnarl",
+    "species": "Grimmsnarl",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Strange Steam",
+     "Hold Hands",
+     "Flip Turn"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Lairon",
+    "species": "Lairon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "U-turn",
+     "Hold Hands",
+     "Volt Switch",
+     "Instruct"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Beartic",
+    "species": "Beartic",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fire Spin",
+     "Hold Hands",
+     "Bind",
+     "Instruct"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Chinchou",
+    "species": "Chinchou",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Magma Storm",
+     "Thunder Cage",
+     "Instruct"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Drapion",
+    "species": "Drapion",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Snap Trap",
+     "Hold Hands",
+     "Infestation",
+     "Instruct"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Omastar",
+    "species": "Omastar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sand Tomb",
+     "Hold Hands",
+     "Wrap",
+     "Instruct"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Cubone",
+    "species": "Cubone",
+    "level": 47,
+    "nature": "Hardy",
+    "moves": [
+     "Whirlpool",
+     "Hold Hands",
+     "Super Fang",
+     "Instruct"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Turtonator",
+    "species": "Turtonator",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Metal Burst",
+     "Hold Hands",
+     "Mirror Coat",
+     "Instruct"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   35585,
+   19589,
+   62852,
+   18222
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Strange Steam 1, move U-turn 2",
+   "p2": "move Snap Trap 1, move Sand Tomb 2"
+  },
+  {
+   "p1": "pass, switch Beartic"
+  },
+  {
+   "p1": "move Flip Turn 1, move Bind 2",
+   "p2": "move Infestation 1, move Wrap 2"
+  },
+  {
+   "p1": "switch Lairon, pass"
+  },
+  {
+   "p1": "move Instruct 1, move Instruct 2",
+   "p2": "move Instruct 1, move Instruct 2"
+  },
+  {
+   "p1": "move U-turn 1, move Fire Spin 2",
+   "p2": "move Snap Trap 1, move Sand Tomb 2"
+  },
+  {
+   "p1": "switch Grimmsnarl, pass"
+  },
+  {
+   "p1": "switch Lairon, move Hold Hands -1",
+   "p2": "switch Cubone, move Hold Hands -1"
+  },
+  {
+   "p1": "move Hold Hands -2, move Bind 1",
+   "p2": "move Hold Hands -2, move Wrap 1"
+  },
+  {
+   "p1": "move Volt Switch 2, move Instruct 1",
+   "p2": "move Super Fang 2, move Instruct 1"
+  },
+  {
+   "p1": "switch Grimmsnarl, pass"
+  },
+  {
+   "p2": "pass, switch Drapion"
+  },
+  {
+   "p1": "move Strange Steam 2, move Hold Hands -1",
+   "p2": "move Whirlpool 2, move Hold Hands -1"
+  },
+  {
+   "p2": "pass, switch Turtonator"
+  },
+  {
+   "p1": "move Hold Hands -2, move Bind 1",
+   "p2": "move Hold Hands -2, move Mirror Coat"
+  },
+  {
+   "p1": "pass, switch Lairon"
+  },
+  {
+   "p1": "switch Chinchou, move Instruct 2",
+   "p2": "move Super Fang 1, move Instruct 2"
+  },
+  {
+   "p1": "move Thunder Cage 1, move U-turn 2",
+   "p2": "move Instruct 1, move Metal Burst"
+  },
+  {
+   "p1": "pass, switch Grimmsnarl"
+  },
+  {
+   "p1": "move Magma Storm 2, move Flip Turn 1",
+   "p2": "move Hold Hands -2, move Mirror Coat"
+  },
+  {
+   "p1": "pass, switch Lairon"
+  },
+  {
+   "p1": "move Thunder Cage 2, move U-turn 2",
+   "p2": "pass, move Metal Burst"
+  },
+  {
+   "p1": "pass, switch Grimmsnarl"
+  },
+  {
+   "p1": "switch Lairon, move Hold Hands -1",
+   "p2": "pass, move Hold Hands -1"
+  },
+  {
+   "p1": "move Instruct 2, move Flip Turn 2",
+   "p2": "pass, move Mirror Coat"
+  },
+  {
+   "p1": "pass, switch Chinchou"
+  },
+  {
+   "p1": "move U-turn 2, move Instruct 2",
+   "p2": "pass, move Instruct 2"
+  }
+ ]
+}

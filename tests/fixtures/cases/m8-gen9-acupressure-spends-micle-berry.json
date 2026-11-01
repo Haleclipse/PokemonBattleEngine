@@ -1,0 +1,123 @@
+{
+  "schema": 1,
+  "id": "m8-gen9-acupressure-spends-micle-berry",
+  "notes": [
+    "Nightly 61: Magmar's Acupressure on itself (adjacentAllyOrSelf) runs the Accuracy event, which spends its Micle Berry; only a move.target self status move skips it (DESIGN.md R-M8-105)",
+    "promoted from m8-gen9-singles-s540-016-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Fidough",
+        "species": "Fidough",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Charge",
+          "Relic Song"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Magmar",
+        "species": "Magmar",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Relic Song",
+          "Acupressure"
+        ],
+        "ability": "Run Away",
+        "item": "Micle Berry",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Skuntank",
+        "species": "Skuntank",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Strength Sap",
+          "Relic Song"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Lapras",
+        "species": "Lapras",
+        "level": 52,
+        "nature": "Hardy",
+        "moves": [
+          "Relic Song",
+          "Aqua Ring"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      51280,
+      19699,
+      8382,
+      41273
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Relic Song",
+      "p2": "move Relic Song"
+    },
+    {
+      "p1": "switch Magmar",
+      "p2": "switch Lapras"
+    },
+    {
+      "p1": "move Relic Song",
+      "p2": "move Relic Song"
+    },
+    {
+      "p1": "switch Fidough",
+      "p2": "switch Skuntank"
+    },
+    {
+      "p1": "move Charge",
+      "p2": "move Strength Sap"
+    },
+    {
+      "p1": "switch Magmar",
+      "p2": "switch Lapras"
+    },
+    {
+      "p1": "move Relic Song",
+      "p2": "move Relic Song"
+    },
+    {
+      "p1": "switch Fidough",
+      "p2": "switch Skuntank"
+    },
+    {
+      "p1": "switch Magmar",
+      "p2": "switch Lapras"
+    },
+    {
+      "p1": "move Relic Song",
+      "p2": "move Relic Song"
+    },
+    {
+      "p1": "move Acupressure",
+      "p2": "move Aqua Ring"
+    }
+  ]
+}

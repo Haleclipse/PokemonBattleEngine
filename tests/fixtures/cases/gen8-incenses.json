@@ -1,0 +1,177 @@
+{
+ "schema": 1,
+ "id": "gen8-incenses",
+ "notes": [
+  "Odd / Rock / Rose / Wave / Sea Incense: \u00d71.2 to moves of their type (Psychic, Rock Slide, Energy Ball, Surf), not to Body Slam"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Odd",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Psychic",
+     "Body Slam"
+    ],
+    "ability": "Run Away",
+    "item": "Odd Incense"
+   },
+   {
+    "label": "Rock",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Rock Slide",
+     "Body Slam"
+    ],
+    "ability": "Run Away",
+    "item": "Rock Incense"
+   },
+   {
+    "label": "Rose",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Energy Ball",
+     "Body Slam"
+    ],
+    "ability": "Run Away",
+    "item": "Rose Incense"
+   },
+   {
+    "label": "Wave",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Surf",
+     "Body Slam"
+    ],
+    "ability": "Run Away",
+    "item": "Wave Incense"
+   },
+   {
+    "label": "Sea",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Surf",
+     "Body Slam"
+    ],
+    "ability": "Run Away",
+    "item": "Sea Incense"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Psychic",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Psychic",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "switch Rock",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Rock Slide",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Rock Slide",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "switch Rose",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Energy Ball",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Energy Ball",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "switch Wave",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Surf",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Surf",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "switch Sea",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Surf",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Surf",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

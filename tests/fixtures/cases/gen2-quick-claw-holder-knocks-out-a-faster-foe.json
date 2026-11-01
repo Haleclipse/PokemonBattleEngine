@@ -1,0 +1,200 @@
+{
+  "schema": 1,
+  "id": "gen2-quick-claw-holder-knocks-out-a-faster-foe",
+  "notes": [
+    "Gen 2 Quick Claw: the slower holder knocks out the faster foe before it acts; the foe's faint (right after that action) is what shows the silent turn roll succeeded",
+    "promoted from m8-gen2-singles-s109-003-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 2,
+    "mode": "singles",
+    "format": "gen2customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Marowak",
+        "species": "Marowak",
+        "level": 46,
+        "nature": "Hardy",
+        "moves": [
+          "Psychic",
+          "Wing Attack",
+          "Aurora Beam",
+          "Aeroblast"
+        ],
+        "item": "Quick Claw",
+        "gender": "F"
+      },
+      {
+        "label": "Xatu",
+        "species": "Xatu",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Mud-Slap",
+          "Peck",
+          "Drill Peck"
+        ],
+        "item": "Quick Claw",
+        "gender": "M"
+      },
+      {
+        "label": "Metapod",
+        "species": "Metapod",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Gust",
+          "Acid"
+        ],
+        "gender": "M"
+      },
+      {
+        "label": "Umbreon",
+        "species": "Umbreon",
+        "level": 46,
+        "nature": "Hardy",
+        "moves": [
+          "Bubble Beam",
+          "Drill Peck",
+          "Crunch",
+          "Aeroblast"
+        ],
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Lugia",
+        "species": "Lugia",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tail Whip",
+          "Drill Peck",
+          "String Shot",
+          "Wing Attack"
+        ]
+      },
+      {
+        "label": "Shellder",
+        "species": "Shellder",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sweet Scent",
+          "Gust",
+          "Surf",
+          "Wing Attack"
+        ],
+        "item": "Quick Claw",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      6593,
+      7271,
+      44622,
+      61254
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Psychic",
+      "p2": "move Tail Whip"
+    },
+    {
+      "p1": "move Wing Attack",
+      "p2": "move Drill Peck"
+    },
+    {
+      "p1": "move Aurora Beam",
+      "p2": "move String Shot"
+    },
+    {
+      "p1": "move Aeroblast",
+      "p2": "move Wing Attack"
+    },
+    {
+      "p1": "switch Xatu"
+    },
+    {
+      "p1": "move Mud-Slap",
+      "p2": "move Tail Whip"
+    },
+    {
+      "p1": "switch Metapod",
+      "p2": "switch Shellder"
+    },
+    {
+      "p1": "move Gust",
+      "p2": "move Gust"
+    },
+    {
+      "p1": "move Acid",
+      "p2": "move Surf"
+    },
+    {
+      "p1": "switch Xatu"
+    },
+    {
+      "p1": "move Drill Peck",
+      "p2": "move Wing Attack"
+    },
+    {
+      "p1": "move Mud-Slap",
+      "p2": "move Sweet Scent"
+    },
+    {
+      "p1": "move Peck",
+      "p2": "move Gust"
+    },
+    {
+      "p1": "switch Umbreon",
+      "p2": "switch Lugia"
+    },
+    {
+      "p1": "move Crunch",
+      "p2": "move String Shot"
+    },
+    {
+      "p1": "move Aeroblast",
+      "p2": "move Wing Attack"
+    },
+    {
+      "p1": "move Bubble Beam",
+      "p2": "move Tail Whip"
+    },
+    {
+      "p1": "move Drill Peck",
+      "p2": "move Drill Peck"
+    },
+    {
+      "p1": "move Crunch",
+      "p2": "move String Shot"
+    },
+    {
+      "p1": "switch Xatu",
+      "p2": "switch Shellder"
+    },
+    {
+      "p1": "move Drill Peck",
+      "p2": "move Wing Attack"
+    },
+    {
+      "p2": "switch Lugia"
+    },
+    {
+      "p1": "move Mud-Slap",
+      "p2": "move Tail Whip"
+    },
+    {
+      "p1": "move Peck",
+      "p2": "move Drill Peck"
+    }
+  ]
+}

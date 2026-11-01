@@ -1,0 +1,104 @@
+{
+ "schema": 1,
+ "id": "gen4-doubles-attract-ends-with-the-residual-that-fells-its-source",
+ "notes": [
+  "Gen 4: with no replacement to ask for, the residual's Update ends the infatuation with Gardevoir, fallen to Leech Seed and its burn"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "doubles",
+  "format": "gen4doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Lucario",
+    "species": "Lucario",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Leech Seed",
+     "Harden"
+    ],
+    "ability": "Inner Focus",
+    "gender": "M"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gardevoir",
+    "species": "Gardevoir",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Attract",
+     "Harden"
+    ],
+    "ability": "Synchronize",
+    "gender": "F",
+    "item": "Flame Orb"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Leech Seed 1, move Harden",
+   "p2": "move Attract 1, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "pass, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "pass, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

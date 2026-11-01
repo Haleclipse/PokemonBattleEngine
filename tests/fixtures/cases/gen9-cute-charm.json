@@ -1,0 +1,129 @@
+{
+ "schema": 1,
+ "id": "gen9-cute-charm",
+ "notes": [
+  "Cute Charm: 3 in 10 after each contact hit (Double Kick rolls per hit, Swift not at all) to infatuate the attacker \u2014 rolled whatever the genders, taking only on the other gender; the infatuation ends when the holder leaves"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Brute",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Double Kick",
+     "Swift",
+     "Recover"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Gal",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Double Kick"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Charmer",
+    "species": "Clefable",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Harden"
+    ],
+    "ability": "Cute Charm",
+    "gender": "F"
+   },
+   {
+    "label": "Other",
+    "species": "Clefable",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Harden"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Double Kick",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Double Kick",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Double Kick",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Swift",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Double Kick",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Double Kick",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "switch Other"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "switch Charmer"
+  },
+  {
+   "p1": "switch Gal",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Double Kick",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Double Kick",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Double Kick",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Double Kick",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

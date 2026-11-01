@@ -1,0 +1,136 @@
+{
+  "schema": 1,
+  "id": "m8-gen9-an-encored-snipe-shot-draws-its-target",
+  "notes": [
+    "Gen 9 doubles: Rillaboom's Encore turns Lucario's chosen Encore into Snipe Shot; Showdown's OverrideAction draws its target (getRandomTarget) — Snipe Shot's tracksTarget does not keep the chosen move's target — before paralysis is checked (DESIGN.md R-M8-124)",
+    "promoted from m8-gen9-doubles-s615-019-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Applin",
+        "species": "Applin",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Blaze Kick",
+          "Encore"
+        ],
+        "ability": "Moxie",
+        "gender": "F"
+      },
+      {
+        "label": "Lucario",
+        "species": "Lucario",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Snipe Shot",
+          "Encore",
+          "Night Slash",
+          "Salt Cure"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Weavile",
+        "species": "Weavile",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Thunder Punch",
+          "Encore",
+          "Dragon Breath",
+          "Salt Cure"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Wattrel",
+        "species": "Wattrel",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Bounce"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Bayleef",
+        "species": "Bayleef",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Freeze Shock",
+          "Thunderbolt",
+          "Salt Cure"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Rillaboom",
+        "species": "Rillaboom",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Thunder Shock",
+          "Encore"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      62411,
+      31196,
+      14841,
+      24070
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Blaze Kick 1, move Snipe Shot 2",
+      "p2": "move Thunder Punch 1, move Bounce 2"
+    },
+    {
+      "p1": "move 2 1, move 2 2",
+      "p2": "move 2 1, move 1"
+    },
+    {
+      "p2": "pass, switch Bayleef"
+    },
+    {
+      "p1": "move Blaze Kick 1, move Night Slash 2",
+      "p2": "move Dragon Breath 2, move Thunderbolt 1"
+    },
+    {
+      "p1": "move Blaze Kick 1, move Salt Cure 2",
+      "p2": "move Salt Cure 2, move Salt Cure 1"
+    },
+    {
+      "p2": "switch Rillaboom, pass"
+    },
+    {
+      "p1": "move Blaze Kick 1, move Snipe Shot 2",
+      "p2": "move Thunder Shock 2, move Freeze Shock 1"
+    },
+    {
+      "p1": "move 2 1, move 2 2",
+      "p2": "move 2 2, move 1"
+    }
+  ]
+}

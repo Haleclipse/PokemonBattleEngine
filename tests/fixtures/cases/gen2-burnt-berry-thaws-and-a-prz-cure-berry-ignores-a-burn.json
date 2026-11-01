@@ -1,0 +1,71 @@
+{
+ "schema": 1,
+ "id": "gen2-burnt-berry-thaws-and-a-prz-cure-berry-ignores-a-burn",
+ "notes": [
+  "Gen 2: Ice Beam freezes Snorlax, whose Burnt Berry thaws it at once (pokecrystal `BattleCommand_FreezeTarget`, issues.md I33); a PRZ Cure Berry does nothing for a burn and stays held"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Smeargle",
+    "species": "Smeargle",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Ice Beam",
+     "Sacred Fire"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Burnt Berry"
+   },
+   {
+    "label": "Lapras",
+    "species": "Lapras",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "PRZ Cure Berry"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Ice Beam",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Sacred Fire",
+   "p2": "switch Lapras"
+  },
+  {
+   "p1": "move Ice Beam",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   18,
+   2,
+   3,
+   4
+  ]
+ }
+}

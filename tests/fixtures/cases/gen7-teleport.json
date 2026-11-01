@@ -1,0 +1,68 @@
+{
+ "schema": 1,
+ "id": "gen7-teleport",
+ "notes": [
+  "Gen 7 Teleport fails in a trainer battle (`onTry: false`; Stomping Tantrum doubles next turn)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Abra",
+    "species": "Abra",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Teleport",
+     "Stomping Tantrum"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Teleport",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Stomping Tantrum",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

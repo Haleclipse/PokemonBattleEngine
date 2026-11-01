@@ -1,0 +1,100 @@
+{
+ "schema": 1,
+ "id": "gen7-pinch-abilities",
+ "notes": [
+  "Gen 5+ pinch abilities: \u00d71.5 to moves of their type once the holder is at a third of its max HP or below, on the attacking stat (onModifyAtk / onModifySpA)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Fire",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Flamethrower",
+     "Harden"
+    ],
+    "ability": "Blaze"
+   },
+   {
+    "label": "Grass",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Energy Ball",
+     "Harden"
+    ],
+    "ability": "Overgrow"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled",
+     "Seismic Toss"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Flamethrower",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Flamethrower",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Flamethrower",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Flamethrower",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "switch Grass",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Energy Ball",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Energy Ball",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Energy Ball",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Energy Ball",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

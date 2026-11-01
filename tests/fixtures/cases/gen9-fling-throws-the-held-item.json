@@ -1,0 +1,120 @@
+{
+ "schema": 1,
+ "id": "gen9-fling-throws-the-held-item",
+ "notes": [
+  "Gen 9 Fling: an Iron Ball at 130 power, gone after the hit; a Flame Orb burns the target; a King's Rock makes the slower target flinch; a Life Orb boosts the throw and costs no HP (gone before the recoil)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Fling",
+     "Harden"
+    ],
+    "ability": "Synchronize",
+    "item": "Iron Ball"
+   },
+   {
+    "label": "Mew2",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Fling",
+     "Harden"
+    ],
+    "ability": "Synchronize",
+    "item": "Flame Orb"
+   },
+   {
+    "label": "Mew3",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Fling",
+     "Harden"
+    ],
+    "ability": "Synchronize",
+    "item": "King's Rock"
+   },
+   {
+    "label": "Mew4",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Fling",
+     "Harden"
+    ],
+    "ability": "Synchronize",
+    "item": "Life Orb"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Fling",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Mew2",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Fling",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Mew3",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Fling",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "switch Mew4",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Fling",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

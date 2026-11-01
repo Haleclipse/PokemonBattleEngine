@@ -1,0 +1,100 @@
+{
+  "schema": 1,
+  "id": "gen3-doubles-a-flinch-after-moving-is-the-last-hits",
+  "notes": [
+    "Nightly 15: Squirtle's Rolling Kick flinches Hitmonlee after it has moved, and the flinch is still on it at the faint request that ends the turn; the replay must give it to that last hit, not to Sharpedo's earlier Rock Slide (Hitmonlee moved after it)",
+    "promoted from m8-gen3-doubles-s370-015-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 3,
+    "mode": "doubles",
+    "format": "gen3doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Sharpedo",
+        "species": "Sharpedo",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Rock Slide",
+          "Sacred Fire"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Squirtle",
+        "species": "Squirtle",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Rolling Kick",
+          "Flame Wheel"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Poliwag",
+        "species": "Poliwag",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Double Slap"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Wooper",
+        "species": "Wooper",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Arm Thrust",
+          "Sacred Fire"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Hitmonlee",
+        "species": "Hitmonlee",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Bullet Seed",
+          "Flame Wheel"
+        ],
+        "ability": "Run Away"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      31395,
+      1007,
+      19478,
+      564
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Rock Slide, move Rolling Kick 1",
+      "p2": "move Arm Thrust 1, move Bullet Seed 2"
+    },
+    {
+      "p1": "move Sacred Fire 2, move Flame Wheel 1",
+      "p2": "move Sacred Fire 1, move Flame Wheel 2"
+    },
+    {
+      "p1": "move Rock Slide, move Rolling Kick 2",
+      "p2": "move Arm Thrust 1, move Bullet Seed 2"
+    }
+  ]
+}

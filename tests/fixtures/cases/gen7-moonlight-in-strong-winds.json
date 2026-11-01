@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "gen7-moonlight-in-strong-winds",
+ "notes": [
+  "Gen 7: Clefable raises Delta Stream's winds and uses Moonlight: Showdown's `onHit` names rain, sandstorm, hail and snow alone, so the winds heal half as a clear sky (DESIGN.md R-M8-90)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Clefable",
+    "species": "Clefable",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Moonlight",
+     "Splash"
+    ],
+    "ability": "Delta Stream",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Machamp",
+    "species": "Machamp",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Close Combat",
+     "Splash"
+    ],
+    "ability": "Guts",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash",
+   "p2": "move Close Combat"
+  },
+  {
+   "p1": "move Moonlight",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,103 @@
+{
+ "schema": 1,
+ "id": "gen7-switcheroo-and-bestow",
+ "notes": [
+  "Gen 7: Switcheroo with both hands empty fails (Kecleon's Stomping Tantrum next turn doubles); from an empty-handed Kecleon it takes Snorlax's Leftovers; Bestow gives Blissey's Black Sludge to Snorlax, holding nothing; Kecleon's Bestow fails on a target holding something"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Kecleon",
+    "species": "Kecleon",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Switcheroo",
+     "Bestow",
+     "Stomping Tantrum",
+     "Harden"
+    ],
+    "ability": "Color Change"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Bestow",
+     "Harden"
+    ],
+    "ability": "Natural Cure",
+    "item": "Black Sludge"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Natural Cure"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Leftovers"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Switcheroo",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Stomping Tantrum",
+   "p2": "switch Snorlax"
+  },
+  {
+   "p1": "move Switcheroo",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Blissey",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Bestow",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Kecleon",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Bestow",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

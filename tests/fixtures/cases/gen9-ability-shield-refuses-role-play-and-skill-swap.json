@@ -1,0 +1,62 @@
+{
+ "schema": 1,
+ "id": "gen9-ability-shield-refuses-role-play-and-skill-swap",
+ "notes": [
+  "Ability Shield refuses an ability change (`onSetAbility`, `-block`): Skill Swap on its holder fails, and the holder's own Role Play fails"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Role Play",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat",
+    "item": "Ability Shield"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gyarados",
+    "species": "Gyarados",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Skill Swap",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Intimidate"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Skill Swap"
+  },
+  {
+   "p1": "move Role Play",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

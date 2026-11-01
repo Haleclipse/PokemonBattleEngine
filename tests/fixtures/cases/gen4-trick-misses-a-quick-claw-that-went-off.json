@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "id": "gen4-trick-misses-a-quick-claw-that-went-off",
+  "notes": [
+    "Gen 4 Trick (cartridge, issues.md I53): Snorlax's Quick Claw goes off for Mirror Coat, so Alakazam's Trick fails before Snorlax moves; the next turn it stays quiet and Trick swaps the Choice Scarf for the Quick Claw \u2014 Snorlax's Mirror Coat then locks it in (Gen 4 Choice items lock after the move)"
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "singles",
+    "format": "gen4customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Alakazam",
+        "species": "Alakazam",
+        "level": 100,
+        "nature": "Hardy",
+        "moves": [
+          "Trick",
+          "Harden"
+        ],
+        "ability": "Synchronize",
+        "item": "Choice Scarf"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Snorlax",
+        "species": "Snorlax",
+        "level": 100,
+        "nature": "Hardy",
+        "moves": [
+          "Mirror Coat",
+          "Harden"
+        ],
+        "ability": "Thick Fat",
+        "item": "Quick Claw"
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Trick",
+      "p2": "move Mirror Coat"
+    },
+    {
+      "p1": "move Trick",
+      "p2": "move Mirror Coat"
+    },
+    {
+      "p1": "move Trick",
+      "p2": "move Mirror Coat"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      2,
+      3,
+      4,
+      5
+    ]
+  }
+}

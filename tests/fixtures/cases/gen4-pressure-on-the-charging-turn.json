@@ -1,0 +1,57 @@
+{
+ "schema": 1,
+ "id": "gen4-pressure-on-the-charging-turn",
+ "notes": [
+  "Gen 4 Pressure: Fly at the holder costs 2 PP as it charges and nothing as it attacks"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "User",
+    "species": "Pidgeot",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fly"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Holder",
+    "species": "Absol",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Pressure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Fly",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Fly",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

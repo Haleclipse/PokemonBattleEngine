@@ -1,0 +1,68 @@
+{
+ "schema": 1,
+ "id": "gen6-future-sight-strikes-normal-for-a-normalize-user",
+ "notes": [
+  "Gen 6: Qwilfish (Normalize) uses Future Sight on Machamp; two turns later the strike is Normal — the condition's `onEnd` retypes it for a user on the field with Normalize — not Psychic, which Machamp's Fighting type would take double (DESIGN.md R-M8-151)"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Qwilfish",
+    "species": "Qwilfish",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Future Sight",
+     "Splash"
+    ],
+    "ability": "Normalize",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Machamp",
+    "species": "Machamp",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Guts",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Future Sight",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

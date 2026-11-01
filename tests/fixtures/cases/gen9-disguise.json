@@ -1,0 +1,69 @@
+{
+ "schema": 1,
+ "id": "gen9-disguise",
+ "notes": [
+  "Gen 9: Mimikyu's Disguise takes the first damaging move whole (no damage, `-activate`), then it is a Mimikyu-Busted and loses an eighth of its max HP (Gen 8+); a second hit lands normally"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mimikyu",
+    "species": "Mimikyu",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "gender": "M",
+    "ability": "Disguise"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Bite",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Bite"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Bite"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Bite"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

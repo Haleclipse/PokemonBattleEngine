@@ -1,0 +1,80 @@
+{
+ "schema": 1,
+ "id": "gen6-future-sight-and-rowap-berry-on-a-benched-user",
+ "notes": [
+  "Gen 6: Alakazam's Future Sight strikes Blissey's Rowap Berry after Alakazam left: the berry is eaten, but a Pokémon off the field takes no damage (`spreadDamage`'s `!target.isActive`)"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Alakazam",
+    "species": "Alakazam",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Future Sight",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Synchronize"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure",
+    "item": "Rowap Berry"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Future Sight",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

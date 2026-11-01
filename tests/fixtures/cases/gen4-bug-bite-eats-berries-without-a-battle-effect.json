@@ -1,0 +1,74 @@
+{
+ "schema": 1,
+ "id": "gen4-bug-bite-eats-berries-without-a-battle-effect",
+ "notes": [
+  "Gen 4: Scizor's Bug Bite takes and eats Bluk Berry, Pinap Berry (onEat: false) one after another, for nothing (pokeplatinum's default branch: a berry with no effect is taken all the same)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Scizor",
+    "species": "Scizor",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Bug Bite",
+     "Harden"
+    ],
+    "ability": "Swarm"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Bluk Berry"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Natural Cure",
+    "item": "Pinap Berry"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Bug Bite",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Blissey"
+  },
+  {
+   "p1": "move Bug Bite",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,84 @@
+{
+ "schema": 1,
+ "id": "gen6-unaware-behind-a-substitute-against-a-spread-move",
+ "notes": [
+  "Gen 6 doubles: Growl takes Rhyperior's Attack down; its Rock Slide breaks into Quagsire's Substitute as if at +0 — Unaware ignores the attacker's stages whichever target it is; Showdown's activeTarget is still Snorlax, the last the accuracy step went through, and the I195 patch sets it for the Substitute's own getDamage (issues.md I195, DESIGN.md R-M8-139)"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "doubles",
+  "format": "gen6doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Rhyperior",
+    "species": "Rhyperior",
+    "level": 20,
+    "nature": "Hardy",
+    "moves": [
+     "Rock Slide",
+     "Splash"
+    ],
+    "ability": "Solid Rock",
+    "gender": "M"
+   },
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Swift Swim",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Quagsire",
+    "species": "Quagsire",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Substitute",
+     "Splash"
+    ],
+    "ability": "Unaware",
+    "gender": "M"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Growl",
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash, move Splash",
+   "p2": "move Substitute, move Growl"
+  },
+  {
+   "p1": "move Rock Slide, move Splash",
+   "p2": "move Splash, move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,76 @@
+{
+ "schema": 1,
+ "id": "gen3-crash-damage-from-the-would-be-damage",
+ "notes": [
+  "Gen 3 crash: half the damage High Jump Kick would have dealt (at most half the target's max HP) when Protect stops it; against the immune Gastly there is no crash"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hitmonlee",
+    "species": "Hitmonlee",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "High Jump Kick"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Protect",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Gastly",
+    "species": "Gastly",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move High Jump Kick",
+   "p2": "move Protect"
+  },
+  {
+   "p1": "move High Jump Kick",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move High Jump Kick",
+   "p2": "switch Gastly"
+  },
+  {
+   "p1": "move High Jump Kick",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

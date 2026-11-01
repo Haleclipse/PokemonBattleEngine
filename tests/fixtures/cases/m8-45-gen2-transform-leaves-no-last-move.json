@@ -1,0 +1,54 @@
+{
+ "schema": 1,
+ "id": "m8-45-gen2-transform-leaves-no-last-move",
+ "notes": [
+  "Nightly 39 gen2-singles-s455-004, minimized: Gen 2: Transform leaves no last move (`moveUsed`), so a later Spite finds nothing"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Pidgey",
+    "species": "Pidgey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Transform",
+     "Spite"
+    ],
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Magmar",
+    "species": "Magmar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Transform"
+    ],
+    "gender": "F"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   65312,
+   43375,
+   60773,
+   9373
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Spite",
+   "p2": "move Transform"
+  }
+ ]
+}

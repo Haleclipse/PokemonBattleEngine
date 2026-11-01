@@ -1,0 +1,401 @@
+{
+ "schema": 1,
+ "id": "m9-gen1-desync-clause-stops-a-called-bind-after-a-switch",
+ "notes": [
+  "R-M9-47: Pidgeot's Mirror Move calls Moltres's Fire Spin, binding it; Moltres switches out, so the Gen 1 `partialtrappinglock` ends at BeforeMove (its target is not the one it caught) with Pidgeot's action still Fire Spin. Nothing locks it any more and its last selected slot holds Mirror Move: Showdown's Desync Clause Mod stops the action (its PP spent, no move line). The engine's check covered only actions chosen as Fight. Minimized from Nightly 20261022-005815 (m9-gen1ou-s143-012)."
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1ou"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mr. Mime",
+    "species": "Mr. Mime",
+    "ability": "",
+    "moves": [
+     "Psychic",
+     "Seismic Toss",
+     "Substitute"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": true,
+    "level": 62
+   },
+   {
+    "label": "Bellsprout",
+    "species": "Bellsprout",
+    "ability": "",
+    "moves": [
+     "Rage",
+     "Cut",
+     "Swords Dance"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": false,
+    "level": 39
+   },
+   {
+    "label": "Nick58",
+    "species": "Pidgeotto",
+    "ability": "",
+    "moves": [
+     "Bide",
+     "Razor Wind",
+     "Wing Attack"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": false,
+    "level": 100,
+    "happiness": 20
+   },
+   {
+    "label": "Moltres",
+    "species": "Moltres",
+    "ability": "",
+    "moves": [
+     "Hyper Beam",
+     "Fire Spin",
+     "Rest",
+     "Peck"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": false,
+    "level": 100,
+    "happiness": 35
+   },
+   {
+    "label": "Electabuzz",
+    "species": "Electabuzz",
+    "ability": "",
+    "moves": [
+     "Mega Punch",
+     "Psywave",
+     "Psychic",
+     "Reflect"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": false,
+    "level": 100,
+    "happiness": 145
+   }
+  ],
+  "p2": [
+   {
+    "label": "Nick51",
+    "species": "Raichu",
+    "ability": "",
+    "moves": [
+     "Pay Day",
+     "Growl",
+     "Submission",
+     "Agility"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": false,
+    "level": 100
+   },
+   {
+    "label": "Cubone",
+    "species": "Cubone",
+    "ability": "",
+    "moves": [
+     "Rage",
+     "Seismic Toss",
+     "Double-Edge"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": false,
+    "level": 36
+   },
+   {
+    "label": "Nick29",
+    "species": "Gengar",
+    "ability": "",
+    "moves": [
+     "Night Shade",
+     "Self-Destruct"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": false,
+    "level": 100
+   },
+   {
+    "label": "Tangela",
+    "species": "Tangela",
+    "ability": "",
+    "moves": [
+     "Stun Spore",
+     "Vine Whip",
+     "Skull Bash"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": false,
+    "level": 100
+   },
+   {
+    "label": "Nick95",
+    "species": "Pidgeot",
+    "ability": "",
+    "moves": [
+     "Razor Wind",
+     "Take Down",
+     "Sand Attack",
+     "Mirror Move"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": false,
+    "level": 100,
+    "happiness": 40
+   },
+   {
+    "label": "Caterpie",
+    "species": "Caterpie",
+    "ability": "",
+    "moves": [
+     "Tackle",
+     "String Shot"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": false,
+    "level": 75
+   }
+  ]
+ },
+ "preview": {
+  "p1": "team 516243",
+  "p2": "team 345612"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   10861,
+   143,
+   1012,
+   31
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Psychic",
+   "p2": "move Pay Day"
+  },
+  {
+   "p1": "move Seismic Toss",
+   "p2": "move Growl"
+  },
+  {
+   "p1": "move Substitute",
+   "p2": "move Submission"
+  },
+  {
+   "p1": "move Psychic",
+   "p2": "move Pay Day"
+  },
+  {
+   "p1": "move Seismic Toss",
+   "p2": "move Growl"
+  },
+  {
+   "p1": "switch Bellsprout",
+   "p2": "switch Cubone"
+  },
+  {
+   "p1": "move Cut",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Swords Dance",
+   "p2": "move Double-Edge"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "move Rage"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "move Rage"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "move Rage"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "move Rage"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "move Rage"
+  },
+  {
+   "p1": "switch Mr. Mime"
+  },
+  {
+   "p1": "move Seismic Toss",
+   "p2": "move Rage"
+  },
+  {
+   "p2": "switch Nick51"
+  },
+  {
+   "p1": "move Substitute",
+   "p2": "move Submission"
+  },
+  {
+   "p1": "switch Nick58"
+  },
+  {
+   "p1": "move Wing Attack",
+   "p2": "move Agility"
+  },
+  {
+   "p2": "switch Nick29"
+  },
+  {
+   "p1": "move Bide",
+   "p2": "move Night Shade"
+  },
+  {
+   "p1": "move Bide",
+   "p2": "move Self-Destruct"
+  },
+  {
+   "p2": "switch Tangela"
+  },
+  {
+   "p1": "switch Moltres",
+   "p2": "switch Nick95"
+  },
+  {
+   "p1": "move Peck",
+   "p2": "move Mirror Move"
+  },
+  {
+   "p1": "move Hyper Beam",
+   "p2": "move Razor Wind"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Rest",
+   "p2": "move Sand Attack"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 4"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "switch Nick58",
+   "p2": "switch Tangela"
+  },
+  {
+   "p1": "move Razor Wind",
+   "p2": "move Vine Whip"
+  },
+  {
+   "p1": "switch Moltres"
+  },
+  {
+   "p1": "move Rest",
+   "p2": "move Skull Bash"
+  },
+  {
+   "p1": "move 4",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Hyper Beam",
+   "p2": "move Stun Spore"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 2"
+  },
+  {
+   "p1": "move Rest",
+   "p2": "move Skull Bash"
+  },
+  {
+   "p1": "switch Electabuzz",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Reflect",
+   "p2": "move Stun Spore"
+  },
+  {
+   "p1": "move Psywave",
+   "p2": "move Skull Bash"
+  },
+  {
+   "p1": "move 3",
+   "p2": "move 1"
+  },
+  {
+   "p2": "switch Nick95"
+  },
+  {
+   "p1": "move 4",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Mega Punch",
+   "p2": "move Take Down"
+  },
+  {
+   "p1": "switch Moltres",
+   "p2": "switch Caterpie"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 2"
+  },
+  {
+   "p1": "move Peck",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Hyper Beam",
+   "p2": "move String Shot"
+  },
+  {
+   "p2": "switch Nick95"
+  },
+  {
+   "p1": "move Fire Spin",
+   "p2": "move Sand Attack"
+  },
+  {
+   "p1": "move Rest",
+   "p2": "move Mirror Move"
+  },
+  {
+   "p1": "switch Electabuzz",
+   "p2": "move 1"
+  }
+ ]
+}

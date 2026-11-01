@@ -1,0 +1,66 @@
+{
+ "schema": 1,
+ "id": "gen7-magic-coat",
+ "notes": [
+  "Gen 7: Clefable's Magic Coat reflects Snorlax's Toxic back; the next turn's coat lets a Tackle (no `reflectable`) through"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Clefable",
+    "species": "Clefable",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Magic Coat",
+     "Psychic"
+    ],
+    "gender": "F",
+    "ability": "Magic Guard"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Toxic",
+     "Tackle",
+     "Thunder Wave"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Magic Coat",
+   "p2": "move Toxic"
+  },
+  {
+   "p1": "move Magic Coat",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Psychic",
+   "p2": "move Thunder Wave"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

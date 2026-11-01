@@ -1,0 +1,92 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-acupressure-on-a-fainted-partner",
+ "notes": [
+  "Gen 9 Acupressure aimed at a partner knocked out earlier in the turn goes to its user (Showdown getTarget: adjacentAllyOrSelf, gen !== 5)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Frail",
+    "species": "Magikarp",
+    "level": 5,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Acu",
+    "species": "Clefable",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Acupressure",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Bench",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Fast",
+    "species": "Jolteon",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Thunderbolt",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Wall",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Acupressure -1",
+   "p2": "move Thunderbolt 1, move Harden"
+  },
+  {
+   "p1": "switch Bench, pass"
+  },
+  {
+   "p1": "move Harden, move Acupressure -1",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

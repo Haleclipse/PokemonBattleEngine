@@ -1,0 +1,80 @@
+{
+ "schema": 1,
+ "id": "gen3-sleep-talk-turns-given-back-keep-the-sleep-longer",
+ "notes": [
+  "Gen 3: Jolteon's Spore puts Snorlax to sleep before it moves; next turn Snorlax, still asleep, uses Sleep Talk; it switches out and back in, which gives the Sleep Talk turn back (`skippedTime`). The replay still reads a sleep longer than the two turns taken before the give-back (DESIGN.md R-M8-152)"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spore",
+     "Splash"
+    ],
+    "ability": "Volt Absorb",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sleep Talk",
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   },
+   {
+    "label": "Clefairy",
+    "species": "Clefairy",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Cute Charm",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Spore",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Sleep Talk"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "switch Clefairy"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "switch Snorlax"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

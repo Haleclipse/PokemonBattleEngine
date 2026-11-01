@@ -1,0 +1,57 @@
+{
+ "schema": 1,
+ "id": "gen6-me-first-round-moves-the-foes-round-up",
+ "notes": [
+  "Gen 6: Gliscor's Me First copies Empoleon's Round; the called Round moves Empoleon's own Round up behind it, at double power (`[from] move: Round`, DESIGN.md R-M8-86)"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Gliscor",
+    "species": "Gliscor",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Me First",
+     "Splash"
+    ],
+    "ability": "Hyper Cutter",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Empoleon",
+    "species": "Empoleon",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Round",
+     "Splash"
+    ],
+    "ability": "Torrent",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Me First",
+   "p2": "move Round"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

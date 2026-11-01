@@ -1,0 +1,76 @@
+{
+ "schema": 1,
+ "id": "gen3-beat-up-by-a-user-that-just-woke",
+ "notes": [
+  "Gen 3: Breloom's Spore puts Sneasel to sleep; the turn it wakes, its Beat Up counts it a member (and lands a critical hit) — the replay plans the move on the state its action began with, the sleep shaken off (DESIGN.md R-M8-134)"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sneasel",
+    "species": "Sneasel",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Beat Up"
+    ],
+    "ability": "Inner Focus",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Breloom",
+    "species": "Breloom",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spore",
+     "Splash"
+    ],
+    "ability": "Effect Spore",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Beat Up",
+   "p2": "move Spore"
+  },
+  {
+   "p1": "move Beat Up",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Beat Up",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Beat Up",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Beat Up",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Beat Up",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   14,
+   15,
+   16,
+   17
+  ]
+ }
+}

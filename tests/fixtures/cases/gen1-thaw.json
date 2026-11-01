@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "id": "gen1-singles-thaw",
+  "notes": [
+    "Gen 1 thawing: a frozen Pok\u00e9mon never thaws by itself; a move whose secondary is a burn (Fire Blast) thaws the target after the move."
+  ],
+  "battle": {
+    "generation": 1,
+    "mode": "singles",
+    "format": "gen1customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "a",
+        "species": "Lapras",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Ice Beam",
+          "Fire Blast"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "b",
+        "species": "Snorlax",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      2,
+      3,
+      4,
+      5
+    ]
+  }
+}

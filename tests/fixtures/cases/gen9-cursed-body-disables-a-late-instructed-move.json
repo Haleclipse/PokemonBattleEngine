@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen9-cursed-body-disables-a-late-instructed-move",
+ "notes": [
+  "Gen 9: the slower Slowbro instructs Gengar, who has moved already; the instructed Sludge Bomb strikes Slowbro and Cursed Body disables it. Instruct's action runs as any move (not `isExternal`): one turn comes off the Disable (DESIGN.md R-M8-93)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Slowbro",
+    "species": "Slowbro",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Instruct",
+     "Splash"
+    ],
+    "ability": "Cursed Body",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gengar",
+    "species": "Gengar",
+    "level": 20,
+    "nature": "Hardy",
+    "moves": [
+     "Sludge Bomb",
+     "Splash"
+    ],
+    "ability": "Levitate",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash",
+   "p2": "move Sludge Bomb"
+  },
+  {
+   "p1": "move Instruct",
+   "p2": "move Sludge Bomb"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

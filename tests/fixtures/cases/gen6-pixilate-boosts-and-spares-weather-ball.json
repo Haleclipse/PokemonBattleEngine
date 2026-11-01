@@ -1,0 +1,70 @@
+{
+ "schema": 1,
+ "id": "gen6-pixilate-boosts-and-spares-weather-ball",
+ "notes": [
+  "Gen 6 Pixilate turns Hyper Voice Fairy with a 5325/4096 boost; Weather Ball, which sets its own type, stays Normal"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sylveon",
+    "species": "Sylveon",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Hyper Voice",
+     "Weather Ball"
+    ],
+    "ability": "Pixilate"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 90,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Hyper Voice",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Hyper Voice",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Weather Ball",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Hyper Voice",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Hyper Voice",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   2,
+   2,
+   3,
+   4
+  ]
+ }
+}

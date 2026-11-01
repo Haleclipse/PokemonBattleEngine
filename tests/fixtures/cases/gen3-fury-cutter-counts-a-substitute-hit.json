@@ -1,0 +1,68 @@
+{
+ "schema": 1,
+ "id": "gen3-fury-cutter-counts-a-substitute-hit",
+ "notes": [
+  "Gen 3 Fury Cutter (cartridge, I75): a hit on a Substitute counts, so the next is doubled; another move in between keeps the count"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Cutter",
+    "species": "Scizor",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fury Cutter",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Wall",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Substitute",
+     "Recover",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Fury Cutter",
+   "p2": "move Substitute"
+  },
+  {
+   "p1": "move Fury Cutter",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Fury Cutter",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   2,
+   2,
+   3,
+   4
+  ]
+ }
+}

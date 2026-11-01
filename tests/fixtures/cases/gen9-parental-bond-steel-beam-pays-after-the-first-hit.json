@@ -1,0 +1,70 @@
+{
+ "schema": 1,
+ "id": "gen9-parental-bond-steel-beam-pays-after-the-first-hit",
+ "notes": [
+  "Gen 9: Groudon's Parental Bond doubles Steel Beam; the self damage comes after the first hit (Showdown `hitStepMoveHitLoop`'s `mindBlownRecoil`), before the second. The next turn it knocks Groudon out after the first hit, and there is no second (DESIGN.md R-M8-84)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Groudon",
+    "species": "Groudon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Steel Beam",
+     "Splash"
+    ],
+    "ability": "Parental Bond"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Steel Beam",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Steel Beam",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

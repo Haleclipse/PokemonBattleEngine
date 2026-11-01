@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen8-protean-rest-at-full-hp",
+ "notes": [
+  "Gen 8: Cinderace with Protean uses Rest at full HP: `onTry` fails it (`-fail … heal`) before Protean; Rest after a hit makes it Psychic and puts it to sleep"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Cinderace",
+    "species": "Cinderace",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Rest",
+     "Water Gun"
+    ],
+    "gender": "M",
+    "ability": "Protean"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Rest",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Rest",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

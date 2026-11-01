@@ -1,0 +1,108 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-wind-rider-and-wind-power",
+ "notes": [
+  "A partner's Tailwind: Wind Rider +1 Attack, Wind Power charged (its Thunderbolt doubled). A foe's Gust: Wind Rider refuses it for +1 Attack; Wind Power takes the hit and is charged again. Wind Rider entering with Tailwind up: +1 Attack"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Rider",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "ability": "Wind Rider"
+   },
+   {
+    "label": "Power",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tailwind",
+     "Thunderbolt",
+     "Harden"
+    ],
+    "ability": "Wind Power"
+   },
+   {
+    "label": "Rider2",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Wind Rider"
+   }
+  ],
+  "p2": [
+   {
+    "label": "F1",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Gust",
+     "Harden",
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "F2",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Tailwind",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Thunderbolt 2",
+   "p2": "move Gust 1, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Gust 2, move Harden"
+  },
+  {
+   "p1": "switch Rider2, move Thunderbolt 2",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Tackle 2, move Harden"
+  },
+  {
+   "p1": "move Harden, move Thunderbolt 2",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

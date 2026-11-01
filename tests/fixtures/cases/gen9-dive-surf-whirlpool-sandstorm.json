@@ -1,0 +1,85 @@
+{
+ "schema": 1,
+ "id": "gen9-dive-surf-whirlpool-sandstorm",
+ "notes": [
+  "Gen 9 Dive: under water it is missed by Tackle, struck twice as hard by Surf and Whirlpool (Whirlpool binds), and the sandstorm does not reach it"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Diver",
+    "species": "Snorlax",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Dive",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Blissey",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Surf",
+     "Whirlpool",
+     "Tackle",
+     "Sandstorm"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Dive",
+   "p2": "move Sandstorm"
+  },
+  {
+   "p1": "move Dive",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Dive",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Dive",
+   "p2": "move Surf"
+  },
+  {
+   "p1": "move Dive",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Dive",
+   "p2": "move Whirlpool"
+  },
+  {
+   "p1": "move Dive",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Dive",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

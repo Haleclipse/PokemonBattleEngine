@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen5-cursed-body-disables-a-copycat-move-not-held",
+ "notes": [
+  "Gen 5: Shuckle's Copycat follows Snorlax's Bounce into the air; next turn its Bounce comes down on Snorlax (Cursed Body), the locked move now Shuckle's last. Disable seals Bounce though no slot holds it (Showdown's `onStart` only asks a holding slot's PP) (DESIGN.md R-M8-158)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Shuckle",
+    "species": "Shuckle",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Copycat",
+     "Splash"
+    ],
+    "ability": "Sturdy",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Bounce",
+     "Splash"
+    ],
+    "ability": "Cursed Body",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Copycat",
+   "p2": "move Bounce"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   2,
+   3,
+   4,
+   5
+  ]
+ }
+}

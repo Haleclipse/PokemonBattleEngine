@@ -1,0 +1,2019 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@pkmn/sim",
+    "version": "0.10.11",
+    "formatid": "gen4customgame",
+    "seed": [
+      2,
+      2,
+      3,
+      4
+    ]
+  },
+  "frames": [
+    {
+      "schema": 1,
+      "checkpoint": "initial",
+      "turn": 1,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                32,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 651,
+              "max_hp": 651,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                32,
+                16
+              ]
+            },
+            {
+              "hp": 231,
+              "max_hp": 231,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ghost"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Rager"
+          },
+          "details": "Snorlax, L50, M",
+          "hp": 235,
+          "max_hp": 235,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "details": "Blissey, F",
+          "hp": 651,
+          "max_hp": 651,
+          "status": null
+        },
+        {
+          "kind": "turn",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_1",
+      "turn": 2,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": {
+                "kind": "par"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                32,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 651,
+              "max_hp": 651,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                31,
+                16
+              ]
+            },
+            {
+              "hp": 231,
+              "max_hp": 231,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ghost"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "move": "Thunder Wave",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Rager"
+          }
+        },
+        {
+          "kind": "status",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Rager"
+          },
+          "status": "par",
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "cant",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Rager"
+          },
+          "detail": "par"
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 2
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_2",
+      "turn": 3,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": {
+                "kind": "par"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                32,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 651,
+              "max_hp": 651,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                31,
+                15
+              ]
+            },
+            {
+              "hp": 231,
+              "max_hp": 231,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ghost"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "move": "Recover",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          }
+        },
+        {
+          "kind": "fail",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "detail": "heal"
+        },
+        {
+          "kind": "cant",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Rager"
+          },
+          "detail": "par"
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 3
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_3",
+      "turn": 4,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": {
+                "kind": "par"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                32,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            1
+          ],
+          "party": [
+            {
+              "hp": 651,
+              "max_hp": 651,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                31,
+                15
+              ]
+            },
+            {
+              "hp": 231,
+              "max_hp": 231,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ghost"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Ghost"
+          },
+          "details": "Dusknoir, M",
+          "hp": 231,
+          "max_hp": 231,
+          "status": null
+        },
+        {
+          "kind": "cant",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Rager"
+          },
+          "detail": "par"
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 4
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_4",
+      "turn": 5,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": {
+                "kind": "par"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                32,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 651,
+              "max_hp": 651,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                31,
+                15
+              ]
+            },
+            {
+              "hp": 231,
+              "max_hp": 231,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ghost"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "details": "Blissey, F",
+          "hp": 651,
+          "max_hp": 651,
+          "status": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Rager"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Rager"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Rager"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 5
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_5",
+      "turn": 6,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": {
+                "kind": "par"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "lockedmove": 1
+              },
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                31,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 515,
+              "max_hp": 651,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                31,
+                14
+              ]
+            },
+            {
+              "hp": 231,
+              "max_hp": 231,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ghost"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "move": "Recover",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          }
+        },
+        {
+          "kind": "fail",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "detail": "heal"
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Rager"
+          },
+          "move": "Thrash",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "hp": 515,
+          "max_hp": 651,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 6
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_6",
+      "turn": 7,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": {
+                "kind": "par"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "confusion": 2
+              },
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                31,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 407,
+              "max_hp": 651,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                31,
+                13
+              ]
+            },
+            {
+              "hp": 231,
+              "max_hp": 231,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ghost"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "move": "Recover",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          }
+        },
+        {
+          "kind": "heal",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "hp": 651,
+          "max_hp": 651,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Rager"
+          },
+          "move": "Thrash",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          }
+        },
+        {
+          "kind": "crit",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "detail": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "hp": 407,
+          "max_hp": 651,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "start",
+          "args": [
+            "p1a: Rager",
+            "confusion",
+            "[fatigue]"
+          ]
+        },
+        {
+          "kind": "turn",
+          "turn": 7
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_7",
+      "turn": 8,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": {
+                "kind": "par"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "confusion": 1,
+                "lockedmove": 1
+              },
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                30,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 518,
+              "max_hp": 651,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                31,
+                12
+              ]
+            },
+            {
+              "hp": 231,
+              "max_hp": 231,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ghost"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "move": "Recover",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          }
+        },
+        {
+          "kind": "heal",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "hp": 651,
+          "max_hp": 651,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "activate",
+          "args": [
+            "p1a: Rager",
+            "confusion"
+          ]
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Rager"
+          },
+          "move": "Thrash",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "hp": 518,
+          "max_hp": 651,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 8
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_8",
+      "turn": 9,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": {
+                "kind": "par"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                30,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 651,
+              "max_hp": 651,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                31,
+                11
+              ]
+            },
+            {
+              "hp": 231,
+              "max_hp": 231,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ghost"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "move": "Recover",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          }
+        },
+        {
+          "kind": "heal",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "hp": 651,
+          "max_hp": 651,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "end",
+          "args": [
+            "p1a: Rager",
+            "confusion"
+          ]
+        },
+        {
+          "kind": "cant",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Rager"
+          },
+          "detail": "par"
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 9
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_9",
+      "turn": 10,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": {
+                "kind": "par"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                30,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 651,
+              "max_hp": 651,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                31,
+                10
+              ]
+            },
+            {
+              "hp": 231,
+              "max_hp": 231,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ghost"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "move": "Recover",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          }
+        },
+        {
+          "kind": "fail",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "detail": "heal"
+        },
+        {
+          "kind": "cant",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Rager"
+          },
+          "detail": "par"
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 10
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_10",
+      "turn": 11,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": {
+                "kind": "par"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                30,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 651,
+              "max_hp": 651,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                31,
+                9
+              ]
+            },
+            {
+              "hp": 231,
+              "max_hp": 231,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ghost"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "move": "Recover",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          }
+        },
+        {
+          "kind": "fail",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "detail": "heal"
+        },
+        {
+          "kind": "cant",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Rager"
+          },
+          "detail": "par"
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 11
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_11",
+      "turn": 12,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": {
+                "kind": "par"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "lockedmove": 2
+              },
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                29,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 533,
+              "max_hp": 651,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                31,
+                8
+              ]
+            },
+            {
+              "hp": 231,
+              "max_hp": 231,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ghost"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "move": "Recover",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          }
+        },
+        {
+          "kind": "fail",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "detail": "heal"
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Rager"
+          },
+          "move": "Thrash",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "hp": 533,
+          "max_hp": 651,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 12
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_12",
+      "turn": 13,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": {
+                "kind": "par"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "lockedmove": 1
+              },
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                29,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 533,
+              "max_hp": 651,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                31,
+                7
+              ]
+            },
+            {
+              "hp": 231,
+              "max_hp": 231,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ghost"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "move": "Recover",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          }
+        },
+        {
+          "kind": "heal",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "hp": 651,
+          "max_hp": 651,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Rager"
+          },
+          "move": "Thrash",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Wall"
+          },
+          "hp": 533,
+          "max_hp": 651,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 13
+        }
+      ]
+    }
+  ],
+  "debug_log": "|gametype|singles\n|player|p1|P1||\n|player|p2|P2||\n|gen|4\n|tier|[Gen 4] Custom Game\n|\n|teamsize|p1|1\n|teamsize|p2|2\n|start\n|switch|p1a: Rager|Snorlax, L50, M|235/235\n|switch|p2a: Wall|Blissey, F|651/651\n|turn|1\n|\n|move|p2a: Wall|Thunder Wave|p1a: Rager\n|-status|p1a: Rager|par\n|cant|p1a: Rager|par\n|\n|upkeep\n|turn|2\n|\n|move|p2a: Wall|Recover||[still]\n|-fail|p2a: Wall|heal\n|debug|move failed because it did nothing\n|cant|p1a: Rager|par\n|\n|upkeep\n|turn|3\n|\n|switch|p2a: Ghost|Dusknoir, M|231/231\n|cant|p1a: Rager|par\n|\n|upkeep\n|turn|4\n|\n|switch|p2a: Wall|Blissey, F|651/651\n|move|p1a: Rager|Harden|p1a: Rager\n|-boost|p1a: Rager|def|1\n|\n|upkeep\n|turn|5\n|\n|move|p2a: Wall|Recover||[still]\n|-fail|p2a: Wall|heal\n|debug|move failed because it did nothing\n|move|p1a: Rager|Thrash|p2a: Wall\n|-damage|p2a: Wall|515/651\n|\n|upkeep\n|turn|6\n|\n|move|p2a: Wall|Recover|p2a: Wall\n|-heal|p2a: Wall|651/651\n|move|p1a: Rager|Thrash|p2a: Wall|[from] lockedmove\n|-crit|p2a: Wall\n|-damage|p2a: Wall|407/651\n|debug|move failed because it did nothing\n|\n|-start|p1a: Rager|confusion|[fatigue]\n|upkeep\n|turn|7\n|\n|move|p2a: Wall|Recover|p2a: Wall\n|-heal|p2a: Wall|651/651\n|-activate|p1a: Rager|confusion\n|move|p1a: Rager|Thrash|p2a: Wall\n|-damage|p2a: Wall|518/651\n|\n|upkeep\n|turn|8\n|\n|move|p2a: Wall|Recover|p2a: Wall\n|-heal|p2a: Wall|651/651\n|-end|p1a: Rager|confusion\n|cant|p1a: Rager|par\n|\n|upkeep\n|turn|9\n|\n|move|p2a: Wall|Recover||[still]\n|-fail|p2a: Wall|heal\n|debug|move failed because it did nothing\n|cant|p1a: Rager|par\n|\n|upkeep\n|turn|10\n|\n|move|p2a: Wall|Recover||[still]\n|-fail|p2a: Wall|heal\n|debug|move failed because it did nothing\n|cant|p1a: Rager|par\n|\n|upkeep\n|turn|11\n|\n|move|p2a: Wall|Recover||[still]\n|-fail|p2a: Wall|heal\n|debug|move failed because it did nothing\n|move|p1a: Rager|Thrash|p2a: Wall\n|-damage|p2a: Wall|533/651\n|\n|upkeep\n|turn|12\n|\n|move|p2a: Wall|Recover|p2a: Wall\n|-heal|p2a: Wall|651/651\n|move|p1a: Rager|Thrash|p2a: Wall|[from] lockedmove\n|-damage|p2a: Wall|533/651\n|debug|move failed because it did nothing\n|\n|upkeep\n|turn|13"
+}

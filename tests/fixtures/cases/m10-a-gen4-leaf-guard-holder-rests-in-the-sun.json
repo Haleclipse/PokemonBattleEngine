@@ -1,0 +1,210 @@
+{
+  "schema": 1,
+  "id": "m10-a-gen4-leaf-guard-holder-rests-in-the-sun",
+  "notes": [
+    "R-M10-9: minimized from the M10.3b Nightly's m9-gen4doublesou-s172-016. In Gen 4 Leaf Guard lets Rest's sleep through in sun (the gen4 mod's `onSetStatus` does nothing for `effect.id === 'rest'`; Bulbapedia: Rest works normally): Tangrowth, woken from its first Rest, rests again under Sunny Day on turn 5, falls asleep and heals in full. The engine refused the sleep, as Leaf Guard does from Gen 5, and Rest failed."
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "doubles",
+    "format": "gen4doublesou"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Raticate",
+        "species": "Raticate",
+        "ability": "Run Away",
+        "moves": [
+          "Substitute",
+          "Sucker Punch",
+          "Sunny Day",
+          "Crunch"
+        ],
+        "nature": "Careful",
+        "gender": "M",
+        "shiny": false,
+        "level": 45,
+        "evs": {
+          "hp": 76,
+          "atk": 252,
+          "def": 92,
+          "spa": 56,
+          "spd": 12,
+          "spe": 20
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        },
+        "happiness": 210
+      },
+      {
+        "label": "Octillery",
+        "species": "Octillery",
+        "ability": "Suction Cups",
+        "moves": [
+          "Constrict",
+          "Surf",
+          "Sunny Day",
+          "Flail"
+        ],
+        "nature": "Jolly",
+        "gender": "F",
+        "shiny": false,
+        "level": 100,
+        "evs": {
+          "hp": 204,
+          "atk": 84,
+          "def": 92,
+          "spa": 4,
+          "spd": 0,
+          "spe": 124
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 27
+        }
+      },
+      {
+        "label": "Shuckle",
+        "species": "Shuckle",
+        "ability": "Sturdy",
+        "moves": [
+          "Snore"
+        ],
+        "nature": "Relaxed",
+        "gender": "M",
+        "shiny": false,
+        "level": 86,
+        "evs": {
+          "hp": 36,
+          "atk": 168,
+          "def": 92,
+          "spa": 0,
+          "spd": 152,
+          "spe": 60
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 2,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        }
+      }
+    ],
+    "p2": [
+      {
+        "label": "Tangrowth",
+        "species": "Tangrowth",
+        "ability": "Leaf Guard",
+        "moves": [
+          "Rest",
+          "Growth",
+          "Protect",
+          "Sleep Powder"
+        ],
+        "nature": "Careful",
+        "gender": "M",
+        "shiny": false,
+        "level": 100,
+        "evs": {
+          "hp": 124,
+          "atk": 116,
+          "def": 160,
+          "spa": 76,
+          "spd": 32,
+          "spe": 0
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        },
+        "happiness": 240
+      },
+      {
+        "label": "Nuzleaf",
+        "species": "Nuzleaf",
+        "ability": "Early Bird",
+        "moves": [
+          "Bullet Seed",
+          "Toxic",
+          "Fury Cutter",
+          "Facade"
+        ],
+        "nature": "Hasty",
+        "gender": "F",
+        "shiny": false,
+        "level": 100,
+        "evs": {
+          "hp": 236,
+          "atk": 64,
+          "def": 76,
+          "spa": 120,
+          "spd": 12,
+          "spe": 0
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        }
+      }
+    ]
+  },
+  "preview": {
+    "p1": "team 314562",
+    "p2": "team 516243"
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      53331,
+      172,
+      1016,
+      31
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Substitute, move Constrict 1",
+      "p2": "move Rest, move Bullet Seed 1"
+    },
+    {
+      "p1": "move Sucker Punch 2, move Surf",
+      "p2": "move Growth, move Toxic 2"
+    },
+    {
+      "p1": "move Sunny Day, move Sunny Day",
+      "p2": "move Protect, move Fury Cutter 1"
+    },
+    {
+      "p1": "move Crunch 1, move Flail 2",
+      "p2": "move Sleep Powder 2, move Facade 1"
+    },
+    {
+      "p1": "switch Shuckle, pass"
+    },
+    {
+      "p1": "move Snore 1, move Constrict 2",
+      "p2": "move Rest, move Bullet Seed 2"
+    }
+  ]
+}

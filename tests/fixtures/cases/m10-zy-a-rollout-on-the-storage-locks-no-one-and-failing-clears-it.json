@@ -1,0 +1,120 @@
+{
+  "schema": 1,
+  "id": "m10-zy-a-rollout-on-the-storage-locks-no-one-and-failing-clears-it",
+  "notes": [
+    "Gen 7: a Rollout on a stored x16 takes it and locks its user in no chain; a Rollout Protect stops clears a storage (R-M10-75, issues.md I212)",
+    "promoted from rollout-storage-rollout-unlocked-and-failed (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 7,
+    "mode": "singles",
+    "format": "gen7customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Marshtomp",
+        "level": 30,
+        "nature": "Hardy",
+        "species": "Marshtomp",
+        "ability": "Compound Eyes",
+        "moves": [
+          "Rollout",
+          "Harden",
+          "Water Gun"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "MimikyuA",
+        "level": 100,
+        "nature": "Hardy",
+        "species": "Mimikyu",
+        "ability": "Disguise",
+        "moves": [
+          "Splash",
+          "Protect"
+        ]
+      },
+      {
+        "label": "MimikyuB",
+        "level": 100,
+        "nature": "Hardy",
+        "species": "Mimikyu",
+        "ability": "Disguise",
+        "moves": [
+          "Splash",
+          "Protect"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Rollout",
+      "p2": "move Splash"
+    },
+    {
+      "p1": "move Rollout",
+      "p2": "move Splash"
+    },
+    {
+      "p1": "move Rollout",
+      "p2": "move Splash"
+    },
+    {
+      "p1": "move Rollout",
+      "p2": "move Splash"
+    },
+    {
+      "p1": "move Rollout",
+      "p2": "move Splash"
+    },
+    {
+      "p1": "move Rollout",
+      "p2": "move Splash"
+    },
+    {
+      "p1": "move Harden",
+      "p2": "switch 2"
+    },
+    {
+      "p1": "move Rollout",
+      "p2": "move Splash"
+    },
+    {
+      "p1": "move Rollout",
+      "p2": "move Splash"
+    },
+    {
+      "p1": "move Rollout",
+      "p2": "move Splash"
+    },
+    {
+      "p1": "move Rollout",
+      "p2": "move Splash"
+    },
+    {
+      "p1": "move Rollout",
+      "p2": "move Splash"
+    },
+    {
+      "p1": "move Rollout",
+      "p2": "move Protect"
+    },
+    {
+      "p1": "move Water Gun",
+      "p2": "move Splash"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      3,
+      9,
+      4,
+      1
+    ]
+  }
+}

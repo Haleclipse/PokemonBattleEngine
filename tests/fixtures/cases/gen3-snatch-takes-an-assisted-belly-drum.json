@@ -1,0 +1,71 @@
+{
+ "schema": 1,
+ "id": "gen3-snatch-takes-an-assisted-belly-drum",
+ "notes": [
+  "Gen 3: Snorlax's Assist calls Chansey's Belly Drum; Sealeo's Snatch takes it and pays the half of its own HP (its `-damage` carries no `[from]`, like any Belly Drum's — the replay reads it as the snatcher's own cost, not a hit of Snorlax's action, DESIGN.md R-M8-79)"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sealeo",
+    "species": "Sealeo",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Snatch",
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Assist"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Belly Drum"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Snatch",
+   "p2": "move Assist"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Assist"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

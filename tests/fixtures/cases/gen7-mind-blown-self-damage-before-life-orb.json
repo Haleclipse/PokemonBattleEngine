@@ -1,0 +1,54 @@
+{
+ "schema": 1,
+ "id": "gen7-mind-blown-self-damage-before-life-orb",
+ "notes": [
+  "Mind Blown that hits pays its half max HP right after the hit, before Life Orb's recoil"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Blacephalon",
+    "species": "Blacephalon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Mind Blown"
+    ],
+    "ability": "Run Away",
+    "item": "Life Orb"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Mind Blown",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

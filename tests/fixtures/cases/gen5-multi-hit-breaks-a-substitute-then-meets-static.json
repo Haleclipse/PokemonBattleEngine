@@ -1,0 +1,54 @@
+{
+ "schema": 1,
+ "id": "gen5-multi-hit-breaks-a-substitute-then-meets-static",
+ "notes": [
+  "Arm Thrust breaks Electrode's Substitute and its later hits reach the body: only those roll Static (the breaking hit returns HIT_SUBSTITUTE, no DamagingHit)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hariyama",
+    "species": "Hariyama",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Arm Thrust"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Electrode",
+    "species": "Electrode",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Substitute",
+     "Harden"
+    ],
+    "ability": "Static"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Arm Thrust",
+   "p2": "move Substitute"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   2,
+   2,
+   3,
+   4
+  ]
+ }
+}

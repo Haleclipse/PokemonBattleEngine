@@ -1,0 +1,70 @@
+{
+ "schema": 1,
+ "id": "gen5-assist-calls-rest",
+ "notes": [
+  "Gen 5: Snorlax takes a Tackle, then its Assist calls its benched partner's Rest: the heal is `[silent]`, as from Rest picked from the menu, and the replay reads it off the called Rest"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Assist"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   },
+   {
+    "label": "Clefairy",
+    "species": "Clefairy",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Rest"
+    ],
+    "ability": "Cute Charm",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Absol",
+    "species": "Absol",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "ability": "Pressure",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

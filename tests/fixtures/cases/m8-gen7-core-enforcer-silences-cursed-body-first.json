@@ -1,0 +1,240 @@
+{
+  "schema": 1,
+  "id": "m8-gen7-core-enforcer-silences-cursed-body-first",
+  "notes": [
+    "Nightly 50 (partial run 20261010-081735): Core Enforcer suppresses the target's Cursed Body in its onHit (runMoveEffects) before the DamagingHit it would answer: the replay plans no Cursed Body chance (DESIGN.md R-M8-94)",
+    "promoted from m8-gen7-singles-s499-019-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 7,
+    "mode": "singles",
+    "format": "gen7customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Yanmega",
+        "species": "Yanmega",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Ice Ball",
+          "Return",
+          "Speed Swap"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Mantyke",
+        "species": "Mantyke",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Stored Power",
+          "Sketch",
+          "Rollout"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Flaaffy",
+        "species": "Flaaffy",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Flail",
+          "Sketch"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Machamp",
+        "species": "Machamp",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Speed Swap",
+          "Hyper Voice"
+        ],
+        "ability": "Cursed Body",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Meloetta",
+        "species": "Meloetta",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Thousand Waves",
+          "Speed Swap",
+          "Growl",
+          "Sketch"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Tangela",
+        "species": "Tangela",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Origin Pulse",
+          "Speed Swap",
+          "Land's Wrath",
+          "Sketch"
+        ],
+        "ability": "Protean",
+        "gender": "F"
+      },
+      {
+        "label": "Magnezone",
+        "species": "Magnezone",
+        "level": 48,
+        "nature": "Hardy",
+        "moves": [
+          "Core Enforcer",
+          "Speed Swap",
+          "Tail Whip",
+          "Sketch"
+        ],
+        "ability": "Run Away"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      52673,
+      6540,
+      54769,
+      56730
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Ice Ball",
+      "p2": "move Thousand Waves"
+    },
+    {
+      "p1": "move Ice Ball",
+      "p2": "move Speed Swap"
+    },
+    {
+      "p1": "move Ice Ball",
+      "p2": "move Growl"
+    },
+    {
+      "p1": "move Ice Ball",
+      "p2": "move Sketch"
+    },
+    {
+      "p1": "move Ice Ball",
+      "p2": "move Thousand Waves"
+    },
+    {
+      "p2": "switch Tangela"
+    },
+    {
+      "p1": "switch Mantyke",
+      "p2": "switch Magnezone"
+    },
+    {
+      "p1": "move Sketch",
+      "p2": "move Speed Swap"
+    },
+    {
+      "p1": "move Stored Power",
+      "p2": "move Tail Whip"
+    },
+    {
+      "p1": "move Rollout",
+      "p2": "move Sketch"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 1",
+      "p2": "switch Tangela"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 3"
+    },
+    {
+      "p1": "move Stored Power",
+      "p2": "move Sketch"
+    },
+    {
+      "p1": "move Rollout",
+      "p2": "move Origin Pulse"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 3"
+    },
+    {
+      "p1": "move 1",
+      "p2": "switch Magnezone"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 4"
+    },
+    {
+      "p1": "switch Yanmega"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 4"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "switch Flaaffy"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "switch Machamp"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move Hyper Voice",
+      "p2": "move Core Enforcer"
+    }
+  ]
+}

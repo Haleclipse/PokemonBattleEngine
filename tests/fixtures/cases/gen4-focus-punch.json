@@ -1,0 +1,72 @@
+{
+ "schema": 1,
+ "id": "gen4-focus-punch",
+ "notes": [
+  "Gen 4 Focus Punch: it strikes when nothing hit its user first; a damaging hit costs the focus (`cant`); a status move or a hit on its Substitute does not"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Puncher",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Focus Punch",
+     "Substitute",
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Jolteon",
+    "level": 75,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Focus Punch",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Focus Punch",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move 3",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Substitute",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Focus Punch",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

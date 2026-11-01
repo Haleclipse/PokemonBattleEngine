@@ -1,0 +1,1149 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@pkmn/sim",
+    "version": "0.10.11",
+    "formatid": "gen4customgame",
+    "seed": [
+      4,
+      2,
+      3,
+      4
+    ]
+  },
+  "frames": [
+    {
+      "schema": 1,
+      "checkpoint": "initial",
+      "turn": 1,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 154,
+              "max_hp": 154,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal",
+                "water"
+              ],
+              "ability": "simple",
+              "item": "",
+              "pp": [
+                48,
+                48,
+                56,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 187,
+              "max_hp": 187,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "bug",
+                "flying"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                48,
+                16
+              ]
+            },
+            {
+              "hp": 165,
+              "max_hp": 165,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "fire"
+              ],
+              "ability": "intimidate",
+              "item": "",
+              "pp": [
+                48,
+                56
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Simp"
+          },
+          "details": "Bibarel, L50, M",
+          "hp": 154,
+          "max_hp": 154,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bug"
+          },
+          "details": "Ninjask, L70, F",
+          "hp": 187,
+          "max_hp": 187,
+          "status": null
+        },
+        {
+          "kind": "turn",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_1",
+      "turn": 2,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 154,
+              "max_hp": 154,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal",
+                "water"
+              ],
+              "ability": "simple",
+              "item": "",
+              "pp": [
+                48,
+                48,
+                55,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 166,
+              "max_hp": 187,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "bug",
+                "flying"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                47,
+                16
+              ]
+            },
+            {
+              "hp": 165,
+              "max_hp": 165,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "fire"
+              ],
+              "ability": "intimidate",
+              "item": "",
+              "pp": [
+                48,
+                56
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bug"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bug"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bug"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Simp"
+          },
+          "move": "Tackle",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bug"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bug"
+          },
+          "hp": 166,
+          "max_hp": 187,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 2
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_2",
+      "turn": 3,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 154,
+              "max_hp": 154,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 2,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal",
+                "water"
+              ],
+              "ability": "simple",
+              "item": "",
+              "pp": [
+                47,
+                48,
+                55,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 166,
+              "max_hp": 187,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 2,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "bug",
+                "flying"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                46,
+                16
+              ]
+            },
+            {
+              "hp": 165,
+              "max_hp": 165,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "fire"
+              ],
+              "ability": "intimidate",
+              "item": "",
+              "pp": [
+                48,
+                56
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bug"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bug"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bug"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Simp"
+          },
+          "move": "Agility",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Simp"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Simp"
+          },
+          "stat": "spe",
+          "amount": 2
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 3
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_3",
+      "turn": 4,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 154,
+              "max_hp": 154,
+              "status": null,
+              "boosts": {
+                "attack": 2,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 2,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal",
+                "water"
+              ],
+              "ability": "simple",
+              "item": "",
+              "pp": [
+                47,
+                47,
+                55,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 166,
+              "max_hp": 187,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 3,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "bug",
+                "flying"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                45,
+                16
+              ]
+            },
+            {
+              "hp": 165,
+              "max_hp": 165,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "fire"
+              ],
+              "ability": "intimidate",
+              "item": "",
+              "pp": [
+                48,
+                56
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Simp"
+          },
+          "move": "Swords Dance",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Simp"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Simp"
+          },
+          "stat": "atk",
+          "amount": 2
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bug"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bug"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bug"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 4
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_4",
+      "turn": 5,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 154,
+              "max_hp": 154,
+              "status": null,
+              "boosts": {
+                "attack": 2,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 2,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal",
+                "water"
+              ],
+              "ability": "simple",
+              "item": "",
+              "pp": [
+                47,
+                47,
+                54,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 133,
+              "max_hp": 187,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 4,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "bug",
+                "flying"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                44,
+                16
+              ]
+            },
+            {
+              "hp": 165,
+              "max_hp": 165,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "fire"
+              ],
+              "ability": "intimidate",
+              "item": "",
+              "pp": [
+                48,
+                56
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Simp"
+          },
+          "move": "Tackle",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bug"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bug"
+          },
+          "hp": 133,
+          "max_hp": 187,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bug"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bug"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bug"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 5
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_5",
+      "turn": 6,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 154,
+              "max_hp": 154,
+              "status": null,
+              "boosts": {
+                "attack": 1,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 2,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal",
+                "water"
+              ],
+              "ability": "simple",
+              "item": "",
+              "pp": [
+                47,
+                47,
+                54,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            1
+          ],
+          "party": [
+            {
+              "hp": 133,
+              "max_hp": 187,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "bug",
+                "flying"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                44,
+                16
+              ]
+            },
+            {
+              "hp": 165,
+              "max_hp": 165,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "fire"
+              ],
+              "ability": "intimidate",
+              "item": "",
+              "pp": [
+                48,
+                56
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Cat"
+          },
+          "details": "Arcanine, L50, F",
+          "hp": 165,
+          "max_hp": 165,
+          "status": null
+        },
+        {
+          "kind": "ability",
+          "args": [
+            "p2a: Cat",
+            "Intimidate",
+            "boost"
+          ]
+        },
+        {
+          "kind": "unboost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Simp"
+          },
+          "stat": "atk",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Simp"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Simp"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Simp"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 6
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_6",
+      "turn": 7,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 142,
+              "max_hp": 154,
+              "status": null,
+              "boosts": {
+                "attack": 1,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 2,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal",
+                "water"
+              ],
+              "ability": "simple",
+              "item": "",
+              "pp": [
+                47,
+                47,
+                53,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            1
+          ],
+          "party": [
+            {
+              "hp": 133,
+              "max_hp": 187,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "bug",
+                "flying"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                44,
+                16
+              ]
+            },
+            {
+              "hp": 114,
+              "max_hp": 165,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "fire"
+              ],
+              "ability": "intimidate",
+              "item": "",
+              "pp": [
+                48,
+                55
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Simp"
+          },
+          "move": "Tackle",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Cat"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Cat"
+          },
+          "hp": 114,
+          "max_hp": 165,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Cat"
+          },
+          "move": "Tackle",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Simp"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Simp"
+          },
+          "hp": 142,
+          "max_hp": 154,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 7
+        }
+      ]
+    }
+  ],
+  "debug_log": "|gametype|singles\n|player|p1|P1||\n|player|p2|P2||\n|gen|4\n|tier|[Gen 4] Custom Game\n|\n|teamsize|p1|1\n|teamsize|p2|2\n|start\n|switch|p1a: Simp|Bibarel, L50, M|154/154\n|switch|p2a: Bug|Ninjask, L70, F|187/187\n|turn|1\n|\n|move|p2a: Bug|Harden|p2a: Bug\n|-boost|p2a: Bug|def|1\n|move|p1a: Simp|Tackle|p2a: Bug\n|-damage|p2a: Bug|166/187\n|\n|upkeep\n|turn|2\n|\n|move|p2a: Bug|Harden|p2a: Bug\n|-boost|p2a: Bug|def|1\n|move|p1a: Simp|Agility|p1a: Simp\n|-boost|p1a: Simp|spe|2\n|\n|upkeep\n|turn|3\n|\n|move|p1a: Simp|Swords Dance|p1a: Simp\n|-boost|p1a: Simp|atk|2\n|move|p2a: Bug|Harden|p2a: Bug\n|-boost|p2a: Bug|def|1\n|\n|upkeep\n|turn|4\n|\n|move|p1a: Simp|Tackle|p2a: Bug\n|-damage|p2a: Bug|133/187\n|move|p2a: Bug|Harden|p2a: Bug\n|-boost|p2a: Bug|def|1\n|\n|upkeep\n|turn|5\n|\n|switch|p2a: Cat|Arcanine, L50, F|165/165\n|-ability|p2a: Cat|Intimidate|boost\n|-unboost|p1a: Simp|atk|1\n|move|p1a: Simp|Harden|p1a: Simp\n|-boost|p1a: Simp|def|1\n|\n|upkeep\n|turn|6\n|\n|move|p1a: Simp|Tackle|p2a: Cat\n|-damage|p2a: Cat|114/165\n|move|p2a: Cat|Tackle|p1a: Simp\n|-damage|p1a: Simp|142/154\n|\n|upkeep\n|turn|7"
+}

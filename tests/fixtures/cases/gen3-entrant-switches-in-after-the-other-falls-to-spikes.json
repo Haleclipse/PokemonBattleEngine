@@ -1,0 +1,226 @@
+{
+ "schema": 1,
+ "id": "gen3-entrant-switches-in-after-the-other-falls-to-spikes",
+ "notes": [
+  "I205: both last Pok\u00e9mon fall at the turn's end; Mudkip comes in to three layers of Spikes and falls, and Sunflora, in beside it, still takes its own Spikes (pokeemerald runs each fallen battler's `switchineffects`). Showdown's gen 3 faint rule cancelled Sunflora's `runSwitch` (oracle patch I205). Minimized from Nightly 20261020-041227 (gen3-singles)."
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Weezing",
+    "species": "Weezing",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Water Pulse",
+     "Spikes",
+     "Signal Beam"
+    ],
+    "ability": "Static",
+    "gender": "M"
+   },
+   {
+    "label": "Xatu",
+    "species": "Xatu",
+    "level": 53,
+    "nature": "Hardy",
+    "moves": [
+     "Psybeam",
+     "Spikes",
+     "Nature Power"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Mudkip",
+    "species": "Mudkip",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spikes",
+     "Wrap",
+     "Nature Power"
+    ],
+    "ability": "Poison Point",
+    "gender": "M"
+   },
+   {
+    "label": "Bayleef",
+    "species": "Bayleef",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sand Tomb"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Shiftry",
+    "species": "Shiftry",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Focus Punch",
+     "Spikes",
+     "Revenge"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Pikachu",
+    "species": "Pikachu",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Counter",
+     "Nature Power"
+    ],
+    "ability": "Drought",
+    "gender": "F"
+   },
+   {
+    "label": "Lickitung",
+    "species": "Lickitung",
+    "level": 55,
+    "nature": "Hardy",
+    "moves": [
+     "Vital Throw",
+     "Spikes",
+     "Nature Power"
+    ],
+    "ability": "Sand Stream",
+    "gender": "F"
+   },
+   {
+    "label": "Sunflora",
+    "species": "Sunflora",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Milk Drink"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Masquerain",
+    "species": "Masquerain",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Slack Off",
+     "Spikes",
+     "Meteor Mash",
+     "Nature Power"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   10553,
+   47563,
+   18175,
+   7415
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Water Pulse",
+   "p2": "move Focus Punch"
+  },
+  {
+   "p1": "move Spikes",
+   "p2": "move Spikes"
+  },
+  {
+   "p1": "move Signal Beam",
+   "p2": "move Revenge"
+  },
+  {
+   "p2": "switch Pikachu"
+  },
+  {
+   "p1": "switch Xatu",
+   "p2": "switch Lickitung"
+  },
+  {
+   "p1": "move Nature Power",
+   "p2": "move Nature Power"
+  },
+  {
+   "p1": "move Psybeam",
+   "p2": "move Vital Throw"
+  },
+  {
+   "p1": "move Spikes",
+   "p2": "move Spikes"
+  },
+  {
+   "p1": "switch Weezing",
+   "p2": "switch Pikachu"
+  },
+  {
+   "p1": "move Signal Beam",
+   "p2": "move Counter"
+  },
+  {
+   "p1": "switch Xatu"
+  },
+  {
+   "p1": "move Nature Power",
+   "p2": "move Nature Power"
+  },
+  {
+   "p2": "switch Lickitung"
+  },
+  {
+   "p1": "move Psybeam",
+   "p2": "move Vital Throw"
+  },
+  {
+   "p2": "switch Sunflora"
+  },
+  {
+   "p1": "switch Mudkip",
+   "p2": "switch Masquerain"
+  },
+  {
+   "p1": "move Spikes",
+   "p2": "move Spikes"
+  },
+  {
+   "p1": "move Wrap",
+   "p2": "move Meteor Mash"
+  },
+  {
+   "p1": "move Nature Power",
+   "p2": "move Nature Power"
+  },
+  {
+   "p1": "switch Xatu",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Psybeam",
+   "p2": "move Spikes"
+  },
+  {
+   "p1": "switch Mudkip",
+   "p2": "switch Sunflora"
+  }
+ ]
+}

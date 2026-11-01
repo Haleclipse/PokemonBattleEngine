@@ -1,0 +1,92 @@
+{
+ "schema": 1,
+ "id": "gen7-doubles-sweet-veil",
+ "notes": [
+  "Sweet Veil keeps sleep and Yawn off its holder and its partner; other statuses still land"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sweet",
+    "species": "Slurpuff",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Sweet Veil"
+   },
+   {
+    "label": "Pal",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Spore",
+     "Yawn",
+     "Toxic",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Mew2",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Hypnosis",
+     "Yawn",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Spore 2, move Yawn 1"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Toxic 2, move Yawn 2"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Spore 1, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

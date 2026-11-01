@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen7-cursed-body-spares-a-dancers-turn",
+ "notes": [
+  "Gen 7: Oricorio (Dancer), done with its turn, copies Slowbro's Fiery Dance; the copy strikes it and Cursed Body disables Oricorio's Splash. The dance is external (`isExternal`) and Oricorio does not move again: no turn comes off the Disable (DESIGN.md R-M8-93)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Oricorio",
+    "species": "Oricorio",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Splash",
+     "Fiery Dance"
+    ],
+    "ability": "Dancer",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Slowbro",
+    "species": "Slowbro",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Fiery Dance",
+     "Splash"
+    ],
+    "ability": "Cursed Body",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Fiery Dance"
+  },
+  {
+   "p1": "move Fiery Dance",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   13,
+   14,
+   15,
+   16
+  ]
+ }
+}

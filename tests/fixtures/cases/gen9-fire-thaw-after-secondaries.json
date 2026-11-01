@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "id": "gen9-fire-thaw-after-secondaries",
+  "notes": [
+    "A damaging Fire move thaws its frozen target in frz's onDamagingHit, after the secondaries: Inferno's certain burn never lands on the target it thaws"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Arcanine",
+        "species": "Arcanine",
+        "level": 100,
+        "nature": "Hardy",
+        "moves": [
+          "Ice Beam",
+          "Inferno"
+        ],
+        "ability": "Run Away"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Snorlax",
+        "species": "Snorlax",
+        "level": 100,
+        "nature": "Hardy",
+        "moves": [
+          "Growl"
+        ],
+        "ability": "Run Away"
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      10,
+      11,
+      12,
+      13
+    ]
+  }
+}

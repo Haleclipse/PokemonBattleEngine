@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "id": "gen3-doubles-shield-dust-does-not-stop-wrap",
+  "notes": [
+    "Shield Dust keeps secondaries off, not Wrap's own trap: the Mightyena is bound",
+    "promoted from m8-gen3-doubles-s401-018-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 3,
+    "mode": "doubles",
+    "format": "gen3doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Mightyena",
+        "species": "Mightyena",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Confusion"
+        ],
+        "ability": "Shield Dust",
+        "gender": "F"
+      },
+      {
+        "label": "Delibird",
+        "species": "Delibird",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Signal Beam"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Gloom",
+        "species": "Gloom",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Wrap"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Exeggutor",
+        "species": "Exeggutor",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Slack Off"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      12043,
+      64451,
+      18045,
+      63117
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Confusion 1, move Signal Beam 2",
+      "p2": "move Wrap 1, move Slack Off"
+    }
+  ]
+}

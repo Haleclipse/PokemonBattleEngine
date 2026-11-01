@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "id": "gen2-sleep-talks-metronome-multi-hit-hits-every-time",
+  "notes": [
+    "Gen 2 singles: Parasect's Spore puts Snorlax to sleep; Snorlax's Sleep Talk calls Metronome, which calls a multi-hit move. pokecrystal's `BattleCommand_EndLoop` checks no sleep, so every hit lands; Showdown's gen2 loop reads Metronome's `sleepUsable` (none) and stops before the first hit, which the oracle patches (issues.md I203, DESIGN.md R-M8-186)"
+  ],
+  "battle": {
+    "generation": 2,
+    "mode": "singles",
+    "format": "gen2customgame"
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Snorlax",
+        "species": "Snorlax",
+        "level": 50,
+        "moves": [
+          "Sleep Talk",
+          "Metronome"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "Parasect",
+        "species": "Parasect",
+        "level": 50,
+        "moves": [
+          "Spore",
+          "Splash"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Sleep Talk",
+      "p2": "move Spore"
+    }
+  ]
+}

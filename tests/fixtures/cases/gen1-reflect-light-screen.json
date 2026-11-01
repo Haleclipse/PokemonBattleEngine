@@ -1,0 +1,104 @@
+{
+ "schema": 1,
+ "id": "gen1-reflect-light-screen",
+ "notes": [
+  "Gen 1: Reflect / Light Screen are volatiles on Lax (a second Reflect fails) doubling its Defense / Special in getDamage; Persian's Slash crits and ignores them; switching out ends them"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Lax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Reflect",
+     "Light Screen",
+     "Tail Whip"
+    ]
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tail Whip"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Strength",
+     "Psychic"
+    ]
+   },
+   {
+    "label": "Persian",
+    "species": "Persian",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Slash"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Reflect",
+   "p2": "move Strength"
+  },
+  {
+   "p1": "move Light Screen",
+   "p2": "move Psychic"
+  },
+  {
+   "p1": "move Reflect",
+   "p2": "move Strength"
+  },
+  {
+   "p1": "move Tail Whip",
+   "p2": "switch Persian"
+  },
+  {
+   "p1": "move Tail Whip",
+   "p2": "move Slash"
+  },
+  {
+   "p1": "switch Chansey",
+   "p2": "move Slash"
+  },
+  {
+   "p1": "switch Lax",
+   "p2": "switch Snorlax"
+  },
+  {
+   "p1": "move Tail Whip",
+   "p2": "move Strength"
+  },
+  {
+   "p1": "move Tail Whip",
+   "p2": "move Psychic"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

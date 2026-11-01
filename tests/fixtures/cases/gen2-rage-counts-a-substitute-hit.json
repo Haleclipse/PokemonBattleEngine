@@ -1,0 +1,67 @@
+{
+ "schema": 1,
+ "id": "gen2-rage-counts-a-substitute-hit",
+ "notes": [
+  "Gen 2 Rage (cartridge, I77): the foe's hit on the raging user's Substitute counts; a Rage that Protect stops leaves the rage and its count \u2014 the next Rage deals \u00d72"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Rager",
+    "species": "Primeape",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Substitute",
+     "Rage",
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Wall",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Protect",
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Substitute",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "move Protect"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   3,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,1290 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@pkmn/sim",
+    "version": "0.10.11",
+    "formatid": "gen4customgame",
+    "seed": [
+      1147,
+      1148,
+      1149,
+      1150
+    ]
+  },
+  "frames": [
+    {
+      "schema": 1,
+      "checkpoint": "initial",
+      "turn": 1,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 148,
+              "max_hp": 148,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "frisk",
+              "item": "",
+              "species": "stantler",
+              "pp": [
+                16,
+                48,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 142,
+              "max_hp": 142,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "rock"
+              ],
+              "ability": "moldbreaker",
+              "item": "",
+              "species": "cranidos",
+              "pp": [
+                32,
+                24,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Stantler"
+          },
+          "details": "Stantler, L50, F",
+          "hp": 148,
+          "max_hp": 148,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Cranidos"
+          },
+          "details": "Cranidos, L50, F",
+          "hp": 142,
+          "max_hp": 142,
+          "status": null
+        },
+        {
+          "kind": "ability",
+          "args": [
+            "p2a: Cranidos",
+            "Mold Breaker"
+          ]
+        },
+        {
+          "kind": "turn",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_1",
+      "turn": 2,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 111,
+              "max_hp": 148,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "substitute": 37
+              },
+              "types": [
+                "normal"
+              ],
+              "ability": "frisk",
+              "item": "",
+              "species": "stantler",
+              "pp": [
+                15,
+                48,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 142,
+              "max_hp": 142,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "rock"
+              ],
+              "ability": "moldbreaker",
+              "item": "",
+              "species": "cranidos",
+              "pp": [
+                32,
+                24,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Stantler"
+          },
+          "move": "Substitute",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Stantler"
+          },
+          "from": null
+        },
+        {
+          "kind": "start",
+          "args": [
+            "p1a: Stantler",
+            "Substitute"
+          ]
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Stantler"
+          },
+          "hp": 111,
+          "max_hp": 148,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Cranidos"
+          },
+          "move": "Haze",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Cranidos"
+          },
+          "from": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 2
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_2",
+      "turn": 3,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 111,
+              "max_hp": 148,
+              "status": null,
+              "boosts": {
+                "attack": 1,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "substitute": 37
+              },
+              "types": [
+                "normal"
+              ],
+              "ability": "frisk",
+              "item": "",
+              "species": "stantler",
+              "pp": [
+                15,
+                47,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 142,
+              "max_hp": 142,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "rock"
+              ],
+              "ability": "moldbreaker",
+              "item": "",
+              "species": "cranidos",
+              "pp": [
+                32,
+                23,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Stantler"
+          },
+          "move": "Sharpen",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Stantler"
+          },
+          "from": null
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Stantler"
+          },
+          "stat": "atk",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Cranidos"
+          },
+          "move": "Future Sight",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Stantler"
+          },
+          "from": null
+        },
+        {
+          "kind": "start",
+          "args": [
+            "p2a: Cranidos",
+            "Future Sight"
+          ]
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 3
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_3",
+      "turn": 4,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 111,
+              "max_hp": 148,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "substitute": 37
+              },
+              "types": [
+                "normal"
+              ],
+              "ability": "frisk",
+              "item": "",
+              "species": "stantler",
+              "pp": [
+                15,
+                46,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 142,
+              "max_hp": 142,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "rock"
+              ],
+              "ability": "moldbreaker",
+              "item": "",
+              "species": "cranidos",
+              "pp": [
+                32,
+                23,
+                46
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Stantler"
+          },
+          "move": "Sharpen",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Stantler"
+          },
+          "from": null
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Stantler"
+          },
+          "stat": "atk",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Cranidos"
+          },
+          "move": "Haze",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Cranidos"
+          },
+          "from": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 4
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_4",
+      "turn": 5,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 111,
+              "max_hp": 148,
+              "status": null,
+              "boosts": {
+                "attack": 1,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "substitute": 5
+              },
+              "types": [
+                "normal"
+              ],
+              "ability": "frisk",
+              "item": "",
+              "species": "stantler",
+              "pp": [
+                15,
+                45,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 142,
+              "max_hp": 142,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "rock"
+              ],
+              "ability": "moldbreaker",
+              "item": "",
+              "species": "cranidos",
+              "pp": [
+                31,
+                23,
+                46
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Stantler"
+          },
+          "move": "Sharpen",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Stantler"
+          },
+          "from": null
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Stantler"
+          },
+          "stat": "atk",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Cranidos"
+          },
+          "move": "Shock Wave",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Stantler"
+          },
+          "from": null
+        },
+        {
+          "kind": "activate",
+          "args": [
+            "p1a: Stantler",
+            "Substitute",
+            "[damage]"
+          ]
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "end",
+          "args": [
+            "p1a: Stantler",
+            "move: Future Sight"
+          ]
+        },
+        {
+          "kind": "activate",
+          "args": [
+            "p1a: Stantler",
+            "Substitute",
+            "[damage]"
+          ]
+        },
+        {
+          "kind": "turn",
+          "turn": 5
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_5",
+      "turn": 6,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 111,
+              "max_hp": 148,
+              "status": null,
+              "boosts": {
+                "attack": 2,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "substitutebroken": null
+              },
+              "types": [
+                "normal"
+              ],
+              "ability": "frisk",
+              "item": "",
+              "species": "stantler",
+              "pp": [
+                15,
+                44,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 142,
+              "max_hp": 142,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "rock"
+              ],
+              "ability": "moldbreaker",
+              "item": "",
+              "species": "cranidos",
+              "pp": [
+                30,
+                23,
+                46
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Stantler"
+          },
+          "move": "Sharpen",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Stantler"
+          },
+          "from": null
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Stantler"
+          },
+          "stat": "atk",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Cranidos"
+          },
+          "move": "Shock Wave",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Stantler"
+          },
+          "from": null
+        },
+        {
+          "kind": "end",
+          "args": [
+            "p1a: Stantler",
+            "Substitute"
+          ]
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 6
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_6",
+      "turn": 7,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 74,
+              "max_hp": 148,
+              "status": null,
+              "boosts": {
+                "attack": 2,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "substitutebroken": null,
+                "substitute": 37
+              },
+              "types": [
+                "normal"
+              ],
+              "ability": "frisk",
+              "item": "",
+              "species": "stantler",
+              "pp": [
+                14,
+                44,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 142,
+              "max_hp": 142,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "rock"
+              ],
+              "ability": "moldbreaker",
+              "item": "",
+              "species": "cranidos",
+              "pp": [
+                30,
+                22,
+                46
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Stantler"
+          },
+          "move": "Substitute",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Stantler"
+          },
+          "from": null
+        },
+        {
+          "kind": "start",
+          "args": [
+            "p1a: Stantler",
+            "Substitute"
+          ]
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Stantler"
+          },
+          "hp": 74,
+          "max_hp": 148,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Cranidos"
+          },
+          "move": "Future Sight",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Stantler"
+          },
+          "from": null
+        },
+        {
+          "kind": "start",
+          "args": [
+            "p2a: Cranidos",
+            "Future Sight"
+          ]
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 7
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_7",
+      "turn": 8,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 74,
+              "max_hp": 148,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "substitutebroken": null,
+                "substitute": 37
+              },
+              "types": [
+                "normal"
+              ],
+              "ability": "frisk",
+              "item": "",
+              "species": "stantler",
+              "pp": [
+                14,
+                43,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 142,
+              "max_hp": 142,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "rock"
+              ],
+              "ability": "moldbreaker",
+              "item": "",
+              "species": "cranidos",
+              "pp": [
+                30,
+                22,
+                45
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Stantler"
+          },
+          "move": "Sharpen",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Stantler"
+          },
+          "from": null
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Stantler"
+          },
+          "stat": "atk",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Cranidos"
+          },
+          "move": "Haze",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Cranidos"
+          },
+          "from": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 8
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_8",
+      "turn": 9,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 74,
+              "max_hp": 148,
+              "status": null,
+              "boosts": {
+                "attack": 1,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "substitutebroken": null,
+                "substitute": 5
+              },
+              "types": [
+                "normal"
+              ],
+              "ability": "frisk",
+              "item": "",
+              "species": "stantler",
+              "pp": [
+                14,
+                42,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 142,
+              "max_hp": 142,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "rock"
+              ],
+              "ability": "moldbreaker",
+              "item": "",
+              "species": "cranidos",
+              "pp": [
+                29,
+                22,
+                45
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Stantler"
+          },
+          "move": "Sharpen",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Stantler"
+          },
+          "from": null
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Stantler"
+          },
+          "stat": "atk",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Cranidos"
+          },
+          "move": "Shock Wave",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Stantler"
+          },
+          "from": null
+        },
+        {
+          "kind": "activate",
+          "args": [
+            "p1a: Stantler",
+            "Substitute",
+            "[damage]"
+          ]
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "end",
+          "args": [
+            "p1a: Stantler",
+            "move: Future Sight"
+          ]
+        },
+        {
+          "kind": "activate",
+          "args": [
+            "p1a: Stantler",
+            "Substitute",
+            "[damage]"
+          ]
+        },
+        {
+          "kind": "turn",
+          "turn": 9
+        }
+      ]
+    }
+  ],
+  "debug_log": "|gametype|singles\n|player|p1|P1||\n|player|p2|P2||\n|gen|4\n|tier|[Gen 4] Custom Game\n|\n|teamsize|p1|1\n|teamsize|p2|1\n|start\n|switch|p1a: Stantler|Stantler, L50, F|148/148\n|switch|p2a: Cranidos|Cranidos, L50, F|142/142\n|-ability|p2a: Cranidos|Mold Breaker\n|turn|1\n|\n|move|p1a: Stantler|Substitute|p1a: Stantler\n|-start|p1a: Stantler|Substitute\n|-damage|p1a: Stantler|111/148\n|move|p2a: Cranidos|Haze|p2a: Cranidos\n|-clearallboost\n|\n|upkeep\n|turn|2\n|\n|move|p1a: Stantler|Sharpen|p1a: Stantler\n|-boost|p1a: Stantler|atk|1\n|move|p2a: Cranidos|Future Sight|p1a: Stantler\n|-start|p2a: Cranidos|Future Sight\n|\n|upkeep\n|turn|3\n|\n|move|p1a: Stantler|Sharpen|p1a: Stantler\n|-boost|p1a: Stantler|atk|1\n|move|p2a: Cranidos|Haze|p2a: Cranidos\n|-clearallboost\n|\n|upkeep\n|turn|4\n|\n|move|p1a: Stantler|Sharpen|p1a: Stantler\n|-boost|p1a: Stantler|atk|1\n|move|p2a: Cranidos|Shock Wave|p1a: Stantler\n|-activate|p1a: Stantler|Substitute|[damage]\n|\n|-end|p1a: Stantler|move: Future Sight\n|-activate|p1a: Stantler|Substitute|[damage]\n|upkeep\n|turn|5\n|\n|move|p1a: Stantler|Sharpen|p1a: Stantler\n|-boost|p1a: Stantler|atk|1\n|move|p2a: Cranidos|Shock Wave|p1a: Stantler\n|-end|p1a: Stantler|Substitute\n|\n|upkeep\n|turn|6\n|\n|move|p1a: Stantler|Substitute|p1a: Stantler\n|-start|p1a: Stantler|Substitute\n|-damage|p1a: Stantler|74/148\n|move|p2a: Cranidos|Future Sight|p1a: Stantler\n|-start|p2a: Cranidos|Future Sight\n|\n|upkeep\n|turn|7\n|\n|move|p1a: Stantler|Sharpen|p1a: Stantler\n|-boost|p1a: Stantler|atk|1\n|move|p2a: Cranidos|Haze|p2a: Cranidos\n|-clearallboost\n|\n|upkeep\n|turn|8\n|\n|move|p1a: Stantler|Sharpen|p1a: Stantler\n|-boost|p1a: Stantler|atk|1\n|move|p2a: Cranidos|Shock Wave|p1a: Stantler\n|-activate|p1a: Stantler|Substitute|[damage]\n|\n|-end|p1a: Stantler|move: Future Sight\n|-activate|p1a: Stantler|Substitute|[damage]\n|upkeep\n|turn|9"
+}

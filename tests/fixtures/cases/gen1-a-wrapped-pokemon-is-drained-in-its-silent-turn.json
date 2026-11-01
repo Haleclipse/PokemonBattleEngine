@@ -1,0 +1,64 @@
+{
+ "schema": 1,
+ "id": "gen1-a-wrapped-pokemon-is-drained-in-its-silent-turn",
+ "notes": [
+  "Gen 1: Victreebel seeds Golem and wraps it; while Wrap goes on, Golem's turn shows nothing, but Leech Seed still drains it as that turn ends — its own silent action, not Wrap's (DESIGN.md R-M8-93)"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Victreebel",
+    "species": "Victreebel",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Leech Seed",
+     "Wrap"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Golem",
+    "species": "Golem",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Leech Seed",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Wrap",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Wrap",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Wrap",
+   "p2": "move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

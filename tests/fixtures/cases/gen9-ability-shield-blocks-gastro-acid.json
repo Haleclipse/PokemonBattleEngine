@@ -1,0 +1,82 @@
+{
+ "schema": 1,
+ "id": "gen9-ability-shield-blocks-gastro-acid",
+ "notes": [
+  "Ability Shield blocks Gastro Acid (`onTryHit`: `-block`): Snorlax keeps Thick Fat and the Ice Beam is halved",
+  "Ability Shield is `ignoreKlutz`: on a Klutz holder it blocks it all the same"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Weezing",
+    "species": "Weezing",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Gastro Acid",
+     "Ice Beam"
+    ],
+    "gender": "M",
+    "ability": "Levitate"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat",
+    "item": "Ability Shield"
+   },
+   {
+    "label": "Klutz Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Klutz",
+    "item": "Ability Shield"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Gastro Acid",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Ice Beam",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Gastro Acid",
+   "p2": "switch Klutz Snorlax"
+  },
+  {
+   "p1": "move Gastro Acid",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

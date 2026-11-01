@@ -1,0 +1,138 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-pinch-berries-raise-a-stat",
+ "notes": [
+  "Gen 9 doubles: Seismic Toss twice takes a 140-HP Jolteon to 20 (a quarter or less): it eats its berry at the second hit's `Update` \u2014 Liechi Berry Attack +1, Ganlon Berry Defense +1, Salac Berry Speed +1, Petaya Berry Special Attack +1, Apicot Berry Special Defense +1"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Liechi",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Liechi Berry",
+    "ability": "Volt Absorb"
+   },
+   {
+    "label": "Ganlon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Ganlon Berry",
+    "ability": "Volt Absorb"
+   },
+   {
+    "label": "Salac",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Salac Berry",
+    "ability": "Volt Absorb"
+   },
+   {
+    "label": "Petaya",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Petaya Berry",
+    "ability": "Volt Absorb"
+   },
+   {
+    "label": "Apicot",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Apicot Berry",
+    "ability": "Volt Absorb"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Snorlax2",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Seismic Toss 1, move Seismic Toss 1"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Seismic Toss 2, move Seismic Toss 2"
+  },
+  {
+   "p1": "switch 3, switch 4",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Seismic Toss 1, move Seismic Toss 1"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Seismic Toss 2, move Seismic Toss 2"
+  },
+  {
+   "p1": "switch 5, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Seismic Toss 1, move Seismic Toss 1"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

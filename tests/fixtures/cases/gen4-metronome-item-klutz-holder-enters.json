@@ -1,0 +1,70 @@
+{
+ "schema": 1,
+ "id": "gen4-metronome-item-klutz-holder-enters",
+ "notes": [
+  "Gen 4: a Klutz Lopunny holding Metronome comes in: Gen 4's `runSwitch` runs the item's `Start`, which Klutz does not suppress (`singleEvent` exempts it) — the `metronome` condition starts"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Lopunny",
+    "species": "Lopunny",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Pound"
+    ],
+    "gender": "F",
+    "ability": "Klutz",
+    "item": "Metronome"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Bronzong",
+    "species": "Bronzong",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Levitate"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "switch Lopunny",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Pound",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

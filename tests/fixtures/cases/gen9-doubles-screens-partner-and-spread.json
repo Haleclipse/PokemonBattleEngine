@@ -1,0 +1,92 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-screens-partner-and-spread",
+ "notes": [
+  "Reflect weakens Snorlax's Strength on its own partner Mew (target != source, on the screen's side); Light Screen weakens the spread Hyper Voice on both, \u00d70.75 then [2732, 4096]; Snorlax's hits on the foes are not"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Reflect",
+     "Light Screen",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Strength",
+     "Hyper Voice",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Lax",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Strength",
+     "Hyper Voice",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Hyper Voice",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Reflect, move Strength -1",
+   "p2": "move Strength 1, move Hyper Voice"
+  },
+  {
+   "p1": "move Light Screen, move Strength -1",
+   "p2": "move Hyper Voice, move Soft-Boiled"
+  },
+  {
+   "p1": "move Recover, move Hyper Voice",
+   "p2": "move Strength 2, move Hyper Voice"
+  },
+  {
+   "p1": "move Recover, move Strength 1",
+   "p2": "move Recover, move Soft-Boiled"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

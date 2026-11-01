@@ -1,0 +1,103 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-baton-pass",
+ "notes": [
+  "Doubles: Baton Pass hands the right slot's stat stages and Substitute to the Pok\u00e9mon taking that slot; its partner keeps its own"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Partner",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Protect"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Passer",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Baton Pass",
+     "Swords Dance",
+     "Substitute"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Taker",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Foe2",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Swords Dance",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Substitute",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Baton Pass",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "pass, switch Taker"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Tackle 2, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

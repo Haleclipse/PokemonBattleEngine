@@ -1,0 +1,91 @@
+{
+ "schema": 1,
+ "id": "gen9-pledge",
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Charizard",
+    "species": "Charizard",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fire Pledge",
+     "Grass Pledge",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Blaze"
+   },
+   {
+    "label": "Venusaur",
+    "species": "Venusaur",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Water Pledge",
+     "Grass Pledge",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Overgrow"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Fire Pledge 1, move Water Pledge 1",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Grass Pledge 1, move Grass Pledge 1",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Fire Pledge 1, move Grass Pledge 1",
+   "p2": "move Tackle 1, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ },
+ "notes": [
+  "Gen 9 doubles: Fire Pledge and Water Pledge combine (Water type, the Water Pledge side condition on the user's side); Fire + Grass in the next turn (Fire type, the Fire Pledge condition on the target's side, chipping every non-Fire type)"
+ ]
+}

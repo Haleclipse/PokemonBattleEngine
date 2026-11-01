@@ -1,0 +1,80 @@
+{
+ "schema": 1,
+ "id": "gen5-wish-runs-out-with-its-fainted-user",
+ "notes": [
+  "Wish is its slot's (Showdown slotCondition): its countdown runs in the residual even when the slot's Pok\u00e9mon fainted that turn, so it ends unused and the damaged replacement is not healed a turn later"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Togekiss",
+    "species": "Togekiss",
+    "level": 5,
+    "nature": "Hardy",
+    "moves": [
+     "Wish",
+     "Harden"
+    ],
+    "ability": "Hustle"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Natural Cure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Body Slam"
+    ],
+    "ability": "Immunity"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Wish",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Body Slam"
+  },
+  {
+   "p1": "switch Blissey"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Body Slam"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

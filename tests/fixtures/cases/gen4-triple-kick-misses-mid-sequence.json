@@ -1,0 +1,69 @@
+{
+ "schema": 1,
+ "id": "gen4-triple-kick-misses-mid-sequence",
+ "notes": [
+  "Triple Kick checks accuracy before each hit after the first (multiaccuracy) and stops at a miss; power 10, 20, 30"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hitmontop",
+    "species": "Hitmontop",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Triple Kick"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Double Team"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Triple Kick",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move Triple Kick",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move Triple Kick",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move Triple Kick",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move Triple Kick",
+   "p2": "move Double Team"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

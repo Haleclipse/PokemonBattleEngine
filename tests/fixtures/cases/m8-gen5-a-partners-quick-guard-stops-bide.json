@@ -1,0 +1,185 @@
+{
+  "schema": 1,
+  "id": "m8-gen5-a-partners-quick-guard-stops-bide",
+  "notes": [
+    "Gen 5 doubles: Monferno's Quick Guard stops its partner Chatot's Bide (+1, protect flag) aimed at Chatot itself — Showdown runs TryHit on the user too; the Bide never starts (DESIGN.md R-M8-119)",
+    "promoted from m8-gen5-doubles-s594-008-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 5,
+    "mode": "doubles",
+    "format": "gen5doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Whimsicott",
+        "species": "Whimsicott",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Confuse Ray",
+          "Bide"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Chatot",
+        "species": "Chatot",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Teeter Dance",
+          "Bide"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Monferno",
+        "species": "Monferno",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Quick Guard"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Shuppet",
+        "species": "Shuppet",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Blast Burn",
+          "Bide",
+          "Quick Guard"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Amoonguss",
+        "species": "Amoonguss",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Hyper Beam"
+        ],
+        "ability": "Run Away",
+        "item": "Choice Scarf",
+        "gender": "M"
+      },
+      {
+        "label": "Swampert",
+        "species": "Swampert",
+        "level": 51,
+        "nature": "Hardy",
+        "moves": [
+          "Giga Impact",
+          "Bide",
+          "Frenzy Plant",
+          "Quick Guard"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Doduo",
+        "species": "Doduo",
+        "level": 46,
+        "nature": "Hardy",
+        "moves": [
+          "Hydro Cannon",
+          "Wrap"
+        ],
+        "ability": "Wonder Guard",
+        "gender": "F"
+      },
+      {
+        "label": "Umbreon",
+        "species": "Umbreon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Magma Storm"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      4570,
+      64473,
+      3163,
+      44428
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Confuse Ray 1, move Teeter Dance",
+      "p2": "move Hyper Beam 1, move Giga Impact 2"
+    },
+    {
+      "p1": "move 2, move 2",
+      "p2": "move 1, move 2"
+    },
+    {
+      "p1": "move 1, move 1",
+      "p2": "move 1 1, move 3 2"
+    },
+    {
+      "p1": "switch Monferno, pass"
+    },
+    {
+      "p1": "switch Shuppet, move 1",
+      "p2": "move 1, move 4"
+    },
+    {
+      "p1": "move Quick Guard, move Teeter Dance",
+      "p2": "move Hyper Beam 1, move Giga Impact 2"
+    },
+    {
+      "p1": "move Blast Burn 2, move Bide",
+      "p2": "move Hyper Beam 1, move Bide"
+    },
+    {
+      "p1": "move 2, move 1",
+      "p2": "move 1 2, move 1"
+    },
+    {
+      "p1": "move 1, move 1",
+      "p2": "move 1, move 1"
+    },
+    {
+      "p2": "switch Doduo, pass"
+    },
+    {
+      "p1": "move 1, move 1",
+      "p2": "move 1 1, move 1 2"
+    },
+    {
+      "p1": "move 1 1, move 2",
+      "p2": "move 1, move 2"
+    },
+    {
+      "p1": "move 2, move 1",
+      "p2": "move 2 1, move 1"
+    },
+    {
+      "p1": "switch Monferno, move 1",
+      "p2": "switch Umbreon, move 1"
+    },
+    {
+      "p1": "move Quick Guard, move Bide",
+      "p2": "move Magma Storm 1, move Bide"
+    }
+  ]
+}

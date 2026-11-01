@@ -1,0 +1,105 @@
+{
+ "schema": 1,
+ "id": "gen9-gorilla-tactics",
+ "notes": [
+  "Gorilla Tactics: Strength with Attack x1.5, alone and with a Choice Band; the lock onto Strength ends when the holder switches out, so Harden is legal on its return"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Darmanitan",
+    "species": "Garchomp",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Strength",
+     "Harden"
+    ],
+    "ability": "Gorilla Tactics"
+   },
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Strength",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Banded",
+    "species": "Garchomp",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Strength"
+    ],
+    "ability": "Gorilla Tactics",
+    "item": "Choice Band"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Strength",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Strength",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "switch Mew",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "switch Darmanitan",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "switch Banded",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Strength",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,84 @@
+{
+ "schema": 1,
+ "id": "gen2-minimize",
+ "notes": [
+  "Gen 2 Minimize (the cartridge, issues.md I50): Stomp against it doubles as the damage calculation's last step, after the random roll; with a Polkadot Bow the item's x 1.1 is in and the damage still doubles"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mini",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Minimize",
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Stomp",
+     "Harden"
+    ]
+   },
+   {
+    "label": "Bow",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Stomp",
+     "Harden"
+    ],
+    "item": "Polkadot Bow"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Minimize",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Stomp"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Stomp"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Bow"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Stomp"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Stomp"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   13,
+   14,
+   15,
+   16
+  ]
+ }
+}

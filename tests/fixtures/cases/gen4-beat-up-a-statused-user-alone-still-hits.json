@@ -1,0 +1,74 @@
+{
+ "schema": 1,
+ "id": "gen4-beat-up-a-statused-user-alone-still-hits",
+ "notes": [
+  "Gen 4 Beat Up of a paralysed user with no other member: on the cartridge the user's own slot always takes part, whatever its status (pokeplatinum `BeatUpEligibleMon`, issues.md I20), so it hits once every time (Showdown: no member, power null, nothing)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sneasel",
+    "species": "Sneasel",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Beat Up"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Thunder Wave",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Beat Up",
+   "p2": "move Thunder Wave"
+  },
+  {
+   "p1": "move Beat Up",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Beat Up",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Beat Up",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Beat Up",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Beat Up",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

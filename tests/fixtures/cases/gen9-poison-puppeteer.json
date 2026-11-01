@@ -1,0 +1,95 @@
+{
+ "schema": 1,
+ "id": "gen9-poison-puppeteer",
+ "notes": [
+  "Poison Puppeteer: a Pecharunt's move that poisons its target also confuses it (Toxic; Malignant Chain's secondary); poison from Toxic Spikes does not"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Pech",
+    "species": "Pecharunt",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Toxic",
+     "Malignant Chain",
+     "Toxic Spikes",
+     "Recover"
+    ],
+    "ability": "Poison Puppeteer"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Lax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Chan",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Kanga",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Toxic",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Malignant Chain",
+   "p2": "switch Chan"
+  },
+  {
+   "p1": "move Toxic Spikes",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "switch Kanga"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   4,
+   2,
+   3,
+   4
+  ]
+ }
+}

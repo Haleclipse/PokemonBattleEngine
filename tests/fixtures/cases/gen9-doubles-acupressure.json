@@ -1,0 +1,90 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-acupressure",
+ "notes": [
+  "Acupressure: a random stat below +6 rises by 2, on the user and on its partner; after Belly Drum the Attack is not among them"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Acu",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Acupressure",
+     "Belly Drum"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Pal",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "F1",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "F2",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Acupressure -1, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Acupressure -2, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Belly Drum, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Acupressure -1, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Acupressure -1, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

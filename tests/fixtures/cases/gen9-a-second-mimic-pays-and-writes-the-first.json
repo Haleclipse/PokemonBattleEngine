@@ -1,0 +1,93 @@
+{
+ "schema": 1,
+ "id": "gen9-a-second-mimic-pays-and-writes-the-first",
+ "notes": [
+  "Gen 9: Smeargle's Mimic copies Splash over its Mimic slot, so its Sketch can copy Jolteon's Mimic into the Sketch slot; back from the bench it has two Mimics. The second one, chosen, spends the first one's PP and copies Splash over it (pokeplatinum `Battler_SlotForMove`, `BtlCmd_TryMimic`'s first Mimic; Showdown's `getMoveData`, `source.moves.indexOf('mimic')` — issues.md I170): the first slot then uses Splash"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Smeargle",
+    "species": "Smeargle",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Mimic",
+     "Sketch",
+     "Harden"
+    ],
+    "ability": "Own Tempo",
+    "gender": "M"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash",
+     "Mimic"
+    ],
+    "ability": "Volt Absorb",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Mimic",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Sketch",
+   "p2": "move Mimic"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

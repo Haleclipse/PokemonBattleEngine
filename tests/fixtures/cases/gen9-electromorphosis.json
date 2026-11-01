@@ -1,0 +1,63 @@
+{
+ "schema": 1,
+ "id": "gen9-electromorphosis",
+ "notes": [
+  "Electromorphosis: a Tackle's hit charges the holder, and its Thunderbolt's power is doubled"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Morph",
+    "species": "Bellibolt",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Thunderbolt",
+     "Harden"
+    ],
+    "ability": "Electromorphosis"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Thunderbolt",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Thunderbolt",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

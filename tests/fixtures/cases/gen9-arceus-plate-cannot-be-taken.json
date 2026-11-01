@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "gen9-arceus-plate-cannot-be-taken",
+ "notes": [
+  "Gen 9: Thief and Knock Off take nothing from an Arceus holding a Plate (the Plate's `onTakeItem`), while the same moves take a plain held item"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Arceus",
+    "species": "Arceus",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Judgment",
+     "Harden"
+    ],
+    "ability": "Multitype",
+    "item": "Sky Plate"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Thief",
+     "Knock Off",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Thief"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Knock Off"
+  },
+  {
+   "p1": "move Judgment",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

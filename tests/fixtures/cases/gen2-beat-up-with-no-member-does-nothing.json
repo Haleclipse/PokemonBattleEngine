@@ -1,0 +1,72 @@
+{
+ "schema": 1,
+ "id": "gen2-beat-up-with-no-member-does-nothing",
+ "notes": [
+  "Gen 2 Beat Up with no party member neither fainted nor statused (the user paralyzed and alone): its power is null \u2014 the accuracy check, then nothing, no critical-hit check or damage roll"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sneasel",
+    "species": "Sneasel",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Beat Up"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Thunder Wave",
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Beat Up",
+   "p2": "move Thunder Wave"
+  },
+  {
+   "p1": "move Beat Up",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Beat Up",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Beat Up",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Beat Up",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Beat Up",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

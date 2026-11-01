@@ -1,0 +1,112 @@
+{
+ "schema": 1,
+ "id": "gen9-reflect-light-screen-aurora-veil",
+ "notes": [
+  "Reflect halves Strength, Light Screen Hyper Voice (onAnyModifyDamage, \u00d70.5 in singles); a second Reflect fails; Flower Trick / Frost Breath always crit and ignore them; Aurora Veil fails without snow, and under Snowscape halves a hit once even with Reflect up (it steps aside); screens last 5 turns, 8 from a Light Clay holder"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Screener",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Reflect",
+     "Light Screen",
+     "Aurora Veil",
+     "Snowscape"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Clay",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Reflect",
+     "Light Screen",
+     "Recover"
+    ],
+    "ability": "Run Away",
+    "item": "Light Clay"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Strength",
+     "Hyper Voice",
+     "Flower Trick",
+     "Frost Breath"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Aurora Veil",
+   "p2": "move Strength"
+  },
+  {
+   "p1": "move Reflect",
+   "p2": "move Strength"
+  },
+  {
+   "p1": "move Light Screen",
+   "p2": "move Hyper Voice"
+  },
+  {
+   "p1": "move Reflect",
+   "p2": "move Flower Trick"
+  },
+  {
+   "p1": "move Snowscape",
+   "p2": "move Frost Breath"
+  },
+  {
+   "p1": "move Aurora Veil",
+   "p2": "move Strength"
+  },
+  {
+   "p1": "switch Clay",
+   "p2": "move Strength"
+  },
+  {
+   "p1": "move Reflect",
+   "p2": "move Hyper Voice"
+  },
+  {
+   "p1": "move Light Screen",
+   "p2": "move Strength"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Hyper Voice"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Strength"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

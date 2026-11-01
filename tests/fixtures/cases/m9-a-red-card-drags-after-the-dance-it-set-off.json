@@ -1,0 +1,104 @@
+{
+ "schema": 1,
+ "id": "m9-a-red-card-drags-after-the-dance-it-set-off",
+ "notes": [
+  "R-M9-53: Volcarona's Fiery Dance hits Zweilous, whose Red Card goes; Trapinch (Dancer) dances it along, and only then, as the action ends, the Red Card drags Volcarona out for a random one of the two on the bench. The log shows the `drag` after the dance, so it is read off the dance: the replay draws the drag's target after the dance's draws and swaps the Showdown party order, which the next turn's `switch 4` counts in: Volcarona, not the Pok\u00e9mon now in its old place."
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "doubles",
+  "format": "gen8doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Trapinch",
+    "species": "Trapinch",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Dancer",
+    "gender": "M"
+   },
+   {
+    "label": "Volcarona",
+    "species": "Volcarona",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fiery Dance"
+    ],
+    "ability": "Flame Body",
+    "gender": "F"
+   },
+   {
+    "label": "Abomasnow",
+    "species": "Abomasnow",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Snow Warning",
+    "gender": "F"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Zweilous",
+    "species": "Zweilous",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Hustle",
+    "item": "Red Card",
+    "gender": "M"
+   },
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Swift Swim",
+    "gender": "M"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash, move Fiery Dance 1",
+   "p2": "move Splash, move Splash"
+  },
+  {
+   "p1": "switch 4, move Splash",
+   "p2": "move Splash, move Splash"
+  }
+ ]
+}

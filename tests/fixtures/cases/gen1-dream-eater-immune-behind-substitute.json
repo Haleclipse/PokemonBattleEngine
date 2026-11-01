@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "gen1-dream-eater-immune-behind-substitute",
+ "notes": [
+  "Gen 1 Dream Eater: an awake target is immune (before any accuracy roll), and so is a sleeping one behind a Substitute (Spore gets through it in Gen 1)"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hypno",
+    "species": "Hypno",
+    "level": 50,
+    "moves": [
+     "Dream Eater",
+     "Spore"
+    ],
+    "nature": "Hardy"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "moves": [
+     "Substitute",
+     "Harden"
+    ],
+    "nature": "Hardy"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Dream Eater",
+   "p2": "move Substitute"
+  },
+  {
+   "p1": "move Spore",
+   "p2": "move 2"
+  },
+  {
+   "p1": "move Dream Eater",
+   "p2": "move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

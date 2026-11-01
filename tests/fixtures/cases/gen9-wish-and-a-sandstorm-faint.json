@@ -1,0 +1,83 @@
+{
+ "schema": 1,
+ "id": "gen9-wish-and-a-sandstorm-faint",
+ "notes": [
+  "Gen 9: Murkrow's Wish is due when the sandstorm knocks Murkrow out at the same residual: the Wish ends over its fainted holder, healing no one; Snorlax, who comes in, is not healed a turn later"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hippowdon",
+    "species": "Hippowdon",
+    "level": 55,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Sand Stream"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Murkrow",
+    "species": "Murkrow",
+    "level": 20,
+    "nature": "Hardy",
+    "moves": [
+     "Wish",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Insomnia"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Seismic Toss",
+   "p2": "move Wish"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Seismic Toss",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

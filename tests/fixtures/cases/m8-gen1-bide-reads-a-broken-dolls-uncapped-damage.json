@@ -1,0 +1,181 @@
+{
+  "schema": 1,
+  "id": "m8-gen1-bide-reads-a-broken-dolls-uncapped-damage",
+  "notes": [
+    "Nightly 58: Gen 1 lastDamage keeps a broken Substitute's damage uncapped; Venusaur's Bide stores it twice, so the release settles the Razor Wind roll the break left open (replay: OpenChoices, a diverging replay runs again with another lastDamage) (DESIGN.md R-M8-102)",
+    "promoted from m8-gen1-singles-s529-010-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 1,
+    "mode": "singles",
+    "format": "gen1customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Raticate",
+        "species": "Raticate",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Razor Wind",
+          "Dig"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "Poliwhirl",
+        "species": "Poliwhirl",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Barrier",
+          "Bide"
+        ]
+      },
+      {
+        "label": "Vaporeon",
+        "species": "Vaporeon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Harden",
+          "Bide"
+        ]
+      },
+      {
+        "label": "Spearow",
+        "species": "Spearow",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Swords Dance",
+          "Bide",
+          "Substitute"
+        ]
+      },
+      {
+        "label": "Venusaur",
+        "species": "Venusaur",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Growth",
+          "Bide",
+          "Withdraw",
+          "Substitute"
+        ]
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      22370,
+      62281,
+      14964,
+      21626
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Razor Wind",
+      "p2": "move Barrier"
+    },
+    {
+      "p1": "move Razor Wind",
+      "p2": "move Bide"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p2": "switch Vaporeon"
+    },
+    {
+      "p1": "move Razor Wind",
+      "p2": "move Harden"
+    },
+    {
+      "p1": "move Razor Wind",
+      "p2": "move Bide"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "switch Spearow"
+    },
+    {
+      "p1": "move Razor Wind",
+      "p2": "move Substitute"
+    },
+    {
+      "p1": "move Razor Wind",
+      "p2": "move Swords Dance"
+    },
+    {
+      "p1": "move Dig",
+      "p2": "move Bide"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move Razor Wind",
+      "p2": "move Swords Dance"
+    },
+    {
+      "p2": "switch Vaporeon"
+    },
+    {
+      "p1": "move Dig",
+      "p2": "move Bide"
+    },
+    {
+      "p1": "move 1",
+      "p2": "switch Venusaur"
+    },
+    {
+      "p1": "move Razor Wind",
+      "p2": "move Withdraw"
+    },
+    {
+      "p1": "move Razor Wind",
+      "p2": "move Substitute"
+    },
+    {
+      "p1": "move Dig",
+      "p2": "move Growth"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 1"
+    }
+  ]
+}

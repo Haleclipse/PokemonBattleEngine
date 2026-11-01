@@ -1,0 +1,262 @@
+{
+  "schema": 1,
+  "id": "m8-gen1-metronome-wrap-goes-back-to-metronome",
+  "notes": [
+    "Gen 1: Dragonite's Metronome calls Wrap and locks it; when Dewgong switches out for Mewtwo, runSwitch's Metronome glitch sends Dragonite back to Metronome (its last selected slot), which calls Lovely Kiss (DESIGN.md R-M8-115)",
+    "promoted from m8-gen1-singles-s578-005-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 1,
+    "mode": "singles",
+    "format": "gen1customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Seadra",
+        "species": "Seadra",
+        "level": 54,
+        "nature": "Hardy",
+        "moves": [
+          "Vine Whip",
+          "Hydro Pump",
+          "Metronome"
+        ]
+      },
+      {
+        "label": "Diglett",
+        "species": "Diglett",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Mega Kick",
+          "Minimize",
+          "Pound",
+          "Metronome"
+        ]
+      },
+      {
+        "label": "Dewgong",
+        "species": "Dewgong",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Jump Kick",
+          "Minimize",
+          "Cut"
+        ]
+      },
+      {
+        "label": "Mewtwo",
+        "species": "Mewtwo",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Strength",
+          "Vise Grip",
+          "Metronome"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "Jigglypuff",
+        "species": "Jigglypuff",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle",
+          "Mega Punch"
+        ]
+      },
+      {
+        "label": "Staryu",
+        "species": "Staryu",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Horn Attack",
+          "Metronome"
+        ]
+      },
+      {
+        "label": "Zubat",
+        "species": "Zubat",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Rock Throw",
+          "Rock Slide",
+          "Metronome"
+        ]
+      },
+      {
+        "label": "Dragonite",
+        "species": "Dragonite",
+        "level": 45,
+        "nature": "Hardy",
+        "moves": [
+          "Egg Bomb",
+          "Minimize",
+          "Tri Attack",
+          "Metronome"
+        ]
+      },
+      {
+        "label": "Golem",
+        "species": "Golem",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Self-Destruct",
+          "Metronome"
+        ]
+      },
+      {
+        "label": "Poliwhirl",
+        "species": "Poliwhirl",
+        "level": 46,
+        "nature": "Hardy",
+        "moves": [
+          "Explosion",
+          "Soft-Boiled",
+          "Metronome"
+        ]
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      50676,
+      53600,
+      18297,
+      34335
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Vine Whip",
+      "p2": "move Tackle"
+    },
+    {
+      "p1": "move Hydro Pump",
+      "p2": "move Mega Punch"
+    },
+    {
+      "p2": "switch Staryu"
+    },
+    {
+      "p1": "switch Diglett",
+      "p2": "switch Zubat"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Metronome"
+    },
+    {
+      "p1": "move Mega Kick",
+      "p2": "move Rock Throw"
+    },
+    {
+      "p1": "switch Seadra",
+      "p2": "switch Staryu"
+    },
+    {
+      "p1": "move Hydro Pump",
+      "p2": "move Horn Attack"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Metronome"
+    },
+    {
+      "p2": "switch Zubat"
+    },
+    {
+      "p1": "switch Diglett",
+      "p2": "switch Dragonite"
+    },
+    {
+      "p1": "move Minimize",
+      "p2": "move Minimize"
+    },
+    {
+      "p1": "move Pound",
+      "p2": "move Tri Attack"
+    },
+    {
+      "p1": "switch Seadra"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Metronome"
+    },
+    {
+      "p1": "switch Dewgong",
+      "p2": "switch Zubat"
+    },
+    {
+      "p1": "move Jump Kick",
+      "p2": "move Rock Throw"
+    },
+    {
+      "p1": "move Cut",
+      "p2": "move Rock Slide"
+    },
+    {
+      "p2": "switch Dragonite"
+    },
+    {
+      "p1": "switch Seadra",
+      "p2": "switch Golem"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Metronome"
+    },
+    {
+      "p1": "move Vine Whip",
+      "p2": "move Self-Destruct"
+    },
+    {
+      "p1": "switch Mewtwo",
+      "p2": "switch Poliwhirl"
+    },
+    {
+      "p1": "move Vise Grip",
+      "p2": "move Soft-Boiled"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Metronome"
+    },
+    {
+      "p1": "move Strength",
+      "p2": "move Explosion"
+    },
+    {
+      "p2": "switch Dragonite"
+    },
+    {
+      "p1": "switch Dewgong",
+      "p2": "move Minimize"
+    },
+    {
+      "p1": "move Minimize",
+      "p2": "move Tri Attack"
+    },
+    {
+      "p1": "move Cut",
+      "p2": "move Metronome"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "switch Mewtwo",
+      "p2": "move Minimize"
+    }
+  ]
+}

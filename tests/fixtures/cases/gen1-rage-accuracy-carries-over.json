@@ -1,0 +1,73 @@
+{
+ "schema": 1,
+ "id": "gen1-rage-accuracy-carries-over",
+ "notes": [
+  "Gen 1 Rage: its accuracy byte carries from use to use with the stages applied again each time \u2014 after Sand-Attack, the lock misses more and more"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Rager",
+    "species": "Primeape",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Rage",
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Sander",
+    "species": "Sandslash",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sand-Attack",
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Rage",
+   "p2": "move Sand-Attack"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "move Sand-Attack"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

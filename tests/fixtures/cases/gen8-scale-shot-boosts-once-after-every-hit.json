@@ -1,0 +1,66 @@
+{
+ "schema": 1,
+ "id": "gen8-scale-shot-boosts-once-after-every-hit",
+ "notes": [
+  "Scale Shot hits 2-5 times and changes the user's stages once afterwards (Defense -1, Speed +1); a miss changes nothing"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Dragapult",
+    "species": "Dragapult",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Scale Shot"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Double Team"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Scale Shot",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Scale Shot",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move Scale Shot",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move Scale Shot",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   2,
+   2,
+   3,
+   4
+  ]
+ }
+}

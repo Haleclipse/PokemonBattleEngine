@@ -1,0 +1,69 @@
+{
+ "schema": 1,
+ "id": "gen7-color-change-through-a-substitute",
+ "notes": [
+  "Gen 7: Snorlax with Color Change behind a Substitute: Dragon Claw breaks the Substitute without changing its type (a Substitute's hit leaves the target out of `AfterMoveSecondary`); the next Dragon Claw on its body makes it Dragon"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Substitute",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Color Change"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Garchomp",
+    "species": "Garchomp",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Swords Dance",
+     "Dragon Claw"
+    ],
+    "gender": "M",
+    "ability": "Rough Skin"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Substitute",
+   "p2": "move Swords Dance"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Dragon Claw"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Dragon Claw"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Dragon Claw"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

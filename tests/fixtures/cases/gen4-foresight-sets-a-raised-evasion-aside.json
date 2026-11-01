@@ -1,0 +1,81 @@
+{
+ "schema": 1,
+ "id": "gen4-foresight-sets-a-raised-evasion-aside",
+ "notes": [
+  "Gen 4: Gengar raises its evasion three times; after Foresight Snorlax's Body Slam (100 %) never misses — an identified target's raised evasion counts as 0 (pokeplatinum `MON_IS_IDENTIFIED`). The seed is one where the I5 accuracy patch before K.7a, which read the stages as they are, had Body Slam miss"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Foresight",
+     "Body Slam"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gengar",
+    "species": "Gengar",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Double Team",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Levitate"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Foresight",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move Foresight",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move Foresight",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   3,
+   5,
+   7
+  ]
+ }
+}

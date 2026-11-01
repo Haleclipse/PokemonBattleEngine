@@ -1,0 +1,97 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-dragon-darts-both-at-one",
+ "notes": [
+  "Dragon Darts: when the partner protects, or is immune (a Fairy type), both darts hit the target (smartTarget turns false)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Dragapult",
+    "species": "Dragapult",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Dragon Darts",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Protect",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Clefable",
+    "species": "Clefable",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Dragon Darts 1, move Harden",
+   "p2": "move Harden, move Protect"
+  },
+  {
+   "p1": "move Dragon Darts 2, move Harden",
+   "p2": "move Harden, move Protect"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, switch 3"
+  },
+  {
+   "p1": "move Dragon Darts 1, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

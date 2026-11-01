@@ -1,0 +1,73 @@
+{
+ "schema": 1,
+ "id": "gen5-incinerate-burns-berries-not-gems",
+ "notes": [
+  "Gen 5 Incinerate (30) burns Snorlax's Sitrus Berry but leaves Blissey's Normal Gem (the gen5 mod: berries only)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Typhlosion",
+    "species": "Typhlosion",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Incinerate"
+    ],
+    "ability": "Blaze"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Sitrus Berry"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Natural Cure",
+    "item": "Normal Gem"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Incinerate",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Incinerate",
+   "p2": "switch Blissey"
+  },
+  {
+   "p1": "move Incinerate",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "gen7-genesis-supernova-through-a-substitute-lays-psychic-terrain",
+ "notes": [
+  "Gen 7: Shuckle's Genesis Supernova breaks Snorlax's Substitute and still lays Psychic Terrain: Showdown's secondaries walk the null a Substitute's hit leaves, and the terrain is a self secondary (DESIGN.md R-M8-137)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Shuckle",
+    "species": "Shuckle",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Genesis Supernova",
+     "Splash"
+    ],
+    "ability": "Sturdy",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Substitute",
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Genesis Supernova",
+   "p2": "move Substitute"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

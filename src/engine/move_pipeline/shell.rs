@@ -1,0 +1,3121 @@
+//! The Move Shell (DESIGN.md §15): the one sequence every move runs — BeforeMove, PP, targeting,
+//! TryMove, the per-target loop through the hit gate and the primary effect, the once-per-move
+//! secondaries and the after-move steps — and the move result it leaves (§22.8).
+
+use crate::dex::{MultiHit, PrimaryEffect, ResolvedMove, SecondaryTrigger, StatusMoveEffect};
+use crate::effects;
+use crate::ids::{MoveId, MoveSlot, PokemonId};
+use crate::rules::{DeclaredTarget, Fraction, MovesSlot, ResolvedRules, ResolvedTarget, Rounding};
+use crate::state::{
+    AttackRecord, MoveResult, NonVolatileStatus, RandomRequestKind, VolatileConditionKind,
+};
+
+use crate::engine::damage::HitBlockReason;
+use crate::engine::{
+    BattleContext, BattleError, DamageAmount, EffectSource, MoveFailReason, TraceEvent,
+};
+
+use super::{CallFrame, HitOutcome, MAX_CALL_DEPTH, MoveExecution, MovePipeline};
+
+impl<'a> MovePipeline<'a> {
+    /// Showdown `runEvent('AfterMove')`'s `onAnyAfterMove` handlers of the Pokémon on the field,
+    /// fastest first, a holder's ability (Opportunist) before its item (White Herb, Mirror
+    /// Herb, Eject Pack).
+    fn any_after_move(&mut self) {
+        let active: Vec<PokemonId> = self
+            .state
+            .sides
+            .iter()
+            .flat_map(|side| side.active.iter().flatten().copied())
+            .collect();
+        let mut holders: Vec<(PokemonId, u32, u8, crate::effects::SwitchHandler)> = Vec::new();
+        for pokemon in active {
+            let speed = crate::engine::stats::handler_speed(self.state, pokemon);
+            if let Some(handler) = self.state.pokemon(pokemon).and_then(|p| {
+                crate::engine::ability_handler(self.state, self.rules, p, |b| b.any_after_move)
+            }) {
+                holders.push((pokemon, speed, 0, handler));
+            }
+            if let Some(handler) = crate::engine::held_item(self.state, self.rules, pokemon)
+                .and_then(|(_, behavior)| behavior.any_after_move)
+            {
+                holders.push((pokemon, speed, 1, handler));
+            }
+        }
+        holders.sort_by_key(|(_, speed, sub, _)| (std::cmp::Reverse(*speed), *sub));
+        for (pokemon, _, _, handler) in holders {
+            handler(
+                &mut BattleContext::new(self.state, self.rules, self.trace),
+                pokemon,
+            );
+        }
+    }
+
+    pub(crate) fn execute(
+        &mut self,
+        actor: PokemonId,
+        slot: MoveSlot,
+        declared_target: Option<DeclaredTarget>,
+    ) -> Result<MoveExecution, BattleError> {
+        // A move this one called (Metronome, Sleep Talk, Copycat …): Showdown runs it inside
+        // the same `useMove`, before the action's AfterMove events (DESIGN.md §42.1). The
+        // called move — and anything it in turn calls, up to a bound nothing real reaches — is
+        // what the action reports.
+        let mut depth = 0;
+        self.state.acting_slot = Some((actor, slot.index()));
+        self.state.items_received_in_action.clear();
+        let mut execution = self.run(actor, slot, declared_target)?;
+        // The actor's own `moveThisTurnResult`: a call another Pokémon runs (a reflection) is its
+        // user's `useMove`, which leaves the actor's result as its move had it — a move bounced
+        // back failed (`hitStepTryHitEvent` turns TryHit's `null` into `false`).
+        let mut own_result = None;
+        // A call may be for another Pokémon than the actor: Magic Coat and Magic Bounce make the
+        // Pokémon they hit use the move back (§42.8).
+        while let Some(call) = self.state.pending_call.take() {
+            depth += 1;
+            if depth > MAX_CALL_DEPTH {
+                break;
+            }
+            if call.user != actor {
+                own_result.get_or_insert(execution.result);
+            }
+            let reflected = matches!(
+                call.source,
+                crate::state::CallSource::Move(crate::ids::MoveId::MAGIC_COAT)
+                    | crate::state::CallSource::Ability(crate::ids::AbilityId::MAGIC_BOUNCE)
+            );
+            let lent = self
+                .lent_priority(reflected)
+                .map(|(priority, boosted)| (priority, boosted || call.reflected_prankster));
+            // The action's own Z status move calling a move for its user (`sourceEffect.isZ`):
+            // the first call of the chain; a move that called is not a Z-Move itself.
+            let z_call = depth == 1
+                && self.z_powered
+                && self.max_base.is_none()
+                && call.user == actor
+                && matches!(call.source, crate::state::CallSource::Move(source) if Some(source) == self.outermost);
+            let mut called =
+                MovePipeline::new(&mut *self.state, self.rules, self.dex, &mut *self.trace)
+                    .called(CallFrame {
+                        source: call.source,
+                        action_move: self.outermost,
+                    })
+                    .reflected(reflected)
+                    .with_lent_priority(lent)
+                    .with_z_caller(z_call);
+            execution = called.execute_called(call)?;
+            // A called Pledge that waited for its ally's (Assist's Water Pledge, R-M8-65): the
+            // action layer moves the ally's action up, as for a Pledge picked from the menu.
+            if let Some(ally_move) = called.pledge_promotes() {
+                self.pledge_promotes = Some(ally_move);
+            }
+            // A called Round (Me First's, Metronome's) moves the next Round up as one of the
+            // action's own would (Round's `onTry`, DESIGN.md R-M8-86).
+            if let Some(round) = called.prioritizes() {
+                self.prioritizes = Some(round);
+            }
+            // A called move's physical hit that armed a Shell Trap (Copycat's Avalanche) moves
+            // the holder up as one of the action's own hits would (`prioritizeAction` in the
+            // trap's `onHit`, R-M8-143).
+            for &armed in called.prioritized_actors() {
+                self.prioritized_actors.retain(|actor| *actor != armed);
+                self.prioritized_actors.push(armed);
+            }
+        }
+        self.state.acting_slot = None;
+        // Gen 3-4 Choice items' `onAfterMove`: the item held now locks its holder onto the move —
+        // the one the action chose (the gen4 `choicelock` condition reads `pokemon.lastMove`,
+        // which a called move leaves alone), not one the action called (DESIGN.md §42.2).
+        // Gen 3: not by an item its own move handed it (issues.md I184).
+        let received_in_the_move = self
+            .rules
+            .conditions
+            .items
+            .choice_lock_skips_an_item_received_in_the_move
+            && self.state.items_received_in_action.contains(&actor);
+        self.state.items_received_in_action.clear();
+        if !execution.stopped
+            && self.rules.conditions.items.choice_locks_after_the_move
+            && !received_in_the_move
+            && let Some((_, item)) = crate::engine::held_item(self.state, self.rules, actor)
+            && let Some(handler) = item.move_decided
+        {
+            let chosen = self.outermost.unwrap_or(execution.move_id);
+            let mut ctx = BattleContext::new(self.state, self.rules, self.trace);
+            handler(&mut ctx, actor, chosen);
+        }
+        // The `AfterMove` events are `runMove`'s: a Gen 3-4 Pursuit striking a Pokémon as it
+        // switches out runs `useMove` alone (`skips_before_move`) and fires none of them — a
+        // Charge it follows stays (R-M8-168).
+        let after_move_events = !self.skips_before_move;
+        // Showdown `runEvent('AfterMove')` (`runMove`, once the move is over, its faints still
+        // pending): the `onAnyAfterMove` of the abilities and held items on the field.
+        if after_move_events && !execution.stopped {
+            self.any_after_move();
+        }
+        // Beak Blast's `onAfterMove`: its volatile ends once the move is over, with no word (seen
+        // on until the turn ends).
+        if after_move_events
+            && !execution.stopped
+            && self
+                .dex
+                .move_by_id(execution.move_id)
+                .is_some_and(|m| m.behavior.ends_turn_start_volatile)
+        {
+            BattleContext::new(self.state, self.rules, self.trace)
+                .end_volatile_unseen(actor, VolatileConditionKind::BeakBlast);
+        }
+        if after_move_events
+            && !execution.stopped
+            && !self.releasing
+            && super::metronome::did_nothing(&execution)
+        {
+            self.metronome_takes_back(actor, execution.move_id);
+        }
+        // Showdown `onAfterMove`: a move that struck nothing still pays its self damage once
+        // it is over (one that struck something paid it after the hit, in `run`).
+        if after_move_events
+            && !execution.stopped
+            && !self.self_damage_cancelled
+            && !struck_something(&execution.hits)
+        {
+            self.after_move_self_damage(actor, execution.move_id);
+        }
+        // Charge's `onAfterMove` / `onMoveAborted`: it ends after a move other than Charge — from
+        // Gen 9 only an Electric one (its type as used; an aborted move's own: the recharge
+        // turn's is `recharge`, Normal, R-M10-57). A move its own `beforeMoveCallback` stopped
+        // (Focus Punch without its focus, Bide storing) runs neither event, and Charge stays.
+        if after_move_events
+            && actor_has_charge(self.state, actor)
+            && execution.move_id != MoveId::CHARGE
+            && (!execution.stopped || execution.aborted)
+        {
+            let electric = !self.recharged
+                && self
+                    .dex
+                    .move_by_id(execution.move_id)
+                    .is_some_and(|move_def| {
+                        let move_type = if execution.stopped {
+                            move_def.move_type
+                        } else {
+                            crate::engine::modified_move_cow(
+                                self.state, self.rules, actor, move_def, false,
+                            )
+                            .0
+                            .move_type
+                        };
+                        move_type == crate::dex::PokemonType::Electric
+                    });
+            if self.rules.conditions.charge_ends_after_any_move || electric {
+                BattleContext::new(self.state, self.rules, self.trace)
+                    .end_volatile(actor, VolatileConditionKind::Charge);
+            }
+        }
+        // Spit Up's `onAfterMove`: the Stockpile ends.
+        if after_move_events
+            && !execution.stopped
+            && self
+                .dex
+                .move_by_id(execution.move_id)
+                .is_some_and(|move_def| move_def.behavior.ends_stockpile)
+        {
+            BattleContext::new(self.state, self.rules, self.trace).end_stockpile(actor);
+        }
+        // Thrash's lock and Uproar as the move is over (`onAfterMove`, §15.12).
+        self.rampage_after_move(actor, &execution);
+        self.uproar_after_move(actor, &execution);
+        self.locked_miss_spends_pp(actor, &execution);
+        self.fury_cutter_after_move(actor, &execution);
+        self.rage_after_move(actor, &execution);
+        self.rolling_after_move(actor, &execution);
+        // Showdown `moveThisTurnResult`, and `lastSuccessfulMoveThisTurn` — which a Pokémon
+        // that could not act (BeforeMove) leaves alone, as Showdown returns before setting it.
+        let result = own_result.unwrap_or(execution.result);
+        if let Some(pokemon) = self.state.pokemon_mut(actor) {
+            pokemon.history.move_this_turn = Some(result);
+        }
+        if !execution.stopped {
+            self.state.last_successful_move =
+                (result == MoveResult::Succeeded).then_some(execution.move_id);
+        }
+        // Dancer (Showdown's `runMove` tail, after the move's and its user's `AfterMove` — a
+        // lock's end and its fatigue, R-M8-78 — and the faints it caused): another Pokémon with
+        // the ability dances along — slowest first (the stored speeds), a fainted one skips,
+        // each using the same move at the original target when it is a foe of the dancer's and
+        // the original user its ally, else at the original user (DESIGN.md §42.9). The original
+        // target is Showdown's `activeTarget`: the last Pokémon the move's hit steps went through
+        // — where a random draw (Petal Dance) or a redirection sent it, not what the action
+        // named (R-M8-122). Only where the action's own move did something (`moveDidSomething`,
+        // the actor's `useMove`): one another Pokémon took over (Snatch) or sent back failed
+        // for its user, and what that one used is no dance of the action's (R-M10-69).
+        if !execution.stopped
+            && self.call.is_none()
+            && self
+                .dex
+                .move_by_id(execution.move_id)
+                .is_some_and(|move_def| move_def.flags.dance)
+            && !matches!(result, MoveResult::Failed | MoveResult::Neither)
+        {
+            let active_target = execution.hits.last().map(|hit| match *hit {
+                HitOutcome::Missed { target }
+                | HitOutcome::Blocked { target, .. }
+                | HitOutcome::Damaged { target, .. }
+                | HitOutcome::Effect { target }
+                | HitOutcome::Reflected { target }
+                | HitOutcome::SubstituteDamaged { target, .. }
+                | HitOutcome::NoEffect { target } => target,
+            });
+            self.dancers_dance(actor, execution.move_id, active_target);
+        }
+        // Gen 4 (pokeplatinum `BattleControllerPlayer_MoveEnd` → `BattleSystem_TriggerEffectOnSwitch`):
+        // an ability gained during the move starts now, unless its kind of switch-in effect was
+        // announced this stint already.
+        if self.rules.conditions.ability_change.start_new
+            == crate::rules::StartNewAbility::Unannounced
+        {
+            BattleContext::new(self.state, self.rules, self.trace).announce_unannounced();
+        }
+        Ok(execution)
+    }
+
+    /// The nested run of `call` (DESIGN.md §42.1): like `execute`, without the action layer's
+    /// AfterMove events — Showdown's `useMove` runs the move alone and its own end is the
+    /// caller's.
+    fn execute_called(
+        &mut self,
+        call: crate::state::MoveCall,
+    ) -> Result<MoveExecution, BattleError> {
+        let move_def = self
+            .dex
+            .move_by_id(call.move_id)
+            .cloned()
+            .ok_or(BattleError::UnknownMove(call.move_id))?;
+        // Called by a Z status move: a damaging move runs as its Z-Move, Z-powered (R-M9-41).
+        let move_def = match self
+            .z_call
+            .then(|| crate::engine::called_z_move(self.state, self.dex, call.user, &move_def))
+            .flatten()
+        {
+            Some(z_move) => {
+                self.z_powered = true;
+                z_move
+            }
+            None => move_def,
+        };
+        let declared = match call.target {
+            crate::state::CallTarget::Random => None,
+            crate::state::CallTarget::Pokemon(target) => self
+                .state
+                .active_position(target, &self.rules.topology)
+                .map(DeclaredTarget),
+        };
+        // Showdown `useMove` without a target (`getRandomTarget`): a caller that names none
+        // (Metronome, Assist, Copycat …) has a single-target move drawn among the adjacent foes,
+        // as the action layer's fallback does — in a double battle there is no one target to
+        // take (DESIGN.md R-M8-55).
+        let resolved = match (
+            self.rules.targeting.resolve(
+                &self.rules.topology,
+                self.state,
+                call.user,
+                move_def.target,
+                declared,
+            ),
+            call.target,
+        ) {
+            (Ok(targets), _) => Some(targets),
+            (Err(error), crate::state::CallTarget::Random) => {
+                self.fallback_target(call.user, &move_def, declared, error)
+            }
+            // A caller that names the target (Me First, a reflection) has the move go there even
+            // when the move picks its own target at random (`randomNormal`: Uproar, Thrash) —
+            // Showdown's `getMoveTargets` keeps a given target that still stands (R-M8-66).
+            (Err(_), crate::state::CallTarget::Pokemon(target)) => self
+                .state
+                .pokemon(target)
+                .filter(|pokemon| !pokemon.is_fainted())
+                .filter(|_| {
+                    self.state
+                        .active_position(target, &self.rules.topology)
+                        .is_some()
+                })
+                .map(|_| crate::rules::ResolvedTargets {
+                    targets: vec![ResolvedTarget::Pokemon(target)],
+                }),
+        };
+        self.execute_called_with(call, move_def, declared, resolved)
+    }
+
+    /// The nested run with the move and its targets already in hand (Dancer resolves them
+    /// ahead of time for its own announcement).
+    fn execute_called_with(
+        &mut self,
+        call: crate::state::MoveCall,
+        mut move_def: crate::dex::ResolvedMove,
+        declared: Option<DeclaredTarget>,
+        resolved: Option<crate::rules::ResolvedTargets>,
+    ) -> Result<MoveExecution, BattleError> {
+        // Showdown `useMoveInner` (`move.ignoreAbility = sourceEffect.ignoreAbility`): a called
+        // move ignores abilities as its caller does, not as its own data says — the calling move
+        // of the same user as ModifyMove left it (that user's Mold Breaker, Mycelium Might on a
+        // status caller), never a condition or an ability making another Pokémon use the move
+        // (Snatch, Magic Coat, Magic Bounce, Dancer). The user's own ModifyMove adds Mold
+        // Breaker's again. Sunsteel Strike called by another move does not ignore abilities
+        // (Bulbapedia, R-M9-43).
+        move_def.ignores_ability = self
+            .state
+            .active_move
+            .as_ref()
+            .is_some_and(|active| active.user == call.user && active.ignores_ability);
+        if move_def.primary_effect == PrimaryEffect::Unsupported {
+            return Ok(MoveExecution {
+                actor: call.user,
+                move_id: call.move_id,
+                hits: Vec::new(),
+                stopped: false,
+                aborted: false,
+                result: MoveResult::Failed,
+            });
+        }
+        // A move another one called meets Heal Block, Throat Chop and Gravity as it is modified
+        // (`onModifyMove`): refused before its `move` line, the caller's action going on to its
+        // end (R-M8-70). A full `runMove` (Dancer) meets them at BeforeMove, below.
+        if self.skips_before_move
+            && let Some(reason) = self.state.pokemon(call.user).and_then(|pokemon| {
+                crate::engine::before_move::refused_as_the_move_starts(
+                    self.state, pokemon, &move_def,
+                )
+            })
+        {
+            self.trace.push(TraceEvent::MoveFailed {
+                actor: call.user,
+                move_id: call.move_id,
+                reason: MoveFailReason::BeforeMove(reason),
+            });
+            return Ok(MoveExecution {
+                actor: call.user,
+                move_id: call.move_id,
+                hits: Vec::new(),
+                stopped: false,
+                aborted: false,
+                result: MoveResult::Failed,
+            });
+        }
+        // A full `runMove` (Dancer): BeforeMove runs, its volatiles' endings included, and a
+        // block is the answer.
+        if !self.skips_before_move
+            && let crate::engine::CanMoveResult::Blocked(reason) =
+                self.before_move(call.user, &move_def, false)
+        {
+            self.trace.push(TraceEvent::MoveFailed {
+                actor: call.user,
+                move_id: call.move_id,
+                reason: MoveFailReason::BeforeMove(reason),
+            });
+            return Ok(MoveExecution {
+                actor: call.user,
+                move_id: call.move_id,
+                hits: Vec::new(),
+                stopped: true,
+                aborted: true,
+                result: MoveResult::Failed,
+            });
+        }
+        self.run_move(
+            call.user,
+            MoveSlot::new(0).unwrap(),
+            call.move_id,
+            move_def,
+            declared,
+            declared,
+            false,
+            resolved,
+            false,
+        )
+    }
+
+    /// Showdown's `BeforeMove` event for `actor`'s move, an action's or a dance's full `runMove`:
+    /// Grudge's, Gen 5+ Rage's and Glaive Rush's `onBeforeMove` (priority 100, ahead of every
+    /// check) end them whatever comes (§15.9, §15.19, §15.20); then the checks; then Destiny
+    /// Bond's `onBeforeMove` (priority -1) ends it unless the move is Destiny Bond, and its
+    /// `onMoveAborted` whatever the move when a check stopped it (a dance too, R-M8-135).
+    fn before_move(
+        &mut self,
+        actor: PokemonId,
+        move_def: &ResolvedMove,
+        is_z: bool,
+    ) -> crate::engine::CanMoveResult {
+        let mut ctx = BattleContext::new(self.state, self.rules, self.trace);
+        ctx.end_volatile(actor, VolatileConditionKind::Grudge);
+        ctx.end_volatile(actor, VolatileConditionKind::GlaiveRush);
+        self.rage_before_move(actor);
+        let can_move = crate::engine::before_move::resolve(
+            self.state, self.rules, self.dex, self.trace, actor, move_def, is_z,
+        );
+        if move_def.id != MoveId::DESTINY_BOND
+            || matches!(can_move, crate::engine::CanMoveResult::Blocked(_))
+        {
+            BattleContext::new(self.state, self.rules, self.trace)
+                .end_volatile(actor, VolatileConditionKind::DestinyBond);
+        }
+        can_move
+    }
+
+    pub(super) fn run(
+        &mut self,
+        actor: PokemonId,
+        slot: MoveSlot,
+        declared_target: Option<DeclaredTarget>,
+    ) -> Result<MoveExecution, BattleError> {
+        if self
+            .state
+            .active_position(actor, &self.rules.topology)
+            .is_none()
+        {
+            return Err(BattleError::ActorNotActive(actor));
+        }
+
+        let move_id = self
+            .state
+            .pokemon(actor)
+            .and_then(|pokemon| pokemon.move_slot(slot))
+            .map(|move_slot| move_slot.move_id)
+            .ok_or(BattleError::InvalidMoveSlot { actor, slot })?;
+        // Showdown `runMove`: `activeMoveActions++` before BeforeMove (a fully paralysed turn
+        // still counts). A move run through `useMove` alone does not count (§15.11).
+        if !self.skips_before_move
+            && let Some(pokemon) = self.state.pokemon_mut(actor)
+        {
+            pokemon.active_move_actions = pokemon.active_move_actions.saturating_add(1);
+        }
+        // Showdown `OverrideAction` (Encore): an Encore that took hold after the choice was made
+        // replaces the chosen move with the encored one this very turn, and the target is
+        // chosen anew (`getRandomTarget`: the implicit target of `TargetingRules::resolve`).
+        // No move was left to choose (Showdown's request held Struggle alone): the action is
+        // Struggle, at a random adjacent foe, whatever slot it names.
+        let struggling = self
+            .state
+            .struggling
+            .iter()
+            .position(|pokemon| *pokemon == actor)
+            .map(|index| self.state.struggling.remove(index))
+            .is_some();
+        // A move a hard lock holds that the user's slots do not (Outrage, Rollout, a charge …
+        // called by Metronome, Copycat or Assist, §42.1) is the action's move whatever slot it
+        // named — Showdown's request offers `getLockedMove` alone — and from Gen 4 an Encore
+        // overrides it as any action's (`onOverrideAction` at `runAction`; Gen 3 keeps the lock,
+        // `CallRules::encore_overrides_a_called_lock`, R-M8-137).
+        let locked_elsewhere = self
+            .state
+            .pokemon(actor)
+            .and_then(|p| p.hard_lock())
+            .filter(|lock| p_has_no_slot(self.state, actor, lock.move_id))
+            .map(|lock| lock.move_id);
+        // A Z-Move's or a Max Move's action is never overridden (`runMove` asks `OverrideAction`
+        // only when `!zMove && !maxMove`): an Encore that landed earlier in the turn leaves it
+        // alone (R-M9-31).
+        let encored = if struggling || self.z_move.is_some() || self.max_move.is_some() {
+            None
+        } else {
+            self.encore_override(
+                actor,
+                locked_elsewhere
+                    .filter(|_| self.rules.conditions.calls.encore_overrides_a_called_lock)
+                    .unwrap_or(move_id),
+            )
+        };
+        // Showdown keeps the action's `targetLoc` through the override: it becomes the user's
+        // `lastMoveTargetLoc`, where a two-turn move's charge aims.
+        let action_target = declared_target;
+        let overridden = encored.is_some();
+        let (slot, move_id, declared_target) = match encored {
+            _ if struggling => (slot, MoveId::STRUGGLE, None),
+            Some((encored_slot, encored)) => {
+                self.trace.push(TraceEvent::MoveOverridden {
+                    actor,
+                    chosen: move_id,
+                    used: encored,
+                });
+                (encored_slot, encored, None)
+            }
+            None => (slot, move_id, declared_target),
+        };
+        // Gen 1: a user locked into its binding move uses it, whatever the action named.
+        let (slot, move_id) = self.binding_locked_move(actor, slot, move_id);
+        let move_id = match locked_elsewhere {
+            Some(locked)
+                if encored.is_none()
+                    || !self.rules.conditions.calls.encore_overrides_a_called_lock =>
+            {
+                locked
+            }
+            _ => move_id,
+        };
+        // A hard lock aims as it holds: a two-turn move's attack where its charge aimed, a
+        // Rollout chain where it started (§15.12), the others anew. Showdown's `chooseMove` gives
+        // a locked action the lock's `targetLoc` (`lockedMoveTargetLoc`) and refuses one the
+        // choice names, which validation does not ask here (`validate_move_action`): a target
+        // submitted with it steers nothing (R-M10-20).
+        let declared_target = match self.state.pokemon(actor).and_then(|p| p.hard_lock()) {
+            Some(lock) if lock.move_id == move_id => lock.target.map(DeclaredTarget),
+            _ => declared_target,
+        };
+
+        let move_def = self
+            .dex
+            .move_by_id(move_id)
+            .cloned()
+            .ok_or(BattleError::UnknownMove(move_id))?;
+
+        // A Z-Move runs in place of the slot's move (Showdown `runMove`: `move =
+        // getActiveZMove(baseMove, pokemon)` before every check, DESIGN.md §44.4): the Z-Move's
+        // own data (type, target, flags) with the base move's power, category and priority. Its
+        // PP pays from the slot, and it is the move that becomes the last move. A Pokémon left
+        // with Struggle drops it; an Encore does not override it (above).
+        // Showdown `maxMove.baseMove` (DESIGN.md §44.5): a Max Move remembers the move it was
+        // made from; Encore, Spite and Copycat resolve a Max Move's `lastMove` through it.
+        let mut max_base = None;
+        let (move_id, move_def) = match self.max_move.take() {
+            // A Dynamaxed Pokémon's move is its Max Move (DESIGN.md §44.5). Struggle is itself.
+            Some(max) if encored.is_none() && !struggling && max.base == move_id => {
+                max_base = Some(max.base);
+                (max.move_def.id, max.move_def)
+            }
+            _ => match self.z_move.take() {
+                Some(z) if encored.is_none() && !struggling && z.base == move_id => {
+                    // Its power waits for the move to be used (`spend_z_power`).
+                    let resolved = (z.move_def.id, z.move_def.clone());
+                    self.z_power = Some(z);
+                    resolved
+                }
+                _ => (move_id, move_def),
+            },
+        };
+        self.max_base = max_base;
+
+        if move_def.primary_effect == PrimaryEffect::Unsupported {
+            // Choice validation refuses these. This is the defensive boundary for callers that
+            // bypass validation; the move fails loudly instead of doing nothing.
+            self.trace.push(TraceEvent::MoveFailed {
+                actor,
+                move_id,
+                reason: MoveFailReason::Unsupported,
+            });
+            return Ok(MoveExecution {
+                actor,
+                move_id,
+                hits: Vec::new(),
+                stopped: false,
+                aborted: false,
+                result: MoveResult::Failed,
+            });
+        }
+
+        // Execution-time targeting (ROADMAP §6.3), before BeforeMove as Showdown's `runMove`
+        // does it (`getTarget`, then `getRandomTarget` after an Encore override): the declared
+        // target may be gone by now, and a random eligible foe is drawn even when the user then
+        // turns out to be fully paralysed. A move left with no target at all fails only after
+        // BeforeMove (`useMove`'s `-notarget`).
+        // Showdown `getTarget`: a move that tracks its target (Snipe Shot; any move of a Stalwart
+        // or Propeller Tail user, `hasAbility` before `ModifyMove`) goes at the action's
+        // `originalTarget` while it is on the field, wherever an Ally Switch put it (R-M8-106).
+        // The outermost move's only: a called move takes its own target.
+        let original_target = self.original_target.take();
+        let tracks_target = move_def.tracks_target
+            || self.state.pokemon(actor).is_some_and(|user| {
+                crate::engine::ability_handler(self.state, self.rules, user, |b| b.move_edit)
+                    .is_some_and(|edit| edit.tracks_target)
+            });
+        // A move an Encore put in the chosen one's place tracks nothing: Showdown's
+        // `OverrideAction` draws its target with `getRandomTarget` (R-M8-124).
+        let declared_target = match original_target {
+            Some(original) if tracks_target && encored.is_none() => self
+                .state
+                .active_position(original, &self.rules.topology)
+                .map(DeclaredTarget)
+                .or(declared_target),
+            _ => declared_target,
+        };
+        let resolved = match self.rules.targeting.resolve(
+            &self.rules.topology,
+            self.state,
+            actor,
+            move_def.target,
+            declared_target,
+        ) {
+            Ok(targets) => Some(targets),
+            Err(error) => self.fallback_target(actor, &move_def, declared_target, error),
+        };
+
+        // Gen 2 (pokecrystal: the move choice): a move other than Fury Cutter ends its count.
+        if move_id != MoveId::FURY_CUTTER
+            && matches!(
+                self.rules.conditions.fury_cutter.model,
+                crate::rules::FuryCutterModel::Count {
+                    another_move_ends_it: true,
+                    ..
+                }
+            )
+        {
+            BattleContext::new(self.state, self.rules, self.trace).end_fury_cutter(actor);
+        }
+        let can_move = if self.skips_before_move {
+            crate::engine::CanMoveResult::Allow
+        } else {
+            self.before_move(actor, &move_def, self.z_power.is_some())
+        };
+        self.trace.push(TraceEvent::BeforeMoveResolved {
+            actor,
+            own_move: self.shown_own_move(move_id),
+            result: can_move,
+        });
+        if let crate::engine::CanMoveResult::Blocked(reason) = can_move {
+            self.trace.push(TraceEvent::MoveFailed {
+                actor,
+                move_id,
+                reason: MoveFailReason::BeforeMove(reason),
+            });
+            // Gen 4: a turn lost to anything but sleep or recharging did no work
+            // (`MOVE_STATUS_NO_MORE_WORK`) — unless it was a two-turn move's attacking turn.
+            let charged = self
+                .state
+                .pokemon(actor)
+                .is_some_and(|p| p.volatiles.charging_move() == Some(move_id));
+            if !charged
+                && !matches!(
+                    reason,
+                    crate::engine::BeforeMoveBlockReason::Sleep
+                        | crate::engine::BeforeMoveBlockReason::WakingTurn
+                        | crate::engine::BeforeMoveBlockReason::Recharge
+                )
+            {
+                self.metronome_takes_back(actor, move_id);
+            }
+            // Thrash's lock (§15.12): Gen 1's full paralysis and self-hit end it, Gen 3-4 mark
+            // the turn failed.
+            self.rampage_blocked(actor, reason);
+            self.uproar_blocked(actor, reason);
+            // Gen 3-4 (the cartridges): some blocks end Fury Cutter's count, whatever the move.
+            if self
+                .rules
+                .conditions
+                .fury_cutter
+                .ending_blocks
+                .contains(&reason)
+            {
+                BattleContext::new(self.state, self.rules, self.trace).end_fury_cutter(actor);
+            }
+            // Gen 3-4 on the cartridge (issues.md I67): the attempt leaves no last move
+            // (pokeemerald `MOVE_UNAVAILABLE`, pokeplatinum `MOVE_NONE`) — Encore and Disable
+            // find nothing to act on. Gen 1: only a turn lost to sleep or a freeze does.
+            let clears_last_move = self.rules.conditions.blocked_move_clears_last_move
+                || (self.rules.conditions.sleep_or_freeze_clears_last_move
+                    && matches!(
+                        reason,
+                        crate::engine::BeforeMoveBlockReason::Sleep
+                            | crate::engine::BeforeMoveBlockReason::WakingTurn
+                            | crate::engine::BeforeMoveBlockReason::Freeze
+                    ));
+            if clears_last_move && let Some(pokemon) = self.state.pokemon_mut(actor) {
+                pokemon.last_move = None;
+                pokemon.last_move_encore = None;
+                pokemon.last_move_base = None;
+            }
+            // Gen 2+ Bide's `onMoveAborted`: stopped, the holder lets it go (§15.10); Gen 1 only
+            // after a full paralysis or a confusion self-hit (the gen1 `par` / `confusion`;
+            // pokered `MonHurtItselfOrFullyParalysed` clears `STORING_ENERGY`).
+            if !self.rules.conditions.retaliation.bide.gen1
+                || matches!(
+                    reason,
+                    crate::engine::BeforeMoveBlockReason::Paralysis
+                        | crate::engine::BeforeMoveBlockReason::Confusion
+                )
+            {
+                // Gen 1's has no `onEnd`: gone with no word; Gen 2+'s `-end … [silent]`.
+                let mut ctx = BattleContext::new(self.state, self.rules, self.trace);
+                if self.rules.conditions.retaliation.bide.gen1 {
+                    ctx.end_volatile_unseen(actor, VolatileConditionKind::Bide);
+                } else {
+                    ctx.end_volatile(actor, VolatileConditionKind::Bide);
+                }
+            }
+            // Showdown `MoveAborted`: a two-turn move in progress is dropped (the user comes
+            // back within reach, the lock is gone). Gen 1 (`ChargeModel::Gen1`): only full
+            // paralysis, Disable and a confusion self-hit drop it, and only the self-hit brings
+            // Fly / Dig's user back within reach.
+            use crate::engine::BeforeMoveBlockReason as Reason;
+            let (drops_charge, drops_hiding) = if self.rules.two_turn.gen1() {
+                (
+                    matches!(
+                        reason,
+                        Reason::Paralysis | Reason::Disabled | Reason::Confusion
+                    ),
+                    reason == Reason::Confusion,
+                )
+            } else {
+                (true, false)
+            };
+            let mut ctx = BattleContext::new(self.state, self.rules, self.trace);
+            if drops_charge {
+                // Sky Drop's `twoturnmove` `onEnd` ends the `skydrop` volatile with it.
+                if ctx.end_volatile(actor, VolatileConditionKind::TwoTurnMove) {
+                    ctx.end_sky_drop(actor);
+                }
+            }
+            if drops_hiding {
+                ctx.end_volatile(actor, VolatileConditionKind::Invulnerability);
+            }
+            self.recharged = reason == crate::engine::BeforeMoveBlockReason::Recharge;
+            // Showdown's BeforeMove handlers return `false` (the move failed, for Stomping
+            // Tantrum) — except the recharge turn's `null`: there was nothing to choose.
+            let result = if matches!(
+                reason,
+                crate::engine::BeforeMoveBlockReason::Recharge
+                    | crate::engine::BeforeMoveBlockReason::SkyDropped
+            ) {
+                MoveResult::Neither
+            } else {
+                MoveResult::Failed
+            };
+            return Ok(MoveExecution {
+                actor,
+                move_id,
+                hits: Vec::new(),
+                stopped: true,
+                aborted: true,
+                result,
+            });
+        }
+        // Bide's volatile past its first turn (`onBeforeMove`, `beforeMoveCallback`, §15.10).
+        if let Some(execution) = self.bide_turn(actor, move_id) {
+            return Ok(execution);
+        }
+        // Gen 5+ Focus Punch's `beforeMoveCallback` (§15.8): a user that lost its focus does
+        // not move — no PP spent, the move failed.
+        if move_def.behavior.lost_focus_stops
+            && self
+                .state
+                .pokemon(actor)
+                .is_some_and(|p| p.volatiles.lost_focus())
+        {
+            self.trace.push(TraceEvent::MoveFailed {
+                actor,
+                move_id,
+                reason: MoveFailReason::BeforeMove(crate::engine::BeforeMoveBlockReason::LostFocus),
+            });
+            return Ok(MoveExecution {
+                actor,
+                move_id,
+                hits: Vec::new(),
+                stopped: true,
+                aborted: false,
+                result: MoveResult::Failed,
+            });
+        }
+        // Showdown `runMove`: a move with no PP left as its turn comes (Spite or Eerie Spell took
+        // it after it was chosen) does not happen — `cant|user|nopp|move`, a failure for Stomping
+        // Tantrum, before anything the move itself does (§15.15). A locked turn spends none.
+        if !struggling && self.out_of_pp(actor, move_id) {
+            self.trace.push(TraceEvent::MoveFailed {
+                actor,
+                move_id,
+                reason: MoveFailReason::NoPp,
+            });
+            return Ok(MoveExecution {
+                actor,
+                move_id,
+                hits: Vec::new(),
+                stopped: true,
+                aborted: false,
+                result: MoveResult::Failed,
+            });
+        }
+        self.run_move(
+            actor,
+            slot,
+            move_id,
+            move_def,
+            declared_target,
+            action_target,
+            overridden,
+            resolved,
+            struggling,
+        )
+    }
+
+    /// The move itself (Showdown `useMove`), once the action around it (BeforeMove, PP, the
+    /// `moveUsed` bookkeeping) has run — or, for a call, has been skipped (DESIGN.md §42.1).
+    #[allow(clippy::too_many_arguments)]
+    fn run_move(
+        &mut self,
+        actor: PokemonId,
+        slot: MoveSlot,
+        move_id: MoveId,
+        move_def: ResolvedMove,
+        declared_target: Option<DeclaredTarget>,
+        action_target: Option<DeclaredTarget>,
+        // An Encore turned the action into this move (`OverrideAction`).
+        overridden: bool,
+        resolved: Option<crate::rules::ResolvedTargets>,
+        struggling: bool,
+    ) -> Result<MoveExecution, BattleError> {
+        if self.outermost.is_none() {
+            self.outermost = Some(move_id);
+        }
+        // Gen 1: the binding lock goes on only against the Pokémon it caught (§30.9) — and it
+        // is the action's business, not a called move's.
+        let continuing_bind = self.call.is_none()
+            && self.binding_continues(
+                actor,
+                resolved.as_ref().and_then(|t| t.pokemon_ids().next()),
+            );
+
+        // A frozen user of a `defrost` move thaws as the move starts (Showdown `frz`
+        // `onModifyMove`, Gen 3+); Gen 2 waits until the move has landed.
+        let defrost_after = self.defrost_user(actor, &move_def);
+        // Shell Side Arm (its own `onModifyMove`, before the ability's: Long Reach then takes the
+        // contact away): physical when its estimates against the target say so; a tie flips a
+        // coin.
+        let physical = move_def.behavior.category_by_estimate
+            && resolved
+                .as_ref()
+                .and_then(|t| t.pokemon_ids().next())
+                .is_some_and(|target| {
+                    crate::engine::physical_by_estimate(
+                        self.state, self.rules, actor, target, &move_def,
+                    )
+                    .unwrap_or_else(|| {
+                        self.state
+                            .rng
+                            .roll_ratio_for(RandomRequestKind::CategoryTie, 1, 2)
+                    })
+                });
+        // Gen 7+ Stance Change (`onModifyMove`, priority 1): the forme for the move, before the
+        // handlers that edit it (DESIGN.md §43.4).
+        if let Some(stance) = self.state.pokemon(actor).and_then(|pokemon| {
+            crate::engine::ability_handler(self.state, self.rules, pokemon, |b| b.move_stance)
+        }) {
+            BattleContext::new(self.state, self.rules, self.trace).stance_change(
+                actor,
+                stance,
+                move_def.id,
+                move_def.category,
+            );
+        }
+        // A combined Pledge (the move's own `onModifyMove` with another Pledge as its
+        // `sourceEffect`, DESIGN.md §42.9): the pair's type and `forceSTAB` — before the user's
+        // ability retypes it and before TryMove, where a strong weather judges the combined type
+        // (R-M8-153). Its power and side condition come at PrepareHit, below.
+        let mut move_def = move_def;
+        if move_def.behavior.pledge_combo
+            && let Some(by) = self.prioritized_by
+            && let Some(combined) = crate::engine::pledges::combo(by, move_id)
+        {
+            move_def.move_type = combined.move_type;
+            move_def.flags.force_stab = true;
+        }
+        // Showdown `ModifyType` / `ModifyMove` as the move starts: its own type and category,
+        // then the user's ability retyping and editing it.
+        let declared_pattern = move_def.target;
+        let (mut move_def, type_changer) =
+            crate::engine::modified_move(self.state, self.rules, actor, &move_def, physical);
+        self.type_changer = type_changer;
+        // Gen 9 Curse (`onModifyMove`): a Ghost type's aimed at an ally goes to a random adjacent
+        // foe, drawn there (`getRandomTarget` after ModifyMove, §15.16).
+        let resolved = match crate::engine::curse_redirect_candidates(
+            self.state,
+            self.rules,
+            actor,
+            &move_def,
+            declared_target,
+        ) {
+            Some(candidates) if !candidates.is_empty() => {
+                move_def.target = crate::rules::TargetPattern::RandomAdjacentFoe;
+                let index = if candidates.len() > 1 {
+                    usize::from(self.state.rng.range_inclusive_for(
+                        RandomRequestKind::RandomTarget,
+                        0,
+                        (candidates.len() - 1) as u16,
+                    ))
+                } else {
+                    0
+                };
+                Some(crate::rules::ResolvedTargets {
+                    targets: vec![ResolvedTarget::Pokemon(candidates[index])],
+                })
+            }
+            _ => resolved,
+        };
+        // Showdown `activeMove` (§41.2): the move being used, whether it ignores abilities as
+        // `ModifyMove` left it (Sunsteel Strike's own, Mold Breaker's). A move another one calls
+        // takes its place; the action's end clears it.
+        self.state.active_move = Some(crate::state::ActiveMove {
+            user: actor,
+            move_id: move_def.id,
+            category: move_def.category,
+            ignores_ability: move_def.ignores_ability,
+            stellar_boosted: false,
+            z_powered: self.z_powered,
+            base_move: if move_def.is_max { self.max_base } else { None },
+            prankster_boosted: self.prankster_boosted,
+        });
+        // A move that changed whom it aims at (Expanding Force: all adjacent foes) is targeted
+        // anew (Showdown `getMoveTargets` after `ModifyMove`).
+        let resolved = if move_def.target != declared_pattern {
+            self.rules
+                .targeting
+                .resolve(
+                    &self.rules.topology,
+                    self.state,
+                    actor,
+                    move_def.target,
+                    None,
+                )
+                .ok()
+                .or(resolved)
+        } else {
+            resolved
+        };
+        // Beat Up (`onModifyMove`): its members are fixed as the move starts.
+        self.beat_up_members = if move_def.behavior.beat_up {
+            crate::engine::beat_up_members(self.state, self.rules, actor)
+        } else {
+            Vec::new()
+        };
+        // Showdown `onModifyMove` (Magnitude, Present): the power is drawn as the move starts.
+        self.drawn = move_def.behavior.random_power.map(|random| {
+            let (values, weights) = random.table();
+            let drawn =
+                self.state
+                    .rng
+                    .sample_weighted_for(RandomRequestKind::Sample, values, weights);
+            random.effect(drawn)
+        });
+
+        // The attacking turn of a two-turn move is the locked action Showdown runs without
+        // `deductPP`; the charging turn paid for both. It aims where the charge aimed (the
+        // lock's target, `before_move`: Showdown `twoturnmove.targetLoc`).
+        let releasing = self
+            .state
+            .pokemon(actor)
+            .is_some_and(|p| p.volatiles.charging_move() == Some(move_id));
+        self.releasing = releasing;
+        // Showdown `runMove`: no `deductPP` while a hard lock holds the user to the move
+        // (Rollout's later turns, §15.12) — `LockMove` asks the lock, not the move, so an Encore
+        // that turned the locked action into its own move pays nothing either (R-M8-137).
+        let continuing_lock = self.state.pokemon(actor).is_some_and(|p| {
+            p.hard_lock().is_some_and(|lock| {
+                (lock.move_id == move_id || p.volatiles.encored_move() == Some(move_id))
+                    // Gen 1's charged attack pays (below).
+                    && !(self.rules.two_turn.gen1() && lock.by == VolatileConditionKind::TwoTurnMove)
+            })
+        });
+        self.continuing_lock = continuing_lock;
+        // The charging turn pays (the attack runs locked, without `deductPP`) — Gen 1 the other
+        // way round (`ChargeModel::Gen1`: pokered decrements the PP as the charged move goes
+        // out, `PlayerCanExecuteChargingMove`).
+        let gen1_charge = self.rules.two_turn.gen1();
+        let charging_now = !releasing
+            && crate::engine::two_turn::will_charge(self.state, self.rules, actor, &move_def);
+        // A called move spends no PP (Showdown `useMove` has no `deductPP`; the caller paid).
+        let pays_pp = self.call.is_none()
+            && if gen1_charge {
+                !charging_now
+            } else {
+                !releasing
+            };
+        // Gen 1: a charging move a caller (Metronome, Mirror Move) called gives the caller's PP
+        // back (the gen1 `useMove`'s `deductPP(-1)` on `lastSelectedMoveSlot`); the attack pays
+        // it as it goes out, like a charging move picked from the menu (DESIGN.md R-M8-54).
+        if gen1_charge && self.call.is_some() && charging_now {
+            let side = self.state.pokemon(actor).map(|p| p.side);
+            let last = side.map(|side| self.state.side(side).last_selected_move_slot);
+            if let (Some(index), Some(pokemon)) = (last, self.state.pokemon_mut(actor)) {
+                if let Some(caller) = pokemon.move_slots_mut().get_mut(index) {
+                    caller.pp = (caller.pp + 1) % 64;
+                }
+                if self.rules.conditions.calls.mimic_keeps_the_slot_pp {
+                    pokemon.sync_mimicked_pp(index);
+                }
+            }
+        }
+        // Gen 1's Transform + Mirror Move / Metronome PP error (the gen1 `useMove`, next to the
+        // refund above): a transformed user's own last-picked slot gains one PP.
+        if self
+            .rules
+            .conditions
+            .calls
+            .transformed_caller_restores_own_pp
+            && let Some(frame) = self.call
+            && matches!(
+                frame.source,
+                crate::state::CallSource::Move(MoveId::METRONOME | MoveId::MIRROR_MOVE)
+            )
+        {
+            let side = self.state.pokemon(actor).map(|p| p.side);
+            let last = side.map(|side| self.state.side(side).last_selected_move_slot);
+            if let (Some(index), Some(pokemon)) = (last, self.state.pokemon_mut(actor))
+                && pokemon.transform.is_some()
+                && let Some(own) = pokemon.base_slot_mut(index)
+            {
+                own.pp = (own.pp + 1) % 64;
+            }
+        }
+        // The slot the PP comes off (`PpRules::moves_slot`): the action's, Gen 1's last pick from
+        // the menu, or Gen 4+'s first slot holding the action's move (issues.md I170).
+        let pp_slot = match self.rules.conditions.pp.moves_slot {
+            MovesSlot::TheLastSelected => self
+                .state
+                .pokemon(actor)
+                .map(|p| self.state.side(p.side).last_selected_move_slot)
+                .and_then(|index| MoveSlot::new(index as u8))
+                .unwrap_or(slot),
+            MovesSlot::TheChosen => slot,
+            MovesSlot::TheFirstHoldingIt => self
+                .state
+                .pokemon(actor)
+                .and_then(|p| {
+                    let id = p.move_slots().get(slot.index())?.move_id;
+                    p.move_slots().iter().position(|other| other.move_id == id)
+                })
+                .and_then(|index| MoveSlot::new(index as u8))
+                .unwrap_or(slot),
+        };
+        let remaining_pp = {
+            let pokemon = self
+                .state
+                .pokemon_mut(actor)
+                .ok_or(BattleError::UnknownPokemon(actor))?;
+            let move_slot = pokemon
+                .move_slot_mut(pp_slot)
+                .ok_or(BattleError::InvalidMoveSlot { actor, slot })?;
+            if !pays_pp || struggling || continuing_bind || continuing_lock {
+                None
+            } else {
+                if move_slot.pp == 0 {
+                    return Err(BattleError::NoPp { actor, move_id });
+                }
+                // Showdown `deductPP`: the slot counts as used (Last Resort).
+                move_slot.used = true;
+                move_slot.pp -= 1;
+                let remaining = move_slot.pp;
+                if self.rules.conditions.calls.mimic_keeps_the_slot_pp {
+                    pokemon.sync_mimicked_pp(pp_slot.index());
+                }
+                Some(remaining)
+            }
+        };
+
+        // Gen 1's Desync Clause Mod (the gen1 `runMove`, after the PP): an action chosen as
+        // `Fight` (`BattleState::fight_actors`) is the side's last selected move; when the slot
+        // that paid holds another (a frozen Pokémon that came in after a teammate's pick, the
+        // slot back at the first, thawed by a Fire move), the move ends here — no `move` line,
+        // the after-move residual as for a stopped action (R-M8-150). Any other action is
+        // stopped the same way when nothing locks it any more (`!lockedMove`: no hard lock, no
+        // charge's release, no Bide, no binding still on the Pokémon it caught) and its move is
+        // not the paying slot's — a binding move Mirror Move or Metronome called, whose target
+        // switched out, ends its lock at BeforeMove (`partialtrappinglock`'s `onBeforeMove`)
+        // with the action still on that move (R-M9-47).
+        let unlocked = !(struggling || continuing_bind || continuing_lock || releasing)
+            && self
+                .state
+                .pokemon(actor)
+                .is_none_or(|pokemon| pokemon.semi_locked_move() != Some(move_id));
+        if self.rules.conditions.pp.desync_clause
+            && self.call.is_none()
+            && unlocked
+            && let Some(pokemon) = self.state.pokemon(actor)
+            && let Some(paying) = pokemon.move_slot(pp_slot).map(|slot| slot.move_id)
+            && if self.state.fight_actors.contains(&actor) {
+                matches!(
+                    self.state.side(pokemon.side).last_selected_move,
+                    Some(crate::state::SelectedMove::Move(selected)) if paying != selected
+                )
+            } else {
+                paying != move_id
+            }
+        {
+            self.trace.push(TraceEvent::MoveFailed {
+                actor,
+                move_id,
+                reason: MoveFailReason::Desync,
+            });
+            return Ok(MoveExecution {
+                actor,
+                move_id,
+                hits: Vec::new(),
+                stopped: true,
+                aborted: false,
+                result: MoveResult::Failed,
+            });
+        }
+        // A use of its own (DESIGN.md §47.0 item 13): no call, nor a lock's later turn (the
+        // `[from] lockedmove` lines).
+        let own_move = (self.call.is_none()
+            && !releasing
+            && !continuing_lock
+            && !continuing_bind
+            && !struggling)
+            .then(|| self.shown_own_move(move_id))
+            .flatten();
+        self.trace.push(TraceEvent::MoveUsed {
+            actor,
+            move_id,
+            declared_target,
+            called_by: self.call.map(|frame| frame.source),
+            own_move,
+        });
+        if let Some(z) = self.z_power.take() {
+            self.spend_z_power(actor, &z);
+        }
+        // The move is decided: it becomes the last move (Encore / Disable lock onto it) and
+        // a Choice item locks the holder onto it (Showdown `onModifyMove`).
+        // Gen 1's charging turn is not the user's last move (the gen1 `useMove`).
+        let leaves_no_last_move = self
+            .rules
+            .conditions
+            .moves_leaving_no_last_move
+            .contains(&move_id);
+        // A called move is nobody's last move after Gen 1 (`useMove` sets `lastMoveUsed` only,
+        // §42.2): Encore and Disable keep reading the move the action chose. Gen 2's `moveUsed`
+        // clears the last move outright when the chosen move is one of the callers
+        // (`ConditionRules::moves_leaving_no_last_move`).
+        let writes_last_move =
+            self.call.is_none() || self.rules.conditions.calls.called_sets_last_move;
+        // Showdown `lastMoveTargetLoc` (Instruct repeats the move where it aimed, §42.9): the
+        // action's own move writes it (`moveUsed`; a called one does not), none — `0` — when no
+        // position was chosen (an Acupressure in singles aims at its user again, R-M8-111).
+        if self.call.is_none()
+            && let Some(pokemon) = self.state.pokemon_mut(actor)
+        {
+            pokemon.last_move_target = declared_target.map(|target| target.0);
+        }
+        if let Some(pokemon) = self.state.pokemon_mut(actor)
+            && !(gen1_charge && charging_now)
+        {
+            if leaves_no_last_move && self.call.is_none() {
+                pokemon.last_move = None;
+                pokemon.last_move_encore = None;
+                pokemon.last_move_base = None;
+            } else if writes_last_move {
+                pokemon.last_move = Some(move_id);
+                pokemon.last_move_pattern = Some((move_id, move_def.target));
+                pokemon.last_move_encore = Some(move_id);
+                // A Max Move's `baseMove` (DESIGN.md §44.5): the move it was made from.
+                pokemon.last_move_base = self.max_base;
+                // `lastMove.isZ`: this use was a Z-Move (a status one keeps its own id).
+                pokemon.last_move_z = self.z_powered && self.max_base.is_none();
+            }
+            // `lastMoveUsed` is the move object `ModifyType` edits: the type as used.
+            pokemon.last_move_used = Some((move_id, move_def.move_type));
+        }
+        // Struggle too (Showdown `choicelock.onStart` takes any move with an id): the lock onto
+        // a move the holder does not know keeps nothing off the request and is dropped as the
+        // next turn starts (`next_turn`).
+        if !self.rules.conditions.items.choice_locks_after_the_move
+            && let Some((_, item)) = crate::engine::held_item(self.state, self.rules, actor)
+            && let Some(handler) = item.move_decided
+        {
+            let mut ctx = BattleContext::new(self.state, self.rules, self.trace);
+            handler(&mut ctx, actor, move_id);
+        }
+        // Gorilla Tactics (`onModifyMove`): the first move since coming in, Struggle aside — a
+        // Z-powered move neither takes the lock nor answers it (DESIGN.md §44.4).
+        let gorilla = self.state.pokemon(actor).is_some_and(|pokemon| {
+            crate::engine::ability_handler(self.state, self.rules, pokemon, |b| b.choice_lock)
+        });
+        if !struggling
+            && !self.z_powered
+            && gorilla
+            && let Some(pokemon) = self.state.pokemon_mut(actor)
+            && pokemon.ability_state.choice_lock.is_none()
+        {
+            pokemon.ability_state.choice_lock = Some(move_id);
+        }
+        if let Some(remaining) = remaining_pp {
+            self.trace.push(TraceEvent::PpSpent {
+                actor,
+                move_id,
+                remaining,
+            });
+        }
+        self.metronome_starts(actor, move_id, releasing);
+        // Rollout / Ice Ball's `onModifyMove`: a first use with a target starts the chain, aimed
+        // at the action's position — the declared one even when an Encore turned the action into
+        // this move (`lastMoveTargetLoc`, as a two-turn move's charge, R-M8-135); not while asleep
+        // (§15.12). A called one (`move.sourceEffect`: Metronome's) aims at where its target
+        // stands (`lastMoveTargetLoc = getLocOf(target)`, R-M8-73).
+        let first_target = resolved
+            .as_ref()
+            .and_then(|targets| targets.pokemon_ids().next());
+        let chain_target = match self.call {
+            Some(_) => first_target
+                .and_then(|target| self.state.active_position(target, &self.rules.topology)),
+            None => action_target.or(declared_target).map(|target| target.0),
+        };
+        // On a Gen 7 Rollout storage (issues.md I212) the move starts no chain — its user is not
+        // locked in — and a use that fails clears the storage (`rolling_after_move`).
+        if move_def.behavior.rolling
+            && first_target.is_some()
+            && let Some(pokemon) = self.state.pokemon_mut(actor)
+            && !pokemon.has_status(NonVolatileStatus::Sleep)
+        {
+            if pokemon.volatiles.rollout_storage().is_some() {
+                pokemon.volatiles.arm_rollout_storage();
+            } else if pokemon.volatiles.start_rolling(move_id, chain_target) {
+                self.trace.push(TraceEvent::VolatileStarted {
+                    target: actor,
+                    kind: VolatileConditionKind::Rolling,
+                });
+            }
+        }
+
+        // Showdown `useMoveInner`'s `if (!target)`, right after the `move|` line: a move handed
+        // no target at all fails here, before the redirection, the PP Pressure takes and
+        // TryMove (the Metronome item's count, R-M10-18); one whose target is gone fails after
+        // TryMove (below).
+        if self.aims_at_nothing(actor, &move_def, declared_target, resolved.as_ref()) {
+            return Ok(self.fail_no_target(actor, move_id));
+        }
+        // Showdown `getMoveTargets`, after the `move|` line and before TryMove (§15.5; the M
+        // family's redirection moved ahead, R218): the targets drawn before BeforeMove; in
+        // doubles a single-target move can still be pulled elsewhere (Follow Me, Lightning Rod /
+        // Storm Drain) below — even one left with no target at all (Showdown `getMoveTargets`
+        // then aims at a fainted slot "for any possible redirection": a partner's Lightning Rod
+        // takes it). The TryMove checks below (a charge, Damp, Shell Trap, a strong weather) do
+        // not depend on them; the no-target failure comes after those.
+        let mut targets = resolved.clone().unwrap_or(crate::rules::ResolvedTargets {
+            targets: Vec::new(),
+        });
+        // Counter / Mirror Coat (their volatile's `onRedirectTarget`), Metal Burst / Comeuppance
+        // (`onModifyTarget`): the move goes where the attacker it answers stood — whoever
+        // stands there now (§15.8). With nobody standing there, Metal Burst keeps the target
+        // drawn for it (`onModifyTarget` comes before `getMoveTargets`, which turns from a
+        // fainted foe); Counter and Mirror Coat in doubles are redirected to the fainted slot
+        // after that turn and have no target (`[notarget]`, R190) — unless a redirector
+        // of higher priority (Follow Me) takes them first, below.
+        if let Some(kind) = move_def.behavior.strikes_back_at
+            && let Some((record, _)) =
+                crate::engine::retaliation_record(self.state, self.rules, actor, kind)
+            && let Some(position) = record.position
+        {
+            let answered = self
+                .state
+                .pokemon_at_position(position, &self.rules.topology)
+                .filter(|answered| {
+                    self.state
+                        .pokemon(*answered)
+                        .is_some_and(|p| !p.is_fainted())
+                });
+            match answered {
+                Some(answered) => targets.targets = vec![ResolvedTarget::Pokemon(answered)],
+                None if kind != crate::dex::Retaliation::MetalBurst
+                    && self.rules.topology.active_slots_per_side() > 1 =>
+                {
+                    targets.targets.clear();
+                }
+                None => {}
+            }
+        }
+        // A charging turn is not redirected (Showdown `getMoveTargets`'s `isCharging`): the
+        // attack aims at its slot when it is released.
+        // Sky Drop's carrying turn too, Power Herb or not (`isCharging`, §15.23).
+        let charging = move_def.behavior.two_turn.is_some_and(|spec| {
+            !releasing
+                && crate::engine::two_turn::charge_skip(self.state, self.rules, actor, spec)
+                    .is_none()
+        }) || (move_def.behavior.sky_drop && !releasing);
+        let held_by_redirector =
+            !charging && self.redirect_target(actor, &move_def, declared_target, &mut targets);
+        // Dragon Darts (`smartTarget`) in doubles: the target and the partner beside it
+        // (Showdown `getSmartTargets`, after the redirection) — both darts on the center of
+        // attention, or the Pokémon whose ability drew the move (R-M8-169).
+        let mut smart = false;
+        if move_def.smart_target
+            && !held_by_redirector
+            && let [ResolvedTarget::Pokemon(target)] = targets.targets.as_slice()
+        {
+            let split = crate::engine::smart_targets(self.state, self.rules, actor, *target);
+            smart = split.len() > 1;
+            targets.targets = split.into_iter().map(ResolvedTarget::Pokemon).collect();
+        }
+
+        self.trace
+            .push_with(crate::engine::TraceCategory::Calculation, || {
+                TraceEvent::TargetsResolved {
+                    actor,
+                    move_id,
+                    targets: targets.targets.clone(),
+                }
+            });
+        // Showdown `useMoveInner` (§15.15): each Pressure the move meets costs one more PP, taken
+        // at once (`deductPP`) before TryMove — a charging turn too; not a locked turn (a
+        // two-turn move's attack and a hard lock's later turns, `sourceEffect` lockedmove: the
+        // hard lock covers both).
+        // A move another move called charges it to the caller (Gen 4+, `callerMoveForPressure`:
+        // the caller's `sourceEffect.pp`) or to the action's move (Gen 3's cartridge, but not
+        // after Sleep Talk); a reflection or a snatch — whose source is a condition, not a move —
+        // charges nothing.
+        // A Max Move or a Z-Move charges the slot's move it was made from (Showdown deducts
+        // `moveOrMoveName`, the base move `runMove` hands `useMove`, R-M8-159).
+        // An action another move moved to the front (Round's, a combined Pledge's) charges the
+        // move it uses: the Pokémon that strikes pays for its own Pledge — the user's decision
+        // (issues.md I201, R-M8-170), where Showdown charges the ally's Pledge that moved it up
+        // (its `sourceEffect`), which the oracle patches.
+        let charged = match self.call {
+            None if move_def.is_max || move_def.z_crystal.is_some() => Some(
+                self.state
+                    .pokemon(actor)
+                    .and_then(|pokemon| pokemon.move_slot(slot))
+                    .map_or(move_id, |move_slot| move_slot.move_id),
+            ),
+            None => Some(move_id),
+            Some(frame) => match frame.source {
+                crate::state::CallSource::Move(caller)
+                    if self.dex.move_by_id(caller).is_some_and(|m| m.calls_move) =>
+                {
+                    match self.rules.conditions.pp.called_move_pressure {
+                        crate::rules::CalledMovePressure::TheCaller => Some(caller),
+                        crate::rules::CalledMovePressure::TheActionsMove { spared_after } => {
+                            frame.action_move.filter(|_| caller != spared_after)
+                        }
+                    }
+                }
+                _ => None,
+            },
+        };
+        if let Some(charged) = charged
+            && !continuing_lock
+            && !continuing_bind
+            && !struggling
+        {
+            let holders = crate::engine::context::pressure_holders(
+                self.state, self.rules, actor, &move_def, &targets,
+            );
+            if let Some(first) = holders.first() {
+                BattleContext::new(self.state, self.rules, self.trace).deduct_pp(
+                    actor,
+                    charged,
+                    holders.len() as u8,
+                    EffectSource::Ability {
+                        pokemon: *first,
+                        ability: crate::ids::AbilityId::PRESSURE,
+                    },
+                );
+            }
+        }
+
+        // TryMove (DESIGN.md §15.5): a two-turn move either starts its charge here and ends
+        // the action (Showdown `-prepare`, `onTryMove` → null; it was not redirected above),
+        // releases the charge started last turn, or attacks at once when the weather says so.
+        // It comes before the no-target failure (`useMoveInner` reports `-notarget` only after
+        // TryMove): Dig aimed at a foe that just fainted still goes underground.
+        if let Some(spec) = move_def.behavior.two_turn {
+            if releasing {
+                if gen1_charge {
+                    // Gen 1: the attack clears the charge and the hiding at once.
+                    let mut ctx = BattleContext::new(self.state, self.rules, self.trace);
+                    ctx.end_volatile(actor, VolatileConditionKind::TwoTurnMove);
+                    ctx.end_volatile(actor, VolatileConditionKind::Invulnerability);
+                } else if let Some(pokemon) = self.state.pokemon_mut(actor) {
+                    pokemon.volatiles.release_two_turn_move();
+                }
+                self.trace
+                    .push(TraceEvent::ChargeReleased { actor, move_id });
+            } else {
+                self.trace
+                    .push(TraceEvent::ChargeStarted { actor, move_id });
+                // The user's own stat change as it charges (`this.boost` after `-prepare`),
+                // before the weather can send the attack out at once (Electro Shot). Gen 1's
+                // Skull Bash raises nothing.
+                if let Some((stat, stages)) = spec.charge_boost.filter(|_| !gen1_charge) {
+                    BattleContext::new(self.state, self.rules, self.trace).try_change_stat_stage(
+                        crate::engine::StatChangeRequest {
+                            target: actor,
+                            stat,
+                            stages,
+                            source: EffectSource::Move {
+                                pokemon: actor,
+                                move_id,
+                            },
+                            cause: crate::engine::StatChangeCause::Move,
+                        },
+                    );
+                }
+                match crate::engine::two_turn::charge_skip(self.state, self.rules, actor, spec) {
+                    Some(cause) => {
+                        // Power Herb (`useItem`): `-enditem`, the move goes ahead this turn.
+                        if let crate::engine::two_turn::ChargeSkipCause::Item(_) = cause {
+                            BattleContext::new(self.state, self.rules, self.trace)
+                                .consume_item(actor);
+                        }
+                        self.trace.push(TraceEvent::ChargeSkipped {
+                            actor,
+                            move_id,
+                            cause,
+                        });
+                    }
+                    None => {
+                        let turns = self.rules.conditions.two_turn_move_turns;
+                        // The attack aims at the action's slot (Showdown `lastMoveTargetLoc`),
+                        // before any redirection: the declared one, even when an Encore turned
+                        // the action into this move and drew this turn's target anew. An action
+                        // chosen without one got its `targetLoc` as it was queued
+                        // (`resolveAction`'s `getRandomTarget` on the chosen move), not from this
+                        // turn's draw: the user's own slot for a move for itself or its side
+                        // (Iron Defense), which the release does not take (`getTarget` →
+                        // `getRandomTarget`, R-M9-26); none for one for an ally in a single
+                        // battle; for any other (Stealth Rock, Razor Wind) a foe drawn among
+                        // those standing then — the release's draw among the foes standing in
+                        // those slots stands for it, the attack going at one of them evenly
+                        // (R-M10-20; it would not where a slot empty then was filled since, by a
+                        // Revival Blessing). So an overridden action's release draws. Otherwise
+                        // the action's own move: a called one at the target drawn for it
+                        // (`twoturnmove.onStart`'s `effect.sourceEffect`), a single battle's at
+                        // the foe.
+                        let aimed = action_target.map(|d| d.0).or_else(|| {
+                            if overridden {
+                                return None;
+                            }
+                            resolved
+                                .as_ref()
+                                .and_then(|targets| match targets.targets[..] {
+                                    [ResolvedTarget::Pokemon(target)] if target != actor => {
+                                        self.state.active_position(target, &self.rules.topology)
+                                    }
+                                    _ => None,
+                                })
+                        });
+                        if let Some(pokemon) = self.state.pokemon_mut(actor)
+                            && pokemon.volatiles.set_two_turn_move(
+                                move_id,
+                                turns,
+                                aimed,
+                                spec.invulnerable,
+                            )
+                        {
+                            self.trace.push(TraceEvent::VolatileStarted {
+                                target: actor,
+                                kind: VolatileConditionKind::TwoTurnMove,
+                            });
+                        }
+                        // The charge's `onStart` runs the `PrepareHit` event's side effects
+                        // (Showdown: "e.g., Protean, Libero") on the charging turn.
+                        BattleContext::new(self.state, self.rules, self.trace)
+                            .protean(actor, move_def.move_type);
+                        // Dive's `onTryMove` (DESIGN.md §43.4): a Cramorant comes up with its
+                        // catch as it dives.
+                        if move_def.id == crate::ids::MoveId::DIVE
+                            && self.state.pokemon(actor).is_some_and(|pokemon| {
+                                crate::engine::ability_handler(
+                                    self.state,
+                                    self.rules,
+                                    pokemon,
+                                    |b| b.gulp_missile,
+                                )
+                            })
+                        {
+                            crate::effects::abilities::forme_ability::gulp_missile_dive(
+                                &mut BattleContext::new(self.state, self.rules, self.trace),
+                                actor,
+                            );
+                        }
+                        if gen1_charge {
+                            // Gen 1 Fly / Dig hide the user with a flag of its own.
+                            if let Some(kind) = spec.invulnerable
+                                && let Some(pokemon) = self.state.pokemon_mut(actor)
+                                && pokemon.volatiles.set_invulnerability(kind)
+                            {
+                                self.trace.push(TraceEvent::VolatileStarted {
+                                    target: actor,
+                                    kind: VolatileConditionKind::Invulnerability,
+                                });
+                            }
+                            // The gen1 `useMove`: the charging turn is the side's last move.
+                            if let Some(side) = self.state.pokemon(actor).map(|p| p.side) {
+                                self.state.side_mut(side).last_move = Some(move_id);
+                            }
+                        }
+                        // Showdown `onTryMove` → `null`: charging is neither.
+                        return Ok(MoveExecution {
+                            actor,
+                            move_id,
+                            hits: Vec::new(),
+                            stopped: false,
+                            aborted: false,
+                            result: MoveResult::Neither,
+                        });
+                    }
+                }
+            }
+        }
+
+        // Gen 1 binding moves' own `onTryMove`: the target's recharge turn ends.
+        self.binding_ends_recharge(
+            &move_def,
+            resolved.as_ref().and_then(|t| t.pokemon_ids().next()),
+        );
+
+        // Burn Up, Double Shock (the move's own `onTryMove`, before the `TryMove` event's
+        // handlers): a user without the type stops (`-fail`), neither failing nor succeeding.
+        if let Some(type_) = move_def.behavior.burns_up
+            && !BattleContext::new(self.state, self.rules, self.trace).has_type(actor, type_)
+        {
+            self.trace.push(TraceEvent::MoveFailed {
+                actor,
+                move_id,
+                reason: MoveFailReason::NoEffect,
+            });
+            return Ok(MoveExecution {
+                actor,
+                move_id,
+                hits: Vec::new(),
+                stopped: false,
+                aborted: false,
+                result: MoveResult::Neither,
+            });
+        }
+        self.metronome_tries(actor, move_id, releasing);
+        // Echoed Voice's own `onTryMove` (`singleEvent('TryMove', move)`), its PP spent: before
+        // the `TryMove` event's handlers, so a strong weather that then stops the move (a Liquid
+        // Voice made it Water under Desolate Land) leaves the condition started (R-M8-181); and
+        // with the target `useMoveInner` picked — a fainted foe still in its slot too
+        // (`getRandomTarget`) — before the move finds no target standing (`[notarget]`).
+        if move_def.behavior.echoes && self.state.field.echo() {
+            self.trace.push(TraceEvent::FieldConditionStarted {
+                kind: crate::state::FieldConditionKind::EchoedVoice,
+            });
+        }
+        // Showdown `runEvent('TryMove')`: an active Damp stops Explosion and its kin
+        // (`onAnyTryMove`) — the PP spent, the user standing.
+        if move_def.behavior.stopped_by_damp
+            && let Some(holder) = crate::engine::context::damp_holder(self.state, self.rules)
+        {
+            let ability = self
+                .state
+                .pokemon(holder)
+                .map_or(crate::ids::AbilityId::DAMP, crate::engine::raw_ability);
+            self.trace.push(TraceEvent::MoveFailed {
+                actor,
+                move_id,
+                reason: MoveFailReason::Ability { holder, ability },
+            });
+            self.self_damage_cancelled = true;
+            return Ok(MoveExecution {
+                actor,
+                move_id,
+                hits: Vec::new(),
+                stopped: false,
+                aborted: false,
+                result: MoveResult::Failed,
+            });
+        }
+        // Shell Trap's `onTryMove` (§15.8): not armed by a foe's physical hit, it stops (`cant`),
+        // the PP spent, neither succeeding nor failing.
+        if move_def.behavior.needs_armed_trap
+            && !self
+                .state
+                .pokemon(actor)
+                .is_some_and(|p| p.volatiles.shell_trap_armed())
+        {
+            self.trace.push(TraceEvent::MoveFailed {
+                actor,
+                move_id,
+                reason: MoveFailReason::NoEffect,
+            });
+            return Ok(MoveExecution {
+                actor,
+                move_id,
+                hits: Vec::new(),
+                stopped: false,
+                aborted: false,
+                result: MoveResult::Neither,
+            });
+        }
+        // Powder's `onTryMove` in Gen 6 (priority 1, ahead of the field's strong weather).
+        if self.rules.conditions.powder_before_strong_weather
+            && let Some(execution) = self.powder_stops(actor, &move_def)
+        {
+            return Ok(execution);
+        }
+        // A strong weather's `onTryMove` (§23.5): the PP spent, nothing else happens. It returns
+        // `null`, so the move neither succeeded nor failed (Stomping Tantrum is not doubled).
+        if let Some(weather) =
+            crate::engine::weather::strong_weather_stops(self.state, self.rules, &move_def)
+        {
+            self.trace.push(TraceEvent::MoveFailed {
+                actor,
+                move_id,
+                reason: MoveFailReason::Weather(weather),
+            });
+            self.self_damage_cancelled = true;
+            return Ok(MoveExecution {
+                actor,
+                move_id,
+                hits: Vec::new(),
+                stopped: false,
+                aborted: false,
+                result: MoveResult::Neither,
+            });
+        }
+        // Dazzling, Queenly Majesty, Armor Tail (`onFoeTryMove`, priority 0): a foe's move of
+        // raised priority aimed at their side fails (`cant|holder|ability: …|move|[of] user`).
+        // TryMove's target is the last of the move's targets (`targets[targets.length - 1]`, "in
+        // case of redirection"): a move an ally's Storm Drain drew is aimed at the user's own
+        // side (R-M10-11); with none, the one it was given.
+        if let Some((holder, ability)) = crate::engine::priority_guard(
+            self.state,
+            self.rules,
+            actor,
+            targets.pokemon_ids().last().or_else(|| {
+                resolved
+                    .as_ref()
+                    .and_then(|targets| targets.pokemon_ids().next())
+            }),
+            &move_def,
+            self.move_priority(&move_def),
+        ) {
+            self.trace.push(TraceEvent::MoveFailed {
+                actor,
+                move_id,
+                reason: MoveFailReason::Ability { holder, ability },
+            });
+            self.self_damage_cancelled = true;
+            return Ok(MoveExecution {
+                actor,
+                move_id,
+                hits: Vec::new(),
+                stopped: false,
+                aborted: false,
+                result: MoveResult::Failed,
+            });
+        }
+        // Powder's `onTryMove` from Gen 7 (priority −1, last).
+        if !self.rules.conditions.powder_before_strong_weather
+            && let Some(execution) = self.powder_stops(actor, &move_def)
+        {
+            return Ok(execution);
+        }
+        // Gen 1 `useMoveInner`: the move is going ahead — this side's last move, and the last
+        // damage starts over (`SKIP_LASTDAMAGE` aside).
+        let retaliation = self.rules.conditions.retaliation;
+        if retaliation.gen1_last_damage {
+            if let Some(side) = self.state.pokemon(actor).map(|p| p.side) {
+                self.state.side_mut(side).last_move = Some(move_id);
+            }
+            if !retaliation.keeps_last_damage.contains(&move_id) {
+                self.state.last_damage = 0;
+            }
+        }
+        // Explosion and its kin (`selfdestruct: 'always'`), Gen 3 and 5+: the user faints as
+        // the move starts, target or not (§30.4).
+        let self_faint = self.rules.conditions.self_faint;
+        let always = move_def.self_destruct == Some(crate::dex::SelfDestruct::Always);
+        if always && self_faint.timing == crate::rules::SelfDestructTiming::BeforeTargets {
+            BattleContext::new(self.state, self.rules, self.trace)
+                .faint_by_own_move(actor, move_id);
+        }
+
+        let pokemon_target_count = targets.pokemon_count();
+        let no_usable_target = targets.targets.is_empty()
+            || (move_def.primary_effect == PrimaryEffect::Damage && pokemon_target_count == 0);
+        // A future move keeps a fainted target (`getMoveTargets`): it is foreseen on its slot.
+        if no_usable_target && !move_def.behavior.future_attack {
+            return Ok(self.fail_no_target(actor, move_id));
+        }
+        // Gen 2 and 4: only a move with a target costs its user, before its hit steps.
+        if always && self_faint.timing == crate::rules::SelfDestructTiming::WithTargets {
+            BattleContext::new(self.state, self.rules, self.trace)
+                .faint_by_own_move(actor, move_id);
+        }
+
+        // Pollen Puff's `onTryMove`: a user under Heal Block cannot aim it at an ally
+        // (`cant|user|move: Heal Block|Pollen Puff`); the move fails.
+        if self
+            .state
+            .pokemon(actor)
+            .is_some_and(|p| p.volatiles.contains(VolatileConditionKind::HealBlock))
+            && targets.pokemon_ids().any(|target| {
+                crate::engine::heals_instead(self.state, self.rules, actor, target, &move_def, None)
+                    .is_some()
+            })
+        {
+            self.trace.push(TraceEvent::MoveFailed {
+                actor,
+                move_id,
+                reason: MoveFailReason::BeforeMove(crate::engine::BeforeMoveBlockReason::HealBlock),
+            });
+            return Ok(MoveExecution {
+                actor,
+                move_id,
+                hits: Vec::new(),
+                stopped: false,
+                aborted: false,
+                result: MoveResult::Failed,
+            });
+        }
+
+        // Gen 3-4 Focus Punch's `onTry` (§15.8): a user that lost its focus stops (`cant`), the
+        // PP spent, neither succeeding nor failing.
+        if move_def.behavior.lost_focus_fails
+            && self
+                .state
+                .pokemon(actor)
+                .is_some_and(|p| p.volatiles.lost_focus())
+        {
+            self.trace.push(TraceEvent::MoveFailed {
+                actor,
+                move_id,
+                reason: MoveFailReason::NoEffect,
+            });
+            return Ok(MoveExecution {
+                actor,
+                move_id,
+                hits: Vec::new(),
+                stopped: false,
+                aborted: false,
+                result: MoveResult::Neither,
+            });
+        }
+        // Showdown `onTry` (Fake Out): after targeting, before any hit step.
+        if let Some(try_use) = move_def.behavior.try_use
+            && !crate::engine::try_use_holds(
+                self.state,
+                self.rules,
+                actor,
+                targets.pokemon_ids().next(),
+                try_use,
+            )
+        {
+            self.trace.push(TraceEvent::MoveFailed {
+                actor,
+                move_id,
+                reason: MoveFailReason::NoEffect,
+            });
+            return Ok(MoveExecution {
+                actor,
+                move_id,
+                hits: Vec::new(),
+                stopped: false,
+                aborted: false,
+                result: MoveResult::Failed,
+            });
+        }
+
+        // Future Sight, Doom Desire (`onTry`): the attack is foreseen and the move stops.
+        if move_def.behavior.future_attack {
+            let spot = self.foreseen_spot(actor, declared_target, &targets);
+            return Ok(self.foresee(actor, &move_def, spot));
+        }
+
+        // A custom primary's own `onTry` / `onPrepareHit` (Teleport, Rest, a stalling move's
+        // roll …), before the `PrepareHit` handlers: a move it fails never meets Protean. Gen 5+
+        // Swallow's lets a snatched Swallow through.
+        let snatched = matches!(
+            self.call.map(|frame| frame.source),
+            Some(crate::state::CallSource::Move(MoveId::SNATCH))
+        );
+        let passes_snatched = snatched
+            && self.rules.conditions().snatched_swallow_skips_stockpile
+            && effects::moves::tries_pass_snatched(move_id);
+        // Gen 3 runs the `PrepareHit` event, Snatch's take among it, before the move's own
+        // `onTry` (`CallRules::snatch_before_try`): a Swallow with nothing stockpiled is taken
+        // all the same, and fails for its taker (R-M8-102).
+        let snatch_before_try = self.rules.conditions.calls.snatch_before_try;
+        // A move Snatch took failed for its user: the take's `PrepareHit` returns `null`, and
+        // `trySpreadMoveHit` answers `null === NOT_FAIL`, `false` (a Stomping Tantrum next turn is
+        // doubled, R-M8-138).
+        if snatch_before_try && self.snatch_takes(actor, &move_def, snatched) {
+            return Ok(MoveExecution {
+                actor,
+                move_id,
+                hits: Vec::new(),
+                stopped: false,
+                aborted: false,
+                result: MoveResult::Failed,
+            });
+        }
+        if let Some(tries) = effects::moves::custom(move_id)
+            .and_then(|primary| primary.tries)
+            .filter(|_| !passes_snatched)
+        {
+            let result = {
+                let mut ctx =
+                    BattleContext::new(self.state, self.rules, self.trace).with_dex(self.dex);
+                tries(&mut ctx, actor)
+            };
+            if let Err(error) = result {
+                self.trace.push(TraceEvent::MoveFailed {
+                    actor,
+                    move_id,
+                    reason: MoveFailReason::Condition(error),
+                });
+                return Ok(MoveExecution {
+                    actor,
+                    move_id,
+                    hits: Vec::new(),
+                    stopped: false,
+                    aborted: false,
+                    result: MoveResult::Failed,
+                });
+            }
+        }
+
+        // Round's `onTry`: the next Round in the queue goes to the front once this move is over.
+        if move_def.behavior.prioritizes_same_move {
+            self.prioritizes = Some(move_id);
+        }
+
+        // `onPrepareHit` (Showdown: the move's own, then Parental Bond's): Fling's and Natural
+        // Gift's power from the item, then twice, unless the move hits several targets.
+        let mut move_def = crate::engine::prepared_move(
+            self.state,
+            self.rules,
+            actor,
+            move_def,
+            pokemon_target_count,
+            targets.pokemon_ids().next(),
+        );
+        // Fling, Natural Gift (`onPrepareHit`): without an item to throw or a berry to use, the
+        // move fails (`-fail`); Fling marks its item to go at the next `Update`, Natural Gift
+        // uses its berry up at once — not eaten. Gen 1-2 charging moves (`onPrepareHit`:
+        // `source.status !== 'slp'`) fail as a sleeping user releases them (through Sleep Talk).
+        let asleep_release = move_def.behavior.charge_fails_asleep
+            && self
+                .state
+                .pokemon(actor)
+                .is_some_and(|p| p.has_status(NonVolatileStatus::Sleep));
+        if asleep_release
+            || ((move_def.behavior.fling || move_def.behavior.natural_gift)
+                && !self.prepare_item_move(actor, &move_def))
+        {
+            self.trace.push(TraceEvent::MoveFailed {
+                actor,
+                move_id,
+                reason: MoveFailReason::NoEffect,
+            });
+            return Ok(MoveExecution {
+                actor,
+                move_id,
+                hits: Vec::new(),
+                stopped: false,
+                aborted: false,
+                result: MoveResult::Failed,
+            });
+        }
+
+        // Showdown `toxic` `onPrepareHit` (the gen7 mod: Gen 6-7), once the move has targets and
+        // passed `onTry`: a Poison-type user takes the `toxic` volatile that makes its Toxic
+        // unmissable. Gen 8+ check it in the hit steps and leave nothing on the user.
+        if self.rules.conditions.typed_sure_hit == Some(crate::rules::TypedSureHit::Volatile)
+            && crate::engine::sure_hit(self.state, self.rules, actor, &move_def)
+            && self
+                .state
+                .pokemon_mut(actor)
+                .is_some_and(|p| p.volatiles.set_sure_hit())
+        {
+            self.trace.push(TraceEvent::VolatileStarted {
+                target: actor,
+                kind: VolatileConditionKind::SureHit,
+            });
+        }
+
+        // A Pledge's own `onPrepareHit` (DESIGN.md §42.9): an ally still holding another Pledge
+        // this turn takes this one's place — that action goes to the front with this move as its
+        // `sourceEffect`, and this move stops (`useMoveInner` returns `null`). A called Pledge
+        // waits too: the handler is the move's own (R-M8-65).
+        if move_def.behavior.pledge_combo
+            && self.rules.conditions.calls.pledge_combines
+            && let Some(ally_move) = self.pledge_partner(actor, move_id)
+        {
+            self.pledge_promotes = Some(ally_move);
+            self.trace.push(TraceEvent::PledgeWaiting {
+                waiting: actor,
+                move_id,
+            });
+            return Ok(MoveExecution {
+                actor,
+                move_id,
+                hits: Vec::new(),
+                stopped: false,
+                aborted: false,
+                result: MoveResult::Neither,
+            });
+        }
+        // The combined move (Showdown's `basePowerCallback` and `onModifyMove` with a
+        // `sourceEffect` of another Pledge): 150 power and the pair's side condition — its type
+        // and `forceSTAB` were set as the move started.
+        let mut pledge_condition: Option<crate::engine::pledges::PledgeCombo> = None;
+        if move_def.behavior.pledge_combo
+            && let Some(by) = self.prioritized_by
+            && let Some(combined) = crate::engine::pledges::combo(by, move_id)
+        {
+            move_def.base_power = 150;
+            pledge_condition = Some(combined);
+            self.trace.push(TraceEvent::PledgeCombined {
+                users: (actor, by),
+                move_id,
+            });
+        }
+
+        // The `PrepareHit` event's handlers, after the move's own: Protean, Libero — which leave
+        // alone a move out of a reflection (`hasBounced`), a snatched move and one that calls
+        // another (`callsMove`: Mirror Move, Copycat …; the move it calls retypes the user),
+        // DESIGN.md R-M8-80. (Their `futuremove` line has nothing to do here: Future Sight ends
+        // at its `onTry`, before this event.)
+        if !(self.bounced || snatched || move_def.calls_move) {
+            BattleContext::new(self.state, self.rules, self.trace)
+                .protean(actor, move_def.move_type);
+        }
+        // Snatch's `onAnyPrepareHit` (priority −1, last of the event): a Snatch holder takes a
+        // move carrying the `snatch` flag over and uses it itself (DESIGN.md §42.8). The outer
+        // move stops where it stands (`useMoveInner` returns `null`). A called move too
+        // (Metronome's Swords Dance, Dancer's); a move Snatch itself called only where the
+        // generation takes it again (R-M8-68). Gen 3 took it before `onTry`.
+        if !snatch_before_try && self.snatch_takes(actor, &move_def, snatched) {
+            return Ok(MoveExecution {
+                actor,
+                move_id,
+                hits: Vec::new(),
+                stopped: false,
+                aborted: false,
+                result: MoveResult::Failed,
+            });
+        }
+
+        // Gen 1-2 open with Thrash's lock, ahead of the hit test (§15.12): it starts, or counts a
+        // use down.
+        self.counted_rampage_use(actor, &move_def);
+
+        self.hp_before_hits = self
+            .state
+            .all_pokemon()
+            .iter()
+            .map(|pokemon| (pokemon.id(), pokemon.hp))
+            .collect();
+
+        // Unified hit loop. Every move, damaging or custom, sends each foreign Pokémon target
+        // through the same gate (immunity pre-check for damaging primaries, TryHit, accuracy)
+        // and then dispatches its primary effect. Custom primaries collect the targets that
+        // survived the gate and run once after the loop, because Side / Field semantics are
+        // naturally whole-move operations. No move gets to re-implement any part of this.
+        let mut hits = Vec::with_capacity(targets.targets.len());
+        let mut custom_targets = Vec::new();
+        // A spread move's hit runs stage by stage over every target that passed the gate
+        // (`apply_spread_hit`), after all the gates (Showdown checks every target's accuracy
+        // before any damage). Gen 1-3 hit each target in full before the next one's gate.
+        let spread = self.rules.hits.staged_spread_hits
+            && move_def.primary_effect == PrimaryEffect::Damage
+            && move_def.multi_hit == crate::dex::MultiHit::Single
+            && targets
+                .targets
+                .iter()
+                .filter(|t| matches!(t, ResolvedTarget::Pokemon(p) if *p != actor))
+                .count()
+                > 1;
+        let mut spread_targets = Vec::new();
+        let mut any_landed_hit = false;
+        // A whole-move operation (a custom primary, a weather move) that changed nothing.
+        let mut move_failed = false;
+        // A custom primary that went through on a Pokémon (Showdown runs a side or field move
+        // without the hit loop, so without its `Update`s).
+        let mut custom_hit_pokemon = false;
+
+        // Dragon Darts split between two targets: both targets' hit steps first; one failing
+        // ends the split (`smartTarget = false`) and both darts go to the other, one dart
+        // each when both pass.
+        if smart {
+            let mut passed = Vec::new();
+            for target in targets.pokemon_ids() {
+                match self.resolve_hit_gate(actor, target, &move_def) {
+                    Ok(modifier) => passed.push((target, modifier)),
+                    Err(outcome) => hits.push(outcome),
+                }
+            }
+            self.smart_hit = passed.len() > 1;
+            for (target, type_effectiveness) in passed {
+                let outcomes =
+                    self.apply_damage_sequence(actor, target, &move_def, 1, type_effectiveness);
+                any_landed_hit |= outcomes
+                    .iter()
+                    .any(|outcome| !matches!(outcome, HitOutcome::NoEffect { .. }));
+                self.record_attack(actor, target, &move_def, &outcomes);
+                hits.extend(outcomes);
+            }
+            self.smart_hit = false;
+        }
+        let unsplit: &[ResolvedTarget] = if smart { &[] } else { &targets.targets };
+        let foreign =
+            |target: &ResolvedTarget| matches!(target, ResolvedTarget::Pokemon(p) if *p != actor);
+        // Showdown's `trySpreadMoveHit` (`HitRules::staged_spread_hits`) takes each hit step over
+        // all of a move's targets: where TryHit comes before the accuracy roll (Gen 5+), every
+        // target's steps up to TryHit — a reflection with them — come before any target's
+        // accuracy (R-M8-77). Gen 4 rolls the accuracy first: target by target here (R-M8-78).
+        let try_hit_first = matches!(
+            self.rules.hits.step_order,
+            crate::rules::HitStepOrder::ImmunityFirst | crate::rules::HitStepOrder::TryHitFirst
+        );
+        let mut past_try_hit = vec![None; unsplit.len()];
+        // Any move with several targets, the user among them too (Life Dew: its ally's Water
+        // Absorb takes the move at TryHit before the user's own heal, R-M9-37).
+        if self.rules.hits.staged_spread_hits
+            && try_hit_first
+            && unsplit.len() > 1
+            && unsplit.iter().any(foreign)
+        {
+            for (index, target) in unsplit.iter().enumerate() {
+                let ResolvedTarget::Pokemon(pokemon) = *target else {
+                    continue;
+                };
+                if pokemon == actor {
+                    continue;
+                }
+                let past = self.hit_gate_through_try_hit(actor, pokemon, &move_def);
+                // Showdown runs the reflection inside the target's `TryHit` (§42.8): the move
+                // goes on to its other targets once the reflected one is over (R-M8-68). A
+                // reflection with no other target left takes the action over as its called move.
+                if matches!(past, Err(HitOutcome::Reflected { .. }))
+                    && (past_try_hit[..index]
+                        .iter()
+                        .any(|p| matches!(p, Some(Ok(_))))
+                        || unsplit[index + 1..].iter().any(foreign))
+                {
+                    self.run_reflection_now()?;
+                }
+                past_try_hit[index] = Some(past);
+            }
+        }
+        for (index, target) in unsplit.iter().enumerate() {
+            let type_effectiveness = match *target {
+                ResolvedTarget::Pokemon(pokemon) if pokemon != actor => {
+                    let gate = match past_try_hit[index].take() {
+                        Some(past) => past.and_then(|past| {
+                            self.hit_gate_after_try_hit(actor, pokemon, &move_def, past)
+                        }),
+                        None => self.resolve_hit_gate(actor, pokemon, &move_def),
+                    };
+                    match gate {
+                        Ok(modifier) => modifier,
+                        Err(outcome) => {
+                            let reflected = matches!(outcome, HitOutcome::Reflected { .. });
+                            hits.push(outcome);
+                            // A reflection still waiting (the target by target gate, or the
+                            // staged one's last) takes the action over as its called move, or
+                            // runs now when another target is left to hit.
+                            if reflected && self.state.pending_call.is_some() {
+                                if unsplit[index + 1..].iter().any(foreign) {
+                                    self.run_reflection_now()?;
+                                } else {
+                                    break;
+                                }
+                            }
+                            continue;
+                        }
+                    }
+                }
+                // The user's own body, its side and the field never protect against the user, so
+                // these targets skip the gate — but for a hiding user missing itself (Gen 2+,
+                // `TwoTurnRules::hides_from_itself`: a Metronome Encore keeps on the turn of the
+                // Bounce it called, R-M10-50), its side's Quick Guard (`own_quick_guard`), and
+                // `hitStepAccuracy` still runs the `Accuracy` event for a move on its user unless
+                // it is a status move aimed at the user alone (`move.target === 'self'`, the user
+                // not semi-invulnerable): Bide, and Acupressure (`adjacentAllyOrSelf`) or Howl
+                // (`allies`) on the user, spend its Micle Berry (R-M8-105).
+                ResolvedTarget::Pokemon(pokemon) => {
+                    if self.rules.two_turn.hides_from_itself
+                        && let Err(outcome) = self.invulnerability_step(actor, pokemon, &move_def)
+                    {
+                        hits.push(outcome);
+                        continue;
+                    }
+                    if let Some(outcome) = self.own_quick_guard(pokemon, &move_def) {
+                        hits.push(outcome);
+                        continue;
+                    }
+                    let skips_accuracy = move_def.category == crate::dex::MoveCategory::Status
+                        && move_def.target == crate::rules::TargetPattern::SelfOnly
+                        && self
+                            .state
+                            .pokemon(pokemon)
+                            .is_none_or(|user| crate::engine::two_turn::hiding(user).is_none());
+                    if !skips_accuracy {
+                        self.accuracy_event(actor, pokemon, &move_def);
+                    }
+                    self.type_effectiveness(pokemon, &move_def)
+                }
+                // `TryHitSide` (Gen 5+): a move at the foes' side that one of them reflects
+                // becomes the action's called move, used back at the user's side (R-M8-77).
+                ResolvedTarget::Side(side) => {
+                    if let Some(reflector) = self.reflect_side_move(actor, side, &move_def) {
+                        hits.push(HitOutcome::Reflected { target: reflector });
+                        break;
+                    }
+                    Fraction::ONE
+                }
+                ResolvedTarget::Field => Fraction::ONE,
+            };
+
+            match (&move_def.primary_effect, *target) {
+                (PrimaryEffect::Status(effect), ResolvedTarget::Pokemon(pokemon)) => {
+                    let (outcome, reached) =
+                        self.apply_status_primary(actor, pokemon, &move_def, effect);
+                    let landed = matches!(outcome, HitOutcome::Effect { .. });
+                    any_landed_hit |= landed;
+                    // Showdown `gotAttacked` where the move did something to the target, or reached
+                    // it with nothing to do (a Heal Block restarted, R-M8-108). A move that failed
+                    // there records nothing — Gen 3 too (pokeemerald's `MOVEEND_MIRROR_MOVE`
+                    // skips `MOVE_RESULT_NO_EFFECT`, a Growl at -6 or a failed Mimic; issues.md
+                    // I173, R-M8-143).
+                    if reached {
+                        self.record_attack(
+                            actor,
+                            pokemon,
+                            &move_def,
+                            &[HitOutcome::Effect { target: pokemon }],
+                        );
+                    }
+                    hits.push(outcome);
+                    // Memento (`selfdestruct: 'ifHit'`): the target was reached, whatever its
+                    // stats did.
+                    self.self_destruct_if_hit(actor, &move_def, true);
+                }
+                (PrimaryEffect::Damage, ResolvedTarget::Pokemon(pokemon)) if spread => {
+                    spread_targets.push((pokemon, type_effectiveness));
+                }
+                (PrimaryEffect::Damage, ResolvedTarget::Pokemon(pokemon)) => {
+                    let outcomes = self.apply_damage_sequence(
+                        actor,
+                        pokemon,
+                        &move_def,
+                        pokemon_target_count,
+                        type_effectiveness,
+                    );
+                    // A hit that did nothing (Present healing a full-HP target) lands nothing.
+                    let landed = outcomes
+                        .iter()
+                        .any(|outcome| !matches!(outcome, HitOutcome::NoEffect { .. }));
+                    any_landed_hit |= landed;
+                    self.record_attack(actor, pokemon, &move_def, &outcomes);
+                    hits.extend(outcomes);
+                    self.self_destruct_if_hit(actor, &move_def, landed);
+                }
+                // A weather move is a field-targeted status primary: one request on the field.
+                (PrimaryEffect::Status(StatusMoveEffect::Weather(kind)), ResolvedTarget::Field) => {
+                    let mut ctx = BattleContext::new(self.state, self.rules, self.trace);
+                    if ctx.set_weather_by_move(*kind, actor) {
+                        any_landed_hit = true;
+                    } else {
+                        move_failed = true;
+                        self.trace.push(TraceEvent::MoveFailed {
+                            actor,
+                            move_id,
+                            reason: MoveFailReason::NoEffect,
+                        });
+                    }
+                }
+                // Other damage / status primaries have no meaning for a side or the field.
+                (PrimaryEffect::Damage | PrimaryEffect::Status(_), _) => {}
+                (PrimaryEffect::Custom, _) => custom_targets.push(*target),
+                // Rejected above; kept exhaustive so a new variant cannot fall through silently.
+                (PrimaryEffect::Unsupported, _) => {}
+            }
+        }
+
+        if !spread_targets.is_empty() {
+            let outcomes =
+                self.apply_spread_hit(actor, &spread_targets, &move_def, pokemon_target_count);
+            any_landed_hit = true;
+            self.self_destruct_if_hit(actor, &move_def, true);
+            for (target, outcome) in outcomes {
+                self.record_attack(actor, target, &move_def, &[outcome]);
+                hits.push(outcome);
+            }
+        }
+
+        if move_def.primary_effect == PrimaryEffect::Custom && !custom_targets.is_empty() {
+            if let Some(user_side) = self.state.pokemon(actor).map(|pokemon| pokemon.side)
+                && custom_targets.contains(&ResolvedTarget::Side(user_side))
+            {
+                BattleContext::new(self.state, self.rules, self.trace)
+                    .ally_try_hit_side(actor, &move_def);
+            }
+            let result = {
+                let mut ctx =
+                    BattleContext::new(self.state, self.rules, self.trace).with_dex(self.dex);
+                effects::moves::execute_custom(move_id, &mut ctx, actor, &custom_targets)
+            };
+            // `gotAttacked` for the Pokémon it was used on where it worked (a failed Mimic or
+            // Sketch records nothing, Gen 3 too: issues.md I173, R-M8-143).
+            if result.is_ok() {
+                for target in custom_targets.iter() {
+                    if let ResolvedTarget::Pokemon(pokemon) = *target {
+                        self.record_attack(
+                            actor,
+                            pokemon,
+                            &move_def,
+                            &[HitOutcome::Effect { target: pokemon }],
+                        );
+                    }
+                }
+            }
+            match result {
+                Ok(()) => {
+                    any_landed_hit = true;
+                    custom_hit_pokemon = custom_targets
+                        .iter()
+                        .any(|target| matches!(target, ResolvedTarget::Pokemon(_)));
+                    // Healing Wish, Lunar Dance (`selfdestruct: 'ifHit'`).
+                    self.self_destruct_if_hit(actor, &move_def, true);
+                }
+                Err(error) => {
+                    move_failed = true;
+                    self.trace.push(TraceEvent::MoveFailed {
+                        actor,
+                        move_id,
+                        reason: MoveFailReason::Condition(error),
+                    });
+                    // A wish already waiting at the slot: the move reached its user and did
+                    // nothing, so it failed (no Dancer), but `selfdestruct: 'ifHit'` asks only
+                    // for the hit (Showdown `runMoveEffects`, R-M8-177).
+                    if error == crate::engine::ConditionApplyError::AlreadyActive {
+                        self.self_destruct_if_hit(actor, &move_def, true);
+                    }
+                }
+            }
+        }
+
+        // The combined Pledge's side condition (Showdown `runMoveEffects` before the
+        // secondaries): it lands once a hit went through — on the target's side only through
+        // its body (`runMoveEffects` skips the `null` a Substitute's hit leaves, `if (target)`);
+        // the user's own side (the rainbow is the move's `self`) through a Substitute too
+        // (R-M8-139).
+        let pledge_lands = |side: crate::engine::pledges::PledgeSide| match side {
+            crate::engine::pledges::PledgeSide::User => any_landed_hit,
+            crate::engine::pledges::PledgeSide::Target => hits
+                .iter()
+                .any(|hit| matches!(hit, HitOutcome::Damaged { .. })),
+        };
+        if let Some(combined) = pledge_condition
+            && pledge_lands(combined.side)
+        {
+            let side = match combined.side {
+                crate::engine::pledges::PledgeSide::User => {
+                    self.state.pokemon(actor).map(|p| p.side)
+                }
+                crate::engine::pledges::PledgeSide::Target => targets
+                    .pokemon_ids()
+                    .next()
+                    .and_then(|target| self.state.pokemon(target).map(|p| p.side)),
+            };
+            if let Some(side) = side {
+                BattleContext::new(self.state, self.rules, self.trace)
+                    .set_pledge_condition(side, combined.condition);
+            }
+        }
+
+        // A move that called another (Metronome, Sleep Talk, Copycat …): Showdown's
+        // `useMoveInner` runs the called move right here, inside the same `useMove`, and the
+        // action reports it — everything after this point belongs to the called move, which the
+        // pipeline runs next (DESIGN.md §42.1).
+        // A reflection is the reflector's own `useMove`: the move it took is the actor's, as its
+        // hits had it (a move every target bounced back failed).
+        if let Some(call) = self.state.pending_call.as_ref() {
+            let result = if call.user == actor {
+                MoveResult::Succeeded
+            } else {
+                move_result(self.rules, &move_def, &hits, any_landed_hit, move_failed)
+            };
+            return Ok(MoveExecution {
+                actor,
+                move_id,
+                hits,
+                stopped: false,
+                aborted: false,
+                result,
+            });
+        }
+
+        if defrost_after && any_landed_hit {
+            self.thaw(actor, crate::engine::CureReason::Move(move_id));
+        }
+        // Gen 1 (`moveHit`'s `doSelf`): a hit that breaks a Substitute skips the move's own
+        // `self` effects — Hyper Beam then owes no recharge.
+        let broke_gen1_substitute = self.rules.conditions.substitute_gen1
+            && hits
+                .iter()
+                .any(|hit| matches!(hit, HitOutcome::SubstituteDamaged { broken: true, .. }));
+        // Gen 1 Explosion: the user faints once the move is over — hit, missed or not
+        // affecting — unless it broke a Substitute.
+        if always
+            && self_faint.timing == crate::rules::SelfDestructTiming::AfterMove
+            && !broke_gen1_substitute
+        {
+            BattleContext::new(self.state, self.rules, self.trace)
+                .faint_by_own_move(actor, move_id);
+        }
+        // A multi-hit move's lands on every hit instead (`hit_sequence::multi_hit_self`).
+        if any_landed_hit && !broke_gen1_substitute && move_def.multi_hit == MultiHit::Single {
+            let move_target = targets.pokemon_ids().next();
+            self.apply_secondary_effects(
+                actor,
+                actor,
+                move_target,
+                &move_def,
+                SecondaryTrigger::OnceAfterMove,
+                false,
+            );
+        }
+        // Showdown `hitStepMoveHitLoop` → `mindBlownRecoil`: right after a hit that struck
+        // something, before the struck targets' item reactions and the user's Life Orb.
+        if struck_something(&hits) {
+            self.after_move_self_damage(actor, move_id);
+        }
+
+        // The hit loop's `faintMessages` (Showdown `hitStepMoveHitLoop`) has reached the faints
+        // so far: no longer Pokémon left for `foePokemonLeft`, no longer on the field for the
+        // `Update` below. Announced only here, after the single-hit move's own `self`, which
+        // Showdown lands inside the hit step (`selfDrops`) — Close Combat lowers its user's stats
+        // even as it knocks the last foe out; nothing in between changes a stage — and after
+        // Mind Blown's self damage, inside the loop too. The recoil the engine took with the
+        // hits comes after it: a user that recoil knocked out is still pending (R-M8-166).
+        // Gen 4+ runs the knocked-out Pokémon's `Faint` listeners and the batch's `AfterFaint`
+        // there too (R-M10-52).
+        BattleContext::new(self.state, self.rules, self.trace)
+            .announce_knocked_out(self.recoil_knocked_out.then_some(actor));
+
+        // Sky Drop's `onMoveFail` on the dropping turn (§15.23): a drop that came to nothing lets
+        // the carried Pokémon down all the same (a miss, before its `onTryHit`) and ends the
+        // charge (`twoturnmove`, at 1 turn left) — after its `onTryHit` let go too (a Flying
+        // target's `-immune`, R-M8-157).
+        if move_def.behavior.sky_drop
+            && releasing
+            && !any_landed_hit
+            && self
+                .state
+                .pokemon(actor)
+                .is_some_and(|p| p.volatiles.contains(VolatileConditionKind::TwoTurnMove))
+        {
+            let mut ctx = BattleContext::new(self.state, self.rules, self.trace);
+            ctx.end_sky_drop(actor);
+            ctx.end_volatile(actor, VolatileConditionKind::TwoTurnMove);
+        }
+
+        // Showdown `useMoveInner` → `singleEvent('MoveFail')`: a move that reached its targets
+        // but hit none (a miss, an immunity, Protect — a Substitute counts as hit) crashes.
+        if move_def.behavior.crash_damage && !hits.is_empty() && !struck_something(&hits) {
+            self.crash(actor, targets.pokemon_ids().next(), &move_def);
+        }
+
+        // Gen 4+ (`hitStepMoveHitLoop`): once a hit went through on some target — a damaging
+        // hit, a Substitute's, a status move's effect — the faints it caused are processed and
+        // an `Update` runs, before the `AfterMoveSecondary` events. A status move's per-hit
+        // `Update` comes just before this one with nothing between but those faints, so this
+        // one stands for both.
+        let went_through = custom_hit_pokemon
+            || hits.iter().any(|hit| {
+                matches!(
+                    hit,
+                    HitOutcome::Damaged { .. }
+                        | HitOutcome::SubstituteDamaged { .. }
+                        | HitOutcome::Effect { .. }
+                )
+            });
+        if self.rules.update.in_move.after_move() && went_through {
+            BattleContext::new(self.state, self.rules, self.trace)
+                .run_update(crate::engine::PendingFaints::Announced);
+        }
+        self.binding_after_move(actor, &move_def, targets.pokemon_ids().next(), &hits);
+        self.after_move(actor, &move_def, &hits, any_landed_hit);
+        if move_def.behavior.cures_burn_after_move {
+            self.sparkling_aria(actor, &move_def, &hits);
+        }
+
+        let result = move_result(self.rules, &move_def, &hits, any_landed_hit, move_failed);
+        Ok(MoveExecution {
+            actor,
+            move_id,
+            hits,
+            stopped: false,
+            aborted: false,
+            result,
+        })
+    }
+
+    /// Dancer's dance-along (DESIGN.md §42.9): every other standing Pokémon with Dancer uses
+    /// the move the actor just used, slowest first, each with the full `runMove` (BeforeMove
+    /// included) but without PP. One in a semi-invulnerable charge (Fly, Dig …) or carried up
+    /// by Sky Drop does not dance (`!isSemiInvulnerable()`, R-M9-30).
+    fn dancers_dance(&mut self, actor: PokemonId, move_id: MoveId, original: Option<PokemonId>) {
+        let mut dancers: Vec<(PokemonId, u32, u32)> = self
+            .state
+            .all_pokemon()
+            .iter()
+            .filter(|pokemon| pokemon.id() != actor && !pokemon.is_fainted())
+            .filter(|pokemon| {
+                self.state
+                    .active_position(pokemon.id(), &self.rules.topology)
+                    .is_some()
+                    && crate::engine::ability_handler(self.state, self.rules, pokemon, |b| b.dancer)
+                    && crate::engine::two_turn::hiding(pokemon).is_none()
+            })
+            .map(|pokemon| {
+                (
+                    pokemon.id(),
+                    u32::from(pokemon.battle_stats().speed),
+                    pokemon.ability_state.effect_order,
+                )
+            })
+            .collect();
+        if dancers.is_empty() {
+            return;
+        }
+        // Lowest stored Speed first; ties to the Pokémon that has had the ability the shortest
+        // time (Showdown sorts by `storedStats.spe`, then `abilityState.effectOrder` descending:
+        // the later-started first, R-M8-182).
+        dancers.sort_by(|a, b| a.1.cmp(&b.1).then_with(|| b.2.cmp(&a.2)));
+        for (dancer, _, _) in dancers {
+            // Showdown's `faintMessages()` between the dances: one that fell skips its turn.
+            if self
+                .state
+                .pokemon(dancer)
+                .is_none_or(|pokemon| pokemon.is_fainted())
+            {
+                continue;
+            }
+            let target = Some(crate::engine::dancer_target(
+                self.state, actor, dancer, original,
+            ));
+            self.trace
+                .push(TraceEvent::DancerActivated { dancer, move_id });
+            let call = crate::state::MoveCall {
+                user: dancer,
+                move_id,
+                target: target.map_or(
+                    crate::state::CallTarget::Random,
+                    crate::state::CallTarget::Pokemon,
+                ),
+                source: crate::state::CallSource::Ability(crate::ids::AbilityId::DANCER),
+                reflected_prankster: false,
+            };
+            let Some(move_def) = self.dex.move_by_id(move_id).cloned() else {
+                continue;
+            };
+            let declared = target
+                .and_then(|target| self.state.active_position(target, &self.rules.topology))
+                .map(crate::rules::DeclaredTarget);
+            // Showdown's `getTarget` draws a `randomNormal` dance's target (Petal Dance) among
+            // the dancer's adjacent foes whatever location it is given (`getRandomTarget`,
+            // DESIGN.md R-M8-78).
+            let resolved = match self.rules.targeting.resolve(
+                &self.rules.topology,
+                self.state,
+                dancer,
+                move_def.target,
+                declared,
+            ) {
+                Ok(targets) => Some(targets),
+                Err(error) => self.fallback_target(dancer, &move_def, declared, error),
+            };
+            // Showdown's `noLock` (the "Dancer Petal Dance hack" in `runMove`): an external move
+            // deletes the `lockedmove` the dance just set, unless the dancer already carried one
+            // (its own rampage goes on). Deleted outright, with no `-end` line and no confusion.
+            let had_rampage = self
+                .state
+                .pokemon(dancer)
+                .is_some_and(|pokemon| pokemon.volatiles.contains(VolatileConditionKind::Rampage));
+            let lent = self.lent_priority(false);
+            let _ = MovePipeline::new(&mut *self.state, self.rules, self.dex, &mut *self.trace)
+                .called(CallFrame {
+                    source: call.source,
+                    action_move: None,
+                })
+                .with_before_move(true)
+                .with_lent_priority(lent)
+                .with_external()
+                .execute_called_with(call, move_def, declared, resolved);
+            if !had_rampage && let Some(pokemon) = self.state.pokemon_mut(dancer) {
+                pokemon.volatiles.remove(VolatileConditionKind::Rampage);
+            }
+        }
+    }
+
+    /// The reflection a spread move's target just made (Magic Coat, Magic Bounce), run at once —
+    /// Showdown's `useMove` inside `onTryHit` — before the move meets its other targets.
+    fn run_reflection_now(&mut self) -> Result<(), BattleError> {
+        if let Some(call) = self.state.pending_call.take() {
+            let action_move = self
+                .call
+                .and_then(|frame| frame.action_move)
+                .or(self.outermost);
+            let lent = self
+                .lent_priority(true)
+                .map(|(priority, boosted)| (priority, boosted || call.reflected_prankster));
+            MovePipeline::new(&mut *self.state, self.rules, self.dex, &mut *self.trace)
+                .called(CallFrame {
+                    source: call.source,
+                    action_move,
+                })
+                .reflected(true)
+                .with_lent_priority(lent)
+                .execute_called(call)?;
+        }
+        Ok(())
+    }
+
+    /// Showdown `useMoveInner`: a move used inside another takes the active move's priority
+    /// (`activeMove.priority`: from Gen 6 the action's, which Psychic Terrain, Quick Guard and
+    /// Dazzling read at the hit) and, unless it bounced back, its Prankster boost (DESIGN.md
+    /// R-M8-81).
+    fn lent_priority(&self, bounced: bool) -> Option<(i8, bool)> {
+        self.action_priority
+            .map(|priority| (priority, self.prankster_boosted && !bounced))
+    }
+
+    /// Snatch's take of the move (`snatch_steals`), but of a move Snatch itself called
+    /// (`snatched`) only where the generation takes it again (R-M8-68).
+    fn snatch_takes(&mut self, actor: PokemonId, move_def: &ResolvedMove, snatched: bool) -> bool {
+        (!snatched || self.rules.conditions.calls.snatch_takes_a_snatched_move)
+            && self.snatch_steals(actor, move_def)
+    }
+
+    /// Snatch's `onAnyPrepareHit` (DESIGN.md §42.8): the fastest Snatch holder that is not the
+    /// user takes a `snatch`-flagged move over — its volatile ends, it announces itself, it pays
+    /// the user's Pressure where the generation has it (`CallRules::taker_pays_pressure`) and it
+    /// uses the move itself, at a random target. A Z-Move or a Max Move is not taken (`move.isZ ||
+    /// move.isMax`: Z-Tailwind, R-M10-43).
+    fn snatch_steals(&mut self, actor: PokemonId, move_def: &ResolvedMove) -> bool {
+        if !move_def.flags.snatch || self.z_powered {
+            return false;
+        }
+        let mut holders: Vec<(PokemonId, u32)> = self
+            .state
+            .all_pokemon()
+            .iter()
+            .filter(|pokemon| {
+                pokemon.id() != actor
+                    && !pokemon.is_fainted()
+                    && self
+                        .state
+                        .active_position(pokemon.id(), &self.rules.topology)
+                        .is_some()
+                    && pokemon.volatiles.contains(VolatileConditionKind::Snatch)
+            })
+            .map(|pokemon| {
+                (
+                    pokemon.id(),
+                    crate::engine::stats::handler_speed(self.state, pokemon.id()),
+                )
+            })
+            .collect();
+        if holders.is_empty() {
+            return false;
+        }
+        // `onAnyPrepareHit` runs every handler; the fastest holder's steal takes the move, and
+        // a second holder's find it gone (`removeVolatile` inside the handler). Holders sharing
+        // a handler speed are shuffled (`speedSort`): each draws a SpeedTie (DESIGN.md R-M8-93).
+        let speeds: Vec<u32> = holders.iter().map(|(_, speed)| *speed).collect();
+        let mut keyed: Vec<(PokemonId, u32, u64)> = holders
+            .iter()
+            .map(|&(id, speed)| {
+                let tie = if speeds.iter().filter(|other| **other == speed).count() > 1 {
+                    self.state.rng.next_u64_for(RandomRequestKind::SpeedTie)
+                } else {
+                    0
+                };
+                (id, speed, tie)
+            })
+            .collect();
+        keyed.sort_by_key(|(_, speed, tie)| std::cmp::Reverse((*speed, *tie)));
+        holders = keyed
+            .into_iter()
+            .map(|(id, speed, _)| (id, speed))
+            .collect();
+        let (snatcher, _) = holders[0];
+        // Gone as it steals, with no word (`removeVolatile('snatch')`): seen on until the turn ends.
+        BattleContext::new(self.state, self.rules, self.trace)
+            .end_volatile_unseen(snatcher, VolatileConditionKind::Snatch);
+        self.trace.push(TraceEvent::MoveSnatched {
+            snatcher,
+            from: actor,
+            move_id: move_def.id,
+        });
+        crate::engine::context::takes_over_under_pressure(
+            self.state,
+            self.rules,
+            self.trace,
+            snatcher,
+            actor,
+            MoveId::SNATCH,
+        );
+        BattleContext::new(self.state, self.rules, self.trace).call_move(
+            snatcher,
+            move_def.id,
+            crate::state::CallTarget::Random,
+            crate::state::CallSource::Move(crate::ids::MoveId::SNATCH),
+        );
+        true
+    }
+
+    /// The other Pledge an ally still has queued this turn (Showdown's `onPrepareHit` walks
+    /// `this.queue.list` for an active ally using one of the other two), or `None`.
+    fn pledge_partner(&self, actor: PokemonId, move_id: MoveId) -> Option<MoveId> {
+        let side = self.state.pokemon(actor).map(|pokemon| pokemon.side)?;
+        let queued = &self.state.queued_moves;
+        queued
+            .iter()
+            .filter(|queued| queued.actor != actor)
+            // `action.maxMove || action.zmove`: a Dynamaxed ally's or a Z-Powered Pledge is no
+            // partner (DESIGN.md R-M9-27); nor is a recharging ally's slot (`recharge`).
+            .filter(|queued| queued.walked_move().is_some())
+            .filter(|queued| {
+                // Still queued this turn (`queue.willMove`): an ally that already ran is no
+                // partner any more.
+                self.state.pending_movers.contains(&queued.actor)
+                    && self
+                        .state
+                        .pokemon(queued.actor)
+                        .is_some_and(|pokemon| pokemon.side == side && !pokemon.is_fainted())
+                    && self
+                        .state
+                        .active_position(queued.actor, &self.rules.topology)
+                        .is_some()
+            })
+            .map(|queued| queued.move_id)
+            .find(|other| crate::engine::pledges::is_pledge(*other) && *other != move_id)
+    }
+
+    /// Sparkling Aria's `onAfterMove`, once the move is over: unless the user is down or Sheer
+    /// Force took the secondary, each target it hit that is still up is cured of a burn when the
+    /// secondary's mark reached it — or whenever the move hit several targets (which gets past a
+    /// Shield Dust). The marks go either way.
+    /// Fling's and Natural Gift's `onPrepareHit` as the move goes ahead (`engine::prepared_move`
+    /// set the power): Fling marks the item it throws (`VolatileCondition::Fling`: the user
+    /// loses it at the next `Update`), Natural Gift uses its berry up (`setItem('')`, last item,
+    /// `AfterUseItem`: not eaten). False when there is no item to throw or berry to use.
+    /// Powder (the `powder` condition's `onTryMove`): its holder's Fire move fails, the holder
+    /// losing a quarter of its max HP, rounded (`round(maxhp / 4)`, at least 1; Magic Guard
+    /// refuses it).
+    fn powder_stops(&mut self, actor: PokemonId, move_def: &ResolvedMove) -> Option<MoveExecution> {
+        let pokemon = self.state.pokemon(actor)?;
+        if move_def.move_type != crate::dex::PokemonType::Fire
+            || !pokemon.volatiles.contains(VolatileConditionKind::Powder)
+        {
+            return None;
+        }
+        let amount = ((pokemon.max_hp + 2) / 4).max(1);
+        self.trace.push(TraceEvent::MoveFailed {
+            actor,
+            move_id: move_def.id,
+            reason: MoveFailReason::Powder,
+        });
+        BattleContext::new(self.state, self.rules, self.trace).apply_damage(
+            crate::engine::DamageRequest {
+                target: actor,
+                amount: crate::engine::DamageAmount(amount),
+                kind: crate::engine::DamageKind::Other,
+                source: crate::engine::EffectSource::Volatile(VolatileConditionKind::Powder),
+                flags: crate::engine::DamageFlags::default(),
+            },
+        );
+        self.self_damage_cancelled = true;
+        Some(MoveExecution {
+            actor,
+            move_id: move_def.id,
+            hits: Vec::new(),
+            stopped: false,
+            aborted: false,
+            result: MoveResult::Failed,
+        })
+    }
+
+    fn prepare_item_move(&mut self, actor: PokemonId, move_def: &ResolvedMove) -> bool {
+        let Some(pokemon) = self.state.pokemon(actor) else {
+            return false;
+        };
+        if move_def.behavior.fling {
+            let Some((item, _, _)) = crate::engine::fling_item(self.state, self.rules, pokemon)
+            else {
+                return false;
+            };
+            BattleContext::new(self.state, self.rules, self.trace).start_fling(actor, item);
+            return true;
+        }
+        if crate::engine::natural_gift_berry(self.state, self.rules, pokemon).is_none() {
+            return false;
+        }
+        // `pokemon.setItem('')`: no message.
+        BattleContext::new(self.state, self.rules, self.trace).consume_item_unseen(actor);
+        true
+    }
+
+    fn sparkling_aria(&mut self, actor: PokemonId, move_def: &ResolvedMove, hits: &[HitOutcome]) {
+        let mut hit_targets: Vec<PokemonId> = Vec::new();
+        for hit in hits {
+            if let HitOutcome::Damaged { target, .. } | HitOutcome::SubstituteDamaged { target, .. } =
+                hit
+                && !hit_targets.contains(target)
+            {
+                hit_targets.push(*target);
+            }
+        }
+        let cures = !move_def.flags.sheer_force
+            && self.state.pokemon(actor).is_some_and(|p| !p.is_fainted());
+        for target in hit_targets.iter().copied().filter(|t| *t != actor) {
+            let marked = self
+                .state
+                .pokemon_mut(target)
+                .is_some_and(|p| p.volatiles.remove(VolatileConditionKind::SparklingAria));
+            if marked {
+                self.trace.push(TraceEvent::VolatileEnded {
+                    target,
+                    kind: VolatileConditionKind::SparklingAria,
+                    seen: true,
+                });
+            }
+            let burned = self
+                .state
+                .pokemon(target)
+                .is_some_and(|p| !p.is_fainted() && p.has_status(NonVolatileStatus::Burn));
+            if cures && burned && (marked || hit_targets.len() > 1) {
+                let mut ctx = BattleContext::new(self.state, self.rules, self.trace);
+                ctx.cure_status(target, crate::engine::CureReason::Move(move_def.id));
+            }
+        }
+    }
+
+    /// Showdown `selfdestruct: 'ifHit'` (Memento, Final Gambit): the user faints once the move
+    /// reached a target (`runMoveEffects`: `damage[i] !== false`).
+    fn self_destruct_if_hit(&mut self, actor: PokemonId, move_def: &ResolvedMove, landed: bool) {
+        if landed && move_def.self_destruct == Some(crate::dex::SelfDestruct::IfHit) {
+            BattleContext::new(self.state, self.rules, self.trace)
+                .faint_by_own_move(actor, move_def.id);
+        }
+    }
+
+    /// Mind Blown / Steel Beam: the user loses a share of its max HP (rounded; Magic Guard
+    /// refuses it; instafaint), once — after the first hit that struck something (inside the hit
+    /// loop: a user it knocks out strikes no second Parental Bond hit, DESIGN.md R-M8-84), else
+    /// once the move is over (Showdown `onAfterMove`). A move stopped at BeforeMove never gets
+    /// here.
+    pub(super) fn after_move_self_damage(&mut self, actor: PokemonId, move_id: MoveId) {
+        if self.self_damage_paid {
+            return;
+        }
+        let Some(fraction) = self
+            .dex
+            .move_by_id(move_id)
+            .and_then(|move_def| move_def.behavior.self_damage_after_move)
+        else {
+            return;
+        };
+        let Some((max_hp, hp_before)) = self
+            .state
+            .pokemon(actor)
+            .filter(|pokemon| !pokemon.is_fainted())
+            .map(|pokemon| (pokemon.max_hp, pokemon.hp))
+        else {
+            return;
+        };
+        let amount = Rounding::HalfUp.apply(u32::from(max_hp), fraction) as u16;
+        self.self_damage_paid = true;
+        let mut ctx = BattleContext::new(self.state, self.rules, self.trace);
+        ctx.apply_damage(crate::engine::DamageRequest {
+            target: actor,
+            amount: DamageAmount(amount),
+            // Not `recoil` (Showdown's effect is the move's condition): Magic Guard refuses it,
+            // Rock Head does not.
+            kind: crate::engine::DamageKind::Other,
+            source: EffectSource::Move {
+                pokemon: actor,
+                move_id,
+            },
+            // `this.damage(…, true)`: a user this knocks out faints before the targets its move
+            // knocked out.
+            flags: crate::engine::DamageFlags {
+                bypass_substitute: true,
+                spare_one_hp: false,
+                instafaint: true,
+                single_strike: false,
+                future_move: false,
+            },
+        });
+        ctx.emergency_exit(actor, hp_before);
+    }
+
+    /// The encored move's slot when an Encore now locks the actor onto another move than the
+    /// one it chose.
+    /// Whether `move_id` comes with no PP left on a turn that would spend some (not a two-turn
+    /// move's attack, a hard lock's later turn or Gen 1's binding lock).
+    fn out_of_pp(&self, actor: PokemonId, move_id: MoveId) -> bool {
+        let Some(pokemon) = self.state.pokemon(actor) else {
+            return false;
+        };
+        let locked = pokemon.volatiles.charging_move() == Some(move_id)
+            || pokemon
+                .hard_lock()
+                .is_some_and(|lock| lock.move_id == move_id)
+            || pokemon.volatiles.partial_trapping_lock().is_some();
+        !locked
+            && pokemon
+                .move_slots()
+                .iter()
+                .find(|slot| slot.move_id == move_id)
+                .is_some_and(|slot| slot.pp == 0)
+    }
+
+    /// The Z power, spent as the move is used (Showdown `runMove`: `-zpower` and
+    /// `side.zMoveUsed` once BeforeMove, the PP and `moveUsed` are through; `useMove` runs
+    /// `runZPower` after the `move` line). A Z-Move that sleep, a flinch or a full paralysis
+    /// stopped spends nothing: no status move's Z effect, and the side keeps its Z power
+    /// (DESIGN.md R-M9-29).
+    fn spend_z_power(&mut self, actor: PokemonId, z: &super::ZMoveExecution) {
+        crate::engine::spend_mechanic(
+            self.state,
+            self.trace,
+            actor,
+            crate::engine::MechanicChoice::ZMove,
+        )
+        .expect("the Z-Move's user is in the battle");
+        let crystal = self.state.pokemon(actor).and_then(|p| p.held_item);
+        self.trace.push(TraceEvent::ZPower {
+            actor,
+            base: z.base,
+            z_move: z.move_def.id,
+            crystal,
+        });
+        if let Some(effect) = &z.status_effect {
+            let mut ctx = BattleContext::new(self.state, self.rules, self.trace);
+            crate::engine::run_z_power(&mut ctx, actor, z.move_def.id, effect);
+        }
+    }
+
+    /// The action's move `move_id` as its lines show it (`TraceEvent::MoveUsed::own_move`): the
+    /// move itself, or the one a status Z-Move or a signature one was made from (`zMoveFrom`);
+    /// none for Struggle, and a generic Z-Move or a Max Move, which hide theirs.
+    fn shown_own_move(&self, move_id: MoveId) -> Option<MoveId> {
+        if move_id == MoveId::STRUGGLE || self.max_base.is_some() {
+            return None;
+        }
+        match &self.z_power {
+            None => Some(move_id),
+            Some(z) if z.move_def.id == z.base => Some(z.base),
+            Some(z) => z
+                .move_def
+                .z_crystal
+                .and_then(|crystal| self.dex.item_by_id(crystal))
+                .and_then(|crystal| crystal.z_move_from),
+        }
+    }
+
+    fn encore_override(&self, actor: PokemonId, chosen: MoveId) -> Option<(MoveSlot, MoveId)> {
+        let pokemon = self.state.pokemon(actor)?;
+        let encored = pokemon.volatiles.encored_move()?;
+        if encored == chosen {
+            return None;
+        }
+        let index = pokemon
+            .move_slots()
+            .iter()
+            .position(|slot| slot.move_id == encored)?;
+        Some((MoveSlot::new(index as u8)?, encored))
+    }
+
+    /// Showdown `gotAttacked` and `timesAttacked` after a move's hits on one target: a target
+    /// the last hit reached (its HP, or its body for a status move) records the attack, and
+    /// a damaging move's hits count towards Rage Fist. A last hit on a Substitute records
+    /// nothing from Gen 4 (`spreadMoveHit` drops such a target from the move's list); Gen 3
+    /// records it with no HP taken (`HitRules::records_substitute_hits`: the gen3 `tryMoveHit`'s
+    /// `gotAttacked` whatever the hit did; pokeemerald's `MOVEEND_MIRROR_MOVE` writes the taken
+    /// move unless it had no effect). Mirror Move finds it, Counter does not: Gen 3's answers
+    /// HP damage (`onDamage`), R-M8-102.
+    pub(super) fn record_attack(
+        &mut self,
+        actor: PokemonId,
+        target: PokemonId,
+        move_def: &crate::dex::ResolvedMove,
+        outcomes: &[HitOutcome],
+    ) {
+        let move_id = move_def.id;
+        if actor == target {
+            return;
+        }
+        let damage = match outcomes.last() {
+            Some(HitOutcome::Damaged { amount, .. }) => Some(amount.0),
+            Some(HitOutcome::Effect { .. }) => None,
+            Some(HitOutcome::SubstituteDamaged { .. })
+                if self.rules.hits.records_substitute_hits =>
+            {
+                None
+            }
+            _ => return,
+        };
+        let position = self.state.active_position(actor, &self.rules.topology);
+        // The category the move was used with, not the dex's, for a move whose own
+        // `onModifyMove` changes it — Shell Side Arm's estimate, Photon Geyser's and Light That
+        // Burns the Sky's stats, a Terastallized Tera Blast's (R-M8-174): Showdown's
+        // `getCategory(move)` reads the ActiveMove, which Counter and Mirror Coat answer
+        // (DESIGN.md R-M8-44). Every other move's category (Gen 2-3's type-based one, Beat Up's
+        // own) is the dex's (DESIGN.md R-M8-45) — but a Max Move's or a Z-Move's, which takes the
+        // base move's category into the ActiveMove (`getActiveMaxMove` / `getActiveZMove`;
+        // the dex has the Max Moves Physical): a Max Overgrowth from Giga Drain is special to
+        // Counter (R-M9-40).
+        let category = if move_def.behavior.announcement
+            == Some(crate::effects::moves::Announcement::Category)
+            || move_def.behavior.category_by_stats
+            || move_def.behavior.tera_blast
+            || self.z_powered
+        {
+            move_def.category
+        } else {
+            self.dex
+                .move_by_id(move_id)
+                .map_or(crate::dex::MoveCategory::Status, |m| m.category)
+        };
+        if let Some(pokemon) = self.state.pokemon_mut(target) {
+            pokemon
+                .history
+                .attacked_by
+                .retain(|record| record.source != actor);
+            pokemon.history.attacked_by.push(AttackRecord {
+                source: actor,
+                damage,
+                move_id,
+                position,
+                category,
+                damaging_hit_only: false,
+            });
+            pokemon.history.attacked_this_turn.push(AttackRecord {
+                source: actor,
+                damage,
+                move_id,
+                position,
+                category,
+                damaging_hit_only: false,
+            });
+            if damage.is_some() {
+                pokemon.history.times_attacked = pokemon
+                    .history
+                    .times_attacked
+                    .saturating_add(outcomes.len() as u16);
+            }
+        }
+    }
+
+    /// A frozen user of a `defrost` move: thawed now (Gen 3+), or — returned `true` — once the
+    /// move has landed (Gen 2).
+    pub(super) fn defrost_user(&mut self, actor: PokemonId, move_def: &ResolvedMove) -> bool {
+        use crate::rules::DefrostUser;
+        let frozen = self
+            .state
+            .pokemon(actor)
+            .is_some_and(|p| p.has_status(NonVolatileStatus::Freeze));
+        if !frozen || !move_def.flags.defrost {
+            return false;
+        }
+        match self.rules.status.lifecycle.defrost_user {
+            DefrostUser::SkipsRoll | DefrostUser::AfterRoll => {
+                self.thaw(actor, crate::engine::CureReason::Move(move_def.id));
+                false
+            }
+            DefrostUser::AfterMove => true,
+            DefrostUser::Never => false,
+        }
+    }
+
+    /// Cures a frozen Pokémon (`-curestatus … frz`).
+    pub(super) fn thaw(&mut self, pokemon: PokemonId, reason: crate::engine::CureReason) {
+        if self
+            .state
+            .pokemon(pokemon)
+            .is_some_and(|p| p.has_status(NonVolatileStatus::Freeze))
+        {
+            let mut ctx = BattleContext::new(self.state, self.rules, self.trace);
+            ctx.cure_status(pokemon, reason);
+        }
+    }
+}
+
+/// Showdown `moveThisTurnResult` for a move that got past BeforeMove and its targeting
+/// (DESIGN.md §22.8). Showdown's hit loop counts a target as hit unless its step returned
+/// `false`: a status move taken by a Substitute, or a Gen 8+ weather heal at full HP
+/// (`NOT_FAIL`; Gen 7's `null` is a failure), still "hits". A target that protected itself is
+/// neither hit nor a failure, so a move every target protected against is neither; anything
+/// else refused, missed or changed nothing.
+pub(super) fn move_result(
+    rules: &ResolvedRules,
+    move_def: &ResolvedMove,
+    hits: &[HitOutcome],
+    any_landed_hit: bool,
+    move_failed: bool,
+) -> MoveResult {
+    let quiet = |hit: &HitOutcome| match hit {
+        HitOutcome::Blocked {
+            reason: HitBlockReason::Substitute,
+            ..
+        } => true,
+        HitOutcome::NoEffect { .. } => match move_def.primary_effect {
+            PrimaryEffect::Status(StatusMoveEffect::WeatherHeal(_)) => {
+                rules.conditions.weather_heal_full_hp_not_fail
+            }
+            // Gen 8+ Purify with nothing to cure (`NOT_FAIL`; the gen7 mod's `false` fails).
+            PrimaryEffect::Status(StatusMoveEffect::CureTarget(_)) => {
+                rules.conditions.cure_target_nothing_not_fail
+            }
+            PrimaryEffect::Status(StatusMoveEffect::TargetHeal(_)) => {
+                rules.conditions.target_heal_nothing_not_fail
+            }
+            _ => false,
+        },
+        _ => false,
+    };
+    let protected = |hit: &HitOutcome| {
+        matches!(
+            hit,
+            HitOutcome::Blocked {
+                reason: HitBlockReason::Protect
+                    | HitBlockReason::WideGuard
+                    | HitBlockReason::QuickGuard
+                    | HitBlockReason::CraftyShield
+                    | HitBlockReason::MatBlock,
+                ..
+            }
+        )
+    };
+    if any_landed_hit || hits.iter().any(quiet) {
+        MoveResult::Succeeded
+    } else if !move_failed && !hits.is_empty() && hits.iter().all(protected) {
+        MoveResult::Neither
+    } else {
+        MoveResult::Failed
+    }
+}
+
+/// Whether a hit reached a body or a Substitute (Showdown: some target's damage is not `false`).
+/// Whether the Pokémon's own move slots lack `move_id` (a locked move a caller brought in).
+fn p_has_no_slot(
+    state: &crate::state::BattleState,
+    pokemon: crate::ids::PokemonId,
+    move_id: MoveId,
+) -> bool {
+    state.pokemon(pokemon).is_some_and(|pokemon| {
+        !pokemon
+            .move_slots()
+            .iter()
+            .any(|slot| slot.move_id == move_id)
+    })
+}
+
+fn struck_something(hits: &[HitOutcome]) -> bool {
+    hits.iter().any(|hit| {
+        matches!(
+            hit,
+            HitOutcome::Damaged { .. } | HitOutcome::SubstituteDamaged { .. }
+        )
+    })
+}
+
+fn actor_has_charge(state: &crate::state::BattleState, actor: PokemonId) -> bool {
+    state
+        .pokemon(actor)
+        .is_some_and(|p| p.volatiles.contains(VolatileConditionKind::Charge))
+}

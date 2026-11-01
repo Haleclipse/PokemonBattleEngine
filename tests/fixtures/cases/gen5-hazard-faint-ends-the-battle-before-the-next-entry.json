@@ -1,0 +1,364 @@
+{
+  "schema": 1,
+  "id": "gen5-hazard-faint-ends-the-battle-before-the-next-entry",
+  "notes": [
+    "End-of-turn replacements enter fastest first, each switch-in its own action: the faster Bulbasaur falls to Stealth Rock and ends the battle before the slower Roggenrola enters, so Roggenrola takes no rock damage (Showdown `runAction` → `faintMessages` after each `runSwitch`)",
+    "promoted from m8-gen5-singles-s122-004-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 5,
+    "mode": "singles",
+    "format": "gen5customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Chansey",
+        "species": "Chansey",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Feather Dance",
+          "Taunt",
+          "Cotton Guard",
+          "Stealth Rock"
+        ],
+        "ability": "Prankster"
+      },
+      {
+        "label": "Rattata",
+        "species": "Rattata",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Hone Claws",
+          "Taunt",
+          "Stealth Rock"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Carracosta",
+        "species": "Carracosta",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Amnesia",
+          "Taunt",
+          "Stealth Rock"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Absol",
+        "species": "Absol",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Defend Order",
+          "Taunt",
+          "Scary Face"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Charizard",
+        "species": "Charizard",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Stealth Rock"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Roggenrola",
+        "species": "Roggenrola",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sand Attack",
+          "Taunt"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Rayquaza",
+        "species": "Rayquaza",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tail Glow",
+          "Taunt"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Anorith",
+        "species": "Anorith",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Taunt",
+          "Charm",
+          "Stealth Rock"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Whimsicott",
+        "species": "Whimsicott",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Shift Gear",
+          "Screech",
+          "Stealth Rock"
+        ],
+        "ability": "Snow Warning",
+        "gender": "F"
+      },
+      {
+        "label": "Unown",
+        "species": "Unown",
+        "level": 53,
+        "nature": "Hardy",
+        "moves": [
+          "Sharpen",
+          "Taunt"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Bulbasaur",
+        "species": "Bulbasaur",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tickle",
+          "Taunt",
+          "Kinesis"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Kyogre",
+        "species": "Kyogre",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Smokescreen",
+          "Taunt",
+          "Growth",
+          "Stealth Rock"
+        ],
+        "ability": "Run Away"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      28259,
+      8634,
+      54471,
+      64966
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Taunt",
+      "p2": "move Taunt"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 1"
+    },
+    {
+      "p1": "switch Rattata",
+      "p2": "switch Anorith"
+    },
+    {
+      "p1": "move Stealth Rock",
+      "p2": "move Stealth Rock"
+    },
+    {
+      "p1": "move Taunt",
+      "p2": "move Taunt"
+    },
+    {
+      "p1": "switch Chansey",
+      "p2": "switch Rayquaza"
+    },
+    {
+      "p1": "switch Rattata",
+      "p2": "switch Anorith"
+    },
+    {
+      "p1": "move Taunt",
+      "p2": "move Taunt"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 3"
+    },
+    {
+      "p1": "switch Chansey",
+      "p2": "switch Rayquaza"
+    },
+    {
+      "p1": "move Feather Dance",
+      "p2": "move Tail Glow"
+    },
+    {
+      "p1": "move Taunt",
+      "p2": "move Taunt"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 1"
+    },
+    {
+      "p2": "switch Anorith"
+    },
+    {
+      "p1": "switch Rattata",
+      "p2": "switch Whimsicott"
+    },
+    {
+      "p1": "move Taunt",
+      "p2": "move Stealth Rock"
+    },
+    {
+      "p1": "switch Chansey",
+      "p2": "switch Anorith"
+    },
+    {
+      "p2": "switch Whimsicott"
+    },
+    {
+      "p1": "move Cotton Guard",
+      "p2": "move Screech"
+    },
+    {
+      "p1": "move Stealth Rock",
+      "p2": "move Screech"
+    },
+    {
+      "p1": "switch Rattata",
+      "p2": "switch Unown"
+    },
+    {
+      "p1": "switch Chansey"
+    },
+    {
+      "p1": "move Taunt",
+      "p2": "move Taunt"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 1"
+    },
+    {
+      "p1": "switch Carracosta"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 1"
+    },
+    {
+      "p1": "switch Absol",
+      "p2": "switch Whimsicott"
+    },
+    {
+      "p1": "move Taunt",
+      "p2": "move Shift Gear"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 1"
+    },
+    {
+      "p2": "switch Unown"
+    },
+    {
+      "p2": "switch Bulbasaur"
+    },
+    {
+      "p1": "switch Carracosta",
+      "p2": "switch Kyogre"
+    },
+    {
+      "p1": "move Stealth Rock",
+      "p2": "move Stealth Rock"
+    },
+    {
+      "p1": "move Amnesia",
+      "p2": "move Smokescreen"
+    },
+    {
+      "p1": "move Taunt",
+      "p2": "move Taunt"
+    },
+    {
+      "p1": "switch Absol",
+      "p2": "switch Bulbasaur"
+    },
+    {
+      "p1": "move Defend Order",
+      "p2": "move Tickle"
+    },
+    {
+      "p1": "switch Carracosta",
+      "p2": "switch Kyogre"
+    },
+    {
+      "p1": "move Taunt",
+      "p2": "move Taunt"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 3"
+    },
+    {
+      "p1": "switch Charizard"
+    },
+    {
+      "p1": "move Stealth Rock",
+      "p2": "move Stealth Rock"
+    },
+    {
+      "p1": "switch Roggenrola",
+      "p2": "switch Bulbasaur"
+    },
+    {
+      "p1": "move Taunt",
+      "p2": "move Taunt"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 3"
+    },
+    {
+      "p1": "switch Charizard",
+      "p2": "switch Kyogre"
+    },
+    {
+      "p1": "switch Roggenrola",
+      "p2": "switch Bulbasaur"
+    }
+  ]
+}

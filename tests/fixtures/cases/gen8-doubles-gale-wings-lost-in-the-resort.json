@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "gen8-doubles-gale-wings-lost-in-the-resort",
+ "notes": [
+  "Gen 8+ re-sorts the queue after every action with `getActionSpeed`, re-running ModifyPriority: Gale Wings hit by a Quick Attack before it moves drops back to priority 0"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "doubles",
+  "format": "gen8doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Wing Attack"
+    ],
+    "ability": "Gale Wings"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Natural Cure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Quick Attack"
+    ],
+    "ability": "Volt Absorb"
+   },
+   {
+    "label": "Pikachu",
+    "species": "Pikachu",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Growl"
+    ],
+    "ability": "Static"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1 1, move 1",
+   "p2": "move 1 1, move 1"
+  },
+  {
+   "p1": "move 1 1, move 1",
+   "p2": "move 1 1, move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

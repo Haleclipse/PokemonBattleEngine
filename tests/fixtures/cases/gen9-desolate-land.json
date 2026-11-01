@@ -1,0 +1,98 @@
+{
+ "schema": 1,
+ "id": "gen9-desolate-land",
+ "notes": [
+  "Desolate Land: Water attacks fail (the PP spent; Stomping Tantrum is not doubled: `null`), Fire ones are \u00d71.5, Rain Dance fails and Drizzle does not start; the holder switching out ends it"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Groudon",
+    "species": "Groudon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Flamethrower",
+     "Harden",
+     "Stomping Tantrum"
+    ],
+    "ability": "Desolate Land"
+   },
+   {
+    "label": "Bench",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Water Gun",
+     "Rain Dance",
+     "Stomping Tantrum"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Pelipper",
+    "species": "Pelipper",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Flamethrower"
+    ],
+    "ability": "Drizzle"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Flamethrower",
+   "p2": "move Water Gun"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Stomping Tantrum"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Rain Dance"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Pelipper"
+  },
+  {
+   "p1": "switch Bench",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Flamethrower"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

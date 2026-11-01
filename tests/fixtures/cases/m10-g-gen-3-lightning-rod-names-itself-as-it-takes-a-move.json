@@ -1,0 +1,180 @@
+{
+  "schema": 1,
+  "id": "m10-g-gen-3-lightning-rod-names-itself-as-it-takes-a-move",
+  "notes": [
+    "Gen 3 Lightning Rod names itself as it takes a move (pokeemerald's BattleScript_TookAttack; issues.md I210): the observers know the ability",
+    "promoted from m8-gen3-doubles-s1635-006-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 3,
+    "mode": "doubles",
+    "format": "gen3doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Dunsparce",
+        "species": "Dunsparce",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Ice Beam",
+          "Disable",
+          "Powder Snow",
+          "Metronome"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Shuckle",
+        "species": "Shuckle",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Blizzard",
+          "Disable",
+          "Stun Spore",
+          "Metronome"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Lairon",
+        "species": "Lairon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Glare",
+          "Disable",
+          "Thunder Wave",
+          "Metronome"
+        ],
+        "ability": "Run Away",
+        "item": "Persim Berry",
+        "gender": "M"
+      },
+      {
+        "label": "Rapidash",
+        "species": "Rapidash",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Metronome"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Kadabra",
+        "species": "Kadabra",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Moonlight",
+          "Disable",
+          "Supersonic",
+          "Metronome"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Typhlosion",
+        "species": "Typhlosion",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sweet Kiss",
+          "Disable",
+          "Confuse Ray",
+          "Metronome"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Sunflora",
+        "species": "Sunflora",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Whirlpool",
+          "Disable",
+          "Sand Tomb",
+          "Metronome"
+        ],
+        "ability": "Lightning Rod",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      36311,
+      23622,
+      29753,
+      180
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Ice Beam 1, move Blizzard",
+      "p2": "move Moonlight, move Sweet Kiss 1"
+    },
+    {
+      "p1": "move Disable 2, move Disable 1",
+      "p2": "move Disable 2, move Disable 1"
+    },
+    {
+      "p1": "move Metronome, move Stun Spore 2",
+      "p2": "move Metronome, move Metronome"
+    },
+    {
+      "p1": "move Disable 1, move Metronome",
+      "p2": "move Moonlight, move Sweet Kiss 2"
+    },
+    {
+      "p1": "move Powder Snow, move Blizzard",
+      "p2": "move Supersonic 1, move Sweet Kiss 2"
+    },
+    {
+      "p1": "move Disable 2, move Disable 1",
+      "p2": "move Disable 1, move Disable 2"
+    },
+    {
+      "p1": "move Powder Snow, move Stun Spore 2",
+      "p2": "move Supersonic 1, move Disable 2"
+    },
+    {
+      "p1": "switch Lairon, move Metronome",
+      "p2": "switch Sunflora, move Confuse Ray 1"
+    },
+    {
+      "p1": "move Metronome, move Blizzard",
+      "p2": "move Metronome, move Metronome"
+    },
+    {
+      "p1": "pass, switch Dunsparce"
+    },
+    {
+      "p1": "move 1 1, move 2 2",
+      "p2": "move 1 2, move 1"
+    },
+    {
+      "p1": "move Disable 1, move Powder Snow",
+      "p2": "move Disable 1, move Confuse Ray 2"
+    },
+    {
+      "p1": "pass, switch Rapidash"
+    },
+    {
+      "p1": "move Thunder Wave 2, move Metronome",
+      "p2": "move Sand Tomb 1, move Metronome"
+    }
+  ]
+}

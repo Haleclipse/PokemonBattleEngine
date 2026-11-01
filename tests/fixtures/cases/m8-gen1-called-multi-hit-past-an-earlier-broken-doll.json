@@ -1,0 +1,114 @@
+{
+  "schema": 1,
+  "id": "m8-gen1-called-multi-hit-past-an-earlier-broken-doll",
+  "notes": [
+    "Gen 1: Chansey's Substitute broke on the turn before; Starmie's Mirror Move then calls Bonemerang at Chansey, which hits twice — pokered stops a multi-hit move only when this move breaks the doll (AttackSubstitute zeroes its effect); Showdown's subFainted, cleared only by a runMove aimed at Chansey, stopped it after one hit (the oracle's I189 patch, user's decision, DESIGN.md R-M8-116)",
+    "promoted from m8-gen1-singles-s583-003-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 1,
+    "mode": "singles",
+    "format": "gen1customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Gyarados",
+        "species": "Gyarados",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Thunder Shock",
+          "Mirror Move",
+          "Thunder Punch"
+        ]
+      },
+      {
+        "label": "Starmie",
+        "species": "Starmie",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Body Slam",
+          "Mirror Move",
+          "Substitute"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "Nidoran-F",
+        "species": "Nidoran-F",
+        "level": 48,
+        "nature": "Hardy",
+        "moves": [
+          "Double Kick",
+          "Mirror Move",
+          "Barrage"
+        ]
+      },
+      {
+        "label": "Magnemite",
+        "species": "Magnemite",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fury Swipes"
+        ]
+      },
+      {
+        "label": "Chansey",
+        "species": "Chansey",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Bonemerang",
+          "Mirror Move",
+          "Substitute"
+        ]
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      30653,
+      60221,
+      38878,
+      45800
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Thunder Shock",
+      "p2": "move Double Kick"
+    },
+    {
+      "p1": "move Mirror Move",
+      "p2": "move Mirror Move"
+    },
+    {
+      "p1": "move Thunder Punch",
+      "p2": "move Barrage"
+    },
+    {
+      "p2": "switch Magnemite"
+    },
+    {
+      "p1": "switch Starmie",
+      "p2": "switch Chansey"
+    },
+    {
+      "p1": "move Substitute",
+      "p2": "move Substitute"
+    },
+    {
+      "p1": "move Body Slam",
+      "p2": "move Bonemerang"
+    },
+    {
+      "p1": "move Mirror Move",
+      "p2": "move Mirror Move"
+    }
+  ]
+}

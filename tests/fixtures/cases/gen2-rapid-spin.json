@@ -1,0 +1,80 @@
+{
+ "schema": 1,
+ "id": "gen2-rapid-spin",
+ "notes": [
+  "Gen 2 Rapid Spin clears the user's Spikes, Leech Seed and Wrap"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Forretress",
+    "species": "Forretress",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Rapid Spin",
+     "Harden"
+    ]
+   },
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Cloyster",
+    "species": "Cloyster",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spikes",
+     "Leech Seed",
+     "Wrap",
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Spikes"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Leech Seed"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Wrap"
+  },
+  {
+   "p1": "move Rapid Spin",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Mew",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   3,
+   2,
+   3,
+   4
+  ]
+ }
+}

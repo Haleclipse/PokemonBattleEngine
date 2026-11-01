@@ -1,0 +1,55 @@
+{
+ "schema": 1,
+ "id": "gen3-metronome-calls-spite",
+ "notes": [
+  "Gen 3: Clefable's Metronome calls Spite at Absol, which takes 4 PP from Absol's Tackle — the draw (`(Random() & 3) + 2`) the `-activate|…|move: Spite|tackle|4` line shows; the replay reads it off the called Spite as off one picked from the menu"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Clefable",
+    "species": "Clefable",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Metronome"
+    ],
+    "ability": "Cute Charm",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Absol",
+    "species": "Absol",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "ability": "Keen Eye",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   469,
+   470,
+   471,
+   472
+  ]
+ }
+}

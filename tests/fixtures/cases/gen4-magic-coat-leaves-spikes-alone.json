@@ -1,0 +1,71 @@
+{
+ "schema": 1,
+ "id": "gen4-magic-coat-leaves-spikes-alone",
+ "notes": [
+  "Gen 4: Espeon's Magic Coat does not reflect Smeargle's Spikes, aimed at its side (the gen4 Magic Coat has no `onAllyTryHitSide`; pokeplatinum's Spikes lacks `MOVE_FLAG_CAN_MAGIC_COAT`): they land on Espeon's side and hurt Snorlax as it comes in"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Smeargle",
+    "species": "Smeargle",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spikes"
+    ],
+    "ability": "Own Tempo",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Espeon",
+    "species": "Espeon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Magic Coat",
+     "Harden"
+    ],
+    "ability": "Synchronize",
+    "gender": "F"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Spikes",
+   "p2": "move Magic Coat"
+  },
+  {
+   "p1": "move Spikes",
+   "p2": "switch 2"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

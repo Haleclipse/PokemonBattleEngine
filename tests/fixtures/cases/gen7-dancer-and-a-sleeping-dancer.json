@@ -1,0 +1,85 @@
+{
+ "schema": 1,
+ "id": "gen7-dancer-and-a-sleeping-dancer",
+ "notes": [
+  "Gen 7: the Dancer Oricorio is asleep when the foe dances — its dance-along is blocked (BeforeMove) but the move still counts as used"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Oricorio",
+    "species": "Oricorio",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Revelation Dance",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Dancer"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Rest",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Volcarona",
+    "species": "Volcarona",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Quiver Dance",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Flame Body"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spore",
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Rest",
+   "p2": "move Harden, move Spore 2"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Quiver Dance, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

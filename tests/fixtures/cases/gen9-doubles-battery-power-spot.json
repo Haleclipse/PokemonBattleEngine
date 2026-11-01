@@ -1,0 +1,97 @@
+{
+  "schema": 1,
+  "id": "gen9-doubles-battery-power-spot",
+  "notes": [
+    "Battery boosts a partner's special move by [5325, 4096] in its BasePower chain and leaves its physical move alone; Power Spot boosts any move of the partner; neither boosts the holder's own move."
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "a",
+        "species": "Rotom",
+        "ability": "Levitate",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Thunderbolt",
+          "Tackle"
+        ]
+      },
+      {
+        "label": "b",
+        "species": "Pikachu",
+        "ability": "Battery",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Swords Dance",
+          "Thunderbolt"
+        ]
+      },
+      {
+        "label": "s",
+        "species": "Clefairy",
+        "ability": "Power Spot",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Swords Dance"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "c",
+        "species": "Snorlax",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Swords Dance"
+        ]
+      },
+      {
+        "label": "d",
+        "species": "Blissey",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Swords Dance"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1 1, move 1",
+      "p2": "move 1, move 1"
+    },
+    {
+      "p1": "move 2 1, move 2 2",
+      "p2": "move 1, move 1"
+    },
+    {
+      "p1": "move 1 1, switch 3",
+      "p2": "move 1, move 1"
+    },
+    {
+      "p1": "move 2 1, move 1",
+      "p2": "move 1, move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      3,
+      2,
+      3,
+      4
+    ]
+  }
+}

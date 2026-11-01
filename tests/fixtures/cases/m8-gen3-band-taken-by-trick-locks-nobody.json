@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "id": "m8-gen3-band-taken-by-trick-locks-nobody",
+  "notes": [
+    "Gen 3: Smoochum's Trick takes Beedrill's Choice Band; pokeemerald keeps the item taken in changedItems until after MOVEEND_CHOICE_MOVE and clears both choicedMove, so neither is locked (the oracle's I184 patch; Showdown's gen3 locks Smoochum onto Trick, DESIGN.md R-M8-108)",
+    "promoted from m8-gen3-singles-s553-016-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 3,
+    "mode": "singles",
+    "format": "gen3customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Beedrill",
+        "species": "Beedrill",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Triple Kick"
+        ],
+        "ability": "Run Away",
+        "item": "Choice Band",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Smoochum",
+        "species": "Smoochum",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Trick"
+        ],
+        "ability": "Run Away"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      9035,
+      54290,
+      37065,
+      14441
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Triple Kick",
+      "p2": "move Trick"
+    }
+  ]
+}

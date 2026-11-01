@@ -1,0 +1,104 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-reflect-type-copies-an-added-type",
+ "notes": [
+  "Gen 9 doubles: Forest's Curse adds Grass to Snorlax; Porygon2's Reflect Type takes Snorlax's Normal and the added Grass (`-start|…|typechange|[from] move: Reflect Type|[of] …`); then copies Gyarados's Water/Flying, which drops the added type. Arceus's Reflect Type on Snorlax fails (its types are locked), so it does not take the added Grass either"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Trevenant",
+    "species": "Trevenant",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Forest's Curse",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Natural Cure"
+   },
+   {
+    "label": "Porygon2",
+    "species": "Porygon2",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Reflect Type",
+     "Harden"
+    ],
+    "ability": "Trace"
+   },
+   {
+    "label": "Arceus",
+    "species": "Arceus",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Reflect Type"
+    ],
+    "ability": "Multitype"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Gyarados",
+    "species": "Gyarados",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Moxie"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Forest's Curse 1, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Reflect Type 1",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Reflect Type 2",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "switch Arceus, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Reflect Type 1, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

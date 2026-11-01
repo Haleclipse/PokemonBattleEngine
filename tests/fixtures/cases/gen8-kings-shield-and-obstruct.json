@@ -1,0 +1,74 @@
+{
+ "schema": 1,
+ "id": "gen8-kings-shield-and-obstruct",
+ "notes": [
+  "Gen 8 King's Shield: Body Slam stopped, Attack -1; Growl goes through. Obstruct: Body Slam stopped, Defense -2"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "King's Shield",
+     "Obstruct",
+     "Recover",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Body Slam",
+     "Growl",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move King's Shield",
+   "p2": "move Body Slam"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Obstruct",
+   "p2": "move Body Slam"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move King's Shield",
+   "p2": "move Growl"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

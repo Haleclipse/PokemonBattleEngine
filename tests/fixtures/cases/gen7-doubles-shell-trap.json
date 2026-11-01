@@ -1,0 +1,80 @@
+{
+ "schema": 1,
+ "id": "gen7-doubles-shell-trap",
+ "notes": [
+  "Doubles: a foe's physical hit arms Shell Trap and its user moves next, ahead of the slower foe still to act"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Turtonator",
+    "species": "Turtonator",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Shell Trap",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Ally",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Foe2",
+    "species": "Snorlax",
+    "level": 55,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Shell Trap, move Harden",
+   "p2": "move Tackle 1, move Harden"
+  },
+  {
+   "p1": "move Shell Trap, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

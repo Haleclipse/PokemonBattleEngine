@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "id": "gen4-confusion-self-hit-full-formula",
+  "notes": [
+    "Gen 3-4 hit themselves through getDamage(pokemon, pokemon, 40): Choice Band raises the self-hit"
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "singles",
+    "format": "gen4customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Snorlax",
+        "species": "Snorlax",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle",
+          "Growl"
+        ],
+        "ability": "Run Away",
+        "item": "Choice Band"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Golbat",
+        "species": "Golbat",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Confuse Ray",
+          "Growl"
+        ],
+        "ability": "Run Away"
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 2"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

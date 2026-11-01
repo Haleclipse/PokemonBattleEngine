@@ -1,0 +1,76 @@
+{
+  "schema": 1,
+  "id": "gen3-doubles-twister-doubles-before-the-roll",
+  "notes": [
+    "Gen 3 applies ModifyDamage (Twister against a flyer) before the random factor",
+    "promoted from m8-gen3-doubles-s102-014-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 3,
+    "mode": "doubles",
+    "format": "gen3doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Ponyta",
+        "species": "Ponyta",
+        "level": 53,
+        "nature": "Hardy",
+        "moves": [
+          "Twister"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Kyogre",
+        "species": "Kyogre",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Thunder"
+        ],
+        "ability": "Run Away"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Smoochum",
+        "species": "Smoochum",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Eruption"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Salamence",
+        "species": "Salamence",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fly"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      53780,
+      15895,
+      6611,
+      39442
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Twister, move Thunder 1",
+      "p2": "move Eruption, move Fly 1"
+    }
+  ]
+}

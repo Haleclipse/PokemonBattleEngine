@@ -1,0 +1,30 @@
+{
+ "schema": 1,
+ "id": "gen7-doubles-a-spread-move-both-foes-reflect-is-not-checked-at-the-first",
+ "notes": [
+  "Gen 7 doubles: Espeon's Sand Attack lowers Cubone's accuracy; next turn Espeon and Xatu both use Magic Coat, and Cubone's Growl is sent back by each in turn at its TryHit, before any accuracy check (Gen 5+). Cubone checks no target: the replay drops every reflector from the move's own targets, the earlier one too, not only the last (DESIGN.md R-M8-175)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [1, 2, 3, 4]
+ },
+ "teams": {
+  "p1": [
+   {"label": "Cubone", "species": "Cubone", "level": 50, "nature": "Hardy", "moves": ["Growl", "Splash"], "ability": "Rock Head", "gender": "M"},
+   {"label": "Chansey", "species": "Chansey", "level": 50, "nature": "Hardy", "moves": ["Splash"], "ability": "Natural Cure", "gender": "F"}
+  ],
+  "p2": [
+   {"label": "Espeon", "species": "Espeon", "level": 50, "nature": "Hardy", "moves": ["Sand Attack", "Magic Coat"], "ability": "Synchronize", "gender": "F"},
+   {"label": "Xatu", "species": "Xatu", "level": 50, "nature": "Hardy", "moves": ["Magic Coat", "Splash"], "ability": "Early Bird", "gender": "M"}
+  ]
+ },
+ "script": [
+  {"p1": "move Splash, move Splash", "p2": "move Sand Attack 1, move Splash"},
+  {"p1": "move Growl, move Splash", "p2": "move Magic Coat, move Magic Coat"}
+ ]
+}

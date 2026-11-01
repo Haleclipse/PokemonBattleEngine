@@ -1,0 +1,96 @@
+{
+ "schema": 1,
+ "id": "gen4-attract-ends-after-the-action-its-source-falls-in",
+ "notes": [
+  "Gen 4: Gardevoir falls to its own Life Orb after the move's Update; the action's Update (no replacement is asked for yet) ends Lucario's infatuation, so the end-of-turn replacement request no longer shows it"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Lucario",
+    "species": "Lucario",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Leech Seed",
+     "Harden"
+    ],
+    "ability": "Inner Focus",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gardevoir",
+    "species": "Gardevoir",
+    "level": 31,
+    "nature": "Hardy",
+    "moves": [
+     "Attract",
+     "Psychic"
+    ],
+    "ability": "Synchronize",
+    "gender": "F",
+    "item": "Life Orb"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Leech Seed",
+   "p2": "move Attract"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Psychic"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Psychic"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Psychic"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Psychic"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Psychic"
+  },
+  {
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,175 @@
+{
+ "schema": 1,
+ "id": "gen5-gems-by-type-2",
+ "notes": [
+  "Gen 5 gems (\u00d71.5 once): Ground Gem (Earth Power), Ice Gem (Ice Beam), Poison Gem (Sludge Bomb), Psychic Gem (Psychic), Rock Gem (Power Gem), Steel Gem (Flash Cannon)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Ground",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Earth Power"
+    ],
+    "ability": "Run Away",
+    "item": "Ground Gem"
+   },
+   {
+    "label": "Ice",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Ice Beam"
+    ],
+    "ability": "Run Away",
+    "item": "Ice Gem"
+   },
+   {
+    "label": "Poison",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sludge Bomb"
+    ],
+    "ability": "Run Away",
+    "item": "Poison Gem"
+   },
+   {
+    "label": "Psychic",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Psychic"
+    ],
+    "ability": "Run Away",
+    "item": "Psychic Gem"
+   },
+   {
+    "label": "Rock",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Power Gem"
+    ],
+    "ability": "Run Away",
+    "item": "Rock Gem"
+   },
+   {
+    "label": "Steel",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Flash Cannon"
+    ],
+    "ability": "Run Away",
+    "item": "Steel Gem"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Wall",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Earth Power",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Earth Power",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "switch Ice",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Ice Beam",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Ice Beam",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "switch Poison",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Sludge Bomb",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Sludge Bomb",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "switch Psychic",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Psychic",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Psychic",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "switch Rock",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Power Gem",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Power Gem",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "switch Steel",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Flash Cannon",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Flash Cannon",
+   "p2": "move Slack Off"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

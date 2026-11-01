@@ -1,0 +1,118 @@
+{
+  "schema": 1,
+  "id": "gen8-doubles-flinch-from-earlier-hit",
+  "notes": [
+    "A cant flinch belongs to the last hit that can flinch (Stomp), not a later Lava Plume",
+    "promoted from m8-gen8-doubles-s101-010-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 8,
+    "mode": "doubles",
+    "format": "gen8doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Incineroar",
+        "species": "Incineroar",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Cross Chop",
+          "Hydro Cannon",
+          "Peck"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Flapple",
+        "species": "Flapple",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Gear Grind",
+          "Draco Meteor",
+          "Crush Grip",
+          "Growl"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Salandit",
+        "species": "Salandit",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Head Smash",
+          "Power Whip"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Mew",
+        "species": "Mew",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Stomp",
+          "Grass Knot",
+          "Toxic",
+          "Earth Power"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Machoke",
+        "species": "Machoke",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Lava Plume",
+          "Aerial Ace",
+          "Scary Face"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      48075,
+      62724,
+      44374,
+      29136
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Cross Chop 1, move Gear Grind 2",
+      "p2": "move Head Smash 1, move Stomp 2"
+    },
+    {
+      "p1": "move Hydro Cannon 1, move Draco Meteor 2",
+      "p2": "move Power Whip 1, move Grass Knot 2"
+    },
+    {
+      "p2": "switch Machoke, pass"
+    },
+    {
+      "p1": "move 1, move 3 1",
+      "p2": "move 2 1, move 3 2"
+    },
+    {
+      "p1": "move Peck 2, move Growl",
+      "p2": "move Scary Face 1, move Earth Power 2"
+    },
+    {
+      "p1": "move Cross Chop 1, move Gear Grind 2",
+      "p2": "move Lava Plume, move Stomp 1"
+    }
+  ]
+}

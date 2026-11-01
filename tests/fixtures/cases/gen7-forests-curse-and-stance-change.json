@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen7-forests-curse-and-stance-change",
+ "notes": [
+  "Gen 7: Trevenant's Forest's Curse adds Grass to Aegislash; its Shadow Ball's forme change sets the Blade Forme's types, and the added type goes (`setSpecies`: `addedType = ''`)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Aegislash",
+    "species": "Aegislash",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Shadow Ball",
+     "King's Shield"
+    ],
+    "gender": "F",
+    "ability": "Stance Change"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Trevenant",
+    "species": "Trevenant",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Forest's Curse",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Natural Cure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move King's Shield",
+   "p2": "move Forest's Curse"
+  },
+  {
+   "p1": "move Shadow Ball",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move King's Shield",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

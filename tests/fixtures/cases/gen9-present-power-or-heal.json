@@ -1,0 +1,89 @@
+{
+ "schema": 1,
+ "id": "gen9-present-power-or-heal",
+ "notes": [
+  "Present draws random(10) as it starts: 0-1 heal the target a quarter of its max HP (round; -fail|target|heal at full HP), 2-5 power 40, 6-8 80, 9 120"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Delibird",
+    "species": "Delibird",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Present"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Present",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Present",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Present",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Present",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Present",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Present",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Present",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Present",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Present",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Present",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

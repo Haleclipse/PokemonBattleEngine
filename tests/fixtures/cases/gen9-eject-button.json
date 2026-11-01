@@ -1,0 +1,82 @@
+{
+  "schema": 1,
+  "id": "gen9-singles-eject-button",
+  "notes": [
+    "Eject Button: Jolteon's U-turn hits the button; Garchomp is ordered out through the mid-turn ForcedSwitch request",
+    "(entry 2 chooses), Jolteon's own switch is cancelled (`-enditem … Eject Button`, no switch for Jolteon)."
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "a",
+        "species": "Jolteon",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "U-turn"
+        ]
+      },
+      {
+        "label": "c",
+        "species": "Vaporeon",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "b",
+        "species": "Garchomp",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ],
+        "item": "Eject Button"
+      },
+      {
+        "label": "d",
+        "species": "Clefable",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p2": "switch 2"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

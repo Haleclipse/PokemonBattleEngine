@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen6-nature-power-into-a-substitute",
+ "notes": [
+  "Gen 6: Snorlax hides behind a Substitute; Smeargle's Nature Power is over at its `onTryHit` (`callsMove`) and the Tri Attack it calls strikes the Substitute — Nature Power itself is not stopped by it (DESIGN.md R-M8-81)"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Smeargle",
+    "species": "Smeargle",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Nature Power",
+     "Splash"
+    ],
+    "ability": "Own Tempo",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Substitute",
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash",
+   "p2": "move Substitute"
+  },
+  {
+   "p1": "move Nature Power",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Nature Power",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

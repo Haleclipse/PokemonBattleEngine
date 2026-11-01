@@ -1,0 +1,83 @@
+{
+ "schema": 1,
+ "id": "gen9-stage-swaps",
+ "notes": [
+  "Topsy-Turvy on a foe without stages fails (Stomping Tantrum then doubles); Guard Swap and Power Swap trade Defense / Special Defense and Attack / Special Attack stages; Psych Up copies every stage; Topsy-Turvy inverts them; Haze clears everyone's"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "User",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Topsy-Turvy",
+     "Stomping Tantrum",
+     "Power Swap",
+     "Guard Swap"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Calm Mind",
+     "Iron Defense",
+     "Psych Up",
+     "Haze"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Topsy-Turvy",
+   "p2": "move Calm Mind"
+  },
+  {
+   "p1": "move Stomping Tantrum",
+   "p2": "move Iron Defense"
+  },
+  {
+   "p1": "move Guard Swap",
+   "p2": "move Calm Mind"
+  },
+  {
+   "p1": "move Power Swap",
+   "p2": "move Psych Up"
+  },
+  {
+   "p1": "move Topsy-Turvy",
+   "p2": "move Iron Defense"
+  },
+  {
+   "p1": "move Stomping Tantrum",
+   "p2": "move Haze"
+  },
+  {
+   "p1": "move Stomping Tantrum",
+   "p2": "move Calm Mind"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

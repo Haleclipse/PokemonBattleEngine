@@ -1,0 +1,95 @@
+{
+ "schema": 1,
+ "id": "gen9-recycle",
+ "notes": [
+  "Gen 9 Recycle: Snorlax eats its Sitrus Berry; Mew's Trick hands Snorlax its Leftovers, and Recycle fails while Snorlax holds them; Knock Off takes the Leftovers and leaves the last item alone, so Recycle brings the Sitrus Berry back (eaten again at once, and again); a Sitrus Berry brought back and held is no longer the last item, so once Knock Off took it Recycle fails"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Recycle",
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Sitrus Berry"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Knock Off",
+     "Trick",
+     "Harden"
+    ],
+    "ability": "Synchronize",
+    "item": "Leftovers"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Trick"
+  },
+  {
+   "p1": "move Recycle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Knock Off"
+  },
+  {
+   "p1": "move Recycle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Recycle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Recycle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Knock Off"
+  },
+  {
+   "p1": "move Recycle",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

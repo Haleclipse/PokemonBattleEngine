@@ -1,0 +1,114 @@
+{
+ "schema": 1,
+ "id": "gen6-soul-dew-special-stats",
+ "notes": [
+  "Gen 3-6 Soul Dew (onModifySpA / onModifySpD, \u00d71.5): Latios' Surf is boosted like its Psychic, Body Slam is not; Latias holding it takes less from Thunderbolt, not from Body Slam"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Latios",
+    "species": "Latios",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Surf",
+     "Psychic",
+     "Body Slam"
+    ],
+    "ability": "Run Away",
+    "item": "Soul Dew"
+   },
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Body Slam",
+     "Thunderbolt"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Latias",
+    "species": "Latias",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away",
+    "item": "Soul Dew"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Surf",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Psychic",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Surf",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "switch Mew",
+   "p2": "switch Latias"
+  },
+  {
+   "p1": "move Thunderbolt",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Thunderbolt",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Slack Off"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

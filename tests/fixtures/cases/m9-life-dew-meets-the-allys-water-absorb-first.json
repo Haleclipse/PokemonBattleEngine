@@ -1,0 +1,416 @@
+{
+ "schema": 1,
+ "id": "m9-life-dew-meets-the-allys-water-absorb-first",
+ "notes": [
+  "R-M9-37: Squirtle's Life Dew aims at itself and Vaporeon (Water Absorb); Showdown's `trySpreadMoveHit` takes every target through TryHit first, so Vaporeon's absorption heals it before Squirtle's own heal. The engine staged TryHit only for two or more targets besides the user. Minimized from Nightly 20261021-010641 (m9-gen9doublesou-s125-004)."
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublesou"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Foongus",
+    "species": "Foongus",
+    "ability": "Effect Spore",
+    "moves": [
+     "Poison Powder"
+    ],
+    "nature": "Calm",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 0,
+     "atk": 152,
+     "def": 164,
+     "spa": 92,
+     "spd": 80,
+     "spe": 20
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Grovyle",
+    "species": "Grovyle",
+    "ability": "Unburden",
+    "moves": [
+     "Thief"
+    ],
+    "nature": "Mild",
+    "gender": "M",
+    "shiny": false,
+    "level": 41,
+    "evs": {
+     "hp": 0,
+     "atk": 64,
+     "def": 96,
+     "spa": 192,
+     "spd": 72,
+     "spe": 84
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Fighting"
+   },
+   {
+    "label": "Nick75",
+    "species": "Shinx",
+    "ability": "Guts",
+    "moves": [
+     "Charge",
+     "Swift"
+    ],
+    "nature": "Impish",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 76,
+     "atk": 0,
+     "def": 240,
+     "spa": 0,
+     "spd": 144,
+     "spe": 48
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 6
+    },
+    "teraType": "Flying"
+   },
+   {
+    "label": "Nick22",
+    "species": "Sunflora",
+    "ability": "Solar Power",
+    "moves": [
+     "After You"
+    ],
+    "nature": "Jolly",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 116,
+     "atk": 68,
+     "def": 152,
+     "spa": 0,
+     "spd": 116,
+     "spe": 56
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 0,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 162,
+    "teraType": "Rock"
+   },
+   {
+    "label": "Vaporeon",
+    "species": "Vaporeon",
+    "ability": "Water Absorb",
+    "moves": [
+     "Last Resort",
+     "Aurora Beam"
+    ],
+    "nature": "Quirky",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 132,
+     "atk": 44,
+     "def": 144,
+     "spa": 32,
+     "spd": 36,
+     "spe": 120
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 30,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Bug"
+   },
+   {
+    "label": "Squirtle",
+    "species": "Squirtle",
+    "ability": "Rain Dish",
+    "moves": [
+     "Life Dew"
+    ],
+    "nature": "Timid",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 68,
+     "atk": 36,
+     "def": 108,
+     "spa": 144,
+     "spd": 72,
+     "spe": 80
+    },
+    "ivs": {
+     "hp": 15,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Normal",
+    "hpType": "Dragon"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Lokix",
+    "species": "Lokix",
+    "ability": "Tinted Lens",
+    "moves": [
+     "Endure"
+    ],
+    "nature": "Timid",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 168,
+     "atk": 44,
+     "def": 80,
+     "spa": 0,
+     "spd": 208,
+     "spe": 8
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 15,
+     "spe": 31
+    },
+    "happiness": 236
+   },
+   {
+    "label": "Phione",
+    "species": "Phione",
+    "ability": "Hydration",
+    "moves": [
+     "Water Pulse"
+    ],
+    "nature": "Adamant",
+    "gender": "",
+    "shiny": false,
+    "level": 99,
+    "evs": {
+     "hp": 124,
+     "atk": 12,
+     "def": 252,
+     "spa": 56,
+     "spd": 0,
+     "spe": 64
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Poison"
+   },
+   {
+    "label": "Regigigas",
+    "species": "Regigigas",
+    "ability": "Slow Start",
+    "moves": [
+     "Thunderbolt"
+    ],
+    "nature": "Naughty",
+    "gender": "",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 32,
+     "atk": 164,
+     "def": 0,
+     "spa": 0,
+     "spd": 60,
+     "spe": 252
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Stellar"
+   },
+   {
+    "label": "Reuniclus",
+    "species": "Reuniclus",
+    "ability": "Overcoat",
+    "moves": [
+     "Fire Punch"
+    ],
+    "nature": "Quirky",
+    "gender": "M",
+    "shiny": false,
+    "level": 97,
+    "evs": {
+     "hp": 84,
+     "atk": 136,
+     "def": 4,
+     "spa": 0,
+     "spd": 252,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Nick54",
+    "species": "Dolliv",
+    "ability": "Early Bird",
+    "moves": [
+     "Leech Seed",
+     "Grassy Terrain"
+    ],
+    "nature": "Quirky",
+    "gender": "M",
+    "shiny": false,
+    "level": 58,
+    "evs": {
+     "hp": 132,
+     "atk": 0,
+     "def": 8,
+     "spa": 248,
+     "spd": 0,
+     "spe": 120
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 12,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Steel"
+   },
+   {
+    "label": "Bellossom",
+    "species": "Bellossom",
+    "ability": "Chlorophyll",
+    "moves": [
+     "Energy Ball",
+     "Safeguard",
+     "Acid"
+    ],
+    "nature": "Gentle",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 28,
+     "atk": 164,
+     "def": 8,
+     "spa": 92,
+     "spd": 168,
+     "spe": 48
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Fairy"
+   }
+  ]
+ },
+ "preview": {
+  "p1": "team 523146",
+  "p2": "team 562314"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   18996,
+   125,
+   1004,
+   31
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1 1 terastallize, move Thief 2",
+   "p2": "move 1 1 terastallize, move Energy Ball 2"
+  },
+  {
+   "p1": "pass, switch 3"
+  },
+  {
+   "p1": "move Last Resort 1, move Charge",
+   "p2": "move Leech Seed 1, move Energy Ball 2"
+  },
+  {
+   "p1": "switch 4, move Swift",
+   "p2": "switch 3, move Acid"
+  },
+  {
+   "p1": "move Poison Powder 2, move Charge",
+   "p2": "move Water Pulse 2, move Energy Ball 1"
+  },
+  {
+   "p1": "pass, switch 4"
+  },
+  {
+   "p1": "switch 6, move Aurora Beam 1",
+   "p2": "switch 3, move Acid"
+  },
+  {
+   "p1": "move Life Dew, move Aurora Beam 2",
+   "p2": "move Grassy Terrain, move Safeguard"
+  }
+ ]
+}

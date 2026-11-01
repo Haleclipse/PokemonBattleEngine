@@ -1,0 +1,347 @@
+{
+  "schema": 1,
+  "id": "m8-gen8-ring-target-holder-keeps-tar-shot",
+  "notes": [
+    "Nightly 50: a Ring Target holder covered in tar takes a Fire move super effectively — Tar Shot's step follows the chart on the Ring Target's way too (DESIGN.md R-M8-94)",
+    "promoted from m8-gen8-singles-s501-009-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 8,
+    "mode": "singles",
+    "format": "gen8customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Reshiram",
+        "species": "Reshiram",
+        "level": 46,
+        "nature": "Hardy",
+        "moves": [
+          "Dragon Darts",
+          "Mean Look",
+          "Fury Attack",
+          "Tar Shot"
+        ],
+        "ability": "Multiscale"
+      },
+      {
+        "label": "Cloyster",
+        "species": "Cloyster",
+        "level": 46,
+        "nature": "Hardy",
+        "moves": [
+          "Ember",
+          "Mean Look",
+          "Fire Fang",
+          "Tar Shot"
+        ],
+        "ability": "Forewarn",
+        "gender": "F"
+      },
+      {
+        "label": "Falinks",
+        "species": "Falinks",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Flamethrower"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Nidoran-F",
+        "species": "Nidoran-F",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Inferno",
+          "Mean Look",
+          "Burning Jealousy",
+          "Tar Shot"
+        ],
+        "ability": "Run Away"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Gengar",
+        "species": "Gengar",
+        "level": 52,
+        "nature": "Hardy",
+        "moves": [
+          "Thunder Fang",
+          "Force Palm",
+          "Tar Shot"
+        ],
+        "ability": "Parental Bond",
+        "gender": "M"
+      },
+      {
+        "label": "Eldegoss",
+        "species": "Eldegoss",
+        "level": 53,
+        "nature": "Hardy",
+        "moves": [
+          "Bolt Strike",
+          "Lick",
+          "Tar Shot"
+        ],
+        "ability": "Magic Bounce",
+        "gender": "F"
+      },
+      {
+        "label": "Steelix",
+        "species": "Steelix",
+        "level": 49,
+        "nature": "Hardy",
+        "moves": [
+          "Freeze Shock",
+          "Body Slam",
+          "Tar Shot"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Feebas",
+        "species": "Feebas",
+        "level": 48,
+        "nature": "Hardy",
+        "moves": [
+          "Bounce",
+          "Tar Shot"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Marill",
+        "species": "Marill",
+        "level": 53,
+        "nature": "Hardy",
+        "moves": [
+          "Zap Cannon",
+          "Mean Look",
+          "Spark",
+          "Tar Shot"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Sandslash",
+        "species": "Sandslash",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Thunder Shock",
+          "Mean Look"
+        ],
+        "ability": "Run Away",
+        "item": "Ring Target",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      49263,
+      34510,
+      9155,
+      56765
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Dragon Darts",
+      "p2": "move Thunder Fang"
+    },
+    {
+      "p1": "move Fury Attack",
+      "p2": "move Force Palm"
+    },
+    {
+      "p1": "move Tar Shot",
+      "p2": "move Tar Shot"
+    },
+    {
+      "p1": "move Dragon Darts",
+      "p2": "move Thunder Fang"
+    },
+    {
+      "p2": "switch Eldegoss"
+    },
+    {
+      "p1": "move Fury Attack",
+      "p2": "switch Steelix"
+    },
+    {
+      "p1": "move Tar Shot",
+      "p2": "move Body Slam"
+    },
+    {
+      "p1": "move Dragon Darts",
+      "p2": "move Tar Shot"
+    },
+    {
+      "p1": "move Mean Look",
+      "p2": "move Freeze Shock"
+    },
+    {
+      "p1": "move Fury Attack",
+      "p2": "move Freeze Shock"
+    },
+    {
+      "p1": "move Tar Shot",
+      "p2": "move Body Slam"
+    },
+    {
+      "p1": "move Dragon Darts",
+      "p2": "move Tar Shot"
+    },
+    {
+      "p1": "switch Cloyster",
+      "p2": "move Freeze Shock"
+    },
+    {
+      "p1": "move Mean Look",
+      "p2": "move Freeze Shock"
+    },
+    {
+      "p1": "move Fire Fang",
+      "p2": "move Body Slam"
+    },
+    {
+      "p1": "move Tar Shot",
+      "p2": "move Tar Shot"
+    },
+    {
+      "p1": "move Ember",
+      "p2": "move Freeze Shock"
+    },
+    {
+      "p2": "switch Eldegoss"
+    },
+    {
+      "p1": "move Fire Fang",
+      "p2": "move Lick"
+    },
+    {
+      "p1": "move Tar Shot",
+      "p2": "switch Feebas"
+    },
+    {
+      "p1": "move Ember",
+      "p2": "move Tar Shot"
+    },
+    {
+      "p1": "move Mean Look",
+      "p2": "move Bounce"
+    },
+    {
+      "p1": "move Fire Fang",
+      "p2": "move Bounce"
+    },
+    {
+      "p2": "switch Eldegoss"
+    },
+    {
+      "p1": "move Tar Shot",
+      "p2": "move Lick"
+    },
+    {
+      "p1": "move Ember",
+      "p2": "move Tar Shot"
+    },
+    {
+      "p1": "move Mean Look",
+      "p2": "move Bolt Strike"
+    },
+    {
+      "p1": "move Fire Fang",
+      "p2": "switch Marill"
+    },
+    {
+      "p1": "move Tar Shot",
+      "p2": "move Mean Look"
+    },
+    {
+      "p1": "move Ember",
+      "p2": "move Spark"
+    },
+    {
+      "p1": "move Mean Look",
+      "p2": "move Tar Shot"
+    },
+    {
+      "p1": "move Fire Fang",
+      "p2": "move Zap Cannon"
+    },
+    {
+      "p1": "switch Reshiram"
+    },
+    {
+      "p1": "move Tar Shot",
+      "p2": "move Mean Look"
+    },
+    {
+      "p1": "move Dragon Darts",
+      "p2": "move Spark"
+    },
+    {
+      "p1": "switch Falinks"
+    },
+    {
+      "p1": "switch Nidoran-F",
+      "p2": "switch Eldegoss"
+    },
+    {
+      "p1": "move Mean Look",
+      "p2": "move Tar Shot"
+    },
+    {
+      "p1": "move Burning Jealousy",
+      "p2": "move Bolt Strike"
+    },
+    {
+      "p2": "switch Marill"
+    },
+    {
+      "p1": "move Tar Shot",
+      "p2": "move Mean Look"
+    },
+    {
+      "p1": "move Inferno",
+      "p2": "move Spark"
+    },
+    {
+      "p1": "move Mean Look",
+      "p2": "move Tar Shot"
+    },
+    {
+      "p1": "move Burning Jealousy",
+      "p2": "move Zap Cannon"
+    },
+    {
+      "p1": "move Tar Shot",
+      "p2": "move Mean Look"
+    },
+    {
+      "p1": "move Inferno",
+      "p2": "move Spark"
+    },
+    {
+      "p2": "switch Sandslash"
+    },
+    {
+      "p1": "move Tar Shot",
+      "p2": "move Mean Look"
+    },
+    {
+      "p1": "move Burning Jealousy",
+      "p2": "move Thunder Shock"
+    }
+  ]
+}

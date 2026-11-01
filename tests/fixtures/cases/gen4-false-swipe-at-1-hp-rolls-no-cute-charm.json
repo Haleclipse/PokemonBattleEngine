@@ -1,0 +1,59 @@
+{
+ "schema": 1,
+ "id": "gen4-false-swipe-at-1-hp-rolls-no-cute-charm",
+ "notes": [
+  "Gen 4: Scizor's False Swipe takes Clefairy to 1 HP, then deals 0 to it: Cute Charm (`damage &&` in the gen4 mod) rolls after the first hit only"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Scizor",
+    "species": "Scizor",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "False Swipe"
+    ],
+    "gender": "M",
+    "ability": "Technician"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Clefairy",
+    "species": "Clefairy",
+    "level": 20,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Cute Charm"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move False Swipe",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move False Swipe",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

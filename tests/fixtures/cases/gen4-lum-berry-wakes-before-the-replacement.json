@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "gen4-lum-berry-wakes-before-the-replacement",
+ "notes": [
+  "Gen 4: Yawn puts Slowbro to sleep in the residual and its Lum Berry (`onAfterSetStatus`, priority -1) wakes it at once; Shedinja fell to poison earlier in the same residual, so the residual asks for its replacement without an Update and only the immediate eat shows at the request"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Slowbro",
+    "species": "Slowbro",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Toxic",
+     "Harden"
+    ],
+    "ability": "Oblivious",
+    "item": "Lum Berry"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Shedinja",
+    "species": "Shedinja",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Yawn",
+     "Harden"
+    ],
+    "ability": "Wonder Guard"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Yawn"
+  },
+  {
+   "p1": "move Toxic",
+   "p2": "move Harden"
+  },
+  {
+   "p2": "switch Snorlax"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   2,
+   2,
+   3,
+   4
+  ]
+ }
+}

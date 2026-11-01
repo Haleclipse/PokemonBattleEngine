@@ -1,0 +1,27 @@
+{
+ "schema": 1,
+ "id": "m10-a-grudge-spares-the-exploding-user-whose-faint-came-first",
+ "notes": [
+  "R-M10-11: Showdown's Grudge `onFaint` returns for a source already `fainted`. Explosion's user faints before the move hits (`useMoveInner`: `this.battle.faint(pokemon, pokemon, move)`, in Gen 4 after the no-target check), so at the hit loop's `faintMessages` its faint comes first. Jolteon uses Grudge, then Golem's Explosion knocks it out: Golem's faint is processed first and Grudge leaves Explosion's PP alone."
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {"label": "Jolteon", "species": "Jolteon", "level": 30, "nature": "Hardy", "moves": ["Grudge", "Tackle"], "ability": "Volt Absorb", "gender": "M"},
+   {"label": "Snorlax", "species": "Snorlax", "level": 50, "nature": "Hardy", "moves": ["Tackle"], "ability": "Thick Fat", "gender": "M"}
+  ],
+  "p2": [
+   {"label": "Golem", "species": "Golem", "level": 60, "nature": "Hardy", "moves": ["Explosion", "Tackle"], "ability": "Sturdy", "gender": "M"},
+   {"label": "Snorlax", "species": "Snorlax", "level": 50, "nature": "Hardy", "moves": ["Tackle"], "ability": "Thick Fat", "gender": "M"}
+  ]
+ },
+ "random": {"mode": "oracle-guided", "seed": [1, 2, 3, 4]},
+ "script": [
+  {"p1": "move Grudge", "p2": "move Explosion"},
+  {"p1": "switch 2", "p2": "switch 2"}
+ ]
+}

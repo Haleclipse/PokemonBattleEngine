@@ -1,0 +1,66 @@
+{
+ "schema": 1,
+ "id": "gen4-triple-kick-after-micle-berry-c",
+ "notes": [
+  "Gen 4: Micle Berry's boost (lasting until used, issues.md I42) makes Triple Kick's first check sure; the boost goes with it, so the second and third hits check accuracy again (`engine::spend_accuracy_check`)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hitmontop",
+    "species": "Hitmontop",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Triple Kick",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Intimidate",
+    "item": "Micle Berry"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Super Fang",
+     "Seismic Toss"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Super Fang"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Triple Kick",
+   "p2": "move Seismic Toss"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   9,
+   10,
+   11,
+   12
+  ]
+ }
+}

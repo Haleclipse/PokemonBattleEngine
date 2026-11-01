@@ -1,0 +1,462 @@
+{
+  "schema": 1,
+  "id": "gen3-multi-hit-breaks-substitute-on-its-first-hit",
+  "notes": [
+    "Nightly 13: Bone Rush breaks Marowak's Substitute on its first hit and its next three reach the body; the replay's search must place the break where Showdown's log does, not where a later HP commit happens to match",
+    "promoted from m8-gen3-singles-s354-019 (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 3,
+    "mode": "singles",
+    "format": "gen3customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Sunkern",
+        "species": "Sunkern",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Pin Missile",
+          "Substitute",
+          "Double Slap",
+          "Helping Hand"
+        ],
+        "ability": "Static",
+        "item": "Root Fossil"
+      },
+      {
+        "label": "Quagsire",
+        "species": "Quagsire",
+        "level": 54,
+        "nature": "Hardy",
+        "moves": [
+          "Bone Rush",
+          "Substitute",
+          "Fury Attack",
+          "Helping Hand"
+        ],
+        "ability": "Synchronize"
+      },
+      {
+        "label": "Hitmonchan",
+        "species": "Hitmonchan",
+        "level": 54,
+        "nature": "Hardy",
+        "moves": [
+          "Double Kick",
+          "Substitute",
+          "Barrage",
+          "Helping Hand"
+        ],
+        "ability": "Run Away",
+        "item": "Premier Ball"
+      },
+      {
+        "label": "Jolteon",
+        "species": "Jolteon",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Fury Swipes",
+          "Substitute",
+          "Hyper Fang",
+          "Helping Hand"
+        ],
+        "ability": "Clear Body",
+        "item": "Hard Stone"
+      },
+      {
+        "label": "Onix",
+        "species": "Onix",
+        "level": 49,
+        "nature": "Hardy",
+        "moves": [
+          "Bone Club",
+          "Substitute",
+          "Twister",
+          "Helping Hand"
+        ],
+        "ability": "Drought",
+        "item": "Poison Barb"
+      },
+      {
+        "label": "Registeel",
+        "species": "Registeel",
+        "level": 45,
+        "nature": "Hardy",
+        "moves": [
+          "Stomp",
+          "Substitute",
+          "Astonish",
+          "Helping Hand"
+        ],
+        "ability": "Illuminate",
+        "item": "Scope Lens"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Tentacruel",
+        "species": "Tentacruel",
+        "level": 53,
+        "nature": "Hardy",
+        "moves": [
+          "Extrasensory",
+          "Substitute",
+          "Rolling Kick",
+          "Helping Hand"
+        ],
+        "ability": "Suction Cups",
+        "item": "Twisted Spoon"
+      },
+      {
+        "label": "Grovyle",
+        "species": "Grovyle",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Rock Slide",
+          "Substitute",
+          "Bite",
+          "Helping Hand"
+        ],
+        "ability": "Intimidate",
+        "item": "Leftovers"
+      },
+      {
+        "label": "Marowak",
+        "species": "Marowak",
+        "level": 45,
+        "nature": "Hardy",
+        "moves": [
+          "Headbutt",
+          "Substitute",
+          "Needle Arm",
+          "Helping Hand"
+        ],
+        "ability": "Drizzle"
+      },
+      {
+        "label": "Flareon",
+        "species": "Flareon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Muddy Water",
+          "Substitute",
+          "Aurora Beam",
+          "Helping Hand"
+        ],
+        "ability": "Shell Armor",
+        "item": "Dragon Fang"
+      },
+      {
+        "label": "Growlithe",
+        "species": "Growlithe",
+        "level": 53,
+        "nature": "Hardy",
+        "moves": [
+          "Shadow Ball",
+          "Substitute",
+          "Luster Purge",
+          "Helping Hand"
+        ],
+        "ability": "Static",
+        "item": "Quick Claw"
+      },
+      {
+        "label": "Hitmonlee",
+        "species": "Hitmonlee",
+        "level": 52,
+        "nature": "Hardy",
+        "moves": [
+          "Rock Tomb",
+          "Substitute",
+          "Mist Ball",
+          "Helping Hand"
+        ],
+        "ability": "Speed Boost"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      10003,
+      22294,
+      43661,
+      45866
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 3"
+    },
+    {
+      "p1": "move 4",
+      "p2": "move 4"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 3"
+    },
+    {
+      "p1": "switch 2"
+    },
+    {
+      "p1": "switch 3",
+      "p2": "switch 2"
+    },
+    {
+      "p1": "move 4",
+      "p2": "move 4"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 3"
+    },
+    {
+      "p1": "move 4",
+      "p2": "move 4"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p2": "switch 2"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 2"
+    },
+    {
+      "p1": "switch 3",
+      "p2": "switch 3"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 3"
+    },
+    {
+      "p1": "move 4",
+      "p2": "move 4"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 3"
+    },
+    {
+      "p1": "move 4",
+      "p2": "move 4"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p2": "switch 3"
+    },
+    {
+      "p1": "switch 3",
+      "p2": "switch 4"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 3"
+    },
+    {
+      "p1": "move 4",
+      "p2": "move 4"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 3"
+    },
+    {
+      "p1": "move 4",
+      "p2": "move 4"
+    },
+    {
+      "p1": "switch 3",
+      "p2": "switch 4"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "switch 3"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 3"
+    },
+    {
+      "p1": "switch 4"
+    },
+    {
+      "p1": "move 4",
+      "p2": "move 4"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 3"
+    },
+    {
+      "p1": "switch 5",
+      "p2": "switch 4"
+    },
+    {
+      "p1": "move 4",
+      "p2": "move 4"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p2": "switch 4"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 3"
+    },
+    {
+      "p1": "move 4",
+      "p2": "move 4"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p2": "switch 5"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 2"
+    },
+    {
+      "p1": "switch 5",
+      "p2": "switch 6"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 3"
+    },
+    {
+      "p1": "move 4",
+      "p2": "move 4"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "switch 5"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 3"
+    },
+    {
+      "p1": "switch 6"
+    },
+    {
+      "p1": "move 4",
+      "p2": "move 4"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 2",
+      "p2": "switch 6"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 4",
+      "p2": "move 3"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 4"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 1"
+    }
+  ]
+}

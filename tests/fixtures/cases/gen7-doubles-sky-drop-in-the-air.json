@@ -1,0 +1,81 @@
+{
+ "schema": 1,
+ "id": "gen7-doubles-sky-drop-in-the-air",
+ "notes": [
+  "Gen 7 doubles: while Sky Drop carries the foe up, the faster foes' partner misses the carrying user with Tackle; the carried one does not move"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Lifter",
+    "species": "Braviary",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sky Drop",
+     "Harden"
+    ]
+   },
+   {
+    "label": "Mate",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Prey",
+    "species": "Machamp",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ]
+   },
+   {
+    "label": "Fast",
+    "species": "Pidgeot",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Gust",
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Sky Drop 1, move Harden",
+   "p2": "move Tackle 1, move Harden"
+  },
+  {
+   "p1": "move 1, move Harden",
+   "p2": "move Tackle 1, move Tackle 1"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Tackle 1, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

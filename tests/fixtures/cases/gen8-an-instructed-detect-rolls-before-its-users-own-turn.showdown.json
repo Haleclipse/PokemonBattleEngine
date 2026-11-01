@@ -1,0 +1,621 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@pkmn/sim",
+    "version": "0.10.11",
+    "formatid": "gen8customgame",
+    "seed": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "frames": [
+    {
+      "schema": 1,
+      "checkpoint": "team_preview",
+      "turn": 0,
+      "request": "team_preview|team_preview",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            null
+          ],
+          "party": [
+            {
+              "hp": 142,
+              "max_hp": 142,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ice",
+                "psychic"
+              ],
+              "ability": "oblivious",
+              "item": "",
+              "species": "smoochum",
+              "pp": [
+                24,
+                64
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            null
+          ],
+          "party": [
+            {
+              "hp": 132,
+              "max_hp": 132,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "steel",
+                "psychic"
+              ],
+              "ability": "levitate",
+              "item": "",
+              "species": "bronzor",
+              "pp": [
+                8,
+                64
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": []
+    },
+    {
+      "schema": 1,
+      "checkpoint": "initial",
+      "turn": 1,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 142,
+              "max_hp": 142,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ice",
+                "psychic"
+              ],
+              "ability": "oblivious",
+              "item": "",
+              "species": "smoochum",
+              "pp": [
+                24,
+                64
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 132,
+              "max_hp": 132,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "steel",
+                "psychic"
+              ],
+              "ability": "levitate",
+              "item": "",
+              "species": "bronzor",
+              "pp": [
+                8,
+                64
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Smoochum"
+          },
+          "details": "Smoochum, L60, F",
+          "hp": 142,
+          "max_hp": 142,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bronzor"
+          },
+          "details": "Bronzor, L50",
+          "hp": 132,
+          "max_hp": 132,
+          "status": null
+        },
+        {
+          "kind": "turn",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_1",
+      "turn": 2,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 142,
+              "max_hp": 142,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ice",
+                "psychic"
+              ],
+              "ability": "oblivious",
+              "item": "",
+              "species": "smoochum",
+              "pp": [
+                24,
+                63
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 132,
+              "max_hp": 132,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "stall": 1
+              },
+              "types": [
+                "steel",
+                "psychic"
+              ],
+              "ability": "levitate",
+              "item": "",
+              "species": "bronzor",
+              "pp": [
+                7,
+                64
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bronzor"
+          },
+          "move": "Detect",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bronzor"
+          },
+          "from": null
+        },
+        {
+          "kind": "singleturn",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bronzor"
+          },
+          "move": "Protect"
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Smoochum"
+          },
+          "move": "Splash",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Smoochum"
+          },
+          "from": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 2
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_2",
+      "turn": 3,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 142,
+              "max_hp": 142,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ice",
+                "psychic"
+              ],
+              "ability": "oblivious",
+              "item": "",
+              "species": "smoochum",
+              "pp": [
+                23,
+                63
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 132,
+              "max_hp": 132,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "stall": 1
+              },
+              "types": [
+                "steel",
+                "psychic"
+              ],
+              "ability": "levitate",
+              "item": "",
+              "species": "bronzor",
+              "pp": [
+                6,
+                63
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Smoochum"
+          },
+          "move": "Instruct",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bronzor"
+          },
+          "from": null
+        },
+        {
+          "kind": "singleturn",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bronzor"
+          },
+          "move": "move: Instruct"
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bronzor"
+          },
+          "move": "Detect",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bronzor"
+          },
+          "from": null
+        },
+        {
+          "kind": "singleturn",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bronzor"
+          },
+          "move": "Protect"
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bronzor"
+          },
+          "move": "Splash",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bronzor"
+          },
+          "from": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 3
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_3",
+      "turn": 4,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 142,
+              "max_hp": 142,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ice",
+                "psychic"
+              ],
+              "ability": "oblivious",
+              "item": "",
+              "species": "smoochum",
+              "pp": [
+                23,
+                62
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 132,
+              "max_hp": 132,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "steel",
+                "psychic"
+              ],
+              "ability": "levitate",
+              "item": "",
+              "species": "bronzor",
+              "pp": [
+                6,
+                62
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Smoochum"
+          },
+          "move": "Splash",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Smoochum"
+          },
+          "from": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bronzor"
+          },
+          "move": "Splash",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bronzor"
+          },
+          "from": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 4
+        }
+      ]
+    }
+  ],
+  "debug_log": "|gametype|singles\n|player|p1|P1||\n|player|p2|P2||\n|gen|8\n|tier|[Gen 8] Custom Game\n|clearpoke\n|poke|p1|Smoochum, L60, F|\n|poke|p2|Bronzor, L50|\n|teampreview\n|\n|teamsize|p1|1\n|teamsize|p2|1\n|start\n|switch|p1a: Smoochum|Smoochum, L60, F|142/142\n|switch|p2a: Bronzor|Bronzor, L50|132/132\n|turn|1\n|\n|move|p2a: Bronzor|Detect|p2a: Bronzor\n|-singleturn|p2a: Bronzor|Protect\n|move|p1a: Smoochum|Splash|p1a: Smoochum\n|-nothing\n|\n|upkeep\n|turn|2\n|\n|move|p1a: Smoochum|Instruct|p2a: Bronzor\n|-singleturn|p2a: Bronzor|move: Instruct|[of] p1a: Smoochum\n|move|p2a: Bronzor|Detect|p2a: Bronzor\n|debug|Success chance: 33%\n|-singleturn|p2a: Bronzor|Protect\n|move|p2a: Bronzor|Splash|p2a: Bronzor\n|-nothing\n|\n|upkeep\n|turn|3\n|\n|move|p1a: Smoochum|Splash|p1a: Smoochum\n|-nothing\n|move|p2a: Bronzor|Splash|p2a: Bronzor\n|-nothing\n|\n|upkeep\n|turn|4"
+}

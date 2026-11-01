@@ -1,0 +1,83 @@
+{
+ "schema": 1,
+ "id": "gen4-a-flung-aspear-berry-thaws-its-target",
+ "notes": [
+  "Gen 4 doubles: Mothim's Ice Beam freezes Snorlax; next turn Mothim flings its Aspear Berry, which thaws Snorlax, then Pidgey and Snorlax move — the replay reads the thaw as the flung berry's, not an action of Snorlax's ahead of Pidgey (DESIGN.md R-M8-139)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "doubles",
+  "format": "gen4doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mothim",
+    "species": "Mothim",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Ice Beam",
+     "Fling"
+    ],
+    "item": "Aspear Berry",
+    "ability": "Swarm",
+    "gender": "M"
+   },
+   {
+    "label": "Pidgey",
+    "species": "Pidgey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Keen Eye",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   },
+   {
+    "label": "Shuckle",
+    "species": "Shuckle",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Sturdy",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Ice Beam 1, move Splash",
+   "p2": "move Tackle 1, move Splash"
+  },
+  {
+   "p1": "move Fling 1, move Splash",
+   "p2": "move Tackle 1, move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   2,
+   3,
+   4,
+   5
+  ]
+ }
+}

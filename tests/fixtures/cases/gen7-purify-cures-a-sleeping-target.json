@@ -1,0 +1,63 @@
+{
+ "schema": 1,
+ "id": "gen7-purify-cures-a-sleeping-target",
+ "notes": [
+  "Purify cures its target's sleep within the move (`-curestatus` during Purify): the sleep ended without the sleeper waking up on its own turn"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Immunity"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Breloom",
+    "species": "Breloom",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spore",
+     "Purify",
+     "Harden"
+    ],
+    "ability": "Technician"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Spore"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Purify"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

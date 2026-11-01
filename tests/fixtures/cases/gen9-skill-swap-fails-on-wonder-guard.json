@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen9-skill-swap-fails-on-wonder-guard",
+ "notes": [
+  "Skill Swap fails on Wonder Guard (`failskillswap`): Blissey keeps it, and gets no Intimidate to start"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Gyarados",
+    "species": "Gyarados",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Skill Swap",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Intimidate"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Guarded",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Wonder Guard"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Skill Swap",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

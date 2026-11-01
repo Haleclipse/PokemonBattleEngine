@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen5-chatter-confuses-only-from-chatot",
+ "notes": [
+  "Gen 5 Chatter: Chatot's confuses (10 %), another species' never does (the gen5 mod's onModifyMove zeroes the chance)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Chatot",
+    "species": "Chatot",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Chatter"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Pidgeot",
+    "species": "Pidgeot",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Chatter"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Chatter",
+   "p2": "move Chatter"
+  },
+  {
+   "p1": "move Chatter",
+   "p2": "move Chatter"
+  },
+  {
+   "p1": "move Chatter",
+   "p2": "move Chatter"
+  },
+  {
+   "p1": "move Chatter",
+   "p2": "move Chatter"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen8-a-neutralizing-gas-holder-transforms",
+ "notes": [
+  "Gen 8: Weezing's Neutralizing Gas keeps Zacian's Intrepid Sword quiet as it comes in; Weezing then Transforms into Zacian and takes Intrepid Sword (+1 Attack). The gas ends with no -end and Zacian's ability does not start again (Showdown's neutralizinggas onEnd returns for a transformed holder; no cartridge reaches this: the Koffing line cannot learn Transform and no caller calls it) (DESIGN.md R-M8-123)"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Weezing",
+    "species": "Weezing",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Transform",
+     "Splash"
+    ],
+    "ability": "Neutralizing Gas",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Zacian",
+    "species": "Zacian",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash",
+     "Tackle"
+    ],
+    "ability": "Intrepid Sword"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Transform",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

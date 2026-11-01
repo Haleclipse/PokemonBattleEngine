@@ -1,0 +1,86 @@
+{
+ "schema": 1,
+ "id": "gen4-cartridge-confusion-borrows-struggle",
+ "notes": [
+  "Gen 4 on the cartridge (issues.md I19): the confusion self-hit is `CALC_SELF_HIT(MOVE_STRUGGLE, 40)` \u2014 Struggle's data type, Normal, so a Silk Scarf raises it and Technician (`move != MOVE_STRUGGLE`) does not; `BattleScript_CalcMoveDamage` is not run, so no Life Orb"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Scarf",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Technician",
+    "item": "Silk Scarf"
+   },
+   {
+    "label": "Orb",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Synchronize",
+    "item": "Life Orb"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Ray",
+    "species": "Mew",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Confuse Ray",
+     "Recover"
+    ],
+    "ability": "Synchronize"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 2"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 2"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 2"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 2"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   2,
+   2,
+   3,
+   4
+  ]
+ }
+}

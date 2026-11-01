@@ -1,0 +1,72 @@
+{
+ "schema": 1,
+ "id": "gen9-shell-side-arm-then-long-reach-and-unseen-fist",
+ "notes": [
+  "Shell Side Arm turns physical with contact before the user's ability edits it: Long Reach's takes no Gooey drop, Unseen Fist's hits through Protect"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Reach",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Shell Side Arm"
+    ],
+    "ability": "Long Reach"
+   },
+   {
+    "label": "Fist",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Shell Side Arm"
+    ],
+    "ability": "Unseen Fist"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Protect",
+     "Recover"
+    ],
+    "ability": "Gooey"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Shell Side Arm",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "switch Fist",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Shell Side Arm",
+   "p2": "move Protect"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

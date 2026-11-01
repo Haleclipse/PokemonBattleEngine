@@ -1,0 +1,73 @@
+{
+ "schema": 1,
+ "id": "gen9-shell-side-arm-flips-a-coin-on-a-tie",
+ "notes": [
+  "Shell Side Arm against equal estimates (Atk = SpA against Def = SpD) flips a coin (randomChance(1, 2)); the -hint names the category, and a physical one meets Rough Skin"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Slowbro-Galar",
+    "species": "Slowbro-Galar",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Shell Side Arm"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Recover"
+    ],
+    "ability": "Rough Skin"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Shell Side Arm",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Shell Side Arm",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Shell Side Arm",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Shell Side Arm",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Shell Side Arm",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Shell Side Arm",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

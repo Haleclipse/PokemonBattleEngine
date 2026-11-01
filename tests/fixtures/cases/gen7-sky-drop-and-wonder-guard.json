@@ -1,0 +1,64 @@
+{
+ "schema": 1,
+ "id": "gen7-sky-drop-and-wonder-guard",
+ "notes": [
+  "Gen 7: Braviary's Sky Drop carries Clefable with Wonder Guard up (the lift is spared: its user not yet `skydrop`), then the drop, neutral, is refused (`-immune`)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Clefable",
+    "species": "Clefable",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Wonder Guard"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Braviary",
+    "species": "Braviary",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sky Drop",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Sheer Force"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Sky Drop"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Sky Drop"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

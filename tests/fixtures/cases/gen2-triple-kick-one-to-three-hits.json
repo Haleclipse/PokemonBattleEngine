@@ -1,0 +1,63 @@
+{
+ "schema": 1,
+ "id": "gen2-triple-kick-one-to-three-hits",
+ "notes": [
+  "Gen 2 Triple Kick hits 1-3 times (multihit [1, 3], no multiaccuracy) with 10 \u00d7 the hit's number as power"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hitmontop",
+    "species": "Hitmontop",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Triple Kick"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Triple Kick",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Triple Kick",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Triple Kick",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Triple Kick",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

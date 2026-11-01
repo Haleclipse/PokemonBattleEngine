@@ -1,0 +1,80 @@
+{
+ "schema": 1,
+ "id": "gen5-regenerator-heals-under-heal-block",
+ "notes": [
+  "Gen 5: Slowbro under Heal Block switches out and Regenerator still heals a third: the ability's `pokemon.heal` runs no `TryHeal` (`HealRequest::direct`, DESIGN.md R-M8-90)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Slowbro",
+    "species": "Slowbro",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Regenerator",
+    "gender": "M"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Alakazam",
+    "species": "Alakazam",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Heal Block",
+     "Psybeam",
+     "Splash"
+    ],
+    "ability": "Synchronize",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash",
+   "p2": "move Psybeam"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Heal Block"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

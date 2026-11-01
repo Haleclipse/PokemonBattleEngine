@@ -1,0 +1,59 @@
+{
+ "schema": 1,
+ "id": "gen7-z-move-thunderbolt",
+ "notes": [
+  "Gen 7: Pikachu holds an Electrium Z and uses Thunderbolt as a Z-Move (`move 1 zmove`): the generic Z-Move 终极伏特狂雷闪 (Gigavolt Havoc) runs with Thunderbolt's power (175), category and priority, Thunderbolt's PP pays, and the Z power is spent for the side (a second `zmove` in the same battle is refused)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Pikachu",
+    "species": "Pikachu",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Thunderbolt",
+     "Harden"
+    ],
+    "ability": "Static",
+    "item": "Electrium Z"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1 zmove",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

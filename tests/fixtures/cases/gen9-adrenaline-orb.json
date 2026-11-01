@@ -1,0 +1,88 @@
+{
+ "schema": 1,
+ "id": "gen9-adrenaline-orb",
+ "notes": [
+  "Gen 9 Adrenaline Orb (Showdown `onAfterBoost`): Arcanine's Intimidate meets Metagross's Clear Body, which refuses the drop \u2014 the orb goes all the same (+1 Speed)",
+  "Its Intimidate on Snorlax lowers its Attack: Snorlax's orb goes too"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Metagross",
+    "species": "Metagross",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Adrenaline Orb",
+    "ability": "Clear Body"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Adrenaline Orb",
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Natural Cure"
+   },
+   {
+    "label": "Arcanine",
+    "species": "Arcanine",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Intimidate"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "switch Arcanine"
+  },
+  {
+   "p1": "switch Snorlax",
+   "p2": "switch Blissey"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Arcanine"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

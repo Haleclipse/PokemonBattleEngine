@@ -1,0 +1,119 @@
+{
+ "schema": 1,
+ "id": "gen9-effect-spore",
+ "notes": [
+  "Effect Spore (Gen 5+): one random(100) per contact hit \u2014 below 11 sleep, below 21 paralysis, below 30 poison \u2014 against an attacker not immune to powder: Swift (no contact) and a Grass-type attacker draw nothing; Refresh clears the status for the next ones"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Swift",
+     "Heal Bell",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Leafeon",
+    "species": "Leafeon",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Spore",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Harden"
+    ],
+    "ability": "Effect Spore"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Heal Bell",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Heal Bell",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Swift",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Leafeon",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   5,
+   6,
+   7,
+   8
+  ]
+ }
+}

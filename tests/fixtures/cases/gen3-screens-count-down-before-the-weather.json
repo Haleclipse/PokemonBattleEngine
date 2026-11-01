@@ -1,0 +1,63 @@
+{
+ "schema": 1,
+ "id": "gen3-screens-count-down-before-the-weather",
+ "notes": [
+  "Gen 3-4 screens count down at onSideResidualOrder 1 / 2, before the weather (8): Shedinja falls to the sandstorm and ends the battle, and the last frame still shows Reflect and Light Screen one turn shorter"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Reflect",
+     "Light Screen",
+     "Sandstorm"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Shedinja",
+    "species": "Shedinja",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Reflect",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Light Screen",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Sandstorm",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

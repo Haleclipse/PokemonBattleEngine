@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "gen9-fling-throws-a-flower-sweet-at-10",
+ "notes": [
+  "Gen 9: Clauncher flings its Flower Sweet at Snorlax for 10 power, as every Sweet — the Sword / Shield item table (Smogon's research, Marty's datamine); Showdown's data has 0 and threw it for nothing, the I196 patch gives it 10 (issues.md I196, DESIGN.md R-M8-142)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Clauncher",
+    "species": "Clauncher",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fling",
+     "Splash"
+    ],
+    "item": "Flower Sweet",
+    "ability": "Mega Launcher",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Fling",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

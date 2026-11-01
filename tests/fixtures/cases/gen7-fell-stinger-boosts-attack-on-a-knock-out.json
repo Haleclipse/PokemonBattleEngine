@@ -1,0 +1,70 @@
+{
+ "schema": 1,
+ "id": "gen7-fell-stinger-boosts-attack-on-a-knock-out",
+ "notes": [
+  "Fell Stinger raises the user's Attack by 3 when its target is knocked out, and does nothing otherwise"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Beedrill",
+    "species": "Beedrill",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fell Stinger"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 5,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Fell Stinger",
+   "p2": "move Harden"
+  },
+  {
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Fell Stinger",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,100 @@
+{
+ "schema": 1,
+ "id": "gen3-sleep-talk-turns-come-back",
+ "notes": [
+  "Gen 3: asleep from Breloom's Spore, Snorlax spends a turn on Sleep Talk and switches out; coming back it gets that turn back (Showdown gen3 `slp.skippedTime`; pokeemerald's `CANCELER_ASLEEP` takes it off the battler without the asleep script that writes the party's status), so it wakes a turn later than its count of sleeping turns says: the 5 drawn, the most there is, shows it (DESIGN.md R-M8-79)"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Breloom",
+    "species": "Breloom",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spore",
+     "Splash"
+    ],
+    "ability": "Effect Spore",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sleep Talk",
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Spore",
+   "p2": "move Sleep Talk"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   13,
+   14,
+   15,
+   16
+  ]
+ }
+}

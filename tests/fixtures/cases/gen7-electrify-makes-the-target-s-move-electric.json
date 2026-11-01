@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen7-electrify-makes-the-target-s-move-electric",
+ "notes": [
+  "Gen 7: Jolteon Electrifies Snorlax before it moves (`-singleturn|…|move: Electrify`): its Body Slam is Electric and Jolteon's Volt Absorb takes it; Electrify after Snorlax's Quick Attack fails (`queue.willMove` false), so Jolteon's Stomping Tantrum doubles the next turn, and Snorlax's Body Slam is Normal again"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Electrify",
+     "Stomping Tantrum"
+    ],
+    "gender": "M",
+    "ability": "Volt Absorb"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Body Slam",
+     "Quick Attack"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Electrify",
+   "p2": "move Body Slam"
+  },
+  {
+   "p1": "move Electrify",
+   "p2": "move Quick Attack"
+  },
+  {
+   "p1": "move Stomping Tantrum",
+   "p2": "move Body Slam"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,102 @@
+{
+  "schema": 1,
+  "id": "m10-s-thief-leaves-a-mega-stone-its-thief-would-mega-evolve-with",
+  "notes": [
+    "Gen 7: Lucario's Thief on a Forretress holding Lucarionite (Pickpocket took it from Stantler) takes nothing: Thief asks the item's TakeItem again with its user as the holder, and the stone stays, unseen (R-M10-43)",
+    "promoted from m8-gen7-singles-s1648-012-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 7,
+    "mode": "singles",
+    "format": "gen7customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Stantler",
+        "species": "Stantler",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Horn Attack"
+        ],
+        "ability": "Run Away",
+        "item": "Lucarionite",
+        "gender": "M"
+      },
+      {
+        "label": "Weepinbell",
+        "species": "Weepinbell",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Bug Bite"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Lucario",
+        "species": "Lucario",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Thief"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Forretress",
+        "species": "Forretress",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Rage Powder"
+        ],
+        "ability": "Pickpocket",
+        "gender": "F"
+      },
+      {
+        "label": "Empoleon",
+        "species": "Empoleon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Psychic Fangs"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      8566,
+      41918,
+      5306,
+      43227
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Horn Attack",
+      "p2": "move Rage Powder"
+    },
+    {
+      "p1": "switch Weepinbell",
+      "p2": "switch Empoleon"
+    },
+    {
+      "p1": "switch Lucario",
+      "p2": "switch Forretress"
+    },
+    {
+      "p1": "move Thief",
+      "p2": "move Rage Powder"
+    }
+  ]
+}

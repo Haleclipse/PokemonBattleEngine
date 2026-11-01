@@ -1,0 +1,62 @@
+{
+ "schema": 1,
+ "id": "gen5-struggle-recoils-when-endure-takes-nothing",
+ "notes": [
+  "Struggle's recoil (a quarter of the user's maximum HP, Gen 4+) follows a hit even when it dealt nothing: Shedinja at its 1 HP endures, the Struggle takes 0 HP and Scyther still loses its quarter; the second Endure rolls the stall counter"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Scyther",
+    "species": "Scyther",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Swords Dance"
+    ],
+    "ability": "Swarm"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Shedinja",
+    "species": "Shedinja",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Taunt",
+     "Endure"
+    ],
+    "ability": "Wonder Guard"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Swords Dance",
+   "p2": "move Taunt"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Endure"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Endure"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

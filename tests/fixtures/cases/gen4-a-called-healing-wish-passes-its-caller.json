@@ -1,0 +1,80 @@
+{
+ "schema": 1,
+ "id": "gen4-a-called-healing-wish-passes-its-caller",
+ "notes": [
+  "Gen 4: asleep, Chansey's Sleep Talk calls Healing Wish; Blissey, sent out in its place, takes the battle's last move — Sleep Talk, the action's (the gen4 slot condition's `target.lastMove = this.lastMove`, Showdown restoring the outermost `activeMove`; pokeplatinum's `movePrevByBattler[attacker] = moveTemp`) — so Snorlax's Spite fails, Blissey knowing no Sleep Talk, and its Healing Wish keeps its PP"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sleep Talk",
+     "Healing Wish"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Healing Wish"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spore",
+     "Spite"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Sleep Talk",
+   "p2": "move Spore"
+  },
+  {
+   "p1": "move Sleep Talk",
+   "p2": "move Spite"
+  },
+  {
+   "p1": "switch 2"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Spite"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

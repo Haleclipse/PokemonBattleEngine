@@ -1,0 +1,108 @@
+{
+  "schema": 1,
+  "id": "m8-gen3-doubles-minus-counts-a-fainting-plus",
+  "notes": [
+    "Nightly 63: Slaking's Minus Heat Wave knocks Spoink (Plus) out with its first hit; Spoink's faint is not processed yet, so the second hit is still boosted (gen3 getAllActive, !fainted) (DESIGN.md R-M8-107)",
+    "promoted from m8-gen3-doubles-s550-017-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 3,
+    "mode": "doubles",
+    "format": "gen3doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Umbreon",
+        "species": "Umbreon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fire Punch",
+          "Fire Blast"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Slaking",
+        "species": "Slaking",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Flamethrower",
+          "Heat Wave"
+        ],
+        "ability": "Minus",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Spoink",
+        "species": "Spoink",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sing",
+          "Steel Wing"
+        ],
+        "ability": "Plus",
+        "gender": "M"
+      },
+      {
+        "label": "Diglett",
+        "species": "Diglett",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Ancient Power"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Lileep",
+        "species": "Lileep",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Meteor Mash",
+          "Superpower"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      40906,
+      6115,
+      33209,
+      39244
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Fire Punch 1, move Flamethrower 2",
+      "p2": "move Sing 1, move Ancient Power 2"
+    },
+    {
+      "p2": "pass, switch Lileep"
+    },
+    {
+      "p1": "move Fire Blast 1, move Heat Wave",
+      "p2": "move Steel Wing 1, move Superpower 2"
+    },
+    {
+      "p1": "move Fire Punch 2, move Flamethrower 1",
+      "p2": "move Sing 1, move Meteor Mash 2"
+    },
+    {
+      "p1": "move Fire Blast 2, move Heat Wave",
+      "p2": "move Steel Wing 1, move Superpower 2"
+    }
+  ]
+}

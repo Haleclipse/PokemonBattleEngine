@@ -1,0 +1,68 @@
+{
+ "schema": 1,
+ "id": "m8-43-gen8-singles-s447-015",
+ "notes": [
+  "Nightly 37 gen8-singles-s447-015, minimized: a foreseen strike (Focus Band, a pinch berry, a gem, AfterMoveSecondary) as Showdown runs it"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Dwebble",
+    "species": "Dwebble",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Thousand Arrows",
+     "Doom Desire",
+     "Magnet Rise"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Spheal",
+    "species": "Spheal",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Doom Desire",
+     "Smack Down",
+     "Magnet Rise"
+    ],
+    "ability": "Run Away",
+    "item": "Maranga Berry",
+    "gender": "M"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   46783,
+   50349,
+   32533,
+   28584
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Doom Desire",
+   "p2": "move Smack Down"
+  },
+  {
+   "p1": "move Magnet Rise",
+   "p2": "move Magnet Rise"
+  },
+  {
+   "p1": "move Thousand Arrows",
+   "p2": "move Doom Desire"
+  }
+ ]
+}

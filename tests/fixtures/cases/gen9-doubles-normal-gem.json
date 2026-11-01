@@ -1,0 +1,87 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-normal-gem",
+ "notes": [
+  "Gen 9 Normal Gem ([5325, 4096]): the spread Hyper Voice that uses it up is boosted on both foes, the next one is not"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Hyper Voice",
+     "Recover"
+    ],
+    "ability": "Run Away",
+    "item": "Normal Gem"
+   },
+   {
+    "label": "Ally",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Protect",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Soft-Boiled",
+     "Protect"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Hyper Voice, move Protect",
+   "p2": "move Recover, move Soft-Boiled"
+  },
+  {
+   "p1": "move Hyper Voice, move Recover",
+   "p2": "move Slack Off, move Soft-Boiled"
+  },
+  {
+   "p1": "move Hyper Voice, move Protect",
+   "p2": "move Soft-Boiled, move Soft-Boiled"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

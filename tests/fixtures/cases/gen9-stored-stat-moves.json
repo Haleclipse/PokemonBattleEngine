@@ -1,0 +1,97 @@
+{
+ "schema": 1,
+ "id": "gen9-stored-stat-moves",
+ "notes": [
+  "Chansey against Snorlax: Power Split averages Attack / Special Attack (Snorlax's Tackle and Swift weaker), Guard Split Defense / Special Defense (Chansey's Defense 46 -> 106), Speed Swap trades Speed (Snorlax moves first, its Gyro Ball reads 136 against 96), Power Trick swaps Chansey's Attack and Defense and, used again, swaps them back; switching out restores Chansey's own stats"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "User",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Power Split",
+     "Guard Split",
+     "Speed Swap",
+     "Power Trick"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Bench",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Swift",
+     "Gyro Ball",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Power Split",
+   "p2": "move Swift"
+  },
+  {
+   "p1": "move Guard Split",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Speed Swap",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Power Trick",
+   "p2": "move Gyro Ball"
+  },
+  {
+   "p1": "move Power Trick",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "switch Bench",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch User",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Power Trick",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

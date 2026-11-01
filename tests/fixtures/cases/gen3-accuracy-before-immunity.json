@@ -1,0 +1,90 @@
+{
+  "schema": 1,
+  "id": "gen3-accuracy-before-immunity",
+  "notes": [
+    "Gen 3 rolls accuracy before TryHit (a miss against a Protecting target is -miss) and before reporting a type immunity"
+  ],
+  "battle": {
+    "generation": 3,
+    "mode": "singles",
+    "format": "gen3customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Marowak",
+        "species": "Marowak",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Bone Club",
+          "Protect"
+        ],
+        "ability": "Run Away"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Snorlax",
+        "species": "Snorlax",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Protect",
+          "Growl"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Pidgeot",
+        "species": "Pidgeot",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Protect",
+          "Growl"
+        ],
+        "ability": "Run Away"
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 1",
+      "p2": "switch 2"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      3,
+      4,
+      5,
+      6
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-pickup",
+ "notes": [
+  "Gen 9 doubles Pickup: Chansey's Teatime makes Snorlax, Muk and Chansey itself eat their berries; at the end of the turn the empty-handed Ambipom picks one of the three up (drawn), and the empty-handed Chansey, slower, the one left: Snorlax's (its own is not adjacent to it, and Ambipom took Muk's)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Ambipom",
+    "species": "Ambipom",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Pickup"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Sitrus Berry"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Muk",
+    "species": "Muk",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Stench",
+    "item": "Oran Berry"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Teatime",
+     "Harden"
+    ],
+    "ability": "Pickup",
+    "item": "Lum Berry"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Teatime"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

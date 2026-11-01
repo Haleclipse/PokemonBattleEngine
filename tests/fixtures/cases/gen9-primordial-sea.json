@@ -1,0 +1,96 @@
+{
+ "schema": 1,
+ "id": "gen9-primordial-sea",
+ "notes": [
+  "Primordial Sea: Fire attacks fail, Water ones are \u00d71.5; a Desolate Land holder coming in replaces it (a strong weather replaces another, and then Kyogre's Water Gun fails), and when that holder faints the weather is gone"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Kyogre",
+    "species": "Kyogre",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Water Gun",
+     "Harden",
+     "Tackle"
+    ],
+    "ability": "Primordial Sea"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Flamethrower",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Groudon",
+    "species": "Groudon",
+    "level": 5,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Water Gun"
+    ],
+    "ability": "Desolate Land"
+   },
+   {
+    "label": "Foe3",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Water Gun",
+   "p2": "move Flamethrower"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Groudon"
+  },
+  {
+   "p1": "move Water Gun",
+   "p2": "move Water Gun"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  },
+  {
+   "p2": "switch Foe3"
+  },
+  {
+   "p1": "move Water Gun",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

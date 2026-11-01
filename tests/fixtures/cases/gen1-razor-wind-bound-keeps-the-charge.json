@@ -1,0 +1,69 @@
+{
+ "schema": 1,
+ "id": "gen1-razor-wind-bound-keeps-the-charge",
+ "notes": [
+  "Gen 1 Razor Wind: bound by Wrap on the turn it would attack, the user keeps its charge (only full paralysis, Disable and a confusion self-hit end it) and attacks once free"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Charger",
+    "species": "Farfetch\u2019d",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Razor Wind",
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Wrapper",
+    "species": "Arbok",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Wrap",
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Razor Wind",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Wrap"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

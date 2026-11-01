@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "gen8-libero-every-move",
+ "notes": [
+  "Gen 8: Libero changes Cinderace's type before every move: Fighting for Low Kick, then Fire for Pyro Ball"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Cinderace",
+    "species": "Cinderace",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Low Kick",
+     "Pyro Ball"
+    ],
+    "gender": "M",
+    "ability": "Libero"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Close Combat"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Low Kick",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Pyro Ball",
+   "p2": "move Close Combat"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

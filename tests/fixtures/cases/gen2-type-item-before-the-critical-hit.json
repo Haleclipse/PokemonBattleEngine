@@ -1,0 +1,149 @@
+{
+ "schema": 1,
+ "id": "gen2-type-item-before-the-critical-hit",
+ "notes": [
+  "Gen 2 (the cartridge, issues.md I51): the Black Belt's x 110/100 is taken before a critical hit doubles the damage (pokecrystal BattleCommand_DamageCalc): Machamp's Karate Chop at Blissey has 66 before either, 72 x 2 = 144 on the cartridge, 132 x 1.1 = 145 in Showdown, 438 against 441 after STAB and the super effectiveness; with this seed a critical hit's roll puts Showdown's damage where no cartridge roll reaches. Focus Energy and Karate Chop for the critical hits"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Champ",
+    "species": "Machamp",
+    "level": 53,
+    "nature": "Hardy",
+    "moves": [
+     "Focus Energy",
+     "Karate Chop"
+    ],
+    "item": "Black Belt"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Wall",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Softboiled"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Focus Energy",
+   "p2": "move Softboiled"
+  },
+  {
+   "p1": "move Karate Chop",
+   "p2": "move Softboiled"
+  },
+  {
+   "p1": "move Karate Chop",
+   "p2": "move Softboiled"
+  },
+  {
+   "p1": "move Karate Chop",
+   "p2": "move Softboiled"
+  },
+  {
+   "p1": "move Karate Chop",
+   "p2": "move Softboiled"
+  },
+  {
+   "p1": "move Karate Chop",
+   "p2": "move Softboiled"
+  },
+  {
+   "p1": "move Karate Chop",
+   "p2": "move Softboiled"
+  },
+  {
+   "p1": "move Karate Chop",
+   "p2": "move Softboiled"
+  },
+  {
+   "p1": "move Karate Chop",
+   "p2": "move Softboiled"
+  },
+  {
+   "p1": "move Karate Chop",
+   "p2": "move Softboiled"
+  },
+  {
+   "p1": "move Karate Chop",
+   "p2": "move Softboiled"
+  },
+  {
+   "p1": "move Karate Chop",
+   "p2": "move Softboiled"
+  },
+  {
+   "p1": "move Karate Chop",
+   "p2": "move Softboiled"
+  },
+  {
+   "p1": "move Karate Chop",
+   "p2": "move Softboiled"
+  },
+  {
+   "p1": "move Karate Chop",
+   "p2": "move Softboiled"
+  },
+  {
+   "p1": "move Karate Chop",
+   "p2": "move Softboiled"
+  },
+  {
+   "p1": "move Karate Chop",
+   "p2": "move Softboiled"
+  },
+  {
+   "p1": "move Karate Chop",
+   "p2": "move Softboiled"
+  },
+  {
+   "p1": "move Karate Chop",
+   "p2": "move Softboiled"
+  },
+  {
+   "p1": "move Karate Chop",
+   "p2": "move Softboiled"
+  },
+  {
+   "p1": "move Karate Chop",
+   "p2": "move Softboiled"
+  },
+  {
+   "p1": "move Karate Chop",
+   "p2": "move Softboiled"
+  },
+  {
+   "p1": "move Karate Chop",
+   "p2": "move Softboiled"
+  },
+  {
+   "p1": "move Karate Chop",
+   "p2": "move Softboiled"
+  },
+  {
+   "p1": "move Karate Chop",
+   "p2": "move Softboiled"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   9,
+   2,
+   3,
+   4
+  ]
+ }
+}

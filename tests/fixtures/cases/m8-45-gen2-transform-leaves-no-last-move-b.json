@@ -1,0 +1,59 @@
+{
+ "schema": 1,
+ "id": "m8-45-gen2-transform-leaves-no-last-move-b",
+ "notes": [
+  "Nightly 39 gen2-singles-s455-005, minimized: Gen 2: Transform (and its kind) leave no last move, on the other side of the same rule"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Geodude",
+    "species": "Geodude",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Transform",
+     "Conversion 2"
+    ],
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Espeon",
+    "species": "Espeon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Transform",
+     "Lock-On"
+    ],
+    "gender": "F"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   11949,
+   31656,
+   1921,
+   21264
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Transform",
+   "p2": "move Transform"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 2"
+  }
+ ]
+}

@@ -1,0 +1,68 @@
+{
+ "schema": 1,
+ "id": "gen1-a-binding-move-that-knocks-out-locks-nothing",
+ "notes": [
+  "Gen 1: a Clamp that knocks its target out starts no lock (`partialtrappinglock.onStart` finds no foe with HP): no duration is rolled and the user acts freely against the replacement"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Cloyster",
+    "species": "Cloyster",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Clamp",
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Caterpie",
+    "species": "Caterpie",
+    "level": 5,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   },
+   {
+    "label": "Metapod",
+    "species": "Metapod",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Clamp",
+   "p2": "move Harden"
+  },
+  {
+   "p2": "switch Metapod"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

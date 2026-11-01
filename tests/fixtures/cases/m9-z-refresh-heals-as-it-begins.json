@@ -1,0 +1,404 @@
+{
+ "schema": 1,
+ "id": "m9-z-refresh-heals-as-it-begins",
+ "notes": [
+  "R-M9-22: a Z status move's own heal (Z-Refresh, `zMove.effect: 'heal'`) shows as `-heal \u2026 [zeffect]` within the action; the replay reads it as HP the action commits, like a drain. Minimized from Nightly 20261020-015900 (gen7ou)."
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7ou"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Armaldo",
+    "species": "Armaldo",
+    "ability": "Battle Armor",
+    "moves": [
+     "Rock Slide"
+    ],
+    "nature": "Bashful",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 120,
+     "atk": 140,
+     "def": 152,
+     "spa": 60,
+     "spd": 36,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 26
+    }
+   },
+   {
+    "label": "Phione",
+    "species": "Phione",
+    "ability": "Hydration",
+    "moves": [
+     "Confide"
+    ],
+    "nature": "Calm",
+    "gender": "",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 180,
+     "atk": 36,
+     "def": 72,
+     "spa": 16,
+     "spd": 124,
+     "spe": 80
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Nick9",
+    "species": "Gourgeist-Super",
+    "ability": "Insomnia",
+    "moves": [
+     "Confuse Ray"
+    ],
+    "nature": "Sassy",
+    "gender": "F",
+    "shiny": false,
+    "level": 38,
+    "evs": {
+     "hp": 96,
+     "atk": 0,
+     "def": 40,
+     "spa": 236,
+     "spd": 92,
+     "spe": 44
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 197
+   },
+   {
+    "label": "Deerling",
+    "species": "Deerling",
+    "ability": "Serene Grace",
+    "moves": [
+     "Tackle"
+    ],
+    "nature": "Quiet",
+    "gender": "M",
+    "shiny": false,
+    "level": 80,
+    "evs": {
+     "hp": 124,
+     "atk": 0,
+     "def": 252,
+     "spa": 32,
+     "spd": 96,
+     "spe": 4
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Jellicent",
+    "species": "Jellicent",
+    "ability": "Water Absorb",
+    "moves": [
+     "Night Shade"
+    ],
+    "nature": "Serious",
+    "gender": "F",
+    "shiny": true,
+    "level": 100,
+    "evs": {
+     "hp": 0,
+     "atk": 104,
+     "def": 156,
+     "spa": 128,
+     "spd": 60,
+     "spe": 60
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 203
+   },
+   {
+    "label": "Snivy",
+    "species": "Snivy",
+    "ability": "Contrary",
+    "moves": [
+     "Seed Bomb",
+     "Torment"
+    ],
+    "nature": "Hardy",
+    "gender": "M",
+    "shiny": false,
+    "level": 69,
+    "evs": {
+     "hp": 104,
+     "atk": 0,
+     "def": 24,
+     "spa": 188,
+     "spd": 48,
+     "spe": 144
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 0
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gligar",
+    "species": "Gligar",
+    "ability": "Hyper Cutter",
+    "moves": [
+     "Night Slash"
+    ],
+    "nature": "Sassy",
+    "gender": "F",
+    "shiny": false,
+    "level": 29,
+    "evs": {
+     "hp": 4,
+     "atk": 92,
+     "def": 112,
+     "spa": 88,
+     "spd": 128,
+     "spe": 84
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 18,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Litwick",
+    "species": "Litwick",
+    "ability": "Flame Body",
+    "moves": [
+     "Sleep Talk"
+    ],
+    "nature": "Naive",
+    "gender": "M",
+    "shiny": false,
+    "level": 20,
+    "evs": {
+     "hp": 144,
+     "atk": 56,
+     "def": 160,
+     "spa": 0,
+     "spd": 0,
+     "spe": 148
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Burmy",
+    "species": "Burmy",
+    "ability": "Shed Skin",
+    "moves": [
+     "Protect"
+    ],
+    "nature": "Careful",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 68,
+     "atk": 0,
+     "def": 88,
+     "spa": 148,
+     "spd": 60,
+     "spe": 144
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 6
+    }
+   },
+   {
+    "label": "Nick26",
+    "species": "Elgyem",
+    "ability": "Synchronize",
+    "moves": [
+     "Gravity"
+    ],
+    "nature": "Quiet",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 112,
+     "atk": 100,
+     "def": 108,
+     "spa": 0,
+     "spd": 0,
+     "spe": 188
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 3,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 120
+   },
+   {
+    "label": "Magby",
+    "species": "Magby",
+    "ability": "Flame Body",
+    "moves": [
+     "Captivate"
+    ],
+    "nature": "Lax",
+    "gender": "F",
+    "shiny": false,
+    "level": 47,
+    "evs": {
+     "hp": 0,
+     "atk": 0,
+     "def": 208,
+     "spa": 176,
+     "spd": 0,
+     "spe": 124
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 9,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Blastoise",
+    "species": "Blastoise",
+    "item": "Normalium Z",
+    "ability": "Torrent",
+    "moves": [
+     "Outrage",
+     "Hydro Pump",
+     "Refresh"
+    ],
+    "nature": "Sassy",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 0,
+     "atk": 0,
+     "def": 232,
+     "spa": 36,
+     "spd": 180,
+     "spe": 60
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   }
+  ]
+ },
+ "preview": {
+  "p1": "team 612345",
+  "p2": "team 642531"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   16627,
+   102,
+   1014,
+   31
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Seed Bomb",
+   "p2": "move Outrage"
+  },
+  {
+   "p1": "move Torment",
+   "p2": "move Outrage"
+  },
+  {
+   "p1": "switch 2"
+  },
+  {
+   "p1": "move Rock Slide",
+   "p2": "move Outrage"
+  },
+  {
+   "p1": "switch 3",
+   "p2": "switch 2"
+  },
+  {
+   "p1": "switch 3",
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Rock Slide",
+   "p2": "move 3 zmove"
+  }
+ ]
+}

@@ -1,0 +1,100 @@
+{
+  "schema": 1,
+  "id": "gen9-doubles-covert-cloak-does-not-stop-sand-tomb",
+  "notes": [
+    "Covert Cloak keeps secondaries off, not Sand Tomb's own trap",
+    "promoted from m8-gen9-doubles-s401-000-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Houndstone",
+        "species": "Houndstone",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Leafage"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Grumpig",
+        "species": "Grumpig",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Water Pulse"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Scizor",
+        "species": "Scizor",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Dynamic Punch"
+        ],
+        "ability": "Run Away",
+        "item": "Covert Cloak",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Skeledirge",
+        "species": "Skeledirge",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Psybeam"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Iron Hands",
+        "species": "Iron Hands",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sand Tomb"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Chikorita",
+        "species": "Chikorita",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fire Spin"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      2740,
+      18470,
+      61958,
+      9529
+    ]
+  },
+  "script": [
+    {
+      "p1": "switch Scizor, move Water Pulse 1",
+      "p2": "switch Chikorita, move Sand Tomb 1"
+    }
+  ]
+}

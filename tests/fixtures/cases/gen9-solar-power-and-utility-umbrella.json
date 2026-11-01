@@ -1,0 +1,117 @@
+{
+ "schema": 1,
+ "id": "gen9-solar-power-and-utility-umbrella",
+ "notes": [
+  "Solar Power: Special Attack \u00d71.5 in the sun, 1/8 lost in the upkeep \u2014 not while it holds a Utility Umbrella, which also keeps sun's Fire boost off hits on its holder and its Solar Beam charging; Thunder aimed at an umbrella holder in rain can miss"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sun",
+    "species": "Mew",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Sunny Day",
+     "Rain Dance",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Umbrella",
+    "species": "Mew",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Solar Beam",
+     "Recover"
+    ],
+    "ability": "Run Away",
+    "item": "Utility Umbrella"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Solar",
+    "species": "Houndoom",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Flamethrower",
+     "Thunder",
+     "Recover"
+    ],
+    "ability": "Solar Power"
+   },
+   {
+    "label": "Shaded",
+    "species": "Houndoom",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Flamethrower",
+     "Recover"
+    ],
+    "ability": "Solar Power",
+    "item": "Utility Umbrella"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Sunny Day",
+   "p2": "move Flamethrower"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Flamethrower"
+  },
+  {
+   "p1": "switch Umbrella",
+   "p2": "move Flamethrower"
+  },
+  {
+   "p1": "move Solar Beam",
+   "p2": "switch Shaded"
+  },
+  {
+   "p1": "move Solar Beam",
+   "p2": "move Flamethrower"
+  },
+  {
+   "p1": "switch Sun",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Rain Dance",
+   "p2": "switch Solar"
+  },
+  {
+   "p1": "switch Umbrella",
+   "p2": "move Thunder"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Thunder"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Thunder"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

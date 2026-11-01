@@ -1,0 +1,87 @@
+{
+ "schema": 1,
+ "id": "gen4-screens-light-clay-and-brick-break",
+ "notes": [
+  "Gen 4: Reflect / Light Screen in ModifyDamagePhase1 (\u00d70.5), eight turns from Light Clay; Snorlax's Brick Break breaks Reflect; Mew hits itself in confusion at full strength under its own Reflect (target === source)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Reflect",
+     "Light Screen",
+     "Recover"
+    ],
+    "ability": "Run Away",
+    "item": "Light Clay"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Lax",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Strength",
+     "Hyper Voice",
+     "Brick Break",
+     "Confuse Ray"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Reflect",
+   "p2": "move Strength"
+  },
+  {
+   "p1": "move Light Screen",
+   "p2": "move Hyper Voice"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Confuse Ray"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Strength"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Hyper Voice"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Brick Break"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Strength"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Hyper Voice"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

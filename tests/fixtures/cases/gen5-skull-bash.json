@@ -1,0 +1,75 @@
+{
+ "schema": 1,
+ "id": "gen5-skull-bash",
+ "notes": [
+  "Gen 5 Skull Bash: the charging turn raises the user's Defense; a full paralysis on the attacking turn drops the charge, and the next use charges (and raises Defense) again"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Basher",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Skull Bash",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Wall",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Thunder Wave",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Skull Bash",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Skull Bash",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Skull Bash",
+   "p2": "move Thunder Wave"
+  },
+  {
+   "p1": "move Skull Bash",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Skull Bash",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Skull Bash",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   4,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,110 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-incinerate-burns-berries-and-gems",
+ "notes": [
+  "Gen 9 doubles Incinerate burns a Sitrus Berry and a Normal Gem (Gen 6+); a Sticky Hold Muk keeps its Oran Berry (-activate); Hitmonlee's Unburden starts once its Lum Berry burns"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Typhlosion",
+    "species": "Typhlosion",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Incinerate",
+     "Harden"
+    ],
+    "ability": "Blaze"
+   },
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Synchronize"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Sitrus Berry"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Natural Cure",
+    "item": "Normal Gem"
+   },
+   {
+    "label": "Muk",
+    "species": "Muk",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Sticky Hold",
+    "item": "Oran Berry"
+   },
+   {
+    "label": "Hitmonlee",
+    "species": "Hitmonlee",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Unburden",
+    "item": "Lum Berry"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Incinerate, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "switch Muk, switch Hitmonlee"
+  },
+  {
+   "p1": "move Incinerate, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

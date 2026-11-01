@@ -1,0 +1,427 @@
+{
+  "schema": 1,
+  "id": "gen4-multi-hit-rolls-that-only-add-up-together",
+  "notes": [
+    "Nightly 17: Sudowoodo's Rock Blast hits Gliscor's Substitute twice for 12 each, where a hit's roll gives 10, 12 or 13; slot by slot the search never moves both rolls at once, so it starts from the uniform roll set that comes closest",
+    "promoted from m8-gen4-singles-s378-002-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "singles",
+    "format": "gen4customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Blastoise",
+        "species": "Blastoise",
+        "level": 48,
+        "nature": "Hardy",
+        "moves": [
+          "Spark",
+          "Thunder Punch"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Octillery",
+        "species": "Octillery",
+        "level": 45,
+        "nature": "Hardy",
+        "moves": [
+          "Lick",
+          "Substitute",
+          "Thunderbolt",
+          "Tailwind"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Quilava",
+        "species": "Quilava",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Zap Cannon",
+          "Substitute",
+          "Dragon Breath",
+          "Tailwind"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Cloyster",
+        "species": "Cloyster",
+        "level": 53,
+        "nature": "Hardy",
+        "moves": [
+          "Double Slap",
+          "Substitute",
+          "Spike Cannon",
+          "Tailwind"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Ludicolo",
+        "species": "Ludicolo",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Arm Thrust",
+          "Double Kick",
+          "Tailwind"
+        ],
+        "ability": "Drizzle",
+        "gender": "F"
+      },
+      {
+        "label": "Sudowoodo",
+        "species": "Sudowoodo",
+        "level": 48,
+        "nature": "Hardy",
+        "moves": [
+          "Rock Blast",
+          "Substitute",
+          "Bone Rush",
+          "Tailwind"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Munchlax",
+        "species": "Munchlax",
+        "level": 46,
+        "nature": "Hardy",
+        "moves": [
+          "Bullet Seed",
+          "Substitute",
+          "Barrage",
+          "Tailwind"
+        ],
+        "ability": "Volt Absorb",
+        "gender": "M"
+      },
+      {
+        "label": "Snorunt",
+        "species": "Snorunt",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fury Attack",
+          "Substitute",
+          "Fury Swipes",
+          "Tailwind"
+        ],
+        "ability": "Snow Warning",
+        "gender": "F"
+      },
+      {
+        "label": "Palkia",
+        "species": "Palkia",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Pin Missile",
+          "Substitute",
+          "Triple Kick",
+          "Tailwind"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Gallade",
+        "species": "Gallade",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Bonemerang",
+          "Double Hit",
+          "Tailwind"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Gliscor",
+        "species": "Gliscor",
+        "level": 53,
+        "nature": "Hardy",
+        "moves": [
+          "Icicle Spear",
+          "Substitute",
+          "Comet Punch",
+          "Tailwind"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      34597,
+      33940,
+      59660,
+      28832
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Spark",
+      "p2": "move Bullet Seed"
+    },
+    {
+      "p1": "move Spark",
+      "p2": "move Substitute"
+    },
+    {
+      "p1": "move Spark",
+      "p2": "move Barrage"
+    },
+    {
+      "p1": "move Spark",
+      "p2": "move Tailwind"
+    },
+    {
+      "p1": "move Spark",
+      "p2": "move Bullet Seed"
+    },
+    {
+      "p1": "move Spark",
+      "p2": "move Substitute"
+    },
+    {
+      "p1": "move Spark",
+      "p2": "move Barrage"
+    },
+    {
+      "p1": "switch Octillery",
+      "p2": "switch Snorunt"
+    },
+    {
+      "p1": "move Tailwind",
+      "p2": "move Tailwind"
+    },
+    {
+      "p1": "move Lick",
+      "p2": "move Fury Attack"
+    },
+    {
+      "p1": "move Substitute",
+      "p2": "move Substitute"
+    },
+    {
+      "p1": "move Thunderbolt",
+      "p2": "move Fury Swipes"
+    },
+    {
+      "p1": "move Tailwind",
+      "p2": "move Tailwind"
+    },
+    {
+      "p1": "move Lick",
+      "p2": "move Fury Attack"
+    },
+    {
+      "p1": "move Substitute",
+      "p2": "move Substitute"
+    },
+    {
+      "p1": "switch Blastoise",
+      "p2": "switch Munchlax"
+    },
+    {
+      "p1": "move Thunder Punch",
+      "p2": "move Barrage"
+    },
+    {
+      "p1": "switch Octillery"
+    },
+    {
+      "p1": "move Tailwind",
+      "p2": "move Tailwind"
+    },
+    {
+      "p1": "move Lick",
+      "p2": "move Bullet Seed"
+    },
+    {
+      "p1": "switch Quilava"
+    },
+    {
+      "p1": "move Substitute",
+      "p2": "move Substitute"
+    },
+    {
+      "p1": "move Dragon Breath",
+      "p2": "move Barrage"
+    },
+    {
+      "p1": "move Tailwind",
+      "p2": "move Tailwind"
+    },
+    {
+      "p1": "move Zap Cannon",
+      "p2": "move Bullet Seed"
+    },
+    {
+      "p1": "switch Cloyster",
+      "p2": "switch Snorunt"
+    },
+    {
+      "p1": "move Substitute",
+      "p2": "move Substitute"
+    },
+    {
+      "p1": "move Spike Cannon",
+      "p2": "move Fury Swipes"
+    },
+    {
+      "p1": "move Tailwind",
+      "p2": "move Tailwind"
+    },
+    {
+      "p1": "move Double Slap",
+      "p2": "move Fury Attack"
+    },
+    {
+      "p2": "switch Munchlax"
+    },
+    {
+      "p1": "move Substitute",
+      "p2": "move Substitute"
+    },
+    {
+      "p1": "move Spike Cannon",
+      "p2": "move Barrage"
+    },
+    {
+      "p1": "move Tailwind",
+      "p2": "move Tailwind"
+    },
+    {
+      "p1": "switch Quilava",
+      "p2": "switch Palkia"
+    },
+    {
+      "p1": "move Zap Cannon",
+      "p2": "move Pin Missile"
+    },
+    {
+      "p1": "move Substitute",
+      "p2": "move Substitute"
+    },
+    {
+      "p1": "move Dragon Breath",
+      "p2": "move Triple Kick"
+    },
+    {
+      "p1": "switch Cloyster"
+    },
+    {
+      "p1": "move Tailwind",
+      "p2": "move Tailwind"
+    },
+    {
+      "p1": "move Double Slap",
+      "p2": "move Pin Missile"
+    },
+    {
+      "p1": "move Substitute",
+      "p2": "move Substitute"
+    },
+    {
+      "p1": "move Spike Cannon",
+      "p2": "move Triple Kick"
+    },
+    {
+      "p2": "switch Munchlax"
+    },
+    {
+      "p1": "switch Ludicolo",
+      "p2": "switch Gallade"
+    },
+    {
+      "p1": "move Tailwind",
+      "p2": "move Tailwind"
+    },
+    {
+      "p1": "move Arm Thrust",
+      "p2": "move Bonemerang"
+    },
+    {
+      "p1": "move Double Kick",
+      "p2": "move Double Hit"
+    },
+    {
+      "p1": "move Tailwind",
+      "p2": "move Tailwind"
+    },
+    {
+      "p1": "move Arm Thrust",
+      "p2": "move Bonemerang"
+    },
+    {
+      "p1": "switch Cloyster",
+      "p2": "switch Munchlax"
+    },
+    {
+      "p1": "move Spike Cannon",
+      "p2": "move Barrage"
+    },
+    {
+      "p2": "switch Gallade"
+    },
+    {
+      "p1": "move Tailwind",
+      "p2": "move Tailwind"
+    },
+    {
+      "p1": "move Double Slap",
+      "p2": "move Bonemerang"
+    },
+    {
+      "p1": "move Spike Cannon",
+      "p2": "move Double Hit"
+    },
+    {
+      "p1": "switch Ludicolo"
+    },
+    {
+      "p1": "move Tailwind",
+      "p2": "move Tailwind"
+    },
+    {
+      "p1": "move Arm Thrust",
+      "p2": "move Bonemerang"
+    },
+    {
+      "p1": "switch Sudowoodo",
+      "p2": "switch Gliscor"
+    },
+    {
+      "p1": "move Substitute",
+      "p2": "move Substitute"
+    },
+    {
+      "p1": "move Bone Rush",
+      "p2": "move Comet Punch"
+    },
+    {
+      "p1": "move Tailwind",
+      "p2": "move Tailwind"
+    },
+    {
+      "p1": "move Rock Blast",
+      "p2": "move Icicle Spear"
+    }
+  ]
+}

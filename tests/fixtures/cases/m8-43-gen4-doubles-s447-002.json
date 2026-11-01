@@ -1,0 +1,93 @@
+{
+ "schema": 1,
+ "id": "m8-43-gen4-doubles-s447-002",
+ "notes": [
+  "Nightly 37 gen4-doubles-s447-002, minimized: a foreseen strike (Focus Band, a pinch berry, a gem, AfterMoveSecondary) as Showdown runs it"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "doubles",
+  "format": "gen4doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Raikou",
+    "species": "Raikou",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Future Sight",
+     "Magnet Rise",
+     "Doom Desire"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Rhyhorn",
+    "species": "Rhyhorn",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Future Sight",
+     "Magnet Rise",
+     "Doom Desire"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Sceptile",
+    "species": "Sceptile",
+    "level": 45,
+    "nature": "Hardy",
+    "moves": [
+     "Doom Desire",
+     "Magnet Rise",
+     "Future Sight"
+    ],
+    "ability": "Run Away",
+    "item": "Focus Band",
+    "gender": "F"
+   },
+   {
+    "label": "Furret",
+    "species": "Furret",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Doom Desire",
+     "Magnet Rise",
+     "Future Sight"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   5358,
+   61296,
+   55668,
+   20847
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Future Sight 1, move Future Sight 2",
+   "p2": "move Doom Desire 1, move Doom Desire 2"
+  },
+  {
+   "p1": "move Magnet Rise, move Magnet Rise",
+   "p2": "move Magnet Rise, move Magnet Rise"
+  },
+  {
+   "p1": "move Doom Desire 1, move Doom Desire 2",
+   "p2": "move Future Sight 1, move Future Sight 2"
+  }
+ ]
+}

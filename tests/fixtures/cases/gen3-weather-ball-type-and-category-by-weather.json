@@ -1,0 +1,71 @@
+{
+ "schema": 1,
+ "id": "gen3-weather-ball-type-and-category-by-weather",
+ "notes": [
+  "Gen 3 Weather Ball: Normal and physical with no weather, Water and special in rain, Rock and physical in a sandstorm (the category follows the type), power doubled in weather"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Dragonite",
+    "species": "Dragonite",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Weather Ball",
+     "Rain Dance",
+     "Sandstorm"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Tail Whip"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Weather Ball",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Rain Dance",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Weather Ball",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Sandstorm",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Weather Ball",
+   "p2": "move Tail Whip"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

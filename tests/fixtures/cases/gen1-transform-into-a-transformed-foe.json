@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen1-transform-into-a-transformed-foe",
+ "notes": [
+  "Gen 1: Ditto transforms into Mew, then Mew transforms into Ditto (a transformed target is no failure before Gen 2)"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Transform"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Ditto",
+    "species": "Ditto",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Transform"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Transform"
+  },
+  {
+   "p1": "move Transform",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,82 @@
+{
+ "schema": 1,
+ "id": "gen5-doubles-a-called-pledge-waits-for-its-ally",
+ "notes": [
+  "Gen 5 doubles: Jolteon's Water Pledge goes first; Ambipom's Copycat then calls Water Pledge, and since its partner Snorlax still has Grass Pledge queued, the called Pledge waits (`-waiting`, the move's own `onPrepareHit`): Snorlax's Grass Pledge moves up and goes out combined (`-combine`)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "doubles",
+  "format": "gen5doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Ambipom",
+    "species": "Ambipom",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Copycat",
+     "Harden"
+    ],
+    "ability": "Technician",
+    "gender": "F"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Grass Pledge",
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Water Pledge",
+     "Harden"
+    ],
+    "ability": "Volt Absorb"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Copycat, move Grass Pledge 1",
+   "p2": "move Water Pledge 1, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

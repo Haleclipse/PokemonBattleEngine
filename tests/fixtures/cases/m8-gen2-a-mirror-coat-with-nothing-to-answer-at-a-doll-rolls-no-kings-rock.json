@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "id": "m8-gen2-a-mirror-coat-with-nothing-to-answer-at-a-doll-rolls-no-kings-rock",
+  "notes": [
+    "Gen 2 singles, minimized from Nightly 151's m8-gen2-singles-s1493-007. Both make a Substitute; then Bellsprout uses Soft-Boiled and Weezing (King's Rock) Mirror Coat, with nothing to answer. Showdown's Gen 2 Substitute (`onTryPrimaryHit`) returns null without a word when the move's damage is nothing, so the log shows the move line alone: no strike on the doll, no damage, no `-fail`. The hit came to nothing, and King's Rock rolls no flinch (DESIGN.md R-M8-179)."
+  ],
+  "battle": {
+    "generation": 2,
+    "mode": "singles",
+    "format": "gen2customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Bellsprout",
+        "species": "Bellsprout",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Soft-Boiled",
+          "Substitute"
+        ],
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Weezing",
+        "species": "Weezing",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Mirror Coat",
+          "Substitute"
+        ],
+        "item": "King's Rock",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      13,
+      52964,
+      61966,
+      357
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Substitute",
+      "p2": "move Substitute"
+    },
+    {
+      "p1": "move Soft-Boiled",
+      "p2": "move Mirror Coat"
+    }
+  ]
+}

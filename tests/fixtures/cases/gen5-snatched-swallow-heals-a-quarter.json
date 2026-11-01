@@ -1,0 +1,70 @@
+{
+ "schema": 1,
+ "id": "gen5-snatched-swallow-heals-a-quarter",
+ "notes": [
+  "Gen 5: Absol snatches Swalot's Swallow with no Stockpile of its own and heals a quarter (`move.sourceEffect === 'snatch'` lets the move through its `onTry`); Swalot keeps its Stockpile (DESIGN.md R-M8-90)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Swalot",
+    "species": "Swalot",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Stockpile",
+     "Swallow",
+     "Strength"
+    ],
+    "ability": "Sticky Hold",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Absol",
+    "species": "Absol",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Snatch",
+     "Splash"
+    ],
+    "ability": "Pressure",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Strength",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Stockpile",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Swallow",
+   "p2": "move Snatch"
+  },
+  {
+   "p1": "move Swallow",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

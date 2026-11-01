@@ -1,0 +1,78 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-ruin-applies-once",
+ "notes": [
+  "Sword of Ruin on both sides: Snorlax's Defense is \u00d70.75 once, not once per holder; the holders' own Defense is spared; the holder's partner Clefable is weakened like anyone"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sword",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Body Slam"
+    ],
+    "ability": "Sword of Ruin"
+   },
+   {
+    "label": "Clefable",
+    "species": "Clefable",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Body Slam"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Body Slam",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Pao",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Body Slam"
+    ],
+    "ability": "Sword of Ruin"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Body Slam 1, move Body Slam 2",
+   "p2": "move Body Slam 2, move Body Slam 1"
+  },
+  {
+   "p1": "move Body Slam 1, move Body Slam 2",
+   "p2": "move Recover, move Body Slam 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,95 @@
+{
+  "schema": 1,
+  "id": "m8-gen4-doubles-mirror-move-copies-a-restarted-heal-block",
+  "notes": [
+    "Gen 4 doubles: Honchkrow's Heal Block on a Porygon already under one fails (-fail), yet the healblock onRestart returns nothing, so the target counts as hit (gotAttacked; pokeplatinum's moveCopied records any move whose attack message showed): Porygon's Mirror Move copies Heal Block, not an older Switcheroo (DESIGN.md R-M8-108)",
+    "promoted from m8-gen4-doubles-s552-011-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "doubles",
+    "format": "gen4doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Porygon",
+        "species": "Porygon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Snatch",
+          "Mirror Move"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Mudkip",
+        "species": "Mudkip",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Snatch",
+          "Mirror Move"
+        ],
+        "ability": "Run Away",
+        "item": "Power Herb",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Honchkrow",
+        "species": "Honchkrow",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Heal Block",
+          "Switcheroo"
+        ],
+        "ability": "Run Away",
+        "item": "Nomel Berry",
+        "gender": "F"
+      },
+      {
+        "label": "Togekiss",
+        "species": "Togekiss",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Heal Block",
+          "Switcheroo"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      22304,
+      46119,
+      13151,
+      43854
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Snatch, move Snatch",
+      "p2": "move Heal Block, move Heal Block"
+    },
+    {
+      "p1": "move Mirror Move, move Mirror Move",
+      "p2": "move Switcheroo 1, move Switcheroo 2"
+    },
+    {
+      "p1": "move Snatch, move Snatch",
+      "p2": "move Heal Block, move Heal Block"
+    },
+    {
+      "p1": "move Mirror Move, move Mirror Move",
+      "p2": "move Switcheroo 1, move Switcheroo 2"
+    }
+  ]
+}

@@ -1,0 +1,396 @@
+{
+ "schema": 1,
+ "id": "m9-plucked-starf-berry-draws-before-flame-body",
+ "notes": [
+  "R-M9-48: Braviary-Hisui's Pluck eats Magcargo's Starf Berry in its `onHit` (`runMoveEffects`), so the berry's random stat is drawn before Magcargo's Flame Body (`DamagingHit`). The replay put a stolen berry's draw after the hit's reactions, as for a berry the target eats at the `Update`. Minimized from Nightly 20261022-031045 (m9-gen9ubers-s145-005)."
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9ubers"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Nick39",
+    "species": "Braviary-Hisui",
+    "ability": "Tinted Lens",
+    "moves": [
+     "Pluck"
+    ],
+    "nature": "Naive",
+    "gender": "",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 116,
+     "atk": 220,
+     "def": 8,
+     "spa": 68,
+     "spd": 40,
+     "spe": 56
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 8,
+     "spe": 31
+    },
+    "teraType": "Dark"
+   },
+   {
+    "label": "Oricorio",
+    "species": "Oricorio-Sensu",
+    "ability": "Dancer",
+    "moves": [
+     "Psych Up"
+    ],
+    "nature": "Naughty",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 76,
+     "atk": 72,
+     "def": 104,
+     "spa": 0,
+     "spd": 16,
+     "spe": 240
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Water"
+   },
+   {
+    "label": "Rockruff",
+    "species": "Rockruff",
+    "ability": "Vital Spirit",
+    "moves": [
+     "Sandstorm"
+    ],
+    "nature": "Brave",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 0,
+     "atk": 160,
+     "def": 140,
+     "spa": 0,
+     "spd": 48,
+     "spe": 160
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 1
+    }
+   },
+   {
+    "label": "Dondozo",
+    "species": "Dondozo",
+    "ability": "Oblivious",
+    "moves": [
+     "Stomping Tantrum"
+    ],
+    "nature": "Calm",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 176,
+     "atk": 0,
+     "def": 12,
+     "spa": 68,
+     "spd": 76,
+     "spe": 176
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 25,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Flying"
+   },
+   {
+    "label": "Chewtle",
+    "species": "Chewtle",
+    "ability": "Shell Armor",
+    "moves": [
+     "Stomping Tantrum"
+    ],
+    "nature": "Relaxed",
+    "gender": "F",
+    "shiny": false,
+    "level": 41,
+    "evs": {
+     "hp": 0,
+     "atk": 252,
+     "def": 72,
+     "spa": 156,
+     "spd": 0,
+     "spe": 28
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Bug"
+   },
+   {
+    "label": "Cresselia",
+    "species": "Cresselia",
+    "ability": "Levitate",
+    "moves": [
+     "Moonblast"
+    ],
+    "nature": "Hasty",
+    "gender": "",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 0,
+     "atk": 52,
+     "def": 0,
+     "spa": 128,
+     "spd": 112,
+     "spe": 216
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 11,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 60,
+    "teraType": "Fairy"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Feebas",
+    "species": "Feebas",
+    "ability": "Adaptability",
+    "moves": [
+     "Double-Edge"
+    ],
+    "nature": "Quirky",
+    "gender": "F",
+    "shiny": false,
+    "level": 57,
+    "evs": {
+     "hp": 0,
+     "atk": 160,
+     "def": 0,
+     "spa": 180,
+     "spd": 144,
+     "spe": 24
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Poison"
+   },
+   {
+    "label": "Nick96",
+    "species": "Magcargo",
+    "item": "Starf Berry",
+    "ability": "Flame Body",
+    "moves": [
+     "Substitute"
+    ],
+    "nature": "Lonely",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 144,
+     "atk": 84,
+     "def": 40,
+     "spa": 0,
+     "spd": 240,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 30,
+     "spe": 31
+    },
+    "teraType": "Steel"
+   },
+   {
+    "label": "Nick73",
+    "species": "Rotom-Mow",
+    "ability": "Levitate",
+    "moves": [
+     "Tera Blast"
+    ],
+    "nature": "Lonely",
+    "gender": "",
+    "shiny": true,
+    "level": 17,
+    "evs": {
+     "hp": 160,
+     "atk": 0,
+     "def": 0,
+     "spa": 120,
+     "spd": 0,
+     "spe": 228
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 140,
+    "teraType": "Ground"
+   },
+   {
+    "label": "Nick38",
+    "species": "Falinks",
+    "ability": "Defiant",
+    "moves": [
+     "First Impression"
+    ],
+    "nature": "Rash",
+    "gender": "",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 4,
+     "atk": 0,
+     "def": 180,
+     "spa": 44,
+     "spd": 172,
+     "spe": 108
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 20
+    },
+    "teraType": "Stellar",
+    "hpType": "Psychic"
+   },
+   {
+    "label": "Tinkatink",
+    "species": "Tinkatink",
+    "ability": "Mold Breaker",
+    "moves": [
+     "Fling"
+    ],
+    "nature": "Rash",
+    "gender": "",
+    "shiny": false,
+    "level": 41,
+    "evs": {
+     "hp": 0,
+     "atk": 224,
+     "def": 108,
+     "spa": 44,
+     "spd": 0,
+     "spe": 132
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Ghost"
+   },
+   {
+    "label": "Cyclizar",
+    "species": "Cyclizar",
+    "ability": "Regenerator",
+    "moves": [
+     "Aerial Ace"
+    ],
+    "nature": "Modest",
+    "gender": "M",
+    "shiny": false,
+    "level": 21,
+    "evs": {
+     "hp": 32,
+     "atk": 148,
+     "def": 0,
+     "spa": 120,
+     "spd": 120,
+     "spe": 88
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Bug"
+   }
+  ]
+ },
+ "preview": {
+  "p1": "team 631452",
+  "p2": "team 246531"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   19835,
+   145,
+   1005,
+   31
+  ]
+ },
+ "script": [
+  {
+   "p1": "switch 2",
+   "p2": "switch 2"
+  },
+  {
+   "p1": "switch 3",
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Pluck",
+   "p2": "move Substitute"
+  }
+ ]
+}

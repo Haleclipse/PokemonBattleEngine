@@ -1,0 +1,84 @@
+{
+ "schema": 1,
+ "id": "gen4-uproar-turns-and-yawn",
+ "notes": [
+  "Gen 4 Uproar (cartridge, I63): Yawn fails while it goes on (Showdown makes its holder drowsy); its 3-6 turns drawn as it starts; Spore fails meanwhile and works once it is over"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Uproarer",
+    "species": "Blissey",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Uproar",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Yawner",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Yawn",
+     "Spore",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Uproar",
+   "p2": "move Yawn"
+  },
+  {
+   "p1": "move Uproar",
+   "p2": "move Spore"
+  },
+  {
+   "p1": "move Uproar",
+   "p2": "move Spore"
+  },
+  {
+   "p1": "move Uproar",
+   "p2": "move Spore"
+  },
+  {
+   "p1": "move Uproar",
+   "p2": "move Spore"
+  },
+  {
+   "p1": "move Uproar",
+   "p2": "move Spore"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Spore"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

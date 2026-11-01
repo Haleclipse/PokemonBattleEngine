@@ -1,0 +1,1153 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@pkmn/sim",
+    "version": "0.10.11",
+    "formatid": "gen4customgame",
+    "seed": [
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  "frames": [
+    {
+      "schema": 1,
+      "checkpoint": "initial",
+      "turn": 1,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 182,
+              "max_hp": 182,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "truant",
+              "item": "",
+              "pp": [
+                56
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 160,
+              "max_hp": 160,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "grass",
+                "fighting"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                24,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Slacker"
+          },
+          "details": "Slaking, L40, F",
+          "hp": 182,
+          "max_hp": 182,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sleeper"
+          },
+          "details": "Breloom, L60, F",
+          "hp": 160,
+          "max_hp": 160,
+          "status": null
+        },
+        {
+          "kind": "turn",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_1",
+      "turn": 2,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 182,
+              "max_hp": 182,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "truant",
+              "item": "",
+              "pp": [
+                55
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 142,
+              "max_hp": 160,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "grass",
+                "fighting"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                24,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sleeper"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sleeper"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sleeper"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Slacker"
+          },
+          "move": "Tackle",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sleeper"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sleeper"
+          },
+          "hp": 142,
+          "max_hp": 160,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 2
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_2",
+      "turn": 3,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 182,
+              "max_hp": 182,
+              "status": {
+                "kind": "slp"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "truant",
+              "item": "",
+              "pp": [
+                55
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 142,
+              "max_hp": 160,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "grass",
+                "fighting"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                23,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sleeper"
+          },
+          "move": "Spore",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Slacker"
+          }
+        },
+        {
+          "kind": "status",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Slacker"
+          },
+          "status": "slp",
+          "from": "[from] move: Spore",
+          "of": null
+        },
+        {
+          "kind": "cant",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Slacker"
+          },
+          "detail": "slp"
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 3
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_3",
+      "turn": 4,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 182,
+              "max_hp": 182,
+              "status": {
+                "kind": "slp"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "truant",
+              "item": "",
+              "pp": [
+                55
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 142,
+              "max_hp": 160,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 2,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "grass",
+                "fighting"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                23,
+                46
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sleeper"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sleeper"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sleeper"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "cant",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Slacker"
+          },
+          "detail": "slp"
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 4
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_4",
+      "turn": 5,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 182,
+              "max_hp": 182,
+              "status": {
+                "kind": "slp"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "truant",
+              "item": "",
+              "pp": [
+                55
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 142,
+              "max_hp": 160,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 3,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "grass",
+                "fighting"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                23,
+                45
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sleeper"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sleeper"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sleeper"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "cant",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Slacker"
+          },
+          "detail": "slp"
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 5
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_5",
+      "turn": 6,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 182,
+              "max_hp": 182,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "truant",
+              "item": "",
+              "pp": [
+                54
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 142,
+              "max_hp": 160,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 4,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "grass",
+                "fighting"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                23,
+                44
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sleeper"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sleeper"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sleeper"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "curestatus",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Slacker"
+          },
+          "status": "slp",
+          "from": "[msg]",
+          "of": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Slacker"
+          },
+          "move": "Tackle",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sleeper"
+          }
+        },
+        {
+          "kind": "miss",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Slacker"
+          },
+          "detail": "p2a: Sleeper"
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 6
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_6",
+      "turn": 7,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 182,
+              "max_hp": 182,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "truant",
+              "item": "",
+              "pp": [
+                54
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 142,
+              "max_hp": 160,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 5,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "grass",
+                "fighting"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                23,
+                43
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sleeper"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sleeper"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sleeper"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "cant",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Slacker"
+          },
+          "detail": "ability: Truant"
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 7
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_7",
+      "turn": 8,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 182,
+              "max_hp": 182,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "truant",
+              "item": "",
+              "pp": [
+                53
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 136,
+              "max_hp": 160,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 6,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "grass",
+                "fighting"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                23,
+                42
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sleeper"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sleeper"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sleeper"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Slacker"
+          },
+          "move": "Tackle",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sleeper"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sleeper"
+          },
+          "hp": 136,
+          "max_hp": 160,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 8
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_8",
+      "turn": 9,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 182,
+              "max_hp": 182,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "truant",
+              "item": "",
+              "pp": [
+                53
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 136,
+              "max_hp": 160,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 6,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "grass",
+                "fighting"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                23,
+                41
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sleeper"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sleeper"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Sleeper"
+          },
+          "stat": "def",
+          "amount": 0
+        },
+        {
+          "kind": "cant",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Slacker"
+          },
+          "detail": "ability: Truant"
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 9
+        }
+      ]
+    }
+  ],
+  "debug_log": "|gametype|singles\n|player|p1|P1||\n|player|p2|P2||\n|gen|4\n|tier|[Gen 4] Custom Game\n|\n|teamsize|p1|1\n|teamsize|p2|1\n|start\n|switch|p1a: Slacker|Slaking, L40, F|182/182\n|switch|p2a: Sleeper|Breloom, L60, F|160/160\n|turn|1\n|\n|move|p2a: Sleeper|Harden|p2a: Sleeper\n|-boost|p2a: Sleeper|def|1\n|move|p1a: Slacker|Tackle|p2a: Sleeper\n|-damage|p2a: Sleeper|142/160\n|\n|upkeep\n|turn|2\n|\n|move|p2a: Sleeper|Spore|p1a: Slacker\n|-status|p1a: Slacker|slp|[from] move: Spore\n|cant|p1a: Slacker|slp\n|\n|upkeep\n|turn|3\n|\n|move|p2a: Sleeper|Harden|p2a: Sleeper\n|-boost|p2a: Sleeper|def|1\n|cant|p1a: Slacker|slp\n|\n|upkeep\n|turn|4\n|\n|move|p2a: Sleeper|Harden|p2a: Sleeper\n|-boost|p2a: Sleeper|def|1\n|cant|p1a: Slacker|slp\n|\n|upkeep\n|turn|5\n|\n|move|p2a: Sleeper|Harden|p2a: Sleeper\n|-boost|p2a: Sleeper|def|1\n|-curestatus|p1a: Slacker|slp|[msg]\n|move|p1a: Slacker|Tackle|p2a: Sleeper|[miss]\n|-miss|p1a: Slacker|p2a: Sleeper\n|\n|upkeep\n|turn|6\n|\n|move|p2a: Sleeper|Harden|p2a: Sleeper\n|-boost|p2a: Sleeper|def|1\n|cant|p1a: Slacker|ability: Truant\n|\n|upkeep\n|turn|7\n|\n|move|p2a: Sleeper|Harden|p2a: Sleeper\n|-boost|p2a: Sleeper|def|1\n|move|p1a: Slacker|Tackle|p2a: Sleeper\n|-damage|p2a: Sleeper|136/160\n|\n|upkeep\n|turn|8\n|\n|move|p2a: Sleeper|Harden|p2a: Sleeper\n|-boost|p2a: Sleeper|def|0\n|debug|move failed because it did nothing\n|cant|p1a: Slacker|ability: Truant\n|\n|upkeep\n|turn|9"
+}

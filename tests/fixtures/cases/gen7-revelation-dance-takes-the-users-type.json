@@ -1,0 +1,57 @@
+{
+ "schema": 1,
+ "id": "gen7-revelation-dance-takes-the-users-type",
+ "notes": [
+  "Revelation Dance takes the user's first type (Fire for Charizard)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Charizard",
+    "species": "Charizard",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Revelation Dance"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Venusaur",
+    "species": "Venusaur",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Revelation Dance",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Revelation Dance",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

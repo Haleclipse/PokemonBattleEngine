@@ -1,0 +1,72 @@
+{
+ "schema": 1,
+ "id": "gen6-protean-leaves-four-moves-alone",
+ "notes": [
+  "Gen 6: Greninja's Protean changes its type for none of: the Toxic its Magic Coat sends back (`hasBounced`), the Swords Dance its Snatch takes (`sourceEffect === 'snatch'`), its Mirror Move (`callsMove`); its Future Sight ends at `onTry`, before Protean's event — it stays Water / Dark (DESIGN.md R-M8-80)"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Greninja",
+    "species": "Greninja",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Magic Coat",
+     "Snatch",
+     "Future Sight",
+     "Mirror Move"
+    ],
+    "ability": "Protean",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Toxic",
+     "Swords Dance",
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Magic Coat",
+   "p2": "move Toxic"
+  },
+  {
+   "p1": "move Snatch",
+   "p2": "move Swords Dance"
+  },
+  {
+   "p1": "move Future Sight",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Mirror Move",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

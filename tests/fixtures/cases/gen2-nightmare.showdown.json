@@ -1,0 +1,987 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@pkmn/sim",
+    "version": "0.10.11",
+    "formatid": "gen2customgame",
+    "seed": [
+      7,
+      2,
+      3,
+      4
+    ]
+  },
+  "frames": [
+    {
+      "schema": 1,
+      "checkpoint": "initial",
+      "turn": 1,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 340,
+              "max_hp": 340,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "psychic"
+              ],
+              "item": "",
+              "pp": [
+                24,
+                24,
+                16,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 460,
+              "max_hp": 460,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "item": "",
+              "pp": [
+                48,
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Mew"
+          },
+          "details": "Mew",
+          "hp": 340,
+          "max_hp": 340,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "details": "Snorlax, F",
+          "hp": 460,
+          "max_hp": 460,
+          "status": null
+        },
+        {
+          "kind": "turn",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_1",
+      "turn": 2,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 340,
+              "max_hp": 340,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "psychic"
+              ],
+              "item": "",
+              "pp": [
+                23,
+                24,
+                16,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 460,
+              "max_hp": 460,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "item": "",
+              "pp": [
+                47,
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Mew"
+          },
+          "move": "Nightmare",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Lax"
+          }
+        },
+        {
+          "kind": "fail",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "detail": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Lax"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 2
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_2",
+      "turn": 3,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 340,
+              "max_hp": 340,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "psychic"
+              ],
+              "item": "",
+              "pp": [
+                23,
+                23,
+                16,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 460,
+              "max_hp": 460,
+              "status": {
+                "kind": "slp"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "item": "",
+              "pp": [
+                47,
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Mew"
+          },
+          "move": "Spore",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Lax"
+          }
+        },
+        {
+          "kind": "status",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "status": "slp",
+          "from": "[from] move: Spore",
+          "of": null
+        },
+        {
+          "kind": "cant",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "detail": "slp"
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 3
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_3",
+      "turn": 4,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 340,
+              "max_hp": 340,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "psychic"
+              ],
+              "item": "",
+              "pp": [
+                22,
+                23,
+                16,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 345,
+              "max_hp": 460,
+              "status": {
+                "kind": "slp"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "nightmare": null
+              },
+              "types": [
+                "normal"
+              ],
+              "item": "",
+              "pp": [
+                47,
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Mew"
+          },
+          "move": "Nightmare",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Lax"
+          }
+        },
+        {
+          "kind": "start",
+          "args": [
+            "p2a: Lax",
+            "Nightmare"
+          ]
+        },
+        {
+          "kind": "cant",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "detail": "slp"
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "hp": 345,
+          "max_hp": 460,
+          "status": "slp",
+          "from": "[from] Nightmare",
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 4
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_4",
+      "turn": 5,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 340,
+              "max_hp": 340,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "psychic"
+              ],
+              "item": "",
+              "pp": [
+                22,
+                23,
+                15,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 173,
+              "max_hp": 460,
+              "status": {
+                "kind": "slp"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "nightmare": null,
+                "leechseed": null
+              },
+              "types": [
+                "normal"
+              ],
+              "item": "",
+              "pp": [
+                47,
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Mew"
+          },
+          "move": "Leech Seed",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Lax"
+          }
+        },
+        {
+          "kind": "start",
+          "args": [
+            "p2a: Lax",
+            "move: Leech Seed"
+          ]
+        },
+        {
+          "kind": "cant",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "detail": "slp"
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "hp": 288,
+          "max_hp": 460,
+          "status": "slp",
+          "from": "[from] Leech Seed",
+          "of": "[of] p1a: Mew"
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "hp": 173,
+          "max_hp": 460,
+          "status": "slp",
+          "from": "[from] Nightmare",
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 5
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_5",
+      "turn": 6,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 340,
+              "max_hp": 340,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "psychic"
+              ],
+              "item": "",
+              "pp": [
+                22,
+                23,
+                15,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 1,
+              "max_hp": 460,
+              "status": {
+                "kind": "slp"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "nightmare": null,
+                "leechseed": null
+              },
+              "types": [
+                "normal"
+              ],
+              "item": "",
+              "pp": [
+                47,
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Mew"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Mew"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Mew"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "cant",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "detail": "slp"
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "hp": 116,
+          "max_hp": 460,
+          "status": "slp",
+          "from": "[from] Leech Seed",
+          "of": "[of] p1a: Mew"
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "hp": 1,
+          "max_hp": 460,
+          "status": "slp",
+          "from": "[from] Nightmare",
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 6
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_6",
+      "turn": 6,
+      "request": "finished",
+      "outcome": "winner(p1)",
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 340,
+              "max_hp": 340,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 2,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "psychic"
+              ],
+              "item": "",
+              "pp": [
+                22,
+                23,
+                15,
+                46
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            null
+          ],
+          "party": [
+            {
+              "hp": 0,
+              "max_hp": 460,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "item": "",
+              "pp": [
+                46,
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Mew"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Mew"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Mew"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "curestatus",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "status": "slp",
+          "from": "[msg]",
+          "of": null
+        },
+        {
+          "kind": "end",
+          "args": [
+            "p2a: Lax",
+            "Nightmare",
+            "[silent]"
+          ]
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Lax"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "hp": 0,
+          "max_hp": null,
+          "status": null,
+          "from": "[from] Leech Seed",
+          "of": "[of] p1a: Mew"
+        },
+        {
+          "kind": "faint",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "detail": null
+        },
+        {
+          "kind": "residual"
+        }
+      ]
+    }
+  ],
+  "debug_log": "|gametype|singles\n|player|p1|P1||\n|player|p2|P2||\n|gen|2\n|tier|[Gen 2] Custom Game\n|rule|HP Percentage Mod: HP is shown in percentages\n|\n|teamsize|p1|1\n|teamsize|p2|1\n|start\n|switch|p1a: Mew|Mew|340/340\n|switch|p2a: Lax|Snorlax, F|460/460\n|turn|1\n|\n|move|p1a: Mew|Nightmare|p2a: Lax\n|-fail|p2a: Lax\n|debug|move failed because it did nothing\n|move|p2a: Lax|Harden|p2a: Lax\n|-boost|p2a: Lax|def|1\n|\n|upkeep\n|turn|2\n|\n|move|p1a: Mew|Spore|p2a: Lax\n|-status|p2a: Lax|slp|[from] move: Spore\n|cant|p2a: Lax|slp\n|\n|upkeep\n|turn|3\n|\n|move|p1a: Mew|Nightmare|p2a: Lax\n|-start|p2a: Lax|Nightmare\n|cant|p2a: Lax|slp\n|-damage|p2a: Lax|345/460 slp|[from] Nightmare\n|\n|upkeep\n|turn|4\n|\n|move|p1a: Mew|Leech Seed|p2a: Lax\n|-start|p2a: Lax|move: Leech Seed\n|cant|p2a: Lax|slp\n|-damage|p2a: Lax|288/460 slp|[from] Leech Seed|[of] p1a: Mew\n|-damage|p2a: Lax|173/460 slp|[from] Nightmare\n|\n|upkeep\n|turn|5\n|\n|move|p1a: Mew|Harden|p1a: Mew\n|-boost|p1a: Mew|def|1\n|cant|p2a: Lax|slp\n|-damage|p2a: Lax|116/460 slp|[from] Leech Seed|[of] p1a: Mew\n|-damage|p2a: Lax|1/460 slp|[from] Nightmare\n|\n|upkeep\n|turn|6\n|\n|move|p1a: Mew|Harden|p1a: Mew\n|-boost|p1a: Mew|def|1\n|-curestatus|p2a: Lax|slp|[msg]\n|-end|p2a: Lax|Nightmare|[silent]\n|move|p2a: Lax|Harden|p2a: Lax\n|-boost|p2a: Lax|def|1\n|-damage|p2a: Lax|0 fnt|[from] Leech Seed|[of] p1a: Mew\n|faint|p2a: Lax\n|\n|win|P1"
+}

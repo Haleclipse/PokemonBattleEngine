@@ -1,0 +1,70 @@
+{
+ "schema": 1,
+ "id": "gen4-snatched-swallow-needs-a-stockpile",
+ "notes": [
+  "Gen 4: Absol snatches Swalot's Swallow with no Stockpile of its own: the gen4 mod's `onTry` (and pokeemerald's `stockpiletohpheal`) asks the Snatch user for its own, so the move fails (DESIGN.md R-M8-90)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Swalot",
+    "species": "Swalot",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Stockpile",
+     "Swallow",
+     "Strength"
+    ],
+    "ability": "Sticky Hold",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Absol",
+    "species": "Absol",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Snatch",
+     "Splash"
+    ],
+    "ability": "Pressure",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Strength",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Stockpile",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Swallow",
+   "p2": "move Snatch"
+  },
+  {
+   "p1": "move Swallow",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

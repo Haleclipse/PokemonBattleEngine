@@ -1,0 +1,127 @@
+{
+ "schema": 1,
+ "id": "gen9-healing-wish-and-lunar-dance",
+ "notes": [
+  "Gen 8+: a replacement that needs nothing leaves the wish on its slot; the next Pok\u00e9mon to come in there hurt or statused is healed; Lunar Dance restores PP too \u2014 after Stealth Rock hurt it"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Wisher",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Healing Wish",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Hurt",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Dancer",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Lunar Dance",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Full",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Toxic",
+     "Tackle",
+     "Harden",
+     "Stealth Rock"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "switch Hurt",
+   "p2": "move Toxic"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "switch Wisher",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Healing Wish",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Full"
+  },
+  {
+   "p1": "switch Hurt",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Stealth Rock"
+  },
+  {
+   "p1": "switch Dancer",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Lunar Dance",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Hurt"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

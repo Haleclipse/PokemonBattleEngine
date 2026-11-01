@@ -1,0 +1,58 @@
+{
+ "schema": 1,
+ "id": "gen5-unnerve-keeps-a-resist-berry-uneaten",
+ "notes": [
+  "Gen 5: Unnerve also stops a resist berry (its `eatItem` runs `TryEatItem`): Tyranitar's super-effective Crunch on the Colbur Berry holder is not halved and the berry stays"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Tyranitar",
+    "species": "Tyranitar",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Crunch"
+    ],
+    "ability": "Unnerve"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Alakazam",
+    "species": "Alakazam",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Synchronize",
+    "item": "Colbur Berry"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Crunch",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Crunch",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

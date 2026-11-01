@@ -1,0 +1,57 @@
+{
+ "schema": 1,
+ "id": "gen4-conversion-curse-is-ghost-for-a-ghost",
+ "notes": [
+  "Gen 4 (I85): Gengar is Ghost/Poison; Curse counts as Ghost and Sludge Bomb is Poison, both its own, so Conversion has nothing left and fails"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Gengar",
+    "species": "Gengar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Conversion",
+     "Curse",
+     "Sludge Bomb"
+    ],
+    "gender": "M",
+    "ability": "Levitate"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Conversion",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

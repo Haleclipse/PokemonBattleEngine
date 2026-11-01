@@ -1,0 +1,73 @@
+{
+ "schema": 1,
+ "id": "gen4-pursuit-paralysed",
+ "notes": [
+  "Gen 4 Pursuit from a paralysed pursuer: striking a Pok\u00e9mon as it switches out, it skips BeforeMove (useMove)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Pursuer",
+    "species": "Tyranitar",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Pursuit",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Thunder Wave",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Vaporeon",
+    "species": "Vaporeon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Thunder Wave"
+  },
+  {
+   "p1": "move Pursuit",
+   "p2": "switch Vaporeon"
+  },
+  {
+   "p1": "move Pursuit",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

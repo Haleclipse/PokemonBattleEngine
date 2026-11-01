@@ -1,0 +1,109 @@
+{
+ "schema": 1,
+ "id": "gen9-rest-comatose-and-insomnia",
+ "notes": [
+  "Rest fails for a Comatose holder (counts as asleep), an Insomnia holder and a Vital Spirit holder, however hurt (the next Stomping Tantrum doubles)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Koala",
+    "species": "Komala",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Rest",
+     "Stomping Tantrum"
+    ],
+    "ability": "Comatose"
+   },
+   {
+    "label": "Hyp",
+    "species": "Hypno",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Rest",
+     "Stomping Tantrum"
+    ],
+    "ability": "Insomnia"
+   },
+   {
+    "label": "Ape",
+    "species": "Primeape",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Rest",
+     "Stomping Tantrum"
+    ],
+    "ability": "Vital Spirit"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Rest",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Rest",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Stomping Tantrum",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Hyp",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Rest",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Stomping Tantrum",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Ape",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Rest",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Stomping Tantrum",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

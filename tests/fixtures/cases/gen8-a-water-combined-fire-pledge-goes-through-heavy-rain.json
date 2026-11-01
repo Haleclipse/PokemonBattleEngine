@@ -1,0 +1,83 @@
+{
+ "schema": 1,
+ "id": "gen8-a-water-combined-fire-pledge-goes-through-heavy-rain",
+ "notes": [
+  "Gen 8 doubles under Jolteon's Primordial Sea: Jolteon's Water Pledge waits for Snorlax's Fire Pledge, which then goes as the combined move. Its own `onModifyMove` makes it Water before TryMove, so the heavy rain lets it through (and boosts it) instead of stopping a Fire move (DESIGN.md R-M8-153)"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "doubles",
+  "format": "gen8doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Water Pledge",
+     "Splash"
+    ],
+    "ability": "Primordial Sea",
+    "gender": "M"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fire Pledge",
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Water Pledge 1, move Fire Pledge 1",
+   "p2": "move Splash, move Splash"
+  },
+  {
+   "p1": "move Splash, move Splash",
+   "p2": "move Splash, move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

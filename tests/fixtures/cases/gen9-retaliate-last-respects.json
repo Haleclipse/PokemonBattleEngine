@@ -1,0 +1,105 @@
+{
+  "schema": 1,
+  "id": "gen9-retaliate-last-respects",
+  "notes": [
+    "Retaliate doubles the turn after a Pok\u00e9mon on the user's side fainted (and only then); Last Respects gains 50 per faint on the user's side"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Pichu",
+        "species": "Pichu",
+        "level": 5,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Tauros",
+        "species": "Tauros",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Retaliate",
+          "Last Respects"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Pichu B",
+        "species": "Pichu",
+        "level": 5,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ],
+        "ability": "Run Away"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Vaporeon",
+        "species": "Vaporeon",
+        "level": 60,
+        "nature": "Hardy",
+        "moves": [
+          "Water Gun",
+          "Recover"
+        ],
+        "ability": "Run Away"
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "switch 2"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 2"
+    },
+    {
+      "p1": "switch 3",
+      "p2": "move 1"
+    },
+    {
+      "p1": "switch 3"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 2"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      2,
+      3,
+      4,
+      5
+    ]
+  }
+}

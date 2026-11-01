@@ -1,0 +1,69 @@
+{
+ "schema": 1,
+ "id": "gen2-fury-cutter-doubles-the-damage",
+ "notes": [
+  "Gen 2 Fury Cutter (cartridge, I75): the count doubles the damage after the type matchups, not the power; another move ends the count"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Cutter",
+    "species": "Scizor",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fury Cutter",
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Wall",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Fury Cutter",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Fury Cutter",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Fury Cutter",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Fury Cutter",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   2,
+   2,
+   3,
+   4
+  ]
+ }
+}

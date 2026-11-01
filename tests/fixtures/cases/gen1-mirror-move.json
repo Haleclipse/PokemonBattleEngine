@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen1-mirror-move",
+ "notes": [
+  "Gen 1: Snorlax's Tackle, then Clefable's Mirror Move copies it back (Gen 1-2 the foe's last move, Gen 3-4 the last move that attacked the user, Gen 5+ the target's move with `mirror`)"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Clefable",
+    "species": "Clefable",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Mirror Move",
+     "Psychic"
+    ],
+    "gender": "F",
+    "ability": null
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": null
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Psychic",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Mirror Move",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Mirror Move",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

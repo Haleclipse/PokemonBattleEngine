@@ -1,0 +1,64 @@
+{
+ "schema": 1,
+ "id": "gen2-focus-band-holds-against-bide",
+ "notes": [
+  "Gen 2 Bide's release would knock the Focus Band holder out, and the band holds (the replay plans the band's draw on the release as on any hit)"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Bider",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Bide"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Holder",
+    "species": "Pikachu",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Body Slam"
+    ],
+    "item": "Focus Band"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Bide",
+   "p2": "move Body Slam"
+  },
+  {
+   "p1": "move Bide",
+   "p2": "move Body Slam"
+  },
+  {
+   "p1": "move Bide",
+   "p2": "move Body Slam"
+  },
+  {
+   "p1": "move Bide",
+   "p2": "move Body Slam"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   2,
+   2,
+   3,
+   4
+  ]
+ }
+}

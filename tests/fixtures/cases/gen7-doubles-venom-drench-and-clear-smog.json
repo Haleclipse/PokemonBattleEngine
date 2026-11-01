@@ -1,0 +1,93 @@
+{
+ "schema": 1,
+ "id": "gen7-doubles-venom-drench-and-clear-smog",
+ "notes": [
+  "Venom Drench: -1 Attack / Special Attack / Speed on the badly poisoned foe, nothing on the other; Clear Smog clears the target's stages as it hits; Happy Hour changes nothing"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Drench",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Toxic",
+     "Venom Drench",
+     "Clear Smog",
+     "Happy Hour"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Pal",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "F1",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Swords Dance",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "F2",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Toxic 1, move Harden",
+   "p2": "move Swords Dance, move Harden"
+  },
+  {
+   "p1": "move Venom Drench, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Clear Smog 1, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Happy Hour, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Venom Drench, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

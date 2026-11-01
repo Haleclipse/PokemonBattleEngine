@@ -1,0 +1,38 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+env:
+  CARGO_TERM_COLOR: always
+  RUSTFLAGS: -D warnings
+
+jobs:
+  check:
+    name: fmt / clippy / test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+      - uses: Swatinem/rust-cache@v2
+      - name: rustfmt
+        run: |
+          cargo fmt --all --check
+          cargo fmt --manifest-path stable-api/Cargo.toml --check
+      - name: clippy (zero warnings)
+        run: cargo clippy --all-targets --all-features -- -D warnings
+      # The stable API alone (DESIGN.md §47.5): the default build and its own consumer.
+      - name: the stable API
+        run: |
+          cargo clippy --lib -- -D warnings
+          cargo clippy --manifest-path stable-api/Cargo.toml --target-dir target/stable-api --all-targets -- -D warnings
+          cargo test --manifest-path stable-api/Cargo.toml --target-dir target/stable-api
+      - name: tests
+        run: cargo test --all-targets
+      - name: doc tests
+        run: cargo test --doc
+      - name: example
+        run: cargo run --example singles_turn

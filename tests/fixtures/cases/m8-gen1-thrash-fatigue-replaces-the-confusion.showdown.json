@@ -1,0 +1,737 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@pkmn/sim",
+    "version": "0.10.11",
+    "formatid": "gen1customgame",
+    "seed": [
+      14266,
+      6907,
+      52634,
+      33617
+    ]
+  },
+  "frames": [
+    {
+      "schema": 1,
+      "checkpoint": "initial",
+      "turn": 1,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 215,
+              "max_hp": 215,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "species": "wigglytuff",
+              "pp": [
+                32,
+                16,
+                48,
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 135,
+              "max_hp": 135,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "psychic"
+              ],
+              "species": "drowzee",
+              "pp": [
+                32
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Wigglytuff"
+          },
+          "details": "Wigglytuff, L50",
+          "hp": 215,
+          "max_hp": 215,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Drowzee"
+          },
+          "details": "Drowzee, L50",
+          "hp": 135,
+          "max_hp": 135,
+          "status": null
+        },
+        {
+          "kind": "turn",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_1",
+      "turn": 2,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 174,
+              "max_hp": 215,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "species": "wigglytuff",
+              "pp": [
+                31,
+                16,
+                48,
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 118,
+              "max_hp": 135,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": -1,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "lockedmove": 3
+              },
+              "types": [
+                "psychic"
+              ],
+              "species": "drowzee",
+              "pp": [
+                31
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Wigglytuff"
+          },
+          "move": "Bubble Beam",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Drowzee"
+          },
+          "from": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Drowzee"
+          },
+          "hp": 118,
+          "max_hp": 135,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "unboost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Drowzee"
+          },
+          "stat": "spe",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Drowzee"
+          },
+          "move": "Thrash",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Wigglytuff"
+          },
+          "from": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Wigglytuff"
+          },
+          "hp": 174,
+          "max_hp": 215,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 2
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_2",
+      "turn": 3,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 132,
+              "max_hp": 215,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "species": "wigglytuff",
+              "pp": [
+                31,
+                15,
+                48,
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 83,
+              "max_hp": 135,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": -1,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "lockedmove": 2
+              },
+              "types": [
+                "psychic"
+              ],
+              "species": "drowzee",
+              "pp": [
+                31
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Wigglytuff"
+          },
+          "move": "Thunder",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Drowzee"
+          },
+          "from": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Drowzee"
+          },
+          "hp": 83,
+          "max_hp": 135,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Drowzee"
+          },
+          "move": "Thrash",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Wigglytuff"
+          },
+          "from": "[from] Thrash"
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Wigglytuff"
+          },
+          "hp": 132,
+          "max_hp": 215,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 3
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_3",
+      "turn": 4,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 92,
+              "max_hp": 215,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "species": "wigglytuff",
+              "pp": [
+                31,
+                15,
+                47,
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 73,
+              "max_hp": 135,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": -1,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "lockedmove": 1
+              },
+              "types": [
+                "psychic"
+              ],
+              "species": "drowzee",
+              "pp": [
+                31
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Wigglytuff"
+          },
+          "move": "Bubble",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Drowzee"
+          },
+          "from": null
+        },
+        {
+          "kind": "crit",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Drowzee"
+          },
+          "detail": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Drowzee"
+          },
+          "hp": 73,
+          "max_hp": 135,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Drowzee"
+          },
+          "move": "Thrash",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Wigglytuff"
+          },
+          "from": "[from] Thrash"
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Wigglytuff"
+          },
+          "hp": 92,
+          "max_hp": 215,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 4
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_4",
+      "turn": 5,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 21,
+              "max_hp": 215,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "species": "wigglytuff",
+              "pp": [
+                31,
+                15,
+                47,
+                15
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 73,
+              "max_hp": 135,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": -1,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "confusion": 5
+              },
+              "types": [
+                "psychic"
+              ],
+              "species": "drowzee",
+              "pp": [
+                31
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Wigglytuff"
+          },
+          "move": "Confuse Ray",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Drowzee"
+          },
+          "from": null
+        },
+        {
+          "kind": "start",
+          "args": [
+            "p2a: Drowzee",
+            "confusion"
+          ]
+        },
+        {
+          "kind": "activate",
+          "args": [
+            "p2a: Drowzee",
+            "confusion"
+          ]
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Drowzee"
+          },
+          "move": "Thrash",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Wigglytuff"
+          },
+          "from": "[from] Thrash"
+        },
+        {
+          "kind": "start",
+          "args": [
+            "p2a: Drowzee",
+            "confusion",
+            "[silent]"
+          ]
+        },
+        {
+          "kind": "crit",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Wigglytuff"
+          },
+          "detail": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Wigglytuff"
+          },
+          "hp": 21,
+          "max_hp": 215,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 5
+        }
+      ]
+    }
+  ],
+  "debug_log": "|gametype|singles\n|player|p1|P1||\n|player|p2|P2||\n|gen|1\n|tier|[Gen 1] Custom Game\n|rule|HP Percentage Mod: HP is shown in percentages\n|rule|Desync Clause Mod: Desyncs changed to move failure.\n|\n|teamsize|p1|1\n|teamsize|p2|1\n|start\n|switch|p1a: Wigglytuff|Wigglytuff, L50|215/215\n|switch|p2a: Drowzee|Drowzee, L50|135/135\n|turn|1\n|\n|move|p1a: Wigglytuff|Bubble Beam|p2a: Drowzee\n|-damage|p2a: Drowzee|118/135\n|-unboost|p2a: Drowzee|spe|1\n|move|p2a: Drowzee|Thrash|p1a: Wigglytuff\n|-damage|p1a: Wigglytuff|174/215\n|\n|upkeep\n|turn|2\n|\n|debug|Forcing into thrash\n|move|p1a: Wigglytuff|Thunder|p2a: Drowzee\n|-damage|p2a: Drowzee|83/135\n|move|p2a: Drowzee|Thrash|p1a: Wigglytuff|[from] Thrash\n|-damage|p1a: Wigglytuff|132/215\n|\n|upkeep\n|turn|3\n|\n|debug|Forcing into thrash\n|move|p1a: Wigglytuff|Bubble|p2a: Drowzee\n|-crit|p2a: Drowzee\n|debug|Negating (sp)atk boost/penalty.\n|debug|Negating (sp)def boost/penalty.\n|-damage|p2a: Drowzee|73/135\n|move|p2a: Drowzee|Thrash|p1a: Wigglytuff|[from] Thrash\n|-damage|p1a: Wigglytuff|92/215\n|\n|upkeep\n|turn|4\n|\n|debug|Forcing into thrash\n|move|p1a: Wigglytuff|Confuse Ray|p2a: Drowzee\n|-start|p2a: Drowzee|confusion\n|-activate|p2a: Drowzee|confusion\n|move|p2a: Drowzee|Thrash|p1a: Wigglytuff|[from] Thrash\n|-start|p2a: Drowzee|confusion|[silent]\n|-crit|p1a: Wigglytuff\n|debug|Negating (sp)atk boost/penalty.\n|debug|Negating (sp)def boost/penalty.\n|-damage|p1a: Wigglytuff|21/215\n|\n|upkeep\n|turn|5"
+}

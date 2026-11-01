@@ -1,0 +1,133 @@
+{
+ "schema": 1,
+ "id": "gen4-inner-focus-steadfast-and-guards",
+ "notes": [
+  "Gen 4: Inner Focus refuses Fake Out's flinch but not Intimidate (no onTryBoost before Gen 8); Steadfast raises Speed when flinched; Hyper Cutter and White Smoke refuse Intimidate and Tickle"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Gyarados",
+    "species": "Gyarados",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fake Out",
+     "Tickle",
+     "Harden"
+    ],
+    "ability": "Intimidate"
+   },
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fake Out",
+     "Tickle",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Focus",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Body Slam",
+     "Harden"
+    ],
+    "ability": "Inner Focus"
+   },
+   {
+    "label": "Steady",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Body Slam",
+     "Harden"
+    ],
+    "ability": "Steadfast"
+   },
+   {
+    "label": "Cutter",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Body Slam",
+     "Harden"
+    ],
+    "ability": "Hyper Cutter"
+   },
+   {
+    "label": "Smoke",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Body Slam",
+     "Harden"
+    ],
+    "ability": "White Smoke"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Fake Out",
+   "p2": "move Body Slam"
+  },
+  {
+   "p1": "switch Mew",
+   "p2": "switch Steady"
+  },
+  {
+   "p1": "move Fake Out",
+   "p2": "move Body Slam"
+  },
+  {
+   "p1": "move Tickle",
+   "p2": "switch Cutter"
+  },
+  {
+   "p1": "switch Gyarados",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tickle",
+   "p2": "switch Smoke"
+  },
+  {
+   "p1": "switch Mew",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Gyarados",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tickle",
+   "p2": "move Body Slam"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

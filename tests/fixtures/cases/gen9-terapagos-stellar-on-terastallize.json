@@ -1,0 +1,64 @@
+{
+ "schema": 1,
+ "id": "gen9-terapagos-stellar-on-terastallize",
+ "notes": [
+  "Gen 9: the Terastal-formed Terapagos Terastallizes and changes again into Terapagos-Stellar, whose ability is Teraform Zero (the weather and terrain it clears run at `AfterTerastallization`)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Terapagos",
+    "species": "Terapagos",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sunny Day",
+     "Harden"
+    ],
+    "ability": "Tera Shift",
+    "teraType": "Stellar"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 2 terastallize",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

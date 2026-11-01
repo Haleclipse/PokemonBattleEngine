@@ -1,0 +1,64 @@
+{
+ "schema": 1,
+ "id": "gen8-protean-swallow-without-a-stockpile",
+ "notes": [
+  "Gen 8: Cinderace with Protean uses Swallow with no Stockpile: its `onTry` fails it before Protean (Cinderace stays Fire); after Stockpile (Normal by Protean) Swallow heals"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Cinderace",
+    "species": "Cinderace",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Swallow",
+     "Stockpile"
+    ],
+    "gender": "M",
+    "ability": "Protean"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Swallow",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Stockpile",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Swallow",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,80 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-poison-gas-feeds-both-pecha-berries",
+ "notes": [
+  "Gen 9 doubles: Poison Gas poisons both foes and the move's Update feeds both their Pecha Berries (speed order; no tie drawn: the order shows in no frame)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Smeargle",
+    "species": "Smeargle",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Poison Gas",
+     "Harden"
+    ],
+    "ability": "Technician"
+   },
+   {
+    "label": "Gengar",
+    "species": "Gengar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Cursed Body"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Pecha Berry"
+   },
+   {
+    "label": "Lapras",
+    "species": "Lapras",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Shell Armor",
+    "item": "Pecha Berry"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Poison Gas, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Poison Gas, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

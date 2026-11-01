@@ -1,0 +1,72 @@
+{
+ "schema": 1,
+ "id": "gen3-rawst-berry-eaten-after-the-hit-before-the-replacement",
+ "notes": [
+  "Gen 3: Magcargo's Flame Body burns Scyther on the hit that knocks Magcargo out; the target's Update (gen3 `tryMoveHit`, faints still pending) lets Scyther eat its Rawst Berry before the action asks for the replacement without an Update"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Scyther",
+    "species": "Scyther",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Slash",
+     "Harden"
+    ],
+    "ability": "Swarm",
+    "item": "Rawst Berry"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Magcargo",
+    "species": "Magcargo",
+    "level": 5,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Flame Body"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Slash",
+   "p2": "move Harden"
+  },
+  {
+   "p2": "switch Snorlax"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   4,
+   2,
+   3,
+   4
+  ]
+ }
+}

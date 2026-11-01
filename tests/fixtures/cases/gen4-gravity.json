@@ -1,0 +1,74 @@
+{
+ "schema": 1,
+ "id": "gen4-gravity",
+ "notes": [
+  "Gen 4 Gravity: the cartridge's accuracy (\u00d710 / 6 after everything else: Zap Cannon against +1 evasion 61, not Showdown's 37.5); Earthquake reaches a Levitate Gengar"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Gravity",
+     "Zap Cannon",
+     "Earthquake",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gengar",
+    "species": "Gengar",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Double Team",
+     "Recover",
+     "Harden"
+    ],
+    "ability": "Levitate"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Gravity",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move Zap Cannon",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Earthquake",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Zap Cannon",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

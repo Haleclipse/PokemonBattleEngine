@@ -1,0 +1,81 @@
+{
+ "schema": 1,
+ "id": "gen1-haze",
+ "notes": [
+  "Gen 1 Haze: both sides' stages back to 0, the paralysed foe cured and its Speed back (faster than the user again), the user's bad poison now poison (1/16 a turn, no longer rising), Leech Seed, Mist, Reflect and Focus Energy gone"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hazer",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Haze",
+     "Thunder Wave",
+     "Leech Seed",
+     "Mist"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Jolteon",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Toxic",
+     "Swords Dance",
+     "Reflect",
+     "Focus Energy"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Thunder Wave",
+   "p2": "move Toxic"
+  },
+  {
+   "p1": "move Leech Seed",
+   "p2": "move Swords Dance"
+  },
+  {
+   "p1": "move Mist",
+   "p2": "move Reflect"
+  },
+  {
+   "p1": "move Leech Seed",
+   "p2": "move Focus Energy"
+  },
+  {
+   "p1": "move Haze",
+   "p2": "move Swords Dance"
+  },
+  {
+   "p1": "move Mist",
+   "p2": "move Swords Dance"
+  },
+  {
+   "p1": "move Mist",
+   "p2": "move Swords Dance"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

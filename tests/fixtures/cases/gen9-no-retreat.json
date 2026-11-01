@@ -1,0 +1,62 @@
+{
+ "schema": 1,
+ "id": "gen9-no-retreat",
+ "notes": [
+  "No Retreat: +1 to all five stats and the volatile that keeps it in; a second one fails"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Stay",
+    "species": "Falinks",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "No Retreat",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Umbreon",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move No Retreat",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move No Retreat",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

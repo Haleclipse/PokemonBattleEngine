@@ -1,0 +1,80 @@
+{
+ "schema": 1,
+ "id": "gen6-a-choice-lock-outlasts-its-item-within-the-turn",
+ "notes": [
+  "Gen 6: Sneasel's Knock Off takes Slowbro's Choice Band; Slowbro's locked Seismic Toss then knocks Sneasel out — the faint boundary still sees the lock (the gen6 mod's choicelock has no onBeforeMove), which the turn's DisableMove ends; Gen 7+ end it as the holder moves (DESIGN.md R-M8-118)"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Slowbro",
+    "species": "Slowbro",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Splash"
+    ],
+    "item": "Choice Band",
+    "ability": "Own Tempo",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Sneasel",
+    "species": "Sneasel",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Knock Off",
+     "Leer"
+    ],
+    "ability": "Inner Focus",
+    "gender": "M"
+   },
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Swift Swim",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Seismic Toss",
+   "p2": "move Leer"
+  },
+  {
+   "p1": "move Seismic Toss",
+   "p2": "move Knock Off"
+  },
+  {
+   "p2": "switch Magikarp"
+  },
+  {
+   "p1": "move Seismic Toss",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

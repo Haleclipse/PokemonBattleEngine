@@ -1,0 +1,75 @@
+{
+ "schema": 1,
+ "id": "gen5-petal-dance",
+ "notes": [
+  "Gen 5 Petal Dance: the lock and its fatigue"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Dancer",
+    "species": "Bellossom",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Petal Dance",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Wall",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Petal Dance",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Petal Dance",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Petal Dance",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Petal Dance",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Petal Dance",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Petal Dance",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

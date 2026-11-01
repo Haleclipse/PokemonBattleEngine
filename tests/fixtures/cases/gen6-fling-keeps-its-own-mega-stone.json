@@ -1,0 +1,78 @@
+{
+ "schema": 1,
+ "id": "gen6-fling-keeps-its-own-mega-stone",
+ "notes": [
+  "Gen 6: Altaria holds its Altarianite; Fling asks the item's `TakeItem` with Altaria as the taker and the Mega Stone refuses: the move fails. A Gengarite flies (DESIGN.md R-M8-89)"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Altaria",
+    "species": "Altaria",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fling",
+     "Splash"
+    ],
+    "item": "Altarianite",
+    "ability": "Natural Cure",
+    "gender": "F"
+   },
+   {
+    "label": "Swablu",
+    "species": "Swablu",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fling",
+     "Splash"
+    ],
+    "item": "Gengarite",
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Fling",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Fling",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

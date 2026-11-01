@@ -1,0 +1,70 @@
+{
+ "schema": 1,
+ "id": "gen6-toxic-sure-hit-volatile-mid-turn",
+ "notes": [
+  "Gen 6+: a Poison type using Toxic takes the `toxic` volatile (its sure hit) until the end of the turn; a mid-turn U-turn request shows it"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Skuntank",
+    "species": "Skuntank",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Toxic"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Ninjask",
+    "species": "Ninjask",
+    "level": 20,
+    "nature": "Hardy",
+    "moves": [
+     "U-turn"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Natural Cure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

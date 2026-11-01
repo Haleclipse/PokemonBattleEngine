@@ -1,0 +1,67 @@
+{
+ "schema": 1,
+ "id": "gen3-truant-role-play-keeps-the-flag",
+ "notes": [
+  "Gen 3 Role Play of Truant: no start of its own (the gen3 Truant has no `onStart`, pokeemerald `Cmd_trycopyability` touches no counter), so the flag the copier came in with counts on, flipped at every turn end it holds Truant \u2014 no `truant` volatile in any frame"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Copier",
+    "species": "Alakazam",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Role Play",
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Slacker",
+    "species": "Slaking",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Truant"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Role Play",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

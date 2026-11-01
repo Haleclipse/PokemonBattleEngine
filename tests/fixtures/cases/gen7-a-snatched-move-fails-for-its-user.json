@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "gen7-a-snatched-move-fails-for-its-user",
+ "notes": [
+  "Gen 7: Snorlax snatches Machamp's Bulk Up; for Machamp the move failed (Snatch's PrepareHit returns null, trySpreadMoveHit answers false), so its Stomping Tantrum next turn is doubled (DESIGN.md R-M8-138)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Machamp",
+    "species": "Machamp",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Bulk Up",
+     "Stomping Tantrum"
+    ],
+    "ability": "Guts",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Snatch",
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Bulk Up",
+   "p2": "move Snatch"
+  },
+  {
+   "p1": "move Stomping Tantrum",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

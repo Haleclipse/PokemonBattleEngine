@@ -1,0 +1,84 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-anger-shell-counts-both-dragon-darts",
+ "notes": [
+  "Gen 9 doubles Anger Shell (Showdown `move.multihit ? move.totalDamage : lastAttackedBy.damage`): Dragon Darts strikes Klawf and Chansey once each; Klawf, already below half at 65 / 145, counts the damage of both darts and changes its stats again \u2014 Berserk would count only its own dart (`!move.smartTarget`)",
+  "Turn 1: Snorlax's Seismic Toss takes Klawf from 145 to 65 (Anger Shell's first change)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Dragapult",
+    "species": "Dragapult",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Dragon Darts",
+     "Harden"
+    ],
+    "ability": "Clear Body"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Klawf",
+    "species": "Klawf",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Anger Shell"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Natural Cure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Seismic Toss 1",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Dragon Darts 1, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

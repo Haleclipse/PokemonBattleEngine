@@ -1,0 +1,83 @@
+{
+ "schema": 1,
+ "id": "gen4-doubles-mirror-move-aims-at-random",
+ "notes": [
+  "Gen 4 doubles: Snorlax's Tackle hits Pidgeot; Pidgeot's Mirror Move then uses Tackle at a foe drawn at random (`useMove` without a target; pokeplatinum's `BattleSystem_Defender(…, randomize)`), here Chansey, not Snorlax (DESIGN.md R-M8-80)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "doubles",
+  "format": "gen4doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Pidgeot",
+    "species": "Pidgeot",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Mirror Move",
+     "Splash"
+    ],
+    "ability": "Keen Eye",
+    "gender": "M"
+   },
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Volt Absorb",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash, move Splash",
+   "p2": "move Tackle 1, move Splash"
+  },
+  {
+   "p1": "move Mirror Move, move Splash",
+   "p2": "move Splash, move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   5,
+   6,
+   7,
+   8
+  ]
+ }
+}

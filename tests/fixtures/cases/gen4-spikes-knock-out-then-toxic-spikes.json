@@ -1,0 +1,97 @@
+{
+ "schema": 1,
+ "id": "gen4-spikes-knock-out-then-toxic-spikes",
+ "notes": [
+  "Gen 4 runs every entry hazard (runEvent('EntryHazard')): Spikes knock Roserade out and the fainted Poison type still absorbs Toxic Spikes, so Snorlax enters unpoisoned; Stealth Rock after the knock-out deals nothing"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Roserade",
+    "species": "Roserade",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Skarmory",
+    "species": "Skarmory",
+    "level": 5,
+    "nature": "Hardy",
+    "moves": [
+     "Endeavor",
+     "Spikes",
+     "Toxic Spikes",
+     "Stealth Rock"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Endeavor"
+  },
+  {
+   "p1": "switch Snorlax",
+   "p2": "move Spikes"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Spikes"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Spikes"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Stealth Rock"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Toxic Spikes"
+  },
+  {
+   "p1": "switch Roserade",
+   "p2": "move Stealth Rock"
+  },
+  {
+   "p1": "switch Snorlax"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Spikes"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen8-hold-hands-alone",
+ "notes": [
+  "Gen 8 singles: Pikachu's Hold Hands has no partner to hold"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Pikachu",
+    "species": "Pikachu",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Hold Hands",
+     "Thunder Shock"
+    ],
+    "gender": "M",
+    "ability": "Static"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Hold Hands",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Thunder Shock",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

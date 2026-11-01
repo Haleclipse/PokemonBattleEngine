@@ -1,0 +1,81 @@
+{
+ "schema": 1,
+ "id": "gen7-doubles-magnitude-hits-everyone-with-one-draw",
+ "notes": [
+  "Magnitude in doubles hits all adjacent Pok\u00e9mon with the one magnitude it drew"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Graveler",
+    "species": "Graveler",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Magnitude"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Skarmory",
+    "species": "Skarmory",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Magnitude, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Magnitude, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Magnitude, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

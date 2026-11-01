@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "gen9-snore-through-spore",
+ "notes": [
+  "Gen 9: Amoonguss's Spore puts Snorlax to sleep for a drawn time; Snorlax snores through it, each Snore a turn of the count, until it wakes"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Snore",
+     "Tackle"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Amoonguss",
+    "species": "Amoonguss",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spore",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Regenerator"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Tackle",
+   "p2": "move Spore"
+  },
+  {
+   "p1": "move Snore",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Snore",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Snore",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Snore",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Snore",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

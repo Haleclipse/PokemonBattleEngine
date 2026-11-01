@@ -1,0 +1,101 @@
+{
+ "schema": 1,
+ "id": "gen3-stockpile",
+ "notes": [
+  "Gen 3 Stockpile: three layers, a fourth fails (no stat stages); Spit Up hits for 300 and ends it; after Amnesia to +6, one layer and a Swallow (a quarter of the max HP) end it again; without a Stockpile Swallow and Spit Up fail"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Pile",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Stockpile",
+     "Spit Up",
+     "Swallow",
+     "Amnesia"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Super Fang"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Stockpile",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Stockpile",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Stockpile",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Stockpile",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Spit Up",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Amnesia",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Amnesia",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Amnesia",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Stockpile",
+   "p2": "move Super Fang"
+  },
+  {
+   "p1": "move Swallow",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Swallow",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Spit Up",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

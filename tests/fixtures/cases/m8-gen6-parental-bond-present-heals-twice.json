@@ -1,0 +1,146 @@
+{
+  "schema": 1,
+  "id": "m8-gen6-parental-bond-present-heals-twice",
+  "notes": [
+    "Gen 6 doubles: Combee (Parental Bond) draws Present's heal on Plusle; the two hits heal once each, as Showdown's hit loop runs moveData.heal per hit (DESIGN.md R-M8-161)",
+    "promoted from m8-gen6-doubles-s789-016-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 6,
+    "mode": "doubles",
+    "format": "gen6doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Aromatisse",
+        "species": "Aromatisse",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Scratch",
+          "Hold Back"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Gogoat",
+        "species": "Gogoat",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Bug Bite",
+          "Foul Play"
+        ],
+        "ability": "Static",
+        "gender": "F"
+      },
+      {
+        "label": "Natu",
+        "species": "Natu",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Vise Grip",
+          "Rapid Spin"
+        ],
+        "ability": "Forewarn",
+        "gender": "F"
+      },
+      {
+        "label": "Plusle",
+        "species": "Plusle",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Jump Kick",
+          "Brick Break"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Honedge",
+        "species": "Honedge",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Vine Whip",
+          "Horn Attack"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Charmander",
+        "species": "Charmander",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Thief",
+          "Rage"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Gothitelle",
+        "species": "Gothitelle",
+        "level": 53,
+        "nature": "Hardy",
+        "moves": [
+          "Pay Day",
+          "Natural Gift"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Combee",
+        "species": "Combee",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Seed Bomb",
+          "Present"
+        ],
+        "ability": "Parental Bond",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      33426,
+      48964,
+      45712,
+      19766
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Scratch 1, move Bug Bite 2",
+      "p2": "move Vine Whip 1, move Thief 2"
+    },
+    {
+      "p1": "move Hold Back 1, move Foul Play 2",
+      "p2": "move Horn Attack 1, move Rage 2"
+    },
+    {
+      "p1": "switch Natu, switch Plusle",
+      "p2": "switch Gothitelle, switch Combee"
+    },
+    {
+      "p1": "move Vise Grip 1, move Jump Kick 2",
+      "p2": "move Pay Day 1, move Seed Bomb 2"
+    },
+    {
+      "p1": "move Rapid Spin 1, move Brick Break 2",
+      "p2": "move Natural Gift 1, move Present 2"
+    }
+  ]
+}

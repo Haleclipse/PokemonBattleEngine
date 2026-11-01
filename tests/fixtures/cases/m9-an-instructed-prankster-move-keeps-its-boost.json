@@ -1,0 +1,94 @@
+{
+ "schema": 1,
+ "id": "m9-an-instructed-prankster-move-keeps-its-boost",
+ "notes": [
+  "R-M9-32: Showdown builds an instructed use as any action (`resolveAction` → `getActionSpeed` → `ModifyPriority`): Sableye's instructed Confuse Ray is Prankster-boosted again, so Umbreon, the Dark type that came into the slot it aims at, is immune to it."
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sableye",
+    "species": "Sableye",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Confuse Ray",
+     "Night Shade"
+    ],
+    "gender": "M",
+    "ability": "Prankster"
+   },
+   {
+    "label": "Oranguru",
+    "species": "Oranguru",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Instruct",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Inner Focus"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Umbreon",
+    "species": "Umbreon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Synchronize"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Confuse Ray 1, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Night Shade 1, move Instruct -1",
+   "p2": "switch 3, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

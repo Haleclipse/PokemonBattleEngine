@@ -1,0 +1,113 @@
+{
+  "schema": 1,
+  "id": "m8-gen8-doubles-pickpocket-after-its-own-eject-button",
+  "notes": [
+    "Nightly 63: Hippowdon's Eject Button goes off first (switchFlag), so its Pickpocket takes nothing from Trubbish (DESIGN.md R-M8-107)",
+    "promoted from m8-gen8-doubles-s546-013-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 8,
+    "mode": "doubles",
+    "format": "gen8doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Sirfetch’d",
+        "species": "Sirfetch’d",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Snarl",
+          "Mimic"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Trubbish",
+        "species": "Trubbish",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Mud-Slap",
+          "Mimic"
+        ],
+        "ability": "Run Away",
+        "item": "Yache Berry",
+        "gender": "F"
+      },
+      {
+        "label": "Cosmoem",
+        "species": "Cosmoem",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Thunderous Kick"
+        ],
+        "ability": "Run Away"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Maractus",
+        "species": "Maractus",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Rock Smash",
+          "Mimic"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Cramorant",
+        "species": "Cramorant",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Bug Buzz",
+          "Mimic"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Hippowdon",
+        "species": "Hippowdon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Earth Power"
+        ],
+        "ability": "Pickpocket",
+        "item": "Eject Button",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      33942,
+      63528,
+      51759,
+      790
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Snarl, move Mud-Slap 1",
+      "p2": "move Rock Smash 1, move Bug Buzz 2"
+    },
+    {
+      "p1": "move Mimic 2, move Mimic 1",
+      "p2": "move Mimic 1, move Mimic 2"
+    },
+    {
+      "p1": "switch Cosmoem, move 2 1",
+      "p2": "switch Hippowdon, move 2 1"
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+ "schema": 1,
+ "id": "gen4-doubles-beat-up-ends-with-the-move",
+ "notes": [
+  "Gen 4 Beat Up reads base Attack and base Defense for its own hits only: Machamp's Strength and U-turn right after it, on the same Blissey, meet Blissey's Defense and Harden (Showdown keeps its `beatup` volatile, and the base Defense, until the turn ends \u2014 issues.md I4, patched out of the oracle); U-turn's switch shows no volatile left on Sneasel"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "doubles",
+  "format": "gen4doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sneasel",
+    "species": "Sneasel",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Beat Up",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Machamp",
+    "species": "Machamp",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Strength",
+     "U-turn"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Pikachu",
+    "species": "Pikachu",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Beat Up 1, move Strength 1",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Beat Up 1, move U-turn 1",
+   "p2": "move Soft-Boiled, move Harden"
+  },
+  {
+   "p1": "switch Pikachu"
+  },
+  {
+   "p1": "move Beat Up 1, move Harden",
+   "p2": "move Soft-Boiled, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

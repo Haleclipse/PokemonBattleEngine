@@ -1,0 +1,78 @@
+{
+ "schema": 1,
+ "id": "gen6-future-sight-through-endure",
+ "notes": [
+  "Gen 6 Future Sight strikes through Endure (`onEnd` removes it, and Protect): the enduring target falls"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Seer",
+    "species": "Slowbro",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Future Sight",
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Guard",
+    "species": "Pichu",
+    "level": 20,
+    "nature": "Hardy",
+    "moves": [
+     "Protect",
+     "Endure",
+     "Harden"
+    ]
+   },
+   {
+    "label": "Bench",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Future Sight",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Endure"
+  },
+  {
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

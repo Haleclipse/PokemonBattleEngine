@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "gen7-perish-song-ends-the-battle-speed-boost",
+ "notes": [
+  "Gen 7: Perish Song takes the singer's side's last Pok\u00e9mon; its Speed Boost (order 28) still runs at 0 HP and settles the faint before the slower foe's charge counts down: twoturnmove stays 2"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Singer",
+    "species": "Jolteon",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Perish Song",
+     "Tail Whip"
+    ],
+    "ability": "Speed Boost"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Lead",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tail Whip"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Charger",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Razor Wind",
+     "Tail Whip"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Perish Song",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Tail Whip",
+   "p2": "switch Charger"
+  },
+  {
+   "p1": "move Tail Whip",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Tail Whip",
+   "p2": "move Razor Wind"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

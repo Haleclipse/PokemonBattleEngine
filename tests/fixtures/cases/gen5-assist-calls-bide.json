@@ -1,0 +1,74 @@
+{
+ "schema": 1,
+ "id": "gen5-assist-calls-bide",
+ "notes": [
+  "Gen 5: Snorlax's Assist calls its benched partner's Bide; Bide's later turns are a lock outside Snorlax's slots whose +1 priority orders the action ahead of the faster Jolteon (Showdown's request offers the lock alone, `getLockedMove`)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Assist"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   },
+   {
+    "label": "Clefairy",
+    "species": "Clefairy",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Bide"
+    ],
+    "ability": "Cute Charm",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "ability": "Volt Absorb",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

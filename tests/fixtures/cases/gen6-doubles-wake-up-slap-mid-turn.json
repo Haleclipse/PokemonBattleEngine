@@ -1,0 +1,113 @@
+{
+  "schema": 1,
+  "id": "gen6-doubles-wake-up-slap-mid-turn",
+  "notes": [
+    "Nightly 49: Torterra's Wake-Up Slap wakes Yanma, which had lost its turn asleep; Showdown's -curestatus|…|slp|[msg] is the slap's cure, not Yanma's own wake-up (the replay's curing moves take cures_target_status, DESIGN.md R-M8-93)",
+    "promoted from m8-gen6-doubles-s496-002-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 6,
+    "mode": "doubles",
+    "format": "gen6doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Minccino",
+        "species": "Minccino",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Peck"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Uxie",
+        "species": "Uxie",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Dragon Pulse",
+          "Misty Terrain",
+          "Stockpile"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Yanma",
+        "species": "Yanma",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Flying Press",
+          "Yawn"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Pangoro",
+        "species": "Pangoro",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Aerial Ace"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Torterra",
+        "species": "Torterra",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Wake-Up Slap",
+          "Yawn",
+          "Misty Terrain"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Shelgon",
+        "species": "Shelgon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Beat Up",
+          "Misty Terrain"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      17105,
+      28469,
+      27004,
+      53698
+    ]
+  },
+  "script": [
+    {
+      "p1": "switch Yanma, move Misty Terrain",
+      "p2": "switch Shelgon, move Yawn 1"
+    },
+    {
+      "p1": "move Flying Press 1, move Stockpile",
+      "p2": "move Beat Up 2, move Misty Terrain"
+    },
+    {
+      "p1": "move Yawn 2, move Dragon Pulse 1",
+      "p2": "move Misty Terrain, move Wake-Up Slap 1"
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+ "schema": 1,
+ "id": "gen2-a-pursued-switch-brings-in-a-poisoned-pokemon",
+ "notes": [
+  "Gen 2 singles: Houndour's Pursuit strikes Dragonair as it switches out for Ponyta, poisoned earlier (seed 2: Poison Powder lands). Ponyta takes its poison as it comes in (Gen 2's `onAfterSwitchInSelf`), inside the same engine step as the Pursuit: the replay counts that damage as the Pursuit action's, as it counts the hazards the incoming Pok\u00e9mon takes (DESIGN.md R-M8-168)"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   2,
+   3,
+   4,
+   5
+  ]
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Houndour",
+    "species": "Houndour",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Pursuit",
+     "Poison Powder",
+     "Splash"
+    ],
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Ponyta",
+    "species": "Ponyta",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "gender": "M"
+   },
+   {
+    "label": "Dragonair",
+    "species": "Dragonair",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Poison Powder",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "switch Dragonair"
+  },
+  {
+   "p1": "move Pursuit",
+   "p2": "switch Ponyta"
+  }
+ ]
+}

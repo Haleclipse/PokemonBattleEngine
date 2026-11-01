@@ -1,0 +1,63 @@
+{
+ "schema": 1,
+ "id": "gen4-normalize-retypes-everything-but-struggle",
+ "notes": [
+  "Gen 4 Normalize (onModifyMove) turns every move Normal, Weather Ball in rain included, with no boost: Gengar is immune"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Delcatty",
+    "species": "Delcatty",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Ember",
+     "Weather Ball",
+     "Rain Dance"
+    ],
+    "ability": "Normalize"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gengar",
+    "species": "Gengar",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Ember",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Rain Dance",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Weather Ball",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

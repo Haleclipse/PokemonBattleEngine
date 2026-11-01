@@ -1,0 +1,2344 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@pkmn/sim",
+    "version": "0.10.11",
+    "formatid": "gen1customgame",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "frames": [
+    {
+      "schema": 1,
+      "checkpoint": "initial",
+      "turn": 1,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 140,
+              "max_hp": 140,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "grass"
+              ],
+              "pp": [
+                56,
+                16,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 43,
+              "max_hp": 43,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal",
+                "flying"
+              ],
+              "pp": [
+                56
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "details": "Tangela, L50",
+          "hp": 140,
+          "max_hp": 140,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Pidgey"
+          },
+          "details": "Pidgey, L16",
+          "hp": 43,
+          "max_hp": 43,
+          "status": null
+        },
+        {
+          "kind": "turn",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_1",
+      "turn": 2,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 135,
+              "max_hp": 140,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "grass"
+              ],
+              "pp": [
+                55,
+                16,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 41,
+              "max_hp": 43,
+              "status": {
+                "kind": "psn"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal",
+                "flying"
+              ],
+              "pp": [
+                55
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "move": "Poison Powder",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Pidgey"
+          }
+        },
+        {
+          "kind": "status",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Pidgey"
+          },
+          "status": "psn",
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Pidgey"
+          },
+          "move": "Wing Attack",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          }
+        },
+        {
+          "kind": "supereffective",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "detail": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "hp": 135,
+          "max_hp": 140,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Pidgey"
+          },
+          "hp": 41,
+          "max_hp": 43,
+          "status": "psn",
+          "from": "[from] psn",
+          "of": "[of] p1a: Tangela"
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 2
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_2",
+      "turn": 3,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 132,
+              "max_hp": 140,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "grass"
+              ],
+              "pp": [
+                55,
+                15,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 37,
+              "max_hp": 43,
+              "status": {
+                "kind": "psn"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "leechseed": null
+              },
+              "types": [
+                "normal",
+                "flying"
+              ],
+              "pp": [
+                54
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "move": "Leech Seed",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Pidgey"
+          }
+        },
+        {
+          "kind": "start",
+          "args": [
+            "p2a: Pidgey",
+            "move: Leech Seed"
+          ]
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Pidgey"
+          },
+          "move": "Wing Attack",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          }
+        },
+        {
+          "kind": "supereffective",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "detail": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "hp": 130,
+          "max_hp": 140,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Pidgey"
+          },
+          "hp": 39,
+          "max_hp": 43,
+          "status": "psn",
+          "from": "[from] psn",
+          "of": "[of] p1a: Tangela"
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Pidgey"
+          },
+          "hp": 37,
+          "max_hp": 43,
+          "status": "psn",
+          "from": "[from] Leech Seed",
+          "of": "[of] p1a: Tangela"
+        },
+        {
+          "kind": "heal",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "hp": 132,
+          "max_hp": 140,
+          "status": null,
+          "from": "[silent]",
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 3
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_3",
+      "turn": 4,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 129,
+              "max_hp": 140,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "grass"
+              ],
+              "pp": [
+                55,
+                15,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 33,
+              "max_hp": 43,
+              "status": {
+                "kind": "psn"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "leechseed": null
+              },
+              "types": [
+                "normal",
+                "flying"
+              ],
+              "pp": [
+                53
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Pidgey"
+          },
+          "move": "Wing Attack",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          }
+        },
+        {
+          "kind": "supereffective",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "detail": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "hp": 127,
+          "max_hp": 140,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Pidgey"
+          },
+          "hp": 35,
+          "max_hp": 43,
+          "status": "psn",
+          "from": "[from] psn",
+          "of": "[of] p1a: Tangela"
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Pidgey"
+          },
+          "hp": 33,
+          "max_hp": 43,
+          "status": "psn",
+          "from": "[from] Leech Seed",
+          "of": "[of] p1a: Tangela"
+        },
+        {
+          "kind": "heal",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "hp": 129,
+          "max_hp": 140,
+          "status": null,
+          "from": "[silent]",
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 4
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_4",
+      "turn": 5,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 124,
+              "max_hp": 140,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 2,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "grass"
+              ],
+              "pp": [
+                55,
+                15,
+                46
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 29,
+              "max_hp": 43,
+              "status": {
+                "kind": "psn"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "leechseed": null
+              },
+              "types": [
+                "normal",
+                "flying"
+              ],
+              "pp": [
+                52
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Pidgey"
+          },
+          "move": "Wing Attack",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          }
+        },
+        {
+          "kind": "crit",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "detail": null
+        },
+        {
+          "kind": "supereffective",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "detail": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "hp": 122,
+          "max_hp": 140,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Pidgey"
+          },
+          "hp": 31,
+          "max_hp": 43,
+          "status": "psn",
+          "from": "[from] psn",
+          "of": "[of] p1a: Tangela"
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Pidgey"
+          },
+          "hp": 29,
+          "max_hp": 43,
+          "status": "psn",
+          "from": "[from] Leech Seed",
+          "of": "[of] p1a: Tangela"
+        },
+        {
+          "kind": "heal",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "hp": 124,
+          "max_hp": 140,
+          "status": null,
+          "from": "[silent]",
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 5
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_5",
+      "turn": 6,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 121,
+              "max_hp": 140,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 3,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "grass"
+              ],
+              "pp": [
+                55,
+                15,
+                45
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 25,
+              "max_hp": 43,
+              "status": {
+                "kind": "psn"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "leechseed": null
+              },
+              "types": [
+                "normal",
+                "flying"
+              ],
+              "pp": [
+                51
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Pidgey"
+          },
+          "move": "Wing Attack",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          }
+        },
+        {
+          "kind": "supereffective",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "detail": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "hp": 119,
+          "max_hp": 140,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Pidgey"
+          },
+          "hp": 27,
+          "max_hp": 43,
+          "status": "psn",
+          "from": "[from] psn",
+          "of": "[of] p1a: Tangela"
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Pidgey"
+          },
+          "hp": 25,
+          "max_hp": 43,
+          "status": "psn",
+          "from": "[from] Leech Seed",
+          "of": "[of] p1a: Tangela"
+        },
+        {
+          "kind": "heal",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "hp": 121,
+          "max_hp": 140,
+          "status": null,
+          "from": "[silent]",
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 6
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_6",
+      "turn": 7,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 118,
+              "max_hp": 140,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 4,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "grass"
+              ],
+              "pp": [
+                55,
+                15,
+                44
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 21,
+              "max_hp": 43,
+              "status": {
+                "kind": "psn"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "leechseed": null
+              },
+              "types": [
+                "normal",
+                "flying"
+              ],
+              "pp": [
+                50
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Pidgey"
+          },
+          "move": "Wing Attack",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          }
+        },
+        {
+          "kind": "supereffective",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "detail": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "hp": 116,
+          "max_hp": 140,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Pidgey"
+          },
+          "hp": 23,
+          "max_hp": 43,
+          "status": "psn",
+          "from": "[from] psn",
+          "of": "[of] p1a: Tangela"
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Pidgey"
+          },
+          "hp": 21,
+          "max_hp": 43,
+          "status": "psn",
+          "from": "[from] Leech Seed",
+          "of": "[of] p1a: Tangela"
+        },
+        {
+          "kind": "heal",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "hp": 118,
+          "max_hp": 140,
+          "status": null,
+          "from": "[silent]",
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 7
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_7",
+      "turn": 8,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 115,
+              "max_hp": 140,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 5,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "grass"
+              ],
+              "pp": [
+                55,
+                15,
+                43
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 17,
+              "max_hp": 43,
+              "status": {
+                "kind": "psn"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "leechseed": null
+              },
+              "types": [
+                "normal",
+                "flying"
+              ],
+              "pp": [
+                49
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Pidgey"
+          },
+          "move": "Wing Attack",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          }
+        },
+        {
+          "kind": "supereffective",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "detail": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "hp": 113,
+          "max_hp": 140,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Pidgey"
+          },
+          "hp": 19,
+          "max_hp": 43,
+          "status": "psn",
+          "from": "[from] psn",
+          "of": "[of] p1a: Tangela"
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Pidgey"
+          },
+          "hp": 17,
+          "max_hp": 43,
+          "status": "psn",
+          "from": "[from] Leech Seed",
+          "of": "[of] p1a: Tangela"
+        },
+        {
+          "kind": "heal",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "hp": 115,
+          "max_hp": 140,
+          "status": null,
+          "from": "[silent]",
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 8
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_8",
+      "turn": 9,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 112,
+              "max_hp": 140,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 6,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "grass"
+              ],
+              "pp": [
+                55,
+                15,
+                42
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 13,
+              "max_hp": 43,
+              "status": {
+                "kind": "psn"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "leechseed": null
+              },
+              "types": [
+                "normal",
+                "flying"
+              ],
+              "pp": [
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Pidgey"
+          },
+          "move": "Wing Attack",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          }
+        },
+        {
+          "kind": "supereffective",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "detail": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "hp": 110,
+          "max_hp": 140,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Pidgey"
+          },
+          "hp": 15,
+          "max_hp": 43,
+          "status": "psn",
+          "from": "[from] psn",
+          "of": "[of] p1a: Tangela"
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Pidgey"
+          },
+          "hp": 13,
+          "max_hp": 43,
+          "status": "psn",
+          "from": "[from] Leech Seed",
+          "of": "[of] p1a: Tangela"
+        },
+        {
+          "kind": "heal",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "hp": 112,
+          "max_hp": 140,
+          "status": null,
+          "from": "[silent]",
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 9
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_9",
+      "turn": 10,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 109,
+              "max_hp": 140,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 6,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "grass"
+              ],
+              "pp": [
+                55,
+                15,
+                41
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 9,
+              "max_hp": 43,
+              "status": {
+                "kind": "psn"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "leechseed": null
+              },
+              "types": [
+                "normal",
+                "flying"
+              ],
+              "pp": [
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          }
+        },
+        {
+          "kind": "fail",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "detail": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Pidgey"
+          },
+          "move": "Wing Attack",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          }
+        },
+        {
+          "kind": "supereffective",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "detail": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "hp": 107,
+          "max_hp": 140,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Pidgey"
+          },
+          "hp": 11,
+          "max_hp": 43,
+          "status": "psn",
+          "from": "[from] psn",
+          "of": "[of] p1a: Tangela"
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Pidgey"
+          },
+          "hp": 9,
+          "max_hp": 43,
+          "status": "psn",
+          "from": "[from] Leech Seed",
+          "of": "[of] p1a: Tangela"
+        },
+        {
+          "kind": "heal",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "hp": 109,
+          "max_hp": 140,
+          "status": null,
+          "from": "[silent]",
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 10
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_10",
+      "turn": 11,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 106,
+              "max_hp": 140,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 6,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "grass"
+              ],
+              "pp": [
+                55,
+                15,
+                40
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 5,
+              "max_hp": 43,
+              "status": {
+                "kind": "psn"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "leechseed": null
+              },
+              "types": [
+                "normal",
+                "flying"
+              ],
+              "pp": [
+                46
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          }
+        },
+        {
+          "kind": "fail",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "detail": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Pidgey"
+          },
+          "move": "Wing Attack",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          }
+        },
+        {
+          "kind": "supereffective",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "detail": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "hp": 104,
+          "max_hp": 140,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Pidgey"
+          },
+          "hp": 7,
+          "max_hp": 43,
+          "status": "psn",
+          "from": "[from] psn",
+          "of": "[of] p1a: Tangela"
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Pidgey"
+          },
+          "hp": 5,
+          "max_hp": 43,
+          "status": "psn",
+          "from": "[from] Leech Seed",
+          "of": "[of] p1a: Tangela"
+        },
+        {
+          "kind": "heal",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "hp": 106,
+          "max_hp": 140,
+          "status": null,
+          "from": "[silent]",
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 11
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_11",
+      "turn": 12,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 101,
+              "max_hp": 140,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 6,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "grass"
+              ],
+              "pp": [
+                55,
+                15,
+                39
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 1,
+              "max_hp": 43,
+              "status": {
+                "kind": "psn"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "leechseed": null
+              },
+              "types": [
+                "normal",
+                "flying"
+              ],
+              "pp": [
+                45
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          }
+        },
+        {
+          "kind": "fail",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "detail": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Pidgey"
+          },
+          "move": "Wing Attack",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          }
+        },
+        {
+          "kind": "crit",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "detail": null
+        },
+        {
+          "kind": "supereffective",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "detail": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "hp": 99,
+          "max_hp": 140,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Pidgey"
+          },
+          "hp": 3,
+          "max_hp": 43,
+          "status": "psn",
+          "from": "[from] psn",
+          "of": "[of] p1a: Tangela"
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Pidgey"
+          },
+          "hp": 1,
+          "max_hp": 43,
+          "status": "psn",
+          "from": "[from] Leech Seed",
+          "of": "[of] p1a: Tangela"
+        },
+        {
+          "kind": "heal",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "hp": 101,
+          "max_hp": 140,
+          "status": null,
+          "from": "[silent]",
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 12
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_12",
+      "turn": 12,
+      "request": "finished",
+      "outcome": "winner(p1)",
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 98,
+              "max_hp": 140,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 6,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "grass"
+              ],
+              "pp": [
+                55,
+                15,
+                38
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            null
+          ],
+          "party": [
+            {
+              "hp": 0,
+              "max_hp": 43,
+              "status": {
+                "kind": "psn"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal",
+                "flying"
+              ],
+              "pp": [
+                44
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          }
+        },
+        {
+          "kind": "fail",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "detail": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Pidgey"
+          },
+          "move": "Wing Attack",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          }
+        },
+        {
+          "kind": "supereffective",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "detail": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "hp": 96,
+          "max_hp": 140,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Pidgey"
+          },
+          "hp": 0,
+          "max_hp": null,
+          "status": null,
+          "from": "[from] psn",
+          "of": "[of] p1a: Tangela"
+        },
+        {
+          "kind": "hint",
+          "text": "In Gen 1, Leech Seed recovery is not limited by the remaining HP of the seeded Pokemon."
+        },
+        {
+          "kind": "heal",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Tangela"
+          },
+          "hp": 98,
+          "max_hp": 140,
+          "status": null,
+          "from": "[silent]",
+          "of": null
+        },
+        {
+          "kind": "faint",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Pidgey"
+          },
+          "detail": null
+        },
+        {
+          "kind": "residual"
+        }
+      ]
+    }
+  ],
+  "debug_log": "|gametype|singles\n|player|p1|P1||\n|player|p2|P2||\n|gen|1\n|tier|[Gen 1] Custom Game\n|rule|HP Percentage Mod: HP is shown in percentages\n|rule|Desync Clause Mod: Desyncs changed to move failure.\n|\n|teamsize|p1|1\n|teamsize|p2|1\n|start\n|switch|p1a: Tangela|Tangela, L50|140/140\n|switch|p2a: Pidgey|Pidgey, L16|43/43\n|turn|1\n|\n|move|p1a: Tangela|Poison Powder|p2a: Pidgey\n|-status|p2a: Pidgey|psn\n|move|p2a: Pidgey|Wing Attack|p1a: Tangela\n|-supereffective|p1a: Tangela\n|-damage|p1a: Tangela|135/140\n|-damage|p2a: Pidgey|41/43 psn|[from] psn|[of] p1a: Tangela\n|\n|upkeep\n|turn|2\n|\n|move|p1a: Tangela|Leech Seed|p2a: Pidgey\n|-start|p2a: Pidgey|move: Leech Seed\n|move|p2a: Pidgey|Wing Attack|p1a: Tangela\n|-supereffective|p1a: Tangela\n|-damage|p1a: Tangela|130/140\n|-damage|p2a: Pidgey|39/43 psn|[from] psn|[of] p1a: Tangela\n|-damage|p2a: Pidgey|37/43 psn|[from] Leech Seed|[of] p1a: Tangela\n|-heal|p1a: Tangela|132/140|[silent]\n|\n|upkeep\n|turn|3\n|\n|move|p1a: Tangela|Harden|p1a: Tangela\n|-boost|p1a: Tangela|def|1\n|move|p2a: Pidgey|Wing Attack|p1a: Tangela\n|-supereffective|p1a: Tangela\n|-damage|p1a: Tangela|127/140\n|-damage|p2a: Pidgey|35/43 psn|[from] psn|[of] p1a: Tangela\n|-damage|p2a: Pidgey|33/43 psn|[from] Leech Seed|[of] p1a: Tangela\n|-heal|p1a: Tangela|129/140|[silent]\n|\n|upkeep\n|turn|4\n|\n|move|p1a: Tangela|Harden|p1a: Tangela\n|-boost|p1a: Tangela|def|1\n|move|p2a: Pidgey|Wing Attack|p1a: Tangela\n|-crit|p1a: Tangela\n|debug|Negating (sp)atk boost/penalty.\n|debug|Negating (sp)def boost/penalty.\n|-supereffective|p1a: Tangela\n|-damage|p1a: Tangela|122/140\n|-damage|p2a: Pidgey|31/43 psn|[from] psn|[of] p1a: Tangela\n|-damage|p2a: Pidgey|29/43 psn|[from] Leech Seed|[of] p1a: Tangela\n|-heal|p1a: Tangela|124/140|[silent]\n|\n|upkeep\n|turn|5\n|\n|move|p1a: Tangela|Harden|p1a: Tangela\n|-boost|p1a: Tangela|def|1\n|move|p2a: Pidgey|Wing Attack|p1a: Tangela\n|-supereffective|p1a: Tangela\n|-damage|p1a: Tangela|119/140\n|-damage|p2a: Pidgey|27/43 psn|[from] psn|[of] p1a: Tangela\n|-damage|p2a: Pidgey|25/43 psn|[from] Leech Seed|[of] p1a: Tangela\n|-heal|p1a: Tangela|121/140|[silent]\n|\n|upkeep\n|turn|6\n|\n|move|p1a: Tangela|Harden|p1a: Tangela\n|-boost|p1a: Tangela|def|1\n|move|p2a: Pidgey|Wing Attack|p1a: Tangela\n|-supereffective|p1a: Tangela\n|-damage|p1a: Tangela|116/140\n|-damage|p2a: Pidgey|23/43 psn|[from] psn|[of] p1a: Tangela\n|-damage|p2a: Pidgey|21/43 psn|[from] Leech Seed|[of] p1a: Tangela\n|-heal|p1a: Tangela|118/140|[silent]\n|\n|upkeep\n|turn|7\n|\n|move|p1a: Tangela|Harden|p1a: Tangela\n|-boost|p1a: Tangela|def|1\n|move|p2a: Pidgey|Wing Attack|p1a: Tangela\n|-supereffective|p1a: Tangela\n|-damage|p1a: Tangela|113/140\n|-damage|p2a: Pidgey|19/43 psn|[from] psn|[of] p1a: Tangela\n|-damage|p2a: Pidgey|17/43 psn|[from] Leech Seed|[of] p1a: Tangela\n|-heal|p1a: Tangela|115/140|[silent]\n|\n|upkeep\n|turn|8\n|\n|move|p1a: Tangela|Harden|p1a: Tangela\n|-boost|p1a: Tangela|def|1\n|move|p2a: Pidgey|Wing Attack|p1a: Tangela\n|-supereffective|p1a: Tangela\n|-damage|p1a: Tangela|110/140\n|-damage|p2a: Pidgey|15/43 psn|[from] psn|[of] p1a: Tangela\n|-damage|p2a: Pidgey|13/43 psn|[from] Leech Seed|[of] p1a: Tangela\n|-heal|p1a: Tangela|112/140|[silent]\n|\n|upkeep\n|turn|9\n|\n|move|p1a: Tangela|Harden|p1a: Tangela\n|-fail|p1a: Tangela\n|move|p2a: Pidgey|Wing Attack|p1a: Tangela\n|-supereffective|p1a: Tangela\n|-damage|p1a: Tangela|107/140\n|-damage|p2a: Pidgey|11/43 psn|[from] psn|[of] p1a: Tangela\n|-damage|p2a: Pidgey|9/43 psn|[from] Leech Seed|[of] p1a: Tangela\n|-heal|p1a: Tangela|109/140|[silent]\n|\n|upkeep\n|turn|10\n|\n|move|p1a: Tangela|Harden|p1a: Tangela\n|-fail|p1a: Tangela\n|move|p2a: Pidgey|Wing Attack|p1a: Tangela\n|-supereffective|p1a: Tangela\n|-damage|p1a: Tangela|104/140\n|-damage|p2a: Pidgey|7/43 psn|[from] psn|[of] p1a: Tangela\n|-damage|p2a: Pidgey|5/43 psn|[from] Leech Seed|[of] p1a: Tangela\n|-heal|p1a: Tangela|106/140|[silent]\n|\n|upkeep\n|turn|11\n|\n|move|p1a: Tangela|Harden|p1a: Tangela\n|-fail|p1a: Tangela\n|move|p2a: Pidgey|Wing Attack|p1a: Tangela\n|-crit|p1a: Tangela\n|debug|Negating (sp)atk boost/penalty.\n|debug|Negating (sp)def boost/penalty.\n|-supereffective|p1a: Tangela\n|-damage|p1a: Tangela|99/140\n|-damage|p2a: Pidgey|3/43 psn|[from] psn|[of] p1a: Tangela\n|-damage|p2a: Pidgey|1/43 psn|[from] Leech Seed|[of] p1a: Tangela\n|-heal|p1a: Tangela|101/140|[silent]\n|\n|upkeep\n|turn|12\n|\n|move|p1a: Tangela|Harden|p1a: Tangela\n|-fail|p1a: Tangela\n|move|p2a: Pidgey|Wing Attack|p1a: Tangela\n|-supereffective|p1a: Tangela\n|-damage|p1a: Tangela|96/140\n|-damage|p2a: Pidgey|0 fnt|[from] psn|[of] p1a: Tangela\n|-hint|In Gen 1, Leech Seed recovery is not limited by the remaining HP of the seeded Pokemon.\n|-heal|p1a: Tangela|98/140|[silent]\n|faint|p2a: Pidgey\n|\n|win|P1"
+}

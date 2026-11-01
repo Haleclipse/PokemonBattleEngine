@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "gen2-dream-eater-immune-before-protect",
+ "notes": [
+  "Gen 2 checks Dream Eater's own immunity before Protect (TryHit): an awake Protect user reports -immune; a sleeping target is hit"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hypno",
+    "species": "Hypno",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Dream Eater",
+     "Spore"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Protect",
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Dream Eater",
+   "p2": "move Protect"
+  },
+  {
+   "p1": "move Spore",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Dream Eater",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

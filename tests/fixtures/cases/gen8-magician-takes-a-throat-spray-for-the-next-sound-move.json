@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "gen8-magician-takes-a-throat-spray-for-the-next-sound-move",
+ "notes": [
+  "Magician takes Snorlax's Throat Spray after Exploud's Hyper Voice; the spray it now holds was no handler of that move's `AfterMoveSecondarySelf` (Showdown gathers them first), so it waits for the next sound move: +1 Special Attack then"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Exploud",
+    "species": "Exploud",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Hyper Voice",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Magician"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat",
+    "item": "Throat Spray"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Hyper Voice",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Hyper Voice",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

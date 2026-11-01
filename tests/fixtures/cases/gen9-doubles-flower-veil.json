@@ -1,0 +1,95 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-flower-veil",
+ "notes": [
+  "Flower Veil guards Grass-type Pok\u00e9mon on its side (its holder here is not one): Intimidate, Growl and Thunder Wave from the foes and Yawn fail on the Grass type, its own Superpower drops still apply; the holder itself is affected"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Comfey",
+    "species": "Comfey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "ability": "Flower Veil"
+   },
+   {
+    "label": "Leaf",
+    "species": "Leafeon",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Superpower",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Dog",
+    "species": "Arcanine",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Growl"
+    ],
+    "ability": "Intimidate"
+   },
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Thunder Wave",
+     "Yawn",
+     "Growl",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Growl, move Thunder Wave 2"
+  },
+  {
+   "p1": "move Harden, move Superpower 1",
+   "p2": "move Harden, move Yawn 2"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Thunder Wave 1"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Yawn 1"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

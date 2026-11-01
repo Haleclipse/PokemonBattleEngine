@@ -1,0 +1,120 @@
+{
+ "schema": 1,
+ "id": "gen6-doubles-a-mirrored-roar-drags-at-random",
+ "notes": [
+  "Gen 6 doubles: Snorlax's Roar drags Pidgeot's partner out on turn 1; on turn 2 Pidgeot's Mirror Move copies it at Snorlax (from Gen 5 Mirror Move goes at its own target, drawing none) and the Roar draws which of two benched Pokémon comes in. The replay planned a target draw for the copied move anyway, which that drag took (DESIGN.md R-M8-144)"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "doubles",
+  "format": "gen6doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Rattata",
+    "species": "Rattata",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Guts",
+    "gender": "M"
+   },
+   {
+    "label": "Pidgeot",
+    "species": "Pidgeot",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Mirror Move",
+     "Splash"
+    ],
+    "ability": "Keen Eye",
+    "gender": "M"
+   },
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Swift Swim",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Roar",
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   },
+   {
+    "label": "Shuckle",
+    "species": "Shuckle",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Sturdy",
+    "gender": "M"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   },
+   {
+    "label": "Lapras",
+    "species": "Lapras",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Water Absorb",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash, move Splash",
+   "p2": "move Roar 1, move Splash"
+  },
+  {
+   "p1": "move Splash, move Mirror Move 1",
+   "p2": "move Splash, move Splash"
+  },
+  {
+   "p1": "move Splash, move Splash",
+   "p2": "move Splash, move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

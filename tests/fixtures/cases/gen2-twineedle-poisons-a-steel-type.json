@@ -1,0 +1,63 @@
+{
+ "schema": 1,
+ "id": "gen2-twineedle-poisons-a-steel-type",
+ "notes": [
+  "The gen2 typechart gives Steel no poison immunity: Twineedle's poison lands on Skarmory"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Beedrill",
+    "species": "Beedrill",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Twineedle"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Skarmory",
+    "species": "Skarmory",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Twineedle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Twineedle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Twineedle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Twineedle",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   2,
+   2,
+   3,
+   4
+  ]
+ }
+}

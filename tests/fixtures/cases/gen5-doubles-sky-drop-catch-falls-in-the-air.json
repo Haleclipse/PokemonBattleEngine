@@ -1,0 +1,91 @@
+{
+ "schema": 1,
+ "id": "gen5-doubles-sky-drop-catch-falls-in-the-air",
+ "notes": [
+  "Gen 5 doubles: the carried Pok\u00e9mon is knocked out in the air by the user's partner's Gust; its replacement takes the slot, and the drop at it fails (not the Pok\u00e9mon carried)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "doubles",
+  "format": "gen5doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Lifter",
+    "species": "Braviary",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sky Drop",
+     "Harden"
+    ]
+   },
+   {
+    "label": "Gusty",
+    "species": "Pidgeot",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Gust",
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Prey",
+    "species": "Machop",
+    "level": 5,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   },
+   {
+    "label": "Other",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   },
+   {
+    "label": "Spare",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Sky Drop 1, move Gust 1",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p2": "switch 3, pass"
+  },
+  {
+   "p1": "move 1, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

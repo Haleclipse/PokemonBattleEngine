@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen9-a-syrup-bomb-outlasts-a-recoil-that-ends-the-battle",
+ "notes": [
+  "Gen 9 singles: Foongus, its side's last Pok\u00e9mon, covers Bisharp in Syrup Bomb, then knocks itself out with Chloroblast's recoil. The recoil comes after the hit loop's `faintMessages`, so at the move's `Update` Foongus is still on the field (`isActive`) and the Syrup Bomb stays; its faint ends the battle before another `Update` could end it (DESIGN.md R-M8-166)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Foongus",
+    "species": "Foongus",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Syrup Bomb",
+     "Chloroblast"
+    ],
+    "ability": "Effect Spore",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Bisharp",
+    "species": "Bisharp",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Super Fang"
+    ],
+    "ability": "Inner Focus",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Syrup Bomb",
+   "p2": "move Super Fang"
+  },
+  {
+   "p1": "move Chloroblast",
+   "p2": "move Super Fang"
+  }
+ ]
+}

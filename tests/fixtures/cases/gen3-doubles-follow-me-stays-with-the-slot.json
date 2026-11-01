@@ -1,0 +1,93 @@
+{
+ "schema": 1,
+ "id": "gen3-doubles-follow-me-stays-with-the-slot",
+ "notes": [
+  "Gen 3's Follow Me is a slot condition: the user fainted and its mid-turn replacement draws the rest of the turn's moves (Showdown gen3 `slotCondition: 'followme'`); with two Follow Me slots, the faster occupant's wins"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "doubles",
+  "format": "gen3doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Thunderbolt",
+     "Aerial Ace"
+    ],
+    "ability": "Volt Absorb"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Aerial Ace"
+    ],
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Follow Me"
+    ],
+    "ability": "Natural Cure"
+   },
+   {
+    "label": "Clefairy",
+    "species": "Clefairy",
+    "level": 5,
+    "nature": "Hardy",
+    "moves": [
+     "Follow Me"
+    ],
+    "ability": "Cute Charm"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Follow Me",
+     "Harden"
+    ],
+    "ability": "Natural Cure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Thunderbolt 2, move Aerial Ace 1",
+   "p2": "move Harden, move Follow Me"
+  },
+  {
+   "p2": "pass, switch Chansey"
+  },
+  {
+   "p1": "move Aerial Ace 2, move Aerial Ace 2",
+   "p2": "move Follow Me, move Follow Me"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

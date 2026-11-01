@@ -1,0 +1,149 @@
+{
+  "schema": 1,
+  "id": "gen8-doubles-mirror-armor-returns-cotton-down-before-mist",
+  "notes": [
+    "Cotton Down's Speed drop on a Mirror Armor Weavile behind Mist goes back to Stunfisk, and the turn order follows the Speed stages",
+    "promoted from m8-gen8-doubles-s399-000-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 8,
+    "mode": "doubles",
+    "format": "gen8doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Pincurchin",
+        "species": "Pincurchin",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Aurora Veil",
+          "Safeguard"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Weavile",
+        "species": "Weavile",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Reflect",
+          "Aurora Veil",
+          "Brick Break",
+          "Mist"
+        ],
+        "ability": "Mirror Armor",
+        "gender": "M"
+      },
+      {
+        "label": "Carvanha",
+        "species": "Carvanha",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Psychic Fangs"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Reshiram",
+        "species": "Reshiram",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Light Screen"
+        ],
+        "ability": "Run Away"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Whiscash",
+        "species": "Whiscash",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Brick Break",
+          "Aurora Veil",
+          "Light Screen"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Rapidash",
+        "species": "Rapidash",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Safeguard",
+          "Aurora Veil",
+          "Psychic Fangs"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Stunfisk",
+        "species": "Stunfisk",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Brick Break",
+          "Safeguard"
+        ],
+        "ability": "Cotton Down",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      62003,
+      45691,
+      16878,
+      55152
+    ]
+  },
+  "script": [
+    {
+      "p1": "switch Carvanha, move Reflect",
+      "p2": "switch Stunfisk, move Safeguard"
+    },
+    {
+      "p1": "move Psychic Fangs 2, move Aurora Veil",
+      "p2": "move Brick Break 1, move Aurora Veil"
+    },
+    {
+      "p1": "switch Pincurchin, pass"
+    },
+    {
+      "p1": "switch Reshiram, move Aurora Veil",
+      "p2": "switch Whiscash, move Aurora Veil"
+    },
+    {
+      "p1": "move Light Screen, move Brick Break 2",
+      "p2": "move Brick Break 1, move Psychic Fangs 2"
+    },
+    {
+      "p1": "switch Pincurchin, move Brick Break 2",
+      "p2": "switch Stunfisk, move Psychic Fangs 1"
+    },
+    {
+      "p2": "pass, switch Whiscash"
+    },
+    {
+      "p1": "move Aurora Veil, move Mist",
+      "p2": "move Brick Break 2, move Light Screen"
+    },
+    {
+      "p1": "move Safeguard, move Brick Break 1",
+      "p2": "move Safeguard, move Aurora Veil"
+    }
+  ]
+}

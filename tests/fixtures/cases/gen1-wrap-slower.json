@@ -1,0 +1,78 @@
+{
+ "schema": 1,
+ "id": "gen1-wrap-slower",
+ "notes": [
+  "Gen 1 Wrap from the slower side: the target moves before it is caught, then loses its turns \u2014 its bad poison still ticks after each lost turn (`abortMove` \u2192 `AfterMoveSelf`)"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Wrapper",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Wrap",
+     "Toxic"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Jolteon",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ]
+   },
+   {
+    "label": "Foe2",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Toxic",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Wrap",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Wrap",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Wrap",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Wrap",
+   "p2": "move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

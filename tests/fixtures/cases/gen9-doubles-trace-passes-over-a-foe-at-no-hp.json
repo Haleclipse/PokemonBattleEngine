@@ -1,0 +1,95 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-trace-passes-over-a-foe-at-no-hp",
+ "notes": [
+  "Gen 9 doubles: Weezing's Explosion knocks out itself and Gyarados (the Ghosts take nothing). Neutralizing Gas ends as Weezing faints and Gengar's Trace starts while Gyarados, not yet fainted, has no HP: Trace leaves it out (`foes()`), keeps looking, and copies Blissey's Natural Cure when it comes in"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Gengar",
+    "species": "Gengar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Trace"
+   },
+   {
+    "label": "Mismagius",
+    "species": "Mismagius",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Levitate"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Weezing",
+    "species": "Weezing-Galar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Explosion"
+    ],
+    "gender": "M",
+    "ability": "Neutralizing Gas"
+   },
+   {
+    "label": "Gyarados",
+    "species": "Gyarados",
+    "level": 1,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Intimidate"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Explosion, move Harden"
+  },
+  {
+   "p2": "switch Blissey, pass"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

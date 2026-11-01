@@ -1,0 +1,109 @@
+{
+ "schema": 1,
+ "id": "gen9-belly-drum",
+ "notes": [
+  "Belly Drum: from -2 (Charm) to +6 for half the max HP; again at +6 it fails; under Contrary Attack falls to -6, a second one still costs half the max HP with Attack already at -6, a third at 1 HP fails; a Contrary Snorlax with even max HP left at exactly half fails"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Drum",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Belly Drum",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Contra",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Belly Drum",
+     "Harden"
+    ],
+    "ability": "Contrary"
+   },
+   {
+    "label": "Even",
+    "species": "Snorlax",
+    "level": 99,
+    "nature": "Hardy",
+    "moves": [
+     "Belly Drum",
+     "Harden"
+    ],
+    "ability": "Contrary"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Charm"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Belly Drum",
+   "p2": "move Charm"
+  },
+  {
+   "p1": "move Belly Drum",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Contra",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Belly Drum",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Belly Drum",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Belly Drum",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Even",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Belly Drum",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Belly Drum",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

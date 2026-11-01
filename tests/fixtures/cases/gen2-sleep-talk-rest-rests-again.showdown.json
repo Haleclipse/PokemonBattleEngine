@@ -1,0 +1,637 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@pkmn/sim",
+    "version": "0.10.11",
+    "formatid": "gen2customgame",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "frames": [
+    {
+      "schema": 1,
+      "checkpoint": "initial",
+      "turn": 1,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "item": "",
+              "species": "snorlax",
+              "pp": [
+                16,
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 140,
+              "max_hp": 140,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "electric"
+              ],
+              "item": "",
+              "species": "jolteon",
+              "pp": [
+                56
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "details": "Snorlax, L50, M",
+          "hp": 235,
+          "max_hp": 235,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Jolteon"
+          },
+          "details": "Jolteon, L50, F",
+          "hp": 140,
+          "max_hp": 140,
+          "status": null
+        },
+        {
+          "kind": "turn",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_1",
+      "turn": 2,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": {
+                "kind": "slp"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "item": "",
+              "species": "snorlax",
+              "pp": [
+                15,
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 140,
+              "max_hp": 140,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "electric"
+              ],
+              "item": "",
+              "species": "jolteon",
+              "pp": [
+                55
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Jolteon"
+          },
+          "move": "Tackle",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "from": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "hp": 220,
+          "max_hp": 235,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Rest",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "from": null
+        },
+        {
+          "kind": "status",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "status": "slp",
+          "from": "[from] move: Rest",
+          "of": null
+        },
+        {
+          "kind": "heal",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "hp": 235,
+          "max_hp": 235,
+          "status": "slp",
+          "from": "[silent]",
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 2
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_2",
+      "turn": 3,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": {
+                "kind": "slp"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "item": "",
+              "species": "snorlax",
+              "pp": [
+                15,
+                15
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 140,
+              "max_hp": 140,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "electric"
+              ],
+              "item": "",
+              "species": "jolteon",
+              "pp": [
+                54
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Jolteon"
+          },
+          "move": "Tackle",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "from": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "hp": 221,
+          "max_hp": 235,
+          "status": "slp",
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "cant",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "detail": "slp"
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Sleep Talk",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "from": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Rest",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "from": "[from] Sleep Talk"
+        },
+        {
+          "kind": "status",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "status": "slp",
+          "from": "[from] move: Rest",
+          "of": null
+        },
+        {
+          "kind": "heal",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "hp": 235,
+          "max_hp": 235,
+          "status": "slp",
+          "from": "[silent]",
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 3
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_3",
+      "turn": 4,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": {
+                "kind": "slp"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "item": "",
+              "species": "snorlax",
+              "pp": [
+                15,
+                14
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 140,
+              "max_hp": 140,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "electric"
+              ],
+              "item": "",
+              "species": "jolteon",
+              "pp": [
+                53
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Jolteon"
+          },
+          "move": "Tackle",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "from": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "hp": 219,
+          "max_hp": 235,
+          "status": "slp",
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "cant",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "detail": "slp"
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Sleep Talk",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "from": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Rest",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "from": "[from] Sleep Talk"
+        },
+        {
+          "kind": "status",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "status": "slp",
+          "from": "[from] move: Rest",
+          "of": null
+        },
+        {
+          "kind": "heal",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "hp": 235,
+          "max_hp": 235,
+          "status": "slp",
+          "from": "[silent]",
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 4
+        }
+      ]
+    }
+  ],
+  "debug_log": "|gametype|singles\n|player|p1|P1||\n|player|p2|P2||\n|gen|2\n|tier|[Gen 2] Custom Game\n|rule|HP Percentage Mod: HP is shown in percentages\n|\n|teamsize|p1|1\n|teamsize|p2|1\n|start\n|switch|p1a: Snorlax|Snorlax, L50, M|235/235\n|switch|p2a: Jolteon|Jolteon, L50, F|140/140\n|turn|1\n|\n|move|p2a: Jolteon|Tackle|p1a: Snorlax\n|-damage|p1a: Snorlax|220/235\n|move|p1a: Snorlax|Rest|p1a: Snorlax\n|-status|p1a: Snorlax|slp|[from] move: Rest\n|-heal|p1a: Snorlax|235/235 slp|[silent]\n|\n|upkeep\n|turn|2\n|\n|move|p2a: Jolteon|Tackle|p1a: Snorlax\n|-damage|p1a: Snorlax|221/235 slp\n|cant|p1a: Snorlax|slp\n|move|p1a: Snorlax|Sleep Talk|p1a: Snorlax\n|move|p1a: Snorlax|Rest|p1a: Snorlax|[from] Sleep Talk\n|-status|p1a: Snorlax|slp|[from] move: Rest\n|-heal|p1a: Snorlax|235/235 slp|[silent]\n|\n|upkeep\n|turn|3\n|\n|move|p2a: Jolteon|Tackle|p1a: Snorlax\n|-damage|p1a: Snorlax|219/235 slp\n|cant|p1a: Snorlax|slp\n|move|p1a: Snorlax|Sleep Talk|p1a: Snorlax\n|move|p1a: Snorlax|Rest|p1a: Snorlax|[from] Sleep Talk\n|-status|p1a: Snorlax|slp|[from] move: Rest\n|-heal|p1a: Snorlax|235/235 slp|[silent]\n|\n|upkeep\n|turn|4"
+}

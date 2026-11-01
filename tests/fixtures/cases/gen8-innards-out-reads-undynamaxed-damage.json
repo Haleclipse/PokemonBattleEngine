@@ -1,0 +1,55 @@
+{
+ "schema": 1,
+ "id": "gen8-innards-out-reads-undynamaxed-damage",
+ "notes": [
+  "Gen 8: a level-1 Dynamaxed Blissey's Innards Out strikes back with `getUndynamaxedHP(damage)` — the doubled hit that knocked it out costs the attacker the undynamaxed share"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 1,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "gender": "F",
+    "ability": "Innards Out"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1",
+   "p2": "move 1 dynamax"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

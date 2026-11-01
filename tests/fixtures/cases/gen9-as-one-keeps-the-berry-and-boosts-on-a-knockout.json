@@ -1,0 +1,76 @@
+{
+ "schema": 1,
+ "id": "gen9-as-one-keeps-the-berry-and-boosts-on-a-knockout",
+ "notes": [
+  "Gen 9: As One (Glastrier) announces As One and Unnerve, keeps the paralysed Snorlax from eating its Cheri Berry, and raises Attack when its move knocks a Pok\u00e9mon out (Chilling Neigh)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Calyrex",
+    "species": "Calyrex-Ice",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Thunder Wave",
+     "Tackle"
+    ],
+    "ability": "As One (Glastrier)"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Cheri Berry"
+   },
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 1,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Swift Swim"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Thunder Wave",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "switch Magikarp"
+  },
+  {
+   "p2": "switch Snorlax"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

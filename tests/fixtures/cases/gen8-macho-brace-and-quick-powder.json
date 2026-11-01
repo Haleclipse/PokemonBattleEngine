@@ -1,0 +1,109 @@
+{
+ "schema": 1,
+ "id": "gen8-macho-brace-and-quick-powder",
+ "notes": [
+  "Macho Brace halves its holder's Speed (a level-100 Mew moves after a level-70 one); Quick Powder doubles Ditto's (132 \u2192 264: first), not Snorlax's (96: still last)"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Brace",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Recover"
+    ],
+    "ability": "Run Away",
+    "item": "Macho Brace"
+   },
+   {
+    "label": "Ditto",
+    "species": "Ditto",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Recover"
+    ],
+    "ability": "Run Away",
+    "item": "Quick Powder"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Recover"
+    ],
+    "ability": "Run Away",
+    "item": "Quick Powder"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Pacer",
+    "species": "Mew",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Tackle",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "switch Ditto",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "switch Snorlax",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Slack Off"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,207 @@
+{
+  "schema": 1,
+  "id": "m8-gen1-flinch-clears-a-hyper-beam-recharge",
+  "notes": [
+    "Nightly 61: Magnemite's Hyper Beam leaves a recharge, Drowzee's Rolling Kick flinches it after it moved: the gen1 flinch clears the recharge, which the frame shows gone (replay: the flinch read from the recharge it cleared) (DESIGN.md R-M8-105)",
+    "promoted from m8-gen1-singles-s541-006-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 1,
+    "mode": "singles",
+    "format": "gen1customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Sandslash",
+        "species": "Sandslash",
+        "level": 49,
+        "nature": "Hardy",
+        "moves": [
+          "Constrict",
+          "Bubble Beam",
+          "Hyper Beam"
+        ]
+      },
+      {
+        "label": "Slowpoke",
+        "species": "Slowpoke",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fire Spin",
+          "Mist",
+          "Clamp",
+          "Hyper Beam"
+        ]
+      },
+      {
+        "label": "Beedrill",
+        "species": "Beedrill",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Wrap",
+          "Bind",
+          "Hyper Beam"
+        ]
+      },
+      {
+        "label": "Drowzee",
+        "species": "Drowzee",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Rolling Kick"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "Gengar",
+        "species": "Gengar",
+        "level": 53,
+        "nature": "Hardy",
+        "moves": [
+          "Bite",
+          "Hyper Fang",
+          "Hyper Beam"
+        ]
+      },
+      {
+        "label": "Alakazam",
+        "species": "Alakazam",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Headbutt",
+          "Fly"
+        ]
+      },
+      {
+        "label": "Tauros",
+        "species": "Tauros",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Gust",
+          "Mist",
+          "Sky Attack"
+        ]
+      },
+      {
+        "label": "Magnemite",
+        "species": "Magnemite",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Hyper Beam"
+        ]
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      60072,
+      55999,
+      58305,
+      41418
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Constrict",
+      "p2": "move Bite"
+    },
+    {
+      "p1": "move Bubble Beam",
+      "p2": "move Hyper Fang"
+    },
+    {
+      "p1": "move Hyper Beam",
+      "p2": "move Hyper Beam"
+    },
+    {
+      "p1": "switch Slowpoke"
+    },
+    {
+      "p1": "move Fire Spin",
+      "p2": "move Bite"
+    },
+    {
+      "p1": "switch Beedrill",
+      "p2": "switch Alakazam"
+    },
+    {
+      "p1": "move Bind",
+      "p2": "move Fly"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 1"
+    },
+    {
+      "p2": "switch Gengar"
+    },
+    {
+      "p1": "move Wrap",
+      "p2": "move Bite"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "switch Slowpoke",
+      "p2": "switch Tauros"
+    },
+    {
+      "p1": "move Fire Spin",
+      "p2": "move Gust"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move Mist",
+      "p2": "move Gust"
+    },
+    {
+      "p1": "move Clamp",
+      "p2": "move Sky Attack"
+    },
+    {
+      "p1": "switch Beedrill",
+      "p2": "move Gust"
+    },
+    {
+      "p1": "switch Slowpoke"
+    },
+    {
+      "p1": "move Hyper Beam",
+      "p2": "move Gust"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move Mist",
+      "p2": "move Sky Attack"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 1"
+    },
+    {
+      "p1": "switch Drowzee",
+      "p2": "switch Magnemite"
+    },
+    {
+      "p1": "move Rolling Kick",
+      "p2": "move Hyper Beam"
+    }
+  ]
+}

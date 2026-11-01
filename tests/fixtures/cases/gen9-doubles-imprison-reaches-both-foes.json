@@ -1,0 +1,86 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-imprison-reaches-both-foes",
+ "notes": [
+  "Gen 9 doubles Imprison from the second slot: both foes' Tackle, chosen before it, fail; afterwards neither can choose a move the holder knows"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Ally",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Imprisoner",
+    "species": "Blissey",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Imprison",
+     "Tackle",
+     "Protect"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "FoeA",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Growl"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "FoeB",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Growl"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Imprison",
+   "p2": "move Tackle 2, move Tackle 2"
+  },
+  {
+   "p1": "move Harden, move Protect",
+   "p2": "move Growl, move Growl"
+  },
+  {
+   "p1": "move Recover, move Tackle 1",
+   "p2": "move Growl, move Growl"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

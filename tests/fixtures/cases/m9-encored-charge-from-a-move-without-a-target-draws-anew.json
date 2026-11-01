@@ -1,0 +1,435 @@
+{
+ "schema": 1,
+ "id": "m9-encored-charge-from-a-move-without-a-target-draws-anew",
+ "notes": [
+  "R-M9-26: Accelgor's Encore turns Vikavolt's Iron Defense into Fly. The action carried no target (`targetLoc` 0), so the charge's `twoturnmove` keeps 0 and the release draws its target anew (`getTarget` \u2192 `getRandomTarget`): it strikes Accelgor, not the Pok\u00e9mon the charge turn drew. Minimized from Nightly 20261020-063213 (gen8doublesou)."
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "doubles",
+  "format": "gen8doublesou"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Accelgor",
+    "species": "Accelgor",
+    "ability": "Hydration",
+    "moves": [
+     "Double-Edge",
+     "Encore",
+     "Venom Drench"
+    ],
+    "nature": "Hardy",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 136,
+     "atk": 128,
+     "def": 0,
+     "spa": 0,
+     "spd": 244,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 25
+    },
+    "happiness": 239
+   },
+   {
+    "label": "Nick23",
+    "species": "Toxtricity-Low-Key",
+    "item": "Lagging Tail",
+    "ability": "Technician",
+    "moves": [
+     "Mega Kick",
+     "Stored Power",
+     "Thunderbolt",
+     "Screech"
+    ],
+    "nature": "Hasty",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 0,
+     "atk": 212,
+     "def": 180,
+     "spa": 116,
+     "spd": 0,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 15,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 147
+   },
+   {
+    "label": "Purrloin",
+    "species": "Purrloin",
+    "ability": "Prankster",
+    "moves": [
+     "Facade"
+    ],
+    "nature": "Jolly",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 36,
+     "atk": 24,
+     "def": 244,
+     "spa": 36,
+     "spd": 148,
+     "spe": 20
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 9,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Spritzee",
+    "species": "Spritzee",
+    "ability": "Aroma Veil",
+    "moves": [
+     "Sweet Kiss"
+    ],
+    "nature": "Sassy",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 60,
+     "atk": 208,
+     "def": 0,
+     "spa": 8,
+     "spd": 96,
+     "spe": 52
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Slowpoke",
+    "species": "Slowpoke",
+    "ability": "Own Tempo",
+    "moves": [
+     "Zen Headbutt",
+     "Hail",
+     "Shadow Ball",
+     "Yawn"
+    ],
+    "nature": "Sassy",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 172,
+     "atk": 156,
+     "def": 144,
+     "spa": 36,
+     "spd": 0,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 12,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Weezing",
+    "species": "Weezing-Galar",
+    "ability": "Neutralizing Gas",
+    "moves": [
+     "Toxic Spikes"
+    ],
+    "nature": "Hasty",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 104,
+     "atk": 0,
+     "def": 64,
+     "spa": 0,
+     "spd": 156,
+     "spe": 184
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 205
+   }
+  ],
+  "p2": [
+   {
+    "label": "Dewpider",
+    "species": "Dewpider",
+    "ability": "Water Absorb",
+    "moves": [
+     "Iron Defense",
+     "Protect"
+    ],
+    "nature": "Brave",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 112,
+     "atk": 0,
+     "def": 36,
+     "spa": 8,
+     "spd": 252,
+     "spe": 100
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 17,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Nick89",
+    "species": "Mareanie",
+    "ability": "Merciless",
+    "moves": [
+     "Pain Split",
+     "Spit Up",
+     "Hail"
+    ],
+    "nature": "Brave",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 0,
+     "atk": 112,
+     "def": 176,
+     "spa": 0,
+     "spd": 0,
+     "spe": 220
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 26,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Slurpuff",
+    "species": "Slurpuff",
+    "ability": "Unburden",
+    "moves": [
+     "Tackle"
+    ],
+    "nature": "Lonely",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 192,
+     "atk": 16,
+     "def": 124,
+     "spa": 80,
+     "spd": 52,
+     "spe": 44
+    },
+    "ivs": {
+     "hp": 4,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Nick11",
+    "species": "Vikavolt",
+    "ability": "Levitate",
+    "moves": [
+     "Rising Voltage",
+     "Fly",
+     "Iron Defense"
+    ],
+    "nature": "Lax",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 100,
+     "atk": 100,
+     "def": 32,
+     "spa": 124,
+     "spd": 0,
+     "spe": 152
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "hpType": "Fire"
+   },
+   {
+    "label": "Diggersby",
+    "species": "Diggersby",
+    "ability": "Huge Power",
+    "moves": [
+     "Sludge Bomb",
+     "Rest",
+     "Scorching Sands",
+     "Nature Power"
+    ],
+    "nature": "Sassy",
+    "gender": "F",
+    "shiny": false,
+    "level": 88,
+    "evs": {
+     "hp": 36,
+     "atk": 112,
+     "def": 32,
+     "spa": 196,
+     "spd": 0,
+     "spe": 132
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 29,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 9
+   },
+   {
+    "label": "Hippopotas",
+    "species": "Hippopotas",
+    "ability": "Sand Force",
+    "moves": [
+     "Curse",
+     "Mud-Slap",
+     "Body Slam"
+    ],
+    "nature": "Adamant",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 36,
+     "atk": 4,
+     "def": 4,
+     "spa": 40,
+     "spd": 252,
+     "spe": 172
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 29,
+     "spe": 31
+    }
+   }
+  ]
+ },
+ "preview": {
+  "p1": "team 251364",
+  "p2": "team 251463"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   25863,
+   107,
+   1002,
+   31
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Mega Kick 1, move Zen Headbutt 2",
+   "p2": "move Pain Split 1, move Sludge Bomb 2"
+  },
+  {
+   "p1": "move Stored Power 1, move Hail",
+   "p2": "move Spit Up 1, move Rest"
+  },
+  {
+   "p1": "move Thunderbolt 2, move Shadow Ball 1",
+   "p2": "move Hail, move Scorching Sands 2"
+  },
+  {
+   "p2": "switch 3, pass"
+  },
+  {
+   "p1": "move Screech 2, move Yawn 1",
+   "p2": "move Protect, move Nature Power 1"
+  },
+  {
+   "p1": "move Mega Kick 2, move Zen Headbutt 1",
+   "p2": "move Iron Defense, move Sludge Bomb 2"
+  },
+  {
+   "p2": "pass, switch 4"
+  },
+  {
+   "p1": "switch 3, move Hail",
+   "p2": "switch 5, move Fly 1"
+  },
+  {
+   "p1": "move 1 2, move 3 1",
+   "p2": "move 1, move 1"
+  },
+  {
+   "p1": "move Encore 2, move Yawn 1",
+   "p2": "move Mud-Slap 2, move Iron Defense"
+  },
+  {
+   "p1": "move 3, move 1 2",
+   "p2": "move 3 1, move 1"
+  }
+ ]
+}

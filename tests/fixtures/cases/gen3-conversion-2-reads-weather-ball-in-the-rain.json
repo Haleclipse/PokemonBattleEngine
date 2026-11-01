@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen3-conversion-2-reads-weather-ball-in-the-rain",
+ "notes": [
+  "Gen 3: Conversion 2 reads the target's `lastMoveUsed` (Politoed is slower: its last move is Weather Ball) with the type it was used as — in the rain, Water — so Porygon2 draws Dragon, Grass or Water (Gen 2-3 do not leave its own types out)"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Porygon2",
+    "species": "Porygon2",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Conversion 2",
+     "Harden"
+    ],
+    "ability": "Trace"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Politoed",
+    "species": "Politoed",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Weather Ball",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Drizzle"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Weather Ball"
+  },
+  {
+   "p1": "move Conversion 2",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

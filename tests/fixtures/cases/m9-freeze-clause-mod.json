@@ -1,0 +1,103 @@
+{
+  "schema": 1,
+  "id": "m9-freeze-clause-mod",
+  "notes": [
+    "M9.5: Freeze Clause Mod (gen4ou). Jynx's Ice Beam freezes Snorlax; with Snorlax frozen on the bench, the freeze Ice Beam rolls on Chansey is refused."
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "singles",
+    "format": "gen4ou"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Jynx",
+        "species": "Jynx",
+        "ability": "Oblivious",
+        "item": "Leftovers",
+        "nature": "Timid",
+        "gender": "F",
+        "evs": {
+          "spa": 252,
+          "spe": 252,
+          "hp": 4
+        },
+        "moves": [
+          "Ice Beam",
+          "Psychic"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "Snorlax",
+        "species": "Snorlax",
+        "ability": "Thick Fat",
+        "item": "Leftovers",
+        "nature": "Careful",
+        "gender": "M",
+        "evs": {
+          "hp": 252,
+          "spd": 252,
+          "def": 4
+        },
+        "moves": [
+          "Curse",
+          "Body Slam"
+        ]
+      },
+      {
+        "label": "Chansey",
+        "species": "Chansey",
+        "ability": "Serene Grace",
+        "item": "Leftovers",
+        "nature": "Bold",
+        "gender": "F",
+        "evs": {
+          "hp": 252,
+          "def": 252,
+          "spd": 4
+        },
+        "moves": [
+          "Softboiled",
+          "Seismic Toss"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "switch 2"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    }
+  ],
+  "random": {
+    "seed": [
+      2,
+      3,
+      4,
+      5
+    ]
+  }
+}

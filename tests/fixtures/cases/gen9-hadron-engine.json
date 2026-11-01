@@ -1,0 +1,83 @@
+{
+ "schema": 1,
+ "id": "gen9-hadron-engine",
+ "notes": [
+  "Hadron Engine sets Electric Terrain as Miraidon comes in and raises its Special Attack \u00d75461/4096 in any Electric Terrain (isTerrain): Dragon Pulse is stronger for 5 turns, not after the terrain ends, and again under Blissey's own Electric Terrain"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Miraidon",
+    "species": "Miraidon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Dragon Pulse",
+     "Protect"
+    ],
+    "ability": "Hadron Engine"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Soft-Boiled",
+     "Electric Terrain"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Dragon Pulse",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Dragon Pulse",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Dragon Pulse",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Dragon Pulse",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Protect",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Dragon Pulse",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Dragon Pulse",
+   "p2": "move Electric Terrain"
+  },
+  {
+   "p1": "move Dragon Pulse",
+   "p2": "move Soft-Boiled"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,282 @@
+{
+  "schema": 1,
+  "id": "gen9-doubles-corpus-e",
+  "notes": [
+    "Whole-battle corpus: a six-on-six Gen 9 doubles battle from the deterministic policy (tools/oracle-node/src/corpus.mjs).",
+    "corpus: 26 script entries, 18 turns, winner P1"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Annihilape",
+        "species": "Annihilape",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Rage Fist",
+          "Stomping Tantrum",
+          "Close Combat",
+          "Protect"
+        ],
+        "ability": "Clear Body"
+      },
+      {
+        "label": "Reshiram",
+        "species": "Reshiram",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fusion Flare",
+          "Draco Meteor",
+          "Protect",
+          "Heat Wave"
+        ],
+        "ability": "Natural Cure"
+      },
+      {
+        "label": "Zekrom",
+        "species": "Zekrom",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fusion Bolt",
+          "Rock Slide",
+          "Protect",
+          "Crunch"
+        ],
+        "ability": "Rough Skin"
+      },
+      {
+        "label": "Grimmsnarl",
+        "species": "Grimmsnarl",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Lash Out",
+          "Fake Out",
+          "Thunder Wave",
+          "Protect"
+        ],
+        "ability": "Intimidate"
+      },
+      {
+        "label": "Houndstone",
+        "species": "Houndstone",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Last Respects",
+          "Body Slam",
+          "Protect",
+          "Will-O-Wisp"
+        ],
+        "ability": "Friend Guard"
+      },
+      {
+        "label": "Tauros",
+        "species": "Tauros",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Retaliate",
+          "Earthquake",
+          "Protect",
+          "Rock Slide"
+        ],
+        "ability": "Intimidate"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Mamoswine",
+        "species": "Mamoswine",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Avalanche",
+          "Earthquake",
+          "Ice Shard",
+          "Protect"
+        ],
+        "ability": "Sturdy"
+      },
+      {
+        "label": "Kingambit",
+        "species": "Kingambit",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Assurance",
+          "Iron Head",
+          "Protect",
+          "Swords Dance"
+        ],
+        "ability": "Iron Barbs"
+      },
+      {
+        "label": "Umbreon",
+        "species": "Umbreon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Payback",
+          "Snarl",
+          "Protect",
+          "Thunder Wave"
+        ],
+        "ability": "Synchronize"
+      },
+      {
+        "label": "Camerupt",
+        "species": "Camerupt",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Temper Flare",
+          "Earthquake",
+          "Protect",
+          "Will-O-Wisp"
+        ],
+        "ability": "Shed Skin"
+      },
+      {
+        "label": "Weavile",
+        "species": "Weavile",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Avalanche",
+          "Assurance",
+          "Fake Out",
+          "Ice Shard"
+        ],
+        "ability": "Technician"
+      },
+      {
+        "label": "Garchomp",
+        "species": "Garchomp",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Stomping Tantrum",
+          "Rock Slide",
+          "Protect",
+          "Swords Dance"
+        ],
+        "ability": "Rough Skin"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      11,
+      12,
+      13,
+      14
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1 1, move 1 2",
+      "p2": "move 1 1, move 1 2"
+    },
+    {
+      "p2": "pass, switch 3"
+    },
+    {
+      "p1": "move 2 1, move 2 2",
+      "p2": "move 2, move 2"
+    },
+    {
+      "p1": "switch 3, pass"
+    },
+    {
+      "p1": "move 3, move 3",
+      "p2": "move 3 1, move 3"
+    },
+    {
+      "p1": "move 4 1, move 4",
+      "p2": "move 4, move 4 2"
+    },
+    {
+      "p2": "pass, switch 4"
+    },
+    {
+      "p1": "move 1 2, move 1 1",
+      "p2": "move 1 1, move 1 2"
+    },
+    {
+      "p2": "switch 5, pass"
+    },
+    {
+      "p1": "switch 4, move 2 2",
+      "p2": "switch 6, move 2"
+    },
+    {
+      "p1": "pass, switch 4"
+    },
+    {
+      "p1": "move 2 1, move 3",
+      "p2": "move 2, move 3"
+    },
+    {
+      "p1": "move 3 2, move 4 1",
+      "p2": "move 3, move 4 1"
+    },
+    {
+      "p1": "move 4, move 1 2",
+      "p2": "move 4, move 1 2"
+    },
+    {
+      "p1": "move 1 1, move 2",
+      "p2": "move 1 1, move 2"
+    },
+    {
+      "p1": "switch 5, pass"
+    },
+    {
+      "p1": "move 2 2, move 3",
+      "p2": "move 2, move 3"
+    },
+    {
+      "p1": "switch 6, move 4 1",
+      "p2": "switch 6, move 4 2"
+    },
+    {
+      "p1": "move 3, move 1 2",
+      "p2": "move 3 1, move 1 2"
+    },
+    {
+      "p1": "move 4, move 2",
+      "p2": "move 4 1, move 2"
+    },
+    {
+      "p2": "switch 6, pass"
+    },
+    {
+      "p1": "move 1 1, move 3",
+      "p2": "move 1 2, pass"
+    },
+    {
+      "p1": "move 2, move 4 1",
+      "p2": "move 2, pass"
+    },
+    {
+      "p1": "pass, switch 6"
+    },
+    {
+      "p1": "move 3, move 1 1",
+      "p2": "move 3, pass"
+    },
+    {
+      "p1": "move 4, move 2 1",
+      "p2": "move 4, pass"
+    }
+  ]
+}

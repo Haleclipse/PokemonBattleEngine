@@ -1,0 +1,99 @@
+{
+ "schema": 1,
+ "id": "gen7-anchor-shot",
+ "notes": [
+  "Anchor Shot's secondary traps; Shield Dust keeps it off, and so does Sheer Force (which takes the secondary)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Anchor",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Anchor Shot",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Nidoking",
+    "species": "Nidoking",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Anchor Shot",
+     "Harden"
+    ],
+    "ability": "Sheer Force"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Dustox",
+    "species": "Dustox",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Shield Dust"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Anchor Shot",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Nidoking",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Dustox"
+  },
+  {
+   "p1": "move Anchor Shot",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Foe"
+  },
+  {
+   "p1": "move Anchor Shot",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Dustox"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

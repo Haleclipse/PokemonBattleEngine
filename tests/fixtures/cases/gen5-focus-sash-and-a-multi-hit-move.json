@@ -1,0 +1,91 @@
+{
+ "schema": 1,
+ "id": "gen5-focus-sash-and-a-multi-hit-move",
+ "notes": [
+  "Gen 5 Focus Sash against Rock Blast: Magikarp at full HP, every hit lethal \u2014 the sash holds the first hit and goes at once; the second knocks Magikarp out",
+  "Then Jolteon at full HP: the first hit does not knock it out, and the sash only holds a hit at full HP"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 10,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Focus Sash",
+    "ability": "Swift Swim"
+   },
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Focus Sash",
+    "ability": "Volt Absorb"
+   },
+   {
+    "label": "Lapras",
+    "species": "Lapras",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Water Absorb"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Golem",
+    "species": "Golem",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Rock Blast",
+     "Harden"
+    ],
+    "ability": "Sturdy"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Rock Blast"
+  },
+  {
+   "p1": "switch Jolteon"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Rock Blast"
+  },
+  {
+   "p1": "switch Lapras"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   9,
+   16,
+   22,
+   38
+  ]
+ }
+}

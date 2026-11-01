@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "id": "m9-sleep-clause-mod",
+  "notes": ["M9.5: Sleep Clause Mod (gen9ubers). Snorlax's own Rest does not count: Breloom's Spore puts Blissey to sleep; with Blissey asleep on the bench by a foe's doing, Spore on Chansey is refused."],
+  "battle": {"generation": 9, "mode": "singles", "format": "gen9ubers"},
+  "teams": {
+    "p1": [
+      {"label": "Breloom", "species": "Breloom", "ability": "Technician", "item": "Leftovers", "nature": "Jolly", "gender": "M", "evs": {"atk": 252, "spe": 252, "hp": 4}, "moves": ["Spore", "Mach Punch"], "teraType": "Fighting"}
+    ],
+    "p2": [
+      {"label": "Snorlax", "species": "Snorlax", "ability": "Thick Fat", "item": "Leftovers", "nature": "Careful", "gender": "M", "evs": {"hp": 252, "spd": 252, "def": 4}, "moves": ["Rest", "Curse"], "teraType": "Normal"},
+      {"label": "Blissey", "species": "Blissey", "ability": "Serene Grace", "item": "Heavy-Duty Boots", "nature": "Bold", "gender": "F", "evs": {"hp": 252, "def": 252, "spd": 4}, "moves": ["Soft-Boiled", "Seismic Toss"], "teraType": "Normal"},
+      {"label": "Chansey", "species": "Chansey", "ability": "Serene Grace", "item": "Eviolite", "nature": "Bold", "gender": "F", "evs": {"hp": 252, "def": 252, "spd": 4}, "moves": ["Soft-Boiled", "Seismic Toss"], "teraType": "Normal"}
+    ]
+  },
+  "script": [
+    {"p1": "move 2", "p2": "move 2"},
+    {"p1": "move 2", "p2": "move 1"},
+    {"p1": "move 1", "p2": "switch 2"},
+    {"p1": "move 1", "p2": "switch 3"}
+  ]
+}

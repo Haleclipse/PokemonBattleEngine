@@ -1,0 +1,80 @@
+{
+ "schema": 1,
+ "id": "gen9-freeze-shock-and-ice-burn",
+ "notes": [
+  "Gen 9 Freeze Shock and Ice Burn: a charging turn (twoturnmove, freezeshock / iceburn without a count), the attack the next; a full paralysis on the attacking turn drops the charge and the next use charges again"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Kyurem",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Freeze Shock",
+     "Ice Burn",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Wall",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Thunder Wave",
+     "Tail Whip"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Freeze Shock",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Freeze Shock",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Ice Burn",
+   "p2": "move Thunder Wave"
+  },
+  {
+   "p1": "move Ice Burn",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Ice Burn",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Ice Burn",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Ice Burn",
+   "p2": "move Tail Whip"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   2,
+   2,
+   3,
+   4
+  ]
+ }
+}

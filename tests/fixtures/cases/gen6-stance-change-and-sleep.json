@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen6-stance-change-and-sleep",
+ "notes": [
+  "Gen 6: Snorlax's Spore puts the Shield Forme Aegislash to sleep through King's Shield (a status move); the asleep Aegislash's chosen Sacred Sword still turns it into its Blade Forme (`onBeforeMove`, priority 11, before sleep stops it)"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Aegislash",
+    "species": "Aegislash",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "King's Shield",
+     "Sacred Sword"
+    ],
+    "gender": "F",
+    "ability": "Stance Change"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spore",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move King's Shield",
+   "p2": "move Spore"
+  },
+  {
+   "p1": "move Sacred Sword",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Sacred Sword",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

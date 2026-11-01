@@ -1,0 +1,153 @@
+{
+ "schema": 1,
+ "id": "gen9-abilities-boosting-a-type-on-the-attacking-stat",
+ "notes": [
+  "Steelworker, Dragon's Maw, Rocky Payload (\u00d71.5) and Gen 9 Transistor (5325/4096) chain into the attacking stat for moves of their type"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Volt",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Thunderbolt",
+     "Thunderbolt"
+    ],
+    "ability": "Transistor"
+   },
+   {
+    "label": "Steel",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Iron Head",
+     "Body Slam"
+    ],
+    "ability": "Steelworker"
+   },
+   {
+    "label": "Volt2",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Thunderbolt",
+     "Ice Beam"
+    ],
+    "ability": "Transistor"
+   },
+   {
+    "label": "Maw",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Dragon Pulse",
+     "Flamethrower"
+    ],
+    "ability": "Dragon's Maw"
+   },
+   {
+    "label": "Rock",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Rock Slide",
+     "Earthquake"
+    ],
+    "ability": "Rocky Payload"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled",
+     "Seismic Toss"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Thunderbolt",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Thunderbolt",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "switch Steel",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Iron Head",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "switch Volt2",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Thunderbolt",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Ice Beam",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "switch Maw",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Dragon Pulse",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Flamethrower",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "switch Rock",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Rock Slide",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Earthquake",
+   "p2": "move Slack Off"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

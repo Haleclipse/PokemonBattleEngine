@@ -1,0 +1,71 @@
+{
+ "schema": 1,
+ "id": "gen9-outrage-put-to-sleep",
+ "notes": [
+  "Gen 9 Outrage: put to sleep by a slower foe's Spore right after it struck, the user loses the lock at the end of the turn, silently"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Rager",
+    "species": "Snorlax",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Outrage",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Sporer",
+    "species": "Snorlax",
+    "level": 35,
+    "nature": "Hardy",
+    "moves": [
+     "Spore",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Outrage",
+   "p2": "move Spore"
+  },
+  {
+   "p1": "move Outrage",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Outrage",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Outrage",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Outrage",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

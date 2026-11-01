@@ -1,0 +1,64 @@
+{
+ "schema": 1,
+ "id": "gen5-transformed-ditto-and-light-ball",
+ "notes": [
+  "Gen 5: Ditto holding a Light Ball transforms into Pikachu; its Tackle is unboosted (Gen 5+: its own species)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Ditto",
+    "species": "Ditto",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Transform"
+    ],
+    "ability": "Limber",
+    "item": "Light Ball"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Pikachu",
+    "species": "Pikachu",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Static"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Transform",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

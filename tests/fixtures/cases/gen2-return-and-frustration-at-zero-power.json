@@ -1,0 +1,80 @@
+{
+ "schema": 1,
+ "id": "gen2-return-and-frustration-at-zero-power",
+ "notes": [
+  "Gen 2 Return / Frustration return `null` for a power of 0 (`|| null`): the move does nothing, not even its critical-hit check or damage roll — Frustration at 255 happiness, Return at 0"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Frustration",
+     "Return"
+    ],
+    "happiness": 255
+   },
+   {
+    "label": "Tauros",
+    "species": "Tauros",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Return",
+     "Frustration"
+    ],
+    "happiness": 0
+   }
+  ],
+  "p2": [
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Growl"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Frustration",
+   "p2": "move Growl"
+  },
+  {
+   "p1": "move Return",
+   "p2": "move Growl"
+  },
+  {
+   "p1": "switch Tauros",
+   "p2": "move Growl"
+  },
+  {
+   "p1": "move Return",
+   "p2": "move Growl"
+  },
+  {
+   "p1": "move Frustration",
+   "p2": "move Growl"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

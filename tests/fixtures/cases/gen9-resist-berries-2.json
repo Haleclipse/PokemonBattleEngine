@@ -1,0 +1,199 @@
+{
+ "schema": 1,
+ "id": "gen9-resist-berries-2",
+ "notes": [
+  "Kebia / Shuca / Coba / Payapa / Tanga / Charti Berry: the first super-effective hit of their type is halved and eats the berry, the second is not"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "First",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Sludge Bomb",
+     "Earthquake",
+     "Aerial Ace",
+     "Psychic"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Second",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Bug Buzz",
+     "Power Gem"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Kebia",
+    "species": "Clefable",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away",
+    "item": "Kebia Berry"
+   },
+   {
+    "label": "Shuca",
+    "species": "Tyranitar",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away",
+    "item": "Shuca Berry"
+   },
+   {
+    "label": "Coba",
+    "species": "Venusaur",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away",
+    "item": "Coba Berry"
+   },
+   {
+    "label": "Payapa",
+    "species": "Gengar",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away",
+    "item": "Payapa Berry"
+   },
+   {
+    "label": "Tanga",
+    "species": "Umbreon",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away",
+    "item": "Tanga Berry"
+   },
+   {
+    "label": "Charti",
+    "species": "Arcanine",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away",
+    "item": "Charti Berry"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Sludge Bomb",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Sludge Bomb",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Sludge Bomb",
+   "p2": "switch Shuca"
+  },
+  {
+   "p1": "move Earthquake",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Earthquake",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Sludge Bomb",
+   "p2": "switch Coba"
+  },
+  {
+   "p1": "move Aerial Ace",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Aerial Ace",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Sludge Bomb",
+   "p2": "switch Payapa"
+  },
+  {
+   "p1": "move Psychic",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Psychic",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "switch Second",
+   "p2": "switch Tanga"
+  },
+  {
+   "p1": "move Bug Buzz",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Bug Buzz",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Bug Buzz",
+   "p2": "switch Charti"
+  },
+  {
+   "p1": "move Power Gem",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Power Gem",
+   "p2": "move Soft-Boiled"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

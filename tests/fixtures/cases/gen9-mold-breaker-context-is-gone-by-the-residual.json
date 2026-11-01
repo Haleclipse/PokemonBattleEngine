@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen9-mold-breaker-context-is-gone-by-the-residual",
+ "notes": [
+  "The move's context ends with its action (Showdown `clearActiveMove`): after Excadrill's Mold Breaker Tackle, the turn's last move, Snorlax's Dry Skin still heals in the rain at the end of the turn"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Excadrill",
+    "species": "Excadrill",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Rain Dance",
+     "Tackle"
+    ],
+    "gender": "M",
+    "ability": "Mold Breaker"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Dry Skin"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Rain Dance",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

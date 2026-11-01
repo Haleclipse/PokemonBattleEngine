@@ -1,0 +1,689 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@pkmn/sim",
+    "version": "0.10.11",
+    "formatid": "gen4customgame",
+    "seed": [
+      9,
+      2,
+      3,
+      4
+    ]
+  },
+  "frames": [
+    {
+      "schema": 1,
+      "checkpoint": "initial",
+      "turn": 1,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 50,
+              "max_hp": 50,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "electric"
+              ],
+              "ability": "static",
+              "item": "starfberry",
+              "pp": [
+                32,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 325,
+              "max_hp": 325,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                16,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Static"
+          },
+          "details": "Pikachu, L20, F",
+          "hp": 50,
+          "max_hp": 50,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bider"
+          },
+          "details": "Snorlax, L70, F",
+          "hp": 325,
+          "max_hp": 325,
+          "status": null
+        },
+        {
+          "kind": "turn",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_1",
+      "turn": 2,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 50,
+              "max_hp": 50,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "electric"
+              ],
+              "ability": "static",
+              "item": "starfberry",
+              "pp": [
+                31,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 305,
+              "max_hp": 325,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "bide": 2
+              },
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                15,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bider"
+          },
+          "move": "Bide",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bider"
+          }
+        },
+        {
+          "kind": "start",
+          "args": [
+            "p2a: Bider",
+            "move: Bide"
+          ]
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Static"
+          },
+          "move": "Seismic Toss",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bider"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bider"
+          },
+          "hp": 305,
+          "max_hp": 325,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 2
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_2",
+      "turn": 3,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 50,
+              "max_hp": 50,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "electric"
+              ],
+              "ability": "static",
+              "item": "starfberry",
+              "pp": [
+                31,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 305,
+              "max_hp": 325,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": -1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "bide": 1
+              },
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                15,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "activate",
+          "args": [
+            "p2a: Bider",
+            "move: Bide"
+          ]
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Static"
+          },
+          "move": "Tail Whip",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bider"
+          }
+        },
+        {
+          "kind": "unboost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bider"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 3
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_3",
+      "turn": 4,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 10,
+              "max_hp": 50,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 2,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "electric"
+              ],
+              "ability": "static",
+              "item": "",
+              "pp": [
+                31,
+                46
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 305,
+              "max_hp": 325,
+              "status": {
+                "kind": "par"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": -2,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                15,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "end",
+          "args": [
+            "p2a: Bider",
+            "move: Bide"
+          ]
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Static"
+          },
+          "hp": 10,
+          "max_hp": 50,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "status",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bider"
+          },
+          "status": "par",
+          "from": "[from] ability: Static",
+          "of": "[of] p1a: Static"
+        },
+        {
+          "kind": "end",
+          "args": [
+            "p2a: Bider",
+            "move: Bide",
+            "[silent]"
+          ]
+        },
+        {
+          "kind": "enditem",
+          "args": [
+            "p1a: Static",
+            "Starf Berry",
+            "[eat]"
+          ]
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Static"
+          },
+          "stat": "spa",
+          "amount": 2
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Static"
+          },
+          "move": "Tail Whip",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bider"
+          }
+        },
+        {
+          "kind": "unboost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bider"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 4
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_4",
+      "turn": 5,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 10,
+              "max_hp": 50,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": -1,
+                "special_attack": 2,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "electric"
+              ],
+              "ability": "static",
+              "item": "",
+              "pp": [
+                31,
+                45
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 305,
+              "max_hp": 325,
+              "status": {
+                "kind": "par"
+              },
+              "boosts": {
+                "attack": 0,
+                "defense": -3,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                15,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Static"
+          },
+          "move": "Tail Whip",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bider"
+          }
+        },
+        {
+          "kind": "unboost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bider"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Bider"
+          },
+          "move": "Tail Whip",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Static"
+          }
+        },
+        {
+          "kind": "unboost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Static"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 5
+        }
+      ]
+    }
+  ],
+  "debug_log": "|gametype|singles\n|player|p1|P1||\n|player|p2|P2||\n|gen|4\n|tier|[Gen 4] Custom Game\n|\n|teamsize|p1|1\n|teamsize|p2|1\n|start\n|switch|p1a: Static|Pikachu, L20, F|50/50\n|switch|p2a: Bider|Snorlax, L70, F|325/325\n|turn|1\n|\n|move|p2a: Bider|Bide|p2a: Bider\n|-start|p2a: Bider|move: Bide\n|move|p1a: Static|Seismic Toss|p2a: Bider\n|-damage|p2a: Bider|305/325\n|\n|upkeep\n|turn|2\n|\n|-activate|p2a: Bider|move: Bide\n|move|p1a: Static|Tail Whip|p2a: Bider\n|-unboost|p2a: Bider|def|1\n|\n|upkeep\n|turn|3\n|\n|-end|p2a: Bider|move: Bide\n|-damage|p1a: Static|10/50\n|-status|p2a: Bider|par|[from] ability: Static|[of] p1a: Static\n|-end|p2a: Bider|move: Bide|[silent]\n|-enditem|p1a: Static|Starf Berry|[eat]\n|-boost|p1a: Static|spa|2|[from] item: Starf Berry\n|move|p1a: Static|Tail Whip|p2a: Bider\n|-unboost|p2a: Bider|def|1\n|\n|upkeep\n|turn|4\n|\n|move|p1a: Static|Tail Whip|p2a: Bider\n|-unboost|p2a: Bider|def|1\n|move|p2a: Bider|Tail Whip|p1a: Static\n|-unboost|p1a: Static|def|1\n|\n|upkeep\n|turn|5"
+}

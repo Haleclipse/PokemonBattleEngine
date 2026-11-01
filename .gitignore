@@ -1,0 +1,46 @@
+# Rust
+/target/
+/stable-api/target/
+Cargo.lock.bak
+
+# Node oracle tooling (development only)
+/tools/oracle-node/node_modules/
+
+# PokéAPI sparse checkout (tools/fetch-pokeapi.sh); the derived official-index.json is committed
+/tools/pokeapi/
+
+# Python bytecode
+__pycache__/
+*.pyc
+
+# Oracle failure bundles (see TESTING.md §9)
+/target/oracle-failures/
+
+# Per-batch drafts of the M7 / M8 work (scenario generators, mutation lists, logs; tools/m7)
+/work/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Internal working documents: kept and maintained locally, not published
+/DESIGN.md
+/ROADMAP.md
+/TESTING.md
+/issues.md
+/*RFC.md
+
+# AI tool local configuration
+.mcp.json
+.claude/
+.cursor/
+CLAUDE.local.md
+*.local.json
+
+# Environment and secrets
+.env
+.env.*
+*.pem
+*.key

@@ -1,0 +1,219 @@
+{
+  "schema": 1,
+  "id": "m10-zt-transform-takes-the-targets-crit-volatiles",
+  "notes": [
+    "Gen 8 doubles: Beheeyem, under Focus Energy, transforms into an Elgyem with none: transformInto drops its own critical-hit volatiles for the target's, with no line (R-M10-70)",
+    "promoted from m8-gen8-doubles-s100-006-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 8,
+    "mode": "doubles",
+    "format": "gen8doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Tapu Lele",
+        "species": "Tapu Lele",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Entrainment",
+          "Swallow",
+          "Clangorous Soul",
+          "Mimic"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Noivern",
+        "species": "Noivern",
+        "level": 46,
+        "nature": "Hardy",
+        "moves": [
+          "Power Trick",
+          "Substitute",
+          "Encore",
+          "Sandstorm"
+        ],
+        "ability": "Run Away",
+        "item": "Power Band",
+        "gender": "M"
+      },
+      {
+        "label": "Gengar",
+        "species": "Gengar",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Defense Curl",
+          "Hail",
+          "Taunt",
+          "Grassy Terrain"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Beheeyem",
+        "species": "Beheeyem",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Magnet Rise",
+          "Transform",
+          "Focus Energy"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Larvesta",
+        "species": "Larvesta",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Block",
+          "Copycat",
+          "Laser Focus"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Fomantis",
+        "species": "Fomantis",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Heal Pulse",
+          "Mist",
+          "Psycho Shift",
+          "Venom Drench"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Latios",
+        "species": "Latios",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Simple Beam",
+          "Reflect",
+          "Electrify",
+          "Happy Hour"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Elgyem",
+        "species": "Elgyem",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Switcheroo",
+          "Charge"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      54750,
+      35698,
+      50190,
+      37538
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Swallow, move Substitute",
+      "p2": "move Copycat, move Mist"
+    },
+    {
+      "p1": "move Mimic 1, move Sandstorm",
+      "p2": "move Laser Focus, move Mist"
+    },
+    {
+      "p1": "move Entrainment 2, move Power Trick",
+      "p2": "move Block 2, move Mist"
+    },
+    {
+      "p1": "move Entrainment 2, move Power Trick",
+      "p2": "switch Latios, move Heal Pulse 2"
+    },
+    {
+      "p1": "move Swallow, move Substitute",
+      "p2": "move Simple Beam 1, move Mist"
+    },
+    {
+      "p1": "move Clangorous Soul, move Encore 1",
+      "p2": "move Reflect, move Psycho Shift 2"
+    },
+    {
+      "p1": "move 4, move 4",
+      "p2": "move 2, move 4"
+    },
+    {
+      "p1": "move Swallow, move Substitute",
+      "p2": "move Reflect, move Mist"
+    },
+    {
+      "p1": "move Entrainment 2, move Power Trick",
+      "p2": "move Reflect, move Heal Pulse 1"
+    },
+    {
+      "p1": "switch Gengar, move Substitute",
+      "p2": "switch Larvesta, move Mist"
+    },
+    {
+      "p1": "move Hail, move Encore 1",
+      "p2": "move Block 2, move Psycho Shift 1"
+    },
+    {
+      "p1": "move Taunt 2, move Sandstorm",
+      "p2": "move Block 2, move Venom Drench"
+    },
+    {
+      "p1": "move 4, move 1",
+      "p2": "move 1 1, move 1"
+    },
+    {
+      "p1": "move 1, move 2",
+      "p2": "move 1 2, move 1"
+    },
+    {
+      "p2": "pass, switch Latios"
+    },
+    {
+      "p1": "move Hail, move Encore 1",
+      "p2": "move Block 1, move Electrify 2"
+    },
+    {
+      "p1": "pass, switch Tapu Lele"
+    },
+    {
+      "p1": "switch Beheeyem, move Clangorous Soul",
+      "p2": "switch Elgyem, move Electrify 2"
+    },
+    {
+      "p1": "move Focus Energy, move Mimic 1",
+      "p2": "move Switcheroo 1, move Happy Hour"
+    },
+    {
+      "p1": "move Magnet Rise, move Clangorous Soul",
+      "p2": "move Charge, move Electrify 2"
+    },
+    {
+      "p1": "move Transform 1, move Mimic 2",
+      "p2": "move Switcheroo 1, move Happy Hour"
+    }
+  ]
+}

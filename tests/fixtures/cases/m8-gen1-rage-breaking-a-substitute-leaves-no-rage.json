@@ -1,0 +1,102 @@
+{
+  "schema": 1,
+  "id": "m8-gen1-rage-breaking-a-substitute-leaves-no-rage",
+  "notes": [
+    "Nightly 62: Pidgeotto's Metronome calls Rage, which breaks Scyther's Substitute: the gen1 moveHit's doSelf skips the move's self effects (pokered nullifies the effect as the doll breaks), so no rage starts (DESIGN.md R-M8-106)",
+    "promoted from m8-gen1-singles-s546-011-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 1,
+    "mode": "singles",
+    "format": "gen1customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Exeggutor",
+        "species": "Exeggutor",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Low Kick",
+          "Metronome",
+          "Hyper Fang"
+        ]
+      },
+      {
+        "label": "Pidgeotto",
+        "species": "Pidgeotto",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Stomp",
+          "Metronome",
+          "Substitute"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "Ninetales",
+        "species": "Ninetales",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Thunder Punch",
+          "Metronome",
+          "Thunderbolt"
+        ]
+      },
+      {
+        "label": "Scyther",
+        "species": "Scyther",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Body Slam",
+          "Metronome",
+          "Substitute"
+        ]
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      48735,
+      46529,
+      58133,
+      45691
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Low Kick",
+      "p2": "move Thunder Punch"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Metronome"
+    },
+    {
+      "p1": "move Hyper Fang",
+      "p2": "move Thunderbolt"
+    },
+    {
+      "p1": "switch Pidgeotto",
+      "p2": "switch Scyther"
+    },
+    {
+      "p1": "move Substitute",
+      "p2": "move Substitute"
+    },
+    {
+      "p1": "move Stomp",
+      "p2": "move Body Slam"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Metronome"
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+ "schema": 1,
+ "id": "gen8-berserk-and-the-confusion-self-hit",
+ "notes": [
+  "Gen 8 Berserk (issues.md I36): Showdown's confusion self-hit is a pseudo-move (`effectType: 'Move'`), so it holds Drampa's Sitrus Berry back like a move's single strike \u2014 and no `AfterMoveSecondary` follows it: Drampa stays below half with its berry until Jolteon's Growl reaches it, whose `AfterMoveSecondary` lets the berry go at the action's `Update`"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Drampa",
+    "species": "Drampa",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Sitrus Berry",
+    "ability": "Berserk"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 36,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Confuse Ray",
+     "Growl",
+     "Harden"
+    ],
+    "ability": "Volt Absorb"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Confuse Ray"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Growl"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   2,
+   3,
+   4,
+   5
+  ]
+ }
+}

@@ -1,0 +1,69 @@
+{
+ "schema": 1,
+ "id": "gen4-future-sight-sets-off-no-rowap-berry",
+ "notes": [
+  "Gen 4: Slowking's Future Sight strikes Snorlax, who holds a Rowap Berry, with Slowking still on the field: pokeplatinum's `subscript_future_sight_damage` runs no `TriggerHeldItemOnHit`, so the berry stays (oracle patch, issues.md I165)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Slowking",
+    "species": "Slowking",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Future Sight",
+     "Splash"
+    ],
+    "ability": "Oblivious",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "item": "Rowap Berry",
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Future Sight",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   9,
+   10,
+   11,
+   12
+  ]
+ }
+}

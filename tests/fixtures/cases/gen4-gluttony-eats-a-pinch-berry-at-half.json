@@ -1,0 +1,89 @@
+{
+ "schema": 1,
+ "id": "gen4-gluttony-eats-a-pinch-berry-at-half",
+ "notes": [
+  "Gen 4 Gluttony (pokeplatinum `BattleSystem_TriggerHeldItem`: the pinch share halved; Showdown `abilityState.gluttony`): Snorlax eats its Petaya Berry at the hit's `Update` once Seismic Toss takes it to half or below; its partner without Gluttony keeps its Salac Berry at the same share until a quarter"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "doubles",
+  "format": "gen4doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Gluttony",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Petaya Berry",
+    "ability": "Gluttony"
+   },
+   {
+    "label": "Plain",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Salac Berry",
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Harden"
+    ],
+    "ability": "Volt Absorb"
+   },
+   {
+    "label": "Jolteon2",
+    "species": "Jolteon",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Harden"
+    ],
+    "ability": "Volt Absorb"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Seismic Toss 1, move Seismic Toss 2"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Seismic Toss 1, move Seismic Toss 2"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Seismic Toss 1, move Seismic Toss 2"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

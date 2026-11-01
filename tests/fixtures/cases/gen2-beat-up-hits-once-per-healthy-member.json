@@ -1,0 +1,96 @@
+{
+ "schema": 1,
+ "id": "gen2-beat-up-hits-once-per-healthy-member",
+ "notes": [
+  "Gen 2 Beat Up: one typeless special hit per party member neither fainted nor statused (the user too), each with that member's base Attack and level against the target's base Defense (-activate \u2026 [of] member); the poisoned Pikachu sits out, and the user once poisoned sits out too"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sneasel",
+    "species": "Sneasel",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Beat Up",
+     "Harden"
+    ]
+   },
+   {
+    "label": "Machamp",
+    "species": "Machamp",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   },
+   {
+    "label": "Pikachu",
+    "species": "Pikachu",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Toxic",
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "switch Pikachu",
+   "p2": "move Toxic"
+  },
+  {
+   "p1": "switch Sneasel",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Beat Up",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Beat Up",
+   "p2": "move Toxic"
+  },
+  {
+   "p1": "move Beat Up",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

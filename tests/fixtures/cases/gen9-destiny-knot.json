@@ -1,0 +1,66 @@
+{
+ "schema": 1,
+ "id": "gen9-destiny-knot",
+ "notes": [
+  "Gen 9 Destiny Knot (Showdown `onAttract`): Grimmsnarl's Attract infatuates Blissey, and her knot infatuates Grimmsnarl in turn",
+  "Both now roll their infatuation as they move"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "item": "Destiny Knot",
+    "ability": "Natural Cure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Grimmsnarl",
+    "species": "Grimmsnarl",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Attract",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Prankster"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Attract"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

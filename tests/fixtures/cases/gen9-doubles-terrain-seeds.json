@@ -1,0 +1,118 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-terrain-seeds",
+ "notes": [
+  "Gen 9 doubles terrain seeds (Showdown `onTerrainChange` / `onStart` \u2192 `useItem`, the item's `boosts`): Jolteon's Electric Terrain makes Snorlax use its Electric Seed (Defense +1) while Chansey keeps its Psychic Seed; Jolteon2's Psychic Terrain then spends Chansey's (Special Defense +1)",
+  "Turn 3: Grassy Terrain; Snorlax2 comes in holding a Grassy Seed and uses it as it enters (Defense +1), Chansey2 a Misty Seed it keeps until turn 4's Misty Terrain"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Electric Seed",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Psychic Seed",
+    "ability": "Natural Cure"
+   },
+   {
+    "label": "Snorlax2",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Grassy Seed",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Chansey2",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Misty Seed",
+    "ability": "Natural Cure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Electric Terrain",
+     "Grassy Terrain",
+     "Harden"
+    ],
+    "ability": "Volt Absorb"
+   },
+   {
+    "label": "Jolteon2",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Psychic Terrain",
+     "Misty Terrain",
+     "Harden"
+    ],
+    "ability": "Volt Absorb"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Electric Terrain, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Psychic Terrain"
+  },
+  {
+   "p1": "switch 3, switch 4",
+   "p2": "move Grassy Terrain, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Misty Terrain"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

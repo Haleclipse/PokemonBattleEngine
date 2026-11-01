@@ -1,0 +1,259 @@
+{
+  "schema": 1,
+  "id": "m8-gen5-sticky-barb-lost-on-a-final-gambit",
+  "notes": [
+    "Nightly 62: Cottonee's Final Gambit faints it before the hit; Persian's Sticky Barb is taken but setItem refuses a user with no HP left, so the barb is gone (DESIGN.md R-M8-106)",
+    "promoted from m8-gen5-singles-s546-008-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 5,
+    "mode": "singles",
+    "format": "gen5customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Magcargo",
+        "species": "Magcargo",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sludge Bomb",
+          "Assist",
+          "Poison Jab",
+          "Metronome"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Persian",
+        "species": "Persian",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sludge Wave",
+          "Assist",
+          "Poison Tail",
+          "Metronome"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Celebi",
+        "species": "Celebi",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Smog"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Watchog",
+        "species": "Watchog",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sludge"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Metagross",
+        "species": "Metagross",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Gunk Shot"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Vanillite",
+        "species": "Vanillite",
+        "level": 54,
+        "nature": "Hardy",
+        "moves": [
+          "Dark Void"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Ferroseed",
+        "species": "Ferroseed",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Lovely Kiss",
+          "Assist",
+          "Sing",
+          "Metronome"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Cobalion",
+        "species": "Cobalion",
+        "level": 54,
+        "nature": "Hardy",
+        "moves": [
+          "Hypnosis",
+          "Assist",
+          "Super Fang",
+          "Metronome"
+        ],
+        "ability": "Run Away",
+        "item": "Sticky Barb"
+      },
+      {
+        "label": "Cottonee",
+        "species": "Cottonee",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Seismic Toss",
+          "Assist",
+          "Endeavor",
+          "Metronome"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Bronzong",
+        "species": "Bronzong",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Final Gambit",
+          "Dragon Rage"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Shuckle",
+        "species": "Shuckle",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Psywave",
+          "Sonic Boom"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Zubat",
+        "species": "Zubat",
+        "level": 46,
+        "nature": "Hardy",
+        "moves": [
+          "Night Shade",
+          "Soft-Boiled"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      37519,
+      47094,
+      30408,
+      13321
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Sludge Bomb",
+      "p2": "move Lovely Kiss"
+    },
+    {
+      "p1": "move Assist",
+      "p2": "move Assist"
+    },
+    {
+      "p1": "move Poison Jab",
+      "p2": "move Sing"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Metronome"
+    },
+    {
+      "p1": "move Sludge Bomb",
+      "p2": "move Lovely Kiss"
+    },
+    {
+      "p1": "move Assist",
+      "p2": "move Assist"
+    },
+    {
+      "p1": "move Poison Jab",
+      "p2": "move Sing"
+    },
+    {
+      "p1": "switch Persian",
+      "p2": "switch Cobalion"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Metronome"
+    },
+    {
+      "p1": "move Sludge Wave",
+      "p2": "move Hypnosis"
+    },
+    {
+      "p1": "move Assist",
+      "p2": "move Assist"
+    },
+    {
+      "p1": "move Poison Tail",
+      "p2": "move Super Fang"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Metronome"
+    },
+    {
+      "p1": "move Sludge Wave",
+      "p2": "move Hypnosis"
+    },
+    {
+      "p1": "move Assist",
+      "p2": "move Assist"
+    },
+    {
+      "p2": "switch Ferroseed"
+    },
+    {
+      "p1": "switch Magcargo",
+      "p2": "switch Cottonee"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Metronome"
+    },
+    {
+      "p1": "move Sludge Bomb",
+      "p2": "move Seismic Toss"
+    },
+    {
+      "p1": "switch Persian"
+    },
+    {
+      "p1": "move Assist",
+      "p2": "move Assist"
+    }
+  ]
+}

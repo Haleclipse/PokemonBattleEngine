@@ -1,0 +1,66 @@
+{
+ "schema": 1,
+ "id": "gen9-opportunist-and-mirror-herb",
+ "notes": [
+  "Gen 9: Espathra's Opportunist against Snorlax's Mirror Herb — Espathra's Swords Dance is copied by the herb (used up), and that copy is not copied back; then Snorlax's Swords Dance is copied by Opportunist"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Espathra",
+    "species": "Espathra",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Swords Dance",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Opportunist"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Swords Dance",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat",
+    "item": "Mirror Herb"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Swords Dance",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Swords Dance"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

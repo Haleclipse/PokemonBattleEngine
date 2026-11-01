@@ -1,0 +1,150 @@
+{
+ "schema": 1,
+ "id": "gen6-bug-bite-eats-berries-without-a-battle-effect",
+ "notes": [
+  "Gen 6: Scizor's Bug Bite takes and eats Belue Berry, Cornn Berry, Durin Berry, Magost Berry, Nanab Berry, Nomel Berry (onEat: false) one after another, for nothing"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Scizor",
+    "species": "Scizor",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Bug Bite",
+     "Harden"
+    ],
+    "ability": "Swarm"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Belue Berry"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Natural Cure",
+    "item": "Cornn Berry"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Natural Cure",
+    "item": "Durin Berry"
+   },
+   {
+    "label": "Lapras",
+    "species": "Lapras",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Water Absorb",
+    "item": "Magost Berry"
+   },
+   {
+    "label": "Muk",
+    "species": "Muk",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Stench",
+    "item": "Nanab Berry"
+   },
+   {
+    "label": "Munchlax",
+    "species": "Munchlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Nomel Berry"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Bug Bite",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Blissey"
+  },
+  {
+   "p1": "move Bug Bite",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Chansey"
+  },
+  {
+   "p1": "move Bug Bite",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Lapras"
+  },
+  {
+   "p1": "move Bug Bite",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Muk"
+  },
+  {
+   "p1": "move Bug Bite",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Munchlax"
+  },
+  {
+   "p1": "move Bug Bite",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,170 @@
+{
+  "schema": 1,
+  "id": "gen5-doubles-clamp-on-magic-guard",
+  "notes": [
+    "A bind on a Magic Guard holder ticks without chipping: its rolled duration is read with the tick the engine says happened, not from a chip",
+    "promoted from m8-gen5-doubles-s110-001-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 5,
+    "mode": "doubles",
+    "format": "gen5doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Weezing",
+        "species": "Weezing",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Shadow Sneak",
+          "Clamp"
+        ],
+        "ability": "Magic Guard",
+        "item": "Eject Button",
+        "gender": "F"
+      },
+      {
+        "label": "Teddiursa",
+        "species": "Teddiursa",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Magical Leaf",
+          "Wrap",
+          "Water Gun",
+          "Fire Spin"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Klinklang",
+        "species": "Klinklang",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Psyshock",
+          "Whirlpool",
+          "Shock Wave",
+          "Bind"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Purugly",
+        "species": "Purugly",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Power Gem"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Weepinbell",
+        "species": "Weepinbell",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Hydro Pump",
+          "Fire Spin",
+          "Aqua Tail",
+          "Wrap"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Cloyster",
+        "species": "Cloyster",
+        "level": 46,
+        "nature": "Hardy",
+        "moves": [
+          "Shadow Punch",
+          "Sand Tomb",
+          "Megahorn",
+          "Whirlpool"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Misdreavus",
+        "species": "Misdreavus",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Bind",
+          "Magma Storm"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Hariyama",
+        "species": "Hariyama",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Wrap",
+          "Clamp"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      20694,
+      1822,
+      50335,
+      57795
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Shadow Sneak 1, move Magical Leaf 2",
+      "p2": "move Hydro Pump 1, move Shadow Punch 2"
+    },
+    {
+      "p1": "switch Klinklang, pass"
+    },
+    {
+      "p1": "move Whirlpool 1, move Wrap 2",
+      "p2": "move Fire Spin 1, move Sand Tomb 2"
+    },
+    {
+      "p1": "move Shock Wave 1, move Water Gun 2",
+      "p2": "move Aqua Tail 1, move Megahorn 2"
+    },
+    {
+      "p1": "move Bind 1, move Fire Spin 2",
+      "p2": "move Wrap 1, move Whirlpool 2"
+    },
+    {
+      "p1": "move Psyshock 1, move Magical Leaf 2",
+      "p2": "move Hydro Pump 1, move Shadow Punch 2"
+    },
+    {
+      "p2": "switch Misdreavus, switch Hariyama"
+    },
+    {
+      "p1": "move Whirlpool 1, move Wrap 2",
+      "p2": "move Bind 1, move Wrap 2"
+    },
+    {
+      "p1": "pass, switch Weezing"
+    },
+    {
+      "p1": "move Bind 1, move Clamp 2",
+      "p2": "move Magma Storm 1, move Clamp 2"
+    }
+  ]
+}

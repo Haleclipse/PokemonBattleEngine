@@ -1,0 +1,92 @@
+{
+  "schema": 1,
+  "id": "gen8-bolt-beak-revenge",
+  "notes": [
+    "Bolt Beak / Fishious Rend double while the target has yet to move (about to move, or just switched in); Revenge doubles after the target damaged the user this turn"
+  ],
+  "battle": {
+    "generation": 8,
+    "mode": "singles",
+    "format": "gen8customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Jolteon",
+        "species": "Jolteon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Bolt Beak",
+          "Revenge",
+          "Fishious Rend"
+        ],
+        "ability": "Volt Absorb"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Snorlax",
+        "species": "Snorlax",
+        "level": 60,
+        "nature": "Hardy",
+        "moves": [
+          "Quick Attack",
+          "Growl",
+          "Absorb"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Umbreon",
+        "species": "Umbreon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle",
+          "Growl"
+        ],
+        "ability": "Synchronize"
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 3"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 3"
+    },
+    {
+      "p1": "move 1",
+      "p2": "switch 2"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 3",
+      "p2": "switch 2"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 3"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

@@ -1,0 +1,250 @@
+{
+  "schema": 1,
+  "id": "m8-gen3-doubles-bide-release-at-a-wonder-guard",
+  "notes": [
+    "Nightly 61: Wartortle's Bide, its last attacker gone, draws Girafarig as its target and Wonder Guard stops it (replay: the immune target is the one drawn) (DESIGN.md R-M8-105)",
+    "promoted from m8-gen3-doubles-s542-017-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 3,
+    "mode": "doubles",
+    "format": "gen3doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Wartortle",
+        "species": "Wartortle",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Recover",
+          "Sleep Talk",
+          "Soft-Boiled",
+          "Bide"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Marshtomp",
+        "species": "Marshtomp",
+        "level": 45,
+        "nature": "Hardy",
+        "moves": [
+          "Slack Off",
+          "Sleep Talk",
+          "Fire Blast",
+          "Bide"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Wooper",
+        "species": "Wooper",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Flamethrower",
+          "Blaze Kick",
+          "Bide"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Mr. Mime",
+        "species": "Mr. Mime",
+        "level": 48,
+        "nature": "Hardy",
+        "moves": [
+          "Fire Punch",
+          "Heat Wave",
+          "Bide"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Jynx",
+        "species": "Jynx",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Ember",
+          "Sleep Talk",
+          "Overheat",
+          "Bide"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Girafarig",
+        "species": "Girafarig",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Metal Claw",
+          "Sleep Talk",
+          "Meteor Mash",
+          "Bide"
+        ],
+        "ability": "Wonder Guard",
+        "gender": "F"
+      },
+      {
+        "label": "Xatu",
+        "species": "Xatu",
+        "level": 46,
+        "nature": "Hardy",
+        "moves": [
+          "Steel Wing",
+          "Ancient Power",
+          "Bide"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Dragonair",
+        "species": "Dragonair",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Superpower",
+          "Psycho Boost",
+          "Bide"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      55438,
+      10586,
+      53112,
+      13518
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Recover, move Slack Off",
+      "p2": "move Ember 1, move Metal Claw 2"
+    },
+    {
+      "p1": "move Sleep Talk, move Sleep Talk",
+      "p2": "move Sleep Talk, move Sleep Talk"
+    },
+    {
+      "p1": "move Soft-Boiled, move Fire Blast 1",
+      "p2": "move Overheat 1, move Meteor Mash 2"
+    },
+    {
+      "p1": "move Bide, move Bide",
+      "p2": "move Bide, move Bide"
+    },
+    {
+      "p1": "move 1, move 1",
+      "p2": "move 1, move 1"
+    },
+    {
+      "p1": "move 1, move 1",
+      "p2": "move 1, move 1"
+    },
+    {
+      "p1": "move Soft-Boiled, move Fire Blast 2",
+      "p2": "move Overheat 1, move Meteor Mash 2"
+    },
+    {
+      "p2": "switch Xatu, pass"
+    },
+    {
+      "p1": "switch Wooper, move Bide",
+      "p2": "switch Dragonair, move Bide"
+    },
+    {
+      "p1": "move 3, move 1",
+      "p2": "move 3, move 1"
+    },
+    {
+      "p1": "move 1, move 1",
+      "p2": "move 1, move 1"
+    },
+    {
+      "p1": "move 1, move 3 2",
+      "p2": "move 1, move 3 1"
+    },
+    {
+      "p1": "move Blaze Kick 1, move Bide",
+      "p2": "move Psycho Boost 2, move Bide"
+    },
+    {
+      "p1": "move 3, move 1",
+      "p2": "move 3, move 1"
+    },
+    {
+      "p1": "move 1, move 1",
+      "p2": "move 1, move 1"
+    },
+    {
+      "p1": "move 1, move 3 2",
+      "p2": "move 1, move 3 1"
+    },
+    {
+      "p1": "move Blaze Kick 1, move Bide",
+      "p2": "move Psycho Boost 2, move Bide"
+    },
+    {
+      "p1": "pass, switch Wartortle"
+    },
+    {
+      "p1": "move 3, move 1",
+      "p2": "move 3, move 1"
+    },
+    {
+      "p1": "move 1, move 2",
+      "p2": "move 1, move 1"
+    },
+    {
+      "p1": "move 1, move 3",
+      "p2": "move 1, move 3 1"
+    },
+    {
+      "p1": "switch Mr. Mime, move Bide",
+      "p2": "switch Xatu, move Bide"
+    },
+    {
+      "p1": "move 2, move 1",
+      "p2": "move 2 2, move 1"
+    },
+    {
+      "p1": "move 3, move 1",
+      "p2": "move 3, move 1"
+    },
+    {
+      "p1": "move 1, move 3",
+      "p2": "move 1, move 3 1"
+    },
+    {
+      "p1": "move 1, move 4",
+      "p2": "move 1, move 4"
+    },
+    {
+      "p1": "move 2, move 1",
+      "p2": "move 2 2, move 1"
+    },
+    {
+      "p2": "switch Dragonair, pass"
+    },
+    {
+      "p1": "switch Wooper, move 1",
+      "p2": "move 3, move 1"
+    }
+  ]
+}

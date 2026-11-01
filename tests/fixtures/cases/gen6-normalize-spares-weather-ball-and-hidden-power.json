@@ -1,0 +1,68 @@
+{
+ "schema": 1,
+ "id": "gen6-normalize-spares-weather-ball-and-hidden-power",
+ "notes": [
+  "Gen 6 Normalize (the gen6 mod's onModifyMove) retypes only moves whose data type is not Normal: Ember turns Normal (Gengar is immune), while Weather Ball (Water in rain) and Hidden Power (Dark) keep the type they set"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Delcatty",
+    "species": "Delcatty",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Ember",
+     "Weather Ball",
+     "Hidden Power",
+     "Rain Dance"
+    ],
+    "ability": "Normalize"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gengar",
+    "species": "Gengar",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Ember",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Hidden Power",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Rain Dance",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Weather Ball",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

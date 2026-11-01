@@ -1,0 +1,66 @@
+{
+ "schema": 1,
+ "id": "gen9-fling-mental-herb-ends-the-targets-taunt",
+ "notes": [
+  "Gen 9: Sableye's Taunt holds Snorlax; Sableye's flung Mental Herb (`fling.effect`) ends it (DESIGN.md R-M8-86)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sableye",
+    "species": "Sableye",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Taunt",
+     "Fling"
+    ],
+    "item": "Mental Herb",
+    "ability": "Keen Eye",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash",
+     "Tackle"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Taunt",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Fling",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Taunt",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,86 @@
+{
+  "schema": 1,
+  "id": "gen5-doubles-wide-guard-stalls",
+  "notes": [
+    "Gen 5 Wide Guard is a stalling move: right after a Protect or guard it rolls the Protect counter (1/2), and a failed roll ends the counter"
+  ],
+  "battle": {
+    "generation": 5,
+    "mode": "doubles",
+    "format": "gen5doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Mienshao",
+        "species": "Mienshao",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Wide Guard",
+          "Protect"
+        ],
+        "ability": "Inner Focus"
+      },
+      {
+        "label": "Snorlax",
+        "species": "Snorlax",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Growl"
+        ],
+        "ability": "Thick Fat"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Blissey",
+        "species": "Blissey",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Growl"
+        ],
+        "ability": "Natural Cure"
+      },
+      {
+        "label": "Chansey",
+        "species": "Chansey",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Growl"
+        ],
+        "ability": "Natural Cure"
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1, move 1",
+      "p2": "move 1, move 1"
+    },
+    {
+      "p1": "move 1, move 1",
+      "p2": "move 1, move 1"
+    },
+    {
+      "p1": "move 2, move 1",
+      "p2": "move 1, move 1"
+    },
+    {
+      "p1": "move 1, move 1",
+      "p2": "move 1, move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      3,
+      4,
+      5,
+      6
+    ]
+  }
+}

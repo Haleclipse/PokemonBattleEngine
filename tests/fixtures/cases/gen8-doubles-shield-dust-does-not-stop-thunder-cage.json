@@ -1,0 +1,185 @@
+{
+  "schema": 1,
+  "id": "gen8-doubles-shield-dust-does-not-stop-thunder-cage",
+  "notes": [
+    "Shield Dust keeps secondaries off, not Thunder Cage's own trap",
+    "promoted from m8-gen8-doubles-s400-015-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 8,
+    "mode": "doubles",
+    "format": "gen8doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Chewtle",
+        "species": "Chewtle",
+        "level": 45,
+        "nature": "Hardy",
+        "moves": [
+          "Psybeam",
+          "Light Screen",
+          "Dynamic Punch",
+          "Mist"
+        ],
+        "ability": "Gooey",
+        "gender": "M"
+      },
+      {
+        "label": "Tyrunt",
+        "species": "Tyrunt",
+        "level": 46,
+        "nature": "Hardy",
+        "moves": [
+          "Confusion",
+          "Light Screen",
+          "Strange Steam",
+          "Mist"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Growlithe",
+        "species": "Growlithe",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Aromatic Mist",
+          "Coaching",
+          "Mist"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Zubat",
+        "species": "Zubat",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Whirlpool",
+          "Fire Spin",
+          "Mist"
+        ],
+        "ability": "Shield Dust",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Regirock",
+        "species": "Regirock",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Infestation",
+          "Light Screen",
+          "Thunder Cage"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Seedot",
+        "species": "Seedot",
+        "level": 53,
+        "nature": "Hardy",
+        "moves": [
+          "Magma Storm",
+          "Light Screen",
+          "Wrap",
+          "Mist"
+        ],
+        "ability": "Run Away",
+        "item": "Power Anklet",
+        "gender": "M"
+      },
+      {
+        "label": "Jigglypuff",
+        "species": "Jigglypuff",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Bind",
+          "Light Screen",
+          "Mist"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      64038,
+      37949,
+      19794,
+      32233
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Psybeam 1, move Confusion 2",
+      "p2": "move Infestation 1, move Magma Storm 2"
+    },
+    {
+      "p1": "move Light Screen, move Light Screen",
+      "p2": "move Light Screen, move Light Screen"
+    },
+    {
+      "p1": "move Dynamic Punch 1, move Strange Steam 2",
+      "p2": "move Thunder Cage 1, move Wrap 2"
+    },
+    {
+      "p1": "move Mist, move Mist",
+      "p2": "switch Jigglypuff, move Mist"
+    },
+    {
+      "p1": "move Psybeam 1, move Confusion 2",
+      "p2": "move Mist, move Magma Storm 1"
+    },
+    {
+      "p1": "move Light Screen, move Light Screen",
+      "p2": "move Bind 2, move Light Screen"
+    },
+    {
+      "p1": "move Dynamic Punch 1, move Strange Steam 2",
+      "p2": "move Light Screen, move Wrap 1"
+    },
+    {
+      "p1": "move Mist, move Mist",
+      "p2": "switch Regirock, move Mist"
+    },
+    {
+      "p1": "move Psybeam 1, move Confusion 2",
+      "p2": "move Thunder Cage 2, move Magma Storm 1"
+    },
+    {
+      "p1": "switch Growlithe, pass"
+    },
+    {
+      "p1": "move Coaching -2, move Strange Steam 1",
+      "p2": "move Infestation 2, move Wrap 1"
+    },
+    {
+      "p1": "pass, switch Zubat"
+    },
+    {
+      "p1": "move Mist, move Mist",
+      "p2": "switch Jigglypuff, move Mist"
+    },
+    {
+      "p1": "move Aromatic Mist -2, move Whirlpool 2",
+      "p2": "move Light Screen, move Magma Storm 2"
+    },
+    {
+      "p2": "pass, switch Regirock"
+    },
+    {
+      "p1": "move Coaching -2, move Fire Spin 1",
+      "p2": "move Mist, move Thunder Cage 2"
+    }
+  ]
+}

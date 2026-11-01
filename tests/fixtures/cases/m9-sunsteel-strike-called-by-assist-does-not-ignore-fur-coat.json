@@ -1,0 +1,108 @@
+{
+ "schema": 1,
+ "id": "m9-sunsteel-strike-called-by-assist-does-not-ignore-fur-coat",
+ "notes": [
+  "R-M9-43: Magearna's Assist calls its partner Charjabug's Sunsteel Strike at Piloswine; a called move takes its caller's `ignoreAbility` (Showdown `useMoveInner`; Bulbapedia: it does not ignore Abilities if called by another move), so Fur Coat halves the damage. Minimized from Nightly 20261021-110733 (m8-gen7-doubles-s1578-019)."
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Magearna",
+    "species": "Magearna",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Foul Play",
+     "Assist"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Weepinbell",
+    "species": "Weepinbell",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Darkest Lariat"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Popplio",
+    "species": "Popplio",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Assist"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Charjabug",
+    "species": "Charjabug",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sunsteel Strike"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Piloswine",
+    "species": "Piloswine",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Bug Bite",
+     "Assist"
+    ],
+    "ability": "Fur Coat",
+    "gender": "M"
+   },
+   {
+    "label": "Beartic",
+    "species": "Beartic",
+    "level": 49,
+    "nature": "Hardy",
+    "moves": [
+     "Soul-Stealing 7-Star Strike",
+     "Mega Kick"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   52004,
+   35862,
+   11384,
+   26116
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Foul Play 1, move Darkest Lariat 2",
+   "p2": "move Bug Bite 1, move Soul-Stealing 7-Star Strike 2"
+  },
+  {
+   "p1": "pass, switch Popplio"
+  },
+  {
+   "p1": "move Assist, move Assist",
+   "p2": "move Assist, move Mega Kick 1"
+  }
+ ]
+}

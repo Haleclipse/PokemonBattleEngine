@@ -1,0 +1,70 @@
+{
+ "schema": 1,
+ "id": "gen1-missed-crash-behind-a-substitute",
+ "notes": [
+  "Gen 1: High Jump Kick misses from behind the user's Substitute and the crash strikes the foe's Substitute; Showdown's hint (shared with the confusion self-hit) follows the move line, so the replay must not read it as a self-hit"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hitmonlee",
+    "species": "Hitmonlee",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "High Jump Kick",
+     "Substitute",
+     "Meditate"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Double Team",
+     "Substitute"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Substitute",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move Meditate",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move Meditate",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move Meditate",
+   "p2": "move Substitute"
+  },
+  {
+   "p1": "move High Jump Kick",
+   "p2": "move Double Team"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

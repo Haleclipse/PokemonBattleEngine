@@ -1,0 +1,114 @@
+{
+  "schema": 1,
+  "id": "m8-gen7-protean-turns-grass-before-an-effect-spore-could-react",
+  "notes": [
+    "Gen 7 singles, minimized from Nightly 154's m8-gen7-singles-s1501-015. Serperior (Protean) turned Normal with a failed Sketch; next turn its Needle Arm makes it Grass (`onPrepareHit`, before the hit) and strikes Snubbull, whose Effect Spore then rolls nothing: a Grass type is immune to powder (`runStatusImmunity('powder')`). The replay planned the contact reactions on the types the user had as its action began (Normal) and an Effect Spore roll with them; it now reads them on the state the move sees (`move_under_way`, R-M8-180)."
+  ],
+  "battle": {
+    "generation": 7,
+    "mode": "singles",
+    "format": "gen7customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Genesect",
+        "species": "Genesect",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Stoked Sparksurfer",
+          "Freeze Shock"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Snubbull",
+        "species": "Snubbull",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Twister",
+          "Sketch"
+        ],
+        "ability": "Effect Spore",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Nihilego",
+        "species": "Nihilego",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Bone Club",
+          "Perish Song",
+          "Bite"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Kabutops",
+        "species": "Kabutops",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Extrasensory"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Serperior",
+        "species": "Serperior",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Needle Arm",
+          "Sketch"
+        ],
+        "ability": "Protean",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      19755,
+      43206,
+      43258,
+      35456
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Stoked Sparksurfer",
+      "p2": "move Bone Club"
+    },
+    {
+      "p1": "move Freeze Shock",
+      "p2": "move Perish Song"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 3"
+    },
+    {
+      "p2": "switch Kabutops"
+    },
+    {
+      "p1": "switch Snubbull",
+      "p2": "switch Serperior"
+    },
+    {
+      "p1": "move Sketch",
+      "p2": "move Sketch"
+    },
+    {
+      "p1": "move Twister",
+      "p2": "move Needle Arm"
+    }
+  ]
+}

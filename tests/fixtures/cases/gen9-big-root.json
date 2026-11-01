@@ -1,0 +1,69 @@
+{
+ "schema": 1,
+ "id": "gen9-big-root",
+ "notes": [
+  "Gen 9 Big Root (Showdown `chainModify([5324, 4096])`): Venusaur's Giga Drain, Leech Seed and Ingrain heal it more",
+  "Snorlax's Seismic Tosses keep Venusaur below full HP"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Venusaur",
+    "species": "Venusaur",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Giga Drain",
+     "Leech Seed",
+     "Ingrain"
+    ],
+    "item": "Big Root",
+    "ability": "Overgrow"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Leech Seed",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Giga Drain",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Ingrain",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Giga Drain",
+   "p2": "move Seismic Toss"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

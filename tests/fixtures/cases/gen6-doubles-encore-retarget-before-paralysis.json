@@ -1,0 +1,118 @@
+{
+  "schema": 1,
+  "id": "gen6-doubles-encore-retarget-before-paralysis",
+  "notes": [
+    "The Encore override s random retarget is drawn before the paralysis check (runMove order)",
+    "promoted from m8-gen6-doubles-s200-004-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 6,
+    "mode": "doubles",
+    "format": "gen6doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Bulbasaur",
+        "species": "Bulbasaur",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Thunder Wave",
+          "Taunt",
+          "Disable",
+          "Hail"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Celebi",
+        "species": "Celebi",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Encore",
+          "Stun Spore",
+          "Toxic",
+          "Hail"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Eevee",
+        "species": "Eevee",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Leech Seed"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Boldore",
+        "species": "Boldore",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Diamond Storm",
+          "Hail",
+          "Metal Claw"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Gulpin",
+        "species": "Gulpin",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Superpower",
+          "Hail",
+          "Close Combat",
+          "Stun Spore"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      9340,
+      53444,
+      18369,
+      3088
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Thunder Wave 1, move Encore 2",
+      "p2": "move Diamond Storm, move Superpower 1"
+    },
+    {
+      "p1": "move Taunt 1, move Stun Spore 2",
+      "p2": "move Hail, move Hail"
+    },
+    {
+      "p1": "move Disable 1, move Toxic 2",
+      "p2": "move Diamond Storm, move Close Combat 2"
+    },
+    {
+      "p1": "move Hail, move Hail",
+      "p2": "move Metal Claw 1, move Stun Spore 2"
+    },
+    {
+      "p1": "switch Eevee, pass"
+    },
+    {
+      "p1": "move Leech Seed 1, move Encore 2",
+      "p2": "move Metal Claw 1, move Superpower 2"
+    }
+  ]
+}

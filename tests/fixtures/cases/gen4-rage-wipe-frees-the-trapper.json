@@ -1,0 +1,82 @@
+{
+ "schema": 1,
+ "id": "gen4-rage-wipe-frees-the-trapper",
+ "notes": [
+  "Gen 4 Rage's wipe (issues.md I78) takes Mean Look's hold off the raging Pok\u00e9mon, and with it the trapper's link: the Pok\u00e9mon that looked is no trapper any more, traps again, and the raging one, freed a second time, switches out"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Rager",
+    "species": "Primeape",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Rage",
+     "Harden"
+    ]
+   },
+   {
+    "label": "Bench",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Looker",
+    "species": "Umbreon",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Mean Look",
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Rage",
+   "p2": "move Mean Look"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "move Mean Look"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,106 @@
+{
+ "schema": 1,
+ "id": "gen4-doubles-flower-gift",
+ "notes": [
+  "Gen 4 Flower Gift in the sun: \u00d71.5 Attack for the holder's side and \u00d71.5 Special Defense; any holder counts (the cartridge; no Cherrim check)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "doubles",
+  "format": "gen4doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Cherrim",
+    "species": "Cherrim",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sunny Day",
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Flower Gift"
+   },
+   {
+    "label": "Ally",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Gifted",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Flower Gift"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Swift",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Foe2",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Tackle 1, move Tackle 1",
+   "p2": "move Tackle 2, move Harden"
+  },
+  {
+   "p1": "move Sunny Day, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Tackle 1, move Tackle 1",
+   "p2": "move Swift, move Tackle 2"
+  },
+  {
+   "p1": "switch Gifted, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Tackle 1, move Tackle 1",
+   "p2": "move Swift, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

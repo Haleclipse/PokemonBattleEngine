@@ -1,0 +1,57 @@
+{
+ "schema": 1,
+ "id": "gen2-frustration-of-nothing-rolls-no-kings-rock",
+ "notes": [
+  "Gen 2 Frustration at full happiness has no power (`basePowerCallback` null): the move stops before the hit, with no critical hit, no damage roll and no King's Rock flinch roll"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Frustration",
+     "Harden"
+    ],
+    "item": "King's Rock"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Starmie",
+    "species": "Starmie",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Frustration",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Frustration",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

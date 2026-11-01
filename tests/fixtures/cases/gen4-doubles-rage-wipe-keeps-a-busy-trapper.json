@@ -1,0 +1,96 @@
+{
+ "schema": 1,
+ "id": "gen4-doubles-rage-wipe-keeps-a-busy-trapper",
+ "notes": [
+  "Gen 4 doubles: Mean Look holds both foes; Rage's wipe frees the raging one (issues.md I78), and the trapper, still holding the other, stays a trapper until that one too is free"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "doubles",
+  "format": "gen4doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Rager",
+    "species": "Primeape",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Rage",
+     "Harden"
+    ]
+   },
+   {
+    "label": "Partner",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   },
+   {
+    "label": "Bench",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Looker",
+    "species": "Umbreon",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Mean Look",
+     "Harden"
+    ]
+   },
+   {
+    "label": "Other",
+    "species": "Blissey",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Rage 1, move Harden",
+   "p2": "move Mean Look 1, move Harden"
+  },
+  {
+   "p1": "move Rage 1, move Harden",
+   "p2": "move Mean Look 2, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "switch 3, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

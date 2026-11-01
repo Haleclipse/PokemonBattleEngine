@@ -1,0 +1,68 @@
+{
+  "schema": 1,
+  "id": "gen2-singles-ohko",
+  "notes": [
+    "Gen 2 one-hit KO moves: the byte accuracy gains twice the level gap; a higher-level target is immune."
+  ],
+  "battle": {
+    "generation": 2,
+    "mode": "singles",
+    "format": "gen2customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "a",
+        "species": "Cloyster",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Horn Drill",
+          "Fissure"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "b",
+        "species": "Golem",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ]
+      },
+      {
+        "label": "c",
+        "species": "Snorlax",
+        "level": 60,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p2": "switch 2"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      5,
+      6,
+      7,
+      8
+    ]
+  }
+}

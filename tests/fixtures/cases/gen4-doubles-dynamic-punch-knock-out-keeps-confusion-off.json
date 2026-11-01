@@ -1,0 +1,119 @@
+{
+  "schema": 1,
+  "id": "gen4-doubles-dynamic-punch-knock-out-keeps-confusion-off",
+  "notes": [
+    "Nightly 12: Dynamic Punch knocks out a Static holder, so its certain confusion never lands; the replay's search must survive candidate rolls that leave the target standing and confused",
+    "promoted from m8-gen4-doubles-s351-017-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "doubles",
+    "format": "gen4doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Smoochum",
+        "species": "Smoochum",
+        "level": 46,
+        "nature": "Hardy",
+        "moves": [
+          "Fire Spin",
+          "Refresh",
+          "Clamp"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Sealeo",
+        "species": "Sealeo",
+        "level": 46,
+        "nature": "Hardy",
+        "moves": [
+          "Powder Snow",
+          "Refresh",
+          "Ice Fang",
+          "Detect"
+        ],
+        "ability": "Static",
+        "gender": "F"
+      },
+      {
+        "label": "Whismur",
+        "species": "Whismur",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Ice Punch",
+          "Detect"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Chimecho",
+        "species": "Chimecho",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Water Pulse",
+          "Refresh",
+          "Rock Climb",
+          "Detect"
+        ],
+        "ability": "Poison Point",
+        "gender": "M"
+      },
+      {
+        "label": "Alakazam",
+        "species": "Alakazam",
+        "level": 53,
+        "nature": "Hardy",
+        "moves": [
+          "Dynamic Punch",
+          "Refresh",
+          "Psybeam",
+          "Detect"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      24868,
+      10541,
+      25863,
+      11747
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Fire Spin 1, move Powder Snow",
+      "p2": "move Water Pulse 1, move Dynamic Punch 2"
+    },
+    {
+      "p1": "move Refresh, move Refresh",
+      "p2": "move Refresh, move Refresh"
+    },
+    {
+      "p1": "move Clamp 2, move Ice Fang 1",
+      "p2": "move Rock Climb 1, move Psybeam 2"
+    },
+    {
+      "p1": "switch Whismur, pass"
+    },
+    {
+      "p1": "move Detect, move Detect",
+      "p2": "move Detect, move Detect"
+    },
+    {
+      "p1": "move Ice Punch 2, move Powder Snow",
+      "p2": "move Water Pulse 1, move Dynamic Punch 2"
+    }
+  ]
+}

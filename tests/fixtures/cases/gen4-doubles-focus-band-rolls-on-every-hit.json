@@ -1,0 +1,79 @@
+{
+ "schema": 1,
+ "id": "gen4-doubles-focus-band-rolls-on-every-hit",
+ "notes": [
+  "Gen 4 doubles (issues.md I38): Golem's Rock Slide lands on both Focus Band holders, neither knocked out \u2014 each hit rolls the band (the roll nothing shows is planned as a failure), in the order the hits land after both are computed; the Substitute's hit rolls with its damage",
+  "Turn 2: the other Snorlax is behind a Substitute when the Rock Slide comes"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "doubles",
+  "format": "gen4doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Substitute"
+    ],
+    "item": "Focus Band"
+   },
+   {
+    "label": "Snorlax2",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Substitute"
+    ],
+    "item": "Focus Band"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Golem",
+    "species": "Golem",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Rock Slide",
+     "Harden"
+    ]
+   },
+   {
+    "label": "Golem2",
+    "species": "Golem",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Substitute",
+   "p2": "move Rock Slide, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Rock Slide, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

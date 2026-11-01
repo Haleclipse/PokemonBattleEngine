@@ -1,0 +1,68 @@
+{
+ "schema": 1,
+ "id": "gen7-transformed-castform-keeps-its-form",
+ "notes": [
+  "Gen 7: Castform transforms into the other, sunny Castform; the rain that follows changes only the other one (`|| pokemon.transformed`)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Castform",
+    "species": "Castform",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Transform",
+     "Harden"
+    ],
+    "ability": "Forecast"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Castform2",
+    "species": "Castform",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Sunny Day",
+     "Rain Dance",
+     "Harden"
+    ],
+    "ability": "Forecast"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Sunny Day"
+  },
+  {
+   "p1": "move Transform",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Rain Dance"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

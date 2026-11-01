@@ -1,0 +1,171 @@
+{
+  "schema": 1,
+  "id": "m8-gen8-a-foe-switch-queued-behind-an-eject-pack",
+  "notes": [
+    "Gen 8: both sides switch; Lampent comes in first, Sticky Web sets off its Eject Pack and Tapu Koko replaces it mid-turn, then p2's queued switch brings Sigilyph in — the replay keeps that switch's party swap through the Eject Pack's request (DESIGN.md R-M8-124)",
+    "promoted from m8-gen8-singles-s617-006-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 8,
+    "mode": "singles",
+    "format": "gen8customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Eldegoss",
+        "species": "Eldegoss",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Flare Blitz",
+          "Charge",
+          "Wood Hammer"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Tapu Koko",
+        "species": "Tapu Koko",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Wild Charge"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Lampent",
+        "species": "Lampent",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Submission"
+        ],
+        "ability": "Run Away",
+        "item": "Eject Pack",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Emolga",
+        "species": "Emolga",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Whirlpool",
+          "Sticky Web",
+          "Bind"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Snom",
+        "species": "Snom",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Magma Storm",
+          "Pyro Ball"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Electrike",
+        "species": "Electrike",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Steam Eruption"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Sigilyph",
+        "species": "Sigilyph",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fusion Flare"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      61796,
+      18280,
+      16643,
+      63170
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 3"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 3"
+    },
+    {
+      "p2": "switch 2"
+    },
+    {
+      "p1": "switch 2",
+      "p2": "switch 3"
+    },
+    {
+      "p1": "switch 2",
+      "p2": "switch 3"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 2"
+    },
+    {
+      "p1": "switch 2"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p2": "switch 3"
+    },
+    {
+      "p1": "switch 3",
+      "p2": "switch 4"
+    },
+    {
+      "p1": "switch 3"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p2": "switch 4"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "gen3-physical-damage-at-least-one-before-the-offset",
+ "notes": [
+  "Gen 3 `modifyDamage`: a physical move whose base damage floors to 0 is raised to 1 before the `+ 2` — a level 5 Caterpie's super-effective Karate Chop on Snorlax does 5-6 (3 × 2 before the roll), not 3-4"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Caterpie",
+    "species": "Caterpie",
+    "level": 5,
+    "nature": "Hardy",
+    "moves": [
+     "Karate Chop"
+    ],
+    "ability": "Shield Dust"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Karate Chop",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Karate Chop",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Karate Chop",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

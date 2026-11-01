@@ -1,0 +1,55 @@
+{
+ "schema": 1,
+ "id": "gen9-metronome-calls-cut",
+ "notes": [
+  "Gen 9: Clefable's Metronome calls Cut — `isNonstandard: 'Unobtainable'` in Gen 9 (no Pokémon learns it) yet carrying the `metronome` flag, so Showdown's Metronome draws among it; the engine's Gen 9 dex keeps such moves"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Clefable",
+    "species": "Clefable",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Metronome"
+    ],
+    "ability": "Magic Guard",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   239,
+   240,
+   241,
+   242
+  ]
+ }
+}

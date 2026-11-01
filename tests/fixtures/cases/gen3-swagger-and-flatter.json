@@ -1,0 +1,87 @@
+{
+ "schema": 1,
+ "id": "gen3-swagger-and-flatter",
+ "notes": [
+  "Gen 3: Swagger (+2 Attack) and Flatter (+1 Special Attack) then confuse; a Substitute blocks them"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Swagger",
+     "Flatter",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Lax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Doll",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Substitute",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Flatter",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Swagger",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Flatter",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "switch Doll"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Substitute"
+  },
+  {
+   "p1": "move Swagger",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

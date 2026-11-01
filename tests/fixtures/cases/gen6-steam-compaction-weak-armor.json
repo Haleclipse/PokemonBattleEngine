@@ -1,0 +1,64 @@
+{
+ "schema": 1,
+ "id": "gen6-steam-compaction-weak-armor",
+ "notes": [
+  "Gen 6: Water Compaction (+2 Defense from a Water hit), Weak Armor (a physical hit: -1 Defense, +1 Speed; a special one nothing)"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Scald",
+     "Crunch",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Weak",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Weak Armor"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Crunch",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Scald",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Crunch",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,89 @@
+{
+ "schema": 1,
+ "id": "gen8-forests-curse-then-trick-or-treat",
+ "notes": [
+  "Forest's Curse adds Grass to Snorlax (`typeadd`): Flamethrower is super effective; Trick-or-Treat replaces it with Ghost: Body Slam does not affect it; Forest's Curse on Venusaur (Grass already) fails"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Trevenant",
+    "species": "Trevenant",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Forest's Curse",
+     "Trick-or-Treat",
+     "Flamethrower",
+     "Body Slam"
+    ],
+    "gender": "M",
+    "ability": "Natural Cure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Venusaur",
+    "species": "Venusaur",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Chlorophyll"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Forest's Curse",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Flamethrower",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Trick-or-Treat",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "switch Venusaur"
+  },
+  {
+   "p1": "move Forest's Curse",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

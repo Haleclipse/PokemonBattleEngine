@@ -1,0 +1,53 @@
+{
+ "schema": 1,
+ "id": "gen3-crash-with-a-hidden-critical-hit",
+ "notes": [
+  "Gen 3 crash: the damage the move would have dealt is computed afresh with its own critical-hit check, which the log never shows (`getDamage(\u2026, suppressMessages)`) \u2014 here it was a critical hit, and only that reproduces the crash"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hitmonlee",
+    "species": "Hitmonlee",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "High Jump Kick"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Protect"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move High Jump Kick",
+   "p2": "move Protect"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   13
+  ]
+ }
+}

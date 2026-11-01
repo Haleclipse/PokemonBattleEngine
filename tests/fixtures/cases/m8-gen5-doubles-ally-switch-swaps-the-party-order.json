@@ -1,0 +1,139 @@
+{
+  "schema": 1,
+  "id": "m8-gen5-doubles-ally-switch-swaps-the-party-order",
+  "notes": [
+    "Nightly 54: Ally Switch trades the two Pokémon's places in side.pokemon too (swapPosition): Beat Up's members come in that order (DESIGN.md R-M8-98)",
+    "promoted from m8-gen5-doubles-s517-001-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 5,
+    "mode": "doubles",
+    "format": "gen5doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Pikachu",
+        "species": "Pikachu",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Wake-Up Slap",
+          "Embargo",
+          "Wring Out"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Omastar",
+        "species": "Omastar",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Reversal",
+          "Embargo",
+          "Return",
+          "Ally Switch"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Pignite",
+        "species": "Pignite",
+        "level": 52,
+        "nature": "Hardy",
+        "moves": [
+          "Low Kick",
+          "Embargo",
+          "Beat Up",
+          "Reflect"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Seadra",
+        "species": "Seadra",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Assurance"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Cloyster",
+        "species": "Cloyster",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Rollout",
+          "Embargo",
+          "Round"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Regirock",
+        "species": "Regirock",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Frustration",
+          "Embargo",
+          "Fury Cutter",
+          "Reflect"
+        ],
+        "ability": "Run Away"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      63053,
+      58563,
+      37465,
+      60537
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Wake-Up Slap 1, move Reversal 2",
+      "p2": "move Rollout 1, move Frustration 2"
+    },
+    {
+      "p1": "move 2 1, move 2 2",
+      "p2": "move 1, move 2 1"
+    },
+    {
+      "p1": "move 3 1, move 3 2",
+      "p2": "move 1, move 3 2"
+    },
+    {
+      "p1": "switch Pignite, pass"
+    },
+    {
+      "p1": "move 4, move 4",
+      "p2": "move 1, move 4"
+    },
+    {
+      "p1": "move 1 1, move 1 2",
+      "p2": "move 1, move 1 1"
+    },
+    {
+      "p1": "move Embargo 1, move Embargo 2",
+      "p2": "move Embargo 2, move Embargo 1"
+    },
+    {
+      "p1": "switch Seadra, move 3 1",
+      "p2": "move 3 2, move 3 1"
+    }
+  ]
+}

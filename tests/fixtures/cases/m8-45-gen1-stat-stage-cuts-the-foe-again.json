@@ -1,0 +1,200 @@
+{
+ "schema": 1,
+ "id": "m8-45-gen1-stat-stage-cuts-the-foe-again",
+ "notes": [
+  "Nightly 39 gen1-singles-s455-015, minimized: Gen 1: a move that changes stat stages cuts the paralysed foe's Speed again (`moveHit`'s check)"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Kadabra",
+    "species": "Kadabra",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Transform",
+     "Conversion",
+     "Stun Spore",
+     "Defense Curl"
+    ]
+   },
+   {
+    "label": "Fearow",
+    "species": "Fearow",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Transform",
+     "Conversion",
+     "Thunder Wave",
+     "Defense Curl"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Venonat",
+    "species": "Venonat",
+    "level": 55,
+    "nature": "Hardy",
+    "moves": [
+     "Transform",
+     "Conversion",
+     "Poison Sting",
+     "Defense Curl"
+    ]
+   },
+   {
+    "label": "Venusaur",
+    "species": "Venusaur",
+    "level": 47,
+    "nature": "Hardy",
+    "moves": [
+     "Transform",
+     "Conversion",
+     "Petal Dance"
+    ]
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   38423,
+   58895,
+   49295,
+   44335
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Transform",
+   "p2": "move Transform"
+  },
+  {
+   "p1": "move Conversion",
+   "p2": "move Conversion"
+  },
+  {
+   "p1": "move 3",
+   "p2": "move 3"
+  },
+  {
+   "p1": "move Defense Curl",
+   "p2": "move Defense Curl"
+  },
+  {
+   "p1": "move Transform",
+   "p2": "move Transform"
+  },
+  {
+   "p1": "move Conversion",
+   "p2": "move Conversion"
+  },
+  {
+   "p1": "move 3",
+   "p2": "move 3"
+  },
+  {
+   "p1": "switch Fearow",
+   "p2": "switch Venusaur"
+  },
+  {
+   "p1": "move Transform",
+   "p2": "move Transform"
+  },
+  {
+   "p1": "move Conversion",
+   "p2": "move Conversion"
+  },
+  {
+   "p1": "move 3",
+   "p2": "move 3"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Conversion",
+   "p2": "move Conversion"
+  },
+  {
+   "p1": "switch Kadabra",
+   "p2": "switch Venonat"
+  },
+  {
+   "p1": "move Stun Spore",
+   "p2": "move Poison Sting"
+  },
+  {
+   "p1": "move Defense Curl",
+   "p2": "move Defense Curl"
+  },
+  {
+   "p1": "move Transform",
+   "p2": "move Transform"
+  },
+  {
+   "p1": "move Conversion",
+   "p2": "move Conversion"
+  },
+  {
+   "p1": "move 3",
+   "p2": "move 3"
+  },
+  {
+   "p1": "move Defense Curl",
+   "p2": "move Defense Curl"
+  },
+  {
+   "p1": "move Transform",
+   "p2": "move Transform"
+  },
+  {
+   "p1": "switch Fearow",
+   "p2": "switch Venusaur"
+  },
+  {
+   "p1": "move Thunder Wave",
+   "p2": "move Petal Dance"
+  },
+  {
+   "p1": "move 4",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 3",
+   "p2": "move 3"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "switch Venonat"
+  },
+  {
+   "p1": "move Conversion",
+   "p2": "move Transform"
+  }
+ ]
+}

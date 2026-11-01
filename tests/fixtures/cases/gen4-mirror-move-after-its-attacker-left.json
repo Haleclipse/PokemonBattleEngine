@@ -1,0 +1,76 @@
+{
+ "schema": 1,
+ "id": "gen4-mirror-move-after-its-attacker-left",
+ "notes": [
+  "Gen 4: Snorlax's Tackle hits Pidgeot, then Snorlax switches out; Pidgeot's Mirror Move fails — the attacker that left has no last move (Showdown's `lastAttackedBy.source.lastMove`; pokeplatinum clears `moveCopied` as it goes, DESIGN.md R-M8-80)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Pidgeot",
+    "species": "Pidgeot",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Mirror Move",
+     "Splash"
+    ],
+    "ability": "Keen Eye",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Mirror Move",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

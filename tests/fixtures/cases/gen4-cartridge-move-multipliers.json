@@ -1,0 +1,92 @@
+{
+ "schema": 1,
+ "id": "gen4-cartridge-move-multipliers",
+ "notes": [
+  "Gen 4 on the cartridge (issues.md I17): Smelling Salts' doubling is its script's (`CheckSubstitute`): a paralysed target behind a Substitute takes the undoubled power; Solar Beam in rain is halved after the weather, on the damage, not on the power (Snorlax takes it on its body)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Salts",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Thunder Wave",
+     "Smelling Salts"
+    ],
+    "ability": "Synchronize"
+   },
+   {
+    "label": "Solar",
+    "species": "Mew",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Solar Beam"
+    ],
+    "ability": "Synchronize"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Sub",
+    "species": "Mew",
+    "level": 45,
+    "nature": "Hardy",
+    "moves": [
+     "Substitute",
+     "Rain Dance",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Wall",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 2"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

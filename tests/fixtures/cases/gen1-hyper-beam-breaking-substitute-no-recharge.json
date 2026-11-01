@@ -1,0 +1,86 @@
+{
+  "schema": 1,
+  "id": "gen1-hyper-beam-breaking-substitute-no-recharge",
+  "notes": [
+    "Gen 1: a hit that breaks a Substitute skips the move s self effects, so Hyper Beam owes no recharge",
+    "promoted from m8-gen1-singles-s104-016-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 1,
+    "mode": "singles",
+    "format": "gen1customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Nidoran-M",
+        "species": "Nidoran-M",
+        "level": 46,
+        "nature": "Hardy",
+        "moves": [
+          "Double Team",
+          "Supersonic",
+          "Razor Leaf",
+          "Glare"
+        ]
+      },
+      {
+        "label": "Tentacool",
+        "species": "Tentacool",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Hyper Beam"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "Scyther",
+        "species": "Scyther",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Scratch",
+          "Substitute",
+          "Acid",
+          "Fury Attack"
+        ]
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      23063,
+      38934,
+      48492,
+      55015
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Double Team",
+      "p2": "move Scratch"
+    },
+    {
+      "p1": "move Supersonic",
+      "p2": "move Substitute"
+    },
+    {
+      "p1": "move Razor Leaf",
+      "p2": "move Acid"
+    },
+    {
+      "p1": "move Glare",
+      "p2": "move Fury Attack"
+    },
+    {
+      "p1": "switch Tentacool"
+    },
+    {
+      "p1": "move Hyper Beam",
+      "p2": "move Scratch"
+    }
+  ]
+}

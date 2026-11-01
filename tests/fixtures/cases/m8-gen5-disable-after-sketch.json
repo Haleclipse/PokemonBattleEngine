@@ -1,0 +1,338 @@
+{
+  "schema": 1,
+  "id": "m8-gen5-disable-after-sketch",
+  "notes": [
+    "Gen 5: Kakuna's Sketch became Sleep Powder; Cubone's Disable then seals Sketch, a move it no longer holds: Gen 5+ only asks a held slot's PP (Gen 2-4 fail it, DESIGN.md R-M8-115)",
+    "promoted from m8-gen5-singles-s577-002-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 5,
+    "mode": "singles",
+    "format": "gen5customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Tentacruel",
+        "species": "Tentacruel",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Whirlpool",
+          "Sketch",
+          "Wrap",
+          "Disable"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Ekans",
+        "species": "Ekans",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Bind",
+          "Sand Tomb",
+          "Autotomize"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Golem",
+        "species": "Golem",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Clamp",
+          "Sketch",
+          "Ice Beam",
+          "Disable"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Furret",
+        "species": "Furret",
+        "level": 45,
+        "nature": "Hardy",
+        "moves": [
+          "Powder Snow",
+          "Sketch",
+          "Ice Punch",
+          "Disable"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Cubone",
+        "species": "Cubone",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Ice Fang",
+          "Sketch",
+          "Sleep Powder",
+          "Disable"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Pidgeotto",
+        "species": "Pidgeotto",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Spore"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Thundurus",
+        "species": "Thundurus",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Facade",
+          "Sketch",
+          "Venoshock",
+          "Disable"
+        ],
+        "ability": "Download"
+      },
+      {
+        "label": "Tranquill",
+        "species": "Tranquill",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Retaliate",
+          "Brine",
+          "Disable"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Cryogonal",
+        "species": "Cryogonal",
+        "level": 46,
+        "nature": "Hardy",
+        "moves": [
+          "Solar Beam",
+          "Fusion Bolt",
+          "Disable"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Kakuna",
+        "species": "Kakuna",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Giga Drain",
+          "Sketch",
+          "Dream Eater"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      55560,
+      29188,
+      10805,
+      7796
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Whirlpool",
+      "p2": "move Facade"
+    },
+    {
+      "p1": "move Sketch",
+      "p2": "move Sketch"
+    },
+    {
+      "p1": "move Wrap",
+      "p2": "move Disable"
+    },
+    {
+      "p1": "move Whirlpool",
+      "p2": "move Facade"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 3"
+    },
+    {
+      "p1": "switch Ekans",
+      "p2": "switch Tranquill"
+    },
+    {
+      "p1": "move Bind",
+      "p2": "move Retaliate"
+    },
+    {
+      "p1": "move Sand Tomb",
+      "p2": "move Brine"
+    },
+    {
+      "p1": "move Autotomize",
+      "p2": "move Disable"
+    },
+    {
+      "p1": "move Autotomize",
+      "p2": "move Retaliate"
+    },
+    {
+      "p1": "switch Tentacruel"
+    },
+    {
+      "p1": "switch Golem",
+      "p2": "switch Thundurus"
+    },
+    {
+      "p1": "move Ice Beam",
+      "p2": "move Venoshock"
+    },
+    {
+      "p2": "switch Tranquill"
+    },
+    {
+      "p1": "move Disable",
+      "p2": "move Disable"
+    },
+    {
+      "p1": "move Clamp",
+      "p2": "move Retaliate"
+    },
+    {
+      "p1": "move Sketch",
+      "p2": "move Brine"
+    },
+    {
+      "p1": "move Disable",
+      "p2": "move Retaliate"
+    },
+    {
+      "p1": "switch Tentacruel",
+      "p2": "move Brine"
+    },
+    {
+      "p1": "move Disable",
+      "p2": "move Brine"
+    },
+    {
+      "p1": "move Whirlpool",
+      "p2": "move Disable"
+    },
+    {
+      "p1": "move Disable",
+      "p2": "move Retaliate"
+    },
+    {
+      "p1": "switch Golem"
+    },
+    {
+      "p1": "move Ice Beam",
+      "p2": "move Disable"
+    },
+    {
+      "p2": "switch Cryogonal"
+    },
+    {
+      "p1": "move Disable",
+      "p2": "move Solar Beam"
+    },
+    {
+      "p1": "switch Furret",
+      "p2": "move Solar Beam"
+    },
+    {
+      "p1": "move Powder Snow",
+      "p2": "move Fusion Bolt"
+    },
+    {
+      "p1": "move Sketch",
+      "p2": "move Disable"
+    },
+    {
+      "p1": "move Disable",
+      "p2": "move Fusion Bolt"
+    },
+    {
+      "p1": "move Ice Punch",
+      "p2": "move Solar Beam"
+    },
+    {
+      "p1": "switch Golem",
+      "p2": "move Solar Beam"
+    },
+    {
+      "p1": "switch Furret"
+    },
+    {
+      "p1": "move Ice Punch",
+      "p2": "move Solar Beam"
+    },
+    {
+      "p1": "move Disable",
+      "p2": "move Solar Beam"
+    },
+    {
+      "p1": "switch Cubone"
+    },
+    {
+      "p1": "move Disable",
+      "p2": "move Solar Beam"
+    },
+    {
+      "p1": "move Ice Fang",
+      "p2": "move Solar Beam"
+    },
+    {
+      "p1": "switch Pidgeotto",
+      "p2": "switch Kakuna"
+    },
+    {
+      "p1": "move Spore",
+      "p2": "move Sketch"
+    },
+    {
+      "p1": "switch Cubone",
+      "p2": "switch Cryogonal"
+    },
+    {
+      "p1": "move Ice Fang",
+      "p2": "move Fusion Bolt"
+    },
+    {
+      "p2": "switch Kakuna"
+    },
+    {
+      "p1": "move Sketch",
+      "p2": "move Giga Drain"
+    },
+    {
+      "p1": "move Sleep Powder",
+      "p2": "move Sketch"
+    },
+    {
+      "p1": "move Disable",
+      "p2": "move Dream Eater"
+    }
+  ]
+}

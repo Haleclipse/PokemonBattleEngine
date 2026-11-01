@@ -1,0 +1,114 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-gooey-tangling-hair-cotton-down",
+ "notes": [
+  "Gooey and Tangling Hair lower a contact attacker's Speed (not Swift's); Cotton Down lowers every other active Pok\u00e9mon's on any hit \u2014 its partner's too, and a Mirror Armor partner sends it back"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Swift"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Ally",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Goo",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Gooey"
+   },
+   {
+    "label": "Cotton",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Cotton Down"
+   },
+   {
+    "label": "Hair",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Tangling Hair"
+   },
+   {
+    "label": "Armor",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Mirror Armor"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Tackle 1, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Swift, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Tackle 2, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Tackle 1, move Harden",
+   "p2": "switch 3, switch 4"
+  },
+  {
+   "p1": "move Swift, move Harden",
+   "p2": "switch 4, move Harden"
+  },
+  {
+   "p1": "move Tackle 2, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

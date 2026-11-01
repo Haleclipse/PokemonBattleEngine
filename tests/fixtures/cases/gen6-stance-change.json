@@ -1,0 +1,97 @@
+{
+ "schema": 1,
+ "id": "gen6-stance-change",
+ "notes": [
+  "Gen 6: Aegislash's Sacred Sword turns it into its Blade Forme (Steel/Ghost, 150 base Attack), King's Shield back into its Shield Forme (140 base Defense: the Bite it takes in that forme is the Shield Forme's), Harden changes nothing; leaving while in its Blade Forme, it comes back with its own stats (the Bite it then takes through a lower Defense is a different number)"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Aegislash",
+    "species": "Aegislash",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sacred Sword",
+     "King's Shield",
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Stance Change"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Bite",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Sacred Sword",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Bite"
+  },
+  {
+   "p1": "move Sacred Sword",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move King's Shield",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Bite"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

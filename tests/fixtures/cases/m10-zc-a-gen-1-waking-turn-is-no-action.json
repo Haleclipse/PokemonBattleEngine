@@ -1,0 +1,428 @@
+{
+  "schema": 1,
+  "id": "m10-zc-a-gen-1-waking-turn-is-no-action",
+  "notes": [
+    "Gen 1 Ubers: Gengar put to sleep after Hyper Beam wakes with no cant; the recharge it owed stays seen (R-M10-53)",
+    "promoted from m9-gen1ubers-s219-014-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 1,
+    "mode": "singles",
+    "format": "gen1ubers"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Gloom",
+        "species": "Gloom",
+        "ability": "",
+        "moves": [
+          "Solar Beam",
+          "Substitute",
+          "Take Down"
+        ],
+        "nature": "",
+        "gender": "",
+        "shiny": false,
+        "level": 100
+      },
+      {
+        "label": "Seaking",
+        "species": "Seaking",
+        "ability": "",
+        "moves": [
+          "Surf",
+          "Take Down",
+          "Rest",
+          "Waterfall"
+        ],
+        "nature": "",
+        "gender": "",
+        "shiny": true,
+        "level": 100,
+        "happiness": 96
+      },
+      {
+        "label": "Machoke",
+        "species": "Machoke",
+        "ability": "",
+        "moves": [
+          "Double-Edge",
+          "Fire Blast",
+          "Rest",
+          "Strength"
+        ],
+        "nature": "",
+        "gender": "",
+        "shiny": false,
+        "level": 52
+      },
+      {
+        "label": "Venomoth",
+        "species": "Venomoth",
+        "ability": "",
+        "moves": [
+          "Poison Powder",
+          "Reflect",
+          "Stun Spore",
+          "Toxic"
+        ],
+        "nature": "",
+        "gender": "",
+        "shiny": true,
+        "level": 86
+      },
+      {
+        "label": "Nick7",
+        "species": "Gengar",
+        "ability": "",
+        "moves": [
+          "Mega Kick",
+          "Metronome",
+          "Hyper Beam",
+          "Hypnosis"
+        ],
+        "nature": "",
+        "gender": "",
+        "shiny": false,
+        "level": 100,
+        "happiness": 105
+      }
+    ],
+    "p2": [
+      {
+        "label": "Machoke",
+        "species": "Machoke",
+        "ability": "",
+        "moves": [
+          "Rage"
+        ],
+        "nature": "",
+        "gender": "",
+        "shiny": false,
+        "level": 100,
+        "happiness": 253
+      },
+      {
+        "label": "Krabby",
+        "species": "Krabby",
+        "ability": "",
+        "moves": [
+          "Bide",
+          "Take Down",
+          "Swords Dance",
+          "Crabhammer"
+        ],
+        "nature": "",
+        "gender": "",
+        "shiny": false,
+        "level": 100
+      },
+      {
+        "label": "Nick43",
+        "species": "Abra",
+        "ability": "",
+        "moves": [
+          "Seismic Toss",
+          "Skull Bash",
+          "Substitute"
+        ],
+        "nature": "",
+        "gender": "",
+        "shiny": false,
+        "level": 100
+      },
+      {
+        "label": "Nick32",
+        "species": "Oddish",
+        "ability": "",
+        "moves": [
+          "Mega Drain",
+          "Reflect",
+          "Poison Powder",
+          "Solar Beam"
+        ],
+        "nature": "",
+        "gender": "",
+        "shiny": false,
+        "level": 100
+      },
+      {
+        "label": "Exeggutor",
+        "species": "Exeggutor",
+        "ability": "",
+        "moves": [
+          "Mimic",
+          "Hypnosis",
+          "Solar Beam"
+        ],
+        "nature": "",
+        "gender": "",
+        "shiny": false,
+        "level": 85
+      },
+      {
+        "label": "Nick13",
+        "species": "Alakazam",
+        "ability": "",
+        "moves": [
+          "Mimic",
+          "Reflect",
+          "Tri Attack"
+        ],
+        "nature": "",
+        "gender": "",
+        "shiny": false,
+        "level": 41
+      }
+    ]
+  },
+  "preview": {
+    "p1": "team 324615",
+    "p2": "team 142563"
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      48043,
+      219,
+      1014,
+      31
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Solar Beam",
+      "p2": "move Rage"
+    },
+    {
+      "p1": "move Solar Beam",
+      "p2": "move Rage"
+    },
+    {
+      "p1": "move Substitute",
+      "p2": "move Rage"
+    },
+    {
+      "p1": "move Take Down",
+      "p2": "move Rage"
+    },
+    {
+      "p1": "move Solar Beam",
+      "p2": "move Rage"
+    },
+    {
+      "p1": "move Solar Beam",
+      "p2": "move Rage"
+    },
+    {
+      "p2": "switch Krabby"
+    },
+    {
+      "p1": "move Substitute",
+      "p2": "move Swords Dance"
+    },
+    {
+      "p1": "switch Seaking",
+      "p2": "switch Nick43"
+    },
+    {
+      "p1": "move Waterfall",
+      "p2": "move Substitute"
+    },
+    {
+      "p1": "move Surf",
+      "p2": "move Seismic Toss"
+    },
+    {
+      "p1": "move Take Down",
+      "p2": "move Skull Bash"
+    },
+    {
+      "p2": "switch Krabby"
+    },
+    {
+      "p1": "move Rest",
+      "p2": "move Swords Dance"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 4"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move Take Down",
+      "p2": "move Bide"
+    },
+    {
+      "p1": "switch Gloom",
+      "p2": "switch Nick32"
+    },
+    {
+      "p1": "move Substitute",
+      "p2": "move Poison Powder"
+    },
+    {
+      "p1": "move Take Down",
+      "p2": "move Solar Beam"
+    },
+    {
+      "p1": "switch Seaking"
+    },
+    {
+      "p1": "move Surf",
+      "p2": "move Mega Drain"
+    },
+    {
+      "p1": "move Take Down",
+      "p2": "move Reflect"
+    },
+    {
+      "p1": "move Rest",
+      "p2": "move Poison Powder"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 4"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "switch Machoke",
+      "p2": "switch Krabby"
+    },
+    {
+      "p1": "move Fire Blast",
+      "p2": "move Take Down"
+    },
+    {
+      "p1": "move Rest",
+      "p2": "move Swords Dance"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 4"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move Fire Blast",
+      "p2": "move Bide"
+    },
+    {
+      "p1": "move Strength",
+      "p2": "move Bide"
+    },
+    {
+      "p1": "switch Seaking",
+      "p2": "switch Nick32"
+    },
+    {
+      "p1": "move Surf",
+      "p2": "move Mega Drain"
+    },
+    {
+      "p1": "switch Machoke"
+    },
+    {
+      "p1": "move Fire Blast",
+      "p2": "move Reflect"
+    },
+    {
+      "p1": "move Double-Edge",
+      "p2": "move Solar Beam"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "switch Venomoth"
+    },
+    {
+      "p1": "move Stun Spore",
+      "p2": "move Poison Powder"
+    },
+    {
+      "p1": "switch Nick7",
+      "p2": "switch Krabby"
+    },
+    {
+      "p1": "move Mega Kick",
+      "p2": "move Bide"
+    },
+    {
+      "p2": "switch Nick32"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Reflect"
+    },
+    {
+      "p1": "move Hyper Beam",
+      "p2": "move Poison Powder"
+    },
+    {
+      "p2": "switch Exeggutor"
+    },
+    {
+      "p1": "move Hypnosis",
+      "p2": "move Solar Beam"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Mimic"
+    },
+    {
+      "p1": "switch Venomoth",
+      "p2": "switch Nick13"
+    },
+    {
+      "p1": "move Stun Spore",
+      "p2": "move Reflect"
+    },
+    {
+      "p1": "move Toxic",
+      "p2": "move Tri Attack"
+    },
+    {
+      "p1": "move Poison Powder",
+      "p2": "move Mimic"
+    },
+    {
+      "p1": "move Toxic",
+      "p2": "move Tri Attack"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "switch Nick7",
+      "p2": "switch Exeggutor"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Mimic"
+    },
+    {
+      "p1": "move Hyper Beam",
+      "p2": "move Hypnosis"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 3"
+    }
+  ]
+}

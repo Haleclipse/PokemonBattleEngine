@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen7-z-move-signature-pikachu",
+ "notes": [
+  "Gen 7: Pikachu with a Pikanium Z uses Volt Tackle as 皮卡皮卡必杀击 (Catastropika, its own 210 power); its Thunderbolt has no Z version with that crystal"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Pikachu",
+    "species": "Pikachu",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Volt Tackle",
+     "Thunderbolt",
+     "Harden"
+    ],
+    "ability": "Static",
+    "item": "Pikanium Z"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1 zmove",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

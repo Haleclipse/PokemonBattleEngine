@@ -1,0 +1,83 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-transform-into-hospitality",
+ "notes": [
+  "Gen 9 doubles: Smeargle transforms into Zangoose and takes its Hospitality, which starts at once and heals the hurt Snorlax beside it (`-heal … [from] ability: Hospitality`, within the Transform's action, DESIGN.md R-M8-84)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Smeargle",
+    "species": "Smeargle",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Transform",
+     "Splash"
+    ],
+    "ability": "Own Tempo",
+    "gender": "M"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Zangoose",
+    "species": "Zangoose",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Hospitality",
+    "gender": "F"
+   },
+   {
+    "label": "Tauros",
+    "species": "Tauros",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Splash"
+    ],
+    "ability": "Sap Sipper",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash, move Splash",
+   "p2": "move Splash, move Tackle 2"
+  },
+  {
+   "p1": "move Transform 1, move Splash",
+   "p2": "move Splash, move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,101 @@
+{
+ "schema": 1,
+ "id": "gen9-pain-split",
+ "notes": [
+  "Gen 9 Pain Split: a Snorlax Super-Fanged to half and a full Chansey both end at their average; a Pikachu's split with a full Blissey is capped at its own max HP; a Substitute keeps it off"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Lax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Pain Split",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Pika",
+    "species": "Pikachu",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Pain Split",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Chan",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Super Fang",
+     "Harden",
+     "Substitute"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Bliss",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Super Fang"
+  },
+  {
+   "p1": "move Pain Split",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Pika",
+   "p2": "switch Bliss"
+  },
+  {
+   "p1": "move Pain Split",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Lax",
+   "p2": "switch Chan"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Substitute"
+  },
+  {
+   "p1": "move Pain Split",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

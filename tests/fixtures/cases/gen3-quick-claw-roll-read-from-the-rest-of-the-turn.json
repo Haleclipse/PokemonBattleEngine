@@ -1,0 +1,113 @@
+{
+  "schema": 1,
+  "id": "gen3-quick-claw-roll-read-from-the-rest-of-the-turn",
+  "notes": [
+    "Gen 3 Quick Claw: an action order that fits either outcome of the silent turn roll leaves it open; the boundary is retried with the other outcome when the first does not reproduce it",
+    "promoted from m8-gen3-singles-s109-007-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 3,
+    "mode": "singles",
+    "format": "gen3customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Aipom",
+        "species": "Aipom",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Dragon Rage"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Quagsire",
+        "species": "Quagsire",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Leech Seed"
+        ],
+        "ability": "Run Away",
+        "item": "Quick Claw",
+        "gender": "F"
+      },
+      {
+        "label": "Abra",
+        "species": "Abra",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Leech Seed"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Machamp",
+        "species": "Machamp",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Aeroblast"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Remoraid",
+        "species": "Remoraid",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Leech Seed"
+        ],
+        "ability": "Intimidate",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      27553,
+      5958,
+      35901,
+      17254
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Dragon Rage",
+      "p2": "move Aeroblast"
+    },
+    {
+      "p1": "switch Quagsire",
+      "p2": "switch Remoraid"
+    },
+    {
+      "p1": "move Leech Seed",
+      "p2": "move Leech Seed"
+    },
+    {
+      "p1": "switch Aipom",
+      "p2": "switch Machamp"
+    },
+    {
+      "p1": "move Dragon Rage",
+      "p2": "move Aeroblast"
+    },
+    {
+      "p1": "switch Quagsire"
+    },
+    {
+      "p1": "switch Abra",
+      "p2": "switch Remoraid"
+    }
+  ]
+}

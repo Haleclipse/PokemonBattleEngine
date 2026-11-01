@@ -1,0 +1,105 @@
+{
+  "schema": 1,
+  "id": "gen3-volt-absorb-spares-thunder-wave",
+  "notes": [
+    "Gen 3 Volt Absorb lets Thunder Wave through (the gen3 onTryHit excludes it)",
+    "promoted from m8-gen3-singles-s100-001-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 3,
+    "mode": "singles",
+    "format": "gen3customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Quilava",
+        "species": "Quilava",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fire Blast",
+          "Cut"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Hoothoot",
+        "species": "Hoothoot",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Acid Armor"
+        ],
+        "ability": "Volt Absorb",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Unown",
+        "species": "Unown",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Helping Hand",
+          "Ice Punch"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Venonat",
+        "species": "Venonat",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Smog"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Lairon",
+        "species": "Lairon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Thunder Wave"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      5970,
+      847,
+      11078,
+      4215
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Fire Blast",
+      "p2": "move Helping Hand"
+    },
+    {
+      "p1": "move Cut",
+      "p2": "move Ice Punch"
+    },
+    {
+      "p2": "switch Venonat"
+    },
+    {
+      "p1": "switch Hoothoot",
+      "p2": "switch Lairon"
+    },
+    {
+      "p1": "move Acid Armor",
+      "p2": "move Thunder Wave"
+    }
+  ]
+}

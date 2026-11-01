@@ -1,0 +1,58 @@
+{
+ "schema": 1,
+ "id": "gen4-transform-into-an-arceus-without-multitype-keeps-its-forme",
+ "notes": [
+  "Gen 4: Ditto, holding a Toxic Plate, Transforms into an Arceus whose ability is White Smoke: it copies Arceus's species, Normal type, forme and White Smoke (pokeplatinum copies `BattleMon` up to `ability`), and the forme change by a held plate needs Multitype. Showdown's `transformInto` made it Arceus-Poison; the I197 patch lets that change through only with Multitype (issues.md I197, DESIGN.md R-M8-146)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Arceus",
+    "species": "Arceus",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "White Smoke"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Ditto",
+    "species": "Ditto",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Transform"
+    ],
+    "item": "Toxic Plate",
+    "ability": "Limber"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash",
+   "p2": "move Transform"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   3,
+   4,
+   5,
+   6
+  ]
+ }
+}

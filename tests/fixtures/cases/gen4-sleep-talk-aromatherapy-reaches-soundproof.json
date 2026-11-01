@@ -1,0 +1,76 @@
+{
+ "schema": 1,
+ "id": "gen4-sleep-talk-aromatherapy-reaches-soundproof",
+ "notes": [
+  "Gen 4: Miltank, asleep, uses Sleep Talk, which calls Aromatherapy: the benched Mr. Mime's Soundproof keeps off Heal Bell, not Aromatherapy, so it is cured too — the cure reads the move under way, not the last move (Sleep Talk) (DESIGN.md R-M8-120)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mr. Mime",
+    "species": "Mr. Mime",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Soundproof",
+    "gender": "M"
+   },
+   {
+    "label": "Miltank",
+    "species": "Miltank",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sleep Talk",
+     "Aromatherapy"
+    ],
+    "ability": "Thick Fat",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Parasect",
+    "species": "Parasect",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spore",
+     "Thunder Wave"
+    ],
+    "ability": "Dry Skin",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash",
+   "p2": "move Thunder Wave"
+  },
+  {
+   "p1": "switch Miltank",
+   "p2": "move Spore"
+  },
+  {
+   "p1": "move Sleep Talk",
+   "p2": "move Spore"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

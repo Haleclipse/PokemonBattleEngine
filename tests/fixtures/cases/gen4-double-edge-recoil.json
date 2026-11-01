@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "id": "gen4-singles-double-edge-recoil",
+  "notes": [
+    "Gen 4 recoil floors (Showdown gen4 `calcRecoilDamage`): Double-Edge recoil is 1/3 of the damage dealt, truncated,",
+    "never below 1. Tackle can miss (95 %) in this generation, so `-miss` events are also exercised."
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "singles",
+    "format": "gen4customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "a",
+        "species": "Tauros",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Double-Edge"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "b",
+        "species": "Snorlax",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

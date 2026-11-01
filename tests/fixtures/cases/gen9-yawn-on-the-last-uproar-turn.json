@@ -1,0 +1,71 @@
+{
+ "schema": 1,
+ "id": "gen9-yawn-on-the-last-uproar-turn",
+ "notes": [
+  "Gen 9 Uproar: its holder, made drowsy on the second turn, stays awake at the end of the third, the uproar's last (Yawn comes at 23, the uproar ends at 28.1)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Uproarer",
+    "species": "Blissey",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Uproar",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Yawner",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Yawn",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Uproar",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Uproar",
+   "p2": "move Yawn"
+  },
+  {
+   "p1": "move Uproar",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,91 @@
+{
+ "schema": 1,
+ "id": "gen9-ripen-halves-the-hit-after-a-forced-resist-berry",
+ "notes": [
+  "Gen 9: Teatime makes Appletun (Ripen) eat its Occa Berry; Ripen's note halves the next hit it takes (Mew's Tackle), and only that one; a second Appletun made to eat a Sitrus Berry (healed twice as much) takes the next Tackle in full"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Appletun",
+    "species": "Appletun",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Ripen",
+    "item": "Occa Berry"
+   },
+   {
+    "label": "Appletun2",
+    "species": "Appletun",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Ripen",
+    "item": "Sitrus Berry"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Teatime",
+     "Tackle",
+     "Seismic Toss"
+    ],
+    "ability": "Synchronize"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Teatime"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "switch Appletun2",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Teatime"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

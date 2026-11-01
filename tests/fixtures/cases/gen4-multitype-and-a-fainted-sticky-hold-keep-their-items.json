@@ -1,0 +1,79 @@
+{
+ "schema": 1,
+ "id": "gen4-multitype-and-a-fainted-sticky-hold-keep-their-items",
+ "notes": [
+  "Gen 4: a Multitype Arceus keeps its Leftovers against Knock Off and Thief (the gen4 mod's onTakeItem: false); Knock Off that knocks out a Sticky Hold Muk leaves its Black Sludge (no fainted exception before Gen 5)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sneasel",
+    "species": "Sneasel",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Knock Off",
+     "Thief",
+     "Harden"
+    ],
+    "ability": "Inner Focus"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Arceus",
+    "species": "Arceus",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Multitype",
+    "item": "Leftovers"
+   },
+   {
+    "label": "Muk",
+    "species": "Muk",
+    "level": 5,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Sticky Hold",
+    "item": "Black Sludge"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Knock Off",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Thief",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Muk"
+  },
+  {
+   "p1": "move Knock Off",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

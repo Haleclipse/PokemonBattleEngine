@@ -1,0 +1,87 @@
+{
+ "schema": 1,
+ "id": "gen1-flinch-clears-the-recharge",
+ "notes": [
+  "Gen 1 (flinch.onStart): a Pok\u00e9mon that flinches on the turn it owes its Hyper Beam recharge loses the recharge with it \u2014 the flinch takes that turn, and the next turn it acts"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 45,
+    "nature": "Hardy",
+    "moves": [
+     "Hyper Beam"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Stomp"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1",
+   "p2": "move Stomp"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Stomp"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Stomp"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Stomp"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Stomp"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Stomp"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Stomp"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Stomp"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Stomp"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Stomp"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   3,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,53 @@
+{
+ "schema": 1,
+ "id": "gen7-tied-leads-weather-follows-the-log",
+ "notes": [
+  "Two equally fast leads with weather abilities: Showdown shuffles their switch-ins, and the replay plans the tie from the order the weathers were announced"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Politoed",
+    "species": "Politoed",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Growl"
+    ],
+    "ability": "Drizzle"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Politoed",
+    "species": "Politoed",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Growl"
+    ],
+    "ability": "Drought"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Growl",
+   "p2": "move Growl"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   6
+  ]
+ }
+}

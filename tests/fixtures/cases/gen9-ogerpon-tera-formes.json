@@ -1,0 +1,66 @@
+{
+ "schema": 1,
+ "id": "gen9-ogerpon-tera-formes",
+ "notes": [
+  "Gen 9: Ogerpon and Ogerpon-Wellspring Terastallize: each changes into its `-Tera` forme (`detailschange`), its ability becomes the matching Embody Aspect, and that `onStart` raises one stage (Speed for Teal, Special Defense for Wellspring)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Ogerpon",
+    "species": "Ogerpon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "ability": "Embody Aspect (Teal)",
+    "teraType": "Grass"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Ogerpon-Wellspring",
+    "species": "Ogerpon-Wellspring",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "ability": "Embody Aspect (Wellspring)",
+    "item": "Wellspring Mask",
+    "teraType": "Water"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1 terastallize",
+   "p2": "move 1 terastallize"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 2"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

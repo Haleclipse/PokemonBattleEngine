@@ -1,0 +1,112 @@
+{
+ "schema": 1,
+ "id": "m10-a-helping-hand-at-a-fainted-ally-reaches-the-metronome-count",
+ "notes": [
+  "R-M10-18: Showdown's `getTarget` keeps a chosen ally that has fainted (\"attack shouldn't retarget\"), so Helping Hand aimed at its fallen partner has a target: TryMove runs — the Metronome item's condition starts over on it — and only then does the move find no target standing (`[notarget]`). After three Dives (6553/4096), Floatzel's next Dive counts from 1 (4915/4096) rather than on (7372/4096) — a gap no damage roll closes."
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "doubles",
+  "format": "gen5doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Floatzel",
+    "species": "Floatzel",
+    "level": 50,
+    "nature": "Hardy",
+    "item": "Metronome",
+    "moves": [
+     "Dive",
+     "Helping Hand"
+    ],
+    "ability": "Swift Swim",
+    "gender": "M"
+   },
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 1,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Swift Swim",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Dive 1, move Splash",
+   "p2": "move Tackle 2, move Splash"
+  },
+  {
+   "p1": "move Dive 1, pass",
+   "p2": "move Splash, move Splash"
+  },
+  {
+   "p1": "move Dive 1, pass",
+   "p2": "move Splash, move Splash"
+  },
+  {
+   "p1": "move Dive 1, pass",
+   "p2": "move Splash, move Splash"
+  },
+  {
+   "p1": "move Dive 1, pass",
+   "p2": "move Splash, move Splash"
+  },
+  {
+   "p1": "move Dive 1, pass",
+   "p2": "move Splash, move Splash"
+  },
+  {
+   "p1": "move Helping Hand -2, pass",
+   "p2": "move Splash, move Splash"
+  },
+  {
+   "p1": "move Dive 1, pass",
+   "p2": "move Splash, move Splash"
+  },
+  {
+   "p1": "move Dive 1, pass",
+   "p2": "move Splash, move Splash"
+  }
+ ]
+}

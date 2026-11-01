@@ -1,0 +1,95 @@
+{
+ "schema": 1,
+ "id": "gen6-a-red-card-drags-out-a-doom-desire-user-after-the-residual",
+ "notes": [
+  "Gen 6: Mismagius's Doom Desire strikes Snorlax at the end of turn 3; Snorlax's Red Card drags Mismagius out for a random bench Pokémon after the residual (Showdown's `runAction` drags in after the residual action), and the replay plans the pick from the frame's `drag` and follows the party order for the switch that comes next (DESIGN.md R-M8-141)"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mismagius",
+    "species": "Mismagius",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Doom Desire",
+     "Splash"
+    ],
+    "ability": "Levitate",
+    "gender": "M"
+   },
+   {
+    "label": "Linoone",
+    "species": "Linoone",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Pickup",
+    "gender": "F"
+   },
+   {
+    "label": "Rhyhorn",
+    "species": "Rhyhorn",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Rock Head",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "item": "Red Card",
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Doom Desire",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   2,
+   3,
+   4,
+   5
+  ]
+ }
+}

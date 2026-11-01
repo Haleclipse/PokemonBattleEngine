@@ -1,0 +1,338 @@
+{
+  "schema": 1,
+  "id": "m10-p-max-guard-keeps-flower-shield-off-its-holder",
+  "notes": [
+    "Gen 8 VGC: Flower Shield on a Max Guard Gourgeist (its own runEvent('TryHit')): the Grass type behind the guard gains nothing (R-M10-40)",
+    "promoted from m9-gen8vgc2022-s202-014-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 8,
+    "mode": "doubles",
+    "format": "gen8vgc2022"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Skwovet",
+        "species": "Skwovet",
+        "ability": "Cheek Pouch",
+        "moves": [
+          "Payback"
+        ],
+        "nature": "Lonely",
+        "gender": "F",
+        "shiny": false,
+        "level": 50,
+        "evs": {
+          "hp": 84,
+          "atk": 176,
+          "def": 116,
+          "spa": 0,
+          "spd": 92,
+          "spe": 40
+        },
+        "ivs": {
+          "hp": 4,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        }
+      },
+      {
+        "label": "Claydol",
+        "species": "Claydol",
+        "ability": "Levitate",
+        "moves": [
+          "Earth Power",
+          "Future Sight",
+          "Light Screen"
+        ],
+        "nature": "Sassy",
+        "gender": "",
+        "shiny": false,
+        "level": 50,
+        "evs": {
+          "hp": 48,
+          "atk": 0,
+          "def": 200,
+          "spa": 0,
+          "spd": 108,
+          "spe": 152
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        },
+        "happiness": 79,
+        "hpType": "Grass"
+      },
+      {
+        "label": "Mandibuzz",
+        "species": "Mandibuzz",
+        "ability": "Big Pecks",
+        "moves": [
+          "Rock Tomb",
+          "Nasty Plot",
+          "Taunt"
+        ],
+        "nature": "Relaxed",
+        "gender": "",
+        "shiny": false,
+        "level": 50,
+        "evs": {
+          "hp": 92,
+          "atk": 0,
+          "def": 112,
+          "spa": 104,
+          "spd": 96,
+          "spe": 104
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        }
+      },
+      {
+        "label": "Metapod",
+        "species": "Metapod",
+        "ability": "Shed Skin",
+        "moves": [
+          "Tackle"
+        ],
+        "nature": "Rash",
+        "gender": "M",
+        "shiny": false,
+        "level": 50,
+        "evs": {
+          "hp": 36,
+          "atk": 208,
+          "def": 0,
+          "spa": 48,
+          "spd": 108,
+          "spe": 108
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 14,
+          "spe": 31
+        },
+        "happiness": 36
+      }
+    ],
+    "p2": [
+      {
+        "label": "Hattrem",
+        "species": "Hattrem",
+        "ability": "Healer",
+        "moves": [
+          "After You"
+        ],
+        "nature": "Timid",
+        "gender": "",
+        "shiny": false,
+        "level": 50,
+        "evs": {
+          "hp": 20,
+          "atk": 0,
+          "def": 236,
+          "spa": 120,
+          "spd": 132,
+          "spe": 0
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        }
+      },
+      {
+        "label": "Gourgeist",
+        "species": "Gourgeist-Large",
+        "ability": "Insomnia",
+        "moves": [
+          "Sleep Talk",
+          "Seed Bomb",
+          "Imprison"
+        ],
+        "nature": "Quiet",
+        "gender": "M",
+        "shiny": false,
+        "level": 50,
+        "evs": {
+          "hp": 112,
+          "atk": 116,
+          "def": 0,
+          "spa": 48,
+          "spd": 152,
+          "spe": 80
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        }
+      },
+      {
+        "label": "Silicobra",
+        "species": "Silicobra",
+        "ability": "Sand Veil",
+        "moves": [
+          "Earthquake"
+        ],
+        "nature": "Lax",
+        "gender": "F",
+        "shiny": false,
+        "level": 50,
+        "evs": {
+          "hp": 0,
+          "atk": 252,
+          "def": 196,
+          "spa": 36,
+          "spd": 0,
+          "spe": 24
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        }
+      },
+      {
+        "label": "Foongus",
+        "species": "Foongus",
+        "ability": "Effect Spore",
+        "moves": [
+          "Absorb"
+        ],
+        "nature": "Naive",
+        "gender": "M",
+        "shiny": false,
+        "level": 50,
+        "evs": {
+          "hp": 0,
+          "atk": 52,
+          "def": 40,
+          "spa": 124,
+          "spd": 144,
+          "spe": 148
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 8,
+          "spd": 31,
+          "spe": 31
+        }
+      },
+      {
+        "label": "Nick74",
+        "species": "Magnezone",
+        "ability": "Magnet Pull",
+        "moves": [
+          "Magnet Rise"
+        ],
+        "nature": "Quirky",
+        "gender": "",
+        "shiny": false,
+        "level": 50,
+        "evs": {
+          "hp": 20,
+          "atk": 52,
+          "def": 180,
+          "spa": 0,
+          "spd": 104,
+          "spe": 152
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        },
+        "hpType": "Ground"
+      },
+      {
+        "label": "Cherubi",
+        "species": "Cherubi",
+        "ability": "Chlorophyll",
+        "moves": [
+          "Grass Knot",
+          "Defense Curl",
+          "Flower Shield"
+        ],
+        "nature": "Quirky",
+        "gender": "M",
+        "shiny": false,
+        "level": 50,
+        "evs": {
+          "hp": 68,
+          "atk": 36,
+          "def": 60,
+          "spa": 88,
+          "spd": 192,
+          "spe": 64
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        }
+      }
+    ]
+  },
+  "preview": {
+    "p1": "team 321465",
+    "p2": "team 265134"
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      29610,
+      202,
+      1014,
+      31
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1 1 dynamax, move Earth Power 2",
+      "p2": "move 1 dynamax, move Grass Knot 1"
+    },
+    {
+      "p1": "move Nasty Plot, move Future Sight 1",
+      "p2": "move Seed Bomb 2, move Defense Curl"
+    },
+    {
+      "p1": "move Taunt, move Light Screen",
+      "p2": "move Imprison, move Flower Shield"
+    }
+  ]
+}

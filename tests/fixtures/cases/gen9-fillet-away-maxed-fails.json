@@ -1,0 +1,75 @@
+{
+ "schema": 1,
+ "id": "gen9-fillet-away-maxed-fails",
+ "notes": [
+  "Fillet Away with Attack, Special Attack and Speed all at +6: its onTryHit returns null, which the TryHit step turns into a failure (no -fail line): the next Stomping Tantrum is doubled"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Fillet",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Fillet Away",
+     "Recover",
+     "Stomping Tantrum"
+    ],
+    "ability": "Simple"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Dondozo",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Fillet Away",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Fillet Away",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Fillet Away",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Stomping Tantrum",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

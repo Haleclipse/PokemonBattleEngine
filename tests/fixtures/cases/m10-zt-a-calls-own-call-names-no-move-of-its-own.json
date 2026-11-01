@@ -1,0 +1,155 @@
+{
+  "schema": 1,
+  "id": "m10-zt-a-calls-own-call-names-no-move-of-its-own",
+  "notes": [
+    "Gen 4 doubles: Shelgon's Assist calls Nature Power, which calls Tri Attack ([from] move: Nature Power): @pkmn/client remembers the caller, itself called, as Shelgon's own (R-M10-70)",
+    "promoted from m8-gen4-doubles-s1695-018-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "doubles",
+    "format": "gen4doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Claydol",
+        "species": "Claydol",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Bullet Punch",
+          "Nature Power",
+          "Extreme Speed"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Manaphy",
+        "species": "Manaphy",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Quick Attack",
+          "Nature Power",
+          "Rock Polish",
+          "Assist"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Shelgon",
+        "species": "Shelgon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Assist"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Turtwig",
+        "species": "Turtwig",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Nature Power"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Delibird",
+        "species": "Delibird",
+        "level": 51,
+        "nature": "Hardy",
+        "moves": [
+          "Sand Attack",
+          "Nature Power",
+          "Acid Armor"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Ampharos",
+        "species": "Ampharos",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Growth",
+          "Nature Power",
+          "Double Team",
+          "Assist"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Politoed",
+        "species": "Politoed",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Scary Face",
+          "Nature Power",
+          "Memento"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Pineco",
+        "species": "Pineco",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Howl",
+          "Assist"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      29694,
+      49838,
+      47715,
+      24635
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Bullet Punch 1, move Quick Attack 2",
+      "p2": "move Sand Attack 1, move Growth"
+    },
+    {
+      "p1": "move Nature Power, move Nature Power",
+      "p2": "move Nature Power, move Nature Power"
+    },
+    {
+      "p2": "switch Politoed, pass"
+    },
+    {
+      "p1": "move Extreme Speed 1, move Rock Polish",
+      "p2": "move Memento 2, move Double Team"
+    },
+    {
+      "p2": "switch Pineco, pass"
+    },
+    {
+      "p1": "switch Shelgon, move Assist",
+      "p2": "move Assist, move Assist"
+    },
+    {
+      "p1": "move Assist, move Quick Attack 2",
+      "p2": "move Howl, move Growth"
+    }
+  ]
+}

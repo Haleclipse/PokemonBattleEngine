@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen4-arceus-and-its-plate",
+ "notes": [
+  "Gen 4: an Arceus with a Flame Plate takes the Arceus-Fire forme as it comes in, its Judgment is Fire (boosted 1.2 by the Plate), and nothing can take the Plate off it"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Arceus",
+    "species": "Arceus",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Judgment",
+     "Harden"
+    ],
+    "ability": "Multitype",
+    "item": "Flame Plate"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Thief"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Judgment",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Judgment",
+   "p2": "move Thief"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

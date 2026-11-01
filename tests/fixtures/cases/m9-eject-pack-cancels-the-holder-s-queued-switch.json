@@ -1,0 +1,517 @@
+{
+ "schema": 1,
+ "id": "m9-eject-pack-cancels-the-holder-s-queued-switch",
+ "notes": [
+  "R-M9-23: Litten's Intimidate sets off Nosepass's Eject Pack while Nosepass's own switch to Ditto is still queued. The replacement's `switchIn` cancels that switch (`queue.cancelAction(oldActive)`), so `switch 6` counts in a party it never changed. Minimized from Nightly 20261020-030225 (gen9ubers)."
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9ubers"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Amoonguss",
+    "species": "Amoonguss",
+    "ability": "Regenerator",
+    "moves": [
+     "Absorb",
+     "Bullet Seed",
+     "Rollout"
+    ],
+    "nature": "Jolly",
+    "gender": "M",
+    "shiny": true,
+    "level": 100,
+    "evs": {
+     "hp": 52,
+     "atk": 0,
+     "def": 248,
+     "spa": 68,
+     "spd": 108,
+     "spe": 32
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 100,
+    "teraType": "Bug"
+   },
+   {
+    "label": "Vivillon",
+    "species": "Vivillon-Icy Snow",
+    "ability": "Compound Eyes",
+    "moves": [
+     "Tera Blast",
+     "Solar Beam",
+     "Weather Ball"
+    ],
+    "nature": "Jolly",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 92,
+     "atk": 0,
+     "def": 184,
+     "spa": 0,
+     "spd": 104,
+     "spe": 128
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Poison"
+   },
+   {
+    "label": "Nymble",
+    "species": "Nymble",
+    "ability": "Swarm",
+    "moves": [
+     "Tackle",
+     "Tera Blast"
+    ],
+    "nature": "Relaxed",
+    "gender": "M",
+    "shiny": true,
+    "level": 100,
+    "evs": {
+     "hp": 120,
+     "atk": 192,
+     "def": 0,
+     "spa": 124,
+     "spd": 28,
+     "spe": 44
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Okidogi",
+    "species": "Okidogi",
+    "ability": "Toxic Chain",
+    "moves": [
+     "Toxic",
+     "Poison Jab",
+     "Rest",
+     "Focus Punch"
+    ],
+    "nature": "Bold",
+    "gender": "",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 16,
+     "atk": 240,
+     "def": 0,
+     "spa": 0,
+     "spd": 128,
+     "spe": 124
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Nick27",
+    "species": "Greninja",
+    "ability": "Battle Bond",
+    "moves": [
+     "Growl"
+    ],
+    "nature": "Bashful",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 92,
+     "atk": 80,
+     "def": 44,
+     "spa": 136,
+     "spd": 100,
+     "spe": 56
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Flying"
+   },
+   {
+    "label": "Litten",
+    "species": "Litten",
+    "ability": "Intimidate",
+    "moves": [
+     "Crunch"
+    ],
+    "nature": "Jolly",
+    "gender": "F",
+    "shiny": false,
+    "level": 85,
+    "evs": {
+     "hp": 96,
+     "atk": 128,
+     "def": 112,
+     "spa": 16,
+     "spd": 100,
+     "spe": 56
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 28,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Fighting"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Ditto",
+    "species": "Ditto",
+    "ability": "Limber",
+    "moves": [
+     "Transform"
+    ],
+    "nature": "Quirky",
+    "gender": "",
+    "shiny": true,
+    "level": 100,
+    "evs": {
+     "hp": 0,
+     "atk": 240,
+     "def": 32,
+     "spa": 136,
+     "spd": 84,
+     "spe": 16
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Ground"
+   },
+   {
+    "label": "Nosepass",
+    "species": "Nosepass",
+    "item": "Eject Pack",
+    "ability": "Sand Force",
+    "moves": [
+     "Rock Tomb"
+    ],
+    "nature": "Docile",
+    "gender": "F",
+    "shiny": true,
+    "level": 100,
+    "evs": {
+     "hp": 60,
+     "atk": 12,
+     "def": 132,
+     "spa": 0,
+     "spd": 180,
+     "spe": 124
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 3,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 210,
+    "teraType": "Electric"
+   },
+   {
+    "label": "Qwilfish",
+    "species": "Qwilfish-Hisui",
+    "ability": "Intimidate",
+    "moves": [
+     "Scary Face",
+     "Poison Sting",
+     "Poison Jab",
+     "Poison Tail"
+    ],
+    "nature": "Quirky",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 0,
+     "atk": 0,
+     "def": 196,
+     "spa": 84,
+     "spd": 8,
+     "spe": 220
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 21,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Ground"
+   },
+   {
+    "label": "Cetoddle",
+    "species": "Cetoddle",
+    "ability": "Snow Cloak",
+    "moves": [
+     "Ice Spinner"
+    ],
+    "nature": "Sassy",
+    "gender": "F",
+    "shiny": true,
+    "level": 2,
+    "evs": {
+     "hp": 84,
+     "atk": 80,
+     "def": 180,
+     "spa": 0,
+     "spd": 0,
+     "spe": 164
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Rock"
+   },
+   {
+    "label": "Squirtle",
+    "species": "Squirtle",
+    "ability": "Rain Dish",
+    "moves": [
+     "Dynamic Punch",
+     "Rock Tomb"
+    ],
+    "nature": "Bashful",
+    "gender": "F",
+    "shiny": false,
+    "level": 49,
+    "evs": {
+     "hp": 104,
+     "atk": 88,
+     "def": 56,
+     "spa": 248,
+     "spd": 0,
+     "spe": 12
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Rock"
+   },
+   {
+    "label": "Luxray",
+    "species": "Luxray",
+    "ability": "Rivalry",
+    "moves": [
+     "Toxic",
+     "Electro Ball",
+     "Trailblaze",
+     "Psychic Fangs"
+    ],
+    "nature": "Docile",
+    "gender": "M",
+    "shiny": true,
+    "level": 100,
+    "evs": {
+     "hp": 16,
+     "atk": 128,
+     "def": 68,
+     "spa": 0,
+     "spd": 248,
+     "spe": 48
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 6
+    },
+    "teraType": "Rock"
+   }
+  ]
+ },
+ "preview": {
+  "p1": "team 231465",
+  "p2": "team 453621"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   19835,
+   103,
+   1001,
+   31
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1 terastallize",
+   "p2": "move 1 terastallize"
+  },
+  {
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Solar Beam",
+   "p2": "move Dynamic Punch"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 2"
+  },
+  {
+   "p2": "switch 3"
+  },
+  {
+   "p1": "move Weather Ball",
+   "p2": "move Poison Tail"
+  },
+  {
+   "p1": "move Tera Blast",
+   "p2": "move Scary Face"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "switch 4"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Electro Ball"
+  },
+  {
+   "p1": "move Tera Blast",
+   "p2": "move Trailblaze"
+  },
+  {
+   "p1": "switch 2"
+  },
+  {
+   "p1": "move Weather Ball",
+   "p2": "move Psychic Fangs"
+  },
+  {
+   "p1": "switch 3"
+  },
+  {
+   "p1": "move Absorb",
+   "p2": "move Toxic"
+  },
+  {
+   "p1": "move Bullet Seed",
+   "p2": "move Electro Ball"
+  },
+  {
+   "p1": "switch 4",
+   "p2": "switch 4"
+  },
+  {
+   "p1": "move Rest",
+   "p2": "move Poison Jab"
+  },
+  {
+   "p1": "move Focus Punch",
+   "p2": "move Poison Tail"
+  },
+  {
+   "p1": "move Toxic",
+   "p2": "move Scary Face"
+  },
+  {
+   "p1": "move Poison Jab",
+   "p2": "move Poison Sting"
+  },
+  {
+   "p1": "move Rest",
+   "p2": "move Poison Jab"
+  },
+  {
+   "p1": "switch 4",
+   "p2": "switch 4"
+  },
+  {
+   "p1": "move Rollout",
+   "p2": "move Psychic Fangs"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 2"
+  },
+  {
+   "p2": "switch 4"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 3"
+  },
+  {
+   "p2": "switch 5"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "switch 4"
+  },
+  {
+   "p1": "switch 5",
+   "p2": "switch 6"
+  },
+  {
+   "p2": "switch 6"
+  }
+ ]
+}

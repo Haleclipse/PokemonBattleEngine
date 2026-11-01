@@ -1,0 +1,78 @@
+{
+ "schema": 1,
+ "id": "gen2-beat-up-with-kings-rock-rolls-on-the-last-hit",
+ "notes": [
+  "Gen 2: Sneasel's Beat Up (three members) with King's Rock: like any multi-hit move's secondaries (`!move.multihit || move.lastHit`), the item's flinch rolls on the last hit only — Blissey flinches"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sneasel",
+    "species": "Sneasel",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Beat Up"
+    ],
+    "gender": "M",
+    "item": "King's Rock"
+   },
+   {
+    "label": "Machamp",
+    "species": "Machamp",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Beat Up",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Beat Up",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   3,
+   7,
+   11,
+   17
+  ]
+ }
+}

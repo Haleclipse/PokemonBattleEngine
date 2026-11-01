@@ -1,0 +1,98 @@
+{
+ "schema": 1,
+ "id": "gen4-doubles-custap-berry-keeps-embargo-knock-off-and-thief-away",
+ "notes": [
+  "Gen 4 doubles (cartridge, issues.md I52, I53): Snorlax at a quarter of its HP has its Custap Berry put Mirror Coat first in its bracket; before it moves, Absol's Embargo fails and Sneasel's Knock Off takes nothing; later Munchlax's Custap Berry goes off the same way and Sneasel's Thief takes nothing"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "doubles",
+  "format": "gen4doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Absol",
+    "species": "Absol",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Embargo"
+    ],
+    "ability": "Pressure"
+   },
+   {
+    "label": "Sneasel",
+    "species": "Sneasel",
+    "level": 5,
+    "nature": "Hardy",
+    "moves": [
+     "Knock Off",
+     "Thief",
+     "Harden"
+    ],
+    "ability": "Inner Focus"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Mirror Coat"
+    ],
+    "ability": "Thick Fat",
+    "item": "Custap Berry"
+   },
+   {
+    "label": "Munchlax",
+    "species": "Munchlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Mirror Coat"
+    ],
+    "ability": "Thick Fat",
+    "item": "Custap Berry"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Seismic Toss 1, move Harden",
+   "p2": "move Mirror Coat, move Mirror Coat"
+  },
+  {
+   "p1": "move Seismic Toss 1, move Harden",
+   "p2": "move Mirror Coat, move Mirror Coat"
+  },
+  {
+   "p1": "move Embargo 1, move Knock Off 1",
+   "p2": "move Mirror Coat, move Mirror Coat"
+  },
+  {
+   "p1": "move Seismic Toss 2, move Harden",
+   "p2": "move Mirror Coat, move Mirror Coat"
+  },
+  {
+   "p1": "move Seismic Toss 2, move Harden",
+   "p2": "move Mirror Coat, move Mirror Coat"
+  },
+  {
+   "p1": "move Seismic Toss 1, move Thief 2",
+   "p2": "move Mirror Coat, move Mirror Coat"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

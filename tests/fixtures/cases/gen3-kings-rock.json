@@ -1,0 +1,100 @@
+{
+ "schema": 1,
+ "id": "gen3-kings-rock",
+ "notes": [
+  "Gen 3 King's Rock: Tackle (on the list) flinches 10 % of the time"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Rock",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "ability": "Run Away",
+    "item": "King's Rock"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Tackle",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Soft-Boiled"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,73 @@
+{
+ "schema": 1,
+ "id": "gen2-bide-first-use-after-minimize",
+ "notes": [
+  "Gen 2 Bide after the user Minimized twice: it starts (no accuracy check on its first use, pokecrystal / pokeemerald; issues.md I41)"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Bider",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Bide",
+     "Minimize"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Minimize",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Minimize",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Bide",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Bide",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Bide",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Bide",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   8,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,74 @@
+{
+ "schema": 1,
+ "id": "gen1-rage-disable-and-explosion-build",
+ "notes": [
+  "Gen 1 Rage: Disable builds the rage whether or not it hits (Showdown, pokered: no hit test before the build), and so does Explosion, once"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Rager",
+    "species": "Primeape",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Rage",
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Disabler",
+    "species": "Hypno",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Disable",
+     "Harden"
+    ]
+   },
+   {
+    "label": "Bomber",
+    "species": "Electrode",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Explosion"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Rage",
+   "p2": "move Disable"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "move Disable"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "move Explosion"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

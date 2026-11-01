@@ -1,0 +1,88 @@
+{
+ "schema": 1,
+ "id": "gen3-doubles-assist-calls-magic-coat-under-pressure",
+ "notes": [
+  "Gen 3 doubles: Delcatty's Assist calls its benched partner's Magic Coat, which sends Absol's Confuse Ray back; Absol's Pressure takes nothing more: pokeemerald's `PressurePPLose` looks for Magic Coat among Delcatty's moves and finds none (issues.md I169, the oracle is patched)"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "doubles",
+  "format": "gen3doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Delcatty",
+    "species": "Delcatty",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Assist"
+    ],
+    "ability": "Cute Charm",
+    "gender": "F"
+   },
+   {
+    "label": "Zigzagoon",
+    "species": "Zigzagoon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Protect"
+    ],
+    "ability": "Pickup",
+    "gender": "M"
+   },
+   {
+    "label": "Mawile",
+    "species": "Mawile",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Magic Coat"
+    ],
+    "ability": "Hyper Cutter",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Absol",
+    "species": "Absol",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Confuse Ray"
+    ],
+    "ability": "Pressure",
+    "gender": "M"
+   },
+   {
+    "label": "Pidgey",
+    "species": "Pidgey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Keen Eye",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1, move 1",
+   "p2": "move 1 1, move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

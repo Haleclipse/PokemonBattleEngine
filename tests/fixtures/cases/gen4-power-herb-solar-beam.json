@@ -1,0 +1,100 @@
+{
+ "schema": 1,
+ "id": "gen4-power-herb-solar-beam",
+ "notes": [
+  "Gen 4 Power Herb: Solar Beam attacks on its first turn and the herb is used up (-enditem); the next Solar Beam charges. A holder in the sun keeps its herb (the sun sends the move out first) and uses it once the sun is gone"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Herbal",
+    "species": "Venusaur",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Solar Beam",
+     "Harden"
+    ],
+    "ability": "Run Away",
+    "item": "Power Herb"
+   },
+   {
+    "label": "Sunny",
+    "species": "Venusaur",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Solar Beam",
+     "Harden"
+    ],
+    "ability": "Run Away",
+    "item": "Power Herb"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Wall",
+    "species": "Snorlax",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Sunny Day",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Solar Beam",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Solar Beam",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Solar Beam",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Sunny",
+   "p2": "move Sunny Day"
+  },
+  {
+   "p1": "move Solar Beam",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Solar Beam",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Solar Beam",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Solar Beam",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Solar Beam",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

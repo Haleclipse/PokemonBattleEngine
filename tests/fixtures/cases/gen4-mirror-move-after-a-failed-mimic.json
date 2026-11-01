@@ -1,0 +1,66 @@
+{
+ "schema": 1,
+ "id": "gen4-mirror-move-after-a-failed-mimic",
+ "notes": [
+  "Gen 4: Snorlax's Tackle hits Pidgeot; next turn its Mimic at Pidgeot fails (it knows the Splash it would copy). Gen 4 drops the target of a failed `onHit` before `gotAttacked`, so Pidgeot's Mirror Move copies the Tackle (DESIGN.md R-M8-80)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Pidgeot",
+    "species": "Pidgeot",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Mirror Move",
+     "Splash"
+    ],
+    "ability": "Keen Eye",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Mimic",
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Mimic"
+  },
+  {
+   "p1": "move Mirror Move",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

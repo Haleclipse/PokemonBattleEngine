@@ -1,0 +1,30 @@
+{
+ "schema": 1,
+ "id": "gen3-a-spread-move-two-foes-reflect-each-checks-its-own",
+ "notes": [
+  "Gen 3 doubles: Cubone's and Chansey's Sand Attacks lower Espeon's and Xatu's accuracy; next turn both use Magic Coat and Cubone's Growl is sent back by each in its turn (Gen 3-4 check each target's accuracy before its TryHit). Each reflection checks Cubone and Chansey with its reflector's own accuracy, and each misses or hits on its own: the replay plans every reflection, each from its own stretch of the action, not only the last (DESIGN.md R-M8-176)"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "doubles",
+  "format": "gen3doublescustomgame"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [1, 2, 3, 4]
+ },
+ "teams": {
+  "p1": [
+   {"label": "Espeon", "species": "Espeon", "level": 50, "nature": "Hardy", "moves": ["Magic Coat", "Splash"], "ability": "Synchronize", "gender": "F"},
+   {"label": "Xatu", "species": "Xatu", "level": 50, "nature": "Hardy", "moves": ["Magic Coat", "Splash"], "ability": "Early Bird", "gender": "M"}
+  ],
+  "p2": [
+   {"label": "Cubone", "species": "Cubone", "level": 50, "nature": "Hardy", "moves": ["Growl", "Sand Attack"], "ability": "Rock Head", "gender": "M"},
+   {"label": "Chansey", "species": "Chansey", "level": 50, "nature": "Hardy", "moves": ["Sand Attack", "Splash"], "ability": "Natural Cure", "gender": "F"}
+  ]
+ },
+ "script": [
+  {"p1": "move Splash, move Splash", "p2": "move Sand Attack 1, move Sand Attack 2"},
+  {"p1": "move Magic Coat, move Magic Coat", "p2": "move Growl, move Splash"}
+ ]
+}

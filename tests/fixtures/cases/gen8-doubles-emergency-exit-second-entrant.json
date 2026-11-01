@@ -1,0 +1,122 @@
+{
+ "schema": 1,
+ "id": "gen8-doubles-emergency-exit-second-entrant",
+ "notes": [
+  "Two replacements come in together over Stealth Rock and three layers of Spikes: Golisopod, the slower one, drops from full to half, but Showdown asks Emergency Exit only of the switch action's Pok\u00e9mon (the faster Jolteon), so it stays"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "doubles",
+  "format": "gen8doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "M1",
+    "species": "Magikarp",
+    "level": 1,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "M2",
+    "species": "Magikarp",
+    "level": 1,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Jolt",
+    "species": "Jolteon",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Gol",
+    "species": "Golisopod",
+    "level": 99,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Emergency Exit"
+   },
+   {
+    "label": "Bench",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Layer",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Stealth Rock",
+     "Spikes",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Voice",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Spikes",
+     "Hyper Voice",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Stealth Rock, move Spikes"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Spikes, move Spikes"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Hyper Voice"
+  },
+  {
+   "p1": "switch Jolt, switch Gol"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

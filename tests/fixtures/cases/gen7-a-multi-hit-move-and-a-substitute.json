@@ -1,0 +1,107 @@
+{
+ "schema": 1,
+ "id": "gen7-a-multi-hit-move-and-a-substitute",
+ "notes": [
+  "Gen 7: Greninja's Water Shuriken strikes Snorlax several times; its Absorb Bulb is used up on the first and Special Attack rises once",
+  "Then Lapras, behind a Substitute, is struck by Lucario's Tackle: its Kee Berry stays held (no `AfterMoveSecondary` for a target behind a Substitute); after the doll breaks, the next Tackle makes it eat it"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Absorb Bulb",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Lapras",
+    "species": "Lapras",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Substitute",
+     "Harden"
+    ],
+    "item": "Kee Berry",
+    "ability": "Water Absorb"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Greninja",
+    "species": "Greninja",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Water Shuriken",
+     "Harden"
+    ],
+    "ability": "Torrent"
+   },
+   {
+    "label": "Lucario",
+    "species": "Lucario",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Steadfast"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Water Shuriken"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Substitute",
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

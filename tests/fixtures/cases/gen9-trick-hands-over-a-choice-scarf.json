@@ -1,0 +1,99 @@
+{
+ "schema": 1,
+ "id": "gen9-trick-hands-over-a-choice-scarf",
+ "notes": [
+  "Gen 9 Trick: Espeon's Choice Scarf goes to Snorlax for its Leftovers — Snorlax's Tackle locks it in, Espeon's lock goes at the end of the turn; Trick on Sticky Hold is -immune; Trick fails on a Zacian-Crowned holding its Rusted Sword"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Espeon",
+    "species": "Espeon",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Trick",
+     "Harden"
+    ],
+    "ability": "Synchronize",
+    "item": "Choice Scarf"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Leftovers"
+   },
+   {
+    "label": "Muk",
+    "species": "Muk",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Sticky Hold",
+    "item": "Black Sludge"
+   },
+   {
+    "label": "Zacian",
+    "species": "Zacian-Crowned",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Intrepid Sword",
+    "item": "Rusted Sword"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Trick",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Trick",
+   "p2": "switch Muk"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Zacian"
+  },
+  {
+   "p1": "move Trick",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,55 @@
+{
+ "schema": 1,
+ "id": "gen8-counter-answers-a-photon-geyser-made-physical",
+ "notes": [
+  "Gen 8 singles: Leafeon's Attack beats its Special Attack, so its Photon Geyser is physical as it is used (`onModifyMove`), and Relicanth's Counter answers it with twice the damage. Showdown's Counter reads the category of the move as used (`getCategory` of the ActiveMove); the engine records it so for every move whose own `onModifyMove` changes it (DESIGN.md R-M8-174)"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Leafeon",
+    "species": "Leafeon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Photon Geyser"
+    ],
+    "ability": "Leaf Guard",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Relicanth",
+    "species": "Relicanth",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Counter"
+    ],
+    "ability": "Swift Swim",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Photon Geyser",
+   "p2": "move Counter"
+  }
+ ]
+}

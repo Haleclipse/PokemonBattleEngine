@@ -1,0 +1,71 @@
+{
+ "schema": 1,
+ "id": "gen7-no-guard-reaches-a-hiding-target",
+ "notes": [
+  "No Guard: the holder's moves hit even a target in the air or underground"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Body Slam"
+    ],
+    "ability": "No Guard"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Fly",
+     "Dig",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Body Slam",
+   "p2": "move Fly"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Fly"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Dig"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Dig"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,63 @@
+{
+ "schema": 1,
+ "id": "gen9-anger-shell-before-the-sitrus-berry",
+ "notes": [
+  "Gen 9 Anger Shell: the second Seismic Toss takes Klawf from 95 / 145 to 45; the Sitrus Berry waits through the hit's `Update`, Anger Shell raises Attack, Special Attack and Speed and lowers both defences at the move's end, and the berry goes at the action's `Update`"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Klawf",
+    "species": "Klawf",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Sitrus Berry",
+    "ability": "Anger Shell"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,87 @@
+{
+ "schema": 1,
+ "id": "gen5-doubles-razor-wind",
+ "notes": [
+  "Gen 5 doubles Razor Wind: charges, then hits both foes (spread) with a raised critical-hit ratio; a foe knocked out in between leaves the release to the other (the locked request still asks for a target, which changes nothing)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "doubles",
+  "format": "gen5doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Winder",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Razor Wind",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Ally",
+    "species": "Machamp",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Close Combat",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tail Whip"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Weak",
+    "species": "Snorlax",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Tail Whip"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Razor Wind, move Harden",
+   "p2": "move Tail Whip, move Tail Whip"
+  },
+  {
+   "p1": "move Razor Wind 1, move Harden",
+   "p2": "move Tail Whip, move Tail Whip"
+  },
+  {
+   "p1": "move Razor Wind, move Close Combat 2",
+   "p2": "move Tail Whip, move Tail Whip"
+  },
+  {
+   "p1": "move Razor Wind 1, move Harden",
+   "p2": "move Tail Whip"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

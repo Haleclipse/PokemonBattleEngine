@@ -1,0 +1,107 @@
+{
+ "schema": 1,
+ "id": "gen8-psycho-shift",
+ "notes": [
+  "Psycho Shift: fails without a status of the user's own (Stomping Tantrum then doubles); passes the burn over and cures the user; a target with a status, one immune to it, or behind a Substitute makes it fail and the user keeps its status"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Psycho Shift",
+     "Stomping Tantrum",
+     "Harden"
+    ],
+    "ability": "Run Away",
+    "item": "Flame Orb"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Lax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Dog",
+    "species": "Arcanine",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Doll",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Substitute",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Psycho Shift",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Stomping Tantrum",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Psycho Shift",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Psycho Shift",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Psycho Shift",
+   "p2": "switch Dog"
+  },
+  {
+   "p1": "move Stomping Tantrum",
+   "p2": "switch Doll"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Substitute"
+  },
+  {
+   "p1": "move Psycho Shift",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

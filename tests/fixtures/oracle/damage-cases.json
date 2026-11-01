@@ -1,0 +1,1486 @@
+{
+  "schema": 1,
+  "notes": [
+    "Hand-written L2 damage cases. Stats are final pre-boost values on both sides (calc rawStats override).",
+    "Attacker is always faster than the defender so the attacking move resolves first.",
+    "Regenerate damage-expected.json with tools/gen-damage-fixtures.py only together with a provenance bump."
+  ],
+  "cases": [
+    {
+      "id": "gen9-tackle-stab-neutral",
+      "generation": 9,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "move": "Tackle",
+      "field": {}
+    },
+    {
+      "id": "gen9-earthquake-super-effective",
+      "generation": 9,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Ground"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Electric"
+        ],
+        "ability": "None"
+      },
+      "move": "Earthquake",
+      "field": {}
+    },
+    {
+      "id": "gen9-flamethrower-sun",
+      "generation": 9,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Fire"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "move": "Flamethrower",
+      "field": {
+        "weather": "Sun"
+      }
+    },
+    {
+      "id": "gen9-thunderbolt-electric-terrain",
+      "generation": 9,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Electric"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "move": "Thunderbolt",
+      "field": {
+        "terrain": "Electric"
+      }
+    },
+    {
+      "id": "gen9-acrobatics-no-item",
+      "generation": 9,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Flying"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "move": "Acrobatics",
+      "field": {}
+    },
+    {
+      "id": "gen9-technician-tackle",
+      "generation": 9,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "Technician"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "move": "Tackle",
+      "field": {}
+    },
+    {
+      "id": "gen9-huge-power-tackle",
+      "generation": 9,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "Huge Power"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "move": "Tackle",
+      "field": {}
+    },
+    {
+      "id": "gen9-choice-band-tackle",
+      "generation": 9,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None",
+        "item": "Choice Band"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "move": "Tackle",
+      "field": {}
+    },
+    {
+      "id": "gen9-burned-tackle",
+      "generation": 9,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None",
+        "status": "brn"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "move": "Tackle",
+      "field": {}
+    },
+    {
+      "id": "gen9-earthquake-doubles-spread",
+      "generation": 9,
+      "mode": "doubles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Ground"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "move": "Earthquake",
+      "field": {}
+    },
+    {
+      "id": "gen9-earthquake-doubles-spread-rounding",
+      "generation": 9,
+      "mode": "doubles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 185,
+          "atk": 150,
+          "def": 100,
+          "spa": 90,
+          "spd": 80,
+          "spe": 100
+        },
+        "types": [
+          "Ice",
+          "Ground"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 175,
+          "atk": 140,
+          "def": 120,
+          "spa": 170,
+          "spd": 140,
+          "spe": 110
+        },
+        "types": [
+          "Dragon",
+          "Fire"
+        ],
+        "ability": "None"
+      },
+      "move": "Earthquake",
+      "field": {}
+    },
+    {
+      "id": "gen9-close-combat-uneven-stats",
+      "generation": 9,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 167,
+          "def": 90,
+          "spa": 100,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Fighting"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 400,
+          "atk": 100,
+          "def": 123,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "move": "Close Combat",
+      "field": {}
+    },
+    {
+      "id": "gen4-tackle-overlay",
+      "generation": 4,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "move": "Tackle",
+      "field": {}
+    },
+    {
+      "id": "gen4-flamethrower-sun",
+      "generation": 4,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Fire"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "move": "Flamethrower",
+      "field": {
+        "weather": "Sun"
+      }
+    },
+    {
+      "id": "gen3-flamethrower-sun",
+      "generation": 3,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Fire"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "move": "Flamethrower",
+      "field": {
+        "weather": "Sun"
+      }
+    },
+    {
+      "id": "gen3-tackle-overlay",
+      "generation": 3,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "move": "Tackle",
+      "field": {}
+    },
+    {
+      "id": "gen4-burned-tackle",
+      "generation": 4,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None",
+        "status": "brn"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "move": "Tackle",
+      "field": {}
+    },
+    {
+      "id": "gen2-body-slam-stab-neutral",
+      "generation": 2,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 200,
+          "atk": 150,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 200,
+          "atk": 100,
+          "def": 120,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Water"
+        ],
+        "ability": "None"
+      },
+      "move": "Body Slam",
+      "field": {}
+    },
+    {
+      "id": "gen2-surf-rain-mystic-water-super-effective",
+      "generation": 2,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 200,
+          "atk": 100,
+          "def": 100,
+          "spa": 180,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Water"
+        ],
+        "ability": "None",
+        "item": "Mystic Water"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 400,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 120,
+          "spe": 90
+        },
+        "types": [
+          "Fire"
+        ],
+        "ability": "None"
+      },
+      "move": "Surf",
+      "field": {
+        "weather": "Rain"
+      }
+    },
+    {
+      "id": "gen2-thunderbolt-double-resisted-magnet",
+      "generation": 2,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 200,
+          "atk": 100,
+          "def": 100,
+          "spa": 160,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Electric"
+        ],
+        "ability": "None",
+        "item": "Magnet"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 200,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 110,
+          "spe": 90
+        },
+        "types": [
+          "Grass",
+          "Dragon"
+        ],
+        "ability": "None"
+      },
+      "move": "Thunderbolt",
+      "field": {}
+    },
+    {
+      "id": "gen2-earthquake-high-stat-rollover",
+      "generation": 2,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 200,
+          "atk": 300,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Ground"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 400,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "move": "Earthquake",
+      "field": {}
+    },
+    {
+      "id": "gen2-tackle-minimal-damage-no-roll",
+      "generation": 2,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 200,
+          "atk": 10,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 200,
+          "atk": 100,
+          "def": 300,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Rock",
+          "Steel"
+        ],
+        "ability": "None"
+      },
+      "move": "Tackle",
+      "field": {}
+    },
+    {
+      "id": "gen2-twister-dragon-fang-inert",
+      "generation": 2,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 200,
+          "atk": 100,
+          "def": 100,
+          "spa": 150,
+          "spd": 100,
+          "spe": 100
+        },
+        "types": [
+          "Dragon"
+        ],
+        "ability": "None",
+        "item": "Dragon Fang"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 200,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 120,
+          "spe": 90
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "move": "Twister",
+      "field": {}
+    },
+    {
+      "id": "gen1-body-slam-stab",
+      "generation": 1,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 200,
+          "atk": 155,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 120
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 400,
+          "atk": 100,
+          "def": 118,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Water"
+        ],
+        "ability": "None"
+      },
+      "move": "Body Slam",
+      "field": {}
+    },
+    {
+      "id": "gen1-thunderbolt-special-super-effective",
+      "generation": 1,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 200,
+          "atk": 100,
+          "def": 100,
+          "spa": 165,
+          "spd": 165,
+          "spe": 120
+        },
+        "types": [
+          "Electric"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 400,
+          "atk": 100,
+          "def": 100,
+          "spa": 111,
+          "spd": 111,
+          "spe": 90
+        },
+        "types": [
+          "Water",
+          "Flying"
+        ],
+        "ability": "None"
+      },
+      "move": "Thunderbolt",
+      "field": {}
+    },
+    {
+      "id": "gen1-earthquake-per-type-rounding",
+      "generation": 1,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 200,
+          "atk": 137,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 120
+        },
+        "types": [
+          "Ground"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 400,
+          "atk": 100,
+          "def": 93,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Grass",
+          "Poison"
+        ],
+        "ability": "None"
+      },
+      "move": "Earthquake",
+      "field": {}
+    },
+    {
+      "id": "gen1-rock-slide-rollover",
+      "generation": 1,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 200,
+          "atk": 290,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 120
+        },
+        "types": [
+          "Rock"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 400,
+          "atk": 100,
+          "def": 105,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Fire"
+        ],
+        "ability": "None"
+      },
+      "move": "Rock Slide",
+      "field": {}
+    },
+    {
+      "id": "gen5-crunch-uneven-stats",
+      "generation": 5,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 147,
+          "def": 90,
+          "spa": 100,
+          "spd": 100,
+          "spe": 110
+        },
+        "types": [
+          "Dark"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 400,
+          "atk": 100,
+          "def": 121,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Psychic"
+        ],
+        "ability": "None"
+      },
+      "move": "Crunch",
+      "field": {}
+    },
+    {
+      "id": "gen5-surf-rain-doubles-spread",
+      "generation": 5,
+      "mode": "doubles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 90,
+          "spa": 139,
+          "spd": 100,
+          "spe": 110
+        },
+        "types": [
+          "Water"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 400,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 117,
+          "spe": 90
+        },
+        "types": [
+          "Rock"
+        ],
+        "ability": "None"
+      },
+      "move": "Surf",
+      "field": {
+        "weather": "Rain"
+      }
+    },
+    {
+      "id": "gen6-flamethrower-uneven-stats",
+      "generation": 6,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 90,
+          "spa": 151,
+          "spd": 100,
+          "spe": 110
+        },
+        "types": [
+          "Fire"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 400,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 109,
+          "spe": 90
+        },
+        "types": [
+          "Grass",
+          "Steel"
+        ],
+        "ability": "None"
+      },
+      "move": "Flamethrower",
+      "field": {}
+    },
+    {
+      "id": "gen6-earthquake-resisted",
+      "generation": 6,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 163,
+          "def": 90,
+          "spa": 100,
+          "spd": 100,
+          "spe": 110
+        },
+        "types": [
+          "Ground"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 400,
+          "atk": 100,
+          "def": 97,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Bug"
+        ],
+        "ability": "None"
+      },
+      "move": "Earthquake",
+      "field": {}
+    },
+    {
+      "id": "gen7-thunderbolt-electric-terrain",
+      "generation": 7,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 90,
+          "spa": 143,
+          "spd": 100,
+          "spe": 110
+        },
+        "types": [
+          "Electric"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 400,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 126,
+          "spe": 90
+        },
+        "types": [
+          "Water"
+        ],
+        "ability": "None"
+      },
+      "move": "Thunderbolt",
+      "field": {
+        "terrain": "Electric"
+      }
+    },
+    {
+      "id": "gen7-body-slam-uneven-stats",
+      "generation": 7,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 158,
+          "def": 90,
+          "spa": 100,
+          "spd": 100,
+          "spe": 110
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 400,
+          "atk": 100,
+          "def": 113,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Fighting"
+        ],
+        "ability": "None"
+      },
+      "move": "Body Slam",
+      "field": {}
+    },
+    {
+      "id": "gen8-thunderbolt-electric-terrain",
+      "generation": 8,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 90,
+          "spa": 143,
+          "spd": 100,
+          "spe": 110
+        },
+        "types": [
+          "Electric"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 400,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 126,
+          "spe": 90
+        },
+        "types": [
+          "Water"
+        ],
+        "ability": "None"
+      },
+      "move": "Thunderbolt",
+      "field": {
+        "terrain": "Electric"
+      }
+    },
+    {
+      "id": "gen8-ice-beam-uneven-stats",
+      "generation": 8,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 90,
+          "spa": 152,
+          "spd": 100,
+          "spe": 110
+        },
+        "types": [
+          "Ice"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 400,
+          "atk": 100,
+          "def": 100,
+          "spa": 100,
+          "spd": 104,
+          "spe": 90
+        },
+        "types": [
+          "Dragon",
+          "Ground"
+        ],
+        "ability": "None"
+      },
+      "move": "Ice Beam",
+      "field": {}
+    },
+    {
+      "id": "gen9-foul-play-target-attack",
+      "generation": 9,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 80,
+          "def": 100,
+          "spa": 100,
+          "spd": 100,
+          "spe": 110
+        },
+        "types": [
+          "Dark"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 400,
+          "atk": 171,
+          "def": 113,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Psychic"
+        ],
+        "ability": "None"
+      },
+      "move": "Foul Play",
+      "field": {}
+    },
+    {
+      "id": "gen9-body-press-user-defense",
+      "generation": 9,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 90,
+          "def": 157,
+          "spa": 100,
+          "spd": 100,
+          "spe": 110
+        },
+        "types": [
+          "Fighting",
+          "Steel"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 400,
+          "atk": 100,
+          "def": 119,
+          "spa": 100,
+          "spd": 100,
+          "spe": 90
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability": "None"
+      },
+      "move": "Body Press",
+      "field": {}
+    },
+    {
+      "id": "gen9-psyshock-target-defense",
+      "generation": 9,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 90,
+          "spa": 152,
+          "spd": 100,
+          "spe": 110
+        },
+        "types": [
+          "Psychic"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 400,
+          "atk": 100,
+          "def": 87,
+          "spa": 100,
+          "spd": 163,
+          "spe": 90
+        },
+        "types": [
+          "Poison"
+        ],
+        "ability": "None"
+      },
+      "move": "Psyshock",
+      "field": {}
+    },
+    {
+      "id": "gen5-psyshock-sandstorm-rock",
+      "generation": 5,
+      "mode": "singles",
+      "attacker": {
+        "level": 50,
+        "stats": {
+          "hp": 300,
+          "atk": 100,
+          "def": 90,
+          "spa": 152,
+          "spd": 100,
+          "spe": 110
+        },
+        "types": [
+          "Psychic"
+        ],
+        "ability": "None"
+      },
+      "defender": {
+        "level": 50,
+        "stats": {
+          "hp": 400,
+          "atk": 100,
+          "def": 97,
+          "spa": 100,
+          "spd": 121,
+          "spe": 90
+        },
+        "types": [
+          "Rock"
+        ],
+        "ability": "None"
+      },
+      "move": "Psyshock",
+      "field": {
+        "weather": "Sand"
+      }
+    }
+  ]
+}

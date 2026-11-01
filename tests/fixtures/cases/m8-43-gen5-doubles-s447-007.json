@@ -1,0 +1,94 @@
+{
+ "schema": 1,
+ "id": "m8-43-gen5-doubles-s447-007",
+ "notes": [
+  "Nightly 37 gen5-doubles-s447-007, minimized: a foreseen strike (Focus Band, a pinch berry, a gem, AfterMoveSecondary) as Showdown runs it"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "doubles",
+  "format": "gen5doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Medicham",
+    "species": "Medicham",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Doom Desire",
+     "Telekinesis",
+     "Smack Down"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Forretress",
+    "species": "Forretress",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Future Sight",
+     "Telekinesis",
+     "Doom Desire"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Pikachu",
+    "species": "Pikachu",
+    "level": 53,
+    "nature": "Hardy",
+    "moves": [
+     "Future Sight",
+     "Telekinesis",
+     "Doom Desire"
+    ],
+    "ability": "Run Away",
+    "item": "Starf Berry",
+    "gender": "F"
+   },
+   {
+    "label": "Whimsicott",
+    "species": "Whimsicott",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Smack Down",
+     "Telekinesis",
+     "Future Sight"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   56873,
+   5192,
+   32473,
+   10816
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Doom Desire 1, move Future Sight 2",
+   "p2": "move Future Sight 1, move Smack Down 2"
+  },
+  {
+   "p1": "move Telekinesis 1, move Telekinesis 2",
+   "p2": "move Telekinesis 1, move Telekinesis 2"
+  },
+  {
+   "p1": "move Smack Down 1, move Doom Desire 2",
+   "p2": "move Doom Desire 1, move Future Sight 2"
+  }
+ ]
+}

@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "id": "m8-gen5-flame-body-rolls-against-a-final-gambit-user",
+  "notes": [
+    "Gen 5: Zekrom's Final Gambit (contact in Gen 5) knocks out Diglett. Zekrom is down before the hit's reactions, yet Diglett's Flame Body still rolls: Showdown's onDamagingHit has no HP check, unlike the Gen 3-4 cartridges (DESIGN.md R-M8-152)",
+    "promoted from m8-gen5-singles-s750-015-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 5,
+    "mode": "singles",
+    "format": "gen5customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Diglett",
+        "species": "Diglett",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Sludge Bomb",
+          "Odor Sleuth",
+          "Poison Jab"
+        ],
+        "ability": "Flame Body",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Jynx",
+        "species": "Jynx",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Grass Whistle",
+          "Odor Sleuth",
+          "Lovely Kiss"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Zekrom",
+        "species": "Zekrom",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Final Gambit"
+        ],
+        "ability": "Run Away"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      42364,
+      18498,
+      33335,
+      14434
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Sludge Bomb",
+      "p2": "move Grass Whistle"
+    },
+    {
+      "p1": "move Odor Sleuth",
+      "p2": "move Odor Sleuth"
+    },
+    {
+      "p1": "move Poison Jab",
+      "p2": "move Lovely Kiss"
+    },
+    {
+      "p2": "switch Zekrom"
+    },
+    {
+      "p1": "move Sludge Bomb",
+      "p2": "move Final Gambit"
+    }
+  ]
+}

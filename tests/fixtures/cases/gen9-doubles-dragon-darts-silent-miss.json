@@ -1,0 +1,99 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-dragon-darts-silent-miss",
+ "notes": [
+  "Dragon Darts against an evasive partner: a missed dart there is silent (no -miss while smartTarget holds) and both hit the target"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Dragapult",
+    "species": "Dragapult",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Dragon Darts",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Double Team",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Double Team"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Double Team"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Double Team"
+  },
+  {
+   "p1": "move Dragon Darts 1, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Dragon Darts 1, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Dragon Darts 1, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Dragon Darts 1, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

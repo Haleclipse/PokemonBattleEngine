@@ -1,0 +1,69 @@
+{
+ "schema": 1,
+ "id": "gen3-sleep-talk-into-pressure",
+ "notes": [
+  "Gen 3: Absol's Spore puts Snorlax to sleep; its Sleep Talk calls Tackle at Absol and pays its own PP alone: pokeemerald's Sleep Talk takes 1 itself and sets `HITMARKER_NO_PPDEDUCT`, so the called move's `ppreduce` takes nothing — Absol's Pressure costs nothing (issues.md I167)"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sleep Talk",
+     "Tackle"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Absol",
+    "species": "Absol",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spore",
+     "Harden"
+    ],
+    "ability": "Pressure",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Tackle",
+   "p2": "move Spore"
+  },
+  {
+   "p1": "move Sleep Talk",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Sleep Talk",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Sleep Talk",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

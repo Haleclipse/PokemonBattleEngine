@@ -1,0 +1,189 @@
+{
+  "schema": 1,
+  "id": "gen7-doubles-moongeist-beam-past-tangled-feet",
+  "notes": [
+    "Nightly 30 (m8-gen7-doubles-s423-010): Zangoose's Moongeist Beam ignores the confused Magnezone's Tangled Feet; the replay driver asks the engine's accuracy with the move under way (active_move), so it plans no accuracy roll",
+    "promoted from m8-gen7-doubles-s423-010-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 7,
+    "mode": "doubles",
+    "format": "gen7doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Tirtouga",
+        "species": "Tirtouga",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Flame Burst",
+          "Trick",
+          "Moongeist Beam",
+          "Bestow"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Metagross",
+        "species": "Metagross",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Covet",
+          "Trick",
+          "Bug Bite"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Murkrow",
+        "species": "Murkrow",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Trick",
+          "Thief",
+          "Bestow"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Magnezone",
+        "species": "Magnezone",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Petal Dance",
+          "Thrash"
+        ],
+        "ability": "Tangled Feet"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Palkia",
+        "species": "Palkia",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Uproar",
+          "Bestow"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Regirock",
+        "species": "Regirock",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Knock Off",
+          "Trick",
+          "Bestow"
+        ],
+        "ability": "No Guard"
+      },
+      {
+        "label": "Munna",
+        "species": "Munna",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Trick",
+          "Incinerate",
+          "Bestow"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Zangoose",
+        "species": "Zangoose",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Core Enforcer",
+          "Moongeist Beam"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      28820,
+      749,
+      7377,
+      35368
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Flame Burst 1, move Covet 2",
+      "p2": "move Uproar, move Knock Off 1"
+    },
+    {
+      "p1": "move 2 1, move 2 2",
+      "p2": "move 1, move 2 2"
+    },
+    {
+      "p1": "move 3 1, move 3 2",
+      "p2": "move 1, move 3 1"
+    },
+    {
+      "p1": "move Flame Burst 1, move Covet 2",
+      "p2": "move Uproar, move Trick 2"
+    },
+    {
+      "p1": "switch Murkrow, move 2 1",
+      "p2": "move 1, move 3 1"
+    },
+    {
+      "p1": "move 1 2, move 3 1",
+      "p2": "move 1, move 1 2"
+    },
+    {
+      "p1": "pass, switch Tirtouga"
+    },
+    {
+      "p1": "move Thief 2, move Bestow 1",
+      "p2": "move Bestow 1, move Trick 2"
+    },
+    {
+      "p1": "move Bestow 2, move Flame Burst 1",
+      "p2": "move Uproar, move Knock Off 1"
+    },
+    {
+      "p1": "switch Magnezone, pass"
+    },
+    {
+      "p1": "move 1, move 2 2",
+      "p2": "move 1, move 2 2"
+    },
+    {
+      "p2": "pass, switch Munna"
+    },
+    {
+      "p1": "move 1, pass",
+      "p2": "move 1, move 2"
+    },
+    {
+      "p1": "move Thrash, pass",
+      "p2": "switch Zangoose, move Bestow 1"
+    },
+    {
+      "p1": "move 1, pass",
+      "p2": "move 1, move 1 1"
+    },
+    {
+      "p1": "move Thrash, pass",
+      "p2": "move Moongeist Beam 1, move Bestow 1"
+    }
+  ]
+}

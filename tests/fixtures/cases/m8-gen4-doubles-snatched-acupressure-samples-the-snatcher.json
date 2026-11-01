@@ -1,0 +1,183 @@
+{
+  "schema": 1,
+  "id": "m8-gen4-doubles-snatched-acupressure-samples-the-snatcher",
+  "notes": [
+    "Nightly 52: a snatched Acupressure raises one of its snatcher's stats: the sample reads the snatcher's stages (DESIGN.md R-M8-96)",
+    "promoted from m8-gen4-doubles-s508-019-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "doubles",
+    "format": "gen4doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Kadabra",
+        "species": "Kadabra",
+        "level": 46,
+        "nature": "Hardy",
+        "moves": [
+          "Present",
+          "Acupressure",
+          "Natural Gift",
+          "Haze"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Porygon",
+        "species": "Porygon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Seed Bomb",
+          "Acupressure",
+          "Rock Throw",
+          "Haze"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Rampardos",
+        "species": "Rampardos",
+        "level": 53,
+        "nature": "Hardy",
+        "moves": [
+          "Egg Bomb",
+          "Acupressure",
+          "Haze"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Ivysaur",
+        "species": "Ivysaur",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Me First",
+          "Acupressure",
+          "Snatch",
+          "Haze"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Grovyle",
+        "species": "Grovyle",
+        "level": 54,
+        "nature": "Hardy",
+        "moves": [
+          "Nature Power",
+          "Acupressure",
+          "Synthesis",
+          "Heart Swap"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Ditto",
+        "species": "Ditto",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Morning Sun",
+          "Acupressure",
+          "Moonlight",
+          "Heart Swap"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Magneton",
+        "species": "Magneton",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Magic Coat"
+        ],
+        "ability": "Run Away"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      37668,
+      4787,
+      57413,
+      39624
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Present 1, move Seed Bomb 2",
+      "p2": "move Me First 1, move Nature Power"
+    },
+    {
+      "p1": "move Acupressure -2, move Acupressure -1",
+      "p2": "move Acupressure -2, move Acupressure -1"
+    },
+    {
+      "p1": "move Natural Gift 1, move Rock Throw 2",
+      "p2": "move Snatch, move Synthesis"
+    },
+    {
+      "p1": "switch Rampardos, move Haze",
+      "p2": "move Haze, move Heart Swap 2"
+    },
+    {
+      "p1": "move Haze, move Seed Bomb 1",
+      "p2": "move Me First 1, move Nature Power"
+    },
+    {
+      "p1": "move Egg Bomb 2, move Acupressure -1",
+      "p2": "move Acupressure -2, move Acupressure -1"
+    },
+    {
+      "p2": "pass, switch Ditto"
+    },
+    {
+      "p1": "switch Kadabra, move Haze",
+      "p2": "move Haze, move Heart Swap 2"
+    },
+    {
+      "p1": "move Haze, move Acupressure -1",
+      "p2": "move Acupressure -2, move Acupressure -1"
+    },
+    {
+      "p1": "move Acupressure -2, move Acupressure -1",
+      "p2": "move Acupressure -2, move Acupressure -1"
+    },
+    {
+      "p1": "move Natural Gift 1, move Rock Throw 2",
+      "p2": "move Snatch, move Moonlight"
+    },
+    {
+      "p1": "switch Rampardos, move Haze",
+      "p2": "move Haze, move Heart Swap 2"
+    },
+    {
+      "p1": "move Haze, move Seed Bomb 1",
+      "p2": "move Me First 1, move Morning Sun"
+    },
+    {
+      "p1": "move Egg Bomb 2, move Acupressure -1",
+      "p2": "move Acupressure -2, move Acupressure -1"
+    },
+    {
+      "p2": "pass, switch Magneton"
+    },
+    {
+      "p1": "move Acupressure -2, move Rock Throw 1",
+      "p2": "move Snatch, move Magic Coat"
+    }
+  ]
+}

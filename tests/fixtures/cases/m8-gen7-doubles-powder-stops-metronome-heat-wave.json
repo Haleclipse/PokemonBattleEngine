@@ -1,0 +1,232 @@
+{
+  "schema": 1,
+  "id": "m8-gen7-doubles-powder-stops-metronome-heat-wave",
+  "notes": [
+    "Gen 7 doubles: Tauros under Powder uses Metronome, which calls Heat Wave; Powder blows it up at TryMove, after the call: the replay plans Metronome's draw before the Powder stop (DESIGN.md R-M8-108)",
+    "promoted from m8-gen7-doubles-s550-010-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 7,
+    "mode": "doubles",
+    "format": "gen7doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Tauros",
+        "species": "Tauros",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Acid Armor",
+          "Powder",
+          "Tail Glow",
+          "Metronome"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Relicanth",
+        "species": "Relicanth",
+        "level": 52,
+        "nature": "Hardy",
+        "moves": [
+          "Baby-Doll Eyes",
+          "Powder",
+          "Swords Dance",
+          "Metronome"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Porygon2",
+        "species": "Porygon2",
+        "level": 49,
+        "nature": "Hardy",
+        "moves": [
+          "Noble Roar",
+          "Powder",
+          "Charm",
+          "Metronome"
+        ],
+        "ability": "Run Away"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Krabby",
+        "species": "Krabby",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Harden",
+          "Powder",
+          "Nasty Plot",
+          "Metronome"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Charmander",
+        "species": "Charmander",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Iron Defense",
+          "Powder",
+          "Fake Tears",
+          "Metronome"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Ekans",
+        "species": "Ekans",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Double Team",
+          "Powder",
+          "Screech",
+          "Metronome"
+        ],
+        "ability": "Liquid Ooze",
+        "gender": "F"
+      },
+      {
+        "label": "Buneary",
+        "species": "Buneary",
+        "level": 46,
+        "nature": "Hardy",
+        "moves": [
+          "Dragon Dance",
+          "Powder",
+          "Bulk Up",
+          "Metronome"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      53396,
+      55503,
+      13583,
+      19499
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Acid Armor, move Baby-Doll Eyes 1",
+      "p2": "move Harden, move Iron Defense"
+    },
+    {
+      "p1": "move Powder 2, move Powder 1",
+      "p2": "move Powder 1, move Powder 2"
+    },
+    {
+      "p1": "move Tail Glow, move Swords Dance",
+      "p2": "move Nasty Plot, move Fake Tears 1"
+    },
+    {
+      "p1": "switch Porygon2, move Metronome",
+      "p2": "switch Ekans, move Metronome"
+    },
+    {
+      "p1": "move Metronome, move Baby-Doll Eyes 2",
+      "p2": "move Metronome, move Iron Defense"
+    },
+    {
+      "p1": "move Noble Roar 1, move Powder 2",
+      "p2": "move Double Team, move Powder 2"
+    },
+    {
+      "p1": "move Powder 1, move Swords Dance",
+      "p2": "move Powder 1, move Fake Tears 2"
+    },
+    {
+      "p1": "switch Tauros, move Metronome",
+      "p2": "switch Krabby, move Metronome"
+    },
+    {
+      "p1": "move Tail Glow, move Baby-Doll Eyes 2",
+      "p2": "move Nasty Plot, move Iron Defense"
+    },
+    {
+      "p1": "move Metronome, move Powder 1",
+      "p2": "move Metronome, move Powder 1"
+    },
+    {
+      "p1": "move Acid Armor, move Swords Dance",
+      "p2": "move Harden, move Fake Tears 2"
+    },
+    {
+      "p1": "switch Porygon2, move Metronome",
+      "p2": "switch Ekans, move Metronome"
+    },
+    {
+      "p1": "move Powder 2, move Baby-Doll Eyes 1",
+      "p2": "move Powder 1, move Iron Defense"
+    },
+    {
+      "p1": "move Charm 2, move Powder 1",
+      "p2": "move Screech 2, move Powder 1"
+    },
+    {
+      "p1": "move Metronome, move Swords Dance",
+      "p2": "move Metronome, move Fake Tears 2"
+    },
+    {
+      "p2": "pass, switch Krabby"
+    },
+    {
+      "p1": "switch Tauros, move Metronome",
+      "p2": "switch Buneary, move Metronome"
+    },
+    {
+      "p1": "move Acid Armor, move Baby-Doll Eyes 2",
+      "p2": "move Dragon Dance, move Harden"
+    },
+    {
+      "p1": "move Powder 1, move Powder 2",
+      "p2": "move Powder 1, move Powder 2"
+    },
+    {
+      "p1": "switch Porygon2, move Metronome",
+      "p2": "switch Ekans, move Metronome"
+    },
+    {
+      "p2": "switch Buneary, pass"
+    },
+    {
+      "p1": "move 4, move 1 1",
+      "p2": "move 4, move 1"
+    },
+    {
+      "p1": "move Noble Roar 2, move Powder 1",
+      "p2": "move Dragon Dance, move Powder 1"
+    },
+    {
+      "p1": "move Powder 2, move Swords Dance",
+      "p2": "move Powder 2, move Nasty Plot"
+    },
+    {
+      "p1": "switch Tauros, move Metronome",
+      "p2": "move Bulk Up, move Metronome"
+    },
+    {
+      "p1": "move Tail Glow, move Swords Dance",
+      "p2": "move Metronome, move Harden"
+    },
+    {
+      "p1": "move Metronome, move Swords Dance",
+      "p2": "move Dragon Dance, move Powder 1"
+    }
+  ]
+}

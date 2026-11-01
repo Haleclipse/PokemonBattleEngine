@@ -1,0 +1,79 @@
+{
+ "schema": 1,
+ "id": "gen5-magnet-rise-lifts-its-user-for-five-turns",
+ "notes": [
+  "Gen 5: Magnezone's Magnet Rise keeps Earthquake off it for five turns (`magnetrise`, residual 18), then it ends and Earthquake hits; Magnet Rise again while it lasts fails"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Magnezone",
+    "species": "Magnezone",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Magnet Rise",
+     "Harden"
+    ],
+    "ability": "Sturdy"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Hippowdon",
+    "species": "Hippowdon",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Earthquake"
+    ],
+    "gender": "M",
+    "ability": "Sand Stream"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Magnet Rise",
+   "p2": "move Earthquake"
+  },
+  {
+   "p1": "move Magnet Rise",
+   "p2": "move Earthquake"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Earthquake"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Earthquake"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Earthquake"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Earthquake"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Earthquake"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

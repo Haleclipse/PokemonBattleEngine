@@ -1,0 +1,79 @@
+{
+ "schema": 1,
+ "id": "gen4-fling-fails-for-multitype",
+ "notes": [
+  "Gen 4 (cartridge, issues.md I90): Arceus with Multitype flings nothing — its Leftovers stays — and neither does Mew holding a Griseous Orb, though Showdown's Fling only asks the item (which refuses only for Giratina)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Arceus",
+    "species": "Arceus",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Fling",
+     "Harden"
+    ],
+    "ability": "Multitype",
+    "item": "Leftovers"
+   },
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Fling",
+     "Harden"
+    ],
+    "ability": "Synchronize",
+    "item": "Griseous Orb"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Fling",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Mew",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Fling",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

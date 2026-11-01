@@ -1,0 +1,73 @@
+{
+ "schema": 1,
+ "id": "gen2-sleep-talk-heal-bell-cures-the-team",
+ "notes": [
+  "Gen 2: Miltank, put to sleep by Spore, uses Sleep Talk, which calls Heal Bell: the team is cured — Miltank itself and the benched, paralysed Magikarp. Gen 2's Sleep Talk (like Metronome) leaves no last move, so the move Heal Bell is reads the one under way (DESIGN.md R-M8-120)"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "gender": "M"
+   },
+   {
+    "label": "Miltank",
+    "species": "Miltank",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sleep Talk",
+     "Heal Bell"
+    ],
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Parasect",
+    "species": "Parasect",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spore",
+     "Thunder Wave"
+    ],
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash",
+   "p2": "move Thunder Wave"
+  },
+  {
+   "p1": "switch Miltank",
+   "p2": "move Spore"
+  },
+  {
+   "p1": "move Sleep Talk",
+   "p2": "move Spore"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

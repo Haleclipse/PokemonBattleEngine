@@ -1,0 +1,85 @@
+{
+ "schema": 1,
+ "id": "gen1-thrash-uses-and-accuracy",
+ "notes": [
+  "Gen 1 Thrash: 3-4 uses, the last confusing its user before it strikes; the accuracy byte carries from use to use while the foe raises its evasion"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Rager",
+    "species": "Tauros",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Thrash",
+     "Growl"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Wall",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Double Team",
+     "Softboiled"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Thrash",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move Thrash",
+   "p2": "move Softboiled"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Softboiled"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Softboiled"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Softboiled"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Softboiled"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

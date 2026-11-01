@@ -1,0 +1,59 @@
+{
+ "schema": 1,
+ "id": "gen8-protean-conversion-2-after-protean-b",
+ "notes": [
+  "Gen 8: Skarmory (Steel/Flying, slower) with Protean uses Conversion 2 after Snorlax's Tackle: Protean makes it Normal first (`-start … typechange|Normal|[from] ability: Protean`), so Steel is a candidate and Normal is not (the user's own types are left out) — the replay plans the drawn type on the types Protean left"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Skarmory",
+    "species": "Skarmory",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Conversion 2"
+    ],
+    "gender": "M",
+    "ability": "Protean"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Conversion 2",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Conversion 2",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   5,
+   6,
+   7,
+   8
+  ]
+ }
+}

@@ -1,0 +1,73 @@
+{
+ "schema": 1,
+ "id": "gen9-phantom-force-through-protect",
+ "notes": [
+  "Gen 9 Phantom Force: while it vanishes Earthquake, Surf and Gust all miss; it strikes through the foe's Protect (-activate \u2026 [broken]), and the foe's next Protect succeeds as a first one"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Phantom",
+    "species": "Dragapult",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Phantom Force",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Corviknight",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Earthquake",
+     "Surf",
+     "Gust",
+     "Protect"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Phantom Force",
+   "p2": "move Earthquake"
+  },
+  {
+   "p1": "move Phantom Force",
+   "p2": "move Protect"
+  },
+  {
+   "p1": "move Phantom Force",
+   "p2": "move Surf"
+  },
+  {
+   "p1": "move Phantom Force",
+   "p2": "move Gust"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Protect"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

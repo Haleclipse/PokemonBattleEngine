@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "gen8-disguise-ends-the-effectiveness-before-tar-shot",
+ "notes": [
+  "Gen 8: a tarred Mimikyu in disguise takes Torkoal's Ember: Disguise's `onEffectiveness` 0 ends the event (`runEvent` stops at a falsy value) before Tar Shot's step (priority -2), so the hit is neutral and Weakness Policy stays put (DESIGN.md R-M8-94)"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mimikyu",
+    "species": "Mimikyu",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "item": "Weakness Policy",
+    "ability": "Disguise",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Torkoal",
+    "species": "Torkoal",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Tar Shot",
+     "Ember"
+    ],
+    "ability": "White Smoke",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash",
+   "p2": "move Tar Shot"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Ember"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

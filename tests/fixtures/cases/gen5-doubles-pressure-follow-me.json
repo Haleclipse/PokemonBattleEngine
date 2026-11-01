@@ -1,0 +1,73 @@
+{
+ "schema": 1,
+ "id": "gen5-doubles-pressure-follow-me",
+ "notes": [
+  "Gen 5 doubles Pressure: Tackle aimed at the foe without it is pulled by Follow Me onto the holder, and costs 2 PP"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "doubles",
+  "format": "gen5doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "User",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Ally",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "FoeHolder",
+    "species": "Dusknoir",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Follow Me"
+    ],
+    "ability": "Pressure"
+   },
+   {
+    "label": "Foe",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Tackle 2, move Harden",
+   "p2": "move Follow Me, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

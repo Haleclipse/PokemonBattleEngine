@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "id": "m10-v-safety-goggles-name-themselves-against-powder",
+  "notes": [
+    "Gen 6 Doubles: Bastiodon's Safety Goggles keep Powder off (-activate|p|item: Safety Goggles|Powder, which @pkmn/protocol reads as -block): the item is named (R-M10-46)",
+    "promoted from m8-gen6-doubles-s1650-000-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 6,
+    "mode": "doubles",
+    "format": "gen6doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Cranidos",
+        "species": "Cranidos",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Powder"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Bastiodon",
+        "species": "Bastiodon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Powder"
+        ],
+        "ability": "Run Away",
+        "item": "Safety Goggles",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Luvdisc",
+        "species": "Luvdisc",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Powder"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Qwilfish",
+        "species": "Qwilfish",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Powder"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      33707,
+      13763,
+      24125,
+      29083
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Powder 1, move Powder 2",
+      "p2": "move Powder 1, move Powder 2"
+    }
+  ]
+}

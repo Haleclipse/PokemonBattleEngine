@@ -1,0 +1,174 @@
+{
+  "schema": 1,
+  "id": "m8-gen4-doubles-confusion-self-hit-without-flower-gift",
+  "notes": [
+    "Gen 4 doubles: Luxray with Flower Gift hits itself in confusion in the sun: pokeplatinum's CALC_SELF_HIT passes no field conditions, so the self-hit sees no sun and no Flower Gift (DESIGN.md R-M8-108)",
+    "promoted from m8-gen4-doubles-s550-008-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "doubles",
+    "format": "gen4doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Manaphy",
+        "species": "Manaphy",
+        "level": 54,
+        "nature": "Hardy",
+        "moves": [
+          "Head Smash",
+          "Baton Pass",
+          "Sunny Day"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Venonat",
+        "species": "Venonat",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Double-Edge",
+          "Baton Pass"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Mesprit",
+        "species": "Mesprit",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sunny Day",
+          "Chatter",
+          "Baton Pass"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Lopunny",
+        "species": "Lopunny",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Dynamic Punch"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Cleffa",
+        "species": "Cleffa",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Rock Climb"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Tentacruel",
+        "species": "Tentacruel",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Confusion",
+          "Sunny Day",
+          "Water Pulse",
+          "Baton Pass"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Registeel",
+        "species": "Registeel",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sunny Day",
+          "Baton Pass"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Luxray",
+        "species": "Luxray",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Cross Poison",
+          "Sunny Day",
+          "Sludge Bomb"
+        ],
+        "ability": "Flower Gift",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      23959,
+      16223,
+      36597,
+      57352
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Head Smash 1, move Double-Edge 2",
+      "p2": "move Rock Climb 1, move Confusion 2"
+    },
+    {
+      "p2": "switch Registeel, pass"
+    },
+    {
+      "p1": "move Baton Pass, move Baton Pass",
+      "p2": "move Sunny Day, move Sunny Day"
+    },
+    {
+      "p1": "switch Mesprit, pass"
+    },
+    {
+      "p1": "pass, switch Manaphy"
+    },
+    {
+      "p1": "move Baton Pass, move Sunny Day",
+      "p2": "move Baton Pass, move Baton Pass"
+    },
+    {
+      "p2": "pass, switch Luxray"
+    },
+    {
+      "p1": "switch Venonat, pass"
+    },
+    {
+      "p2": "switch Tentacruel, pass"
+    },
+    {
+      "p1": "move Double-Edge 1, move Head Smash 2",
+      "p2": "move Confusion 1, move Cross Poison 2"
+    },
+    {
+      "p1": "switch Mesprit, pass"
+    },
+    {
+      "p1": "move Sunny Day, move Baton Pass",
+      "p2": "move Sunny Day, move Sunny Day"
+    },
+    {
+      "p1": "pass, switch Lopunny"
+    },
+    {
+      "p1": "move Chatter 1, move Dynamic Punch 2",
+      "p2": "move Water Pulse 1, move Sludge Bomb 2"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+ "schema": 1,
+ "id": "gen9-steel-beam-self-knockout-faints-first",
+ "notes": [
+  "Steel Beam's self damage is `damage(…, true)` too: the user faints before the target, whose side wins"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Magnezone",
+    "species": "Magnezone",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Growl",
+     "Steel Beam"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Lechonk",
+    "species": "Lechonk",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Growl",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Growl",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Steel Beam",
+   "p2": "move Seismic Toss"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

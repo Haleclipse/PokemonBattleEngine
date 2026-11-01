@@ -1,0 +1,528 @@
+{
+ "schema": 1,
+ "id": "m9-a-sleeping-users-z-move-spends-no-z-power",
+ "notes": [
+  "R-M9-29: a sleeping Wailmer's Z-Stun Spore (its Mimic copy) is stopped by sleep before Showdown's `runMove` spends the Z power: no `-zpower`, no +1 Special Defense, and the side keeps its Z power. The engine used to spend it as the action began. Minimized from Nightly 20261020-114818 (m9-gen7ou-s113-006)."
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7ou"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Wailmer",
+    "species": "Wailmer",
+    "item": "Grassium Z",
+    "ability": "Oblivious",
+    "moves": [
+     "Rest",
+     "Mimic",
+     "Facade",
+     "Whirlpool"
+    ],
+    "nature": "Calm",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 4,
+     "atk": 84,
+     "def": 36,
+     "spa": 200,
+     "spd": 0,
+     "spe": 184
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 1
+    }
+   },
+   {
+    "label": "Duskull",
+    "species": "Duskull",
+    "ability": "Levitate",
+    "moves": [
+     "Ally Switch"
+    ],
+    "nature": "Quiet",
+    "gender": "F",
+    "shiny": true,
+    "level": 100,
+    "evs": {
+     "hp": 20,
+     "atk": 48,
+     "def": 84,
+     "spa": 124,
+     "spd": 104,
+     "spe": 128
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 74
+   },
+   {
+    "label": "Nick94",
+    "species": "Larvitar",
+    "ability": "Guts",
+    "moves": [
+     "Facade"
+    ],
+    "nature": "Modest",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 228,
+     "atk": 124,
+     "def": 0,
+     "spa": 0,
+     "spd": 156,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 22,
+     "spe": 31
+    },
+    "hpType": "Ice"
+   },
+   {
+    "label": "Vivillon",
+    "species": "Vivillon",
+    "ability": "Compound Eyes",
+    "moves": [
+     "Defog"
+    ],
+    "nature": "Calm",
+    "gender": "F",
+    "shiny": false,
+    "level": 83,
+    "evs": {
+     "hp": 40,
+     "atk": 156,
+     "def": 240,
+     "spa": 0,
+     "spd": 68,
+     "spe": 4
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 14,
+     "spe": 31
+    },
+    "happiness": 250
+   },
+   {
+    "label": "Silvally",
+    "species": "Silvally",
+    "ability": "RKS System",
+    "moves": [
+     "Roar",
+     "Draco Meteor",
+     "Confide",
+     "Fire Fang"
+    ],
+    "nature": "Serious",
+    "gender": "",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 188,
+     "atk": 92,
+     "def": 88,
+     "spa": 24,
+     "spd": 116,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Lumineon",
+    "species": "Lumineon",
+    "ability": "Storm Drain",
+    "moves": [
+     "Surf"
+    ],
+    "nature": "Bashful",
+    "gender": "F",
+    "shiny": false,
+    "level": 74,
+    "evs": {
+     "hp": 76,
+     "atk": 84,
+     "def": 192,
+     "spa": 92,
+     "spd": 0,
+     "spe": 64
+    },
+    "ivs": {
+     "hp": 6,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   }
+  ],
+  "p2": [
+   {
+    "label": "Cradily",
+    "species": "Cradily",
+    "ability": "Suction Cups",
+    "moves": [
+     "Mirror Coat",
+     "Brine",
+     "Rock Slide"
+    ],
+    "nature": "Serious",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 112,
+     "atk": 24,
+     "def": 228,
+     "spa": 0,
+     "spd": 136,
+     "spe": 8
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Cosmoem",
+    "species": "Cosmoem",
+    "ability": "Sturdy",
+    "moves": [
+     "Cosmic Power"
+    ],
+    "nature": "Hardy",
+    "gender": "",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 72,
+     "atk": 88,
+     "def": 168,
+     "spa": 48,
+     "spd": 0,
+     "spe": 132
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Goldeen",
+    "species": "Goldeen",
+    "ability": "Lightning Rod",
+    "moves": [
+     "Body Slam",
+     "Fury Attack",
+     "Soak"
+    ],
+    "nature": "Bashful",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 188,
+     "atk": 64,
+     "def": 44,
+     "spa": 176,
+     "spd": 0,
+     "spe": 36
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Manectric",
+    "species": "Manectric",
+    "ability": "Lightning Rod",
+    "moves": [
+     "Hyper Beam"
+    ],
+    "nature": "Gentle",
+    "gender": "F",
+    "shiny": true,
+    "level": 100,
+    "evs": {
+     "hp": 0,
+     "atk": 0,
+     "def": 192,
+     "spa": 128,
+     "spd": 116,
+     "spe": 72
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 1
+   },
+   {
+    "label": "Spewpa",
+    "species": "Spewpa",
+    "ability": "Friend Guard",
+    "moves": [
+     "Stun Spore",
+     "Poison Powder",
+     "Iron Defense",
+     "Bug Bite"
+    ],
+    "nature": "Mild",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 108,
+     "atk": 8,
+     "def": 16,
+     "spa": 124,
+     "spd": 252,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Monferno",
+    "species": "Monferno",
+    "ability": "Blaze",
+    "moves": [
+     "Rock Tomb",
+     "Encore",
+     "Facade",
+     "Protect"
+    ],
+    "nature": "Sassy",
+    "gender": "M",
+    "shiny": true,
+    "level": 100,
+    "evs": {
+     "hp": 68,
+     "atk": 128,
+     "def": 0,
+     "spa": 36,
+     "spd": 220,
+     "spe": 56
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   }
+  ]
+ },
+ "preview": {
+  "p1": "team 415632",
+  "p2": "team 631254"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   16627,
+   113,
+   1006,
+   31
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Defog",
+   "p2": "move Rock Tomb"
+  },
+  {
+   "p1": "switch 2"
+  },
+  {
+   "p1": "move Mimic",
+   "p2": "move Encore"
+  },
+  {
+   "p1": "move Facade",
+   "p2": "move Facade"
+  },
+  {
+   "p1": "move Whirlpool",
+   "p2": "move Protect"
+  },
+  {
+   "p1": "move Rest",
+   "p2": "move Rock Tomb"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 2"
+  },
+  {
+   "p1": "switch 3",
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Confide",
+   "p2": "move Fury Attack"
+  },
+  {
+   "p1": "move Fire Fang",
+   "p2": "move Soak"
+  },
+  {
+   "p1": "move Roar",
+   "p2": "move Body Slam"
+  },
+  {
+   "p1": "move Draco Meteor",
+   "p2": "move Poison Powder"
+  },
+  {
+   "p1": "move Confide",
+   "p2": "move Iron Defense"
+  },
+  {
+   "p1": "move Fire Fang",
+   "p2": "move Bug Bite"
+  },
+  {
+   "p1": "switch 3",
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Rest",
+   "p2": "move Rock Tomb"
+  },
+  {
+   "p1": "move Mimic",
+   "p2": "move Encore"
+  },
+  {
+   "p1": "move Facade",
+   "p2": "move Facade"
+  },
+  {
+   "p1": "move Whirlpool",
+   "p2": "move Protect"
+  },
+  {
+   "p1": "move Rest",
+   "p2": "move Rock Tomb"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 2"
+  },
+  {
+   "p1": "switch 3",
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Confide",
+   "p2": "move Iron Defense"
+  },
+  {
+   "p1": "move Fire Fang",
+   "p2": "move Bug Bite"
+  },
+  {
+   "p1": "move Roar",
+   "p2": "move Stun Spore"
+  },
+  {
+   "p1": "move Draco Meteor",
+   "p2": "move Encore"
+  },
+  {
+   "p1": "move Roar",
+   "p2": "move Cosmic Power"
+  },
+  {
+   "p1": "switch 3",
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Rest",
+   "p2": "move Stun Spore"
+  },
+  {
+   "p1": "move Mimic",
+   "p2": "move Poison Powder"
+  },
+  {
+   "p1": "move Facade",
+   "p2": "move Iron Defense"
+  },
+  {
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Whirlpool",
+   "p2": "move Rock Slide"
+  },
+  {
+   "p1": "move Rest",
+   "p2": "move Mirror Coat"
+  },
+  {
+   "p1": "move 2 zmove",
+   "p2": "move Brine"
+  }
+ ]
+}

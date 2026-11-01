@@ -1,0 +1,66 @@
+{
+ "schema": 1,
+ "id": "gen7-protean-every-move",
+ "notes": [
+  "Gen 6-8: Protean changes Greninja's type before every move: Ice for Ice Beam, Water for Water Pulse, Normal for Harden (status moves too)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Greninja",
+    "species": "Greninja",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Ice Beam",
+     "Water Pulse",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Protean"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Thunderbolt"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Ice Beam",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Water Pulse",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Thunderbolt"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

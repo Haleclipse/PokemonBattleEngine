@@ -1,0 +1,93 @@
+{
+ "schema": 1,
+ "id": "gen3-a-second-mimic-writes-its-own-slot",
+ "notes": [
+  "Gen 3: Smeargle's Mimic copies Splash over its Mimic slot, so its Sketch can copy Jolteon's Mimic into the Sketch slot; back from the bench it has two Mimics. The second one, chosen, spends its own PP and copies Splash into its own slot (pokeemerald's `gCurrMovePos` in `Cmd_ppreduce` and `Cmd_mimicattackcopy`; Showdown's lookup by id took the first Mimic's — issues.md I170, the oracle patched); the first Mimic is still there and fails, as Smeargle knows Splash"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Smeargle",
+    "species": "Smeargle",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Mimic",
+     "Sketch",
+     "Harden"
+    ],
+    "ability": "Own Tempo",
+    "gender": "M"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash",
+     "Mimic"
+    ],
+    "ability": "Volt Absorb",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Mimic",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Sketch",
+   "p2": "move Mimic"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

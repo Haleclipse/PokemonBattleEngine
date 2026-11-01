@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen9-pure-flying-roosts-into-normal",
+ "notes": [
+  "Gen 5+: Tornadus, pure Flying, is Normal while it roosts (`getTypes` fills an empty list with Normal): Gengar's Shadow Ball does not affect it that turn"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Tornadus",
+    "species": "Tornadus",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Roost",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Prankster"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gengar",
+    "species": "Gengar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Thunderbolt",
+     "Shadow Ball"
+    ],
+    "gender": "M",
+    "ability": "Cursed Body"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Thunderbolt"
+  },
+  {
+   "p1": "move Roost",
+   "p2": "move Shadow Ball"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Shadow Ball"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

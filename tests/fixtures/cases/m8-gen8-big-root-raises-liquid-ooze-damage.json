@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "id": "m8-gen8-big-root-raises-liquid-ooze-damage",
+  "notes": [
+    "Gen 8: Froslass (Big Root) drains Inteleon (Liquid Ooze) with Draining Kiss. Big Root also raises the damage Liquid Ooze deals (Bulbapedia's Big Root); Showdown's Gen 5+ chainModify comes too late for Liquid Ooze, patched in the oracle (issues.md I199, DESIGN.md R-M8-160)",
+    "promoted from m8-gen8-singles-s784-018-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 8,
+    "mode": "singles",
+    "format": "gen8customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Froslass",
+        "species": "Froslass",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Draining Kiss"
+        ],
+        "ability": "Run Away",
+        "item": "Big Root"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Inteleon",
+        "species": "Inteleon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Solar Blade"
+        ],
+        "ability": "Liquid Ooze",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      57139,
+      1060,
+      2525,
+      35977
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Draining Kiss",
+      "p2": "move Solar Blade"
+    }
+  ]
+}

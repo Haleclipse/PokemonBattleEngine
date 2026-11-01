@@ -1,0 +1,76 @@
+{
+ "schema": 1,
+ "id": "gen8-autotomize-contrary",
+ "notes": [
+  "Autotomize with Contrary: -2 Speed; at -6 it fails (the onTryHit limit follows Contrary; Stomping Tantrum doubles next); Shuckle (20.5 kg) goes down to 0.1 kg (Grass Knot 40 \u2192 20 power)"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Shuck",
+    "species": "Shuckle",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Autotomize",
+     "Harden",
+     "Stomping Tantrum"
+    ],
+    "ability": "Contrary"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Grass Knot",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Grass Knot"
+  },
+  {
+   "p1": "move Autotomize",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Autotomize",
+   "p2": "move Grass Knot"
+  },
+  {
+   "p1": "move Autotomize",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Autotomize",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Stomping Tantrum",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

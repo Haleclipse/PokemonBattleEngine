@@ -1,0 +1,69 @@
+{
+ "schema": 1,
+ "id": "gen5-infiltrator-and-substitute",
+ "notes": [
+  "Gen 5 Infiltrator ignores Reflect and a foe's Safeguard, but a Substitute takes its Strength (the gen5 substitute ignores move.infiltrates)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Infil",
+    "species": "Mew",
+    "level": 90,
+    "nature": "Hardy",
+    "moves": [
+     "Strength",
+     "Thunder Wave"
+    ],
+    "ability": "Infiltrator"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Wall",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Reflect",
+     "Safeguard",
+     "Substitute",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Strength",
+   "p2": "move Reflect"
+  },
+  {
+   "p1": "move Thunder Wave",
+   "p2": "move Safeguard"
+  },
+  {
+   "p1": "move Strength",
+   "p2": "move Substitute"
+  },
+  {
+   "p1": "move Strength",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

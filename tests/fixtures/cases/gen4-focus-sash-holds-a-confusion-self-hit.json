@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen4-focus-sash-holds-a-confusion-self-hit",
+ "notes": [
+  "Gen 4 (issues.md I39: pokeplatinum `subscript_hurt_self_in_confusion` \u2192 `CheckHoldOnWith1HP`): the confused Shedinja at its full 1 HP hits itself; its Focus Sash leaves it at 1 and is used up",
+  "Unpatched, Showdown's gen4 sash only arms from `onTryHit` and Shedinja faints"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Shedinja",
+    "species": "Shedinja",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Focus Sash",
+    "ability": "Wonder Guard"
+   },
+   {
+    "label": "Lapras",
+    "species": "Lapras",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Confuse Ray",
+     "Harden"
+    ],
+    "ability": "Volt Absorb"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Confuse Ray"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   2,
+   9,
+   15,
+   31
+  ]
+ }
+}

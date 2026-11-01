@@ -1,0 +1,75 @@
+{
+ "schema": 1,
+ "id": "gen9-metronome-item-and-copycat",
+ "notes": [
+  "Gen 9: Snorlax holds a Metronome and uses Tackle, then Copycat turn after turn (Corviknight's Tackle is the last move): the item skips Copycat (`if (move.callsMove) return`), so each Tackle it calls carries the chain on — x1.2, x1.4 … up to x2 — instead of starting over"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Copycat"
+    ],
+    "item": "Metronome",
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Corviknight",
+    "species": "Corviknight",
+    "level": 20,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "ability": "Pressure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Tackle",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Copycat",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Copycat",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Copycat",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Copycat",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Copycat",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

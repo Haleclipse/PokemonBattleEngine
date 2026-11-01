@@ -1,0 +1,175 @@
+{
+ "schema": 1,
+ "id": "gen5-gems-by-type-1",
+ "notes": [
+  "Gen 5 gems (\u00d71.5 once): Bug Gem (Bug Buzz), Dark Gem (Dark Pulse), Dragon Gem (Dragon Pulse), Electric Gem (Thunderbolt), Fighting Gem (Aura Sphere), Ghost Gem (Shadow Ball)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Bug",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Bug Buzz"
+    ],
+    "ability": "Run Away",
+    "item": "Bug Gem"
+   },
+   {
+    "label": "Dark",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Dark Pulse"
+    ],
+    "ability": "Run Away",
+    "item": "Dark Gem"
+   },
+   {
+    "label": "Dragon",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Dragon Pulse"
+    ],
+    "ability": "Run Away",
+    "item": "Dragon Gem"
+   },
+   {
+    "label": "Electric",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Thunderbolt"
+    ],
+    "ability": "Run Away",
+    "item": "Electric Gem"
+   },
+   {
+    "label": "Fighting",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Aura Sphere"
+    ],
+    "ability": "Run Away",
+    "item": "Fighting Gem"
+   },
+   {
+    "label": "Ghost",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Shadow Ball"
+    ],
+    "ability": "Run Away",
+    "item": "Ghost Gem"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Wall",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Bug Buzz",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Bug Buzz",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "switch Dark",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Dark Pulse",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Dark Pulse",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "switch Dragon",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Dragon Pulse",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Dragon Pulse",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "switch Electric",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Thunderbolt",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Thunderbolt",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "switch Fighting",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Aura Sphere",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Aura Sphere",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "switch Ghost",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Shadow Ball",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Shadow Ball",
+   "p2": "move Slack Off"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

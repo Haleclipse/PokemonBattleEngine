@@ -1,0 +1,98 @@
+{
+ "schema": 1,
+ "id": "gen8-octolock-immunities",
+ "notes": [
+  "Octolock: a Ghost type is immune (`onTryImmunity`, no accuracy roll; Stomping Tantrum doubles); again on an octolocked target it fails (Stomping Tantrum doubles); Clear Body keeps the drops off; Mirror Armor turns them on the user"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Locker",
+    "species": "Mew",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Octolock",
+     "Stomping Tantrum"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gengar",
+    "species": "Gengar",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Metagross",
+    "species": "Metagross",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "U-turn"
+    ],
+    "ability": "Clear Body"
+   },
+   {
+    "label": "Corviknight",
+    "species": "Corviknight",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Mirror Armor"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Octolock",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Stomping Tantrum",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Octolock",
+   "p2": "switch Metagross"
+  },
+  {
+   "p1": "move Octolock",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Stomping Tantrum",
+   "p2": "move U-turn"
+  },
+  {
+   "p2": "switch Corviknight"
+  },
+  {
+   "p1": "move Octolock",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

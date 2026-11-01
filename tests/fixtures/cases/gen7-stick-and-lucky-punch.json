@@ -1,0 +1,101 @@
+{
+ "schema": 1,
+ "id": "gen7-stick-and-lucky-punch",
+ "notes": [
+  "Stick (Farfetch'd) and Lucky Punch (Chansey), +2 critical stages: Leaf Blade / Night Slash (+1) always crit; Body Slam not always"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Farfetch'd",
+    "species": "Farfetch'd",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Leaf Blade",
+     "Body Slam"
+    ],
+    "ability": "Run Away",
+    "item": "Stick"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Night Slash",
+     "Body Slam"
+    ],
+    "ability": "Run Away",
+    "item": "Lucky Punch"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Leaf Blade",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Leaf Blade",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "switch Chansey",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Night Slash",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Night Slash",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Soft-Boiled"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

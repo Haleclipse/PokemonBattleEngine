@@ -1,0 +1,370 @@
+{
+  "schema": 1,
+  "id": "m8-gen4-endure-and-protect-counters-tied-at-the-end",
+  "notes": [
+    "A Perish Song faint decides the battle in the residual: the holder's Endure and Protect counters tie and Showdown's speedSort shuffle ran one before the end; the replay takes the tie order whose last frame is the oracle's (DESIGN.md R-M8-95)",
+    "promoted from m8-gen4-singles-s451-013-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "singles",
+    "format": "gen4customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Lopunny",
+        "species": "Lopunny",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Beat Up",
+          "Endure",
+          "Flail",
+          "Perish Song"
+        ],
+        "ability": "Wonder Guard",
+        "gender": "M"
+      },
+      {
+        "label": "Swalot",
+        "species": "Swalot",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Hidden Power",
+          "Endure",
+          "Smelling Salts"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Gible",
+        "species": "Gible",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Trump Card",
+          "Endure",
+          "String Shot",
+          "Perish Song"
+        ],
+        "ability": "Soundproof",
+        "gender": "F"
+      },
+      {
+        "label": "Mewtwo",
+        "species": "Mewtwo",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Leer",
+          "Endure",
+          "Sweet Scent",
+          "Perish Song"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Swablu",
+        "species": "Swablu",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Captivate",
+          "Endure",
+          "Growl",
+          "Perish Song"
+        ],
+        "ability": "Soundproof",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Metapod",
+        "species": "Metapod",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Hyper Voice",
+          "Endure",
+          "Shadow Sneak",
+          "Perish Song"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Wailmer",
+        "species": "Wailmer",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Aqua Jet",
+          "Endure",
+          "Bullet Punch",
+          "Perish Song"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Regirock",
+        "species": "Regirock",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Extreme Speed",
+          "Endure",
+          "Quick Attack",
+          "Perish Song"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Purugly",
+        "species": "Purugly",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Ice Shard",
+          "Endure",
+          "Mach Punch",
+          "Perish Song"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Kabuto",
+        "species": "Kabuto",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Vacuum Wave",
+          "Endure",
+          "Charm",
+          "Perish Song"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Barboach",
+        "species": "Barboach",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Growth",
+          "Endure",
+          "Agility"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      2775,
+      9235,
+      52893,
+      43527
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Beat Up",
+      "p2": "move Hyper Voice"
+    },
+    {
+      "p1": "move Endure",
+      "p2": "move Endure"
+    },
+    {
+      "p1": "move Beat Up",
+      "p2": "move Hyper Voice"
+    },
+    {
+      "p1": "move Flail",
+      "p2": "move Shadow Sneak"
+    },
+    {
+      "p1": "move Perish Song",
+      "p2": "move Perish Song"
+    },
+    {
+      "p1": "move Beat Up",
+      "p2": "move Hyper Voice"
+    },
+    {
+      "p2": "switch Wailmer"
+    },
+    {
+      "p1": "move Endure",
+      "p2": "move Endure"
+    },
+    {
+      "p1": "move Flail",
+      "p2": "move Bullet Punch"
+    },
+    {
+      "p1": "switch Swalot"
+    },
+    {
+      "p1": "switch Gible",
+      "p2": "switch Regirock"
+    },
+    {
+      "p1": "move Perish Song",
+      "p2": "move Perish Song"
+    },
+    {
+      "p1": "move Trump Card",
+      "p2": "move Extreme Speed"
+    },
+    {
+      "p1": "move Endure",
+      "p2": "move Endure"
+    },
+    {
+      "p1": "move String Shot",
+      "p2": "move Quick Attack"
+    },
+    {
+      "p2": "switch Wailmer"
+    },
+    {
+      "p1": "switch Swalot",
+      "p2": "switch Purugly"
+    },
+    {
+      "p1": "move Hidden Power",
+      "p2": "move Ice Shard"
+    },
+    {
+      "p1": "move Smelling Salts",
+      "p2": "move Mach Punch"
+    },
+    {
+      "p1": "move Hidden Power",
+      "p2": "move Ice Shard"
+    },
+    {
+      "p1": "switch Gible",
+      "p2": "switch Wailmer"
+    },
+    {
+      "p1": "move Endure",
+      "p2": "move Endure"
+    },
+    {
+      "p1": "move String Shot",
+      "p2": "move Bullet Punch"
+    },
+    {
+      "p1": "move Trump Card",
+      "p2": "move Aqua Jet"
+    },
+    {
+      "p1": "switch Swalot"
+    },
+    {
+      "p1": "move Endure",
+      "p2": "move Endure"
+    },
+    {
+      "p1": "switch Mewtwo",
+      "p2": "switch Purugly"
+    },
+    {
+      "p1": "move Sweet Scent",
+      "p2": "move Mach Punch"
+    },
+    {
+      "p1": "move Perish Song",
+      "p2": "move Perish Song"
+    },
+    {
+      "p1": "move Leer",
+      "p2": "move Ice Shard"
+    },
+    {
+      "p1": "move Endure",
+      "p2": "move Endure"
+    },
+    {
+      "p1": "move Sweet Scent",
+      "p2": "move Mach Punch"
+    },
+    {
+      "p1": "switch Swablu",
+      "p2": "switch Kabuto"
+    },
+    {
+      "p1": "move Perish Song",
+      "p2": "move Perish Song"
+    },
+    {
+      "p1": "move Captivate",
+      "p2": "move Vacuum Wave"
+    },
+    {
+      "p1": "move Endure",
+      "p2": "move Endure"
+    },
+    {
+      "p1": "move Growl",
+      "p2": "move Charm"
+    },
+    {
+      "p2": "switch Wailmer"
+    },
+    {
+      "p1": "switch Swalot",
+      "p2": "switch Barboach"
+    },
+    {
+      "p1": "move Hidden Power",
+      "p2": "move Growth"
+    },
+    {
+      "p1": "move Endure",
+      "p2": "move Endure"
+    },
+    {
+      "p1": "move Smelling Salts",
+      "p2": "move Agility"
+    },
+    {
+      "p1": "move Hidden Power",
+      "p2": "move Growth"
+    },
+    {
+      "p2": "switch Wailmer"
+    },
+    {
+      "p1": "switch Swablu",
+      "p2": "move Endure"
+    },
+    {
+      "p1": "move Growl",
+      "p2": "move Perish Song"
+    },
+    {
+      "p1": "move Perish Song",
+      "p2": "move Aqua Jet"
+    },
+    {
+      "p1": "move Captivate",
+      "p2": "move Endure"
+    },
+    {
+      "p1": "move Endure",
+      "p2": "move Bullet Punch"
+    }
+  ]
+}

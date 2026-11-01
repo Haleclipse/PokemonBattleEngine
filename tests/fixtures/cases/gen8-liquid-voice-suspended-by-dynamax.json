@@ -1,0 +1,71 @@
+{
+ "schema": 1,
+ "id": "gen8-liquid-voice-suspended-by-dynamax",
+ "notes": [
+  "Gen 8: Primarina's Hyper Voice runs as Max Strike (Normal) while Dynamaxed — Liquid Voice's `onModifyType` returns early for a Dynamaxed holder — and as a Water-type move (2×on Charizard) once the Dynamax ended"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Primarina",
+    "species": "Primarina",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Hyper Voice",
+     "Harden"
+    ],
+    "ability": "Liquid Voice"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Charizard",
+    "species": "Charizard",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "ability": "Blaze"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1 dynamax",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 2"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 2"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

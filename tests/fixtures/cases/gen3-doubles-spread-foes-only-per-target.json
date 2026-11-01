@@ -1,0 +1,82 @@
+{
+  "schema": 1,
+  "id": "gen3-doubles-spread-foes-only-per-target",
+  "notes": [
+    "Gen 3: only a move aimed at both foes takes the 0.5 spread modifier (Earthquake does not), and a spread move hits each target in full before the next (Rock Slide: accuracy, damage, flinch per target)"
+  ],
+  "battle": {
+    "generation": 3,
+    "mode": "doubles",
+    "format": "gen3doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Marowak",
+        "species": "Marowak",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Earthquake",
+          "Rock Slide"
+        ],
+        "ability": "Rock Head"
+      },
+      {
+        "label": "Skarmory",
+        "species": "Skarmory",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Growl"
+        ],
+        "ability": "Keen Eye"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Snorlax",
+        "species": "Snorlax",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Growl"
+        ],
+        "ability": "Thick Fat"
+      },
+      {
+        "label": "Blissey",
+        "species": "Blissey",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Growl"
+        ],
+        "ability": "Natural Cure"
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1, move 1",
+      "p2": "move 1, move 1"
+    },
+    {
+      "p1": "move 2, move 1",
+      "p2": "move 1, move 1"
+    },
+    {
+      "p1": "move 2, move 1",
+      "p2": "move 1, move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

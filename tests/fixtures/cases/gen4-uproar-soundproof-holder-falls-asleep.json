@@ -1,0 +1,71 @@
+{
+ "schema": 1,
+ "id": "gen4-uproar-soundproof-holder-falls-asleep",
+ "notes": [
+  "Gen 4 Uproar (cartridge, I63): a Soundproof holder is out of it and falls asleep to Spore; Gen 4 keeps the uproar going while it sleeps"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Exploud",
+    "species": "Exploud",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Uproar",
+     "Harden"
+    ],
+    "ability": "Soundproof"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Sporer",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spore",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Uproar",
+   "p2": "move Spore"
+  },
+  {
+   "p1": "move Uproar",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Uproar",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Uproar",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Uproar",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

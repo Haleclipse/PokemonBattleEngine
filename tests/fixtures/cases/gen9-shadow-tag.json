@@ -1,0 +1,85 @@
+{
+ "schema": 1,
+ "id": "gen9-shadow-tag",
+ "notes": [
+  "Shadow Tag lets a U-turn out, a Ghost type (Gen 6+) and another Shadow Tag (Gen 4+) switch"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Tagger",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Shadow Tag"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "U-turn",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Gengar",
+    "species": "Gengar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Tagger2",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Shadow Tag"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move U-turn"
+  },
+  {
+   "p2": "switch Gengar"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Tagger2"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Foe"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

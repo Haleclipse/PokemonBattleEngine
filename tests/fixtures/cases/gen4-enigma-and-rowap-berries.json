@@ -1,0 +1,75 @@
+{
+ "schema": 1,
+ "id": "gen4-enigma-and-rowap-berries",
+ "notes": [
+  "Gen 4 Enigma Berry: Hariyama's super effective Double Kick \u2014 after its first hit Snorlax eats the berry and restores a quarter (pokeplatinum `HOLD_EFFECT_HP_RESTORE_SE` after every hit, as Showdown's `onHit`)",
+  "Gen 4 Rowap Berry: Hariyama's Swift on Blissey costs it an eighth of its max HP"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Enigma Berry",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Rowap Berry",
+    "ability": "Natural Cure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Hariyama",
+    "species": "Hariyama",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Double Kick",
+     "Swift"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Double Kick"
+  },
+  {
+   "p1": "switch Blissey",
+   "p2": "move Swift"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Swift"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

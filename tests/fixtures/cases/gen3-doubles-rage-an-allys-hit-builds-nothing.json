@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "gen3-doubles-rage-an-allys-hit-builds-nothing",
+ "notes": [
+  "Gen 3 doubles Rage (cartridge, I77): only a foe's hit builds the rage \u2014 the ally's Earthquake does not, the foe's Tackle does"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "doubles",
+  "format": "gen3doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Rager",
+    "species": "Primeape",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Rage",
+     "Protect"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Quaker",
+    "species": "Golem",
+    "level": 20,
+    "nature": "Hardy",
+    "moves": [
+     "Earthquake",
+     "Harden"
+    ],
+    "ability": "Sturdy"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Wall",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Pad",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Softboiled"
+    ],
+    "ability": "Natural Cure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Rage 1, move Earthquake",
+   "p2": "move Tackle 1, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

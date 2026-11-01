@@ -1,0 +1,66 @@
+{
+ "schema": 1,
+ "id": "m9-an-encore-earlier-in-the-turn-leaves-a-z-move-alone",
+ "notes": [
+  "R-M9-31: Showdown's `runMove` asks `OverrideAction` only when the action is no Z-Move and no Max Move: Ambipom's Encore lands on Snorlax (its last move Harden) before Snorlax moves, and Snorlax's Z-Body Slam (Breakneck Blitz) goes ahead, paying Body Slam's PP. The next turn the Encore holds it to Harden."
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Body Slam"
+    ],
+    "gender": "F",
+    "ability": "Thick Fat",
+    "item": "Normalium Z"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Ambipom",
+    "species": "Ambipom",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Encore"
+    ],
+    "gender": "M",
+    "ability": "Technician"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 2 zmove",
+   "p2": "move 2"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

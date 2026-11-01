@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen1-a-called-mimic-writes-the-last-selected-slot",
+ "notes": [
+  "Gen 1: a Mimic that is *called* (Mirror Move copies the foe's Mimic) overwrites the slot the side last picked from the menu (Showdown `side.lastSelectedMoveSlot` — the Mirror Move's slot), not the Mimic's own (the user has none)"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mimicry",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Mirror Move",
+     "Tackle"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Mimic",
+     "Tackle"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Tackle",
+   "p2": "move Mimic"
+  },
+  {
+   "p1": "move Mirror Move",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   5,
+   6,
+   7,
+   8
+  ]
+ }
+}

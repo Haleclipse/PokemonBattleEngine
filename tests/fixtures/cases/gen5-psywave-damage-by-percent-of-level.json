@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen5-psywave-damage-by-percent-of-level",
+ "notes": [
+  "Gen 3+ Psywave deals \u230arandom(50, 151) \u00d7 level / 100\u230b (accuracy 80 through Gen 5)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hypno",
+    "species": "Hypno",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Psywave"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Psywave",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Psywave",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Psywave",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Psywave",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

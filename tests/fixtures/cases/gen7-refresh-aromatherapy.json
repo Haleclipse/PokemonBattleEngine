@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "id": "gen7-refresh-aromatherapy",
+  "notes": [
+    "Refresh cures the user; Aromatherapy cures the whole party, the Pok\u00e9mon on the bench included"
+  ],
+  "battle": {
+    "generation": 7,
+    "mode": "singles",
+    "format": "gen7customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Umbreon",
+        "species": "Umbreon",
+        "level": 60,
+        "nature": "Hardy",
+        "moves": [
+          "Refresh",
+          "Tackle"
+        ],
+        "ability": "Synchronize"
+      },
+      {
+        "label": "Vileplume",
+        "species": "Vileplume",
+        "level": 60,
+        "nature": "Hardy",
+        "moves": [
+          "Aromatherapy",
+          "Tackle"
+        ],
+        "ability": "Run Away"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Jolteon",
+        "species": "Jolteon",
+        "level": 60,
+        "nature": "Hardy",
+        "moves": [
+          "Toxic",
+          "Will-O-Wisp",
+          "Tackle"
+        ],
+        "ability": "Volt Absorb"
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 2",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 3"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 2"
+    },
+    {
+      "p1": "switch 2",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 3"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

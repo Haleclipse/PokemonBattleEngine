@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "id": "gen3-doubles-faint-clears-status",
+  "notes": [
+    "Gen 1-3 check faints after every action: a knocked-out Pokémon loses its status even with no replacement left; the last one to faint, ending the battle, keeps it"
+  ],
+  "battle": {
+    "generation": 3,
+    "mode": "doubles",
+    "format": "gen3doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Mewtwo",
+        "species": "Mewtwo",
+        "level": 100,
+        "nature": "Hardy",
+        "moves": [
+          "Thunder Wave",
+          "Psychic"
+        ],
+        "ability": "Pressure"
+      },
+      {
+        "label": "Mew",
+        "species": "Mew",
+        "level": 100,
+        "nature": "Hardy",
+        "moves": [
+          "Psychic",
+          "Thunder Wave"
+        ],
+        "ability": "Synchronize"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Magikarp",
+        "species": "Magikarp",
+        "level": 10,
+        "nature": "Hardy",
+        "moves": [
+          "Growl"
+        ],
+        "ability": "Swift Swim"
+      },
+      {
+        "label": "Feebas",
+        "species": "Feebas",
+        "level": 10,
+        "nature": "Hardy",
+        "moves": [
+          "Growl"
+        ],
+        "ability": "Swift Swim"
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1 1, move 2 2",
+      "p2": "move 1, move 1"
+    },
+    {
+      "p1": "move 2 1, move 1 2",
+      "p2": "move 1, move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

@@ -1,0 +1,78 @@
+{
+ "schema": 1,
+ "id": "gen8-doubles-trick-or-treat-no-curse-glitch",
+ "notes": [
+  "Gen 8 doubles: Trick-or-Treat makes Jigglypuff (second slot, about to Curse) a Ghost; Gen 7-8's Curse is `randomNormal`, so the glitch's aim at the ally changes nothing: it curses a random foe"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "doubles",
+  "format": "gen8doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Ferroseed",
+    "species": "Ferroseed",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Trick-or-Treat",
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Iron Barbs"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Phantump",
+    "species": "Phantump",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Natural Cure"
+   },
+   {
+    "label": "Jigglypuff",
+    "species": "Jigglypuff",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Curse"
+    ],
+    "gender": "M",
+    "ability": "Cute Charm"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Trick-or-Treat 2, move Harden",
+   "p2": "move Harden, move Curse"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

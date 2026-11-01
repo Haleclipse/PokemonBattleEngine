@@ -1,0 +1,67 @@
+{
+ "schema": 1,
+ "id": "gen9-weather-ball-in-sun-and-snow",
+ "notes": [
+  "Weather Ball turns Fire in sun and Ice in snow, with double power"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Dragonite",
+    "species": "Dragonite",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Weather Ball",
+     "Sunny Day",
+     "Snowscape"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Sunny Day",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Weather Ball",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Snowscape",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Weather Ball",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,73 @@
+{
+ "schema": 1,
+ "id": "gen9-air-lock-strong-weather",
+ "notes": [
+  "Air Lock suppresses a strong weather: Water attacks go through unweakened, and the weather is back once the Air Lock holder leaves"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Groudon",
+    "species": "Groudon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Flamethrower"
+    ],
+    "ability": "Desolate Land"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Rayquaza",
+    "species": "Rayquaza",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Water Gun",
+     "Harden"
+    ],
+    "ability": "Air Lock"
+   },
+   {
+    "label": "Foe2",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Water Gun"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Water Gun"
+  },
+  {
+   "p1": "move Flamethrower",
+   "p2": "switch Foe2"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Water Gun"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

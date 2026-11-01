@@ -1,0 +1,91 @@
+{
+ "schema": 1,
+ "id": "gen5-heavy-and-light-metal",
+ "notes": [
+  "Heavy Metal doubles its holder's weight: Snorlax's Heavy Slam on a Snorlax is 60, not 40; Light Metal halves it: Mew's Low Kick on Aggron drops a band"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Lax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Heavy Slam"
+    ],
+    "ability": "Heavy Metal"
+   },
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Low Kick"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Aggron",
+    "species": "Aggron",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Harden"
+    ],
+    "ability": "Light Metal"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Heavy Slam",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "switch Mew",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Low Kick",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Low Kick",
+   "p2": "switch Aggron"
+  },
+  {
+   "p1": "move Low Kick",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

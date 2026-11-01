@@ -1,0 +1,62 @@
+{
+ "schema": 1,
+ "id": "gen4-acupressure-substitute",
+ "notes": [
+  "Gen 4 Acupressure: behind its own Substitute it fails (the gen4 mod's onHit); without one a random stat rises by 2"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Acu",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Acupressure",
+     "Substitute"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Acupressure",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Substitute",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Acupressure",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,101 @@
+{
+ "schema": 1,
+ "id": "gen9-psychic-terrain",
+ "notes": [
+  "Psychic Terrain: Quick Attack and a Prankster Thunder Wave (priority raised at the action) are stopped on grounded Mew (-activate \u2026 move: Psychic Terrain) but not on Pidgeot in the air; Mew's Psychic \u00d75325/4096"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Psychic Terrain",
+     "Psychic",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Pidgeot",
+    "species": "Staraptor",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Quick Attack",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Liepard",
+    "species": "Sableye",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Thunder Wave",
+     "Harden"
+    ],
+    "ability": "Prankster"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Psychic Terrain",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Psychic",
+   "p2": "move Quick Attack"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "switch Liepard"
+  },
+  {
+   "p1": "move Psychic",
+   "p2": "move Thunder Wave"
+  },
+  {
+   "p1": "switch Pidgeot",
+   "p2": "move Thunder Wave"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "switch Snorlax"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Quick Attack"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

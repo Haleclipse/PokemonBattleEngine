@@ -1,0 +1,119 @@
+{
+ "schema": 1,
+ "id": "gen9-an-eject-pack-switch-and-a-revival-blessing-in-one-request",
+ "notes": [
+  "Gen 9 doubles: Growl lowers Scream Tail's Attack while its side has nobody left to send in, so its Eject Pack waits. Next turn Scream Tail's Revival Blessing brings Magnezone back; Basculegion's Revival Blessing follows, and as it ends the Eject Pack finds Magnezone to switch to. Showdown asks the side once \u2014 Scream Tail's slot switches, Basculegion's names its revive (`switch Magnezone, switch Palafin`) \u2014 and runs the switch first (`instaswitch` before `revivalblessing`): the engine asks the forced switch, then the revive, both answered from that entry (DESIGN.md R-M8-171)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sylveon",
+    "species": "Sylveon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Hyper Voice",
+     "Growl",
+     "Splash"
+    ],
+    "ability": "Cute Charm",
+    "gender": "F"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Magnezone",
+    "species": "Magnezone",
+    "level": 1,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Analytic"
+   },
+   {
+    "label": "Palafin",
+    "species": "Palafin",
+    "level": 1,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Zero to Hero",
+    "gender": "M"
+   },
+   {
+    "label": "Scream Tail",
+    "species": "Scream Tail",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Revival Blessing",
+     "Splash"
+    ],
+    "ability": "Protosynthesis",
+    "item": "Eject Pack"
+   },
+   {
+    "label": "Basculegion",
+    "species": "Basculegion",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Revival Blessing",
+     "Splash"
+    ],
+    "ability": "Swift Swim",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Hyper Voice, move Splash",
+   "p2": "move Splash, move Splash"
+  },
+  {
+   "p2": "switch Scream Tail, switch Basculegion"
+  },
+  {
+   "p1": "move Growl, move Splash",
+   "p2": "move Splash, move Splash"
+  },
+  {
+   "p1": "move Splash, move Splash",
+   "p2": "move Revival Blessing, move Revival Blessing"
+  },
+  {
+   "p2": "switch Magnezone, pass"
+  },
+  {
+   "p2": "switch Magnezone, switch Palafin"
+  }
+ ]
+}

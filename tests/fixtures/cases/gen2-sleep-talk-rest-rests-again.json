@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen2-sleep-talk-rest-rests-again",
+ "notes": [
+  "Gen 2: Snorlax, asleep from Rest and hurt again, uses Sleep Talk and draws Rest: the gen2 mod's Rest asks only for missing HP, keeps the sleep (`-status|…|slp|[from] move: Rest`, no new sleep drawn), sets it to 3 turns and heals Snorlax in full — pokecrystal `BattleCommand_Heal` (DESIGN.md R-M8-94)"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Rest",
+     "Sleep Talk"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Rest",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Sleep Talk",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Sleep Talk",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

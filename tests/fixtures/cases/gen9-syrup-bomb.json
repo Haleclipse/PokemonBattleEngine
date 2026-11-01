@@ -1,0 +1,120 @@
+{
+ "schema": 1,
+ "id": "gen9-syrup-bomb",
+ "notes": [
+  "Syrup Bomb: the target's Speed drops by one at the end of each of the next three turns (residual 14), the countdown ending on the fourth; Mirror Armor sends each drop back to the thrower, Clear Body refuses it; it ends once the thrower leaves the field"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Syrup Bomb",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Pal",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Lax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Crow",
+    "species": "Corviknight",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Roost"
+    ],
+    "ability": "Mirror Armor"
+   },
+   {
+    "label": "Meta",
+    "species": "Metagross",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Clear Body"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Syrup Bomb",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Syrup Bomb",
+   "p2": "switch Crow"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Syrup Bomb",
+   "p2": "switch Meta"
+  },
+  {
+   "p1": "switch Pal",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

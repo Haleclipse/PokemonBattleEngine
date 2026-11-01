@@ -1,0 +1,324 @@
+{
+  "schema": 1,
+  "id": "m8-gen8-thaw-after-a-worry-seed",
+  "notes": [
+    "Nightly 59: Rhydon thaws at its own BeforeMove right after Oranguru's Worry Seed (-curestatus frz [msg]); Worry Seed cures only sleep, so the thaw is Rhydon's roll (replay: curing_moves with the status each cures) (DESIGN.md R-M8-103)",
+    "promoted from m8-gen8-singles-s531-000-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 8,
+    "mode": "singles",
+    "format": "gen8customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Carvanha",
+        "species": "Carvanha",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Psystrike",
+          "Nature Power",
+          "Grass Pledge"
+        ],
+        "ability": "Run Away",
+        "item": "King's Rock",
+        "gender": "M"
+      },
+      {
+        "label": "Torracat",
+        "species": "Torracat",
+        "level": 54,
+        "nature": "Hardy",
+        "moves": [
+          "Fire Pledge",
+          "Nature Power",
+          "Secret Sword",
+          "Worry Seed"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Blastoise",
+        "species": "Blastoise",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fairy Wind",
+          "Nature Power",
+          "Moongeist Beam",
+          "Worry Seed"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Mudbray",
+        "species": "Mudbray",
+        "level": 49,
+        "nature": "Hardy",
+        "moves": [
+          "Sunsteel Strike",
+          "Nature Power",
+          "Power Whip",
+          "Worry Seed"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Rhydon",
+        "species": "Rhydon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Mega Punch",
+          "Tackle",
+          "Worry Seed"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Combee",
+        "species": "Combee",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Covet",
+          "Nature Power"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Aromatisse",
+        "species": "Aromatisse",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Hold Back",
+          "Nature Power",
+          "High Horsepower",
+          "Worry Seed"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Vespiquen",
+        "species": "Vespiquen",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Vine Whip",
+          "Nature Power",
+          "Dragon Hammer",
+          "Worry Seed"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Dusclops",
+        "species": "Dusclops",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Jaw Lock",
+          "Nature Power",
+          "Fell Stinger",
+          "Worry Seed"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Marshadow",
+        "species": "Marshadow",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "False Swipe"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Oranguru",
+        "species": "Oranguru",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Nature Power",
+          "Sacred Sword",
+          "Worry Seed"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      20254,
+      30563,
+      38871,
+      1854
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Psystrike",
+      "p2": "move Covet"
+    },
+    {
+      "p1": "move Nature Power",
+      "p2": "move Nature Power"
+    },
+    {
+      "p2": "switch Aromatisse"
+    },
+    {
+      "p1": "move Grass Pledge",
+      "p2": "move High Horsepower"
+    },
+    {
+      "p1": "switch Torracat"
+    },
+    {
+      "p1": "move Worry Seed",
+      "p2": "move Worry Seed"
+    },
+    {
+      "p1": "move Fire Pledge",
+      "p2": "move Hold Back"
+    },
+    {
+      "p1": "switch Blastoise",
+      "p2": "switch Vespiquen"
+    },
+    {
+      "p1": "move Nature Power",
+      "p2": "move Nature Power"
+    },
+    {
+      "p1": "move Moongeist Beam",
+      "p2": "move Dragon Hammer"
+    },
+    {
+      "p1": "move Worry Seed",
+      "p2": "move Worry Seed"
+    },
+    {
+      "p1": "move Fairy Wind",
+      "p2": "move Vine Whip"
+    },
+    {
+      "p1": "move Nature Power",
+      "p2": "move Nature Power"
+    },
+    {
+      "p1": "switch Torracat",
+      "p2": "switch Aromatisse"
+    },
+    {
+      "p1": "move Secret Sword",
+      "p2": "move High Horsepower"
+    },
+    {
+      "p1": "move Worry Seed",
+      "p2": "move Worry Seed"
+    },
+    {
+      "p1": "move Fire Pledge",
+      "p2": "move Hold Back"
+    },
+    {
+      "p1": "move Nature Power",
+      "p2": "move Nature Power"
+    },
+    {
+      "p2": "switch Vespiquen"
+    },
+    {
+      "p1": "move Secret Sword",
+      "p2": "move Dragon Hammer"
+    },
+    {
+      "p1": "switch Blastoise"
+    },
+    {
+      "p1": "switch Mudbray",
+      "p2": "switch Dusclops"
+    },
+    {
+      "p1": "move Sunsteel Strike",
+      "p2": "move Jaw Lock"
+    },
+    {
+      "p1": "move Nature Power",
+      "p2": "move Nature Power"
+    },
+    {
+      "p1": "move Power Whip",
+      "p2": "move Fell Stinger"
+    },
+    {
+      "p1": "move Worry Seed",
+      "p2": "move Worry Seed"
+    },
+    {
+      "p1": "move Sunsteel Strike",
+      "p2": "switch Vespiquen"
+    },
+    {
+      "p2": "switch Dusclops"
+    },
+    {
+      "p1": "move Nature Power",
+      "p2": "move Jaw Lock"
+    },
+    {
+      "p1": "move Power Whip",
+      "p2": "move Nature Power"
+    },
+    {
+      "p1": "switch Blastoise"
+    },
+    {
+      "p1": "move Worry Seed",
+      "p2": "move Fell Stinger"
+    },
+    {
+      "p1": "move Fairy Wind",
+      "p2": "move Worry Seed"
+    },
+    {
+      "p2": "switch Marshadow"
+    },
+    {
+      "p1": "move Nature Power",
+      "p2": "move False Swipe"
+    },
+    {
+      "p1": "switch Rhydon",
+      "p2": "switch Oranguru"
+    },
+    {
+      "p1": "move Tackle",
+      "p2": "move Nature Power"
+    },
+    {
+      "p1": "move Worry Seed",
+      "p2": "move Sacred Sword"
+    },
+    {
+      "p1": "move Mega Punch",
+      "p2": "move Worry Seed"
+    }
+  ]
+}

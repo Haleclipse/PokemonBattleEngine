@@ -1,0 +1,84 @@
+{
+ "schema": 1,
+ "id": "gen9-own-tempo",
+ "notes": [
+  "Gen 9: Mudbray with Own Tempo against Confuse Ray (`-immune … confusion`; the failure doubles Stomping Tantrum) and Swagger (the Attack rises, no confusion); Persian's confusion ends once Skill Swap gives it Own Tempo"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mudbray",
+    "species": "Mudbray",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Skill Swap",
+     "Confuse Ray",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Own Tempo"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Persian",
+    "species": "Persian",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Confuse Ray",
+     "Swagger",
+     "Harden",
+     "Stomping Tantrum"
+    ],
+    "gender": "M",
+    "ability": "Limber"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Confuse Ray"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Stomping Tantrum"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Swagger"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Swagger"
+  },
+  {
+   "p1": "move Confuse Ray",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Skill Swap",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

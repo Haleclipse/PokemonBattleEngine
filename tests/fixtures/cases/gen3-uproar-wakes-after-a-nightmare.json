@@ -1,0 +1,68 @@
+{
+ "schema": 1,
+ "id": "gen3-uproar-wakes-after-a-nightmare",
+ "notes": [
+  "Gen 3 Uproar (cartridge, I63): the faster sleeper's Nightmare still hurts it at the end of the turn the uproar began; the holder's turn-end step wakes it afterwards"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Uproarer",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spore",
+     "Nightmare",
+     "Uproar"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Sleeper",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Spore",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Nightmare",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Uproar",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Uproar",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   3,
+   2,
+   3,
+   4
+  ]
+ }
+}

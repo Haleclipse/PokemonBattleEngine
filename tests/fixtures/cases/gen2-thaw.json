@@ -1,0 +1,74 @@
+{
+  "schema": 1,
+  "id": "gen2-singles-thaw",
+  "notes": [
+    "Gen 2 thawing: a frozen user of Flame Wheel (defrost) thaws once the move landed; a frozen target hit by Fire Punch (a burn secondary) thaws after the move."
+  ],
+  "battle": {
+    "generation": 2,
+    "mode": "singles",
+    "format": "gen2customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "a",
+        "species": "Jynx",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Ice Beam",
+          "Fire Punch"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "b",
+        "species": "Slowbro",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Flame Wheel",
+          "Tackle"
+        ]
+      },
+      {
+        "label": "c",
+        "species": "Snorlax",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "switch 2"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      85,
+      86,
+      87,
+      88
+    ]
+  }
+}

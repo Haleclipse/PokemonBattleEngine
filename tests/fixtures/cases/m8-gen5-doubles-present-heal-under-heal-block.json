@@ -1,0 +1,179 @@
+{
+  "schema": 1,
+  "id": "m8-gen5-doubles-present-heal-under-heal-block",
+  "notes": [
+    "Nightly 55: Present draws its heal for a Heal Blocked target and fails (-fail|user): the replay reads that failure as the heal band (DESIGN.md R-M8-99)",
+    "promoted from m8-gen5-doubles-s519-009-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 5,
+    "mode": "doubles",
+    "format": "gen5doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Cobalion",
+        "species": "Cobalion",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Magnet Bomb",
+          "Heal Block",
+          "Pay Day",
+          "Psych Up"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Slowpoke",
+        "species": "Slowpoke",
+        "level": 54,
+        "nature": "Hardy",
+        "moves": [
+          "Seed Bomb",
+          "Heal Block",
+          "Rock Throw",
+          "Psych Up"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Lombre",
+        "species": "Lombre",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Egg Bomb",
+          "Heal Block",
+          "Present",
+          "Psych Up"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Shinx",
+        "species": "Shinx",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Moonlight",
+          "Heal Block",
+          "Psych Up"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Blastoise",
+        "species": "Blastoise",
+        "level": 45,
+        "nature": "Hardy",
+        "moves": [
+          "Morning Sun",
+          "Heal Block",
+          "Hydro Cannon",
+          "Power Split"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Swampert",
+        "species": "Swampert",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Hyper Beam",
+          "Heal Block",
+          "Rock Wrecker",
+          "Power Split"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Tangela",
+        "species": "Tangela",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Frenzy Plant",
+          "Heal Block",
+          "Blast Burn"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      58064,
+      50257,
+      37878,
+      11803
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Magnet Bomb 1, move Seed Bomb 2",
+      "p2": "move Moonlight, move Morning Sun"
+    },
+    {
+      "p1": "move Heal Block, move Heal Block",
+      "p2": "move Heal Block, move Heal Block"
+    },
+    {
+      "p1": "move Pay Day 1, move Rock Throw 2",
+      "p2": "move Heal Block, move Power Split 1"
+    },
+    {
+      "p1": "move Psych Up 1, move Psych Up 2",
+      "p2": "move Psych Up 2, move Heal Block"
+    },
+    {
+      "p1": "move Magnet Bomb 1, move Seed Bomb 2",
+      "p2": "move Heal Block, move Hydro Cannon 1"
+    },
+    {
+      "p2": "pass, switch Swampert"
+    },
+    {
+      "p1": "move Heal Block, move Heal Block",
+      "p2": "move Psych Up 2, move Heal Block"
+    },
+    {
+      "p1": "switch Lombre, move Rock Throw 1",
+      "p2": "switch Tangela, move Rock Wrecker 1"
+    },
+    {
+      "p1": "move Present 2, move Psych Up 1",
+      "p2": "move Blast Burn 2, move Power Split 1"
+    },
+    {
+      "p1": "move 4 2, move 1 1",
+      "p2": "move 1, move 1 2"
+    },
+    {
+      "p1": "pass, switch Cobalion"
+    },
+    {
+      "p1": "move 1 2, move 2",
+      "p2": "move 1 1, move 1"
+    },
+    {
+      "p1": "move Heal Block, move Pay Day 1",
+      "p2": "move Heal Block, move Rock Wrecker 2"
+    },
+    {
+      "p1": "move Present 2, move Psych Up 1",
+      "p2": "move Blast Burn 1, move Power Split 2"
+    }
+  ]
+}

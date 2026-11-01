@@ -1,0 +1,79 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-flash-fire-partner",
+ "notes": [
+  "Flash Fire takes a partner's Flamethrower aimed at it; the holder's Flamethrower is then stronger"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Dog",
+    "species": "Arcanine",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Flamethrower",
+     "Harden"
+    ],
+    "ability": "Flash Fire"
+   },
+   {
+    "label": "Pal",
+    "species": "Charizard",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Flamethrower",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "F1",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "F2",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Flamethrower -1",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Flamethrower 1, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

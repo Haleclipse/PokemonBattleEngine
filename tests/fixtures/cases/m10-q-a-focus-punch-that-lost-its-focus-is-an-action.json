@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "id": "m10-q-a-focus-punch-that-lost-its-focus-is-an-action",
+  "notes": [
+    "Gen 8: Corvisquire's Focus Punch loses its focus (cant|p|Focus Punch|Focus Punch, past BeforeMove), an action: its Grudge is seen gone (R-M10-41)",
+    "promoted from m8-gen8-singles-s1644-017-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 8,
+    "mode": "singles",
+    "format": "gen8customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Hattrem",
+        "species": "Hattrem",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Grudge",
+          "Drain Punch"
+        ],
+        "ability": "Run Away"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Corvisquire",
+        "species": "Corvisquire",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Grudge",
+          "Focus Punch"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      15783,
+      50427,
+      6653,
+      24813
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Grudge",
+      "p2": "move Grudge"
+    },
+    {
+      "p1": "move Drain Punch",
+      "p2": "move Focus Punch"
+    }
+  ]
+}

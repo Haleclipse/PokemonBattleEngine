@@ -1,0 +1,74 @@
+{
+ "schema": 1,
+ "id": "gen9-seed-sower-as-its-holder-falls",
+ "notes": [
+  "Gen 9: Dragon Claw knocks out Arboliva; its Seed Sower still brings Grassy Terrain, but its Grassy Seed stays held (`useItem` refuses a fainted holder); Snorlax comes in to the terrain"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Arboliva",
+    "species": "Arboliva",
+    "level": 5,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Seed Sower",
+    "item": "Grassy Seed"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Garchomp",
+    "species": "Garchomp",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Dragon Claw"
+    ],
+    "gender": "M",
+    "ability": "Rough Skin"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Dragon Claw"
+  },
+  {
+   "p1": "switch 2"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Dragon Claw"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

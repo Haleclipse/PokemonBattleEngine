@@ -1,0 +1,83 @@
+{
+ "schema": 1,
+ "id": "gen5-eject-button-ignores-doom-desire",
+ "notes": [
+  "Gen 5: Jirachi's Doom Desire strikes Snorlax, holding an Eject Button, two turns later: the button stays (Showdown's ejectbutton: !move.flags['futuremove']); Jirachi's Tackle then sets it off (DESIGN.md R-M8-128)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Jirachi",
+    "species": "Jirachi",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Doom Desire",
+     "Tackle",
+     "Splash"
+    ],
+    "ability": "Serene Grace"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "item": "Eject Button",
+    "ability": "Thick Fat",
+    "gender": "M"
+   },
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Swift Swim",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Doom Desire",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Splash"
+  },
+  {
+   "p2": "switch Magikarp"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

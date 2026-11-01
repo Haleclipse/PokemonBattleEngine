@@ -1,0 +1,72 @@
+{
+ "schema": 1,
+ "id": "gen5-oblivious",
+ "notes": [
+  "Gen 5: Slowbro with Oblivious against Attract (refused: `onImmunity('attract')`, so its Destiny Knot passes nothing back) and Taunt (lands: the gen5 Oblivious names Captivate alone)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Slowbro",
+    "species": "Slowbro",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Skill Swap",
+     "Harden",
+     "Tackle"
+    ],
+    "gender": "F",
+    "ability": "Oblivious",
+    "item": "Destiny Knot"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Persian",
+    "species": "Persian",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Attract",
+     "Taunt",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Limber"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Attract"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Taunt"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

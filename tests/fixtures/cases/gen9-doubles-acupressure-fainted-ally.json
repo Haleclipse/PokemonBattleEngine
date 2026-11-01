@@ -1,0 +1,79 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-acupressure-fainted-ally",
+ "notes": [
+  "Gen 9 doubles Acupressure aimed at the ally knocked out the turn before: it goes to its user"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Striker",
+    "species": "Annihilape",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Close Combat",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Ally",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Presser",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Acupressure",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Weak",
+    "species": "Snorlax",
+    "level": 20,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Close Combat 2, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Acupressure -2"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

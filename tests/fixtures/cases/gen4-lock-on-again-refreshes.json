@@ -1,0 +1,68 @@
+{
+ "schema": 1,
+ "id": "gen4-lock-on-again-refreshes",
+ "notes": [
+  "Gen 4 Lock-On (cartridge, I68): taking aim again sets the lock anew, so Zap Cannon still draws no accuracy the turn after (Showdown fails the second Lock-On and the lock runs out)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Locker",
+    "species": "Magneton",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Lock-On",
+     "Zap Cannon",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Evader",
+    "species": "Blissey",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Double Team",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Lock-On",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move Lock-On",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move Zap Cannon",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

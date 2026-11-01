@@ -1,0 +1,106 @@
+{
+  "schema": 1,
+  "id": "gen6-doubles-diamond-storm-self-boost-per-target",
+  "notes": [
+    "Gen 6 Diamond Storm rolls its Defense boost per target: one +1 for each roll that landed",
+    "promoted from m8-gen6-doubles-s102-008-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 6,
+    "mode": "doubles",
+    "format": "gen6doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Finneon",
+        "species": "Finneon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Megahorn",
+          "Double Team",
+          "Dragon Rush"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Joltik",
+        "species": "Joltik",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Bone Rush"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Seviper",
+        "species": "Seviper",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Heat Wave",
+          "Diamond Storm"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Corsola",
+        "species": "Corsola",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Seed Bomb",
+          "Land's Wrath",
+          "Nuzzle"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Sigilyph",
+        "species": "Sigilyph",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Blast Burn",
+          "Aura Sphere"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      65090,
+      22172,
+      10569,
+      46109
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Megahorn 1, move Bone Rush 2",
+      "p2": "move Seed Bomb 1, move Blast Burn 2"
+    },
+    {
+      "p1": "pass, switch Seviper"
+    },
+    {
+      "p1": "move 2, move 1",
+      "p2": "move 2, move 1"
+    },
+    {
+      "p1": "move Dragon Rush 1, move Diamond Storm",
+      "p2": "move Nuzzle 1, move Aura Sphere 2"
+    }
+  ]
+}

@@ -1,0 +1,177 @@
+{
+  "schema": 1,
+  "id": "m8-gen7-a-confusion-read-where-an-ally-switch-moved-its-victim",
+  "notes": [
+    "Gen 7 doubles, minimized from Nightly 143's m8-gen7-doubles-s1466-015. On turn 10 Celebi's Assist calls Sweet Kiss and confuses Kricketune (p1a); Kricketune hits itself (one tick); then Torterra's Assist calls Ally Switch, so Torterra ends the turn in slot a and Kricketune in slot b. The boundary shows Kricketune's confusion time 2, so the rolled time was 3. The planner read the confusion where Kricketune stood when it was confused (slot a, Torterra by then) and found none; it now finds the victim by its party index (R-M8-175)."
+  ],
+  "battle": {
+    "generation": 7,
+    "mode": "doubles",
+    "format": "gen7doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Kricketune",
+        "species": "Kricketune",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Black Hole Eclipse",
+          "Power Trick",
+          "Gigavolt Havoc",
+          "Assist"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Torterra",
+        "species": "Torterra",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Savage Spin-Out",
+          "Power Trick",
+          "Breakneck Blitz",
+          "Assist"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Luvdisc",
+        "species": "Luvdisc",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Devastating Drake",
+          "Power Trick",
+          "Ally Switch",
+          "Assist"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Politoed",
+        "species": "Politoed",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Swagger",
+          "Power Trick",
+          "Flatter"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Celebi",
+        "species": "Celebi",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Heal Pulse",
+          "Power Trick",
+          "Floral Healing",
+          "Assist"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Victini",
+        "species": "Victini",
+        "level": 48,
+        "nature": "Hardy",
+        "moves": [
+          "Sweet Kiss",
+          "Power Trick",
+          "Supersonic",
+          "Assist"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Simisear",
+        "species": "Simisear",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Teeter Dance",
+          "Power Trick",
+          "Confuse Ray",
+          "Assist"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Growlithe",
+        "species": "Growlithe",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "U-turn",
+          "Power Trick",
+          "Volt Switch"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      41784,
+      36772,
+      52379,
+      33010
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Black Hole Eclipse 1, move Savage Spin-Out 2",
+      "p2": "move Heal Pulse 1, move Sweet Kiss 2"
+    },
+    {
+      "p1": "move Gigavolt Havoc 1, move Breakneck Blitz 2",
+      "p2": "move Power Trick, move Power Trick"
+    },
+    {
+      "p1": "move Power Trick, move Assist",
+      "p2": "move Floral Healing 1, move Supersonic 2"
+    },
+    {
+      "p1": "move Assist, move Power Trick",
+      "p2": "move Assist, move Assist"
+    },
+    {
+      "p1": "move Power Trick, move Breakneck Blitz 1",
+      "p2": "move Heal Pulse 1, move Sweet Kiss 2"
+    },
+    {
+      "p1": "switch Luvdisc, move Assist",
+      "p2": "switch Simisear, move Power Trick"
+    },
+    {
+      "p1": "move Assist, move Power Trick",
+      "p2": "move Assist, move Sweet Kiss 1"
+    },
+    {
+      "p1": "move Devastating Drake 1, move Assist",
+      "p2": "move Teeter Dance, move Power Trick"
+    },
+    {
+      "p1": "switch Kricketune, move Assist",
+      "p2": "switch Celebi, move Assist"
+    },
+    {
+      "p1": "move Assist, move Assist",
+      "p2": "move Assist, move Power Trick"
+    }
+  ]
+}

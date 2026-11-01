@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen1-haze-wakes-a-thrasher-that-keeps-its-lock",
+ "notes": [
+  "Gen 1 Petal Dance's lock through sleep and a Haze: the Haze that wakes the dancer leaves its side's last selected move `cannotmove`, but the lock's `onBeforeTurn` puts Petal Dance back as the next turn starts \u2014 the dancer goes on dancing"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Dancer",
+    "species": "Vileplume",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Petal Dance"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Sleeper",
+    "species": "Parasect",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Sleep Powder",
+     "Haze",
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Petal Dance",
+   "p2": "move Sleep Powder"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Haze"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   2,
+   3,
+   4,
+   5
+  ]
+ }
+}

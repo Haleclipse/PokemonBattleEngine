@@ -1,0 +1,88 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-pressure-reach",
+ "notes": [
+  "Gen 9 doubles Pressure: Earthquake meets the foe holder (2 PP) but not the ally one; Sticky Web (no mustpressure) 1; Imprison (mustpressure) 2; Helping Hand on the ally holder 1"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "User",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Earthquake",
+     "Sticky Web",
+     "Imprison",
+     "Helping Hand"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "AllyHolder",
+    "species": "Corviknight",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Pressure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "FoeHolder",
+    "species": "Kingambit",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Pressure"
+   },
+   {
+    "label": "Foe",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Earthquake, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Sticky Web, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Imprison, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Helping Hand -2, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

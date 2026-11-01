@@ -1,0 +1,75 @@
+{
+ "schema": 1,
+ "id": "gen5-entrainment-gives-intimidate-and-fails-on-multitype",
+ "notes": [
+  "Entrainment gives Snorlax Gyarados's Intimidate, which starts at once (Gen 5 `setAbility`): Gyarados's Attack drops",
+  "Entrainment fails on Arceus: Multitype cannot be suppressed (`onTryHit`)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Gyarados",
+    "species": "Gyarados",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Entrainment",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Intimidate"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Arceus",
+    "species": "Arceus",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Multitype"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Entrainment",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Arceus"
+  },
+  {
+   "p1": "move Entrainment",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

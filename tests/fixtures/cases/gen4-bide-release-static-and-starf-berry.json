@@ -1,0 +1,68 @@
+{
+ "schema": 1,
+ "id": "gen4-bide-release-static-and-starf-berry",
+ "notes": [
+  "Gen 4 Bide's release strikes a Static holder with a Starf Berry: Static's 30 % chance paralyses the Bide user, and the berry eaten below a quarter raises a drawn stat by 2"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Static",
+    "species": "Pikachu",
+    "level": 20,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Tail Whip"
+    ],
+    "ability": "Static",
+    "item": "Starf Berry"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Bider",
+    "species": "Snorlax",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Bide",
+     "Tail Whip"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Seismic Toss",
+   "p2": "move Bide"
+  },
+  {
+   "p1": "move Tail Whip",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Tail Whip",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Tail Whip",
+   "p2": "move Tail Whip"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   9,
+   2,
+   3,
+   4
+  ]
+ }
+}

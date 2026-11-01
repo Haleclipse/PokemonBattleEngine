@@ -1,0 +1,112 @@
+{
+ "schema": 1,
+ "id": "m10-a-aromatic-mist-an-ally-switch-turned-on-its-user-fails-before-the-metronome-count",
+ "notes": [
+  "R-M10-18: Showdown's `getTarget` gives a move for an adjacent ally aimed at its user's own position no target at all (`targetLoc === selfLoc` → null), and `useMoveInner` fails it (`if (!target)`, `[notarget]`) before TryMove. Clefable's Ally Switch (+1) puts Floatzel where its Aromatic Mist aimed: the Metronome item's condition never sees the move, and after three Dives (6553/4096) Floatzel's next Dive counts on (7372/4096) rather than from 1 (4915/4096) — a gap no damage roll closes."
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "doubles",
+  "format": "gen6doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Floatzel",
+    "species": "Floatzel",
+    "level": 50,
+    "nature": "Hardy",
+    "item": "Metronome",
+    "moves": [
+     "Dive",
+     "Aromatic Mist"
+    ],
+    "ability": "Swift Swim",
+    "gender": "M"
+   },
+   {
+    "label": "Clefable",
+    "species": "Clefable",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash",
+     "Ally Switch"
+    ],
+    "ability": "Magic Guard",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Dive 1, move Splash",
+   "p2": "move Splash, move Splash"
+  },
+  {
+   "p1": "move Dive 1, move Splash",
+   "p2": "move Splash, move Splash"
+  },
+  {
+   "p1": "move Dive 1, move Splash",
+   "p2": "move Splash, move Splash"
+  },
+  {
+   "p1": "move Dive 1, move Splash",
+   "p2": "move Splash, move Splash"
+  },
+  {
+   "p1": "move Dive 1, move Splash",
+   "p2": "move Splash, move Splash"
+  },
+  {
+   "p1": "move Dive 1, move Splash",
+   "p2": "move Splash, move Splash"
+  },
+  {
+   "p1": "move Aromatic Mist -2, move Ally Switch",
+   "p2": "move Splash, move Splash"
+  },
+  {
+   "p1": "move Splash, move Dive 1",
+   "p2": "move Splash, move Splash"
+  },
+  {
+   "p1": "move Splash, move Dive 1",
+   "p2": "move Splash, move Splash"
+  }
+ ]
+}

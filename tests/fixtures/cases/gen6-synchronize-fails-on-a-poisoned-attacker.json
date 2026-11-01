@@ -1,0 +1,66 @@
+{
+ "schema": 1,
+ "id": "gen6-synchronize-fails-on-a-poisoned-attacker",
+ "notes": [
+  "Synchronize bouncing a bad poison back on an attacker already badly poisoned prints `-fail|attacker|tox`: the attacker's own move did not fail (its damage and critical roll are still planned)"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Misdreavus",
+    "species": "Misdreavus",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Toxic",
+     "Harden"
+    ],
+    "ability": "Synchronize"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Lickitung",
+    "species": "Lickitung",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Poison Fang"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   5
+  ]
+ }
+}

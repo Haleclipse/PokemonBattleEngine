@@ -1,0 +1,69 @@
+{
+ "schema": 1,
+ "id": "gen2-thrash-asleep-keeps-the-lock",
+ "notes": [
+  "Gen 2 Thrash put to sleep: the lock waits for the user's next move (pokecrystal `CantMove`, issues.md I109) instead of ending at the turn's end (Showdown's gen2 `onResidual`), so the user stays locked into it; asleep there, it loses the lock with no confusion"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Thrasher",
+    "species": "Tauros",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Thrash",
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Sleeper",
+    "species": "Parasect",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Spore",
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Thrash",
+   "p2": "move Spore"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

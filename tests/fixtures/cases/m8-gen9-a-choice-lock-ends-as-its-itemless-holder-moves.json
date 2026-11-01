@@ -1,0 +1,92 @@
+{
+  "schema": 1,
+  "id": "m8-gen9-a-choice-lock-ends-as-its-itemless-holder-moves",
+  "notes": [
+    "Gen 7+ choicelock.onBeforeMove: Corrosive Gas took Grubbin's Choice Specs; the lock ends as Grubbin moves, seen at the faint boundary before the turn ends",
+    "promoted from m8-gen9-singles-s589-004-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Drifblim",
+        "species": "Drifblim",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Corrosive Gas"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Grubbin",
+        "species": "Grubbin",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Bone Rush"
+        ],
+        "ability": "Run Away",
+        "item": "Choice Specs",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Trevenant",
+        "species": "Trevenant",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Corrosive Gas"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Carkol",
+        "species": "Carkol",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tachyon Cutter",
+          "Corrosive Gas"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      2509,
+      42061,
+      45893,
+      26143
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Corrosive Gas",
+      "p2": "move Corrosive Gas"
+    },
+    {
+      "p1": "switch Grubbin",
+      "p2": "switch Carkol"
+    },
+    {
+      "p1": "move Bone Rush",
+      "p2": "move Tachyon Cutter"
+    },
+    {
+      "p1": "move Bone Rush",
+      "p2": "move Corrosive Gas"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+ "schema": 1,
+ "id": "gen8-emergency-exit-hazards",
+ "notes": [
+  "Emergency Exit on entry: Stealth Rock takes the newcomer from above half to half or less and it goes straight back out"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Pod",
+    "species": "Golisopod",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Liquidation"
+    ],
+    "ability": "Emergency Exit"
+   },
+   {
+    "label": "Pal",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Stealth Rock",
+     "Psychic",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Stealth Rock"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Psychic"
+  },
+  {
+   "p1": "switch Pal",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Pod",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Pal"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

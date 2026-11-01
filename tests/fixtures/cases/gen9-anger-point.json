@@ -1,0 +1,69 @@
+{
+ "schema": 1,
+ "id": "gen9-anger-point",
+ "notes": [
+  "Anger Point: a hit that is not critical does nothing; a critical hit (Flower Trick) raises Attack to +6; a critical hit on its Substitute does nothing from Gen 5 (no onAfterSubDamage)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Ape",
+    "species": "Primeape",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Substitute",
+     "Harden",
+     "Tackle"
+    ],
+    "ability": "Anger Point"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Cat",
+    "species": "Meowscarada",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Flower Trick",
+     "Harden",
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Substitute",
+   "p2": "move Flower Trick"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Flower Trick"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Flower Trick"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,413 @@
+{
+ "schema": 1,
+ "id": "m9-contrary-does-not-turn-a-z-power-boost",
+ "notes": [
+  "R-M9-44: Malamar (Contrary) uses Z-Ally Switch with its Psychium Z; the Z power's Speed +2 (`runZPower`, effect `zpower`) is not turned around — Contrary's and Simple's `onChangeBoost` return early for `zpower` (Bulbapedia: Z-Power stat increases are not inverted by Contrary). Minimized from Nightly 20261021-135119 (m9-gen7ubers-s139-001)."
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7ubers"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Zweilous",
+    "species": "Zweilous",
+    "ability": "Hustle",
+    "moves": [
+     "Screech"
+    ],
+    "nature": "Impish",
+    "gender": "M",
+    "shiny": false,
+    "level": 72,
+    "evs": {
+     "hp": 104,
+     "atk": 48,
+     "def": 84,
+     "spa": 164,
+     "spd": 48,
+     "spe": 60
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Nick54",
+    "species": "Primeape",
+    "ability": "Vital Spirit",
+    "moves": [
+     "Psych Up",
+     "Brick Break"
+    ],
+    "nature": "Gentle",
+    "gender": "M",
+    "shiny": false,
+    "level": 66,
+    "evs": {
+     "hp": 236,
+     "atk": 0,
+     "def": 0,
+     "spa": 32,
+     "spd": 88,
+     "spe": 152
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Purrloin",
+    "species": "Purrloin",
+    "ability": "Prankster",
+    "moves": [
+     "Fury Swipes",
+     "Payback",
+     "Shadow Claw"
+    ],
+    "nature": "Relaxed",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 0,
+     "atk": 204,
+     "def": 0,
+     "spa": 100,
+     "spd": 160,
+     "spe": 44
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 9,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 231
+   },
+   {
+    "label": "Pidgeotto",
+    "species": "Pidgeotto",
+    "ability": "Keen Eye",
+    "moves": [
+     "Brave Bird"
+    ],
+    "nature": "Rash",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 0,
+     "atk": 84,
+     "def": 40,
+     "spa": 248,
+     "spd": 104,
+     "spe": 32
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 28,
+     "spd": 31,
+     "spe": 31
+    },
+    "hpType": "Flying"
+   },
+   {
+    "label": "Klinklang",
+    "species": "Klinklang",
+    "ability": "Clear Body",
+    "moves": [
+     "Sandstorm"
+    ],
+    "nature": "Docile",
+    "gender": "",
+    "shiny": false,
+    "level": 79,
+    "evs": {
+     "hp": 68,
+     "atk": 0,
+     "def": 236,
+     "spa": 32,
+     "spd": 108,
+     "spe": 64
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Timburr",
+    "species": "Timburr",
+    "ability": "Sheer Force",
+    "moves": [
+     "Leer",
+     "Toxic"
+    ],
+    "nature": "Calm",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 52,
+     "atk": 24,
+     "def": 204,
+     "spa": 228,
+     "spd": 0,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 31
+   }
+  ],
+  "p2": [
+   {
+    "label": "Malamar",
+    "species": "Malamar",
+    "item": "Psychium Z",
+    "ability": "Contrary",
+    "moves": [
+     "Block",
+     "Ally Switch"
+    ],
+    "nature": "Quiet",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 12,
+     "atk": 0,
+     "def": 252,
+     "spa": 112,
+     "spd": 36,
+     "spe": 96
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 15
+    }
+   },
+   {
+    "label": "Sawk",
+    "species": "Sawk",
+    "ability": "Sturdy",
+    "moves": [
+     "Focus Punch"
+    ],
+    "nature": "Quirky",
+    "gender": "",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 44,
+     "atk": 0,
+     "def": 212,
+     "spa": 232,
+     "spd": 20,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 14,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Riolu",
+    "species": "Riolu",
+    "ability": "Inner Focus",
+    "moves": [
+     "Foresight"
+    ],
+    "nature": "Relaxed",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 0,
+     "atk": 56,
+     "def": 156,
+     "spa": 72,
+     "spd": 200,
+     "spe": 24
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 51
+   },
+   {
+    "label": "Ducklett",
+    "species": "Ducklett",
+    "ability": "Hydration",
+    "moves": [
+     "Aqua Jet",
+     "Mud Sport",
+     "Hail"
+    ],
+    "nature": "Impish",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 148,
+     "atk": 28,
+     "def": 220,
+     "spa": 56,
+     "spd": 56,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 11,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 59,
+    "hpType": "Poison"
+   },
+   {
+    "label": "Rayquaza",
+    "species": "Rayquaza",
+    "ability": "Air Lock",
+    "moves": [
+     "Round",
+     "Flamethrower"
+    ],
+    "nature": "Hardy",
+    "gender": "",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 0,
+     "atk": 112,
+     "def": 124,
+     "spa": 160,
+     "spd": 112,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   }
+  ]
+ },
+ "preview": {
+  "p1": "team 623415",
+  "p2": "team 541236"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   26887,
+   139,
+   1001,
+   31
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Leer",
+   "p2": "move Round"
+  },
+  {
+   "p1": "move Toxic",
+   "p2": "move Flamethrower"
+  },
+  {
+   "p1": "switch 2"
+  },
+  {
+   "p1": "switch 3",
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Payback",
+   "p2": "move Aqua Jet"
+  },
+  {
+   "p1": "move Shadow Claw",
+   "p2": "move Hail"
+  },
+  {
+   "p1": "switch 3",
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Psych Up",
+   "p2": "move Round"
+  },
+  {
+   "p1": "move Brick Break",
+   "p2": "move Flamethrower"
+  },
+  {
+   "p1": "switch 3"
+  },
+  {
+   "p1": "switch 4",
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Brave Bird",
+   "p2": "move Mud Sport"
+  },
+  {
+   "p2": "switch 2"
+  },
+  {
+   "p1": "switch 4",
+   "p2": "switch 3"
+  },
+  {
+   "p1": "move Fury Swipes",
+   "p2": "move 2 zmove"
+  }
+ ]
+}

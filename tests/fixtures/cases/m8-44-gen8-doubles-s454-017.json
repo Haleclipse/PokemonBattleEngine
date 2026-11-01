@@ -1,0 +1,85 @@
+{
+ "schema": 1,
+ "id": "m8-44-gen8-doubles-s454-017",
+ "notes": [
+  "Nightly 38 gen8-doubles-s454-017, minimized: a confused non-Ghost's Curse draws its random foe before the confusion check (`getRandomTarget` before ModifyMove)"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "doubles",
+  "format": "gen8doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Azelf",
+    "species": "Azelf",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Iron Head",
+     "Curse"
+    ],
+    "ability": "Run Away",
+    "item": "Power Lens"
+   },
+   {
+    "label": "Alakazam",
+    "species": "Alakazam",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Acrobatics",
+     "Swagger"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Crawdaunt",
+    "species": "Crawdaunt",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Aerial Ace",
+     "Curse"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Excadrill",
+    "species": "Excadrill",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Dragon Pulse",
+     "Curse"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   21078,
+   37527,
+   42498,
+   50613
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Iron Head 1, move Acrobatics 2",
+   "p2": "move Aerial Ace 1, move Dragon Pulse 2"
+  },
+  {
+   "p1": "move Curse, move Swagger 1",
+   "p2": "move Curse, move Curse"
+  }
+ ]
+}

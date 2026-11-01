@@ -1,0 +1,150 @@
+{
+ "schema": 1,
+ "id": "gen3-status-berries",
+ "notes": [
+  "Gen 3: each status berry is eaten at the Update after the move that gave its status (Cheri Berry: paralysis, Chesto Berry: sleep, Pecha Berry: poison, Rawst Berry: burn, Persim Berry: confusion, Lum Berry: confusion), and cures it"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Smeargle",
+    "species": "Smeargle",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Thunder Wave",
+     "Spore",
+     "Toxic",
+     "Will-O-Wisp"
+    ],
+    "ability": "Keen Eye"
+   },
+   {
+    "label": "Gengar",
+    "species": "Gengar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Confuse Ray"
+    ],
+    "ability": "Levitate"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Cheri Berry"
+   },
+   {
+    "label": "Dragonite",
+    "species": "Dragonite",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Inner Focus",
+    "item": "Chesto Berry"
+   },
+   {
+    "label": "Lapras",
+    "species": "Lapras",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Shell Armor",
+    "item": "Pecha Berry"
+   },
+   {
+    "label": "Swampert",
+    "species": "Swampert",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Torrent",
+    "item": "Rawst Berry"
+   },
+   {
+    "label": "Aggron",
+    "species": "Aggron",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Rock Head",
+    "item": "Persim Berry"
+   },
+   {
+    "label": "Walrein",
+    "species": "Walrein",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Lum Berry"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Thunder Wave",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Spore",
+   "p2": "switch Dragonite"
+  },
+  {
+   "p1": "move Toxic",
+   "p2": "switch Lapras"
+  },
+  {
+   "p1": "move Will-O-Wisp",
+   "p2": "switch Swampert"
+  },
+  {
+   "p1": "switch Gengar",
+   "p2": "switch Aggron"
+  },
+  {
+   "p1": "move Confuse Ray",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Confuse Ray",
+   "p2": "switch Walrein"
+  },
+  {
+   "p1": "move Confuse Ray",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

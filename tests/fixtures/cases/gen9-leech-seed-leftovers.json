@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "id": "gen9-singles-leech-seed-leftovers",
+  "notes": [
+    "Residual scheduler (ROADMAP §7.3): Leftovers (order 5.4, faster holder first) heals before Leech Seed (order 8)",
+    "drains Garchomp towards Forretress's position. Turn 1 Forretress is at full HP so only Garchomp's Leftovers shows."
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "a",
+        "species": "Forretress",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Leech Seed"
+        ],
+        "item": "Leftovers"
+      }
+    ],
+    "p2": [
+      {
+        "label": "b",
+        "species": "Garchomp",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ],
+        "item": "Leftovers"
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

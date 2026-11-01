@@ -1,0 +1,75 @@
+{
+ "schema": 1,
+ "id": "gen6-lunar-dance-settles-the-perish-faint",
+ "notes": [
+  "Gen 6 Lunar Dance waits on its user's slot as a residual handler (no order, the user's speed, sub-order 3): its count going on settles the faint Perish Song left waiting, which ends the battle before Echoed Voice's count \u2014 Echoed Voice used into the fainted dancer's slot, whose condition starts all the same (`onTryMove` before `[notarget]`)"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Dancer",
+    "species": "Cresselia",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Lunar Dance",
+     "Harden"
+    ]
+   },
+   {
+    "label": "Bench",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Singer",
+    "species": "Kangaskhan",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Perish Song",
+     "Echoed Voice",
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Perish Song"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Lunar Dance",
+   "p2": "move Echoed Voice"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

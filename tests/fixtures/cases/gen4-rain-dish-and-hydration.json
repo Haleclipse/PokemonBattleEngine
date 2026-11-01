@@ -1,0 +1,110 @@
+{
+ "schema": 1,
+ "id": "gen4-rain-dish-and-hydration",
+ "notes": [
+  "Gen 4 Rain Dish heals 1/16 in rain's upkeep (onWeather, before the poison); Air Lock stops it and Hydration (every onWeather is suppressed); Hydration cures the poison once Air Lock leaves"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Rainer",
+    "species": "Kyogre",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Toxic",
+     "Recover",
+     "Water Gun"
+    ],
+    "ability": "Drizzle"
+   },
+   {
+    "label": "Nine",
+    "species": "Golduck",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Toxic"
+    ],
+    "ability": "Air Lock"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Ludicolo",
+    "species": "Ludicolo",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Harden"
+    ],
+    "ability": "Rain Dish"
+   },
+   {
+    "label": "Vaporeon",
+    "species": "Vaporeon",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Harden"
+    ],
+    "ability": "Hydration"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Water Gun",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Toxic",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Nine",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "switch Vaporeon"
+  },
+  {
+   "p1": "move Toxic",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Rainer",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Water Gun",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   3,
+   2,
+   3,
+   4
+  ]
+ }
+}

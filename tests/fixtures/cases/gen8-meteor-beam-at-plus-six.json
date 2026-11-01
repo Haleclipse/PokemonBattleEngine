@@ -1,0 +1,70 @@
+{
+ "schema": 1,
+ "id": "gen8-meteor-beam-at-plus-six",
+ "notes": [
+  "Gen 8 Meteor Beam at +6 Special Attack: the boost changes nothing (-boost \u2026 0) and the move still charges"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Beamer",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Meteor Beam",
+     "Nasty Plot"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Wall",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Nasty Plot",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Nasty Plot",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Nasty Plot",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Meteor Beam",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Meteor Beam",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

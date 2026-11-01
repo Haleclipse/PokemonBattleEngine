@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen4-transformed-ditto-and-soul-dew",
+ "notes": [
+  "Gen 4: Ditto holding Soul Dew transforms into Latias: no boost (Soul Dew asks `baseSpecies` in every generation)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Ditto",
+    "species": "Ditto",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Transform"
+    ],
+    "ability": "Limber",
+    "item": "Soul Dew"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Latias",
+    "species": "Latias",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Psychic",
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Levitate"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Transform",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Psychic",
+   "p2": "move Psychic"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

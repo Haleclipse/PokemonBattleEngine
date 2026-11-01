@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "gen9-hearthflame-mask",
+ "notes": [
+  "Gen 9: Ogerpon wearing its Hearthflame Mask boosts every move by 20 % and its Ivy Cudgel is fire-type (a Charizard takes it accordingly); the mask cannot be taken off an Ogerpon"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Ogerpon",
+    "species": "Ogerpon-Hearthflame",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Ivy Cudgel",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Defiant",
+    "item": "Hearthflame Mask"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Charizard",
+    "species": "Charizard",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Thief",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Blaze"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Thief"
+  },
+  {
+   "p1": "move Ivy Cudgel",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Ivy Cudgel",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

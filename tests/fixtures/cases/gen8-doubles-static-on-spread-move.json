@@ -1,0 +1,77 @@
+{
+  "schema": 1,
+  "id": "gen8-doubles-static-on-spread-move",
+  "notes": [
+    "A spread move reports every hit before the reactions: Static's paralysis belongs to the target named in [of]",
+    "promoted from m8-gen8-doubles-s108-004-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 8,
+    "mode": "doubles",
+    "format": "gen8doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Tsareena",
+        "species": "Tsareena",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Breaking Swipe"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Linoone",
+        "species": "Linoone",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Lunge"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Pinsir",
+        "species": "Pinsir",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Bubble Beam"
+        ],
+        "ability": "Static",
+        "gender": "F"
+      },
+      {
+        "label": "Scorbunny",
+        "species": "Scorbunny",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Aurora Beam"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      24234,
+      56126,
+      17415,
+      2722
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Breaking Swipe, move Lunge 1",
+      "p2": "move Bubble Beam 1, move Aurora Beam 2"
+    }
+  ]
+}

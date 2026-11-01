@@ -1,0 +1,63 @@
+{
+ "schema": 1,
+ "id": "m8-45-gen1-critical-hit-vs-transform-b",
+ "notes": [
+  "Nightly 39 gen1-singles-s455-001, minimized: Gen 1: a critical hit reads the Pokemon's own stats under Transform"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Golduck",
+    "species": "Golduck",
+    "level": 47,
+    "nature": "Hardy",
+    "moves": [
+     "Transform",
+     "Conversion",
+     "Psywave"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Magneton",
+    "species": "Magneton",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Transform",
+     "Conversion",
+     "Bonemerang"
+    ]
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   62263,
+   65308,
+   10401,
+   56705
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Transform",
+   "p2": "move Transform"
+  },
+  {
+   "p1": "move Conversion",
+   "p2": "move Conversion"
+  },
+  {
+   "p1": "move 3",
+   "p2": "move 3"
+  }
+ ]
+}

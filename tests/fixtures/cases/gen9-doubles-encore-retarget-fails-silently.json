@@ -1,0 +1,85 @@
+{
+  "schema": 1,
+  "id": "gen9-doubles-encore-retarget-fails-silently",
+  "notes": [
+    "An Encore retarget onto an already confused Pokemon fails with [still]; the adapter keeps the target Showdown erases",
+    "promoted from m8-gen9-doubles-s101-008-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Swinub",
+        "species": "Swinub",
+        "level": 48,
+        "nature": "Hardy",
+        "moves": [
+          "Dragon Hammer",
+          "Confide"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Vileplume",
+        "species": "Vileplume",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Encore"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Scatterbug",
+        "species": "Scatterbug",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Headlong Rush",
+          "Roar"
+        ],
+        "ability": "Sand Stream",
+        "gender": "F"
+      },
+      {
+        "label": "Skrelp",
+        "species": "Skrelp",
+        "level": 52,
+        "nature": "Hardy",
+        "moves": [
+          "Supersonic",
+          "Tackle"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      65435,
+      42335,
+      28915,
+      12079
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Dragon Hammer 1, move Encore 2",
+      "p2": "move Headlong Rush 1, move Supersonic 2"
+    },
+    {
+      "p1": "move Confide 1, move Encore 2",
+      "p2": "move Roar 1, move Tackle 2"
+    }
+  ]
+}

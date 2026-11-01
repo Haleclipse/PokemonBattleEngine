@@ -1,0 +1,144 @@
+{
+ "schema": 1,
+ "id": "gen9-electric-surge-and-quark-drive",
+ "notes": [
+  "Electric Surge sets Electric Terrain as the battle starts: Quark Drive raises Iron Moth's best stat (Special Attack \u00d75325/4096) and Iron Bundle's (Speed \u00d71.5), Raichu's Surge Surfer doubles its Speed; Psychic Surge's Mew replaces the terrain and both Quark Drives end; Electric Terrain from Pikachu's move brings Iron Moth's back on its Defense, now its best stat after three Hardens (Raichu's Thunder Punch meets it); switched out and back in under the terrain, it raises its Special Attack again as it enters; it ends with the terrain"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Surge",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Protect"
+    ],
+    "ability": "Electric Surge"
+   },
+   {
+    "label": "Moth",
+    "species": "Iron Moth",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Flamethrower",
+     "Harden"
+    ],
+    "ability": "Quark Drive"
+   },
+   {
+    "label": "Psy",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Protect"
+    ],
+    "ability": "Psychic Surge"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Bundle",
+    "species": "Iron Bundle",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Freeze-Dry",
+     "Protect"
+    ],
+    "ability": "Quark Drive"
+   },
+   {
+    "label": "Raichu",
+    "species": "Raichu",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Thunderbolt",
+     "Thunder Punch",
+     "Protect"
+    ],
+    "ability": "Surge Surfer"
+   },
+   {
+    "label": "Pikachu",
+    "species": "Pikachu",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Electric Terrain",
+     "Protect"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Recover, move Flamethrower 2",
+   "p2": "move Freeze-Dry 1, move Thunderbolt 1"
+  },
+  {
+   "p1": "move Recover, move Harden",
+   "p2": "move Freeze-Dry 1, move Thunderbolt 1"
+  },
+  {
+   "p1": "switch Psy, move Harden",
+   "p2": "move Freeze-Dry 1, move Thunderbolt 1"
+  },
+  {
+   "p1": "move Recover, move Flamethrower 2",
+   "p2": "move Freeze-Dry 1, move Protect"
+  },
+  {
+   "p1": "move Recover, move Harden",
+   "p2": "switch Pikachu, move Protect"
+  },
+  {
+   "p1": "move Recover, move Harden",
+   "p2": "move Electric Terrain, move Thunderbolt 1"
+  },
+  {
+   "p1": "move Recover, move Harden",
+   "p2": "move Protect, move Thunder Punch 2"
+  },
+  {
+   "p1": "move Recover, switch Surge",
+   "p2": "move Protect, move Protect"
+  },
+  {
+   "p1": "move Recover, switch Moth",
+   "p2": "move Protect, move Thunderbolt 1"
+  },
+  {
+   "p1": "move Recover, move Flamethrower 2",
+   "p2": "move Protect, move Protect"
+  },
+  {
+   "p1": "move Recover, move Harden",
+   "p2": "move Protect, move Thunderbolt 1"
+  },
+  {
+   "p1": "move Recover, move Harden",
+   "p2": "move Protect, move Thunderbolt 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

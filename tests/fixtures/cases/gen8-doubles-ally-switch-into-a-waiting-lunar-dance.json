@@ -1,0 +1,98 @@
+{
+ "schema": 1,
+ "id": "gen8-doubles-ally-switch-into-a-waiting-lunar-dance",
+ "notes": [
+  "Gen 8 doubles: Cresselia's Lunar Dance waits on its slot (Bagon comes in needing nothing); Tympole's Ally Switch moves into that slot and the dance restores its HP and PP there (`onSwap`, the partner's `Swap` first, DESIGN.md R-M8-86)"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "doubles",
+  "format": "gen8doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Cresselia",
+    "species": "Cresselia",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Lunar Dance",
+     "Splash"
+    ],
+    "ability": "Levitate",
+    "gender": "F"
+   },
+   {
+    "label": "Tympole",
+    "species": "Tympole",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Ally Switch",
+     "Tackle"
+    ],
+    "ability": "Swift Swim",
+    "gender": "M"
+   },
+   {
+    "label": "Bagon",
+    "species": "Bagon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Rock Head",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Lunar Dance, move Tackle 1",
+   "p2": "move Tackle 2, move Splash"
+  },
+  {
+   "p1": "switch 3, pass"
+  },
+  {
+   "p1": "move Splash, move Ally Switch",
+   "p2": "move Splash, move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,63 @@
+{
+ "schema": 1,
+ "id": "gen7-berserk-before-the-sitrus-berry",
+ "notes": [
+  "Gen 7 Berserk (Showdown `onDamage`, `onTryEatItem`, `onAfterMoveSecondary`): the second Seismic Toss takes Drampa from 103 / 153 to 53; its Sitrus Berry waits through the hit's `Update`, Berserk raises its Special Attack at the move's end, and the berry goes at the action's `Update`"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Drampa",
+    "species": "Drampa",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Sitrus Berry",
+    "ability": "Berserk"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

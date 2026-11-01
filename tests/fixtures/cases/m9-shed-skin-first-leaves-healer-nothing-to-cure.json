@@ -1,0 +1,379 @@
+{
+ "schema": 1,
+ "id": "m9-shed-skin-first-leaves-healer-nothing-to-cure",
+ "notes": [
+  "R-M9-48: Pupitar's Shed Skin and its partner Blissey's Healer share order 5 / sub-order 3; Pupitar, faster, sheds its toxic first, so Healer finds no status and rolls nothing (Showdown `healer.onResidual` asks `allyActive.status`). The replay planned Healer's roll from the state before the residual. Minimized from Nightly 20261022-031045 (m9-gen8doublesou-s145-013)."
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "doubles",
+  "format": "gen8doublesou"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Alcremie",
+    "species": "Alcremie-Ruby-Cream",
+    "ability": "Aroma Veil",
+    "moves": [
+     "Encore"
+    ],
+    "nature": "Modest",
+    "gender": "",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 116,
+     "atk": 0,
+     "def": 116,
+     "spa": 0,
+     "spd": 28,
+     "spe": 248
+    },
+    "ivs": {
+     "hp": 9,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Vanillite",
+    "species": "Vanillite",
+    "ability": "Snow Cloak",
+    "moves": [
+     "Ally Switch"
+    ],
+    "nature": "Careful",
+    "gender": "M",
+    "shiny": false,
+    "level": 25,
+    "evs": {
+     "hp": 0,
+     "atk": 20,
+     "def": 56,
+     "spa": 116,
+     "spd": 120,
+     "spe": 196
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 16
+    },
+    "happiness": 196
+   },
+   {
+    "label": "Pupitar",
+    "species": "Pupitar",
+    "ability": "Shed Skin",
+    "moves": [
+     "Hyper Beam",
+     "Ancient Power",
+     "Assurance",
+     "Tackle"
+    ],
+    "nature": "Timid",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 0,
+     "atk": 156,
+     "def": 244,
+     "spa": 0,
+     "spd": 0,
+     "spe": 108
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Ludicolo",
+    "species": "Ludicolo",
+    "ability": "Own Tempo",
+    "moves": [
+     "Seed Bomb"
+    ],
+    "nature": "Mild",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 96,
+     "atk": 232,
+     "def": 68,
+     "spa": 0,
+     "spd": 112,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Nick29",
+    "species": "Blissey",
+    "ability": "Healer",
+    "moves": [
+     "Sandstorm",
+     "Ally Switch",
+     "Rock Smash",
+     "Hail"
+    ],
+    "nature": "Timid",
+    "gender": "",
+    "shiny": false,
+    "level": 79,
+    "evs": {
+     "hp": 160,
+     "atk": 252,
+     "def": 0,
+     "spa": 0,
+     "spd": 0,
+     "spe": 96
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Nick45",
+    "species": "Volcarona",
+    "ability": "Swarm",
+    "moves": [
+     "Rage Powder"
+    ],
+    "nature": "Relaxed",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 48,
+     "atk": 128,
+     "def": 128,
+     "spa": 0,
+     "spd": 92,
+     "spe": 112
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   }
+  ],
+  "p2": [
+   {
+    "label": "Dragalge",
+    "species": "Dragalge",
+    "ability": "Adaptability",
+    "moves": [
+     "Draco Meteor"
+    ],
+    "nature": "Docile",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 144,
+     "atk": 44,
+     "def": 8,
+     "spa": 72,
+     "spd": 120,
+     "spe": 120
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Koffing",
+    "species": "Koffing",
+    "ability": "Levitate",
+    "moves": [
+     "Smog"
+    ],
+    "nature": "Rash",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 20,
+     "atk": 140,
+     "def": 100,
+     "spa": 120,
+     "spd": 128,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Exeggutor",
+    "species": "Exeggutor",
+    "ability": "Harvest",
+    "moves": [
+     "Toxic",
+     "Uproar"
+    ],
+    "nature": "Quiet",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 8,
+     "atk": 56,
+     "def": 28,
+     "spa": 208,
+     "spd": 208,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 27,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Celebi",
+    "species": "Celebi",
+    "ability": "Natural Cure",
+    "moves": [
+     "Metronome",
+     "Confide",
+     "Psychic Terrain",
+     "Mimic"
+    ],
+    "nature": "Quiet",
+    "gender": "",
+    "shiny": false,
+    "level": 98,
+    "evs": {
+     "hp": 36,
+     "atk": 96,
+     "def": 212,
+     "spa": 0,
+     "spd": 40,
+     "spe": 124
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 17,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Alcremie",
+    "species": "Alcremie-Matcha-Cream",
+    "ability": "Sweet Veil",
+    "moves": [
+     "Sweet Kiss"
+    ],
+    "nature": "Brave",
+    "gender": "",
+    "shiny": false,
+    "level": 11,
+    "evs": {
+     "hp": 0,
+     "atk": 88,
+     "def": 0,
+     "spa": 168,
+     "spd": 252,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 18
+    }
+   }
+  ]
+ },
+ "preview": {
+  "p1": "team 356412",
+  "p2": "team 543216"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   25863,
+   145,
+   1013,
+   31
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Hyper Beam 1, move Sandstorm",
+   "p2": "move Sweet Kiss 1, move Metronome"
+  },
+  {
+   "p2": "switch Exeggutor, pass"
+  },
+  {
+   "p1": "move 1, move 2",
+   "p2": "move 2, move 2 2"
+  },
+  {
+   "p1": "move 3 2, move 3 1",
+   "p2": "move 1, move 3"
+  },
+  {
+   "p1": "move 4, move 4 2",
+   "p2": "move 1, move 4 1"
+  },
+  {
+   "p1": "move 1, move 1 1",
+   "p2": "move 1 2, move 1"
+  },
+  {
+   "p1": "move 2, move 1",
+   "p2": "move 2, move 2 1"
+  }
+ ]
+}

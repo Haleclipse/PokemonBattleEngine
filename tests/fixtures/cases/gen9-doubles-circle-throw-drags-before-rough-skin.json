@@ -1,0 +1,164 @@
+{
+  "schema": 1,
+  "id": "gen9-doubles-circle-throw-drags-before-rough-skin",
+  "notes": [
+    "Circle Throw drags its target before DamagingHit: the user its Rough Skin then knocks out still forces the switch",
+    "promoted from m8-gen9-doubles-s106-009-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Urshifu",
+        "species": "Urshifu",
+        "level": 53,
+        "nature": "Hardy",
+        "moves": [
+          "Hammer Arm",
+          "Taunt",
+          "Overheat",
+          "Dragon Tail"
+        ],
+        "ability": "Rough Skin",
+        "gender": "M"
+      },
+      {
+        "label": "Pupitar",
+        "species": "Pupitar",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Esper Wing",
+          "Taunt",
+          "Dragon Ascent",
+          "Circle Throw"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Dusclops",
+        "species": "Dusclops",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Make It Rain"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Floragato",
+        "species": "Floragato",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Leaf Storm",
+          "Ancient Power"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Minior",
+        "species": "Minior",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Mystical Power",
+          "Taunt",
+          "Psycho Boost"
+        ],
+        "ability": "Poison Point"
+      },
+      {
+        "label": "Metagross",
+        "species": "Metagross",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fiery Dance",
+          "Taunt",
+          "Superpower"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Zapdos",
+        "species": "Zapdos",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Headlong Rush",
+          "Circle Throw"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Graveler",
+        "species": "Graveler",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Meteor Mash"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      50113,
+      4280,
+      34110,
+      321
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Hammer Arm 1, move Esper Wing 2",
+      "p2": "move Mystical Power 1, move Fiery Dance 2"
+    },
+    {
+      "p1": "move Taunt 1, move Taunt 2",
+      "p2": "move Taunt 1, move Taunt 2"
+    },
+    {
+      "p1": "move Dragon Tail 1, move Dragon Ascent 2",
+      "p2": "move Psycho Boost 1, move Fiery Dance 2"
+    },
+    {
+      "p2": "switch Zapdos, pass"
+    },
+    {
+      "p1": "move Hammer Arm 1, move Circle Throw 2",
+      "p2": "move Circle Throw 1, move Superpower 2"
+    },
+    {
+      "p1": "pass, switch Urshifu"
+    },
+    {
+      "p1": "switch Floragato, move Hammer Arm 1",
+      "p2": "switch Graveler, move Fiery Dance 1"
+    },
+    {
+      "p2": "switch Zapdos, pass"
+    },
+    {
+      "p1": "move Leaf Storm 2, move Taunt 1",
+      "p2": "move Headlong Rush 2, move Taunt 1"
+    },
+    {
+      "p1": "move Ancient Power 2, move Overheat 1",
+      "p2": "move Circle Throw 2, move Superpower 1"
+    }
+  ]
+}

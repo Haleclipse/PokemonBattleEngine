@@ -1,0 +1,88 @@
+{
+  "schema": 1,
+  "id": "gen4-embargo-ends-a-choice-lock",
+  "notes": [
+    "Gen 4 (cartridge, issues.md I55): Snorlax's Choice Scarf locks it into Seismic Toss; Honchkrow's Embargo sets the scarf aside, which ends the lock — Snorlax uses Harden under Embargo and stays free after it ends, then Harden locks it in"
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "singles",
+    "format": "gen4customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Snorlax",
+        "species": "Snorlax",
+        "level": 100,
+        "nature": "Hardy",
+        "moves": [
+          "Seismic Toss",
+          "Harden"
+        ],
+        "ability": "Thick Fat",
+        "item": "Choice Scarf"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Honchkrow",
+        "species": "Honchkrow",
+        "level": 100,
+        "nature": "Hardy",
+        "moves": [
+          "Embargo",
+          "Harden"
+        ],
+        "ability": "Insomnia"
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Seismic Toss",
+      "p2": "move Harden"
+    },
+    {
+      "p1": "move Seismic Toss",
+      "p2": "move Embargo"
+    },
+    {
+      "p1": "move Harden",
+      "p2": "move Harden"
+    },
+    {
+      "p1": "move Harden",
+      "p2": "move Harden"
+    },
+    {
+      "p1": "move Harden",
+      "p2": "move Harden"
+    },
+    {
+      "p1": "move Harden",
+      "p2": "move Harden"
+    },
+    {
+      "p1": "move Harden",
+      "p2": "move Harden"
+    },
+    {
+      "p1": "move Harden",
+      "p2": "move Harden"
+    },
+    {
+      "p1": "move Harden",
+      "p2": "move Harden"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

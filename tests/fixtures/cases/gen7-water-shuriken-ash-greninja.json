@@ -1,0 +1,71 @@
+{
+ "schema": 1,
+ "id": "gen7-water-shuriken-ash-greninja",
+ "notes": [
+  "Water Shuriken is 20 per hit for Greninja-Ash with Battle Bond, 15 otherwise"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Greninja-Ash",
+    "species": "Greninja-Ash",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Water Shuriken"
+    ],
+    "ability": "Battle Bond"
+   },
+   {
+    "label": "Greninja",
+    "species": "Greninja",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Water Shuriken"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Growl"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Water Shuriken",
+   "p2": "move Growl"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "move Growl"
+  },
+  {
+   "p1": "move Water Shuriken",
+   "p2": "move Growl"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

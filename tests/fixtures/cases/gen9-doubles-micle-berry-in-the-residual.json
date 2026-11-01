@@ -1,0 +1,92 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-micle-berry-in-the-residual",
+ "notes": [
+  "Gen 9 doubles Micle Berry (Showdown `onResidual`, a `micleberry` condition with `duration: 2`, `onSourceAccuracy`): tossed to a quarter, Jolteon eats it only at the end of the turn; its boost waits two turns for a move and wears off",
+  "Turn 2: Vaporeon, tossed to a quarter, eats its own at the end of the turn; turn 3 its Swift, sure to hit, still uses the boost up"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Leer"
+    ],
+    "item": "Micle Berry",
+    "ability": "Volt Absorb"
+   },
+   {
+    "label": "Vaporeon",
+    "species": "Vaporeon",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Swift"
+    ],
+    "item": "Micle Berry",
+    "ability": "Water Absorb"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 55,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Snorlax2",
+    "species": "Snorlax",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Seismic Toss 1, move Seismic Toss 1"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Seismic Toss 2, move Seismic Toss 2"
+  },
+  {
+   "p1": "move Harden, move Swift",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

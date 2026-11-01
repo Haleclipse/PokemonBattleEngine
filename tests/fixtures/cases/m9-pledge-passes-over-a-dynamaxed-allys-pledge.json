@@ -1,0 +1,93 @@
+{
+ "schema": 1,
+ "id": "m9-pledge-passes-over-a-dynamaxed-allys-pledge",
+ "notes": [
+  "R-M9-27: a Pledge's `onPrepareHit` passes over an ally's action that is a Max Move (`action.maxMove`): Charizard's Fire Pledge does not wait for the Dynamaxed Blastoise's Water Pledge (its Max Geyser); both go alone."
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "doubles",
+  "format": "gen8doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Charizard",
+    "species": "Charizard",
+    "ability": "Blaze",
+    "moves": [
+     "Fire Pledge"
+    ],
+    "evs": {
+     "spa": 252,
+     "spe": 252
+    },
+    "nature": "Timid"
+   },
+   {
+    "label": "Blastoise",
+    "species": "Blastoise",
+    "ability": "Torrent",
+    "moves": [
+     "Water Pledge"
+    ],
+    "evs": {
+     "hp": 252,
+     "spa": 252
+    },
+    "nature": "Modest"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "ability": "Thick Fat",
+    "item": "Leftovers",
+    "moves": [
+     "Splash"
+    ],
+    "evs": {
+     "hp": 252,
+     "def": 252
+    },
+    "nature": "Bold"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "ability": "Natural Cure",
+    "item": "Eviolite",
+    "moves": [
+     "Splash"
+    ],
+    "evs": {
+     "hp": 252,
+     "def": 252
+    },
+    "nature": "Bold"
+   }
+  ]
+ },
+ "random": {
+  "seed": [
+   2,
+   4,
+   6,
+   8
+  ]
+ },
+ "corpus": {
+  "mechanics": true
+ },
+ "script": [
+  {
+   "p1": "move 1 2, move 1 1 dynamax",
+   "p2": "move 1, move 1"
+  },
+  {
+   "p1": "move 1 2, move 1 1",
+   "p2": "move 1, move 1"
+  }
+ ]
+}

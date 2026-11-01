@@ -1,0 +1,80 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-cheek-pouch-under-heal-block",
+ "notes": [
+  "Gen 9 doubles: Psychic Noise gives Greedent Heal Block, Seismic Toss takes it to a quarter: it eats its Liechi Berry (Attack +1), and Cheek Pouch's heal is refused (`TryHeal`)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Greedent",
+    "species": "Greedent",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Liechi Berry",
+    "ability": "Cheek Pouch"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Natural Cure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Hatterene",
+    "species": "Hatterene",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Psychic Noise",
+     "Harden"
+    ],
+    "ability": "Magic Bounce"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Psychic Noise 1, move Seismic Toss 1"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

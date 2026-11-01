@@ -1,0 +1,62 @@
+{
+ "schema": 1,
+ "id": "gen7-clanging-scales-lowers-defense-once-it-lands",
+ "notes": [
+  "Clanging Scales (selfBoost) lowers the user's Defense once the move lands; blocked by Protect, it lowers nothing"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Kommo-o",
+    "species": "Kommo-o",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Clanging Scales"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Protect"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Clanging Scales",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Clanging Scales",
+   "p2": "move Protect"
+  },
+  {
+   "p1": "move Clanging Scales",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

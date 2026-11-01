@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "id": "m8-gen9-a-partners-petal-dance-danced-at-a-random-foe",
+  "notes": [
+    "Gen 9 doubles: Camerupt's Petal Dance hits Decidueye; its partner Altaria (Dancer) dances it at a random foe (Cacturne) — the dance aims where the move went (Showdown activeTarget), not at the action's declared target, which a randomNormal move does not have (DESIGN.md R-M8-122)",
+    "promoted from m8-gen9-doubles-s606-014-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Decidueye",
+        "species": "Decidueye",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Strange Steam"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Cacturne",
+        "species": "Cacturne",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Confusion"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Camerupt",
+        "species": "Camerupt",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Petal Dance"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Altaria",
+        "species": "Altaria",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Raging Fury"
+        ],
+        "ability": "Dancer",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      31161,
+      38462,
+      49581,
+      54906
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Strange Steam 1, move Confusion 2",
+      "p2": "move Petal Dance, move Raging Fury"
+    }
+  ]
+}

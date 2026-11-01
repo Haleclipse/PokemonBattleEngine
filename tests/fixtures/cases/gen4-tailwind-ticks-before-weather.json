@@ -1,0 +1,311 @@
+{
+  "schema": 1,
+  "id": "gen4-tailwind-ticks-before-weather",
+  "notes": [
+    "Gen 4 Tailwind counts down before the weather: a battle ended by hail shows it already ticked",
+    "promoted from m8-gen4-singles-s104-004-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "singles",
+    "format": "gen4customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Combee",
+        "species": "Combee",
+        "level": 48,
+        "nature": "Hardy",
+        "moves": [
+          "Aqua Tail",
+          "Slash",
+          "Dragon Breath"
+        ],
+        "ability": "Sand Stream",
+        "gender": "F"
+      },
+      {
+        "label": "Wailord",
+        "species": "Wailord",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Giga Drain",
+          "Hypnosis",
+          "Withdraw",
+          "Meteor Mash"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Venonat",
+        "species": "Venonat",
+        "level": 45,
+        "nature": "Hardy",
+        "moves": [
+          "Octazooka",
+          "Roar of Time",
+          "Agility"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Roselia",
+        "species": "Roselia",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Teeter Dance",
+          "Twister"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Aipom",
+        "species": "Aipom",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Attack Order",
+          "Rock Tomb",
+          "Lovely Kiss"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Yanmega",
+        "species": "Yanmega",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Toxic Spikes",
+          "Tailwind",
+          "Wood Hammer",
+          "Confusion"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Marshtomp",
+        "species": "Marshtomp",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Icicle Spear",
+          "Earth Power",
+          "Silver Wind",
+          "Drain Punch"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Shuppet",
+        "species": "Shuppet",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Rock Polish",
+          "Magnet Bomb"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Kricketot",
+        "species": "Kricketot",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Bone Rush",
+          "Double-Edge",
+          "Will-O-Wisp"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Voltorb",
+        "species": "Voltorb",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Crush Claw",
+          "Icy Wind",
+          "Thunder Fang"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Beedrill",
+        "species": "Beedrill",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Ingrain"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      50076,
+      40316,
+      57105,
+      26183
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Aqua Tail",
+      "p2": "move Icicle Spear"
+    },
+    {
+      "p1": "move Slash",
+      "p2": "move Earth Power"
+    },
+    {
+      "p1": "move Dragon Breath",
+      "p2": "move Silver Wind"
+    },
+    {
+      "p1": "switch Wailord",
+      "p2": "switch Shuppet"
+    },
+    {
+      "p1": "move Meteor Mash",
+      "p2": "move Magnet Bomb"
+    },
+    {
+      "p1": "move Giga Drain",
+      "p2": "move Rock Polish"
+    },
+    {
+      "p2": "switch Marshtomp"
+    },
+    {
+      "p1": "move Hypnosis",
+      "p2": "move Earth Power"
+    },
+    {
+      "p1": "switch Combee",
+      "p2": "switch Kricketot"
+    },
+    {
+      "p1": "move Dragon Breath",
+      "p2": "move Double-Edge"
+    },
+    {
+      "p1": "switch Wailord"
+    },
+    {
+      "p1": "move Meteor Mash",
+      "p2": "move Will-O-Wisp"
+    },
+    {
+      "p1": "move Giga Drain",
+      "p2": "move Bone Rush"
+    },
+    {
+      "p1": "switch Venonat",
+      "p2": "switch Marshtomp"
+    },
+    {
+      "p1": "move Octazooka",
+      "p2": "move Earth Power"
+    },
+    {
+      "p1": "move Roar of Time",
+      "p2": "move Silver Wind"
+    },
+    {
+      "p1": "move Agility",
+      "p2": "move Drain Punch"
+    },
+    {
+      "p1": "switch Wailord"
+    },
+    {
+      "p1": "switch Roselia",
+      "p2": "switch Kricketot"
+    },
+    {
+      "p2": "switch Marshtomp"
+    },
+    {
+      "p1": "move Teeter Dance",
+      "p2": "move Icicle Spear"
+    },
+    {
+      "p1": "move Twister",
+      "p2": "move Earth Power"
+    },
+    {
+      "p1": "switch Wailord"
+    },
+    {
+      "p1": "move Withdraw",
+      "p2": "move Silver Wind"
+    },
+    {
+      "p1": "switch Aipom"
+    },
+    {
+      "p1": "switch Yanmega",
+      "p2": "switch Voltorb"
+    },
+    {
+      "p1": "move Confusion",
+      "p2": "move Thunder Fang"
+    },
+    {
+      "p1": "move Toxic Spikes",
+      "p2": "move Crush Claw"
+    },
+    {
+      "p1": "move Tailwind",
+      "p2": "move Icy Wind"
+    },
+    {
+      "p1": "switch Aipom",
+      "p2": "switch Marshtomp"
+    },
+    {
+      "p1": "move Rock Tomb",
+      "p2": "move Silver Wind"
+    },
+    {
+      "p2": "switch Voltorb"
+    },
+    {
+      "p1": "move Lovely Kiss",
+      "p2": "move Thunder Fang"
+    },
+    {
+      "p1": "move Attack Order",
+      "p2": "move Crush Claw"
+    },
+    {
+      "p1": "switch Yanmega"
+    },
+    {
+      "p1": "move Tailwind",
+      "p2": "switch Beedrill"
+    },
+    {
+      "p1": "move Wood Hammer",
+      "p2": "move Ingrain"
+    }
+  ]
+}

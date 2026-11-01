@@ -1,0 +1,91 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-mortal-spin-and-toxic-debris",
+ "notes": [
+  "Toxic Debris lays Toxic Spikes on the foes' side when a physical move hits Glimmora (a foe's or its ally's), not for a special one, two layers at most; Mortal Spin hits both foes, poisons them and clears its user's side"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Glimmora",
+    "species": "Glimmora",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Mortal Spin",
+     "Harden"
+    ],
+    "ability": "Toxic Debris"
+   },
+   {
+    "label": "Ally",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Setter",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Stealth Rock",
+     "Spikes",
+     "Water Gun",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Hitter",
+    "species": "Garchomp",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Water Gun 1, move Tackle 1"
+  },
+  {
+   "p1": "move Harden, move Tackle -1",
+   "p2": "move Stealth Rock, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Spikes, move Tackle 1"
+  },
+  {
+   "p1": "move Mortal Spin, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

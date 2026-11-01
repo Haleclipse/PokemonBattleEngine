@@ -1,0 +1,487 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@pkmn/sim",
+    "version": "0.10.11",
+    "formatid": "gen4customgame",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "frames": [
+    {
+      "schema": 1,
+      "checkpoint": "initial",
+      "turn": 1,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 357,
+              "max_hp": 357,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "dragon",
+                "ground"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                24,
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 172,
+              "max_hp": 172,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "electric"
+              ],
+              "ability": "lightningrod",
+              "item": "",
+              "pp": [
+                56
+              ]
+            },
+            {
+              "hp": 52,
+              "max_hp": 52,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "rock",
+                "ground"
+              ],
+              "ability": "sturdy",
+              "item": "",
+              "pp": [
+                56
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Garchomp"
+          },
+          "details": "Garchomp, M",
+          "hp": 357,
+          "max_hp": 357,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Manectric"
+          },
+          "details": "Manectric, L60, F",
+          "hp": 172,
+          "max_hp": 172,
+          "status": null
+        },
+        {
+          "kind": "turn",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_1",
+      "turn": 2,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 348,
+              "max_hp": 357,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "dragon",
+                "ground"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                23,
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 97,
+              "max_hp": 172,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "electric"
+              ],
+              "ability": "lightningrod",
+              "item": "",
+              "pp": [
+                55
+              ]
+            },
+            {
+              "hp": 52,
+              "max_hp": 52,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "rock",
+                "ground"
+              ],
+              "ability": "sturdy",
+              "item": "",
+              "pp": [
+                56
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Garchomp"
+          },
+          "move": "Thunderbolt",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Manectric"
+          }
+        },
+        {
+          "kind": "resisted",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Manectric"
+          },
+          "detail": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Manectric"
+          },
+          "hp": 97,
+          "max_hp": 172,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Manectric"
+          },
+          "move": "Tackle",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Garchomp"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Garchomp"
+          },
+          "hp": 348,
+          "max_hp": 357,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 2
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_2",
+      "turn": 2,
+      "request": "wait|forced_switch",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 348,
+              "max_hp": 357,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "dragon",
+                "ground"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "pp": [
+                23,
+                15
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            null
+          ],
+          "party": [
+            {
+              "hp": 97,
+              "max_hp": 172,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "electric"
+              ],
+              "ability": "lightningrod",
+              "item": "",
+              "pp": [
+                55
+              ]
+            },
+            {
+              "hp": 0,
+              "max_hp": 52,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "rock",
+                "ground"
+              ],
+              "ability": "sturdy",
+              "item": "",
+              "pp": [
+                56
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Geodude"
+          },
+          "details": "Geodude, L20, F",
+          "hp": 52,
+          "max_hp": 52,
+          "status": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Garchomp"
+          },
+          "move": "Earthquake",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Geodude"
+          }
+        },
+        {
+          "kind": "supereffective",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Geodude"
+          },
+          "detail": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Geodude"
+          },
+          "hp": 0,
+          "max_hp": null,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "faint",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Geodude"
+          },
+          "detail": null
+        },
+        {
+          "kind": "residual"
+        }
+      ]
+    }
+  ],
+  "debug_log": "|gametype|singles\n|player|p1|P1||\n|player|p2|P2||\n|gen|4\n|tier|[Gen 4] Custom Game\n|\n|teamsize|p1|1\n|teamsize|p2|2\n|start\n|switch|p1a: Garchomp|Garchomp, M|357/357\n|switch|p2a: Manectric|Manectric, L60, F|172/172\n|turn|1\n|\n|move|p1a: Garchomp|Thunderbolt|p2a: Manectric\n|-resisted|p2a: Manectric\n|-damage|p2a: Manectric|97/172\n|move|p2a: Manectric|Tackle|p1a: Garchomp\n|-damage|p1a: Garchomp|348/357\n|\n|upkeep\n|turn|2\n|\n|switch|p2a: Geodude|Geodude, L20, F|52/52\n|move|p1a: Garchomp|Earthquake|p2a: Geodude\n|-supereffective|p2a: Geodude\n|-damage|p2a: Geodude|0 fnt\n|faint|p2a: Geodude\n|\n|upkeep"
+}

@@ -1,0 +1,693 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@pkmn/sim",
+    "version": "0.10.11",
+    "formatid": "gen1customgame",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "frames": [
+    {
+      "schema": 1,
+      "checkpoint": "initial",
+      "turn": 1,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 184,
+              "max_hp": 184,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "grass",
+                "poison"
+              ],
+              "species": "victreebel",
+              "pp": [
+                16,
+                32
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 155,
+              "max_hp": 155,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "rock",
+                "ground"
+              ],
+              "species": "golem",
+              "pp": [
+                61
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Victreebel"
+          },
+          "details": "Victreebel, L60",
+          "hp": 184,
+          "max_hp": 184,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Golem"
+          },
+          "details": "Golem, L50",
+          "hp": 155,
+          "max_hp": 155,
+          "status": null
+        },
+        {
+          "kind": "turn",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_1",
+      "turn": 2,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 184,
+              "max_hp": 184,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "grass",
+                "poison"
+              ],
+              "species": "victreebel",
+              "pp": [
+                15,
+                32
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 146,
+              "max_hp": 155,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "leechseed": null
+              },
+              "types": [
+                "rock",
+                "ground"
+              ],
+              "species": "golem",
+              "pp": [
+                60
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Victreebel"
+          },
+          "move": "Leech Seed",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Golem"
+          },
+          "from": null
+        },
+        {
+          "kind": "start",
+          "args": [
+            "p2a: Golem",
+            "move: Leech Seed"
+          ]
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Golem"
+          },
+          "move": "Splash",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Golem"
+          },
+          "from": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Golem"
+          },
+          "hp": 146,
+          "max_hp": 155,
+          "status": null,
+          "from": "[from] Leech Seed",
+          "of": "[of] p1a: Victreebel"
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 2
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_2",
+      "turn": 3,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 184,
+              "max_hp": 184,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "grass",
+                "poison"
+              ],
+              "species": "victreebel",
+              "pp": [
+                15,
+                31
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 137,
+              "max_hp": 155,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "leechseed": null
+              },
+              "types": [
+                "rock",
+                "ground"
+              ],
+              "species": "golem",
+              "pp": [
+                59
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Victreebel"
+          },
+          "move": "Wrap",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Golem"
+          },
+          "from": null
+        },
+        {
+          "kind": "miss",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Victreebel"
+          },
+          "detail": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Golem"
+          },
+          "move": "Splash",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Golem"
+          },
+          "from": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Golem"
+          },
+          "hp": 137,
+          "max_hp": 155,
+          "status": null,
+          "from": "[from] Leech Seed",
+          "of": "[of] p1a: Victreebel"
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 3
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_3",
+      "turn": 4,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 184,
+              "max_hp": 184,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "partialtrappinglock": 2
+              },
+              "types": [
+                "grass",
+                "poison"
+              ],
+              "species": "victreebel",
+              "pp": [
+                15,
+                30
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 121,
+              "max_hp": 155,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "leechseed": null,
+                "partiallytrapped": 1
+              },
+              "types": [
+                "rock",
+                "ground"
+              ],
+              "species": "golem",
+              "pp": [
+                59
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Victreebel"
+          },
+          "move": "Wrap",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Golem"
+          },
+          "from": null
+        },
+        {
+          "kind": "crit",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Golem"
+          },
+          "detail": null
+        },
+        {
+          "kind": "resisted",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Golem"
+          },
+          "detail": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Golem"
+          },
+          "hp": 130,
+          "max_hp": 155,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "cant",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Golem"
+          },
+          "detail": "partiallytrapped"
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Golem"
+          },
+          "hp": 121,
+          "max_hp": 155,
+          "status": null,
+          "from": "[from] Leech Seed",
+          "of": "[of] p1a: Victreebel"
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 4
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_4",
+      "turn": 5,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 184,
+              "max_hp": 184,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "partialtrappinglock": 1
+              },
+              "types": [
+                "grass",
+                "poison"
+              ],
+              "species": "victreebel",
+              "pp": [
+                15,
+                30
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 105,
+              "max_hp": 155,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "leechseed": null,
+                "partiallytrapped": 1
+              },
+              "types": [
+                "rock",
+                "ground"
+              ],
+              "species": "golem",
+              "pp": [
+                59
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Victreebel"
+          },
+          "move": "Wrap",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Golem"
+          },
+          "from": "[from] Wrap"
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Golem"
+          },
+          "hp": 114,
+          "max_hp": 155,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Golem"
+          },
+          "hp": 105,
+          "max_hp": 155,
+          "status": null,
+          "from": "[from] Leech Seed",
+          "of": "[of] p1a: Victreebel"
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 5
+        }
+      ]
+    }
+  ],
+  "debug_log": "|gametype|singles\n|player|p1|P1||\n|player|p2|P2||\n|gen|1\n|tier|[Gen 1] Custom Game\n|rule|HP Percentage Mod: HP is shown in percentages\n|rule|Desync Clause Mod: Desyncs changed to move failure.\n|\n|teamsize|p1|1\n|teamsize|p2|1\n|start\n|switch|p1a: Victreebel|Victreebel, L60|184/184\n|switch|p2a: Golem|Golem, L50|155/155\n|turn|1\n|\n|move|p1a: Victreebel|Leech Seed|p2a: Golem\n|-start|p2a: Golem|move: Leech Seed\n|move|p2a: Golem|Splash|p2a: Golem\n|-nothing\n|-damage|p2a: Golem|146/155|[from] Leech Seed|[of] p1a: Victreebel\n|\n|upkeep\n|turn|2\n|\n|move|p1a: Victreebel|Wrap|p2a: Golem|[miss]\n|-miss|p1a: Victreebel\n|move|p2a: Golem|Splash|p2a: Golem\n|-nothing\n|-damage|p2a: Golem|137/155|[from] Leech Seed|[of] p1a: Victreebel\n|\n|upkeep\n|turn|3\n|\n|move|p1a: Victreebel|Wrap|p2a: Golem\n|-crit|p2a: Golem\n|debug|Negating (sp)atk boost/penalty.\n|debug|Negating (sp)def boost/penalty.\n|-resisted|p2a: Golem\n|-damage|p2a: Golem|130/155\n|cant|p2a: Golem|partiallytrapped\n|-damage|p2a: Golem|121/155|[from] Leech Seed|[of] p1a: Victreebel\n|\n|upkeep\n|turn|4\n|\n|move|p1a: Victreebel|Wrap|p2a: Golem|[from] Wrap\n|-damage|p2a: Golem|114/155\n|-damage|p2a: Golem|105/155|[from] Leech Seed|[of] p1a: Victreebel\n|\n|upkeep\n|turn|5"
+}

@@ -1,0 +1,73 @@
+{
+ "schema": 1,
+ "id": "gen3-knock-off-spares-a-fainted-target",
+ "notes": [
+  "Gen 3 (pokeemerald SetMoveEffect, issues.md I53): Knock Off that knocks its target out leaves the item; on a standing target it takes it and marks it"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Absol",
+    "species": "Absol",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Knock Off",
+     "Harden"
+    ],
+    "ability": "Pressure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Weak",
+    "species": "Shuckle",
+    "level": 2,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Sturdy",
+    "item": "Leftovers"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Leftovers"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Knock Off",
+   "p2": "move Harden"
+  },
+  {
+   "p2": "switch Snorlax"
+  },
+  {
+   "p1": "move Knock Off",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

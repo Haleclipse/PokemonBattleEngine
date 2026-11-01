@@ -1,0 +1,64 @@
+{
+ "schema": 1,
+ "id": "gen2-rest-and-the-mint-berry-wait-for-the-end-of-the-turn",
+ "notes": [
+  "Gen 2 (pokecrystal `BattleCommand_Heal`'s `.rest` branch calls no `UseHeldStatusHealingItem`, issues.md I33): Jolteon's Rest puts it to sleep and its Mint Berry waits for the end of the turn (`HandleHealingItems`), so the slower Slowbro's Dream Eater hits the sleeper and drains it; Jolteon wakes at the end of the turn",
+  "Unpatched, Showdown feeds the Mint Berry at Rest's own `Update`: Jolteon is awake before the Dream Eater, which fails (`-immune`)"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Rest",
+     "Harden"
+    ],
+    "item": "Mint Berry"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Slowbro",
+    "species": "Slowbro",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Dream Eater",
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Rest",
+   "p2": "move Dream Eater"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

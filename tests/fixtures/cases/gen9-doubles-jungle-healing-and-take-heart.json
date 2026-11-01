@@ -1,0 +1,95 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-jungle-healing-and-take-heart",
+ "notes": [
+  "Take Heart: +1 Special Attack / Special Defense and the bad poison cured. Jungle Healing: its partner heals a quarter of its max HP and is cured of paralysis (the user, unhurt and without a status, gains nothing); Lunar Blessing heals the partner to full; once both are at full HP without a status it fails (the next Stomping Tantrum is doubled)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Healer",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Take Heart",
+     "Jungle Healing",
+     "Lunar Blessing",
+     "Stomping Tantrum"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Pal",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Belly Drum",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Zap",
+    "species": "Jolteon",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Thunder Wave",
+     "Toxic",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Foe2",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Take Heart, move Belly Drum",
+   "p2": "move Toxic 1, move Harden"
+  },
+  {
+   "p1": "move Jungle Healing, move Harden",
+   "p2": "move Thunder Wave 2, move Harden"
+  },
+  {
+   "p1": "move Lunar Blessing, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Lunar Blessing, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Stomping Tantrum 2, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   2,
+   2,
+   3,
+   4
+  ]
+ }
+}

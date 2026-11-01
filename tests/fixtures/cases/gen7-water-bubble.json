@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen7-water-bubble",
+ "notes": [
+  "Gen 7: Araquanid's Water Bubble doubles its Water Gun's attacking stat and halves Ember's against it; Will-O-Wisp does not affect it"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Araquanid",
+    "species": "Araquanid",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Water Gun",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Water Bubble"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Arcanine",
+    "species": "Arcanine",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Ember",
+     "Will-O-Wisp"
+    ],
+    "gender": "M",
+    "ability": "Flash Fire"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Water Gun",
+   "p2": "move Ember"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Will-O-Wisp"
+  },
+  {
+   "p1": "move Water Gun",
+   "p2": "move Ember"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

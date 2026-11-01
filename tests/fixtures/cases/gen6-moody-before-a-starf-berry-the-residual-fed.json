@@ -1,0 +1,78 @@
+{
+ "schema": 1,
+ "id": "gen6-moody-before-a-starf-berry-the-residual-fed",
+ "notes": [
+  "Gen 6: a burned Smeargle with Moody and a Starf Berry; the burn of the last turn takes it to a quarter: Moody's two stats are drawn first (residual 28.2), then the Starf Berry's at the residual's closing `Update` (`-enditem … [eat]` after Moody's lines)"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Smeargle",
+    "species": "Smeargle",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Substitute",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Moody",
+    "item": "Starf Berry"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Will-O-Wisp",
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "No Guard"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Will-O-Wisp"
+  },
+  {
+   "p1": "move Substitute",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,58 @@
+{
+ "schema": 1,
+ "id": "gen6-trick-refuses-a-mega-stone-its-receiver-would-use",
+ "notes": [
+  "Gen 6: Sceptile holds a Gengarite and Binacle a Sceptilite; Sceptile's Trick fails: the Sceptilite would go to the Sceptile that Mega Evolves with it (Trick's second `TakeItem`, the receiver as the holder, DESIGN.md R-M8-86)"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sceptile",
+    "species": "Sceptile",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Trick",
+     "Splash"
+    ],
+    "item": "Gengarite",
+    "ability": "Overgrow",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Binacle",
+    "species": "Binacle",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "item": "Sceptilite",
+    "ability": "Tough Claws",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Trick",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

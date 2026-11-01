@@ -1,0 +1,97 @@
+{
+ "schema": 1,
+ "id": "gen4-mud-and-water-sport",
+ "notes": [
+  "Gen 4 Mud Sport / Water Sport: a volatile on the user; while it is in, every Electric / Fire move \u00d70.5 (its own too); used again it fails; gone when the user switches out"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Mud Sport",
+     "Water Sport",
+     "Thunderbolt",
+     "Flamethrower"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Bench",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Thunderbolt",
+     "Flamethrower"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Thunderbolt",
+     "Flamethrower",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Mud Sport",
+   "p2": "move Thunderbolt"
+  },
+  {
+   "p1": "move Thunderbolt",
+   "p2": "move Flamethrower"
+  },
+  {
+   "p1": "move Water Sport",
+   "p2": "move Flamethrower"
+  },
+  {
+   "p1": "move Mud Sport",
+   "p2": "move Thunderbolt"
+  },
+  {
+   "p1": "switch Bench",
+   "p2": "move Thunderbolt"
+  },
+  {
+   "p1": "move Flamethrower",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Thunderbolt",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Thunderbolt",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

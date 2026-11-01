@@ -1,0 +1,81 @@
+{
+ "schema": 1,
+ "id": "gen5-doubles-echoed-voice-twice-in-a-turn",
+ "notes": [
+  "Two Echoed Voices in one turn share the multiplier (the second restarts nothing at duration 2); the next turn raises it once"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "doubles",
+  "format": "gen5doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Exploud",
+    "species": "Exploud",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Echoed Voice"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Loudred",
+    "species": "Loudred",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Echoed Voice"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 90,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 90,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Echoed Voice 1, move Echoed Voice 1",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Echoed Voice 1, move Echoed Voice 1",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Echoed Voice 1, move Echoed Voice 1",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

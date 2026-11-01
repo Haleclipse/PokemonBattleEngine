@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "id": "gen9-singles-sturdy",
+  "notes": [
+    "Sturdy (DESIGN.md §20, damage resolution): a move that would KO from full HP leaves 1 HP (`-ability … Sturdy`); the",
+    "next hit is fatal because the holder is no longer at full HP."
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "a",
+        "species": "Snorlax",
+        "ability": "Run Away",
+        "level": 100,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "b",
+        "species": "Magnemite",
+        "ability": "Sturdy",
+        "level": 5,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

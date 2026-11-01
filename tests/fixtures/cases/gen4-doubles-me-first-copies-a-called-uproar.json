@@ -1,0 +1,87 @@
+{
+ "schema": 1,
+ "id": "gen4-doubles-me-first-copies-a-called-uproar",
+ "notes": [
+  "Gen 4 doubles: Jolteon's Copycat copies Snorlax's Uproar and is locked into it, a move it does not know; two Agilities later Lickilicky outspeeds it and its Me First takes Jolteon's queued action — the lock, Uproar (`queue.willMove`) — and uses it at Jolteon, the target it named, though Uproar picks its own target at random (`randomNormal`)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "doubles",
+  "format": "gen4doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Copycat"
+    ],
+    "ability": "Volt Absorb"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Uproar"
+    ],
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Lickilicky",
+    "species": "Lickilicky",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Agility",
+     "Me First"
+    ],
+    "ability": "Oblivious"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1, move 1",
+   "p2": "move 1, move 1"
+  },
+  {
+   "p1": "move 1, move 1",
+   "p2": "move 1, move 1"
+  },
+  {
+   "p1": "move 1, move 1",
+   "p2": "move 1, move 2 1"
+  },
+  {
+   "p1": "move 1, move 1",
+   "p2": "move 1, move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

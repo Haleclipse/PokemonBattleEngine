@@ -1,0 +1,102 @@
+{
+ "schema": 1,
+ "id": "gen4-truant-role-play-and-skill-swap",
+ "notes": [
+  "Gen 4 Role Play / Skill Swap of Truant: pokeplatinum sets the parity of the next turn for Role Play's user and both Skill Swap Pok\u00e9mon (issues.md I106), so the new holder loafs at once on the next turn \u2014 here a turn of the parity it came in on, which it would otherwise act on (Showdown starts nothing on the ability change, I82)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Copier",
+    "species": "Alakazam",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Role Play",
+     "Skill Swap",
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Spare",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Slacker",
+    "species": "Slaking",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Truant"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Role Play",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Spare",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Copier",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Skill Swap",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

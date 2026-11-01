@@ -1,0 +1,93 @@
+{
+ "schema": 1,
+ "id": "gen9-guard-dog",
+ "notes": [
+  "Guard Dog: a foe's Intimidate raises its Attack by 1 instead \u2014 ahead of its Clear Amulet \u2014 on the lead; Roar fails and Dragon Tail does not drag it out; a Guard Dog without an item meets the foe's return with +1 Attack too (the drop never lands)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Dog",
+    "species": "Mabosstiff",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "ability": "Guard Dog",
+    "item": "Clear Amulet"
+   },
+   {
+    "label": "Pup",
+    "species": "Mabosstiff",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Guard Dog"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Cat",
+    "species": "Arcanine",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Roar",
+     "Dragon Tail",
+     "Harden"
+    ],
+    "ability": "Intimidate"
+   },
+   {
+    "label": "Bench2",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Roar"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Dragon Tail"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Bench2"
+  },
+  {
+   "p1": "switch Pup",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Cat"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

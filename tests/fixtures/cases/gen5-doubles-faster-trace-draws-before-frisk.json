@@ -1,0 +1,108 @@
+{
+ "schema": 1,
+ "id": "gen5-doubles-faster-trace-draws-before-frisk",
+ "notes": [
+  "Gen 5: both of P2's leads go down to Surf; Porygon2 (Trace) and the slower Stunky (Frisk) come in together. Porygon2 runs its switch-in first: Trace's foe draw comes before Frisk's (the replay orders the entrants' draws by their speed, DESIGN.md R-M8-92)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "doubles",
+  "format": "gen5doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Lapras",
+    "species": "Lapras",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Surf",
+     "Splash"
+    ],
+    "item": "Leftovers",
+    "ability": "Water Absorb",
+    "gender": "F"
+   },
+   {
+    "label": "Gengar",
+    "species": "Gengar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "item": "Black Sludge",
+    "ability": "Levitate",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Caterpie",
+    "species": "Caterpie",
+    "level": 5,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Shield Dust",
+    "gender": "M"
+   },
+   {
+    "label": "Weedle",
+    "species": "Weedle",
+    "level": 5,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Shield Dust",
+    "gender": "M"
+   },
+   {
+    "label": "Porygon2",
+    "species": "Porygon2",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Trace"
+   },
+   {
+    "label": "Stunky",
+    "species": "Stunky",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Frisk",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Surf, move Splash",
+   "p2": "move Splash, move Splash"
+  },
+  {
+   "p2": "switch 3, switch 4"
+  },
+  {
+   "p1": "move Splash, move Splash",
+   "p2": "move Splash, move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   9,
+   10,
+   11,
+   12
+  ]
+ }
+}

@@ -1,0 +1,82 @@
+{
+ "schema": 1,
+ "id": "gen7-future-sight-and-emergency-exit",
+ "notes": [
+  "Gen 7: Alakazam's Future Sight strikes Golisopod below half: Emergency Exit takes it out (the strike's `AfterMoveSecondary`)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Alakazam",
+    "species": "Alakazam",
+    "level": 62,
+    "nature": "Hardy",
+    "moves": [
+     "Future Sight",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Synchronize"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Golisopod",
+    "species": "Golisopod",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Emergency Exit"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Future Sight",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

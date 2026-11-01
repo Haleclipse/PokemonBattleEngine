@@ -1,0 +1,1388 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@pkmn/sim",
+    "version": "0.10.11",
+    "formatid": "gen1customgame",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "frames": [
+    {
+      "schema": 1,
+      "checkpoint": "initial",
+      "turn": 1,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 460,
+              "max_hp": 460,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "pp": [
+                48,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 110,
+              "max_hp": 110,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "water",
+                "psychic"
+              ],
+              "pp": [
+                61,
+                32
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "details": "Snorlax",
+          "hp": 460,
+          "max_hp": 460,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Starmie"
+          },
+          "details": "Starmie, L40",
+          "hp": 110,
+          "max_hp": 110,
+          "status": null
+        },
+        {
+          "kind": "turn",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_1",
+      "turn": 2,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 460,
+              "max_hp": 460,
+              "status": null,
+              "boosts": {
+                "attack": -1,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "mist": null
+              },
+              "types": [
+                "normal"
+              ],
+              "pp": [
+                47,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 110,
+              "max_hp": 110,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "water",
+                "psychic"
+              ],
+              "pp": [
+                60,
+                32
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Starmie"
+          },
+          "move": "Growl",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          }
+        },
+        {
+          "kind": "unboost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "stat": "atk",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "move": "Mist",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          }
+        },
+        {
+          "kind": "start",
+          "args": [
+            "p1a: Lax",
+            "Mist"
+          ]
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 2
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_2",
+      "turn": 3,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 441,
+              "max_hp": 460,
+              "status": null,
+              "boosts": {
+                "attack": -1,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "mist": null
+              },
+              "types": [
+                "normal"
+              ],
+              "pp": [
+                47,
+                47
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 110,
+              "max_hp": 110,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "water",
+                "psychic"
+              ],
+              "pp": [
+                60,
+                31
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Starmie"
+          },
+          "move": "Bubble Beam",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "hp": 441,
+          "max_hp": 460,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 3
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_3",
+      "turn": 4,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 441,
+              "max_hp": 460,
+              "status": null,
+              "boosts": {
+                "attack": -1,
+                "defense": 2,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "mist": null
+              },
+              "types": [
+                "normal"
+              ],
+              "pp": [
+                47,
+                46
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 110,
+              "max_hp": 110,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "water",
+                "psychic"
+              ],
+              "pp": [
+                59,
+                31
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Starmie"
+          },
+          "move": "Growl",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          }
+        },
+        {
+          "kind": "activate",
+          "args": [
+            "p1a: Lax",
+            "move: Mist"
+          ]
+        },
+        {
+          "kind": "fail",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "detail": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 4
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_4",
+      "turn": 5,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 420,
+              "max_hp": 460,
+              "status": null,
+              "boosts": {
+                "attack": -1,
+                "defense": 3,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "mist": null
+              },
+              "types": [
+                "normal"
+              ],
+              "pp": [
+                47,
+                45
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 110,
+              "max_hp": 110,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "water",
+                "psychic"
+              ],
+              "pp": [
+                59,
+                30
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Starmie"
+          },
+          "move": "Bubble Beam",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "hp": 420,
+          "max_hp": 460,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 5
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_5",
+      "turn": 6,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 420,
+              "max_hp": 460,
+              "status": null,
+              "boosts": {
+                "attack": -1,
+                "defense": 4,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "mist": null
+              },
+              "types": [
+                "normal"
+              ],
+              "pp": [
+                47,
+                44
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 110,
+              "max_hp": 110,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "water",
+                "psychic"
+              ],
+              "pp": [
+                58,
+                30
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Starmie"
+          },
+          "move": "Growl",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          }
+        },
+        {
+          "kind": "activate",
+          "args": [
+            "p1a: Lax",
+            "move: Mist"
+          ]
+        },
+        {
+          "kind": "fail",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "detail": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 6
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_6",
+      "turn": 7,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 381,
+              "max_hp": 460,
+              "status": null,
+              "boosts": {
+                "attack": -1,
+                "defense": 5,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": -1,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "mist": null
+              },
+              "types": [
+                "normal"
+              ],
+              "pp": [
+                47,
+                43
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 110,
+              "max_hp": 110,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "water",
+                "psychic"
+              ],
+              "pp": [
+                58,
+                29
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Starmie"
+          },
+          "move": "Bubble Beam",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          }
+        },
+        {
+          "kind": "crit",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "detail": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "hp": 381,
+          "max_hp": 460,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "unboost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "stat": "spe",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 7
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_7",
+      "turn": 8,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 381,
+              "max_hp": 460,
+              "status": null,
+              "boosts": {
+                "attack": -1,
+                "defense": 6,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": -1,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "mist": null
+              },
+              "types": [
+                "normal"
+              ],
+              "pp": [
+                47,
+                42
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 110,
+              "max_hp": 110,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "water",
+                "psychic"
+              ],
+              "pp": [
+                57,
+                29
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Starmie"
+          },
+          "move": "Growl",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          }
+        },
+        {
+          "kind": "activate",
+          "args": [
+            "p1a: Lax",
+            "move: Mist"
+          ]
+        },
+        {
+          "kind": "fail",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "detail": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 8
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_8",
+      "turn": 9,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 362,
+              "max_hp": 460,
+              "status": null,
+              "boosts": {
+                "attack": -1,
+                "defense": 6,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": -2,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "mist": null
+              },
+              "types": [
+                "normal"
+              ],
+              "pp": [
+                47,
+                41
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 110,
+              "max_hp": 110,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "water",
+                "psychic"
+              ],
+              "pp": [
+                57,
+                28
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Starmie"
+          },
+          "move": "Bubble Beam",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          }
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "hp": 362,
+          "max_hp": 460,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "unboost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "stat": "spe",
+          "amount": 1
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          }
+        },
+        {
+          "kind": "fail",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "detail": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 9
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_9",
+      "turn": 10,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 362,
+              "max_hp": 460,
+              "status": null,
+              "boosts": {
+                "attack": -1,
+                "defense": 6,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": -2,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "mist": null
+              },
+              "types": [
+                "normal"
+              ],
+              "pp": [
+                47,
+                40
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 110,
+              "max_hp": 110,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "water",
+                "psychic"
+              ],
+              "pp": [
+                56,
+                28
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Starmie"
+          },
+          "move": "Growl",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          }
+        },
+        {
+          "kind": "activate",
+          "args": [
+            "p1a: Lax",
+            "move: Mist"
+          ]
+        },
+        {
+          "kind": "fail",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "detail": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          }
+        },
+        {
+          "kind": "fail",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Lax"
+          },
+          "detail": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 10
+        }
+      ]
+    }
+  ],
+  "debug_log": "|gametype|singles\n|player|p1|P1||\n|player|p2|P2||\n|gen|1\n|tier|[Gen 1] Custom Game\n|rule|HP Percentage Mod: HP is shown in percentages\n|rule|Desync Clause Mod: Desyncs changed to move failure.\n|\n|teamsize|p1|1\n|teamsize|p2|1\n|start\n|switch|p1a: Lax|Snorlax|460/460\n|switch|p2a: Starmie|Starmie, L40|110/110\n|turn|1\n|\n|move|p2a: Starmie|Growl|p1a: Lax\n|-unboost|p1a: Lax|atk|1\n|move|p1a: Lax|Mist|p1a: Lax\n|-start|p1a: Lax|Mist\n|\n|upkeep\n|turn|2\n|\n|move|p2a: Starmie|Bubble Beam|p1a: Lax\n|-damage|p1a: Lax|441/460\n|move|p1a: Lax|Harden|p1a: Lax\n|-boost|p1a: Lax|def|1\n|\n|upkeep\n|turn|3\n|\n|move|p2a: Starmie|Growl|p1a: Lax\n|-activate|p1a: Lax|move: Mist\n|-fail|p1a: Lax\n|move|p1a: Lax|Harden|p1a: Lax\n|-boost|p1a: Lax|def|1\n|\n|upkeep\n|turn|4\n|\n|move|p2a: Starmie|Bubble Beam|p1a: Lax\n|-damage|p1a: Lax|420/460\n|move|p1a: Lax|Harden|p1a: Lax\n|-boost|p1a: Lax|def|1\n|\n|upkeep\n|turn|5\n|\n|move|p2a: Starmie|Growl|p1a: Lax\n|-activate|p1a: Lax|move: Mist\n|-fail|p1a: Lax\n|move|p1a: Lax|Harden|p1a: Lax\n|-boost|p1a: Lax|def|1\n|\n|upkeep\n|turn|6\n|\n|move|p2a: Starmie|Bubble Beam|p1a: Lax\n|-crit|p1a: Lax\n|debug|Negating (sp)atk boost/penalty.\n|debug|Negating (sp)def boost/penalty.\n|-damage|p1a: Lax|381/460\n|-unboost|p1a: Lax|spe|1\n|move|p1a: Lax|Harden|p1a: Lax\n|-boost|p1a: Lax|def|1\n|\n|upkeep\n|turn|7\n|\n|move|p2a: Starmie|Growl|p1a: Lax\n|-activate|p1a: Lax|move: Mist\n|-fail|p1a: Lax\n|move|p1a: Lax|Harden|p1a: Lax\n|-boost|p1a: Lax|def|1\n|\n|upkeep\n|turn|8\n|\n|move|p2a: Starmie|Bubble Beam|p1a: Lax\n|-damage|p1a: Lax|362/460\n|-unboost|p1a: Lax|spe|1\n|move|p1a: Lax|Harden|p1a: Lax\n|-fail|p1a: Lax\n|\n|upkeep\n|turn|9\n|\n|move|p2a: Starmie|Growl|p1a: Lax\n|-activate|p1a: Lax|move: Mist\n|-fail|p1a: Lax\n|move|p1a: Lax|Harden|p1a: Lax\n|-fail|p1a: Lax\n|\n|upkeep\n|turn|10"
+}

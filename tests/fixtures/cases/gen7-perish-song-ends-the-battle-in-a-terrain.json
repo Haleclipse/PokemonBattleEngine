@@ -1,0 +1,78 @@
+{
+ "schema": 1,
+ "id": "gen7-perish-song-ends-the-battle-in-a-terrain",
+ "notes": [
+  "Gen 7: Perish Song takes the singer's side's last Pok\u00e9mon; the terrain (order 27) goes on and settles the faint before the foe's Rollout (no order) counts down: the final frame keeps rollout at 2"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Singer",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Perish Song",
+     "Electric Terrain",
+     "Tail Whip"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Lead",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tail Whip"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Roller",
+    "species": "Snorlax",
+    "level": 20,
+    "nature": "Hardy",
+    "moves": [
+     "Rollout",
+     "Tail Whip"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Perish Song",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Electric Terrain",
+   "p2": "switch Roller"
+  },
+  {
+   "p1": "move Tail Whip",
+   "p2": "move Rollout"
+  },
+  {
+   "p1": "move Tail Whip",
+   "p2": "move Rollout"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

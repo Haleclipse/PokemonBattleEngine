@@ -1,0 +1,56 @@
+{
+ "schema": 1,
+ "id": "gen3-flame-body-again-after-a-lum-berry",
+ "notes": [
+  "Gen 3: Primeape's Fury Swipes is burned by Magcargo's Flame Body, its Lum Berry cures it, and a later swipe's Flame Body burns it again — the replay plans every hit a contact status followed (DESIGN.md R-M8-138)"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Primeape",
+    "species": "Primeape",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fury Swipes"
+    ],
+    "item": "Lum Berry",
+    "ability": "Vital Spirit",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Magcargo",
+    "species": "Magcargo",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Flame Body",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Fury Swipes",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   4,
+   5,
+   6,
+   7
+  ]
+ }
+}

@@ -1,0 +1,199 @@
+{
+ "schema": 1,
+ "id": "m8-45-gen5-lead-trace-and-frisk-order",
+ "notes": [
+  "Nightly 39 gen5-doubles-s455-018, recorded as it stands: a lead's Trace that copied Frisk draws both `Sample`s in the log's order"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "doubles",
+  "format": "gen5doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Medicham",
+    "species": "Medicham",
+    "level": 54,
+    "nature": "Hardy",
+    "moves": [
+     "Outrage",
+     "Transform",
+     "Lovely Kiss",
+     "Curse"
+    ],
+    "ability": "Own Tempo",
+    "item": "Steel Gem"
+   },
+   {
+    "label": "Groudon",
+    "species": "Groudon",
+    "level": 46,
+    "nature": "Hardy",
+    "moves": [
+     "Hypnosis",
+     "Transform",
+     "Dark Void",
+     "Power Split"
+    ],
+    "ability": "Trace",
+    "item": "Lucky Punch"
+   },
+   {
+    "label": "Golurk",
+    "species": "Golurk",
+    "level": 53,
+    "nature": "Hardy",
+    "moves": [
+     "Grass Whistle",
+     "Transform",
+     "Sing",
+     "Curse"
+    ],
+    "ability": "Klutz",
+    "item": "Babiri Berry"
+   },
+   {
+    "label": "Oshawott",
+    "species": "Oshawott",
+    "level": 55,
+    "nature": "Hardy",
+    "moves": [
+     "Poison Tail",
+     "Transform",
+     "Cross Poison",
+     "Reflect Type"
+    ],
+    "ability": "Rain Dish",
+    "item": "Rawst Berry"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Masquerain",
+    "species": "Masquerain",
+    "level": 51,
+    "nature": "Hardy",
+    "moves": [
+     "Sludge Wave",
+     "Transform",
+     "Twineedle",
+     "Power Split"
+    ],
+    "ability": "Frisk",
+    "item": "Salac Berry"
+   },
+   {
+    "label": "Ledyba",
+    "species": "Ledyba",
+    "level": 47,
+    "nature": "Hardy",
+    "moves": [
+     "Poison Jab",
+     "Transform",
+     "Smog",
+     "Power Split"
+    ],
+    "ability": "Swift Swim",
+    "item": "Watmel Berry"
+   },
+   {
+    "label": "Silcoon",
+    "species": "Silcoon",
+    "level": 49,
+    "nature": "Hardy",
+    "moves": [
+     "Poison Sting",
+     "Transform",
+     "Sludge Bomb",
+     "Power Split"
+    ],
+    "ability": "Hustle",
+    "item": "Rindo Berry"
+   },
+   {
+    "label": "Porygon2",
+    "species": "Porygon2",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sludge",
+     "Transform",
+     "Gunk Shot",
+     "Power Split"
+    ],
+    "ability": "Vital Spirit",
+    "item": "Ice Gem"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   38555,
+   31550,
+   8094,
+   50
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1, move 1 1",
+   "p2": "move 1, move 1 1"
+  },
+  {
+   "p1": "move 1, move 2 2",
+   "p2": "move 2 2, move 2 1"
+  },
+  {
+   "p1": "move 3 1, move 3 2",
+   "p2": "move 3 2, move 3 1"
+  },
+  {
+   "p1": "move 4, move 4 1",
+   "p2": "move 4 2, move 4"
+  },
+  {
+   "p1": "move 1, move 1 2",
+   "p2": "move 1, move 1"
+  },
+  {
+   "p2": "switch 3, switch 4"
+  },
+  {
+   "p1": "move 1, move 2 1",
+   "p2": "move 2 1, move 2 2"
+  },
+  {
+   "p1": "switch 3, move 3 2",
+   "p2": "move 3 1, move 3 2"
+  },
+  {
+   "p1": "pass, switch 3"
+  },
+  {
+   "p1": "move 3 1, move 4",
+   "p2": "move 4, move 4 1"
+  },
+  {
+   "p1": "move 4 2, move 1",
+   "p2": "move 1, move 1 2"
+  },
+  {
+   "p1": "move 1 1, move 1",
+   "p2": "move 1, pass"
+  },
+  {
+   "p1": "move 2 1, move 1",
+   "p2": "move 3 1, pass"
+  },
+  {
+   "p1": "move 3 1, move 4",
+   "p2": "move 4, pass"
+  },
+  {
+   "p1": "move 4 1, move 1",
+   "p2": "move 1, pass"
+  }
+ ]
+}

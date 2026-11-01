@@ -1,0 +1,67 @@
+{
+ "schema": 1,
+ "id": "gen7-dream-eater-on-comatose-synchronoise-and-endeavor-immune",
+ "notes": [
+  "Dream Eater hits Comatose (Komala); Synchronoise leaves a Normal target immune; Endeavor hits, then leaves the target immune"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hypno",
+    "species": "Hypno",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Dream Eater",
+     "Synchronoise",
+     "Endeavor"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Komala",
+    "species": "Komala",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Comatose"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Endeavor",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Endeavor",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Dream Eater",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Synchronoise",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

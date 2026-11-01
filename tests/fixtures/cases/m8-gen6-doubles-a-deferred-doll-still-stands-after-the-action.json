@@ -1,0 +1,145 @@
+{
+  "schema": 1,
+  "id": "m8-gen6-doubles-a-deferred-doll-still-stands-after-the-action",
+  "notes": [
+    "Gen 6 doubles, minimized from Nightly 160's m8-gen6-doubles-s1519-004. All four make a Substitute; next turn Hypno's Petal Blizzard, Lillipup's Discharge and Cacturne's Lava Plume all strike Solosis's doll: the first two leave it standing (`-activate|…|Substitute|[damage]`), Lava Plume ends it. The first two actions' rolls on it are open (the frame shows the doll only after the last), and the search took rolls that broke it already, so Lava Plume struck Solosis's body: a deferred doll must still stand after the action (DESIGN.md R-M8-183)."
+  ],
+  "battle": {
+    "generation": 6,
+    "mode": "doubles",
+    "format": "gen6doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Leavanny",
+        "species": "Leavanny",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Flamethrower"
+        ],
+        "ability": "Sand Stream",
+        "gender": "M"
+      },
+      {
+        "label": "Cacturne",
+        "species": "Cacturne",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Lava Plume",
+          "Charge",
+          "Blue Flare",
+          "Substitute"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Solosis",
+        "species": "Solosis",
+        "level": 52,
+        "nature": "Hardy",
+        "moves": [
+          "Ice Burn",
+          "Charge",
+          "Blaze Kick",
+          "Substitute"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Meowth",
+        "species": "Meowth",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Fire Punch",
+          "Charge",
+          "Ember"
+        ],
+        "ability": "Stench",
+        "gender": "F"
+      },
+      {
+        "label": "Sunkern",
+        "species": "Sunkern",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Inferno"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Hypno",
+        "species": "Hypno",
+        "level": 49,
+        "nature": "Hardy",
+        "moves": [
+          "Petal Blizzard",
+          "Charge",
+          "Magnitude",
+          "Substitute"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Lillipup",
+        "species": "Lillipup",
+        "level": 54,
+        "nature": "Hardy",
+        "moves": [
+          "Discharge",
+          "Substitute"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      16075,
+      56130,
+      37764,
+      33612
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Flamethrower 1, move Lava Plume",
+      "p2": "move Fire Punch 1, move Inferno 2"
+    },
+    {
+      "p1": "switch Solosis, pass",
+      "p2": "pass, switch Hypno"
+    },
+    {
+      "p1": "move Charge, move Charge",
+      "p2": "move Charge, move Charge"
+    },
+    {
+      "p1": "move Blaze Kick 2, move Blue Flare 1",
+      "p2": "move Ember 1, move Magnitude"
+    },
+    {
+      "p2": "switch Lillipup, pass"
+    },
+    {
+      "p1": "move Substitute, move Substitute",
+      "p2": "move Substitute, move Substitute"
+    },
+    {
+      "p1": "move Ice Burn 2, move Lava Plume",
+      "p2": "move Discharge, move Petal Blizzard"
+    }
+  ]
+}

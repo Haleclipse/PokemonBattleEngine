@@ -1,0 +1,80 @@
+{
+  "schema": 1,
+  "id": "gen9-doubles-follow-me",
+  "notes": [
+    "Follow Me (+2): Clefable takes both of P1's single-target moves declared at Snorlax; Earthquake on turn 2 is a spread",
+    "move and is not redirected. Follow Me lasts the turn only (`-singleturn`)."
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "a",
+        "species": "Jolteon",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ]
+      },
+      {
+        "label": "c",
+        "species": "Garchomp",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle",
+          "Earthquake"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "b",
+        "species": "Clefable",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Follow Me",
+          "Tackle"
+        ]
+      },
+      {
+        "label": "d",
+        "species": "Snorlax",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Swords Dance"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1 2, move 1 2",
+      "p2": "move 1, move 1"
+    },
+    {
+      "p1": "move 1 2, move 2",
+      "p2": "move 1, move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

@@ -1,0 +1,67 @@
+{
+ "schema": 1,
+ "id": "gen9-spite-empties-the-chosen-move",
+ "notes": [
+  "Gen 9 Spite from a faster user: it fails before the target has moved; then Zap Cannon loses 4 PP, then its last 2 \u2014 the Zap Cannon chosen that turn does not come (cant nopp); Spite fails on a move with no PP left"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Spiter",
+    "species": "Gengar",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Spite",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Target",
+    "species": "Magneton",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Zap Cannon",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Spite",
+   "p2": "move Zap Cannon"
+  },
+  {
+   "p1": "move Spite",
+   "p2": "move Zap Cannon"
+  },
+  {
+   "p1": "move Spite",
+   "p2": "move Zap Cannon"
+  },
+  {
+   "p1": "move Spite",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

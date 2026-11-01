@@ -1,0 +1,66 @@
+{
+ "schema": 1,
+ "id": "gen3-attract-outlasts-the-winning-knockout",
+ "notes": [
+  "Gen 3 processes the knockout at the end of the action and the battle ends without an Update: the infatuation stays in the last frame"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Machamp",
+    "species": "Machamp",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Brick Break"
+    ],
+    "ability": "Soundproof",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gardevoir",
+    "species": "Gardevoir",
+    "level": 5,
+    "nature": "Hardy",
+    "moves": [
+     "Attract",
+     "Harden"
+    ],
+    "ability": "Synchronize",
+    "gender": "F",
+    "item": "Quick Claw"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Attract"
+  },
+  {
+   "p1": "move Brick Break",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Brick Break",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

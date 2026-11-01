@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "gen7-doubles-soul-heart-as-the-last-two-foes-fall-together",
+ "notes": [
+  "Gen 7 doubles: Magearna's Dazzling Gleam knocks out both of P2's last Pokémon; Soul-Heart raises its Special Attack for the first (the second still counts as left while the first falls) but not for the second (no foe left): +1"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Magearna",
+    "species": "Magearna",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Dazzling Gleam",
+     "Harden"
+    ],
+    "ability": "Soul-Heart"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Rattata",
+    "species": "Rattata",
+    "level": 5,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Guts"
+   },
+   {
+    "label": "Zigzagoon",
+    "species": "Zigzagoon",
+    "level": 5,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Pickup"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Dazzling Gleam, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,104 @@
+{
+ "schema": 1,
+ "id": "gen8-mimicry",
+ "notes": [
+  "Gen 8 Mimicry: the holder takes the terrain's type (Electric, Psychic \u2026), and its own types back when the terrain ends (Thunderbolt resisted, then not affecting the Ground type again; Shadow Ball super effective on the Psychic type)"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Stunfisk",
+    "species": "Stunfisk-Galar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Electric Terrain",
+     "Psychic Terrain",
+     "Harden"
+    ],
+    "ability": "Mimicry"
+   },
+   {
+    "label": "Bench",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Hitter",
+    "species": "Snorlax",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Thunderbolt",
+     "Shadow Ball",
+     "Flamethrower",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Electric Terrain",
+   "p2": "move Thunderbolt"
+  },
+  {
+   "p1": "move Psychic Terrain",
+   "p2": "move Shadow Ball"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Flamethrower"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Thunderbolt"
+  },
+  {
+   "p1": "move Electric Terrain",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Bench",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Stunfisk",
+   "p2": "move Thunderbolt"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

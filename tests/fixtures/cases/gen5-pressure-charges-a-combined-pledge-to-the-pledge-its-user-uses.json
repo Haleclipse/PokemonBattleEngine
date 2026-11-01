@@ -1,0 +1,78 @@
+{
+ "schema": 1,
+ "id": "gen5-pressure-charges-a-combined-pledge-to-the-pledge-its-user-uses",
+ "notes": [
+  "Gen 5 doubles: Samurott's Water Pledge waits for Emboar's Fire Pledge, both aimed at Absol (Pressure). Emboar, which strikes, pays Pressure's extra PP on the Fire Pledge it uses; its Water Pledge keeps all its PP (the user's decision, a presumption of the executor's ownership, issues.md I201; Showdown charges the ally's Pledge that moved the action up \u2014 its `sourceEffect` \u2014 which the oracle patches; DESIGN.md R-M8-170)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "doubles",
+  "format": "gen5doublescustomgame"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Absol",
+    "species": "Absol",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Pressure",
+    "gender": "M"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Samurott",
+    "species": "Samurott",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Water Pledge"
+    ],
+    "ability": "Torrent",
+    "gender": "M"
+   },
+   {
+    "label": "Emboar",
+    "species": "Emboar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fire Pledge",
+     "Water Pledge"
+    ],
+    "ability": "Blaze",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash, move Splash",
+   "p2": "move Water Pledge 1, move Fire Pledge 1"
+  }
+ ]
+}

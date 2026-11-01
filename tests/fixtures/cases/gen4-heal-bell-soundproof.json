@@ -1,0 +1,90 @@
+{
+ "schema": 1,
+ "id": "gen4-heal-bell-soundproof",
+ "notes": [
+  "Gen 4: a Soundproof user's Heal Bell leaves its own poison (the gen4 mod skips every Soundproof holder); Aromatherapy cures it. A benched Soundproof teammate is left alone too (hasAbility answers for the bench before Gen 5)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Bell",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Heal Bell",
+     "Aromatherapy",
+     "Harden"
+    ],
+    "ability": "Soundproof"
+   },
+   {
+    "label": "Quiet",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Soundproof"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Toxic",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Toxic"
+  },
+  {
+   "p1": "move Heal Bell",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Aromatherapy",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Quiet",
+   "p2": "move Toxic"
+  },
+  {
+   "p1": "switch Bell",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Heal Bell",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Aromatherapy",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   5,
+   6,
+   7,
+   8
+  ]
+ }
+}

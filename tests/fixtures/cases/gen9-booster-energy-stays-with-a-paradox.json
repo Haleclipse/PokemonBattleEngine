@@ -1,0 +1,79 @@
+{
+ "schema": 1,
+ "id": "gen9-booster-energy-stays-with-a-paradox",
+ "notes": [
+  "Gen 9 Booster Energy (`onTakeItem`: a Paradox Pok\u00e9mon keeps it, `baseSpecies.tags`): Torkoal's Drought gives Great Tusk its Protosynthesis, so the item waits; Torkoal's Knock Off cannot take it (no power boost either) and its Thief steals nothing",
+  "Muk holds Booster Energy without being a Paradox Pok\u00e9mon: Torkoal's Thief takes it"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Great Tusk",
+    "species": "Great Tusk",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Booster Energy",
+    "ability": "Protosynthesis"
+   },
+   {
+    "label": "Muk",
+    "species": "Muk",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Booster Energy",
+    "ability": "Stench"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Torkoal",
+    "species": "Torkoal",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Knock Off",
+     "Thief"
+    ],
+    "ability": "Drought"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Knock Off"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Thief"
+  },
+  {
+   "p1": "switch Muk",
+   "p2": "move Thief"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Knock Off"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

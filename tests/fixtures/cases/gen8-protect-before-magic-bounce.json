@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen8-protect-before-magic-bounce",
+ "notes": [
+  "Gen 8: Espeon with Magic Bounce protects itself: Protect's `onTryHit` (priority 3) stops Charm before Magic Bounce's (priority 1) can send it back; the next turn the Charm comes back (DESIGN.md R-M8-90)"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Espeon",
+    "species": "Espeon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Protect",
+     "Splash"
+    ],
+    "ability": "Magic Bounce",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Clefable",
+    "species": "Clefable",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Charm"
+    ],
+    "ability": "Unaware",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Protect",
+   "p2": "move Charm"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Charm"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

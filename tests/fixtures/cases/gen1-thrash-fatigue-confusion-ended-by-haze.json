@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "id": "gen1-thrash-fatigue-confusion-ended-by-haze",
+  "notes": [
+    "Gen 1: Electabuzz's Thrash ends on its last use and confuses it, and Rhydon's Haze ends that confusion in the same turn (-end … confusion [silent]): the frame tells nothing of the fatigue's time, so the replay takes any (the shortest), not 0. Minimized from the 30th Nightly's m8-gen1-singles-s423-004.",
+    "promoted from m8-gen1-singles-s423-004-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 1,
+    "mode": "singles",
+    "format": "gen1customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Electabuzz",
+        "species": "Electabuzz",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Thrash"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "Rhydon",
+        "species": "Rhydon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Petal Dance",
+          "Haze"
+        ]
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      49213,
+      44785,
+      14191,
+      40781
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Thrash",
+      "p2": "move Petal Dance"
+    },
+    {
+      "p1": "move Thrash",
+      "p2": "move Petal Dance"
+    },
+    {
+      "p1": "move Thrash",
+      "p2": "move Petal Dance"
+    },
+    {
+      "p1": "move Thrash",
+      "p2": "move Haze"
+    }
+  ]
+}

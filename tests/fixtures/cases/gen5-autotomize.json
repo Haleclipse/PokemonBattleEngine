@@ -1,0 +1,59 @@
+{
+ "schema": 1,
+ "id": "gen5-autotomize",
+ "notes": [
+  "Gen 5 Autotomize: the autotomize volatile (the gen5 mod), Grass Knot weaker against it"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Bronze",
+    "species": "Bronzong",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Autotomize",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Grass Knot",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Grass Knot"
+  },
+  {
+   "p1": "move Autotomize",
+   "p2": "move Grass Knot"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,80 @@
+{
+ "schema": 1,
+ "id": "gen4-knock-off-marks-and-the-marked-cannot-steal",
+ "notes": [
+  "Gen 4 Knock Off takes Murkrow's Leftovers and marks it; the marked Murkrow's Thief takes nothing from Sneasel's Black Belt (Showdown takeItem, pokeplatinum BtlCmd_TryStealItem); Muk's Sticky Hold keeps its item against Knock Off"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sneasel",
+    "species": "Sneasel",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Knock Off",
+     "Harden"
+    ],
+    "ability": "Inner Focus",
+    "item": "Black Belt"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Murkrow",
+    "species": "Murkrow",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Thief",
+     "Harden"
+    ],
+    "ability": "Insomnia",
+    "item": "Leftovers"
+   },
+   {
+    "label": "Muk",
+    "species": "Muk",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Sticky Hold",
+    "item": "Black Sludge"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Knock Off",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Thief"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Muk"
+  },
+  {
+   "p1": "move Knock Off",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

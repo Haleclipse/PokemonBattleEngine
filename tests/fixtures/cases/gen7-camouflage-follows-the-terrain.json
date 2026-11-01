@@ -1,0 +1,63 @@
+{
+ "schema": 1,
+ "id": "gen7-camouflage-follows-the-terrain",
+ "notes": [
+  "Gen 7: in Tapu Koko's Electric Terrain Camouflage makes Charizard Electric; used again it fails (Electric alone already), so Stomping Tantrum doubles"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Charizard",
+    "species": "Charizard",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Camouflage",
+     "Stomping Tantrum"
+    ],
+    "gender": "M",
+    "ability": "Blaze"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Tapu Koko",
+    "species": "Tapu Koko",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Electric Surge"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Camouflage",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Camouflage",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Stomping Tantrum",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

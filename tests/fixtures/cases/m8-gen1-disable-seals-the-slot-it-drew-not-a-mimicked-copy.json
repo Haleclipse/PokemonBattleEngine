@@ -1,0 +1,74 @@
+{
+  "schema": 1,
+  "id": "m8-gen1-disable-seals-the-slot-it-drew-not-a-mimicked-copy",
+  "notes": [
+    "Gen 1: Kadabra's Mimic copies Disable; Wigglytuff's Disable then seals the slot it drew, the original Disable (slot 4), and Kadabra may still choose the copy. The replay reads the drawn slot from Showdown's debug line (the oracle's disableslot event), not the first slot holding the move (DESIGN.md R-M8-161)",
+    "promoted from m8-gen1-singles-s787-001-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 1,
+    "mode": "singles",
+    "format": "gen1customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Kadabra",
+        "species": "Kadabra",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sludge",
+          "Mimic",
+          "Twineedle",
+          "Disable"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "Wigglytuff",
+        "species": "Wigglytuff",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Surf",
+          "Mimic",
+          "Tail Whip",
+          "Disable"
+        ]
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      40707,
+      2674,
+      48831,
+      6435
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Sludge",
+      "p2": "move Surf"
+    },
+    {
+      "p1": "move Mimic",
+      "p2": "move Mimic"
+    },
+    {
+      "p1": "move Twineedle",
+      "p2": "move Tail Whip"
+    },
+    {
+      "p1": "move Disable",
+      "p2": "move Disable"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 3"
+    }
+  ]
+}

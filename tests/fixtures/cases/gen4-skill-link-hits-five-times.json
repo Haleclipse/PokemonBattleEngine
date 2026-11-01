@@ -1,0 +1,63 @@
+{
+ "schema": 1,
+ "id": "gen4-skill-link-hits-five-times",
+ "notes": [
+  "Skill Link: Bullet Seed and Fury Attack always hit five times"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Bullet Seed",
+     "Fury Attack"
+    ],
+    "ability": "Skill Link"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Bullet Seed",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Fury Attack",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Bullet Seed",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

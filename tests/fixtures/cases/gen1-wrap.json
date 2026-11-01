@@ -1,0 +1,86 @@
+{
+ "schema": 1,
+ "id": "gen1-wrap",
+ "notes": [
+  "Gen 1 Wrap: the first hit rolls 2-5 turns and locks the user into it (`partialtrappinglock`, no PP, the same damage, no accuracy roll); the target cannot move meanwhile (`cant` the turn it is caught, then its turns are lost) but ends it free"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Wrapper",
+    "species": "Mew",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Wrap",
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ]
+   },
+   {
+    "label": "Foe2",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Wrap",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Wrap",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Wrap",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Wrap",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Wrap",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Wrap",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,127 @@
+{
+  "schema": 1,
+  "id": "gen3-quick-claw-orders-the-entrants",
+  "notes": [
+    "Gen 3 Quick Claw: a successful turn roll also orders the switch-ins (their weather abilities), which the action order alone does not show",
+    "promoted from m8-gen3-singles-s113-019-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 3,
+    "mode": "singles",
+    "format": "gen3customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Diglett",
+        "species": "Diglett",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Growl",
+          "Hail",
+          "Swift",
+          "Synthesis"
+        ],
+        "ability": "Sand Stream",
+        "gender": "M"
+      },
+      {
+        "label": "Dunsparce",
+        "species": "Dunsparce",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "String Shot",
+          "Hail",
+          "Sweet Scent",
+          "Morning Sun"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Mankey",
+        "species": "Mankey",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Smokescreen",
+          "Hail",
+          "Swords Dance",
+          "Synthesis"
+        ],
+        "ability": "Drizzle",
+        "gender": "F"
+      },
+      {
+        "label": "Mawile",
+        "species": "Mawile",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sand Attack",
+          "Hail",
+          "Fake Tears",
+          "Moonlight"
+        ],
+        "ability": "Run Away",
+        "item": "Quick Claw",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      27041,
+      38039,
+      48428,
+      23399
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Growl",
+      "p2": "move Smokescreen"
+    },
+    {
+      "p1": "move Hail",
+      "p2": "move Hail"
+    },
+    {
+      "p1": "move Swift",
+      "p2": "move Swords Dance"
+    },
+    {
+      "p1": "move Synthesis",
+      "p2": "move Synthesis"
+    },
+    {
+      "p1": "switch Dunsparce",
+      "p2": "switch Mawile"
+    },
+    {
+      "p1": "move String Shot",
+      "p2": "move Sand Attack"
+    },
+    {
+      "p1": "move Hail",
+      "p2": "move Hail"
+    },
+    {
+      "p1": "move Sweet Scent",
+      "p2": "move Fake Tears"
+    },
+    {
+      "p1": "move Morning Sun",
+      "p2": "move Moonlight"
+    },
+    {
+      "p1": "switch Diglett",
+      "p2": "switch Mankey"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+ "schema": 1,
+ "id": "gen5-present-band-before-a-starf-berry-draw",
+ "notes": [
+  "Gen 5 singles: Delibird's Present draws a band above 40 (seed 22) and leaves Taillow in its pinch, whose Starf Berry then draws a stat. The replay tries Present's other bands on the last Sample before the hit's damage roll \u2014 Present's own draw \u2014 not on the berry's after it (DESIGN.md R-M8-173)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   22,
+   23,
+   24,
+   25
+  ]
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Delibird",
+    "species": "Delibird",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Present"
+    ],
+    "ability": "Vital Spirit",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Taillow",
+    "species": "Taillow",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Guts",
+    "gender": "M",
+    "item": "Starf Berry"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Present",
+   "p2": "move Splash"
+  }
+ ]
+}

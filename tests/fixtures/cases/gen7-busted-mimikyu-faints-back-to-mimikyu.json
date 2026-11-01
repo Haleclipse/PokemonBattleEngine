@@ -1,0 +1,70 @@
+{
+ "schema": 1,
+ "id": "gen7-busted-mimikyu-faints-back-to-mimikyu",
+ "notes": [
+  "Gen 7: Garchomp's Earthquake breaks Mimikyu's Disguise (Mimikyu-Busted for good), the next one knocks it out: the gen7 Disguise marks the change `formeRegression`, so the fainted Mimikyu is the set's Mimikyu again (DESIGN.md R-M8-111)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mimikyu",
+    "species": "Mimikyu",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Disguise",
+    "gender": "F"
+   },
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Swift Swim",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Garchomp",
+    "species": "Garchomp",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Earthquake"
+    ],
+    "ability": "Rough Skin",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash",
+   "p2": "move Earthquake"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Earthquake"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

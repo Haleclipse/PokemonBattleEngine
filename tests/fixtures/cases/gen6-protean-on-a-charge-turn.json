@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen6-protean-on-a-charge-turn",
+ "notes": [
+  "Gen 6: Kecleon with Protean charges Sky Attack and is Flying from the charging turn on (Thunder Shock is super effective at once); with a Power Herb the charge is skipped and Protean runs as the move hits"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Kecleon",
+    "species": "Kecleon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sky Attack",
+     "Solar Beam"
+    ],
+    "gender": "M",
+    "ability": "Protean",
+    "item": "Power Herb"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Thunder Shock"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Solar Beam",
+   "p2": "move Thunder Shock"
+  },
+  {
+   "p1": "move Sky Attack",
+   "p2": "move Thunder Shock"
+  },
+  {
+   "p1": "move Sky Attack",
+   "p2": "move Thunder Shock"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "id": "gen5-copycat-counts-itself-used-for-a-copied-last-resort",
+  "notes": [
+    "Gen 5 singles: Electivire's Last Resort, then Petilil's Copycat copies it. Petilil used Splash before, and Copycat's own PP spent at this action marks its slot used before the copied Last Resort's `onTry` (`deductPP` \u2192 `moveSlot.used`): every other move is used, so Last Resort strikes. The replay judges the `onTry` on the state after that spend (DESIGN.md R-M8-167)"
+  ],
+  "battle": {
+    "generation": 5,
+    "mode": "singles",
+    "format": "gen5customgame"
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Petilil",
+        "species": "Petilil",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Splash",
+          "Copycat",
+          "Last Resort"
+        ],
+        "ability": "Chlorophyll",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Electivire",
+        "species": "Electivire",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Last Resort",
+          "Splash"
+        ],
+        "ability": "Motor Drive",
+        "gender": "M"
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Splash",
+      "p2": "move Splash"
+    },
+    {
+      "p1": "move Copycat",
+      "p2": "move Last Resort"
+    }
+  ]
+}

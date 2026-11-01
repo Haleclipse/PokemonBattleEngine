@@ -1,0 +1,87 @@
+{
+ "schema": 1,
+ "id": "gen4-cartridge-power-and-stat-steps",
+ "notes": [
+  "Gen 4 on the cartridge (issues.md I14): each power and stat modifier multiplies in turn and is floored, in pokeplatinum's order, the stat modifiers on the stored stat before its stage \u2014 Technician's 35 \u2192 52 then the Silk Scarf's 52 \u00d7 120 / 100 = 62 (Showdown's chain: 63); the level-53 Mew's 127 Attack through the Choice Band (190) then Guts (285; Showdown's chain: 286), then Growl's \u22121 (190; Showdown: 189)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Tech",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "ability": "Technician",
+    "item": "Silk Scarf"
+   },
+   {
+    "label": "Guts",
+    "species": "Mew",
+    "level": 53,
+    "nature": "Hardy",
+    "moves": [
+     "Megahorn"
+    ],
+    "ability": "Guts",
+    "item": "Choice Band"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Lax",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Toxic",
+     "Growl"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "move 2"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 3"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

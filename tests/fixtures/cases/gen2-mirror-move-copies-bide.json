@@ -1,0 +1,71 @@
+{
+ "schema": 1,
+ "id": "gen2-mirror-move-copies-bide",
+ "notes": [
+  "Gen 2: Slowpoke's Mirror Move copies Jolteon's Bide: Bide is not among Slowpoke's moves, yet it holds Slowpoke to itself (`getSemiLockedMove`) — the request offers Bide alone, and `move 1` means it"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Slowpoke",
+    "species": "Slowpoke",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Mirror Move"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Bide"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

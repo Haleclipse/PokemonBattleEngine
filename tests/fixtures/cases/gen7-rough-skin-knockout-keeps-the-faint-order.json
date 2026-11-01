@@ -1,0 +1,66 @@
+{
+ "schema": 1,
+ "id": "gen7-rough-skin-knockout-keeps-the-faint-order",
+ "notes": [
+  "Gen 7: Rough Skin's damage is not `instafaint` — Sharpedo, knocked out first, faints first, Scyther last, so P1 wins"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Scyther",
+    "species": "Scyther",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Swords Dance",
+     "X-Scissor"
+    ],
+    "ability": "Swarm"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Sharpedo",
+    "species": "Sharpedo",
+    "level": 47,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss"
+    ],
+    "ability": "Rough Skin"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Swords Dance",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Swords Dance",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Swords Dance",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move X-Scissor",
+   "p2": "move Seismic Toss"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

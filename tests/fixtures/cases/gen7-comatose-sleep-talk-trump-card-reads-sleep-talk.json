@@ -1,0 +1,69 @@
+{
+ "schema": 1,
+ "id": "gen7-comatose-sleep-talk-trump-card-reads-sleep-talk",
+ "notes": [
+  "Gen 7: Smeargle (Comatose) uses Sleep Talk, which calls Trump Card; Chansey's Spite cuts Sleep Talk's PP. Trump Card's power reads the PP of the move that called it (`move.sourceEffect || move.id`): once Sleep Talk is down to its last uses, 200 (DESIGN.md R-M8-84)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Smeargle",
+    "species": "Smeargle",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sleep Talk",
+     "Trump Card"
+    ],
+    "ability": "Comatose",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spite",
+     "Splash"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Sleep Talk",
+   "p2": "move Spite"
+  },
+  {
+   "p1": "move Sleep Talk",
+   "p2": "move Spite"
+  },
+  {
+   "p1": "move Sleep Talk",
+   "p2": "move Spite"
+  },
+  {
+   "p1": "move Sleep Talk",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

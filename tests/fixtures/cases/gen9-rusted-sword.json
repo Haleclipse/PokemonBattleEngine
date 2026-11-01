@@ -1,0 +1,66 @@
+{
+ "schema": 1,
+ "id": "gen9-rusted-sword",
+ "notes": [
+  "Gen 9: Zacian holding the Rusted Sword is its Crowned forme from the start of the battle (Fairy/Steel, its own species, Intrepid Sword), its Iron Head is Behemoth Blade, and the sword cannot be taken off it"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Zacian",
+    "species": "Zacian",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Iron Head",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Intrepid Sword",
+    "item": "Rusted Sword"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Behemoth Blade",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Behemoth Blade",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

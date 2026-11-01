@@ -1,0 +1,72 @@
+{
+ "schema": 1,
+ "id": "gen8-mind-blown-and-damp",
+ "notes": [
+  "Damp stops Mind Blown (no half HP lost); with Damp gone it costs its user half its HP"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Blacephalon",
+    "species": "Blacephalon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Mind Blown",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Wet",
+    "species": "Quagsire",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Damp"
+   },
+   {
+    "label": "Dry",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Mind Blown",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Dry"
+  },
+  {
+   "p1": "move Mind Blown",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen7-mud-sport-zeroes-a-power-one-move",
+ "notes": [
+  "Gen 7: Gigavolt Havoc in a slot (a custom game's) has power 1; under Mud Sport (`chainModify([1352, 4096])`) the BasePower event leaves 0 and `getDamage` deals nothing — still a hit, no damage roll (DESIGN.md R-M8-84)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mandibuzz",
+    "species": "Mandibuzz",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Gigavolt Havoc",
+     "Mud Sport"
+    ],
+    "ability": "Overcoat",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Mud Sport",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Gigavolt Havoc",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

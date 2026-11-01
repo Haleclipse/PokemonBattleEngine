@@ -1,0 +1,97 @@
+{
+ "schema": 1,
+ "id": "gen7-doubles-crafty-shield-and-mat-block",
+ "notes": [
+  "Mat Block, on its user's first move action, keeps the damaging moves Protect would stop off its side for the turn (a Tackle; not a Toxic: `checkMoveBypassesProtect(\u2026, false)`), and fails afterwards; Crafty Shield keeps status moves off (Thunder Wave) but not Tackle, and fails when nobody else still acts (Stomping Tantrum doubles next turn)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Crafter",
+    "species": "Mew",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Crafty Shield",
+     "Mat Block",
+     "Tackle",
+     "Stomping Tantrum"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Partner",
+    "species": "Mew",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Protect"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Lax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Thunder Wave",
+     "Tackle",
+     "Protect"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Lax2",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Toxic",
+     "Tackle",
+     "Protect"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Mat Block, move Harden",
+   "p2": "move Tackle 1, move Toxic 2"
+  },
+  {
+   "p1": "move Mat Block, move Harden",
+   "p2": "move Tackle 1, move Tackle 2"
+  },
+  {
+   "p1": "move Crafty Shield, move Harden",
+   "p2": "move Thunder Wave 1, move Tackle 1"
+  },
+  {
+   "p1": "move Crafty Shield, move Protect",
+   "p2": "move Protect, move Protect"
+  },
+  {
+   "p1": "move Stomping Tantrum 1, move Harden",
+   "p2": "move Tackle 1, move Tackle 2"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

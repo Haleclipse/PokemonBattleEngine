@@ -1,0 +1,129 @@
+{
+ "schema": 1,
+ "id": "gen9-explosion-and-damp",
+ "notes": [
+  "Damp stops Explosion (the PP spent, the user standing); Explosion into a Ghost type and into Protect still costs its user, Self-Destruct's hit too"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Blaster",
+    "species": "Electrode",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Explosion"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Bomber",
+    "species": "Golem",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Self-Destruct"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Popper",
+    "species": "Electrode",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Explosion"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Last",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Target",
+    "species": "Snorlax",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Protect",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Ghost",
+    "species": "Gengar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Wet",
+    "species": "Quagsire",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Damp"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Explosion",
+   "p2": "switch Wet"
+  },
+  {
+   "p1": "move Explosion",
+   "p2": "switch Ghost"
+  },
+  {
+   "p1": "switch Bomber"
+  },
+  {
+   "p1": "move Self-Destruct",
+   "p2": "switch Target"
+  },
+  {
+   "p1": "switch Popper"
+  },
+  {
+   "p1": "move Explosion",
+   "p2": "move Protect"
+  },
+  {
+   "p1": "switch Last"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

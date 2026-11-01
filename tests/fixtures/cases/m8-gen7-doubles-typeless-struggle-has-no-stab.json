@@ -1,0 +1,342 @@
+{
+  "schema": 1,
+  "id": "m8-gen7-doubles-typeless-struggle-has-no-stab",
+  "notes": [
+    "Nightly 63: Arcanine, typeless since Burn Up, Struggles: the '???' type never gets STAB (DESIGN.md R-M8-107)",
+    "promoted from m8-gen7-doubles-s549-006-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 7,
+    "mode": "doubles",
+    "format": "gen7doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Vespiquen",
+        "species": "Vespiquen",
+        "level": 53,
+        "nature": "Hardy",
+        "moves": [
+          "Heal Pulse",
+          "Curse",
+          "Ally Switch",
+          "Psycho Shift"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Beartic",
+        "species": "Beartic",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Rock Wrecker"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Wigglytuff",
+        "species": "Wigglytuff",
+        "level": 48,
+        "nature": "Hardy",
+        "moves": [
+          "Frenzy Plant",
+          "Curse",
+          "Blast Burn",
+          "Guard Swap"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Fletchling",
+        "species": "Fletchling",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Prismatic Laser",
+          "Curse",
+          "Hyper Beam"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Skarmory",
+        "species": "Skarmory",
+        "level": 48,
+        "nature": "Hardy",
+        "moves": [
+          "Roar of Time",
+          "Curse",
+          "Hydro Cannon"
+        ],
+        "ability": "Forewarn",
+        "gender": "F"
+      },
+      {
+        "label": "Arcanine",
+        "species": "Arcanine",
+        "level": 46,
+        "nature": "Hardy",
+        "moves": [
+          "Burn Up",
+          "Curse",
+          "Morning Sun",
+          "Guard Swap"
+        ],
+        "ability": "Trace",
+        "gender": "M"
+      },
+      {
+        "label": "Aron",
+        "species": "Aron",
+        "level": 54,
+        "nature": "Hardy",
+        "moves": [
+          "Moonlight",
+          "Shore Up",
+          "Guard Swap"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Hitmonlee",
+        "species": "Hitmonlee",
+        "level": 48,
+        "nature": "Hardy",
+        "moves": [
+          "Synthesis",
+          "Curse",
+          "Ice Beam",
+          "Psycho Shift"
+        ],
+        "ability": "Shadow Shield"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      45139,
+      48098,
+      58903,
+      43735
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Heal Pulse 1, move Rock Wrecker 2",
+      "p2": "move Roar of Time 1, move Burn Up 2"
+    },
+    {
+      "p1": "pass, switch Wigglytuff"
+    },
+    {
+      "p1": "move Curse, move Curse",
+      "p2": "move Curse, move Curse"
+    },
+    {
+      "p1": "move Ally Switch, move Blast Burn 1",
+      "p2": "move Hydro Cannon 1, move Morning Sun"
+    },
+    {
+      "p2": "switch Aron, pass"
+    },
+    {
+      "p1": "move 1, move 4 2",
+      "p2": "move 3 2, move 4 1"
+    },
+    {
+      "p1": "move 1 1, move 1 2",
+      "p2": "move 1, move 1 2"
+    },
+    {
+      "p1": "move 1, move 2",
+      "p2": "switch Hitmonlee, move 2"
+    },
+    {
+      "p1": "move 3 1, move 3",
+      "p2": "move 2, move 3"
+    },
+    {
+      "p1": "move 4 2, move 1",
+      "p2": "move 3 1, move 4 2"
+    },
+    {
+      "p1": "move Heal Pulse 1, move Frenzy Plant 2",
+      "p2": "move Psycho Shift 1, move Burn Up 2"
+    },
+    {
+      "p1": "move 2, move 1",
+      "p2": "move 1, move 2"
+    },
+    {
+      "p1": "move Ally Switch, move Blast Burn 1",
+      "p2": "move Curse, move Morning Sun"
+    },
+    {
+      "p1": "move 1, move 4 2",
+      "p2": "switch Aron, move 4 1"
+    },
+    {
+      "p1": "move 1 1, move 1 2",
+      "p2": "move 2, move 1 2"
+    },
+    {
+      "p1": "move 1, move 2",
+      "p2": "move 3 1, move 2"
+    },
+    {
+      "p1": "move 3 1, move 3",
+      "p2": "move 1, move 3"
+    },
+    {
+      "p2": "switch Hitmonlee, pass"
+    },
+    {
+      "p1": "move 4 2, move 1",
+      "p2": "move 2, move 4 2"
+    },
+    {
+      "p1": "move Heal Pulse 1, move Frenzy Plant 2",
+      "p2": "move Ice Beam 1, move Burn Up 2"
+    },
+    {
+      "p1": "switch Fletchling, move 1",
+      "p2": "move 4 1, move 2"
+    },
+    {
+      "p1": "move Curse, move Blast Burn 1",
+      "p2": "move Synthesis, move Morning Sun"
+    },
+    {
+      "p1": "move 3 2, move 1",
+      "p2": "move 2, move 4 2"
+    },
+    {
+      "p1": "move 1, move 1 1",
+      "p2": "move 3 1, move 1 2"
+    },
+    {
+      "p1": "move 1 2, move 1",
+      "p2": "move 4 1, move 2"
+    },
+    {
+      "p1": "move 1, move 3 1",
+      "p2": "move 1, move 3"
+    },
+    {
+      "p1": "switch Vespiquen, move 1",
+      "p2": "move 2, move 4 2"
+    },
+    {
+      "p1": "move Ally Switch, move Frenzy Plant 2",
+      "p2": "move Ice Beam 1, move Burn Up 2"
+    },
+    {
+      "p1": "move 1, move 2",
+      "p2": "move 4 1, move 2"
+    },
+    {
+      "p1": "move 1 1, move 3",
+      "p2": "move 1, move 3"
+    },
+    {
+      "p1": "move 2, move 1",
+      "p2": "move 2, move 4 2"
+    },
+    {
+      "p1": "move Ally Switch, move Frenzy Plant 2",
+      "p2": "move Ice Beam 1, move Burn Up 2"
+    },
+    {
+      "p1": "move 1, move 2",
+      "p2": "move 4 1, move 4 2"
+    },
+    {
+      "p1": "move 3 1, move 3",
+      "p2": "move 1, move 2"
+    },
+    {
+      "p1": "move 2, move 1",
+      "p2": "move 2, move 3"
+    },
+    {
+      "p1": "move Ally Switch, move Guard Swap 2",
+      "p2": "move Ice Beam 1, move Curse"
+    },
+    {
+      "p1": "move 3 1, move 2",
+      "p2": "move 4 2, move 4 1"
+    },
+    {
+      "p1": "move 4 2, move 3",
+      "p2": "move 1, move 2"
+    },
+    {
+      "p1": "switch Fletchling, move Guard Swap 1",
+      "p2": "move Curse, move Guard Swap 2"
+    },
+    {
+      "p1": "move Curse, move Curse",
+      "p2": "move Ice Beam 1, move Curse"
+    },
+    {
+      "p1": "switch Vespiquen, pass"
+    },
+    {
+      "p1": "move Ally Switch, move Blast Burn 2",
+      "p2": "move Psycho Shift 2, move Guard Swap 1"
+    },
+    {
+      "p1": "move 1, move 3",
+      "p2": "move 1, move 2"
+    },
+    {
+      "p1": "move Heal Pulse 1, move Guard Swap 2",
+      "p2": "move Curse, move Guard Swap 2"
+    },
+    {
+      "p1": "move Curse, move Curse",
+      "p2": "move Ice Beam 1, move Curse"
+    },
+    {
+      "p1": "move Ally Switch, move Guard Swap 1",
+      "p2": "move Psycho Shift 2, move Guard Swap 1"
+    },
+    {
+      "p1": "move 4 2, move 3",
+      "p2": "move 1, move 2"
+    },
+    {
+      "p1": "move Heal Pulse 1, move Guard Swap 2",
+      "p2": "move Psycho Shift 2, move Guard Swap 1"
+    },
+    {
+      "p1": "move Curse, move Curse",
+      "p2": "move Curse, move Curse"
+    },
+    {
+      "p1": "move Ally Switch, move Guard Swap 1",
+      "p2": "move Ice Beam 2, move Guard Swap 1"
+    },
+    {
+      "p1": "move 4 2, move 3",
+      "p2": "move 4 2, move 2"
+    },
+    {
+      "p1": "move 2, move 4 1",
+      "p2": "move 2, move 4 1"
+    },
+    {
+      "p1": "move 4 2, move 1 1",
+      "p2": "move 3 2, move 1"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+ "schema": 1,
+ "id": "gen9-illusion-keeps-its-gender-hidden",
+ "notes": [
+  "Gen 9: Zoroark, of a gender Showdown draws, stays disguised as Chansey (female) all battle; Blissey's Attract reads its own gender (the `switch` line shows Chansey's)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Zoroark",
+    "species": "Zoroark",
+    "level": 50,
+    "nature": "Hardy",
+    "ability": "Illusion",
+    "moves": [
+     "Harden"
+    ]
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Attract",
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Attract"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

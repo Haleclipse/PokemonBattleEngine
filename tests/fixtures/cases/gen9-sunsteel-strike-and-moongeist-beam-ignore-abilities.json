@@ -1,0 +1,76 @@
+{
+ "schema": 1,
+ "id": "gen9-sunsteel-strike-and-moongeist-beam-ignore-abilities",
+ "notes": [
+  "Sunsteel Strike (`ignoreAbility`) ignores Fur Coat's doubled Defense",
+  "Moongeist Beam ignores Ice Scales' halving of special damage"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Solgaleo",
+    "species": "Solgaleo",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sunsteel Strike",
+     "Moongeist Beam"
+    ],
+    "gender": "N",
+    "ability": "Full Metal Body"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Furry",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Fur Coat"
+   },
+   {
+    "label": "Scaly",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Ice Scales"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Sunsteel Strike",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Moongeist Beam",
+   "p2": "switch Scaly"
+  },
+  {
+   "p1": "move Moongeist Beam",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

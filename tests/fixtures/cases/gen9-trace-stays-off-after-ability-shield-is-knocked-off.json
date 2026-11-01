@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen9-trace-stays-off-after-ability-shield-is-knocked-off",
+ "notes": [
+  "Ability Shield stops Trace looking (`seek` false, `-block`); Knock Off takes the shield, and Trace still copies nothing at the `Update`s after"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Gardevoir",
+    "species": "Gardevoir",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Trace",
+    "item": "Ability Shield"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gyarados",
+    "species": "Gyarados",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Knock Off"
+    ],
+    "gender": "M",
+    "ability": "Intimidate"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Knock Off"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Knock Off"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

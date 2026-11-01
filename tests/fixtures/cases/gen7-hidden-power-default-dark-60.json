@@ -1,0 +1,57 @@
+{
+ "schema": 1,
+ "id": "gen7-hidden-power-default-dark-60",
+ "notes": [
+  "Gen 6+ Hidden Power has 60 power; all-31 IVs make it Dark"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Porygon2",
+    "species": "Porygon2",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Hidden Power"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Alakazam",
+    "species": "Alakazam",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Hidden Power",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Hidden Power",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

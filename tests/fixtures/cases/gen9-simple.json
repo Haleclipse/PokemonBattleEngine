@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "id": "gen9-singles-simple",
+  "notes": [
+    "Simple (ChangeBoost): Swords Dance is +4 and Growl -2; the second Swords Dance is capped at +6 before TryBoost."
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "a",
+        "species": "Snorlax",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Growl"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "b",
+        "species": "Numel",
+        "ability": "Simple",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Swords Dance"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

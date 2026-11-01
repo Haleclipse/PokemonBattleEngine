@@ -1,0 +1,70 @@
+{
+ "schema": 1,
+ "id": "gen4-seismic-toss-with-a-life-orb-pays-its-recoil-but-not-into-a-substitute",
+ "notes": [
+  "Gen 4: Ambipom's Seismic Toss with a Life Orb: no recoil while Snorlax's Substitute takes it (UpdateHP returns before SYSCTL_MOVE_HIT), the tenth once it reaches Snorlax — fixed damage takes real HP like any hit (issues.md I193, DESIGN.md R-M8-131)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Ambipom",
+    "species": "Ambipom",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Splash"
+    ],
+    "item": "Life Orb",
+    "ability": "Technician",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Substitute",
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash",
+   "p2": "move Substitute"
+  },
+  {
+   "p1": "move Seismic Toss",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Seismic Toss",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Seismic Toss",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

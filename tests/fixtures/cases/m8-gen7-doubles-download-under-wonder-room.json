@@ -1,0 +1,199 @@
+{
+  "schema": 1,
+  "id": "m8-gen7-doubles-download-under-wonder-room",
+  "notes": [
+    "Nightly 56: Download under Wonder Room reads each foe's stored Defense at its Special Defense stage and the other way round (Showdown getStat(stat, false, true)) (DESIGN.md R-M8-100)",
+    "promoted from m8-gen7-doubles-s523-008-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 7,
+    "mode": "doubles",
+    "format": "gen7doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Braviary",
+        "species": "Braviary",
+        "level": 45,
+        "nature": "Hardy",
+        "moves": [
+          "Land's Wrath",
+          "Wonder Room",
+          "Growl",
+          "Block"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Sableye",
+        "species": "Sableye",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Baby-Doll Eyes",
+          "Wonder Room",
+          "Sand Attack",
+          "Defense Curl"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Nidoran-F",
+        "species": "Nidoran-F",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Rock Polish"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Meloetta",
+        "species": "Meloetta",
+        "level": 54,
+        "nature": "Hardy",
+        "moves": [
+          "Growth",
+          "Block",
+          "Eerie Impulse",
+          "Wonder Room"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Bibarel",
+        "species": "Bibarel",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sharpen"
+        ],
+        "ability": "Download",
+        "gender": "F"
+      },
+      {
+        "label": "Kricketune",
+        "species": "Kricketune",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Iron Defense",
+          "Block",
+          "Smokescreen",
+          "Wonder Room"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      54377,
+      21530,
+      18084,
+      30505
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Land's Wrath, move Baby-Doll Eyes 1",
+      "p2": "move Rock Polish, move Growth"
+    },
+    {
+      "p1": "move Land's Wrath, move Baby-Doll Eyes 2",
+      "p2": "move Rock Polish, move Growth"
+    },
+    {
+      "p2": "switch Bibarel, pass"
+    },
+    {
+      "p1": "move Land's Wrath, move Baby-Doll Eyes 1",
+      "p2": "move Sharpen, move Growth"
+    },
+    {
+      "p1": "move Wonder Room, move Wonder Room",
+      "p2": "switch Kricketune, move Block 2"
+    },
+    {
+      "p1": "move Growl, move Sand Attack 2",
+      "p2": "move Block 1, move Eerie Impulse 2"
+    },
+    {
+      "p1": "move Growl, move Sand Attack 2",
+      "p2": "move Block 1, move Eerie Impulse 2"
+    },
+    {
+      "p1": "move Block 2, move Defense Curl",
+      "p2": "move Smokescreen 1, move Wonder Room"
+    },
+    {
+      "p1": "move Land's Wrath, move Baby-Doll Eyes 1",
+      "p2": "move Wonder Room, move Growth"
+    },
+    {
+      "p1": "move Growl, move Sand Attack 2",
+      "p2": "move Block 1, move Eerie Impulse 2"
+    },
+    {
+      "p1": "move Block 1, move Defense Curl",
+      "p2": "move Smokescreen 1, move Wonder Room"
+    },
+    {
+      "p1": "move Land's Wrath, move Baby-Doll Eyes 2",
+      "p2": "move Wonder Room, move Growth"
+    },
+    {
+      "p1": "move Growl, move Baby-Doll Eyes 1",
+      "p2": "move Wonder Room, move Wonder Room"
+    },
+    {
+      "p1": "move Land's Wrath, move Wonder Room",
+      "p2": "move Iron Defense, move Growth"
+    },
+    {
+      "p1": "move Wonder Room, move Sand Attack 2",
+      "p2": "move Block 2, move Eerie Impulse 1"
+    },
+    {
+      "p1": "move Growl, move Sand Attack 2",
+      "p2": "move Block 2, move Wonder Room"
+    },
+    {
+      "p1": "move Land's Wrath, move Defense Curl",
+      "p2": "move Wonder Room, move Growth"
+    },
+    {
+      "p1": "move Wonder Room, move Baby-Doll Eyes 1",
+      "p2": "move Iron Defense, move Eerie Impulse 1"
+    },
+    {
+      "p1": "move Growl, move Baby-Doll Eyes 1",
+      "p2": "move Smokescreen 2, move Wonder Room"
+    },
+    {
+      "p1": "move Land's Wrath, move Wonder Room",
+      "p2": "move Wonder Room, move Growth"
+    },
+    {
+      "p1": "move Wonder Room, move Sand Attack 2",
+      "p2": "move Iron Defense, move Eerie Impulse 1"
+    },
+    {
+      "p1": "move Growl, move Defense Curl",
+      "p2": "move Smokescreen 2, move Wonder Room"
+    },
+    {
+      "p1": "move Land's Wrath, move Baby-Doll Eyes 1",
+      "p2": "move Wonder Room, move Growth"
+    },
+    {
+      "p2": "pass, switch Bibarel"
+    }
+  ]
+}

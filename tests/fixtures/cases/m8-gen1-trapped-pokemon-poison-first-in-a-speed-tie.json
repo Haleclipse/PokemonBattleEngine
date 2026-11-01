@@ -1,0 +1,111 @@
+{
+  "schema": 1,
+  "id": "m8-gen1-trapped-pokemon-poison-first-in-a-speed-tie",
+  "notes": [
+    "Gen 1: Jynx, held by Electabuzz's Wrap, wins the speed tie: its cannotmove action is only its poison damage, first in the turn and before the Wrap that goes on; the replay reads that silent action as Jynx's place in the order (DESIGN.md R-M8-108)",
+    "promoted from m8-gen1-singles-s553-013-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 1,
+    "mode": "singles",
+    "format": "gen1customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Drowzee",
+        "species": "Drowzee",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Surf",
+          "Swift",
+          "Toxic"
+        ]
+      },
+      {
+        "label": "Electabuzz",
+        "species": "Electabuzz",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Wrap",
+          "Fire Spin"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "Jynx",
+        "species": "Jynx",
+        "level": 51,
+        "nature": "Hardy",
+        "moves": [
+          "Stomp",
+          "Bite",
+          "Toxic"
+        ]
+      },
+      {
+        "label": "Paras",
+        "species": "Paras",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Headbutt",
+          "Fly"
+        ]
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      7082,
+      42490,
+      12067,
+      47780
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Surf",
+      "p2": "move Stomp"
+    },
+    {
+      "p1": "move Swift",
+      "p2": "move Bite"
+    },
+    {
+      "p1": "move Toxic",
+      "p2": "move Toxic"
+    },
+    {
+      "p1": "move Surf",
+      "p2": "move Stomp"
+    },
+    {
+      "p1": "switch Electabuzz",
+      "p2": "switch Paras"
+    },
+    {
+      "p1": "move Fire Spin",
+      "p2": "move Fly"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p2": "switch Jynx"
+    },
+    {
+      "p1": "move Wrap",
+      "p2": "move Stomp"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    }
+  ]
+}

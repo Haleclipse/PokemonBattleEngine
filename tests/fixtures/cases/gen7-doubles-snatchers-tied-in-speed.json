@@ -1,0 +1,80 @@
+{
+ "schema": 1,
+ "id": "gen7-doubles-snatchers-tied-in-speed",
+ "notes": [
+  "Gen 7: two Absol at the same speed both use Snatch; the Swords Dance goes to the one Showdown's `speedSort` shuffle puts first (each tied holder draws a SpeedTie, DESIGN.md R-M8-93)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Absol",
+    "species": "Absol",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Snatch",
+     "Splash"
+    ],
+    "ability": "Pressure",
+    "gender": "M"
+   },
+   {
+    "label": "Absol-2",
+    "species": "Absol",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Snatch",
+     "Splash"
+    ],
+    "ability": "Pressure",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Scizor",
+    "species": "Scizor",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Swords Dance",
+     "Splash"
+    ],
+    "ability": "Technician",
+    "gender": "M"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Snatch, move Snatch",
+   "p2": "move Swords Dance, move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   13,
+   14,
+   15,
+   16
+  ]
+ }
+}

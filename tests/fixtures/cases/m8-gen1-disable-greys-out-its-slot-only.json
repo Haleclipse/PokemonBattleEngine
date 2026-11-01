@@ -1,0 +1,195 @@
+{
+  "schema": 1,
+  "id": "m8-gen1-disable-greys-out-its-slot-only",
+  "notes": [
+    "Nightly 57: Gen 1 Disable greys out the slot it drew (Showdown gen1 slotIndex, pokered wPlayerDisabledMove): Zapdos' Mimic copy of Disable stays on the request and is refused at BeforeMove by id (wPlayerDisabledMoveNumber) (DESIGN.md R-M8-101)",
+    "promoted from m8-gen1-singles-s526-003-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 1,
+    "mode": "singles",
+    "format": "gen1customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Pikachu",
+        "species": "Pikachu",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Thunder Shock",
+          "Disable",
+          "Body Slam",
+          "Mimic"
+        ]
+      },
+      {
+        "label": "Poliwag",
+        "species": "Poliwag",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Thunder Punch",
+          "Disable",
+          "Lick",
+          "Mimic"
+        ]
+      },
+      {
+        "label": "Moltres",
+        "species": "Moltres",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Thunderbolt",
+          "Disable",
+          "Psywave",
+          "Mimic"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "Blastoise",
+        "species": "Blastoise",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Razor Wind",
+          "Disable",
+          "Solar Beam"
+        ]
+      },
+      {
+        "label": "Psyduck",
+        "species": "Psyduck",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Dig",
+          "Disable",
+          "Fury Swipes",
+          "Mimic"
+        ]
+      },
+      {
+        "label": "Zapdos",
+        "species": "Zapdos",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Comet Punch",
+          "Disable",
+          "Fury Attack",
+          "Mimic"
+        ]
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      18490,
+      3468,
+      20637,
+      41572
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Thunder Shock",
+      "p2": "move Razor Wind"
+    },
+    {
+      "p1": "move Disable",
+      "p2": "move Razor Wind"
+    },
+    {
+      "p1": "move Body Slam",
+      "p2": "move Solar Beam"
+    },
+    {
+      "p1": "move 4",
+      "p2": "move 1"
+    },
+    {
+      "p1": "switch Poliwag"
+    },
+    {
+      "p1": "move Thunder Punch",
+      "p2": "move Razor Wind"
+    },
+    {
+      "p1": "move Disable",
+      "p2": "move Razor Wind"
+    },
+    {
+      "p1": "move Lick",
+      "p2": "move Disable"
+    },
+    {
+      "p1": "move Lick",
+      "p2": "move Solar Beam"
+    },
+    {
+      "p1": "switch Moltres",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move Thunderbolt",
+      "p2": "move Disable"
+    },
+    {
+      "p2": "switch Psyduck"
+    },
+    {
+      "p1": "move Disable",
+      "p2": "move Fury Swipes"
+    },
+    {
+      "p1": "move Psywave",
+      "p2": "move Mimic"
+    },
+    {
+      "p1": "move Mimic",
+      "p2": "move Dig"
+    },
+    {
+      "p1": "move Thunderbolt",
+      "p2": "move Dig"
+    },
+    {
+      "p1": "move Disable",
+      "p2": "move Fury Swipes"
+    },
+    {
+      "p1": "move Psywave",
+      "p2": "move Dig"
+    },
+    {
+      "p1": "move 4",
+      "p2": "move 1"
+    },
+    {
+      "p1": "switch Poliwag",
+      "p2": "switch Zapdos"
+    },
+    {
+      "p1": "move Thunder Punch",
+      "p2": "move Disable"
+    },
+    {
+      "p1": "move Mimic",
+      "p2": "move Fury Attack"
+    },
+    {
+      "p1": "move Disable",
+      "p2": "move Mimic"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 4"
+    }
+  ]
+}

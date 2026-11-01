@@ -1,0 +1,99 @@
+{
+  "schema": 1,
+  "id": "gen3-cute-charm-and-attract",
+  "notes": [
+    "Gen 3: Cute Charm infatuates 1 in 3 on a contact hit that dealt damage; paralysis rolls before Attract (the cartridge's BeforeMove order, issues.md I66)"
+  ],
+  "battle": {
+    "generation": 3,
+    "mode": "singles",
+    "format": "gen3customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Brute",
+        "species": "Snorlax",
+        "level": 100,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle",
+          "Swift",
+          "Recover"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Charmer",
+        "species": "Clefable",
+        "level": 100,
+        "nature": "Hardy",
+        "moves": [
+          "Thunder Wave",
+          "Soft-Boiled",
+          "Harden"
+        ],
+        "ability": "Cute Charm",
+        "gender": "F"
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Tackle",
+      "p2": "move Thunder Wave"
+    },
+    {
+      "p1": "move Tackle",
+      "p2": "move Harden"
+    },
+    {
+      "p1": "move Tackle",
+      "p2": "move Soft-Boiled"
+    },
+    {
+      "p1": "move Tackle",
+      "p2": "move Harden"
+    },
+    {
+      "p1": "move Tackle",
+      "p2": "move Soft-Boiled"
+    },
+    {
+      "p1": "move Tackle",
+      "p2": "move Harden"
+    },
+    {
+      "p1": "move Tackle",
+      "p2": "move Soft-Boiled"
+    },
+    {
+      "p1": "move Tackle",
+      "p2": "move Harden"
+    },
+    {
+      "p1": "move Tackle",
+      "p2": "move Soft-Boiled"
+    },
+    {
+      "p1": "move Tackle",
+      "p2": "move Harden"
+    },
+    {
+      "p1": "move Tackle",
+      "p2": "move Soft-Boiled"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      2,
+      2,
+      3,
+      4
+    ]
+  }
+}

@@ -1,0 +1,288 @@
+{
+  "schema": 1,
+  "id": "gen1-clamped-seeded-silent-turn",
+  "notes": [
+    "Nightly 49: Gen 1 Clamp goes on; the clamped Pokémon's turn shows nothing, yet Leech Seed drains it as that turn ends — its own silent action (DESIGN.md R-M8-93)",
+    "promoted from m8-gen1-singles-s498-001-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 1,
+    "mode": "singles",
+    "format": "gen1customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Wigglytuff",
+        "species": "Wigglytuff",
+        "level": 52,
+        "nature": "Hardy",
+        "moves": [
+          "Petal Dance",
+          "Thrash",
+          "Leech Seed"
+        ]
+      },
+      {
+        "label": "Seaking",
+        "species": "Seaking",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Acid",
+          "Mimic",
+          "Aurora Beam",
+          "Leech Seed"
+        ]
+      },
+      {
+        "label": "Electabuzz",
+        "species": "Electabuzz",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Constrict",
+          "Mimic",
+          "Psychic"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "Shellder",
+        "species": "Shellder",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Leer",
+          "Mimic"
+        ]
+      },
+      {
+        "label": "Arcanine",
+        "species": "Arcanine",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Clamp",
+          "Mimic",
+          "Bind",
+          "Leech Seed"
+        ]
+      },
+      {
+        "label": "Diglett",
+        "species": "Diglett",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fire Spin",
+          "Mimic",
+          "Wrap"
+        ]
+      },
+      {
+        "label": "Dratini",
+        "species": "Dratini",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Mimic",
+          "Sleep Powder"
+        ]
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      2387,
+      14707,
+      7095,
+      28005
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Petal Dance",
+      "p2": "move Leer"
+    },
+    {
+      "p1": "move Petal Dance",
+      "p2": "move Mimic"
+    },
+    {
+      "p2": "switch Arcanine"
+    },
+    {
+      "p1": "move Petal Dance",
+      "p2": "move Bind"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move Petal Dance",
+      "p2": "move Clamp"
+    },
+    {
+      "p1": "move Petal Dance",
+      "p2": "move Mimic"
+    },
+    {
+      "p1": "switch Seaking",
+      "p2": "switch Diglett"
+    },
+    {
+      "p1": "move Aurora Beam",
+      "p2": "move Wrap"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move Acid",
+      "p2": "move Fire Spin"
+    },
+    {
+      "p1": "move Mimic",
+      "p2": "move Mimic"
+    },
+    {
+      "p1": "move Acid",
+      "p2": "move Fire Spin"
+    },
+    {
+      "p1": "switch Wigglytuff",
+      "p2": "switch Arcanine"
+    },
+    {
+      "p1": "move Petal Dance",
+      "p2": "move Clamp"
+    },
+    {
+      "p1": "move Petal Dance",
+      "p2": "move Mimic"
+    },
+    {
+      "p1": "move Petal Dance",
+      "p2": "move Bind"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move Petal Dance",
+      "p2": "move Clamp"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 2"
+    },
+    {
+      "p1": "switch Seaking",
+      "p2": "switch Diglett"
+    },
+    {
+      "p1": "move Aurora Beam",
+      "p2": "move Wrap"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move Acid",
+      "p2": "move Fire Spin"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move Acid",
+      "p2": "move Fire Spin"
+    },
+    {
+      "p1": "switch Wigglytuff",
+      "p2": "switch Arcanine"
+    },
+    {
+      "p1": "move Petal Dance",
+      "p2": "move Clamp"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move Thrash",
+      "p2": "move Bind"
+    },
+    {
+      "p1": "switch Seaking"
+    },
+    {
+      "p1": "move Leech Seed",
+      "p2": "move Leech Seed"
+    },
+    {
+      "p1": "move Acid",
+      "p2": "move Clamp"
+    },
+    {
+      "p1": "move Mimic",
+      "p2": "move Mimic"
+    },
+    {
+      "p1": "switch Electabuzz",
+      "p2": "switch Diglett"
+    },
+    {
+      "p1": "move Psychic",
+      "p2": "move Wrap"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move Constrict",
+      "p2": "move Fire Spin"
+    },
+    {
+      "p1": "move Mimic",
+      "p2": "move Mimic"
+    },
+    {
+      "p1": "switch Seaking",
+      "p2": "switch Dratini"
+    },
+    {
+      "p1": "move Acid",
+      "p2": "move Mimic"
+    },
+    {
+      "p1": "move Aurora Beam",
+      "p2": "move Sleep Powder"
+    },
+    {
+      "p2": "switch Arcanine"
+    },
+    {
+      "p1": "move Leech Seed",
+      "p2": "move Leech Seed"
+    },
+    {
+      "p1": "move Acid",
+      "p2": "move Clamp"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    }
+  ]
+}

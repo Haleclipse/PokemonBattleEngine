@@ -1,0 +1,57 @@
+{
+ "schema": 1,
+ "id": "gen2-conversion-leaves-curse-out-b",
+ "notes": [
+  "Gen 2: Conversion draws one of the user's move types it does not have (`sample` over the slots): Electric or Ice — Curse (`???`) is left out (Showdown's gen3 `onHit`, which Gen 2 inherits)"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Porygon2",
+    "species": "Porygon2",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Conversion",
+     "Curse",
+     "Thunderbolt",
+     "Ice Beam"
+    ],
+    "ability": null
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": null
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Conversion",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   5,
+   6,
+   7,
+   8
+  ]
+ }
+}

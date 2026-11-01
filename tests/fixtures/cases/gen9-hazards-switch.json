@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "id": "gen9-singles-hazards-switch",
+  "notes": [
+    "Entry hazards in the switch-in stage (DESIGN.md §30.1) with switches as turn actions: two layers of Spikes, Toxic",
+    "Spikes and Sticky Web on P2's side. Pikachu (Heavy-Duty Boots) enters unharmed; Garchomp re-enters onto 2 layers",
+    "(4/24), gets poisoned and loses a Speed stage. Turn 5 switches P1 too, so the frame covers both benches."
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "a",
+        "species": "Forretress",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Spikes",
+          "Toxic Spikes",
+          "Sticky Web"
+        ]
+      },
+      {
+        "label": "c",
+        "species": "Snorlax",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "b",
+        "species": "Garchomp",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ]
+      },
+      {
+        "label": "d",
+        "species": "Pikachu",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ],
+        "item": "Heavy-Duty Boots"
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 2",
+      "p2": "switch 2"
+    },
+    {
+      "p1": "move 3",
+      "p2": "switch 2"
+    },
+    {
+      "p1": "switch 2",
+      "p2": "move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

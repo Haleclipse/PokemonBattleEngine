@@ -1,0 +1,124 @@
+{
+ "schema": 1,
+ "id": "gen9-final-gambit-and-misty-explosion",
+ "notes": [
+  "Final Gambit deals its user's HP and knocks it out, not into a Ghost type; Misty Explosion is \u00d71.5 in Misty Terrain for a grounded user, not for a Flying one, and knocks its user out"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Gambler",
+    "species": "Mew",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Final Gambit"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Grounded",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Misty Explosion",
+     "Misty Terrain"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Flyer",
+    "species": "Corviknight",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Misty Explosion"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Last",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gengar",
+    "species": "Gengar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Target",
+    "species": "Blissey",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Final Gambit",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Final Gambit",
+   "p2": "switch Target"
+  },
+  {
+   "p1": "switch Grounded"
+  },
+  {
+   "p1": "move Misty Terrain",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Misty Explosion",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "switch Flyer"
+  },
+  {
+   "p1": "move Misty Explosion",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "switch Last"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

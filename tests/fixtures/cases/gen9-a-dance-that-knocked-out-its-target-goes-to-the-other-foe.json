@@ -1,0 +1,82 @@
+{
+ "schema": 1,
+ "id": "gen9-a-dance-that-knocked-out-its-target-goes-to-the-other-foe",
+ "notes": [
+  "Gen 9 doubles: Lilligant's Fiery Dance knocks out the level-1 Magikarp; its partner Oricorio (Dancer) dances along at Snorlax — Showdown's getTarget passes over a fainted foe (target.fainted) for a random one, the only foe left standing (DESIGN.md R-M8-129)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Lilligant",
+    "species": "Lilligant",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fiery Dance",
+     "Splash"
+    ],
+    "ability": "Own Tempo",
+    "gender": "F"
+   },
+   {
+    "label": "Oricorio",
+    "species": "Oricorio",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Dancer",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 1,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Swift Swim",
+    "gender": "M"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Fiery Dance 1, move Splash",
+   "p2": "move Splash, move Splash"
+  },
+  {
+   "p1": "move Splash, move Splash",
+   "p2": "pass, move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

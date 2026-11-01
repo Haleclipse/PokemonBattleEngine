@@ -1,0 +1,109 @@
+{
+ "schema": 1,
+ "id": "gen9-fillet-away-and-clangorous-soul",
+ "notes": [
+  "Fillet Away under Simple: +4 Attack / Special Attack / Speed for half the max HP; again at exactly half HP it fails; after a Recover +6 (capped) for another half; after another Recover none can rise, so it fails and costs nothing. Clangorous Soul: +1 to five stats for a third of the max HP, until the HP is a third or less"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Fillet",
+    "species": "Snorlax",
+    "level": 99,
+    "nature": "Hardy",
+    "moves": [
+     "Fillet Away",
+     "Recover"
+    ],
+    "ability": "Simple"
+   },
+   {
+    "label": "Soul",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Clangorous Soul",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Fillet Away",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Fillet Away",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Fillet Away",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Fillet Away",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Soul",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Clangorous Soul",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Clangorous Soul",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Clangorous Soul",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Clangorous Soul",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

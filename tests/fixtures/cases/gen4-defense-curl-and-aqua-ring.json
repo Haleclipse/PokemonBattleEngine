@@ -1,0 +1,69 @@
+{
+ "schema": 1,
+ "id": "gen4-defense-curl-and-aqua-ring",
+ "notes": [
+  "Gen 4: Defense Curl raises Defense and leaves its mark; a second one raises Defense again. Aqua Ring heals a sixteenth of the max HP every turn \u2014 before bad poison (10.2 before 10.6), so a Snorlax at 81 HP heals to 109 before losing 84; a second Aqua Ring fails"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Ring",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Defense Curl",
+     "Aqua Ring",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Toxic",
+     "Super Fang",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Defense Curl",
+   "p2": "move Toxic"
+  },
+  {
+   "p1": "move Defense Curl",
+   "p2": "move Super Fang"
+  },
+  {
+   "p1": "move Aqua Ring",
+   "p2": "move Super Fang"
+  },
+  {
+   "p1": "move Aqua Ring",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   2,
+   2,
+   3,
+   4
+  ]
+ }
+}

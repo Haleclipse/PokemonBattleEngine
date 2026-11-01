@@ -1,0 +1,85 @@
+{
+ "schema": 1,
+ "id": "gen4-knock-off-and-thief-miss-a-quick-claw-that-went-off",
+ "notes": [
+  "Gen 4 (cartridge, issues.md I53): Snorlax's Quick Claw goes off for Mirror Coat, so Knock Off leaves its item; it goes off again for Harden, Snorlax moves first and Knock Off takes it; Munchlax's goes off for Mirror Coat and Thief takes nothing, then stays quiet and Thief takes it"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sneasel",
+    "species": "Sneasel",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Knock Off",
+     "Thief",
+     "Harden"
+    ],
+    "ability": "Inner Focus"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Mirror Coat",
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Quick Claw"
+   },
+   {
+    "label": "Munchlax",
+    "species": "Munchlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Mirror Coat",
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Quick Claw"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Knock Off",
+   "p2": "move Mirror Coat"
+  },
+  {
+   "p1": "move Knock Off",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Munchlax"
+  },
+  {
+   "p1": "move Thief",
+   "p2": "move Mirror Coat"
+  },
+  {
+   "p1": "move Thief",
+   "p2": "move Mirror Coat"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   142,
+   143,
+   144,
+   145
+  ]
+ }
+}

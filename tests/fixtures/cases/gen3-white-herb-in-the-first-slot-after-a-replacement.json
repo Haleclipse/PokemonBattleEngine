@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "gen3-white-herb-in-the-first-slot-after-a-replacement",
+ "notes": [
+  "Gen 3 White Herb (issues.md I48; pokeemerald `HandleFaintedMonActions` checks the first battler's item after the replacement's Intimidate): False Swipe leaves Magikarp at 1 HP, Snorlax's Sandstorm knocks it out at the end of the turn, and Gyarados, sent in after the residual, intimidates P1's Snorlax \u2014 its herb sets the Attack back at once (Showdown's gen3 waits for Snorlax's next move)"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "False Swipe",
+     "Sandstorm",
+     "Harden"
+    ],
+    "item": "White Herb",
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 5,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Swift Swim"
+   },
+   {
+    "label": "Gyarados",
+    "species": "Gyarados",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Intimidate"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move False Swipe",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Sandstorm",
+   "p2": "move Harden"
+  },
+  {
+   "p2": "switch Gyarados"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

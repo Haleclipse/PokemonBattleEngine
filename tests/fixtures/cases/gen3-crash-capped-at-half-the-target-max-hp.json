@@ -1,0 +1,53 @@
+{
+ "schema": 1,
+ "id": "gen3-crash-capped-at-half-the-target-max-hp",
+ "notes": [
+  "Gen 3 crash is at most half the target's max HP: High Jump Kick into a level 5 Snorlax's Protect would have dealt far more than its HP, and the crash is capped at ⌊max HP / 2⌋"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hitmonlee",
+    "species": "Hitmonlee",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "High Jump Kick"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 5,
+    "nature": "Hardy",
+    "moves": [
+     "Protect"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move High Jump Kick",
+   "p2": "move Protect"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,203 @@
+{
+ "schema": 1,
+ "id": "m9-gen1-rage-boost-at-999-echoes-a-drop",
+ "notes": [
+  "R-M9-42: Pinsir's Attack reads 999; Abra's Aurora Beam (Metronome) builds its Rage, and Gen 1's raise of a stat at 999 prints `-boost atk 1` then its echo `-unboost atk 1` (the stage goes up and back). The replay read the echo as Aurora Beam's Attack drop and planned it. Minimized from Nightly 20261021-091606 (m9-gen1ou-s135-010)."
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1ou"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Zubat",
+    "species": "Zubat",
+    "ability": "",
+    "moves": [
+     "Razor Wind"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": false,
+    "level": 23
+   },
+   {
+    "label": "Spearow",
+    "species": "Spearow",
+    "ability": "",
+    "moves": [
+     "Mirror Move",
+     "Sky Attack",
+     "Agility",
+     "Whirlwind"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": false,
+    "level": 100
+   },
+   {
+    "label": "Pinsir",
+    "species": "Pinsir",
+    "ability": "",
+    "moves": [
+     "Bide",
+     "Rage"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": false,
+    "level": 100
+   }
+  ],
+  "p2": [
+   {
+    "label": "Drowzee",
+    "species": "Drowzee",
+    "ability": "",
+    "moves": [
+     "Metronome",
+     "Mega Kick",
+     "Mimic",
+     "Rest"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": false,
+    "level": 100
+   },
+   {
+    "label": "Horsea",
+    "species": "Horsea",
+    "ability": "",
+    "moves": [
+     "Mimic"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": false,
+    "level": 100
+   },
+   {
+    "label": "Nick75",
+    "species": "Mr. Mime",
+    "ability": "",
+    "moves": [
+     "Thunder Wave",
+     "Rage",
+     "Teleport"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": false,
+    "level": 100
+   },
+   {
+    "label": "Abra",
+    "species": "Abra",
+    "ability": "",
+    "moves": [
+     "Metronome"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": false,
+    "level": 100
+   }
+  ]
+ },
+ "preview": {
+  "p1": "team 253641",
+  "p2": "team 436512"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   10861,
+   135,
+   1010,
+   31
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Razor Wind",
+   "p2": "move Metronome"
+  },
+  {
+   "p1": "move Razor Wind",
+   "p2": "move Mega Kick"
+  },
+  {
+   "p1": "switch Spearow"
+  },
+  {
+   "p1": "move Agility",
+   "p2": "move Mimic"
+  },
+  {
+   "p1": "move Whirlwind",
+   "p2": "move Rest"
+  },
+  {
+   "p1": "move Mirror Move",
+   "p2": "move Metronome"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p2": "switch Horsea"
+  },
+  {
+   "p1": "switch Pinsir",
+   "p2": "switch Nick75"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "move Teleport"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 2"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p2": "switch Horsea"
+  },
+  {
+   "p1": "move 1",
+   "p2": "switch Abra"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  }
+ ]
+}

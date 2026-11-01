@@ -1,0 +1,69 @@
+{
+ "schema": 1,
+ "id": "gen1-mirror-move-calls-a-charging-move",
+ "notes": [
+  "Gen 1: Jolteon's Mirror Move copies Chansey's Skull Bash: the charging turn gives Mirror Move its PP back (the gen1 `useMove`'s `deductPP(-1)`), and the attack the next turn — the request offers Skull Bash alone, `move 1` — pays from Mirror Move's slot, the side's last pick from the menu (`side.lastSelectedMoveSlot`), not from Harden in the first slot; and the attack is Skull Bash, not the Harden that slot holds"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Mirror Move"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Skull Bash",
+     "Tackle"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Skull Bash"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Mirror Move",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

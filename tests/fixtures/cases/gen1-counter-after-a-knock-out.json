@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "gen1-counter-after-a-knock-out",
+ "notes": [
+  "Gen 1 Counter after a knock-out: the last damage is the hit's capped at the HP it took (the gen1 moveHit's `damage > target.hp`, pokered's wDamage) \u2014 Counter against the sleeping replacement deals twice that (the 33rd Nightly)"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sleeper",
+    "species": "Nidorino",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Hyper Fang"
+    ]
+   },
+   {
+    "label": "Kicker",
+    "species": "Seadra",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Rolling Kick"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Clubber",
+    "species": "Marowak",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Bone Club",
+     "Counter",
+     "Hypnosis"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Hyper Fang",
+   "p2": "move Hypnosis"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "move Bone Club"
+  },
+  {
+   "p1": "move Rolling Kick",
+   "p2": "move Bone Club"
+  },
+  {
+   "p1": "switch 2"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Counter"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   17,
+   2,
+   3,
+   4
+  ]
+ }
+}

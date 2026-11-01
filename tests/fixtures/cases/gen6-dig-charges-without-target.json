@@ -1,0 +1,213 @@
+{
+  "schema": 1,
+  "id": "gen6-dig-charges-without-target",
+  "notes": [
+    "Dig aimed at a foe that fainted this turn still charges (TryMove before the no-target failure) and shields its user from the hail",
+    "promoted from m8-gen6-singles-s108-008-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 6,
+    "mode": "singles",
+    "format": "gen6customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Furret",
+        "species": "Furret",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Head Charge",
+          "Electric Terrain",
+          "Wild Charge",
+          "Hail"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Dusclops",
+        "species": "Dusclops",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Electric Terrain",
+          "Wood Hammer",
+          "Will-O-Wisp"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Steelix",
+        "species": "Steelix",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Take Down",
+          "Head Smash",
+          "Hail"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Electivire",
+        "species": "Electivire",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Double-Edge",
+          "Electric Terrain",
+          "Water Pulse",
+          "Hail"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Magby",
+        "species": "Magby",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Rock Climb"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Vanillish",
+        "species": "Vanillish",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Signal Beam",
+          "Hail",
+          "Fly"
+        ],
+        "ability": "Rough Skin",
+        "gender": "M"
+      },
+      {
+        "label": "Wobbuffet",
+        "species": "Wobbuffet",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Dig",
+          "Bulldoze",
+          "Will-O-Wisp"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Haxorus",
+        "species": "Haxorus",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Discharge",
+          "Frost Breath",
+          "Lava Plume",
+          "Storm Throw"
+        ],
+        "ability": "Static",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      27570,
+      31732,
+      23470,
+      31018
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Head Charge",
+      "p2": "move Rock Climb"
+    },
+    {
+      "p2": "switch Vanillish"
+    },
+    {
+      "p1": "move Electric Terrain",
+      "p2": "move Hail"
+    },
+    {
+      "p1": "move Wild Charge",
+      "p2": "move Fly"
+    },
+    {
+      "p1": "move 4",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move Head Charge",
+      "p2": "move Signal Beam"
+    },
+    {
+      "p1": "switch Steelix",
+      "p2": "switch Haxorus"
+    },
+    {
+      "p1": "move Head Smash",
+      "p2": "move Lava Plume"
+    },
+    {
+      "p1": "move Hail",
+      "p2": "move Storm Throw"
+    },
+    {
+      "p1": "move Take Down",
+      "p2": "move Discharge"
+    },
+    {
+      "p1": "switch Dusclops"
+    },
+    {
+      "p1": "move Electric Terrain",
+      "p2": "move Frost Breath"
+    },
+    {
+      "p1": "move Wood Hammer",
+      "p2": "move Lava Plume"
+    },
+    {
+      "p1": "move Will-O-Wisp",
+      "p2": "move Storm Throw"
+    },
+    {
+      "p1": "switch Electivire",
+      "p2": "switch Wobbuffet"
+    },
+    {
+      "p1": "move Double-Edge",
+      "p2": "move Dig"
+    },
+    {
+      "p1": "move Electric Terrain",
+      "p2": "move Dig"
+    },
+    {
+      "p1": "move Water Pulse",
+      "p2": "move Bulldoze"
+    },
+    {
+      "p1": "move Hail",
+      "p2": "move Will-O-Wisp"
+    },
+    {
+      "p1": "move Double-Edge",
+      "p2": "move Dig"
+    }
+  ]
+}

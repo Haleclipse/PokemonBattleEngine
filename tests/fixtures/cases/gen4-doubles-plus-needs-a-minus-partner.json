@@ -1,0 +1,100 @@
+{
+ "schema": 1,
+ "id": "gen4-doubles-plus-needs-a-minus-partner",
+ "notes": [
+  "Gen 4 Plus: a partner with Minus turns it on, a partner with Plus does not"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "doubles",
+  "format": "gen4doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Psychic"
+    ],
+    "ability": "Plus"
+   },
+   {
+    "label": "Pikachu",
+    "species": "Pikachu",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Plus"
+   },
+   {
+    "label": "Minun",
+    "species": "Minun",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Minus"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Psychic 1, move Harden",
+   "p2": "move Recover, move Harden"
+  },
+  {
+   "p1": "move Psychic 1, move Harden",
+   "p2": "move Recover, move Harden"
+  },
+  {
+   "p1": "move Psychic 1, switch 3",
+   "p2": "move Recover, move Harden"
+  },
+  {
+   "p1": "move Psychic 1, move Harden",
+   "p2": "move Recover, move Harden"
+  },
+  {
+   "p1": "move Psychic 1, move Harden",
+   "p2": "move Recover, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

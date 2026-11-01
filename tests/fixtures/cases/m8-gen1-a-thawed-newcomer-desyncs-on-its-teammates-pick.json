@@ -1,0 +1,288 @@
+{
+  "schema": 1,
+  "id": "m8-gen1-a-thawed-newcomer-desyncs-on-its-teammates-pick",
+  "notes": [
+    "Nightly 109: Machoke picks Blizzard, faints; Omanyte comes in frozen (the side's last selected slot back at the first) and, thawed by Fire Blast, acts with the side's last selected move — Blizzard, which its first slot (Slam) is not: Showdown's Desync Clause Mod ends the move, Slam's PP spent (DESIGN.md R-M8-150)",
+    "promoted from m8-gen1-singles-s741-010-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 1,
+    "mode": "singles",
+    "format": "gen1customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Ekans",
+        "species": "Ekans",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Strength",
+          "Blizzard",
+          "Rage"
+        ]
+      },
+      {
+        "label": "Machop",
+        "species": "Machop",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Cut",
+          "Ice Punch",
+          "Blizzard"
+        ]
+      },
+      {
+        "label": "Omastar",
+        "species": "Omastar",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle",
+          "Horn Attack",
+          "Ice Punch"
+        ]
+      },
+      {
+        "label": "Machoke",
+        "species": "Machoke",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Mega Kick",
+          "Blizzard"
+        ]
+      },
+      {
+        "label": "Omanyte",
+        "species": "Omanyte",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Slam",
+          "Mega Punch",
+          "Blizzard"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "Beedrill",
+        "species": "Beedrill",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Dizzy Punch",
+          "Ice Punch",
+          "High Jump Kick",
+          "Ice Beam"
+        ]
+      },
+      {
+        "label": "Flareon",
+        "species": "Flareon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Pay Day",
+          "Ice Punch",
+          "Tri Attack",
+          "Blizzard"
+        ]
+      },
+      {
+        "label": "Golduck",
+        "species": "Golduck",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Self-Destruct",
+          "Rock Throw",
+          "Blizzard"
+        ]
+      },
+      {
+        "label": "Clefairy",
+        "species": "Clefairy",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Explosion"
+        ]
+      },
+      {
+        "label": "Pidgeotto",
+        "species": "Pidgeotto",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Blizzard",
+          "Fire Punch",
+          "Ice Beam"
+        ]
+      },
+      {
+        "label": "Fearow",
+        "species": "Fearow",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Flamethrower",
+          "Ice Punch",
+          "Fire Blast"
+        ]
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      29123,
+      52355,
+      64799,
+      15085
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Strength",
+      "p2": "move Dizzy Punch"
+    },
+    {
+      "p1": "move Blizzard",
+      "p2": "move Ice Punch"
+    },
+    {
+      "p1": "move Rage",
+      "p2": "move High Jump Kick"
+    },
+    {
+      "p1": "switch Machop"
+    },
+    {
+      "p1": "move Blizzard",
+      "p2": "move Ice Beam"
+    },
+    {
+      "p1": "move Cut",
+      "p2": "move Dizzy Punch"
+    },
+    {
+      "p2": "switch Flareon"
+    },
+    {
+      "p1": "move Ice Punch",
+      "p2": "move Ice Punch"
+    },
+    {
+      "p1": "switch Omastar",
+      "p2": "switch Golduck"
+    },
+    {
+      "p1": "move Horn Attack",
+      "p2": "move Rock Throw"
+    },
+    {
+      "p1": "move Ice Punch",
+      "p2": "move Blizzard"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p2": "switch Flareon"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 4"
+    },
+    {
+      "p1": "switch Machop",
+      "p2": "switch Clefairy"
+    },
+    {
+      "p1": "move Cut",
+      "p2": "move Explosion"
+    },
+    {
+      "p1": "switch Omastar",
+      "p2": "switch Flareon"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 3"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 4"
+    },
+    {
+      "p1": "switch Machoke"
+    },
+    {
+      "p1": "move Mega Kick",
+      "p2": "move Pay Day"
+    },
+    {
+      "p1": "move Blizzard",
+      "p2": "move Ice Punch"
+    },
+    {
+      "p1": "switch Omanyte",
+      "p2": "switch Pidgeotto"
+    },
+    {
+      "p1": "move Mega Punch",
+      "p2": "move Fire Punch"
+    },
+    {
+      "p1": "move Blizzard",
+      "p2": "move Ice Beam"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 2"
+    },
+    {
+      "p2": "switch Flareon"
+    },
+    {
+      "p1": "move Blizzard",
+      "p2": "move Blizzard"
+    },
+    {
+      "p1": "switch Machoke",
+      "p2": "switch Fearow"
+    },
+    {
+      "p1": "move Mega Kick",
+      "p2": "move Flamethrower"
+    },
+    {
+      "p1": "move Blizzard",
+      "p2": "move Ice Punch"
+    },
+    {
+      "p1": "switch Omanyte"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 3"
+    }
+  ]
+}

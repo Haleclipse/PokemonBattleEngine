@@ -1,0 +1,155 @@
+{
+  "schema": 1,
+  "id": "gen9-doubles-substitute-struck-twice",
+  "notes": [
+    "A Substitute struck by two actions of one turn: the boundary frame shows its HP only after both, so the first hit's roll is settled jointly with the second (replay backtracking)",
+    "promoted from m8-gen9-doubles-s1-007-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Shieldon",
+        "species": "Shieldon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Aqua Step",
+          "Aqua Cutter",
+          "Drain Punch",
+          "Sludge Bomb"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Steenee",
+        "species": "Steenee",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Rock Blast",
+          "Behemoth Blade",
+          "Sandsear Storm"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Probopass",
+        "species": "Probopass",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Quick Guard",
+          "Will-O-Wisp",
+          "Tail Slap",
+          "Substitute"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Dudunsparce",
+        "species": "Dudunsparce",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Astonish"
+        ],
+        "ability": "Run Away"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Popplio",
+        "species": "Popplio",
+        "level": 54,
+        "nature": "Hardy",
+        "moves": [
+          "Magma Storm",
+          "Aqua Tail",
+          "Mist Ball",
+          "Spicy Extract"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Samurott",
+        "species": "Samurott",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Glaciate",
+          "Hone Claws",
+          "Air Cutter",
+          "Heat Wave"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Floatzel",
+        "species": "Floatzel",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Matcha Gotcha"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Quilava",
+        "species": "Quilava",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Smog"
+        ],
+        "ability": "Run Away"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      38078,
+      34104,
+      46673,
+      30781
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Aqua Step 1, move Rock Blast 2",
+      "p2": "move Magma Storm 1, move Glaciate"
+    },
+    {
+      "p1": "move Aqua Cutter 1, move Behemoth Blade 2",
+      "p2": "move Aqua Tail 2, move Hone Claws"
+    },
+    {
+      "p1": "move Drain Punch 1, move Sandsear Storm",
+      "p2": "move Mist Ball 1, move Air Cutter"
+    },
+    {
+      "p1": "pass, switch Probopass"
+    },
+    {
+      "p1": "move Sludge Bomb 2, move Substitute",
+      "p2": "move Spicy Extract 2, move Heat Wave"
+    },
+    {
+      "p1": "move Aqua Step 1, move Quick Guard",
+      "p2": "move Magma Storm 1, move Glaciate"
+    },
+    {
+      "p1": "switch Dudunsparce, move Will-O-Wisp 2",
+      "p2": "switch Floatzel, move Hone Claws"
+    },
+    {
+      "p1": "move Astonish 1, move Tail Slap 2",
+      "p2": "move Matcha Gotcha, move Air Cutter"
+    }
+  ]
+}

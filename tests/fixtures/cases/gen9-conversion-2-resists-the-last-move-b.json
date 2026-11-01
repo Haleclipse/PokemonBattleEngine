@@ -1,0 +1,64 @@
+{
+ "schema": 1,
+ "id": "gen9-conversion-2-resists-the-last-move-b",
+ "notes": [
+  "Gen 9: Conversion 2 draws a type that resists the type of the target's last move (Ampharos, slower, last used Thunderbolt: Dragon, Electric, Grass, Ground), leaving out Porygon2's own"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Porygon2",
+    "species": "Porygon2",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Conversion 2",
+     "Harden"
+    ],
+    "ability": "Trace"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Ampharos",
+    "species": "Ampharos",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Thunderbolt",
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Static"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Thunderbolt"
+  },
+  {
+   "p1": "move Conversion 2",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Thunderbolt"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   5,
+   6,
+   7,
+   8
+  ]
+ }
+}

@@ -1,0 +1,63 @@
+{
+ "schema": 1,
+ "id": "gen3-rock-head-takes-no-recoil",
+ "notes": [
+  "Rock Head: the holder's Double-Edge and Take Down cost it no recoil"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Double-Edge",
+     "Take Down"
+    ],
+    "ability": "Rock Head"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Double-Edge",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Take Down",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Double-Edge",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

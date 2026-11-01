@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen2-dig-reached-by-earthquake",
+ "notes": [
+  "Gen 2 Dig: underground only Earthquake / Magnitude (doubled) and Fissure reach the user \u2014 Tackle misses, Earthquake strikes twice as hard"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Digger",
+    "species": "Sandslash",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Dig",
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Quaker",
+    "species": "Golem",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Earthquake"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Dig",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Dig",
+   "p2": "move Earthquake"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

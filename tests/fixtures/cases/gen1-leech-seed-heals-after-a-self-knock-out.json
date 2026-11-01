@@ -1,0 +1,98 @@
+{
+ "schema": 1,
+ "id": "gen1-leech-seed-heals-after-a-self-knock-out",
+ "notes": [
+  "Gen 1: a seeded, poisoned Pok\u00e9mon whose own action leaves it at 0 HP (hurt by its confusion) takes no poison damage but still feeds Leech Seed (Showdown gen1 onAfterMoveSelf has no HP check), and the seeder heals in full; the faint then ends the turn"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Leech Seed",
+     "Seismic Toss",
+     "Confuse Ray",
+     "Poison Powder"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Pikachu",
+    "species": "Pikachu",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Thunder Shock"
+    ]
+   },
+   {
+    "label": "Electrode",
+    "species": "Electrode",
+    "level": 20,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Leech Seed",
+   "p2": "move Thunder Shock"
+  },
+  {
+   "p1": "move Poison Powder",
+   "p2": "move Thunder Shock"
+  },
+  {
+   "p1": "move Confuse Ray",
+   "p2": "move Thunder Shock"
+  },
+  {
+   "p1": "move Confuse Ray",
+   "p2": "move Thunder Shock"
+  },
+  {
+   "p1": "move Confuse Ray",
+   "p2": "move Thunder Shock"
+  },
+  {
+   "p1": "move Confuse Ray",
+   "p2": "move Thunder Shock"
+  },
+  {
+   "p1": "move Confuse Ray",
+   "p2": "move Thunder Shock"
+  },
+  {
+   "p2": "switch Electrode"
+  },
+  {
+   "p1": "move Leech Seed",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Leech Seed",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   3,
+   2,
+   3,
+   4
+  ]
+ }
+}

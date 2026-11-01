@@ -1,0 +1,66 @@
+{
+ "schema": 1,
+ "id": "gen6-air-balloon-pops-on-the-substitute",
+ "notes": [
+  "Gen 6: Snorlax behind a Substitute with an Air Balloon: Tackle on the Substitute pops the balloon (`onAfterSubDamage`); the holder's Unburden starts"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Substitute",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Unburden",
+    "item": "Air Balloon"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Hippowdon",
+    "species": "Hippowdon",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Earthquake",
+     "Tackle"
+    ],
+    "gender": "M",
+    "ability": "Sand Stream"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Substitute",
+   "p2": "move Earthquake"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Earthquake"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

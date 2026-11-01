@@ -1,0 +1,55 @@
+{
+ "schema": 1,
+ "id": "gen2-false-swipe-leaves-one-hp",
+ "notes": [
+  "Gen 2 False Swipe (the Gen 2 damage formula) leaves the target at 1 HP"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "False Swipe"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Rattata",
+    "species": "Rattata",
+    "level": 10,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move False Swipe",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move False Swipe",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

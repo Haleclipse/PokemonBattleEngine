@@ -1,0 +1,185 @@
+{
+  "schema": 1,
+  "id": "gen5-doubles-heal-bell-then-foe-thaws",
+  "notes": [
+    "Heal Bell cures its user's side only: a foe thawing right after it is its own thaw roll",
+    "promoted from m8-gen5-doubles-s105-017-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 5,
+    "mode": "doubles",
+    "format": "gen5doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Numel",
+        "species": "Numel",
+        "level": 45,
+        "nature": "Hardy",
+        "moves": [
+          "Foul Play",
+          "Poison Gas",
+          "X-Scissor",
+          "Protect"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Delcatty",
+        "species": "Delcatty",
+        "level": 53,
+        "nature": "Hardy",
+        "moves": [
+          "Vise Grip",
+          "Heal Bell",
+          "Slam",
+          "Protect"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Bronzor",
+        "species": "Bronzor",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Power Whip",
+          "Protect",
+          "Seed Bomb",
+          "Will-O-Wisp"
+        ],
+        "ability": "Run Away",
+        "item": "Muscle Band"
+      },
+      {
+        "label": "Aggron",
+        "species": "Aggron",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Rock Throw",
+          "Heal Bell"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Dodrio",
+        "species": "Dodrio",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Egg Bomb",
+          "Protect",
+          "Magnet Bomb",
+          "Heal Bell"
+        ],
+        "ability": "Run Away",
+        "item": "Toxic Orb",
+        "gender": "M"
+      },
+      {
+        "label": "Glalie",
+        "species": "Glalie",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Ice Fang",
+          "Heal Bell",
+          "Sand Tomb",
+          "Protect"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Clefable",
+        "species": "Clefable",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Powder Snow",
+          "Heal Bell",
+          "Protect"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Diglett",
+        "species": "Diglett",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Whirlpool",
+          "Heal Bell",
+          "Protect"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      24974,
+      42870,
+      19696,
+      37012
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Foul Play 1, move Vise Grip 2",
+      "p2": "move Egg Bomb 1, move Ice Fang 2"
+    },
+    {
+      "p1": "move Poison Gas, move Heal Bell",
+      "p2": "move Protect, move Heal Bell"
+    },
+    {
+      "p1": "move X-Scissor 1, move Slam 2",
+      "p2": "move Magnet Bomb 1, move Sand Tomb 2"
+    },
+    {
+      "p1": "move Protect, move Protect",
+      "p2": "move Heal Bell, move Protect"
+    },
+    {
+      "p1": "move Foul Play 1, move Vise Grip 2",
+      "p2": "move Egg Bomb 1, move Ice Fang 2"
+    },
+    {
+      "p1": "move Poison Gas, move Heal Bell",
+      "p2": "move Protect, move Heal Bell"
+    },
+    {
+      "p1": "pass, switch Bronzor"
+    },
+    {
+      "p1": "move X-Scissor 1, move Seed Bomb 2",
+      "p2": "move Magnet Bomb 1, move Sand Tomb 2"
+    },
+    {
+      "p2": "switch Clefable, switch Diglett"
+    },
+    {
+      "p1": "switch Aggron, move Will-O-Wisp 1",
+      "p2": "move Protect, move Protect"
+    },
+    {
+      "p1": "move Heal Bell, move Power Whip 2",
+      "p2": "move Powder Snow, move Whirlpool 1"
+    },
+    {
+      "p1": "move Rock Throw 1, move Protect",
+      "p2": "move Heal Bell, move Heal Bell"
+    }
+  ]
+}

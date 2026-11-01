@@ -1,0 +1,501 @@
+{
+ "schema": 1,
+ "id": "m9-z-nature-power-calls-tri-attack-as-a-z-move",
+ "notes": [
+  "R-M9-41: Bonsly's Z-Nature Power (no terrain) calls Tri Attack, and Showdown's `useMoveInner` makes a damaging move a Z status move calls its Z-Move (`move.category !== 'Status' && sourceEffect.isZ`): Breakneck Blitz at Tri Attack's Z power, no freeze roll. The engine ran a plain Tri Attack. Minimized from Nightly 20261021-054929 (m9-gen7doublesou-s131-004)."
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublesou"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Duosion",
+    "species": "Duosion",
+    "ability": "Magic Guard",
+    "moves": [
+     "Secret Power",
+     "Rain Dance",
+     "Rest",
+     "Protect"
+    ],
+    "nature": "Serious",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 76,
+     "atk": 100,
+     "def": 92,
+     "spa": 132,
+     "spd": 96,
+     "spe": 12
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Aurorus",
+    "species": "Aurorus",
+    "ability": "Refrigerate",
+    "moves": [
+     "Encore",
+     "Aurora Beam",
+     "Haze",
+     "Toxic"
+    ],
+    "nature": "Serious",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 0,
+     "atk": 196,
+     "def": 196,
+     "spa": 0,
+     "spd": 116,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Bonsly",
+    "species": "Bonsly",
+    "item": "Normalium Z",
+    "ability": "Rock Head",
+    "moves": [
+     "Slam",
+     "Brick Break",
+     "Rock Throw",
+     "Nature Power"
+    ],
+    "nature": "Rash",
+    "gender": "M",
+    "shiny": false,
+    "level": 95,
+    "evs": {
+     "hp": 92,
+     "atk": 48,
+     "def": 72,
+     "spa": 96,
+     "spd": 160,
+     "spe": 40
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Volcarona",
+    "species": "Volcarona",
+    "ability": "Swarm",
+    "moves": [
+     "Calm Mind",
+     "Absorb",
+     "Return",
+     "Solar Beam"
+    ],
+    "nature": "Quirky",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 24,
+     "atk": 0,
+     "def": 104,
+     "spa": 0,
+     "spd": 128,
+     "spe": 252
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 214
+   },
+   {
+    "label": "Aerodactyl",
+    "species": "Aerodactyl",
+    "ability": "Pressure",
+    "moves": [
+     "Rest",
+     "Stealth Rock",
+     "Hone Claws",
+     "Rock Tomb"
+    ],
+    "nature": "Jolly",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 0,
+     "atk": 192,
+     "def": 80,
+     "spa": 0,
+     "spd": 220,
+     "spe": 16
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 30,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 37
+   },
+   {
+    "label": "Scizor",
+    "species": "Scizor",
+    "ability": "Light Metal",
+    "moves": [
+     "Vacuum Wave"
+    ],
+    "nature": "Quirky",
+    "gender": "F",
+    "shiny": false,
+    "level": 7,
+    "evs": {
+     "hp": 76,
+     "atk": 8,
+     "def": 68,
+     "spa": 104,
+     "spd": 252,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   }
+  ],
+  "p2": [
+   {
+    "label": "Nick12",
+    "species": "Dragalge",
+    "ability": "Adaptability",
+    "moves": [
+     "Attract",
+     "Facade",
+     "Secret Power",
+     "Shock Wave"
+    ],
+    "nature": "Bashful",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 0,
+     "atk": 64,
+     "def": 92,
+     "spa": 120,
+     "spd": 0,
+     "spe": 232
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 16,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Shroomish",
+    "species": "Shroomish",
+    "ability": "Effect Spore",
+    "moves": [
+     "Giga Drain"
+    ],
+    "nature": "Impish",
+    "gender": "M",
+    "shiny": false,
+    "level": 24,
+    "evs": {
+     "hp": 160,
+     "atk": 60,
+     "def": 84,
+     "spa": 0,
+     "spd": 116,
+     "spe": 88
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Minccino",
+    "species": "Minccino",
+    "ability": "Technician",
+    "moves": [
+     "Flail"
+    ],
+    "nature": "Gentle",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 0,
+     "atk": 252,
+     "def": 20,
+     "spa": 116,
+     "spd": 0,
+     "spe": 120
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Alakazam",
+    "species": "Alakazam",
+    "ability": "Magic Guard",
+    "moves": [
+     "Teleport"
+    ],
+    "nature": "Gentle",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 84,
+     "atk": 132,
+     "def": 216,
+     "spa": 0,
+     "spd": 28,
+     "spe": 48
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 243
+   },
+   {
+    "label": "Nidoking",
+    "species": "Nidoking",
+    "ability": "Rivalry",
+    "moves": [
+     "Iron Tail",
+     "Confide",
+     "Double Kick",
+     "Protect"
+    ],
+    "nature": "Careful",
+    "gender": "",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 76,
+     "atk": 60,
+     "def": 52,
+     "spa": 228,
+     "spd": 68,
+     "spe": 24
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 21,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Mamoswine",
+    "species": "Mamoswine",
+    "ability": "Thick Fat",
+    "moves": [
+     "Fury Attack",
+     "Thrash",
+     "Freeze-Dry",
+     "Roar"
+    ],
+    "nature": "Lonely",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 168,
+     "atk": 160,
+     "def": 0,
+     "spa": 0,
+     "spd": 96,
+     "spe": 84
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 10,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   }
+  ]
+ },
+ "preview": {
+  "p1": "team 512463",
+  "p2": "team 615342"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   32730,
+   131,
+   1004,
+   31
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Rest, move Secret Power 1",
+   "p2": "move Fury Attack 1, move Attract 2"
+  },
+  {
+   "p1": "move Stealth Rock, move Rain Dance",
+   "p2": "move Thrash, move Facade 1"
+  },
+  {
+   "p1": "move 3, move 3",
+   "p2": "move 1, move 3 2"
+  },
+  {
+   "p1": "move 4 2, move 4",
+   "p2": "move 1, move 4 1"
+  },
+  {
+   "p1": "switch 3, pass"
+  },
+  {
+   "p1": "move Encore 1, move Secret Power 2",
+   "p2": "move Fury Attack 2, move Attract 1"
+  },
+  {
+   "p1": "move Aurora Beam 1, move Rain Dance",
+   "p2": "move Fury Attack 2, move Facade 1"
+  },
+  {
+   "p1": "move Haze, move Rest",
+   "p2": "move Fury Attack 2, move Secret Power 1"
+  },
+  {
+   "p1": "switch 4, move Protect",
+   "p2": "switch 3, move Shock Wave 2"
+  },
+  {
+   "p1": "move Solar Beam 2, move Secret Power 1",
+   "p2": "move Protect, move Attract 1"
+  },
+  {
+   "p1": "move 1, move 2",
+   "p2": "move 1 2, move 2 1"
+  },
+  {
+   "p1": "move Absorb 2, move Rest",
+   "p2": "move Confide 2, move Secret Power 1"
+  },
+  {
+   "p1": "move Return 1, move Protect",
+   "p2": "move Double Kick 2, move Shock Wave 1"
+  },
+  {
+   "p1": "move Solar Beam 2, move Secret Power 1",
+   "p2": "move Protect, move Attract 2"
+  },
+  {
+   "p1": "move Calm Mind, move Rain Dance",
+   "p2": "move Iron Tail 1, move Facade 2"
+  },
+  {
+   "p1": "move Absorb 2, move Rest",
+   "p2": "move Confide 1, move Secret Power 2"
+  },
+  {
+   "p1": "switch 4, move Protect",
+   "p2": "switch 3, move Shock Wave 1"
+  },
+  {
+   "p1": "move Haze, move Secret Power 1",
+   "p2": "move Freeze-Dry 2, move Attract 1"
+  },
+  {
+   "p1": "move Toxic 2, move Rain Dance",
+   "p2": "move Roar 2, move Facade 1"
+  },
+  {
+   "p1": "move Encore 1, move Return 2",
+   "p2": "move Fury Attack 2, move Secret Power 1"
+  },
+  {
+   "p1": "move Aurora Beam 1, move Solar Beam 2",
+   "p2": "move Fury Attack 2, move Shock Wave 1"
+  },
+  {
+   "p1": "pass, switch 4"
+  },
+  {
+   "p1": "move Haze, move Secret Power 1",
+   "p2": "move Fury Attack 2, move Attract 1"
+  },
+  {
+   "p1": "pass, switch 5"
+  },
+  {
+   "p1": "move Toxic 2, move Vacuum Wave 1",
+   "p2": "move Fury Attack 2, move Facade 1"
+  },
+  {
+   "p1": "pass, switch 6"
+  },
+  {
+   "p1": "move Aurora Beam 2, move 4 1 zmove",
+   "p2": "switch 3, move Shock Wave 2"
+  }
+ ]
+}

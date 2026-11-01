@@ -1,0 +1,63 @@
+{
+ "schema": 1,
+ "id": "gen8-poison-type-toxic-no-volatile-mid-turn",
+ "notes": [
+  "A Poison-type Toxic user keeps no `toxic` volatile from Gen 8 (the hit steps check the move), seen at the U-turn request"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Venusaur",
+    "species": "Venusaur",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Toxic"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Butterfree",
+    "species": "Butterfree",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "U-turn"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Toxic",
+   "p2": "move U-turn"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

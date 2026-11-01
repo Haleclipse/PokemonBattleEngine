@@ -1,0 +1,308 @@
+{
+  "schema": 1,
+  "id": "gen9-doubles-corpus-c",
+  "notes": [
+    "M5 corpus C: a third full six-on-six doubles battle from the deterministic policy, around guards and redirection: Wide Guard and Quick Guard against spread and priority moves, Rage Powder with Grass and Safety Goggles attackers, Spore and Stun Spore against powder immunity, Fake Out on entry, Water Absorb / Volt Absorb, Helping Hand, Protect after a guard.",
+    "corpus: 29 script entries, 23 turns, winner P1"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "top",
+        "species": "Hitmontop",
+        "ability": "Intimidate",
+        "item": "Leftovers",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fake Out",
+          "Wide Guard",
+          "Close Combat",
+          "Quick Guard"
+        ]
+      },
+      {
+        "label": "amoon",
+        "species": "Amoonguss",
+        "ability": "Overcoat",
+        "item": "Black Sludge",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Rage Powder",
+          "Spore",
+          "Giga Drain",
+          "Protect"
+        ]
+      },
+      {
+        "label": "rotom",
+        "species": "Rotom",
+        "ability": "Levitate",
+        "item": "Leftovers",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Thunderbolt",
+          "Hydro Pump",
+          "Discharge",
+          "Protect"
+        ]
+      },
+      {
+        "label": "gar",
+        "species": "Garchomp",
+        "ability": "Rough Skin",
+        "item": "Safety Goggles",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Earthquake",
+          "Rock Slide",
+          "Dragon Claw",
+          "Protect"
+        ]
+      },
+      {
+        "label": "vapo",
+        "species": "Vaporeon",
+        "ability": "Water Absorb",
+        "item": "Leftovers",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Muddy Water",
+          "Icy Wind",
+          "Helping Hand",
+          "Protect"
+        ]
+      },
+      {
+        "label": "clef",
+        "species": "Clefable",
+        "ability": "Friend Guard",
+        "item": "Leftovers",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Moonblast",
+          "Helping Hand",
+          "Icy Wind",
+          "Protect"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "inci",
+        "species": "Incineroar",
+        "ability": "Intimidate",
+        "item": "Leftovers",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fake Out",
+          "Flare Blitz",
+          "Snarl",
+          "Protect"
+        ]
+      },
+      {
+        "label": "venu",
+        "species": "Venusaur",
+        "ability": "Run Away",
+        "item": "Leftovers",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sleep Powder",
+          "Energy Ball",
+          "Sludge Bomb",
+          "Protect"
+        ]
+      },
+      {
+        "label": "lant",
+        "species": "Lanturn",
+        "ability": "Volt Absorb",
+        "item": "Leftovers",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Discharge",
+          "Surf",
+          "Thunderbolt",
+          "Protect"
+        ]
+      },
+      {
+        "label": "meta",
+        "species": "Metagross",
+        "ability": "Clear Body",
+        "item": "Leftovers",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Bullet Punch",
+          "Iron Head",
+          "Earthquake",
+          "Protect"
+        ]
+      },
+      {
+        "label": "tyr",
+        "species": "Tyranitar",
+        "ability": "Run Away",
+        "item": "Leftovers",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Rock Slide",
+          "Crunch",
+          "Wide Guard",
+          "Protect"
+        ]
+      },
+      {
+        "label": "snor",
+        "species": "Snorlax",
+        "ability": "Run Away",
+        "item": "Silk Scarf",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Body Slam",
+          "Crunch",
+          "Helping Hand",
+          "Protect"
+        ]
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      41,
+      42,
+      43,
+      44
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1 1, move 1",
+      "p2": "move 1 1, move 1 2"
+    },
+    {
+      "p1": "move 2, move 2 2",
+      "p2": "move 2 1, move 2 2"
+    },
+    {
+      "p1": "move 3 1, move 3 2",
+      "p2": "move 3, move 3 1"
+    },
+    {
+      "p1": "move 4, move 4",
+      "p2": "move 4, move 4"
+    },
+    {
+      "p1": "switch 3, pass"
+    },
+    {
+      "p1": "switch 4, move 1",
+      "p2": "switch 3, move 1 2"
+    },
+    {
+      "p1": "move 1, move 2 1",
+      "p2": "move 1, move 2 1"
+    },
+    {
+      "p1": "move 2, move 3 2",
+      "p2": "move 2, move 3 2"
+    },
+    {
+      "p2": "switch 3, pass"
+    },
+    {
+      "p1": "move 3 1, move 4",
+      "p2": "move 3, move 4"
+    },
+    {
+      "p1": "move 4, move 1",
+      "p2": "move 4, move 1 1"
+    },
+    {
+      "p1": "switch 4, move 2 2",
+      "p2": "switch 4, move 2 2"
+    },
+    {
+      "p1": "move 1 1, move 3 2",
+      "p2": "move 1 1, move 3 2"
+    },
+    {
+      "p1": "pass, switch 4"
+    },
+    {
+      "p1": "move 2 1, move 4",
+      "p2": "move 2 1, move 4"
+    },
+    {
+      "p1": "move 3, move 1",
+      "p2": "move 3, move 1 2"
+    },
+    {
+      "p2": "switch 4, pass"
+    },
+    {
+      "p1": "move 4, move 2",
+      "p2": "move 4, move 2 1"
+    },
+    {
+      "p1": "switch 5, move 3 2",
+      "p2": "switch 5, move 3 2"
+    },
+    {
+      "p2": "pass, switch 5"
+    },
+    {
+      "p1": "move 1, move 4",
+      "p2": "move 1, move 4"
+    },
+    {
+      "p1": "move 2, move 1",
+      "p2": "move 2 1, move 1 2"
+    },
+    {
+      "p2": "pass, switch 6"
+    },
+    {
+      "p1": "move 3 -2, move 2",
+      "p2": "move 3, move 2 1"
+    },
+    {
+      "p1": "move 4, move 3 1",
+      "p2": "move 4, move 3 -1"
+    },
+    {
+      "p1": "switch 5, move 4",
+      "p2": "move 1, move 4"
+    },
+    {
+      "p1": "move 1 2, move 1",
+      "p2": "move 2 2, move 1 1"
+    },
+    {
+      "p1": "move 2 2, move 2",
+      "p2": "pass, move 2 2"
+    },
+    {
+      "p1": "move 3, move 3 2",
+      "p2": "pass, move 3 -1"
+    }
+  ]
+}

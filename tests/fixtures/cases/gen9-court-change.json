@@ -1,0 +1,91 @@
+{
+ "schema": 1,
+ "id": "gen9-court-change",
+ "notes": [
+  "Court Change with nothing on either side fails; later it swaps the sides' hazards (with their layers), screens and Tailwind (with their turns left), which then count down and take layers on their new side"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Cinderace",
+    "species": "Cinderace",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Court Change",
+     "Spikes",
+     "Reflect",
+     "Stealth Rock"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tailwind",
+     "Sticky Web",
+     "Light Screen",
+     "Spikes"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Court Change",
+   "p2": "move Spikes"
+  },
+  {
+   "p1": "move Spikes",
+   "p2": "move Sticky Web"
+  },
+  {
+   "p1": "move Spikes",
+   "p2": "move Light Screen"
+  },
+  {
+   "p1": "move Reflect",
+   "p2": "move Tailwind"
+  },
+  {
+   "p1": "move Stealth Rock",
+   "p2": "move Spikes"
+  },
+  {
+   "p1": "move Court Change",
+   "p2": "move Light Screen"
+  },
+  {
+   "p1": "move Spikes",
+   "p2": "move Spikes"
+  },
+  {
+   "p1": "move Spikes",
+   "p2": "move Spikes"
+  },
+  {
+   "p1": "move Spikes",
+   "p2": "move Spikes"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

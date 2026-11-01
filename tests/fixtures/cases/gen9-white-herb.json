@@ -1,0 +1,104 @@
+{
+ "schema": 1,
+ "id": "gen9-white-herb",
+ "notes": [
+  "Gen 9 White Herb (Showdown `onAnyAfterMove`): Hariyama's Close Combat lowers its own defenses, and its herb sets them back as the move ends \u2014 before Slowbro's Tackle lands",
+  "Snorlax's Seismic Toss knocks Magikarp out; Arcanine, sent in at the end of the turn, intimidates Snorlax, and its herb sets the Attack back at once (`onAnySwitchIn`)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hariyama",
+    "species": "Hariyama",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Close Combat",
+     "Harden"
+    ],
+    "item": "White Herb",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Harden"
+    ],
+    "item": "White Herb",
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Slowbro",
+    "species": "Slowbro",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Oblivious"
+   },
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 5,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Swift Swim"
+   },
+   {
+    "label": "Arcanine",
+    "species": "Arcanine",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Intimidate"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Close Combat",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "switch Snorlax",
+   "p2": "switch Magikarp"
+  },
+  {
+   "p1": "move Seismic Toss",
+   "p2": "move Harden"
+  },
+  {
+   "p2": "switch Arcanine"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,66 @@
+{
+ "schema": 1,
+ "id": "gen5-bide-release-uses-a-gem",
+ "notes": [
+  "Gen 5: Snorlax's Bide release uses its Normal Gem and knocks Hitmonlee out, ending the battle mid-turn: the gem volatile ends with the release — struck from Bide's onBeforeMove, which stops the move, so no onAfterMove ends it (I10 continued, DESIGN.md R-M8-132)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Bide",
+     "Splash"
+    ],
+    "item": "Normal Gem",
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Hitmonlee",
+    "species": "Hitmonlee",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Rock Smash",
+     "Splash"
+    ],
+    "ability": "Limber",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Bide",
+   "p2": "move Rock Smash"
+  },
+  {
+   "p1": "move Bide",
+   "p2": "move Rock Smash"
+  },
+  {
+   "p1": "move Bide",
+   "p2": "move Rock Smash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

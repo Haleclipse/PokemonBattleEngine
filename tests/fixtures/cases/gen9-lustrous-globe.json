@@ -1,0 +1,66 @@
+{
+ "schema": 1,
+ "id": "gen9-lustrous-globe",
+ "notes": [
+  "Gen 9: a Lustrous Globe on Palkia-Origin boosts its Water and Dragon moves and cannot be taken off it"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Palkia",
+    "species": "Palkia-Origin",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Surf",
+     "Dragon Pulse"
+    ],
+    "gender": "M",
+    "ability": "Pressure",
+    "item": "Lustrous Globe"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Thief"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Surf",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Dragon Pulse",
+   "p2": "move Thief"
+  },
+  {
+   "p1": "move Surf",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,334 @@
+{
+  "schema": 1,
+  "id": "m10-c-instruct-refuses-a-z-move-in-a-slot-a-leppa-berry-refilled",
+  "notes": [
+    "R-M10-20: Seviper's Light That Burns the Sky, a Z-Move a custom game put in its slot, spent its one PP and a Leppa Berry gave it back; Diggersby's Instruct on Seviper then fails (Showdown instruct.onHit: lastMove.isZ), where the engine had reasoned that such a slot is empty once the move was used (R-M8-71). Minimized from m8-gen7-singles-s1629-001 (Nightly 20261024-125113).",
+    "promoted from m8-gen7-singles-s1629-001-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 7,
+    "mode": "singles",
+    "format": "gen7customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Fraxure",
+        "species": "Fraxure",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Moongeist Beam",
+          "Instruct",
+          "Psystrike"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Tsareena",
+        "species": "Tsareena",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Oceanic Operetta",
+          "Instruct",
+          "Grass Pledge"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Ninjask",
+        "species": "Ninjask",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Menacing Moonraze Maelstrom",
+          "Techno Blast",
+          "Follow Me"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Kadabra",
+        "species": "Kadabra",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Shock Wave",
+          "Hydro Pump"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Marowak",
+        "species": "Marowak",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Photon Geyser",
+          "Instruct",
+          "Water Gun"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Seviper",
+        "species": "Seviper",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Light That Burns the Sky",
+          "Instruct"
+        ],
+        "ability": "Run Away",
+        "item": "Leppa Berry",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Sandshrew",
+        "species": "Sandshrew",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fairy Wind",
+          "Instruct",
+          "Psyshock"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Raikou",
+        "species": "Raikou",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Weather Ball",
+          "Instruct",
+          "Clear Smog"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Phantump",
+        "species": "Phantump",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Future Sight",
+          "Secret Sword"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Victini",
+        "species": "Victini",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Magical Leaf",
+          "Instruct",
+          "Fire Pledge",
+          "Follow Me"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Diggersby",
+        "species": "Diggersby",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Flame Burst",
+          "Instruct",
+          "Revelation Dance"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      59170,
+      13504,
+      57486,
+      64827
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Moongeist Beam",
+      "p2": "move Fairy Wind"
+    },
+    {
+      "p1": "move Instruct",
+      "p2": "move Instruct"
+    },
+    {
+      "p1": "move Psystrike",
+      "p2": "move Psyshock"
+    },
+    {
+      "p1": "switch Tsareena",
+      "p2": "switch Raikou"
+    },
+    {
+      "p1": "move Oceanic Operetta",
+      "p2": "move Weather Ball"
+    },
+    {
+      "p1": "switch Fraxure",
+      "p2": "switch Sandshrew"
+    },
+    {
+      "p1": "move Psystrike",
+      "p2": "move Psyshock"
+    },
+    {
+      "p1": "switch Tsareena",
+      "p2": "switch Phantump"
+    },
+    {
+      "p1": "move Grass Pledge",
+      "p2": "move Secret Sword"
+    },
+    {
+      "p1": "switch Fraxure",
+      "p2": "switch Raikou"
+    },
+    {
+      "p1": "move Moongeist Beam",
+      "p2": "move Weather Ball"
+    },
+    {
+      "p1": "move Instruct",
+      "p2": "move Instruct"
+    },
+    {
+      "p1": "move Psystrike",
+      "p2": "move Clear Smog"
+    },
+    {
+      "p1": "switch Tsareena"
+    },
+    {
+      "p1": "switch Ninjask",
+      "p2": "switch Phantump"
+    },
+    {
+      "p1": "move Menacing Moonraze Maelstrom",
+      "p2": "move Future Sight"
+    },
+    {
+      "p2": "switch Raikou"
+    },
+    {
+      "p1": "switch Tsareena",
+      "p2": "switch Victini"
+    },
+    {
+      "p1": "move Instruct",
+      "p2": "move Fire Pledge"
+    },
+    {
+      "p1": "switch Ninjask"
+    },
+    {
+      "p1": "move Techno Blast",
+      "p2": "move Follow Me"
+    },
+    {
+      "p1": "switch Kadabra",
+      "p2": "switch Raikou"
+    },
+    {
+      "p1": "move Hydro Pump",
+      "p2": "move Clear Smog"
+    },
+    {
+      "p1": "switch Ninjask",
+      "p2": "switch Victini"
+    },
+    {
+      "p1": "move Techno Blast",
+      "p2": "move Instruct"
+    },
+    {
+      "p1": "move Follow Me",
+      "p2": "move Fire Pledge"
+    },
+    {
+      "p1": "switch Kadabra"
+    },
+    {
+      "p1": "switch Marowak",
+      "p2": "switch Raikou"
+    },
+    {
+      "p1": "move Photon Geyser",
+      "p2": "move Weather Ball"
+    },
+    {
+      "p2": "switch Victini"
+    },
+    {
+      "p1": "move Instruct",
+      "p2": "move Instruct"
+    },
+    {
+      "p1": "switch Kadabra",
+      "p2": "switch Diggersby"
+    },
+    {
+      "p1": "move Hydro Pump",
+      "p2": "move Revelation Dance"
+    },
+    {
+      "p1": "move Shock Wave",
+      "p2": "move Flame Burst"
+    },
+    {
+      "p1": "switch Marowak",
+      "p2": "switch Victini"
+    },
+    {
+      "p1": "move Water Gun",
+      "p2": "move Fire Pledge"
+    },
+    {
+      "p1": "switch Kadabra",
+      "p2": "switch Diggersby"
+    },
+    {
+      "p1": "move Shock Wave",
+      "p2": "move Flame Burst"
+    },
+    {
+      "p1": "switch Marowak"
+    },
+    {
+      "p1": "switch Seviper",
+      "p2": "switch Victini"
+    },
+    {
+      "p1": "move Light That Burns the Sky",
+      "p2": "move Magical Leaf"
+    },
+    {
+      "p2": "switch Diggersby"
+    },
+    {
+      "p1": "move Instruct",
+      "p2": "move Instruct"
+    }
+  ]
+}

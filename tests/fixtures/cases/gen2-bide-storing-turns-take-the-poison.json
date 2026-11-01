@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen2-bide-storing-turns-take-the-poison",
+ "notes": [
+  "Gen 2 Bide (cartridge, I76): a badly poisoned Bide user takes its poison after every turn it stores energy (pokecrystal ResidualDamage after each side's turn); Showdown's gen2 runMove skips AfterMoveSelf there"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Poisoner",
+    "species": "Furret",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Toxic",
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Bider",
+    "species": "Slowpoke",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Bide",
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Toxic",
+   "p2": "move Bide"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Bide"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Bide"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Bide"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

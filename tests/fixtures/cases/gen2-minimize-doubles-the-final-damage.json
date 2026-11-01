@@ -1,0 +1,69 @@
+{
+ "schema": 1,
+ "id": "gen2-minimize-doubles-the-final-damage",
+ "notes": [
+  "Gen 2 Minimize (the cartridge, issues.md I50): without an item, Stomp's damage doubles after the + 2, STAB and the random roll (Showdown doubles before the 997 cap and the + 2)"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mini",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Minimize",
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Tauros",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Stomp",
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Minimize",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Stomp"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Stomp"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Stomp"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Stomp"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

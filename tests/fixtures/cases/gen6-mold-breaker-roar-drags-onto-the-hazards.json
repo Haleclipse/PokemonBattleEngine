@@ -1,0 +1,92 @@
+{
+ "schema": 1,
+ "id": "gen6-mold-breaker-roar-drags-onto-the-hazards",
+ "notes": [
+  "Gen 6: a Pokémon Roar drags in switches in at once, still inside Mold Breaker's move (`runSwitch` before `clearActiveMove`)",
+  "Bronzong's Levitate does not keep it off Spikes; Metagross's Clear Body does not stop Sticky Web"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Haxorus",
+    "species": "Haxorus",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spikes",
+     "Sticky Web",
+     "Roar"
+    ],
+    "gender": "M",
+    "ability": "Mold Breaker"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Bronzong",
+    "species": "Bronzong",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "N",
+    "ability": "Levitate"
+   },
+   {
+    "label": "Metagross",
+    "species": "Metagross",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "N",
+    "ability": "Clear Body"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Spikes",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Sticky Web",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Roar",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Roar",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen3-shell-bell-heals-each-hit",
+ "notes": [
+  "Gen 3 Shell Bell (issues.md I47; pokeemerald heals at every move end, `shellBellDmg`): each of Machamp's Double Kick hits heals an eighth of its own damage, rounded on its own (Showdown's gen3 heals the hits' total once)",
+  "Behind Jolteon's Substitute the hits still heal (the doll's damage counts); Karate Chop heals once"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Machamp",
+    "species": "Machamp",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Double Kick",
+     "Karate Chop"
+    ],
+    "item": "Shell Bell",
+    "ability": "Guts"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Substitute"
+    ],
+    "ability": "Volt Absorb"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Double Kick",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Double Kick",
+   "p2": "move Substitute"
+  },
+  {
+   "p1": "move Karate Chop",
+   "p2": "move Seismic Toss"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,72 @@
+{
+ "schema": 1,
+ "id": "gen9-magician-that-falls-to-rough-skin-takes-nothing",
+ "notes": [
+  "Gen 9 Magician: False Swipe leaves Fennekin at 1 HP, its Tackle sets off Garchomp's Rough Skin and it falls — gone from the field before its Magician would run, Garchomp keeps its Leftovers"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Fennekin",
+    "species": "Fennekin",
+    "level": 1,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "ability": "Magician"
+   },
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Synchronize"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Garchomp",
+    "species": "Garchomp",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "False Swipe",
+     "Harden"
+    ],
+    "ability": "Rough Skin",
+    "item": "Leftovers"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Tackle",
+   "p2": "move False Swipe"
+  },
+  {
+   "p1": "switch Mew"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

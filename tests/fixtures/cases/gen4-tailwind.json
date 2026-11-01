@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "id": "gen4-singles-tailwind",
+  "notes": [
+    "Tailwind: the slower Metagross (90) doubles its speed to 180 for three turns counting the one it was set (the side condition `tailwind` counts down in the frame) and outspeeds Garchomp (122) while it lasts; the order flips back when it ends."
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "singles",
+    "format": "gen4customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "a",
+        "species": "Metagross",
+        "ability": "Clear Body",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tailwind",
+          "Tackle"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "b",
+        "species": "Garchomp",
+        "ability": "Rough Skin",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Swords Dance",
+          "Tackle"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 2"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "gen8-parental-bond-mind-blown-protected-still-costs",
+ "notes": [
+  "Gen 8: Kangaskhan (Parental Bond) uses Mind Blown, then Steel Beam, into Snorlax's Protect: each still costs it half its HP. Showdown leaves a two-hit cost to the hit loop, which Protect never lets run; the I192 patch pays it in onAfterMove (Bulbapedia: protected or missed, the user still takes the damage) (DESIGN.md R-M8-128)"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Kangaskhan",
+    "species": "Kangaskhan",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Mind Blown",
+     "Steel Beam",
+     "Splash"
+    ],
+    "ability": "Parental Bond",
+    "gender": "F"
+   },
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Swift Swim",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Protect",
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Mind Blown",
+   "p2": "move Protect"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Steel Beam",
+   "p2": "move Protect"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,59 @@
+{
+ "schema": 1,
+ "id": "gen7-frustration-and-return-by-happiness",
+ "notes": [
+  "Frustration `⌊(255 − happiness) × 10 / 25⌋` and Return `⌊happiness × 10 / 25⌋` read the set's happiness (100: 62 and 40)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Frustration",
+     "Return"
+    ],
+    "ability": "Run Away",
+    "happiness": 100
+   }
+  ],
+  "p2": [
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Growl"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Frustration",
+   "p2": "move Growl"
+  },
+  {
+   "p1": "move Return",
+   "p2": "move Growl"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

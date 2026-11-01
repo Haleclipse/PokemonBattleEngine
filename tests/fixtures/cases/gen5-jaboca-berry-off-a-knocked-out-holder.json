@@ -1,0 +1,68 @@
+{
+ "schema": 1,
+ "id": "gen5-jaboca-berry-off-a-knocked-out-holder",
+ "notes": [
+  "Gen 5 Jaboca Berry: Pikachu's Seismic Tosses leave Scyther with less than an eighth of its HP; Scyther's X-Scissor knocks Pikachu out, and the berry goes off all the same (Showdown `eatItem` lets Jaboca and Rowap Berry go at 0 HP), knocking Scyther out",
+  "the gen6 mod's `damage(\u2026, true)`: Scyther faints at once, before Pikachu \u2014 Pikachu fainted last, so P2 wins"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Scyther",
+    "species": "Scyther",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Swords Dance",
+     "X-Scissor"
+    ],
+    "ability": "Swarm"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Pikachu",
+    "species": "Pikachu",
+    "level": 45,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss"
+    ],
+    "item": "Jaboca Berry",
+    "ability": "Lightning Rod"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Swords Dance",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Swords Dance",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Swords Dance",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move X-Scissor",
+   "p2": "move Seismic Toss"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,88 @@
+{
+ "schema": 1,
+ "id": "gen4-doubles-quick-claw-and-custap-under-trick-room",
+ "notes": [
+  "Gen 4 doubles (issues.md I44: pokeplatinum compares two Pok\u00e9mon whose Quick Claw or Custap Berry went off by their Speed, before its Trick Room branch): under Trick Room the faster Jolteon, its Custap Berry going off, moves before the slower Snorlax whose Quick Claw went off",
+  "Unpatched, Showdown orders the two by Trick Room's reversed Speed: Snorlax first"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "doubles",
+  "format": "gen4doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Harden"
+    ],
+    "item": "Custap Berry",
+    "ability": "Volt Absorb"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Natural Cure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Trick Room",
+     "Harden"
+    ],
+    "item": "Quick Claw",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Golem",
+    "species": "Golem",
+    "level": 55,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Harden"
+    ],
+    "ability": "Sturdy"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Trick Room, move Seismic Toss 1"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Seismic Toss 1"
+  },
+  {
+   "p1": "move Seismic Toss 1, move Harden",
+   "p2": "move Seismic Toss 1, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   6,
+   13,
+   19,
+   35
+  ]
+ }
+}

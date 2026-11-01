@@ -1,0 +1,89 @@
+{
+ "schema": 1,
+ "id": "gen7-parting-shot",
+ "notes": [
+  "Gen 7 Parting Shot sends its user out only when a stat went down: not into Clear Body"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Pangoro",
+    "species": "Pangoro",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Parting Shot",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Metagross",
+    "species": "Metagross",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Clear Body"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Parting Shot",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Mew"
+  },
+  {
+   "p1": "switch Pangoro",
+   "p2": "switch Metagross"
+  },
+  {
+   "p1": "move Parting Shot",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

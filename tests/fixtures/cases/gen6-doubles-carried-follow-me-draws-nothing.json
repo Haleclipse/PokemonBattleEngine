@@ -1,0 +1,80 @@
+{
+ "schema": 1,
+ "id": "gen6-doubles-carried-follow-me-draws-nothing",
+ "notes": [
+  "Gen 6 doubles: a Follow Me user that Sky Drop then carries up draws no more moves to itself (`isSkyDropped`): the slower partner's Tackle goes where it was aimed"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "doubles",
+  "format": "gen6doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Lifter",
+    "species": "Braviary",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sky Drop",
+     "Harden"
+    ]
+   },
+   {
+    "label": "Hitter",
+    "species": "Ursaring",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Leader",
+    "species": "Jolteon",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Follow Me",
+     "Harden"
+    ]
+   },
+   {
+    "label": "Other",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Sky Drop 1, move Tackle 2",
+   "p2": "move Follow Me, move Harden"
+  },
+  {
+   "p1": "move 1, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

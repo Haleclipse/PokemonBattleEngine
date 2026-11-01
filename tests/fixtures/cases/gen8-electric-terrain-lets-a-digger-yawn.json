@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen8-electric-terrain-lets-a-digger-yawn",
+ "notes": [
+  "Gen 8: Dugtrio is underground in Electric Terrain when No Guard's Yawn reaches it: the terrain's `onTryAddVolatile` spares a semi-invulnerable Pokémon, so Dugtrio grows drowsy (DESIGN.md R-M8-94)"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Dugtrio",
+    "species": "Dugtrio",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Splash",
+     "Dig"
+    ],
+    "ability": "Arena Trap",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Machamp",
+    "species": "Machamp",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Electric Terrain",
+     "Yawn"
+    ],
+    "ability": "No Guard",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash",
+   "p2": "move Electric Terrain"
+  },
+  {
+   "p1": "move Dig",
+   "p2": "move Yawn"
+  },
+  {
+   "p1": "move Dig",
+   "p2": "move Electric Terrain"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

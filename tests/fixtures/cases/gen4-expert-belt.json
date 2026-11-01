@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "id": "gen4-expert-belt",
+  "notes": [
+    "Gen 4 Expert Belt boosts a super-effective hit by × 120 / 100, floored, at the end of the type chart (the cartridge's `BattleSystem_ApplyTypeChart`, issues.md I18)"
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "singles",
+    "format": "gen4customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Jolteon",
+        "species": "Jolteon",
+        "level": 30,
+        "nature": "Hardy",
+        "moves": [
+          "Thunderbolt"
+        ],
+        "ability": "Volt Absorb",
+        "item": "Expert Belt"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Milotic",
+        "species": "Milotic",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Growl"
+        ],
+        "ability": "Marvel Scale"
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

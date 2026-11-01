@@ -1,0 +1,75 @@
+{
+ "schema": 1,
+ "id": "gen5-knock-off-and-thief-take-mail",
+ "notes": [
+  "Gen 5 Knock Off (20, no boost) takes Mail; Thief takes Mail too (Showdown, no cartridge to say otherwise), from a Multitype Arceus as well (only Gen 4's Multitype keeps its item)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sneasel",
+    "species": "Sneasel",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Knock Off",
+     "Thief",
+     "Harden"
+    ],
+    "ability": "Inner Focus"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Mail"
+   },
+   {
+    "label": "Arceus",
+    "species": "Arceus",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Multitype",
+    "item": "Mail"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Knock Off",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Arceus"
+  },
+  {
+   "p1": "move Thief",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

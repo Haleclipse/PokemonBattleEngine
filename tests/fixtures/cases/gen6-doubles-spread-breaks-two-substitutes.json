@@ -1,0 +1,93 @@
+{
+  "schema": 1,
+  "id": "gen6-doubles-spread-breaks-two-substitutes",
+  "notes": [
+    "One spread move breaking two Substitutes: each target s roll settles on its own doll",
+    "promoted from m8-gen6-doubles-s202-003-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 6,
+    "mode": "doubles",
+    "format": "gen6doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Solrock",
+        "species": "Solrock",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Substitute",
+          "Toxic",
+          "Blizzard"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Makuhita",
+        "species": "Makuhita",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Substitute",
+          "Toxic",
+          "Blizzard"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Pidgey",
+        "species": "Pidgey",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Substitute",
+          "Toxic",
+          "Blizzard"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Graveler",
+        "species": "Graveler",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Substitute",
+          "Toxic",
+          "Blizzard"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      39797,
+      32041,
+      6978,
+      21300
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Substitute, move Substitute",
+      "p2": "move Substitute, move Substitute"
+    },
+    {
+      "p1": "move Toxic 1, move Toxic 2",
+      "p2": "move Toxic 1, move Toxic 2"
+    },
+    {
+      "p1": "move Blizzard, move Blizzard",
+      "p2": "move Blizzard, move Blizzard"
+    }
+  ]
+}

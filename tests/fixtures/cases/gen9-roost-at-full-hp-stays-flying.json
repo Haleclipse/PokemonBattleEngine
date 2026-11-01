@@ -1,0 +1,55 @@
+{
+ "schema": 1,
+ "id": "gen9-roost-at-full-hp-stays-flying",
+ "notes": [
+  "Roost at full HP fails (`-fail|…|heal`), and no `roost` volatile is added: Earthquake still does not affect Staraptor that turn"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Staraptor",
+    "species": "Staraptor",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Roost"
+    ],
+    "gender": "M",
+    "ability": "Reckless"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Hippowdon",
+    "species": "Hippowdon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Earthquake"
+    ],
+    "gender": "M",
+    "ability": "Sand Stream"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Roost",
+   "p2": "move Earthquake"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,264 @@
+{
+  "schema": 1,
+  "id": "m8-gen7-doubles-poison-touch-through-its-own-pads",
+  "notes": [
+    "Nightly 60: Mareep, holding Protective Pads, poisons Rhyperior through Poison Touch with Ice Ball; Pads take no contact away (issues.md I8, Sun / Moon research #424; DESIGN.md R-M8-104)",
+    "promoted from m8-gen7-doubles-s536-000-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 7,
+    "mode": "doubles",
+    "format": "gen7doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Bounsweet",
+        "species": "Bounsweet",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Smelling Salts",
+          "Return",
+          "Yawn"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Skuntank",
+        "species": "Skuntank",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Frustration",
+          "Charge",
+          "Stored Power",
+          "Yawn"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Lickitung",
+        "species": "Lickitung",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Crush Grip",
+          "Charge",
+          "Payback",
+          "Yawn"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Mareep",
+        "species": "Mareep",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Heavy Slam",
+          "Charge",
+          "Ice Ball",
+          "Yawn"
+        ],
+        "ability": "Poison Touch",
+        "item": "Protective Pads",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Gothitelle",
+        "species": "Gothitelle",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Power Trip",
+          "Charge",
+          "Trump Card",
+          "Yawn"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Doublade",
+        "species": "Doublade",
+        "level": 49,
+        "nature": "Hardy",
+        "moves": [
+          "Wring Out",
+          "Charge",
+          "Hex",
+          "Yawn"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Rhyperior",
+        "species": "Rhyperior",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Round",
+          "Charge",
+          "Grass Knot",
+          "Yawn"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Beheeyem",
+        "species": "Beheeyem",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Thousand Waves",
+          "Yawn"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      29691,
+      53226,
+      16016,
+      48138
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Smelling Salts 1, move Frustration 2",
+      "p2": "move Power Trip 1, move Wring Out 2"
+    },
+    {
+      "p1": "move Return 1, move Stored Power 2",
+      "p2": "move Trump Card 1, move Hex 2"
+    },
+    {
+      "p1": "switch Lickitung, move Yawn 1",
+      "p2": "switch Rhyperior, move Yawn 1"
+    },
+    {
+      "p1": "move Yawn 2, move Frustration 1",
+      "p2": "move Yawn 2, move Wring Out 1"
+    },
+    {
+      "p1": "move Crush Grip 2, move Charge",
+      "p2": "move Round 2, move Charge"
+    },
+    {
+      "p1": "move Charge, move Stored Power 1",
+      "p2": "move Charge, move Hex 1"
+    },
+    {
+      "p1": "switch Bounsweet, move Yawn 2",
+      "p2": "switch Gothitelle, move Yawn 2"
+    },
+    {
+      "p1": "move Return 1, move Frustration 2",
+      "p2": "move Trump Card 1, move Wring Out 2"
+    },
+    {
+      "p1": "move Yawn 1, move Charge",
+      "p2": "move Yawn 1, move Charge"
+    },
+    {
+      "p1": "move Smelling Salts 2, move Stored Power 1",
+      "p2": "move Power Trip 2, move Hex 1"
+    },
+    {
+      "p1": "switch Lickitung, pass"
+    },
+    {
+      "p1": "switch Mareep, move Yawn 2",
+      "p2": "switch Rhyperior, move Yawn 2"
+    },
+    {
+      "p1": "move Charge, move Frustration 1",
+      "p2": "move Charge, move Wring Out 1"
+    },
+    {
+      "p1": "move Ice Ball 2, move Charge",
+      "p2": "move Grass Knot 2, move Charge"
+    },
+    {
+      "p1": "move 1, move 3 1",
+      "p2": "move 4 1, move 3 2"
+    },
+    {
+      "p1": "move 1, move 4 2",
+      "p2": "switch Gothitelle, move 4 1"
+    },
+    {
+      "p1": "move 1, move 1 1",
+      "p2": "move 1 2, move 1 1"
+    },
+    {
+      "p1": "move Ice Ball 2, move Charge",
+      "p2": "move Charge, move Charge"
+    },
+    {
+      "p1": "move Yawn 1, move Stored Power 2",
+      "p2": "move Trump Card 2, move Hex 1"
+    },
+    {
+      "p1": "switch Lickitung, move Yawn 1",
+      "p2": "switch Rhyperior, move Yawn 2"
+    },
+    {
+      "p1": "move Crush Grip 2, move Frustration 1",
+      "p2": "move Yawn 1, move Wring Out 2"
+    },
+    {
+      "p1": "move Charge, move Charge",
+      "p2": "move Round 1, move Charge"
+    },
+    {
+      "p1": "move Payback 2, move Stored Power 1",
+      "p2": "move Charge, move Hex 2"
+    },
+    {
+      "p1": "switch Mareep, move Yawn 2",
+      "p2": "switch Gothitelle, move Yawn 1"
+    },
+    {
+      "p1": "move Yawn 1, move Frustration 2",
+      "p2": "move Trump Card 2, move Wring Out 1"
+    },
+    {
+      "p1": "move Heavy Slam 1, move Charge",
+      "p2": "move Yawn 2, move Charge"
+    },
+    {
+      "p1": "move Charge, move Stored Power 2",
+      "p2": "move Power Trip 1, move Hex 2"
+    },
+    {
+      "p2": "pass, switch Rhyperior"
+    },
+    {
+      "p1": "switch Lickitung, move Yawn 1",
+      "p2": "switch Beheeyem, move Yawn 1"
+    },
+    {
+      "p1": "move Yawn 2, move Charge",
+      "p2": "move Thousand Waves, move Charge"
+    },
+    {
+      "p1": "pass, switch Mareep"
+    },
+    {
+      "p1": "move Crush Grip 1, move Ice Ball 2",
+      "p2": "move Yawn 1, move Grass Knot 2"
+    }
+  ]
+}

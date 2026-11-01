@@ -1,0 +1,89 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-focus-energy-and-dragon-cheer",
+ "notes": [
+  "Dragon Cheer on a Dragon-type partner; that partner's Focus Energy then fails (Dragon Cheer excludes it), the user's own Focus Energy works and a second one fails; Psych Up (Gen 6+) drops the user's Focus Energy and copies the partner's Dragon Cheer with its stages"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "User",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Dragon Cheer",
+     "Focus Energy",
+     "Psych Up",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Drake",
+    "species": "Dragonite",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Focus Energy"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "F1",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "F2",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Dragon Cheer -2, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Focus Energy, move Focus Energy",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Focus Energy, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Psych Up -2, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

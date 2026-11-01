@@ -1,0 +1,82 @@
+{
+ "schema": 1,
+ "id": "gen5-doubles-lock-on-rock-slide",
+ "notes": [
+  "Gen 5 doubles Lock-On on one foe: the user's Rock Slide draws no accuracy for it, one for the other"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "doubles",
+  "format": "gen5doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Locker",
+    "species": "Golem",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Lock-On",
+     "Rock Slide",
+     "Protect"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Ally",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Protect",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "FoeA",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Double Team",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "FoeB",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Double Team",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Lock-On 1, move Harden",
+   "p2": "move Double Team, move Double Team"
+  },
+  {
+   "p1": "move Rock Slide, move Protect",
+   "p2": "move Recover, move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

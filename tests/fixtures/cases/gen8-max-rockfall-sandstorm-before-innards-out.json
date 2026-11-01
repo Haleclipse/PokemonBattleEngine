@@ -1,0 +1,82 @@
+{
+ "schema": 1,
+ "id": "gen8-max-rockfall-sandstorm-before-innards-out",
+ "notes": [
+  "Gen 8: Machamp, Dynamaxed after Belly Drum, knocks Innards Out Blissey out with Max Rockfall; the Max Move's `self.onHit` (`selfDrops`) starts the sandstorm before the hit's `DamagingHit`, so Innards Out knocking Machamp out comes too late to stop it (DESIGN.md R-M8-96)"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Machamp",
+    "species": "Machamp",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Belly Drum",
+     "Stone Edge"
+    ],
+    "ability": "Guts",
+    "gender": "M"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Innards Out",
+    "gender": "F"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Belly Drum",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Stone Edge dynamax",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

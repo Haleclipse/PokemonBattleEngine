@@ -1,0 +1,366 @@
+{
+  "schema": 1,
+  "id": "m8-gen8-mimicry-clears-an-added-ghost-type",
+  "notes": [
+    "Gen 8: Meowstic (Mimicry) carries the Ghost type Trick-or-Treat added; when Neutralizing Gas ends with no terrain, Mimicry's onTerrainChange compares getTypes() (Psychic/Ghost) with its own (Psychic) and setType clears the added type (DESIGN.md R-M8-114)",
+    "promoted from m8-gen8-singles-s573-002-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 8,
+    "mode": "singles",
+    "format": "gen8customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Lunatone",
+        "species": "Lunatone",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Mach Punch",
+          "Teleport",
+          "Accelerock",
+          "Acupressure"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Farfetch’d",
+        "species": "Farfetch’d",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Spectral Thief",
+          "Trick-or-Treat",
+          "Doom Desire",
+          "Acupressure"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Jirachi",
+        "species": "Jirachi",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Terrain Pulse",
+          "Acupressure",
+          "Trick-or-Treat"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Horsea",
+        "species": "Horsea",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Photon Geyser"
+        ],
+        "ability": "Neutralizing Gas",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Tapu Koko",
+        "species": "Tapu Koko",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Techno Blast",
+          "Acupressure",
+          "Weather Ball",
+          "Trick-or-Treat"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Glastrier",
+        "species": "Glastrier",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Power Gem",
+          "Acupressure",
+          "Shock Wave",
+          "Trick-or-Treat"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Cottonee",
+        "species": "Cottonee",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Acupressure",
+          "Water Gun",
+          "Trick-or-Treat"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Regirock",
+        "species": "Regirock",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Clear Smog",
+          "Acupressure",
+          "Magical Leaf",
+          "Trick-or-Treat"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Fletchling",
+        "species": "Fletchling",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Steel Beam"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Meowstic",
+        "species": "Meowstic",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Pollen Puff",
+          "Acupressure",
+          "Future Sight",
+          "Trick-or-Treat"
+        ],
+        "ability": "Mimicry"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      63652,
+      15671,
+      54943,
+      10703
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Mach Punch",
+      "p2": "move Techno Blast"
+    },
+    {
+      "p1": "move Teleport",
+      "p2": "move Acupressure"
+    },
+    {
+      "p1": "switch Farfetch’d"
+    },
+    {
+      "p1": "move Doom Desire",
+      "p2": "move Weather Ball"
+    },
+    {
+      "p1": "move Acupressure",
+      "p2": "move Trick-or-Treat"
+    },
+    {
+      "p1": "move Spectral Thief",
+      "p2": "move Techno Blast"
+    },
+    {
+      "p2": "switch Glastrier"
+    },
+    {
+      "p1": "move Trick-or-Treat",
+      "p2": "move Acupressure"
+    },
+    {
+      "p1": "switch Lunatone",
+      "p2": "switch Cottonee"
+    },
+    {
+      "p1": "move Accelerock",
+      "p2": "move Water Gun"
+    },
+    {
+      "p1": "move Teleport",
+      "p2": "move Acupressure"
+    },
+    {
+      "p1": "switch Farfetch’d"
+    },
+    {
+      "p1": "move Doom Desire",
+      "p2": "move Water Gun"
+    },
+    {
+      "p1": "move Acupressure",
+      "p2": "move Trick-or-Treat"
+    },
+    {
+      "p1": "switch Lunatone",
+      "p2": "switch Glastrier"
+    },
+    {
+      "p1": "move Mach Punch",
+      "p2": "move Power Gem"
+    },
+    {
+      "p1": "move Teleport",
+      "p2": "move Acupressure"
+    },
+    {
+      "p1": "switch Farfetch’d"
+    },
+    {
+      "p1": "move Doom Desire",
+      "p2": "move Shock Wave"
+    },
+    {
+      "p1": "move Acupressure",
+      "p2": "move Trick-or-Treat"
+    },
+    {
+      "p1": "move Trick-or-Treat",
+      "p2": "move Acupressure"
+    },
+    {
+      "p1": "switch Lunatone",
+      "p2": "switch Regirock"
+    },
+    {
+      "p1": "move Accelerock",
+      "p2": "move Magical Leaf"
+    },
+    {
+      "p1": "move Acupressure",
+      "p2": "move Trick-or-Treat"
+    },
+    {
+      "p1": "move Mach Punch",
+      "p2": "move Clear Smog"
+    },
+    {
+      "p1": "move Teleport",
+      "p2": "move Acupressure"
+    },
+    {
+      "p1": "switch Farfetch’d"
+    },
+    {
+      "p1": "move Doom Desire",
+      "p2": "move Magical Leaf"
+    },
+    {
+      "p1": "move Acupressure",
+      "p2": "move Trick-or-Treat"
+    },
+    {
+      "p1": "switch Lunatone",
+      "p2": "switch Cottonee"
+    },
+    {
+      "p2": "switch Regirock"
+    },
+    {
+      "p1": "move Mach Punch",
+      "p2": "move Clear Smog"
+    },
+    {
+      "p1": "move Teleport",
+      "p2": "move Acupressure"
+    },
+    {
+      "p1": "switch Farfetch’d"
+    },
+    {
+      "p1": "move Doom Desire",
+      "p2": "move Magical Leaf"
+    },
+    {
+      "p1": "move Acupressure",
+      "p2": "move Trick-or-Treat"
+    },
+    {
+      "p1": "switch Lunatone",
+      "p2": "switch Meowstic"
+    },
+    {
+      "p1": "move Accelerock",
+      "p2": "move Future Sight"
+    },
+    {
+      "p1": "move Acupressure",
+      "p2": "move Trick-or-Treat"
+    },
+    {
+      "p1": "move Mach Punch",
+      "p2": "move Pollen Puff"
+    },
+    {
+      "p1": "switch Farfetch’d"
+    },
+    {
+      "p1": "move Trick-or-Treat",
+      "p2": "move Acupressure"
+    },
+    {
+      "p1": "move Doom Desire",
+      "p2": "move Future Sight"
+    },
+    {
+      "p1": "move Acupressure",
+      "p2": "move Trick-or-Treat"
+    },
+    {
+      "p1": "switch Jirachi",
+      "p2": "switch Fletchling"
+    },
+    {
+      "p1": "move Terrain Pulse",
+      "p2": "move Steel Beam"
+    },
+    {
+      "p2": "switch Meowstic"
+    },
+    {
+      "p1": "move Trick-or-Treat",
+      "p2": "move Trick-or-Treat"
+    },
+    {
+      "p1": "move Acupressure",
+      "p2": "move Acupressure"
+    },
+    {
+      "p1": "switch Farfetch’d",
+      "p2": "move Future Sight"
+    },
+    {
+      "p1": "move Doom Desire",
+      "p2": "move Trick-or-Treat"
+    },
+    {
+      "p1": "move Acupressure",
+      "p2": "move Pollen Puff"
+    },
+    {
+      "p1": "switch Jirachi"
+    },
+    {
+      "p1": "switch Horsea",
+      "p2": "move Acupressure"
+    },
+    {
+      "p1": "move Photon Geyser",
+      "p2": "move Pollen Puff"
+    }
+  ]
+}

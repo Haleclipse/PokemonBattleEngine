@@ -1,0 +1,83 @@
+{
+ "schema": 1,
+ "id": "gen9-the-center-of-attention-takes-both-dragon-darts",
+ "notes": [
+  "Gen 9 doubles: Copperajah's Dragon Darts aimed at Vespiquen goes to Cetoddle, whose Follow Me makes it the center of attention, and both darts strike Cetoddle; next turn, aimed at Cetoddle, it goes to Vespiquen under Rage Powder, and both strike Vespiquen. Showdown's Follow Me and Rage Powder turn `smartTarget` off as they redirect; Bulbapedia's Dragon Darts: \"If an opponent is the center of attention (such as due to Follow Me), both strikes will target that Pok\u00e9mon\". Vespiquen's Sand Attack makes each target's accuracy check a draw (seed 2: both hit), so a plan that split the darts would draw for a target the move never had (DESIGN.md R-M8-169)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   2,
+   3,
+   4,
+   5
+  ]
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Copperajah",
+    "species": "Copperajah",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Dragon Darts"
+    ],
+    "ability": "Sheer Force",
+    "gender": "M"
+   },
+   {
+    "label": "Clefable",
+    "species": "Clefable",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Magic Guard",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Cetoddle",
+    "species": "Cetoddle",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Follow Me",
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   },
+   {
+    "label": "Vespiquen",
+    "species": "Vespiquen",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Rage Powder",
+     "Sand Attack"
+    ],
+    "ability": "Pressure",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Dragon Darts 2, move Splash",
+   "p2": "move Follow Me, move Sand Attack 1"
+  },
+  {
+   "p1": "move Dragon Darts 1, move Splash",
+   "p2": "move Splash, move Rage Powder"
+  }
+ ]
+}

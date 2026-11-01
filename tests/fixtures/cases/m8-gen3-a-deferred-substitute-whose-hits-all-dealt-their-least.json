@@ -1,0 +1,262 @@
+{
+  "schema": 1,
+  "id": "m8-gen3-a-deferred-substitute-whose-hits-all-dealt-their-least",
+  "notes": [
+    "Gen 3 doubles, minimized from Nightly 148's m8-gen3-doubles-s1482-010. On the last turn Heracross's Icicle Spear strikes Wobbuffet's Substitute three times, then Loudred's Triple Kick once (its second kick misses): the boundary shows the doll at 52 of 66, which takes every Icicle Spear hit at its least (4, the doll at 54) and a kick of 2. The Icicle Spear's Substitute is deferred (struck again later), and its other outcomes were found by changing one roll at a time from the highest, which never leaves 54; every combination of each hit's outcomes is now tried (R-M8-178)."
+  ],
+  "battle": {
+    "generation": 3,
+    "mode": "doubles",
+    "format": "gen3doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Machop",
+        "species": "Machop",
+        "level": 49,
+        "nature": "Hardy",
+        "moves": [
+          "Double Slap",
+          "Substitute",
+          "Rock Blast",
+          "Odor Sleuth"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Lotad",
+        "species": "Lotad",
+        "level": 54,
+        "nature": "Hardy",
+        "moves": [
+          "Bonemerang",
+          "Substitute",
+          "Spike Cannon",
+          "Odor Sleuth"
+        ],
+        "ability": "Pure Power",
+        "item": "Focus Band",
+        "gender": "M"
+      },
+      {
+        "label": "Heracross",
+        "species": "Heracross",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Double Kick",
+          "Substitute",
+          "Icicle Spear",
+          "Odor Sleuth"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Loudred",
+        "species": "Loudred",
+        "level": 53,
+        "nature": "Hardy",
+        "moves": [
+          "Triple Kick",
+          "Substitute",
+          "Bone Rush",
+          "Odor Sleuth"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Lairon",
+        "species": "Lairon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Comet Punch",
+          "Substitute",
+          "Pin Missile",
+          "Odor Sleuth"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Dewgong",
+        "species": "Dewgong",
+        "level": 48,
+        "nature": "Hardy",
+        "moves": [
+          "Fury Swipes",
+          "Substitute",
+          "Bullet Seed",
+          "Odor Sleuth"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Aron",
+        "species": "Aron",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Arm Thrust",
+          "Substitute",
+          "Fury Attack",
+          "Odor Sleuth"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Wobbuffet",
+        "species": "Wobbuffet",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Barrage",
+          "Substitute",
+          "Twister",
+          "Odor Sleuth"
+        ],
+        "ability": "Intimidate",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      60101,
+      44895,
+      13076,
+      21991
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Double Slap 1, move Bonemerang 2",
+      "p2": "move Comet Punch 1, move Fury Swipes 2"
+    },
+    {
+      "p1": "move Substitute, move Substitute",
+      "p2": "move Substitute, move Substitute"
+    },
+    {
+      "p1": "move Rock Blast 1, move Spike Cannon 2",
+      "p2": "move Pin Missile 1, move Bullet Seed 2"
+    },
+    {
+      "p1": "move Odor Sleuth 1, move Odor Sleuth 2",
+      "p2": "switch Aron, move Odor Sleuth 1"
+    },
+    {
+      "p1": "move Double Slap 1, move Bonemerang 2",
+      "p2": "move Odor Sleuth 2, move Fury Swipes 1"
+    },
+    {
+      "p1": "move Substitute, move Substitute",
+      "p2": "move Arm Thrust 2, move Substitute"
+    },
+    {
+      "p1": "move Rock Blast 1, move Spike Cannon 2",
+      "p2": "move Substitute, move Bullet Seed 1"
+    },
+    {
+      "p1": "move Odor Sleuth 1, move Odor Sleuth 2",
+      "p2": "switch Lairon, move Odor Sleuth 2"
+    },
+    {
+      "p1": "move Double Slap 1, move Bonemerang 2",
+      "p2": "move Pin Missile 1, move Fury Swipes 2"
+    },
+    {
+      "p2": "pass, switch Aron"
+    },
+    {
+      "p1": "move Substitute, move Substitute",
+      "p2": "move Odor Sleuth 1, move Substitute"
+    },
+    {
+      "p1": "move Rock Blast 1, move Spike Cannon 2",
+      "p2": "move Comet Punch 2, move Fury Attack 1"
+    },
+    {
+      "p1": "pass, switch Heracross"
+    },
+    {
+      "p1": "switch Loudred, move Odor Sleuth 1",
+      "p2": "switch Wobbuffet, move Odor Sleuth 2"
+    },
+    {
+      "p1": "move Odor Sleuth 2, move Double Kick 1",
+      "p2": "move Substitute, move Arm Thrust 1"
+    },
+    {
+      "p1": "move Triple Kick 2, move Substitute",
+      "p2": "move Twister, move Substitute"
+    },
+    {
+      "p1": "move Substitute, move Icicle Spear 1",
+      "p2": "move Odor Sleuth 2, move Fury Attack 1"
+    },
+    {
+      "p1": "switch Machop, move Odor Sleuth 2",
+      "p2": "switch Lairon, move Odor Sleuth 2"
+    },
+    {
+      "p1": "move Rock Blast 1, move Double Kick 2",
+      "p2": "move Comet Punch 1, move Arm Thrust 2"
+    },
+    {
+      "p2": "pass, switch Wobbuffet"
+    },
+    {
+      "p1": "switch Loudred, pass"
+    },
+    {
+      "p1": "move Odor Sleuth 1, move Substitute",
+      "p2": "move Substitute, move Substitute"
+    },
+    {
+      "p1": "move Triple Kick 2, move Icicle Spear 1",
+      "p2": "move Pin Missile 1, move Twister"
+    },
+    {
+      "p1": "move Substitute, move Odor Sleuth 2",
+      "p2": "move Odor Sleuth 2, move Odor Sleuth 1"
+    },
+    {
+      "p1": "move Bone Rush 1, move Double Kick 2",
+      "p2": "move Comet Punch 2, move Barrage 1"
+    },
+    {
+      "p1": "move Odor Sleuth 1, move Substitute",
+      "p2": "move Substitute, move Substitute"
+    },
+    {
+      "p1": "move Triple Kick 2, move Icicle Spear 1",
+      "p2": "move Pin Missile 2, move Twister"
+    },
+    {
+      "p1": "move Substitute, move Odor Sleuth 2",
+      "p2": "move Odor Sleuth 1, move Odor Sleuth 2"
+    },
+    {
+      "p1": "move Bone Rush 1, move Double Kick 2",
+      "p2": "move Comet Punch 1, move Barrage 2"
+    },
+    {
+      "p1": "move Odor Sleuth 2, move Substitute",
+      "p2": "pass, move Substitute"
+    },
+    {
+      "p1": "move Triple Kick 2, move Icicle Spear 2",
+      "p2": "pass, move Twister"
+    }
+  ]
+}

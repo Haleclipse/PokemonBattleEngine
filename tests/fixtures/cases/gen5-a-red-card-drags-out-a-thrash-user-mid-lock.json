@@ -1,0 +1,98 @@
+{
+ "schema": 1,
+ "id": "gen5-a-red-card-drags-out-a-thrash-user-mid-lock",
+ "notes": [
+  "Gen 5: Tauros's Thrash, its second turn into the incoming Rhydon, sets off the Red Card; dragged out (one of two drawn) with no fatigue shown, the lock had drawn 3 turns — the replay reads the slot's new occupant as the user gone (DESIGN.md R-M8-136)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Tauros",
+    "species": "Tauros",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Thrash",
+     "Splash"
+    ],
+    "ability": "Intimidate",
+    "gender": "M"
+   },
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Swift Swim",
+    "gender": "M"
+   },
+   {
+    "label": "Sentret",
+    "species": "Sentret",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   },
+   {
+    "label": "Rhydon",
+    "species": "Rhydon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "item": "Red Card",
+    "ability": "Rock Head",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Thrash",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Thrash",
+   "p2": "switch Rhydon"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   3,
+   4,
+   5,
+   6
+  ]
+ }
+}

@@ -1,0 +1,95 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-entrainment-hands-over-lightning-rod",
+ "notes": [
+  "Gen 9 doubles: Raichu's Entrainment gives the foe Snorlax its Lightning Rod (`-ability|p2a|Lightning Rod|…|[from] move: Entrainment` is no absorption)",
+  "With Raichu switched out, Snorlax draws Jolteon's Thunderbolt aimed at Chansey: no damage, +1 Special Attack"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Raichu",
+    "species": "Raichu",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Entrainment",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Lightning Rod"
+   },
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Thunderbolt",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Volt Absorb"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Entrainment 1, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "switch Blissey, move Thunderbolt 2",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

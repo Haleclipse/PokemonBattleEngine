@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "id": "gen6-doubles-second-wide-guard-advances-stall",
+  "notes": [
+    "A partner s Wide Guard on an already guarded side fails, but onHitSide still advances its user s stall counter",
+    "promoted from m8-gen6-doubles-s200-019-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 6,
+    "mode": "doubles",
+    "format": "gen6doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Chikorita",
+        "species": "Chikorita",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Toxic"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Elgyem",
+        "species": "Elgyem",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Wide Guard"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Patrat",
+        "species": "Patrat",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Wide Guard"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Misdreavus",
+        "species": "Misdreavus",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Wide Guard"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      33425,
+      47706,
+      40447,
+      25850
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Toxic 1, move Wide Guard",
+      "p2": "move Wide Guard, move Wide Guard"
+    }
+  ]
+}

@@ -1,0 +1,396 @@
+{
+ "schema": 1,
+ "id": "m10-a-bide-released-at-a-random-foe-breaks-its-substitute",
+ "notes": [
+  "R-M10-3: minimized from the M10.2a Nightly's m9-gen5doublesou-s164-009. Turn 4: Stunfisk releases Bide; Lotad, which hurt it last, has switched out, so the release draws a random adjacent foe (`getRandomTarget`) and breaks Magneton's Substitute (`-end|p2b: Magneton|Substitute`, no HP commit). The replay read the release's target off damage, misses and immunities only, and drew the first foe."
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "doubles",
+  "format": "gen5doublesou"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Nick5",
+    "species": "Delcatty",
+    "ability": "Cute Charm",
+    "moves": [
+     "Water Pulse"
+    ],
+    "nature": "Naive",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 148,
+     "atk": 172,
+     "def": 100,
+     "spa": 0,
+     "spd": 68,
+     "spe": 20
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 2,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Nick40",
+    "species": "Swablu",
+    "ability": "Cloud Nine",
+    "moves": [
+     "Uproar"
+    ],
+    "nature": "Lax",
+    "gender": "M",
+    "shiny": false,
+    "level": 29,
+    "evs": {
+     "hp": 44,
+     "atk": 192,
+     "def": 164,
+     "spa": 0,
+     "spd": 60,
+     "spe": 48
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 1,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Staravia",
+    "species": "Staravia",
+    "ability": "Intimidate",
+    "moves": [
+     "Thief",
+     "Whirlwind",
+     "Air Cutter",
+     "Mud-Slap"
+    ],
+    "nature": "Quirky",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 64,
+     "atk": 96,
+     "def": 48,
+     "spa": 40,
+     "spd": 208,
+     "spe": 52
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Stunfisk",
+    "species": "Stunfisk",
+    "ability": "Static",
+    "moves": [
+     "Sludge Bomb",
+     "Bide"
+    ],
+    "nature": "Rash",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 60,
+     "atk": 68,
+     "def": 52,
+     "spa": 212,
+     "spd": 8,
+     "spe": 108
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 10,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Nick79",
+    "species": "Yamask",
+    "ability": "Mummy",
+    "moves": [
+     "Embargo"
+    ],
+    "nature": "Serious",
+    "gender": "F",
+    "shiny": false,
+    "level": 17,
+    "evs": {
+     "hp": 0,
+     "atk": 104,
+     "def": 252,
+     "spa": 64,
+     "spd": 88,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 62
+   },
+   {
+    "label": "Mightyena",
+    "species": "Mightyena",
+    "ability": "Intimidate",
+    "moves": [
+     "Substitute"
+    ],
+    "nature": "Sassy",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 76,
+     "atk": 220,
+     "def": 60,
+     "spa": 0,
+     "spd": 76,
+     "spe": 76
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 1
+    }
+   }
+  ],
+  "p2": [
+   {
+    "label": "Magneton",
+    "species": "Magneton",
+    "ability": "Analytic",
+    "moves": [
+     "Substitute",
+     "Psych Up",
+     "Facade",
+     "Magnet Rise"
+    ],
+    "nature": "Modest",
+    "gender": "",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 88,
+     "atk": 124,
+     "def": 92,
+     "spa": 128,
+     "spd": 0,
+     "spe": 76
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 16,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 252
+   },
+   {
+    "label": "Venipede",
+    "species": "Venipede",
+    "ability": "Poison Point",
+    "moves": [
+     "Rest"
+    ],
+    "nature": "Bold",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 172,
+     "atk": 188,
+     "def": 0,
+     "spa": 44,
+     "spd": 52,
+     "spe": 52
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Raticate",
+    "species": "Raticate",
+    "ability": "Run Away",
+    "moves": [
+     "Rain Dance"
+    ],
+    "nature": "Relaxed",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 64,
+     "atk": 40,
+     "def": 76,
+     "spa": 0,
+     "spd": 128,
+     "spe": 200
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Lotad",
+    "species": "Lotad",
+    "ability": "Swift Swim",
+    "moves": [
+     "Double-Edge"
+    ],
+    "nature": "Jolly",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 124,
+     "atk": 52,
+     "def": 40,
+     "spa": 128,
+     "spd": 108,
+     "spe": 56
+    },
+    "ivs": {
+     "hp": 5,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Gloom",
+    "species": "Gloom",
+    "ability": "Chlorophyll",
+    "moves": [
+     "Sleep Talk",
+     "Drain Punch"
+    ],
+    "nature": "Mild",
+    "gender": "M",
+    "shiny": true,
+    "level": 100,
+    "evs": {
+     "hp": 36,
+     "atk": 120,
+     "def": 0,
+     "spa": 120,
+     "spd": 20,
+     "spe": 212
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 3,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 54
+   },
+   {
+    "label": "Probopass",
+    "species": "Probopass",
+    "ability": "Magnet Pull",
+    "moves": [
+     "Return"
+    ],
+    "nature": "Relaxed",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 216,
+     "atk": 0,
+     "def": 208,
+     "spa": 16,
+     "spd": 68,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   }
+  ]
+ },
+ "preview": {
+  "p1": "team 436521",
+  "p2": "team 513642"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   46464,
+   164,
+   1009,
+   31
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Sludge Bomb 1, move Thief 2",
+   "p2": "move Sleep Talk, move Substitute"
+  },
+  {
+   "p1": "move Bide, move Whirlwind 1",
+   "p2": "move Drain Punch 1, move Psych Up 2"
+  },
+  {
+   "p1": "move 1, move 3",
+   "p2": "move 1 1, move 3 2"
+  },
+  {
+   "p1": "move 1, move 4 2",
+   "p2": "switch Raticate, move 4"
+  }
+ ]
+}

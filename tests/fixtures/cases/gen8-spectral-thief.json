@@ -1,0 +1,73 @@
+{
+ "schema": 1,
+ "id": "gen8-spectral-thief",
+ "notes": [
+  "Spectral Thief: the target's positive stages (+2 Attack, +2 Defense) go to the user before the hit (its damage reads the target's Defense at 0), through a Substitute; nothing to steal, nothing happens"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Thief",
+    "species": "Marshadow",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Spectral Thief",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Swords Dance",
+     "Iron Defense",
+     "Substitute",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Swords Dance"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Iron Defense"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Substitute"
+  },
+  {
+   "p1": "move Spectral Thief",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Spectral Thief",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

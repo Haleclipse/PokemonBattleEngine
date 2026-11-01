@@ -1,0 +1,113 @@
+{
+ "schema": 1,
+ "id": "gen9-infiltrator",
+ "notes": [
+  "Infiltrator (move.infiltrates): Mew's Strength and Hyper Voice ignore Reflect and Light Screen, Growl the foe's Mist, Thunder Wave and Confuse Ray its Safeguard, and (Gen 6+) Strength hits the Pok\u00e9mon behind a Substitute"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Infil",
+    "species": "Mew",
+    "level": 90,
+    "nature": "Hardy",
+    "moves": [
+     "Strength",
+     "Hyper Voice",
+     "Growl",
+     "Thunder Wave"
+    ],
+    "ability": "Infiltrator"
+   },
+   {
+    "label": "Infil2",
+    "species": "Mew",
+    "level": 90,
+    "nature": "Hardy",
+    "moves": [
+     "Confuse Ray",
+     "Strength"
+    ],
+    "ability": "Infiltrator"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Wall",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Reflect",
+     "Light Screen",
+     "Mist",
+     "Safeguard"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Sub",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Substitute",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Strength",
+   "p2": "move Reflect"
+  },
+  {
+   "p1": "move Hyper Voice",
+   "p2": "move Light Screen"
+  },
+  {
+   "p1": "move Growl",
+   "p2": "move Mist"
+  },
+  {
+   "p1": "move Thunder Wave",
+   "p2": "move Safeguard"
+  },
+  {
+   "p1": "switch Infil2",
+   "p2": "move Reflect"
+  },
+  {
+   "p1": "move Confuse Ray",
+   "p2": "move Light Screen"
+  },
+  {
+   "p1": "move Strength",
+   "p2": "switch Sub"
+  },
+  {
+   "p1": "move Strength",
+   "p2": "move Substitute"
+  },
+  {
+   "p1": "move Strength",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "id": "gen9-doubles-helping-hand-semi-invulnerable",
+  "notes": [
+    "Helping Hand reaches a partner in the air (Gen 5+ hitStepInvulnerabilityEvent): Corviknight's Fly lands boosted"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Clefable",
+        "species": "Clefable",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Helping Hand",
+          "Growl"
+        ],
+        "ability": "Magic Guard"
+      },
+      {
+        "label": "Corviknight",
+        "species": "Corviknight",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fly"
+        ],
+        "ability": "Run Away"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Snorlax",
+        "species": "Snorlax",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Growl"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Blissey",
+        "species": "Blissey",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Growl"
+        ],
+        "ability": "Natural Cure"
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 2, move 1 1",
+      "p2": "move 1, move 1"
+    },
+    {
+      "p1": "move 1 -2, move 1",
+      "p2": "move 1, move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      2,
+      3,
+      4,
+      5
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+{
+ "schema": 1,
+ "id": "gen9-mycelium-might",
+ "notes": [
+  "Gen 9: Toedscruel with Mycelium Might is faster than Snorlax, but its status moves go last in their bracket (Spore after Snorlax's Tackle) while its Mud Shot goes first; its Spore ignores Snorlax's Vital Spirit... (a breakable ability: `ignoreAbility` for status moves)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Toedscruel",
+    "species": "Toedscruel",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spore",
+     "Mud Shot",
+     "Toxic"
+    ],
+    "gender": "M",
+    "ability": "Mycelium Might"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Vital Spirit"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Mud Shot",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Spore",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Mud Shot",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

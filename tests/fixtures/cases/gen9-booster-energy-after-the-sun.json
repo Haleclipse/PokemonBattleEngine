@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen9-booster-energy-after-the-sun",
+ "notes": [
+  "Gen 9 Booster Energy: Torkoal's Drought comes first as the battle starts, so Great Tusk's Protosynthesis starts from the sun and the item waits",
+  "Torkoal's Rain Dance ends the sun and the Protosynthesis it gave; at the next `Update` Great Tusk uses the item up and Protosynthesis starts again from it"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Great Tusk",
+    "species": "Great Tusk",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Booster Energy",
+    "ability": "Protosynthesis"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Torkoal",
+    "species": "Torkoal",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Rain Dance",
+     "Harden"
+    ],
+    "ability": "Drought"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Rain Dance"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

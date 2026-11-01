@@ -1,0 +1,101 @@
+{
+ "schema": 1,
+ "id": "gen5-stockpile",
+ "notes": [
+  "Gen 5 Stockpile: three layers, a fourth fails (+1 Defense / Special Defense per layer, and as it ends -1 each per layer \u2014 even the Special Defense that was already +6 falls); Spit Up hits for 300 and ends it; after Amnesia to +6, one layer and a Swallow (a quarter of the max HP) end it again; without a Stockpile Swallow and Spit Up fail"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Pile",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Stockpile",
+     "Spit Up",
+     "Swallow",
+     "Amnesia"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Super Fang"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Stockpile",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Stockpile",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Stockpile",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Stockpile",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Spit Up",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Amnesia",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Amnesia",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Amnesia",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Stockpile",
+   "p2": "move Super Fang"
+  },
+  {
+   "p1": "move Swallow",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Swallow",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Spit Up",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

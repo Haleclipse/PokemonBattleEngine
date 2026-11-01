@@ -1,0 +1,342 @@
+{
+  "schema": 1,
+  "id": "gen3-singles-corpus",
+  "notes": [
+    "M6 corpus: a full six-on-six Gen 3 singles battle from the deterministic policy (tools/oracle-node/src/corpus.mjs), the M4 corpus A roster adapted to what Gen 3 has.",
+    "corpus: 38 script entries, 30 turns, winner P2"
+  ],
+  "battle": {
+    "generation": 3,
+    "mode": "singles",
+    "format": "gen3customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "ttar",
+        "species": "Tyranitar",
+        "ability": "Sand Stream",
+        "item": "Leftovers",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Rock Slide",
+          "Crunch",
+          "Earthquake",
+          "Protect"
+        ]
+      },
+      {
+        "label": "chomp",
+        "species": "Flygon",
+        "ability": "Rough Skin",
+        "item": "Leftovers",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Earthquake",
+          "Dragon Claw",
+          "Swords Dance",
+          "Dig"
+        ]
+      },
+      {
+        "label": "talon",
+        "species": "Swellow",
+        "ability": "Flame Body",
+        "item": "Leftovers",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fly",
+          "Aerial Ace",
+          "Double-Edge",
+          "Protect"
+        ]
+      },
+      {
+        "label": "bliss",
+        "species": "Blissey",
+        "ability": "Natural Cure",
+        "item": "Leftovers",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Toxic",
+          "Heal Bell",
+          "Recover",
+          "Thunder Wave"
+        ]
+      },
+      {
+        "label": "meta",
+        "species": "Metagross",
+        "ability": "Clear Body",
+        "item": "Choice Band",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Meteor Mash",
+          "Earthquake",
+          "Rock Slide",
+          "Psychic"
+        ]
+      },
+      {
+        "label": "gyara",
+        "species": "Gyarados",
+        "ability": "Intimidate",
+        "item": "Leftovers",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Waterfall",
+          "Dragon Dance",
+          "Crunch",
+          "Taunt"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "hippo",
+        "species": "Donphan",
+        "ability": "Sand Stream",
+        "item": "Leftovers",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Earthquake",
+          "Spikes",
+          "Roar",
+          "Toxic"
+        ]
+      },
+      {
+        "label": "swamp",
+        "species": "Swampert",
+        "ability": "Run Away",
+        "item": "Leftovers",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Surf",
+          "Ice Beam",
+          "Earthquake",
+          "Sludge Bomb"
+        ]
+      },
+      {
+        "label": "gengar",
+        "species": "Gengar",
+        "ability": "Levitate",
+        "item": "Leftovers",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Shadow Ball",
+          "Sludge Bomb",
+          "Thunderbolt",
+          "Substitute"
+        ]
+      },
+      {
+        "label": "shroom",
+        "species": "Breloom",
+        "ability": "Speed Boost",
+        "item": "Leftovers",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Mach Punch",
+          "Bullet Seed",
+          "Leech Seed",
+          "Thunder Wave"
+        ]
+      },
+      {
+        "label": "sevi",
+        "species": "Seviper",
+        "ability": "Shed Skin",
+        "item": "Leftovers",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sludge Bomb",
+          "Crunch",
+          "Earthquake",
+          "Giga Drain"
+        ]
+      },
+      {
+        "label": "lax",
+        "species": "Snorlax",
+        "ability": "Serene Grace",
+        "item": "Silk Scarf",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Body Slam",
+          "Crunch",
+          "Earthquake",
+          "Hyper Beam"
+        ]
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      101,
+      102,
+      103,
+      104
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "switch 2"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 3"
+    },
+    {
+      "p1": "move 4",
+      "p2": "move 4"
+    },
+    {
+      "p1": "move 4",
+      "p2": "move 1"
+    },
+    {
+      "p2": "switch 2"
+    },
+    {
+      "p1": "switch 3",
+      "p2": "switch 3"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 3"
+    },
+    {
+      "p1": "switch 3"
+    },
+    {
+      "p1": "move 4",
+      "p2": "move 4"
+    },
+    {
+      "p1": "move 4",
+      "p2": "move 1"
+    },
+    {
+      "p2": "switch 3"
+    },
+    {
+      "p1": "move 4",
+      "p2": "move 2"
+    },
+    {
+      "p1": "switch 4",
+      "p2": "switch 4"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 3"
+    },
+    {
+      "p1": "move 4",
+      "p2": "move 4"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "switch 4"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 3"
+    },
+    {
+      "p1": "switch 5",
+      "p2": "switch 4"
+    },
+    {
+      "p1": "move 4",
+      "p2": "move 4"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 2"
+    },
+    {
+      "p1": "switch 5"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 3"
+    },
+    {
+      "p1": "switch 6"
+    },
+    {
+      "p1": "move 4",
+      "p2": "move 4"
+    },
+    {
+      "p1": "move 1",
+      "p2": "switch 4"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 2"
+    },
+    {
+      "p2": "switch 4"
+    },
+    {
+      "p1": "move 4",
+      "p2": "move 3"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 4"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 3",
+      "p2": "switch 5"
+    }
+  ]
+}

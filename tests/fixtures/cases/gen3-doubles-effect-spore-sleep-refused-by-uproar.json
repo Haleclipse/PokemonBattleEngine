@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "id": "gen3-doubles-effect-spore-sleep-refused-by-uproar",
+  "notes": [
+    "Gen 3 doubles: Parasect's Thrash hits Gulpin, whose Effect Spore would put Parasect to sleep, but Grumpig's uproar refuses it (-fail|Parasect|slp|[from] Uproar): the user's own -fail with a status is not its move failing, and the replay plans the hit's rolls. Minimized from the 30th Nightly's m8-gen3-doubles-s422-004.",
+    "promoted from m8-gen3-doubles-s422-004-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 3,
+    "mode": "doubles",
+    "format": "gen3doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Grumpig",
+        "species": "Grumpig",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Uproar"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Gulpin",
+        "species": "Gulpin",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Petal Dance"
+        ],
+        "ability": "Effect Spore",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Tropius",
+        "species": "Tropius",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Outrage"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Parasect",
+        "species": "Parasect",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Thrash"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      5012,
+      830,
+      28564,
+      7671
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Uproar, move Petal Dance",
+      "p2": "move Outrage, move Thrash"
+    }
+  ]
+}

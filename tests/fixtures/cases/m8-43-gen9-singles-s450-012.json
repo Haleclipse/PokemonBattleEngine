@@ -1,0 +1,86 @@
+{
+ "schema": 1,
+ "id": "m8-43-gen9-singles-s450-012",
+ "notes": [
+  "Nightly 37 gen9-singles-s450-012, minimized: Prinplup with Parental Bond, Fiery Dance: the Special Attack raise rolled after the second strike follows it, the first strike unboosted"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Trevenant",
+    "species": "Trevenant",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Parting Shot"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Prinplup",
+    "species": "Prinplup",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fiery Dance"
+    ],
+    "ability": "Parental Bond",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Latios",
+    "species": "Latios",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Parting Shot"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Minccino",
+    "species": "Minccino",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fiery Wrath"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   23340,
+   20845,
+   1792,
+   62779
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Parting Shot",
+   "p2": "move Parting Shot"
+  },
+  {
+   "p2": "switch Minccino"
+  },
+  {
+   "p1": "switch Prinplup"
+  },
+  {
+   "p1": "move Fiery Dance",
+   "p2": "move Fiery Wrath"
+  }
+ ]
+}

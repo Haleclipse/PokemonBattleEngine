@@ -1,0 +1,83 @@
+{
+ "schema": 1,
+ "id": "gen6-misty-terrain",
+ "notes": [
+  "Misty Terrain: Dragon Pulse halved against grounded Mew but not against Pidgeot in the air; Thunder Wave fails on Mew, lands on Pidgeot; Confuse Ray lands (Gen 6 has no onTryAddVolatile)"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Misty Terrain",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Pidgeot",
+    "species": "Pidgeot",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Dragon Pulse",
+     "Thunder Wave",
+     "Confuse Ray",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Misty Terrain",
+   "p2": "move Dragon Pulse"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Thunder Wave"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Confuse Ray"
+  },
+  {
+   "p1": "switch Pidgeot",
+   "p2": "move Dragon Pulse"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Thunder Wave"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

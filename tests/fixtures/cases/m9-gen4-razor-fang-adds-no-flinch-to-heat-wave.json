@@ -1,0 +1,262 @@
+{
+ "schema": 1,
+ "id": "m9-gen4-razor-fang-adds-no-flinch-to-heat-wave",
+ "notes": [
+  "R-M9-34: Gen 4 King's Rock / Razor Fang add a flinch only to the moves on their list, and Heat Wave is not one: Latias's Fire Fang (its own flinch) is what made Wailord flinch, before Meganium's Heat Wave. The replay used to blame the last hit by an item holder. Minimized from Nightly 20261020-202240 (m8-gen4-doubles-s1560-006)."
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "doubles",
+  "format": "gen4doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Meganium",
+    "species": "Meganium",
+    "level": 52,
+    "nature": "Hardy",
+    "moves": [
+     "Heat Wave",
+     "Nightmare",
+     "Flamethrower",
+     "Teleport"
+    ],
+    "ability": "Run Away",
+    "item": "Razor Fang",
+    "gender": "F"
+   },
+   {
+    "label": "Glameow",
+    "species": "Glameow",
+    "level": 49,
+    "nature": "Hardy",
+    "moves": [
+     "Fire Blast",
+     "Nightmare",
+     "Blaze Kick"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Latias",
+    "species": "Latias",
+    "level": 52,
+    "nature": "Hardy",
+    "moves": [
+     "Fire Fang",
+     "Nightmare",
+     "Ember",
+     "Teleport"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Floatzel",
+    "species": "Floatzel",
+    "level": 51,
+    "nature": "Hardy",
+    "moves": [
+     "Fire Punch",
+     "Nightmare",
+     "Soft-Boiled",
+     "Teleport"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Wailord",
+    "species": "Wailord",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Slack Off",
+     "Nightmare",
+     "Heal Order",
+     "Teleport"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Sunkern",
+    "species": "Sunkern",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Recover"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Medicham",
+    "species": "Medicham",
+    "level": 46,
+    "nature": "Hardy",
+    "moves": [
+     "Close Combat",
+     "Nightmare",
+     "Leaf Storm",
+     "Teleport"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Rampardos",
+    "species": "Rampardos",
+    "level": 46,
+    "nature": "Hardy",
+    "moves": [
+     "Steel Wing",
+     "Nightmare",
+     "Draco Meteor",
+     "Teleport"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   54945,
+   8661,
+   63818,
+   59673
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Heat Wave, move Fire Blast 1",
+   "p2": "move Slack Off, move Recover"
+  },
+  {
+   "p2": "pass, switch Medicham"
+  },
+  {
+   "p1": "move Nightmare 2, move Nightmare 1",
+   "p2": "move Nightmare 1, move Nightmare 2"
+  },
+  {
+   "p1": "move Flamethrower 2, move Blaze Kick 1",
+   "p2": "move Heal Order, move Leaf Storm 1"
+  },
+  {
+   "p1": "move Heat Wave, move Fire Blast 2",
+   "p2": "move Slack Off, move Close Combat 2"
+  },
+  {
+   "p1": "pass, switch Latias"
+  },
+  {
+   "p1": "move Nightmare 1, move Nightmare 2",
+   "p2": "move Nightmare 1, move Nightmare 2"
+  },
+  {
+   "p1": "move Flamethrower 1, move Ember 2",
+   "p2": "move Heal Order, move Leaf Storm 1"
+  },
+  {
+   "p1": "switch Floatzel, move Teleport",
+   "p2": "move Teleport, move Teleport"
+  },
+  {
+   "p1": "move Teleport, move Fire Fang 1",
+   "p2": "move Slack Off, move Close Combat 2"
+  },
+  {
+   "p1": "move Fire Punch 2, move Nightmare 1",
+   "p2": "move Nightmare 1, move Nightmare 2"
+  },
+  {
+   "p2": "pass, switch Rampardos"
+  },
+  {
+   "p1": "move Nightmare 2, move Ember 1",
+   "p2": "move Heal Order, move Draco Meteor 1"
+  },
+  {
+   "p1": "move Teleport, move Fire Fang 2",
+   "p2": "move Slack Off, move Steel Wing 2"
+  },
+  {
+   "p1": "move Fire Punch 1, move Nightmare 2",
+   "p2": "move Nightmare 1, move Nightmare 2"
+  },
+  {
+   "p1": "move Nightmare 1, move Ember 2",
+   "p2": "move Heal Order, move Draco Meteor 1"
+  },
+  {
+   "p1": "switch Meganium, move Teleport",
+   "p2": "move Teleport, move Teleport"
+  },
+  {
+   "p1": "move Flamethrower 1, move Fire Fang 2",
+   "p2": "move Slack Off, move Steel Wing 2"
+  },
+  {
+   "p1": "move Teleport, move Nightmare 1",
+   "p2": "move Nightmare 1, move Nightmare 2"
+  },
+  {
+   "p1": "move Heat Wave, move Ember 2",
+   "p2": "move Heal Order, move Draco Meteor 1"
+  },
+  {
+   "p1": "move Flamethrower 2, move Fire Fang 1",
+   "p2": "move Slack Off, move Steel Wing 2"
+  },
+  {
+   "p1": "move Teleport, move Nightmare 1",
+   "p2": "move Nightmare 1, pass"
+  },
+  {
+   "p1": "move Heat Wave, move Ember 1",
+   "p2": "move Heal Order, pass"
+  },
+  {
+   "p1": "switch Floatzel, move Teleport",
+   "p2": "move Teleport, pass"
+  },
+  {
+   "p1": "move Soft-Boiled, move Nightmare 1",
+   "p2": "move Nightmare 2, pass"
+  },
+  {
+   "p1": "move Teleport, move Ember 1",
+   "p2": "move Heal Order, pass"
+  },
+  {
+   "p1": "move Fire Punch 1, move Teleport",
+   "p2": "move Teleport, pass"
+  },
+  {
+   "p1": "move Nightmare 1, move Fire Fang 1",
+   "p2": "move Slack Off, pass"
+  },
+  {
+   "p1": "move Soft-Boiled, move Nightmare 1",
+   "p2": "move Nightmare 1, pass"
+  },
+  {
+   "p1": "move Teleport, move Ember 1",
+   "p2": "move Heal Order, pass"
+  },
+  {
+   "p1": "switch Meganium, move Teleport",
+   "p2": "move Teleport, pass"
+  },
+  {
+   "p1": "move Heat Wave, move Fire Fang 1",
+   "p2": "move Slack Off, pass"
+  }
+ ]
+}

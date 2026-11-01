@@ -1,0 +1,100 @@
+{
+  "schema": 1,
+  "id": "m8-gen8-shell-side-arm-with-no-target-flips-no-coin",
+  "notes": [
+    "Gen 8: Combee's Lunar Dance knocks itself out before Lapras moves, so Lapras's Shell Side Arm has no target ([notarget]). Its onModifyMove returns without a target and flips no coin, even where the estimates against the fallen foe would tie (DESIGN.md R-M8-155)",
+    "promoted from m8-gen8-singles-s760-016-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 8,
+    "mode": "singles",
+    "format": "gen8customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Pincurchin",
+        "species": "Pincurchin",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sludge Bomb"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Lapras",
+        "species": "Lapras",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Shell Side Arm"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Hakamo-o",
+        "species": "Hakamo-o",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Lunar Dance"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Shellder",
+        "species": "Shellder",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Horn Leech"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Combee",
+        "species": "Combee",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Lunar Dance"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      13489,
+      25979,
+      60713,
+      50514
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Sludge Bomb",
+      "p2": "move Lunar Dance"
+    },
+    {
+      "p2": "switch Shellder"
+    },
+    {
+      "p1": "switch Lapras",
+      "p2": "switch Combee"
+    },
+    {
+      "p1": "move Shell Side Arm",
+      "p2": "move Lunar Dance"
+    }
+  ]
+}

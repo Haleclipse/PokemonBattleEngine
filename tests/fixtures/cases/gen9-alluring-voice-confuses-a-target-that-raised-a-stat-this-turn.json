@@ -1,0 +1,58 @@
+{
+ "schema": 1,
+ "id": "gen9-alluring-voice-confuses-a-target-that-raised-a-stat-this-turn",
+ "notes": [
+  "Alluring Voice confuses only a target whose stats rose this turn: after Swords Dance, not after Growl"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sylveon",
+    "species": "Sylveon",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Alluring Voice"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Swords Dance",
+     "Growl"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Alluring Voice",
+   "p2": "move Growl"
+  },
+  {
+   "p1": "move Alluring Voice",
+   "p2": "move Swords Dance"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

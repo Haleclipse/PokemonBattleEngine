@@ -1,0 +1,75 @@
+{
+ "schema": 1,
+ "id": "gen3-rage-misses-an-evasive-ghost",
+ "notes": [
+  "Gen 3 Rage (cartridge, I77): against an evasive Ghost, a Rage whose accuracy check passes leaves the user raging and one that misses ends the rage \u2014 Showdown's `-immune` either way"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Rager",
+    "species": "Primeape",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Rage",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Ghost",
+    "species": "Gengar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Double Team",
+     "Shadow Ball"
+    ],
+    "ability": "Levitate"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Rage",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "move Shadow Ball"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "move Shadow Ball"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

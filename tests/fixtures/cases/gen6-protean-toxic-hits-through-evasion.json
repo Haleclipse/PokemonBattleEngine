@@ -1,0 +1,69 @@
+{
+ "schema": 1,
+ "id": "gen6-protean-toxic-hits-through-evasion",
+ "notes": [
+  "Gen 6: Greninja's Protean makes it Poison-type before its Toxic, which then cannot miss though Snorlax has +3 evasion (Bulbapedia; Showdown's gen7 toxic checks the type before Protean — the I194 patch turns the accuracy into 100, the draw kept) (issues.md I194, DESIGN.md R-M8-134)"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Greninja",
+    "species": "Greninja",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Toxic",
+     "Splash"
+    ],
+    "ability": "Protean",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Double Team",
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move Toxic",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

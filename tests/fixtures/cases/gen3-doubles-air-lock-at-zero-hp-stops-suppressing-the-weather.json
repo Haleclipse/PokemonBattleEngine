@@ -1,0 +1,155 @@
+{
+ "schema": 1,
+ "id": "gen3-doubles-air-lock-at-zero-hp-stops-suppressing-the-weather",
+ "notes": [
+  "I204: Granbull's Heat Wave knocks out the Air Lock Illumise first; at 0 HP it no longer suppresses the rain (pokeemerald `ABILITYEFFECT_CHECK_ON_FIELD`: `hp != 0`), so the rain weakens the hit on Seviper. Showdown waits for the faint (oracle patch I204). Minimized from Nightly 20261020-041227 (gen3-doubles)."
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "doubles",
+  "format": "gen3doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Superpower",
+     "Poison Gas",
+     "Meteor Mash",
+     "Poison Powder"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Seviper",
+    "species": "Seviper",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Ancient Power",
+     "Poison Gas",
+     "Silver Wind",
+     "Poison Powder"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Illumise",
+    "species": "Illumise",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Poison Powder",
+     "Poison Gas"
+    ],
+    "ability": "Air Lock"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Doduo",
+    "species": "Doduo",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Grass Whistle",
+     "Poison Powder",
+     "Hypnosis",
+     "Poison Gas"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Sableye",
+    "species": "Sableye",
+    "level": 52,
+    "nature": "Hardy",
+    "moves": [
+     "Sing",
+     "Poison Gas",
+     "Lovely Kiss",
+     "Poison Powder"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Granbull",
+    "species": "Granbull",
+    "level": 54,
+    "nature": "Hardy",
+    "moves": [
+     "Heat Wave",
+     "Poison Powder",
+     "Flamethrower"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Kingler",
+    "species": "Kingler",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Poison Powder",
+     "Poison Gas"
+    ],
+    "ability": "Drizzle",
+    "gender": "F"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   64256,
+   54035,
+   50329,
+   65101
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Superpower 1, move Ancient Power 2",
+   "p2": "move Grass Whistle 1, move Sing 2"
+  },
+  {
+   "p1": "move Poison Gas 1, move Poison Gas 2",
+   "p2": "move Poison Powder 1, move Poison Gas 2"
+  },
+  {
+   "p1": "move Meteor Mash 1, move Silver Wind 2",
+   "p2": "move Hypnosis 1, move Lovely Kiss 2"
+  },
+  {
+   "p1": "move Poison Powder 1, move Poison Powder 2",
+   "p2": "move Poison Gas 1, move Poison Powder 2"
+  },
+  {
+   "p1": "move Superpower 1, move Ancient Power 2",
+   "p2": "move Grass Whistle 1, move Sing 2"
+  },
+  {
+   "p2": "pass, switch Granbull"
+  },
+  {
+   "p1": "switch Illumise, move Poison Gas 1",
+   "p2": "switch Kingler, move Poison Powder 1"
+  },
+  {
+   "p1": "move Poison Powder 2, move Silver Wind 1",
+   "p2": "move Poison Powder 2, move Flamethrower 1"
+  },
+  {
+   "p1": "move Poison Gas 2, move Ancient Power 1",
+   "p2": "move Poison Gas 2, move Heat Wave"
+  }
+ ]
+}

@@ -1,0 +1,67 @@
+{
+ "schema": 1,
+ "id": "gen7-figy-berry-in-the-sandstorm-confuses",
+ "notes": [
+  "Gen 7: the sandstorm takes the Modest Snorlax to a quarter HP; the Update after the weather feeds it its Figy Berry, which heals half and confuses it (a duration drawn in the residual)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Modest",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Figy Berry"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Tyranitar",
+    "species": "Tyranitar",
+    "level": 78,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Harden"
+    ],
+    "ability": "Sand Stream"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

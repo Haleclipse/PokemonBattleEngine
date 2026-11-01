@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "gen9-a-stalwart-thrash-copied-goes-at-the-foe",
+ "notes": [
+  "Gen 9: Duraludon (Stalwart) copies Jolteon's Thrash with Copycat; next turn its locked Thrash goes at Jolteon. Copycat leaves lastMoveTargetLoc at Duraludon's own position, and Showdown's getTarget hands a target-tracking user its originalTarget — itself; the I190 patch tracks no user its move cannot aim at (issues.md I190, DESIGN.md R-M8-119)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Duraludon",
+    "species": "Duraludon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Copycat",
+     "Splash"
+    ],
+    "ability": "Stalwart",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Thrash",
+     "Splash"
+    ],
+    "ability": "Volt Absorb",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Copycat",
+   "p2": "move Thrash"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

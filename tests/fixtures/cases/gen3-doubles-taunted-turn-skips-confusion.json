@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "id": "gen3-doubles-taunted-turn-skips-confusion",
+  "notes": [
+    "Gen 3 checks Taunt before confusion on the cartridge (issues.md I66; the gen3 mod drops Taunt's `onBeforeMovePriority` 5 and checks it last): a Taunted, confused Pokémon's refused status move counts no confusion turn, and the replay reads the duration without it"
+  ],
+  "battle": {
+    "generation": 3,
+    "mode": "doubles",
+    "format": "gen3doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Jolteon",
+        "species": "Jolteon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Taunt",
+          "Harden"
+        ],
+        "ability": "Volt Absorb"
+      },
+      {
+        "label": "Crobat",
+        "species": "Crobat",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Confuse Ray",
+          "Harden"
+        ],
+        "ability": "Inner Focus"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Snorlax",
+        "species": "Snorlax",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Harden",
+          "Tackle"
+        ],
+        "ability": "Thick Fat"
+      },
+      {
+        "label": "Slowbro",
+        "species": "Slowbro",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Harden"
+        ],
+        "ability": "Oblivious"
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Taunt 1, move Confuse Ray 1",
+      "p2": "move Harden, move Harden"
+    },
+    {
+      "p1": "move Harden, move Harden",
+      "p2": "move Tackle 1, move Harden"
+    },
+    {
+      "p1": "move Harden, move Harden",
+      "p2": "move Tackle 1, move Harden"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      5
+    ]
+  }
+}

@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "gen6-powder-under-primordial-sea",
+ "notes": [
+  "Gen 6: under Vivillon's Primordial Sea, Arcanine's Flamethrower after Powder blows up first (Powder at priority 1, a Pokémon's handler ahead of the field's)"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Vivillon",
+    "species": "Vivillon",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Powder",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Primordial Sea"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Arcanine",
+    "species": "Arcanine",
+    "level": 52,
+    "nature": "Hardy",
+    "moves": [
+     "Flamethrower",
+     "Bite"
+    ],
+    "gender": "M",
+    "ability": "Intimidate"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Powder",
+   "p2": "move Flamethrower"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Flamethrower"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

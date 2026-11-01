@@ -1,0 +1,72 @@
+{
+ "schema": 1,
+ "id": "gen5-magic-bounce-reflects-with-its-own-accuracy",
+ "notes": [
+  "Gen 5: Klink's Sand Attacks lower Bellossom's accuracy; Bellossom's Charm comes back off Klink's Magic Bounce and Klink uses it at Klink's own accuracy, not Bellossom's (the replay plans the reflection for its taker, DESIGN.md R-M8-81)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Bellossom",
+    "species": "Bellossom",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Charm",
+     "Splash"
+    ],
+    "ability": "Chlorophyll",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Klink",
+    "species": "Klink",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sand Attack",
+     "Splash"
+    ],
+    "ability": "Magic Bounce"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash",
+   "p2": "move Sand Attack"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Sand Attack"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Sand Attack"
+  },
+  {
+   "p1": "move Charm",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Charm",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

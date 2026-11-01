@@ -1,0 +1,116 @@
+{
+ "schema": 1,
+ "id": "gen7-pursuit",
+ "notes": [
+  "Gen 7 Pursuit: a switching target (by choice or U-turn) is struck first at double power, never missing; Baton Pass is not; the switching Pok\u00e9mon's Destiny Bond ends; knocked out, its switch is cancelled"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Pursuer",
+    "species": "Tyranitar",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Pursuit",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Backup",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "U-turn",
+     "Harden",
+     "Baton Pass",
+     "Destiny Bond"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Vaporeon",
+    "species": "Vaporeon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "U-turn",
+     "Baton Pass"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Pursuit",
+   "p2": "switch Vaporeon"
+  },
+  {
+   "p1": "move Pursuit",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Pursuit",
+   "p2": "move U-turn"
+  },
+  {
+   "p2": "switch Jolteon"
+  },
+  {
+   "p1": "move Pursuit",
+   "p2": "move Baton Pass"
+  },
+  {
+   "p2": "switch Vaporeon"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Jolteon"
+  },
+  {
+   "p1": "move Pursuit",
+   "p2": "move Destiny Bond"
+  },
+  {
+   "p1": "move Pursuit",
+   "p2": "switch Vaporeon"
+  },
+  {
+   "p2": "switch Vaporeon"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

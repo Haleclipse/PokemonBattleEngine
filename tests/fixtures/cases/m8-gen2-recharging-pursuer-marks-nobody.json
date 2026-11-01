@@ -1,0 +1,209 @@
+{
+  "schema": 1,
+  "id": "m8-gen2-recharging-pursuer-marks-nobody",
+  "notes": [
+    "Nightly 61: Exeggutor must recharge after Hyper Beam; the Pursuit slot named is the recharge (getLockedMove), so it marks nobody before Eevee's Bide knocks it out (DESIGN.md R-M8-105)",
+    "promoted from m8-gen2-singles-s539-012-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 2,
+    "mode": "singles",
+    "format": "gen2customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Electabuzz",
+        "species": "Electabuzz",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Low Kick",
+          "Sleep Talk",
+          "Bone Club",
+          "Bide"
+        ],
+        "gender": "M"
+      },
+      {
+        "label": "Ditto",
+        "species": "Ditto",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Rock Slide",
+          "Hyper Beam"
+        ]
+      },
+      {
+        "label": "Aerodactyl",
+        "species": "Aerodactyl",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Hyper Beam"
+        ],
+        "gender": "M"
+      },
+      {
+        "label": "Feraligatr",
+        "species": "Feraligatr",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Bide"
+        ],
+        "gender": "F"
+      },
+      {
+        "label": "Charmander",
+        "species": "Charmander",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Triple Kick"
+        ],
+        "gender": "M"
+      },
+      {
+        "label": "Eevee",
+        "species": "Eevee",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Frustration",
+          "Bide"
+        ],
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Arbok",
+        "species": "Arbok",
+        "level": 46,
+        "nature": "Hardy",
+        "moves": [
+          "Hidden Power",
+          "Bide"
+        ],
+        "gender": "M"
+      },
+      {
+        "label": "Moltres",
+        "species": "Moltres",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Beat Up",
+          "Rollout",
+          "Hyper Beam"
+        ]
+      },
+      {
+        "label": "Exeggutor",
+        "species": "Exeggutor",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Pursuit",
+          "Hyper Beam"
+        ],
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      27076,
+      58169,
+      63752,
+      7227
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Low Kick",
+      "p2": "move Hidden Power"
+    },
+    {
+      "p1": "move Sleep Talk",
+      "p2": "move Bide"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 4",
+      "p2": "move 1"
+    },
+    {
+      "p1": "switch Ditto"
+    },
+    {
+      "p1": "move Rock Slide",
+      "p2": "move Hidden Power"
+    },
+    {
+      "p1": "move Hyper Beam",
+      "p2": "move Bide"
+    },
+    {
+      "p2": "switch Moltres"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 2"
+    },
+    {
+      "p1": "switch Aerodactyl",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "switch Ditto"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "switch Feraligatr"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "switch Charmander"
+    },
+    {
+      "p1": "move Triple Kick",
+      "p2": "move Hyper Beam"
+    },
+    {
+      "p1": "switch Eevee"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "switch Exeggutor"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    }
+  ]
+}

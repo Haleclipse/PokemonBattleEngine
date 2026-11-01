@@ -1,0 +1,78 @@
+{
+ "schema": 1,
+ "id": "gen3-lock-on-target-baton-pass",
+ "notes": [
+  "Gen 3 Lock-On (cartridge, I68): the target's Baton Pass keeps the lock on its replacement, so Zap Cannon draws no accuracy against it"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Locker",
+    "species": "Magneton",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Lock-On",
+     "Zap Cannon",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Evader",
+    "species": "Blissey",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Double Team",
+     "Baton Pass"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Heir",
+    "species": "Chansey",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move Lock-On",
+   "p2": "move Baton Pass"
+  },
+  {
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Zap Cannon",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

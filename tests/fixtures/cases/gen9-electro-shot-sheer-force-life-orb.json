@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen9-electro-shot-sheer-force-life-orb",
+ "notes": [
+  "Gen 9 Electro Shot with Sheer Force and a Life Orb in the rain: Sheer Force boosts it (hasSheerForceBoost) without taking anything away, so Life Orb still costs its user"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Forceful",
+    "species": "Archaludon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Electro Shot",
+     "Harden"
+    ],
+    "ability": "Sheer Force",
+    "item": "Life Orb"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Rainer",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Rain Dance",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Rain Dance"
+  },
+  {
+   "p1": "move Electro Shot",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,165 @@
+{
+ "schema": 1,
+ "id": "m9-a-poisoned-berry-eater-is-no-poison-puppeteer-confusion",
+ "notes": [
+  "R-M9-35: Zubat's Sludge Bomb poisons Loudred, whose Aguav Berry (a disliked flavor) then confuses it: one confusion duration, the berry's. The replay planned a second one, as if Poison Puppeteer had confused it, without asking whether the user holds it. Minimized from Nightly 20261020-213753 (m9-gen4ou-s120-010)."
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4ou"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Nick37",
+    "species": "Weezing",
+    "ability": "Levitate",
+    "moves": [
+     "Psywave",
+     "Attract"
+    ],
+    "nature": "Calm",
+    "gender": "M",
+    "shiny": false,
+    "level": 81,
+    "evs": {
+     "hp": 0,
+     "atk": 92,
+     "def": 0,
+     "spa": 72,
+     "spd": 252,
+     "spe": 92
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 29,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Nick67",
+    "species": "Loudred",
+    "item": "Aguav Berry",
+    "ability": "Soundproof",
+    "moves": [
+     "Toxic"
+    ],
+    "nature": "Naughty",
+    "gender": "M",
+    "shiny": true,
+    "level": 48,
+    "evs": {
+     "hp": 0,
+     "atk": 108,
+     "def": 24,
+     "spa": 20,
+     "spd": 236,
+     "spe": 120
+    },
+    "ivs": {
+     "hp": 20,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   }
+  ],
+  "p2": [
+   {
+    "label": "Combusken",
+    "species": "Combusken",
+    "ability": "Blaze",
+    "moves": [
+     "Captivate",
+     "Substitute"
+    ],
+    "nature": "Impish",
+    "gender": "F",
+    "shiny": false,
+    "level": 45,
+    "evs": {
+     "hp": 0,
+     "atk": 160,
+     "def": 156,
+     "spa": 60,
+     "spd": 112,
+     "spe": 20
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Zubat",
+    "species": "Zubat",
+    "ability": "Inner Focus",
+    "moves": [
+     "Sludge Bomb"
+    ],
+    "nature": "Hardy",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 0,
+     "atk": 96,
+     "def": 252,
+     "spa": 16,
+     "spd": 140,
+     "spe": 4
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 27,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 222
+   }
+  ]
+ },
+ "preview": {
+  "p1": "team 456123",
+  "p2": "team 163452"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   13744,
+   120,
+   1010,
+   31
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Psywave",
+   "p2": "move Captivate"
+  },
+  {
+   "p1": "move Attract",
+   "p2": "move Substitute"
+  },
+  {
+   "p1": "switch Nick67",
+   "p2": "switch Zubat"
+  },
+  {
+   "p1": "move Toxic",
+   "p2": "move Sludge Bomb"
+  }
+ ]
+}

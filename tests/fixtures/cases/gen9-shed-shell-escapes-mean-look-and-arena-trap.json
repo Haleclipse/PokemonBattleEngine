@@ -1,0 +1,97 @@
+{
+ "schema": 1,
+ "id": "gen9-shed-shell-escapes-mean-look-and-arena-trap",
+ "notes": [
+  "Gen 9 Shed Shell (Showdown `onTrapPokemon` / `onMaybeTrapPokemon`, priority \u221210): Umbreon's Mean Look traps Snorlax, which switches out all the same; Lapras, Ingrained, switches out too; then Dugtrio's Arena Trap does not keep Snorlax in"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Shed Shell",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Lapras",
+    "species": "Lapras",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Ingrain",
+     "Harden"
+    ],
+    "item": "Shed Shell",
+    "ability": "Water Absorb"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Umbreon",
+    "species": "Umbreon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Mean Look",
+     "Harden"
+    ],
+    "ability": "Synchronize"
+   },
+   {
+    "label": "Dugtrio",
+    "species": "Dugtrio",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Arena Trap"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Mean Look"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Ingrain",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "switch 2"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

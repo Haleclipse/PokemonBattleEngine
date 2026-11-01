@@ -1,0 +1,63 @@
+{
+ "schema": 1,
+ "id": "gen7-mega-rayquaza",
+ "notes": [
+  "Gen 7: Rayquaza holds no stone — a Dragon Ascent in its moves is its Mega Evolution's whole condition; its Delta Stream starts with the forme"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Rayquaza",
+    "species": "Rayquaza",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Dragon Ascent",
+     "Harden"
+    ],
+    "ability": "Air Lock"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 2 mega",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 2"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

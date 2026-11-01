@@ -1,0 +1,63 @@
+{
+ "schema": 1,
+ "id": "gen8-disabled-solar-beam-stays-locked",
+ "notes": [
+  "Disable lands on Solar Beam mid-charge: the locked move is still the request's (Showdown `getMoves(lockedMove)`), and Disable stops it at BeforeMove (`cant … Disable`)"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Solar Beam",
+     "Tackle"
+    ],
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Slowbro",
+    "species": "Slowbro",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Disable",
+     "Harden"
+    ],
+    "ability": "Oblivious"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Solar Beam",
+   "p2": "move Disable"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

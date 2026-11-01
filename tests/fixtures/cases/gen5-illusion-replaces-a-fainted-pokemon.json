@@ -1,0 +1,85 @@
+{
+ "schema": 1,
+ "id": "gen5-illusion-replaces-a-fainted-pokemon",
+ "notes": [
+  "Gen 5: Kyogre with Illusion (a custom game's) comes in for a fainted Magikarp disguised as Eelektross, the last of the party: the `switch` line shows the disguise's details (male), the frame's `illusion` the entrant's own (genderless) — the normalizer's Illusion marks, which R-N.1 had dropped (R-M8-75)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 5,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Swift Swim",
+    "gender": "M"
+   },
+   {
+    "label": "Kyogre",
+    "species": "Kyogre",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Illusion"
+   },
+   {
+    "label": "Eelektross",
+    "species": "Eelektross",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Levitate",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Garchomp",
+    "species": "Garchomp",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Earthquake",
+     "Splash"
+    ],
+    "ability": "Rough Skin",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "switch 2",
+   "p2": null
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 2"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

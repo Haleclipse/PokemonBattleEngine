@@ -1,0 +1,76 @@
+{
+ "schema": 1,
+ "id": "m9-tera-shell-resists-a-full-hp-hit",
+ "notes": [
+  "R-M9-45: Terapagos changes into its Terastal forme (Tera Shift); at full HP, Mankey's False Swipe is resisted by Tera Shell (Showdown `Pokemon#runEffectiveness`; the ability has no handler of its own, so the engine had never modelled it). Minimized from Nightly 20261021-152405 (m8-gen9-doubles-s1583-003)."
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mankey",
+    "species": "Mankey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "False Swipe"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Petilil",
+    "species": "Petilil",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Slam"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Terapagos",
+    "species": "Terapagos",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Rock Throw"
+    ],
+    "ability": "Tera Shift",
+    "gender": "F"
+   },
+   {
+    "label": "Dodrio",
+    "species": "Dodrio",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Gigaton Hammer"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   58490,
+   38621,
+   60252,
+   56569
+  ]
+ },
+ "script": [
+  {
+   "p1": "move False Swipe 1, move Slam 2",
+   "p2": "move Rock Throw 1, move Gigaton Hammer 2"
+  }
+ ]
+}

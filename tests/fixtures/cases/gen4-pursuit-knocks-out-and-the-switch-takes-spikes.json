@@ -1,0 +1,75 @@
+{
+ "schema": 1,
+ "id": "gen4-pursuit-knocks-out-and-the-switch-takes-spikes",
+ "notes": [
+  "Gen 4: Houndoom's Pursuit knocks the switching Magikarp out; the switch goes on (gen4 pursuit), and Feebas comes in and takes Spikes inside the same action — the replay reads the entrant's hazard damage as the Pursuit's, as it does a dragged-in Pokémon's (DESIGN.md R-M8-119)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Houndoom",
+    "species": "Houndoom",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Pursuit",
+     "Spikes"
+    ],
+    "ability": "Early Bird",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 5,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Swift Swim",
+    "gender": "M"
+   },
+   {
+    "label": "Feebas",
+    "species": "Feebas",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Swift Swim",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Spikes",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Pursuit",
+   "p2": "switch Feebas"
+  },
+  {
+   "p1": "move Pursuit",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,296 @@
+{
+ "schema": 1,
+ "id": "gen1-confusion-self-hit-behind-a-substitute-is-the-last-damage",
+ "notes": [
+  "R-M9-25: Gen 1 \u2014 Scyther, confused behind its own Substitute with none across, hits itself for nothing, but the self-hit is the battle's last damage all the same (`directDamage` sets `lastDamage` first; pokered's `wDamage`): Vulpix's Bide stores it and its release breaks Scyther's Substitute. Minimized from Nightly 20261020-052649 (gen1ou)."
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1ou"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Golbat",
+    "species": "Golbat",
+    "ability": "",
+    "moves": [
+     "Leech Life",
+     "Haze",
+     "Screech",
+     "Mimic"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": false,
+    "level": 100
+   },
+   {
+    "label": "Oddish",
+    "species": "Oddish",
+    "ability": "",
+    "moves": [
+     "Mega Drain",
+     "Cut",
+     "Substitute",
+     "Acid"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": true,
+    "level": 100
+   },
+   {
+    "label": "Seadra",
+    "species": "Seadra",
+    "ability": "",
+    "moves": [
+     "Surf",
+     "Mimic",
+     "Bide",
+     "Hyper Beam"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": false,
+    "level": 100,
+    "happiness": 2
+   },
+   {
+    "label": "Nick0",
+    "species": "Scyther",
+    "ability": "",
+    "moves": [
+     "Swords Dance",
+     "Take Down",
+     "Substitute",
+     "Double-Edge"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": false,
+    "level": 100
+   }
+  ],
+  "p2": [
+   {
+    "label": "Machop",
+    "species": "Machop",
+    "ability": "",
+    "moves": [
+     "Fire Blast",
+     "Submission",
+     "Low Kick",
+     "Body Slam"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": true,
+    "level": 31
+   },
+   {
+    "label": "Vulpix",
+    "species": "Vulpix",
+    "ability": "",
+    "moves": [
+     "Confuse Ray",
+     "Bide"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": false,
+    "level": 100
+   },
+   {
+    "label": "Gloom",
+    "species": "Gloom",
+    "ability": "",
+    "moves": [
+     "Double-Edge",
+     "Substitute",
+     "Rage",
+     "Sleep Powder"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": false,
+    "level": 100,
+    "happiness": 195
+   }
+  ]
+ },
+ "preview": {
+  "p1": "team 362415",
+  "p2": "team 654123"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   10861,
+   106,
+   1016,
+   31
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Leech Life",
+   "p2": "move Fire Blast"
+  },
+  {
+   "p1": "move Haze",
+   "p2": "move Submission"
+  },
+  {
+   "p1": "move Screech",
+   "p2": "move Low Kick"
+  },
+  {
+   "p1": "move Mimic",
+   "p2": "move Body Slam"
+  },
+  {
+   "p1": "switch Oddish",
+   "p2": "switch Vulpix"
+  },
+  {
+   "p1": "move Mega Drain",
+   "p2": "move Confuse Ray"
+  },
+  {
+   "p1": "move Cut",
+   "p2": "move Bide"
+  },
+  {
+   "p1": "move 4",
+   "p2": "move 1"
+  },
+  {
+   "p1": "switch Golbat",
+   "p2": "switch Machop"
+  },
+  {
+   "p1": "move Leech Life",
+   "p2": "move Fire Blast"
+  },
+  {
+   "p1": "move Haze",
+   "p2": "move Submission"
+  },
+  {
+   "p1": "move Screech",
+   "p2": "move Low Kick"
+  },
+  {
+   "p1": "move Mimic",
+   "p2": "move Body Slam"
+  },
+  {
+   "p1": "switch Oddish",
+   "p2": "switch Vulpix"
+  },
+  {
+   "p1": "move Mega Drain",
+   "p2": "move Confuse Ray"
+  },
+  {
+   "p1": "move Acid",
+   "p2": "move Confuse Ray"
+  },
+  {
+   "p1": "switch Golbat",
+   "p2": "switch Machop"
+  },
+  {
+   "p1": "move Leech Life",
+   "p2": "move Fire Blast"
+  },
+  {
+   "p1": "move Haze",
+   "p2": "move Submission"
+  },
+  {
+   "p1": "move Screech",
+   "p2": "move Low Kick"
+  },
+  {
+   "p1": "move Mimic",
+   "p2": "move Body Slam"
+  },
+  {
+   "p1": "switch Oddish",
+   "p2": "switch Vulpix"
+  },
+  {
+   "p1": "move Mega Drain",
+   "p2": "move Confuse Ray"
+  },
+  {
+   "p1": "move Substitute",
+   "p2": "move Confuse Ray"
+  },
+  {
+   "p1": "switch Seadra",
+   "p2": "switch Machop"
+  },
+  {
+   "p1": "move Surf",
+   "p2": "move Fire Blast"
+  },
+  {
+   "p2": "switch Vulpix"
+  },
+  {
+   "p1": "move Mimic",
+   "p2": "move Bide"
+  },
+  {
+   "p1": "move 3",
+   "p2": "move 1"
+  },
+  {
+   "p1": "switch Golbat",
+   "p2": "switch Gloom"
+  },
+  {
+   "p1": "move Leech Life",
+   "p2": "move Double-Edge"
+  },
+  {
+   "p1": "move Haze",
+   "p2": "move Substitute"
+  },
+  {
+   "p1": "move Screech",
+   "p2": "move Rage"
+  },
+  {
+   "p1": "switch Seadra"
+  },
+  {
+   "p1": "move Hyper Beam",
+   "p2": "move Sleep Powder"
+  },
+  {
+   "p1": "switch Nick0",
+   "p2": "switch Vulpix"
+  },
+  {
+   "p1": "move Swords Dance",
+   "p2": "move Confuse Ray"
+  },
+  {
+   "p1": "move Take Down",
+   "p2": "move Bide"
+  },
+  {
+   "p1": "move 3",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 4",
+   "p2": "move 1"
+  }
+ ]
+}

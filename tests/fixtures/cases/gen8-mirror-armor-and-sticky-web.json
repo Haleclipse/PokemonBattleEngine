@@ -1,0 +1,97 @@
+{
+ "schema": 1,
+ "id": "gen8-mirror-armor-and-sticky-web",
+ "notes": [
+  "Gen 8 Sticky Web's drop comes from the Pok\u00e9mon that set it: Mirror Armor sends it back to the setter while it is on the field, and to no one once it is benched"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Webber",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Sticky Web",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Growler",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Growl",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Lax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Armor",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Mirror Armor"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Sticky Web",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Armor"
+  },
+  {
+   "p1": "switch Growler",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Growl",
+   "p2": "switch Lax"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "switch Armor"
+  },
+  {
+   "p1": "move Growl",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

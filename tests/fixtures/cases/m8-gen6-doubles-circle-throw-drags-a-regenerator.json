@@ -1,0 +1,96 @@
+{
+  "schema": 1,
+  "id": "m8-gen6-doubles-circle-throw-drags-a-regenerator",
+  "notes": [
+    "Nightly 62: Staraptor's Metronome calls Circle Throw, which drags Seedot out; Regenerator heals it in silence, no HP line of the action (replay: damages_in leaves Regenerator out) (DESIGN.md R-M8-106)",
+    "promoted from m8-gen6-doubles-s543-011-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 6,
+    "mode": "doubles",
+    "format": "gen6doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Mew",
+        "species": "Mew",
+        "level": 49,
+        "nature": "Hardy",
+        "moves": [
+          "Dazzling Gleam",
+          "Metronome"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Staraptor",
+        "species": "Staraptor",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sweet Scent",
+          "Metronome"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Sceptile",
+        "species": "Sceptile",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Precipice Blades",
+          "Metronome"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Seedot",
+        "species": "Seedot",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Land's Wrath",
+          "Metronome"
+        ],
+        "ability": "Regenerator",
+        "gender": "M"
+      },
+      {
+        "label": "Duskull",
+        "species": "Duskull",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Growl"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      44856,
+      33691,
+      32985,
+      31945
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Dazzling Gleam, move Sweet Scent",
+      "p2": "move Precipice Blades, move Land's Wrath"
+    },
+    {
+      "p1": "move Metronome, move Metronome",
+      "p2": "move Metronome, move Metronome"
+    }
+  ]
+}

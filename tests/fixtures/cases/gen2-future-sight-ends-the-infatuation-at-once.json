@@ -1,0 +1,73 @@
+{
+ "schema": 1,
+ "id": "gen2-future-sight-ends-the-infatuation-at-once",
+ "notes": [
+  "Gen 2: Future Sight knocks out the Clefairy Machop is infatuated with; the strike runs Showdown's `hitStepMoveHitLoop` (no generation replaces it): an `Update` once its faints are processed ends the infatuation before the replacement is asked for (DESIGN.md R-M8-95)"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Machop",
+    "species": "Machop",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Future Sight",
+     "Splash"
+    ],
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Clefairy",
+    "species": "Clefairy",
+    "level": 5,
+    "nature": "Hardy",
+    "moves": [
+     "Attract",
+     "Splash"
+    ],
+    "gender": "F"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Future Sight",
+   "p2": "move Attract"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   5,
+   6,
+   7,
+   8
+  ]
+ }
+}

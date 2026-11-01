@@ -1,0 +1,84 @@
+{
+ "schema": 1,
+ "id": "gen5-smack-down-ends-magnet-rise-and-fly",
+ "notes": [
+  "Gen 5: Smack Down ends Magnezone's Magnet Rise and grounds it; against Skarmory mid-Fly it hits, brings it down (its Fly ends, not used) and grounds it"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Golem",
+    "species": "Golem",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Smack Down",
+     "Earthquake"
+    ],
+    "gender": "M",
+    "ability": "Sturdy"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Magnezone",
+    "species": "Magnezone",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Magnet Rise",
+     "Harden"
+    ],
+    "ability": "Sturdy"
+   },
+   {
+    "label": "Skarmory",
+    "species": "Skarmory",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Fly",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Sturdy"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Earthquake",
+   "p2": "move Magnet Rise"
+  },
+  {
+   "p1": "move Smack Down",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Earthquake",
+   "p2": "switch Skarmory"
+  },
+  {
+   "p1": "move Smack Down",
+   "p2": "move Fly"
+  },
+  {
+   "p1": "move Earthquake",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

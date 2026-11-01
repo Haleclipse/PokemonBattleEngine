@@ -1,0 +1,86 @@
+{
+  "schema": 1,
+  "id": "m10-f-a-signature-z-move-in-a-slot-after-its-base-move",
+  "notes": [
+    "A custom game's signature Z-Move in a slot, used as it is after its base move was: one use of the Z-Move, none more of the base (@pkmn/client takes the Z-Move for its base; DESIGN.md R-M10-25)",
+    "promoted from m8-gen7-doubles-s1634-005-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 7,
+    "mode": "doubles",
+    "format": "gen7doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Prinplup",
+        "species": "Prinplup",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Photon Geyser",
+          "Light That Burns the Sky"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Gumshoos",
+        "species": "Gumshoos",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Weather Ball",
+          "Oceanic Operetta"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Reuniclus",
+        "species": "Reuniclus",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sky Uppercut",
+          "Shadow Punch"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Misdreavus",
+        "species": "Misdreavus",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Rapid Spin",
+          "Catastropika"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      53016,
+      35606,
+      20628,
+      59208
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Photon Geyser 1, move Weather Ball 2",
+      "p2": "move Sky Uppercut 1, move Rapid Spin 2"
+    },
+    {
+      "p1": "move Light That Burns the Sky 1, move Oceanic Operetta 2",
+      "p2": "move Shadow Punch 1, move Catastropika 2"
+    }
+  ]
+}

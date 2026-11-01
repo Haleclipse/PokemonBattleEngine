@@ -1,0 +1,76 @@
+{
+ "schema": 1,
+ "id": "m9-z-pursuit-marks-nobody",
+ "notes": [
+  "R-M9-30: a Z-Move's action queues no `beforeTurnMove` (`!action.maxMove && !action.zmove`): Tyranitar's Z-Pursuit (Black Hole Eclipse) marks nobody, so Alakazam switches out unharmed and the Z-Move strikes Umbreon, which came in. The next turn's plain Pursuit strikes Umbreon as it leaves."
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Tyranitar",
+    "species": "Tyranitar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Pursuit",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Unnerve",
+    "item": "Darkinium Z"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Alakazam",
+    "species": "Alakazam",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Inner Focus"
+   },
+   {
+    "label": "Umbreon",
+    "species": "Umbreon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Synchronize"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1 zmove",
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move 1",
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

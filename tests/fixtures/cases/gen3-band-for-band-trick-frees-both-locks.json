@@ -1,0 +1,63 @@
+{
+ "schema": 1,
+ "id": "gen3-band-for-band-trick-frees-both-locks",
+ "notes": [
+  "Gen 3: Beedrill's Choice Band locks it onto Triple Kick, then Smoochum's Trick swaps its own Choice Band for it. pokeemerald's `Cmd_tryswapitems` clears both battlers' `choicedMove`, and Smoochum's new item waits in `changedItems` until after `MOVEEND_CHOICE_MOVE`: neither is locked, and turn 2 has Beedrill's Twineedle. Showdown's gen3 shares the gen4 Choice items (no `onStart`, `onAfterMove` locks by the item held then) and keeps both locked; the oracle's I184 patch frees them (DESIGN.md R-M8-108)"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Beedrill",
+    "species": "Beedrill",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Triple Kick",
+     "Twineedle"
+    ],
+    "item": "Choice Band",
+    "ability": "Swarm",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Smoochum",
+    "species": "Smoochum",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Trick",
+     "Pound"
+    ],
+    "item": "Choice Band",
+    "ability": "Oblivious",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Triple Kick",
+   "p2": "move Trick"
+  },
+  {
+   "p1": "move Twineedle",
+   "p2": "move Pound"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

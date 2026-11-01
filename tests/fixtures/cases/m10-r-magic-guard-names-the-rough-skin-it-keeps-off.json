@@ -1,0 +1,219 @@
+{
+  "schema": 1,
+  "id": "m10-r-magic-guard-names-the-rough-skin-it-keeps-off",
+  "notes": [
+    "Gen 7: Deerling's Magic Guard keeps Frillish's Rough Skin damage off, the line naming the ability (-activate|Frillish|ability: Rough Skin) (R-M10-42)",
+    "promoted from m8-gen7-singles-s1646-006-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 7,
+    "mode": "singles",
+    "format": "gen7customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Smoochum",
+        "species": "Smoochum",
+        "level": 53,
+        "nature": "Hardy",
+        "moves": [
+          "Water Spout",
+          "Reversal"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Maractus",
+        "species": "Maractus",
+        "level": 52,
+        "nature": "Hardy",
+        "moves": [
+          "Stomping Tantrum",
+          "Echoed Voice"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Frillish",
+        "species": "Frillish",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Rollout",
+          "Flower Shield"
+        ],
+        "ability": "Rough Skin",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Furret",
+        "species": "Furret",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Hex",
+          "Stored Power"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Hoopa",
+        "species": "Hoopa",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Fury Cutter",
+          "Flower Shield",
+          "Smelling Salts",
+          "Conversion"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Cherubi",
+        "species": "Cherubi",
+        "level": 45,
+        "nature": "Hardy",
+        "moves": [
+          "Assurance",
+          "Trump Card"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Deerling",
+        "species": "Deerling",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Ice Ball"
+        ],
+        "ability": "Magic Guard",
+        "gender": "M"
+      },
+      {
+        "label": "Meditite",
+        "species": "Meditite",
+        "level": 46,
+        "nature": "Hardy",
+        "moves": [
+          "Eruption"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      58542,
+      55630,
+      44144,
+      38485
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Water Spout",
+      "p2": "move Hex"
+    },
+    {
+      "p1": "move Reversal",
+      "p2": "move Stored Power"
+    },
+    {
+      "p1": "switch Maractus",
+      "p2": "switch Hoopa"
+    },
+    {
+      "p1": "move Stomping Tantrum",
+      "p2": "move Fury Cutter"
+    },
+    {
+      "p1": "move Echoed Voice",
+      "p2": "move Smelling Salts"
+    },
+    {
+      "p1": "switch Smoochum",
+      "p2": "switch Furret"
+    },
+    {
+      "p1": "move Water Spout",
+      "p2": "move Hex"
+    },
+    {
+      "p1": "move Reversal",
+      "p2": "move Stored Power"
+    },
+    {
+      "p2": "switch Hoopa"
+    },
+    {
+      "p1": "switch Maractus",
+      "p2": "switch Cherubi"
+    },
+    {
+      "p1": "move Stomping Tantrum",
+      "p2": "move Assurance"
+    },
+    {
+      "p1": "move Echoed Voice",
+      "p2": "move Trump Card"
+    },
+    {
+      "p1": "switch Smoochum",
+      "p2": "switch Hoopa"
+    },
+    {
+      "p1": "move Water Spout",
+      "p2": "move Fury Cutter"
+    },
+    {
+      "p1": "switch Maractus"
+    },
+    {
+      "p1": "switch Frillish",
+      "p2": "switch Cherubi"
+    },
+    {
+      "p1": "move Rollout",
+      "p2": "move Assurance"
+    },
+    {
+      "p2": "switch Hoopa"
+    },
+    {
+      "p1": "move Rollout",
+      "p2": "move Flower Shield"
+    },
+    {
+      "p1": "move Rollout",
+      "p2": "move Smelling Salts"
+    },
+    {
+      "p1": "move Rollout",
+      "p2": "move Conversion"
+    },
+    {
+      "p2": "switch Deerling"
+    },
+    {
+      "p1": "move Rollout",
+      "p2": "switch Meditite"
+    },
+    {
+      "p2": "switch Deerling"
+    },
+    {
+      "p1": "move Flower Shield",
+      "p2": "move Ice Ball"
+    }
+  ]
+}

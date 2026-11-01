@@ -1,0 +1,94 @@
+{
+ "schema": 1,
+ "id": "gen9-klutz-and-magic-room-eat-berries-for-nothing",
+ "notes": [
+  "Gen 9: a Klutz Scizor's Bug Bite takes and eats the Sitrus Berry but heals nothing, and Belch opens all the same; under Magic Room Greedent's Stuff Cheeks eats its Sitrus Berry for no heal — Cheek Pouch still heals"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Scizor",
+    "species": "Scizor",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Bug Bite",
+     "Belch",
+     "Harden"
+    ],
+    "ability": "Klutz"
+   },
+   {
+    "label": "Greedent",
+    "species": "Greedent",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Stuff Cheeks",
+     "Harden"
+    ],
+    "ability": "Cheek Pouch",
+    "item": "Sitrus Berry"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Magic Room",
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "item": "Sitrus Berry"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Bug Bite",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Belch",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Greedent",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Magic Room"
+  },
+  {
+   "p1": "move Stuff Cheeks",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

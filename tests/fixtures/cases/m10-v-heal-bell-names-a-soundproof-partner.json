@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "id": "m10-v-heal-bell-names-a-soundproof-partner",
+  "notes": [
+    "Gen 3 Doubles: Solrock's Heal Bell passes over its partner Igglybuff, -immune|p|[from] ability: Soundproof (R-M10-46)",
+    "promoted from m8-gen3-doubles-s1650-011-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 3,
+    "mode": "doubles",
+    "format": "gen3doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Nidorino",
+        "species": "Nidorino",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Eruption",
+          "Heal Bell"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Omanyte",
+        "species": "Omanyte",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Ice Ball"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Solrock",
+        "species": "Solrock",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sweet Scent",
+          "Heal Bell"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Igglybuff",
+        "species": "Igglybuff",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "String Shot",
+          "Tail Whip"
+        ],
+        "ability": "Soundproof",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      47714,
+      40589,
+      50035,
+      44628
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Eruption, move Ice Ball 1",
+      "p2": "move Sweet Scent, move String Shot"
+    },
+    {
+      "p1": "move 2, move 1",
+      "p2": "move 2, move 2"
+    }
+  ]
+}

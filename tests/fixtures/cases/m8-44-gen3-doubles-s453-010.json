@@ -1,0 +1,202 @@
+{
+ "schema": 1,
+ "id": "m8-44-gen3-doubles-s453-010",
+ "notes": [
+  "Nightly 38 gen3-doubles-s453-010, minimized: Bide's release leaves no last move: a tormented holder chooses Bide again (I67)"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "doubles",
+  "format": "gen3doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Meowth",
+    "species": "Meowth",
+    "level": 47,
+    "nature": "Hardy",
+    "moves": [
+     "Rage",
+     "Imprison",
+     "Mega Kick"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Furret",
+    "species": "Furret",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Pound",
+     "Imprison",
+     "Cut"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Slowking",
+    "species": "Slowking",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Slam",
+     "Imprison",
+     "Rapid Spin",
+     "Torment"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Surskit",
+    "species": "Surskit",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Strength"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jynx",
+    "species": "Jynx",
+    "level": 46,
+    "nature": "Hardy",
+    "moves": [
+     "Doom Desire",
+     "Imprison",
+     "Covet",
+     "Torment"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Dewgong",
+    "species": "Dewgong",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Egg Bomb",
+     "Imprison",
+     "Rock Throw"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Kakuna",
+    "species": "Kakuna",
+    "level": 48,
+    "nature": "Hardy",
+    "moves": [
+     "Present",
+     "Weather Ball"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Omastar",
+    "species": "Omastar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Pay Day",
+     "Bide"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   60310,
+   9490,
+   32471,
+   42366
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Rage 1, move Pound 2",
+   "p2": "move Doom Desire 1, move Egg Bomb 2"
+  },
+  {
+   "p1": "move Imprison, move Imprison",
+   "p2": "move Imprison, move Imprison"
+  },
+  {
+   "p1": "move Mega Kick 1, move Cut 2",
+   "p2": "move Doom Desire 1, move Rock Throw 2"
+  },
+  {
+   "p1": "switch Slowking, move Imprison",
+   "p2": "switch Kakuna, move Rock Throw 2"
+  },
+  {
+   "p1": "move Torment 1, move Cut 2",
+   "p2": "move Weather Ball 1, move Rock Throw 2"
+  },
+  {
+   "p1": "move Imprison, move Pound 1",
+   "p2": "move Present 1, move Rock Throw 2"
+  },
+  {
+   "p1": "move Torment 1, move Cut 2",
+   "p2": "move Weather Ball 2, move Egg Bomb 1"
+  },
+  {
+   "p1": "switch Meowth, move Pound 2",
+   "p2": "switch Jynx, move Egg Bomb 1"
+  },
+  {
+   "p2": "pass, switch Kakuna"
+  },
+  {
+   "p1": "move Imprison, move Cut 2",
+   "p2": "move Covet 1, move Present 2"
+  },
+  {
+   "p1": "move Rage 1, move Imprison",
+   "p2": "move Doom Desire 2, move Weather Ball 1"
+  },
+  {
+   "p1": "move Imprison, move Cut 2",
+   "p2": "move Covet 2, move Weather Ball 1"
+  },
+  {
+   "p2": "pass, switch Omastar"
+  },
+  {
+   "p1": "switch Slowking, move Pound 2",
+   "p2": "move Covet 2, move Bide"
+  },
+  {
+   "p1": "pass, switch Meowth"
+  },
+  {
+   "p1": "move 3 1, move 2",
+   "p2": "move 1 1, move 1"
+  },
+  {
+   "p1": "move 4 2, move 3 1",
+   "p2": "move 3 2, move 1"
+  },
+  {
+   "p1": "pass, switch Surskit"
+  },
+  {
+   "p1": "move Slam 1, move Strength 2",
+   "p2": "move Torment 2, move Bide"
+  }
+ ]
+}

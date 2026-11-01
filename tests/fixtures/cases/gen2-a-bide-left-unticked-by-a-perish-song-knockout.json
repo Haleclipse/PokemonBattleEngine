@@ -1,0 +1,78 @@
+{
+ "schema": 1,
+ "id": "gen2-a-bide-left-unticked-by-a-perish-song-knockout",
+ "notes": [
+  "Gen 2: as Misdreavus's Perish Song runs out, Misdreavus is storing a Bide of its own and Snorlax starts one. Perish Song's `onEnd` knocks Misdreavus out; the next residual handler is Misdreavus's own (faster) Bide `duration`, after which the faint is printed and the battle decided: Snorlax's Bide never ticks (DESIGN.md R-M8-158)"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Misdreavus",
+    "species": "Misdreavus",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Perish Song",
+     "Bide",
+     "Splash"
+    ],
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Bide",
+     "Splash"
+    ],
+    "gender": "M"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Perish Song",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "switch Chansey"
+  },
+  {
+   "p1": "move Bide",
+   "p2": "switch Snorlax"
+  },
+  {
+   "p1": "move Bide",
+   "p2": "move Bide"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   7,
+   1,
+   9,
+   3
+  ]
+ }
+}

@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen1-rage-locks-and-builds",
+ "notes": [
+  "Gen 1 Rage: the user is locked into Rage for good (no PP spent after the first use); a foe's damaging hit raises its Attack, Growl builds nothing"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Rager",
+    "species": "Primeape",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Rage",
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Wall",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Growl"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Rage",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "move Growl"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

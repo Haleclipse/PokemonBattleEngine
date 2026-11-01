@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "gen4-camouflage-fails-for-a-multitype-holder",
+ "notes": [
+  "Gen 4: Camouflage makes Charizard Normal; Arceus-Fire's fails, its types locked by Multitype (`setType`: `gen === 4 && hasAbility('multitype')`); Pidgeot, Normal/Flying, has Normal already and stays Normal/Flying"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Arceus",
+    "species": "Arceus-Fire",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Camouflage",
+     "Harden"
+    ],
+    "ability": "Multitype",
+    "item": "Flame Plate"
+   },
+   {
+    "label": "Charizard",
+    "species": "Charizard",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Camouflage",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Blaze"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Pidgeot",
+    "species": "Pidgeot",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Camouflage",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Keen Eye"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Camouflage",
+   "p2": "move Camouflage"
+  },
+  {
+   "p1": "switch Charizard",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Camouflage",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

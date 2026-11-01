@@ -1,0 +1,67 @@
+{
+ "schema": 1,
+ "id": "gen4-slow-start-halves-the-confusion-self-hit",
+ "notes": [
+  "Gen 4: Regigigas under Slow Start hits itself in confusion: pokeplatinum halves the Attack of the self-hit (Struggle's data) as of any move; Showdown's pseudo-move has no data and keeps it whole (oracle patch, issues.md I177)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Regigigas",
+    "species": "Regigigas",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Slow Start"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gengar",
+    "species": "Gengar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Confuse Ray",
+     "Splash"
+    ],
+    "ability": "Levitate",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash",
+   "p2": "move Confuse Ray"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

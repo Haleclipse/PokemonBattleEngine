@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "gen7-doubles-tied-dancers-the-later-started-dances-first",
+ "notes": [
+  "Gen 7 doubles: two Oricorio with Dancer and the same stored Speed, one on each side, both leads; Chansey's Fiery Dance at Snorlax sets both off. Showdown sorts the dancers by stored Speed, slowest first, then by `abilityState.effectOrder`, the later-started first: p2's Oricorio came in after p1's, so it dances first (at Chansey: the original target is its ally), then p1's (at Snorlax) — their hits and rolls come in that order (DESIGN.md R-M8-182)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Oricorio",
+    "species": "Oricorio",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Dancer",
+    "gender": "F"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fiery Dance"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Oricorio 2",
+    "species": "Oricorio",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Dancer",
+    "gender": "F"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash, move Fiery Dance 2",
+   "p2": "move Splash, move Splash"
+  }
+ ]
+}

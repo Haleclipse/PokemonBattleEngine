@@ -1,0 +1,109 @@
+{
+ "schema": 1,
+ "id": "gen6-doubles-trick-or-treat-curse-glitch",
+ "notes": [
+  "Gen 6 doubles (from Nightly 33's m8-gen6-doubles-s433-007): Ferroseed's Trick-or-Treat makes Jigglypuff, in its side's second slot and about to Curse, a Ghost; its Curse now aims at its side's first slot (`action.targetLoc = -1`, the \"Curse glitch\") and curses its ally Phantump"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "doubles",
+  "format": "gen6doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Teddiursa",
+    "species": "Teddiursa",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Curse"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Ferroseed",
+    "species": "Ferroseed",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Trick-or-Treat",
+     "Roost"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Marshtomp",
+    "species": "Marshtomp",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Camouflage"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Diglett",
+    "species": "Diglett",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Forest's Curse"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Jigglypuff",
+    "species": "Jigglypuff",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Curse",
+     "Roost"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Phantump",
+    "species": "Phantump",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Camouflage"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   4061,
+   55850,
+   50359,
+   11898
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Curse, move Trick-or-Treat 1",
+   "p2": "move Forest's Curse 1, move Curse"
+  },
+  {
+   "p1": "switch Marshtomp, move Roost",
+   "p2": "switch Phantump, move Roost"
+  },
+  {
+   "p1": "move Camouflage, move Trick-or-Treat 2",
+   "p2": "move Camouflage, move Curse"
+  }
+ ]
+}

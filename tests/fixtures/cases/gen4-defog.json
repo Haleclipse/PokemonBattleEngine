@@ -1,0 +1,100 @@
+{
+ "schema": 1,
+ "id": "gen4-defog",
+ "notes": [
+  "Gen 4 Defog: Mist stops its evasion drop and then ends with the screens, Safeguard and the hazards on the target's side; the user's side keeps its hazards; behind a Substitute no evasion drop, the hazards still go"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Togekiss",
+    "species": "Togekiss",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Defog",
+     "Spikes",
+     "Toxic Spikes",
+     "Stealth Rock"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Screener",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Reflect",
+     "Light Screen",
+     "Safeguard",
+     "Mist"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Subber",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spikes",
+     "Substitute",
+     "Recover",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Spikes",
+   "p2": "move Reflect"
+  },
+  {
+   "p1": "move Toxic Spikes",
+   "p2": "move Light Screen"
+  },
+  {
+   "p1": "move Stealth Rock",
+   "p2": "move Safeguard"
+  },
+  {
+   "p1": "move Defog",
+   "p2": "move Mist"
+  },
+  {
+   "p1": "move Defog",
+   "p2": "switch Subber"
+  },
+  {
+   "p1": "move Spikes",
+   "p2": "move Spikes"
+  },
+  {
+   "p1": "move Stealth Rock",
+   "p2": "move Substitute"
+  },
+  {
+   "p1": "move Defog",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

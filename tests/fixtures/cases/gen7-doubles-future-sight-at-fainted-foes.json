@@ -1,0 +1,111 @@
+{
+ "schema": 1,
+ "id": "gen7-doubles-future-sight-at-fainted-foes",
+ "notes": [
+  "Gen 7 doubles: both foes are gone (Memento) when Slowbro uses Future Sight at the second: `getRandomTarget` hands back the first foe's slot, fainted, and the attack is foreseen there; its empty slot counts down; two turns later it strikes Snorlax, who came into it"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Slowbro",
+    "species": "Slowbro",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Future Sight",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Oblivious"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Murkrow",
+    "species": "Murkrow",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Memento"
+    ],
+    "gender": "M",
+    "ability": "Insomnia"
+   },
+   {
+    "label": "Mismagius",
+    "species": "Mismagius",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Memento"
+    ],
+    "gender": "F",
+    "ability": "Levitate"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Future Sight 2, move Harden",
+   "p2": "move Memento 1, move Memento 1"
+  },
+  {
+   "p2": "switch 3, switch 4"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

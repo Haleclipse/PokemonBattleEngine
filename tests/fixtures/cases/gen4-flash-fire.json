@@ -1,0 +1,72 @@
+{
+ "schema": 1,
+ "id": "gen4-flash-fire",
+ "notes": [
+  "Gen 4 Flash Fire: a frozen holder does not take the Fire move (it is hit and thawed); then it takes one and its Flamethrower is stronger (the cartridge: after the weather)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Dog",
+    "species": "Arcanine",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Flamethrower",
+     "Harden"
+    ],
+    "ability": "Flash Fire"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Ice Beam",
+     "Flamethrower",
+     "Sunny Day"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Ice Beam"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Flamethrower"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Flamethrower"
+  },
+  {
+   "p1": "move Flamethrower",
+   "p2": "move Sunny Day"
+  },
+  {
+   "p1": "move Flamethrower",
+   "p2": "move Sunny Day"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   9,
+   2,
+   3,
+   4
+  ]
+ }
+}

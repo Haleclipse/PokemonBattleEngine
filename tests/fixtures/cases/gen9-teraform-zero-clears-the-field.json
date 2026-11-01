@@ -1,0 +1,59 @@
+{
+ "schema": 1,
+ "id": "gen9-teraform-zero-clears-the-field",
+ "notes": [
+  "Gen 9: Terapagos-Stellar Terastallizes while the sun and Electric Terrain are up: Teraform Zero's `onAfterTerastallization` announces itself and takes both away"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Terapagos-Stellar",
+    "species": "Terapagos-Stellar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Teraform Zero",
+    "teraType": "Stellar"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Torkoal",
+    "species": "Torkoal",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Electric Terrain",
+     "Harden"
+    ],
+    "ability": "Drought"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Electric Terrain"
+  },
+  {
+   "p1": "move Harden terastallize",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

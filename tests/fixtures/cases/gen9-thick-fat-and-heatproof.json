@@ -1,0 +1,90 @@
+{
+ "schema": 1,
+ "id": "gen9-thick-fat-and-heatproof",
+ "notes": [
+  "Thick Fat halves the attacking stat of Fire and Ice moves (onSourceModifyAtk / SpA); Heatproof halves Fire moves' attacking stat and its own burn damage"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Flamethrower",
+     "Ice Beam",
+     "Body Slam",
+     "Will-O-Wisp"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Fat",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Proof",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Heatproof"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Flamethrower",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Ice Beam",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Flamethrower",
+   "p2": "switch Proof"
+  },
+  {
+   "p1": "move Will-O-Wisp",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Slack Off"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,64 @@
+{
+ "schema": 1,
+ "id": "gen7-beak-blast",
+ "notes": [
+  "Beak Blast: a contact hit on its user before it strikes burns the attacker, a non-contact one does not; after it struck (Circle Throw at \u22126) contact burns nobody"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Toucannon",
+    "species": "Toucannon",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Beak Blast",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Snorlax",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Swift",
+     "Circle Throw"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Beak Blast",
+   "p2": "move Swift"
+  },
+  {
+   "p1": "move Beak Blast",
+   "p2": "move Circle Throw"
+  },
+  {
+   "p1": "move Beak Blast",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

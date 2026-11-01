@@ -1,0 +1,367 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@pkmn/sim",
+    "version": "0.10.11",
+    "formatid": "gen4customgame",
+    "seed": [
+      7,
+      14,
+      20,
+      36
+    ]
+  },
+  "frames": [
+    {
+      "schema": 1,
+      "checkpoint": "initial",
+      "turn": 1,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 27,
+              "max_hp": 27,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "water"
+              ],
+              "ability": "swiftswim",
+              "item": "focusband",
+              "pp": [
+                48
+              ]
+            },
+            {
+              "hp": 205,
+              "max_hp": 205,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "water",
+                "ice"
+              ],
+              "ability": "waterabsorb",
+              "item": "",
+              "pp": [
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 213,
+              "max_hp": 213,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "rock",
+                "ground"
+              ],
+              "ability": "rockhead",
+              "item": "",
+              "pp": [
+                16,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Magikarp"
+          },
+          "details": "Magikarp, L10, F",
+          "hp": 27,
+          "max_hp": 27,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Golem"
+          },
+          "details": "Golem, L70, M",
+          "hp": 213,
+          "max_hp": 213,
+          "status": null
+        },
+        {
+          "kind": "turn",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_1",
+      "turn": 2,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 1,
+              "max_hp": 27,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 1,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "water"
+              ],
+              "ability": "swiftswim",
+              "item": "focusband",
+              "pp": [
+                47
+              ]
+            },
+            {
+              "hp": 205,
+              "max_hp": 205,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "water",
+                "ice"
+              ],
+              "ability": "waterabsorb",
+              "item": "",
+              "pp": [
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 213,
+              "max_hp": 213,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "rock",
+                "ground"
+              ],
+              "ability": "rockhead",
+              "item": "",
+              "pp": [
+                15,
+                48
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Golem"
+          },
+          "move": "Rock Blast",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Magikarp"
+          }
+        },
+        {
+          "kind": "activate",
+          "args": [
+            "p1a: Magikarp",
+            "item: Focus Band"
+          ]
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Magikarp"
+          },
+          "hp": 1,
+          "max_hp": 27,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "activate",
+          "args": [
+            "p1a: Magikarp",
+            "item: Focus Band"
+          ]
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Magikarp"
+          },
+          "hp": 1,
+          "max_hp": 27,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "activate",
+          "args": [
+            "p1a: Magikarp",
+            "item: Focus Band"
+          ]
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Magikarp"
+          },
+          "hp": 1,
+          "max_hp": 27,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "hitcount",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Magikarp"
+          },
+          "count": 3
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Magikarp"
+          },
+          "move": "Harden",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Magikarp"
+          }
+        },
+        {
+          "kind": "boost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Magikarp"
+          },
+          "stat": "def",
+          "amount": 1
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 2
+        }
+      ]
+    }
+  ],
+  "debug_log": "|gametype|singles\n|player|p1|P1||\n|player|p2|P2||\n|gen|4\n|tier|[Gen 4] Custom Game\n|\n|teamsize|p1|2\n|teamsize|p2|1\n|start\n|switch|p1a: Magikarp|Magikarp, L10, F|27/27\n|switch|p2a: Golem|Golem, L70, M|213/213\n|turn|1\n|\n|move|p2a: Golem|Rock Blast|p1a: Magikarp\n|-activate|p1a: Magikarp|item: Focus Band\n|-damage|p1a: Magikarp|1/27\n|-activate|p1a: Magikarp|item: Focus Band\n|-damage|p1a: Magikarp|1/27\n|-activate|p1a: Magikarp|item: Focus Band\n|-damage|p1a: Magikarp|1/27\n|-hitcount|p1a: Magikarp|3\n|move|p1a: Magikarp|Harden|p1a: Magikarp\n|-boost|p1a: Magikarp|def|1\n|\n|upkeep\n|turn|2"
+}

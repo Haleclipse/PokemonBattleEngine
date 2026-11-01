@@ -1,0 +1,64 @@
+{
+ "schema": 1,
+ "id": "gen9-klutz-choice-scarf-neither-speeds-nor-locks",
+ "notes": [
+  "Gen 9 Klutz sets its Choice Scarf aside: Jolteon, slower than a scarfed Golurk, moves first, and Golurk is not locked into Tackle"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Golurk",
+    "species": "Golurk",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Growl"
+    ],
+    "ability": "Klutz",
+    "item": "Choice Scarf"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Growl",
+     "Harden"
+    ],
+    "ability": "Volt Absorb"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Growl",
+   "p2": "move Growl"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

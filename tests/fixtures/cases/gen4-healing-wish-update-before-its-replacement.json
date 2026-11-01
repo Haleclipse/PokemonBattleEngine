@@ -1,0 +1,78 @@
+{
+ "schema": 1,
+ "id": "gen4-healing-wish-update-before-its-replacement",
+ "notes": [
+  "Gen 4: Miltank's Healing Wish faints it and asks for its replacement at once; the action asks without its Update (before Gen 5 that Update comes only when no switch is asked for), but the move's own Update (`hitStepMoveHitLoop`, after the faints: a status move that went through runs it too) has already ended Scyther's infatuation with Miltank, so the request no longer shows it"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Scyther",
+    "species": "Scyther",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Swarm",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Miltank",
+    "species": "Miltank",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Attract",
+     "Healing Wish"
+    ],
+    "ability": "Thick Fat",
+    "gender": "F"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Attract"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Healing Wish"
+  },
+  {
+   "p2": "switch Snorlax"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

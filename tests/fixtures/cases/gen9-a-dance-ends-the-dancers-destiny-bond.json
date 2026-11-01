@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "gen9-a-dance-ends-the-dancers-destiny-bond",
+ "notes": [
+  "Gen 9: Oricorio (Dancer) uses Destiny Bond, then dances Lilligant's Fiery Dance: the dance's full runMove meets BeforeMove, and Destiny Bond's onBeforeMove ends the bond (DESIGN.md R-M8-135)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Oricorio",
+    "species": "Oricorio",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Destiny Bond",
+     "Splash"
+    ],
+    "ability": "Dancer",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Lilligant",
+    "species": "Lilligant",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fiery Dance",
+     "Splash"
+    ],
+    "ability": "Own Tempo",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Destiny Bond",
+   "p2": "move Fiery Dance"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

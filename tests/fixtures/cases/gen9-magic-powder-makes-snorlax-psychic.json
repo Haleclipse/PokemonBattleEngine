@@ -1,0 +1,79 @@
+{
+ "schema": 1,
+ "id": "gen9-magic-powder-makes-snorlax-psychic",
+ "notes": [
+  "Magic Powder makes Snorlax pure Psychic; Venusaur, a Grass type, is immune to the powder"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hatterene",
+    "species": "Hatterene",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Magic Powder",
+     "Shadow Ball"
+    ],
+    "gender": "F",
+    "ability": "Magic Bounce"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Venusaur",
+    "species": "Venusaur",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Chlorophyll"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Magic Powder",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Shadow Ball",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Shadow Ball",
+   "p2": "switch Venusaur"
+  },
+  {
+   "p1": "move Magic Powder",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

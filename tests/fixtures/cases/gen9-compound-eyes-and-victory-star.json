@@ -1,0 +1,85 @@
+{
+ "schema": 1,
+ "id": "gen9-compound-eyes-and-victory-star",
+ "notes": [
+  "Compound Eyes (\u00d71.3) and Victory Star (4506/4096) raise the accuracy of their holder's moves: Zap Cannon's 50 becomes 66, Rock Slide's 90 becomes 99 (the exact values: L1)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Eyes",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Zap Cannon"
+    ],
+    "ability": "Compound Eyes"
+   },
+   {
+    "label": "Star",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Rock Slide"
+    ],
+    "ability": "Victory Star"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Zap Cannon",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Zap Cannon",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Zap Cannon",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "switch Star",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Rock Slide",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Rock Slide",
+   "p2": "move Soft-Boiled"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

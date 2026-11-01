@@ -1,0 +1,63 @@
+{
+ "schema": 1,
+ "id": "gen2-psywave-damage-by-level",
+ "notes": [
+  "Gen 2 Psywave deals random(1, level + \u230alevel / 2\u230b)"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hypno",
+    "species": "Hypno",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Psywave"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Psywave",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Psywave",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Psywave",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Psywave",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

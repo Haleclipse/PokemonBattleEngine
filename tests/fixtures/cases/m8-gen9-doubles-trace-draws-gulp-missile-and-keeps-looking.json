@@ -1,0 +1,132 @@
+{
+  "schema": 1,
+  "id": "m8-gen9-doubles-trace-draws-gulp-missile-and-keeps-looking",
+  "notes": [
+    "Nightly 54: Gen 9 Trace samples Gulp Missile (cantsuppress without notrace), setAbility refuses it, and Trace keeps looking: it copies the foe that comes in next (DESIGN.md R-M8-98)",
+    "promoted from m8-gen9-doubles-s517-001-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Voltorb",
+        "species": "Voltorb",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Feather Dance",
+          "Gastro Acid",
+          "Spicy Extract"
+        ],
+        "ability": "Gulp Missile"
+      },
+      {
+        "label": "Floragato",
+        "species": "Floragato",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Nasty Plot",
+          "Gastro Acid",
+          "Memento"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Chandelure",
+        "species": "Chandelure",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Acid Armor"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Ting-Lu",
+        "species": "Ting-Lu",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Decorate"
+        ],
+        "ability": "Pure Power"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Azurill",
+        "species": "Azurill",
+        "level": 52,
+        "nature": "Hardy",
+        "moves": [
+          "Withdraw",
+          "Toxic Thread",
+          "Shell Smash"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Trevenant",
+        "species": "Trevenant",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Victory Dance",
+          "Toxic Thread",
+          "Work Up"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Scatterbug",
+        "species": "Scatterbug",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tearful Look"
+        ],
+        "ability": "Trace",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      2927,
+      41361,
+      32958,
+      54992
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Feather Dance 1, move Nasty Plot",
+      "p2": "move Withdraw, move Victory Dance"
+    },
+    {
+      "p1": "move Gastro Acid 2, move Gastro Acid 1",
+      "p2": "move Toxic Thread 1, move Toxic Thread 2"
+    },
+    {
+      "p1": "move Spicy Extract 2, move Memento 1",
+      "p2": "move Shell Smash, move Work Up"
+    },
+    {
+      "p1": "pass, switch Chandelure"
+    },
+    {
+      "p1": "switch Ting-Lu, move Acid Armor",
+      "p2": "switch Scatterbug, move Victory Dance"
+    }
+  ]
+}

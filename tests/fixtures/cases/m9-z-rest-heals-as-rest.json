@@ -1,0 +1,405 @@
+{
+ "schema": 1,
+ "id": "m9-z-rest-heals-as-rest",
+ "notes": [
+  "R-M9-30: a Z status move is logged as `Z-<move>` with the move as its `[anim]`; the replay reads it as that move, so Z-Rest's silent heal is Rest's. Minimized from Nightly 20261020-131033 (m9-gen7doublesou-s114-017)."
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublesou"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sneasel",
+    "species": "Sneasel",
+    "ability": "Keen Eye",
+    "moves": [
+     "Low Kick"
+    ],
+    "nature": "Sassy",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 88,
+     "atk": 0,
+     "def": 28,
+     "spa": 252,
+     "spd": 12,
+     "spe": 128
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Cleffa",
+    "species": "Cleffa",
+    "ability": "Cute Charm",
+    "moves": [
+     "Toxic"
+    ],
+    "nature": "Relaxed",
+    "gender": "F",
+    "shiny": false,
+    "level": 63,
+    "evs": {
+     "hp": 0,
+     "atk": 60,
+     "def": 196,
+     "spa": 0,
+     "spd": 252,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 233
+   },
+   {
+    "label": "Snover",
+    "species": "Snover",
+    "ability": "Snow Warning",
+    "moves": [
+     "Toxic"
+    ],
+    "nature": "Timid",
+    "gender": "F",
+    "shiny": false,
+    "level": 17,
+    "evs": {
+     "hp": 72,
+     "atk": 72,
+     "def": 124,
+     "spa": 60,
+     "spd": 60,
+     "spe": 120
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Decidueye",
+    "species": "Decidueye",
+    "ability": "Overgrow",
+    "moves": [
+     "Substitute",
+     "Sucker Punch",
+     "Astonish"
+    ],
+    "nature": "Brave",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 0,
+     "atk": 224,
+     "def": 124,
+     "spa": 28,
+     "spd": 80,
+     "spe": 52
+    },
+    "ivs": {
+     "hp": 9,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 37
+   },
+   {
+    "label": "Golem",
+    "species": "Golem-Alola",
+    "ability": "Sturdy",
+    "moves": [
+     "Fire Punch",
+     "Sunny Day"
+    ],
+    "nature": "Naughty",
+    "gender": "F",
+    "shiny": true,
+    "level": 32,
+    "evs": {
+     "hp": 76,
+     "atk": 100,
+     "def": 0,
+     "spa": 104,
+     "spd": 92,
+     "spe": 136
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Carvanha",
+    "species": "Carvanha",
+    "item": "Psychium Z",
+    "ability": "Rough Skin",
+    "moves": [
+     "Confide",
+     "Rest"
+    ],
+    "nature": "Serious",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 88,
+     "atk": 8,
+     "def": 188,
+     "spa": 0,
+     "spd": 160,
+     "spe": 64
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   }
+  ],
+  "p2": [
+   {
+    "label": "Yanma",
+    "species": "Yanma",
+    "ability": "Speed Boost",
+    "moves": [
+     "Frustration"
+    ],
+    "nature": "Naive",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 32,
+     "atk": 216,
+     "def": 36,
+     "spa": 108,
+     "spd": 116,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "hpType": "Steel"
+   },
+   {
+    "label": "Nick4",
+    "species": "Rotom",
+    "ability": "Levitate",
+    "moves": [
+     "Psych Up",
+     "Spite",
+     "Volt Switch"
+    ],
+    "nature": "Relaxed",
+    "gender": "",
+    "shiny": false,
+    "level": 49,
+    "evs": {
+     "hp": 124,
+     "atk": 136,
+     "def": 104,
+     "spa": 0,
+     "spd": 36,
+     "spe": 108
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Tapu Lele",
+    "species": "Tapu Lele",
+    "ability": "Psychic Surge",
+    "moves": [
+     "Psych Up"
+    ],
+    "nature": "Quiet",
+    "gender": "",
+    "shiny": false,
+    "level": 92,
+    "evs": {
+     "hp": 0,
+     "atk": 128,
+     "def": 24,
+     "spa": 180,
+     "spd": 176,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Nick87",
+    "species": "Volcanion",
+    "ability": "Water Absorb",
+    "moves": [
+     "Facade"
+    ],
+    "nature": "Bashful",
+    "gender": "",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 216,
+     "atk": 84,
+     "def": 144,
+     "spa": 28,
+     "spd": 0,
+     "spe": 36
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 98
+   },
+   {
+    "label": "Nick61",
+    "species": "Beedrill",
+    "ability": "Swarm",
+    "moves": [
+     "Rock Smash"
+    ],
+    "nature": "Bold",
+    "gender": "F",
+    "shiny": false,
+    "level": 49,
+    "evs": {
+     "hp": 40,
+     "atk": 0,
+     "def": 200,
+     "spa": 0,
+     "spd": 152,
+     "spe": 116
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 9,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 186
+   },
+   {
+    "label": "Poochyena",
+    "species": "Poochyena",
+    "ability": "Run Away",
+    "moves": [
+     "Mud-Slap",
+     "Rest"
+    ],
+    "nature": "Relaxed",
+    "gender": "M",
+    "shiny": false,
+    "level": 47,
+    "evs": {
+     "hp": 84,
+     "atk": 164,
+     "def": 0,
+     "spa": 88,
+     "spd": 76,
+     "spe": 96
+    },
+    "ivs": {
+     "hp": 27,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 208
+   }
+  ]
+ },
+ "preview": {
+  "p1": "team 546213",
+  "p2": "team 263145"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   32730,
+   114,
+   1017,
+   31
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Fire Punch 2, move Sucker Punch 1",
+   "p2": "move Spite 2, move Mud-Slap 1"
+  },
+  {
+   "p1": "move Sunny Day, move Astonish 2",
+   "p2": "move Volt Switch 2, move Rest"
+  },
+  {
+   "p2": "switch 3, pass"
+  },
+  {
+   "p2": "pass, switch 3"
+  },
+  {
+   "p1": "switch 3, move Substitute",
+   "p2": "switch 4, move Psych Up 1"
+  },
+  {
+   "p1": "move 2 zmove, move Sucker Punch 1",
+   "p2": "move Frustration 1, move Spite 2"
+  }
+ ]
+}

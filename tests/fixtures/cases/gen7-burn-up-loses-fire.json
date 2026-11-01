@@ -1,0 +1,74 @@
+{
+ "schema": 1,
+ "id": "gen7-burn-up-loses-fire",
+ "notes": [
+  "Gen 7: Moltres's Burn Up hits, then Moltres loses its Fire type (`-start|…|typechange|???/Flying|[from] move: Burn Up`): the next Burn Up fails (`-fail|…|move: Burn Up`, neither failed nor succeeded: Stomping Tantrum is not doubled), and Golem's Rock Slide is no longer resisted by Fire"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Moltres",
+    "species": "Moltres",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Burn Up",
+     "Stomping Tantrum"
+    ],
+    "ability": "Pressure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Golem",
+    "species": "Golem",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Rock Slide"
+    ],
+    "gender": "M",
+    "ability": "Sturdy"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Burn Up",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Burn Up",
+   "p2": "switch Golem"
+  },
+  {
+   "p1": "move Stomping Tantrum",
+   "p2": "move Rock Slide"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

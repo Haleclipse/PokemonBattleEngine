@@ -1,0 +1,114 @@
+{
+  "schema": 1,
+  "id": "m8-gen7-assault-vest-allows-me-first",
+  "notes": [
+    "Gen 7: Burmy holds an Assault Vest and chooses Me First: the vest keeps every status move off the request but Me First (Showdown assaultvest onDisableMove: move.id !== mefirst, DESIGN.md R-M8-117)",
+    "promoted from m8-gen7-singles-s588-017-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 7,
+    "mode": "singles",
+    "format": "gen7customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Delibird",
+        "species": "Delibird",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Pin Missile"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Spritzee",
+        "species": "Spritzee",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Bone Rush"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Burmy",
+        "species": "Burmy",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Spike Cannon",
+          "Me First"
+        ],
+        "ability": "Run Away",
+        "item": "Assault Vest",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Typhlosion",
+        "species": "Typhlosion",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Surf"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Minun",
+        "species": "Minun",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Me First"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      31872,
+      54715,
+      12705,
+      28911
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Pin Missile",
+      "p2": "move Surf"
+    },
+    {
+      "p1": "switch Spritzee",
+      "p2": "switch Minun"
+    },
+    {
+      "p1": "switch Delibird",
+      "p2": "switch Typhlosion"
+    },
+    {
+      "p1": "move Pin Missile",
+      "p2": "move Surf"
+    },
+    {
+      "p1": "switch Spritzee"
+    },
+    {
+      "p1": "switch Burmy",
+      "p2": "switch Minun"
+    },
+    {
+      "p1": "move Me First",
+      "p2": "move Me First"
+    }
+  ]
+}

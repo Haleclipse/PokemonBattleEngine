@@ -1,0 +1,180 @@
+{
+  "schema": 1,
+  "id": "m8-gen5-own-tempo-cures-a-mold-breaker-teeter-dance",
+  "notes": [
+    "Gen 5 doubles: Thundurus (Teravolt) Teeter Dances past its partner Corsola's Own Tempo, which cures the confusion at once in its Update; the confusion's duration is any in the range (DESIGN.md R-M8-127)",
+    "promoted from m8-gen5-doubles-s634-007-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 5,
+    "mode": "doubles",
+    "format": "gen5doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Corsola",
+        "species": "Corsola",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Cut",
+          "Sketch",
+          "Mega Punch",
+          "Roost"
+        ],
+        "ability": "Own Tempo",
+        "gender": "F"
+      },
+      {
+        "label": "Swellow",
+        "species": "Swellow",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Magnet Bomb",
+          "Sketch",
+          "Rock Throw",
+          "Encore"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Thundurus",
+        "species": "Thundurus",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Pay Day",
+          "Sketch",
+          "Fling",
+          "Roost"
+        ],
+        "ability": "Teravolt"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Gulpin",
+        "species": "Gulpin",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Present",
+          "Sketch",
+          "Egg Bomb",
+          "Roost"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Spoink",
+        "species": "Spoink",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Confuse Ray",
+          "Sketch",
+          "Supersonic",
+          "Roost"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Vanilluxe",
+        "species": "Vanilluxe",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Teeter Dance",
+          "Sketch",
+          "Sweet Kiss",
+          "Roost"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      38589,
+      50149,
+      1715,
+      31075
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Cut 1, move Magnet Bomb 2",
+      "p2": "move Present 1, move Confuse Ray 2"
+    },
+    {
+      "p1": "move Sketch 1, move Sketch 2",
+      "p2": "move Sketch 1, move Sketch 2"
+    },
+    {
+      "p1": "move Roost, move Rock Throw 1",
+      "p2": "move Egg Bomb 1, move Roost"
+    },
+    {
+      "p1": "move Cut 2, move Encore 1",
+      "p2": "move Roost, move Confuse Ray 2"
+    },
+    {
+      "p1": "move Mega Punch 2, move Magnet Bomb 1",
+      "p2": "move Egg Bomb 1, move Supersonic 2"
+    },
+    {
+      "p1": "move 4, move 2 2",
+      "p2": "move 3 1, move 4"
+    },
+    {
+      "p1": "switch Thundurus, move Rock Throw 1",
+      "p2": "switch Vanilluxe, move Confuse Ray 2"
+    },
+    {
+      "p1": "move Fling 2, move Encore 1",
+      "p2": "move Sweet Kiss 1, move Supersonic 2"
+    },
+    {
+      "p1": "move Roost, move Magnet Bomb 2",
+      "p2": "move Roost, move Roost"
+    },
+    {
+      "p1": "move 1 1, move 2 2",
+      "p2": "move 1, move 1 1"
+    },
+    {
+      "p1": "move Sketch 1, move Rock Throw 2",
+      "p2": "move Sketch 2, move Supersonic 1"
+    },
+    {
+      "p1": "move Fling 1, move Encore 2",
+      "p2": "move Sweet Kiss 2, move Roost"
+    },
+    {
+      "p1": "move Roost, move Magnet Bomb 1",
+      "p2": "move Roost, move Supersonic 1"
+    },
+    {
+      "p1": "switch Corsola, move 2 2",
+      "p2": "switch Gulpin, move 3 2"
+    },
+    {
+      "p1": "move Cut 1, move Rock Throw 2",
+      "p2": "move Present 1, move Roost"
+    },
+    {
+      "p1": "pass, switch Thundurus"
+    },
+    {
+      "p1": "move 1 1, move 2",
+      "p2": "move 4, move 4"
+    }
+  ]
+}

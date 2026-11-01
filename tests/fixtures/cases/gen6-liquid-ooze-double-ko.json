@@ -1,0 +1,67 @@
+{
+ "schema": 1,
+ "id": "gen6-liquid-ooze-double-ko",
+ "notes": [
+  "Gen 6: worn down by Super Fang, Mew's Giga Drain knocks out the last foe and its Liquid Ooze knocks Mew out. Gen 3-6 Liquid Ooze knocks out at once (instafaint): Mew faints first, so the Liquid Ooze side, fainting last, wins"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Drain",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Giga Drain",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Ooze",
+    "species": "Tentacool",
+    "level": 20,
+    "nature": "Hardy",
+    "moves": [
+     "Super Fang",
+     "Harden"
+    ],
+    "ability": "Liquid Ooze"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Super Fang"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Super Fang"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Super Fang"
+  },
+  {
+   "p1": "move Giga Drain",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

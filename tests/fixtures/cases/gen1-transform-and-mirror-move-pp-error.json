@@ -1,0 +1,76 @@
+{
+ "schema": 1,
+ "id": "gen1-transform-and-mirror-move-pp-error",
+ "notes": [
+  "Gen 1: Mew transforms into Snorlax and uses the copied Mirror Move (its second slot): the Transform + Mirror Move PP error gives Mew's own second slot, Tackle, one PP — past its maximum (the gen1 `useMove`: `baseMoveSlots[lastSelectedMoveSlot].pp += 1`), seen once Mew leaves the field"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Transform",
+     "Tackle",
+     "Harden",
+     "Splash"
+    ]
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Mirror Move"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Transform",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "move Tackle"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

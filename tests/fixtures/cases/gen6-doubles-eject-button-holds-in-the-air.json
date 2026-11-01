@@ -1,0 +1,90 @@
+{
+ "schema": 1,
+ "id": "gen6-doubles-eject-button-holds-in-the-air",
+ "notes": [
+  "Gen 6 doubles: Sky Drop's user, holding an Eject Button, is struck by the faster foe's Gust in the air; the button does nothing while Sky Drop holds it (`isSkyDropped`)"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "doubles",
+  "format": "gen6doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Lifter",
+    "species": "Braviary",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sky Drop",
+     "Harden"
+    ],
+    "item": "Eject Button"
+   },
+   {
+    "label": "Mate",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   },
+   {
+    "label": "Bench",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Prey",
+    "species": "Machamp",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ]
+   },
+   {
+    "label": "Fast",
+    "species": "Pidgeot",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Gust",
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Sky Drop 1, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move 1, move Harden",
+   "p2": "move Harden, move Gust 1"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

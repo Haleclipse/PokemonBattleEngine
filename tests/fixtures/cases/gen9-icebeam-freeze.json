@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "id": "gen9-icebeam-freeze",
+  "notes": [
+    "Ice Beam's 10 % freeze on Snorlax; the seed was searched so the freeze lands on turn 1.",
+    "Later turns ask the 20 % thaw question at Snorlax's BeforeMove; the replay driver reads the answer from",
+    "Showdown's `cant frz` / `-curestatus frz` events."
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "a",
+        "species": "Glaceon",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Ice Beam"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "b",
+        "species": "Snorlax",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      2,
+      2,
+      3,
+      4
+    ]
+  }
+}

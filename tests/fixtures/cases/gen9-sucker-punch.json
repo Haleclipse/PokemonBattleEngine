@@ -1,0 +1,78 @@
+{
+ "schema": 1,
+ "id": "gen9-sucker-punch",
+ "notes": [
+  "Sucker Punch hits a target about to attack; fails against a status move (Stomping Tantrum doubles next turn), a recharging target and one that already moved (Quick Attack from a faster foe)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Puncher",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sucker Punch",
+     "Stomping Tantrum",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Jolteon",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden",
+     "Hyper Beam",
+     "Quick Attack"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Sucker Punch",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Sucker Punch",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Stomping Tantrum",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Sucker Punch",
+   "p2": "move Hyper Beam"
+  },
+  {
+   "p1": "move Sucker Punch",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Sucker Punch",
+   "p2": "move Quick Attack"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

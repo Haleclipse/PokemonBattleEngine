@@ -1,0 +1,64 @@
+{
+ "schema": 1,
+ "id": "gen7-ultra-burst",
+ "notes": [
+  "Gen 7: Necrozma-Dusk-Mane holds the Ultranecrozium Z and Ultra Bursts (`move 1 ultra`): `-burst`, the Ultra forme with Neuroforce, and the Z-Move it enables (Light That Burns the Sky) is a mechanic of its own, so the same side may also Mega Evolve"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Necrozma-Dusk-Mane",
+    "species": "Necrozma-Dusk-Mane",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Photon Geyser",
+     "Harden"
+    ],
+    "ability": "Prism Armor",
+    "item": "Ultranecrozium Z"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 2 ultra",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1 zmove",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 2"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,89 @@
+{
+ "schema": 1,
+ "id": "m10-a-helping-hand-with-no-ally-fails-before-the-metronome-count",
+ "notes": [
+  "R-M10-18: Showdown's `useMoveInner` fails a move with no target at all (`if (!target)`, `[notarget]`) right after its `move|` line, before TryMove: `getRandomTarget` gives none for a move that needs an adjacent ally (`adjacentAlly`) in a single battle. The Metronome item's condition (`onTryMove`) never sees Helping Hand: after three Dives (6553/4096), Floatzel's next Dive counts on (7372/4096) rather than from 1 (4915/4096) — a gap no damage roll closes."
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Floatzel",
+    "species": "Floatzel",
+    "level": 50,
+    "nature": "Hardy",
+    "item": "Metronome",
+    "moves": [
+     "Dive",
+     "Helping Hand"
+    ],
+    "ability": "Swift Swim",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Dive",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Dive",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Dive",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Dive",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Dive",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Dive",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Helping Hand",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Dive",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Dive",
+   "p2": "move Splash"
+  }
+ ]
+}

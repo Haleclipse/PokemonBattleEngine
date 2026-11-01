@@ -1,0 +1,73 @@
+{
+ "schema": 1,
+ "id": "gen3-assist-into-pressure",
+ "notes": [
+  "Gen 3: Delcatty's Assist calls its benched partner's Tackle at Absol, whose Pressure takes one more PP from Assist: pokeemerald's Assist has no `ppreduce` of its own, the called move's takes 1 plus the Pressure from the action's slot (`gCurrMovePos`). Showdown's gen3 `useMoveInner` charges nothing for a called move; the oracle is patched (issues.md I167)"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Delcatty",
+    "species": "Delcatty",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Assist",
+     "Harden"
+    ],
+    "ability": "Cute Charm",
+    "gender": "F"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Absol",
+    "species": "Absol",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Pressure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Assist",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Assist",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Assist",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,63 @@
+{
+ "schema": 1,
+ "id": "gen6-phantom-force-minimize",
+ "notes": [
+  "Gen 6 Phantom Force (minimize flag): against a Minimized foe it is sure to hit and deals double"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Phantom",
+    "species": "Trevenant",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Phantom Force",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Skarmory",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Minimize",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Minimize"
+  },
+  {
+   "p1": "move Phantom Force",
+   "p2": "move Minimize"
+  },
+  {
+   "p1": "move Phantom Force",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

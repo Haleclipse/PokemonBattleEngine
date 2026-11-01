@@ -1,0 +1,63 @@
+{
+ "schema": 1,
+ "id": "gen7-bad-dreams-ends-the-battle-after-the-screens",
+ "notes": [
+  "Gen 7: Bad Dreams (order 28) knocks the last foe out; the user's Reflect (order 26) counted down before it, so the final frame has it one turn shorter"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Dreamer",
+    "species": "Darkrai",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Reflect",
+     "Spore",
+     "Seismic Toss"
+    ],
+    "ability": "Bad Dreams"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Victim",
+    "species": "Rattata",
+    "level": 27,
+    "nature": "Hardy",
+    "moves": [
+     "Tail Whip"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Reflect",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Seismic Toss",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Spore",
+   "p2": "move Tail Whip"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

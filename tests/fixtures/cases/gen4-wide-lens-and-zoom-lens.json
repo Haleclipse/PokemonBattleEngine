@@ -1,0 +1,131 @@
+{
+ "schema": 1,
+ "id": "gen4-wide-lens-and-zoom-lens",
+ "notes": [
+  "Wide Lens: Fire Blast 85 \u2192 93 still misses; Zoom Lens: a holder faster than its target (which has not moved) gets nothing \u2014 Fire Blast 85 misses (the cartridge's \u00d7110/100, \u00d7120/100)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Wide",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Fire Blast"
+    ],
+    "ability": "Run Away",
+    "item": "Wide Lens"
+   },
+   {
+    "label": "Zoom",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Fire Blast"
+    ],
+    "ability": "Run Away",
+    "item": "Zoom Lens"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Slack Off",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Fire Blast",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Fire Blast",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Fire Blast",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Fire Blast",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Fire Blast",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Fire Blast",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Fire Blast",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Fire Blast",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "switch Zoom",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Fire Blast",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Fire Blast",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Fire Blast",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Fire Blast",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Fire Blast",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Fire Blast",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Fire Blast",
+   "p2": "move Slack Off"
+  },
+  {
+   "p1": "move Fire Blast",
+   "p2": "move Soft-Boiled"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

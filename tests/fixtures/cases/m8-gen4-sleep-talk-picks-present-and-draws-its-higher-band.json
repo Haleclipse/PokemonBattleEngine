@@ -1,0 +1,157 @@
+{
+  "schema": 1,
+  "id": "m8-gen4-sleep-talk-picks-present-and-draws-its-higher-band",
+  "notes": [
+    "Gen 4 doubles: asleep, Wailmer's Sleep Talk picks Present (the third of its moves, a draw of 2), and Present draws a power band above 40. The replay tries Present's other bands on the action's last Sample draw, not the first draw of 2 (Sleep Talk's pick), which it used to overwrite into a draw no Sleep Talk can take (DESIGN.md R-M8-166).",
+    "promoted from m8-gen4-doubles-s827-007-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "doubles",
+    "format": "gen4doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Houndoom",
+        "species": "Houndoom",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Vine Whip",
+          "Yawn",
+          "Rock Throw",
+          "Sleep Talk"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Wailmer",
+        "species": "Wailmer",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Pay Day",
+          "Yawn",
+          "Present",
+          "Sleep Talk"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Zapdos",
+        "species": "Zapdos",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Natural Gift",
+          "Yawn",
+          "Fling",
+          "Sleep Talk"
+        ],
+        "ability": "Run Away"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Kangaskhan",
+        "species": "Kangaskhan",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Egg Bomb",
+          "Yawn",
+          "Morning Sun",
+          "Sleep Talk"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Bellsprout",
+        "species": "Bellsprout",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Moonlight",
+          "Yawn",
+          "Synthesis",
+          "Sleep Talk"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Leafeon",
+        "species": "Leafeon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sweet Kiss",
+          "Yawn",
+          "Teeter Dance",
+          "Sleep Talk"
+        ],
+        "ability": "Run Away",
+        "item": "Iron Ball",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      23676,
+      26580,
+      56640,
+      50020
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Yawn 1, move Yawn 2",
+      "p2": "move Yawn 2, move Yawn 1"
+    },
+    {
+      "p1": "move Rock Throw 1, move Present 2",
+      "p2": "move Morning Sun, move Synthesis"
+    },
+    {
+      "p1": "move Sleep Talk, move Sleep Talk",
+      "p2": "move Sleep Talk, move Sleep Talk"
+    },
+    {
+      "p1": "move Vine Whip 1, move Pay Day 2",
+      "p2": "move Egg Bomb 2, move Moonlight"
+    },
+    {
+      "p1": "move Yawn 1, move Yawn 2",
+      "p2": "move Yawn 1, move Yawn 2"
+    },
+    {
+      "p1": "move Rock Throw 1, move Present 2",
+      "p2": "move Morning Sun, move Synthesis"
+    },
+    {
+      "p1": "switch Zapdos, move Sleep Talk",
+      "p2": "switch Leafeon, move Sleep Talk"
+    },
+    {
+      "p1": "move Sleep Talk, move Pay Day 1",
+      "p2": "move Sleep Talk, move Moonlight"
+    },
+    {
+      "p1": "move Natural Gift 2, move Yawn 1",
+      "p2": "move Sweet Kiss 1, move Yawn 2"
+    },
+    {
+      "p1": "move Yawn 2, move Present 1",
+      "p2": "move Yawn 1, move Synthesis"
+    },
+    {
+      "p1": "move Fling 2, move Sleep Talk",
+      "p2": "move Teeter Dance, move Sleep Talk"
+    }
+  ]
+}

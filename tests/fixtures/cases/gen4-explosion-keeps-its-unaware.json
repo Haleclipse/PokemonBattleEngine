@@ -1,0 +1,72 @@
+{
+ "schema": 1,
+ "id": "gen4-explosion-keeps-its-unaware",
+ "notes": [
+  "Gen 4: Quagsire with Unaware explodes into Snorlax at +2 Defense: pokeplatinum reads the attacker's ability whatever its HP, so the stages are set aside (oracle patch, issues.md I178)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Quagsire",
+    "species": "Quagsire",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Explosion",
+     "Splash"
+    ],
+    "ability": "Unaware",
+    "gender": "M"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Iron Defense",
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash",
+   "p2": "move Iron Defense"
+  },
+  {
+   "p1": "move Explosion",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

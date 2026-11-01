@@ -1,0 +1,59 @@
+{
+ "schema": 1,
+ "id": "gen6-sky-drop-wins-the-battle",
+ "notes": [
+  "Gen 6: Archeops' Sky Drop knocks the last foe out as it drops it: the battle ends with Archeops' `twoturnmove` and no `skydrop` (the drop let go)"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Archeops",
+    "species": "Archeops",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sky Drop"
+    ],
+    "gender": "M",
+    "ability": "Defeatist"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Pumpkaboo",
+    "species": "Pumpkaboo",
+    "level": 5,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Pickup"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Sky Drop",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Sky Drop",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

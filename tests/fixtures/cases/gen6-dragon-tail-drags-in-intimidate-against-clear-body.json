@@ -1,0 +1,269 @@
+{
+  "schema": 1,
+  "id": "gen6-dragon-tail-drags-in-intimidate-against-clear-body",
+  "notes": [
+    "Nightly 13: Dragon Tail drags in an Intimidate user whose drop Clear Body refuses (-fail|user|unboost): the user's move did not fail",
+    "promoted from m8-gen6-singles-s357-016-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 6,
+    "mode": "singles",
+    "format": "gen6customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Stantler",
+        "species": "Stantler",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Head Charge",
+          "Circle Throw",
+          "Wild Charge",
+          "Roar"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Jellicent",
+        "species": "Jellicent",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Head Smash",
+          "Whirlwind"
+        ],
+        "ability": "Intimidate",
+        "gender": "F"
+      },
+      {
+        "label": "Solosis",
+        "species": "Solosis",
+        "level": 46,
+        "nature": "Hardy",
+        "moves": [
+          "Sleep Powder",
+          "Roar"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Shelmet",
+        "species": "Shelmet",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Dragon Tail",
+          "Spore",
+          "Circle Throw"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Pelipper",
+        "species": "Pelipper",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Grass Whistle",
+          "Dragon Tail"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Toxicroak",
+        "species": "Toxicroak",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Whirlwind",
+          "Roar"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Purugly",
+        "species": "Purugly",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Heal Order",
+          "Dragon Tail",
+          "Slack Off",
+          "Circle Throw"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Sceptile",
+        "species": "Sceptile",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Milk Drink",
+          "Whirlwind",
+          "Sludge Bomb",
+          "Circle Throw"
+        ],
+        "ability": "Contrary",
+        "gender": "M"
+      },
+      {
+        "label": "Eevee",
+        "species": "Eevee",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Dragon Tail",
+          "Whirlwind"
+        ],
+        "ability": "Clear Body",
+        "gender": "F"
+      },
+      {
+        "label": "Shaymin",
+        "species": "Shaymin",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Smog"
+        ],
+        "ability": "Run Away"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      41234,
+      809,
+      37011,
+      45314
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Head Charge",
+      "p2": "move Heal Order"
+    },
+    {
+      "p1": "move Circle Throw",
+      "p2": "move Dragon Tail"
+    },
+    {
+      "p1": "move Grass Whistle",
+      "p2": "move Slack Off"
+    },
+    {
+      "p1": "move Dragon Tail",
+      "p2": "move Circle Throw"
+    },
+    {
+      "p1": "move Head Charge",
+      "p2": "move Heal Order"
+    },
+    {
+      "p1": "switch Jellicent",
+      "p2": "switch Sceptile"
+    },
+    {
+      "p1": "move Whirlwind",
+      "p2": "move Whirlwind"
+    },
+    {
+      "p1": "move Sleep Powder",
+      "p2": "move Sludge Bomb"
+    },
+    {
+      "p1": "move Roar",
+      "p2": "move Circle Throw"
+    },
+    {
+      "p1": "switch Stantler"
+    },
+    {
+      "p1": "move Head Charge",
+      "p2": "move Milk Drink"
+    },
+    {
+      "p1": "move Circle Throw",
+      "p2": "move Whirlwind"
+    },
+    {
+      "p1": "switch Stantler",
+      "p2": "switch Purugly"
+    },
+    {
+      "p1": "move Wild Charge",
+      "p2": "move Slack Off"
+    },
+    {
+      "p1": "move Roar",
+      "p2": "move Circle Throw"
+    },
+    {
+      "p1": "switch Jellicent"
+    },
+    {
+      "p1": "move Head Smash",
+      "p2": "move Heal Order"
+    },
+    {
+      "p1": "move Whirlwind",
+      "p2": "move Dragon Tail"
+    },
+    {
+      "p1": "switch Shelmet",
+      "p2": "switch Sceptile"
+    },
+    {
+      "p1": "move Circle Throw",
+      "p2": "move Circle Throw"
+    },
+    {
+      "p1": "move Head Smash",
+      "p2": "move Milk Drink"
+    },
+    {
+      "p1": "move Whirlwind",
+      "p2": "move Whirlwind"
+    },
+    {
+      "p1": "move Spore",
+      "p2": "move Sludge Bomb"
+    },
+    {
+      "p1": "move Circle Throw",
+      "p2": "move Circle Throw"
+    },
+    {
+      "p1": "switch Toxicroak",
+      "p2": "switch Purugly"
+    },
+    {
+      "p1": "move Whirlwind",
+      "p2": "move Dragon Tail"
+    },
+    {
+      "p1": "move Roar",
+      "p2": "move Whirlwind"
+    },
+    {
+      "p1": "switch Shelmet",
+      "p2": "switch Eevee"
+    },
+    {
+      "p1": "move Dragon Tail",
+      "p2": "move Dragon Tail"
+    }
+  ]
+}

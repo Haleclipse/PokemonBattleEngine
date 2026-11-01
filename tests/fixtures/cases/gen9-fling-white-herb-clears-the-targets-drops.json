@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "gen9-fling-white-herb-clears-the-targets-drops",
+ "notes": [
+  "Gen 9: Magikarp's Leer lowers Meditite's Defense; its flung White Herb (`fling.effect`, Fling's `onHit`) clears the drop before Meditite's Weak Armor lowers it again (DESIGN.md R-M8-86)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Leer",
+     "Fling"
+    ],
+    "item": "White Herb",
+    "ability": "Swift Swim",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Meditite",
+    "species": "Meditite",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Weak Armor",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Leer",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Fling",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

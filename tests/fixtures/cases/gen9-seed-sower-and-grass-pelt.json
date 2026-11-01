@@ -1,0 +1,109 @@
+{
+ "schema": 1,
+ "id": "gen9-seed-sower-and-grass-pelt",
+ "notes": [
+  "Misty Surge sets Misty Terrain; Arboliva's Seed Sower turns it into Grassy Terrain when a hit reaches it; Gogoat's Grass Pelt raises its Defense \u00d71.5 there; Grassy Surge on the switch-in finds Grassy Terrain up and does nothing; after it ends, Misty Surge and then Grassy Surge set their terrains as they come in"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Misty",
+    "species": "Mew",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Strength"
+    ],
+    "ability": "Misty Surge"
+   },
+   {
+    "label": "Grassy",
+    "species": "Mew",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Strength"
+    ],
+    "ability": "Grassy Surge"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Arboliva",
+    "species": "Arboliva",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Seed Sower"
+   },
+   {
+    "label": "Gogoat",
+    "species": "Gogoat",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Recover"
+    ],
+    "ability": "Grass Pelt"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Strength",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Strength",
+   "p2": "switch Gogoat"
+  },
+  {
+   "p1": "move Strength",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "switch Grassy",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Strength",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "switch Misty",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Strength",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "switch Grassy",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Strength",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

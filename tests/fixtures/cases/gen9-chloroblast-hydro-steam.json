@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "id": "gen9-chloroblast-hydro-steam",
+  "notes": [
+    "Showdown hard-codes both by move id: sun boosts Hydro Steam (x1.5) where it weakens Surf; Chloroblast recoils round(maxhp/2) whenever it dealt damage, a hit on a Substitute included"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Torkoal",
+        "species": "Torkoal",
+        "level": 70,
+        "nature": "Hardy",
+        "moves": [
+          "Hydro Steam",
+          "Surf",
+          "Chloroblast"
+        ],
+        "ability": "Drought"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Blissey",
+        "species": "Blissey",
+        "level": 100,
+        "nature": "Hardy",
+        "moves": [
+          "Growl",
+          "Substitute"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Chansey",
+        "species": "Chansey",
+        "level": 60,
+        "nature": "Hardy",
+        "moves": [
+          "Growl"
+        ],
+        "ability": "Run Away"
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 3",
+      "p2": "switch 2"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+ "schema": 1,
+ "id": "gen1-metronome-selects-the-called-move",
+ "notes": [
+  "Gen 1: Clefable's Metronome calls Counter, which becomes the side's last selected move (pokered `MetronomePickMove` writes `wPlayerSelectedMove`); asleep from Snorlax's Spore, Clefable's next action is that Counter (the Fight button), at priority −1 — Snorlax, slower, moves first"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Clefable",
+    "species": "Clefable",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Metronome"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spore"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   9,
+   10,
+   11,
+   12
+  ]
+ }
+}

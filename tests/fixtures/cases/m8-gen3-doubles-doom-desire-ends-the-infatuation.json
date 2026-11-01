@@ -1,0 +1,128 @@
+{
+  "schema": 1,
+  "id": "m8-gen3-doubles-doom-desire-ends-the-infatuation",
+  "notes": [
+    "Gen 3 doubles: Doom Desire knocks out the Pokémon Tyranitar is infatuated with; the strike's hitStepMoveHitLoop runs an Update once its faints are processed and the infatuation ends there, before the replacement (DESIGN.md R-M8-95)",
+    "promoted from m8-gen3-doubles-s504-015-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 3,
+    "mode": "doubles",
+    "format": "gen3doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Tyranitar",
+        "species": "Tyranitar",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Rage",
+          "Spider Web",
+          "False Swipe",
+          "Poison Fang"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Oddish",
+        "species": "Oddish",
+        "level": 54,
+        "nature": "Hardy",
+        "moves": [
+          "Doom Desire",
+          "Spider Web",
+          "Covet",
+          "Stockpile"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Porygon",
+        "species": "Porygon",
+        "level": 53,
+        "nature": "Hardy",
+        "moves": [
+          "Egg Bomb",
+          "Poison Fang",
+          "Thunder Wave",
+          "Spider Web"
+        ],
+        "ability": "Trace"
+      },
+      {
+        "label": "Camerupt",
+        "species": "Camerupt",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Stun Spore",
+          "Spider Web",
+          "Glare",
+          "Stockpile"
+        ],
+        "ability": "Cute Charm",
+        "gender": "M"
+      },
+      {
+        "label": "Magikarp",
+        "species": "Magikarp",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Mirror Move"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      50031,
+      36995,
+      45456,
+      43164
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Rage 1, move Doom Desire 2",
+      "p2": "move Egg Bomb 1, move Stun Spore 2"
+    },
+    {
+      "p1": "move Spider Web 1, move Spider Web 2",
+      "p2": "move Poison Fang 1, move Spider Web 2"
+    },
+    {
+      "p1": "move False Swipe 1, move Covet 2",
+      "p2": "move Thunder Wave 1, move Glare 2"
+    },
+    {
+      "p1": "move Rage 2, move Doom Desire 1",
+      "p2": "move Egg Bomb 2, move Stun Spore 1"
+    },
+    {
+      "p1": "move Poison Fang 2, move Stockpile",
+      "p2": "move Spider Web 2, move Stockpile"
+    },
+    {
+      "p1": "move Rage 1, move Doom Desire 2",
+      "p2": "move Egg Bomb 1, move Stun Spore 2"
+    },
+    {
+      "p1": "move Spider Web 1, move Spider Web 2",
+      "p2": "move Poison Fang 1, move Spider Web 2"
+    },
+    {
+      "p1": "move False Swipe 1, move Covet 2",
+      "p2": "move Thunder Wave 1, move Glare 2"
+    }
+  ]
+}

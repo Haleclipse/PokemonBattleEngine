@@ -1,0 +1,125 @@
+{
+  "schema": 1,
+  "id": "m8-gen7-doubles-mind-blown-cost-before-the-berry",
+  "notes": [
+    "Gen 7 doubles: Beartic's Mind Blown, a spread move, drops Torkoal into its Aguav Berry's reach; Beartic pays its half HP inside the hit loop (mindBlownRecoil) before the hit's Update eats the berry (DESIGN.md R-M8-112)",
+    "promoted from m8-gen7-doubles-s566-002-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 7,
+    "mode": "doubles",
+    "format": "gen7doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Riolu",
+        "species": "Riolu",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Boomburst"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Giratina",
+        "species": "Giratina",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Self-Destruct"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Beartic",
+        "species": "Beartic",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Mind Blown",
+          "Bulldoze"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Drowzee",
+        "species": "Drowzee",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Brutal Swing",
+          "Synchronoise"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Seadra",
+        "species": "Seadra",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Silver Wind",
+          "Leaf Storm"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Torkoal",
+        "species": "Torkoal",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Ominous Wind",
+          "Close Combat"
+        ],
+        "ability": "Run Away",
+        "item": "Aguav Berry",
+        "gender": "F"
+      },
+      {
+        "label": "Pheromosa",
+        "species": "Pheromosa",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Ice Hammer"
+        ],
+        "ability": "Run Away"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      4348,
+      35832,
+      61907,
+      65484
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Boomburst, move Self-Destruct",
+      "p2": "move Silver Wind 1, move Ominous Wind 2"
+    },
+    {
+      "p1": "switch Beartic, switch Drowzee"
+    },
+    {
+      "p1": "move Bulldoze, move Synchronoise",
+      "p2": "move Leaf Storm 1, move Close Combat 2"
+    },
+    {
+      "p1": "move Mind Blown, move Brutal Swing",
+      "p2": "switch Pheromosa, move Ominous Wind 1"
+    }
+  ]
+}

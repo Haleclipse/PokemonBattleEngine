@@ -1,0 +1,78 @@
+{
+ "schema": 1,
+ "id": "gen4-lock-on-baton-pass",
+ "notes": [
+  "Gen 4 Lock-On (cartridge, I68): the user's Baton Pass hands the lock on with its 2 turns afresh; the replacement's Zap Cannon draws no accuracy"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Locker",
+    "species": "Magneton",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Lock-On",
+     "Baton Pass",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Heir",
+    "species": "Magneton",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Zap Cannon",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Evader",
+    "species": "Blissey",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Double Team",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Lock-On",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "move Baton Pass",
+   "p2": "move Double Team"
+  },
+  {
+   "p1": "switch 2"
+  },
+  {
+   "p1": "move Zap Cannon",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

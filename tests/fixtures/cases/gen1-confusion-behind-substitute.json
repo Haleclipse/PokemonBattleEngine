@@ -1,0 +1,70 @@
+{
+  "schema": 1,
+  "id": "gen1-confusion-behind-substitute",
+  "notes": [
+    "Gen 1: a confused Pok\u00e9mon behind its Substitute hurts the foe's Substitute instead, or nothing when the foe has none"
+  ],
+  "battle": {
+    "generation": 1,
+    "mode": "singles",
+    "format": "gen1customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Snorlax",
+        "species": "Snorlax",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Substitute",
+          "Growl"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "Golbat",
+        "species": "Golbat",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Confuse Ray",
+          "Substitute",
+          "Growl"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 3"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 3"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 3"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 3"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      5,
+      6,
+      7,
+      8
+    ]
+  }
+}

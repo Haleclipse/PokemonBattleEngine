@@ -1,0 +1,59 @@
+{
+ "schema": 1,
+ "id": "gen4-magic-coat-into-pressure",
+ "notes": [
+  "Gen 4: Xatu's Magic Coat sends Absol's Toxic back at Absol. Absol's Pressure takes one PP from Magic Coat as it reflects (pokeplatinum `BattleSystem_DecPPForPressure`, issues.md I169; the oracle is patched), and nothing for the reflected Toxic meeting it: a reflection is a condition's call (`sourceEffect` the `magiccoat` volatile, no `pp`), not a move's"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Absol",
+    "species": "Absol",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Toxic"
+    ],
+    "ability": "Pressure",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Xatu",
+    "species": "Xatu",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Magic Coat"
+    ],
+    "ability": "Synchronize",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

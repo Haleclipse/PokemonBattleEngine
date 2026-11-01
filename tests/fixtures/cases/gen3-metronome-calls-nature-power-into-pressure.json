@@ -1,0 +1,56 @@
+{
+ "schema": 1,
+ "id": "gen3-metronome-calls-nature-power-into-pressure",
+ "notes": [
+  "Gen 3: Clefable's Metronome calls Nature Power, which calls Swift at Absol: Absol's Pressure takes one more PP from Metronome — the action's slot (pokeemerald `Cmd_ppreduce` takes from `gCurrMovePos`; Metronome and Nature Power have no `ppreduce` of their own), not from Nature Power, the move that called Swift (issues.md I167; the oracle is patched)"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Clefable",
+    "species": "Clefable",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Metronome",
+     "Harden"
+    ],
+    "ability": "Cute Charm",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Absol",
+    "species": "Absol",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Pressure",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Metronome",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   74,
+   75,
+   76,
+   77
+  ]
+ }
+}

@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "gen4-doubles-mud-sport-meets-everyones-pressure",
+ "notes": [
+  "Gen 4 Mud Sport and Water Sport, aimed at their user (issues.md I23), meet the Pressure of everyone else standing as a field move does (pokeplatinum `RANGE_FIELD`, issues.md I72): the ally's and both foes'"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "doubles",
+  "format": "gen4doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sporter",
+    "species": "Wooper",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Mud Sport",
+     "Water Sport"
+    ]
+   },
+   {
+    "label": "Ally",
+    "species": "Weavile",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Pressure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "FoeA",
+    "species": "Absol",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Pressure"
+   },
+   {
+    "label": "FoeB",
+    "species": "Dusclops",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Pressure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Mud Sport, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Water Sport, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

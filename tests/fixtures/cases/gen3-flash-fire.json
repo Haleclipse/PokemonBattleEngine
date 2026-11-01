@@ -1,0 +1,69 @@
+{
+ "schema": 1,
+ "id": "gen3-flash-fire",
+ "notes": [
+  "Gen 3 Flash Fire: Will-O-Wisp at a holder that already has a status is not taken (it fails on its own); a Flamethrower is, and the holder's Flamethrower is then stronger (ModifyDamagePhase1)"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Dog",
+    "species": "Arcanine",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Flamethrower",
+     "Harden"
+    ],
+    "ability": "Flash Fire"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Will-O-Wisp",
+     "Flamethrower",
+     "Toxic",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Toxic"
+  },
+  {
+   "p1": "move Flamethrower",
+   "p2": "move Will-O-Wisp"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Flamethrower"
+  },
+  {
+   "p1": "move Flamethrower",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   3,
+   2,
+   3,
+   4
+  ]
+ }
+}

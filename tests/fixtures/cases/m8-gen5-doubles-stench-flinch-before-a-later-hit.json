@@ -1,0 +1,76 @@
+{
+  "schema": 1,
+  "id": "m8-gen5-doubles-stench-flinch-before-a-later-hit",
+  "notes": [
+    "Nightly 58: Ambipom's Stench flinch (Gen 5 onModifyMove) is the cause of Weezing's cant flinch, not Nidorina's later Muddy Water (replay: an ability adding a flinch counts like King's Rock) (DESIGN.md R-M8-102)",
+    "promoted from m8-gen5-doubles-s529-006-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 5,
+    "mode": "doubles",
+    "format": "gen5doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Weezing",
+        "species": "Weezing",
+        "level": 48,
+        "nature": "Hardy",
+        "moves": [
+          "Dragon Pulse"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Landorus",
+        "species": "Landorus",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Drill Peck"
+        ],
+        "ability": "Run Away"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Ambipom",
+        "species": "Ambipom",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Luster Purge"
+        ],
+        "ability": "Stench",
+        "gender": "M"
+      },
+      {
+        "label": "Nidorina",
+        "species": "Nidorina",
+        "level": 52,
+        "nature": "Hardy",
+        "moves": [
+          "Muddy Water"
+        ],
+        "ability": "Run Away"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      13999,
+      19765,
+      25158,
+      52645
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Dragon Pulse 1, move Drill Peck 2",
+      "p2": "move Luster Purge 1, move Muddy Water"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "schema": 1,
+  "id": "gen9-doubles-wide-quick-guard",
+  "notes": [
+    "Wide Guard (priority +3) guards the user's side for the turn against spread moves (`-activate … move: Wide Guard`, no accuracy or damage decision) while the foe's own ally still takes the Earthquake; Quick Guard stops Aqua Jet (+1); neither rolls the Protect counter but both advance it, so the Protect that follows rolls 1/3."
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "a",
+        "species": "Hitmontop",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Wide Guard",
+          "Quick Guard",
+          "Protect"
+        ]
+      },
+      {
+        "label": "b",
+        "species": "Snorlax",
+        "ability": "Run Away",
+        "level": 100,
+        "nature": "Hardy",
+        "moves": [
+          "Swords Dance"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "c",
+        "species": "Garchomp",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Earthquake",
+          "Aqua Jet",
+          "Dragon Claw"
+        ]
+      },
+      {
+        "label": "d",
+        "species": "Tyranitar",
+        "ability": "Run Away",
+        "level": 100,
+        "nature": "Hardy",
+        "moves": [
+          "Rock Slide",
+          "Crunch"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1, move 1",
+      "p2": "move 1, move 1"
+    },
+    {
+      "p1": "move 2, move 1",
+      "p2": "move 2 2, move 2 2"
+    },
+    {
+      "p1": "move 3, move 1",
+      "p2": "move 3 1, move 2 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      3,
+      2,
+      3,
+      4
+    ]
+  }
+}

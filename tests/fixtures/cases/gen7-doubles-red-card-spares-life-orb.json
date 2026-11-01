@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "id": "gen7-doubles-red-card-spares-life-orb",
+  "notes": [
+    "Gen 7+ Life Orb: no recoil for a user a Red Card is dragging out (forceSwitchFlag)",
+    "promoted from m8-gen7-doubles-s104-008-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 7,
+    "mode": "doubles",
+    "format": "gen7doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Vigoroth",
+        "species": "Vigoroth",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Steel Wing"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Kyogre",
+        "species": "Kyogre",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Hammer Arm",
+          "Close Combat"
+        ],
+        "ability": "Run Away",
+        "item": "Life Orb"
+      },
+      {
+        "label": "Budew",
+        "species": "Budew",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Superpower"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Gurdurr",
+        "species": "Gurdurr",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Stomp"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Lampent",
+        "species": "Lampent",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Zen Headbutt"
+        ],
+        "ability": "Run Away",
+        "item": "Eject Button",
+        "gender": "M"
+      },
+      {
+        "label": "Marowak",
+        "species": "Marowak",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Bite"
+        ],
+        "ability": "Run Away",
+        "item": "Red Card",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      19627,
+      64036,
+      8743,
+      46232
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Steel Wing 2, move Close Combat 1",
+      "p2": "move Stomp 1, move Zen Headbutt 2"
+    },
+    {
+      "p2": "pass, switch Marowak"
+    },
+    {
+      "p1": "switch Budew, move Hammer Arm 2",
+      "p2": "switch Lampent, move Bite 1"
+    }
+  ]
+}

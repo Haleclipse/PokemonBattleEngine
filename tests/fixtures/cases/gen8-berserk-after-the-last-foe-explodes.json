@@ -1,0 +1,55 @@
+{
+ "schema": 1,
+ "id": "gen8-berserk-after-the-last-foe-explodes",
+ "notes": [
+  "Gen 8: P2's last Pokémon, Weezing, explodes; Drampa drops below half but its Berserk raises nothing: `faintMessages` at the end of the hit loop took P2's last Pokémon off `pokemonLeft`, and from Gen 6 `boost` changes nothing once the holder's foes have no Pokémon left (the battle ends with Drampa at +0)"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Drampa",
+    "species": "Drampa",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Berserk"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Weezing",
+    "species": "Weezing",
+    "level": 62,
+    "nature": "Hardy",
+    "moves": [
+     "Explosion"
+    ],
+    "gender": "M",
+    "ability": "Levitate"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Explosion"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

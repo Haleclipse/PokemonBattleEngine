@@ -1,0 +1,83 @@
+{
+ "schema": 1,
+ "id": "gen9-commander-stretchy-order-up",
+ "notes": [
+  "Gen 9 doubles: Order Up raises the commanded Dondozo's Speed when the Tatsugiri in its mouth is the Stretchy one"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Dondozo",
+    "species": "Dondozo",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Order Up",
+     "Wave Crash",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Unaware"
+   },
+   {
+    "label": "Tatsugiri",
+    "species": "Tatsugiri-Stretchy",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Commander"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Order Up 1, pass",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Order Up 1, pass",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

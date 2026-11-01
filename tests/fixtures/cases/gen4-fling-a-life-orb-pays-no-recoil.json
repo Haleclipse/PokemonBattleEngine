@@ -1,0 +1,57 @@
+{
+ "schema": 1,
+ "id": "gen4-fling-a-life-orb-pays-no-recoil",
+ "notes": [
+  "Gen 4: Ambipom flings its Life Orb: the ×1.3 boosts the throw (the item is still held at CalcDamage), but no recoil follows — the item is gone when pokeplatinum reads it after the move (issues.md I193, DESIGN.md R-M8-131)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Ambipom",
+    "species": "Ambipom",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fling",
+     "Splash"
+    ],
+    "item": "Life Orb",
+    "ability": "Technician",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Fling",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

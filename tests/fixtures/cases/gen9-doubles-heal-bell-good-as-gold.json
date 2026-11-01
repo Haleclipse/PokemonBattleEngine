@@ -1,0 +1,98 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-heal-bell-good-as-gold",
+ "notes": [
+  "Gen 9 Heal Bell: the Soundproof user cures itself (only the others' abilities count), an active Good as Gold partner is left alone (-immune); later an active Soundproof partner is left alone and the benched Good as Gold teammate is cured"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Bell",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Heal Bell",
+     "Harden"
+    ],
+    "ability": "Soundproof"
+   },
+   {
+    "label": "Gold",
+    "species": "Gholdengo",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Good as Gold",
+    "item": "Flame Orb"
+   },
+   {
+    "label": "Quiet",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Soundproof"
+   }
+  ],
+  "p2": [
+   {
+    "label": "F1",
+    "species": "Toxapex",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Toxic",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "F2",
+    "species": "Toxapex",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Toxic 1, move Harden"
+  },
+  {
+   "p1": "move Heal Bell, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, switch Quiet",
+   "p2": "move Toxic 2, move Harden"
+  },
+  {
+   "p1": "move Heal Bell, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

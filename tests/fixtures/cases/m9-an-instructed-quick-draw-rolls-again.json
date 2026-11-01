@@ -1,0 +1,133 @@
+{
+ "schema": 1,
+ "id": "m9-an-instructed-quick-draw-rolls-again",
+ "notes": [
+  "R-M9-32: Mudsdale instructs Totodile (Quick Draw); Showdown builds the instructed use with `resolveAction`, whose `FractionalPriority` rolls Quick Draw again and announces it right after the `-singleturn`. Totodile's own Quick Draw had not gone off as the turn began. Minimized from Nightly 20261020-154242 (m8-gen9-doubles-s1559-003)."
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Wyrdeer",
+    "species": "Wyrdeer",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Springtide Storm",
+     "Instruct",
+     "Moonblast"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Milcery",
+    "species": "Milcery",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Chilling Water",
+     "Instruct",
+     "Mystical Fire",
+     "Conversion"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Totodile",
+    "species": "Totodile",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Aurora Beam",
+     "Conversion"
+    ],
+    "ability": "Quick Draw",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Toxtricity",
+    "species": "Toxtricity",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Skitter Smack",
+     "Instruct",
+     "Breaking Swipe"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Mudsdale",
+    "species": "Mudsdale",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Overdrive",
+     "Instruct",
+     "Disarming Voice",
+     "Conversion"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Abomasnow",
+    "species": "Abomasnow",
+    "level": 55,
+    "nature": "Hardy",
+    "moves": [
+     "Glacial Lance",
+     "Conversion"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   22045,
+   61248,
+   51316,
+   61677
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Springtide Storm, move Chilling Water 1",
+   "p2": "move Skitter Smack 1, move Overdrive"
+  },
+  {
+   "p1": "move Instruct 2, move Instruct 1",
+   "p2": "move Instruct 2, move Instruct 1"
+  },
+  {
+   "p1": "move Moonblast 2, move Mystical Fire 1",
+   "p2": "move Breaking Swipe, move Disarming Voice"
+  },
+  {
+   "p1": "switch Totodile, move Conversion",
+   "p2": "switch Abomasnow, move Conversion"
+  },
+  {
+   "p1": "move Conversion, move Chilling Water 2",
+   "p2": "move Conversion, move Overdrive"
+  },
+  {
+   "p1": "pass, switch Wyrdeer"
+  },
+  {
+   "p1": "move Aurora Beam 1, move Instruct 2",
+   "p2": "move Glacial Lance, move Instruct 2"
+  }
+ ]
+}

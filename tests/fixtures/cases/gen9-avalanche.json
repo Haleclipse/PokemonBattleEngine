@@ -1,0 +1,87 @@
+{
+  "schema": 1,
+  "id": "gen9-avalanche",
+  "notes": [
+    "Avalanche doubles when the target damaged the user this turn: not after a status move, a hit on the user's Substitute, the previous turn's hit, or a newcomer that has not attacked"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Mamoswine",
+        "species": "Mamoswine",
+        "level": 60,
+        "nature": "Hardy",
+        "moves": [
+          "Avalanche",
+          "Substitute",
+          "Protect"
+        ],
+        "ability": "Run Away"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Jolteon",
+        "species": "Jolteon",
+        "level": 100,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle",
+          "Growl"
+        ],
+        "ability": "Volt Absorb"
+      },
+      {
+        "label": "Blissey",
+        "species": "Blissey",
+        "level": 70,
+        "nature": "Hardy",
+        "moves": [
+          "Pound",
+          "Growl"
+        ],
+        "ability": "Run Away"
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "switch 2"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

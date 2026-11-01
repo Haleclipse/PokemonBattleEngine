@@ -1,0 +1,117 @@
+{
+ "schema": 1,
+ "id": "gen7-wimp-out-from-future-sight-shares-the-faint-request",
+ "notes": [
+  "Gen 7 doubles: Snorlax knocks out the level-1 Magikarp; at the end of the turn Flareon's Future Sight sets off Trevenant's Wimp Out during the residual, before checkFainted — the residual's own EmergencyExit then finds it flagged and clears nothing: one request for both sides (DESIGN.md R-M8-130)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Flareon",
+    "species": "Flareon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Future Sight",
+     "Splash"
+    ],
+    "ability": "Flash Fire",
+    "gender": "M"
+   },
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 1,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Swift Swim",
+    "gender": "M"
+   },
+   {
+    "label": "Servine",
+    "species": "Servine",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Overgrow",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Trevenant",
+    "species": "Trevenant",
+    "level": 35,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Wimp Out",
+    "gender": "M"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   },
+   {
+    "label": "Fearow",
+    "species": "Fearow",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Keen Eye",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Future Sight 1, move Splash",
+   "p2": "move Splash, move Splash"
+  },
+  {
+   "p1": "move Splash, move Splash",
+   "p2": "move Splash, move Splash"
+  },
+  {
+   "p1": "move Splash, move Splash",
+   "p2": "move Splash, move Tackle 2"
+  },
+  {
+   "p1": "pass, switch Servine",
+   "p2": "switch Fearow, pass"
+  },
+  {
+   "p1": "move Splash, move Splash",
+   "p2": "move Splash, move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "gen4-arceus-flying-roosts-into-no-type",
+ "notes": [
+  "Gen 4: Arceus-Flying roosting has no type left, which `getTypes` leaves as `???` before Gen 5 (Gen 5+ would make it Normal): Gengar's Shadow Ball hits it for neutral damage"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Arceus",
+    "species": "Arceus-Flying",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Roost",
+     "Harden"
+    ],
+    "ability": "Multitype",
+    "item": "Sky Plate"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gengar",
+    "species": "Gengar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Thunderbolt",
+     "Shadow Ball"
+    ],
+    "gender": "M",
+    "ability": "Levitate"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Thunderbolt"
+  },
+  {
+   "p1": "move Roost",
+   "p2": "move Shadow Ball"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,177 @@
+{
+  "schema": 1,
+  "id": "gen5-doubles-u-turn-user-faints-to-life-orb",
+  "notes": [
+    "A U-turn user knocked out by its Life Orb drops its switch-out: no mid-turn replacement, the residual runs first",
+    "promoted from m8-gen5-doubles-s105-000-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 5,
+    "mode": "doubles",
+    "format": "gen5doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Snorlax",
+        "species": "Snorlax",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Submission",
+          "Dragon Rage",
+          "Sleep Powder",
+          "U-turn"
+        ],
+        "ability": "Run Away",
+        "item": "Life Orb",
+        "gender": "M"
+      },
+      {
+        "label": "Porygon",
+        "species": "Porygon",
+        "level": 54,
+        "nature": "Hardy",
+        "moves": [
+          "Volt Tackle",
+          "Rain Dance",
+          "Brave Bird",
+          "Dragon Rage"
+        ],
+        "ability": "Poison Point"
+      },
+      {
+        "label": "Magmar",
+        "species": "Magmar",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Wild Charge",
+          "Seismic Toss",
+          "Double-Edge"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Grovyle",
+        "species": "Grovyle",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Wood Hammer"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Beheeyem",
+        "species": "Beheeyem",
+        "level": 48,
+        "nature": "Hardy",
+        "moves": [
+          "Take Down",
+          "Night Shade",
+          "Head Charge",
+          "Super Fang"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Kingler",
+        "species": "Kingler",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sing",
+          "Dragon Rage",
+          "Lovely Kiss",
+          "Sonic Boom"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Sableye",
+        "species": "Sableye",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Seismic Toss",
+          "Grass Whistle",
+          "Sonic Boom"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Spinda",
+        "species": "Spinda",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Seismic Toss",
+          "Twineedle",
+          "Volt Switch"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      44115,
+      32811,
+      21735,
+      32705
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Submission 1, move Volt Tackle 2",
+      "p2": "move Take Down 1, move Sing 2"
+    },
+    {
+      "p1": "move Dragon Rage 1, move Rain Dance",
+      "p2": "move Night Shade 1, move Dragon Rage 2"
+    },
+    {
+      "p1": "move Sleep Powder 2, move Brave Bird 1",
+      "p2": "move Head Charge 1, move Lovely Kiss 2"
+    },
+    {
+      "p1": "move U-turn 2, move Dragon Rage 1",
+      "p2": "move Super Fang 1, move Sonic Boom 2"
+    },
+    {
+      "p1": "switch Magmar, pass"
+    },
+    {
+      "p1": "move Wild Charge 2, move Volt Tackle 1",
+      "p2": "move Take Down 1, move Sing 2"
+    },
+    {
+      "p2": "switch Sableye, switch Spinda"
+    },
+    {
+      "p1": "move Seismic Toss 2, move Rain Dance",
+      "p2": "move Seismic Toss 1, move Seismic Toss 2"
+    },
+    {
+      "p1": "move Double-Edge 1, move Brave Bird 2",
+      "p2": "move Grass Whistle 1, move Twineedle 2"
+    },
+    {
+      "p1": "pass, switch Snorlax"
+    },
+    {
+      "p1": "switch Grovyle, move U-turn 1",
+      "p2": "move Sonic Boom 1, move Volt Switch 2"
+    }
+  ]
+}

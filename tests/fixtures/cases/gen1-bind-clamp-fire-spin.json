@@ -1,0 +1,109 @@
+{
+ "schema": 1,
+ "id": "gen1-bind-clamp-fire-spin",
+ "notes": [
+  "Gen 1 Bind, Clamp and Fire Spin lock the same way (a move chosen while locked is the locked one)"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Wrapper",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Bind",
+     "Clamp",
+     "Fire Spin"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Snorlax",
+    "level": 80,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Bind",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Bind",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Bind",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Bind",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Bind",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Clamp",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Clamp",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Clamp",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Clamp",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Clamp",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Fire Spin",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Fire Spin",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Fire Spin",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Fire Spin",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Fire Spin",
+   "p2": "move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "gen9-tar-shot-spares-a-terastallized-target",
+ "notes": [
+  "Gen 9: Snorlax has Terastallized: Tar Shot only lowers its Speed (the volatile's `onStart` refuses a Terastallized Pokémon), so the Ember that follows is not super effective (DESIGN.md R-M8-94)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M",
+    "teraType": "Normal"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Torkoal",
+    "species": "Torkoal",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Tar Shot",
+     "Ember"
+    ],
+    "ability": "White Smoke",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash terastallize",
+   "p2": "move Tar Shot"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Ember"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,113 @@
+{
+  "schema": 1,
+  "id": "m8-gen2-sleep-talk-rest-renews-the-sleep",
+  "notes": [
+    "Replay R-M8-93 (partial run 20261010-081735): Gen 2 Rest through Sleep Talk on a sleeping user keeps the sleep, sets it to 3 turns and heals in full (gen2 mod; pokecrystal BattleCommand_Heal; DESIGN.md R-M8-94)",
+    "promoted from m8-gen2-singles-s499-001-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 2,
+    "mode": "singles",
+    "format": "gen2customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Spearow",
+        "species": "Spearow",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Double Team",
+          "Sleep Talk"
+        ],
+        "gender": "M"
+      },
+      {
+        "label": "Ariados",
+        "species": "Ariados",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Screech",
+          "Sleep Talk",
+          "Growth",
+          "Rest"
+        ],
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Goldeen",
+        "species": "Goldeen",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Scratch",
+          "Sleep Talk"
+        ],
+        "gender": "M"
+      },
+      {
+        "label": "Mewtwo",
+        "species": "Mewtwo",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Rapid Spin",
+          "Sleep Talk",
+          "Pound",
+          "Rest"
+        ]
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      61416,
+      26294,
+      48853,
+      22726
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Double Team",
+      "p2": "move Scratch"
+    },
+    {
+      "p1": "move Sleep Talk",
+      "p2": "move Sleep Talk"
+    },
+    {
+      "p1": "move Double Team",
+      "p2": "move Scratch"
+    },
+    {
+      "p1": "switch Ariados",
+      "p2": "switch Mewtwo"
+    },
+    {
+      "p1": "move Sleep Talk",
+      "p2": "move Sleep Talk"
+    },
+    {
+      "p1": "move Growth",
+      "p2": "move Pound"
+    },
+    {
+      "p1": "move Rest",
+      "p2": "move Rest"
+    },
+    {
+      "p1": "move Screech",
+      "p2": "move Rapid Spin"
+    },
+    {
+      "p1": "move Sleep Talk",
+      "p2": "move Sleep Talk"
+    }
+  ]
+}

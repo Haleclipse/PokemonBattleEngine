@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "gen9-copycat-after-a-metronome",
+ "notes": [
+  "Gen 9: Jolteon's Metronome, then Clefable's Copycat — Gen 4 copies Metronome itself (the outermost move), Gen 5+ the move Metronome called"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Metronome",
+     "Tackle"
+    ],
+    "gender": "M",
+    "ability": "Volt Absorb"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Clefable",
+    "species": "Clefable",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Copycat",
+     "Psychic"
+    ],
+    "gender": "F",
+    "ability": "Magic Guard"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Metronome",
+   "p2": "move Copycat"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Psychic"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen7-transformed-ash-greninja",
+ "notes": [
+  "Gen 7: Mew transforms into Ash-Greninja; its Water Shuriken is the plain one (Battle Bond's bonus asks `!transformed`)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Transform",
+     "Harden"
+    ],
+    "ability": "Synchronize"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Greninja",
+    "species": "Greninja-Ash",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Water Shuriken",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Battle Bond"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Transform",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Water Shuriken",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

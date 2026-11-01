@@ -1,0 +1,257 @@
+{
+  "schema": 1,
+  "id": "gen9-hazard-knockout-on-replacement-drops-status",
+  "notes": [
+    "A replacement knocked out by entry hazards loses its status to the faint (checkFainted after the switch action)",
+    "promoted from m8-gen9-singles-s101-001-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Girafarig",
+        "species": "Girafarig",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Dynamax Cannon",
+          "Dual Wingbeat"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Quilladin",
+        "species": "Quilladin",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Iron Head",
+          "Poison Sting",
+          "Stealth Rock"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Crawdaunt",
+        "species": "Crawdaunt",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Mud Shot",
+          "Scald",
+          "Ember",
+          "Razor Leaf"
+        ],
+        "ability": "Static",
+        "gender": "M"
+      },
+      {
+        "label": "Chewtle",
+        "species": "Chewtle",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Mud-Slap",
+          "Payback",
+          "Hurricane",
+          "Mach Punch"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Pyroar",
+        "species": "Pyroar",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Drain Punch",
+          "Blue Flare",
+          "Roar of Time"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Greavard",
+        "species": "Greavard",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Aqua Jet",
+          "Slash",
+          "Ingrain",
+          "Infernal Parade"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Meowscarada",
+        "species": "Meowscarada",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Overheat",
+          "Synthesis",
+          "Kowtow Cleave",
+          "Bug Buzz"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Coalossal",
+        "species": "Coalossal",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Dynamic Punch",
+          "Sheer Cold",
+          "Low Sweep"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Ditto",
+        "species": "Ditto",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Cross Chop"
+        ],
+        "ability": "Run Away"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      218,
+      390,
+      15791,
+      51798
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Dynamax Cannon",
+      "p2": "move Drain Punch"
+    },
+    {
+      "p1": "move Dual Wingbeat",
+      "p2": "move Blue Flare"
+    },
+    {
+      "p1": "switch Quilladin"
+    },
+    {
+      "p1": "move Poison Sting",
+      "p2": "move Roar of Time"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move Iron Head",
+      "p2": "move Blue Flare"
+    },
+    {
+      "p1": "switch Crawdaunt"
+    },
+    {
+      "p1": "switch Chewtle",
+      "p2": "switch Greavard"
+    },
+    {
+      "p1": "move Hurricane",
+      "p2": "move Ingrain"
+    },
+    {
+      "p1": "move Mach Punch",
+      "p2": "move Infernal Parade"
+    },
+    {
+      "p1": "move Mud-Slap",
+      "p2": "move Aqua Jet"
+    },
+    {
+      "p1": "move Payback",
+      "p2": "move Slash"
+    },
+    {
+      "p1": "move Hurricane",
+      "p2": "move Ingrain"
+    },
+    {
+      "p1": "move Mach Punch",
+      "p2": "move Infernal Parade"
+    },
+    {
+      "p1": "switch Crawdaunt",
+      "p2": "switch Pyroar"
+    },
+    {
+      "p2": "switch Greavard"
+    },
+    {
+      "p1": "move Mud Shot",
+      "p2": "move Aqua Jet"
+    },
+    {
+      "p1": "move Scald",
+      "p2": "move Slash"
+    },
+    {
+      "p2": "switch Meowscarada"
+    },
+    {
+      "p1": "move Ember",
+      "p2": "move Kowtow Cleave"
+    },
+    {
+      "p1": "move Razor Leaf",
+      "p2": "move Bug Buzz"
+    },
+    {
+      "p1": "move Mud Shot",
+      "p2": "move Overheat"
+    },
+    {
+      "p1": "move Scald",
+      "p2": "move Synthesis"
+    },
+    {
+      "p1": "switch Chewtle",
+      "p2": "switch Coalossal"
+    },
+    {
+      "p1": "move Hurricane",
+      "p2": "move Sheer Cold"
+    },
+    {
+      "p1": "move Mach Punch",
+      "p2": "move Low Sweep"
+    },
+    {
+      "p1": "switch Crawdaunt"
+    },
+    {
+      "p1": "move Mud Shot",
+      "p2": "move Dynamic Punch"
+    },
+    {
+      "p2": "switch Meowscarada"
+    }
+  ]
+}

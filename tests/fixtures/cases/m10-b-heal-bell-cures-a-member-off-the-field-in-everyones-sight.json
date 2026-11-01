@@ -1,0 +1,76 @@
+{
+ "schema": 1,
+ "id": "m10-b-heal-bell-cures-a-member-off-the-field-in-everyones-sight",
+ "notes": [
+  "R-M10-19: Heal Bell cures the whole party (`cureStatus` on each: `-curestatus|p2: Squirtle|tox|[msg]`), the members off the field too, in everyone's sight: the other side's view of the badly poisoned Squirtle, which left poisoned, is cured."
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Gengar",
+    "species": "Gengar",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Toxic",
+     "Splash"
+    ],
+    "ability": "Levitate",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Squirtle",
+    "species": "Squirtle",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Torrent",
+    "gender": "M"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Heal Bell",
+     "Splash"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Toxic",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Heal Bell"
+  }
+ ]
+}

@@ -1,0 +1,80 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-opportunist-copies-foes-not-allies",
+ "notes": [
+  "Gen 9 doubles: Espathra's Opportunist copies the raises of both foes (Swords Dance, Calm Mind) but not its partner's (Iron Defense)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Espathra",
+    "species": "Espathra",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Opportunist"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Iron Defense"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Swords Dance"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Calm Mind"
+    ],
+    "ability": "Synchronize"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Iron Defense",
+   "p2": "move Swords Dance, move Calm Mind"
+  },
+  {
+   "p1": "move Harden, move Iron Defense",
+   "p2": "move Swords Dance, move Calm Mind"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

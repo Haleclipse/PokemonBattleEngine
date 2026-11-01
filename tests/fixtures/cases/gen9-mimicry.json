@@ -1,0 +1,82 @@
+{
+ "schema": 1,
+ "id": "gen9-mimicry",
+ "notes": [
+  "Gen 9 Mimicry: Grass in Grassy Terrain (Flamethrower super effective), Fairy in Misty Terrain (Dragon Pulse does not affect it), its own Normal type once the terrain ends (Shadow Ball does not affect it)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mimic",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Grassy Terrain",
+     "Misty Terrain",
+     "Harden"
+    ],
+    "ability": "Mimicry"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Hitter",
+    "species": "Snorlax",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Flamethrower",
+     "Dragon Pulse",
+     "Shadow Ball",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Grassy Terrain",
+   "p2": "move Flamethrower"
+  },
+  {
+   "p1": "move Misty Terrain",
+   "p2": "move Dragon Pulse"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Shadow Ball"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Shadow Ball"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,59 @@
+{
+ "schema": 1,
+ "id": "gen7-spectral-thief-contrary",
+ "notes": [
+  "Gen 7 Spectral Thief by a Contrary user: the stolen +2 Attack is a -2 on the user, and the target's goes to 0"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Thief",
+    "species": "Marshadow",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Spectral Thief",
+     "Harden"
+    ],
+    "ability": "Contrary"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Swords Dance",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Swords Dance"
+  },
+  {
+   "p1": "move Spectral Thief",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

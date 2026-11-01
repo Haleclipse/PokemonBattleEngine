@@ -1,0 +1,259 @@
+{
+ "schema": 1,
+ "id": "m8-45-gen7-sap-sipper-before-the-powder-immunity",
+ "notes": [
+  "Nightly 39 gen7-doubles-s457-006, recorded as it stands: a Grass type's powder immunity is the TryImmunity step's, after the abilities: Sap Sipper absorbs the Sleep Powder (Nightly 39, minimized recording kept whole)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Wailmer",
+    "species": "Wailmer",
+    "level": 45,
+    "nature": "Hardy",
+    "moves": [
+     "Whirlpool",
+     "Trick",
+     "Wrap",
+     "Psych Up"
+    ],
+    "ability": "No Guard",
+    "item": "Chilan Berry"
+   },
+   {
+    "label": "Regigigas",
+    "species": "Regigigas",
+    "level": 48,
+    "nature": "Hardy",
+    "moves": [
+     "Magma Storm",
+     "Trick",
+     "Infestation",
+     "Psych Up"
+    ],
+    "ability": "Primordial Sea",
+    "item": "Shuca Berry"
+   },
+   {
+    "label": "Elekid",
+    "species": "Elekid",
+    "level": 48,
+    "nature": "Hardy",
+    "moves": [
+     "Sand Tomb",
+     "Trick",
+     "Sleep Powder",
+     "Psych Up"
+    ],
+    "ability": "Iron Fist"
+   },
+   {
+    "label": "Giratina",
+    "species": "Giratina",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spore",
+     "Trick",
+     "Sing",
+     "Psych Up"
+    ],
+    "ability": "Berserk",
+    "item": "Pomeg Berry"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Trapinch",
+    "species": "Trapinch",
+    "level": 53,
+    "nature": "Hardy",
+    "moves": [
+     "Grass Whistle",
+     "Trick",
+     "Lovely Kiss",
+     "Psych Up"
+    ],
+    "ability": "Aroma Veil"
+   },
+   {
+    "label": "Dratini",
+    "species": "Dratini",
+    "level": 49,
+    "nature": "Hardy",
+    "moves": [
+     "Hypnosis",
+     "Trick",
+     "Wood Hammer",
+     "Embargo"
+    ],
+    "ability": "Vital Spirit",
+    "item": "Metal Powder"
+   },
+   {
+    "label": "Pumpkaboo",
+    "species": "Pumpkaboo",
+    "level": 45,
+    "nature": "Hardy",
+    "moves": [
+     "Brave Bird",
+     "Trick",
+     "Volt Tackle",
+     "Embargo"
+    ],
+    "ability": "Sap Sipper",
+    "item": "Float Stone"
+   },
+   {
+    "label": "Corphish",
+    "species": "Corphish",
+    "level": 48,
+    "nature": "Hardy",
+    "moves": [
+     "Head Charge",
+     "Trick",
+     "Head Smash",
+     "Embargo"
+    ],
+    "ability": "Limber",
+    "item": "Enigma Berry"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   6216,
+   57409,
+   18864,
+   56161
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1 1, move 1 2",
+   "p2": "move 1 1, move 1 2"
+  },
+  {
+   "p1": "move 2 1, move 2 2",
+   "p2": "move 2 1, move 2 2"
+  },
+  {
+   "p1": "move 3 1, move 3 2",
+   "p2": "move 3 1, move 3 2"
+  },
+  {
+   "p1": "switch 3, move 4 1",
+   "p2": "move 4 1, move 4 2"
+  },
+  {
+   "p1": "move 4 2, move 1 1",
+   "p2": "move 1 1, move 1 2"
+  },
+  {
+   "p1": "move 1 2, move 2 1",
+   "p2": "move 2 1, move 2 2"
+  },
+  {
+   "p1": "move 2 2, move 3 1",
+   "p2": "move 3 1, move 3 2"
+  },
+  {
+   "p2": "switch 3, pass"
+  },
+  {
+   "p1": "switch 3, move 4 2",
+   "p2": "switch 4, move 4 1"
+  },
+  {
+   "p1": "move 3 1, move 1 2",
+   "p2": "move 4 2, move 1 1"
+  },
+  {
+   "p1": "move 4 1, move 2 2",
+   "p2": "move 1 2, move 2 1"
+  },
+  {
+   "p1": "move 1 1, move 3 2",
+   "p2": "move 2 2, move 3 1"
+  },
+  {
+   "p2": "pass, switch 4"
+  },
+  {
+   "p1": "switch 3, move 4 1",
+   "p2": "move 3 2, move 4 1"
+  },
+  {
+   "p1": "move 2 2, move 1 1",
+   "p2": "move 4 2, move 1 1"
+  },
+  {
+   "p1": "move 3 2, move 2 1",
+   "p2": "move 1 2, move 2 1"
+  },
+  {
+   "p1": "pass, switch 3"
+  },
+  {
+   "p1": "move 4 2, move 3 1",
+   "p2": "move 2 2, move 3 1"
+  },
+  {
+   "p1": "switch 4, move 4 2",
+   "p2": "move 3 2, move 4 1"
+  },
+  {
+   "p1": "pass, switch 4"
+  },
+  {
+   "p1": "move 1 2, move 1 2",
+   "p2": "pass, move 1 2"
+  },
+  {
+   "p1": "move 2 2, pass",
+   "p2": "pass, move 2 1"
+  },
+  {
+   "p1": "move 3 2, pass",
+   "p2": "pass, move 3 1"
+  },
+  {
+   "p1": "move 4 2, pass",
+   "p2": "pass, move 4 1"
+  },
+  {
+   "p1": "move 1 2, pass",
+   "p2": "pass, move 1 1"
+  },
+  {
+   "p1": "move 2 2, pass",
+   "p2": "pass, move 2 1"
+  },
+  {
+   "p1": "move 3 2, pass",
+   "p2": "pass, move 3 1"
+  },
+  {
+   "p1": "move 4 2, pass",
+   "p2": "pass, move 4 1"
+  },
+  {
+   "p1": "move 1 2, pass",
+   "p2": "pass, move 1 1"
+  },
+  {
+   "p1": "move 2 2, pass",
+   "p2": "pass, move 2 1"
+  },
+  {
+   "p1": "move 3 2, pass",
+   "p2": "pass, move 3 1"
+  }
+ ]
+}

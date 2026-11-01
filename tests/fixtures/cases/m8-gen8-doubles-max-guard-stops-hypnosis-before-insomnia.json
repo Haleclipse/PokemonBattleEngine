@@ -1,0 +1,102 @@
+{
+  "schema": 1,
+  "id": "m8-gen8-doubles-max-guard-stops-hypnosis-before-insomnia",
+  "notes": [
+    "Gen 8 doubles: Hypnosis at an Insomnia target behind Max Guard: the TryHit block stops it before the target's status immunity could show, so the accuracy check before it is planned (the replay plan, DESIGN.md R-M8-108)",
+    "promoted from m8-gen8-doubles-s550-007-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 8,
+    "mode": "doubles",
+    "format": "gen8doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Cresselia",
+        "species": "Cresselia",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Anchor Shot"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Keldeo",
+        "species": "Keldeo",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Heal Pulse",
+          "Max Guard",
+          "Worry Seed"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Snorlax",
+        "species": "Snorlax",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Hypnosis",
+          "Worry Seed"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Corphish",
+        "species": "Corphish",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Shore Up",
+          "Lock-On",
+          "Max Guard"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Krookodile",
+        "species": "Krookodile",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Morning Sun",
+          "Max Guard",
+          "Lock-On"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      5269,
+      15343,
+      13715,
+      17737
+    ]
+  },
+  "script": [
+    {
+      "p1": "switch Snorlax, move Worry Seed 1",
+      "p2": "move Max Guard, move Lock-On 2"
+    },
+    {
+      "p1": "move Worry Seed 2, move Heal Pulse 1",
+      "p2": "move Shore Up, move Morning Sun"
+    },
+    {
+      "p1": "move Hypnosis 2, move Max Guard",
+      "p2": "move Lock-On 1, move Max Guard"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "schema": 1,
+  "id": "gen9-doubles-resort-reshuffles-ties",
+  "notes": [
+    "Gen 8+ re-sorts the queue after every action and reshuffles each speed tie among the pending actions"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Regieleki",
+        "species": "Regieleki",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Growl"
+        ],
+        "ability": "Transistor"
+      },
+      {
+        "label": "Snorlax",
+        "species": "Snorlax",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ],
+        "ability": "Thick Fat"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Snorlax",
+        "species": "Snorlax",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ],
+        "ability": "Thick Fat"
+      },
+      {
+        "label": "Munchlax",
+        "species": "Snorlax",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ],
+        "ability": "Thick Fat"
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1, move 1 1",
+      "p2": "move 1 1, move 1 2"
+    },
+    {
+      "p1": "move 1, move 1 1",
+      "p2": "move 1 1, move 1 2"
+    },
+    {
+      "p1": "move 1, move 1 1",
+      "p2": "move 1 1, move 1 2"
+    },
+    {
+      "p1": "move 1, move 1 1",
+      "p2": "move 1 1, move 1 2"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

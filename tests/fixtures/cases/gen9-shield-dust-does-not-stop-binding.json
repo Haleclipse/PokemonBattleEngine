@@ -1,0 +1,64 @@
+{
+ "schema": 1,
+ "id": "gen9-shield-dust-does-not-stop-binding",
+ "notes": [
+  "Shield Dust / Covert Cloak keep secondaries off, not a binding move's own volatile: Fire Spin still traps the holder"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Fire Spin",
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Harden"
+    ],
+    "ability": "Run Away",
+    "item": "Covert Cloak"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Fire Spin",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Recover",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   2,
+   2,
+   3,
+   4
+  ]
+ }
+}

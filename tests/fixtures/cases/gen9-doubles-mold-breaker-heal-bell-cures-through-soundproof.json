@@ -1,0 +1,83 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-mold-breaker-heal-bell-cures-through-soundproof",
+ "notes": [
+  "Gen 9: Heal Bell skips a Soundproof ally (`ally.hasAbility('soundproof')`) unless the user ignores abilities (`!this.suppressingAbility(ally)`): Excadrill's Mold Breaker cures its Soundproof partner"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Excadrill",
+    "species": "Excadrill",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Heal Bell",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Mold Breaker"
+   },
+   {
+    "label": "Soundproof",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Soundproof"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Toxicroak",
+    "species": "Toxicroak",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Toxic",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Dry Skin"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Toxic 2, move Harden"
+  },
+  {
+   "p1": "move Heal Bell, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

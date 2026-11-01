@@ -1,0 +1,93 @@
+{
+ "schema": 1,
+ "id": "gen4-insomnia-by-skill-swap-and-worry-seed",
+ "notes": [
+  "Gen 4: Hypno puts Snorlax to sleep with Spore and gives it its Insomnia by Skill Swap: cured at once; Spore then does not affect it. Breloom's Worry Seed wakes Blissey up, and a second Worry Seed fails"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hypno",
+    "species": "Hypno",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Spore",
+     "Skill Swap",
+     "Worry Seed",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Insomnia"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Spore",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Skill Swap",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Spore",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Spore",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Worry Seed",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Worry Seed",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

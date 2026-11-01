@@ -1,0 +1,110 @@
+{
+ "schema": 1,
+ "id": "gen9-eject-pack",
+ "notes": [
+  "Gen 9 Eject Pack (Showdown `onAfterBoost`, `onAnySwitchIn` -4, `onAnyAfterMove`): Incineroar's Intimidate as the battle starts lowers Gyarados's Attack and its pack sends it out before the first turn",
+  "Hydreigon's Draco Meteor lowers its own Special Attack: its pack sends it out once the move is over, before Incineroar's Harden",
+  "Incineroar's Parting Shot lowers Snorlax's stats but its pack stays put (`activeMove` Parting Shot); Arcanine, in for Incineroar, intimidates Snorlax, and the pack sends Snorlax out at once, its Harden lost"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Incineroar",
+    "species": "Incineroar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Parting Shot",
+     "Harden"
+    ],
+    "ability": "Intimidate"
+   },
+   {
+    "label": "Arcanine",
+    "species": "Arcanine",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Intimidate"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gyarados",
+    "species": "Gyarados",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Eject Pack",
+    "ability": "Moxie"
+   },
+   {
+    "label": "Hydreigon",
+    "species": "Hydreigon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Draco Meteor",
+     "Harden"
+    ],
+    "item": "Eject Pack",
+    "ability": "Levitate"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Eject Pack",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p2": "switch Hydreigon"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Draco Meteor"
+  },
+  {
+   "p2": "switch Snorlax"
+  },
+  {
+   "p1": "move Parting Shot",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Arcanine"
+  },
+  {
+   "p2": "switch Gyarados"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

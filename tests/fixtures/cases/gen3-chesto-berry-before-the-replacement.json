@@ -1,0 +1,78 @@
+{
+ "schema": 1,
+ "id": "gen3-chesto-berry-before-the-replacement",
+ "notes": [
+  "Gen 3 (pokeemerald `ENDTURN_ITEMS2` after Yawn, issues.md I34): Yawn puts Slowbro to sleep in the residual and its Chesto Berry wakes it before the replacement request; Shedinja fell to Toxic earlier in the same residual",
+  "Unpatched, Showdown feeds the berry only at the residual's Update, which the Gen 3 replacement request cuts: the request still shows Slowbro asleep"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Slowbro",
+    "species": "Slowbro",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Toxic",
+     "Harden"
+    ],
+    "ability": "Oblivious",
+    "item": "Chesto Berry"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Shedinja",
+    "species": "Shedinja",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Yawn",
+     "Harden"
+    ],
+    "ability": "Wonder Guard"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Yawn"
+  },
+  {
+   "p1": "move Toxic",
+   "p2": "move Harden"
+  },
+  {
+   "p2": "switch Snorlax"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

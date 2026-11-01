@@ -1,0 +1,83 @@
+{
+ "schema": 1,
+ "id": "gen8-hold-hands",
+ "notes": [
+  "Gen 8 doubles: Pikachu holds hands with its partner Raichu — nothing happens; in the second turn Raichu holds hands back"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "doubles",
+  "format": "gen8doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Pikachu",
+    "species": "Pikachu",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Hold Hands",
+     "Thunder Shock"
+    ],
+    "gender": "M",
+    "ability": "Static"
+   },
+   {
+    "label": "Raichu",
+    "species": "Raichu",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Hold Hands",
+     "Thunder Shock"
+    ],
+    "gender": "M",
+    "ability": "Static"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Hold Hands -2, move Thunder Shock 1",
+   "p2": "move Tackle 1, move Tackle 2"
+  },
+  {
+   "p1": "move Thunder Shock 1, move Hold Hands -1",
+   "p2": "move Tackle 1, move Tackle 2"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

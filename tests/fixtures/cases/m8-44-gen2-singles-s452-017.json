@@ -1,0 +1,196 @@
+{
+ "schema": 1,
+ "id": "m8-44-gen2-singles-s452-017",
+ "notes": [
+  "Nightly 38 gen2-singles-s452-017, minimized: a confused Pokémon that chose Explosion hits itself with its Defense halved (the gen2 self-hit keeps the move's `selfdestruct`)"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Magnemite",
+    "species": "Magnemite",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Slam"
+    ]
+   },
+   {
+    "label": "Slugma",
+    "species": "Slugma",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Vise Grip",
+     "Foresight",
+     "Rock Throw",
+     "Spite"
+    ],
+    "gender": "M"
+   },
+   {
+    "label": "Gligar",
+    "species": "Gligar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Foresight",
+     "Destiny Bond"
+    ],
+    "gender": "F"
+   },
+   {
+    "label": "Tentacruel",
+    "species": "Tentacruel",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Pay Day",
+     "Foresight",
+     "Roar",
+     "Destiny Bond"
+    ],
+    "gender": "F"
+   },
+   {
+    "label": "Quilava",
+    "species": "Quilava",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Whirlwind",
+     "Explosion"
+    ],
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Skarmory",
+    "species": "Skarmory",
+    "level": 54,
+    "nature": "Hardy",
+    "moves": [
+     "Dynamic Punch",
+     "Foresight",
+     "Dizzy Punch",
+     "Destiny Bond"
+    ],
+    "gender": "M"
+   },
+   {
+    "label": "Dunsparce",
+    "species": "Dunsparce",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Confusion",
+     "Foresight",
+     "Psybeam",
+     "Destiny Bond"
+    ],
+    "item": "Bright Powder",
+    "gender": "M"
+   },
+   {
+    "label": "Beedrill",
+    "species": "Beedrill",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Whirlpool"
+    ],
+    "gender": "M"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1173,
+   14531,
+   59497,
+   52517
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Slam",
+   "p2": "move Dynamic Punch"
+  },
+  {
+   "p1": "switch Slugma"
+  },
+  {
+   "p1": "move Foresight",
+   "p2": "move Foresight"
+  },
+  {
+   "p1": "move Rock Throw",
+   "p2": "move Dizzy Punch"
+  },
+  {
+   "p1": "move Spite",
+   "p2": "move Destiny Bond"
+  },
+  {
+   "p1": "move Vise Grip",
+   "p2": "move Dynamic Punch"
+  },
+  {
+   "p1": "switch Gligar"
+  },
+  {
+   "p1": "move Foresight",
+   "p2": "move Foresight"
+  },
+  {
+   "p1": "switch Tentacruel",
+   "p2": "switch Dunsparce"
+  },
+  {
+   "p1": "move Roar",
+   "p2": "move Psybeam"
+  },
+  {
+   "p1": "move Destiny Bond",
+   "p2": "move Destiny Bond"
+  },
+  {
+   "p1": "move Pay Day",
+   "p2": "move Confusion"
+  },
+  {
+   "p1": "move Foresight",
+   "p2": "move Foresight"
+  },
+  {
+   "p1": "move Roar",
+   "p2": "move Psybeam"
+  },
+  {
+   "p1": "switch Gligar"
+  },
+  {
+   "p1": "move Destiny Bond",
+   "p2": "move Destiny Bond"
+  },
+  {
+   "p1": "switch Quilava",
+   "p2": "switch Skarmory"
+  },
+  {
+   "p1": "move Whirlwind",
+   "p2": "move Dynamic Punch"
+  },
+  {
+   "p1": "move Explosion",
+   "p2": "move Whirlpool"
+  }
+ ]
+}

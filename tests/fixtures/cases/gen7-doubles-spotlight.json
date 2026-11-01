@@ -1,0 +1,104 @@
+{
+ "schema": 1,
+ "id": "gen7-doubles-spotlight",
+ "notes": [
+  "Gen 7 Spotlight (priority +3): the target draws its foes' single-target moves this turn, ahead of Follow Me; gone by the next turn; Baton Pass does not hand it on (noCopy), the mid-turn request shows it"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Clefable",
+    "species": "Clefable",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spotlight",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Hitter",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Togekiss",
+    "species": "Togekiss",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Follow Me",
+     "Harden",
+     "Air Slash"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Foe2",
+    "species": "Snorlax",
+    "level": 55,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle",
+     "Baton Pass"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Foe3",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Spotlight 2, move Tackle 1",
+   "p2": "move Follow Me, move Harden"
+  },
+  {
+   "p1": "move Harden, move Tackle 2",
+   "p2": "move Follow Me, move Harden"
+  },
+  {
+   "p1": "move Spotlight -2, move Harden",
+   "p2": "move Air Slash 1, move Tackle 1"
+  },
+  {
+   "p1": "move Spotlight 2, move Tackle 1",
+   "p2": "move Harden, move Baton Pass"
+  },
+  {
+   "p2": "switch Foe3"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

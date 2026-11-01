@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "gen5-round-moves-a-foes-round-up",
+ "notes": [
+  "Gen 5: Empoleon's Round moves Alakazam's Round up right behind it (`queue.prioritizeAction`, any Round user): Alakazam's is its own action, `[from] move: Round`, at double power (DESIGN.md R-M8-84)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Alakazam",
+    "species": "Alakazam",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Round",
+     "Splash"
+    ],
+    "ability": "Synchronize",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Empoleon",
+    "species": "Empoleon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Round",
+     "Autotomize"
+    ],
+    "ability": "Torrent",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash",
+   "p2": "move Autotomize"
+  },
+  {
+   "p1": "move Round",
+   "p2": "move Round"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

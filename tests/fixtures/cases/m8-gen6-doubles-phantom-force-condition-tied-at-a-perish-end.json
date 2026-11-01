@@ -1,0 +1,186 @@
+{
+  "schema": 1,
+  "id": "m8-gen6-doubles-phantom-force-condition-tied-at-a-perish-end",
+  "notes": [
+    "Gen 6 doubles: Perish Song decides the battle in the residual as Magnemite charges Phantom Force; phantomforce counted down before twoturnmove (DESIGN.md R-M8-95)",
+    "promoted from m8-gen6-doubles-s449-014-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 6,
+    "mode": "doubles",
+    "format": "gen6doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Foongus",
+        "species": "Foongus",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Zap Cannon",
+          "Perish Song",
+          "Secret Power",
+          "Recycle"
+        ],
+        "ability": "Run Away",
+        "item": "Focus Band",
+        "gender": "M"
+      },
+      {
+        "label": "Skiddo",
+        "species": "Skiddo",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Thunder Punch",
+          "Perish Song",
+          "Freeze Shock"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Druddigon",
+        "species": "Druddigon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fly",
+          "Dive"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Rufflet",
+        "species": "Rufflet",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Geomancy",
+          "Dig"
+        ],
+        "ability": "Run Away"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Magnemite",
+        "species": "Magnemite",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Phantom Force",
+          "Skull Bash"
+        ],
+        "ability": "Run Away",
+        "item": "Jaboca Berry"
+      },
+      {
+        "label": "Solosis",
+        "species": "Solosis",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Shadow Force",
+          "Steamroller",
+          "Recycle"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Lopunny",
+        "species": "Lopunny",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Heart Stamp",
+          "Perish Song",
+          "Dark Pulse",
+          "Recycle"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Yanma",
+        "species": "Yanma",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Extrasensory",
+          "Perish Song",
+          "Zen Headbutt",
+          "Recycle"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      10401,
+      52316,
+      27945,
+      34639
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Zap Cannon 1, move Thunder Punch 2",
+      "p2": "move Phantom Force 1, move Shadow Force 2"
+    },
+    {
+      "p1": "move 2, move 2",
+      "p2": "move 1, move 1"
+    },
+    {
+      "p1": "move Secret Power 1, move Freeze Shock 2",
+      "p2": "move Skull Bash 1, move Steamroller 2"
+    },
+    {
+      "p1": "move 4, move 1",
+      "p2": "move 1, move 3"
+    },
+    {
+      "p2": "pass, switch Lopunny"
+    },
+    {
+      "p1": "switch Druddigon, move Thunder Punch 1",
+      "p2": "switch Yanma, move Heart Stamp 1"
+    },
+    {
+      "p1": "pass, switch Foongus"
+    },
+    {
+      "p1": "move Fly 2, move Perish Song",
+      "p2": "move Extrasensory 2, move Perish Song"
+    },
+    {
+      "p1": "pass, switch Rufflet"
+    },
+    {
+      "p1": "move 1, move 2 1",
+      "p2": "move 2, move 3 1"
+    },
+    {
+      "p1": "move 2 2, move 1",
+      "p2": "move 3 2, move 4"
+    },
+    {
+      "p1": "move 1, move 1",
+      "p2": "move 4, move 1 1"
+    },
+    {
+      "p2": "switch Magnemite, pass"
+    },
+    {
+      "p1": "pass, move 1",
+      "p2": "move 1 2, pass"
+    }
+  ]
+}

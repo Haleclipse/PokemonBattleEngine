@@ -1,0 +1,232 @@
+{
+  "schema": 1,
+  "id": "m10-k-an-ability-shown-while-transformed-is-not-its-own",
+  "notes": [
+    "Gen 8: Metagross, transformed into Togepi, shows Wimp Out; back in later it shows its own Cotton Down: the ability shown while transformed was the copy's, not its own (the oracle's client filed it as the base ability)",
+    "promoted from m8-gen8-singles-s1638-005-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 8,
+    "mode": "singles",
+    "format": "gen8customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Corsola",
+        "species": "Corsola",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sand Tomb",
+          "Transform",
+          "Fire Spin",
+          "Octolock"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Togetic",
+        "species": "Togetic",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Wrap",
+          "Transform",
+          "Bind",
+          "Octolock"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Metagross",
+        "species": "Metagross",
+        "level": 45,
+        "nature": "Hardy",
+        "moves": [
+          "Magma Storm",
+          "Transform",
+          "Whirlpool",
+          "Octolock"
+        ],
+        "ability": "Cotton Down"
+      },
+      {
+        "label": "Drifblim",
+        "species": "Drifblim",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Snap Trap"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Meowstic",
+        "species": "Meowstic",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Mirror Coat",
+          "Transform",
+          "Endeavor",
+          "Octolock"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Togepi",
+        "species": "Togepi",
+        "level": 46,
+        "nature": "Hardy",
+        "moves": [
+          "Counter",
+          "Transform",
+          "Nature's Madness",
+          "Octolock"
+        ],
+        "ability": "Wimp Out",
+        "gender": "M"
+      },
+      {
+        "label": "Cleffa",
+        "species": "Cleffa",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Final Gambit",
+          "Night Shade"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Throh",
+        "species": "Throh",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Ice Beam"
+        ],
+        "ability": "Run Away"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      31680,
+      51157,
+      13403,
+      5422
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Sand Tomb",
+      "p2": "move Mirror Coat"
+    },
+    {
+      "p1": "move Transform",
+      "p2": "move Transform"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 3"
+    },
+    {
+      "p1": "move Octolock",
+      "p2": "move Octolock"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move Transform",
+      "p2": "move Transform"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 3"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "switch Togetic"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 3"
+    },
+    {
+      "p1": "move Octolock",
+      "p2": "move Octolock"
+    },
+    {
+      "p2": "switch Togepi"
+    },
+    {
+      "p1": "move Wrap",
+      "p2": "move Counter"
+    },
+    {
+      "p1": "move Transform",
+      "p2": "move Transform"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 3"
+    },
+    {
+      "p1": "switch Metagross"
+    },
+    {
+      "p1": "move Octolock",
+      "p2": "move Octolock"
+    },
+    {
+      "p1": "move Transform",
+      "p2": "move Transform"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 3"
+    },
+    {
+      "p1": "switch Togetic"
+    },
+    {
+      "p1": "move Wrap",
+      "p2": "move Counter"
+    },
+    {
+      "p2": "switch Cleffa"
+    },
+    {
+      "p1": "move Bind",
+      "p2": "move Night Shade"
+    },
+    {
+      "p1": "switch Metagross"
+    },
+    {
+      "p1": "move Magma Storm",
+      "p2": "move Final Gambit"
+    },
+    {
+      "p2": "switch Togepi"
+    },
+    {
+      "p1": "switch Drifblim",
+      "p2": "switch Throh"
+    }
+  ]
+}

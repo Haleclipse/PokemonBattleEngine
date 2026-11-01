@@ -1,0 +1,68 @@
+{
+ "schema": 1,
+ "id": "gen9-pressure-costs-one-more",
+ "notes": [
+  "Gen 9 Pressure: Tackle at the holder costs 2 PP; Rain Dance (a field move) 2; Reflect (the user's side) 1; Stealth Rock (mustpressure) 2"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "User",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Rain Dance",
+     "Reflect",
+     "Stealth Rock"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Holder",
+    "species": "Corviknight",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Pressure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Rain Dance",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Reflect",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Stealth Rock",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

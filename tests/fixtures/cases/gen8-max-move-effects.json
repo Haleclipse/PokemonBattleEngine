@@ -1,0 +1,63 @@
+{
+ "schema": 1,
+ "id": "gen8-max-move-effects",
+ "notes": [
+  "Gen 8: a Dynamaxed Charizard's 极巨飞冲 (Max Airstream, from Aerial Ace) raises its own Speed by one (`alliesAndSelf`) and 极巨火爆 (Max Flare, from Flamethrower) sets the sun"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Charizard",
+    "species": "Charizard",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Aerial Ace",
+     "Flamethrower",
+     "Harden"
+    ],
+    "ability": "Blaze"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1 dynamax",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "id": "gen3-white-herb-elsewhere-waits-for-the-next-move",
+ "notes": [
+  "Gen 3 White Herb (issues.md I48): P2's Snorlax is not the first battler, so after Gyarados comes in at the end of the turn and intimidates it, its herb waits for the next move's end (pokeemerald `MOVEEND_ITEM_EFFECTS_ALL`) \u2014 Snorlax's Harden"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 5,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Swift Swim"
+   },
+   {
+    "label": "Gyarados",
+    "species": "Gyarados",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Intimidate"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "False Swipe",
+     "Sandstorm",
+     "Harden"
+    ],
+    "item": "White Herb",
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move False Swipe"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Sandstorm"
+  },
+  {
+   "p1": "switch Gyarados"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

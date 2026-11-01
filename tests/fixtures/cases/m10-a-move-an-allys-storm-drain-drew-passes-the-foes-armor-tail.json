@@ -1,0 +1,526 @@
+{
+  "schema": 1,
+  "id": "m10-a-move-an-allys-storm-drain-drew-passes-the-foes-armor-tail",
+  "notes": [
+    "R-M10-11: minimized from the M10.3c Nightly's m9-gen9doublesou-s176-003. Qwilfish's Aqua Jet, aimed at Glastrier, is drawn by its ally Shellos' Storm Drain (Spe. Atk +1). TryMove reads the last of the move's targets after redirection (`useMoveInner`: `target = targets[targets.length - 1]`), the user's own side: Farigiraf's Armor Tail lets it be. The engine asked Armor Tail about the target before the redirection."
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublesou"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Wattrel",
+        "species": "Wattrel",
+        "ability": "Wind Power",
+        "moves": [
+          "Dual Wingbeat"
+        ],
+        "nature": "Brave",
+        "gender": "M",
+        "shiny": false,
+        "level": 100,
+        "evs": {
+          "hp": 0,
+          "atk": 96,
+          "def": 180,
+          "spa": 232,
+          "spd": 0,
+          "spe": 0
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        },
+        "teraType": "Bug"
+      },
+      {
+        "label": "Nick84",
+        "species": "Qwilfish",
+        "ability": "Swift Swim",
+        "moves": [
+          "Rest",
+          "Toxic",
+          "Icy Wind",
+          "Aqua Jet"
+        ],
+        "nature": "Sassy",
+        "gender": "M",
+        "shiny": false,
+        "level": 100,
+        "evs": {
+          "hp": 184,
+          "atk": 0,
+          "def": 36,
+          "spa": 132,
+          "spd": 0,
+          "spe": 156
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 8,
+          "spd": 31,
+          "spe": 31
+        },
+        "teraType": "Rock"
+      },
+      {
+        "label": "Sylveon",
+        "species": "Sylveon",
+        "item": "Iron Ball",
+        "ability": "Pixilate",
+        "moves": [
+          "Tackle",
+          "Sand Attack",
+          "Attract",
+          "Rain Dance"
+        ],
+        "nature": "Impish",
+        "gender": "F",
+        "shiny": false,
+        "level": 100,
+        "evs": {
+          "hp": 4,
+          "atk": 124,
+          "def": 64,
+          "spa": 212,
+          "spd": 20,
+          "spe": 84
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        },
+        "teraType": "Bug"
+      },
+      {
+        "label": "Noctowl",
+        "species": "Noctowl",
+        "ability": "Tinted Lens",
+        "moves": [
+          "Recycle",
+          "Mean Look",
+          "Confide",
+          "Zen Headbutt"
+        ],
+        "nature": "Naughty",
+        "gender": "F",
+        "shiny": false,
+        "level": 100,
+        "evs": {
+          "hp": 56,
+          "atk": 196,
+          "def": 116,
+          "spa": 56,
+          "spd": 16,
+          "spe": 68
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 10,
+          "spd": 31,
+          "spe": 31
+        },
+        "teraType": "Fire",
+        "hpType": "Ghost"
+      },
+      {
+        "label": "Shellos",
+        "species": "Shellos-East",
+        "item": "Iapapa Berry",
+        "ability": "Storm Drain",
+        "moves": [
+          "Clear Smog",
+          "Icy Wind",
+          "Bulldoze"
+        ],
+        "nature": "Naive",
+        "gender": "F",
+        "shiny": false,
+        "level": 100,
+        "evs": {
+          "hp": 156,
+          "atk": 0,
+          "def": 12,
+          "spa": 188,
+          "spd": 52,
+          "spe": 100
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 11,
+          "spd": 31,
+          "spe": 31
+        }
+      },
+      {
+        "label": "Nick72",
+        "species": "Squawkabilly-Blue",
+        "ability": "Hustle",
+        "moves": [
+          "Parting Shot",
+          "Pounce",
+          "Hyper Beam"
+        ],
+        "nature": "Brave",
+        "gender": "M",
+        "shiny": false,
+        "level": 86,
+        "evs": {
+          "hp": 56,
+          "atk": 0,
+          "def": 112,
+          "spa": 116,
+          "spd": 132,
+          "spe": 92
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 19,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        },
+        "teraType": "Psychic"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Tsareena",
+        "species": "Tsareena",
+        "item": "Chipped Pot",
+        "ability": "Leaf Guard",
+        "moves": [
+          "Light Screen",
+          "Covet",
+          "Attract",
+          "Protect"
+        ],
+        "nature": "Rash",
+        "gender": "",
+        "shiny": false,
+        "level": 37,
+        "evs": {
+          "hp": 0,
+          "atk": 40,
+          "def": 200,
+          "spa": 0,
+          "spd": 252,
+          "spe": 16
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        },
+        "happiness": 88,
+        "teraType": "Ice"
+      },
+      {
+        "label": "Nick0",
+        "species": "Glastrier",
+        "ability": "Chilling Neigh",
+        "moves": [
+          "Icicle Crash",
+          "Double-Edge",
+          "Double Kick"
+        ],
+        "nature": "Mild",
+        "gender": "",
+        "shiny": false,
+        "level": 100,
+        "evs": {
+          "hp": 172,
+          "atk": 108,
+          "def": 0,
+          "spa": 128,
+          "spd": 0,
+          "spe": 100
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 6,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        },
+        "hpType": "Rock"
+      },
+      {
+        "label": "Salandit",
+        "species": "Salandit",
+        "item": "Leftovers",
+        "ability": "Oblivious",
+        "moves": [
+          "Poison Jab",
+          "Thief",
+          "Scratch",
+          "Fake Out"
+        ],
+        "nature": "Bashful",
+        "gender": "M",
+        "shiny": false,
+        "level": 100,
+        "evs": {
+          "hp": 148,
+          "atk": 120,
+          "def": 0,
+          "spa": 128,
+          "spd": 72,
+          "spe": 40
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 2,
+          "spd": 31,
+          "spe": 31
+        },
+        "teraType": "Fire"
+      },
+      {
+        "label": "Stunky",
+        "species": "Stunky",
+        "ability": "Aftermath",
+        "moves": [
+          "Trailblaze"
+        ],
+        "nature": "Serious",
+        "gender": "F",
+        "shiny": false,
+        "level": 7,
+        "evs": {
+          "hp": 108,
+          "atk": 4,
+          "def": 36,
+          "spa": 0,
+          "spd": 252,
+          "spe": 108
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 12,
+          "spd": 31,
+          "spe": 31
+        },
+        "teraType": "Ground"
+      },
+      {
+        "label": "Farigiraf",
+        "species": "Farigiraf",
+        "ability": "Armor Tail",
+        "moves": [
+          "Echoed Voice",
+          "Thunderbolt",
+          "Mirror Coat",
+          "Double Hit"
+        ],
+        "nature": "Mild",
+        "gender": "M",
+        "shiny": false,
+        "level": 78,
+        "evs": {
+          "hp": 20,
+          "atk": 0,
+          "def": 116,
+          "spa": 136,
+          "spd": 52,
+          "spe": 184
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 16,
+          "spd": 31,
+          "spe": 31
+        },
+        "teraType": "Psychic"
+      },
+      {
+        "label": "Deoxys",
+        "species": "Deoxys-Defense",
+        "ability": "Pressure",
+        "moves": [
+          "Spikes",
+          "Protect",
+          "Wrap",
+          "Recycle"
+        ],
+        "nature": "Hardy",
+        "gender": "",
+        "shiny": false,
+        "level": 73,
+        "evs": {
+          "hp": 20,
+          "atk": 4,
+          "def": 168,
+          "spa": 48,
+          "spd": 240,
+          "spe": 0
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        },
+        "teraType": "Ghost"
+      }
+    ]
+  },
+  "preview": {
+    "p1": "team 642351",
+    "p2": "team 364512"
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      18996,
+      176,
+      1003,
+      31
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1 1 terastallize, move Recycle",
+      "p2": "move 1 1 terastallize, move Spikes"
+    },
+    {
+      "p1": "switch 3, pass"
+    },
+    {
+      "p1": "move Toxic 2, move Mean Look 1",
+      "p2": "move Thief 2, move Protect"
+    },
+    {
+      "p1": "move Icy Wind, move Confide 2",
+      "p2": "move Scratch 1, move Wrap 2"
+    },
+    {
+      "p1": "move Aqua Jet 1, move Zen Headbutt 2",
+      "p2": "move Fake Out 1, move Recycle"
+    },
+    {
+      "p1": "move Rest, move Recycle",
+      "p2": "move Poison Jab 2, move Spikes"
+    },
+    {
+      "p1": "move Toxic 1, move Mean Look 2",
+      "p2": "move Thief 1, move Protect"
+    },
+    {
+      "p1": "move Icy Wind, move Confide 1",
+      "p2": "move Scratch 2, move Wrap 1"
+    },
+    {
+      "p1": "move Aqua Jet 2, move Zen Headbutt 1",
+      "p2": "move Fake Out 2, move Recycle"
+    },
+    {
+      "p1": "move Rest, move Recycle",
+      "p2": "move Poison Jab 1, move Spikes"
+    },
+    {
+      "p1": "move Toxic 2, move Mean Look 1",
+      "p2": "move Thief 2, move Protect"
+    },
+    {
+      "p1": "pass, switch 3"
+    },
+    {
+      "p1": "move Icy Wind, move Pounce 2",
+      "p2": "move Scratch 1, move Wrap 2"
+    },
+    {
+      "p2": "pass, switch 3"
+    },
+    {
+      "p1": "move Aqua Jet 1, move Hyper Beam 2",
+      "p2": "move Fake Out 1, move Trailblaze 2"
+    },
+    {
+      "p2": "switch 4, switch 5"
+    },
+    {
+      "p1": "move 1, move 1",
+      "p2": "move 1 1, move 1"
+    },
+    {
+      "p1": "pass, switch 4"
+    },
+    {
+      "p1": "move Toxic 1, move Sand Attack 2",
+      "p2": "move Thunderbolt 2, move Covet 1"
+    },
+    {
+      "p1": "move Icy Wind, move Attract 1",
+      "p2": "move Mirror Coat, move Attract 2"
+    },
+    {
+      "p1": "move Aqua Jet 2, move Rain Dance",
+      "p2": "move Double Hit 1, move Protect"
+    },
+    {
+      "p1": "move Rest, move Tackle 1",
+      "p2": "move Echoed Voice 2, move Light Screen"
+    },
+    {
+      "p1": "switch 5, move Sand Attack 2",
+      "p2": "switch 6, move Covet 1"
+    },
+    {
+      "p1": "move Icy Wind, move Attract 1",
+      "p2": "move Double-Edge 2, move Attract 1"
+    },
+    {
+      "p1": "move Bulldoze, move Rain Dance",
+      "p2": "move Double Kick 2, move Protect"
+    },
+    {
+      "p1": "pass, switch 5"
+    },
+    {
+      "p1": "move Clear Smog 1, move Toxic 2",
+      "p2": "move Icicle Crash 2, move Covet 1"
+    },
+    {
+      "p1": "move Icy Wind, move Icy Wind",
+      "p2": "move Double-Edge 2, move Attract 1"
+    },
+    {
+      "p2": "pass, switch 6"
+    },
+    {
+      "p1": "move Bulldoze, move Aqua Jet 1",
+      "p2": "move Double Kick 2, move Double Hit 1"
+    }
+  ]
+}

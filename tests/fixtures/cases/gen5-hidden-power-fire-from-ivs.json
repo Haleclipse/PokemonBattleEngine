@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen5-hidden-power-fire-from-ivs",
+ "notes": [
+  "Gen 3-5 Hidden Power takes its type and power (30-70) from the IVs' low bits: Fire 70 here"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Porygon2",
+    "species": "Porygon2",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Hidden Power"
+    ],
+    "ability": "Run Away",
+    "ivs": {
+     "hp": 30,
+     "atk": 31,
+     "def": 30,
+     "spa": 30,
+     "spd": 31,
+     "spe": 30
+    }
+   }
+  ],
+  "p2": [
+   {
+    "label": "Abomasnow",
+    "species": "Abomasnow",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Hidden Power",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Hidden Power",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

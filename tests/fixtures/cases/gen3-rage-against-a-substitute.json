@@ -1,0 +1,68 @@
+{
+ "schema": 1,
+ "id": "gen3-rage-against-a-substitute",
+ "notes": [
+  "Gen 3 Rage (cartridge, I77): a Rage that strikes a Substitute leaves the user not raging \u2014 the faster foe's Quick Attack the next turn builds nothing (Showdown: raging)"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Rager",
+    "species": "Primeape",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Rage",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Guard",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Substitute",
+     "Quick Attack",
+     "Harden"
+    ],
+    "ability": "Volt Absorb"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Rage",
+   "p2": "move Substitute"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "move Quick Attack"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "move Quick Attack"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

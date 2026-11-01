@@ -1,0 +1,93 @@
+{
+ "schema": 1,
+ "id": "gen9-instruct",
+ "notes": [
+  "Gen 9 doubles: Clefable instructs Snorlax, which uses its last move (Harden) at once and still takes its own turn; a target whose last move was Instruct itself cannot be instructed again"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Clefable",
+    "species": "Clefable",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Instruct",
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Magic Guard"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Tackle"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Volcarona",
+    "species": "Volcarona",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Quiver Dance",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Flame Body"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Instruct",
+     "Harden"
+    ],
+    "gender": "F",
+    "ability": "Natural Cure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Instruct 2, move Harden",
+   "p2": "move Harden, move Instruct 1"
+  },
+  {
+   "p1": "move Harden, move Tackle 1",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Instruct 2, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

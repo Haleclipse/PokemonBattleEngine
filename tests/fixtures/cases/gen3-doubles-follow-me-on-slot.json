@@ -1,0 +1,113 @@
+{
+  "schema": 1,
+  "id": "gen3-doubles-follow-me-on-slot",
+  "notes": [
+    "Gen 3 Follow Me is a slot condition, not a volatile of its user",
+    "promoted from m8-gen3-doubles-s101-009-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 3,
+    "mode": "doubles",
+    "format": "gen3doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Corphish",
+        "species": "Corphish",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Whirlwind",
+          "Hyper Voice",
+          "Earthquake"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Goldeen",
+        "species": "Goldeen",
+        "level": 49,
+        "nature": "Hardy",
+        "moves": [
+          "Confusion",
+          "Roar",
+          "Confuse Ray"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Cacturne",
+        "species": "Cacturne",
+        "level": 54,
+        "nature": "Hardy",
+        "moves": [
+          "Gust"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Smoochum",
+        "species": "Smoochum",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fire Blast",
+          "Whirlpool",
+          "Solar Beam"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Whismur",
+        "species": "Whismur",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Follow Me"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Parasect",
+        "species": "Parasect",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Cut"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      39609,
+      261,
+      52713,
+      24761
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Whirlwind 1, move Confusion 2",
+      "p2": "move Gust 1, move Fire Blast 2"
+    },
+    {
+      "p1": "move Hyper Voice, move Roar 1",
+      "p2": "move Cut 1, move Whirlpool 2"
+    },
+    {
+      "p1": "move Earthquake, move Confuse Ray 2",
+      "p2": "move Follow Me, move Solar Beam 1"
+    }
+  ]
+}

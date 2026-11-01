@@ -1,0 +1,114 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-soul-heart",
+ "notes": [
+  "Soul-Heart: +1 Special Attack for every Pok\u00e9mon that faints \u2014 its partner and two foes to its Earthquake (+3); then a Rock Slide takes down the foes' last two: +1 for the first, nothing for the second (from Gen 6 no stage moves once the foes have no Pok\u00e9mon left, and Showdown counts the one still queued as left)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Soul",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Earthquake",
+     "Rock Slide",
+     "Harden"
+    ],
+    "ability": "Soul-Heart"
+   },
+   {
+    "label": "Pal",
+    "species": "Magikarp",
+    "level": 1,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Wall",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Soft-Boiled"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "F1",
+    "species": "Magikarp",
+    "level": 1,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "F2",
+    "species": "Magikarp",
+    "level": 1,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "F3",
+    "species": "Magikarp",
+    "level": 1,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "F4",
+    "species": "Magikarp",
+    "level": 1,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Earthquake, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "switch Wall",
+   "p2": "switch F3, switch F4"
+  },
+  {
+   "p1": "move Rock Slide, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

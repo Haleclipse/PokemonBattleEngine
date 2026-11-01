@@ -1,0 +1,94 @@
+{
+ "schema": 1,
+ "id": "gen5-doubles-mud-sport-stays-with-its-user",
+ "notes": [
+  "Gen 5 doubles: Mud Sport is a volatile on its user (issues.md I23) \u2014 used by both p1 Pok\u00e9mon it takes on each (Showdown puts the right one's on the left one, whose own then fails); once the left one leaves, the right one's still weakens Thunderbolt"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "doubles",
+  "format": "gen5doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Mud Sport",
+     "Harden"
+    ],
+    "ability": "Immunity"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Mud Sport",
+     "Harden"
+    ],
+    "ability": "Natural Cure"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Natural Cure"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Starmie",
+    "species": "Starmie",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Thunderbolt",
+     "Harden"
+    ],
+    "ability": "Illuminate"
+   },
+   {
+    "label": "Slowbro",
+    "species": "Slowbro",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Own Tempo"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Mud Sport, move Mud Sport",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "switch Chansey, move Harden",
+   "p2": "move Thunderbolt 1, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Thunderbolt 2, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

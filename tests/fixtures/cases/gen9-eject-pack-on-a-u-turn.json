@@ -1,0 +1,72 @@
+{
+ "schema": 1,
+ "id": "gen9-eject-pack-on-a-u-turn",
+ "notes": [
+  "Gen 9 Eject Pack on a U-turn (Showdown `onUseItem`: only a `switchFlag` of `true` stops it, U-turn's holds the move's id): Goodra's Gooey lowers Lokix's Speed as its U-turn makes contact, and the pack is used up as the move ends \u2014 Lokix leaves on the pack's order, not U-turn's"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Lokix",
+    "species": "Lokix",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "U-turn",
+     "Harden"
+    ],
+    "item": "Eject Pack",
+    "ability": "Swarm"
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Goodra",
+    "species": "Goodra",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Gooey"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move U-turn",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Snorlax"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,92 @@
+{
+ "schema": 1,
+ "id": "gen9-psychic-noise",
+ "notes": [
+  "Psychic Noise: its Heal Block lasts 2 turns (a Recover chosen that turn is stopped; Leftovers fails); hitting again does not renew it; Covert Cloak keeps it off"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Psychic Noise",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Lax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Harden"
+    ],
+    "ability": "Run Away",
+    "item": "Leftovers"
+   },
+   {
+    "label": "Cloak",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Harden"
+    ],
+    "ability": "Run Away",
+    "item": "Covert Cloak"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Psychic Noise",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Psychic Noise",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Cloak"
+  },
+  {
+   "p1": "move Psychic Noise",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

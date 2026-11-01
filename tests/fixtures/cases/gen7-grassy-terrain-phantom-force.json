@@ -1,0 +1,67 @@
+{
+ "schema": 1,
+ "id": "gen7-grassy-terrain-phantom-force",
+ "notes": [
+  "Gen 7 Grassy Terrain heals no Pok\u00e9mon vanished by Phantom Force"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Phantom",
+    "species": "Trevenant",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Phantom Force",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gardener",
+    "species": "Skarmory",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Grassy Terrain",
+     "Crunch"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Crunch"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Grassy Terrain"
+  },
+  {
+   "p1": "move Phantom Force",
+   "p2": "move Crunch"
+  },
+  {
+   "p1": "move Phantom Force",
+   "p2": "move Crunch"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

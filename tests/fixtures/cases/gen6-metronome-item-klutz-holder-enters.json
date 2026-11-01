@@ -1,0 +1,70 @@
+{
+ "schema": 1,
+ "id": "gen6-metronome-item-klutz-holder-enters",
+ "notes": [
+  "Gen 6: a Klutz Lopunny holding Metronome comes in: Klutz suppresses the item's SwitchIn start — no `metronome` condition"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Lopunny",
+    "species": "Lopunny",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Pound"
+    ],
+    "gender": "F",
+    "ability": "Klutz",
+    "item": "Metronome"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Bronzong",
+    "species": "Bronzong",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Levitate"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "switch Lopunny",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Pound",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

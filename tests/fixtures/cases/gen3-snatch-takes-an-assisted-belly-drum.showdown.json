@@ -1,0 +1,545 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@pkmn/sim",
+    "version": "0.10.11",
+    "formatid": "gen3customgame",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "frames": [
+    {
+      "schema": 1,
+      "checkpoint": "initial",
+      "turn": 1,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 165,
+              "max_hp": 165,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ice",
+                "water"
+              ],
+              "ability": "thickfat",
+              "item": "",
+              "species": "sealeo",
+              "pp": [
+                16,
+                64
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "thickfat",
+              "item": "",
+              "species": "snorlax",
+              "pp": [
+                32
+              ]
+            },
+            {
+              "hp": 325,
+              "max_hp": 325,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "naturalcure",
+              "item": "",
+              "species": "chansey",
+              "pp": [
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Sealeo"
+          },
+          "details": "Sealeo, L50, M",
+          "hp": 165,
+          "max_hp": 165,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "details": "Snorlax, L50, M",
+          "hp": 235,
+          "max_hp": 235,
+          "status": null
+        },
+        {
+          "kind": "turn",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_1",
+      "turn": 2,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 83,
+              "max_hp": 165,
+              "status": null,
+              "boosts": {
+                "attack": 6,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ice",
+                "water"
+              ],
+              "ability": "thickfat",
+              "item": "",
+              "species": "sealeo",
+              "pp": [
+                15,
+                64
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 235,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "thickfat",
+              "item": "",
+              "species": "snorlax",
+              "pp": [
+                31
+              ]
+            },
+            {
+              "hp": 325,
+              "max_hp": 325,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "naturalcure",
+              "item": "",
+              "species": "chansey",
+              "pp": [
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Sealeo"
+          },
+          "move": "Snatch",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Sealeo"
+          },
+          "from": null
+        },
+        {
+          "kind": "singleturn",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Sealeo"
+          },
+          "move": "Snatch"
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Assist",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "from": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Belly Drum",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "from": "[from] Assist"
+        },
+        {
+          "kind": "activate",
+          "args": [
+            "p1a: Sealeo",
+            "move: Snatch",
+            "[of] p2a: Snorlax"
+          ]
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Sealeo"
+          },
+          "move": "Belly Drum",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Sealeo"
+          },
+          "from": "[from] Snatch"
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Sealeo"
+          },
+          "hp": 83,
+          "max_hp": 165,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "setboost",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Sealeo"
+          },
+          "stat": "atk",
+          "amount": 6
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 2
+        }
+      ]
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_2",
+      "turn": 3,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 83,
+              "max_hp": 165,
+              "status": null,
+              "boosts": {
+                "attack": 6,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ice",
+                "water"
+              ],
+              "ability": "thickfat",
+              "item": "",
+              "species": "sealeo",
+              "pp": [
+                15,
+                63
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 118,
+              "max_hp": 235,
+              "status": null,
+              "boosts": {
+                "attack": 6,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "thickfat",
+              "item": "",
+              "species": "snorlax",
+              "pp": [
+                30
+              ]
+            },
+            {
+              "hp": 325,
+              "max_hp": 325,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "normal"
+              ],
+              "ability": "naturalcure",
+              "item": "",
+              "species": "chansey",
+              "pp": [
+                16
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Sealeo"
+          },
+          "move": "Splash",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Sealeo"
+          },
+          "from": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Assist",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "from": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "move": "Belly Drum",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "from": "[from] Assist"
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "hp": 118,
+          "max_hp": 235,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "setboost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Snorlax"
+          },
+          "stat": "atk",
+          "amount": 6
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 3
+        }
+      ]
+    }
+  ],
+  "debug_log": "|gametype|singles\n|player|p1|P1||\n|player|p2|P2||\n|gen|3\n|tier|[Gen 3] Custom Game\n|rule|HP Percentage Mod: HP is shown in percentages\n|\n|teamsize|p1|1\n|teamsize|p2|2\n|start\n|switch|p1a: Sealeo|Sealeo, L50, M|165/165\n|switch|p2a: Snorlax|Snorlax, L50, M|235/235\n|turn|1\n|\n|move|p1a: Sealeo|Snatch|p1a: Sealeo\n|-singleturn|p1a: Sealeo|Snatch\n|move|p2a: Snorlax|Assist|p2a: Snorlax\n|move|p2a: Snorlax|Belly Drum|p2a: Snorlax|[from] Assist\n|-activate|p1a: Sealeo|move: Snatch|[of] p2a: Snorlax\n|move|p1a: Sealeo|Belly Drum|p1a: Sealeo|[from] Snatch\n|-damage|p1a: Sealeo|83/165\n|-setboost|p1a: Sealeo|atk|6|[from] move: Belly Drum\n|\n|upkeep\n|turn|2\n|\n|move|p1a: Sealeo|Splash|p1a: Sealeo\n|-nothing\n|move|p2a: Snorlax|Assist|p2a: Snorlax\n|move|p2a: Snorlax|Belly Drum|p2a: Snorlax|[from] Assist\n|-damage|p2a: Snorlax|118/235\n|-setboost|p2a: Snorlax|atk|6|[from] move: Belly Drum\n|\n|upkeep\n|turn|3"
+}

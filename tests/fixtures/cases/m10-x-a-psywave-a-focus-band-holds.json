@@ -1,0 +1,104 @@
+{
+  "schema": 1,
+  "id": "m10-x-a-psywave-a-focus-band-holds",
+  "notes": [
+    "Gen 3 Doubles: Jynx's Psywave on Metang, whose Focus Band holds (-activate|p|item: Focus Band): the replay draws a Psywave roll that would have knocked it out, not one that leaves it on 1 by itself (R-M10-48)",
+    "promoted from m8-gen3-doubles-s1653-017-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 3,
+    "mode": "doubles",
+    "format": "gen3doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Jynx",
+        "species": "Jynx",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Psywave",
+          "Ingrain",
+          "Dragon Rage",
+          "Foresight"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Regirock",
+        "species": "Regirock",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Seismic Toss",
+          "Ingrain",
+          "Sonic Boom",
+          "Foresight"
+        ],
+        "ability": "Run Away"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Metang",
+        "species": "Metang",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Aeroblast",
+          "Ingrain",
+          "Razor Leaf",
+          "Foresight"
+        ],
+        "ability": "Run Away",
+        "item": "Focus Band"
+      },
+      {
+        "label": "Medicham",
+        "species": "Medicham",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Air Cutter",
+          "Ingrain",
+          "Cross Chop",
+          "Foresight"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      48508,
+      46650,
+      6994,
+      45396
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Psywave 1, move Seismic Toss 2",
+      "p2": "move Aeroblast 1, move Air Cutter"
+    },
+    {
+      "p1": "move Ingrain, move Ingrain",
+      "p2": "move Ingrain, move Ingrain"
+    },
+    {
+      "p1": "move Dragon Rage 1, move Sonic Boom 2",
+      "p2": "move Razor Leaf, move Cross Chop 2"
+    },
+    {
+      "p1": "move Foresight 1, move Foresight 2",
+      "p2": "move Foresight 1, move Foresight 2"
+    },
+    {
+      "p1": "move Psywave 1, move Seismic Toss 2",
+      "p2": "move Aeroblast 1, move Air Cutter"
+    }
+  ]
+}

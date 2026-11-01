@@ -1,0 +1,268 @@
+{
+ "schema": 1,
+ "id": "gen3-doubles-encored-charge-from-razor-wind-keeps-the-drawn-foe",
+ "notes": [
+  "R-M9-39: Plusle's Encore turns Chimecho's Razor Wind (no target) into Sky Attack. `resolveAction` had given the action a foe's `targetLoc` (`getRandomTarget` on Razor Wind), so the charge keeps it and the release strikes Plusle. R-M9-26's rule (draw anew at the release) holds only for a chosen move aimed at its user (Iron Defense), whose `targetLoc` is the user's own slot. From the full campaign replay of 2026-10-21 (Nightly 20261013-175156's m8-gen3-doubles-s643-012)."
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "doubles",
+  "format": "gen3doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Chikorita",
+    "species": "Chikorita",
+    "level": 48,
+    "nature": "Hardy",
+    "moves": [
+     "Psywave",
+     "Attract",
+     "Dragon Rage",
+     "Encore"
+    ],
+    "ability": "Shell Armor",
+    "item": "Focus Band"
+   },
+   {
+    "label": "Plusle",
+    "species": "Plusle",
+    "level": 52,
+    "nature": "Hardy",
+    "moves": [
+     "Snore",
+     "Attract",
+     "Spit Up",
+     "Encore"
+    ],
+    "ability": "Flash Fire",
+    "item": "Lucky Punch"
+   },
+   {
+    "label": "Torkoal",
+    "species": "Torkoal",
+    "level": 51,
+    "nature": "Hardy",
+    "moves": [
+     "Aeroblast",
+     "Attract",
+     "Cross Chop",
+     "Encore"
+    ],
+    "ability": "Hustle"
+   },
+   {
+    "label": "Croconaw",
+    "species": "Croconaw",
+    "level": 55,
+    "nature": "Hardy",
+    "moves": [
+     "Razor Leaf",
+     "Attract",
+     "Slash",
+     "Encore"
+    ],
+    "ability": "Water Veil",
+    "item": "Starf Berry"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Masquerain",
+    "species": "Masquerain",
+    "level": 49,
+    "nature": "Hardy",
+    "moves": [
+     "Air Cutter",
+     "Attract",
+     "Crabhammer",
+     "Encore"
+    ],
+    "ability": "Blaze",
+    "item": "Pecha Berry"
+   },
+   {
+    "label": "Wurmple",
+    "species": "Wurmple",
+    "level": 53,
+    "nature": "Hardy",
+    "moves": [
+     "Leaf Blade",
+     "Attract",
+     "Karate Chop",
+     "Encore"
+    ],
+    "ability": "Marvel Scale",
+    "item": "Quick Claw"
+   },
+   {
+    "label": "Chimecho",
+    "species": "Chimecho",
+    "level": 54,
+    "nature": "Hardy",
+    "moves": [
+     "Razor Wind",
+     "Attract",
+     "Sky Attack",
+     "Encore"
+    ],
+    "ability": "Magma Armor",
+    "item": "Sun Stone"
+   },
+   {
+    "label": "Shedinja",
+    "species": "Shedinja",
+    "level": 54,
+    "nature": "Hardy",
+    "moves": [
+     "Gust",
+     "Attract",
+     "Wing Attack",
+     "Encore"
+    ],
+    "ability": "Rain Dish",
+    "item": "Figy Berry"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   61106,
+   5492,
+   34350,
+   36686
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1 1, move 1 2",
+   "p2": "move 1, move 1 1"
+  },
+  {
+   "p1": "move 2 1, move 2 2",
+   "p2": "move 2 2, move 2 1"
+  },
+  {
+   "p1": "move 3 1, move 3 2",
+   "p2": "move 3 2, move 3 1"
+  },
+  {
+   "p1": "move 4 1, move 4 2",
+   "p2": "move 4 2, move 4 1"
+  },
+  {
+   "p1": "switch 3, move 1 1",
+   "p2": "switch 3, move 1 2"
+  },
+  {
+   "p1": "move 1 2, move 2 1",
+   "p2": "move 1, move 2 1"
+  },
+  {
+   "p1": "move 2 2, move 3 1",
+   "p2": "move 1, move 3 2"
+  },
+  {
+   "p1": "move 3 2, move 4 1",
+   "p2": "move 3 1, move 4 2"
+  },
+  {
+   "p1": "move 4 2, move 1 1",
+   "p2": "move 1, move 1 1"
+  },
+  {
+   "p1": "switch 3, move 2 2",
+   "p2": "switch 3, move 2 2"
+  },
+  {
+   "p1": "move 1 1, move 3 2",
+   "p2": "move 1, move 3 1"
+  },
+  {
+   "p1": "move 2 1, move 4 2",
+   "p2": "move 2 2, move 4 1"
+  },
+  {
+   "p1": "move 3 1, move 1 2",
+   "p2": "move 3 2, move 3 1"
+  },
+  {
+   "p2": "switch 3, pass"
+  },
+  {
+   "p1": "move 4 1, move 2 2",
+   "p2": "move 4 2, move 3 1"
+  },
+  {
+   "p1": "switch 3, pass"
+  },
+  {
+   "p1": "switch 4, move 2 1",
+   "p2": "switch 4, move 3 2"
+  },
+  {
+   "p1": "move 1, move 2 2",
+   "p2": "move 1 1, move 3 2"
+  },
+  {
+   "p2": "switch 4, pass"
+  },
+  {
+   "p1": "move 2 1, move 2 2",
+   "p2": "move 2 1, move 3 2"
+  },
+  {
+   "p1": "move 3 1, move 2 2",
+   "p2": "move 3 1, move 2 2"
+  },
+  {
+   "p1": "move 4 1, move 2 2",
+   "p2": "move 1, move 3 1"
+  },
+  {
+   "p1": "switch 4, move 2 1",
+   "p2": "move 3 2, move 4 1"
+  },
+  {
+   "p1": "move 1 2, move 1 1",
+   "p2": "move 1, move 1 2"
+  },
+  {
+   "p1": "move 2 2, move 2 1",
+   "p2": "move 3 1, move 2 2"
+  },
+  {
+   "p1": "move 3 2, move 3 1",
+   "p2": "move 1, move 3 1"
+  },
+  {
+   "p1": "move 4 1, move 4 1",
+   "p2": "move 1, pass"
+  },
+  {
+   "p1": "switch 4, move 1 1",
+   "p2": "move 1, pass"
+  },
+  {
+   "p1": "pass, switch 4"
+  },
+  {
+   "p1": "move 1, move 2 1",
+   "p2": "move 3 2, pass"
+  },
+  {
+   "p1": "move 2 1, move 3 1",
+   "p2": "move 1, pass"
+  },
+  {
+   "p1": "move 3 1, move 4 1",
+   "p2": "move 1, pass"
+  },
+  {
+   "p1": "move 4 1, move 1 1",
+   "p2": "move 2 1, pass"
+  }
+ ]
+}

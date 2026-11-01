@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "id": "m10-l-an-autotomize-that-takes-no-weight-off-shows-nothing",
+  "notes": [
+    "Gen 5: Haunter (0.1 kg) uses Autotomize — it can take no weight off, Showdown shows no -start and the observers see no Autotomize volatile (R-M10-36)",
+    "promoted from m8-gen5-singles-s1640-018-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 5,
+    "mode": "singles",
+    "format": "gen5customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Shiftry",
+        "species": "Shiftry",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Autotomize"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Haunter",
+        "species": "Haunter",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Autotomize"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      58748,
+      40353,
+      46824,
+      47398
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Autotomize",
+      "p2": "move Autotomize"
+    }
+  ]
+}

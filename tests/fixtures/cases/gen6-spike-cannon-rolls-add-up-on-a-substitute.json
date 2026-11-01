@@ -1,0 +1,281 @@
+{
+  "schema": 1,
+  "id": "gen6-spike-cannon-rolls-add-up-on-a-substitute",
+  "notes": [
+    "Two Spike Cannon hits on a Substitute that survives: only the sum of their rolls shows, so the roll search sweeps the hits again from the rolls it kept",
+    "promoted from m8-gen6-singles-s113-018-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 6,
+    "mode": "singles",
+    "format": "gen6customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Quilava",
+        "species": "Quilava",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Blue Flare",
+          "Substitute",
+          "Fire Blast",
+          "Toxic"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Tyrogue",
+        "species": "Tyrogue",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Vital Throw"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Keldeo",
+        "species": "Keldeo",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Pin Missile",
+          "Toxic",
+          "Rock Blast",
+          "Substitute"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Goomy",
+        "species": "Goomy",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Bullet Seed",
+          "Toxic",
+          "Double Slap",
+          "Substitute"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Absol",
+        "species": "Absol",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Double Hit",
+          "Bonemerang"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Skorupi",
+        "species": "Skorupi",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tail Slap",
+          "Toxic",
+          "Arm Thrust",
+          "Substitute"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Delphox",
+        "species": "Delphox",
+        "level": 53,
+        "nature": "Hardy",
+        "moves": [
+          "Icicle Spear",
+          "Toxic",
+          "Gear Grind",
+          "Substitute"
+        ],
+        "ability": "Huge Power",
+        "gender": "F"
+      },
+      {
+        "label": "Golbat",
+        "species": "Golbat",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Barrage",
+          "Toxic",
+          "Fury Swipes",
+          "Substitute"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Golduck",
+        "species": "Golduck",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Toxic",
+          "Fury Attack",
+          "Substitute"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Pidgeotto",
+        "species": "Pidgeotto",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Spike Cannon"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      10941,
+      43437,
+      10139,
+      36109
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Blue Flare",
+      "p2": "move Icicle Spear"
+    },
+    {
+      "p1": "move Substitute",
+      "p2": "move Toxic"
+    },
+    {
+      "p1": "move Fire Blast",
+      "p2": "move Gear Grind"
+    },
+    {
+      "p1": "move Toxic",
+      "p2": "move Substitute"
+    },
+    {
+      "p1": "switch Tyrogue"
+    },
+    {
+      "p1": "move Vital Throw",
+      "p2": "move Icicle Spear"
+    },
+    {
+      "p1": "switch Keldeo"
+    },
+    {
+      "p1": "move Toxic",
+      "p2": "move Toxic"
+    },
+    {
+      "p1": "move Rock Blast",
+      "p2": "move Gear Grind"
+    },
+    {
+      "p1": "switch Goomy",
+      "p2": "switch Golbat"
+    },
+    {
+      "p1": "move Bullet Seed",
+      "p2": "move Barrage"
+    },
+    {
+      "p1": "move Toxic",
+      "p2": "move Toxic"
+    },
+    {
+      "p1": "move Double Slap",
+      "p2": "move Fury Swipes"
+    },
+    {
+      "p1": "move Substitute",
+      "p2": "move Substitute"
+    },
+    {
+      "p1": "switch Keldeo"
+    },
+    {
+      "p1": "move Pin Missile",
+      "p2": "move Barrage"
+    },
+    {
+      "p1": "move Toxic",
+      "p2": "move Toxic"
+    },
+    {
+      "p1": "switch Absol",
+      "p2": "switch Delphox"
+    },
+    {
+      "p1": "move Bonemerang",
+      "p2": "move Gear Grind"
+    },
+    {
+      "p2": "switch Golbat"
+    },
+    {
+      "p1": "move Double Hit",
+      "p2": "move Barrage"
+    },
+    {
+      "p1": "switch Keldeo"
+    },
+    {
+      "p1": "move Toxic",
+      "p2": "move Toxic"
+    },
+    {
+      "p1": "move Substitute",
+      "p2": "move Substitute"
+    },
+    {
+      "p1": "switch Skorupi"
+    },
+    {
+      "p1": "move Tail Slap",
+      "p2": "move Barrage"
+    },
+    {
+      "p1": "move Toxic",
+      "p2": "switch Golduck"
+    },
+    {
+      "p1": "move Arm Thrust",
+      "p2": "move Toxic"
+    },
+    {
+      "p1": "move Substitute",
+      "p2": "move Fury Attack"
+    },
+    {
+      "p1": "move Tail Slap",
+      "p2": "move Substitute"
+    },
+    {
+      "p1": "move Toxic",
+      "p2": "switch Pidgeotto"
+    },
+    {
+      "p1": "move Arm Thrust",
+      "p2": "move Spike Cannon"
+    }
+  ]
+}

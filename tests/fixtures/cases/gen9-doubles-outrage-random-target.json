@@ -1,0 +1,83 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-outrage-random-target",
+ "notes": [
+  "Gen 9 doubles Outrage and Raging Fury: each locked turn draws its target anew among the adjacent foes"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Rager",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Outrage",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Fury",
+    "species": "Arcanine",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Raging Fury",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Wall",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Wall2",
+    "species": "Blissey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Outrage, move Raging Fury",
+   "p2": "move Recover, move Recover"
+  },
+  {
+   "p1": "move Outrage 1, move Raging Fury 1",
+   "p2": "move Recover, move Recover"
+  },
+  {
+   "p1": "move Outrage 1, move Raging Fury 1",
+   "p2": "move Recover, move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

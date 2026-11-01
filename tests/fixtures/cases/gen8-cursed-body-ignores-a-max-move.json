@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen8-cursed-body-ignores-a-max-move",
+ "notes": [
+  "Gen 8: Snorlax Dynamaxes and its Max Strike hits Blissey (Cursed Body); Cursed Body does not roll for a Max Move (`!move.isMax`), so nothing is drawn for it (DESIGN.md R-M8-144)"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Cursed Body",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1 dynamax",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move Splash"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   12,
+   13,
+   14,
+   15
+  ]
+ }
+}

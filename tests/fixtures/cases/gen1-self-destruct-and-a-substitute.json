@@ -1,0 +1,78 @@
+{
+ "schema": 1,
+ "id": "gen1-self-destruct-and-a-substitute",
+ "notes": [
+  "Gen 1: Self-Destruct that breaks a Substitute leaves its user standing; Explosion's hit costs it; both halve the Defense after the rollover"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Electrode",
+    "species": "Electrode",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Self-Destruct",
+     "Explosion",
+     "Harden"
+    ]
+   },
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Substitute",
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Substitute"
+  },
+  {
+   "p1": "move Self-Destruct",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Explosion",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Mew"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

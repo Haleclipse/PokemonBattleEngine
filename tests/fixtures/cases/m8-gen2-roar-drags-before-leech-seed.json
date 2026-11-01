@@ -1,0 +1,215 @@
+{
+  "schema": 1,
+  "id": "m8-gen2-roar-drags-before-leech-seed",
+  "notes": [
+    "Gen 2: Entei, seeded, roars Nidoran-M out; the gen2 moveHit drags Gligar in within the move, so Entei's Leech Seed after its own action heals Gligar (DESIGN.md R-M8-115)",
+    "promoted from m8-gen2-singles-s577-006-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 2,
+    "mode": "singles",
+    "format": "gen2customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Larvitar",
+        "species": "Larvitar",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Rage"
+        ],
+        "gender": "F"
+      },
+      {
+        "label": "Cubone",
+        "species": "Cubone",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Rock Throw",
+          "Heal Bell",
+          "Leech Seed"
+        ],
+        "gender": "F"
+      },
+      {
+        "label": "Entei",
+        "species": "Entei",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Egg Bomb",
+          "Present",
+          "Roar"
+        ]
+      },
+      {
+        "label": "Diglett",
+        "species": "Diglett",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Heal Bell",
+          "Thunder Wave",
+          "Roar"
+        ],
+        "gender": "F"
+      },
+      {
+        "label": "Yanma",
+        "species": "Yanma",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Leech Seed"
+        ],
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Pupitar",
+        "species": "Pupitar",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Explosion"
+        ],
+        "gender": "F"
+      },
+      {
+        "label": "Pikachu",
+        "species": "Pikachu",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Self-Destruct",
+          "Leech Seed"
+        ],
+        "gender": "M"
+      },
+      {
+        "label": "Nidoran-M",
+        "species": "Nidoran-M",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Recover",
+          "Heal Bell",
+          "Soft-Boiled",
+          "Leech Seed"
+        ]
+      },
+      {
+        "label": "Gligar",
+        "species": "Gligar",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Leech Seed"
+        ],
+        "gender": "F"
+      },
+      {
+        "label": "Lanturn",
+        "species": "Lanturn",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Blizzard"
+        ],
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      32605,
+      48729,
+      35739,
+      42922
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Rage",
+      "p2": "move Explosion"
+    },
+    {
+      "p1": "switch Cubone",
+      "p2": "switch Pikachu"
+    },
+    {
+      "p1": "move Leech Seed",
+      "p2": "move Leech Seed"
+    },
+    {
+      "p1": "move Rock Throw",
+      "p2": "move Self-Destruct"
+    },
+    {
+      "p2": "switch Nidoran-M"
+    },
+    {
+      "p1": "move Heal Bell",
+      "p2": "move Heal Bell"
+    },
+    {
+      "p1": "switch Entei"
+    },
+    {
+      "p1": "move Present",
+      "p2": "move Soft-Boiled"
+    },
+    {
+      "p1": "move Roar",
+      "p2": "move Leech Seed"
+    },
+    {
+      "p1": "switch Diglett",
+      "p2": "switch Nidoran-M"
+    },
+    {
+      "p1": "move Heal Bell",
+      "p2": "move Heal Bell"
+    },
+    {
+      "p1": "move Thunder Wave",
+      "p2": "move Soft-Boiled"
+    },
+    {
+      "p1": "move Roar",
+      "p2": "move Leech Seed"
+    },
+    {
+      "p1": "move Thunder Wave",
+      "p2": "move Blizzard"
+    },
+    {
+      "p1": "switch Entei"
+    },
+    {
+      "p1": "switch Yanma",
+      "p2": "switch Gligar"
+    },
+    {
+      "p1": "move Leech Seed",
+      "p2": "move Leech Seed"
+    },
+    {
+      "p1": "switch Entei",
+      "p2": "switch Nidoran-M"
+    },
+    {
+      "p1": "move Egg Bomb",
+      "p2": "move Recover"
+    },
+    {
+      "p1": "move Roar",
+      "p2": "move Leech Seed"
+    }
+  ]
+}

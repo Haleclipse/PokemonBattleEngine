@@ -1,0 +1,110 @@
+{
+ "schema": 1,
+ "id": "gen9-mental-herb",
+ "notes": [
+  "Gen 9 Mental Herb (Showdown `onUpdate`): Grimmsnarl's Taunt on Snorlax \u2014 at the move's `Update` Snorlax uses the herb up and the taunt ends, so its Harden goes through",
+  "Blissey's herb answers Grimmsnarl's Attract the same way; Eevee's answers Disable, and its Harden is not disabled"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Mental Herb",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "gender": "F",
+    "item": "Mental Herb",
+    "ability": "Natural Cure"
+   },
+   {
+    "label": "Eevee",
+    "species": "Eevee",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Mental Herb",
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Grimmsnarl",
+    "species": "Grimmsnarl",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Taunt",
+     "Attract",
+     "Disable",
+     "Harden"
+    ],
+    "gender": "M",
+    "ability": "Prankster"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Taunt"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Blissey",
+   "p2": "move Attract"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Eevee",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Disable"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen1-mirror-move-after-the-foe-slept",
+ "notes": [
+  "Gen 1: Snorlax used Tackle, then Jolteon's Spore puts it to sleep — the turn sleep takes leaves it no last move (the gen1 `slp` `onBeforeMove`: `lastMove = null`; pokered clears `wPlayerUsedMove`), so Jolteon's Mirror Move then fails"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spore",
+     "Mirror Move",
+     "Tackle"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Tackle",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Spore",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Mirror Move",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Mirror Move",
+   "p2": "move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

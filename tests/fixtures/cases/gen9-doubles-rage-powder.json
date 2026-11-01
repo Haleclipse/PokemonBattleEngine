@@ -1,0 +1,85 @@
+{
+  "schema": 1,
+  "id": "gen9-doubles-rage-powder",
+  "notes": [
+    "Rage Powder (priority +2) pulls the foes' single-target moves onto its user, except from a Grass type (powder immunity); Spore is refused by a Grass type (`-immune`) and by Safety Goggles (`-activate … item: Safety Goggles`)."
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "a",
+        "species": "Amoonguss",
+        "ability": "Run Away",
+        "level": 100,
+        "nature": "Hardy",
+        "moves": [
+          "Rage Powder",
+          "Spore"
+        ]
+      },
+      {
+        "label": "b",
+        "species": "Snorlax",
+        "ability": "Run Away",
+        "level": 100,
+        "nature": "Hardy",
+        "moves": [
+          "Swords Dance"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "label": "c",
+        "species": "Garchomp",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Dragon Claw",
+          "Swords Dance"
+        ],
+        "item": "Safety Goggles"
+      },
+      {
+        "label": "d",
+        "species": "Venusaur",
+        "ability": "Run Away",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Body Slam",
+          "Swords Dance"
+        ]
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1, move 1",
+      "p2": "move 1 2, move 1 2"
+    },
+    {
+      "p1": "move 2 2, move 1",
+      "p2": "move 2, move 2"
+    },
+    {
+      "p1": "move 2 1, move 1",
+      "p2": "move 2, move 2"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      3,
+      2,
+      3,
+      4
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "schema": 1,
+  "id": "gen4-singles-ohko",
+  "notes": [
+    "Gen 4 one-hit KO moves: Sturdy blocks them; Sheer Cold still affects an Ice type (the typed immunity starts in Gen 7); a higher-level target is immune."
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "singles",
+    "format": "gen4customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "a",
+        "species": "Cloyster",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Sheer Cold",
+          "Fissure",
+          "Horn Drill",
+          "Protect"
+        ],
+        "ability": "Shell Armor"
+      }
+    ],
+    "p2": [
+      {
+        "label": "b",
+        "species": "Golem",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ],
+        "ability": "Sturdy"
+      },
+      {
+        "label": "c",
+        "species": "Mamoswine",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "d",
+        "species": "Snorlax",
+        "level": 60,
+        "nature": "Hardy",
+        "moves": [
+          "Tackle"
+        ],
+        "ability": "Run Away"
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 2",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "switch 2"
+    },
+    {
+      "p2": "switch 3"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 1"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      25,
+      26,
+      27,
+      28
+    ]
+  }
+}

@@ -1,0 +1,67 @@
+{
+ "schema": 1,
+ "id": "gen3-dive",
+ "notes": [
+  "Gen 3 Dive (special, 60 power): Surf reaches it and doubles at the final damage"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Diver",
+    "species": "Kingdra",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Dive",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Foe",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Surf",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Dive",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Dive",
+   "p2": "move Surf"
+  },
+  {
+   "p1": "move Dive",
+   "p2": "move Surf"
+  },
+  {
+   "p1": "move Dive",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

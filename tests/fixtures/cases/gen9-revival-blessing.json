@@ -1,0 +1,121 @@
+{
+ "schema": 1,
+ "id": "gen9-revival-blessing",
+ "notes": [
+  "Revival Blessing fails with no fainted party member (Stomping Tantrum doubles next turn); after Frail faints it asks which fainted Pok\u00e9mon comes back (the Revive request): Frail returns to the bench at half HP, its status gone, and can switch in"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Frail",
+    "species": "Mew",
+    "level": 20,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Blesser",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Revival Blessing",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Early",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Revival Blessing",
+     "Stomping Tantrum"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Third",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Killer",
+    "species": "Snorlax",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Toxic",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "switch Early",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Revival Blessing",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Stomping Tantrum",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Frail",
+   "p2": "move Toxic"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "switch Blesser"
+  },
+  {
+   "p1": "move Revival Blessing",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Frail"
+  },
+  {
+   "p1": "switch Frail",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

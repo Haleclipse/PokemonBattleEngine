@@ -1,0 +1,72 @@
+{
+ "schema": 1,
+ "id": "gen4-u-turn-passes-the-last-move",
+ "notes": [
+  "Gen 4: the Pok\u00e9mon a U-turn brings in takes over the user's last move (Showdown `switchIn`: `gen === 4 && sourceEffect`), so a Disable right after seals U-turn on it"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Scyther",
+    "species": "Scyther",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "U-turn"
+    ],
+    "ability": "Swarm"
+   },
+   {
+    "label": "Heracross",
+    "species": "Heracross",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "U-turn",
+     "Tackle"
+    ],
+    "ability": "Guts"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Slowbro",
+    "species": "Slowbro",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Disable",
+     "Harden"
+    ],
+    "ability": "Oblivious"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move U-turn",
+   "p2": "move Disable"
+  },
+  {
+   "p1": "switch Heracross"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   5
+  ]
+ }
+}

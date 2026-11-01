@@ -1,0 +1,129 @@
+{
+ "schema": 1,
+ "id": "gen5-effect-spore-cursed-body-poison-touch",
+ "notes": [
+  "Gen 5: Effect Spore's random(100) spares no Grass type yet; Poison Touch rolls per contact hit; Cursed Body disables the move that hit for 4 turns"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Leafeon",
+    "species": "Leafeon",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Swift"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Toucher",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Double Kick",
+     "Swift"
+    ],
+    "ability": "Poison Touch"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Spore",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Heal Bell"
+    ],
+    "ability": "Effect Spore"
+   },
+   {
+    "label": "Cursed",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover",
+     "Harden"
+    ],
+    "ability": "Cursed Body"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Tackle",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "switch Toucher",
+   "p2": "move Heal Bell"
+  },
+  {
+   "p1": "move Double Kick",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Double Kick",
+   "p2": "move Heal Bell"
+  },
+  {
+   "p1": "move Double Kick",
+   "p2": "switch Cursed"
+  },
+  {
+   "p1": "move Swift",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Swift",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Swift",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Swift",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Double Kick",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

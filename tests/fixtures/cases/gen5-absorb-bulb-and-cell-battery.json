@@ -1,0 +1,83 @@
+{
+ "schema": 1,
+ "id": "gen5-absorb-bulb-and-cell-battery",
+ "notes": [
+  "Gen 5 Absorb Bulb and Cell Battery: Lapras's Water Gun spends Snorlax's bulb (Special Attack +1), its Thunder Shock the other Snorlax's battery (Attack +1); a second Water Gun on the first changes nothing"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Bulb",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Absorb Bulb",
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Battery",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Cell Battery",
+    "ability": "Thick Fat"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Lapras",
+    "species": "Lapras",
+    "level": 30,
+    "nature": "Hardy",
+    "moves": [
+     "Water Gun",
+     "Thunder Shock",
+     "Harden"
+    ],
+    "ability": "Water Absorb"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Water Gun"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Water Gun"
+  },
+  {
+   "p1": "switch 2",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Thunder Shock"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,260 @@
+{
+  "schema": 1,
+  "id": "m10-t-an-illusion-fainting-in-its-guise-keeps-its-status",
+  "notes": [
+    "Gen 5: Dewott, Illusion, faints in Krookodile's guise; the faint's cure is no line, and Dewott is still seen poisoned as it was last seen (R-M10-44)",
+    "promoted from m8-gen5-singles-s1649-006-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 5,
+    "mode": "singles",
+    "format": "gen5customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Dwebble",
+        "species": "Dwebble",
+        "level": 45,
+        "nature": "Hardy",
+        "moves": [
+          "Body Slam",
+          "Metronome",
+          "Bolt Strike",
+          "Toxic Spikes"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Dewott",
+        "species": "Dewott",
+        "level": 49,
+        "nature": "Hardy",
+        "moves": [
+          "Thunderbolt",
+          "Metronome",
+          "Lick",
+          "Toxic Spikes"
+        ],
+        "ability": "Illusion",
+        "gender": "M"
+      },
+      {
+        "label": "Zoroark",
+        "species": "Zoroark",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Spark",
+          "Metronome",
+          "Dragon Breath",
+          "Toxic Spikes"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Krookodile",
+        "species": "Krookodile",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Zap Cannon",
+          "Metronome",
+          "Freeze Shock"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Lotad",
+        "species": "Lotad",
+        "level": 45,
+        "nature": "Hardy",
+        "moves": [
+          "Dive",
+          "Metronome",
+          "Drill Peck",
+          "Toxic Spikes"
+        ],
+        "ability": "Wonder Guard",
+        "gender": "F"
+      },
+      {
+        "label": "Trubbish",
+        "species": "Trubbish",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Dragon Pulse",
+          "Metronome",
+          "Peck",
+          "Toxic Spikes"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Pineco",
+        "species": "Pineco",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Dark Pulse",
+          "Gust",
+          "Toxic Spikes"
+        ],
+        "ability": "Run Away",
+        "item": "Red Card",
+        "gender": "F"
+      },
+      {
+        "label": "Buizel",
+        "species": "Buizel",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Toxic Spikes"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      11069,
+      5540,
+      36877,
+      32643
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Body Slam",
+      "p2": "move Dive"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Dive"
+    },
+    {
+      "p1": "move Bolt Strike",
+      "p2": "move Drill Peck"
+    },
+    {
+      "p1": "move Toxic Spikes",
+      "p2": "move Toxic Spikes"
+    },
+    {
+      "p1": "move Body Slam",
+      "p2": "move Dive"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Dive"
+    },
+    {
+      "p1": "move Bolt Strike",
+      "p2": "move Drill Peck"
+    },
+    {
+      "p1": "switch Dewott"
+    },
+    {
+      "p1": "switch Zoroark",
+      "p2": "switch Trubbish"
+    },
+    {
+      "p1": "move Toxic Spikes",
+      "p2": "move Toxic Spikes"
+    },
+    {
+      "p1": "move Spark",
+      "p2": "move Dragon Pulse"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Metronome"
+    },
+    {
+      "p1": "move Dragon Breath",
+      "p2": "move Peck"
+    },
+    {
+      "p1": "move Toxic Spikes",
+      "p2": "move Toxic Spikes"
+    },
+    {
+      "p1": "switch Dewott"
+    },
+    {
+      "p1": "move Thunderbolt",
+      "p2": "move Metronome"
+    },
+    {
+      "p2": "switch Lotad"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Metronome"
+    },
+    {
+      "p1": "switch Krookodile",
+      "p2": "switch Pineco"
+    },
+    {
+      "p1": "move Freeze Shock",
+      "p2": "move Gust"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 3"
+    },
+    {
+      "p1": "move Thunderbolt",
+      "p2": "move Dark Pulse"
+    },
+    {
+      "p2": "switch Lotad"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Metronome"
+    },
+    {
+      "p1": "move Lick",
+      "p2": "move Drill Peck"
+    },
+    {
+      "p1": "move Toxic Spikes",
+      "p2": "move Toxic Spikes"
+    },
+    {
+      "p1": "move Thunderbolt",
+      "p2": "move Dive"
+    },
+    {
+      "p1": "switch Krookodile",
+      "p2": "move Dive"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Drill Peck"
+    },
+    {
+      "p1": "switch Dewott"
+    },
+    {
+      "p2": "switch Buizel"
+    },
+    {
+      "p1": "move Lick",
+      "p2": "move Toxic Spikes"
+    }
+  ]
+}

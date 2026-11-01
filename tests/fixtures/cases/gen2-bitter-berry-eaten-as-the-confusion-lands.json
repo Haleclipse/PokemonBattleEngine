@@ -1,0 +1,80 @@
+{
+ "schema": 1,
+ "id": "gen2-bitter-berry-eaten-as-the-confusion-lands",
+ "notes": [
+  "Gen 2 (pokecrystal `BattleCommand_FinishConfusingTarget` \u2192 `UseConfusionHealingItem`, issues.md I33): Jolteon's Confuse Ray confuses Snorlax, which eats its Bitter Berry at once; Jolteon then falls to its own Toxic damage and the replacement request shows Snorlax no longer confused",
+  "Unpatched, Showdown feeds the berry only at the action's Update, which the Gen 2 replacement request cuts: the request still shows Snorlax confused"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 20,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Confuse Ray"
+    ]
+   },
+   {
+    "label": "Lapras",
+    "species": "Lapras",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 54,
+    "nature": "Hardy",
+    "moves": [
+     "Toxic",
+     "Seismic Toss",
+     "Harden"
+    ],
+    "item": "Bitter Berry"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Toxic"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Confuse Ray",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Lapras"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

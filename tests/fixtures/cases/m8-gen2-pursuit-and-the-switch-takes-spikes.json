@@ -1,0 +1,163 @@
+{
+  "schema": 1,
+  "id": "m8-gen2-pursuit-and-the-switch-takes-spikes",
+  "notes": [
+    "Gen 2: Skiploom's Pursuit strikes the switching Rapidash; the switch goes on and Cloyster takes Spikes inside the Pursuit's action — the replay reads the entrant's hazard damage as the Pursuit's (DESIGN.md R-M8-119)",
+    "promoted from m8-gen2-singles-s593-019-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 2,
+    "mode": "singles",
+    "format": "gen2customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Sandshrew",
+        "species": "Sandshrew",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Aeroblast",
+          "Mach Punch"
+        ],
+        "gender": "M"
+      },
+      {
+        "label": "Marowak",
+        "species": "Marowak",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Spikes"
+        ],
+        "gender": "F"
+      },
+      {
+        "label": "Skiploom",
+        "species": "Skiploom",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Pursuit"
+        ],
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Omastar",
+        "species": "Omastar",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Reversal",
+          "Fury Cutter"
+        ],
+        "gender": "F"
+      },
+      {
+        "label": "Swinub",
+        "species": "Swinub",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Spikes"
+        ],
+        "gender": "F"
+      },
+      {
+        "label": "Rapidash",
+        "species": "Rapidash",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Hidden Power"
+        ],
+        "gender": "M"
+      },
+      {
+        "label": "Ninetales",
+        "species": "Ninetales",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Return"
+        ],
+        "gender": "M"
+      },
+      {
+        "label": "Cloyster",
+        "species": "Cloyster",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Hyper Fang"
+        ],
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      44163,
+      23537,
+      26966,
+      43329
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Aeroblast",
+      "p2": "move Reversal"
+    },
+    {
+      "p1": "switch Marowak",
+      "p2": "switch Swinub"
+    },
+    {
+      "p1": "move Spikes",
+      "p2": "move Spikes"
+    },
+    {
+      "p1": "switch Sandshrew",
+      "p2": "switch Omastar"
+    },
+    {
+      "p1": "move Mach Punch",
+      "p2": "move Fury Cutter"
+    },
+    {
+      "p1": "move Aeroblast",
+      "p2": "move Reversal"
+    },
+    {
+      "p1": "switch Marowak",
+      "p2": "switch Swinub"
+    },
+    {
+      "p1": "switch Sandshrew",
+      "p2": "switch Omastar"
+    },
+    {
+      "p1": "switch Marowak",
+      "p2": "switch Ninetales"
+    },
+    {
+      "p1": "switch Sandshrew",
+      "p2": "switch Rapidash"
+    },
+    {
+      "p1": "move Mach Punch",
+      "p2": "move Hidden Power"
+    },
+    {
+      "p1": "switch Skiploom"
+    },
+    {
+      "p1": "move Pursuit",
+      "p2": "switch Cloyster"
+    }
+  ]
+}

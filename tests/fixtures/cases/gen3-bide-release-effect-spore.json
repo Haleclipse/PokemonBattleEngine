@@ -1,0 +1,67 @@
+{
+ "schema": 1,
+ "id": "gen3-bide-release-effect-spore",
+ "notes": [
+  "Gen 3 Bide's release strikes an Effect Spore holder: the spores' 10 % chance puts the Bide user to sleep"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Spore",
+    "species": "Breloom",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Tail Whip"
+    ],
+    "ability": "Effect Spore"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Bider",
+    "species": "Ludicolo",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Bide",
+     "Tail Whip"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Tackle",
+   "p2": "move Bide"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Tail Whip",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Tail Whip",
+   "p2": "move Tail Whip"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   362,
+   2,
+   3,
+   4
+  ]
+ }
+}

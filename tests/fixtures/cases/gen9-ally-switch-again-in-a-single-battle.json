@@ -1,0 +1,82 @@
+{
+ "schema": 1,
+ "id": "gen9-ally-switch-again-in-a-single-battle",
+ "notes": [
+  "Gen 9 singles: Sinistcha uses Ally Switch turn after turn. Its `onPrepareHit` adds the `allyswitch` counter before the swap fails for want of a partner (`-fail|p|move: Ally Switch`), so the next use rolls 1 / 3, then 1 / 9: a roll that fails is `PrepareHit`'s bare `-fail` and drops the counter, one that succeeds keeps it and fails the swap again"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Sinistcha",
+    "species": "Sinistcha",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Ally Switch",
+     "Harden"
+    ],
+    "ability": "Hospitality"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Ally Switch",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Ally Switch",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Ally Switch",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Ally Switch",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Ally Switch",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Ally Switch",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Ally Switch",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Ally Switch",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,86 @@
+{
+ "schema": 1,
+ "id": "gen1-waking-turn-counts-no-confusion",
+ "notes": [
+  "Gen 1: the sleep check refuses the move even on the turn the Pok\u00e9mon wakes (no `cant`, only the `-curestatus`), so a confusion started that turn is not counted down by it"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Butterfree",
+    "species": "Butterfree",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sleep Powder",
+     "Confuse Ray",
+     "Disable"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Defense Curl"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 3",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 3",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 3",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 3",
+   "p2": "move 1"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   7
+  ]
+ }
+}

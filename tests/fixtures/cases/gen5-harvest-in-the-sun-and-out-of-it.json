@@ -1,0 +1,78 @@
+{
+ "schema": 1,
+ "id": "gen5-harvest-in-the-sun-and-out-of-it",
+ "notes": [
+  "Gen 5 Harvest (Showdown `onResidual` 28.2, as in Gen 9): Tropius eats its Sitrus Berry to Jolteon's Seismic Toss; in the sun Harvest brings it back at the end of the turn without a roll",
+  "Under rain the 1-in-2 chance is rolled at every turn's end, also while Tropius holds the berry it got back"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "singles",
+  "format": "gen5customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Tropius",
+    "species": "Tropius",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sunny Day",
+     "Rain Dance",
+     "Harden"
+    ],
+    "item": "Sitrus Berry",
+    "ability": "Harvest"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Jolteon",
+    "species": "Jolteon",
+    "level": 90,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Harden"
+    ],
+    "ability": "Volt Absorb"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Sunny Day",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Rain Dance",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

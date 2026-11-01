@@ -1,0 +1,72 @@
+# pokemon-battle-engine
+
+一个用 Rust 2024 实现的宝可梦对战规则引擎，覆盖第 1 到第 9 世代的单打与双打，以 [Pokémon Showdown](https://github.com/smogon/pokemon-showdown) 为差分基准逐帧比对。
+
+A Rust Pokémon battle engine for Generations 1–9, singles and doubles, differentially tested frame by frame against Pokémon Showdown.
+
+## 特点
+
+- **可暂停、可恢复的执行。** `submit → step → Awaiting / Progressed / Finished`；任意时刻 `snapshot()` / `restore()` 或 `Clone` 分叉，连随机数一起回到同一刻，结果与不中断运行完全一致。
+- **按世代解析的规则。** 行动顺序、伤害公式与取整、残留顺序、异常状态的生命周期等世代差异都在开战前解析为规则表，热路径上没有 `if generation` 分支；Gen 1、Gen 2 的伤害各是独立策略。
+- **统一的招式流程。** 所有招式走同一个 Move Shell；状态修改经过 Request → 解析 → Commit，每一步进入 trace。
+- **按观察者过滤的视图。** `view(Observer)` 只给某一方知道的信息（己方完整，对方只有公开过的），与 Showdown 客户端（`@pkmn/client`）的视角逐帧对照。
+- **赛制层。** 赛制数据、按 Showdown 校验的队伍、队伍预览与公开队伍表、带出成员的选择（`BattleSession`）。
+- **诚实的支持范围。** 解析器对每个条目做保守的支持分类，未实现的行为在选择校验时就被拒绝，不做静默的半实现。
+
+## 支持范围
+
+`cargo run --example support_matrix` 打印各世代的矩阵，Gen 9 当前：
+
+<!-- support-summary:begin (generated: tests/docs.rs) -->
+| 对象 | 支持 | 总数 |
+|---|---|---|
+| 招式 Damage / Status / Custom | 474 / 104 / 111 | 689 |
+| 招式 Unsupported | 0 | |
+| 特性 implemented | 310 | 310 |
+| 道具 implemented | 249 | 249 |
+<!-- support-summary:end -->
+
+招式、特性、道具的行为数据来自 `data/dex/` 的快照；`cargo run --example unsupported_moves -- 9` 列出仍未支持的招式与原因。
+
+## 稳定 API
+
+默认构建只提供稳定 API；内部模块经 `internals` feature 开放，不承诺兼容。一场对局：
+
+- **赛前**：`FormatLibrary`（`data/` 的赛制数据）→ `SessionFormat` → `BattleSession`：两方登记 `TeamSet`（按 Showdown 校验），看对方的队伍预览，可接受公开队伍表，选出带的成员，会话随后开始 `BattleEngine`。
+- **对战**：`step()` 推进到需要输入（`EngineStep::Awaiting(BattleRequest)`）或结束；能选什么由 `choice_options(side)` 列出，选择交给 `submit_turn_choices` / `resolve_forced_switches` / `resolve_revive`，可先 `validate_choice`。
+- **观察**：`view(Observer)` 是某个观察者知道的对局（未知为 `Seen::Unknown`；`SideView::previewed()` 是队伍预览与公开队伍表），`omniscient_view()` 给受信任的宿主、研究与 AI；`names()` 把 id 译成 Showdown 的英文名。
+- **分叉**：`BattleEngine: Clone`，`snapshot()` / `rewind()` 回到某一刻，`TraceMode::Off` 不记 trace。
+
+`cargo doc --open` 的首页有完整的可运行示例。`stable-api/` 是只用默认 API 的使用者包，三个示例分别是 AI 的推演、服务端的回合循环、规则研究的反事实比较：
+
+```sh
+cargo run --release --manifest-path stable-api/Cargo.toml --example rollout
+cargo run --manifest-path stable-api/Cargo.toml --example server_loop
+cargo run --manifest-path stable-api/Cargo.toml --example research
+```
+
+## 构建与测试
+
+```sh
+scripts/check.sh        # rustfmt --check、clippy -D warnings、全部测试、稳定 API 包、示例
+cargo test
+cargo run --example singles_turn
+```
+
+- `rust-toolchain.toml` 锁定工具链；`scripts/check.sh` 与 `.github/workflows/ci.yml` 执行相同的检查。
+- 数据快照与 oracle 录制都提交在仓库里，构建和测试不需要 Node，也不联网。
+
+## 验证
+
+- **Showdown 逐帧对照。** `tests/fixtures/cases/` 有 2800 多场用 `@pkmn/sim`（版本 pin 在 `tools/oracle-node/package-lock.json`）录制的对局：引擎按同样的选择重放，每个回合边界的语义帧（HP、状态、能力等级、临时状态、场地……）逐项一致，每个随机决策都恰好是引擎请求的；录有各方视角的对局，`BattleView` 还与 `@pkmn/client` 逐帧比对。帧格式见 `tests/fixtures/SCHEMA.md`。
+- **伤害与能力值。** `@smogon/calc` 的伤害档位与能力值，Gen 1 到 Gen 9 逐值一致。
+- **随机差分。** `scripts/nightly.sh` 在限定时间内生成对局与 Showdown 比对（`tools/nightly.py`），新的分歧自动缩减成最小复现（`tools/minimize.py`）；`.github/workflows/nightly.yml` 每天运行一次。
+- **按卡带。** 有卡带证据（反汇编、实机测试）表明 Showdown 与原作不同的地方，引擎按原作实现，oracle 打补丁随之对齐；每一处都记在 `tools/oracle-node/src/cartridge.mjs` 的注释里。
+
+重新生成数据或录制需要 Node：`cd tools/oracle-node && npm ci`，然后 `node src/export-dex.mjs ../../data/dex`（见 `data/dex/README.md`、`tools/oracle-node/README.md`）。
+
+## 许可证
+
+本项目以 [GNU General Public License v3.0 only](LICENSE) 发布。`data/` 与 `tests/fixtures/` 中的数据来自 Pokémon Showdown（MIT）、`@smogon/calc`（MIT）与 PokéAPI（BSD-3-Clause），见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
+
+Pokémon 及宝可梦名称是任天堂、Creatures 与 GAME FREAK 的商标；本项目与它们无关，也未获其认可。

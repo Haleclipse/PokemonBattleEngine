@@ -1,0 +1,105 @@
+{
+ "schema": 1,
+ "id": "gen9-cheek-pouch-heals-after-each-berry",
+ "notes": [
+  "Gen 9 Cheek Pouch (`onEatItem`): after the berry's own effect the holder heals a third of its HP \u2014 Dedenne's Sitrus Berry a quarter, then the third; Greedent's Liechi Berry Attack +1, then the third; Skwovet's Cheri Berry cures Glare's paralysis, then the third (it is at full HP: nothing)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Dedenne",
+    "species": "Dedenne",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Sitrus Berry",
+    "ability": "Cheek Pouch"
+   },
+   {
+    "label": "Greedent",
+    "species": "Greedent",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Liechi Berry",
+    "ability": "Cheek Pouch"
+   },
+   {
+    "label": "Skwovet",
+    "species": "Skwovet",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "item": "Cheri Berry",
+    "ability": "Cheek Pouch"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Glare",
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Snorlax2",
+    "species": "Snorlax",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Seismic Toss 1, move Seismic Toss 1"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Seismic Toss 2, move Seismic Toss 2"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Seismic Toss 2, move Seismic Toss 2"
+  },
+  {
+   "p1": "switch 3, move Harden",
+   "p2": "move Glare 1, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

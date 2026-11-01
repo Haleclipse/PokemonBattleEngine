@@ -1,0 +1,111 @@
+{
+ "schema": 1,
+ "id": "gen5-doubles-frisk-names-one-drawn-foes-item",
+ "notes": [
+  "Gen 5 doubles Frisk draws one foe (side.randomFoe) and names its item without its holder: at the lead, on a switch, and for a replacement after a faint"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "doubles",
+  "format": "gen5doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Furret",
+    "species": "Furret",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Frisk"
+   },
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Synchronize"
+   },
+   {
+    "label": "Stantler",
+    "species": "Stantler",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Frisk"
+   },
+   {
+    "label": "Sentret",
+    "species": "Sentret",
+    "level": 5,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Frisk"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Seismic Toss"
+    ],
+    "ability": "Thick Fat",
+    "item": "Leftovers"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Natural Cure",
+    "item": "Life Orb"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, switch Stantler",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, switch Sentret",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Seismic Toss 2, move Harden"
+  },
+  {
+   "p1": "pass, switch Stantler"
+  },
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   2,
+   3,
+   4,
+   5
+  ]
+ }
+}

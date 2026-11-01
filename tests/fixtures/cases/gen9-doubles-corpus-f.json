@@ -1,0 +1,179 @@
+{
+  "schema": 1,
+  "id": "gen9-doubles-corpus-f",
+  "notes": [
+    "Whole-battle corpus: a six-on-six Gen 9 doubles battle from the deterministic policy (tools/oracle-node/src/corpus.mjs).",
+    "corpus: 11 script entries, 8 turns, winner P1"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Kingambit",
+        "species": "Kingambit",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Crunch",
+          "Iron Head",
+          "Protect",
+          "Swords Dance"
+        ],
+        "ability": "Run Away",
+        "item": "Black Glasses"
+      },
+      {
+        "label": "Venusaur",
+        "species": "Venusaur",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Giga Drain",
+          "Sludge Bomb",
+          "Sleep Powder",
+          "Earth Power"
+        ],
+        "ability": "Run Away",
+        "item": "Miracle Seed"
+      },
+      {
+        "label": "Talonflame",
+        "species": "Talonflame",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Acrobatics",
+          "Brave Bird",
+          "Protect",
+          "Bleakwind Storm"
+        ],
+        "ability": "Run Away",
+        "item": "Muscle Band"
+      },
+      {
+        "label": "Miraidon",
+        "species": "Miraidon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Electro Drift",
+          "Wildbolt Storm",
+          "Protect",
+          "Sandsear Storm"
+        ],
+        "ability": "Run Away",
+        "item": "Wise Glasses"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Regidrago",
+        "species": "Regidrago",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Dragon Energy",
+          "Heat Crash",
+          "Protect",
+          "Earthquake"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Torkoal",
+        "species": "Torkoal",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Heat Wave",
+          "Rock Slide",
+          "Protect",
+          "Flamethrower"
+        ],
+        "ability": "Drought"
+      },
+      {
+        "label": "Azumarill",
+        "species": "Azumarill",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Play Rough",
+          "Aqua Jet",
+          "Protect",
+          "Liquidation"
+        ],
+        "ability": "Huge Power"
+      },
+      {
+        "label": "Armarouge",
+        "species": "Armarouge",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Infernal Parade",
+          "Psychic",
+          "Protect",
+          "Will-O-Wisp"
+        ],
+        "ability": "Run Away"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      41,
+      42,
+      43,
+      44
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1 1, move 1 2",
+      "p2": "move 1, move 1"
+    },
+    {
+      "p1": "move 2 1, move 2 2",
+      "p2": "move 2 1, move 2"
+    },
+    {
+      "p1": "switch 3, switch 4"
+    },
+    {
+      "p1": "move 3, move 3",
+      "p2": "move 3, move 3"
+    },
+    {
+      "p2": "pass, switch 3"
+    },
+    {
+      "p1": "move 4, move 4",
+      "p2": "move 4, move 4 2"
+    },
+    {
+      "p1": "move 1 1, move 1 2",
+      "p2": "move 1, move 1 1"
+    },
+    {
+      "p2": "pass, switch 4"
+    },
+    {
+      "p1": "move 2 1, move 2",
+      "p2": "move 2 2, move 2 1"
+    },
+    {
+      "p1": "move 3, move 3",
+      "p2": "pass, move 3"
+    },
+    {
+      "p1": "move 4, move 4",
+      "p2": "pass, move 4 2"
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+ "schema": 1,
+ "id": "gen9-inner-focus-and-steadfast",
+ "notes": [
+  "Inner Focus: Fake Out does not flinch its holder, and (Gen 8+) Intimidate does not lower its Attack \u2014 Growl still does; Steadfast: the flinch stops the move and raises Speed"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Gyarados",
+    "species": "Gyarados",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fake Out",
+     "Harden",
+     "Growl"
+    ],
+    "ability": "Intimidate"
+   },
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fake Out",
+     "Harden"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Focus",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Inner Focus"
+   },
+   {
+    "label": "Steady",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle",
+     "Harden"
+    ],
+    "ability": "Steadfast"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Fake Out",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "switch Mew",
+   "p2": "switch Steady"
+  },
+  {
+   "p1": "move Fake Out",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "switch Focus"
+  },
+  {
+   "p1": "switch Gyarados",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Fake Out",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Growl",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

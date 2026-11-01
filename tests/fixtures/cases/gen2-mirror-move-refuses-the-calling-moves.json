@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "gen2-mirror-move-refuses-the-calling-moves",
+ "notes": [
+  "Gen 2: Snorlax's Transform, then Clefable's Mirror Move fails (Transform is on the gen2 `noMirror` list)"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Clefable",
+    "species": "Clefable",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Mirror Move",
+     "Psychic"
+    ],
+    "gender": "F",
+    "ability": null
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Transform",
+     "Tackle"
+    ],
+    "gender": "M",
+    "ability": null
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Psychic",
+   "p2": "move Transform"
+  },
+  {
+   "p1": "move Mirror Move",
+   "p2": "move Psychic"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

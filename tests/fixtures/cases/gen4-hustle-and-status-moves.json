@@ -1,0 +1,90 @@
+{
+ "schema": 1,
+ "id": "gen4-hustle-and-status-moves",
+ "notes": [
+  "Hustle's \u00d70.8 accuracy: Gen 4 applies it to physical moves only \u2014 Tail Whip and Sand Attack never miss"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mew",
+    "species": "Mew",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Tail Whip",
+     "Sand Attack"
+    ],
+    "ability": "Hustle"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "nature": "Hardy",
+    "moves": [
+     "Recover"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Tail Whip",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Sand Attack",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Tail Whip",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Sand Attack",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Tail Whip",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Sand Attack",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Tail Whip",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Sand Attack",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Tail Whip",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Sand Attack",
+   "p2": "move Recover"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

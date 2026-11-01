@@ -1,0 +1,81 @@
+{
+ "schema": 1,
+ "id": "gen2-spite-takes-the-last-pp",
+ "notes": [
+  "Gen 2 Spite on a move with 1 PP left takes it (pokecrystal BattleCommand_Spite fails only at 0; the Gen 3 2-PP rule of issues.md I71 had leaked into the gen2 oracle through the shared move object \u2014 the 33rd Nightly)"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Spiter",
+    "species": "Misdreavus",
+    "level": 60,
+    "nature": "Hardy",
+    "moves": [
+     "Spite",
+     "Harden"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Target",
+    "species": "Dugtrio",
+    "level": 40,
+    "nature": "Hardy",
+    "moves": [
+     "Fissure",
+     "Harden"
+    ]
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden",
+   "p2": "move Fissure"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Fissure"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Fissure"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Fissure"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Fissure"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Fissure"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Fissure"
+  },
+  {
+   "p1": "move Spite",
+   "p2": "move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,209 @@
+{
+  "schema": 1,
+  "id": "m8-gen7-doubles-zygarde-complete-faints-back-to-zygarde",
+  "notes": [
+    "Gen 7 doubles: Zygarde's Power Construct makes it Zygarde-Complete; once it faints it is the set's Zygarde again, with that forme's max HP (Power Construct sets formeRegression, DESIGN.md R-M8-111)",
+    "promoted from m8-gen7-doubles-s565-017-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 7,
+    "mode": "doubles",
+    "format": "gen7doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Munna",
+        "species": "Munna",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Recover",
+          "Conversion",
+          "Soft-Boiled"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Espurr",
+        "species": "Espurr",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Slack Off",
+          "Conversion",
+          "Focus Punch",
+          "Yawn"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Cosmog",
+        "species": "Cosmog",
+        "level": 54,
+        "nature": "Hardy",
+        "moves": [
+          "Avalanche",
+          "Yawn",
+          "Vital Throw",
+          "Conversion"
+        ],
+        "ability": "Run Away",
+        "item": "Ghostium Z"
+      },
+      {
+        "label": "Zygarde",
+        "species": "Zygarde",
+        "level": 46,
+        "nature": "Hardy",
+        "moves": [
+          "Beak Blast",
+          "Yawn",
+          "Shell Trap",
+          "Conversion"
+        ],
+        "ability": "Power Construct"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Rampardos",
+        "species": "Rampardos",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Revenge",
+          "Yawn",
+          "Blue Flare",
+          "Conversion"
+        ],
+        "ability": "Run Away",
+        "item": "Sticky Barb",
+        "gender": "M"
+      },
+      {
+        "label": "Petilil",
+        "species": "Petilil",
+        "level": 53,
+        "nature": "Hardy",
+        "moves": [
+          "Ember",
+          "Yawn",
+          "Searing Shot",
+          "Conversion"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Mudkip",
+        "species": "Mudkip",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Yawn",
+          "Fire Punch",
+          "Conversion"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Nidoqueen",
+        "species": "Nidoqueen",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Lava Plume",
+          "Yawn",
+          "Flamethrower"
+        ],
+        "ability": "Run Away"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      26337,
+      25001,
+      5873,
+      29342
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Recover, move Slack Off",
+      "p2": "move Revenge 1, move Ember 2"
+    },
+    {
+      "p1": "move Conversion, move Conversion",
+      "p2": "move Yawn 1, move Yawn 2"
+    },
+    {
+      "p1": "move Soft-Boiled, move Focus Punch 1",
+      "p2": "move Blue Flare 1, move Searing Shot"
+    },
+    {
+      "p1": "switch Cosmog, pass"
+    },
+    {
+      "p1": "move Conversion, move Yawn 2",
+      "p2": "move Conversion, move Conversion"
+    },
+    {
+      "p1": "move Avalanche 1, move Slack Off",
+      "p2": "move Revenge 2, move Ember 1"
+    },
+    {
+      "p1": "pass, switch Zygarde"
+    },
+    {
+      "p1": "move Yawn 2, move Yawn 1",
+      "p2": "switch Mudkip, move Yawn 2"
+    },
+    {
+      "p1": "move Vital Throw 2, move Shell Trap",
+      "p2": "move Yawn 1, move Searing Shot"
+    },
+    {
+      "p1": "pass, move Conversion",
+      "p2": "move Fire Punch 2, move Conversion"
+    },
+    {
+      "p1": "pass, move Beak Blast 1",
+      "p2": "move Conversion, move Ember 2"
+    },
+    {
+      "p2": "switch Rampardos, pass"
+    },
+    {
+      "p1": "pass, move Yawn 2",
+      "p2": "move Revenge 2, move Yawn 2"
+    },
+    {
+      "p2": "switch Nidoqueen, pass"
+    },
+    {
+      "p1": "pass, move Yawn 2",
+      "p2": "move Lava Plume, move Yawn 2"
+    },
+    {
+      "p1": "pass, move Shell Trap",
+      "p2": "move Yawn 2, move Searing Shot"
+    },
+    {
+      "p1": "pass, move Conversion",
+      "p2": "move Flamethrower 2, move Conversion"
+    },
+    {
+      "p1": "pass, move Yawn 2",
+      "p2": "move Lava Plume, move Yawn 2"
+    },
+    {
+      "p1": "pass, move Shell Trap",
+      "p2": "move Yawn 2, move Searing Shot"
+    }
+  ]
+}
