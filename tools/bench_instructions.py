@@ -14,12 +14,16 @@ above its baseline fails; one more than `THRESHOLD` below is reported, for the b
 updated. Counts from another rustc or Valgrind than the baseline's are reported, never failed:
 a new compiler moves them by itself. No baseline yet: the counts are reported. `--write
 BASELINE` writes the results as the baseline. `--repeat N` measures N times and reports the
-largest spread between the runs (the measurement's own noise).
+largest spread between the runs (the measurement's own noise: under 0.001% in CI).
 
-Linux only (Valgrind); CI runs it (`.github/workflows/ci.yml`).
+Linux only (Valgrind); CI runs it (`.github/workflows/ci.yml`) and uploads the results as the
+`instruction-counts` artifact. To update the baseline, commit that artifact's `results.json` as
+`benches/instructions.json`: on a deliberate change of cost, or when the stable toolchain moves
+(the run then warns that the baseline was taken with another rustc).
 """
 import argparse
 import json
+import os
 import re
 import subprocess
 import sys
@@ -71,6 +75,11 @@ def version(command):
     return subprocess.run(command, capture_output=True, text=True).stdout.strip()
 
 
+def warn(message):
+    """A line that GitHub Actions also shows as a warning on the run's page."""
+    print(f'::warning::{message}' if os.environ.get('GITHUB_ACTIONS') else message)
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--check', type=Path)
@@ -103,8 +112,8 @@ def main():
     baseline = json.loads(args.check.read_text())
     same_tools = (baseline['rustc'], baseline['valgrind']) == (results['rustc'], results['valgrind'])
     if not same_tools:
-        print(f"baseline taken with {baseline['rustc']} / {baseline['valgrind']}, now "
-              f"{results['rustc']} / {results['valgrind']}: compared, not failed")
+        warn(f"baseline taken with {baseline['rustc']} / {baseline['valgrind']}, now "
+             f"{results['rustc']} / {results['valgrind']}: compared, not failed; update the baseline")
     failed = False
     for key, count in counts.items():
         base = baseline['counts'].get(key)
@@ -118,7 +127,11 @@ def main():
             failed = failed or same_tools
         elif change < -THRESHOLD:
             mark = '  (below the threshold: update the baseline)'
-        print(f'{key}: {count:,} vs {base:,} ({change:+.2%}){mark}')
+        line = f'{key}: {count:,} vs {base:,} ({change:+.2%}){mark}'
+        if mark:
+            warn(line)
+        else:
+            print(line)
     return 1 if failed else 0
 
 

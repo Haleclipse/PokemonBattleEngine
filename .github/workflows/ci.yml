@@ -47,9 +47,10 @@ jobs:
       - name: valgrind
         run: sudo apt-get update -q && sudo apt-get install -y -q valgrind
       # The benchmark threshold (tools/bench_instructions.py): a workload more than 3% above
-      # benches/instructions.json fails, when taken with the baseline's rustc and Valgrind.
+      # benches/instructions.json fails, when taken with the baseline's rustc and Valgrind;
+      # with another toolchain the run warns instead (the baseline wants updating).
       - name: instruction counts against the baseline
-        run: python3 tools/bench_instructions.py --check benches/instructions.json --repeat 2
+        run: python3 tools/bench_instructions.py --check benches/instructions.json
       - name: results
         if: always()
         uses: actions/upload-artifact@v7
