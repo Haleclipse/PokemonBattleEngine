@@ -654,10 +654,11 @@ impl<'a> MovePipeline<'a> {
             self.state.pokemon(reflector).expect("the reflector stands"),
         );
         // Gen 3-4 (the gen4 mod's `onTryHit`): reflecting ends the coat at once; Gen 5+ leave it
-        // until the end of the turn.
+        // until the end of the turn. It ends unannounced (`removeVolatile`, no `-end`): the
+        // observers still see the coat on until the turn is over (R-M11-27).
         if coat && self.rules.conditions.calls.magic_coat_ends_on_reflection {
             BattleContext::new(self.state, self.rules, self.trace)
-                .end_volatile(reflector, VolatileConditionKind::MagicCoat);
+                .end_volatile_unseen(reflector, VolatileConditionKind::MagicCoat);
         }
         if coat {
             crate::engine::context::takes_over_under_pressure(

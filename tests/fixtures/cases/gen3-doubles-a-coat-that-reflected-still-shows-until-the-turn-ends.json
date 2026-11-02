@@ -1,0 +1,154 @@
+{
+ "schema": 1,
+ "id": "gen3-doubles-a-coat-that-reflected-still-shows-until-the-turn-ends",
+ "notes": [
+  "Gen 3 doubles: Absol's Magic Coat (`-singleturn|p2b: Absol|move: Magic Coat`) reflects Breloom's Block. Gen 3-4 end the coat as it reflects (the gen4 mod's `onTryHit`, `removeVolatile`), with no word: the observers still see it until the turn is over. Latios's Rollout then knocks Breloom out, and the replacement request comes before the turn's end \u2014 the views must still show the coat. The engine announced the end to the views (DESIGN.md R-M11-27). Minimized from the cloud Nightly battle m8-gen3-doubles-s100401-012 (run 41474453239, fa315d01)"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "doubles",
+  "format": "gen3doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Breloom",
+    "species": "Breloom",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Smokescreen",
+     "Block",
+     "Dragon Dance",
+     "Magic Coat"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Golem",
+    "species": "Golem",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Growth",
+     "Block",
+     "Cosmic Power",
+     "Transform"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Meditate"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Pinsir",
+    "species": "Pinsir",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Withdraw",
+     "Block"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Absol",
+    "species": "Absol",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Acid Armor",
+     "Magic Coat",
+     "Fake Tears",
+     "Block"
+    ],
+    "ability": "Run Away",
+    "item": "Macho Brace",
+    "gender": "M"
+   },
+   {
+    "label": "Latios",
+    "species": "Latios",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Agility",
+     "Rollout",
+     "Block"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   29010,
+   11895,
+   29325,
+   23458
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Dragon Dance, move Cosmic Power",
+   "p2": "move Withdraw, move Fake Tears 2"
+  },
+  {
+   "p1": "move Magic Coat, move Transform 2",
+   "p2": "switch Latios, move Block 1"
+  },
+  {
+   "p1": "move 1 1, move 1",
+   "p2": "move 3 2, move 1"
+  },
+  {
+   "p1": "move 4, move 4 2",
+   "p2": "switch Pinsir, move 4 2"
+  },
+  {
+   "p1": "move 1 1, move 1",
+   "p2": "move 1, move 1"
+  },
+  {
+   "p1": "move 2 2, move 2",
+   "p2": "move 2 1, move 2"
+  },
+  {
+   "p1": "move 4, move 4 2",
+   "p2": "switch Latios, move 4 2"
+  },
+  {
+   "p1": "move 2 2, move 2",
+   "p2": "move 2 1, move 2"
+  },
+  {
+   "p1": "move 3, move 3 1",
+   "p2": "move 1, move 3 2"
+  },
+  {
+   "p1": "move 4, move 4 2",
+   "p2": "move 1, move 4 1"
+  },
+  {
+   "p1": "move 1 1, move 1",
+   "p2": "move 1, move 1"
+  },
+  {
+   "p1": "move 2 2, move 2",
+   "p2": "move 1, move 2"
+  }
+ ]
+}
