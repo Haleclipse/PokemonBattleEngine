@@ -1,0 +1,23 @@
+{
+ "schema": 1,
+ "id": "gen9-terastallization-refuses-a-transform",
+ "notes": [
+  "Gen 9 (Showdown `transformInto`): Ditto's Transform fails against Ogerpon once Ogerpon has terastallized (none transforms into Ogerpon or Terapagos while either is terastallized), and fails again once Ditto itself has terastallized into the Stellar type, against Snorlax — a Stellar user transforms into nothing. The engine transformed both times (DESIGN.md R-M11-9)"
+ ],
+ "battle": {"generation": 9, "mode": "singles", "format": "gen9customgame"},
+ "random": {"mode": "oracle-guided", "seed": [1, 2, 3, 4]},
+ "teams": {
+  "p1": [
+   {"label": "Ogerpon", "species": "Ogerpon", "level": 50, "nature": "Hardy", "moves": ["Splash"], "ability": "Defiant", "gender": "F", "teraType": "Grass"},
+   {"label": "Snorlax", "species": "Snorlax", "level": 50, "nature": "Hardy", "moves": ["Splash"], "ability": "Thick Fat", "gender": "M"}
+  ],
+  "p2": [
+   {"label": "Ditto", "species": "Ditto", "level": 50, "nature": "Hardy", "moves": ["Transform"], "ability": "Limber", "teraType": "Stellar"}
+  ]
+ },
+ "script": [
+  {"p1": "move Splash terastallize", "p2": "move Transform"},
+  {"p1": "switch Snorlax", "p2": "move Transform terastallize"},
+  {"p1": "move Splash", "p2": "move Transform"}
+ ]
+}

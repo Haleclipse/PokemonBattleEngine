@@ -21,8 +21,9 @@ impl<'a> BattleContext<'a> {
     }
 
     /// `user` transforms into `target` (Transform's `onHit`, or Imposter's `by`): false when it
-    /// cannot — either has transformed already (`TransformRules`), or the target hides behind a
-    /// Substitute (Gen 5+). (A fainted target is never reached: it has left its slot.)
+    /// cannot — either has transformed already (`TransformRules`), the target hides behind a
+    /// Substitute (Gen 5+), or Gen 9's Terastallization forbids it (Showdown `transformInto`).
+    /// (A fainted target is never reached: it has left its slot.)
     pub fn transform_into(
         &mut self,
         user: PokemonId,
@@ -40,6 +41,14 @@ impl<'a> BattleContext<'a> {
             || (rules.fails_when_transformed && pokemon.transform.is_some())
             || (rules.fails_behind_substitute
                 && into.volatiles.contains(VolatileConditionKind::Substitute))
+            // A Stellar-terastallized user transforms into nothing, and none transforms into
+            // Ogerpon or Terapagos while either is terastallized (R-M11-9). Eternatus-Eternamax,
+            // the other species `transformInto` refuses, is in no battle.
+            || pokemon.terastallized == Some(crate::dex::PokemonType::Stellar)
+            || (crate::engine::species_of(into).is_some_and(|species| {
+                species.dex == crate::ids::SpeciesId::OGERPON.dex
+                    || species.dex == crate::ids::SpeciesId::TERAPAGOS.dex
+            }) && (pokemon.terastallized.is_some() || into.terastallized.is_some()))
         {
             return false;
         }
