@@ -77,7 +77,8 @@ pub fn anticipates(state: &BattleState, rules: &ResolvedRules, holder: PokemonId
 
 /// Forewarn (`onStart`): every foe's move at the highest warning power — its base power, a
 /// one-hit KO move's `ConditionRules::forewarn_ohko_power`, Counter / Metal Burst / Mirror Coat
-/// 120, a damaging move of no base power 80 — with its foe, in position then move-slot order;
+/// 120, a move of base power 1 or a damaging move of none 80 — with its foe, in position then
+/// move-slot order;
 /// one is drawn (`sample`). Nothing above a power of 1: no warning.
 pub fn forewarn_candidates(
     state: &BattleState,
@@ -103,6 +104,10 @@ pub fn forewarn_candidates(
                 MoveId::COUNTER | MoveId::METAL_BURST | MoveId::MIRROR_COAT
             ) {
                 power = 120;
+            }
+            // A base power of 1 (Gen 7's Z-Moves in a move slot) warns as 80 too (R-M11-12).
+            if power == 1 {
+                power = 80;
             }
             if power == 0 && row.category != "Status" {
                 power = 80;

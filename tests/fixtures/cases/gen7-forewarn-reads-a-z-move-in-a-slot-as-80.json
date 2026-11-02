@@ -1,0 +1,20 @@
+{
+ "schema": 1,
+ "id": "gen7-forewarn-reads-a-z-move-in-a-slot-as-80",
+ "notes": [
+  "Gen 7 (Showdown Forewarn `onStart`): a move of base power 1 warns as 80. A Z-Move in a move slot (Black Hole Eclipse, base power 1 as a move of its own) outranks Magnet Bomb's 60, so Hypno's Forewarn names it; the engine read the 1 as it stood and warned of Magnet Bomb (DESIGN.md R-M11-12)"
+ ],
+ "battle": {"generation": 7, "mode": "singles", "format": "gen7customgame"},
+ "random": {"mode": "oracle-guided", "seed": [1, 2, 3, 4]},
+ "teams": {
+  "p1": [
+   {"label": "Hypno", "species": "Hypno", "level": 50, "nature": "Hardy", "moves": ["Splash"], "ability": "Forewarn", "gender": "M"}
+  ],
+  "p2": [
+   {"label": "Marowak", "species": "Marowak", "level": 50, "nature": "Hardy", "moves": ["Magnet Bomb", "Black Hole Eclipse", "Splash"], "ability": "Rock Head", "gender": "M"}
+  ]
+ },
+ "script": [
+  {"p1": "move Splash", "p2": "move Splash"}
+ ]
+}
