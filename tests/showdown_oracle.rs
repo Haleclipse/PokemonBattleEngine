@@ -30,6 +30,10 @@ fn showdown_scenarios_replay_frame_by_frame() {
     entries.sort();
     // `SCENARIO=<substring>` replays only the matching scenario files (debugging aid).
     let only = std::env::var("SCENARIO").ok();
+    // `REPLAY_DIGESTS=<file>` writes each replay's digest — its full trace and its frames — for
+    // the structural refactor's old-against-new check (DESIGN.md §48.3).
+    let digests_path = std::env::var_os("REPLAY_DIGESTS").map(std::path::PathBuf::from);
+    let mut digests = digests_path.as_ref().map(|_| String::new());
     for path in entries {
         let name = path.file_name().and_then(|n| n.to_str()).unwrap_or("");
         if !name.ends_with(".json") || name.ends_with(".showdown.json") {
@@ -46,6 +50,18 @@ fn showdown_scenarios_replay_frame_by_frame() {
         let oracle: Value = load_json(&oracle_path);
         let report = replay_against_oracle(&scenario, &oracle);
         ran += 1;
+        if let Some(out) = digests.as_mut() {
+            let replayed = format!(
+                "{}\n{}",
+                report.trace.join("\n"),
+                serde_json::Value::from(report.rust_frames.clone())
+            );
+            out.push_str(&format!(
+                "{} {}\n",
+                scenario.id,
+                pokemon_battle_engine::digest::sha256_hex(replayed.as_bytes())
+            ));
+        }
         println!(
             "{}: {} frames compared, {} actions replayed, {} divergence(s)",
             scenario.id,
@@ -80,6 +96,9 @@ fn showdown_scenarios_replay_frame_by_frame() {
                 bundle.display()
             ));
         }
+    }
+    if let (Some(path), Some(digests)) = (&digests_path, &digests) {
+        std::fs::write(path, digests).expect("the replay digests");
     }
     assert!(
         ran >= 1,
