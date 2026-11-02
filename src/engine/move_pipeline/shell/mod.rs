@@ -2,6 +2,8 @@
 //! TryMove, the per-target loop through the hit gate and the primary effect, the once-per-move
 //! secondaries and the after-move steps — and the move result it leaves (§22.8).
 
+use std::ops::ControlFlow;
+
 use crate::dex::{MultiHit, PrimaryEffect, ResolvedMove, SecondaryTrigger, StatusMoveEffect};
 use crate::effects;
 use crate::ids::{MoveId, MoveSlot, PokemonId};
@@ -16,6 +18,47 @@ use crate::engine::{
 };
 
 use super::{CallFrame, HitOutcome, MAX_CALL_DEPTH, MoveExecution, MovePipeline};
+
+mod commit;
+mod start;
+
+/// A stage of `run_move` (DESIGN.md §48.3): on to the next with what it found, or the move's
+/// end here — its execution as it stands — or an engine error.
+type MoveStage<T> = Result<ControlFlow<MoveExecution, T>, BattleError>;
+
+/// What `run_move` is handed: the move, where the action aimed it, how the action came to it.
+pub(super) struct MoveRunInput {
+    pub(super) actor: PokemonId,
+    pub(super) slot: MoveSlot,
+    pub(super) move_id: MoveId,
+    pub(super) move_def: ResolvedMove,
+    pub(super) declared_target: Option<DeclaredTarget>,
+    pub(super) action_target: Option<DeclaredTarget>,
+    /// An Encore turned the action into this move (`OverrideAction`).
+    pub(super) overridden: bool,
+    pub(super) resolved: Option<crate::rules::ResolvedTargets>,
+    pub(super) struggling: bool,
+}
+
+/// A use of a move as it starts (`start_move`): the move as `ModifyType` / `ModifyMove` left
+/// it, its targets as they then stand, and what the stages after read of its start.
+struct MoveRun {
+    actor: PokemonId,
+    slot: MoveSlot,
+    move_id: MoveId,
+    move_def: ResolvedMove,
+    declared_target: Option<DeclaredTarget>,
+    action_target: Option<DeclaredTarget>,
+    overridden: bool,
+    resolved: Option<crate::rules::ResolvedTargets>,
+    struggling: bool,
+    /// Gen 1: the binding lock goes on against the Pokémon it caught.
+    continuing_bind: bool,
+    /// Gen 2: a frozen user of a `defrost` move thaws once the move has landed.
+    defrost_after: bool,
+    /// The attacking turn of a two-turn move.
+    releasing: bool,
+}
 
 impl<'a> MovePipeline<'a> {
     /// Showdown `runEvent('AfterMove')`'s `onAnyAfterMove` handlers of the Pokémon on the field,
@@ -421,17 +464,17 @@ impl<'a> MovePipeline<'a> {
                 result: MoveResult::Failed,
             });
         }
-        self.run_move(
-            call.user,
-            MoveSlot::new(0).unwrap(),
-            call.move_id,
+        self.run_move(MoveRunInput {
+            actor: call.user,
+            slot: MoveSlot::new(0).unwrap(),
+            move_id: call.move_id,
             move_def,
-            declared,
-            declared,
-            false,
+            declared_target: declared,
+            action_target: declared,
+            overridden: false,
             resolved,
-            false,
-        )
+            struggling: false,
+        })
     }
 
     /// Showdown's `BeforeMove` event for `actor`'s move, an action's or a dance's full `runMove`:
@@ -830,7 +873,7 @@ impl<'a> MovePipeline<'a> {
                 result: MoveResult::Failed,
             });
         }
-        self.run_move(
+        self.run_move(MoveRunInput {
             actor,
             slot,
             move_id,
@@ -840,436 +883,35 @@ impl<'a> MovePipeline<'a> {
             overridden,
             resolved,
             struggling,
-        )
+        })
     }
 
-    /// The move itself (Showdown `useMove`), once the action around it (BeforeMove, PP, the
-    /// `moveUsed` bookkeeping) has run — or, for a call, has been skipped (DESIGN.md §42.1).
-    #[allow(clippy::too_many_arguments)]
-    fn run_move(
-        &mut self,
-        actor: PokemonId,
-        slot: MoveSlot,
-        move_id: MoveId,
-        move_def: ResolvedMove,
-        declared_target: Option<DeclaredTarget>,
-        action_target: Option<DeclaredTarget>,
-        // An Encore turned the action into this move (`OverrideAction`).
-        overridden: bool,
-        resolved: Option<crate::rules::ResolvedTargets>,
-        struggling: bool,
-    ) -> Result<MoveExecution, BattleError> {
-        if self.outermost.is_none() {
-            self.outermost = Some(move_id);
-        }
-        // Gen 1: the binding lock goes on only against the Pokémon it caught (§30.9) — and it
-        // is the action's business, not a called move's.
-        let continuing_bind = self.call.is_none()
-            && self.binding_continues(
-                actor,
-                resolved.as_ref().and_then(|t| t.pokemon_ids().next()),
-            );
-
-        // A frozen user of a `defrost` move thaws as the move starts (Showdown `frz`
-        // `onModifyMove`, Gen 3+); Gen 2 waits until the move has landed.
-        let defrost_after = self.defrost_user(actor, &move_def);
-        // Shell Side Arm (its own `onModifyMove`, before the ability's: Long Reach then takes the
-        // contact away): physical when its estimates against the target say so; a tie flips a
-        // coin.
-        let physical = move_def.behavior.category_by_estimate
-            && resolved
-                .as_ref()
-                .and_then(|t| t.pokemon_ids().next())
-                .is_some_and(|target| {
-                    crate::engine::physical_by_estimate(
-                        self.state, self.rules, actor, target, &move_def,
-                    )
-                    .unwrap_or_else(|| {
-                        self.state
-                            .rng
-                            .roll_ratio_for(RandomRequestKind::CategoryTie, 1, 2)
-                    })
-                });
-        // Gen 7+ Stance Change (`onModifyMove`, priority 1): the forme for the move, before the
-        // handlers that edit it (DESIGN.md §43.4).
-        if let Some(stance) = self.state.pokemon(actor).and_then(|pokemon| {
-            crate::engine::ability_handler(self.state, self.rules, pokemon, |b| b.move_stance)
-        }) {
-            BattleContext::new(self.state, self.rules, self.trace).stance_change(
-                actor,
-                stance,
-                move_def.id,
-                move_def.category,
-            );
-        }
-        // A combined Pledge (the move's own `onModifyMove` with another Pledge as its
-        // `sourceEffect`, DESIGN.md §42.9): the pair's type and `forceSTAB` — before the user's
-        // ability retypes it and before TryMove, where a strong weather judges the combined type
-        // (R-M8-153). Its power and side condition come at PrepareHit, below.
-        let mut move_def = move_def;
-        if move_def.behavior.pledge_combo
-            && let Some(by) = self.prioritized_by
-            && let Some(combined) = crate::engine::pledges::combo(by, move_id)
-        {
-            move_def.move_type = combined.move_type;
-            move_def.flags.force_stab = true;
-        }
-        // Showdown `ModifyType` / `ModifyMove` as the move starts: its own type and category,
-        // then the user's ability retyping and editing it.
-        let declared_pattern = move_def.target;
-        let (mut move_def, type_changer) =
-            crate::engine::modified_move(self.state, self.rules, actor, &move_def, physical);
-        self.type_changer = type_changer;
-        // Gen 9 Curse (`onModifyMove`): a Ghost type's aimed at an ally goes to a random adjacent
-        // foe, drawn there (`getRandomTarget` after ModifyMove, §15.16).
-        let resolved = match crate::engine::curse_redirect_candidates(
-            self.state,
-            self.rules,
+    /// The move itself, stage by stage (DESIGN.md §48.3): as it starts (`start_move`: Showdown
+    /// `ModifyType` / `ModifyMove`), its use paid and recorded (`commit_use`: `runMove`'s
+    /// `deductPP`, the `move` line, `moveUsed`), then its targets, TryMove, PrepareHit, the hits
+    /// and its end. A call comes here without the action around it (BeforeMove, §42.1).
+    fn run_move(&mut self, input: MoveRunInput) -> Result<MoveExecution, BattleError> {
+        let run = self.start_move(input);
+        let continuing_lock = match self.commit_use(&run)? {
+            ControlFlow::Continue(continuing_lock) => continuing_lock,
+            ControlFlow::Break(execution) => return Ok(execution),
+        };
+        let MoveRun {
             actor,
-            &move_def,
-            declared_target,
-        ) {
-            Some(candidates) if !candidates.is_empty() => {
-                move_def.target = crate::rules::TargetPattern::RandomAdjacentFoe;
-                let index = if candidates.len() > 1 {
-                    usize::from(self.state.rng.range_inclusive_for(
-                        RandomRequestKind::RandomTarget,
-                        0,
-                        (candidates.len() - 1) as u16,
-                    ))
-                } else {
-                    0
-                };
-                Some(crate::rules::ResolvedTargets {
-                    targets: vec![ResolvedTarget::Pokemon(candidates[index])],
-                })
-            }
-            _ => resolved,
-        };
-        // Showdown `activeMove` (§41.2): the move being used, whether it ignores abilities as
-        // `ModifyMove` left it (Sunsteel Strike's own, Mold Breaker's). A move another one calls
-        // takes its place; the action's end clears it.
-        self.state.active_move = Some(crate::state::ActiveMove {
-            user: actor,
-            move_id: move_def.id,
-            category: move_def.category,
-            ignores_ability: move_def.ignores_ability,
-            stellar_boosted: false,
-            z_powered: self.z_powered,
-            base_move: if move_def.is_max { self.max_base } else { None },
-            prankster_boosted: self.prankster_boosted,
-        });
-        // A move that changed whom it aims at (Expanding Force: all adjacent foes) is targeted
-        // anew (Showdown `getMoveTargets` after `ModifyMove`).
-        let resolved = if move_def.target != declared_pattern {
-            self.rules
-                .targeting
-                .resolve(
-                    &self.rules.topology,
-                    self.state,
-                    actor,
-                    move_def.target,
-                    None,
-                )
-                .ok()
-                .or(resolved)
-        } else {
-            resolved
-        };
-        // Beat Up (`onModifyMove`): its members are fixed as the move starts.
-        self.beat_up_members = if move_def.behavior.beat_up {
-            crate::engine::beat_up_members(self.state, self.rules, actor)
-        } else {
-            Vec::new()
-        };
-        // Showdown `onModifyMove` (Magnitude, Present): the power is drawn as the move starts.
-        self.drawn = move_def.behavior.random_power.map(|random| {
-            let (values, weights) = random.table();
-            let drawn =
-                self.state
-                    .rng
-                    .sample_weighted_for(RandomRequestKind::Sample, values, weights);
-            random.effect(drawn)
-        });
-
-        // The attacking turn of a two-turn move is the locked action Showdown runs without
-        // `deductPP`; the charging turn paid for both. It aims where the charge aimed (the
-        // lock's target, `before_move`: Showdown `twoturnmove.targetLoc`).
-        let releasing = self
-            .state
-            .pokemon(actor)
-            .is_some_and(|p| p.volatiles.charging_move() == Some(move_id));
-        self.releasing = releasing;
-        // Showdown `runMove`: no `deductPP` while a hard lock holds the user to the move
-        // (Rollout's later turns, §15.12) — `LockMove` asks the lock, not the move, so an Encore
-        // that turned the locked action into its own move pays nothing either (R-M8-137).
-        let continuing_lock = self.state.pokemon(actor).is_some_and(|p| {
-            p.hard_lock().is_some_and(|lock| {
-                (lock.move_id == move_id || p.volatiles.encored_move() == Some(move_id))
-                    // Gen 1's charged attack pays (below).
-                    && !(self.rules.two_turn.gen1() && lock.by == VolatileConditionKind::TwoTurnMove)
-            })
-        });
-        self.continuing_lock = continuing_lock;
-        // The charging turn pays (the attack runs locked, without `deductPP`) — Gen 1 the other
-        // way round (`ChargeModel::Gen1`: pokered decrements the PP as the charged move goes
-        // out, `PlayerCanExecuteChargingMove`).
-        let gen1_charge = self.rules.two_turn.gen1();
-        let charging_now = !releasing
-            && crate::engine::two_turn::will_charge(self.state, self.rules, actor, &move_def);
-        // A called move spends no PP (Showdown `useMove` has no `deductPP`; the caller paid).
-        let pays_pp = self.call.is_none()
-            && if gen1_charge {
-                !charging_now
-            } else {
-                !releasing
-            };
-        // Gen 1: a charging move a caller (Metronome, Mirror Move) called gives the caller's PP
-        // back (the gen1 `useMove`'s `deductPP(-1)` on `lastSelectedMoveSlot`); the attack pays
-        // it as it goes out, like a charging move picked from the menu (DESIGN.md R-M8-54).
-        if gen1_charge && self.call.is_some() && charging_now {
-            let side = self.state.pokemon(actor).map(|p| p.side);
-            let last = side.map(|side| self.state.side(side).last_selected_move_slot);
-            if let (Some(index), Some(pokemon)) = (last, self.state.pokemon_mut(actor)) {
-                if let Some(caller) = pokemon.move_slots_mut().get_mut(index) {
-                    caller.pp = (caller.pp + 1) % 64;
-                }
-                if self.rules.conditions.calls.mimic_keeps_the_slot_pp {
-                    pokemon.sync_mimicked_pp(index);
-                }
-            }
-        }
-        // Gen 1's Transform + Mirror Move / Metronome PP error (the gen1 `useMove`, next to the
-        // refund above): a transformed user's own last-picked slot gains one PP.
-        if self
-            .rules
-            .conditions
-            .calls
-            .transformed_caller_restores_own_pp
-            && let Some(frame) = self.call
-            && matches!(
-                frame.source,
-                crate::state::CallSource::Move(MoveId::METRONOME | MoveId::MIRROR_MOVE)
-            )
-        {
-            let side = self.state.pokemon(actor).map(|p| p.side);
-            let last = side.map(|side| self.state.side(side).last_selected_move_slot);
-            if let (Some(index), Some(pokemon)) = (last, self.state.pokemon_mut(actor))
-                && pokemon.transform.is_some()
-                && let Some(own) = pokemon.base_slot_mut(index)
-            {
-                own.pp = (own.pp + 1) % 64;
-            }
-        }
-        // The slot the PP comes off (`PpRules::moves_slot`): the action's, Gen 1's last pick from
-        // the menu, or Gen 4+'s first slot holding the action's move (issues.md I170).
-        let pp_slot = match self.rules.conditions.pp.moves_slot {
-            MovesSlot::TheLastSelected => self
-                .state
-                .pokemon(actor)
-                .map(|p| self.state.side(p.side).last_selected_move_slot)
-                .and_then(|index| MoveSlot::new(index as u8))
-                .unwrap_or(slot),
-            MovesSlot::TheChosen => slot,
-            MovesSlot::TheFirstHoldingIt => self
-                .state
-                .pokemon(actor)
-                .and_then(|p| {
-                    let id = p.move_slots().get(slot.index())?.move_id;
-                    p.move_slots().iter().position(|other| other.move_id == id)
-                })
-                .and_then(|index| MoveSlot::new(index as u8))
-                .unwrap_or(slot),
-        };
-        let remaining_pp = {
-            let pokemon = self
-                .state
-                .pokemon_mut(actor)
-                .ok_or(BattleError::UnknownPokemon(actor))?;
-            let move_slot = pokemon
-                .move_slot_mut(pp_slot)
-                .ok_or(BattleError::InvalidMoveSlot { actor, slot })?;
-            if !pays_pp || struggling || continuing_bind || continuing_lock {
-                None
-            } else {
-                if move_slot.pp == 0 {
-                    return Err(BattleError::NoPp { actor, move_id });
-                }
-                // Showdown `deductPP`: the slot counts as used (Last Resort).
-                move_slot.used = true;
-                move_slot.pp -= 1;
-                let remaining = move_slot.pp;
-                if self.rules.conditions.calls.mimic_keeps_the_slot_pp {
-                    pokemon.sync_mimicked_pp(pp_slot.index());
-                }
-                Some(remaining)
-            }
-        };
-
-        // Gen 1's Desync Clause Mod (the gen1 `runMove`, after the PP): an action chosen as
-        // `Fight` (`BattleState::fight_actors`) is the side's last selected move; when the slot
-        // that paid holds another (a frozen Pokémon that came in after a teammate's pick, the
-        // slot back at the first, thawed by a Fire move), the move ends here — no `move` line,
-        // the after-move residual as for a stopped action (R-M8-150). Any other action is
-        // stopped the same way when nothing locks it any more (`!lockedMove`: no hard lock, no
-        // charge's release, no Bide, no binding still on the Pokémon it caught) and its move is
-        // not the paying slot's — a binding move Mirror Move or Metronome called, whose target
-        // switched out, ends its lock at BeforeMove (`partialtrappinglock`'s `onBeforeMove`)
-        // with the action still on that move (R-M9-47).
-        let unlocked = !(struggling || continuing_bind || continuing_lock || releasing)
-            && self
-                .state
-                .pokemon(actor)
-                .is_none_or(|pokemon| pokemon.semi_locked_move() != Some(move_id));
-        if self.rules.conditions.pp.desync_clause
-            && self.call.is_none()
-            && unlocked
-            && let Some(pokemon) = self.state.pokemon(actor)
-            && let Some(paying) = pokemon.move_slot(pp_slot).map(|slot| slot.move_id)
-            && if self.state.fight_actors.contains(&actor) {
-                matches!(
-                    self.state.side(pokemon.side).last_selected_move,
-                    Some(crate::state::SelectedMove::Move(selected)) if paying != selected
-                )
-            } else {
-                paying != move_id
-            }
-        {
-            self.trace.push(TraceEvent::MoveFailed {
-                actor,
-                move_id,
-                reason: MoveFailReason::Desync,
-            });
-            return Ok(MoveExecution {
-                actor,
-                move_id,
-                hits: Vec::new(),
-                stopped: true,
-                aborted: false,
-                result: MoveResult::Failed,
-            });
-        }
-        // A use of its own (DESIGN.md §47.0 item 13): no call, nor a lock's later turn (the
-        // `[from] lockedmove` lines).
-        let own_move = (self.call.is_none()
-            && !releasing
-            && !continuing_lock
-            && !continuing_bind
-            && !struggling)
-            .then(|| self.shown_own_move(move_id))
-            .flatten();
-        self.trace.push(TraceEvent::MoveUsed {
-            actor,
+            slot,
             move_id,
+            move_def,
             declared_target,
-            called_by: self.call.map(|frame| frame.source),
-            own_move,
-        });
-        if let Some(z) = self.z_power.take() {
-            self.spend_z_power(actor, &z);
-        }
-        // The move is decided: it becomes the last move (Encore / Disable lock onto it) and
-        // a Choice item locks the holder onto it (Showdown `onModifyMove`).
-        // Gen 1's charging turn is not the user's last move (the gen1 `useMove`).
-        let leaves_no_last_move = self
-            .rules
-            .conditions
-            .moves_leaving_no_last_move
-            .contains(&move_id);
-        // A called move is nobody's last move after Gen 1 (`useMove` sets `lastMoveUsed` only,
-        // §42.2): Encore and Disable keep reading the move the action chose. Gen 2's `moveUsed`
-        // clears the last move outright when the chosen move is one of the callers
-        // (`ConditionRules::moves_leaving_no_last_move`).
-        let writes_last_move =
-            self.call.is_none() || self.rules.conditions.calls.called_sets_last_move;
-        // Showdown `lastMoveTargetLoc` (Instruct repeats the move where it aimed, §42.9): the
-        // action's own move writes it (`moveUsed`; a called one does not), none — `0` — when no
-        // position was chosen (an Acupressure in singles aims at its user again, R-M8-111).
-        if self.call.is_none()
-            && let Some(pokemon) = self.state.pokemon_mut(actor)
-        {
-            pokemon.last_move_target = declared_target.map(|target| target.0);
-        }
-        if let Some(pokemon) = self.state.pokemon_mut(actor)
-            && !(gen1_charge && charging_now)
-        {
-            if leaves_no_last_move && self.call.is_none() {
-                pokemon.last_move = None;
-                pokemon.last_move_encore = None;
-                pokemon.last_move_base = None;
-            } else if writes_last_move {
-                pokemon.last_move = Some(move_id);
-                pokemon.last_move_pattern = Some((move_id, move_def.target));
-                pokemon.last_move_encore = Some(move_id);
-                // A Max Move's `baseMove` (DESIGN.md §44.5): the move it was made from.
-                pokemon.last_move_base = self.max_base;
-                // `lastMove.isZ`: this use was a Z-Move (a status one keeps its own id).
-                pokemon.last_move_z = self.z_powered && self.max_base.is_none();
-            }
-            // `lastMoveUsed` is the move object `ModifyType` edits: the type as used.
-            pokemon.last_move_used = Some((move_id, move_def.move_type));
-        }
-        // Struggle too (Showdown `choicelock.onStart` takes any move with an id): the lock onto
-        // a move the holder does not know keeps nothing off the request and is dropped as the
-        // next turn starts (`next_turn`).
-        if !self.rules.conditions.items.choice_locks_after_the_move
-            && let Some((_, item)) = crate::engine::held_item(self.state, self.rules, actor)
-            && let Some(handler) = item.move_decided
-        {
-            let mut ctx = BattleContext::new(self.state, self.rules, self.trace);
-            handler(&mut ctx, actor, move_id);
-        }
-        // Gorilla Tactics (`onModifyMove`): the first move since coming in, Struggle aside — a
-        // Z-powered move neither takes the lock nor answers it (DESIGN.md §44.4).
-        let gorilla = self.state.pokemon(actor).is_some_and(|pokemon| {
-            crate::engine::ability_handler(self.state, self.rules, pokemon, |b| b.choice_lock)
-        });
-        if !struggling
-            && !self.z_powered
-            && gorilla
-            && let Some(pokemon) = self.state.pokemon_mut(actor)
-            && pokemon.ability_state.choice_lock.is_none()
-        {
-            pokemon.ability_state.choice_lock = Some(move_id);
-        }
-        if let Some(remaining) = remaining_pp {
-            self.trace.push(TraceEvent::PpSpent {
-                actor,
-                move_id,
-                remaining,
-            });
-        }
-        self.metronome_starts(actor, move_id, releasing);
-        // Rollout / Ice Ball's `onModifyMove`: a first use with a target starts the chain, aimed
-        // at the action's position — the declared one even when an Encore turned the action into
-        // this move (`lastMoveTargetLoc`, as a two-turn move's charge, R-M8-135); not while asleep
-        // (§15.12). A called one (`move.sourceEffect`: Metronome's) aims at where its target
-        // stands (`lastMoveTargetLoc = getLocOf(target)`, R-M8-73).
-        let first_target = resolved
-            .as_ref()
-            .and_then(|targets| targets.pokemon_ids().next());
-        let chain_target = match self.call {
-            Some(_) => first_target
-                .and_then(|target| self.state.active_position(target, &self.rules.topology)),
-            None => action_target.or(declared_target).map(|target| target.0),
-        };
-        // On a Gen 7 Rollout storage (issues.md I212) the move starts no chain — its user is not
-        // locked in — and a use that fails clears the storage (`rolling_after_move`).
-        if move_def.behavior.rolling
-            && first_target.is_some()
-            && let Some(pokemon) = self.state.pokemon_mut(actor)
-            && !pokemon.has_status(NonVolatileStatus::Sleep)
-        {
-            if pokemon.volatiles.rollout_storage().is_some() {
-                pokemon.volatiles.arm_rollout_storage();
-            } else if pokemon.volatiles.start_rolling(move_id, chain_target) {
-                self.trace.push(TraceEvent::VolatileStarted {
-                    target: actor,
-                    kind: VolatileConditionKind::Rolling,
-                });
-            }
-        }
-
+            action_target,
+            overridden,
+            resolved,
+            struggling,
+            continuing_bind,
+            defrost_after,
+            releasing,
+        } = run;
+        // Gen 1's charge model (`ChargeModel::Gen1`), as `commit_use` read it.
+        let gen1_charge = self.rules.two_turn.gen1();
         // Showdown `useMoveInner`'s `if (!target)`, right after the `move|` line: a move handed
         // no target at all fails here, before the redirection, the PP Pressure takes and
         // TryMove (the Metronome item's count, R-M10-18); one whose target is gone fails after
