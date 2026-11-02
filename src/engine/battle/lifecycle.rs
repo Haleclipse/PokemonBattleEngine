@@ -382,6 +382,16 @@ impl BattleEngine {
             .state
             .active_position(outgoing, &self.rules.topology)
             .ok_or(BattleError::ActorNotActive(outgoing))?;
+        // Showdown `switchIn`: the Pokémon chosen is already in — an Eject Pack's, an Eject
+        // Button's or a self-switch's replacement earlier in the turn — and the switch fails
+        // before anything of it (no `BeforeSwitchOut`): the Pokémon stays (R-M11-4).
+        if self
+            .state
+            .active_position(incoming, &self.rules.topology)
+            .is_some()
+        {
+            return Ok(());
+        }
         // Showdown `switchIn` → `BeforeSwitchOut` (Pursuit, §15.11), then Gen 5+ an `Update`. A
         // Pokémon it knocked out does not leave by its switch: Gen 5+ the switch is cancelled;
         // Gen 2-4 it faints and the Pokémon it chose comes in at once (`pursuitfaint`).

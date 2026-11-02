@@ -1,0 +1,33 @@
+{
+ "schema": 1,
+ "id": "gen8-doubles-a-switch-to-a-pokemon-already-in-fails",
+ "notes": [
+  "Gen 8 doubles: Snorlax chooses to switch to Blissey; Jolteon's faster switch brings Gyarados in, whose Intimidate sets off Chansey's Eject Pack, and the only one Chansey can switch to is Blissey. Snorlax's switch then finds Blissey already in: Showdown's `switchIn` fails it (`A switch failed because the Pokémon trying to switch in is already in.`) and Snorlax stays — the engine put Blissey on both positions (DESIGN.md R-M11-4)"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "doubles",
+  "format": "gen8doublescustomgame"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [1, 2, 3, 4]
+ },
+ "teams": {
+  "p1": [
+   {"label": "Snorlax", "species": "Snorlax", "level": 50, "nature": "Hardy", "moves": ["Splash"], "ability": "Thick Fat", "gender": "M"},
+   {"label": "Chansey", "species": "Chansey", "level": 50, "nature": "Hardy", "moves": ["Splash"], "ability": "Natural Cure", "item": "Eject Pack", "gender": "F"},
+   {"label": "Blissey", "species": "Blissey", "level": 50, "nature": "Hardy", "moves": ["Splash"], "ability": "Natural Cure", "gender": "F"}
+  ],
+  "p2": [
+   {"label": "Jolteon", "species": "Jolteon", "level": 50, "nature": "Hardy", "moves": ["Splash"], "ability": "Volt Absorb", "gender": "M"},
+   {"label": "Shuckle", "species": "Shuckle", "level": 50, "nature": "Hardy", "moves": ["Splash"], "ability": "Sturdy", "gender": "M"},
+   {"label": "Gyarados", "species": "Gyarados", "level": 50, "nature": "Hardy", "moves": ["Splash"], "ability": "Intimidate", "gender": "M"}
+  ]
+ },
+ "script": [
+  {"p1": "switch Blissey, move Splash", "p2": "switch Gyarados, move Splash"},
+  {"p1": "pass, switch Blissey"},
+  {"p1": "move Splash, move Splash", "p2": "move Splash, move Splash"}
+ ]
+}
