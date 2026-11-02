@@ -684,15 +684,22 @@ function noteOwnCopy(client, moves, observer, battle, args) {
   moves.fromRequest.add(into.originalIdent ?? into.ident);
 }
 
-/** The item the client holds for the Pokémon a `move` line names, before it reads the line. */
+/**
+ * The item the client holds for the Pokémon a `move`, `-item` or `-enditem` line names, before it
+ * reads the line.
+ */
 function itemOf(client, args) {
-  return args[0] === 'move' ? client.getPokemon(args[1])?.item : undefined;
+  return ['move', '-item', '-enditem'].includes(args[0])
+    ? client.getPokemon(args[1])?.item
+    : undefined;
 }
 
 /**
  * @pkmn/client takes a Z-Move's use for its Z-Crystal (`useMove`: `this.item = move.isZ`), an
  * inference, wrong for a Z-Move a custom game put in a slot: the entry is marked
- * `item_from_z_move` until an item line names it again.
+ * `item_from_z_move` until an item line changes the item the client holds or names it. One that
+ * does neither — a flung Micle Berry's boost ending, `-enditem|p|Micle Berry`, while the inferred
+ * crystal stays — says nothing of it (R-M11-17).
  */
 function noteZItem(client, zItems, args, itemBefore) {
   if (args[0] === 'move') {
@@ -702,7 +709,10 @@ function noteZItem(client, zItems, args, itemBefore) {
     }
   } else if (args[0] === '-item' || args[0] === '-enditem') {
     const poke = client.getPokemon(args[1]);
-    if (poke) zItems.delete(poke.originalIdent ?? poke.ident);
+    const named = Dex.items.get(args[2]).id;
+    if (poke && (poke.item !== itemBefore || named === poke.item)) {
+      zItems.delete(poke.originalIdent ?? poke.ident);
+    }
   }
 }
 

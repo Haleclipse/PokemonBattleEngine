@@ -1,0 +1,84 @@
+{
+ "schema": 1,
+ "id": "gen7-doubles-a-flung-micle-berry-leaves-the-inferred-crystal",
+ "notes": [
+  "Gen 7 doubles, a custom game's Z-Move in a slot: Espeon flings its Micle Berry at Machop, which eats it, then uses Never-Ending Nightmare from its slot (no `-zpower`). @pkmn/client takes the Z-Move's use for a Ghostium Z, an inference the comparison marks `item_from_z_move`; the berry's boost ending (`-enditem|p1a: Machop|Micle Berry`) names another item and leaves the crystal the client holds, yet it cleared the mark, and the views were held to the client's guess. The mark goes only with a line that changes the item held or names it (DESIGN.md R-M11-17)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Machop",
+    "species": "Machop",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Never-Ending Nightmare",
+     "Splash"
+    ],
+    "ability": "Guts",
+    "gender": "M"
+   },
+   {
+    "label": "Mightyena",
+    "species": "Mightyena",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Intimidate",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Espeon",
+    "species": "Espeon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fling",
+     "Splash"
+    ],
+    "ability": "Synchronize",
+    "item": "Micle Berry",
+    "gender": "M"
+   },
+   {
+    "label": "Dusknoir",
+    "species": "Dusknoir",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Pressure",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Never-Ending Nightmare 1, move Splash",
+   "p2": "move Fling 1, move Splash"
+  },
+  {
+   "p1": "move Splash, move Splash",
+   "p2": "move Splash, move Splash"
+  }
+ ]
+}
