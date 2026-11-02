@@ -18725,6 +18725,47 @@
    "references": [
     "DESIGN.md R-M11-15"
    ]
+  },
+  {
+   "id": "ability.dancer_follows_a_called_dance_by_its_own_result",
+   "status": "verified",
+   "generations": [
+    7
+   ],
+   "singles": false,
+   "doubles": true,
+   "local_tests": [
+    "showdown_scenarios_replay_frame_by_frame"
+   ],
+   "oracles": [
+    "@pkmn/sim"
+   ],
+   "references": [
+    "DESIGN.md §42.9",
+    "DESIGN.md R-M11-26",
+    "issues.md I213",
+    "TESTING.md §7"
+   ]
+  },
+  {
+   "id": "move.fusion_boost_reads_a_called_move_s_own_result",
+   "status": "verified",
+   "generations": [
+    7
+   ],
+   "singles": false,
+   "doubles": true,
+   "local_tests": [
+    "showdown_scenarios_replay_frame_by_frame"
+   ],
+   "oracles": [
+    "@pkmn/sim"
+   ],
+   "references": [
+    "DESIGN.md R-M11-26",
+    "issues.md I213",
+    "TESTING.md §7"
+   ]
   }
  ]
 }

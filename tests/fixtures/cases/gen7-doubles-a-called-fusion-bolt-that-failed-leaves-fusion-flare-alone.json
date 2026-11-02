@@ -1,0 +1,78 @@
+{
+ "schema": 1,
+ "id": "gen7-doubles-a-called-fusion-bolt-that-failed-leaves-fusion-flare-alone",
+ "notes": [
+  "Gen 7 doubles: Komala (Comatose) uses Sleep Talk, which calls Fusion Bolt at a Ground-type foe: immune. Fusion Flare's boost needs a Fusion Bolt successfully used, so Lapras's Fusion Flare right after it is not doubled. Showdown sets `lastSuccessfulMoveThisTurn` from the action's own `useMove` (`moveDidSomething`), Sleep Talk's, which hit, and doubled it: the oracle's patch I213 (issues.md I213, DESIGN.md R-M11-26). Speeds: Komala 85, Lapras 80, Hippowdon 67, Hippopotas 52 \u2014 no move between the two"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Komala",
+    "species": "Komala",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sleep Talk",
+     "Fusion Bolt"
+    ],
+    "ability": "Comatose",
+    "gender": "M"
+   },
+   {
+    "label": "Lapras",
+    "species": "Lapras",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fusion Flare"
+    ],
+    "ability": "Shell Armor",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Hippopotas",
+    "species": "Hippopotas",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Sand Stream",
+    "gender": "M"
+   },
+   {
+    "label": "Hippowdon",
+    "species": "Hippowdon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Sand Force",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Sleep Talk, move Fusion Flare 2",
+   "p2": "move Harden, move Harden"
+  }
+ ]
+}

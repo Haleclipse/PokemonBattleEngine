@@ -1,0 +1,83 @@
+{
+ "schema": 1,
+ "id": "gen7-doubles-dancer-follows-a-mirror-moved-dance",
+ "notes": [
+  "Gen 7 doubles: Snorlax's Feather Dance on Chatot sets off Oricorio's Dancer. A turn later Chatot's Mirror Move takes Snorlax's Feather Dance at it, and it lands: the dance executed did something, so Oricorio dances again. Showdown's Gen 5+ Mirror Move calls in its `onTryHit` and returns `null`, its own `useMove` did nothing (`moveDidSomething`), and Dancer stayed still: the oracle's patch I213 (issues.md I213, DESIGN.md R-M11-26)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Chatot",
+    "species": "Chatot",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Mirror Move",
+     "Harden"
+    ],
+    "ability": "Keen Eye",
+    "gender": "M"
+   },
+   {
+    "label": "Oricorio",
+    "species": "Oricorio",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Dancer",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Feather Dance",
+     "Harden"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   },
+   {
+    "label": "Slowbro",
+    "species": "Slowbro",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Oblivious",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Harden, move Harden",
+   "p2": "move Feather Dance 1, move Harden"
+  },
+  {
+   "p1": "move Mirror Move 1, move Harden",
+   "p2": "move Harden, move Harden"
+  }
+ ]
+}

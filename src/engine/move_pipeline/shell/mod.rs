@@ -292,6 +292,9 @@ impl<'a> MovePipeline<'a> {
         self.rolling_after_move(actor, &execution);
         // Showdown `moveThisTurnResult`, and `lastSuccessfulMoveThisTurn` — which a Pokémon
         // that could not act (BeforeMove) leaves alone, as Showdown returns before setting it.
+        // Both read the move executed — a called one's own result, not its caller's (Showdown's
+        // `moveDidSomething` for the latter is the caller's `useMove`: a Fusion Bolt Sleep Talk
+        // called into an immunity still powered Fusion Flare; issues.md I213, patched).
         let result = own_result.unwrap_or(execution.result);
         if let Some(pokemon) = self.state.pokemon_mut(actor) {
             pokemon.history.move_this_turn = Some(result);
@@ -307,9 +310,12 @@ impl<'a> MovePipeline<'a> {
         // the original user its ally, else at the original user (DESIGN.md §42.9). The original
         // target is Showdown's `activeTarget`: the last Pokémon the move's hit steps went through
         // — where a random draw (Petal Dance) or a redirection sent it, not what the action
-        // named (R-M8-122). Only where the action's own move did something (`moveDidSomething`,
-        // the actor's `useMove`): one another Pokémon took over (Snatch) or sent back failed
-        // for its user, and what that one used is no dance of the action's (R-M10-69).
+        // named (R-M8-122). Only where the move the actor executed did something: one another
+        // Pokémon took over (Snatch) or sent back failed for its user, and what that one used is
+        // no dance of the action's (R-M10-69); a dance the action's move called counts by its
+        // own result — Swords Dance at +6 that Assist called is not followed, a Feather Dance
+        // Mirror Move called that landed is (issues.md I213: Showdown reads the caller's
+        // `useMove`, `moveDidSomething`; the oracle is patched).
         if !execution.stopped
             && self.call.is_none()
             && self

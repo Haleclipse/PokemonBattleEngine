@@ -33,7 +33,8 @@
 // move calls strikes back). I206 (Dragon Darts' first target is checked for
 // Emergency Exit), I210 (Gen 3 Lightning Rod names itself as it takes a move), I211 (a White Herb
 // its holder may not use stays held) and I212 (Gen 7's Rollout storage kept until it is used) change
-// no draw.
+// no draw. I213 (a Gen 5+ called move's own result for Dancer and the Fusion moves) changes whether
+// Dancer dances, and so its draws.
 // `SHOWDOWN_UNPATCHED=1` plays Showdown as published: to reproduce a battle recorded before a
 // patch existed, and to check that a patch's scenario fails without it.
 import {Battle, Dex, Pokemon} from '@pkmn/sim';
@@ -3834,5 +3835,44 @@ if (patched) {
       this.effectState.busted = true;
       return 0;
     }
+  };
+}
+
+// I213 — Gen 5+: what a called move did is what the action did. Showdown's `runMove` reads
+// `moveDidSomething` — what the action's own move's `useMove` returned — for Dancer (`if
+// (move.flags['dance'] && moveDidSomething …)`, `move` being the called move by then) and for
+// `lastSuccessfulMoveThisTurn` (Fusion Flare's and Fusion Bolt's doubling). A move called in the
+// caller's `onHit` (Assist, Metronome, Sleep Talk, Copycat) always did something; one called in its
+// `onTryHit`, which returns `null` (Me First, Gen 5+ Mirror Move, Gen 6+ Nature Power), never did:
+// Dancer follows a Swords Dance Assist calls at +6, but not a Feather Dance Mirror Move calls that
+// lands. The cartridge research has a dance that failed — Swords Dance at +6 included — go
+// uncopied, and Fusion Flare's boost needs a Fusion Bolt "successfully used"; the user decided the
+// move executed is what counts (issues.md I213). The patch: the outermost `useMove` of a Pokémon
+// returns the result of the last move it executed itself — a move it called in turn — while every
+// `useMove` still sets `moveThisTurnResult` as before; another Pokémon's move inside (Magic Coat's,
+// Magic Bounce's, Snatch's) is that Pokémon's own and leaves the user's result alone. Only
+// `runMove` reads the value. Dancer then dances (or not) as its draws go: the user allowed the
+// change in draws.
+if (patched) {
+  const actions = Object.getPrototypeOf(new Battle({formatid: 'gen9customgame'}).actions);
+  const useMove = actions.useMove;
+  const executing = new WeakMap();
+  actions.useMove = function (move, pokemon, options) {
+    if (this.battle.gen < 5) return useMove.call(this, move, pokemon, options);
+    const enclosing = executing.get(pokemon);
+    const record = {called: false, result: undefined};
+    executing.set(pokemon, record);
+    let result;
+    try {
+      result = useMove.call(this, move, pokemon, options);
+    } finally {
+      if (enclosing) executing.set(pokemon, enclosing);
+      else executing.delete(pokemon);
+    }
+    const executed = record.called ? record.result : result;
+    if (!enclosing) return executed;
+    enclosing.called = true;
+    enclosing.result = executed;
+    return result;
   };
 }

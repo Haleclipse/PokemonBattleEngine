@@ -1,0 +1,128 @@
+{
+ "schema": 1,
+ "id": "gen7-doubles-a-called-dance-that-did-nothing-sets-no-dancer-off",
+ "notes": [
+  "Gen 7 doubles: Charizard, its Attack at +6 from a Belly Drum, uses Assist, which calls Swords Dance: the dance changes nothing (`-boost|p1b: Charizard|atk|0`). A dance that failed is not copied \u2014 Swords Dance at +6 included (the cartridge research) \u2014 and the dance Assist called is the move executed: its partner Cosmoem's Dancer does not follow it. Showdown follows the action's own `useMove` (`moveDidSomething`), Assist's, which hit, and Cosmoem danced (Attack +2): the oracle's patch I213 (issues.md I213, DESIGN.md R-M11-26). Minimized from the Nightly battle m8-gen7-doubles-s1728-008"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Cosmoem",
+    "species": "Cosmoem",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Swords Dance",
+     "Assist"
+    ],
+    "ability": "Dancer"
+   },
+   {
+    "label": "Charizard",
+    "species": "Charizard",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Metal Sound",
+     "Assist",
+     "Defend Order"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Diggersby",
+    "species": "Diggersby",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Belly Drum"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Chikorita",
+    "species": "Chikorita",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Dragon Dance",
+     "Assist"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Roserade",
+    "species": "Roserade",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tail Glow",
+     "Assist",
+     "Bulk Up"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Delibird",
+    "species": "Delibird",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Belly Drum"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   26200,
+   29042,
+   36721,
+   18183
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Assist, move Assist",
+   "p2": "move Assist, move Assist"
+  },
+  {
+   "p1": "move Swords Dance, move Metal Sound 2",
+   "p2": "move Dragon Dance, move Tail Glow"
+  },
+  {
+   "p1": "move Assist, move Assist",
+   "p2": "move Assist, move Assist"
+  },
+  {
+   "p1": "switch Diggersby, move Defend Order",
+   "p2": "switch Delibird, move Bulk Up"
+  },
+  {
+   "p1": "move Belly Drum, move Metal Sound 1",
+   "p2": "move Belly Drum, move Tail Glow"
+  },
+  {
+   "p1": "move Belly Drum, move Metal Sound 2",
+   "p2": "move Belly Drum, move Tail Glow"
+  },
+  {
+   "p1": "switch Cosmoem, move Assist",
+   "p2": "switch Chikorita, move Assist"
+  }
+ ]
+}
