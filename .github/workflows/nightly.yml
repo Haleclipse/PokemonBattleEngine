@@ -65,6 +65,11 @@ jobs:
       - name: data reproduces
         if: always()
         run: scripts/check-data.sh
+      # Every snapshot the replays restore, through its JSON first (DESIGN.md §48.2): about a
+      # minute more than the replays alone, so here rather than in every check.
+      - name: snapshots through JSON
+        if: always()
+        run: SNAPSHOT_JSON=1 cargo test --release --test showdown_oracle showdown_scenarios_replay_frame_by_frame
       - name: save coverage
         if: always()
         uses: actions/cache/save@v6

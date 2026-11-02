@@ -73,6 +73,22 @@ pub(super) fn restore_with_tape(
 ) -> BattleEngine {
     let mut snapshot = snapshot.clone();
     snapshot.state.rng = BattleRng::with_semantic_tape(1, tape);
+    // `SNAPSHOT_JSON=1`: every snapshot the replay restores goes through its JSON first, and
+    // must read back equal and write the same bytes (DESIGN.md §48.2, R-M11-25).
+    if std::env::var_os("SNAPSHOT_JSON").is_some() {
+        let json = snapshot.to_json();
+        let back = BattleSnapshot::from_json(&json).expect("a snapshot's own JSON reads back");
+        assert!(
+            back == snapshot,
+            "a snapshot read back from its JSON differs"
+        );
+        assert_eq!(
+            back.to_json(),
+            json,
+            "a snapshot read back writes other bytes"
+        );
+        snapshot = back;
+    }
     BattleEngine::restore(compiled.rules.clone(), compiled.dex.clone(), snapshot).expect("restore")
 }
 

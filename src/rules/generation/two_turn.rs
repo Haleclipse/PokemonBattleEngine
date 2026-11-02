@@ -1,9 +1,10 @@
 //! A generation's two-turn moves and semi-invulnerability (`TwoTurnRules`).
 
 use super::*;
+use serde::{Deserialize, Serialize};
 
 /// Where a charging move's user is while it is out of reach (Showdown `onInvulnerability`).
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
 pub enum SemiInvulnerableKind {
     /// Fly, Bounce: in the air.
     Flying,

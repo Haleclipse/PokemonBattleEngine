@@ -31,7 +31,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 FORMATS = ['gen9ou', 'gen9vgc2025regi', 'gen4ou', 'gen1ou']
-WORKLOADS = ['battle', 'rollout', 'snapshot']
+WORKLOADS = ['battle', 'rollout', 'snapshot', 'json']
 THRESHOLD = 0.03
 OUT = ROOT / 'target' / 'bench-instructions' / 'results.json'
 

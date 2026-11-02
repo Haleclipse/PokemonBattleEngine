@@ -1,6 +1,7 @@
 use crate::ids::{PokemonId, SideId};
 use crate::rules::ActionOrderStrategy;
 use crate::state::{BattleOutcome, BattlePhase, BattleState};
+use serde::{Deserialize, Serialize};
 
 use super::{ForcedSwitchChoice, QueuedAction, ReplacementRequirement, SideChoice};
 
@@ -29,7 +30,7 @@ pub enum EngineStep {
     Finished(BattleOutcome),
 }
 
-#[derive(Debug, Clone, Default, PartialEq, Eq)]
+#[derive(Debug, Clone, Default, PartialEq, Eq, Serialize, Deserialize)]
 pub(crate) enum PendingExecution {
     #[default]
     Idle,

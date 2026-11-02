@@ -6,8 +6,9 @@
 
 use super::*;
 use crate::ids::{ItemId, MoveId, PokemonId, PositionId};
+use serde::{Deserialize, Serialize};
 
-#[derive(Debug, Clone, Default, PartialEq, Eq)]
+#[derive(Debug, Clone, Default, PartialEq, Eq, Serialize, Deserialize)]
 pub struct VolatileState {
     pub(super) entries: Vec<VolatileCondition>,
 }

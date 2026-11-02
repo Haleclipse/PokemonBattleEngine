@@ -1,6 +1,7 @@
 //! A format as the session reads it: the validator, the team policy, the engine's switches, and
 //! the registration of a team.
 
+use serde::{Deserialize, Serialize};
 use std::sync::Arc;
 
 use crate::dex::{DexResolver, ResolvedDex};
@@ -187,9 +188,11 @@ fn generation_and_mode(entry: &FormatEntry) -> Result<(Generation, BattleMode), 
 }
 
 /// A side's team as registered: validated, its sets normalised, every gender fixed.
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct RegisteredTeam {
+    #[serde(with = "crate::snapshot::wire")]
     pub side: SideId,
+    #[serde(with = "crate::snapshot::wire")]
     pub sets: Vec<TeamSet>,
     /// Whether its moves were checked against the learnsets (`TeamValidator::checks_learnsets`):
     /// a team registered without them is not known to be legal (DESIGN.md §45.6).

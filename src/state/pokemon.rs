@@ -1,10 +1,11 @@
 use crate::ids::{AbilityId, ItemId, MoveId, MoveSlot, PokemonId, SideId, SpeciesId};
+use serde::{Deserialize, Serialize};
 
 use crate::dex::PokemonType;
 
 use super::{PokemonHistory, PokemonTypes, VolatileState};
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub struct BattleStats {
     pub attack: u16,
     pub defense: u16,
@@ -61,7 +62,7 @@ pub enum Stat {
     Evasion,
 }
 
-#[derive(Debug, Clone, Copy, Default, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, Default, PartialEq, Eq, Serialize, Deserialize)]
 pub struct StatStages {
     pub attack: i8,
     pub defense: i8,
@@ -134,7 +135,7 @@ pub enum NonVolatileStatus {
 
 /// Showdown's staleness (DESIGN.md §45.7): the Pokémon may be keeping the battle from ending.
 /// Endless Battle Clause reads it at each turn's end.
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub enum Staleness {
     /// Its own doing: it ate a restorative berry that an item change had given it.
     Internal,
@@ -148,8 +149,9 @@ pub enum Staleness {
 /// Keeping lifecycle state beside the status prevents Toxic/Sleep counters from becoming unrelated
 /// fields on `PokemonState`. More generation-specific counters can be added here without changing
 /// the public meaning of `PokemonState::status`.
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub struct StatusState {
+    #[serde(with = "crate::snapshot::wire")]
     pub kind: NonVolatileStatus,
     pub turns_active: u8,
     pub toxic_counter: u8,
@@ -161,6 +163,7 @@ pub struct StatusState {
     pub sleep_turns_skipped: u8,
     /// The side of the Pokémon whose doing the status is (Showdown `statusState.source`):
     /// Sleep Clause Mod counts a sleep a foe caused, not a Rest (DESIGN.md §45.7).
+    #[serde(with = "crate::snapshot::wire")]
     pub inflicted_by: Option<crate::ids::SideId>,
 }
 
@@ -206,14 +209,15 @@ pub struct MoveLock {
 /// (`moveSlots[i] = {…}`); the others are the own slots themselves — `clearVolatile`'s
 /// `baseMoveSlots.slice()` shares them — so what is spent from them this stint stays when the
 /// overlay goes (`PokemonState::drop_move_overlay`, DESIGN.md R-M8-54).
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct MoveOverlay {
     pub slots: Vec<MoveSlotState>,
     pub rewritten: Vec<usize>,
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub struct MoveSlotState {
+    #[serde(with = "crate::snapshot::wire")]
     pub move_id: MoveId,
     pub pp: u8,
     pub max_pp: u8,
@@ -223,6 +227,7 @@ pub struct MoveSlotState {
     /// Showdown `moveSlot.target` where it is not the move's own: a Mimic's or Sketch's copy
     /// of a use whose `onModifyMove` aimed it elsewhere (a non-Ghost's Curse: its user). The
     /// request reads it — whether a target is chosen —, the move itself does not.
+    #[serde(with = "crate::snapshot::wire")]
     pub target: Option<crate::rules::TargetPattern>,
 }
 
@@ -240,9 +245,10 @@ impl MoveSlotState {
 
 /// Showdown `abilityState`: what the Pokémon's ability keeps between events. Entering the field
 /// starts it over (`switchIn`).
-#[derive(Debug, Clone, Copy, Default, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, Default, PartialEq, Eq, Serialize, Deserialize)]
 pub struct AbilityState {
     /// Gorilla Tactics: the move it locked the Pokémon into (`choiceLock`).
+    #[serde(with = "crate::snapshot::wire")]
     pub choice_lock: Option<MoveId>,
     /// Trace: still looking for an ability to copy (`seek`); every `Update` looks again.
     pub trace_seek: bool,
@@ -264,6 +270,7 @@ pub struct AbilityState {
     pub ending: bool,
     /// Cud Chew: the berry the Pokémon ate and the turn ends left before it eats it again
     /// (`berry`, `counter`).
+    #[serde(with = "crate::snapshot::wire")]
     pub cud_chew: Option<(ItemId, u8)>,
     /// Ripen: the berry the Pokémon last ate was a resist berry (`berryWeaken`); the next hit
     /// it takes is halved again, which uses the note up.
@@ -285,8 +292,9 @@ pub struct AbilityState {
 
 /// Raises kept to be copied later (Opportunist's `effectState.boosts`): by stat, in the order
 /// the stats first came, each the sum of what was kept of it.
-#[derive(Debug, Clone, Copy, Default, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, Default, PartialEq, Eq, Serialize, Deserialize)]
 pub struct KeptRaises {
+    #[serde(with = "crate::snapshot::wire")]
     raises: [Option<(Stat, i8)>; 7],
 }
 
@@ -324,10 +332,11 @@ impl KeptRaises {
 /// Showdown `itemState`: what the Pokémon's held item keeps between events. Entering the field
 /// starts it over (`switchIn`), and so does losing the item (`useItem`, `eatItem`:
 /// `clearEffectState`).
-#[derive(Debug, Clone, Default, PartialEq, Eq)]
+#[derive(Debug, Clone, Default, PartialEq, Eq, Serialize, Deserialize)]
 pub struct ItemState {
     /// Mirror Herb: the raises the holder's foes got, by stat in the order they first came
     /// (`boosts`); the herb is ready once it kept one (`ready`).
+    #[serde(with = "crate::snapshot::wire")]
     pub kept_raises: Vec<(Stat, i8)>,
     /// Eject Pack: a stage of the holder's went down (`eject`).
     pub eject: bool,
@@ -341,20 +350,24 @@ pub struct ItemState {
 /// changes them meanwhile (Soak, Skill Swap, Power Split, PP spent); leaving drops it
 /// (`clearVolatile`). Boosts, critical-hit volatiles and Gen 1's modified stats are copied into
 /// the Pokémon's own fields, which leaving clears anyway.
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct TransformState {
     /// The Pokémon it transformed into.
+    #[serde(with = "crate::snapshot::wire")]
     pub into: PokemonId,
+    #[serde(with = "crate::snapshot::wire")]
     pub species: Option<SpeciesId>,
     /// The target's types before Roost took Flying out (`roost.typeWas`).
     pub types: PokemonTypes,
     /// The five stored stats; HP stays the Pokémon's own.
     pub stats: BattleStats,
     /// Gen 3+ the target's ability; Gen 1-2 the Pokémon's own (no abilities).
+    #[serde(with = "crate::snapshot::wire")]
     pub ability: AbilityId,
     /// The target's moves with Transform's PP (`TransformRules::max_pp`).
     pub moves: Vec<MoveSlotState>,
     /// Gen 2-4 the target's Hidden Power; Gen 5+ the Pokémon's own.
+    #[serde(with = "crate::snapshot::wire")]
     pub hidden_power: (PokemonType, u8),
 }
 
@@ -362,8 +375,9 @@ pub struct TransformState {
 /// it — Showdown's `setSpecies` computes them as the forme changes (`spreadModify(
 /// species.baseStats, set)`); the team builder computes them once (`dex::build_pokemon`), so a
 /// forme change needs no dex.
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub struct Forme {
+    #[serde(with = "crate::snapshot::wire")]
     pub species: SpeciesId,
     pub types: PokemonTypes,
     /// The five stored stats the set gives this forme.
@@ -372,21 +386,26 @@ pub struct Forme {
     pub max_hp: u16,
     /// The forme's first ability (Showdown `species.abilities['0']`): a permanent forme change
     /// gives it.
+    #[serde(with = "crate::snapshot::wire")]
     pub first_ability: AbilityId,
     /// The forme a battle-only forme goes back to (Showdown `battleOnly` / `changesFrom`).
+    #[serde(with = "crate::snapshot::wire")]
     pub changes_from: Option<SpeciesId>,
     /// It is a mega forme (Showdown `isMega`, DESIGN.md §44.3): what a Mega Stone's or Mega
     /// Rayquaza's `canMegaEvo` looks for.
     pub mega: bool,
     /// The move this forme needs (Showdown `requiredMove`; Mega Rayquaza only).
+    #[serde(with = "crate::snapshot::wire")]
     pub required_move: Option<crate::ids::MoveId>,
 }
 
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct PokemonState {
     /// Read-only: `BattleState` keeps an id → index table, so the id must not change after
     /// construction. Every other field is public on purpose (see DESIGN.md §7.2).
+    #[serde(with = "crate::snapshot::wire")]
     id: PokemonId,
+    #[serde(with = "crate::snapshot::wire")]
     pub side: SideId,
     pub level: u8,
     pub hp: u16,
@@ -399,14 +418,19 @@ pub struct PokemonState {
     pub types_before_change: Option<PokemonTypes>,
     /// Showdown `addedType`: a third type Forest's Curse or Trick-or-Treat added (one at a
     /// time); a type change and leaving the field clear it.
+    #[serde(with = "crate::snapshot::wire")]
     pub added_type: Option<PokemonType>,
+    #[serde(with = "crate::snapshot::wire")]
     pub ability: AbilityId,
     /// The ability before something changed it this stint on the field (Skill Swap, Role Play
     /// …): Showdown's `clearVolatile` writes `baseAbility` back as the Pokémon leaves the field.
     /// `None` while unchanged.
+    #[serde(with = "crate::snapshot::wire")]
     pub ability_before_change: Option<AbilityId>,
+    #[serde(with = "crate::snapshot::wire")]
     pub held_item: Option<ItemId>,
     /// From the set (`PokemonSet::gender`); genderless when it names none.
+    #[serde(with = "crate::snapshot::wire")]
     pub gender: Gender,
     pub status: Option<StatusState>,
     pub stages: StatStages,
@@ -414,23 +438,29 @@ pub struct PokemonState {
     pub moves: Vec<MoveSlotState>,
     /// The last move this Pokémon actually used (Showdown `lastMove`): Disable locks onto it.
     /// Cleared on switch-out, and in Gen 1-2 whenever anyone enters.
+    #[serde(with = "crate::snapshot::wire")]
     pub last_move: Option<MoveId>,
     /// Showdown `lastMoveUsed`: the last move this Pokémon used (a called one too), with the
     /// type it had as it was used (`ModifyType` edits the same object). Conversion 2 reads it.
     /// Cleared on switch-out.
+    #[serde(with = "crate::snapshot::wire")]
     pub last_move_used: Option<(MoveId, PokemonType)>,
     /// Showdown `lastMoveTargetLoc`: the position the last move aimed at (Instruct aims the
     /// repeated move there, DESIGN.md §42.9).
+    #[serde(with = "crate::snapshot::wire")]
     pub last_move_target: Option<crate::ids::PositionId>,
     /// Where the last move used went as its `onModifyMove` aimed it (Showdown `lastMove`, the
     /// active move: `lastMove.target`), with the move: Mimic and Sketch copy it into the slot.
+    #[serde(with = "crate::snapshot::wire")]
     pub last_move_pattern: Option<(MoveId, crate::rules::TargetPattern)>,
     /// The move Encore locks onto (Showdown's Gen 2 `lastMoveEncore`, `lastMove` elsewhere): the
     /// same last move, which the Gen 1-2 entry reset leaves alone. Cleared on switch-out.
+    #[serde(with = "crate::snapshot::wire")]
     pub last_move_encore: Option<MoveId>,
     /// Showdown `lastMove.baseMove`: the move a Max Move was made from (only Max Moves carry
     /// one, DESIGN.md §44.5). Encore, Spite, Grudge and Eerie Spell read the base move out of a
     /// `last_move` that is a Max Move. Kept in step with `last_move` at every write.
+    #[serde(with = "crate::snapshot::wire")]
     pub last_move_base: Option<MoveId>,
     /// Showdown `lastMove.isZ` for a status move used as a Z-Move: its id is the move itself
     /// (a damaging Z-Move is a move of its own, `ResolvedMove::z_crystal`). Copycat, Encore,
@@ -452,6 +482,7 @@ pub struct PokemonState {
     /// species check from Gen 5, Gen 1's critical chance, Beat Up's members). What it battles
     /// as is `engine::species_of` (Showdown `species`, DESIGN.md §41.7). `None` for a Pokémon
     /// built by hand.
+    #[serde(with = "crate::snapshot::wire")]
     pub species: Option<SpeciesId>,
     /// Gen 1 (`StatRules::modified_stats`, Showdown `modifiedStats`): the in-battle value of
     /// each stat, kept on the Pokémon. `None` in every other generation.
@@ -466,27 +497,33 @@ pub struct PokemonState {
     pub nature: crate::dex::Nature,
     /// Hidden Power's type and (Gen 2-5) power from the set's IVs (Showdown `hpType`,
     /// `hpPower`): all-31 IVs give Dark 70.
+    #[serde(with = "crate::snapshot::wire")]
     pub hidden_power: (crate::dex::PokemonType, u8),
     /// The forme the Pokémon battles as when it is not its own species (Showdown `species` after
     /// a `formeChange` that is not permanent: Stance Change, Zen Mode, Forecast …, DESIGN.md
     /// §43.1); leaving the field drops it (`setSpecies(baseSpecies)`). A permanent forme change
     /// rewrites `species` instead.
+    #[serde(with = "crate::snapshot::wire")]
     pub forme: Option<SpeciesId>,
     /// The formes its species can take, with the values its set gives each (DESIGN.md §43.1);
     /// empty for a Pokémon built by hand, which then changes no forme.
+    #[serde(with = "crate::snapshot::arc_slice")]
     pub formes: std::sync::Arc<[Forme]>,
     /// Showdown `dynamaxLevel` (0-10, DESIGN.md §44.5): how much HP a Dynamax adds
     /// (`1.5 + 0.05 × level`).
     pub dynamax_level: u8,
     /// The type Terastallization gives (Showdown `teraType`): the set's, else the species'
     /// first type (`PokemonSet::tera_type` is resolved as it is built). Gen 9 only.
+    #[serde(with = "crate::snapshot::wire")]
     pub tera_type: PokemonType,
     /// Terastallization (DESIGN.md §44.1): the type it took, `None` while it has not. The types
     /// it reads are then that type alone (`types_of`, unless it is Stellar), and its base types
     /// still count for STAB and for the 60-power floor.
+    #[serde(with = "crate::snapshot::wire")]
     pub terastallized: Option<PokemonType>,
     /// Stellar's per-type boost (Showdown `stellarBoostedTypes`): the types whose move already
     /// got the one-time boost; a Terapagos-Stellar keeps none (`getDamage`).
+    #[serde(with = "crate::snapshot::wire")]
     pub stellar_boosted_types: Vec<PokemonType>,
     /// Transform's copy (DESIGN.md §41.7), read through the effective-value entries
     /// (`engine::species_of`, `types_of`, `raw_ability`, `move_slots`, `battle_stats`,
@@ -501,6 +538,7 @@ pub struct PokemonState {
     /// Pokémon appears as to the other side (`BattleEngine::view_for`). Nothing else reads it but
     /// Transform, which fails on either side of one. Chosen as it enters, gone as it is hit,
     /// suppressed, leaves or faints.
+    #[serde(with = "crate::snapshot::wire")]
     pub illusion: Option<PokemonId>,
     /// Battle Bond (Showdown `bondTriggered`): it has raised its holder once this battle
     /// (DESIGN.md §43.4).
@@ -510,14 +548,18 @@ pub struct PokemonState {
     pub hero_message_displayed: bool,
     /// The species the set named (Showdown `pokemon.set.species`): what a forme with
     /// `forme_regression` goes back to as it faints (DESIGN.md §44.3).
+    #[serde(with = "crate::snapshot::wire")]
     pub set_species: Option<SpeciesId>,
     /// The ability the set named (Showdown `pokemon.set.ability`, the reverting faint's
     /// `baseAbility`).
+    #[serde(with = "crate::snapshot::wire")]
     pub set_ability: AbilityId,
     /// The item the set named (Showdown `pokemon.set.item`): Endless Battle Clause's
     /// berry-cycling check (DESIGN.md §45.7).
+    #[serde(with = "crate::snapshot::wire")]
     pub set_item: Option<ItemId>,
     /// The moves the set named (Showdown `pokemon.set.moves`), whatever Sketch writes since.
+    #[serde(with = "crate::snapshot::wire")]
     pub set_moves: Vec<MoveId>,
     /// Showdown `staleness` (DESIGN.md §45.7), kept for the whole battle.
     pub staleness: Option<Staleness>,
@@ -536,8 +578,10 @@ pub struct PokemonState {
     pub forme_regression: bool,
     /// Showdown `canMegaEvo` (DESIGN.md §44.3): the forme this Pokémon may Mega Evolve into,
     /// fixed as the battle is built (the species, its moves and the stone it holds then).
+    #[serde(with = "crate::snapshot::wire")]
     pub mega_evolves_into: Option<SpeciesId>,
     /// Showdown `canUltraBurst` (DESIGN.md §44.3): Necrozma's Ultra forme, the same way.
+    #[serde(with = "crate::snapshot::wire")]
     pub ultra_bursts_into: Option<SpeciesId>,
     /// What happened to and by the Pokémon recently (DESIGN.md §22.8).
     pub history: PokemonHistory,

@@ -1,5 +1,6 @@
 use crate::ids::{MoveId, PokemonId, PositionId, SideId};
 use crate::rules::BattleTopology;
+use serde::{Deserialize, Serialize};
 
 use super::{BattleRng, FieldState, PokemonState, SideState};
 
@@ -30,12 +31,56 @@ const NO_POKEMON: u8 = u8::MAX;
 /// twelve, so this is a structural limit rather than a practical one.
 pub const MAX_POKEMON_PER_BATTLE: usize = NO_POKEMON as usize;
 
+/// The battle's Pokémon and the `PokemonId` → index table over them, built once from them.
+/// Serialized as the Pokémon alone: a snapshot read back builds the table again (DESIGN.md
+/// §48.2), so it can never disagree with them.
+#[derive(Debug, Clone, PartialEq, Eq)]
+struct Roster {
+    pokemon: Vec<PokemonState>,
+    lookup: Box<[u8; 256]>,
+}
+
+impl Roster {
+    fn new(pokemon: Vec<PokemonState>) -> Self {
+        let mut lookup = Box::new([NO_POKEMON; 256]);
+        for (index, entry) in pokemon.iter().enumerate() {
+            let slot = &mut lookup[usize::from(entry.id().0)];
+            // Duplicate ids are rejected by engine validation; keeping the first occurrence
+            // lets the validator observe a consistent view while it reports the duplicate.
+            if *slot == NO_POKEMON {
+                *slot = index as u8;
+            }
+        }
+        Self { pokemon, lookup }
+    }
+}
+
+impl Serialize for Roster {
+    fn serialize<S: serde::Serializer>(&self, serializer: S) -> Result<S::Ok, S::Error> {
+        self.pokemon.serialize(serializer)
+    }
+}
+
+impl<'de> Deserialize<'de> for Roster {
+    fn deserialize<D: serde::Deserializer<'de>>(deserializer: D) -> Result<Self, D::Error> {
+        let pokemon = Vec::<PokemonState>::deserialize(deserializer)?;
+        if pokemon.len() > MAX_POKEMON_PER_BATTLE {
+            return Err(serde::de::Error::custom(format!(
+                "a battle cannot address more than {MAX_POKEMON_PER_BATTLE} Pokémon"
+            )));
+        }
+        Ok(Self::new(pokemon))
+    }
+}
+
 /// Who knocked a Pokémon out, recorded as its HP reaches 0 (Showdown's `faintQueue` entry:
 /// `source`, and whether `effect` is a move). `faintMessages` hands it to the faint handlers.
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub struct FaintCause {
+    #[serde(with = "crate::snapshot::wire")]
     pub target: PokemonId,
     /// The Pokémon behind the damage, when there is one.
+    #[serde(with = "crate::snapshot::wire")]
     pub source: Option<PokemonId>,
     /// The damage was a move's (`effect.effectType === 'Move'`).
     pub by_move: bool,
@@ -58,49 +103,58 @@ pub struct FaintCause {
     pub counted: bool,
 }
 
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct BattleState {
     pub turn: u32,
+    #[serde(with = "crate::snapshot::wire")]
     pub phase: BattlePhase,
-    /// Owned Pokémon storage. Kept private so the id → index table below can never go stale.
-    /// Reads go through `all_pokemon()` / `pokemon()`, writes through `pokemon_mut()`.
-    pokemon: Vec<PokemonState>,
-    /// `PokemonId` → index into `pokemon`, built once at construction. Every rule stage
-    /// addresses Pokémon by id, so lookup must be O(1) and allocation-free.
-    lookup: Box<[u8; 256]>,
+    /// Owned Pokémon storage with its `PokemonId` → index table. Kept private so the table can
+    /// never go stale. Every rule stage addresses Pokémon by id, so lookup must be O(1) and
+    /// allocation-free. Reads go through `all_pokemon()` / `pokemon()`, writes through
+    /// `pokemon_mut()`.
+    #[serde(rename = "pokemon")]
+    roster: Roster,
     pub sides: [SideState; 2],
     pub field: FieldState,
     pub rng: BattleRng,
     /// What the battle has shown its observers (DESIGN.md §47.0 item 12): the views' alone.
     pub knowledge: super::Knowledge,
+    #[serde(with = "crate::snapshot::wire")]
     pub outcome: Option<BattleOutcome>,
     /// Pokémon whose HP reached 0, in the order it happened, until the faint step consumes
     /// them (Showdown `faintQueue`: decides which side wins a double knock-out from Gen 5).
+    #[serde(with = "crate::snapshot::wire")]
     pub faint_queue: Vec<PokemonId>,
     /// Who knocked each `faint_queue` Pokémon out (the `source` and `effect` of its Showdown
     /// `faintQueue` entry), consumed with it.
     pub faint_causes: Vec<FaintCause>,
     /// Pokémon ordered out for a random bench Pokémon (Roar, Dragon Tail, Red Card), dragged
     /// at the end of the action (Showdown `forceSwitchFlag`).
+    #[serde(with = "crate::snapshot::wire")]
     pub drag_queue: Vec<PokemonId>,
     /// Actors whose declared move has not run yet this turn (Showdown `queue.willMove`):
     /// Taunt / Encore / Disable durations depend on whether the target still moves.
+    #[serde(with = "crate::snapshot::wire")]
     pub pending_movers: Vec<PokemonId>,
     /// Gen 1: the Pokémon whose action this turn is their side's last selected move, chosen as
     /// `Fight` (frozen or asleep as the turn began) — the only ones Showdown's Desync Clause Mod
     /// can stop (`PpRules::desync_clause`, R-M8-150).
+    #[serde(with = "crate::snapshot::wire")]
     pub fight_actors: Vec<PokemonId>,
     /// The move slot the action under way chose, and whose action it is (Showdown's
     /// `action.moveSlot`): the slot Gen 2-3's Mimic and Sketch write when they are that slot's
     /// move — the second of two Mimics too (`MovesSlot::TheChosen`, issues.md I170). `None`
     /// between actions.
+    #[serde(with = "crate::snapshot::wire")]
     pub acting_slot: Option<(PokemonId, usize)>,
     /// The Pokémon handed an item while that action was under way (Showdown `setItem`: a Trick,
     /// a Bestow, a Thief): Gen 3's Choice lock skips one its own move handed it (issues.md
     /// I184). Empty between actions — the engine reads its state, never its trace (R-M10-2).
+    #[serde(with = "crate::snapshot::wire")]
     pub items_received_in_action: Vec<PokemonId>,
     /// Actors that had no move left to choose this turn (Showdown's request held Struggle
     /// alone): decided at the choice, their action is Struggle whatever slot it names.
+    #[serde(with = "crate::snapshot::wire")]
     pub struggling: Vec<PokemonId>,
     /// The move each actor's action of this turn names (Showdown's queued `action.move`), with
     /// its category and priority as ordered (Gen 6+ `action.move.priority`): what Sucker Punch
@@ -108,10 +162,12 @@ pub struct BattleState {
     pub queued_moves: Vec<QueuedMove>,
     /// The "Curse glitch" (Trick-or-Treat, Gen 6-8 doubles): Pokémon in the second slot whose
     /// queued Curse now aims at their ally's slot (`action.targetLoc = -1`), as their move runs.
+    #[serde(with = "crate::snapshot::wire")]
     pub curse_glitched: Vec<crate::ids::PokemonId>,
     /// The fainted Pokémon of `faint_queue` Showdown's `faintMessages` has reached already — at
     /// the end of a move's hit loop — though the engine processes them at the end of the
     /// action: their side's `pokemonLeft` no longer counts them.
+    #[serde(with = "crate::snapshot::wire")]
     pub announced_faints: Vec<crate::ids::PokemonId>,
     /// An Emergency Exit in the residual called off the switch flags `checkFainted` had just
     /// put on the fainted (Showdown `onEmergencyExit` clears every active's `switchFlag`): the
@@ -126,28 +182,35 @@ pub struct BattleState {
     pub next_ability_order: u32,
     /// Showdown `beingCalledBack` / `switchFlag` while `BeforeSwitchOut` runs: the Pokémon
     /// leaving the field that Pursuit strikes at double power (DESIGN.md §15.11).
+    #[serde(with = "crate::snapshot::wire")]
     pub called_back: Option<PokemonId>,
     /// Showdown `skipBeforeSwitchOutEventFlag`: Pokémon ordered out whose `BeforeSwitchOut` has
     /// already run, before their replacement request.
+    #[serde(with = "crate::snapshot::wire")]
     pub skip_before_switch_out: Vec<PokemonId>,
     /// Gen 2 (Showdown `draggedIn`): the Pokémon a drag just brought in, until its switch-in has
     /// run (`SwitchingRules::dragged_skips_switch_in_status`).
+    #[serde(with = "crate::snapshot::wire")]
     pub dragged_in: Vec<PokemonId>,
     /// Gen 1 (Showdown `cannotmove`): actors partially trapped as the turn's choices were made;
     /// their action is lost, whatever move it names (DESIGN.md §30.9).
+    #[serde(with = "crate::snapshot::wire")]
     pub cannot_move: Vec<PokemonId>,
     /// Showdown `lastSuccessfulMoveThisTurn` (Fusion Flare / Fusion Bolt): the last move this
     /// turn that ran and did something; a move that fails, or finds everyone protected, clears
     /// it. A Pokémon that cannot act (BeforeMove) leaves it alone.
+    #[serde(with = "crate::snapshot::wire")]
     pub last_successful_move: Option<MoveId>,
     /// Gen 2-3 Showdown `quickClawRoll`: this turn's Quick Claw roll succeeded, so every
     /// holder acts at Speed 65535 until the next turn's roll.
     pub quick_claw_roll: bool,
     /// The actors whose priority chance (Quick Claw, Quick Draw) went off as this turn's
     /// actions were ordered (`priority_item_pending` reads it).
+    #[serde(with = "crate::snapshot::wire")]
     pub priority_chance_activated: Vec<PokemonId>,
     /// Gen 4 Custap Berry (`ActionOrderRules::custap_eaten_as_the_move_begins`): the holders it
     /// put first this turn, which eat it as their move begins.
+    #[serde(with = "crate::snapshot::wire")]
     pub custap_ready: Vec<PokemonId>,
     /// Showdown `!queue.peek()` (Cud Chew): the turn's actions are over — from the residual on,
     /// through its `Update` and the replacements after it, until the next turn's choices.
@@ -158,6 +221,7 @@ pub struct BattleState {
     /// (`engine::stats::update_handler_speeds`; the residual refreshes it too, and reads the
     /// speed of that moment directly). One never refreshed reads its Speed stat
     /// (`storedStats.spe`).
+    #[serde(with = "crate::snapshot::wire")]
     handler_speeds: Vec<(PokemonId, u32)>,
     /// The move being used (Showdown `activeMove`, DESIGN.md §41.2): set as a move starts,
     /// cleared once its action is over (after its drags, before its faints) and as the residual
@@ -173,9 +237,11 @@ pub struct BattleState {
     /// one of an action's chain from Gen 5, the outermost in Gen 1-4 (`activeMove =
     /// oldActiveMove`), written as the action ends (`clearActiveMove`). A BeforeMove that
     /// stopped the action leaves it alone (`clearActiveMove(true)`).
+    #[serde(with = "crate::snapshot::wire")]
     pub last_move: Option<MoveId>,
     /// Showdown `battle.lastMove.baseMove`: the move a Max Move was made from, kept beside
     /// `last_move` (DESIGN.md §44.5).
+    #[serde(with = "crate::snapshot::wire")]
     pub last_move_base: Option<MoveId>,
     /// Showdown `battle.lastMove.isZ` for a status move used as a Z-Move (its id is the move
     /// itself): Copycat refuses it (DESIGN.md R-M9-36).
@@ -183,26 +249,28 @@ pub struct BattleState {
 }
 
 /// Who made a Pokémon use a move it did not choose (DESIGN.md §42.1, Showdown `sourceEffect`).
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub enum CallSource {
-    Move(MoveId),
-    Ability(crate::ids::AbilityId),
+    Move(#[serde(with = "crate::snapshot::wire")] MoveId),
+    Ability(#[serde(with = "crate::snapshot::wire")] crate::ids::AbilityId),
 }
 
 /// Where a called move aims (Showdown `useMove`'s `target`): drawn at execution time, or the
 /// Pokémon the caller named.
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub enum CallTarget {
     Random,
-    Pokemon(PokemonId),
+    Pokemon(#[serde(with = "crate::snapshot::wire")] PokemonId),
 }
 
 /// A move another effect makes its user use now (Showdown `useMove`, DESIGN.md §42.1): the
 /// caller (Metronome, Sleep Talk, Magic Coat …) asks through `BattleContext::call_move` and the
 /// Shell runs it once the caller's own effect is over. Never set at a request boundary.
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub struct MoveCall {
+    #[serde(with = "crate::snapshot::wire")]
     pub user: PokemonId,
+    #[serde(with = "crate::snapshot::wire")]
     pub move_id: MoveId,
     pub target: CallTarget,
     pub source: CallSource,
@@ -213,27 +281,32 @@ pub struct MoveCall {
 }
 
 /// A change to the action queue a move asked for (`BattleState::queue_requests`).
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub enum QueueRequest {
     /// After You: the Pokémon's pending action goes to the front.
-    Prioritize(PokemonId),
+    Prioritize(#[serde(with = "crate::snapshot::wire")] PokemonId),
     /// Quash: the Pokémon's pending action goes last (`ActionOrderRules::quash`).
-    Quash(PokemonId),
+    Quash(#[serde(with = "crate::snapshot::wire")] PokemonId),
     /// Instruct (DESIGN.md §42.9): a fresh action of its own for `actor`, using `move_id` from
     /// its slot, at the front of the queue (`queue.resolveAction` + `prioritizeAction`).
     Instruct {
+        #[serde(with = "crate::snapshot::wire")]
         actor: PokemonId,
+        #[serde(with = "crate::snapshot::wire")]
         move_id: MoveId,
         slot: usize,
+        #[serde(with = "crate::snapshot::wire")]
         target_position: Option<crate::ids::PositionId>,
     },
 }
 
 /// The move being used (`BattleState::active_move`; Showdown `activeMove` / `activePokemon`).
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub struct ActiveMove {
+    #[serde(with = "crate::snapshot::wire")]
     pub user: PokemonId,
     /// The move's id (`activeMove.id`: Eject Pack's exception for Parting Shot).
+    #[serde(with = "crate::snapshot::wire")]
     pub move_id: MoveId,
     /// The category the move has as it is used (`activeMove.category`: Shell Side Arm may have
     /// turned it physical; Ice Face asks it, DESIGN.md §43.4).
@@ -252,6 +325,7 @@ pub struct ActiveMove {
     pub ignores_ability: bool,
     /// Showdown `move.baseMove` (DESIGN.md §44.5): the move a Max Move was made from. Only Max
     /// Moves carry one; Copycat resolves the battle's last move through it.
+    #[serde(with = "crate::snapshot::wire")]
     pub base_move: Option<MoveId>,
     /// Showdown `move.pranksterBoosted`: Prankster raised the move's priority (Magic Coat keeps
     /// its own for the move it sends back, DESIGN.md R-M8-88).
@@ -259,9 +333,11 @@ pub struct ActiveMove {
 }
 
 /// One actor's move action of the turn (`BattleState::queued_moves`).
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub struct QueuedMove {
+    #[serde(with = "crate::snapshot::wire")]
     pub actor: PokemonId,
+    #[serde(with = "crate::snapshot::wire")]
     pub move_id: MoveId,
     pub category: crate::dex::MoveCategory,
     pub priority: i8,
@@ -314,21 +390,10 @@ impl BattleState {
             "a battle cannot address more than {MAX_POKEMON_PER_BATTLE} Pokémon"
         );
 
-        let mut lookup = Box::new([NO_POKEMON; 256]);
-        for (index, entry) in pokemon.iter().enumerate() {
-            let slot = &mut lookup[usize::from(entry.id().0)];
-            // Duplicate ids are rejected by engine validation; keeping the first occurrence
-            // lets the validator observe a consistent view while it reports the duplicate.
-            if *slot == NO_POKEMON {
-                *slot = index as u8;
-            }
-        }
-
         Self {
             turn: 1,
             phase: BattlePhase::TurnChoice,
-            pokemon,
-            lookup,
+            roster: Roster::new(pokemon),
             sides,
             field: FieldState::default(),
             rng: BattleRng::new(seed),
@@ -406,25 +471,26 @@ impl BattleState {
 
     /// Every Pokémon in the battle, in construction order.
     pub fn all_pokemon(&self) -> &[PokemonState] {
-        &self.pokemon
+        &self.roster.pokemon
     }
 
     pub fn pokemon_ids(&self) -> impl Iterator<Item = PokemonId> + '_ {
-        self.pokemon.iter().map(|pokemon| pokemon.id())
+        self.roster.pokemon.iter().map(|pokemon| pokemon.id())
     }
 
     fn index_of(&self, id: PokemonId) -> Option<usize> {
-        let index = self.lookup[usize::from(id.0)];
+        let index = self.roster.lookup[usize::from(id.0)];
         (index != NO_POKEMON).then_some(usize::from(index))
     }
 
     pub fn pokemon(&self, id: PokemonId) -> Option<&PokemonState> {
-        self.index_of(id).and_then(|index| self.pokemon.get(index))
+        self.index_of(id)
+            .and_then(|index| self.roster.pokemon.get(index))
     }
 
     pub fn pokemon_mut(&mut self, id: PokemonId) -> Option<&mut PokemonState> {
         let index = self.index_of(id)?;
-        self.pokemon.get_mut(index)
+        self.roster.pokemon.get_mut(index)
     }
 
     /// Starts `id`'s ability state over (Showdown `initEffectState` for `abilityState`: a

@@ -1,0 +1,2808 @@
+{
+  "format": "pokemon-battle-engine-snapshot",
+  "version": 1,
+  "engine": "0.1.0",
+  "kind": "battle",
+  "body": {
+    "rules_fingerprint": "rules:2bf21ce57d684c0c",
+    "dex_fingerprint": "dex:@pkmn/data:0.10.11:gen1:734d8dadcfaa613f",
+    "state": {
+      "turn": 12,
+      "phase": "TurnResolution",
+      "pokemon": [
+        {
+          "id": 1,
+          "side": "P1",
+          "level": 17,
+          "hp": 0,
+          "max_hp": 53,
+          "stats": {
+            "attack": 56,
+            "defense": 51,
+            "special_attack": 29,
+            "special_defense": 29,
+            "speed": 37
+          },
+          "types": {
+            "primary": "Water",
+            "secondary": null
+          },
+          "types_before_change": null,
+          "added_type": null,
+          "ability": 0,
+          "ability_before_change": null,
+          "held_item": null,
+          "gender": "Genderless",
+          "status": null,
+          "stages": {
+            "attack": 0,
+            "defense": 0,
+            "special_attack": 0,
+            "special_defense": 0,
+            "speed": 0,
+            "accuracy": 0,
+            "evasion": 0
+          },
+          "volatiles": {
+            "entries": []
+          },
+          "moves": [
+            {
+              "move_id": 58,
+              "pp": 16,
+              "max_pp": 16,
+              "used": false,
+              "target": null
+            },
+            {
+              "move_id": 156,
+              "pp": 15,
+              "max_pp": 16,
+              "used": true,
+              "target": null
+            },
+            {
+              "move_id": 145,
+              "pp": 47,
+              "max_pp": 48,
+              "used": true,
+              "target": null
+            },
+            {
+              "move_id": 99,
+              "pp": 32,
+              "max_pp": 32,
+              "used": false,
+              "target": null
+            }
+          ],
+          "last_move": null,
+          "last_move_used": null,
+          "last_move_target": null,
+          "last_move_pattern": [
+            145,
+            "SelectedAdjacent"
+          ],
+          "last_move_encore": null,
+          "last_move_base": null,
+          "last_move_z": false,
+          "active_turns": 0,
+          "active_move_actions": 0,
+          "truant_turn": false,
+          "species": {
+            "dex": 98,
+            "form": 0
+          },
+          "modified_stats": {
+            "attack": 56,
+            "defense": 51,
+            "special_attack": 29,
+            "special_defense": 29,
+            "speed": 9
+          },
+          "unchanged_stats": null,
+          "happiness": 255,
+          "nature": "Serious",
+          "hidden_power": [
+            "Dark",
+            70
+          ],
+          "forme": null,
+          "formes": [
+            {
+              "species": {
+                "dex": 98,
+                "form": 0
+              },
+              "types": {
+                "primary": "Water",
+                "secondary": null
+              },
+              "stats": {
+                "attack": 56,
+                "defense": 51,
+                "special_attack": 29,
+                "special_defense": 29,
+                "speed": 37
+              },
+              "max_hp": 53,
+              "first_ability": 0,
+              "changes_from": null,
+              "mega": false,
+              "required_move": null
+            }
+          ],
+          "dynamax_level": 10,
+          "tera_type": "Water",
+          "terastallized": null,
+          "stellar_boosted_types": [],
+          "transform": null,
+          "move_overlay": null,
+          "illusion": null,
+          "bond_triggered": false,
+          "hero_message_displayed": false,
+          "set_species": {
+            "dex": 98,
+            "form": 0
+          },
+          "set_ability": 0,
+          "set_item": null,
+          "set_moves": [
+            58,
+            156,
+            145,
+            99
+          ],
+          "staleness": null,
+          "volatile_staleness": null,
+          "pending_staleness": false,
+          "forme_regression": false,
+          "mega_evolves_into": null,
+          "ultra_bursts_into": null,
+          "history": {
+            "newly_switched": true,
+            "move_this_turn": null,
+            "move_last_turn": null,
+            "stats_lowered_this_turn": false,
+            "stats_raised_this_turn": false,
+            "hurt_this_turn": false,
+            "attacked_this_turn": [],
+            "attacked_by": [],
+            "times_attacked": 1,
+            "sword_boost": false,
+            "shield_boost": false,
+            "syrup_triggered": false,
+            "last_item": null,
+            "used_item_this_turn": false,
+            "ate_berry": false,
+            "announced": [],
+            "item_knocked_off": false
+          },
+          "ability_state": {
+            "choice_lock": null,
+            "trace_seek": false,
+            "protean_used": false,
+            "fallen": 0,
+            "slow_start": 0,
+            "unnerved": false,
+            "hp_berries_wait": false,
+            "ending": false,
+            "cud_chew": null,
+            "berry_weaken": false,
+            "busted": false,
+            "embodied": false,
+            "opportunist": {
+              "raises": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ]
+            },
+            "effect_order": 1
+          },
+          "item_state": {
+            "kept_raises": [],
+            "eject": false,
+            "started": false
+          }
+        },
+        {
+          "id": 2,
+          "side": "P1",
+          "level": 100,
+          "hp": 353,
+          "max_hp": 353,
+          "stats": {
+            "attack": 258,
+            "defense": 268,
+            "special_attack": 298,
+            "special_defense": 298,
+            "speed": 198
+          },
+          "types": {
+            "primary": "Grass",
+            "secondary": "Poison"
+          },
+          "types_before_change": null,
+          "added_type": null,
+          "ability": 0,
+          "ability_before_change": null,
+          "held_item": null,
+          "gender": "Genderless",
+          "status": null,
+          "stages": {
+            "attack": 0,
+            "defense": 0,
+            "special_attack": 0,
+            "special_defense": 0,
+            "speed": 0,
+            "accuracy": 0,
+            "evasion": 0
+          },
+          "volatiles": {
+            "entries": []
+          },
+          "moves": [
+            {
+              "move_id": 99,
+              "pp": 32,
+              "max_pp": 32,
+              "used": false,
+              "target": null
+            },
+            {
+              "move_id": 14,
+              "pp": 48,
+              "max_pp": 48,
+              "used": false,
+              "target": null
+            },
+            {
+              "move_id": 38,
+              "pp": 24,
+              "max_pp": 24,
+              "used": false,
+              "target": null
+            },
+            {
+              "move_id": 78,
+              "pp": 48,
+              "max_pp": 48,
+              "used": false,
+              "target": null
+            }
+          ],
+          "last_move": null,
+          "last_move_used": null,
+          "last_move_target": null,
+          "last_move_pattern": null,
+          "last_move_encore": null,
+          "last_move_base": null,
+          "last_move_z": false,
+          "active_turns": 1,
+          "active_move_actions": 0,
+          "truant_turn": false,
+          "species": {
+            "dex": 45,
+            "form": 0
+          },
+          "modified_stats": {
+            "attack": 258,
+            "defense": 268,
+            "special_attack": 298,
+            "special_defense": 298,
+            "speed": 198
+          },
+          "unchanged_stats": null,
+          "happiness": 255,
+          "nature": "Serious",
+          "hidden_power": [
+            "Dark",
+            70
+          ],
+          "forme": null,
+          "formes": [
+            {
+              "species": {
+                "dex": 45,
+                "form": 0
+              },
+              "types": {
+                "primary": "Grass",
+                "secondary": "Poison"
+              },
+              "stats": {
+                "attack": 258,
+                "defense": 268,
+                "special_attack": 298,
+                "special_defense": 298,
+                "speed": 198
+              },
+              "max_hp": 353,
+              "first_ability": 0,
+              "changes_from": null,
+              "mega": false,
+              "required_move": null
+            }
+          ],
+          "dynamax_level": 10,
+          "tera_type": "Grass",
+          "terastallized": null,
+          "stellar_boosted_types": [],
+          "transform": null,
+          "move_overlay": null,
+          "illusion": null,
+          "bond_triggered": false,
+          "hero_message_displayed": false,
+          "set_species": {
+            "dex": 45,
+            "form": 0
+          },
+          "set_ability": 0,
+          "set_item": null,
+          "set_moves": [
+            99,
+            14,
+            38,
+            78
+          ],
+          "staleness": null,
+          "volatile_staleness": null,
+          "pending_staleness": false,
+          "forme_regression": false,
+          "mega_evolves_into": null,
+          "ultra_bursts_into": null,
+          "history": {
+            "newly_switched": false,
+            "move_this_turn": null,
+            "move_last_turn": null,
+            "stats_lowered_this_turn": false,
+            "stats_raised_this_turn": false,
+            "hurt_this_turn": false,
+            "attacked_this_turn": [],
+            "attacked_by": [],
+            "times_attacked": 0,
+            "sword_boost": false,
+            "shield_boost": false,
+            "syrup_triggered": false,
+            "last_item": null,
+            "used_item_this_turn": false,
+            "ate_berry": false,
+            "announced": [],
+            "item_knocked_off": false
+          },
+          "ability_state": {
+            "choice_lock": null,
+            "trace_seek": false,
+            "protean_used": false,
+            "fallen": 0,
+            "slow_start": 0,
+            "unnerved": false,
+            "hp_berries_wait": false,
+            "ending": false,
+            "cud_chew": null,
+            "berry_weaken": false,
+            "busted": false,
+            "embodied": false,
+            "opportunist": {
+              "raises": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ]
+            },
+            "effect_order": 7
+          },
+          "item_state": {
+            "kept_raises": [],
+            "eject": false,
+            "started": false
+          }
+        },
+        {
+          "id": 3,
+          "side": "P1",
+          "level": 40,
+          "hp": 117,
+          "max_hp": 117,
+          "stats": {
+            "attack": 75,
+            "defense": 74,
+            "special_attack": 94,
+            "special_defense": 94,
+            "speed": 94
+          },
+          "types": {
+            "primary": "Fire",
+            "secondary": null
+          },
+          "types_before_change": null,
+          "added_type": null,
+          "ability": 0,
+          "ability_before_change": null,
+          "held_item": null,
+          "gender": "Genderless",
+          "status": null,
+          "stages": {
+            "attack": 0,
+            "defense": 0,
+            "special_attack": 0,
+            "special_defense": 0,
+            "speed": 0,
+            "accuracy": 0,
+            "evasion": 0
+          },
+          "volatiles": {
+            "entries": []
+          },
+          "moves": [
+            {
+              "move_id": 38,
+              "pp": 24,
+              "max_pp": 24,
+              "used": false,
+              "target": null
+            },
+            {
+              "move_id": 129,
+              "pp": 32,
+              "max_pp": 32,
+              "used": false,
+              "target": null
+            },
+            {
+              "move_id": 52,
+              "pp": 40,
+              "max_pp": 40,
+              "used": false,
+              "target": null
+            },
+            {
+              "move_id": 34,
+              "pp": 24,
+              "max_pp": 24,
+              "used": false,
+              "target": null
+            }
+          ],
+          "last_move": null,
+          "last_move_used": null,
+          "last_move_target": null,
+          "last_move_pattern": null,
+          "last_move_encore": null,
+          "last_move_base": null,
+          "last_move_z": false,
+          "active_turns": 0,
+          "active_move_actions": 0,
+          "truant_turn": false,
+          "species": {
+            "dex": 37,
+            "form": 0
+          },
+          "modified_stats": {
+            "attack": 75,
+            "defense": 74,
+            "special_attack": 94,
+            "special_defense": 94,
+            "speed": 94
+          },
+          "unchanged_stats": null,
+          "happiness": 14,
+          "nature": "Serious",
+          "hidden_power": [
+            "Dark",
+            70
+          ],
+          "forme": null,
+          "formes": [
+            {
+              "species": {
+                "dex": 37,
+                "form": 0
+              },
+              "types": {
+                "primary": "Fire",
+                "secondary": null
+              },
+              "stats": {
+                "attack": 75,
+                "defense": 74,
+                "special_attack": 94,
+                "special_defense": 94,
+                "speed": 94
+              },
+              "max_hp": 117,
+              "first_ability": 0,
+              "changes_from": null,
+              "mega": false,
+              "required_move": null
+            }
+          ],
+          "dynamax_level": 10,
+          "tera_type": "Fire",
+          "terastallized": null,
+          "stellar_boosted_types": [],
+          "transform": null,
+          "move_overlay": null,
+          "illusion": null,
+          "bond_triggered": false,
+          "hero_message_displayed": false,
+          "set_species": {
+            "dex": 37,
+            "form": 0
+          },
+          "set_ability": 0,
+          "set_item": null,
+          "set_moves": [
+            38,
+            129,
+            52,
+            34
+          ],
+          "staleness": null,
+          "volatile_staleness": null,
+          "pending_staleness": false,
+          "forme_regression": false,
+          "mega_evolves_into": null,
+          "ultra_bursts_into": null,
+          "history": {
+            "newly_switched": true,
+            "move_this_turn": null,
+            "move_last_turn": null,
+            "stats_lowered_this_turn": false,
+            "stats_raised_this_turn": false,
+            "hurt_this_turn": false,
+            "attacked_this_turn": [],
+            "attacked_by": [],
+            "times_attacked": 0,
+            "sword_boost": false,
+            "shield_boost": false,
+            "syrup_triggered": false,
+            "last_item": null,
+            "used_item_this_turn": false,
+            "ate_berry": false,
+            "announced": [],
+            "item_knocked_off": false
+          },
+          "ability_state": {
+            "choice_lock": null,
+            "trace_seek": false,
+            "protean_used": false,
+            "fallen": 0,
+            "slow_start": 0,
+            "unnerved": false,
+            "hp_berries_wait": false,
+            "ending": false,
+            "cud_chew": null,
+            "berry_weaken": false,
+            "busted": false,
+            "embodied": false,
+            "opportunist": {
+              "raises": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ]
+            },
+            "effect_order": 0
+          },
+          "item_state": {
+            "kept_raises": [],
+            "eject": false,
+            "started": false
+          }
+        },
+        {
+          "id": 4,
+          "side": "P1",
+          "level": 100,
+          "hp": 0,
+          "max_hp": 263,
+          "stats": {
+            "attack": 178,
+            "defense": 238,
+            "special_attack": 238,
+            "special_defense": 238,
+            "speed": 218
+          },
+          "types": {
+            "primary": "Water",
+            "secondary": null
+          },
+          "types_before_change": null,
+          "added_type": null,
+          "ability": 0,
+          "ability_before_change": null,
+          "held_item": null,
+          "gender": "Genderless",
+          "status": null,
+          "stages": {
+            "attack": 0,
+            "defense": 0,
+            "special_attack": 0,
+            "special_defense": 0,
+            "speed": 0,
+            "accuracy": 0,
+            "evasion": 0
+          },
+          "volatiles": {
+            "entries": []
+          },
+          "moves": [
+            {
+              "move_id": 59,
+              "pp": 6,
+              "max_pp": 8,
+              "used": true,
+              "target": null
+            },
+            {
+              "move_id": 156,
+              "pp": 15,
+              "max_pp": 16,
+              "used": true,
+              "target": null
+            },
+            {
+              "move_id": 57,
+              "pp": 23,
+              "max_pp": 24,
+              "used": true,
+              "target": null
+            },
+            {
+              "move_id": 61,
+              "pp": 30,
+              "max_pp": 32,
+              "used": true,
+              "target": null
+            }
+          ],
+          "last_move": null,
+          "last_move_used": null,
+          "last_move_target": null,
+          "last_move_pattern": [
+            59,
+            "SelectedAdjacent"
+          ],
+          "last_move_encore": null,
+          "last_move_base": null,
+          "last_move_z": false,
+          "active_turns": 0,
+          "active_move_actions": 0,
+          "truant_turn": false,
+          "species": {
+            "dex": 116,
+            "form": 0
+          },
+          "modified_stats": {
+            "attack": 178,
+            "defense": 238,
+            "special_attack": 238,
+            "special_defense": 238,
+            "speed": 218
+          },
+          "unchanged_stats": null,
+          "happiness": 255,
+          "nature": "Serious",
+          "hidden_power": [
+            "Dark",
+            70
+          ],
+          "forme": null,
+          "formes": [
+            {
+              "species": {
+                "dex": 116,
+                "form": 0
+              },
+              "types": {
+                "primary": "Water",
+                "secondary": null
+              },
+              "stats": {
+                "attack": 178,
+                "defense": 238,
+                "special_attack": 238,
+                "special_defense": 238,
+                "speed": 218
+              },
+              "max_hp": 263,
+              "first_ability": 0,
+              "changes_from": null,
+              "mega": false,
+              "required_move": null
+            }
+          ],
+          "dynamax_level": 10,
+          "tera_type": "Water",
+          "terastallized": null,
+          "stellar_boosted_types": [],
+          "transform": null,
+          "move_overlay": null,
+          "illusion": null,
+          "bond_triggered": false,
+          "hero_message_displayed": false,
+          "set_species": {
+            "dex": 116,
+            "form": 0
+          },
+          "set_ability": 0,
+          "set_item": null,
+          "set_moves": [
+            59,
+            156,
+            57,
+            61
+          ],
+          "staleness": null,
+          "volatile_staleness": null,
+          "pending_staleness": false,
+          "forme_regression": false,
+          "mega_evolves_into": null,
+          "ultra_bursts_into": null,
+          "history": {
+            "newly_switched": true,
+            "move_this_turn": null,
+            "move_last_turn": null,
+            "stats_lowered_this_turn": false,
+            "stats_raised_this_turn": false,
+            "hurt_this_turn": false,
+            "attacked_this_turn": [],
+            "attacked_by": [],
+            "times_attacked": 4,
+            "sword_boost": false,
+            "shield_boost": false,
+            "syrup_triggered": false,
+            "last_item": null,
+            "used_item_this_turn": false,
+            "ate_berry": false,
+            "announced": [],
+            "item_knocked_off": false
+          },
+          "ability_state": {
+            "choice_lock": null,
+            "trace_seek": false,
+            "protean_used": false,
+            "fallen": 0,
+            "slow_start": 0,
+            "unnerved": false,
+            "hp_berries_wait": false,
+            "ending": false,
+            "cud_chew": null,
+            "berry_weaken": false,
+            "busted": false,
+            "embodied": false,
+            "opportunist": {
+              "raises": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ]
+            },
+            "effect_order": 4
+          },
+          "item_state": {
+            "kept_raises": [],
+            "eject": false,
+            "started": false
+          }
+        },
+        {
+          "id": 5,
+          "side": "P1",
+          "level": 100,
+          "hp": 363,
+          "max_hp": 363,
+          "stats": {
+            "attack": 308,
+            "defense": 228,
+            "special_attack": 298,
+            "special_defense": 298,
+            "speed": 238
+          },
+          "types": {
+            "primary": "Grass",
+            "secondary": "Poison"
+          },
+          "types_before_change": null,
+          "added_type": null,
+          "ability": 0,
+          "ability_before_change": null,
+          "held_item": null,
+          "gender": "Genderless",
+          "status": null,
+          "stages": {
+            "attack": 0,
+            "defense": 0,
+            "special_attack": 0,
+            "special_defense": 0,
+            "speed": 0,
+            "accuracy": 0,
+            "evasion": 0
+          },
+          "volatiles": {
+            "entries": []
+          },
+          "moves": [
+            {
+              "move_id": 72,
+              "pp": 16,
+              "max_pp": 16,
+              "used": false,
+              "target": null
+            },
+            {
+              "move_id": 34,
+              "pp": 24,
+              "max_pp": 24,
+              "used": false,
+              "target": null
+            },
+            {
+              "move_id": 15,
+              "pp": 48,
+              "max_pp": 48,
+              "used": false,
+              "target": null
+            },
+            {
+              "move_id": 117,
+              "pp": 16,
+              "max_pp": 16,
+              "used": false,
+              "target": null
+            }
+          ],
+          "last_move": null,
+          "last_move_used": null,
+          "last_move_target": null,
+          "last_move_pattern": null,
+          "last_move_encore": null,
+          "last_move_base": null,
+          "last_move_z": false,
+          "active_turns": 0,
+          "active_move_actions": 0,
+          "truant_turn": false,
+          "species": {
+            "dex": 71,
+            "form": 0
+          },
+          "modified_stats": {
+            "attack": 308,
+            "defense": 228,
+            "special_attack": 298,
+            "special_defense": 298,
+            "speed": 238
+          },
+          "unchanged_stats": null,
+          "happiness": 255,
+          "nature": "Serious",
+          "hidden_power": [
+            "Dark",
+            70
+          ],
+          "forme": null,
+          "formes": [
+            {
+              "species": {
+                "dex": 71,
+                "form": 0
+              },
+              "types": {
+                "primary": "Grass",
+                "secondary": "Poison"
+              },
+              "stats": {
+                "attack": 308,
+                "defense": 228,
+                "special_attack": 298,
+                "special_defense": 298,
+                "speed": 238
+              },
+              "max_hp": 363,
+              "first_ability": 0,
+              "changes_from": null,
+              "mega": false,
+              "required_move": null
+            }
+          ],
+          "dynamax_level": 10,
+          "tera_type": "Grass",
+          "terastallized": null,
+          "stellar_boosted_types": [],
+          "transform": null,
+          "move_overlay": null,
+          "illusion": null,
+          "bond_triggered": false,
+          "hero_message_displayed": false,
+          "set_species": {
+            "dex": 71,
+            "form": 0
+          },
+          "set_ability": 0,
+          "set_item": null,
+          "set_moves": [
+            72,
+            34,
+            15,
+            117
+          ],
+          "staleness": null,
+          "volatile_staleness": null,
+          "pending_staleness": false,
+          "forme_regression": false,
+          "mega_evolves_into": null,
+          "ultra_bursts_into": null,
+          "history": {
+            "newly_switched": true,
+            "move_this_turn": null,
+            "move_last_turn": null,
+            "stats_lowered_this_turn": false,
+            "stats_raised_this_turn": false,
+            "hurt_this_turn": false,
+            "attacked_this_turn": [],
+            "attacked_by": [],
+            "times_attacked": 0,
+            "sword_boost": false,
+            "shield_boost": false,
+            "syrup_triggered": false,
+            "last_item": null,
+            "used_item_this_turn": false,
+            "ate_berry": false,
+            "announced": [],
+            "item_knocked_off": false
+          },
+          "ability_state": {
+            "choice_lock": null,
+            "trace_seek": false,
+            "protean_used": false,
+            "fallen": 0,
+            "slow_start": 0,
+            "unnerved": false,
+            "hp_berries_wait": false,
+            "ending": false,
+            "cud_chew": null,
+            "berry_weaken": false,
+            "busted": false,
+            "embodied": false,
+            "opportunist": {
+              "raises": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ]
+            },
+            "effect_order": 0
+          },
+          "item_state": {
+            "kept_raises": [],
+            "eject": false,
+            "started": false
+          }
+        },
+        {
+          "id": 6,
+          "side": "P1",
+          "level": 100,
+          "hp": 363,
+          "max_hp": 363,
+          "stats": {
+            "attack": 262,
+            "defense": 254,
+            "special_attack": 258,
+            "special_defense": 258,
+            "speed": 268
+          },
+          "types": {
+            "primary": "Water",
+            "secondary": null
+          },
+          "types_before_change": null,
+          "added_type": null,
+          "ability": 0,
+          "ability_before_change": null,
+          "held_item": null,
+          "gender": "Genderless",
+          "status": null,
+          "stages": {
+            "attack": 0,
+            "defense": 0,
+            "special_attack": 0,
+            "special_defense": 0,
+            "speed": 0,
+            "accuracy": 0,
+            "evasion": 0
+          },
+          "volatiles": {
+            "entries": []
+          },
+          "moves": [
+            {
+              "move_id": 68,
+              "pp": 32,
+              "max_pp": 32,
+              "used": false,
+              "target": null
+            },
+            {
+              "move_id": 36,
+              "pp": 32,
+              "max_pp": 32,
+              "used": false,
+              "target": null
+            },
+            {
+              "move_id": 70,
+              "pp": 24,
+              "max_pp": 24,
+              "used": false,
+              "target": null
+            },
+            {
+              "move_id": 39,
+              "pp": 48,
+              "max_pp": 48,
+              "used": false,
+              "target": null
+            }
+          ],
+          "last_move": null,
+          "last_move_used": null,
+          "last_move_target": null,
+          "last_move_pattern": null,
+          "last_move_encore": null,
+          "last_move_base": null,
+          "last_move_z": false,
+          "active_turns": 0,
+          "active_move_actions": 0,
+          "truant_turn": false,
+          "species": {
+            "dex": 55,
+            "form": 0
+          },
+          "modified_stats": {
+            "attack": 262,
+            "defense": 254,
+            "special_attack": 258,
+            "special_defense": 258,
+            "speed": 268
+          },
+          "unchanged_stats": null,
+          "happiness": 255,
+          "nature": "Serious",
+          "hidden_power": [
+            "Dark",
+            70
+          ],
+          "forme": null,
+          "formes": [
+            {
+              "species": {
+                "dex": 55,
+                "form": 0
+              },
+              "types": {
+                "primary": "Water",
+                "secondary": null
+              },
+              "stats": {
+                "attack": 262,
+                "defense": 254,
+                "special_attack": 258,
+                "special_defense": 258,
+                "speed": 268
+              },
+              "max_hp": 363,
+              "first_ability": 0,
+              "changes_from": null,
+              "mega": false,
+              "required_move": null
+            }
+          ],
+          "dynamax_level": 10,
+          "tera_type": "Water",
+          "terastallized": null,
+          "stellar_boosted_types": [],
+          "transform": null,
+          "move_overlay": null,
+          "illusion": null,
+          "bond_triggered": false,
+          "hero_message_displayed": false,
+          "set_species": {
+            "dex": 55,
+            "form": 0
+          },
+          "set_ability": 0,
+          "set_item": null,
+          "set_moves": [
+            68,
+            36,
+            70,
+            39
+          ],
+          "staleness": null,
+          "volatile_staleness": null,
+          "pending_staleness": false,
+          "forme_regression": false,
+          "mega_evolves_into": null,
+          "ultra_bursts_into": null,
+          "history": {
+            "newly_switched": true,
+            "move_this_turn": null,
+            "move_last_turn": null,
+            "stats_lowered_this_turn": false,
+            "stats_raised_this_turn": false,
+            "hurt_this_turn": false,
+            "attacked_this_turn": [],
+            "attacked_by": [],
+            "times_attacked": 0,
+            "sword_boost": false,
+            "shield_boost": false,
+            "syrup_triggered": false,
+            "last_item": null,
+            "used_item_this_turn": false,
+            "ate_berry": false,
+            "announced": [],
+            "item_knocked_off": false
+          },
+          "ability_state": {
+            "choice_lock": null,
+            "trace_seek": false,
+            "protean_used": false,
+            "fallen": 0,
+            "slow_start": 0,
+            "unnerved": false,
+            "hp_berries_wait": false,
+            "ending": false,
+            "cud_chew": null,
+            "berry_weaken": false,
+            "busted": false,
+            "embodied": false,
+            "opportunist": {
+              "raises": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ]
+            },
+            "effect_order": 0
+          },
+          "item_state": {
+            "kept_raises": [],
+            "eject": false,
+            "started": false
+          }
+        },
+        {
+          "id": 7,
+          "side": "P2",
+          "level": 100,
+          "hp": 323,
+          "max_hp": 323,
+          "stats": {
+            "attack": 228,
+            "defense": 238,
+            "special_attack": 268,
+            "special_defense": 268,
+            "speed": 178
+          },
+          "types": {
+            "primary": "Grass",
+            "secondary": "Poison"
+          },
+          "types_before_change": null,
+          "added_type": null,
+          "ability": 0,
+          "ability_before_change": null,
+          "held_item": null,
+          "gender": "Genderless",
+          "status": null,
+          "stages": {
+            "attack": 0,
+            "defense": 0,
+            "special_attack": 0,
+            "special_defense": 0,
+            "speed": 0,
+            "accuracy": 0,
+            "evasion": 0
+          },
+          "volatiles": {
+            "entries": []
+          },
+          "moves": [
+            {
+              "move_id": 156,
+              "pp": 16,
+              "max_pp": 16,
+              "used": false,
+              "target": null
+            },
+            {
+              "move_id": 76,
+              "pp": 16,
+              "max_pp": 16,
+              "used": false,
+              "target": null
+            },
+            {
+              "move_id": 78,
+              "pp": 46,
+              "max_pp": 48,
+              "used": true,
+              "target": null
+            },
+            {
+              "move_id": 117,
+              "pp": 16,
+              "max_pp": 16,
+              "used": false,
+              "target": null
+            }
+          ],
+          "last_move": null,
+          "last_move_used": null,
+          "last_move_target": null,
+          "last_move_pattern": [
+            78,
+            "SelectedAdjacent"
+          ],
+          "last_move_encore": null,
+          "last_move_base": null,
+          "last_move_z": false,
+          "active_turns": 0,
+          "active_move_actions": 0,
+          "truant_turn": false,
+          "species": {
+            "dex": 44,
+            "form": 0
+          },
+          "modified_stats": {
+            "attack": 228,
+            "defense": 238,
+            "special_attack": 268,
+            "special_defense": 268,
+            "speed": 178
+          },
+          "unchanged_stats": null,
+          "happiness": 255,
+          "nature": "Serious",
+          "hidden_power": [
+            "Dark",
+            70
+          ],
+          "forme": null,
+          "formes": [
+            {
+              "species": {
+                "dex": 44,
+                "form": 0
+              },
+              "types": {
+                "primary": "Grass",
+                "secondary": "Poison"
+              },
+              "stats": {
+                "attack": 228,
+                "defense": 238,
+                "special_attack": 268,
+                "special_defense": 268,
+                "speed": 178
+              },
+              "max_hp": 323,
+              "first_ability": 0,
+              "changes_from": null,
+              "mega": false,
+              "required_move": null
+            }
+          ],
+          "dynamax_level": 10,
+          "tera_type": "Grass",
+          "terastallized": null,
+          "stellar_boosted_types": [],
+          "transform": null,
+          "move_overlay": null,
+          "illusion": null,
+          "bond_triggered": false,
+          "hero_message_displayed": false,
+          "set_species": {
+            "dex": 44,
+            "form": 0
+          },
+          "set_ability": 0,
+          "set_item": null,
+          "set_moves": [
+            156,
+            76,
+            78,
+            117
+          ],
+          "staleness": null,
+          "volatile_staleness": null,
+          "pending_staleness": false,
+          "forme_regression": false,
+          "mega_evolves_into": null,
+          "ultra_bursts_into": null,
+          "history": {
+            "newly_switched": true,
+            "move_this_turn": null,
+            "move_last_turn": null,
+            "stats_lowered_this_turn": false,
+            "stats_raised_this_turn": false,
+            "hurt_this_turn": false,
+            "attacked_this_turn": [],
+            "attacked_by": [],
+            "times_attacked": 0,
+            "sword_boost": false,
+            "shield_boost": false,
+            "syrup_triggered": false,
+            "last_item": null,
+            "used_item_this_turn": false,
+            "ate_berry": false,
+            "announced": [],
+            "item_knocked_off": false
+          },
+          "ability_state": {
+            "choice_lock": null,
+            "trace_seek": false,
+            "protean_used": false,
+            "fallen": 0,
+            "slow_start": 0,
+            "unnerved": false,
+            "hp_berries_wait": false,
+            "ending": false,
+            "cud_chew": null,
+            "berry_weaken": false,
+            "busted": false,
+            "embodied": false,
+            "opportunist": {
+              "raises": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ]
+            },
+            "effect_order": 2
+          },
+          "item_state": {
+            "kept_raises": [],
+            "eject": false,
+            "started": false
+          }
+        },
+        {
+          "id": 8,
+          "side": "P2",
+          "level": 100,
+          "hp": 0,
+          "max_hp": 323,
+          "stats": {
+            "attack": 188,
+            "defense": 198,
+            "special_attack": 258,
+            "special_defense": 258,
+            "speed": 238
+          },
+          "types": {
+            "primary": "Bug",
+            "secondary": "Flying"
+          },
+          "types_before_change": null,
+          "added_type": null,
+          "ability": 0,
+          "ability_before_change": null,
+          "held_item": null,
+          "gender": "Genderless",
+          "status": null,
+          "stages": {
+            "attack": 0,
+            "defense": 0,
+            "special_attack": 0,
+            "special_defense": 0,
+            "speed": 0,
+            "accuracy": 0,
+            "evasion": 0
+          },
+          "volatiles": {
+            "entries": []
+          },
+          "moves": [
+            {
+              "move_id": 33,
+              "pp": 54,
+              "max_pp": 56,
+              "used": true,
+              "target": null
+            },
+            {
+              "move_id": 94,
+              "pp": 16,
+              "max_pp": 16,
+              "used": false,
+              "target": null
+            },
+            {
+              "move_id": 76,
+              "pp": 16,
+              "max_pp": 16,
+              "used": false,
+              "target": null
+            },
+            {
+              "move_id": 100,
+              "pp": 32,
+              "max_pp": 32,
+              "used": false,
+              "target": null
+            }
+          ],
+          "last_move": null,
+          "last_move_used": null,
+          "last_move_target": null,
+          "last_move_pattern": [
+            33,
+            "SelectedAdjacent"
+          ],
+          "last_move_encore": null,
+          "last_move_base": null,
+          "last_move_z": false,
+          "active_turns": 0,
+          "active_move_actions": 0,
+          "truant_turn": false,
+          "species": {
+            "dex": 12,
+            "form": 0
+          },
+          "modified_stats": {
+            "attack": 188,
+            "defense": 198,
+            "special_attack": 258,
+            "special_defense": 258,
+            "speed": 238
+          },
+          "unchanged_stats": null,
+          "happiness": 255,
+          "nature": "Serious",
+          "hidden_power": [
+            "Dark",
+            70
+          ],
+          "forme": null,
+          "formes": [
+            {
+              "species": {
+                "dex": 12,
+                "form": 0
+              },
+              "types": {
+                "primary": "Bug",
+                "secondary": "Flying"
+              },
+              "stats": {
+                "attack": 188,
+                "defense": 198,
+                "special_attack": 258,
+                "special_defense": 258,
+                "speed": 238
+              },
+              "max_hp": 323,
+              "first_ability": 0,
+              "changes_from": null,
+              "mega": false,
+              "required_move": null
+            }
+          ],
+          "dynamax_level": 10,
+          "tera_type": "Bug",
+          "terastallized": null,
+          "stellar_boosted_types": [],
+          "transform": null,
+          "move_overlay": null,
+          "illusion": null,
+          "bond_triggered": false,
+          "hero_message_displayed": false,
+          "set_species": {
+            "dex": 12,
+            "form": 0
+          },
+          "set_ability": 0,
+          "set_item": null,
+          "set_moves": [
+            33,
+            94,
+            76,
+            100
+          ],
+          "staleness": null,
+          "volatile_staleness": null,
+          "pending_staleness": false,
+          "forme_regression": false,
+          "mega_evolves_into": null,
+          "ultra_bursts_into": null,
+          "history": {
+            "newly_switched": true,
+            "move_this_turn": null,
+            "move_last_turn": null,
+            "stats_lowered_this_turn": false,
+            "stats_raised_this_turn": false,
+            "hurt_this_turn": false,
+            "attacked_this_turn": [],
+            "attacked_by": [],
+            "times_attacked": 3,
+            "sword_boost": false,
+            "shield_boost": false,
+            "syrup_triggered": false,
+            "last_item": null,
+            "used_item_this_turn": false,
+            "ate_berry": false,
+            "announced": [],
+            "item_knocked_off": false
+          },
+          "ability_state": {
+            "choice_lock": null,
+            "trace_seek": false,
+            "protean_used": false,
+            "fallen": 0,
+            "slow_start": 0,
+            "unnerved": false,
+            "hp_berries_wait": false,
+            "ending": false,
+            "cud_chew": null,
+            "berry_weaken": false,
+            "busted": false,
+            "embodied": false,
+            "opportunist": {
+              "raises": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ]
+            },
+            "effect_order": 5
+          },
+          "item_state": {
+            "kept_raises": [],
+            "eject": false,
+            "started": false
+          }
+        },
+        {
+          "id": 9,
+          "side": "P2",
+          "level": 100,
+          "hp": 521,
+          "max_hp": 523,
+          "stats": {
+            "attack": 318,
+            "defense": 228,
+            "special_attack": 228,
+            "special_defense": 228,
+            "speed": 158
+          },
+          "types": {
+            "primary": "Normal",
+            "secondary": null
+          },
+          "types_before_change": null,
+          "added_type": null,
+          "ability": 0,
+          "ability_before_change": null,
+          "held_item": null,
+          "gender": "Genderless",
+          "status": null,
+          "stages": {
+            "attack": 0,
+            "defense": 0,
+            "special_attack": 0,
+            "special_defense": 0,
+            "speed": 0,
+            "accuracy": 0,
+            "evasion": 0
+          },
+          "volatiles": {
+            "entries": []
+          },
+          "moves": [
+            {
+              "move_id": 6,
+              "pp": 32,
+              "max_pp": 32,
+              "used": false,
+              "target": null
+            },
+            {
+              "move_id": 58,
+              "pp": 16,
+              "max_pp": 16,
+              "used": false,
+              "target": null
+            },
+            {
+              "move_id": 5,
+              "pp": 30,
+              "max_pp": 32,
+              "used": true,
+              "target": null
+            },
+            {
+              "move_id": 59,
+              "pp": 8,
+              "max_pp": 8,
+              "used": false,
+              "target": null
+            }
+          ],
+          "last_move": null,
+          "last_move_used": null,
+          "last_move_target": null,
+          "last_move_pattern": [
+            5,
+            "SelectedAdjacent"
+          ],
+          "last_move_encore": null,
+          "last_move_base": null,
+          "last_move_z": false,
+          "active_turns": 0,
+          "active_move_actions": 0,
+          "truant_turn": false,
+          "species": {
+            "dex": 143,
+            "form": 0
+          },
+          "modified_stats": {
+            "attack": 318,
+            "defense": 228,
+            "special_attack": 228,
+            "special_defense": 228,
+            "speed": 158
+          },
+          "unchanged_stats": null,
+          "happiness": 167,
+          "nature": "Serious",
+          "hidden_power": [
+            "Dark",
+            70
+          ],
+          "forme": null,
+          "formes": [
+            {
+              "species": {
+                "dex": 143,
+                "form": 0
+              },
+              "types": {
+                "primary": "Normal",
+                "secondary": null
+              },
+              "stats": {
+                "attack": 318,
+                "defense": 228,
+                "special_attack": 228,
+                "special_defense": 228,
+                "speed": 158
+              },
+              "max_hp": 523,
+              "first_ability": 0,
+              "changes_from": null,
+              "mega": false,
+              "required_move": null
+            }
+          ],
+          "dynamax_level": 10,
+          "tera_type": "Normal",
+          "terastallized": null,
+          "stellar_boosted_types": [],
+          "transform": null,
+          "move_overlay": null,
+          "illusion": null,
+          "bond_triggered": false,
+          "hero_message_displayed": false,
+          "set_species": {
+            "dex": 143,
+            "form": 0
+          },
+          "set_ability": 0,
+          "set_item": null,
+          "set_moves": [
+            6,
+            58,
+            5,
+            59
+          ],
+          "staleness": null,
+          "volatile_staleness": null,
+          "pending_staleness": false,
+          "forme_regression": false,
+          "mega_evolves_into": null,
+          "ultra_bursts_into": null,
+          "history": {
+            "newly_switched": true,
+            "move_this_turn": null,
+            "move_last_turn": null,
+            "stats_lowered_this_turn": false,
+            "stats_raised_this_turn": false,
+            "hurt_this_turn": false,
+            "attacked_this_turn": [],
+            "attacked_by": [],
+            "times_attacked": 1,
+            "sword_boost": false,
+            "shield_boost": false,
+            "syrup_triggered": false,
+            "last_item": null,
+            "used_item_this_turn": false,
+            "ate_berry": false,
+            "announced": [],
+            "item_knocked_off": false
+          },
+          "ability_state": {
+            "choice_lock": null,
+            "trace_seek": false,
+            "protean_used": false,
+            "fallen": 0,
+            "slow_start": 0,
+            "unnerved": false,
+            "hp_berries_wait": false,
+            "ending": false,
+            "cud_chew": null,
+            "berry_weaken": false,
+            "busted": false,
+            "embodied": false,
+            "opportunist": {
+              "raises": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ]
+            },
+            "effect_order": 3
+          },
+          "item_state": {
+            "kept_raises": [],
+            "eject": false,
+            "started": false
+          }
+        },
+        {
+          "id": 10,
+          "side": "P2",
+          "level": 100,
+          "hp": 413,
+          "max_hp": 413,
+          "stats": {
+            "attack": 358,
+            "defense": 338,
+            "special_attack": 188,
+            "special_defense": 188,
+            "speed": 178
+          },
+          "types": {
+            "primary": "Ground",
+            "secondary": "Rock"
+          },
+          "types_before_change": null,
+          "added_type": null,
+          "ability": 0,
+          "ability_before_change": null,
+          "held_item": null,
+          "gender": "Genderless",
+          "status": null,
+          "stages": {
+            "attack": 0,
+            "defense": 0,
+            "special_attack": 0,
+            "special_defense": 0,
+            "speed": 0,
+            "accuracy": 0,
+            "evasion": 0
+          },
+          "volatiles": {
+            "entries": []
+          },
+          "moves": [
+            {
+              "move_id": 5,
+              "pp": 32,
+              "max_pp": 32,
+              "used": false,
+              "target": null
+            },
+            {
+              "move_id": 63,
+              "pp": 8,
+              "max_pp": 8,
+              "used": false,
+              "target": null
+            },
+            {
+              "move_id": 30,
+              "pp": 40,
+              "max_pp": 40,
+              "used": false,
+              "target": null
+            },
+            {
+              "move_id": 25,
+              "pp": 8,
+              "max_pp": 8,
+              "used": false,
+              "target": null
+            }
+          ],
+          "last_move": null,
+          "last_move_used": null,
+          "last_move_target": null,
+          "last_move_pattern": null,
+          "last_move_encore": null,
+          "last_move_base": null,
+          "last_move_z": false,
+          "active_turns": 0,
+          "active_move_actions": 0,
+          "truant_turn": false,
+          "species": {
+            "dex": 112,
+            "form": 0
+          },
+          "modified_stats": {
+            "attack": 358,
+            "defense": 338,
+            "special_attack": 188,
+            "special_defense": 188,
+            "speed": 178
+          },
+          "unchanged_stats": null,
+          "happiness": 255,
+          "nature": "Serious",
+          "hidden_power": [
+            "Dark",
+            70
+          ],
+          "forme": null,
+          "formes": [
+            {
+              "species": {
+                "dex": 112,
+                "form": 0
+              },
+              "types": {
+                "primary": "Ground",
+                "secondary": "Rock"
+              },
+              "stats": {
+                "attack": 358,
+                "defense": 338,
+                "special_attack": 188,
+                "special_defense": 188,
+                "speed": 178
+              },
+              "max_hp": 413,
+              "first_ability": 0,
+              "changes_from": null,
+              "mega": false,
+              "required_move": null
+            }
+          ],
+          "dynamax_level": 10,
+          "tera_type": "Ground",
+          "terastallized": null,
+          "stellar_boosted_types": [],
+          "transform": null,
+          "move_overlay": null,
+          "illusion": null,
+          "bond_triggered": false,
+          "hero_message_displayed": false,
+          "set_species": {
+            "dex": 112,
+            "form": 0
+          },
+          "set_ability": 0,
+          "set_item": null,
+          "set_moves": [
+            5,
+            63,
+            30,
+            25
+          ],
+          "staleness": null,
+          "volatile_staleness": null,
+          "pending_staleness": false,
+          "forme_regression": false,
+          "mega_evolves_into": null,
+          "ultra_bursts_into": null,
+          "history": {
+            "newly_switched": true,
+            "move_this_turn": null,
+            "move_last_turn": null,
+            "stats_lowered_this_turn": false,
+            "stats_raised_this_turn": false,
+            "hurt_this_turn": false,
+            "attacked_this_turn": [],
+            "attacked_by": [],
+            "times_attacked": 0,
+            "sword_boost": false,
+            "shield_boost": false,
+            "syrup_triggered": false,
+            "last_item": null,
+            "used_item_this_turn": false,
+            "ate_berry": false,
+            "announced": [],
+            "item_knocked_off": false
+          },
+          "ability_state": {
+            "choice_lock": null,
+            "trace_seek": false,
+            "protean_used": false,
+            "fallen": 0,
+            "slow_start": 0,
+            "unnerved": false,
+            "hp_berries_wait": false,
+            "ending": false,
+            "cud_chew": null,
+            "berry_weaken": false,
+            "busted": false,
+            "embodied": false,
+            "opportunist": {
+              "raises": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ]
+            },
+            "effect_order": 0
+          },
+          "item_state": {
+            "kept_raises": [],
+            "eject": false,
+            "started": false
+          }
+        },
+        {
+          "id": 11,
+          "side": "P2",
+          "level": 47,
+          "hp": 138,
+          "max_hp": 138,
+          "stats": {
+            "attack": 91,
+            "defense": 81,
+            "special_attack": 86,
+            "special_defense": 86,
+            "speed": 133
+          },
+          "types": {
+            "primary": "Normal",
+            "secondary": null
+          },
+          "types_before_change": null,
+          "added_type": null,
+          "ability": 0,
+          "ability_before_change": null,
+          "held_item": null,
+          "gender": "Genderless",
+          "status": null,
+          "stages": {
+            "attack": 0,
+            "defense": 0,
+            "special_attack": 0,
+            "special_defense": 0,
+            "speed": 0,
+            "accuracy": 0,
+            "evasion": 0
+          },
+          "volatiles": {
+            "entries": []
+          },
+          "moves": [
+            {
+              "move_id": 61,
+              "pp": 32,
+              "max_pp": 32,
+              "used": false,
+              "target": null
+            },
+            {
+              "move_id": 10,
+              "pp": 56,
+              "max_pp": 56,
+              "used": false,
+              "target": null
+            },
+            {
+              "move_id": 102,
+              "pp": 16,
+              "max_pp": 16,
+              "used": false,
+              "target": null
+            },
+            {
+              "move_id": 36,
+              "pp": 32,
+              "max_pp": 32,
+              "used": false,
+              "target": null
+            }
+          ],
+          "last_move": null,
+          "last_move_used": null,
+          "last_move_target": null,
+          "last_move_pattern": null,
+          "last_move_encore": null,
+          "last_move_base": null,
+          "last_move_z": false,
+          "active_turns": 0,
+          "active_move_actions": 0,
+          "truant_turn": false,
+          "species": {
+            "dex": 52,
+            "form": 0
+          },
+          "modified_stats": {
+            "attack": 91,
+            "defense": 81,
+            "special_attack": 86,
+            "special_defense": 86,
+            "speed": 133
+          },
+          "unchanged_stats": null,
+          "happiness": 255,
+          "nature": "Serious",
+          "hidden_power": [
+            "Dark",
+            70
+          ],
+          "forme": null,
+          "formes": [
+            {
+              "species": {
+                "dex": 52,
+                "form": 0
+              },
+              "types": {
+                "primary": "Normal",
+                "secondary": null
+              },
+              "stats": {
+                "attack": 91,
+                "defense": 81,
+                "special_attack": 86,
+                "special_defense": 86,
+                "speed": 133
+              },
+              "max_hp": 138,
+              "first_ability": 0,
+              "changes_from": null,
+              "mega": false,
+              "required_move": null
+            }
+          ],
+          "dynamax_level": 10,
+          "tera_type": "Normal",
+          "terastallized": null,
+          "stellar_boosted_types": [],
+          "transform": null,
+          "move_overlay": null,
+          "illusion": null,
+          "bond_triggered": false,
+          "hero_message_displayed": false,
+          "set_species": {
+            "dex": 52,
+            "form": 0
+          },
+          "set_ability": 0,
+          "set_item": null,
+          "set_moves": [
+            61,
+            10,
+            102,
+            36
+          ],
+          "staleness": null,
+          "volatile_staleness": null,
+          "pending_staleness": false,
+          "forme_regression": false,
+          "mega_evolves_into": null,
+          "ultra_bursts_into": null,
+          "history": {
+            "newly_switched": true,
+            "move_this_turn": null,
+            "move_last_turn": null,
+            "stats_lowered_this_turn": false,
+            "stats_raised_this_turn": false,
+            "hurt_this_turn": false,
+            "attacked_this_turn": [],
+            "attacked_by": [],
+            "times_attacked": 0,
+            "sword_boost": false,
+            "shield_boost": false,
+            "syrup_triggered": false,
+            "last_item": null,
+            "used_item_this_turn": false,
+            "ate_berry": false,
+            "announced": [],
+            "item_knocked_off": false
+          },
+          "ability_state": {
+            "choice_lock": null,
+            "trace_seek": false,
+            "protean_used": false,
+            "fallen": 0,
+            "slow_start": 0,
+            "unnerved": false,
+            "hp_berries_wait": false,
+            "ending": false,
+            "cud_chew": null,
+            "berry_weaken": false,
+            "busted": false,
+            "embodied": false,
+            "opportunist": {
+              "raises": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ]
+            },
+            "effect_order": 0
+          },
+          "item_state": {
+            "kept_raises": [],
+            "eject": false,
+            "started": false
+          }
+        },
+        {
+          "id": 12,
+          "side": "P2",
+          "level": 100,
+          "hp": 244,
+          "max_hp": 325,
+          "stats": {
+            "attack": 266,
+            "defense": 228,
+            "special_attack": 238,
+            "special_defense": 238,
+            "speed": 238
+          },
+          "types": {
+            "primary": "Dragon",
+            "secondary": null
+          },
+          "types_before_change": null,
+          "added_type": null,
+          "ability": 0,
+          "ability_before_change": null,
+          "held_item": null,
+          "gender": "Genderless",
+          "status": null,
+          "stages": {
+            "attack": 0,
+            "defense": 0,
+            "special_attack": 0,
+            "special_defense": 0,
+            "speed": 0,
+            "accuracy": 0,
+            "evasion": 0
+          },
+          "volatiles": {
+            "entries": []
+          },
+          "moves": [
+            {
+              "move_id": 82,
+              "pp": 16,
+              "max_pp": 16,
+              "used": false,
+              "target": null
+            },
+            {
+              "move_id": 43,
+              "pp": 47,
+              "max_pp": 48,
+              "used": true,
+              "target": null
+            },
+            {
+              "move_id": 129,
+              "pp": 31,
+              "max_pp": 32,
+              "used": true,
+              "target": null
+            },
+            {
+              "move_id": 164,
+              "pp": 15,
+              "max_pp": 16,
+              "used": true,
+              "target": null
+            }
+          ],
+          "last_move": null,
+          "last_move_used": [
+            129,
+            "Normal"
+          ],
+          "last_move_target": null,
+          "last_move_pattern": [
+            129,
+            "AllAdjacentFoes"
+          ],
+          "last_move_encore": 129,
+          "last_move_base": null,
+          "last_move_z": false,
+          "active_turns": 4,
+          "active_move_actions": 3,
+          "truant_turn": false,
+          "species": {
+            "dex": 148,
+            "form": 0
+          },
+          "modified_stats": {
+            "attack": 266,
+            "defense": 228,
+            "special_attack": 238,
+            "special_defense": 238,
+            "speed": 238
+          },
+          "unchanged_stats": null,
+          "happiness": 255,
+          "nature": "Serious",
+          "hidden_power": [
+            "Dark",
+            70
+          ],
+          "forme": null,
+          "formes": [
+            {
+              "species": {
+                "dex": 148,
+                "form": 0
+              },
+              "types": {
+                "primary": "Dragon",
+                "secondary": null
+              },
+              "stats": {
+                "attack": 266,
+                "defense": 228,
+                "special_attack": 238,
+                "special_defense": 238,
+                "speed": 238
+              },
+              "max_hp": 325,
+              "first_ability": 0,
+              "changes_from": null,
+              "mega": false,
+              "required_move": null
+            }
+          ],
+          "dynamax_level": 10,
+          "tera_type": "Dragon",
+          "terastallized": null,
+          "stellar_boosted_types": [],
+          "transform": null,
+          "move_overlay": null,
+          "illusion": null,
+          "bond_triggered": false,
+          "hero_message_displayed": false,
+          "set_species": {
+            "dex": 148,
+            "form": 0
+          },
+          "set_ability": 0,
+          "set_item": null,
+          "set_moves": [
+            82,
+            43,
+            129,
+            164
+          ],
+          "staleness": null,
+          "volatile_staleness": null,
+          "pending_staleness": false,
+          "forme_regression": false,
+          "mega_evolves_into": null,
+          "ultra_bursts_into": null,
+          "history": {
+            "newly_switched": false,
+            "move_this_turn": null,
+            "move_last_turn": "Succeeded",
+            "stats_lowered_this_turn": false,
+            "stats_raised_this_turn": false,
+            "hurt_this_turn": false,
+            "attacked_this_turn": [],
+            "attacked_by": [],
+            "times_attacked": 0,
+            "sword_boost": false,
+            "shield_boost": false,
+            "syrup_triggered": false,
+            "last_item": null,
+            "used_item_this_turn": false,
+            "ate_berry": false,
+            "announced": [],
+            "item_knocked_off": false
+          },
+          "ability_state": {
+            "choice_lock": null,
+            "trace_seek": false,
+            "protean_used": false,
+            "fallen": 0,
+            "slow_start": 0,
+            "unnerved": false,
+            "hp_berries_wait": false,
+            "ending": false,
+            "cud_chew": null,
+            "berry_weaken": false,
+            "busted": false,
+            "embodied": false,
+            "opportunist": {
+              "raises": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ]
+            },
+            "effect_order": 6
+          },
+          "item_state": {
+            "kept_raises": [],
+            "eject": false,
+            "started": false
+          }
+        }
+      ],
+      "sides": [
+        {
+          "team": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "battle_order": [
+            2,
+            4,
+            3,
+            1,
+            5,
+            6
+          ],
+          "active": [
+            2
+          ],
+          "fallen": [
+            4
+          ],
+          "mechanics": {
+            "mega": "Unavailable",
+            "ultra_burst": "Unavailable",
+            "z_move": "Unavailable",
+            "dynamax": "Unavailable",
+            "tera": "Unavailable"
+          },
+          "conditions": {
+            "entries": []
+          },
+          "switch_out": null,
+          "passing": null,
+          "switch_out_by_move": false,
+          "fainted_this_turn": false,
+          "fainted_last_turn": true,
+          "total_fainted": 2,
+          "last_selected_move": {
+            "Move": 59
+          },
+          "last_selected_move_slot": 0,
+          "last_move": 59,
+          "follow_me_slots": [],
+          "wishes": [],
+          "future_attacks": [],
+          "slot_heals": [],
+          "reviving": null,
+          "returning": null,
+          "refill_mid_turn": null
+        },
+        {
+          "team": [
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "battle_order": [
+            12,
+            9,
+            7,
+            10,
+            11,
+            8
+          ],
+          "active": [
+            12
+          ],
+          "fallen": [
+            8
+          ],
+          "mechanics": {
+            "mega": "Unavailable",
+            "ultra_burst": "Unavailable",
+            "z_move": "Unavailable",
+            "dynamax": "Unavailable",
+            "tera": "Unavailable"
+          },
+          "conditions": {
+            "entries": []
+          },
+          "switch_out": null,
+          "passing": null,
+          "switch_out_by_move": false,
+          "fainted_this_turn": false,
+          "fainted_last_turn": false,
+          "total_fainted": 1,
+          "last_selected_move": {
+            "Move": 129
+          },
+          "last_selected_move_slot": 2,
+          "last_move": 129,
+          "follow_me_slots": [],
+          "wishes": [],
+          "future_attacks": [],
+          "slot_heals": [],
+          "reviving": null,
+          "returning": null,
+          "refill_mid_turn": null
+        }
+      ],
+      "field": {
+        "conditions": [],
+        "weather": null,
+        "terrain": null
+      },
+      "rng": {
+        "state": "13306735003898700623",
+        "raw_tape": [],
+        "raw_cursor": 0,
+        "semantic_tape": [],
+        "semantic_cursor": 0
+      },
+      "knowledge": {
+        "appeared": [
+          1,
+          7,
+          9,
+          4,
+          8,
+          12,
+          2
+        ],
+        "sightings": [
+          [
+            7,
+            {
+              "hp": 323,
+              "max_hp": 323,
+              "status": null,
+              "species": {
+                "dex": 44,
+                "form": 0
+              },
+              "level": 100,
+              "terastallized": null
+            }
+          ],
+          [
+            9,
+            {
+              "hp": 521,
+              "max_hp": 523,
+              "status": null,
+              "species": {
+                "dex": 143,
+                "form": 0
+              },
+              "level": 100,
+              "terastallized": null
+            }
+          ]
+        ],
+        "on_field": [
+          [
+            12,
+            12
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "fainted": [
+          1,
+          8,
+          4
+        ],
+        "revealed": [],
+        "worn": [],
+        "moves": [
+          {
+            "user": 7,
+            "shown_as": 7,
+            "worn": false,
+            "move_id": 78,
+            "uses": 2,
+            "kind": "Own"
+          },
+          {
+            "user": 1,
+            "shown_as": 1,
+            "worn": false,
+            "move_id": 156,
+            "uses": 1,
+            "kind": "Own"
+          },
+          {
+            "user": 1,
+            "shown_as": 1,
+            "worn": false,
+            "move_id": 145,
+            "uses": 1,
+            "kind": "Own"
+          },
+          {
+            "user": 9,
+            "shown_as": 9,
+            "worn": false,
+            "move_id": 5,
+            "uses": 2,
+            "kind": "Own"
+          },
+          {
+            "user": 4,
+            "shown_as": 4,
+            "worn": false,
+            "move_id": 156,
+            "uses": 1,
+            "kind": "Own"
+          },
+          {
+            "user": 4,
+            "shown_as": 4,
+            "worn": false,
+            "move_id": 61,
+            "uses": 2,
+            "kind": "Own"
+          },
+          {
+            "user": 8,
+            "shown_as": 8,
+            "worn": false,
+            "move_id": 33,
+            "uses": 2,
+            "kind": "Own"
+          },
+          {
+            "user": 4,
+            "shown_as": 4,
+            "worn": false,
+            "move_id": 59,
+            "uses": 2,
+            "kind": "Own"
+          },
+          {
+            "user": 4,
+            "shown_as": 4,
+            "worn": false,
+            "move_id": 57,
+            "uses": 1,
+            "kind": "Own"
+          },
+          {
+            "user": 12,
+            "shown_as": 12,
+            "worn": false,
+            "move_id": 164,
+            "uses": 1,
+            "kind": "Own"
+          },
+          {
+            "user": 12,
+            "shown_as": 12,
+            "worn": false,
+            "move_id": 43,
+            "uses": 1,
+            "kind": "Own"
+          },
+          {
+            "user": 12,
+            "shown_as": 12,
+            "worn": false,
+            "move_id": 129,
+            "uses": 1,
+            "kind": "Own"
+          }
+        ],
+        "transforms": [],
+        "copied": [],
+        "volatiles": [],
+        "left_with": [],
+        "preview": null,
+        "sheets": []
+      },
+      "outcome": null,
+      "faint_queue": [],
+      "faint_causes": [],
+      "drag_queue": [],
+      "pending_movers": [
+        12
+      ],
+      "fight_actors": [],
+      "acting_slot": null,
+      "items_received_in_action": [],
+      "struggling": [],
+      "queued_moves": [
+        {
+          "actor": 12,
+          "move_id": 129,
+          "category": "Physical",
+          "priority": 0,
+          "z_powered": false,
+          "max_move": false,
+          "recharge": false
+        }
+      ],
+      "curse_glitched": [],
+      "announced_faints": [],
+      "faint_refills_held": false,
+      "last_damage": 92,
+      "next_ability_order": 8,
+      "called_back": null,
+      "skip_before_switch_out": [],
+      "dragged_in": [],
+      "cannot_move": [],
+      "last_successful_move": null,
+      "quick_claw_roll": false,
+      "priority_chance_activated": [],
+      "custap_ready": [],
+      "turn_actions_done": false,
+      "handler_speeds": [
+        [
+          1,
+          9
+        ],
+        [
+          7,
+          178
+        ],
+        [
+          9,
+          158
+        ],
+        [
+          4,
+          218
+        ],
+        [
+          8,
+          238
+        ],
+        [
+          12,
+          238
+        ],
+        [
+          2,
+          198
+        ]
+      ],
+      "active_move": null,
+      "queue_requests": [],
+      "pending_call": null,
+      "last_move": 129,
+      "last_move_base": null,
+      "last_move_z": false
+    },
+    "pending": {
+      "Turn": {
+        "actions": [
+          {
+            "actor": 2,
+            "choice": {
+              "Switch": {
+                "pokemon": 6
+              }
+            },
+            "step": "Act",
+            "order": {
+              "action_priority": 8,
+              "move_priority": 0,
+              "fractional_priority": 0,
+              "speed": 198,
+              "slowest_first": false,
+              "fastest_first": false,
+              "tie_break": 0,
+              "prankster_boosted": false
+            },
+            "prioritized_by": null,
+            "instructed": false,
+            "original_target": null
+          },
+          {
+            "actor": 12,
+            "choice": {
+              "Move": {
+                "slot": 2,
+                "target": null,
+                "mechanic": null
+              }
+            },
+            "step": "Act",
+            "order": {
+              "action_priority": 0,
+              "move_priority": 0,
+              "fractional_priority": 0,
+              "speed": 238,
+              "slowest_first": false,
+              "fastest_first": false,
+              "tie_break": 0,
+              "prankster_boosted": false
+            },
+            "prioritized_by": null,
+            "instructed": false,
+            "original_target": null
+          }
+        ],
+        "strategy": "StaticAtTurnStart",
+        "residual": true,
+        "resort_ties": false
+      }
+    }
+  }
+}

@@ -4,6 +4,7 @@
 use crate::ids::{AbilityId, ItemId, MoveId, SpeciesId};
 use crate::rules::{Fraction, SemiInvulnerableKind, TargetPattern};
 use crate::state::{NonVolatileStatus, PokemonTypes, Stat, VolatileConditionKind, WeatherKind};
+use serde::{Deserialize, Serialize};
 
 use super::PokemonType;
 
@@ -142,7 +143,7 @@ impl SecondaryEffectSpec {
     }
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub enum MoveCategory {
     Physical,
     Special,

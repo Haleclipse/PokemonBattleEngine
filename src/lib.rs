@@ -24,6 +24,10 @@
 //! - **Forking it:** a [`BattleEngine`] is `Clone` (a rollout's fork), and
 //!   [`BattleEngine::snapshot`] / [`BattleEngine::rewind`] go back to a moment, its random
 //!   numbers included; [`TraceMode::Off`] keeps no trace, for speed.
+//! - **Storing it:** a snapshot — a session's ([`BattleSession::snapshot`], for a server to keep
+//!   a battle across restarts) or a battle's (for another process to rewind its copy of the
+//!   battle to) — is written as JSON by `to_json` (one line, for storage) or `to_json_pretty`
+//!   (for reading) and read back by `from_json`. See *Snapshots as JSON* below.
 //!
 //! ```
 //! use pokemon_battle_engine::view::{Observer, Seen};
@@ -90,6 +94,26 @@
 //!   reordered changes what a seed gives, and the random generator itself is an implementation
 //!   detail; nor anything about Pokémon Showdown's seeds, whose generator this crate does not
 //!   use. A Showdown battle is not replayed from its seed but from its log.
+//!
+//! # Snapshots as JSON
+//!
+//! [`SessionSnapshot::to_json`] and [`BattleSnapshot::to_json`] write a snapshot as one line of
+//! JSON — compress it as you store it, if you like — and `from_json` reads it back; the same
+//! state always writes the same bytes. The JSON is an envelope naming the format, the layout's
+//! `version`, the engine that wrote it and the kind of snapshot (`session`, `battle`), around
+//! the snapshot itself; the snapshot's types implement no serde trait of their own, so that
+//! envelope is the only way in and out. Integers wider than 32 bits (the random state) are
+//! decimal strings, for JavaScript's sake.
+//!
+//! - **Only the same layout version reads back** ([`SnapshotError::UnsupportedVersion`]): a
+//!   snapshot is no archive across versions of this crate, as a battle itself is not (above).
+//!   Keep the seed and the inputs to keep a battle for longer.
+//! - **A snapshot is trusted data.** Malformed JSON, another format, version or kind is an
+//!   error, and restoring it checks it belongs to the battle's rules and dex and that the battle
+//!   can be in that state; JSON edited into something this engine never wrote is not guarded
+//!   against beyond that. Where it is stored out of your hands, sign it.
+//! - **A snapshot holds everything:** both sides' teams, the hidden information, the random
+//!   state. Never send one to a player; send each player its [`view`](BattleEngine::view).
 
 // The stable API alone, unless the `internals` feature opens the modules (DESIGN.md §47.0 item
 // 7, §47.5): a type the stable API reaches but does not name is an error. Code and re-exports
@@ -169,6 +193,8 @@ pub mod state;
 pub(crate) mod state;
 // The stable API's view of a battle (DESIGN.md §47.0 items 8-9, 11).
 pub mod view;
+// Snapshots as JSON (DESIGN.md §48.2).
+mod snapshot;
 
 // The internals' own shortcuts at the crate's root.
 #[cfg(feature = "internals")]
@@ -197,6 +223,7 @@ pub use session::{
     BattleSession, PreviewEntry, SessionError, SessionFormat, SessionPhase, SessionRequest,
     SessionSnapshot, SessionView, SetBuildError, TeamChoice, TeamChoiceError, TeamSlot,
 };
+pub use snapshot::SnapshotError;
 pub use spec::{BattleMode, FormatId, Generation};
 pub use state::{
     BattleOutcome, BattlePhase, FieldConditionKind, Gender, NonVolatileStatus, SideConditionKind,

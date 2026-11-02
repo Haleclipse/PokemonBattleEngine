@@ -1,8 +1,11 @@
 use crate::dex::PokemonType;
+use serde::{Deserialize, Serialize};
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub struct PokemonTypes {
+    #[serde(with = "crate::snapshot::wire")]
     pub primary: PokemonType,
+    #[serde(with = "crate::snapshot::wire")]
     pub secondary: Option<PokemonType>,
 }
 

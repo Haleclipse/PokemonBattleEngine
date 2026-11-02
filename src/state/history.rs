@@ -7,9 +7,10 @@
 //! ages it (Showdown `endTurn`, for the Pokémon on the field).
 
 use crate::ids::{MoveId, PokemonId, PositionId};
+use serde::{Deserialize, Serialize};
 
 /// How a Pokémon's move went (Showdown `moveThisTurnResult`), as Stomping Tantrum reads it.
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub enum MoveResult {
     /// `true`: the move did something to at least one target.
     Succeeded,
@@ -22,16 +23,19 @@ pub enum MoveResult {
 }
 
 /// One attack a Pokémon took this turn (Showdown `attackedBy` entry with `thisTurn`).
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub struct AttackRecord {
+    #[serde(with = "crate::snapshot::wire")]
     pub source: PokemonId,
     /// The HP the move's last hit took; `None` for a status move (Showdown's non-numeric
     /// `damageValue`) or a Gen 3 hit its Substitute took (`MovePipeline::record_attack`).
     pub damage: Option<u16>,
     /// The move (Showdown `move`): Counter / Mirror Coat read its category, Gen 2 Counter
     /// checks it is the attacker's last move.
+    #[serde(with = "crate::snapshot::wire")]
     pub move_id: MoveId,
     /// Where the attacker stood (Showdown `slot`): Counter and Metal Burst strike back there.
+    #[serde(with = "crate::snapshot::wire")]
     pub position: Option<PositionId>,
     /// The move's category in the dex (Showdown `getCategory(move)`): what Counter and Mirror
     /// Coat answer.
@@ -45,7 +49,7 @@ pub struct AttackRecord {
 /// A kind of switch-in effect the Gen 4 cartridge marks as announced for a stint on the field
 /// (pokeplatinum `battleMons[].…Announced`, cleared as the Pokémon comes in): the weather
 /// abilities share one (`StartNewAbility::Unannounced`).
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub enum SwitchInAnnouncement {
     Weather,
     Intimidate,
@@ -59,7 +63,7 @@ pub enum SwitchInAnnouncement {
     Pressure,
 }
 
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct PokemonHistory {
     /// Showdown `newlySwitched`: the Pokémon has not been on the field across a turn boundary
     /// since it last came in. Set when it leaves (and when it is built), cleared at the next
@@ -95,6 +99,7 @@ pub struct PokemonHistory {
     pub syrup_triggered: bool,
     /// Showdown `lastItem` (DESIGN.md §39.1): the item the Pokémon last used up or ate — across
     /// switches; Gen 1-4 hand it to the Pokémon that takes its place (`switchIn`).
+    #[serde(with = "crate::snapshot::wire")]
     pub last_item: Option<crate::ids::ItemId>,
     /// Showdown `usedItemThisTurn`: the Pokémon used up or ate an item this turn.
     pub used_item_this_turn: bool,

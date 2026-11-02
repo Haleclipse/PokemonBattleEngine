@@ -3,11 +3,13 @@
 //! Valgrind's cachegrind, once with the workload and once with its setup alone, and the difference
 //! is the workload's count — instructions, unlike time, do not move with the machine's load.
 //!
-//! Each of the M10 benches' formats (`benches/engine.rs`) has three workloads, the trace off:
+//! Each of the M10 benches' formats (`benches/engine.rs`) has four workloads, the trace off:
 //!
 //! - `battle`: whole battles from its first turn, policies of seeds 0..`BATTLES`;
 //! - `rollout`: policies of seeds 0..`ROLLOUTS` played out from its middle turn;
-//! - `snapshot`: `SNAPSHOTS` snapshots of the middle turn, each restored.
+//! - `snapshot`: `SNAPSHOTS` snapshots of the middle turn, each restored;
+//! - `json`: `JSONS` times the middle turn's snapshot written as JSON and read back (DESIGN.md
+//!   §48.2).
 //!
 //! The counts make each workload outweigh its setup (loading the format data, validating the
 //! teams), so the difference of the two runs is mostly the workload's.
@@ -27,12 +29,13 @@ use pokemon_battle_engine::ids::SideId;
 use policy::{Policy, advance, play_out, start_battle};
 
 const FORMATS: [&str; 4] = ["gen9ou", "gen9vgc2025regi", "gen4ou", "gen1ou"];
-const WORKLOADS: [&str; 3] = ["battle", "rollout", "snapshot"];
+const WORKLOADS: [&str; 4] = ["battle", "rollout", "snapshot", "json"];
 const MID_TURN: u32 = 10;
 const SEED: u64 = 1;
 const BATTLES: u64 = 400;
 const ROLLOUTS: u64 = 400;
 const SNAPSHOTS: u64 = 32768;
+const JSONS: u64 = 512;
 
 /// The benched battle at its start and at its middle turn's request (as `benches/engine.rs`
 /// finds it), with the rules and dex to restore it.
@@ -101,6 +104,12 @@ fn run(setup: &Setup, workload: &str, full: bool) {
             let engine = (setup.restore)(&setup.mid);
             for _ in 0..times(SNAPSHOTS) {
                 black_box((setup.restore)(&black_box(&engine).snapshot()));
+            }
+        }
+        "json" => {
+            for _ in 0..times(JSONS) {
+                let json = black_box(&setup.mid).to_json();
+                black_box(BattleSnapshot::from_json(&json).expect("its own JSON"));
             }
         }
         other => panic!("no workload {other}: {WORKLOADS:?} or setup"),

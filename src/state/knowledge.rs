@@ -8,6 +8,7 @@
 //! saw come in. While it is on the field they watch it; once it has left, they know it as it was
 //! when they last saw it (`Sighting`) — a heal it takes as it goes (Regenerator) they do not see.
 
+use serde::{Deserialize, Serialize};
 use std::sync::Arc;
 
 use crate::dex::PokemonType;
@@ -15,17 +16,20 @@ use crate::ids::{AbilityId, ItemId, MoveId, PokemonId, SpeciesId};
 use crate::state::{NonVolatileStatus, TeamPreview, VolatileConditionKind, VolatileSet};
 
 /// What observers last saw of a Pokémon, as it left the field.
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub struct Sighting {
     pub hp: u16,
     pub max_hp: u16,
+    #[serde(with = "crate::snapshot::wire")]
     pub status: Option<NonVolatileStatus>,
     /// The species it showed (an Illusion's disguise's).
+    #[serde(with = "crate::snapshot::wire")]
     pub species: Option<SpeciesId>,
     /// The level it showed: its own, through an Illusion too.
     pub level: u8,
     /// The type it showed Terastallized into: its own, through an Illusion too (a disguise that
     /// left Terastallized is believed so).
+    #[serde(with = "crate::snapshot::wire")]
     pub terastallized: Option<PokemonType>,
 }
 
@@ -139,31 +143,38 @@ pub struct VolatileVisibility {
 }
 
 /// What observers know of a Pokémon's ability and item, by the one seen.
-#[derive(Debug, Clone, Copy, Default, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, Default, PartialEq, Eq, Serialize, Deserialize)]
 pub struct Revealed {
     /// Its ability, once named; forgotten when it changes unnamed (Skill Swap, a Transform),
     /// back to its own as it leaves the field.
+    #[serde(with = "crate::snapshot::wire")]
     ability: Option<AbilityId>,
     /// Its own ability, the one it comes in with: named while unchanged since it came in;
     /// forgotten when a forme for good brings another (a Mega Evolution).
+    #[serde(with = "crate::snapshot::wire")]
     own_ability: Option<AbilityId>,
     /// Its ability changed since it came in.
     ability_changed: bool,
     /// The Pokémon whose ability it took by Transform, nothing naming it since: whoever knows
     /// that one's ability knows its own (`PokemonView::ability`).
+    #[serde(with = "crate::snapshot::wire")]
     copied_from: Option<PokemonId>,
     /// Its item: `Some(Some(item))` once named, `Some(None)` once seen lost, `None` unknown.
+    #[serde(with = "crate::snapshot::wire::option_option")]
     item: Option<Option<ItemId>>,
     /// The item last seen lost.
+    #[serde(with = "crate::snapshot::wire")]
     lost: Option<ItemId>,
 }
 
 /// What an Illusion's holder shows while it stands in its disguise (DESIGN.md §47.0 item 11):
 /// the disguise's record as the observers believe it, and which of it the holder set. Unmasked,
 /// what the holder set is its own; gone still disguised, it is what they believe of the disguise.
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 struct Worn {
+    #[serde(with = "crate::snapshot::wire")]
     holder: PokemonId,
+    #[serde(with = "crate::snapshot::wire")]
     disguise: PokemonId,
     revealed: Revealed,
     ability_set: bool,
@@ -181,19 +192,22 @@ enum Part {
 /// the one it was seen as: an Illusion's holder shows its moves as the disguise's, and they are
 /// its own once it is unmasked — what it showed in a disguise it left in is believed the
 /// disguise's.
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 struct KnownMove {
+    #[serde(with = "crate::snapshot::wire")]
     user: PokemonId,
+    #[serde(with = "crate::snapshot::wire")]
     shown_as: PokemonId,
     /// Shown in a disguise it still stands in.
     worn: bool,
+    #[serde(with = "crate::snapshot::wire")]
     move_id: MoveId,
     /// The uses seen of it by the Pokémon's own action.
     uses: u16,
     kind: MoveKind,
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 enum MoveKind {
     /// One of its own moves.
     Own,
@@ -228,35 +242,46 @@ impl Revealed {
 }
 
 /// What the battle has shown so far.
-#[derive(Debug, Clone, Default, PartialEq, Eq)]
+#[derive(Debug, Clone, Default, PartialEq, Eq, Serialize, Deserialize)]
 pub struct Knowledge {
     /// The Pokémon seen on the field, in the order they first came.
+    #[serde(with = "crate::snapshot::wire")]
     appeared: Vec<PokemonId>,
     /// What was last seen of each Pokémon that has left the field, by the one seen.
+    #[serde(with = "crate::snapshot::wire")]
     sightings: Vec<(PokemonId, Sighting)>,
     /// The Pokémon on the field, each with the one it is seen as: what happens to them is seen
     /// as it happens, not through a sighting.
+    #[serde(with = "crate::snapshot::wire")]
     on_field: Vec<(PokemonId, PokemonId)>,
     /// The Pokémon seen fainting, by the one seen, until seen again.
+    #[serde(with = "crate::snapshot::wire")]
     fainted: Vec<PokemonId>,
     /// The abilities and items seen, by the Pokémon seen.
+    #[serde(with = "crate::snapshot::wire")]
     revealed: Vec<(PokemonId, Revealed)>,
     /// The Illusion holders standing in a disguise that have shown something in it.
     worn: Vec<Worn>,
     /// The moves seen, in the order they were first seen.
     moves: Vec<KnownMove>,
     /// The Pokémon standing transformed, each with the one it transformed into.
+    #[serde(with = "crate::snapshot::wire")]
     transforms: Vec<(PokemonId, PokemonId)>,
     /// The moves a Pokémon took by Transform, which its side alone saw (its requests list them):
     /// the one that transformed, the one it transformed into, the move.
+    #[serde(with = "crate::snapshot::wire")]
     copied: Vec<(PokemonId, PokemonId, MoveId)>,
     /// The volatiles seen on the Pokémon on the field, by the Pokémon itself.
+    #[serde(with = "crate::snapshot::wire")]
     volatiles: Vec<(PokemonId, VolatileConditionKind)>,
     /// Those a Pokémon had as it last left the field, for a Baton Pass to hand on.
+    #[serde(with = "crate::snapshot::wire")]
     left_with: Vec<(PokemonId, VolatileConditionKind)>,
     /// What the team preview showed (DESIGN.md §47.0 item 14), set once as the battle starts.
+    #[serde(with = "crate::snapshot::option_arc")]
     preview: Option<Arc<TeamPreview>>,
     /// The Pokémon whose moves an open team sheet showed, all of them.
+    #[serde(with = "crate::snapshot::wire")]
     sheets: Vec<PokemonId>,
 }
 

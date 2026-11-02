@@ -2,6 +2,7 @@
 //! kinds and values, and the set a side holds.
 
 use crate::ids::PokemonId;
+use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 #[cfg_attr(not(feature = "internals"), non_exhaustive)]
@@ -39,41 +40,51 @@ pub enum SideConditionKind {
 
 /// Entry hazards and side effects. Entries keep insertion order: entry hazards trigger in the
 /// order they were laid (Showdown runs the side's SwitchIn handlers in effect order).
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub enum SideCondition {
     StealthRock {
+        #[serde(with = "crate::snapshot::wire")]
         source: PokemonId,
     },
     Spikes {
+        #[serde(with = "crate::snapshot::wire")]
         source: PokemonId,
         layers: u8,
     },
     ToxicSpikes {
+        #[serde(with = "crate::snapshot::wire")]
         source: PokemonId,
         layers: u8,
     },
     StickyWeb {
+        #[serde(with = "crate::snapshot::wire")]
         source: PokemonId,
     },
     Tailwind {
+        #[serde(with = "crate::snapshot::wire")]
         source: PokemonId,
         turns_remaining: u8,
     },
     WideGuard {
+        #[serde(with = "crate::snapshot::wire")]
         source: PokemonId,
     },
     QuickGuard {
+        #[serde(with = "crate::snapshot::wire")]
         source: PokemonId,
     },
     CraftyShield {
+        #[serde(with = "crate::snapshot::wire")]
         source: PokemonId,
     },
     MatBlock {
+        #[serde(with = "crate::snapshot::wire")]
         source: PokemonId,
     },
     /// A side condition that only lasts a number of turns (Showdown `duration`, counted down
     /// in the residual): the screens, Mist, Safeguard, Lucky Chant.
     Timed {
+        #[serde(with = "crate::snapshot::wire")]
         kind: SideConditionKind,
         turns_remaining: u8,
     },
@@ -96,7 +107,7 @@ impl SideCondition {
     }
 }
 
-#[derive(Debug, Clone, Default, PartialEq, Eq)]
+#[derive(Debug, Clone, Default, PartialEq, Eq, Serialize, Deserialize)]
 pub struct SideConditions {
     entries: Vec<SideCondition>,
 }

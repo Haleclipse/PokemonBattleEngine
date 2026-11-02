@@ -2,6 +2,7 @@
 //! Room, Gravity …) — their kinds and values, and the field's state and its expiry.
 
 use crate::ids::PokemonId;
+use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 #[cfg_attr(not(feature = "internals"), non_exhaustive)]
@@ -25,9 +26,10 @@ pub enum FieldConditionKind {
     MagicRoom,
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub enum FieldCondition {
     TrickRoom {
+        #[serde(with = "crate::snapshot::wire")]
         source: PokemonId,
         turns_remaining: u8,
     },
@@ -38,6 +40,7 @@ pub enum FieldCondition {
     /// at the end of the turn): Gravity, Wonder Room, Ion Deluge, Mud / Water Sport, Fairy
     /// Lock.
     Timed {
+        #[serde(with = "crate::snapshot::wire")]
         kind: FieldConditionKind,
         turns_remaining: u8,
     },
@@ -64,9 +67,11 @@ pub enum WeatherKind {
     StrongWinds,
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub struct WeatherState {
+    #[serde(with = "crate::snapshot::wire")]
     pub kind: WeatherKind,
+    #[serde(with = "crate::snapshot::wire")]
     pub source: PokemonId,
     pub turns_remaining: u8,
     /// Showdown's strong weathers (DESIGN.md §23.5): Desolate Land's extremely harsh sun
@@ -85,14 +90,16 @@ pub enum TerrainKind {
     Misty,
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub struct TerrainState {
+    #[serde(with = "crate::snapshot::wire")]
     pub kind: TerrainKind,
+    #[serde(with = "crate::snapshot::wire")]
     pub source: PokemonId,
     pub turns_remaining: u8,
 }
 
-#[derive(Debug, Clone, Default, PartialEq, Eq)]
+#[derive(Debug, Clone, Default, PartialEq, Eq, Serialize, Deserialize)]
 pub struct FieldState {
     conditions: Vec<FieldCondition>,
     pub weather: Option<WeatherState>,

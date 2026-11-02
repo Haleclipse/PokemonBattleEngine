@@ -6,18 +6,19 @@
 
 use crate::dex::PokemonType;
 use crate::ids::{AbilityId, ItemId, MoveId, PokemonId, SpeciesId};
+use serde::{Deserialize, Serialize};
 
 use super::Gender;
 
 /// The members a team preview showed, by side.
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct TeamPreview {
     /// P1's and P2's members, in the order registered.
     pub sides: [Vec<PreviewedMember>; 2],
 }
 
 /// One member a team preview showed.
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct PreviewedMember {
     /// What everyone was shown of it.
     pub shown: MemberSheet,
@@ -25,24 +26,31 @@ pub struct PreviewedMember {
     pub known: MemberSheet,
     /// The battle's Pokémon it is, when its side brought it: what an open team sheet showed of
     /// it is known of that Pokémon from the start.
+    #[serde(with = "crate::snapshot::wire")]
     pub pokemon: Option<PokemonId>,
 }
 
 /// What is known of a previewed member: `None` for what is not.
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct MemberSheet {
     /// Its species: the base species where the preview hid the forme (`forme_hidden`).
+    #[serde(with = "crate::snapshot::wire")]
     pub species: SpeciesId,
     /// The preview showed the species with its forme hidden (`Urshifu-*`).
     pub forme_hidden: bool,
     pub level: u8,
+    #[serde(with = "crate::snapshot::wire")]
     pub gender: Gender,
     /// Its item: `Some(None)` for none (a Gen 4-7 preview marks the members holding one).
+    #[serde(with = "crate::snapshot::wire::option_option")]
     pub item: Option<Option<ItemId>>,
+    #[serde(with = "crate::snapshot::wire")]
     pub ability: Option<AbilityId>,
     /// All its moves, in order.
+    #[serde(with = "crate::snapshot::wire")]
     pub moves: Option<Vec<MoveId>>,
     /// Its Tera type: `Some(None)` where it has none (before Gen 9).
+    #[serde(with = "crate::snapshot::wire::option_option")]
     pub tera_type: Option<Option<PokemonType>>,
 }
 

@@ -1,4 +1,6 @@
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
+use serde::{Deserialize, Serialize};
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
 pub enum RandomRequestKind {
     SpeedTie,
     Accuracy,
@@ -56,14 +58,14 @@ pub enum RandomRequestKind {
     Other,
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub enum RandomOverrideValue {
     Bool(bool),
     Range(u16),
-    Raw(u64),
+    Raw(#[serde(with = "crate::snapshot::u64_string")] u64),
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub struct RandomOverride {
     pub kind: RandomRequestKind,
     pub value: RandomOverrideValue,
@@ -118,9 +120,13 @@ impl RandomOverride {
 ///
 /// Both cursors and the fallback SplitMix64 state are part of `BattleState`, so snapshots are
 /// reproducible.
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct BattleRng {
+    // `u64`s are decimal strings in a snapshot's JSON (DESIGN.md §48.2): beyond what a
+    // JavaScript number holds exactly.
+    #[serde(with = "crate::snapshot::u64_string")]
     state: u64,
+    #[serde(with = "crate::snapshot::u64_strings")]
     raw_tape: Vec<u64>,
     raw_cursor: usize,
     semantic_tape: Vec<RandomOverride>,

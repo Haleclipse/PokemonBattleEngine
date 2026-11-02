@@ -1,8 +1,9 @@
 use crate::ids::PokemonId;
+use serde::{Deserialize, Serialize};
 
 use super::ActionChoice;
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub struct ActionOrder {
     pub action_priority: i16,
     pub move_priority: i8,
@@ -96,7 +97,7 @@ impl PriorityChance {
 /// What a queue entry does (DESIGN.md §44.2): Showdown `resolveAction` splits a move choice with
 /// a generation gimmick into the gimmick's own action (order 104-106) and the move (200). The
 /// gimmick happens before every move of the turn, whatever the speeds.
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub enum ActionStep {
     /// The move itself (a switch and a pass are always this).
     Act,
@@ -150,15 +151,18 @@ impl ActionStep {
     }
 }
 
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct QueuedAction {
+    #[serde(with = "crate::snapshot::wire")]
     pub actor: PokemonId,
+    #[serde(with = "crate::snapshot::wire")]
     pub choice: ActionChoice,
     /// The gimmick step this entry runs, before the move action of the same choice.
     pub step: ActionStep,
     pub order: ActionOrder,
     /// The move that moved this action to the front of the queue (Round's `onTry`, Showdown
     /// `queue.prioritizeAction`), read by the move as its `sourceEffect`.
+    #[serde(with = "crate::snapshot::wire")]
     pub prioritized_by: Option<crate::ids::MoveId>,
     /// The action is one a move injected for its target (Instruct, DESIGN.md §42.9): it runs
     /// besides the target's own action for the turn, which it must not consume.
@@ -166,6 +170,7 @@ pub struct QueuedAction {
     /// Showdown `originalTarget`: the Pokémon the declared target slot held as the action was
     /// queued. A move that tracks its target goes at it while it is on the field, wherever an
     /// Ally Switch put it (R-M8-106).
+    #[serde(with = "crate::snapshot::wire")]
     pub original_target: Option<crate::ids::PokemonId>,
 }
 

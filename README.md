@@ -45,6 +45,7 @@ A Rust Pokémon battle engine for Generations 1–9, singles and doubles, differ
 - **对战**：`step()` 推进到需要输入（`EngineStep::Awaiting(BattleRequest)`）或结束；能选什么由 `choice_options(side)` 列出，选择交给 `submit_turn_choices` / `resolve_forced_switches` / `resolve_revive`，可先 `validate_choice`。
 - **观察**：`view(Observer)` 是某个观察者知道的对局（未知为 `Seen::Unknown`；`SideView::previewed()` 是队伍预览与公开队伍表），`omniscient_view()` 给受信任的宿主、研究与 AI；`names()` 把 id 译成 Showdown 的英文名。
 - **分叉**：`BattleEngine: Clone`，`snapshot()` / `rewind()` 回到某一刻，`TraceMode::Off` 不记 trace。
+- **存储**：会话快照与对局快照都可 `to_json()`（一行，用于存储；压缩由宿主决定）/ `to_json_pretty()`，再 `from_json()` 读回。JSON 外带格式名、布局版本与种类，只有同一布局版本能读回；快照是可信数据，并含双方的全部隐藏信息，不能发给玩家。
 
 `cargo doc --open` 的首页有完整的可运行示例。`stable-api/` 是只用默认 API 的使用者包，三个示例分别是 AI 的推演、服务端的回合循环、规则研究的反事实比较：
 

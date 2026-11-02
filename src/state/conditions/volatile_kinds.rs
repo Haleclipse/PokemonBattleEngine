@@ -3,11 +3,12 @@
 //! that count (Thrash's rampage, Uproar, Bide), Protect's kinds, `VolatileSet`.
 
 use crate::ids::{ItemId, MoveId, PokemonId, PositionId};
+use serde::{Deserialize, Serialize};
 
 /// Which protecting move stands behind a `Protect` volatile (Showdown: one volatile each,
 /// never two at once): whether it stops status moves, and what a contact move that it stops
 /// costs the attacker (`engine::protect_punishment`).
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
 pub enum ProtectKind {
     /// Protect, Detect.
     Protect,
@@ -312,8 +313,9 @@ pub enum VolatileConditionKind {
 
 /// Showdown `lockedmove` (DESIGN.md §15.12), as the generation counts it
 /// (`RampageRules::counter`).
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub struct RampageState {
+    #[serde(with = "crate::snapshot::wire")]
     pub move_id: MoveId,
     /// The frame's `lockedmove`: Gen 1 the uses left (`time`, counted down as the move starts
     /// again); Gen 3-4 the cartridge's counter (2-3, counted down at the end of every turn);
@@ -331,7 +333,7 @@ pub struct RampageState {
 }
 
 /// Showdown `uproar` (DESIGN.md §15.12), as the generation counts it (`UproarRules`).
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub struct UproarState {
     /// The frame's `uproar`: the turns left, the current one included (Gen 5+ Showdown's
     /// `duration`; Gen 3-4 the cartridge's count), counted down at the holder's turn-end step.
@@ -342,7 +344,7 @@ pub struct UproarState {
 }
 
 /// What Bide keeps (Showdown's `bide` effect state, DESIGN.md §15.10).
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub struct BideState {
     /// Gen 2+ `duration`, ticked at the end of every turn: the release comes at the holder's
     /// move on the turn it reads 1. Gen 1's has none.
@@ -352,15 +354,17 @@ pub struct BideState {
     /// The damage stored (Gen 2+ `totalDamage`, Gen 1 `damage`).
     pub damage: u32,
     /// Gen 2+ `lastDamageSource`: the Pokémon whose move last damaged the holder.
+    #[serde(with = "crate::snapshot::wire")]
     pub source: Option<PokemonId>,
     /// Gen 3+ `onLockMove`: the holder cannot switch; Gen 1-2's `onSemiLockMove` only keeps its
     /// other moves off the request.
     pub traps: bool,
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub enum VolatileCondition {
     Protect {
+        #[serde(with = "crate::snapshot::wire")]
         source: PokemonId,
         started_turn: u32,
         kind: ProtectKind,
@@ -370,17 +374,22 @@ pub enum VolatileCondition {
     },
     /// Showdown keeps the seeder's slot, not the seeder: whoever stands there is healed.
     LeechSeed {
+        #[serde(with = "crate::snapshot::wire")]
         source: PokemonId,
+        #[serde(with = "crate::snapshot::wire")]
         source_position: PositionId,
     },
     Substitute {
+        #[serde(with = "crate::snapshot::wire")]
         source: PokemonId,
         hp: u16,
     },
     Flinch {
+        #[serde(with = "crate::snapshot::wire")]
         source: PokemonId,
     },
     Confusion {
+        #[serde(with = "crate::snapshot::wire")]
         source: PokemonId,
         /// Showdown `effectState.time`: 2-5 drawn, or Gen 2 Berserk Gene's 256.
         time: u16,
@@ -389,10 +398,12 @@ pub enum VolatileCondition {
         turns: u8,
     },
     Encore {
+        #[serde(with = "crate::snapshot::wire")]
         move_id: MoveId,
         turns: u8,
     },
     Disable {
+        #[serde(with = "crate::snapshot::wire")]
         move_id: MoveId,
         turns: u8,
         /// Gen 1: the move slot the request greys out (Showdown gen1 `slotIndex`, pokered's
@@ -406,6 +417,7 @@ pub enum VolatileCondition {
         turns: Option<u8>,
     },
     ChoiceLock {
+        #[serde(with = "crate::snapshot::wire")]
         move_id: MoveId,
     },
     FollowMe,
@@ -417,14 +429,18 @@ pub enum VolatileCondition {
     /// duration handler of its own in the residual (`DurationHandler::ChargeHiding`), tied with
     /// `twoturnmove`'s.
     TwoTurnMove {
+        #[serde(with = "crate::snapshot::wire")]
         move_id: MoveId,
         turns: u8,
         charging: bool,
+        #[serde(with = "crate::snapshot::wire")]
         target: Option<PositionId>,
         hiding: Option<(crate::rules::SemiInvulnerableKind, u8)>,
     },
     PartiallyTrapped {
+        #[serde(with = "crate::snapshot::wire")]
         source: PokemonId,
+        #[serde(with = "crate::snapshot::wire")]
         move_id: MoveId,
         turns: u8,
         /// The trapper held Binding Band as it bound (Showdown `boundDivisor`, set at `onStart`).
@@ -451,6 +467,7 @@ pub enum VolatileCondition {
     },
     RagePowder,
     SubstituteBroken {
+        #[serde(with = "crate::snapshot::wire")]
         by: MoveId,
     },
     ResidualDamage {
@@ -481,20 +498,25 @@ pub enum VolatileCondition {
         turns: u8,
     },
     Trapped {
+        #[serde(with = "crate::snapshot::wire")]
         source: PokemonId,
     },
     Trapper,
     Octolock {
+        #[serde(with = "crate::snapshot::wire")]
         source: PokemonId,
     },
     PartialTrappingLock {
+        #[serde(with = "crate::snapshot::wire")]
         target: PokemonId,
+        #[serde(with = "crate::snapshot::wire")]
         move_id: MoveId,
         damage: u16,
         turns: u8,
         total: u8,
     },
     FakePartiallyTrapped {
+        #[serde(with = "crate::snapshot::wire")]
         counterpart: PokemonId,
         turns: u8,
     },
@@ -524,6 +546,7 @@ pub enum VolatileCondition {
     Torment,
     Imprison,
     LockOn {
+        #[serde(with = "crate::snapshot::wire")]
         target: PokemonId,
         turns: u8,
     },
@@ -547,14 +570,17 @@ pub enum VolatileCondition {
         kind: crate::rules::SemiInvulnerableKind,
     },
     SkyDrop {
+        #[serde(with = "crate::snapshot::wire")]
         target: PokemonId,
         turns: u8,
     },
     SkyDropped {
+        #[serde(with = "crate::snapshot::wire")]
         by: PokemonId,
     },
     /// The pursuers, in the order they marked the holder.
     Pursuit {
+        #[serde(with = "crate::snapshot::wire")]
         sources: [Option<PokemonId>; 3],
     },
     /// Rollout / Ice Ball: the move, the hits that computed their damage so far
@@ -562,10 +588,12 @@ pub enum VolatileCondition {
     /// the hits Gen 7 Disguise took), the turns left (`duration`: 1, back to 2 after each of the
     /// first four hits) and the position the lock aims at (`lastMoveTargetLoc`).
     Rolling {
+        #[serde(with = "crate::snapshot::wire")]
         move_id: MoveId,
         hits: u8,
         doublings: u8,
         turns: u8,
+        #[serde(with = "crate::snapshot::wire")]
         target: Option<PositionId>,
     },
     /// Gen 7's Rollout storage glitch (issues.md I212): a chain that ran its five hits with
@@ -587,15 +615,18 @@ pub enum VolatileCondition {
     MudSport,
     WaterSport,
     Attract {
+        #[serde(with = "crate::snapshot::wire")]
         source: PokemonId,
     },
     /// `from_booster`: started by Booster Energy (`fromBooster`), which the terrain or weather
     /// ending leaves be.
     QuarkDrive {
+        #[serde(with = "crate::snapshot::wire")]
         best: crate::state::Stat,
         from_booster: bool,
     },
     Protosynthesis {
+        #[serde(with = "crate::snapshot::wire")]
         best: crate::state::Stat,
         from_booster: bool,
     },
@@ -603,6 +634,7 @@ pub enum VolatileCondition {
         turns: u8,
         /// The side of the Pokémon that yawned at it (Showdown `effectState.source`): the
         /// sleep is its doing (Sleep Clause Mod).
+        #[serde(with = "crate::snapshot::wire")]
         source: Option<crate::ids::SideId>,
     },
     Nightmare,
@@ -614,6 +646,7 @@ pub enum VolatileCondition {
     },
     SaltCure,
     SyrupBomb {
+        #[serde(with = "crate::snapshot::wire")]
         source: PokemonId,
         turns: u8,
     },
@@ -661,6 +694,7 @@ pub enum VolatileCondition {
         turns: Option<u8>,
     },
     Fling {
+        #[serde(with = "crate::snapshot::wire")]
         item: ItemId,
     },
     /// `layers`, and the stages its end takes back (Showdown `effectState.def` / `.spd`: 0 or
@@ -672,6 +706,7 @@ pub enum VolatileCondition {
     },
     SparklingAria,
     Metronome {
+        #[serde(with = "crate::snapshot::wire")]
         last_move: Option<MoveId>,
         consecutive: u8,
     },

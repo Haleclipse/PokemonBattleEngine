@@ -1,8 +1,9 @@
 //! How a generation orders the turn's actions (`ActionOrderRules`).
 
 use super::*;
+use serde::{Deserialize, Serialize};
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub enum ActionOrderStrategy {
     StaticAtTurnStart,
     RecalculateAfterAction,

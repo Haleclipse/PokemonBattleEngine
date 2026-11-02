@@ -9,8 +9,9 @@ use crate::dex::{BaseStats, ResolvedDex};
 use crate::ids::{AbilityId, PokemonId, SideId};
 use crate::spec::Generation;
 use crate::state::{BattleStats, Gender, MoveSlotState, PokemonState, Stat};
+use serde::{Deserialize, Serialize};
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
 pub enum Nature {
     Hardy,
     Lonely,
