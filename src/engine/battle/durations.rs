@@ -14,7 +14,7 @@ use crate::state::{
 };
 
 use super::BattleEngine;
-use super::lifecycle::ResidualRun;
+use super::residual::ResidualRun;
 use crate::engine::{BattleContext, TraceEvent};
 
 /// One effect that only counts down in the residual.

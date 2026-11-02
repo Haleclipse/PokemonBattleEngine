@@ -6,7 +6,7 @@ use crate::ids::{ItemId, PokemonId, SideId};
 use crate::state::{FutureAttack, VolatileConditionKind};
 
 use super::BattleEngine;
-use super::lifecycle::ResidualRun;
+use super::residual::ResidualRun;
 use crate::engine::{BattleContext, MovePipeline, TraceEvent};
 
 impl BattleEngine {

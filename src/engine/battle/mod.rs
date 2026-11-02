@@ -21,10 +21,14 @@ mod binding;
 mod durations;
 pub use durations::DurationHandler;
 mod endless;
+mod faint;
 mod future_attack;
 mod lifecycle;
 mod pursuit;
+mod residual;
+mod residual_effects;
 mod slots;
+mod switching;
 mod view;
 
 pub use view::{SeenPokemon, SideView};
