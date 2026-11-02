@@ -415,11 +415,15 @@ pub fn extract_decisions_with(
         {
             continue;
         }
-        // So is a hold on 1 HP against it (`ShownHolds`, R-M10-41): a Focus Band's, Sturdy's.
+        // So is a hold on 1 HP against it (`ShownHolds`, R-M10-41): a Focus Band's, Sturdy's, a
+        // Focus Sash's (`-enditem|p|Focus Sash` with no `[from]`, R-M11-30).
         if in_residual
             && ((kind == "activate" && event["args"][1] == "item: Focus Band")
                 || (kind == "ability"
                     && event["args"][1] == "Sturdy"
+                    && event["args"].get(2).is_none())
+                || (kind == "enditem"
+                    && event["args"][1] == "Focus Sash"
                     && event["args"].get(2).is_none()))
         {
             continue;
