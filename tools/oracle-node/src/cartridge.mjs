@@ -34,7 +34,8 @@
 // Emergency Exit), I210 (Gen 3 Lightning Rod names itself as it takes a move), I211 (a White Herb
 // its holder may not use stays held) and I212 (Gen 7's Rollout storage kept until it is used) change
 // no draw. I213 (a Gen 5+ called move's own result for Dancer and the Fusion moves) changes whether
-// Dancer dances, and so its draws.
+// Dancer dances, and so its draws; I214 (Gen 4 Safeguard stops every confusion berry's confusion) takes
+// the confusion's duration draw away.
 // `SHOWDOWN_UNPATCHED=1` plays Showdown as published: to reproduce a battle recorded before a
 // patch existed, and to check that a patch's scenario fails without it.
 import {Battle, Dex, Pokemon} from '@pkmn/sim';
@@ -3874,5 +3875,24 @@ if (patched) {
     enclosing.called = true;
     enclosing.result = executed;
     return result;
+  };
+}
+
+// I214 — Gen 4: Safeguard stops every confusion berry's confusion. pokeplatinum runs a confusion
+// berry the eater dislikes through `subscript_held_item_dislike_flavor`, whose `subscript_confuse`
+// (`SIDE_EFFECT_TYPE_HELD_ITEM`) ends silently under Own Tempo, an existing confusion or Safeguard on
+// the eater's side — the berry it held, one Bug Bite or Pluck took (`BattleSystem_PluckBerry`), one
+// flung at it (`BattleSystem_FlingItem`) alike. Showdown's `onTryAddVolatile` asks `target !== source`:
+// only the flung berry, the flinger the event's source, is stopped. The patch: the gen4 Safeguard
+// stops a confusion whose effect is a berry, silently, before the duration is drawn — so the draw
+// goes too (TESTING.md §7).
+if (patched) {
+  const condition = Dex.mod('gen4').data.Moves.safeguard.condition;
+  const tryAddVolatile = condition.onTryAddVolatile;
+  condition.onTryAddVolatile = function (status, target, source, effect) {
+    if (this.gen === 4 && status.id === 'confusion' && effect?.effectType === 'Item' && effect.isBerry) {
+      return null;
+    }
+    return tryAddVolatile.call(this, status, target, source, effect);
   };
 }

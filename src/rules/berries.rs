@@ -102,6 +102,12 @@ pub struct BerryRules {
     /// the ability itself. Showdown's `ignoringItem()` spares a Klutz holder of an item marked
     /// `ignoreKlutz` (Macho Brace, the Power items).
     pub klutz_spoils_taken_berries: bool,
+    /// Gen 4 (pokeplatinum `subscript_confuse`, the held-item branch `subscript_held_item_dislike_flavor`
+    /// calls; issues.md I214): Safeguard on the eater's side stops a confusion berry's confusion,
+    /// silently — the berry it held, one Bug Bite or Pluck took, one flung at it alike. Elsewhere
+    /// (Showdown's `onTryAddVolatile`: `target !== source`) only a berry flung at it, the flinger
+    /// the event's source; an eater's own berry confuses it through Safeguard.
+    pub safeguard_stops_own_berry_confusion: bool,
     /// The PP berries (Gen 2 Mystery Berry, Gen 3 Leppa Berry; issues.md I49) are eaten only at
     /// the end of the turn — pokecrystal `HandleMysteryberry`, pokeemerald `ENDTURN_ITEMS1`
     /// (`HOLD_EFFECT_RESTORE_PP` only `!moveTurn`) — for the first move with no PP left; from
@@ -147,6 +153,7 @@ impl BerryRules {
             ),
             taken_confusion_berry_needs_damage: matches!(generation, Generation::Gen4),
             klutz_spoils_taken_berries: matches!(generation, Generation::Gen4),
+            safeguard_stops_own_berry_confusion: matches!(generation, Generation::Gen4),
             pp_berries_at_turn_end: matches!(
                 generation,
                 Generation::Gen1 | Generation::Gen2 | Generation::Gen3

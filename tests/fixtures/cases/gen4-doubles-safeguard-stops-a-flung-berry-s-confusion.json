@@ -1,0 +1,326 @@
+{
+ "schema": 1,
+ "id": "gen4-doubles-safeguard-stops-a-flung-berry-s-confusion",
+ "notes": [
+  "Gen 4 doubles OU: Luvdisc's Safeguard stands over its side when Monferno flings its Iapapa Berry at Ponyta, whose nature dislikes the sour flavor: the berry heals Ponyta but does not confuse it, silently (`|debug|add volatile [confusion] interrupted`). The engine read the eater as confusing itself, which Safeguard does not stop. pokeplatinum's flung berry runs `subscript_confuse` with Safeguard checked; Showdown's `onTryAddVolatile` stops it as the flinger's doing (issues.md I214, DESIGN.md R-M11-28). Minimized from the Nightly battle m9-gen4doublesou-s288-014"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "doubles",
+  "format": "gen4doublesou"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Luvdisc",
+    "species": "Luvdisc",
+    "ability": "Swift Swim",
+    "moves": [
+     "Frustration",
+     "Safeguard",
+     "Swift",
+     "Charm"
+    ],
+    "nature": "Bashful",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 248,
+     "atk": 32,
+     "def": 0,
+     "spa": 96,
+     "spd": 0,
+     "spe": 132
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Luxray",
+    "species": "Luxray",
+    "ability": "Intimidate",
+    "moves": [
+     "Protect",
+     "Thunder Fang",
+     "Rain Dance",
+     "Fire Fang"
+    ],
+    "nature": "Naive",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 28,
+     "atk": 80,
+     "def": 72,
+     "spa": 40,
+     "spd": 172,
+     "spe": 116
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Larvitar",
+    "species": "Larvitar",
+    "ability": "Guts",
+    "moves": [
+     "Hyper Beam",
+     "Iron Head"
+    ],
+    "nature": "Rash",
+    "gender": "F",
+    "shiny": false,
+    "level": 59,
+    "evs": {
+     "hp": 116,
+     "atk": 140,
+     "def": 132,
+     "spa": 104,
+     "spd": 0,
+     "spe": 16
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Ponyta",
+    "species": "Ponyta",
+    "ability": "Run Away",
+    "moves": [
+     "Natural Gift"
+    ],
+    "nature": "Hasty",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 84,
+     "atk": 0,
+     "def": 176,
+     "spa": 80,
+     "spd": 96,
+     "spe": 72
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 25,
+     "spe": 31
+    },
+    "happiness": 53
+   }
+  ],
+  "p2": [
+   {
+    "label": "Kricketot",
+    "species": "Kricketot",
+    "ability": "Shed Skin",
+    "moves": [
+     "Bug Bite",
+     "Uproar"
+    ],
+    "nature": "Lonely",
+    "gender": "M",
+    "shiny": false,
+    "level": 77,
+    "evs": {
+     "hp": 20,
+     "atk": 168,
+     "def": 84,
+     "spa": 0,
+     "spd": 120,
+     "spe": 116
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 23,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 122
+   },
+   {
+    "label": "Baltoy",
+    "species": "Baltoy",
+    "ability": "Levitate",
+    "moves": [
+     "Flash",
+     "Ice Beam",
+     "Hidden Power",
+     "Double-Edge"
+    ],
+    "nature": "Naughty",
+    "gender": "",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 244,
+     "atk": 124,
+     "def": 0,
+     "spa": 140,
+     "spd": 0,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Monferno",
+    "species": "Monferno",
+    "item": "Iapapa Berry",
+    "ability": "Blaze",
+    "moves": [
+     "Fling",
+     "Endure",
+     "Focus Blast"
+    ],
+    "nature": "Bold",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 32,
+     "atk": 80,
+     "def": 32,
+     "spa": 156,
+     "spd": 208,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 7
+    },
+    "happiness": 64
+   },
+   {
+    "label": "Riolu",
+    "species": "Riolu",
+    "ability": "Steadfast",
+    "moves": [
+     "Captivate"
+    ],
+    "nature": "Hasty",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 184,
+     "atk": 0,
+     "def": 100,
+     "spa": 0,
+     "spd": 56,
+     "spe": 168
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 8,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   }
+  ]
+ },
+ "preview": {
+  "p1": "team 621534",
+  "p2": "team 241635"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   53331,
+   288,
+   1014,
+   31
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Safeguard, move Thunder Fang 2",
+   "p2": "move Uproar, move Ice Beam 1"
+  },
+  {
+   "p1": "move 3, move 3",
+   "p2": "move 1, move 3 2"
+  },
+  {
+   "p1": "move 4 1, move 4 2",
+   "p2": "move 1, move 4 1"
+  },
+  {
+   "p1": "move 1 1, move 1",
+   "p2": "move 1, move 1 2"
+  },
+  {
+   "p1": "move Safeguard, move Thunder Fang 2",
+   "p2": "move Uproar, move Ice Beam 1"
+  },
+  {
+   "p1": "switch Larvitar, move 3",
+   "p2": "move 1, move 3 2"
+  },
+  {
+   "p1": "move 2 1, move 4 2",
+   "p2": "move 1, move 4 1"
+  },
+  {
+   "p1": "move 1 2, move 2 1",
+   "p2": "move 1, move 2 1"
+  },
+  {
+   "p1": "switch Luvdisc, pass",
+   "p2": "switch Monferno, pass"
+  },
+  {
+   "p1": "move Safeguard, move Rain Dance",
+   "p2": "move Endure, move Hidden Power 2"
+  },
+  {
+   "p1": "move Swift, move Fire Fang 2",
+   "p2": "move Focus Blast 1, move Double-Edge 2"
+  },
+  {
+   "p1": "switch Ponyta, pass",
+   "p2": "pass, switch Riolu"
+  },
+  {
+   "p1": "move Natural Gift 1, move Protect",
+   "p2": "move Fling 1, move Captivate"
+  }
+ ]
+}

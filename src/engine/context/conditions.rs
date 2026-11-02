@@ -344,10 +344,35 @@ impl<'a> BattleContext<'a> {
         self.start_confusion(target, source, ConfusionTime::Drawn(time.0, time.1))
     }
 
+    /// A confusion berry's confusion on the eater that dislikes its flavor (`onEat`), the eater
+    /// its own source: Safeguard stands in the way only where `culprit` is someone else
+    /// (`BerryRules::safeguard_stops_own_berry_confusion`, a berry flung at it).
+    pub(super) fn confuse_berry_eater(
+        &mut self,
+        eater: PokemonId,
+        culprit: crate::engine::protections::Culprit,
+    ) -> Result<(), ConditionApplyError> {
+        let lifecycle = self.rules.status.lifecycle;
+        let time = ConfusionTime::Drawn(lifecycle.confusion_time_min, lifecycle.confusion_time_max);
+        self.start_confusion_by(eater, eater, culprit, time)
+    }
+
     fn start_confusion(
         &mut self,
         target: PokemonId,
         source: PokemonId,
+        time: ConfusionTime,
+    ) -> Result<(), ConditionApplyError> {
+        let culprit =
+            crate::engine::protections::Culprit::by_move(self.state, self.rules, source, target);
+        self.start_confusion_by(target, source, culprit, time)
+    }
+
+    fn start_confusion_by(
+        &mut self,
+        target: PokemonId,
+        source: PokemonId,
+        culprit: crate::engine::protections::Culprit,
         time: ConfusionTime,
     ) -> Result<(), ConditionApplyError> {
         let Some(pokemon) = self.state.pokemon(target).filter(|p| !p.is_fainted()) else {
@@ -360,9 +385,7 @@ impl<'a> BattleContext<'a> {
         if self.ability_blocks_volatile(target, VolatileConditionKind::Confusion) {
             return Err(ConditionApplyError::Immune);
         }
-        // Safeguard (`onTryAddVolatile`), before the duration is drawn: someone else's move.
-        let culprit =
-            crate::engine::protections::Culprit::by_move(self.state, self.rules, source, target);
+        // Safeguard (`onTryAddVolatile`), before the duration is drawn: someone else's doing.
         if crate::engine::protections::safeguard_refuses(self.state, target, culprit) {
             return Err(ConditionApplyError::Immune);
         }

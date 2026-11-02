@@ -1,0 +1,62 @@
+{
+ "schema": 1,
+ "id": "gen8-safeguard-stops-a-flung-berry-s-confusion",
+ "notes": [
+  "Gen 8: Snorlax (Lonely: dislikes sour) raises Safeguard; Machamp flings its Iapapa Berry at it. Snorlax eats it and heals, and Safeguard stops the confusion, silently \u2014 the flinger is the `Eat` event's source, someone else (Showdown's `onTryAddVolatile`, `target !== source`; issues.md I214, DESIGN.md R-M11-28)"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Lonely",
+    "moves": [
+     "Safeguard",
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Machamp",
+    "species": "Machamp",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Bulk Up",
+     "Fling"
+    ],
+    "ability": "Guts",
+    "item": "Iapapa Berry",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Safeguard",
+   "p2": "move Bulk Up"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Fling"
+  }
+ ]
+}

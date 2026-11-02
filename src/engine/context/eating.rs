@@ -50,7 +50,7 @@ impl<'a> BattleContext<'a> {
         }
         self.trace.push(TraceEvent::ItemEaten { holder, item });
         if !self.sets_items_aside(holder, false) {
-            self.eat_effect(holder, item);
+            self.eat_effect(holder, item, None);
         }
         // `EatItem`, the berry still held; a restorative berry settles the holder's pending
         // staleness (DESIGN.md §45.7).
@@ -84,14 +84,19 @@ impl<'a> BattleContext<'a> {
             )
             && unharmed;
         let effect = !spoilt && !self.sets_items_aside(eater, berries.klutz_spoils_taken_berries);
-        self.eat_from_another(eater, item, effect, true)
+        self.eat_from_another(eater, item, effect, true, None)
     }
 
-    /// Fling's `onHit` for a berry: the target eats it (`eat_from_another`). Gen 4 only
-    /// Embargo keeps its effect away — Klutz does not
+    /// Fling's `onHit` for a berry `thrower` flung: the target eats it (`eat_from_another`).
+    /// Gen 4 only Embargo keeps its effect away — Klutz does not
     /// (`ItemTransferRules::flung_berry_ignores_klutz`, issues.md I91). Returns whether the
     /// target ate it.
-    pub(super) fn eat_flung_berry(&mut self, target: PokemonId, item: ItemId) -> bool {
+    pub(super) fn eat_flung_berry(
+        &mut self,
+        thrower: PokemonId,
+        target: PokemonId,
+        item: ItemId,
+    ) -> bool {
         let Some(pokemon) = self.state.pokemon(target) else {
             return false;
         };
@@ -100,7 +105,7 @@ impl<'a> BattleContext<'a> {
         } else {
             self.sets_items_aside(target, false)
         };
-        self.eat_from_another(target, item, !set_aside, false)
+        self.eat_from_another(target, item, !set_aside, false, Some(thrower))
     }
 
     /// A berry from another's hand (Bug Bite, Pluck, Fling): its `onEat` on `eater`
@@ -108,19 +113,20 @@ impl<'a> BattleContext<'a> {
     /// which Cud Chew passes over, not thrown — and the eater has eaten a berry; nothing asks
     /// `TryEatItem`, and nobody remembers it as a last item. A berry whose `onEat` is `false`
     /// (`EatEffect::Inert`) stops it all. Returns whether the eater ate it (the `Eat` event's
-    /// result).
+    /// result). `thrower`: who flung it (Fling), the `Eat` event's source.
     fn eat_from_another(
         &mut self,
         eater: PokemonId,
         item: ItemId,
         effect: bool,
         taken: bool,
+        thrower: Option<PokemonId>,
     ) -> bool {
         if crate::engine::item_behavior(self.rules, item).eat_effect == Some(EatEffect::Inert) {
             return false;
         }
         if effect {
-            self.eat_effect(eater, item);
+            self.eat_effect(eater, item, thrower);
         }
         self.ate_item(eater, item, taken);
         if let Some(pokemon) = self.state.pokemon_mut(eater) {
@@ -144,8 +150,8 @@ impl<'a> BattleContext<'a> {
         })
     }
 
-    /// The berry's `onEat` on `eater` (Showdown `singleEvent('Eat')`).
-    fn eat_effect(&mut self, eater: PokemonId, item: ItemId) {
+    /// The berry's `onEat` on `eater` (Showdown `singleEvent('Eat')`); `thrower` flung it.
+    fn eat_effect(&mut self, eater: PokemonId, item: ItemId, thrower: Option<PokemonId>) {
         match crate::engine::item_behavior(self.rules, item).eat_effect {
             Some(EatEffect::CureStatus(statuses)) => {
                 if self.state.pokemon(eater).is_some_and(|pokemon| {
@@ -176,8 +182,23 @@ impl<'a> BattleContext<'a> {
                     .pokemon(eater)
                     .is_some_and(|pokemon| pokemon.nature.minus() == Some(disliked))
                 {
-                    // The eater confuses itself: Safeguard does not stand in the way.
-                    let _ = self.try_set_confusion(eater, eater);
+                    // The eater confuses itself; Safeguard stands in the way of a berry flung at
+                    // it (the flinger is the event's source) and, in Gen 4, of any berry
+                    // (`BerryRules::safeguard_stops_own_berry_confusion`, issues.md I214).
+                    let culprit = if thrower.is_some()
+                        || self
+                            .rules
+                            .conditions
+                            .berries
+                            .safeguard_stops_own_berry_confusion
+                    {
+                        crate::engine::protections::Culprit::Another {
+                            infiltrating: false,
+                        }
+                    } else {
+                        crate::engine::protections::Culprit::None
+                    };
+                    let _ = self.confuse_berry_eater(eater, culprit);
                 }
             }
             Some(EatEffect::Boost(stat)) => {
@@ -254,7 +275,7 @@ impl<'a> BattleContext<'a> {
         self.ability_activated(holder, AbilityId::CUD_CHEW);
         self.trace.push(TraceEvent::ItemEaten { holder, item });
         if !self.sets_items_aside(holder, false) {
-            self.eat_effect(holder, item);
+            self.eat_effect(holder, item, None);
         }
         if crate::engine::item_behavior(self.rules, item)
             .eat_effect

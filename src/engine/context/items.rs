@@ -343,7 +343,7 @@ impl<'a> BattleContext<'a> {
         };
         // A Leppa Berry eaten makes the target stale (`foe.staleness = 'external'`).
         if crate::engine::item_behavior(self.rules, item).is_berry
-            && self.eat_flung_berry(target, item)
+            && self.eat_flung_berry(user, target, item)
             && item == ItemId::LEPPA_BERRY
         {
             self.make_stale(target, None);

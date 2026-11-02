@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "gen4-safeguard-stops-the-holder-s-own-berry-confusion",
+ "notes": [
+  "Gen 4: Snorlax (Lonely: dislikes sour) raises Safeguard; Chansey's Seismic Tosses and its own Belly Drum bring it below half, and it eats its Iapapa Berry: it heals, and Safeguard stops the confusion, silently. pokeplatinum's `subscript_confuse` checks Safeguard on the eater's side for a held berry (`SIDE_EFFECT_TYPE_HELD_ITEM`); Showdown lets the eater confuse itself (`target === source`): the oracle's patch I214 (issues.md I214, DESIGN.md R-M11-28)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Lonely",
+    "moves": [
+     "Safeguard",
+     "Belly Drum"
+    ],
+    "ability": "Thick Fat",
+    "item": "Iapapa Berry",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Safeguard",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Belly Drum",
+   "p2": "move Seismic Toss"
+  }
+ ]
+}
