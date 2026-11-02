@@ -177,23 +177,12 @@ impl<'a> MovePipeline<'a> {
                     .with_lent_priority(lent)
                     .with_z_caller(z_call);
             execution = called.execute_called(call)?;
-            // A called Pledge that waited for its ally's (Assist's Water Pledge, R-M8-65): the
-            // action layer moves the ally's action up, as for a Pledge picked from the menu.
-            if let Some(ally_move) = called.pledge_promotes() {
-                self.pledge_promotes = Some(ally_move);
-            }
-            // A called Round (Me First's, Metronome's) moves the next Round up as one of the
-            // action's own would (Round's `onTry`, DESIGN.md R-M8-86).
-            if let Some(round) = called.prioritizes() {
-                self.prioritizes = Some(round);
-            }
-            // A called move's physical hit that armed a Shell Trap (Copycat's Avalanche) moves
-            // the holder up as one of the action's own hits would (`prioritizeAction` in the
-            // trap's `onHit`, R-M8-143).
-            for &armed in called.prioritized_actors() {
-                self.prioritized_actors.retain(|actor| *actor != armed);
-                self.prioritized_actors.push(armed);
-            }
+            // What the called move asks of the queue is the action's, as the action's own move's
+            // would be: a called Pledge that waited for its ally's (Assist's Water Pledge,
+            // R-M8-65), a called Round (Me First's, Metronome's, R-M8-86), a Shell Trap a called
+            // move's physical hit armed (Copycat's Avalanche, R-M8-143).
+            let effects = called.take_effects();
+            self.effects.absorb(effects);
         }
         self.state.acting_slot = None;
         // Gen 3-4 Choice items' `onAfterMove`: the item held now locks its holder onto the move —
@@ -1074,15 +1063,20 @@ impl<'a> MovePipeline<'a> {
                 .pokemon(dancer)
                 .is_some_and(|pokemon| pokemon.volatiles.contains(VolatileConditionKind::Rampage));
             let lent = self.lent_priority(false);
-            let _ = MovePipeline::new(&mut *self.state, self.rules, self.dex, &mut *self.trace)
-                .called(CallFrame {
-                    source: call.source,
-                    action_move: None,
-                })
-                .with_before_move(true)
-                .with_lent_priority(lent)
-                .with_external()
-                .execute_called_with(call, move_def, declared, resolved);
+            let mut dance =
+                MovePipeline::new(&mut *self.state, self.rules, self.dex, &mut *self.trace)
+                    .called(CallFrame {
+                        source: call.source,
+                        action_move: None,
+                    })
+                    .with_before_move(true)
+                    .with_lent_priority(lent)
+                    .with_external();
+            let _ = dance.execute_called_with(call, move_def, declared, resolved);
+            // A dance asks of the queue as any run does (none can yet: no physical dance meets
+            // a Shell Trap, R-M11-18).
+            let effects = dance.take_effects();
+            self.effects.absorb(effects);
             if !had_rampage && let Some(pokemon) = self.state.pokemon_mut(dancer) {
                 pokemon.volatiles.remove(VolatileConditionKind::Rampage);
             }
@@ -1100,14 +1094,19 @@ impl<'a> MovePipeline<'a> {
             let lent = self
                 .lent_priority(true)
                 .map(|(priority, boosted)| (priority, boosted || call.reflected_prankster));
-            MovePipeline::new(&mut *self.state, self.rules, self.dex, &mut *self.trace)
-                .called(CallFrame {
-                    source: call.source,
-                    action_move,
-                })
-                .reflected(true)
-                .with_lent_priority(lent)
-                .execute_called(call)?;
+            let mut reflection =
+                MovePipeline::new(&mut *self.state, self.rules, self.dex, &mut *self.trace)
+                    .called(CallFrame {
+                        source: call.source,
+                        action_move,
+                    })
+                    .reflected(true)
+                    .with_lent_priority(lent);
+            reflection.execute_called(call)?;
+            // A reflection asks of the queue as any run does (none can yet: a reflected move is a
+            // status move, R-M11-18).
+            let effects = reflection.take_effects();
+            self.effects.absorb(effects);
         }
         Ok(())
     }

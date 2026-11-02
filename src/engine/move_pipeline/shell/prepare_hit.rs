@@ -74,7 +74,7 @@ impl MovePipeline<'_> {
 
         // Round's `onTry`: the next Round in the queue goes to the front once this move is over.
         if move_def.behavior.prioritizes_same_move {
-            self.prioritizes = Some(move_id);
+            self.effects.prioritize_move = Some(move_id);
         }
 
         // `onPrepareHit` (Showdown: the move's own, then Parental Bond's): Fling's and Natural
@@ -139,7 +139,7 @@ impl MovePipeline<'_> {
             && self.rules.conditions.calls.pledge_combines
             && let Some(ally_move) = self.pledge_partner(actor, move_id)
         {
-            self.pledge_promotes = Some(ally_move);
+            self.effects.promote_pledge = Some(ally_move);
             self.trace.push(TraceEvent::PledgeWaiting {
                 waiting: actor,
                 move_id,

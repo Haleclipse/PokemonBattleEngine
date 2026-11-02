@@ -1085,8 +1085,7 @@ impl<'a> MovePipeline<'a> {
                 .is_some_and(|holder| holder.volatiles.arm_shell_trap())
             && self.state.will_move_with(target).is_some()
         {
-            self.prioritized_actors.retain(|armed| *armed != target);
-            self.prioritized_actors.push(target);
+            self.effects.arm(target);
         }
         self.rage_struck(actor, target, move_def, RageHit::Body);
     }

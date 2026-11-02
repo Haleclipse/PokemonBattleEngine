@@ -963,20 +963,23 @@ impl BattleEngine {
                     pipeline = pipeline.with_max_move(max);
                 }
                 let execution = pipeline.execute(action.actor, slot, target)?;
-                let armed = pipeline.prioritized_actors().to_vec();
+                // What the action's runs asked of the queue (DESIGN.md §48.3).
+                let crate::engine::move_pipeline::ActionEffects {
+                    promote_pledge,
+                    prioritize_move,
+                    prioritize_actors: armed,
+                } = pipeline.take_effects();
                 // Gen 4 (Showdown restores `activeMove = oldActiveMove` at the end of the
                 // outermost `runMove`): the battle's last move — what Copycat reads — is the
                 // outermost of a chain, not the move it called (DESIGN.md §42.2).
                 let outermost = pipeline.outermost();
-                let prioritizes = pipeline.prioritizes();
-                let pledge_promotes = pipeline.pledge_promotes();
                 drop(pipeline);
                 // A Pledge that waited for its ally's: that action goes to the front with this
                 // move as its `sourceEffect` (DESIGN.md §42.9).
-                if let Some(ally_move) = pledge_promotes {
+                if let Some(ally_move) = promote_pledge {
                     self.prioritize_ally_move(execution.move_id, execution.actor, ally_move);
                 }
-                if let Some(move_id) = prioritizes {
+                if let Some(move_id) = prioritize_move {
                     self.prioritize_same_move(move_id);
                 }
                 if self.rules.conditions.calls.copycat_reads_outermost

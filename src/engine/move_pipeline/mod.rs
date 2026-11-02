@@ -119,11 +119,9 @@ pub(crate) struct MovePipeline<'a> {
     prioritized_by: Option<crate::ids::MoveId>,
     /// The action's `originalTarget` (`QueuedAction::original_target`), for the outermost move.
     original_target: Option<PokemonId>,
-    /// Round's `onTry` ran: the next queued use of this move is to go to the front.
-    prioritizes: Option<crate::ids::MoveId>,
-    /// Shell Trap armed by this move's hit (`queue.prioritizeAction`): these Pokémon's actions
-    /// go to the front, the last armed first.
-    prioritized_actors: Vec<PokemonId>,
+    /// What this run asks of the queue (Round, a waiting Pledge, Shell Trap), with what the
+    /// runs it called asked (`ActionEffects::absorb`).
+    effects: ActionEffects,
     /// The targets whose Tera Shell resisted this move (Showdown `abilityState.resisted`, reset
     /// at a move's first hit): its later hits are resisted too (R-M9-45).
     tera_shell_resisted: Vec<PokemonId>,
@@ -200,9 +198,44 @@ pub(crate) struct MovePipeline<'a> {
     /// The outermost move of this run's chain (Showdown `activeMove` at the action's end,
     /// Gen 4's Copycat): set by the first `run_move`.
     outermost: Option<MoveId>,
-    /// The ally's Pledge this move waits for (Showdown `queue.prioritizeAction(action, move)`,
-    /// DESIGN.md §42.9): the engine promotes its action with this move as its `sourceEffect`.
-    pledge_promotes: Option<MoveId>,
+}
+
+/// What a move's run asks of the action queue once the action is over (Showdown's
+/// `queue.prioritizeAction` calls, DESIGN.md §48.3): a run another one started — a called move,
+/// a reflection, a dance — hands them to that one (`absorb`), the action's to the battle
+/// (`take_effects`), one place for every nested run.
+#[derive(Debug, Default)]
+pub(crate) struct ActionEffects {
+    /// The ally's Pledge a Pledge waits for (`queue.prioritizeAction(action, move)`, §42.9): the
+    /// engine promotes its action with this move as its `sourceEffect`.
+    pub(crate) promote_pledge: Option<MoveId>,
+    /// Round's `onTry` ran: the next queued use of this move goes to the front.
+    pub(crate) prioritize_move: Option<MoveId>,
+    /// The Pokémon whose Shell Trap a physical hit armed: their actions go to the front, the last
+    /// armed first.
+    pub(crate) prioritize_actors: Vec<PokemonId>,
+}
+
+impl ActionEffects {
+    /// A Shell Trap holder armed (again): its action goes to the front after those armed before.
+    fn arm(&mut self, holder: PokemonId) {
+        self.prioritize_actors.retain(|armed| *armed != holder);
+        self.prioritize_actors.push(holder);
+    }
+
+    /// What a run this one started asked: its Pledge and Round as this one's own, the holders it
+    /// armed after those this one did.
+    fn absorb(&mut self, called: ActionEffects) {
+        if let Some(ally_move) = called.promote_pledge {
+            self.promote_pledge = Some(ally_move);
+        }
+        if let Some(round) = called.prioritize_move {
+            self.prioritize_move = Some(round);
+        }
+        for armed in called.prioritize_actors {
+            self.arm(armed);
+        }
+    }
 }
 
 /// A Z-Move as the pipeline runs it (DESIGN.md §44.4). Public: the replay driver asks the
@@ -264,8 +297,7 @@ impl<'a> MovePipeline<'a> {
             type_changer: None,
             prioritized_by: None,
             original_target: None,
-            prioritizes: None,
-            prioritized_actors: Vec::new(),
+            effects: ActionEffects::default(),
             tera_shell_resisted: Vec::new(),
             self_damage_cancelled: false,
             recharged: false,
@@ -291,13 +323,12 @@ impl<'a> MovePipeline<'a> {
             call: None,
             bounced: false,
             outermost: None,
-            pledge_promotes: None,
         }
     }
 
-    /// The ally's Pledge this move promoted (the action's `sourceEffect`), if any.
-    pub(crate) fn pledge_promotes(&self) -> Option<MoveId> {
-        self.pledge_promotes
+    /// What the run asks of the queue, handed over once it is done.
+    pub(crate) fn take_effects(&mut self) -> ActionEffects {
+        std::mem::take(&mut self.effects)
     }
 
     /// The outermost move of the chain (`MovePipeline::outermost`).
@@ -426,16 +457,6 @@ impl<'a> MovePipeline<'a> {
     pub(crate) fn with_original_target(mut self, target: Option<PokemonId>) -> Self {
         self.original_target = target;
         self
-    }
-
-    /// The move whose next queued use the executed move moved to the front (Round's `onTry`).
-    pub(crate) fn prioritizes(&self) -> Option<crate::ids::MoveId> {
-        self.prioritizes
-    }
-
-    /// The Pokémon whose Shell Trap this move armed, in the order it did.
-    pub(crate) fn prioritized_actors(&self) -> &[PokemonId] {
-        &self.prioritized_actors
     }
 
     /// The move runs as a queued action ordered with this priority (Showdown writes it back to
