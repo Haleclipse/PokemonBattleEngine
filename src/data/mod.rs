@@ -18,7 +18,10 @@ use serde_json::Value;
 
 use crate::spec::Generation;
 
-const RAW: [&str; 9] = [
+// A `static`, not a `const`: a const's 2.7 MB of text is laid down again in every codegen unit
+// that reads it, and how the crate's modules fall into units decides how many copies the binary
+// carries (R-M11-20 split `state/conditions` and doubled it).
+static RAW: [&str; 9] = [
     include_str!("../../data/dex/gen1.json"),
     include_str!("../../data/dex/gen2.json"),
     include_str!("../../data/dex/gen3.json"),
