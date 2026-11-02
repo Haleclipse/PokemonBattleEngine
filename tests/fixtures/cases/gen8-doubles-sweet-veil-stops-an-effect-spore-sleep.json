@@ -1,0 +1,89 @@
+{
+ "schema": 1,
+ "id": "gen8-doubles-sweet-veil-stops-an-effect-spore-sleep",
+ "notes": [
+  "Gen 8 doubles: Machamp's Tackles on Amoonguss set off Effect Spore (`random(100)`: below 11 sleep). A sleep is stopped by Machamp's partner Slurpuff's Sweet Veil, which announces itself whatever put the Pok\u00e9mon to sleep (`-block|p2a: Machamp|ability: Sweet Veil|[of] p2b: Slurpuff`). The replay read no status and drew Effect Spore's nothing: the engine showed no Sweet Veil, and the views missed the ability. A Sweet Veil block after the user's hit means the draw came to sleep (DESIGN.md R-M11-15)"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "doubles",
+  "format": "gen8doublescustomgame"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   13,
+   14,
+   15,
+   16
+  ]
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Amoonguss",
+    "species": "Amoonguss",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Effect Spore",
+    "gender": "M"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Machamp",
+    "species": "Machamp",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tackle"
+    ],
+    "ability": "Guts",
+    "gender": "M"
+   },
+   {
+    "label": "Slurpuff",
+    "species": "Slurpuff",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Sweet Veil",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash, move Splash",
+   "p2": "move Tackle 1, move Splash"
+  },
+  {
+   "p1": "move Splash, move Splash",
+   "p2": "move Tackle 1, move Splash"
+  },
+  {
+   "p1": "move Splash, move Splash",
+   "p2": "move Tackle 1, move Splash"
+  },
+  {
+   "p1": "move Splash, move Splash",
+   "p2": "move Tackle 1, move Splash"
+  }
+ ]
+}

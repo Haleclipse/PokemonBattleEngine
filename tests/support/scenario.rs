@@ -1008,6 +1008,10 @@ pub struct ActionOracle {
     /// Every hit count a contact status came after: a berry that cured the first lets a later
     /// hit's reaction take again (Lum Berry between two Flame Body burns, R-M8-138).
     pub contact_status_hits: Vec<usize>,
+    /// Sweet Veil stopped a sleep on the user after its hits (`-block|user|ability: Sweet
+    /// Veil`, which it announces whatever put it to sleep): a contact ability's draw that came
+    /// to sleep (Effect Spore), with the hits by then (R-M11-15).
+    pub contact_sleep_blocked: Vec<usize>,
     /// The move a Disable sealed (`-start|target|Disable|Move`): Gen 1 picks it at random.
     pub disabled_move: Option<String>,
     /// Gen 1: the slot it drew (`debug|Disable: disabling move X in slot N`, the oracle's
@@ -1147,6 +1151,7 @@ impl ActionOracle {
             contact_status_after_hits: 0,
             contact_status_of: None,
             contact_status_hits: Vec::new(),
+            contact_sleep_blocked: Vec::new(),
             disabled_move: None,
             disabled_slot: None,
             typechanges: Vec::new(),
@@ -2865,6 +2870,19 @@ pub fn extract_decisions_with(
                             stat_stuck(&target, event["stat"].as_str().unwrap_or(""), raised)
                         })
                 } => {}
+            "block"
+                if event["detail"]
+                    .as_str()
+                    .is_some_and(|detail| detail.starts_with("ability: Sweet Veil")) =>
+            {
+                if let (Some(action), Some(target)) = (out.last_mut(), who(&event["pokemon"]))
+                    && target == action.user
+                    && action.move_name.is_some()
+                    && !action.crits.is_empty()
+                {
+                    action.contact_sleep_blocked.push(action.crits.len());
+                }
+            }
             "status" | "boost" | "unboost" | "heal" => {
                 let kind = event["kind"].as_str().unwrap_or("");
                 if let (Some(action), Some(target)) = (out.last_mut(), who(&event["pokemon"])) {
@@ -7191,13 +7209,23 @@ fn chance_reactions(
                 .into_iter()
                 .find(|status| status_id(*status) == shown)
             });
+        // A sleep Sweet Veil stopped (`contact_sleep_blocked`) was drawn all the same: the draw
+        // came to sleep, and no duration follows it (R-M11-15).
+        let drawn = shown.or_else(|| {
+            (!behind_substitute
+                && oracle
+                    .contact_sleep_blocked
+                    .iter()
+                    .any(|after| reported_after(*after)))
+            .then_some(NonVolatileStatus::Sleep)
+        });
         match roll {
             EffectSporeRoll::ChanceThenSample(_) => {
                 push(
                     staged,
-                    RandomOverride::bool(RandomRequestKind::HitReaction, shown.is_some()),
+                    RandomOverride::bool(RandomRequestKind::HitReaction, drawn.is_some()),
                 );
-                if let Some(status) = shown {
+                if let Some(status) = drawn {
                     let index = pokemon_battle_engine::engine::EFFECT_SPORE_SAMPLE
                         .iter()
                         .position(|s| *s == status)
@@ -7210,7 +7238,7 @@ fn chance_reactions(
             }
             EffectSporeRoll::Percent => {
                 let value = (0..100)
-                    .find(|roll| pokemon_battle_engine::engine::effect_spore_status(*roll) == shown)
+                    .find(|roll| pokemon_battle_engine::engine::effect_spore_status(*roll) == drawn)
                     .unwrap_or(99);
                 push(
                     staged,
