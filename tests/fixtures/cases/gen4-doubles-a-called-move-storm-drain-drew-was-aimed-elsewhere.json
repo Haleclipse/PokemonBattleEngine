@@ -1,0 +1,92 @@
+{
+ "schema": 1,
+ "id": "gen4-doubles-a-called-move-storm-drain-drew-was-aimed-elsewhere",
+ "notes": [
+  "Gen 4 doubles: Victreebel's Assist calls Duskull's Aqua Tail, which draws a random foe (`getRandomTarget`); it drew Turtwig, and Gastrodon's Storm Drain took it (`-activate|p2a: Gastrodon|ability: Storm Drain`), so the `move` line names Gastrodon. The replay drew the target the line names, Gastrodon itself: no redirection, no Storm Drain shown, and the views missed the ability Showdown's client learned. A line naming the holder that announced the redirection was drawn elsewhere first (DESIGN.md R-M11-7)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "doubles",
+  "format": "gen4doublescustomgame"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   9,
+   10,
+   11,
+   12
+  ]
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Victreebel",
+    "species": "Victreebel",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Assist"
+    ],
+    "ability": "Chlorophyll",
+    "gender": "M"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Protect"
+    ],
+    "ability": "Natural Cure",
+    "gender": "F"
+   },
+   {
+    "label": "Duskull",
+    "species": "Duskull",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Aqua Tail"
+    ],
+    "ability": "Levitate",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gastrodon",
+    "species": "Gastrodon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Storm Drain",
+    "gender": "M"
+   },
+   {
+    "label": "Turtwig",
+    "species": "Turtwig",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Overgrow",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Assist, move Protect",
+   "p2": "move Splash, move Splash"
+  },
+  {
+   "p1": "move Assist, move Protect",
+   "p2": "move Splash, move Splash"
+  }
+ ]
+}

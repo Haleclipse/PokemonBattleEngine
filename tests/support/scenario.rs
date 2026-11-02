@@ -863,6 +863,8 @@ pub struct CalledMove {
     /// called move's start. Two foes sending one spread move back each strike the same
     /// Pokémon, each with its own checks (R-M8-176).
     pub outcomes_from: (usize, usize, usize),
+    /// The Lightning Rod / Storm Drain holder that drew it (`ActionOracle::redirected_by`).
+    pub redirected_by: Option<Who>,
 }
 
 impl CalledMove {
@@ -883,6 +885,7 @@ impl CalledMove {
                 action.immune.len(),
                 action.applied.len(),
             ),
+            redirected_by: None,
         }
     }
 }
@@ -1102,6 +1105,10 @@ pub struct ActionOracle {
     /// Forewarn|<move>|[of] <foe>` line's arguments. Its draw is the action's; an entrant's is
     /// `entrant_ability_tape`'s.
     pub forewarned: Vec<Vec<String>>,
+    /// The Lightning Rod / Storm Drain holder that drew the action's own move
+    /// (`-activate|holder|ability: Storm Drain` right after its `move` line, which names the
+    /// holder): the target the move was aimed at first is another (R-M11-7).
+    pub redirected_by: Option<Who>,
 }
 
 impl ActionOracle {
@@ -1168,6 +1175,7 @@ impl ActionOracle {
             fatigue: false,
             raging_after: None,
             forewarned: Vec::new(),
+            redirected_by: None,
             danced: false,
             instructed: false,
             instructed_chances: Vec::new(),
@@ -2321,6 +2329,18 @@ pub fn extract_decisions_with(
                 }
                 if what == "ability: Synchronize" {
                     synchronizing = args.first().and_then(who_from_text);
+                }
+                // Lightning Rod / Storm Drain drew the move whose `move` line came last
+                // (`onAnyRedirectTarget` announces only a target it changed): the line names
+                // the holder, and the move was aimed at another first (R-M11-7).
+                if matches!(what, "ability: Lightning Rod" | "ability: Storm Drain")
+                    && let Some(action) = out.last_mut()
+                    && let Some(holder) = args.first().and_then(who_from_text)
+                {
+                    match action.called.last_mut() {
+                        Some(called) => called.redirected_by = Some(holder),
+                        None => action.redirected_by = Some(holder),
+                    }
                 }
                 // A contact reaction taking the user's ability away for the rest of its move.
                 if matches!(
@@ -3863,6 +3883,24 @@ fn restore_with_tape(
     BattleEngine::restore(compiled.rules.clone(), compiled.dex.clone(), snapshot).expect("restore")
 }
 
+/// Which of `candidates` a random target draw picked, from the target the `move` line names:
+/// that one — unless the Lightning Rod / Storm Drain holder named there drew the move to itself
+/// (`redirected_by`), and then the draw was another candidate, the first (any other is drawn
+/// to the holder alike, and the holder's ability is announced either way, R-M11-7). `None`: the
+/// named target is no candidate.
+fn drawn_target(
+    state: &BattleState,
+    candidates: &[PokemonId],
+    named: Option<&Who>,
+    redirected_by: Option<&Who>,
+) -> Option<usize> {
+    let named = named.and_then(|who| who_to_id(state, who))?;
+    if redirected_by.and_then(|who| who_to_id(state, who)) == Some(named) {
+        return candidates.iter().position(|candidate| *candidate != named);
+    }
+    candidates.iter().position(|candidate| *candidate == named)
+}
+
 fn who_to_id(state: &BattleState, who: &Who) -> Option<PokemonId> {
     let side = if who.side == 0 {
         SideId::P1
@@ -4414,12 +4452,13 @@ fn tape_template(
         )
         && candidates.len() > 1
     {
-        let picked = called
-            .target
-            .as_ref()
-            .and_then(|who| who_to_id(state, who))
-            .and_then(|id| candidates.iter().position(|c| *c == id))
-            .unwrap_or(0);
+        let picked = drawn_target(
+            state,
+            &candidates,
+            called.target.as_ref(),
+            called.redirected_by.as_ref(),
+        )
+        .unwrap_or(0);
         tape.push(Some(
             RandomOverride::range(RandomRequestKind::RandomTarget, picked as u16).optional(),
         ));
@@ -9988,7 +10027,15 @@ fn drive_to_boundary(
                         .own_target
                         .as_ref()
                         .and_then(|who| who_to_id(&before.state, who))
-                        .map(|id| candidates.iter().position(|c| *c == id).unwrap_or(0)),
+                        .map(|_| {
+                            drawn_target(
+                                &before.state,
+                                &candidates,
+                                decision.own_target.as_ref(),
+                                decision.redirected_by.as_ref(),
+                            )
+                            .unwrap_or(0)
+                        }),
                 }
             {
                 template.insert(
