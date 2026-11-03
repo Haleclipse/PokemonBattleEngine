@@ -176,7 +176,10 @@ export function observers(battle) {
         }
         if (side?.activeRequest) {
           const kept = movesTaken(client, name);
-          client.update(Protocol.parseRequest(JSON.stringify(side.activeRequest)));
+          const request = Protocol.parseRequest(JSON.stringify(side.activeRequest));
+          const teraIds = teraSearchIds(client, name, request);
+          client.update(request);
+          restoreTeraSearchIds(teraIds);
           noteMovesFromRequest(client, moves, name, kept);
         }
 
@@ -561,6 +564,35 @@ function noteMovesFromRequest(client, moves, observer, kept) {
 }
 
 /** The other side's Pokémon the player's own stand transformed into, with what the client knows of their moves. */
+/**
+ * A Pokémon's `searchid` (its ident and details) gains `, tera:<type>` with its `-terastallize`
+ * (@pkmn/client), while Showdown's request goes on naming its details without it: the client's
+ * `update` then finds no such Pokémon among the observer's own and makes a new one, its volatiles
+ * and boosts lost (a Magmar's Focus Energy, which a foe's Psych Up then copied as none, R-M11-34).
+ * The observer's own are matched without the suffix for the update and given it back after — a
+ * later `switch` line names it.
+ */
+function teraSearchIds(client, observer, request) {
+  const own = observer === 'p1' ? client.p1 : observer === 'p2' ? client.p2 : null;
+  if (!own || !request.side) return [];
+  const restored = [];
+  for (const p of request.side.pokemon) {
+    const member = own.team.find(m => m.searchid !== p.searchid
+      && m.searchid?.replace(/, tera:[^,|]*$/, '') === p.searchid);
+    if (!member) continue;
+    restored.push([member, member.searchid, member.details]);
+    member.searchid = p.searchid;
+  }
+  return restored;
+}
+
+function restoreTeraSearchIds(restored) {
+  for (const [member, searchid, details] of restored) {
+    member.searchid = searchid;
+    member.details = details;
+  }
+}
+
 function movesTaken(client, observer) {
   const side = observer === 'p1' ? client.p1 : client.p2;
   const kept = new Map();
