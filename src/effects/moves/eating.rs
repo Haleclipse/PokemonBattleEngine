@@ -34,8 +34,8 @@ pub fn stuff_cheeks(
 }
 
 /// Teatime (`onHitField`): every active Pokémon holding a berry eats it — but one out of reach
-/// in a charge (`Invulnerability`: `-miss`) or whose ability or item refuses the move
-/// (`TryHit`). With nobody to eat, `-fail`, yet the move has not failed (`NOT_FAIL`).
+/// in a charge (`Invulnerability`: `-miss`) or whose Max Guard, ability or item refuses the
+/// move (`TryHit`). With nobody to eat, `-fail`, yet the move has not failed (`NOT_FAIL`).
 pub fn teatime(
     ctx: &mut BattleContext<'_>,
     user: PokemonId,
@@ -43,8 +43,11 @@ pub fn teatime(
 ) -> Result<(), ConditionApplyError> {
     let mut eaters = Vec::new();
     for pokemon in ctx.active_pokemon() {
+        // `onHitField`: each Pokémon's `Invulnerability`, then its `runEvent('TryHit')` — a Max
+        // Guard holder's refuses it before any berry is asked about (R-M11-45).
         if ctx.is_fainted(pokemon)
             || ctx.out_of_reach(user, pokemon)
+            || ctx.max_guard_refuses(user, pokemon, MoveId::TEATIME)
             || ctx.holders_refuse(user, pokemon, MoveId::TEATIME)
         {
             continue;
