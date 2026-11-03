@@ -1554,10 +1554,15 @@ pub fn extract_decisions_with(
                     if item_stat {
                         item_stat_change = item_boosting.clone();
                     }
+                    // A drag ends the move's effects (Red Card's after them all, Dragon Tail's and
+                    // Roar's after the hit): a stat change after it is the entrant's entry — its
+                    // Intimidate — not the move's secondary nor its own on the user (R-M11-42).
+                    let entry = dragging && matches!(kind, "boost" | "unboost");
                     if action.damages.iter().any(|(t, _)| *t == target)
                         && kind != "heal"
                         && !item_stat
                         && !by_ability
+                        && !entry
                     {
                         action.secondary_applied = true;
                         let hits = action.crits.len();
@@ -1565,7 +1570,7 @@ pub fn extract_decisions_with(
                             .secondary_on
                             .push((target.clone(), label.clone(), hits));
                     }
-                    if target == action.user {
+                    if target == action.user && !entry {
                         let hits = action.crits.len();
                         action.user_applied_hits.push((label.clone(), hits));
                     }
