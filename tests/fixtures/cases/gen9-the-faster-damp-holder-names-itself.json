@@ -1,0 +1,123 @@
+{
+ "schema": 1,
+ "id": "gen9-the-faster-damp-holder-names-itself",
+ "notes": [
+  "Gen 9: Klefki's Doodle gives it Scizor's Damp; Scizor's Explosion is then stopped by Damp \u2014 Klefki's, the faster holder (`cant|p2a: Klefki|ability: Damp|Explosion|[of] p1a: Scizor`): Showdown runs the `onAnyTryMove` handlers by their holder's speed. The engine took the first holder on the field, Scizor itself, and its views learnt Scizor's Damp, which no line named (DESIGN.md R-M11-35). Minimized from the Nightly battle m8-gen9-singles-s1739-006"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Seedot",
+    "species": "Seedot",
+    "level": 45,
+    "nature": "Hardy",
+    "moves": [
+     "Earthquake",
+     "Syrup Bomb"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Shellder",
+    "species": "Shellder",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Misty Explosion"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Veluza",
+    "species": "Veluza",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Boomburst"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Scizor",
+    "species": "Scizor",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Explosion"
+    ],
+    "ability": "Damp",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Luxray",
+    "species": "Luxray",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Snipe Shot",
+     "Syrup Bomb"
+    ],
+    "ability": "Download",
+    "gender": "F"
+   },
+   {
+    "label": "Klefki",
+    "species": "Klefki",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Doodle"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   5637,
+   55357,
+   16881,
+   44615
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Earthquake",
+   "p2": "move Snipe Shot"
+  },
+  {
+   "p1": "move Syrup Bomb",
+   "p2": "move Syrup Bomb"
+  },
+  {
+   "p1": "switch Shellder"
+  },
+  {
+   "p1": "move Misty Explosion",
+   "p2": "move Snipe Shot"
+  },
+  {
+   "p1": "switch Veluza"
+  },
+  {
+   "p1": "switch Scizor",
+   "p2": "switch Klefki"
+  },
+  {
+   "p1": "move Explosion",
+   "p2": "move Doodle"
+  }
+ ]
+}

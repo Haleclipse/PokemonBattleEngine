@@ -61,22 +61,21 @@ impl<'a> BattleContext<'a> {
     }
 }
 
-/// The first active Pokémon whose ability is Damp, if any.
+/// The active Pokémon whose Damp stops the move, if any: Showdown's `runEvent('TryMove')` runs the
+/// `onAnyTryMove` handlers by their holder's speed (`speedSort`), so the fastest holder's line
+/// names it — the user's own Damp too, after a faster one's (R-M11-35). Holders tied in speed
+/// keep the field's order (Showdown shuffles them, which the engine does not draw for).
 pub(crate) fn damp_holder(
     state: &crate::state::BattleState,
     rules: &crate::rules::ResolvedRules,
 ) -> Option<PokemonId> {
-    [SideId::P1, SideId::P2].into_iter().find_map(|side| {
-        state
-            .side(side)
-            .active
-            .iter()
-            .flatten()
-            .copied()
-            .find(|id| {
-                state.pokemon(*id).is_some_and(|p| {
-                    !p.is_fainted() && crate::engine::ability_handler(state, rules, p, |b| b.damp)
-                })
+    [SideId::P1, SideId::P2]
+        .into_iter()
+        .flat_map(|side| state.side(side).active.iter().flatten().copied())
+        .filter(|id| {
+            state.pokemon(*id).is_some_and(|p| {
+                !p.is_fainted() && crate::engine::ability_handler(state, rules, p, |b| b.damp)
             })
-    })
+        })
+        .min_by_key(|id| std::cmp::Reverse(crate::engine::stats::handler_speed(state, *id)))
 }
