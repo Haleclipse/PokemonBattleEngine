@@ -785,6 +785,8 @@ impl BattleEngine {
             ResidualKind::LaserFocus => {
                 self.tick_volatile(holder, VolatileConditionKind::LaserFocus);
             }
+            // `-singleturn`'s, ended with no line: the observers see them gone as the turn ends —
+            // not where the battle ends in it (R-M10-44's countdown, R-M11-38).
             ResidualKind::Roost | ResidualKind::Electrify | ResidualKind::Powder => {
                 let kind = match kind {
                     ResidualKind::Roost => VolatileConditionKind::Roost,
@@ -792,7 +794,7 @@ impl BattleEngine {
                     _ => VolatileConditionKind::Powder,
                 };
                 BattleContext::new(&mut self.state, &self.rules, &mut self.trace)
-                    .end_volatile(holder, kind);
+                    .end_volatile_unseen(holder, kind);
             }
             ResidualKind::MicleBoost => {
                 self.tick_volatile(holder, VolatileConditionKind::MicleBerry);

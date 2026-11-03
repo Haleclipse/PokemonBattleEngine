@@ -1,0 +1,502 @@
+{
+ "schema": 1,
+ "id": "gen8-a-roost-the-battle-ends-in-is-still-seen",
+ "notes": [
+  "Gen 8 Ubers: on the last turn Skarmory uses Roost (`-singleturn|p2a: Skarmory|move: Roost`), and the residual's Perish Song knocks Arctozolt out: the battle ends in the turn's end, with no `turn` line after. Roost's volatile ends in the residual with no word; the observers see it gone as the turn ends, which never comes \u2014 @pkmn/client still shows it. The engine ended it as a seen end (DESIGN.md R-M11-38, as R-M10-44 for the countdowns). Minimized from the Nightly battle m9-gen8ubers-s299-003"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8ubers"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Genesect",
+    "species": "Genesect",
+    "ability": "Download",
+    "moves": [
+     "Flash Cannon"
+    ],
+    "nature": "Impish",
+    "gender": "",
+    "shiny": false,
+    "level": 28,
+    "evs": {
+     "hp": 12,
+     "atk": 0,
+     "def": 124,
+     "spa": 228,
+     "spd": 36,
+     "spe": 108
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 8,
+     "spe": 31
+    },
+    "happiness": 133
+   },
+   {
+    "label": "Darmanitan",
+    "species": "Darmanitan",
+    "ability": "Sheer Force",
+    "moves": [
+     "Overheat",
+     "Heat Wave",
+     "Hyper Beam",
+     "Earthquake"
+    ],
+    "nature": "Brave",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 92,
+     "atk": 48,
+     "def": 168,
+     "spa": 104,
+     "spd": 4,
+     "spe": 92
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Nick54",
+    "species": "Orbeetle",
+    "ability": "Telepathy",
+    "moves": [
+     "Agility"
+    ],
+    "nature": "Naive",
+    "gender": "M",
+    "shiny": false,
+    "level": 37,
+    "evs": {
+     "hp": 252,
+     "atk": 156,
+     "def": 0,
+     "spa": 48,
+     "spd": 0,
+     "spe": 52
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 17
+    }
+   },
+   {
+    "label": "Victini",
+    "species": "Victini",
+    "ability": "Victory Star",
+    "moves": [
+     "Round",
+     "Thunderbolt",
+     "Rock Smash"
+    ],
+    "nature": "Lonely",
+    "gender": "",
+    "shiny": false,
+    "level": 72,
+    "evs": {
+     "hp": 0,
+     "atk": 4,
+     "def": 8,
+     "spa": 200,
+     "spd": 144,
+     "spe": 140
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Arctozolt",
+    "species": "Arctozolt",
+    "ability": "Static",
+    "moves": [
+     "Body Slam",
+     "Bolt Beak",
+     "Payback",
+     "Endure"
+    ],
+    "nature": "Relaxed",
+    "gender": "",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 80,
+     "atk": 88,
+     "def": 0,
+     "spa": 236,
+     "spd": 24,
+     "spe": 80
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 29,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Articuno",
+    "species": "Articuno",
+    "ability": "Snow Cloak",
+    "moves": [
+     "Bubble Beam"
+    ],
+    "nature": "Careful",
+    "gender": "",
+    "shiny": true,
+    "level": 7,
+    "evs": {
+     "hp": 80,
+     "atk": 176,
+     "def": 40,
+     "spa": 48,
+     "spd": 140,
+     "spe": 24
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 17,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   }
+  ],
+  "p2": [
+   {
+    "label": "Nick93",
+    "species": "Minccino",
+    "ability": "Technician",
+    "moves": [
+     "Safeguard"
+    ],
+    "nature": "Docile",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 12,
+     "atk": 36,
+     "def": 116,
+     "spa": 0,
+     "spd": 132,
+     "spe": 212
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 18
+    }
+   },
+   {
+    "label": "Skarmory",
+    "species": "Skarmory",
+    "ability": "Keen Eye",
+    "moves": [
+     "Thief",
+     "Roost",
+     "Pluck",
+     "Tailwind"
+    ],
+    "nature": "Quiet",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 0,
+     "atk": 24,
+     "def": 232,
+     "spa": 44,
+     "spd": 208,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 20,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Gyarados",
+    "species": "Gyarados",
+    "ability": "Intimidate",
+    "moves": [
+     "Stone Edge",
+     "Dark Pulse",
+     "Iron Tail",
+     "Hydro Pump"
+    ],
+    "nature": "Naughty",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 176,
+     "atk": 84,
+     "def": 68,
+     "spa": 0,
+     "spd": 88,
+     "spe": 92
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 5,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 182
+   },
+   {
+    "label": "Alcremie",
+    "species": "Alcremie-Ruby-Swirl",
+    "ability": "Aroma Veil",
+    "moves": [
+     "Acid Armor",
+     "Solar Beam"
+    ],
+    "nature": "Hardy",
+    "gender": "",
+    "shiny": true,
+    "level": 55,
+    "evs": {
+     "hp": 212,
+     "atk": 92,
+     "def": 0,
+     "spa": 0,
+     "spd": 76,
+     "spe": 128
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 0
+   },
+   {
+    "label": "Nick28",
+    "species": "Cursola",
+    "ability": "Perish Body",
+    "moves": [
+     "Whirlpool",
+     "Giga Drain",
+     "Sleep Talk"
+    ],
+    "nature": "Modest",
+    "gender": "M",
+    "shiny": false,
+    "level": 41,
+    "evs": {
+     "hp": 132,
+     "atk": 0,
+     "def": 68,
+     "spa": 0,
+     "spd": 168,
+     "spe": 140
+    },
+    "ivs": {
+     "hp": 9,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 212
+   },
+   {
+    "label": "Unfezant",
+    "species": "Unfezant",
+    "ability": "Big Pecks",
+    "moves": [
+     "Gust"
+    ],
+    "nature": "Serious",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 0,
+     "atk": 168,
+     "def": 100,
+     "spa": 44,
+     "spd": 0,
+     "spe": 196
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 5,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   }
+  ]
+ },
+ "preview": {
+  "p1": "team 361245",
+  "p2": "team 342561"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   23361,
+   299,
+   1003,
+   31
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Agility",
+   "p2": "move Stone Edge"
+  },
+  {
+   "p1": "switch 2"
+  },
+  {
+   "p1": "move Bubble Beam",
+   "p2": "move Dark Pulse"
+  },
+  {
+   "p1": "switch 3"
+  },
+  {
+   "p1": "move Flash Cannon",
+   "p2": "move Iron Tail"
+  },
+  {
+   "p1": "switch 4"
+  },
+  {
+   "p1": "move Earthquake",
+   "p2": "move Hydro Pump"
+  },
+  {
+   "p1": "move Overheat",
+   "p2": "move Stone Edge"
+  },
+  {
+   "p1": "move Heat Wave",
+   "p2": "move Dark Pulse"
+  },
+  {
+   "p1": "move Hyper Beam",
+   "p2": "move Iron Tail"
+  },
+  {
+   "p1": "switch 5"
+  },
+  {
+   "p1": "move Rock Smash",
+   "p2": "move Hydro Pump"
+  },
+  {
+   "p1": "switch 6",
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Acid Armor"
+  },
+  {
+   "p1": "move Bolt Beak",
+   "p2": "move Solar Beam"
+  },
+  {
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Payback",
+   "p2": "move Iron Tail"
+  },
+  {
+   "p1": "move Bolt Beak",
+   "p2": "move Dark Pulse"
+  },
+  {
+   "p2": "switch 3"
+  },
+  {
+   "p1": "move Payback",
+   "p2": "move Pluck"
+  },
+  {
+   "p1": "move Endure",
+   "p2": "move Tailwind"
+  },
+  {
+   "p1": "switch 6",
+   "p2": "switch 4"
+  },
+  {
+   "p1": "move Round",
+   "p2": "move Whirlpool"
+  },
+  {
+   "p1": "move Thunderbolt",
+   "p2": "move Giga Drain"
+  },
+  {
+   "p1": "switch 6"
+  },
+  {
+   "p1": "move Payback",
+   "p2": "move Sleep Talk"
+  },
+  {
+   "p2": "switch 4"
+  },
+  {
+   "p1": "move Endure",
+   "p2": "move Tailwind"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Thief"
+  },
+  {
+   "p1": "move Bolt Beak",
+   "p2": "move Roost"
+  }
+ ]
+}
