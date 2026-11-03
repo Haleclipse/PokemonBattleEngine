@@ -1127,6 +1127,11 @@ impl TraceEvent {
                         | MoveFailReason::BeforeMove(BeforeMoveBlockReason::LostFocus),
                     ..
                 }
+                | Self::MoveFailed {
+                    move_id: MoveId::SHELL_TRAP,
+                    reason: MoveFailReason::NoEffect,
+                    ..
+                }
                 | Self::HitBlocked {
                     reason: HitBlockReason::Ability(_) | HitBlockReason::Item(_),
                     ..
@@ -1478,6 +1483,16 @@ impl TraceEvent {
                     VolatileConditionKind::FocusPunch,
                 )),
             ],
+            // Shell Trap not sprung (`onTryMove`: `cant|p|Shell Trap|Shell Trap`): the trap is
+            // seen gone the same way, though it too lasts the turn.
+            Self::MoveFailed {
+                actor,
+                move_id: MoveId::SHELL_TRAP,
+                reason: MoveFailReason::NoEffect,
+            } => one(Some(Disclosure::VolatileEnded(
+                *actor,
+                VolatileConditionKind::ShellTrap,
+            ))),
             // Truant names itself (`cant|p|ability: Truant`).
             Self::BeforeMoveResolved {
                 actor,

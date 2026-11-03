@@ -1,0 +1,140 @@
+{
+ "schema": 1,
+ "id": "gen8-doubles-a-shell-trap-not-sprung-is-seen-gone",
+ "notes": [
+  "Gen 8 doubles: Duraludon sets Shell Trap (`-singleturn|p1b: Duraludon|move: Shell Trap`); no physical hit arms it, so it stops (`cant|p1b: Duraludon|Shell Trap|Shell Trap`). The client's `cantUseMove` drops the volatile there, as it does Focus Punch's lost focus, though Showdown's lasts the turn; the engine's view kept it to the turn's end, past the replacement Stoutland's poison faint asks for (DESIGN.md R-M11-46). Minimized from the Nightly battle m8-gen8-doubles-s1760-012"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "doubles",
+  "format": "gen8doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Blacephalon",
+    "species": "Blacephalon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Leech Life",
+     "Toxic Spikes",
+     "Avalanche",
+     "Belly Drum"
+    ],
+    "ability": "Poison Touch"
+   },
+   {
+    "label": "Duraludon",
+    "species": "Duraludon",
+    "level": 48,
+    "nature": "Hardy",
+    "moves": [
+     "Shell Trap",
+     "Toxic Spikes",
+     "Revenge",
+     "Belly Drum"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Scraggy",
+    "species": "Scraggy",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Vital Throw"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Latios",
+    "species": "Latios",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Pin Missile",
+     "Toxic Spikes"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Whirlipede",
+    "species": "Whirlipede",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Arm Thrust"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Deino",
+    "species": "Deino",
+    "level": 46,
+    "nature": "Hardy",
+    "moves": [
+     "Toxic Spikes",
+     "Tail Slap"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Stoutland",
+    "species": "Stoutland",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Bone Rush",
+     "Scale Shot",
+     "Belly Drum"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   14384,
+   5430,
+   5377,
+   41344
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Leech Life 1, move Shell Trap",
+   "p2": "move Pin Missile 1, move Arm Thrust 2"
+  },
+  {
+   "p2": "pass, switch Deino"
+  },
+  {
+   "p1": "move Toxic Spikes, move Toxic Spikes",
+   "p2": "move Toxic Spikes, move Toxic Spikes"
+  },
+  {
+   "p2": "switch Stoutland, pass"
+  },
+  {
+   "p1": "move Avalanche 2, move Revenge 1",
+   "p2": "move Scale Shot 1, move Tail Slap 2"
+  },
+  {
+   "p1": "move Belly Drum, move Belly Drum",
+   "p2": "move Belly Drum, pass"
+  },
+  {
+   "p1": "switch Scraggy, move Shell Trap",
+   "p2": "move Bone Rush 1, pass"
+  }
+ ]
+}
