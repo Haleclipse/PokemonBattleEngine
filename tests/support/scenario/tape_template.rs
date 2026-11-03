@@ -2806,6 +2806,15 @@ pub(super) fn sleep_duration_hint(
                 }
                 break;
             };
+            // A turn it slept through counts before what the action then did: a Sleep Talk
+            // that calls Rest sleeps anew after its BeforeMove took the turn (R-M11-32).
+            let slept_here = same(&action.user)
+                && (action.cant.as_deref() == Some("slp") || action.slept_through);
+            if slept_here {
+                cants += 1;
+                taken += step_at(t);
+                skipped = if action.slept_through { skipped + 1 } else { 0 };
+            }
             // Put to sleep again, or cured by another's move (Purify): the first sleep ended
             // without a wake-up of its own (Shed Skin, a switch-out cure …), so any time above
             // the turns seen behaves the same.
@@ -2816,7 +2825,7 @@ pub(super) fn sleep_duration_hint(
             {
                 return Some((taken + 1).max(at_least).clamp(min_time, max_time));
             }
-            if !same(&action.user) {
+            if !same(&action.user) || slept_here {
                 continue;
             }
             // Gen 3-4 (issues.md I63): an uproar woke it as it was about to move, before this
@@ -2831,12 +2840,6 @@ pub(super) fn sleep_duration_hint(
                         .max(at_least)
                         .clamp(min_time, max_time),
                 );
-            }
-            if action.cant.as_deref() == Some("slp") || action.slept_through {
-                cants += 1;
-                taken += step_at(t);
-                skipped = if action.slept_through { skipped + 1 } else { 0 };
-                continue;
             }
             if action.cured.as_deref() == Some("slp") {
                 // Early Bird's range may reach past the generation's maximum.

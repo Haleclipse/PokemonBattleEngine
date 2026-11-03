@@ -1,0 +1,150 @@
+{
+ "schema": 1,
+ "id": "gen2-a-sleep-talk-rest-counts-the-turn-it-slept-through",
+ "notes": [
+  "Gen 2 OU: Flaaffy, put to sleep by Sleep Powder, sleeps through turns 6, 7 and (after a switch) 13; on turn 14 it is still asleep (`cant|p2a: Flaaffy|slp`), and its Sleep Talk calls Rest, which puts it to sleep anew. The replay read the sleep's time off the turns before that action alone \u2014 the new sleep ended its search before the turn it slept through counted \u2014 and the engine woke Flaaffy on turn 14. The turn a Sleep Talk sleeps through counts before the sleep it calls (DESIGN.md R-M11-32). Minimized from the Nightly battle m9-gen2ou-s295-011"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2ou"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Nick41",
+    "species": "Jigglypuff",
+    "ability": "",
+    "moves": [
+     "Thunder Wave",
+     "Icy Wind",
+     "Thunder Punch",
+     "Sleep Talk"
+    ],
+    "nature": "",
+    "gender": "M",
+    "shiny": false,
+    "level": 92
+   },
+   {
+    "label": "Nick26",
+    "species": "Venomoth",
+    "ability": "",
+    "moves": [
+     "Sleep Powder",
+     "Return",
+     "Rest",
+     "Sleep Talk"
+    ],
+    "nature": "",
+    "gender": "M",
+    "shiny": false,
+    "level": 84
+   }
+  ],
+  "p2": [
+   {
+    "label": "Ledian",
+    "species": "Ledian",
+    "item": "King's Rock",
+    "ability": "",
+    "moves": [
+     "Headbutt",
+     "Toxic",
+     "Bide"
+    ],
+    "nature": "",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "happiness": 204
+   },
+   {
+    "label": "Flaaffy",
+    "species": "Flaaffy",
+    "ability": "",
+    "moves": [
+     "Curse",
+     "Reflect",
+     "Sleep Talk",
+     "Rest"
+    ],
+    "nature": "",
+    "gender": "M",
+    "shiny": false,
+    "level": 100
+   }
+  ]
+ },
+ "preview": {
+  "p1": "team 465132",
+  "p2": "team 624531"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   11822,
+   295,
+   1011,
+   31
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Thunder Wave",
+   "p2": "move Headbutt"
+  },
+  {
+   "p1": "move Icy Wind",
+   "p2": "move Toxic"
+  },
+  {
+   "p1": "move Thunder Punch",
+   "p2": "move Bide"
+  },
+  {
+   "p1": "switch Nick26",
+   "p2": "switch Flaaffy"
+  },
+  {
+   "p1": "move Sleep Talk",
+   "p2": "move Rest"
+  },
+  {
+   "p1": "move Sleep Powder",
+   "p2": "move Curse"
+  },
+  {
+   "p1": "move Return",
+   "p2": "move Reflect"
+  },
+  {
+   "p1": "switch Nick41",
+   "p2": "switch Ledian"
+  },
+  {
+   "p1": "move Thunder Punch",
+   "p2": "move Bide"
+  },
+  {
+   "p1": "move 4",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "switch Nick26",
+   "p2": "switch Flaaffy"
+  },
+  {
+   "p1": "move Return",
+   "p2": "move Reflect"
+  },
+  {
+   "p1": "move Rest",
+   "p2": "move Sleep Talk"
+  }
+ ]
+}
