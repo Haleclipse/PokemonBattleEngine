@@ -1425,6 +1425,19 @@ pub fn extract_decisions_with(
                 {
                     action.contact_sleep_blocked.push(action.crits.len());
                 }
+                // On a target the move hit: its secondary's sleep was drawn, and stopped (Relic
+                // Song's 10% on a Sweet Veil holder's partner, R-M11-43).
+                if let (Some(action), Some(target)) = (out.last_mut(), who(&event["pokemon"]))
+                    && target != action.user
+                    && action.move_name.is_some()
+                    && action.damages.iter().any(|(hit, _)| *hit == target)
+                {
+                    action.secondary_applied = true;
+                    let hits = action.crits.len();
+                    action
+                        .secondary_on
+                        .push((target, "status:slp".to_string(), hits));
+                }
             }
             "status" | "boost" | "unboost" | "heal" => {
                 let kind = event["kind"].as_str().unwrap_or("");

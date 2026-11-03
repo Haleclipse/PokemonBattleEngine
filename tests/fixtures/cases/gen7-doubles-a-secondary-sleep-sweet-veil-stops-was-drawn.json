@@ -1,0 +1,84 @@
+{
+ "schema": 1,
+ "id": "gen7-doubles-a-secondary-sleep-sweet-veil-stops-was-drawn",
+ "notes": [
+  "Gen 7 doubles: Genesect's Relic Song hits Torterra and Elekid; its 10% sleep comes up on Elekid and Torterra's Sweet Veil stops it (`-block|p2b: Elekid|ability: Sweet Veil|[of] p2a: Torterra`), which shows Torterra's ability. The replay read no sleep and planned the roll to miss, so the engine never met Sweet Veil and the views missed it. A Sweet Veil block on a target the move hit means the secondary's sleep was drawn (DESIGN.md R-M11-43, as R-M11-15 for Effect Spore). Minimized from the Nightly battle m8-gen7-doubles-s1752-006"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Genesect",
+    "species": "Genesect",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Octazooka",
+     "Relic Song"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Lillipup",
+    "species": "Lillipup",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Mud Bomb",
+     "Relic Song"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Torterra",
+    "species": "Torterra",
+    "level": 47,
+    "nature": "Hardy",
+    "moves": [
+     "Rock Smash",
+     "Relic Song"
+    ],
+    "ability": "Sweet Veil",
+    "gender": "M"
+   },
+   {
+    "label": "Elekid",
+    "species": "Elekid",
+    "level": 55,
+    "nature": "Hardy",
+    "moves": [
+     "Crunch",
+     "Relic Song"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   47043,
+   36247,
+   33798,
+   56855
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Octazooka 1, move Mud Bomb 2",
+   "p2": "move Rock Smash 1, move Crunch 2"
+  },
+  {
+   "p1": "move Relic Song, move Relic Song",
+   "p2": "move Relic Song, move Relic Song"
+  }
+ ]
+}
