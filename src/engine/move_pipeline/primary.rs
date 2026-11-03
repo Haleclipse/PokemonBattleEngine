@@ -227,10 +227,11 @@ impl<'a> MovePipeline<'a> {
             },
             // Psycho Shift: the user's status goes to the target (without one, its `onTryHit`
             // fails the move); once it took there, the user is cured (`self`: `selfDrops` skip
-            // a target the move failed on).
+            // a target the move failed on). Its `onTryHit` makes the status the move's own
+            // (`move.status`): an ability keeping it off says so (R-M11-31).
             StatusMoveEffect::TransferStatus => ctx.status_of(actor).is_some_and(|status| {
                 let took = matches!(
-                    ctx.try_set_status(target, status, source),
+                    ctx.try_set_carried_status(target, status, source),
                     crate::engine::StatusApplyResult::Applied { .. }
                 );
                 if took {

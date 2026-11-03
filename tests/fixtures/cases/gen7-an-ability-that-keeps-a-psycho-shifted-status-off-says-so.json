@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "id": "gen7-an-ability-that-keeps-a-psycho-shifted-status-off-says-so",
+ "notes": [
+  "Gen 7: Tauros's Baneful Bunker poisons Yanma; Yanma's Psycho Shift then passes the poison to Tauros, whose Immunity keeps it off and says so (`-immune|p2a: Tauros|[from] ability: Immunity`): Psycho Shift's `onTryHit` makes the status the move's own (`move.status`), and an ability keeping off a status its effect carries names itself. The engine passed the status as a secondary's, the ability silent, and the views missed it (DESIGN.md R-M11-31). Minimized from the Nightly battle m8-gen7-singles-s1737-006"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Yanma",
+    "species": "Yanma",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Mega Punch",
+     "Psycho Shift"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Tauros",
+    "species": "Tauros",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Baneful Bunker",
+     "Aqua Tail"
+    ],
+    "ability": "Immunity"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   15079,
+   28371,
+   22121,
+   33744
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Mega Punch",
+   "p2": "move Baneful Bunker"
+  },
+  {
+   "p1": "move Psycho Shift",
+   "p2": "move Aqua Tail"
+  }
+ ]
+}
