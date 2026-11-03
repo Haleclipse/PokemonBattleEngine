@@ -148,6 +148,7 @@ export function observers(battle) {
           noteMoves(client, moves, args, kwArgs, slotsBefore);
           noteHaze(client, args);
           clampBoost(client, args);
+          notePrimalOrb(client, args);
           copyDragonCheer(client, args);
           transformCritVolatiles(client, args);
           noteMimicDraw(client, args, previous);
@@ -516,14 +517,26 @@ function transformCritVolatiles(client, args) {
 
 /**
  * The gen1 mod's `boost` names the stages asked for, not those that took (`-boost|p|def|2` at
- * +5), which @pkmn/client adds as they come: a stage stays within -6 to 6 (R-M10-43).
+ * +5), which @pkmn/client adds as they come: a stage stays within -6 to 6 (R-M10-43). So does
+ * one set outright: the gen4 mod's Anger Point prints `-setboost|p|atk|12` (R-M11-36).
  */
 function clampBoost(client, args) {
-  if (args[0] !== '-boost' && args[0] !== '-unboost') return;
+  if (args[0] !== '-boost' && args[0] !== '-unboost' && args[0] !== '-setboost') return;
   const poke = client.getPokemon(args[1]);
   const stat = args[2];
   if (!poke || typeof poke.boosts?.[stat] !== 'number') return;
   poke.boosts[stat] = Math.max(-6, Math.min(6, poke.boosts[stat]));
+}
+
+/**
+ * Primal Reversion names the orb it reverts by (`-primal|p|Blue Orb`), which @pkmn/client, with
+ * no `-primal` handler, does not read: the holder's item is known, as a Mega Stone `-mega` names
+ * is (R-M11-36).
+ */
+function notePrimalOrb(client, args) {
+  if (args[0] !== '-primal' || !args[2]) return;
+  const poke = client.getPokemon(args[1]);
+  if (poke) poke.item = toID(args[2]);
 }
 
 /**

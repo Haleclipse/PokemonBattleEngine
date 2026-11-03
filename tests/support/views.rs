@@ -139,7 +139,7 @@ fn label(compiled: &Compiled, id: PokemonId) -> String {
             compiled.teams[side]
                 .iter()
                 .position(|member| *member == id)
-                .map(|index| compiled.labels[side][index].clone())
+                .map(|index| compiled.names[side][index].clone())
         })
         .unwrap_or_else(|| format!("{id:?}"))
 }

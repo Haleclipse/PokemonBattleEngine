@@ -198,8 +198,11 @@ pub struct Compiled {
     /// switch swaps the newcomer with the Pokémon it replaces (the active one stays at index 0
     /// in singles). Kept in step with the engine as the script is replayed.
     pub party: [Vec<PokemonId>; 2],
-    /// Scenario labels per side, parallel to `teams` (Showdown names Pokémon by label).
+    /// Scenario labels per side, parallel to `teams`: what a script's `switch <label>` names.
     pub labels: [Vec<String>; 2],
+    /// The names Showdown gives them, parallel to `teams` (`shown_name`): what its protocol and
+    /// its client call them.
+    pub names: [Vec<String>; 2],
     /// Party swaps made for this boundary's declared switches, kept only if the switch really
     /// happens (Gen 1: a faint cancels the rest of the turn, the other side's switch included).
     pub pending_swaps: Vec<(usize, usize, usize, PokemonId)>,
@@ -221,10 +224,10 @@ pub(super) fn flush_trace(compiled: &mut Compiled) {
     compiled.log.extend(events);
 }
 
-/// The engine id of the Pokémon Showdown calls `who` (by side and label).
+/// The engine id of the Pokémon Showdown calls `who` (by side and the name it gives it).
 pub(super) fn label_to_id(compiled: &Compiled, who: &Who) -> Option<PokemonId> {
     let side = who.side.min(1);
-    compiled.labels[side]
+    compiled.names[side]
         .iter()
         .position(|label| *label == who.name)
         .map(|index| compiled.teams[side][index])
@@ -475,6 +478,25 @@ pub(super) fn team_choice(text: Option<&str>) -> TeamChoice {
 /// Preview's state, the scenario's choices taken as Showdown takes them, and the battle started
 /// from the Pokémon brought — `session::SessionFormat`'s path, the lead switch-in left to the
 /// replay (its tape first).
+/// The name Showdown gives a set's Pokémon (its `Pokemon` constructor: `if (set.name ===
+/// set.species || !set.name) set.name = this.baseSpecies.baseSpecies`): the label, unless it is
+/// the species as written — or there is none — when it is the species' base species as the dex
+/// names it: `Slowbro` for a `Slowbro-Galar`, `Farfetch’d` for a `Farfetch'd` (R-M11-36).
+pub(super) fn shown_name(dex: &ResolvedDex, set: &ScenarioSet) -> String {
+    match &set.label {
+        Some(label) if *label != set.species => label.clone(),
+        _ => dex
+            .species_by_name(&set.species)
+            .map(|species| {
+                species
+                    .base_species
+                    .clone()
+                    .unwrap_or_else(|| species.name.clone())
+            })
+            .unwrap_or_else(|| set.species.clone()),
+    }
+}
+
 pub(super) fn compile_format(scenario: &Scenario, format_id: &str) -> Compiled {
     let fail = |error: &dyn std::fmt::Debug| -> ! { panic!("{}: {error:?}", scenario.id) };
     let format = SessionFormat::new(format_library(), format_id).unwrap_or_else(|e| fail(&e));
@@ -583,6 +605,12 @@ pub(super) fn compile_format(scenario: &Scenario, format_id: &str) -> Compiled {
             })
             .collect()
     });
+    let names = [0, 1].map(|i| {
+        orders[i]
+            .iter()
+            .map(|&j| shown_name(format.dex(), &sides[i][j]))
+            .collect()
+    });
     Compiled {
         rules: Arc::new(format.rules().unwrap_or_else(|e| fail(&e))),
         dex: format.dex().clone(),
@@ -590,6 +618,7 @@ pub(super) fn compile_format(scenario: &Scenario, format_id: &str) -> Compiled {
         pending_swaps: Vec::new(),
         party: teams.clone(),
         labels,
+        names,
         teams,
         preview,
         log: Vec::new(),
@@ -660,6 +689,8 @@ pub fn compile(scenario: &Scenario) -> Compiled {
     let state = BattleState::new(pokemon, [side_state(&teams[0]), side_state(&teams[1])], 1);
     let engine = BattleEngine::try_new(rules.clone(), dex.clone(), state)
         .unwrap_or_else(|error| panic!("{}: {error:?}", scenario.id));
+    let names = [&scenario.teams.p1, &scenario.teams.p2]
+        .map(|sets| sets.iter().map(|set| shown_name(&dex, set)).collect());
     Compiled {
         rules,
         dex,
@@ -682,6 +713,7 @@ pub fn compile(scenario: &Scenario) -> Compiled {
                 .map(|set| set.label.clone().unwrap_or_else(|| set.species.clone()))
                 .collect(),
         ],
+        names,
         teams,
     }
 }
