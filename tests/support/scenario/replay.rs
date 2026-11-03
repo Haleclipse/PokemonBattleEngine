@@ -2443,21 +2443,18 @@ pub(super) fn drive_to_boundary(
 
         // From Gen 5 a foreseen attack draws its random factor as it strikes (§15.22): one that
         // strikes, in the residual, a doll this action struck leaves the boundary frame showing
-        // the doll after both, so the action's one roll is open — every roll that leaves the doll
-        // standing above the frame's HP, the highest first (`OpenChoices`, R-M10-21). Gen 4's
-        // strike deals what it stored at use, which `substitute_hint` adds.
+        // the doll after both, so the action's roll on the doll is open — every roll that leaves
+        // the doll standing above the frame's HP, the highest first (`OpenChoices`, R-M10-21).
+        // The roll on the doll is the one that moves its HP: a spread move rolls once a target
+        // (an Incinerate on the doll and its partner, R-M11-40). Gen 4's strike deals what it
+        // stored at use, which `substitute_hint` adds.
         if foresight.damage_at_use != Some(pokemon_battle_engine::rules::ForeseenRoll::AtUse)
             && let Some((_, _, tape)) = &search.chosen
-            && let [roll_at] = tape
-                .iter()
-                .enumerate()
-                .filter(|(_, decision)| decision.kind == RandomRequestKind::DamageRoll)
-                .map(|(at, _)| at)
-                .collect::<Vec<_>>()[..]
             && let [(holder, false)] = &decision.substitute_struck[..]
             && residual_substitute_strike(oracle_frame, holder)
             && let Some(at_boundary) = frame_substitute_hp(oracle_frame, holder)
             && let Some(id) = who_to_id(&before.state, holder)
+            && let Some(roll_at) = doll_roll(compiled, &before, tape, id)
         {
             let damage = compiled.rules.damage();
             let tape = tape.clone();
@@ -2582,4 +2579,35 @@ pub(super) fn drive_to_boundary(
         ));
     }
     step
+}
+
+/// Which of `tape`'s damage rolls struck the doll `holder` stands behind: the only one, or the
+/// one whose lowest and highest values leave the doll different HP (R-M11-40).
+fn doll_roll(
+    compiled: &Compiled,
+    before: &BattleSnapshot,
+    tape: &[RandomOverride],
+    holder: PokemonId,
+) -> Option<usize> {
+    let rolls: Vec<usize> = tape
+        .iter()
+        .enumerate()
+        .filter(|(_, decision)| decision.kind == RandomRequestKind::DamageRoll)
+        .map(|(at, _)| at)
+        .collect();
+    if let [only] = rolls[..] {
+        return Some(only);
+    }
+    let damage = compiled.rules.damage();
+    let doll_with = |at: usize, roll: u16| {
+        let mut again = tape.to_vec();
+        again[at] = RandomOverride::range(RandomRequestKind::DamageRoll, roll);
+        let mut engine = restore_with_tape(compiled, before, again);
+        engine.step().ok()?;
+        substitute_hp(engine.state(), holder)
+    };
+    rolls.into_iter().find(|&at| {
+        let low = doll_with(at, damage.random_min);
+        low.is_some() && low != doll_with(at, damage.random_max)
+    })
 }
