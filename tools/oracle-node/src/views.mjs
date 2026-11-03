@@ -1209,14 +1209,17 @@ function noteUnresolvedIllusion(client, unresolved, args, twin) {
 
 /**
  * Whether `p` stands transformed into an Illusion's holder the client saw unmasked, into one
- * whose moves the client knows no oracle of (`moves_copied`), or into an entry filed apart from
+ * whose moves the client knows no oracle of (`moves_copied`), into an entry filed apart from
  * another of its name (`filed_apart`: a disguise's moves the client keeps on the disguise's level,
- * the engine on the one it shows, R-M10-58).
+ * the engine on the one it shows, R-M10-58), or into an entry the client made anew
+ * (`entry_renewed`: it forgot the moves the old one knew — a Roselia whose name an Illusion's
+ * holder fainted under, R-M11-37).
  */
-function transformedIntoNoOracle(p, masks, moves) {
+function transformedIntoNoOracle(p, masks, moves, renewed) {
   const into = p.volatiles?.transform?.pokemon;
   const key = into && (into.originalIdent ?? into.ident);
-  return !!into && (masks.unmasked.has(key) || moves.copied.has(key) || filedApart(into.side, into));
+  return !!into && (masks.unmasked.has(key) || moves.copied.has(key) || filedApart(into.side, into)
+    || renewed.has(key));
 }
 
 /** One observer's knowledge, normalized. */
@@ -1241,7 +1244,7 @@ function view(client, reset, copied, unresolved, zItems, hiddenSwaps, masks, mis
         // client keeps on the disguise, R-M10-44), or into one whose moves are no oracle (a Mimic
         // it used since, which the client counts among that one's moves, R-M10-46): what the
         // client knows of the copy is no oracle either.
-        moves_copied: moves.copied.has(p.originalIdent ?? p.ident) || transformedIntoNoOracle(p, masks, moves),
+        moves_copied: moves.copied.has(p.originalIdent ?? p.ident) || transformedIntoNoOracle(p, masks, moves, renewed),
         moves_from_request: moves.fromRequest.has(p.originalIdent ?? p.ident),
         filed_apart: filedApart(side, p),
         transformed: !!p.volatiles?.transform,

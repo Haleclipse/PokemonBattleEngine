@@ -1,0 +1,147 @@
+{
+ "schema": 1,
+ "id": "gen5-doubles-a-transform-into-a-renewed-entry-copies-no-oracle",
+ "notes": [
+  "Gen 5 doubles: Bagon (Illusion), disguised as Roselia, uses Memento and faints in its guise; the real Roselia comes in later, and @pkmn/client files it under a new entry (`entry_renewed`) that forgot the Memento seen. Shaymin then transforms into Roselia, and the client copies the renewed entry's moves; the engine's spectator view keeps the Memento it saw as Roselia's. Moves copied from a renewed entry are no oracle, as the renewed entry's own are not (DESIGN.md R-M11-37). Minimized from the Nightly battle m8-gen5-doubles-s1740-007"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "doubles",
+  "format": "gen5doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Abra",
+    "species": "Abra",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sharpen",
+     "Transform"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Weezing",
+    "species": "Weezing",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Howl",
+     "Transform",
+     "Tickle"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Shaymin",
+    "species": "Shaymin",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Swords Dance",
+     "Transform",
+     "Magic Room"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Bagon",
+    "species": "Bagon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Memento"
+    ],
+    "ability": "Illusion",
+    "gender": "M"
+   },
+   {
+    "label": "Floatzel",
+    "species": "Floatzel",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Grass Pledge",
+     "Transform",
+     "Flame Burst"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Groudon",
+    "species": "Groudon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Judgment",
+     "Transform",
+     "Fire Pledge"
+    ],
+    "ability": "Run Away",
+    "item": "Full Incense"
+   },
+   {
+    "label": "Roselia",
+    "species": "Roselia",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Clear Smog",
+     "Transform",
+     "Future Sight"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   3005,
+   32715,
+   2436,
+   3637
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Sharpen, move Howl",
+   "p2": "move Memento 1, move Grass Pledge 2"
+  },
+  {
+   "p2": "switch Groudon, pass"
+  },
+  {
+   "p1": "move Transform 1, move Transform 2",
+   "p2": "move Transform 1, move Transform 2"
+  },
+  {
+   "p1": "move Transform 2, move Transform 1",
+   "p2": "move Transform 2, move Transform 1"
+  },
+  {
+   "p1": "switch Shaymin, move 3 2",
+   "p2": "switch Roselia, move 3 2"
+  },
+  {
+   "p1": "move 3, move 1 1",
+   "p2": "move 3 2, move 1"
+  },
+  {
+   "p1": "move Swords Dance, move Transform 2",
+   "p2": "move Clear Smog 1, move Transform 2"
+  },
+  {
+   "p1": "move 2 1, move 3 2",
+   "p2": "move 2 1, move 3 2"
+  }
+ ]
+}
