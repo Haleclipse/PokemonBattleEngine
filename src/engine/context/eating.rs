@@ -422,8 +422,7 @@ impl<'a> BattleContext<'a> {
     /// Whether the holder's HP is down to `share` for a berry (the generation's half, Gluttony).
     pub fn berry_hp_reached(&self, holder: PokemonId, share: HpShare) -> bool {
         self.state.pokemon(holder).is_some_and(|pokemon| {
-            let gluttony =
-                crate::engine::ability_handler(self.state, self.rules, pokemon, |b| b.gluttony);
+            let gluttony = crate::engine::gluttony(self.state, self.rules, pokemon);
             self.rules
                 .conditions
                 .berries
@@ -665,6 +664,13 @@ impl<'a> BattleContext<'a> {
 
     /// Berserk / Anger Shell: whether the holder's healing berries wait for the move's
     /// `AfterMoveSecondary` (`AbilityState::hp_berries_wait`).
+    /// Gluttony's flag (`AbilityState::gluttony_waits`).
+    pub fn set_gluttony_waits(&mut self, holder: PokemonId, waits: bool) {
+        if let Some(pokemon) = self.state.pokemon_mut(holder) {
+            pokemon.ability_state.gluttony_waits = waits;
+        }
+    }
+
     pub fn set_hp_berries_wait(&mut self, holder: PokemonId, wait: bool) {
         if let Some(pokemon) = self.state.pokemon_mut(holder) {
             pokemon.ability_state.hp_berries_wait = wait;

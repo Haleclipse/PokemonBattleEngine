@@ -47,8 +47,9 @@ pub use calls::{
 
 pub use ability::{
     Handler, ability_active, ability_handler, ability_handlers, ability_running,
-    active_ability_handler, core_enforcer_suppresses, dancer_target, has_ability, ignoring_ability,
-    poison_puppeteer_confuses, raw_ability, suppressing_ability, trace_candidates,
+    active_ability_handler, core_enforcer_suppresses, dancer_target, gluttony, has_ability,
+    ignoring_ability, poison_puppeteer_confuses, raw_ability, suppressing_ability,
+    trace_candidates,
 };
 pub use action::{ActionOrder, ActionQueue, ActionStep, PriorityChance, QueuedAction};
 pub use battle::{

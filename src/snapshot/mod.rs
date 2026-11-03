@@ -2,7 +2,7 @@
 //! engine that wrote it and the kind of snapshot, around the snapshot's body.
 //!
 //! ```json
-//! {"format":"pokemon-battle-engine-snapshot","version":1,"engine":"0.1.0","kind":"battle","body":{…}}
+//! {"format":"pokemon-battle-engine-snapshot","version":2,"engine":"0.1.0","kind":"battle","body":{…}}
 //! ```
 //!
 //! Only a snapshot of the same layout version reads back (§48.2.3 question 1): the engine
@@ -33,7 +33,7 @@ const FORMAT: &str = "pokemon-battle-engine-snapshot";
 /// The layout's version: one more at every change of what a snapshot serializes to. The
 /// fixtures under `tests/fixtures/snapshots/` read back byte for byte only under their version,
 /// so a change of layout fails them until this moves.
-pub(crate) const VERSION: u32 = 1;
+pub(crate) const VERSION: u32 = 2;
 
 const BATTLE: &str = "battle";
 const SESSION: &str = "session";

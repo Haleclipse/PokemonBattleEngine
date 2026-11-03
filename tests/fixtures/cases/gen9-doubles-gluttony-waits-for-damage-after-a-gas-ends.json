@@ -1,0 +1,129 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-gluttony-waits-for-damage-after-a-gas-ends",
+ "notes": [
+  "Gen 9 doubles: Milcery's Neutralizing Gas keeps Calyrex's Gluttony off while it falls to 63/175; Milcery faints to its poison in the turn's end and the gas ends, Gluttony starting again. Showdown's `onEnd` then takes Gluttony's flag down (`abilityState.gluttony = false`): its Wiki Berry waits for a quarter of the HP until Calyrex takes damage, and Calyrex still holds it. The engine fed it at once at half (DESIGN.md R-M11-41). Minimized from the Nightly battle m8-gen9-doubles-s1750-019"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hypno",
+    "species": "Hypno",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Toxic Spikes"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Swanna",
+    "species": "Swanna",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Low Kick",
+     "Lock-On",
+     "Stored Power",
+     "Toxic Spikes"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Victreebel",
+    "species": "Victreebel",
+    "level": 45,
+    "nature": "Hardy",
+    "moves": [
+     "Rising Voltage",
+     "Lock-On",
+     "Rage Fist",
+     "Toxic Spikes"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Meowstic",
+    "species": "Meowstic",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Toxic Spikes"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Calyrex",
+    "species": "Calyrex",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Echoed Voice",
+     "Lock-On",
+     "Heavy Slam",
+     "Toxic Spikes"
+    ],
+    "ability": "Gluttony",
+    "item": "Wiki Berry"
+   },
+   {
+    "label": "Milcery",
+    "species": "Milcery",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Payback",
+     "Lock-On",
+     "Assurance",
+     "Toxic Spikes"
+    ],
+    "ability": "Neutralizing Gas"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   58457,
+   23858,
+   14519,
+   40480
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Toxic Spikes, move Toxic Spikes",
+   "p2": "move Toxic Spikes, move Toxic Spikes"
+  },
+  {
+   "p1": "switch Victreebel, move Lock-On 1",
+   "p2": "switch Milcery, move Lock-On 1"
+  },
+  {
+   "p1": "move Lock-On 2, move Stored Power 1",
+   "p2": "move Lock-On 2, move Heavy Slam 1"
+  },
+  {
+   "p1": "move Rage Fist 2, move Toxic Spikes",
+   "p2": "move Assurance 2, move Toxic Spikes"
+  },
+  {
+   "p1": "move Toxic Spikes, move Low Kick 1",
+   "p2": "move Toxic Spikes, move Echoed Voice 1"
+  },
+  {
+   "p1": "move Rising Voltage 2, move Lock-On 1",
+   "p2": "move Payback 2, move Lock-On 1"
+  }
+ ]
+}

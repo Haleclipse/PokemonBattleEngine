@@ -4321,6 +4321,10 @@ pub fn damaged(
     if behavior.half_hp_boosts.is_some() {
         berserk::damaged(ctx, request);
     }
+    // Gluttony's `onDamage`: the flag a Neutralizing Gas ending took down is up again.
+    if behavior.gluttony && !request.kind.is_direct() {
+        ctx.set_gluttony_waits(request.target, false);
+    }
 }
 
 /// What a move dealt, for an `onAfterMoveSecondary` handler on one of the Pokémon it reached.

@@ -269,6 +269,13 @@ impl BattleContext<'_> {
                 continue;
             }
             self.start_ability(other);
+            // Showdown's `onEnd` takes Gluttony's flag down after the `Start`: its berries wait
+            // for the holder to take damage (R-M11-41).
+            if let Some(pokemon) = self.state.pokemon_mut(other)
+                && crate::engine::raw_ability(pokemon) == crate::ids::AbilityId::GLUTTONY
+            {
+                pokemon.ability_state.gluttony_waits = true;
+            }
         }
     }
 

@@ -268,6 +268,10 @@ pub struct AbilityState {
     /// Neutralizing Gas: its `End` has run (`ending`) — it suppresses nothing more until the
     /// holder comes in again.
     pub ending: bool,
+    /// Gluttony: a Neutralizing Gas ending started it again and took its flag down
+    /// (`abilityState.gluttony = false`): its pinch berries wait for a quarter of the HP until the
+    /// holder takes damage (`onDamage` sets the flag) or the ability starts anew (R-M11-41).
+    pub gluttony_waits: bool,
     /// Cud Chew: the berry the Pokémon ate and the turn ends left before it eats it again
     /// (`berry`, `counter`).
     #[serde(with = "crate::snapshot::wire")]

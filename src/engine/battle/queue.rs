@@ -554,8 +554,7 @@ impl BattleEngine {
         let Some(pokemon) = self.state.pokemon(actor) else {
             return false;
         };
-        let gluttony =
-            crate::engine::ability_handler(&self.state, &self.rules, pokemon, |b| b.gluttony);
+        let gluttony = crate::engine::gluttony(&self.state, &self.rules, pokemon);
         crate::engine::held_item(&self.state, &self.rules, actor)
             .is_some_and(|(_, behavior)| behavior.pinch_priority)
             && self.rules.conditions.berries.reached(

@@ -159,8 +159,7 @@ impl<'a> BattleContext<'a> {
         let Some((_, behavior)) = crate::engine::held_item(self.state, self.rules, holder) else {
             return;
         };
-        let gluttony =
-            crate::engine::ability_handler(self.state, self.rules, pokemon, |b| b.gluttony);
+        let gluttony = crate::engine::gluttony(self.state, self.rules, pokemon);
         let berries = &self.rules.conditions.berries;
         match behavior.update {
             Some(ItemUpdate::Eat(trigger))

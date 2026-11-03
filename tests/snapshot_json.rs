@@ -5,7 +5,7 @@
 //!
 //! The fixtures: `v<N>/` holds snapshots of layout version N. The newest directory's must read
 //! back and write the same bytes; an older one's must be refused as another version. A change
-//! of layout fails the newest until the version moves (`src/snapshot.rs`, `VERSION`) and
+//! of layout fails the newest until the version moves (`src/snapshot/mod.rs`, `VERSION`) and
 //! `SNAPSHOT_FIXTURES=write cargo test --test snapshot_json` writes the new version's. They
 //! catch a change to the types they contain: an enum variant none of them holds is not.
 
@@ -341,13 +341,13 @@ fn the_layout_fixtures_hold_the_layout() {
                 let written = read.unwrap_or_else(|error| {
                     panic!(
                         "v{version}/{name}: {error} — the layout changed: move the version \
-                         (src/snapshot.rs) and write the new fixtures (SNAPSHOT_FIXTURES=write)"
+                         (src/snapshot/mod.rs) and write the new fixtures (SNAPSHOT_FIXTURES=write)"
                     )
                 });
                 assert!(
                     written == text,
                     "v{version}/{name} reads back into other bytes — the layout changed: move \
-                     the version (src/snapshot.rs) and write the new fixtures \
+                     the version (src/snapshot/mod.rs) and write the new fixtures \
                      (SNAPSHOT_FIXTURES=write)"
                 );
             } else {

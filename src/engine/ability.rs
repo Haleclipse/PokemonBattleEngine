@@ -186,6 +186,13 @@ pub fn poison_puppeteer_confuses(
     })
 }
 
+/// Whether `pokemon`'s Gluttony makes its pinch berries go at half its HP: the ability runs and
+/// its flag is up (Showdown `hasAbility('gluttony') && abilityState.gluttony`) — a Neutralizing
+/// Gas ending takes it down until the holder takes damage (`AbilityState::gluttony_waits`).
+pub fn gluttony(state: &BattleState, rules: &ResolvedRules, pokemon: &PokemonState) -> bool {
+    ability_handler(state, rules, pokemon, |b| b.gluttony) && !pokemon.ability_state.gluttony_waits
+}
+
 /// The handlers of `ability_running`: its behavior, none's when no ability runs. One handler is
 /// `ability_handler`'s to find.
 pub fn ability_handlers(
