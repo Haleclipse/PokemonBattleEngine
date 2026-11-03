@@ -1,0 +1,365 @@
+{
+ "schema": 1,
+ "id": "gen8-doubles-an-infiltrators-max-strike-goes-past-mist",
+ "notes": [
+  "Gen 8 VGC 2021: Noivern (Infiltrator) Dynamaxes; its Max Strike lowers both foes' Speed through their side's Mist, as an Infiltrator's moves go through Mist. Showdown's Max Moves apply their foe effects in `self.onHit` with the move's `self` data as the effect, which carries no `infiltrates`, and Mist stopped them: the oracle's patch I215 (issues.md I215, DESIGN.md R-M11-39). Minimized from the Nightly battle m9-gen8vgc2021-s302-001"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "doubles",
+  "format": "gen8vgc2021"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Machamp",
+    "species": "Machamp",
+    "ability": "Guts",
+    "moves": [
+     "Rock Slide"
+    ],
+    "nature": "Naive",
+    "gender": "F",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 48,
+     "atk": 84,
+     "def": 48,
+     "spa": 128,
+     "spd": 12,
+     "spe": 188
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Elgyem",
+    "species": "Elgyem",
+    "ability": "Telepathy",
+    "moves": [
+     "Headbutt"
+    ],
+    "nature": "Adamant",
+    "gender": "F",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 104,
+     "atk": 112,
+     "def": 68,
+     "spa": 124,
+     "spd": 0,
+     "spe": 100
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 6
+   },
+   {
+    "label": "Nick94",
+    "species": "Noivern",
+    "ability": "Infiltrator",
+    "moves": [
+     "Shadow Ball",
+     "Snore"
+    ],
+    "nature": "Lonely",
+    "gender": "F",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 72,
+     "atk": 112,
+     "def": 112,
+     "spa": 0,
+     "spd": 24,
+     "spe": 188
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Aerodactyl",
+    "species": "Aerodactyl",
+    "ability": "Unnerve",
+    "moves": [
+     "Earthquake",
+     "Assurance",
+     "Iron Head"
+    ],
+    "nature": "Naughty",
+    "gender": "F",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 240,
+     "atk": 0,
+     "def": 0,
+     "spa": 160,
+     "spd": 0,
+     "spe": 108
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Nick68",
+    "species": "Amoonguss",
+    "ability": "Regenerator",
+    "moves": [
+     "Sunny Day"
+    ],
+    "nature": "Gentle",
+    "gender": "F",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 48,
+     "atk": 0,
+     "def": 252,
+     "spa": 160,
+     "spd": 0,
+     "spe": 48
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   }
+  ],
+  "p2": [
+   {
+    "label": "Nick35",
+    "species": "Sylveon",
+    "ability": "Cute Charm",
+    "moves": [
+     "Body Slam"
+    ],
+    "nature": "Rash",
+    "gender": "M",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 0,
+     "atk": 232,
+     "def": 16,
+     "spa": 240,
+     "spd": 8,
+     "spe": 12
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Lileep",
+    "species": "Lileep",
+    "ability": "Suction Cups",
+    "moves": [
+     "Brine"
+    ],
+    "nature": "Impish",
+    "gender": "M",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 56,
+     "atk": 140,
+     "def": 32,
+     "spa": 252,
+     "spd": 0,
+     "spe": 28
+    },
+    "ivs": {
+     "hp": 5,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 234
+   },
+   {
+    "label": "Hawlucha",
+    "species": "Hawlucha",
+    "ability": "Limber",
+    "moves": [
+     "False Swipe"
+    ],
+    "nature": "Naive",
+    "gender": "F",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 108,
+     "atk": 100,
+     "def": 28,
+     "spa": 16,
+     "spd": 184,
+     "spe": 72
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 15,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "hpType": "Bug"
+   },
+   {
+    "label": "Alcremie",
+    "species": "Alcremie-Rainbow-Swirl",
+    "ability": "Sweet Veil",
+    "moves": [
+     "Magical Leaf"
+    ],
+    "nature": "Calm",
+    "gender": "",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 8,
+     "atk": 0,
+     "def": 96,
+     "spa": 0,
+     "spd": 208,
+     "spe": 196
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Wishiwashi",
+    "species": "Wishiwashi",
+    "ability": "Schooling",
+    "moves": [
+     "Protect",
+     "Mist",
+     "Take Down"
+    ],
+    "nature": "Naive",
+    "gender": "F",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 116,
+     "atk": 96,
+     "def": 16,
+     "spa": 0,
+     "spd": 72,
+     "spe": 208
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 10
+    }
+   },
+   {
+    "label": "Cofagrigus",
+    "species": "Cofagrigus",
+    "ability": "Mummy",
+    "moves": [
+     "Dark Pulse",
+     "Toxic Spikes",
+     "Grudge"
+    ],
+    "nature": "Lonely",
+    "gender": "F",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 32,
+     "atk": 52,
+     "def": 120,
+     "spa": 132,
+     "spd": 80,
+     "spe": 92
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 0,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 39,
+    "hpType": "Steel"
+   }
+  ]
+ },
+ "preview": {
+  "p1": "team 341562",
+  "p2": "team 652431"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   29609,
+   302,
+   1001,
+   31
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1 1 dynamax, move Earthquake",
+   "p2": "move 1 1 dynamax, move Protect"
+  },
+  {
+   "p1": "move Shadow Ball 2, move Assurance 1",
+   "p2": "move Toxic Spikes, move Mist"
+  },
+  {
+   "p1": "move Snore 2, move Iron Head 1",
+   "p2": "move Grudge, move Take Down 2"
+  }
+ ]
+}

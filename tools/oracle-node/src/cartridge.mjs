@@ -35,7 +35,8 @@
 // its holder may not use stays held) and I212 (Gen 7's Rollout storage kept until it is used) change
 // no draw. I213 (a Gen 5+ called move's own result for Dancer and the Fusion moves) changes whether
 // Dancer dances, and so its draws; I214 (Gen 4 Safeguard stops every confusion berry's confusion) takes
-// the confusion's duration draw away.
+// the confusion's duration draw away; I215 (an Infiltrator's Max Move effects past Mist and Safeguard)
+// lets a sleep's or a confusion's duration be drawn.
 // `SHOWDOWN_UNPATCHED=1` plays Showdown as published: to reproduce a battle recorded before a
 // patch existed, and to check that a patch's scenario fails without it.
 import {Battle, Dex, Pokemon} from '@pkmn/sim';
@@ -3895,4 +3896,37 @@ if (patched) {
     }
     return tryAddVolatile.call(this, status, target, source, effect);
   };
+}
+
+// I215 — a Max or G-Max Move's effects on the foes (`self.onHit`: Max Strike's Speed drop, Max
+// Phantasm's Defense drop, G-Max Stun Shock's status, G-Max Gold Rush's confusion …) are its
+// user's move's: an Infiltrator user's go through the foes' Mist and Safeguard, as its moves' own
+// effects do. Showdown hands `boost` / `trySetStatus` / `addVolatile` the move's `self` data as the
+// effect, which is no Move and carries no `infiltrates`, so Mist's `onTryBoost` and Safeguard's
+// `onSetStatus` / `onTryAddVolatile` stopped them. No cartridge evidence either way; the user
+// decided the move's semantics count (issues.md I215). The patch: those handlers let through what
+// the active Max Move's Infiltrator user does to a foe. A sleep or a confusion let through draws
+// its duration (TESTING.md §7).
+if (patched) {
+  const seen = new Set();
+  for (const mod of ['gen8', 'gen9']) {
+    const moves = Dex.mod(mod).data.Moves;
+    for (const [id, names] of [['mist', ['onTryBoost']], ['safeguard', ['onSetStatus', 'onTryAddVolatile']]]) {
+      const condition = moves[id]?.condition;
+      if (!condition || seen.has(condition)) continue;
+      seen.add(condition);
+      for (const name of names) {
+        const handler = condition[name];
+        if (!handler) continue;
+        condition[name] = function (value, target, source, effect) {
+          const move = this.activeMove;
+          if (move?.isMax && move.infiltrates && effect !== move && source && this.activePokemon === source &&
+            target && !target.isAlly(source)) {
+            return;
+          }
+          return handler.call(this, value, target, source, effect);
+        };
+      }
+    }
+  }
 }
