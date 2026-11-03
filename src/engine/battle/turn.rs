@@ -600,9 +600,13 @@ impl BattleEngine {
                     self.process_drag_queue();
                 }
                 // Gen 2: the user's own after-action residual (`onAfterMoveSelf`), skipped
-                // after a self-switching move.
+                // after a self-switching move — the action's own (the gen2 `runMove`'s
+                // `move.selfSwitch`): a Baton Pass Metronome called leaves it in (R-M11-44).
                 let used = self.dex.move_by_id(execution.move_id);
-                let self_switch = used.is_some_and(|m| m.self_switch.is_some());
+                let self_switch = self
+                    .dex
+                    .move_by_id(outermost.unwrap_or(execution.move_id))
+                    .is_some_and(|m| m.self_switch.is_some());
                 let aimed_at_self =
                     used.is_some_and(|m| m.target == crate::rules::TargetPattern::SelfOnly);
                 if execution.stopped || !self_switch {

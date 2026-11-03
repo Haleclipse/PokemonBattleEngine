@@ -1,0 +1,127 @@
+{
+ "schema": 1,
+ "id": "gen2-a-metronome-baton-pass-leaves-the-residual-in",
+ "notes": [
+  "Gen 2: Porygon, seeded, uses Metronome, which calls Baton Pass; Leech Seed drains it (`-damage|p1a: Porygon|62/140|[from] Leech Seed`) before the Baton Pass switch is asked for. The gen2 `runMove` skips `AfterMoveSelf` after a self-switching move \u2014 the action's own (`move.selfSwitch`: Metronome's, none): the engine read the called Baton Pass and skipped it (DESIGN.md R-M11-44). Minimized from the Nightly battle m8-gen2-singles-s1756-006"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Tentacool",
+    "species": "Tentacool",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Horn Attack",
+     "Metronome"
+    ],
+    "gender": "M"
+   },
+   {
+    "label": "Raticate",
+    "species": "Raticate",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Rage",
+     "Rapid Spin",
+     "Leech Seed"
+    ],
+    "gender": "M"
+   },
+   {
+    "label": "Porygon",
+    "species": "Porygon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "High Jump Kick",
+     "Metronome",
+     "Leech Seed"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Kangaskhan",
+    "species": "Kangaskhan",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Present",
+     "Metronome",
+     "Rock Throw",
+     "Leech Seed"
+    ]
+   },
+   {
+    "label": "Krabby",
+    "species": "Krabby",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Pay Day",
+     "Metronome",
+     "Egg Bomb",
+     "Leech Seed"
+    ],
+    "gender": "M"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   43995,
+   44199,
+   53829,
+   51449
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Horn Attack",
+   "p2": "move Present"
+  },
+  {
+   "p1": "move Metronome",
+   "p2": "move Metronome"
+  },
+  {
+   "p1": "switch Raticate"
+  },
+  {
+   "p1": "move Leech Seed",
+   "p2": "move Leech Seed"
+  },
+  {
+   "p1": "move Rage",
+   "p2": "move Present"
+  },
+  {
+   "p1": "move Rapid Spin",
+   "p2": "move Rock Throw"
+  },
+  {
+   "p1": "switch Porygon",
+   "p2": "switch Krabby"
+  },
+  {
+   "p1": "move Leech Seed",
+   "p2": "move Leech Seed"
+  },
+  {
+   "p1": "move High Jump Kick",
+   "p2": "move Pay Day"
+  },
+  {
+   "p1": "move Metronome",
+   "p2": "move Metronome"
+  }
+ ]
+}
