@@ -1397,6 +1397,24 @@ pub(super) fn residual_tape(
                     },
                 ));
             }
+            // The user's Toxic Chain (`onSourceDamagingHit`, any move but contact-only Poison
+            // Touch): it rolls on a strike that reached the target's HP, as the engine's hit
+            // reactions have it (R-M11-33).
+            if strike.hp_after.is_some()
+                && pokemon_battle_engine::engine::dealt_hit_status(
+                    state,
+                    rules,
+                    pokemon_battle_engine::engine::chance_reactors(state, rules, source, target),
+                    target,
+                    &strike_def,
+                )
+                .is_some()
+            {
+                decisions.push((
+                    key,
+                    RandomOverride::bool(RandomRequestKind::HitReaction, strike.dealt_status),
+                ));
+            }
             // A Starf Berry the strike's `Update` fed the target: its stat.
             if let Some(draw @ BerryDraw::Stat(_)) = strike.berry_draw
                 && let Some(decision) = berry_decision(draw, || None)

@@ -1,0 +1,154 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-toxic-chain-rolls-on-a-doom-desire-strike",
+ "notes": [
+  "Gen 9 doubles: Magby (Toxic Chain) used Doom Desire; it strikes Espathra in the residual of turn 5 and Toxic Chain badly poisons it (`-status|p2b: Espathra|tox|[from] ability: Toxic Chain|[of] p1b: Magby`, its `onSourceDamagingHit`). The replay planned the strike's accuracy, critical hit and damage but not the user's Toxic Chain roll, which the engine then drew at random: no poison. The strike plans it now, and the residual's Toxic Chain line is no longer the last action's (DESIGN.md R-M11-33). Minimized from the cloud Nightly battle m8-gen9-doubles-s100501-005 (run 41556397430, 98a315fb)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Corvisquire",
+    "species": "Corvisquire",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Dynamax Cannon",
+     "Ingrain",
+     "Water Gun",
+     "Psychic Noise"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Dratini",
+    "species": "Dratini",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Weather Ball"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Hatterene",
+    "species": "Hatterene",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Lunar Dance"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Magby",
+    "species": "Magby",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Psystrike",
+     "Doom Desire",
+     "Eerie Spell"
+    ],
+    "ability": "Toxic Chain",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Great Tusk",
+    "species": "Great Tusk",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Revelation Dance",
+     "Aurora Veil",
+     "Tera Starstorm",
+     "Lunar Dance"
+    ],
+    "ability": "Forewarn"
+   },
+   {
+    "label": "Phione",
+    "species": "Phione",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Steel Beam",
+     "Aurora Veil",
+     "Fickle Beam",
+     "Lunar Dance"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Croagunk",
+    "species": "Croagunk",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sacred Sword"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Espathra",
+    "species": "Espathra",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Megahorn"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   56153,
+   8284,
+   14724,
+   49974
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Dynamax Cannon 1, move Weather Ball 2",
+   "p2": "move Revelation Dance 1, move Steel Beam 2"
+  },
+  {
+   "p1": "pass, switch Hatterene"
+  },
+  {
+   "p1": "move Ingrain, move Lunar Dance",
+   "p2": "move Aurora Veil, move Aurora Veil"
+  },
+  {
+   "p1": "pass, switch Magby"
+  },
+  {
+   "p1": "move Water Gun 1, move Doom Desire 2",
+   "p2": "move Tera Starstorm 1, move Fickle Beam 2"
+  },
+  {
+   "p1": "move Psychic Noise 1, move Eerie Spell 2",
+   "p2": "switch Croagunk, move Lunar Dance"
+  },
+  {
+   "p2": "switch Great Tusk, switch Espathra"
+  },
+  {
+   "p1": "move Dynamax Cannon 1, move Psystrike 2",
+   "p2": "move Lunar Dance, move Megahorn 1"
+  }
+ ]
+}

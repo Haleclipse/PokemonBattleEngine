@@ -424,7 +424,12 @@ pub fn extract_decisions_with(
                     && event["args"].get(2).is_none())
                 || (kind == "enditem"
                     && event["args"][1] == "Focus Sash"
-                    && event["args"].get(2).is_none()))
+                    && event["args"].get(2).is_none())
+                // The user's Toxic Chain on the target it struck (R-M11-33).
+                || (kind == "status"
+                    && event["from"]
+                        .as_str()
+                        .is_some_and(|f| f.contains("ability: Toxic Chain"))))
         {
             continue;
         }
@@ -1997,6 +2002,9 @@ pub(super) struct FutureStrikeOracle {
     pub(super) focus_band_held: bool,
     /// What a berry the strike's `Update` fed the target drew (Starf Berry's stat).
     pub(super) berry_draw: Option<BerryDraw>,
+    /// The user's Toxic Chain statused the target the strike damaged (`-status|target|tox|[from]
+    /// ability: Toxic Chain`, its `onSourceDamagingHit`; R-M11-33).
+    pub(super) dealt_status: bool,
     /// The target's HP after the strike's damage; none when it took none (a miss, an immunity,
     /// a Substitute).
     pub(super) hp_after: Option<u16>,
@@ -2025,6 +2033,7 @@ pub(super) fn extract_future_strikes(events: &[Value]) -> Vec<FutureStrikeOracle
                 critical: false,
                 focus_band_held: false,
                 berry_draw: None,
+                dealt_status: false,
                 hp_after: None,
             });
             open = true;
@@ -2040,6 +2049,20 @@ pub(super) fn extract_future_strikes(events: &[Value]) -> Vec<FutureStrikeOracle
             && eater == strike.target
         {
             strike.berry_draw = Some(draw);
+        }
+        // The user's Toxic Chain on the target the strike damaged: after the damage line.
+        if fed
+            && kind == "status"
+            && event["from"]
+                .as_str()
+                .is_some_and(|f| f.contains("ability: Toxic Chain"))
+            && let Some(strike) = out.last_mut()
+            && strike.hp_after.is_some()
+            && serde_json::from_value::<Who>(event["pokemon"].clone())
+                .ok()
+                .is_some_and(|who| who.side == strike.target.side && who.name == strike.target.name)
+        {
+            strike.dealt_status = true;
         }
         if matches!(kind, "residual" | "turn" | "move") {
             fed = false;
