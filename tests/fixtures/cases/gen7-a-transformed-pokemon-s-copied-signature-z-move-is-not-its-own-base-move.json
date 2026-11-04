@@ -1,0 +1,117 @@
+{
+ "schema": 1,
+ "id": "gen7-a-transformed-pokemon-s-copied-signature-z-move-is-not-its-own-base-move",
+ "notes": [
+  "Gen 7 singles (custom game): Hakamo-o uses Darkest Lariat, transforms into Tangela and uses the Malicious Moonsault it copied, a signature Z-Move in a slot with no `-zpower`. @pkmn/client takes that for a use of Darkest Lariat (`zMoveFrom`) and files it as a slot the transformed Pok\u00e9mon took (`virtual`); the views undid only the use, on Hakamo-o's own Darkest Lariat, and left the spectator a Darkest Lariat among the copied moves (DESIGN.md R-M11-57). Minimized from the Nightly battle m8-gen7-singles-s1791-013"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Treecko",
+    "species": "Treecko",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Mega Punch"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Drowzee",
+    "species": "Drowzee",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sky Uppercut"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Tangela",
+    "species": "Tangela",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Malicious Moonsault",
+     "Heart Swap",
+     "Horn Attack",
+     "Transform"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Pansage",
+    "species": "Pansage",
+    "level": 55,
+    "nature": "Hardy",
+    "moves": [
+     "Pulverizing Pancake"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Hakamo-o",
+    "species": "Hakamo-o",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Catastropika",
+     "Heart Swap",
+     "Darkest Lariat",
+     "Transform"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   35628,
+   64405,
+   32424,
+   2205
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Mega Punch",
+   "p2": "move Pulverizing Pancake"
+  },
+  {
+   "p1": "switch Drowzee"
+  },
+  {
+   "p1": "switch Tangela",
+   "p2": "switch Hakamo-o"
+  },
+  {
+   "p1": "move Heart Swap",
+   "p2": "move Heart Swap"
+  },
+  {
+   "p1": "move Horn Attack",
+   "p2": "move Darkest Lariat"
+  },
+  {
+   "p1": "move Transform",
+   "p2": "move Transform"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  }
+ ]
+}

@@ -348,7 +348,9 @@ function slotsOf(client, args) {
   const poke = client.getPokemon(args[1]);
   const slots = new Map();
   for (const p of [poke, poke?.volatiles?.transform?.pokemon]) {
-    if (p) slots.set(p, new Set(p.moveSlots.map(slot => slot.id)));
+    // Each move by its id, and by its id as a slot of the Pokémon's own or one it took by
+    // Transform (`virtual`): a transformed Pokémon may have both.
+    if (p) slots.set(p, new Set(p.moveSlots.flatMap(slot => [slot.id, `${slot.virtual ? 'virtual' : 'own'}:${slot.id}`])));
   }
   return slots;
 }
@@ -421,10 +423,16 @@ function noteMoves(client, moves, args, kwArgs, slotsBefore) {
       drop(move.id);
     } else if (move.isZ && !zPowered && from && !kwArgs.from) {
       // A signature Z-Move a custom game put in a slot, used as it is: the client takes it for
-      // the move it is made from — a use of it, if that one was seen before.
+      // the move it is made from — a use of it, if that one was seen before. A transformed
+      // Pokémon's is a slot it took (`virtual`), apart from its own of the same move (a Hakamo-o
+      // that used Darkest Lariat, transformed, using the Malicious Moonsault it copied, R-M11-57).
       const base = toID(from);
-      const own = poke.moveSlots.find(slot => slot.id === base && slotsBefore?.get(poke)?.has(base));
+      const virtual = !!poke.volatiles?.transform;
+      const key = `${virtual ? 'virtual' : 'own'}:${base}`;
+      const remembered = slot => slot.id === base && !!slot.virtual === virtual;
+      const own = poke.moveSlots.find(slot => remembered(slot) && slotsBefore?.get(poke)?.has(key));
       if (own && typeof own.ppUsed === 'number') own.ppUsed = Math.max(0, own.ppUsed - 1);
+      if (!slotsBefore?.get(poke)?.has(key)) poke.moveSlots = poke.moveSlots.filter(slot => !remembered(slot));
       drop(base);
       poke.rememberMove(move.name, 1);
     }
