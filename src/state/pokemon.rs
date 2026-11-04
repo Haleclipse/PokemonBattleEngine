@@ -541,7 +541,8 @@ pub struct PokemonState {
     /// Illusion's disguise (Showdown `pokemon.illusion`, DESIGN.md §41.7): the party member the
     /// Pokémon appears as to the other side (`BattleEngine::view_for`). Nothing else reads it but
     /// Transform, which fails on either side of one. Chosen as it enters, gone as it is hit,
-    /// suppressed, leaves or faints.
+    /// suppressed or faints; one that leaves keeps it until it comes in again (`beingCalledBack`:
+    /// a cure off the field names the disguise, R-M11-51).
     #[serde(with = "crate::snapshot::wire")]
     pub illusion: Option<PokemonId>,
     /// Battle Bond (Showdown `bondTriggered`): it has raised its holder once this battle

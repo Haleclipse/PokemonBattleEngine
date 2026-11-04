@@ -45,15 +45,18 @@ impl BattleContext<'_> {
         if behavior.neutralizing_gas && !transformed {
             self.neutralizing_gas_ended(pokemon);
         }
-        // Illusion's `onEnd`: suppressed or replaced, the holder is seen as itself; leaving
-        // (`beingCalledBack`) or fainting (`onFaint`), the disguise just goes.
+        // Illusion's `onEnd`: suppressed or replaced, the holder is seen as itself; fainting
+        // (`onFaint`), the disguise just goes. Leaving (`beingCalledBack`) it stays on until the
+        // holder comes in again: a Heal Bell's cure off the field names the disguise (R-M11-51).
         if behavior.illusion {
-            if matches!(cause, AbilityEndCause::Leaving | AbilityEndCause::Fainted) {
-                if let Some(holder) = self.state.pokemon_mut(pokemon) {
-                    holder.illusion = None;
+            match cause {
+                AbilityEndCause::Leaving => {}
+                AbilityEndCause::Fainted => {
+                    if let Some(holder) = self.state.pokemon_mut(pokemon) {
+                        holder.illusion = None;
+                    }
                 }
-            } else {
-                self.end_illusion(pokemon);
+                _ => self.end_illusion(pokemon),
             }
         }
         // Zen Mode (`onEnd`, DESIGN.md §43.4): a holder still standing goes back to its own

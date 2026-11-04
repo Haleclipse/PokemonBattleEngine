@@ -422,6 +422,7 @@ fn shed_skin_cures_at_the_end_of_the_turn_on_its_roll_before_leftovers() {
             target: A,
             status: NonVolatileStatus::Paralysis,
             reason: CureReason::Ability(AbilityId::SHED_SKIN),
+            ..
         }
     )));
     // No status: no roll.

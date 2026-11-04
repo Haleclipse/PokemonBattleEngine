@@ -661,6 +661,7 @@ impl BattleEngine {
             }
             self.trace.push(TraceEvent::StatusCured {
                 target: pokemon,
+                seen_as: pokemon,
                 status,
                 reason: crate::engine::CureReason::Fainted,
             });

@@ -7,8 +7,13 @@ use crate::ids::PokemonId;
 impl<'a> BattleContext<'a> {
     /// Illusion's `onBeforeSwitchIn` as `pokemon` takes its slot: it appears as the last party
     /// member after it in the party order (`side.pokemon`, past its own index) that has not
-    /// fainted — an active partner to its right included. None there, no disguise.
+    /// fainted — an active partner to its right included. None there, no disguise. The one it
+    /// went out in goes first (`pokemon.illusion = null`), the ability at work or not.
     pub fn take_disguise(&mut self, pokemon: PokemonId) {
+        let Some(holder) = self.state.pokemon_mut(pokemon) else {
+            return;
+        };
+        holder.illusion = None;
         let Some(holder) = self.state.pokemon(pokemon) else {
             return;
         };

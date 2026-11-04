@@ -20,11 +20,13 @@ impl<'a> BattleContext<'a> {
         let Some(status) = pokemon.status.take() else {
             return false;
         };
+        let seen_as = pokemon.illusion.unwrap_or(target);
         // Showdown `cureStatus`: a Nightmare ends with the sleep.
         let nightmare_ended = status.kind == NonVolatileStatus::Sleep
             && pokemon.volatiles.remove(VolatileConditionKind::Nightmare);
         self.trace.push(TraceEvent::StatusCured {
             target,
+            seen_as,
             status: status.kind,
             reason,
         });

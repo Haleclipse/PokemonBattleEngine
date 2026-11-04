@@ -486,6 +486,7 @@ fn a_mid_turn_request_asks_only_for_ordered_out_slots_and_fainted_status_clears_
             target: B,
             status: NonVolatileStatus::Burn,
             reason: CureReason::Fainted,
+            ..
         }
     )));
     assert_eq!(arena.pokemon(B).status, None);

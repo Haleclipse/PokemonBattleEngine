@@ -1,0 +1,305 @@
+{
+ "schema": 1,
+ "id": "gen9-a-heal-bell-cures-an-illusion-holder-off-the-field-as-its-disguise",
+ "notes": [
+  "Gen 9 singles: Bellsprout (Illusion), paralyzed, unmasked and seen as itself, goes out once as itself and once disguised as Calyrex (`switch|p2a: Calyrex|Calyrex, L54|134/134 par`). The real Calyrex's Heal Bell cures it off the field, and the line names the disguise (`-curestatus|p2: Calyrex|par|[msg]`): Showdown keeps `pokemon.illusion` as the holder is called back (`onEnd` skips `beingCalledBack`). The client keeps Bellsprout paralyzed; the engine had cleared the disguise as it left and cured Bellsprout's own sighting (DESIGN.md R-M11-51). Minimized from the Nightly battle m8-gen9-singles-s1777-015"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Flamigo",
+    "species": "Flamigo",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fire Spin",
+     "Power Swap",
+     "Whirlpool",
+     "Poison Fang"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Skrelp",
+    "species": "Skrelp",
+    "level": 52,
+    "nature": "Hardy",
+    "moves": [
+     "Thunder Cage",
+     "Infestation",
+     "Malignant Chain"
+    ],
+    "ability": "Cotton Down",
+    "gender": "F"
+   },
+   {
+    "label": "Wooper",
+    "species": "Wooper",
+    "level": 55,
+    "nature": "Hardy",
+    "moves": [
+     "Bind",
+     "Magma Storm",
+     "Malignant Chain"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Azurill",
+    "species": "Azurill",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Wrap",
+     "Bleakwind Storm"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Ho-Oh",
+    "species": "Ho-Oh",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sandsear Storm",
+     "Malignant Chain"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Noivern",
+    "species": "Noivern",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Thunder",
+     "Poison Fang"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Tepig",
+    "species": "Tepig",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Hurricane",
+     "Power Swap",
+     "Freeze-Dry",
+     "Heal Bell"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Abomasnow",
+    "species": "Abomasnow",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Powder Snow",
+     "Ice Punch",
+     "Malignant Chain"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Trevenant",
+    "species": "Trevenant",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Freezing Glare",
+     "Ice Beam",
+     "Heal Bell"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Delibird",
+    "species": "Delibird",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Poison Fang"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Bellsprout",
+    "species": "Bellsprout",
+    "level": 54,
+    "nature": "Hardy",
+    "moves": [
+     "Milk Drink"
+    ],
+    "ability": "Illusion",
+    "gender": "F"
+   },
+   {
+    "label": "Calyrex",
+    "species": "Calyrex",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Heal Bell"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   60237,
+   62480,
+   40194,
+   22293
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Fire Spin",
+   "p2": "move Hurricane"
+  },
+  {
+   "p1": "move Power Swap",
+   "p2": "move Power Swap"
+  },
+  {
+   "p1": "move Whirlpool",
+   "p2": "move Freeze-Dry"
+  },
+  {
+   "p1": "move Poison Fang",
+   "p2": "move Heal Bell"
+  },
+  {
+   "p1": "move Fire Spin",
+   "p2": "move Hurricane"
+  },
+  {
+   "p1": "switch Skrelp"
+  },
+  {
+   "p1": "move Infestation",
+   "p2": "move Freeze-Dry"
+  },
+  {
+   "p2": "switch Abomasnow"
+  },
+  {
+   "p1": "move Malignant Chain",
+   "p2": "move Malignant Chain"
+  },
+  {
+   "p1": "switch Wooper",
+   "p2": "switch Trevenant"
+  },
+  {
+   "p1": "move Bind",
+   "p2": "move Freezing Glare"
+  },
+  {
+   "p1": "move Magma Storm",
+   "p2": "move Ice Beam"
+  },
+  {
+   "p1": "move Malignant Chain",
+   "p2": "move Heal Bell"
+  },
+  {
+   "p1": "move Bind",
+   "p2": "move Freezing Glare"
+  },
+  {
+   "p1": "switch Skrelp"
+  },
+  {
+   "p1": "move Infestation",
+   "p2": "move Ice Beam"
+  },
+  {
+   "p1": "move Malignant Chain",
+   "p2": "move Heal Bell"
+  },
+  {
+   "p1": "switch Azurill",
+   "p2": "switch Abomasnow"
+  },
+  {
+   "p1": "move Wrap",
+   "p2": "move Powder Snow"
+  },
+  {
+   "p1": "move Bleakwind Storm",
+   "p2": "move Ice Punch"
+  },
+  {
+   "p1": "switch Skrelp"
+  },
+  {
+   "p1": "move Malignant Chain",
+   "p2": "move Malignant Chain"
+  },
+  {
+   "p2": "switch Trevenant"
+  },
+  {
+   "p1": "move Thunder Cage",
+   "p2": "move Freezing Glare"
+  },
+  {
+   "p1": "switch Ho-Oh"
+  },
+  {
+   "p1": "move Sandsear Storm",
+   "p2": "move Ice Beam"
+  },
+  {
+   "p1": "switch Noivern",
+   "p2": "switch Bellsprout"
+  },
+  {
+   "p1": "move Thunder",
+   "p2": "move Milk Drink"
+  },
+  {
+   "p1": "switch Ho-Oh",
+   "p2": "switch Delibird"
+  },
+  {
+   "p1": "move Malignant Chain",
+   "p2": "move Poison Fang"
+  },
+  {
+   "p1": "move Malignant Chain",
+   "p2": "move Poison Fang"
+  },
+  {
+   "p2": "switch Bellsprout"
+  },
+  {
+   "p1": "switch Noivern",
+   "p2": "switch Calyrex"
+  },
+  {
+   "p1": "move Poison Fang",
+   "p2": "move Heal Bell"
+  }
+ ]
+}

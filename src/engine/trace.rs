@@ -659,6 +659,9 @@ pub enum TraceEvent {
     },
     StatusCured {
         target: PokemonId,
+        /// Whom the line names (`-curestatus|p2: Calyrex|par`): the target, or the disguise an
+        /// Illusion's holder still wears off the field (it went out in it, R-M11-51).
+        seen_as: PokemonId,
         status: NonVolatileStatus,
         reason: CureReason,
     },
@@ -1205,7 +1208,12 @@ impl TraceEvent {
                 reason: CureReason::Fainted,
                 ..
             } => [None, None],
-            Self::StatusCured { target, .. } => one(Some(Disclosure::Cured(*target))),
+            Self::StatusCured {
+                target, seen_as, ..
+            } => one(Some(Disclosure::Cured {
+                pokemon: *target,
+                seen_as: *seen_as,
+            })),
             // A change for good names no ability (`detailschange`); one for the battle names
             // its ability (`-formechange … [from] ability: …`) but Zen Mode's, which goes through
             // its `zenmode` volatile, unnamed, and back `[silent]`, and Gulp Missile's, which the

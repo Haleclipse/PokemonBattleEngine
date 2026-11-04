@@ -53,9 +53,12 @@ pub enum Disclosure {
     Fainted(PokemonId),
     /// A fainted Pokémon off the field was seen brought back, as itself, so (Revival Blessing).
     Revived(PokemonId, Sighting),
-    /// The Pokémon was seen cured of its status: one off the field so (Heal Bell, Aromatherapy,
-    /// Natural Cure as it left).
-    Cured(PokemonId),
+    /// The Pokémon was seen cured of its status, as `seen_as` (the disguise an Illusion's holder
+    /// went out in): one off the field so (Heal Bell, Aromatherapy, Natural Cure as it left).
+    Cured {
+        pokemon: PokemonId,
+        seen_as: PokemonId,
+    },
     /// The Pokémon was seen taking this species for good (`detailschange`): off the field so,
     /// Zero to Hero's as it leaves. `keeps_ability`: Disguise's or Ice Face's, the ability
     /// staying; another brings the forme's.
@@ -365,9 +368,11 @@ impl Knowledge {
                     None => self.sightings.push((pokemon, sighting)),
                 }
             }
-            Disclosure::Cured(pokemon) => {
+            // Off the field, on what was seen of whom the line names: an Illusion's holder that
+            // went out disguised is cured as its disguise (R-M11-51).
+            Disclosure::Cured { pokemon, seen_as } => {
                 if !self.is_on_field(pokemon)
-                    && let Some(seen) = self.sighting_mut(pokemon)
+                    && let Some(seen) = self.sighting_mut(seen_as)
                 {
                     seen.status = None;
                 }

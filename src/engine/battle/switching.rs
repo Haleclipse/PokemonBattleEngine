@@ -492,6 +492,7 @@ impl BattleEngine {
         {
             self.trace.push(TraceEvent::StatusCured {
                 target: previous,
+                seen_as: previous,
                 status: status.kind,
                 reason: crate::engine::CureReason::Fainted,
             });

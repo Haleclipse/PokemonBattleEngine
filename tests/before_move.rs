@@ -158,7 +158,7 @@ fn sleep_counts_down_at_before_move_and_the_waking_turn_is_playable_from_gen2() 
     let start = arena.turn(tape);
     assert!(arena.events(start).iter().any(|event| matches!(
         event,
-        TraceEvent::StatusCured { target, status: NonVolatileStatus::Sleep, reason: CureReason::WokeUp } if *target == SLOW
+        TraceEvent::StatusCured { target, status: NonVolatileStatus::Sleep, reason: CureReason::WokeUp, .. } if *target == SLOW
     )));
     assert_eq!(arena.before_move(start, SLOW), Some(CanMoveResult::Allow));
     assert!(arena.moved(start, SLOW));
@@ -205,7 +205,7 @@ fn freeze_holds_until_the_thaw_roll_succeeds() {
     let start = arena.turn(tape);
     assert!(arena.events(start).iter().any(|event| matches!(
         event,
-        TraceEvent::StatusCured { target, status: NonVolatileStatus::Freeze, reason: CureReason::Thawed } if *target == SLOW
+        TraceEvent::StatusCured { target, status: NonVolatileStatus::Freeze, reason: CureReason::Thawed, .. } if *target == SLOW
     )));
     assert!(arena.moved(start, SLOW));
     assert!(arena.subject().status.is_none());
