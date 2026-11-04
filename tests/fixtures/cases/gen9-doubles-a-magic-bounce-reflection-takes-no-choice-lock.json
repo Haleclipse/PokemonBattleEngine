@@ -1,0 +1,389 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-a-magic-bounce-reflection-takes-no-choice-lock",
+ "notes": [
+  "Gen 9 Doubles OU: Spewpa's Stun Spore at Hatterene, holding Choice Specs, bounces off its Magic Bounce (`move|p1b: Hatterene|Stun Spore|p2b: Spewpa|[from] ability: Magic Bounce`); Hatterene then uses Nuzzle. `choicelock.onStart` refuses a move with `hasBounced` (or a snatched one), so the reflection locked nothing; the engine locked Hatterene into Stun Spore and refused its Nuzzle (DESIGN.md R-M11-48). Minimized from the Nightly battle m9-gen9doublesou-s323-010"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublesou"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hatenna",
+    "species": "Hatenna",
+    "ability": "Anticipation",
+    "moves": [
+     "Stored Power"
+    ],
+    "nature": "Bashful",
+    "gender": "",
+    "shiny": false,
+    "level": 20,
+    "evs": {
+     "hp": 136,
+     "atk": 44,
+     "def": 164,
+     "spa": 80,
+     "spd": 40,
+     "spe": 44
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 25,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Poison"
+   },
+   {
+    "label": "Hatterene",
+    "species": "Hatterene",
+    "item": "Choice Specs",
+    "ability": "Magic Bounce",
+    "moves": [
+     "Nuzzle"
+    ],
+    "nature": "Mild",
+    "gender": "",
+    "shiny": false,
+    "level": 90,
+    "evs": {
+     "hp": 16,
+     "atk": 172,
+     "def": 40,
+     "spa": 116,
+     "spd": 116,
+     "spe": 48
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Fairy"
+   },
+   {
+    "label": "Nick24",
+    "species": "Naclstack",
+    "ability": "Sturdy",
+    "moves": [
+     "Headbutt"
+    ],
+    "nature": "Timid",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 0,
+     "atk": 0,
+     "def": 132,
+     "spa": 132,
+     "spd": 128,
+     "spe": 116
+    },
+    "ivs": {
+     "hp": 25,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 54,
+    "teraType": "Normal"
+   },
+   {
+    "label": "Dragalge",
+    "species": "Dragalge",
+    "ability": "Poison Touch",
+    "moves": [
+     "Scary Face"
+    ],
+    "nature": "Mild",
+    "gender": "M",
+    "shiny": false,
+    "level": 72,
+    "evs": {
+     "hp": 96,
+     "atk": 120,
+     "def": 0,
+     "spa": 56,
+     "spd": 0,
+     "spe": 236
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Dark"
+   },
+   {
+    "label": "Kilowattrel",
+    "species": "Kilowattrel",
+    "ability": "Volt Absorb",
+    "moves": [
+     "Quick Attack"
+    ],
+    "nature": "Calm",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 148,
+     "atk": 80,
+     "def": 116,
+     "spa": 68,
+     "spd": 16,
+     "spe": 80
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 14,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Grass",
+    "hpType": "Dark"
+   },
+   {
+    "label": "Nick91",
+    "species": "Hippopotas",
+    "ability": "Sand Force",
+    "moves": [
+     "Spit Up"
+    ],
+    "nature": "Hasty",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 72,
+     "atk": 0,
+     "def": 204,
+     "spa": 160,
+     "spd": 0,
+     "spe": 72
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 7,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Fairy"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Nick32",
+    "species": "Raboot",
+    "ability": "Blaze",
+    "moves": [
+     "Endure"
+    ],
+    "nature": "Quirky",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 0,
+     "atk": 72,
+     "def": 84,
+     "spa": 140,
+     "spd": 88,
+     "spe": 124
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 30,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Water",
+    "hpType": "Grass"
+   },
+   {
+    "label": "Rabsca",
+    "species": "Rabsca",
+    "ability": "Telepathy",
+    "moves": [
+     "Psychic Terrain"
+    ],
+    "nature": "Relaxed",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 88,
+     "atk": 0,
+     "def": 16,
+     "spa": 180,
+     "spd": 136,
+     "spe": 88
+    },
+    "ivs": {
+     "hp": 0,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "hpType": "Flying"
+   },
+   {
+    "label": "Glimmet",
+    "species": "Glimmet",
+    "ability": "Corrosion",
+    "moves": [
+     "Acid Armor"
+    ],
+    "nature": "Lonely",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 0,
+     "atk": 0,
+     "def": 80,
+     "spa": 200,
+     "spd": 120,
+     "spe": 108
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 6
+    },
+    "teraType": "Dragon",
+    "hpType": "Flying"
+   },
+   {
+    "label": "Cresselia",
+    "species": "Cresselia",
+    "ability": "Levitate",
+    "moves": [
+     "Psybeam"
+    ],
+    "nature": "Lonely",
+    "gender": "",
+    "shiny": true,
+    "level": 100,
+    "evs": {
+     "hp": 172,
+     "atk": 164,
+     "def": 0,
+     "spa": 44,
+     "spd": 0,
+     "spe": 128
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 3,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Psychic"
+   },
+   {
+    "label": "Spewpa",
+    "species": "Spewpa",
+    "ability": "Friend Guard",
+    "moves": [
+     "Stun Spore"
+    ],
+    "nature": "Naive",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 172,
+     "atk": 88,
+     "def": 44,
+     "spa": 104,
+     "spd": 100,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Nick43",
+    "species": "Oricorio-Pom-Pom",
+    "ability": "Dancer",
+    "moves": [
+     "U-turn"
+    ],
+    "nature": "Sassy",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 232,
+     "atk": 100,
+     "def": 0,
+     "spa": 92,
+     "spd": 84,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 16,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Grass"
+   }
+  ]
+ },
+ "preview": {
+  "p1": "team 523641",
+  "p2": "team 452163"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   18996,
+   323,
+   1010,
+   31
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1 1 terastallize, move Nuzzle 2",
+   "p2": "move 1 1 terastallize, move Stun Spore 2"
+  }
+ ]
+}

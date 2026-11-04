@@ -233,8 +233,16 @@ impl MovePipeline<'_> {
         }
         // Struggle too (Showdown `choicelock.onStart` takes any move with an id): the lock onto
         // a move the holder does not know keeps nothing off the request and is dropped as the
-        // next turn starts (`next_turn`).
+        // next turn starts (`next_turn`). Not a move out of a reflection (`hasBounced`: a Magic
+        // Bounce holder's first move of the turn is still its own to choose) nor a snatched one
+        // (`sourceEffect === 'snatch'`).
+        let snatched = matches!(
+            self.call.map(|frame| frame.source),
+            Some(crate::state::CallSource::Move(MoveId::SNATCH))
+        );
         if !self.rules.conditions.items.choice_locks_after_the_move
+            && !self.bounced
+            && !snatched
             && let Some((_, item)) = crate::engine::held_item(self.state, self.rules, actor)
             && let Some(handler) = item.move_decided
         {
