@@ -357,7 +357,7 @@ function slotsOf(client, args) {
  *   signature Z-Move with no `-zpower` is a custom game's, in its slot, which the client takes
  *   for the move it is made from;
  * - a Round a partner's brought forward is its own action (`[from] move: Round`, PP paid), which
- *   the client takes for a call: counted;
+ *   the client takes for a call: counted — so is the move an Encore put in its place;
  * - Beak Blast's charge names the move (`-singleturn|p|move: Beak Blast`), like Focus Punch's;
  * - Forewarn and a Leppa or Mystery Berry name a move, which the client's handlers miss (they look
  *   for `forewarn`, `leppaberry` where the id reads `ability:forewarn`, `item:leppaberry`);
@@ -384,11 +384,13 @@ function noteMoves(client, moves, args, kwArgs, slotsBefore) {
       }
     };
     // A Round or a Pledge brought forward (`[from] move: Round`, `[from] move: Grass Pledge`) is
-    // the Pokémon's own action, which the client takes for a call — of the other Pledge.
+    // the Pokémon's own action, which the client takes for a call — of the other Pledge, or of
+    // the Round or Pledge an Encore then put another move in place of (`onOverrideAction`: the
+    // action keeps its `sourceEffect`). Neither calls a move of its own.
     // (Gen 1's locks print `[from] Skull Bash`, a Pursuit at a switch `[from] Pursuit`: no `move:`.)
     const caller = kwArgs.from?.startsWith('move:') ? Dex.moves.get(kwArgs.from.slice(5).trim()) : null;
     const broughtForward = caller?.exists &&
-      (caller.id === move.id || (PLEDGES.includes(caller.id) && PLEDGES.includes(move.id)));
+      (caller.id === move.id || caller.id === 'round' || PLEDGES.includes(caller.id));
     if (broughtForward) {
       if (caller.id !== move.id) drop(caller.id);
       poke.rememberMove(move.name, 1);
