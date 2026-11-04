@@ -1,0 +1,99 @@
+{
+ "schema": 1,
+ "id": "gen9-a-revived-illusion-holder-in-another-s-guise-shows-what-it-was-revived-with",
+ "notes": [
+  "Gen 9 singles: Noibat (Illusion) faints in its own guise; Infernape's Revival Blessing brings it back (`-heal|p2: Noibat|53/107|[from] move: Revival Blessing`), and it comes in disguised as Infernape (`switch|p2a: Infernape|Infernape, L46, F|53/107`), is poisoned and loses HP. The client puts that on Infernape and keeps Noibat as it was revived; the engine's knowledge had no sighting of Noibat (it fainted on the field), so the view showed its real HP and status (DESIGN.md R-M11-50). Minimized from the cloud Nightly battle m8-gen9-singles-s100801-019"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Eiscue",
+    "species": "Eiscue",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Rock Throw"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Drakloak",
+    "species": "Drakloak",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Poison Gas"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Noibat",
+    "species": "Noibat",
+    "level": 46,
+    "nature": "Hardy",
+    "moves": [
+     "Will-O-Wisp"
+    ],
+    "ability": "Illusion",
+    "gender": "M"
+   },
+   {
+    "label": "Infernape",
+    "species": "Infernape",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Revival Blessing"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   21472,
+   62002,
+   17115,
+   26497
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Rock Throw",
+   "p2": "move Will-O-Wisp"
+  },
+  {
+   "p1": "move Rock Throw",
+   "p2": "move Will-O-Wisp"
+  },
+  {
+   "p2": "switch Infernape"
+  },
+  {
+   "p1": "move Rock Throw",
+   "p2": "move Revival Blessing"
+  },
+  {
+   "p2": "switch Noibat"
+  },
+  {
+   "p1": "switch Drakloak",
+   "p2": "switch Noibat"
+  },
+  {
+   "p1": "move Poison Gas",
+   "p2": "move Will-O-Wisp"
+  }
+ ]
+}

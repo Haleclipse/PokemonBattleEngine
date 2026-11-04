@@ -722,10 +722,11 @@ pub enum TraceEvent {
         /// unseen too (R-M10-41).
         lets_through: crate::state::VolatileSet,
     },
-    /// Revival Blessing brought the fainted Pokémon back with `hp`.
+    /// Revival Blessing brought the fainted Pokémon back (`-heal|p2: Noibat|53/107|[from] move:
+    /// Revival Blessing`): what observers see of it off the field, its HP, no status, as itself.
     Revived {
         pokemon: PokemonId,
-        hp: u16,
+        sighting: crate::state::Sighting,
     },
     /// Showdown `pokemon.faint()` (Explosion, Memento, Final Gambit; Perish Song's count): the
     /// HP went to 0 with no damage dealt.
@@ -1193,7 +1194,9 @@ impl TraceEvent {
                 sighting: *sighting,
             })),
             Self::Fainted { pokemon, .. } => one(Some(Disclosure::Fainted(*pokemon))),
-            Self::Revived { pokemon, hp } => one(Some(Disclosure::Revived(*pokemon, *hp))),
+            Self::Revived { pokemon, sighting } => {
+                one(Some(Disclosure::Revived(*pokemon, *sighting)))
+            }
             // A curing ability shows itself in its own event (Shed Skin, Hydration, Healer — the
             // last cures another); Natural Cure's line is `[silent]`.
             // A faint takes the status with no line of its own: an Illusion's holder fainting in

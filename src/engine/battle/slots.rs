@@ -82,10 +82,17 @@ impl BattleEngine {
         if let Some(pokemon) = self.state.pokemon_mut(choice.pokemon) {
             pokemon.hp = (pokemon.max_hp / 2).max(1);
             pokemon.status = None;
-            let hp = pokemon.hp;
+            let sighting = crate::state::Sighting {
+                hp: pokemon.hp,
+                max_hp: pokemon.max_hp,
+                status: None,
+                species: pokemon.species,
+                level: pokemon.level,
+                terastallized: pokemon.terastallized,
+            };
             self.trace.push(TraceEvent::Revived {
                 pokemon: choice.pokemon,
-                hp,
+                sighting,
             });
         }
         let slots = usize::from(self.rules.topology.active_slots_per_side());

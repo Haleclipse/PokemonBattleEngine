@@ -51,8 +51,8 @@ pub enum Disclosure {
     /// The Pokémon fainted, in everyone's sight — as the one it is seen as (an Illusion's holder
     /// that faints in its disguise is seen as the disguise fainting) — and leaves the field.
     Fainted(PokemonId),
-    /// A fainted Pokémon off the field was seen brought back with this HP (Revival Blessing).
-    Revived(PokemonId, u16),
+    /// A fainted Pokémon off the field was seen brought back, as itself, so (Revival Blessing).
+    Revived(PokemonId, Sighting),
     /// The Pokémon was seen cured of its status: one off the field so (Heal Bell, Aromatherapy,
     /// Natural Cure as it left).
     Cured(PokemonId),
@@ -351,11 +351,18 @@ impl Knowledge {
                 // (R-M10-54).
                 self.ability_back(seen);
             }
-            Disclosure::Revived(pokemon, hp) => {
+            // Seen now, off the field, with its HP and no status: what was seen of it before it
+            // fainted holds otherwise. One never seen leaving — it fainted on the field — is seen
+            // so for the first time: in another's guise as it comes back, it must not show what
+            // the guise takes (R-M11-50).
+            Disclosure::Revived(pokemon, sighting) => {
                 self.fainted.retain(|seen| *seen != pokemon);
-                if let Some(seen) = self.sighting_mut(pokemon) {
-                    seen.hp = hp;
-                    seen.status = None;
+                match self.sighting_mut(pokemon) {
+                    Some(seen) => {
+                        seen.hp = sighting.hp;
+                        seen.status = None;
+                    }
+                    None => self.sightings.push((pokemon, sighting)),
                 }
             }
             Disclosure::Cured(pokemon) => {
