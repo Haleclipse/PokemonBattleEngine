@@ -103,6 +103,7 @@ export function observers(battle) {
     moves: {uncompared: new Set(), reset: new Set(), copied: new Set(), fromRequest: new Set(), zPowered: new Set(), previous: null, dancer: null, called: new Set(), lastMove: new Map(), mover: null, moveName: null, stolen: null, flung: null},
     changed: new WeakSet(),
     handover: {who: null, used: new Map()},
+    fallenTera: new WeakMap(),
   }));
   let cursor = 0;
   return {
@@ -111,7 +112,7 @@ export function observers(battle) {
       const raw = battle.log.slice(cursor).join('\n');
       cursor = battle.log.length;
       const views = {version: VERSION};
-      for (const {name, channel, client, reset, copied, unresolved, zItems, hiddenSwaps, masks, misplaced, renewed, moves, previews, changed, handover} of clients) {
+      for (const {name, channel, client, reset, copied, unresolved, zItems, hiddenSwaps, masks, misplaced, renewed, moves, previews, changed, handover, fallenTera} of clients) {
         const stream = extractChannelMessages(raw, [channel])[channel].join('\n');
         for (const parsed of Protocol.parse(stream)) {
           const kwArgs = parsed.kwArgs;
@@ -139,7 +140,9 @@ export function observers(battle) {
           if (args[0] === 'start') previews.started = true;
           const kept = volatilesKept(client, args, kwArgs);
           const asOne = asOneBefore(client, args);
+          noteFallenTera(client, fallenTera, args);
           client.add(args, kwArgs);
+          restoreRevivedTera(client, fallenTera, args, kwArgs);
           restoreOwnSlots(hidden);
           noteShowteam(client, previews, args);
           restoreVolatiles(kept);
@@ -539,6 +542,25 @@ function notePrimalOrb(client, args) {
   if (args[0] !== '-primal' || !args[2]) return;
   const poke = client.getPokemon(args[1]);
   if (poke) poke.item = toID(args[2]);
+}
+
+/**
+ * A Terastallized Pokémon stays so for the battle (Showdown never clears `terastallized`), a
+ * faint included: one Revival Blessing brings back is still Terastallized. @pkmn/client's
+ * `faint` forgets it, as though the Pokémon could not come back: it is kept as it faints and
+ * given back as it is revived (`-heal|p2: Braixen|155/310|[from] move: Revival Blessing`,
+ * R-M11-52).
+ */
+function noteFallenTera(client, fallenTera, args) {
+  if (args[0] !== 'faint') return;
+  const poke = client.getPokemon(args[1]);
+  if (poke?.terastallized) fallenTera.set(poke, poke.terastallized);
+}
+
+function restoreRevivedTera(client, fallenTera, args, kwArgs) {
+  if (args[0] !== '-heal' || kwArgs.from !== 'move: Revival Blessing') return;
+  const poke = client.getPokemon(args[1]);
+  if (poke && !poke.terastallized && fallenTera.has(poke)) poke.terastallized = fallenTera.get(poke);
 }
 
 /**
