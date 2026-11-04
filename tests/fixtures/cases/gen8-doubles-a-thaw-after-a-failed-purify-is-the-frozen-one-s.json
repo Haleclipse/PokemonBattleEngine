@@ -1,0 +1,281 @@
+{
+ "schema": 1,
+ "id": "gen8-doubles-a-thaw-after-a-failed-purify-is-the-frozen-one-s",
+ "notes": [
+  "Gen 8 doubles: Lunatone's Nature Power (Tri Attack) freezes Gallade; Seaking's Purify at Palpitoad, which has no status, fails (`-fail|p1b: Seaking`); then Gallade thaws at its own BeforeMove (`-curestatus|p2b: Gallade|frz|[msg]`) and uses Purify. The replay took the thaw for the failed Purify's cure and planned Gallade's thaw roll as a miss (DESIGN.md R-M11-55). Minimized from the cloud Nightly battle m8-gen8-doubles-s100901-016"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "doubles",
+  "format": "gen8doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Vespiquen",
+    "species": "Vespiquen",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Present",
+     "Spiky Shield",
+     "Seed Bomb",
+     "Purify"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Seaking",
+    "species": "Seaking",
+    "level": 45,
+    "nature": "Hardy",
+    "moves": [
+     "Aqua Ring",
+     "Spiky Shield",
+     "Tailwind",
+     "Purify"
+    ],
+    "ability": "Cursed Body",
+    "gender": "M"
+   },
+   {
+    "label": "Lunatone",
+    "species": "Lunatone",
+    "level": 47,
+    "nature": "Hardy",
+    "moves": [
+     "Roost",
+     "Spiky Shield",
+     "Nature Power",
+     "Purify"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Gallade",
+    "species": "Gallade",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Throat Chop",
+     "Spiky Shield",
+     "Wide Guard",
+     "Purify"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Timburr",
+    "species": "Timburr",
+    "level": 46,
+    "nature": "Hardy",
+    "moves": [
+     "Defense Curl",
+     "Spiky Shield",
+     "Trick Room",
+     "Purify"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Herdier",
+    "species": "Herdier",
+    "level": 49,
+    "nature": "Hardy",
+    "moves": [
+     "Magic Room",
+     "Spiky Shield",
+     "Teleport"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Palpitoad",
+    "species": "Palpitoad",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Pain Split",
+     "Spiky Shield",
+     "Wonder Room",
+     "Purify"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1488,
+   14636,
+   47040,
+   39764
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Present 1, move Aqua Ring",
+   "p2": "move Throat Chop 1, move Defense Curl"
+  },
+  {
+   "p1": "move Spiky Shield, move Spiky Shield",
+   "p2": "move Spiky Shield, move Spiky Shield"
+  },
+  {
+   "p1": "move Seed Bomb 2, move Tailwind",
+   "p2": "move Wide Guard, move Trick Room"
+  },
+  {
+   "p1": "move Present 1, move Aqua Ring",
+   "p2": "move Throat Chop 2, move Defense Curl"
+  },
+  {
+   "p1": "move Spiky Shield, move Spiky Shield",
+   "p2": "move Purify 1, move Spiky Shield"
+  },
+  {
+   "p1": "switch Lunatone, move Tailwind",
+   "p2": "switch Herdier, move Trick Room"
+  },
+  {
+   "p1": "move Nature Power 2, move Purify 1",
+   "p2": "move Teleport, move Purify 2"
+  },
+  {
+   "p2": "switch Gallade, pass"
+  },
+  {
+   "p1": "move Purify 2, move Aqua Ring",
+   "p2": "move Purify 1, move Defense Curl"
+  },
+  {
+   "p1": "move Roost, move Spiky Shield",
+   "p2": "move Throat Chop 2, move Spiky Shield"
+  },
+  {
+   "p1": "move Spiky Shield, move Tailwind",
+   "p2": "move Spiky Shield, move Trick Room"
+  },
+  {
+   "p1": "move Nature Power 1, move Purify 2",
+   "p2": "move Wide Guard, move Purify 1"
+  },
+  {
+   "p1": "move Purify 1, move Aqua Ring",
+   "p2": "move Purify 2, move Defense Curl"
+  },
+  {
+   "p1": "switch Vespiquen, move Spiky Shield",
+   "p2": "switch Herdier, move Spiky Shield"
+  },
+  {
+   "p1": "move Present 2, move Tailwind",
+   "p2": "move Magic Room, move Trick Room"
+  },
+  {
+   "p1": "move Spiky Shield, move Purify 1",
+   "p2": "move Spiky Shield, move Purify 1"
+  },
+  {
+   "p1": "move Seed Bomb 2, move Aqua Ring",
+   "p2": "move Teleport, move Defense Curl"
+  },
+  {
+   "p2": "switch Gallade, pass"
+  },
+  {
+   "p1": "move Purify 1, move Spiky Shield",
+   "p2": "move Purify 2, move Spiky Shield"
+  },
+  {
+   "p1": "move Present 2, move Tailwind",
+   "p2": "move Throat Chop 1, move Trick Room"
+  },
+  {
+   "p1": "move Spiky Shield, move Purify 1",
+   "p2": "move Spiky Shield, move Purify 2"
+  },
+  {
+   "p1": "switch Lunatone, move Aqua Ring",
+   "p2": "switch Herdier, move Defense Curl"
+  },
+  {
+   "p1": "move Nature Power 2, move Spiky Shield",
+   "p2": "move Teleport, move Spiky Shield"
+  },
+  {
+   "p2": "switch Gallade, pass"
+  },
+  {
+   "p1": "move Roost, move Purify 2",
+   "p2": "move Throat Chop 2, move Purify 1"
+  },
+  {
+   "p1": "move Spiky Shield, move Aqua Ring",
+   "p2": "move Spiky Shield, move Defense Curl"
+  },
+  {
+   "p1": "move Nature Power 1, move Spiky Shield",
+   "p2": "move Wide Guard, move Spiky Shield"
+  },
+  {
+   "p1": "switch Vespiquen, move Purify 1",
+   "p2": "switch Herdier, move Purify 1"
+  },
+  {
+   "p1": "move Present 2, move Aqua Ring",
+   "p2": "move Magic Room, move Defense Curl"
+  },
+  {
+   "p2": "pass, switch Gallade"
+  },
+  {
+   "p1": "move Spiky Shield, move Spiky Shield",
+   "p2": "move Spiky Shield, move Spiky Shield"
+  },
+  {
+   "p1": "move Seed Bomb 1, move Tailwind",
+   "p2": "move Teleport, move Wide Guard"
+  },
+  {
+   "p2": "switch Palpitoad, pass"
+  },
+  {
+   "p1": "move Present 2, move Aqua Ring",
+   "p2": "move Pain Split 2, move Throat Chop 1"
+  },
+  {
+   "p1": "move Spiky Shield, move Spiky Shield",
+   "p2": "move Spiky Shield, move Spiky Shield"
+  },
+  {
+   "p1": "switch Lunatone, move Tailwind",
+   "p2": "switch Herdier, move Wide Guard"
+  },
+  {
+   "p1": "move Nature Power 1, move Purify 2",
+   "p2": "move Teleport, move Purify 2"
+  },
+  {
+   "p2": "switch Palpitoad, pass"
+  },
+  {
+   "p1": "move Purify 1, move Aqua Ring",
+   "p2": "move Purify 1, move Throat Chop 2"
+  },
+  {
+   "p1": "move Spiky Shield, move Tailwind",
+   "p2": "move Spiky Shield, move Wide Guard"
+  },
+  {
+   "p1": "move Nature Power 2, move Purify 1",
+   "p2": "move Wonder Room, move Purify 2"
+  }
+ ]
+}

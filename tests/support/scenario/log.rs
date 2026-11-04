@@ -727,10 +727,13 @@ pub fn extract_decisions_with(
                 // move does not cure: a freeze the Worry Seed target thaws from at its own
                 // BeforeMove is its thaw (R-M8-103).
                 // Nor a foe's cure within a move on the user's own side (a frozen foe thawing at
-                // its BeforeMove after the user's Jungle Healing, R-M8-113).
+                // its BeforeMove after the user's Jungle Healing, R-M8-113), nor one after the
+                // move failed (`-fail|user`: a Purify at a target with no status cured nothing;
+                // the frozen foe that thaws next is thawing at its own BeforeMove, R-M11-55).
                 if let Some(cured) = who(&event["pokemon"])
                     && let Some(action) = out.last_mut()
                     && action.user != cured
+                    && !action.failed
                     && action
                         .used_move()
                         .and_then(|m| reading.curing_moves.get(m))
