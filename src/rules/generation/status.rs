@@ -19,9 +19,14 @@ pub enum DefrostUser {
 /// `onAfterMoveSecondary`).
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum ThawOnHit {
-    /// Gen 3+: a damaging Fire move that reaches the target's HP thaws it at once (before the
+    /// Gen 4+: a damaging Fire move that reaches the target's HP thaws it at once (before the
     /// move's secondaries), a `thawsTarget` move (Scald) after them.
     FireDamage,
+    /// Gen 3: the same, but a Fire Hidden Power: its damage counts as its base type's (Normal,
+    /// physical), so it sets no `specialDmg`, which the defrost check asks for (pokeemerald
+    /// `Cmd_datahpupdate`'s `F_DYNAMIC_TYPE_IGNORE_PHYSICALITY`, `MOVEEND_DEFROST`; Showdown's
+    /// gen3 `frz.onDamagingHit` reads the dex type, R-M11-53).
+    FireDamageButHiddenPower,
     /// Gen 1-2: a move whose secondary is a burn thaws the target after the move.
     BurnSecondary,
 }
@@ -176,10 +181,10 @@ fn lifecycle(generation: Generation) -> StatusLifecycleRules {
                 Generation::Gen3 | Generation::Gen4 => DefrostUser::AfterRoll,
                 _ => DefrostUser::SkipsRoll,
             },
-            thaw_on_hit: if generation <= Generation::Gen2 {
-                ThawOnHit::BurnSecondary
-            } else {
-                ThawOnHit::FireDamage
+            thaw_on_hit: match generation {
+                Generation::Gen1 | Generation::Gen2 => ThawOnHit::BurnSecondary,
+                Generation::Gen3 => ThawOnHit::FireDamageButHiddenPower,
+                _ => ThawOnHit::FireDamage,
             },
             full_paralysis: Fraction::new(63, 256),
             confusion_time_min: 2,
@@ -216,10 +221,10 @@ fn lifecycle(generation: Generation) -> StatusLifecycleRules {
                 Generation::Gen3 | Generation::Gen4 => DefrostUser::AfterRoll,
                 _ => DefrostUser::SkipsRoll,
             },
-            thaw_on_hit: if generation <= Generation::Gen2 {
-                ThawOnHit::BurnSecondary
-            } else {
-                ThawOnHit::FireDamage
+            thaw_on_hit: match generation {
+                Generation::Gen1 | Generation::Gen2 => ThawOnHit::BurnSecondary,
+                Generation::Gen3 => ThawOnHit::FireDamageButHiddenPower,
+                _ => ThawOnHit::FireDamage,
             },
             full_paralysis: Fraction::new(63, 256),
             confusion_time_min: 2,
@@ -256,10 +261,10 @@ fn lifecycle(generation: Generation) -> StatusLifecycleRules {
                 Generation::Gen3 | Generation::Gen4 => DefrostUser::AfterRoll,
                 _ => DefrostUser::SkipsRoll,
             },
-            thaw_on_hit: if generation <= Generation::Gen2 {
-                ThawOnHit::BurnSecondary
-            } else {
-                ThawOnHit::FireDamage
+            thaw_on_hit: match generation {
+                Generation::Gen1 | Generation::Gen2 => ThawOnHit::BurnSecondary,
+                Generation::Gen3 => ThawOnHit::FireDamageButHiddenPower,
+                _ => ThawOnHit::FireDamage,
             },
             full_paralysis: Fraction::new(1, 4),
             confusion_time_min: 2,
@@ -300,10 +305,10 @@ fn lifecycle(generation: Generation) -> StatusLifecycleRules {
                 Generation::Gen3 | Generation::Gen4 => DefrostUser::AfterRoll,
                 _ => DefrostUser::SkipsRoll,
             },
-            thaw_on_hit: if generation <= Generation::Gen2 {
-                ThawOnHit::BurnSecondary
-            } else {
-                ThawOnHit::FireDamage
+            thaw_on_hit: match generation {
+                Generation::Gen1 | Generation::Gen2 => ThawOnHit::BurnSecondary,
+                Generation::Gen3 => ThawOnHit::FireDamageButHiddenPower,
+                _ => ThawOnHit::FireDamage,
             },
             full_paralysis: Fraction::new(1, 4),
             confusion_time_min: 2,
@@ -340,10 +345,10 @@ fn lifecycle(generation: Generation) -> StatusLifecycleRules {
                 Generation::Gen3 | Generation::Gen4 => DefrostUser::AfterRoll,
                 _ => DefrostUser::SkipsRoll,
             },
-            thaw_on_hit: if generation <= Generation::Gen2 {
-                ThawOnHit::BurnSecondary
-            } else {
-                ThawOnHit::FireDamage
+            thaw_on_hit: match generation {
+                Generation::Gen1 | Generation::Gen2 => ThawOnHit::BurnSecondary,
+                Generation::Gen3 => ThawOnHit::FireDamageButHiddenPower,
+                _ => ThawOnHit::FireDamage,
             },
             full_paralysis: Fraction::new(1, 4),
             confusion_time_min: 2,

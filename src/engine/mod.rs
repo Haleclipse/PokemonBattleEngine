@@ -341,6 +341,11 @@ pub fn thaws_target_on_hit(
                 || (move_def.move_type == crate::dex::PokemonType::Fire
                     && move_def.category != MoveCategory::Status)
         }
+        crate::rules::ThawOnHit::FireDamageButHiddenPower => {
+            move_def.move_type == crate::dex::PokemonType::Fire
+                && move_def.category != MoveCategory::Status
+                && move_def.id != crate::ids::MoveId::HIDDEN_POWER
+        }
         // Gen 2 `frz.onAfterMoveSecondary`: a burn secondary, or Tri Attack's `statusRoll`
         // drawn as a burn (`picked`), whether or not the secondary landed.
         crate::rules::ThawOnHit::BurnSecondary => {

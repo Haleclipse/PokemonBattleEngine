@@ -1,0 +1,461 @@
+{
+ "schema": 1,
+ "id": "gen3-doubles-a-fire-hidden-power-thaws-no-one",
+ "notes": [
+  "Gen 3 Doubles OU: Blissey's Hidden Power (Fire) hits a frozen Ariados (`-damage|p2b: Ariados|191/344 frz`), which stays frozen. pokeemerald's `Cmd_datahpupdate` counts Hidden Power's damage as its base type's (`F_DYNAMIC_TYPE_IGNORE_PHYSICALITY`: Normal, physical), so no `specialDmg` is set and `MOVEEND_DEFROST` passes it by; Showdown's gen3 `frz.onDamagingHit` reads the dex type. The engine thawed it (DESIGN.md R-M11-53). Minimized from the Nightly battle m9-gen3doublesou-s338-012"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "doubles",
+  "format": "gen3doublesou"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Swinub",
+    "species": "Swinub",
+    "ability": "Oblivious",
+    "moves": [
+     "Amnesia",
+     "Take Down",
+     "Tackle",
+     "Mud-Slap"
+    ],
+    "nature": "Lax",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 144,
+     "atk": 16,
+     "def": 0,
+     "spa": 68,
+     "spd": 100,
+     "spe": 180
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 11,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Nick48",
+    "species": "Moltres",
+    "ability": "Pressure",
+    "moves": [
+     "Extrasensory",
+     "Sunny Day",
+     "Endure",
+     "Heat Wave"
+    ],
+    "nature": "Calm",
+    "gender": "",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 0,
+     "atk": 76,
+     "def": 0,
+     "spa": 68,
+     "spd": 112,
+     "spe": 252
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Azumarill",
+    "species": "Azumarill",
+    "ability": "Huge Power",
+    "moves": [
+     "Blizzard",
+     "Ice Punch",
+     "Slam",
+     "Rain Dance"
+    ],
+    "nature": "Docile",
+    "gender": "M",
+    "shiny": false,
+    "level": 73,
+    "evs": {
+     "hp": 0,
+     "atk": 92,
+     "def": 56,
+     "spa": 0,
+     "spd": 132,
+     "spe": 228
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Ponyta",
+    "species": "Ponyta",
+    "ability": "Run Away",
+    "moves": [
+     "Substitute"
+    ],
+    "nature": "Quirky",
+    "gender": "F",
+    "shiny": false,
+    "level": 29,
+    "evs": {
+     "hp": 16,
+     "atk": 120,
+     "def": 128,
+     "spa": 0,
+     "spd": 148,
+     "spe": 96
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 2,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 170
+   },
+   {
+    "label": "Registeel",
+    "species": "Registeel",
+    "ability": "Clear Body",
+    "moves": [
+     "Rain Dance",
+     "Facade",
+     "Rock Slide"
+    ],
+    "nature": "Sassy",
+    "gender": "",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 0,
+     "atk": 48,
+     "def": 108,
+     "spa": 224,
+     "spd": 0,
+     "spe": 128
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 26
+    },
+    "happiness": 76
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "ability": "Natural Cure",
+    "moves": [
+     "Hidden Power Fire"
+    ],
+    "nature": "Timid",
+    "gender": "",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 36,
+     "atk": 36,
+     "def": 116,
+     "spa": 28,
+     "spd": 40,
+     "spe": 252
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   }
+  ],
+  "p2": [
+   {
+    "label": "Bellsprout",
+    "species": "Bellsprout",
+    "ability": "Chlorophyll",
+    "moves": [
+     "Sunny Day"
+    ],
+    "nature": "Modest",
+    "gender": "M",
+    "shiny": true,
+    "level": 100,
+    "evs": {
+     "hp": 156,
+     "atk": 12,
+     "def": 88,
+     "spa": 0,
+     "spd": 0,
+     "spe": 252
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 19,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Horsea",
+    "species": "Horsea",
+    "ability": "Swift Swim",
+    "moves": [
+     "Dragon Breath",
+     "Swift",
+     "Waterfall",
+     "Frustration"
+    ],
+    "nature": "Lax",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 196,
+     "atk": 0,
+     "def": 116,
+     "spa": 52,
+     "spd": 100,
+     "spe": 44
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 56
+   },
+   {
+    "label": "Nick55",
+    "species": "Wartortle",
+    "item": "Focus Band",
+    "ability": "Torrent",
+    "moves": [
+     "Ice Beam",
+     "Ice Punch",
+     "Return",
+     "Mirror Coat"
+    ],
+    "nature": "Calm",
+    "gender": "F",
+    "shiny": false,
+    "level": 79,
+    "evs": {
+     "hp": 120,
+     "atk": 168,
+     "def": 112,
+     "spa": 0,
+     "spd": 36,
+     "spe": 72
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 175
+   },
+   {
+    "label": "Ariados",
+    "species": "Ariados",
+    "ability": "Swarm",
+    "moves": [
+     "Substitute",
+     "Leech Life",
+     "Poison Sting",
+     "Rest"
+    ],
+    "nature": "Impish",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 252,
+     "atk": 180,
+     "def": 52,
+     "spa": 0,
+     "spd": 0,
+     "spe": 24
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 5
+   },
+   {
+    "label": "Teddiursa",
+    "species": "Teddiursa",
+    "ability": "Pickup",
+    "moves": [
+     "Crunch"
+    ],
+    "nature": "Impish",
+    "gender": "M",
+    "shiny": false,
+    "level": 54,
+    "evs": {
+     "hp": 0,
+     "atk": 80,
+     "def": 120,
+     "spa": 0,
+     "spd": 212,
+     "spe": 96
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 13,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Seviper",
+    "species": "Seviper",
+    "ability": "Shed Skin",
+    "moves": [
+     "Spit Up"
+    ],
+    "nature": "Lonely",
+    "gender": "F",
+    "shiny": false,
+    "level": 77,
+    "evs": {
+     "hp": 84,
+     "atk": 40,
+     "def": 72,
+     "spa": 124,
+     "spd": 88,
+     "spe": 100
+    },
+    "ivs": {
+     "hp": 15,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   }
+  ]
+ },
+ "preview": {
+  "p1": "team 536214",
+  "p2": "team 514236"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   60198,
+   338,
+   1012,
+   31
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1, move 1 1",
+   "p2": "move 1, move 1 1"
+  },
+  {
+   "p2": "switch 3, pass"
+  },
+  {
+   "p1": "move 2 2, move 2",
+   "p2": "move 2 2, move 2"
+  },
+  {
+   "p1": "move 3 1, move 3",
+   "p2": "move 3 1, move 3 2"
+  },
+  {
+   "p1": "move 4 2, move 4",
+   "p2": "move 4, move 4 1"
+  },
+  {
+   "p1": "move 1, move 1 1",
+   "p2": "move 1 2, move 1 1"
+  },
+  {
+   "p1": "switch 3, move 2",
+   "p2": "switch 4, move 2"
+  },
+  {
+   "p1": "pass, switch 3"
+  },
+  {
+   "p1": "move 2 2, move 3 1",
+   "p2": "move 2 2, move 3 1"
+  },
+  {
+   "p1": "pass, switch 4"
+  },
+  {
+   "p1": "move 3 2, move 1",
+   "p2": "move 3 2, move 4 1"
+  },
+  {
+   "p2": "pass, switch 4"
+  },
+  {
+   "p1": "pass, switch 5"
+  },
+  {
+   "p1": "move 4, move 1",
+   "p2": "move 4, move 1 2"
+  },
+  {
+   "p1": "move 1, move 2 1",
+   "p2": "move 1, move 2 1"
+  },
+  {
+   "p1": "switch 6, move 3",
+   "p2": "switch 5, move 4"
+  },
+  {
+   "p2": "pass, switch 5"
+  },
+  {
+   "p1": "move 1 2, move 2 1",
+   "p2": "move 1 1, move 2 2"
+  }
+ ]
+}
