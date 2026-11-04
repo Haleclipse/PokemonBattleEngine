@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen3-a-sun-weather-ball-thaws-its-target",
+ "notes": [
+  "Gen 3: Lapras's Ice Beam freezes Snorlax, Sunny Day goes up, and Lapras's Weather Ball (Fire in the sun) hits the frozen Snorlax, which thaws. pokeemerald's `MOVEEND_DEFROST` takes the move's dynamic type, and Weather Ball's counts as special damage (`specialDmg`); Showdown's gen3 `frz.onDamagingHit` reads Weather Ball's dex type, Normal: the oracle's patch I216 (issues.md I216, DESIGN.md R-M11-54)"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   13,
+   2,
+   3,
+   4
+  ]
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Lapras",
+    "species": "Lapras",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Ice Beam",
+     "Sunny Day",
+     "Weather Ball"
+    ],
+    "ability": "Shell Armor",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 70,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Thick Fat",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Ice Beam",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Sunny Day",
+   "p2": "move Splash"
+  },
+  {
+   "p1": "move Weather Ball",
+   "p2": "move Splash"
+  }
+ ]
+}

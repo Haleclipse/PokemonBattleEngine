@@ -36,7 +36,8 @@
 // no draw. I213 (a Gen 5+ called move's own result for Dancer and the Fusion moves) changes whether
 // Dancer dances, and so its draws; I214 (Gen 4 Safeguard stops every confusion berry's confusion) takes
 // the confusion's duration draw away; I215 (an Infiltrator's Max Move effects past Mist and Safeguard)
-// lets a sleep's or a confusion's duration be drawn.
+// lets a sleep's or a confusion's duration be drawn; I216 (a Gen 3 sun Weather Ball thaws its target)
+// takes the thawed Pokémon's later thaw rolls away.
 // `SHOWDOWN_UNPATCHED=1` plays Showdown as published: to reproduce a battle recorded before a
 // patch existed, and to check that a patch's scenario fails without it.
 import {Battle, Dex, Pokemon} from '@pkmn/sim';
@@ -3929,4 +3930,23 @@ if (patched) {
       }
     }
   }
+}
+
+// I216 — Gen 3 thawing by a Fire move. pokeemerald's `MOVEEND_DEFROST` thaws a target the move
+// dealt special damage to (`specialDmg`) when the move's type, its dynamic type included
+// (`GET_MOVE_TYPE`), is Fire. Weather Ball in the sun is Fire (`Cmd_setweatherballtype`), and so
+// special: it thaws. (Hidden Power's dynamic type carries `F_DYNAMIC_TYPE_IGNORE_PHYSICALITY`: its
+// damage counts as Normal, physical, and it never thaws, as Showdown has it.) Showdown's gen3
+// `frz.onDamagingHit` reads the dex type, Weather Ball's Normal. The patch: a Fire Weather Ball
+// thaws too. The thawed Pokémon draws no thaw roll after (TESTING.md §7).
+if (patched) {
+  const frz = Dex.mod('gen3').data.Conditions.frz;
+  const onDamagingHit = frz.onDamagingHit;
+  frz.onDamagingHit = function (damage, target, source, move) {
+    if (move.id === 'weatherball' && move.type === 'Fire' && move.category !== 'Status') {
+      target.cureStatus();
+      return;
+    }
+    return onDamagingHit.call(this, damage, target, source, move);
+  };
 }
