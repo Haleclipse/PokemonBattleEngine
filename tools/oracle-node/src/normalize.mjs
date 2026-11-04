@@ -149,9 +149,13 @@ export function parseEvents(lines, stillTarget = () => undefined, disguised = ()
     // 'residual'`): everything after it belongs to the end of the turn, not to the last action.
     // The bare line `turnLoop` adds before its `|t:|` stamp as the actions start is not that
     // (it comes first in a boundary's slice, unless a Quick Claw or Quick Draw announced
-    // itself while the choices were resolved).
+    // itself while the choices were resolved), nor the one `win` adds before `|win|` / `|tie`:
+    // the action that ended the battle goes on after it (Gen 4's Focus Sash used up at
+    // `AfterMoveSecondary`, R-M11-49).
     if (line === '|') {
-      if (events.length > 0 && !(lines[i + 1] ?? '').startsWith('|t:|')) events.push({kind: 'residual'});
+      const next = lines[i + 1] ?? '';
+      const ends = next.startsWith('|win|') || next === '|tie';
+      if (events.length > 0 && !next.startsWith('|t:|') && !ends) events.push({kind: 'residual'});
       continue;
     }
     switch (kind) {

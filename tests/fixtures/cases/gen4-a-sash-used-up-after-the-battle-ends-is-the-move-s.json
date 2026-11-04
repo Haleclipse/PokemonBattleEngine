@@ -1,0 +1,478 @@
+{
+ "schema": 1,
+ "id": "gen4-a-sash-used-up-after-the-battle-ends-is-the-move-s",
+ "notes": [
+  "Gen 4 OU: Snorlax at 8 HP uses Facade on Carvanha, whose Focus Sash holds it at 1 HP; Rough Skin knocks Snorlax out and the battle ends (`|`, `|win|P2`) before the sash is used up (`-enditem|p2a: Carvanha|Focus Sash`, Gen 4's `focussash` condition at `AfterMoveSecondary`). The recorder took the bare line `win` adds for the end-of-turn residual's and the sash's hold for a residual one, so no roll of Facade's matched (DESIGN.md R-M11-49). Minimized from the Nightly battle m9-gen4ou-s325-003"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4ou"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hariyama",
+    "species": "Hariyama",
+    "ability": "Thick Fat",
+    "moves": [
+     "Headbutt",
+     "Brick Break",
+     "Smelling Salts",
+     "Sand Attack"
+    ],
+    "nature": "Gentle",
+    "gender": "M",
+    "shiny": false,
+    "level": 42,
+    "evs": {
+     "hp": 80,
+     "atk": 92,
+     "def": 240,
+     "spa": 96,
+     "spd": 0,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 28,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Metapod",
+    "species": "Metapod",
+    "ability": "Shed Skin",
+    "moves": [
+     "Snore",
+     "String Shot",
+     "Harden"
+    ],
+    "nature": "Adamant",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 120,
+     "atk": 116,
+     "def": 92,
+     "spa": 108,
+     "spd": 0,
+     "spe": 72
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 49
+   },
+   {
+    "label": "Piplup",
+    "species": "Piplup",
+    "ability": "Torrent",
+    "moves": [
+     "Secret Power",
+     "Bide"
+    ],
+    "nature": "Quirky",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 48,
+     "atk": 0,
+     "def": 32,
+     "spa": 96,
+     "spd": 240,
+     "spe": 92
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Nick99",
+    "species": "Flareon",
+    "ability": "Flash Fire",
+    "moves": [
+     "Trump Card"
+    ],
+    "nature": "Jolly",
+    "gender": "M",
+    "shiny": false,
+    "level": 21,
+    "evs": {
+     "hp": 96,
+     "atk": 140,
+     "def": 108,
+     "spa": 108,
+     "spd": 0,
+     "spe": 56
+    },
+    "ivs": {
+     "hp": 19,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Nick74",
+    "species": "Crawdaunt",
+    "ability": "Hyper Cutter",
+    "moves": [
+     "Avalanche",
+     "Rain Dance",
+     "Body Slam",
+     "Vise Grip"
+    ],
+    "nature": "Sassy",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 120,
+     "atk": 0,
+     "def": 60,
+     "spa": 52,
+     "spd": 40,
+     "spe": 236
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 15,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "ability": "Immunity",
+    "moves": [
+     "Facade",
+     "Mud-Slap",
+     "Substitute",
+     "Fire Blast"
+    ],
+    "nature": "Gentle",
+    "gender": "F",
+    "shiny": false,
+    "level": 92,
+    "evs": {
+     "hp": 72,
+     "atk": 68,
+     "def": 0,
+     "spa": 152,
+     "spd": 104,
+     "spe": 112
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 15,
+     "spd": 31,
+     "spe": 31
+    }
+   }
+  ],
+  "p2": [
+   {
+    "label": "Bagon",
+    "species": "Bagon",
+    "ability": "Rock Head",
+    "moves": [
+     "Natural Gift",
+     "Rock Tomb",
+     "Body Slam",
+     "Thrash"
+    ],
+    "nature": "Mild",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 0,
+     "atk": 124,
+     "def": 60,
+     "spa": 100,
+     "spd": 116,
+     "spe": 108
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 22
+   },
+   {
+    "label": "Probopass",
+    "species": "Probopass",
+    "ability": "Sturdy",
+    "moves": [
+     "Flash Cannon",
+     "Zap Cannon",
+     "Defense Curl",
+     "Earth Power"
+    ],
+    "nature": "Quiet",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 104,
+     "atk": 80,
+     "def": 100,
+     "spa": 148,
+     "spd": 76,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Skorupi",
+    "species": "Skorupi",
+    "ability": "Battle Armor",
+    "moves": [
+     "Screech",
+     "Feint Attack",
+     "Snore",
+     "Rock Tomb"
+    ],
+    "nature": "Timid",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 124,
+     "atk": 0,
+     "def": 8,
+     "spa": 176,
+     "spd": 4,
+     "spe": 196
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Carvanha",
+    "species": "Carvanha",
+    "item": "Focus Sash",
+    "ability": "Rough Skin",
+    "moves": [
+     "Leer"
+    ],
+    "nature": "Lonely",
+    "gender": "M",
+    "shiny": false,
+    "level": 21,
+    "evs": {
+     "hp": 92,
+     "atk": 120,
+     "def": 0,
+     "spa": 196,
+     "spd": 12,
+     "spe": 88
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   }
+  ]
+ },
+ "preview": {
+  "p1": "team 162345",
+  "p2": "team 432516"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   13744,
+   325,
+   1003,
+   31
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Headbutt",
+   "p2": "move Natural Gift"
+  },
+  {
+   "p1": "move Brick Break",
+   "p2": "move Rock Tomb"
+  },
+  {
+   "p1": "move Smelling Salts",
+   "p2": "move Body Slam"
+  },
+  {
+   "p1": "move Sand Attack",
+   "p2": "move Thrash"
+  },
+  {
+   "p1": "switch Metapod"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move String Shot",
+   "p2": "move Rock Tomb"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Body Slam"
+  },
+  {
+   "p1": "switch Piplup"
+  },
+  {
+   "p1": "switch Nick99",
+   "p2": "switch Probopass"
+  },
+  {
+   "p1": "move Trump Card",
+   "p2": "move Earth Power"
+  },
+  {
+   "p1": "switch Piplup"
+  },
+  {
+   "p1": "move Secret Power",
+   "p2": "move Flash Cannon"
+  },
+  {
+   "p1": "move Bide",
+   "p2": "move Zap Cannon"
+  },
+  {
+   "p1": "switch Nick74"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Defense Curl"
+  },
+  {
+   "p1": "move Vise Grip",
+   "p2": "move Earth Power"
+  },
+  {
+   "p1": "move Avalanche",
+   "p2": "move Flash Cannon"
+  },
+  {
+   "p1": "move Rain Dance",
+   "p2": "move Zap Cannon"
+  },
+  {
+   "p1": "switch Snorlax",
+   "p2": "switch Bagon"
+  },
+  {
+   "p1": "move Substitute",
+   "p2": "move Body Slam"
+  },
+  {
+   "p1": "move Fire Blast",
+   "p2": "move Thrash"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 1"
+  },
+  {
+   "p2": "switch Probopass"
+  },
+  {
+   "p1": "move Substitute",
+   "p2": "move Defense Curl"
+  },
+  {
+   "p1": "switch Nick74",
+   "p2": "switch Skorupi"
+  },
+  {
+   "p1": "move Rain Dance",
+   "p2": "move Feint Attack"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Snore"
+  },
+  {
+   "p1": "move Vise Grip",
+   "p2": "move Rock Tomb"
+  },
+  {
+   "p1": "move Avalanche",
+   "p2": "move Screech"
+  },
+  {
+   "p1": "move Rain Dance",
+   "p2": "move Feint Attack"
+  },
+  {
+   "p1": "move Body Slam",
+   "p2": "move Snore"
+  },
+  {
+   "p2": "switch Probopass"
+  },
+  {
+   "p1": "move Vise Grip",
+   "p2": "move Earth Power"
+  },
+  {
+   "p1": "switch Snorlax"
+  },
+  {
+   "p1": "move Facade",
+   "p2": "switch Carvanha"
+  }
+ ]
+}
