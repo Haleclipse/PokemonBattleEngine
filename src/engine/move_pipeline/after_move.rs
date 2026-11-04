@@ -45,7 +45,7 @@ impl<'a> MovePipeline<'a> {
         let secondary_events = !move_def.flags.sheer_force;
 
         // Showdown `onAfterMoveSecondary` on every Pokémon the move reached, once per move: the
-        // item reactions to a damaging move's hit on the HP (Eject Button, Red Card, Kee Berry),
+        // item reactions to a damaging move's hit (Eject Button, Red Card; Kee Berry on the HP),
         // and the abilities (Berserk, Anger Shell, Pickpocket) — Eject Button (priority 2) before
         // the ability, Red Card and the berries (0) after it, the ability's effect type sorting
         // first.
@@ -106,9 +106,16 @@ impl<'a> MovePipeline<'a> {
                 let took_hp = hits.iter().any(
                     |hit| matches!(hit, HitOutcome::Damaged { target: t, .. } if *t == target),
                 );
+                // Red Card and Eject Button go off for any damaging move that reached the holder,
+                // a Present that healed it too (Showdown's `move.category !== 'Status'`); Kee
+                // Berry leaves that Present out (`move.id === 'present' && move.heal`), so the
+                // berries want HP taken (R-M11-59).
                 let item_reaction = crate::engine::held_item(self.state, self.rules, target)
-                    .and_then(|(_, item)| item.after_hit)
-                    .filter(|_| move_def.category != MoveCategory::Status && took_hp);
+                    .and_then(|(_, item)| {
+                        item.after_hit
+                            .filter(|_| took_hp || item.eaten_after_a_hit.is_none())
+                    })
+                    .filter(|_| move_def.category != MoveCategory::Status);
                 let ability = self
                     .state
                     .pokemon(target)
