@@ -1,0 +1,101 @@
+{
+ "schema": 1,
+ "id": "gen7-doubles-a-petal-dance-dancer-with-one-foe-left-draws-no-target",
+ "notes": [
+  "Gen 7 doubles: Blastoise's Petal Dance knocks out Chansey; Torracat's Dancer dances it (`move|p2b: Torracat|Petal Dance|p1a: Porygon-Z|[from] ability: Dancer`), with Porygon-Z the one foe left. The replay counted the dance's candidates on the state before the action, both foes standing, and planned a random target the engine, with one candidate, does not draw: the plan desynchronized (DESIGN.md R-M11-58). Minimized from the Nightly battle m8-gen7-doubles-s1790-001"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Porygon-Z",
+    "species": "Porygon-Z",
+    "level": 47,
+    "nature": "Hardy",
+    "moves": [
+     "Bullet Seed",
+     "Aurora Veil",
+     "Fury Attack"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Wishiwashi",
+    "species": "Wishiwashi",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Barrage"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Aurora Veil",
+     "Double Kick"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blastoise",
+    "species": "Blastoise",
+    "level": 54,
+    "nature": "Hardy",
+    "moves": [
+     "Thrash",
+     "Petal Dance"
+    ],
+    "ability": "Trace",
+    "gender": "M"
+   },
+   {
+    "label": "Torracat",
+    "species": "Torracat",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Uproar"
+    ],
+    "ability": "Dancer",
+    "gender": "M"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   31019,
+   35197,
+   27798,
+   4598
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Bullet Seed 1, move Barrage 2",
+   "p2": "move Thrash, move Uproar"
+  },
+  {
+   "p1": "pass, switch Chansey"
+  },
+  {
+   "p1": "move 2, move 1",
+   "p2": "move 1, move 1"
+  },
+  {
+   "p1": "move 3 1, move 2 2",
+   "p2": "move 2, move 1"
+  }
+ ]
+}

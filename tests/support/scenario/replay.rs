@@ -2079,15 +2079,27 @@ pub(super) fn drive_to_boundary(
             );
             // A `randomNormal` dance (Petal Dance) draws its target among the dancer's adjacent
             // foes first (`getRandomTarget`, before BeforeMove, R-M8-78); its line names the pick.
+            // The candidates are those still standing as it dances: the action's move (or an
+            // earlier dance) may have knocked one out, leaving one alone and nothing to draw
+            // (R-M11-58).
+            let fallen: Vec<PokemonId> = expected
+                .iter()
+                .filter(|(_, hp)| *hp == 0)
+                .map(|(id, _)| *id)
+                .collect();
             if let Some(def) = drawn_def.as_ref()
-                && let Some(candidates) = pokemon_battle_engine::engine::random_retarget_candidates(
-                    &before.state,
-                    &compiled.rules,
-                    dancer,
-                    def,
-                    declared,
-                )
-                && candidates.len() > 1
+                && let Some(mut candidates) =
+                    pokemon_battle_engine::engine::random_retarget_candidates(
+                        &before.state,
+                        &compiled.rules,
+                        dancer,
+                        def,
+                        declared,
+                    )
+                && {
+                    candidates.retain(|candidate| !fallen.contains(candidate));
+                    candidates.len() > 1
+                }
             {
                 let picked = aimed
                     .and_then(|id| candidates.iter().position(|c| *c == id))
