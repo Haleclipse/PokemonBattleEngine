@@ -30,11 +30,17 @@ impl<'a> BattleContext<'a> {
     fn eat_held_item(&mut self, holder: PokemonId, force: bool) -> Option<ItemId> {
         let pokemon = self.state.pokemon(holder)?;
         let item = pokemon.held_item?;
-        // Showdown `eatItem`: Jaboca and Rowap Berry go even off a holder the hit knocked out.
+        // Showdown `eatItem`: Jaboca and Rowap Berry go even off a holder the hit knocked out —
+        // while it is still `isActive`: a faint already processed (`faintMessages`, an
+        // instafaint's: Gen 5-6 Aftermath knocking the attacker out at once takes the holder
+        // with it) leaves it off the field (R-M11-56).
         let at_no_hp = crate::engine::item_behavior(self.rules, item)
             .recoil_berry
             .is_some();
-        if (pokemon.hp == 0 && !at_no_hp) || !self.is_active(holder) {
+        if (pokemon.hp == 0 && !at_no_hp)
+            || !self.is_active(holder)
+            || self.state.announced_faints.contains(&holder)
+        {
             return None;
         }
         if !force {
