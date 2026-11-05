@@ -1,0 +1,139 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-a-doodle-that-took-galvanize-away-ends-charge",
+ "notes": [
+  "Gen 9 doubles: Raikou, Charged and holding a Galvanize it copied, uses Doodle, which Galvanize makes Electric as it starts; Doodle gives Raikou Run Away in Galvanize's place, and Charge ends (`-end|p2b: Raikou|Charge|[silent]`): its `onAfterMove` reads the move's type as used. The engine reckoned the type again after the move, with Run Away, and kept Charge (DESIGN.md R-M11-63). Minimized from the cloud Nightly battle m8-gen9-doubles-s101100-004"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Chimecho",
+    "species": "Chimecho",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Seed Bomb",
+     "Mist",
+     "Fling"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Malamar",
+    "species": "Malamar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Leafage",
+     "Doodle",
+     "Present",
+     "Heal Bell"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Poliwag",
+    "species": "Poliwag",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Wicked Blow",
+     "Doodle"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Tyranitar",
+    "species": "Tyranitar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Poison Gas",
+     "Heal Bell",
+     "Teleport"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Raikou",
+    "species": "Raikou",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Wish",
+     "Heal Bell",
+     "Charge",
+     "Doodle"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Shuppet",
+    "species": "Shuppet",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Doodle"
+    ],
+    "ability": "Galvanize",
+    "gender": "M"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   27607,
+   32168,
+   29897,
+   8396
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Fling 2, move Present 1",
+   "p2": "move Teleport, move Charge"
+  },
+  {
+   "p2": "switch Shuppet, pass"
+  },
+  {
+   "p1": "switch Poliwag, move Leafage 2",
+   "p2": "switch Tyranitar, move Wish"
+  },
+  {
+   "p1": "move Wicked Blow 2, move Heal Bell",
+   "p2": "move Teleport, move Doodle 1"
+  },
+  {
+   "p2": "switch Shuppet, pass"
+  },
+  {
+   "p1": "move Doodle 1, move Leafage 2",
+   "p2": "move Doodle 2, move Wish"
+  },
+  {
+   "p1": "switch Chimecho, move Doodle 1",
+   "p2": "switch Tyranitar, move Heal Bell"
+  },
+  {
+   "p1": "move Seed Bomb 2, move Present 1",
+   "p2": "move Poison Gas, move Charge"
+  },
+  {
+   "p1": "move Mist, move Heal Bell",
+   "p2": "move Heal Bell, move Doodle 1"
+  }
+ ]
+}

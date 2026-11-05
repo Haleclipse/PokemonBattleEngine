@@ -257,8 +257,19 @@ impl<'a> MovePipeline<'a> {
                     .dex
                     .move_by_id(execution.move_id)
                     .is_some_and(|move_def| {
+                        // The type as used: what `ModifyType` made it as the move started
+                        // (`lastMoveUsed`), not what it would be now — a Doodle that took the
+                        // user's Galvanize away was Electric all the same (R-M11-63).
+                        let as_used = self
+                            .state
+                            .pokemon(actor)
+                            .and_then(|pokemon| pokemon.last_move_used)
+                            .filter(|(id, _)| *id == execution.move_id)
+                            .map(|(_, move_type)| move_type);
                         let move_type = if execution.stopped {
                             move_def.move_type
+                        } else if let Some(move_type) = as_used {
+                            move_type
                         } else {
                             crate::engine::modified_move_cow(
                                 self.state, self.rules, actor, move_def, false,
