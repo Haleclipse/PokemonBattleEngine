@@ -2111,8 +2111,12 @@ pub(super) fn tape_template(
     }
     // The rest of the action's berry draws (a status move's target; the user, hurt by its
     // recoil; a Pokémon it dragged in onto hazards): drawn at the move's or the action's
-    // closing `Update`.
-    for (who, _, draw) in &oracle.berry_draws {
+    // closing `Update`. Those after the action's drag come after its draw
+    // (`berry_draws_after_drag`).
+    let before_drag = oracle
+        .berry_draws_at_drag
+        .unwrap_or(oracle.berry_draws.len());
+    for (who, _, draw) in &oracle.berry_draws[..before_drag] {
         let eater = who_to_id(state, who);
         if !berry_confusions_planned.contains(&eater)
             && let Some(decision) =
@@ -2153,6 +2157,42 @@ pub(super) fn self_focus_band(
 
 /// The decision a berry's eating draws: a confusion berry's duration (as `confusion` finds it),
 /// Starf Berry's stat.
+/// The berries eaten at the `Update` after the action's drag (`berry_draws_at_drag`): a Roar
+/// that dragged out the foe whose Unnerve held a confusion berry back (R-M11-60). Showdown drags
+/// at the action's end, then runs `Update`: these come after the drag's RandomTarget.
+pub(super) fn berry_draws_after_drag(
+    state: &BattleState,
+    rules: &ResolvedRules,
+    oracle: &ActionOracle,
+    duration_hints: &[(PokemonId, DurationKind, u16)],
+) -> Vec<Option<RandomOverride>> {
+    let Some(at) = oracle.berry_draws_at_drag else {
+        return Vec::new();
+    };
+    let mut planned: Vec<Option<PokemonId>> = Vec::new();
+    let mut tape = Vec::new();
+    for (who, _, draw) in &oracle.berry_draws[at..] {
+        let eater = who_to_id(state, who);
+        if planned.contains(&eater) {
+            continue;
+        }
+        let duration = || {
+            duration_hints
+                .iter()
+                .find(|(victim, class, _)| {
+                    *class == DurationKind::Confusion && eater.is_none_or(|e| e == *victim)
+                })
+                .map(|(_, _, hint)| *hint)
+                .or(Some(u16::from(rules.status().lifecycle.confusion_time_min)))
+        };
+        if let Some(decision) = berry_decision(*draw, duration) {
+            planned.push(eater);
+            tape.push(Some(decision));
+        }
+    }
+    tape
+}
+
 pub(super) fn berry_decision(
     draw: BerryDraw,
     confusion: impl FnOnce() -> Option<u16>,

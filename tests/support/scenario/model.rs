@@ -1113,6 +1113,9 @@ pub struct ActionOracle {
     /// Starf Berry raised a stat (`-boost|p|spd|2|[from] item: Starf Berry`: the stat). With how
     /// many hits had landed. Not a secondary.
     pub berry_draws: Vec<(Who, usize, BerryDraw)>,
+    /// How many of `berry_draws` came before the action's first `drag`: the rest were eaten at
+    /// the `Update` after it (a Roar that took the foe's Unnerve away), after the drag's draw.
+    pub berry_draws_at_drag: Option<usize>,
     /// The user that took the target's berry and ate it (`-enditem|target|X Berry|[from]
     /// stealeat|[move] Pluck|[of] user`): Pluck's and Bug Bite's `onHit`, so its draw comes before
     /// the hit's `DamagingHit` reactions, not at the `Update` after them (R-M9-48).
@@ -1211,6 +1214,7 @@ impl ActionOracle {
             applied: Vec::new(),
             user_applied_hits: Vec::new(),
             berry_draws: Vec::new(),
+            berry_draws_at_drag: None,
             stolen_berry: None,
             flung_berry: None,
             intercepted: false,

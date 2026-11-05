@@ -2197,6 +2197,21 @@ pub(super) fn drive_to_boundary(
                 party.swap(from, to);
             }
         }
+        // The berries eaten at the `Update` after the drag (R-M11-60).
+        template.extend(berry_draws_after_drag(
+            &before.state,
+            &compiled.rules,
+            &decision,
+            &duration_hints,
+        ));
+        for dance in &dances {
+            template.extend(berry_draws_after_drag(
+                &before.state,
+                &compiled.rules,
+                dance,
+                &duration_hints,
+            ));
+        }
         // The re-sort's tie decisions come before anything the action itself draws; the ties of
         // Neutralizing Gas clearing (Gastro Acid on its holder, or the holder fainting) after.
         template.splice(0..0, resort_ties.iter().copied().map(Some));

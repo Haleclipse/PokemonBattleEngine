@@ -1212,6 +1212,9 @@ pub fn extract_decisions_with(
             "drag" => {
                 if let (Some(action), Some(entrant)) = (out.last_mut(), who(&event["pokemon"])) {
                     action.dragged_in.push(entrant);
+                    action
+                        .berry_draws_at_drag
+                        .get_or_insert(action.berry_draws.len());
                     dragging = true;
                 }
             }
