@@ -236,11 +236,14 @@ fn raw_formula_power(
         PowerFormula::PerHit(step) => u32::from(step) * u32::from(usage.hit.max(1)),
         PowerFormula::HiddenPower => u32::from(user.hidden_power_of().1),
         PowerFormula::StockpileLayers => 100 * u32::from(user.volatiles.stockpile_layers()),
+        // Gen 5+: each member's base Attack — of the species its set named (Showdown
+        // `move.allies.shift().set.species`), not a forme it took in battle: a Mega Venusaur
+        // on the bench hits as Venusaur (R-M11-65).
         PowerFormula::BeatUp => match rules.damage.beat_up {
             crate::rules::BeatUpStyle::Modern => usage
                 .member
                 .and_then(|member| state.pokemon(member))
-                .and_then(|member| member.species)
+                .and_then(|member| member.set_species.or(member.species))
                 .and_then(|species| dex.species_by_id(species))
                 .map_or(base, |species| {
                     5 + u32::from(species.base_stats.attack) / 10

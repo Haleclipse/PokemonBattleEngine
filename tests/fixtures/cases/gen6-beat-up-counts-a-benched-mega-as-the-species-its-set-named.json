@@ -1,0 +1,405 @@
+{
+ "schema": 1,
+ "id": "gen6-beat-up-counts-a-benched-mega-as-the-species-its-set-named",
+ "notes": [
+  "Gen 6 Ubers: Venusaur Mega Evolves and switches out; Houndoom's Beat Up then strikes once per member, Venusaur's hit at 13 (`|debug|BP for Venusaur hit: 13`): Showdown's `basePowerCallback` reads the base Attack of the species the set named (`set.species`), 82, not the Mega's 100. The engine read the member's current species (DESIGN.md R-M11-65). Minimized from the Nightly battle m9-gen6ubers-s363-018"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "singles",
+  "format": "gen6ubers"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Dratini",
+    "species": "Dratini",
+    "ability": "Marvel Scale",
+    "moves": [
+     "Round"
+    ],
+    "nature": "Brave",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 56,
+     "atk": 64,
+     "def": 40,
+     "spa": 180,
+     "spd": 20,
+     "spe": 148
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Dodrio",
+    "species": "Dodrio",
+    "ability": "Run Away",
+    "moves": [
+     "Endeavor",
+     "Protect",
+     "Secret Power"
+    ],
+    "nature": "Naive",
+    "gender": "F",
+    "shiny": false,
+    "level": 61,
+    "evs": {
+     "hp": 48,
+     "atk": 52,
+     "def": 168,
+     "spa": 0,
+     "spd": 136,
+     "spe": 104
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 28
+    },
+    "happiness": 206
+   },
+   {
+    "label": "Spoink",
+    "species": "Spoink",
+    "ability": "Thick Fat",
+    "moves": [
+     "Grass Knot"
+    ],
+    "nature": "Calm",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 68,
+     "atk": 20,
+     "def": 228,
+     "spa": 44,
+     "spd": 96,
+     "spe": 52
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 1
+   },
+   {
+    "label": "Venusaur",
+    "species": "Venusaur",
+    "item": "Venusaurite",
+    "ability": "Overgrow",
+    "moves": [
+     "Echoed Voice"
+    ],
+    "nature": "Lonely",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 96,
+     "atk": 96,
+     "def": 0,
+     "spa": 56,
+     "spd": 252,
+     "spe": 8
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 7
+    },
+    "happiness": 59
+   },
+   {
+    "label": "Lunatone",
+    "species": "Lunatone",
+    "ability": "Levitate",
+    "moves": [
+     "Psywave"
+    ],
+    "nature": "Gentle",
+    "gender": "",
+    "shiny": true,
+    "level": 58,
+    "evs": {
+     "hp": 68,
+     "atk": 24,
+     "def": 40,
+     "spa": 60,
+     "spd": 64,
+     "spe": 252
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 28
+    }
+   },
+   {
+    "label": "Houndoom",
+    "species": "Houndoom",
+    "ability": "Early Bird",
+    "moves": [
+     "Beat Up"
+    ],
+    "nature": "Hasty",
+    "gender": "F",
+    "shiny": false,
+    "level": 88,
+    "evs": {
+     "hp": 28,
+     "atk": 108,
+     "def": 0,
+     "spa": 48,
+     "spd": 156,
+     "spe": 168
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   }
+  ],
+  "p2": [
+   {
+    "label": "Nick65",
+    "species": "Phione",
+    "ability": "Hydration",
+    "moves": [
+     "Hail"
+    ],
+    "nature": "Naughty",
+    "gender": "",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 112,
+     "atk": 124,
+     "def": 88,
+     "spa": 60,
+     "spd": 0,
+     "spe": 124
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Nick66",
+    "species": "Wooper",
+    "ability": "Unaware",
+    "moves": [
+     "Sleep Talk",
+     "Water Pulse",
+     "Dive"
+    ],
+    "nature": "Sassy",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 84,
+     "atk": 100,
+     "def": 40,
+     "spa": 144,
+     "spd": 104,
+     "spe": 36
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 0,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Torchic",
+    "species": "Torchic",
+    "ability": "Blaze",
+    "moves": [
+     "Crush Claw"
+    ],
+    "nature": "Adamant",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 196,
+     "atk": 0,
+     "def": 72,
+     "spa": 40,
+     "spd": 108,
+     "spe": 92
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Nick81",
+    "species": "Fearow",
+    "ability": "Sniper",
+    "moves": [
+     "Uproar"
+    ],
+    "nature": "Modest",
+    "gender": "M",
+    "shiny": false,
+    "level": 82,
+    "evs": {
+     "hp": 40,
+     "atk": 176,
+     "def": 84,
+     "spa": 20,
+     "spd": 76,
+     "spe": 112
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Sliggoo",
+    "species": "Sliggoo",
+    "ability": "Sap Sipper",
+    "moves": [
+     "Facade"
+    ],
+    "nature": "Timid",
+    "gender": "M",
+    "shiny": false,
+    "level": 83,
+    "evs": {
+     "hp": 0,
+     "atk": 0,
+     "def": 112,
+     "spa": 116,
+     "spd": 108,
+     "spe": 172
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 30,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Glaceon",
+    "species": "Glaceon",
+    "ability": "Ice Body",
+    "moves": [
+     "Retaliate"
+    ],
+    "nature": "Gentle",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 0,
+     "atk": 64,
+     "def": 88,
+     "spa": 204,
+     "spd": 148,
+     "spe": 4
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 5,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 243
+   }
+  ]
+ },
+ "preview": {
+  "p1": "team 246153",
+  "p2": "team 213654"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   30413,
+   363,
+   1018,
+   31
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Endeavor",
+   "p2": "move Water Pulse"
+  },
+  {
+   "p1": "move Protect",
+   "p2": "move Dive"
+  },
+  {
+   "p1": "move 3",
+   "p2": "move 1"
+  },
+  {
+   "p1": "switch 2"
+  },
+  {
+   "p1": "move 1 mega",
+   "p2": "move Sleep Talk"
+  },
+  {
+   "p1": "switch 3",
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Beat Up",
+   "p2": "move Hail"
+  }
+ ]
+}
