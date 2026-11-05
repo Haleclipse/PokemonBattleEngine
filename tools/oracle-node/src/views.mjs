@@ -333,9 +333,14 @@ function noteMover(moves, args, kwArgs) {
  * A Micle Berry's boost spent on a move (`-enditem|p|Micle Berry`, nothing else on the line: the
  * berry was eaten before, `[eat]`) names a berry long gone, which @pkmn/client reads as the item
  * the Pokémon holds now going (one Bestow handed it since). What it knows of the item is kept.
+ * So with a resist berry's `-enditem|p|Chilan Berry|[weaken]`: Showdown writes it after the berry
+ * was eaten (`[eat]`), and a Symbiosis partner may have handed the holder its item in between
+ * (R-M11-73).
  */
 function micleSpent(client, args, kwArgs) {
-  if (args[0] !== '-enditem' || args[2] !== 'Micle Berry' || Object.keys(kwArgs).length) return null;
+  if (args[0] !== '-enditem') return null;
+  const micle = args[2] === 'Micle Berry' && !Object.keys(kwArgs).length;
+  if (!micle && !kwArgs.weaken) return null;
   const poke = client.getPokemon(args[1]);
   if (!poke) return null;
   const {item, itemEffect, lastItem, lastItemEffect} = poke;
