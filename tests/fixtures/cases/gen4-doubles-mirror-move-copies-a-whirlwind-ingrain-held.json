@@ -1,0 +1,165 @@
+{
+ "schema": 1,
+ "id": "gen4-doubles-mirror-move-copies-a-whirlwind-ingrain-held",
+ "notes": [
+  "Gen 4 doubles: Staryu's Whirlwind at the rooted Tangela is held by Ingrain (`-activate`, no `-fail`: Showdown's `DragOut` returns `null`, the move still hit). The next turn Tangela's Mirror Move copies it — the last move aimed at it — and blows Staryu away for Milotic. The engine failed the Whirlwind, so Tangela's Mirror Move had nothing to copy (DESIGN.md R-M11-70). Minimized from the cloud Nightly battle m8-gen4-doubles-s101300-004"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "doubles",
+  "format": "gen4doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Entei",
+    "species": "Entei",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Magnet Bomb",
+     "Mirror Move",
+     "Lucky Chant"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Bellsprout",
+    "species": "Bellsprout",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Torment",
+     "Follow Me",
+     "Mirror Move"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Tangela",
+    "species": "Tangela",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Taunt",
+     "Mirror Move",
+     "Ingrain"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Slowking",
+    "species": "Slowking",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Curse",
+     "Follow Me",
+     "Mirror Move"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Piloswine",
+    "species": "Piloswine",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Safeguard",
+     "Follow Me",
+     "Mirror Move"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Dialga",
+    "species": "Dialga",
+    "level": 55,
+    "nature": "Hardy",
+    "moves": [
+     "Tri Attack",
+     "Light Screen",
+     "Mirror Move"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Staryu",
+    "species": "Staryu",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Whirlwind",
+     "Follow Me"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Milotic",
+    "species": "Milotic",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Moonlight"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   34022,
+   37750,
+   32421,
+   13292
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Magnet Bomb 1, move Torment 2",
+   "p2": "move Safeguard, move Tri Attack 1"
+  },
+  {
+   "p1": "move Mirror Move, move Follow Me",
+   "p2": "move Follow Me, move Light Screen"
+  },
+  {
+   "p1": "move Lucky Chant, move Mirror Move",
+   "p2": "move Mirror Move, move Tri Attack 2"
+  },
+  {
+   "p1": "pass, switch Tangela"
+  },
+  {
+   "p1": "move Magnet Bomb 2, move Taunt 1",
+   "p2": "move Safeguard, move Light Screen"
+  },
+  {
+   "p1": "switch Slowking, move 2",
+   "p2": "move 1, move 3"
+  },
+  {
+   "p1": "move 2, move 3",
+   "p2": "move 1, move 1 1"
+  },
+  {
+   "p2": "switch Staryu, pass"
+  },
+  {
+   "p1": "move Mirror Move, move Taunt 2",
+   "p2": "move Whirlwind 2, move Mirror Move"
+  },
+  {
+   "p1": "move Curse, move Mirror Move",
+   "p2": "move Follow Me, move Tri Attack 1"
+  }
+ ]
+}

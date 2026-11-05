@@ -528,8 +528,8 @@ fn protect_in_a_row_rolls_the_stall_counter_and_fails_for_the_last_to_act() {
 
 #[test]
 fn suction_cups_and_ingrain_refuse_a_drag_out_and_ingrain_roots_and_heals() {
-    // Suction Cups: Roar fails, Dragon Tail hits without dragging, Red Card is spent for
-    // nothing.
+    // Suction Cups: Roar is held (Showdown's `DragOut` returns `null`: the move still hit, no
+    // `-fail`), Dragon Tail hits without dragging, Red Card is spent for nothing.
     let mut arena = setup(
         Generation::Gen9,
         set(
@@ -556,13 +556,9 @@ fn suction_cups_and_ingrain_refuse_a_drag_out_and_ingrain_roots_and_heals() {
             },
         }
     )));
-    assert!(arena.has(start, |e| matches!(
+    assert!(!arena.has(start, |e| matches!(
         e,
-        TraceEvent::MoveFailed {
-            actor: B,
-            reason: MoveFailReason::NoEffect,
-            ..
-        }
+        TraceEvent::MoveFailed { actor: B, .. }
     )));
     let mut tape = vec![RandomOverride::bool(RandomRequestKind::Accuracy, true)];
     tape.extend(hit(100));

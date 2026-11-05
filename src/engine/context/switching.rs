@@ -25,7 +25,8 @@ impl<'a> BattleContext<'a> {
 
     /// Orders `target` out for a random bench Pokémon at the end of the action (Roar, Dragon
     /// Tail, Red Card). Refused when the target is not standing, its side has no bench, or it
-    /// is already being dragged.
+    /// is already being dragged. Whether a phazing status move stands: a target held in place
+    /// stands it still, but for Commander's.
     pub fn request_drag_out(&mut self, target: PokemonId, source: EffectSource) -> bool {
         let Some(side) = self.side_of(target) else {
             return false;
@@ -37,11 +38,18 @@ impl<'a> BattleContext<'a> {
         {
             return false;
         }
-        // Showdown `DragOut` event: Suction Cups and Ingrain refuse (the phazing status move
-        // then fails; a damaging phazer or Red Card just does not drag).
+        // Showdown `DragOut` event: Suction Cups, Guard Dog, Ingrain and Dynamax hold the target
+        // (`null`: the phazing status move still hit — a Gen 4 Mirror Move copies it); only
+        // Commander's volatiles refuse (`false`: it fails, `-fail`). A damaging phazer or Red
+        // Card just does not drag.
         if let Some(by) = self.drag_out_blocker(target) {
             self.trace.push(TraceEvent::DragOutBlocked { target, by });
-            return false;
+            return !matches!(
+                by,
+                EffectSource::Volatile(
+                    VolatileConditionKind::Commanding | VolatileConditionKind::Commanded
+                )
+            );
         }
         self.state.drag_queue.push(target);
         self.trace
