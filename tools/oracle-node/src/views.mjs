@@ -143,6 +143,7 @@ export function observers(battle) {
           noteFallenTera(client, fallenTera, args);
           const wornBefore = args[0] === 'replace' ? activeAt(client, args[1]) : null;
           client.add(args, kwArgs);
+          untangleReplace(client, args, wornBefore);
           restoreRevivedTera(client, fallenTera, args, kwArgs);
           noteEntryItem(client, masks, args, wornBefore);
           restoreOwnSlots(hidden);
@@ -1148,6 +1149,28 @@ function noteEntryItem(client, masks, args, worn) {
 function activeAt(client, position) {
   const side = position.startsWith('p1') ? client.p1 : client.p2;
   return side.active[position.charCodeAt(2) - 'a'.charCodeAt(0)] ?? null;
+}
+
+/**
+ * Two of one Pokémon on the field, @pkmn/client may take the wrong one for the Illusion's holder
+ * (`noteUnresolvedIllusion`); the `replace` that breaks the Illusion then finds the holder's
+ * entry standing in the other slot and moves it over, leaving it in both. The next switch out of
+ * that other slot empties the holder's (`switchOut` goes by the entry's slot), and a line naming
+ * the holder there throws. The other slot takes back the entry the disguise wore (`worn`): the
+ * Pokémon standing there is the one the holder was disguised as. The side stays unresolved.
+ */
+function untangleReplace(client, args, worn) {
+  if (args[0] !== 'replace') return;
+  const side = args[1].startsWith('p1') ? client.p1 : client.p2;
+  const slot = args[1].charCodeAt(2) - 'a'.charCodeAt(0);
+  const holder = side.active[slot];
+  if (!holder || !worn || worn === holder || side.active.includes(worn)) return;
+  side.active.forEach((p, i) => {
+    if (i !== slot && p === holder) {
+      side.active[i] = worn;
+      worn.slot = i;
+    }
+  });
 }
 
 /**

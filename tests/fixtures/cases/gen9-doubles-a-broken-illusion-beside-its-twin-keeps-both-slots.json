@@ -1,0 +1,351 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-a-broken-illusion-beside-its-twin-keeps-both-slots",
+ "notes": [
+  "Gen 9 VGC 2025 Reg I (open team sheets): P1's Zoroark-Hisui (Nick34) comes in to p1b disguised as Pincurchin, and the real Pincurchin comes in to p1a. P2's @pkmn/client knows Zoroark-Hisui's Illusion from the sheet and takes the newcomer at p1a for it. The Pincurchin's Surf, spread to its ally, breaks the Illusion at p1b: the `replace` finds that entry at p1a and moves it over, leaving it in both slots; when Qwilfish switches in to p1a, `switchOut` goes by the entry's slot and empties p1b, and the next `move|p1b: Nick34` threw in the recorder. `untangleReplace` (views.mjs) puts the entry the disguise wore back in the other slot (DESIGN.md R-M11-69). Shrunk from the Nightly battle m9-gen9vgc2025regi-s372-016, a generation error"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9vgc2025regi"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Nick34",
+    "species": "Zoroark-Hisui",
+    "item": "",
+    "ability": "Illusion",
+    "moves": [
+     "Endure",
+     "Dig",
+     "Confuse Ray",
+     "Imprison"
+    ],
+    "nature": "Naive",
+    "gender": "F",
+    "shiny": false,
+    "level": 66,
+    "evs": {
+     "hp": 112,
+     "atk": 0,
+     "def": 0,
+     "spa": 120,
+     "spd": 228,
+     "spe": 48
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Poison"
+   },
+   {
+    "label": "Qwilfish",
+    "species": "Qwilfish-Hisui",
+    "item": "Rocky Helmet",
+    "ability": "Poison Point",
+    "moves": [
+     "Hydro Pump",
+     "Scary Face",
+     "Shadow Ball",
+     "Swift"
+    ],
+    "nature": "Hasty",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 0,
+     "atk": 80,
+     "def": 76,
+     "spa": 120,
+     "spd": 192,
+     "spe": 40
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 136,
+    "teraType": "Fighting",
+    "hpType": "Fire"
+   },
+   {
+    "label": "Flamigo",
+    "species": "Flamigo",
+    "item": "Light Clay",
+    "ability": "Scrappy",
+    "moves": [
+     "Giga Impact",
+     "Pounce",
+     "Air Slash",
+     "Double Kick"
+    ],
+    "nature": "Adamant",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 0,
+     "atk": 136,
+     "def": 0,
+     "spa": 188,
+     "spd": 76,
+     "spe": 108
+    },
+    "ivs": {
+     "hp": 7,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Normal"
+   },
+   {
+    "label": "Pincurchin",
+    "species": "Pincurchin",
+    "item": "Razor Fang",
+    "ability": "Lightning Rod",
+    "moves": [
+     "Peck",
+     "Thunder",
+     "Surf",
+     "Toxic Spikes"
+    ],
+    "nature": "Docile",
+    "gender": "M",
+    "shiny": false,
+    "level": 83,
+    "evs": {
+     "hp": 56,
+     "atk": 20,
+     "def": 60,
+     "spa": 164,
+     "spd": 208,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 9,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Water"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Nick21",
+    "species": "Cyclizar",
+    "item": "Luxury Ball",
+    "ability": "Regenerator",
+    "moves": [
+     "Rest",
+     "Taunt",
+     "Dragon Pulse",
+     "Aerial Ace"
+    ],
+    "nature": "Serious",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 184,
+     "atk": 0,
+     "def": 104,
+     "spa": 220,
+     "spd": 0,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Dark",
+    "hpType": "Steel"
+   },
+   {
+    "label": "Hitmontop",
+    "species": "Hitmontop",
+    "item": "Covert Cloak",
+    "ability": "Intimidate",
+    "moves": [
+     "Aerial Ace",
+     "Baton Pass",
+     "Vacuum Wave",
+     "Endeavor"
+    ],
+    "nature": "Impish",
+    "gender": "",
+    "shiny": false,
+    "level": 13,
+    "evs": {
+     "hp": 0,
+     "atk": 120,
+     "def": 100,
+     "spa": 104,
+     "spd": 0,
+     "spe": 184
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 51,
+    "teraType": "Ghost"
+   },
+   {
+    "label": "Nick84",
+    "species": "Dondozo",
+    "item": "Dubious Disc",
+    "ability": "Unaware",
+    "moves": [
+     "Flail",
+     "Hyper Beam",
+     "Tera Blast",
+     "Yawn"
+    ],
+    "nature": "Sassy",
+    "gender": "M",
+    "shiny": false,
+    "level": 75,
+    "evs": {
+     "hp": 248,
+     "atk": 60,
+     "def": 60,
+     "spa": 24,
+     "spd": 0,
+     "spe": 116
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Normal"
+   },
+   {
+    "label": "Gholdengo",
+    "species": "Gholdengo",
+    "item": "Dive Ball",
+    "ability": "Good as Gold",
+    "moves": [
+     "Night Shade",
+     "Trick",
+     "Sleep Talk",
+     "Dazzling Gleam"
+    ],
+    "nature": "Careful",
+    "gender": "",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 176,
+     "atk": 0,
+     "def": 104,
+     "spa": 48,
+     "spd": 128,
+     "spe": 52
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Flying",
+    "hpType": "Steel"
+   }
+  ]
+ },
+ "preview": {
+  "p1": "team 2314",
+  "p2": "team 4132",
+  "open_team_sheets": true
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   890,
+   372,
+   1016,
+   31
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1 1 terastallize, move 1 2",
+   "p2": "move 1 1 terastallize, move 1"
+  },
+  {
+   "p1": "move 2 1, move 1",
+   "p2": "move 2 2, move 2 1"
+  },
+  {
+   "p1": "move 4, move 3 2",
+   "p2": "move 3, move 3 2"
+  },
+  {
+   "p2": "pass, switch 3"
+  },
+  {
+   "p1": "move 1 1, move 4 2",
+   "p2": "move 4, move 4 1"
+  },
+  {
+   "p1": "pass, switch 3"
+  },
+  {
+   "p1": "switch 4, move 1",
+   "p2": "switch 4, move 1 2"
+  },
+  {
+   "p1": "move 1 1, move 2 2",
+   "p2": "move 1 1, move 2 2"
+  },
+  {
+   "p1": "move 2 1, move 1",
+   "p2": "move 2, move 3 1"
+  },
+  {
+   "p2": "switch 4, pass"
+  },
+  {
+   "p2": "switch 4, pass"
+  },
+  {
+   "p1": "move 3, move 4",
+   "p2": "move 3 2, move 4 1"
+  },
+  {
+   "p1": "switch 4, move 2 2",
+   "p2": "move 1 2, move 2 1"
+  }
+ ]
+}
