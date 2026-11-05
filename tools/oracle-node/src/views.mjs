@@ -98,7 +98,7 @@ ClientSide.prototype.addPokemon = function (details, replaceSlot = -1) {
 export function observers(battle) {
   const clients = OBSERVERS.map(([name, channel]) => ({
     name, channel, client: new ClientBattle(generations), reset: new Set(), copied: new Set(),
-    unresolved: new Set(), zItems: new Set(), hiddenSwaps: new Set(), masks: {worn: new Set(), unmasked: new Set(), slotItems: new Map()},
+    unresolved: new Set(), zItems: new Set(), hiddenSwaps: new Set(), masks: {worn: new Set(), unmasked: new Set(), entryItems: new WeakMap()},
     misplaced: new Set(), renewed: new Set(), previews: {p1: {pokes: [], sheet: null}, p2: {pokes: [], sheet: null}, started: false, taken: false},
     moves: {uncompared: new Set(), reset: new Set(), copied: new Set(), fromRequest: new Set(), zPowered: new Set(), previous: null, dancer: null, called: new Set(), lastMove: new Map(), mover: null, moveName: null, stolen: null, flung: null},
     changed: new WeakSet(),
@@ -141,9 +141,10 @@ export function observers(battle) {
           const kept = volatilesKept(client, args, kwArgs);
           const asOne = asOneBefore(client, args);
           noteFallenTera(client, fallenTera, args);
+          const wornBefore = args[0] === 'replace' ? activeAt(client, args[1]) : null;
           client.add(args, kwArgs);
           restoreRevivedTera(client, fallenTera, args, kwArgs);
-          noteSlotItem(client, masks, args);
+          noteEntryItem(client, masks, args, wornBefore);
           restoreOwnSlots(hidden);
           noteShowteam(client, previews, args);
           restoreVolatiles(kept);
@@ -1121,26 +1122,32 @@ function noteIllusionReset(client, reset, args) {
 }
 
 /**
- * The item a slot's Pokémon was seen to take or lose since it came in (`-item`, `-enditem`): an
+ * The item a Pokémon's entry was seen to take or lose since it came in (`-item`, `-enditem`): an
  * Illusion's holder that changed items in its disguise (a Trick) keeps what it took when the
  * Illusion breaks, as the view has it (DESIGN.md §47.0 item 11), while @pkmn/client leaves that on
  * the disguise's entry and the holder's with the item it knew before — an open team sheet's
- * (R-M11-61). On `replace`, the holder's entry takes it.
+ * (R-M11-61). Kept by entry, not by slot: an Ally Switch moves the disguise with its item
+ * (R-M11-66). On `replace`, the holder's entry takes what the disguise's (`worn`) took.
  */
-function noteSlotItem(client, masks, args) {
+function noteEntryItem(client, masks, args, worn) {
   const position = args[1];
   if (typeof position !== 'string' || !/^p[1-4][a-d]: /.test(position)) return;
-  const slot = position.slice(0, 3);
-  if (args[0] === 'switch' || args[0] === 'drag') {
-    masks.slotItems.delete(slot);
-  } else if (args[0] === '-item') {
-    masks.slotItems.set(slot, {item: toID(args[2])});
-  } else if (args[0] === '-enditem') {
-    masks.slotItems.set(slot, {item: ''});
-  } else if (args[0] === 'replace' && masks.slotItems.has(slot)) {
+  if (args[0] === 'replace') {
     const holder = client.getPokemon(position);
-    if (holder) holder.item = masks.slotItems.get(slot).item;
+    if (holder && worn && masks.entryItems.has(worn)) holder.item = masks.entryItems.get(worn);
+    return;
   }
+  const entry = client.getPokemon(position);
+  if (!entry) return;
+  if (args[0] === 'switch' || args[0] === 'drag') masks.entryItems.delete(entry);
+  else if (args[0] === '-item') masks.entryItems.set(entry, toID(args[2]));
+  else if (args[0] === '-enditem') masks.entryItems.set(entry, '');
+}
+
+/** The entry standing in a position (`p1a: …`), as the client has it before a line. */
+function activeAt(client, position) {
+  const side = position.startsWith('p1') ? client.p1 : client.p2;
+  return side.active[position.charCodeAt(2) - 'a'.charCodeAt(0)] ?? null;
 }
 
 /**
