@@ -240,8 +240,13 @@ pub fn gulp_missile_spit(ctx: &mut BattleContext<'_>, hit: crate::engine::Damagi
     if !gulping && forme != SpeciesId::CRAMORANT_GORGING {
         return;
     }
-    // A fainted, benched or semi-invulnerable attacker is spared.
-    if ctx.hp(hit.attacker).is_none_or(|hp| hp == 0) || !ctx.is_active(hit.attacker) {
+    // A fainted or benched attacker is spared, and nothing is spat while the Cramorant is itself
+    // semi-invulnerable (`target.isSemiInvulnerable()`: a No Guard hit reaching it underwater
+    // mid-Dive, R-M11-67).
+    if ctx.hp(hit.attacker).is_none_or(|hp| hp == 0)
+        || !ctx.is_active(hit.attacker)
+        || ctx.semi_invulnerable(hit.holder)
+    {
         return;
     }
     let source = EffectSource::Ability {
