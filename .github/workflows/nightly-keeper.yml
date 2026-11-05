@@ -1,0 +1,38 @@
+name: nightly-keeper
+
+# GitHub may delay a scheduled run by hours or drop it under load, and a dropped Nightly slot is
+# coverage lost. Every hour this checks the Nightly: none queued or running, and none started in
+# the last five hours, it dispatches one on `master` (a `workflow_dispatch` the job's token may
+# trigger). The Nightly's own `concurrency` group keeps the runs from overlapping.
+on:
+  schedule:
+    - cron: '41 * * * *'
+  workflow_dispatch:
+
+permissions:
+  actions: write
+
+jobs:
+  keep:
+    name: dispatch a missed Nightly
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: check and dispatch
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          busy=$(gh run list --workflow nightly.yml --limit 20 --json status \
+            --jq '[.[] | select(.status != "completed")] | length')
+          if [ "$busy" -gt 0 ]; then
+            echo "a Nightly is queued or running"
+            exit 0
+          fi
+          last=$(gh run list --workflow nightly.yml --limit 1 --json createdAt --jq '.[0].createdAt // ""')
+          if [ -n "$last" ] && [ $(( $(date -u +%s) - $(date -u -d "$last" +%s) )) -lt 18000 ]; then
+            echo "the last Nightly started at $last"
+            exit 0
+          fi
+          echo "no Nightly since ${last:-ever}: dispatching one"
+          gh workflow run nightly.yml --ref master
