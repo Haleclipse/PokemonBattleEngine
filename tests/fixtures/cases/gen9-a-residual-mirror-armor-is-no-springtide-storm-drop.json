@@ -1,0 +1,168 @@
+{
+ "schema": 1,
+ "id": "gen9-a-residual-mirror-armor-is-no-springtide-storm-drop",
+ "notes": [
+  "Gen 9 singles: Illumise's Springtide Storm hits Iron Hands; its 30% Attack drop does not come. At the residual, the Syrup Bomb on Iron Hands drops its Speed, and Mirror Armor sends the drop back (`-ability|p2a: Iron Hands|Mirror Armor`, `-unboost|p1a: Illumise|spe|1`). The replay read that Mirror Armor as the move's secondary sent back and planned the Attack drop (DESIGN.md R-M11-75). Minimized from the Nightly battle m8-gen9-singles-s1822-007"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "singles",
+  "format": "gen9customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Flamigo",
+    "species": "Flamigo",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Round",
+     "Syrup Bomb",
+     "Echoed Voice",
+     "Relic Song"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Seel",
+    "species": "Seel",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Syrup Bomb",
+     "Breaking Swipe",
+     "Relic Song"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Illumise",
+    "species": "Illumise",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Syrup Bomb",
+     "Springtide Storm"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Sunkern",
+    "species": "Sunkern",
+    "level": 49,
+    "nature": "Hardy",
+    "moves": [
+     "Leer",
+     "Syrup Bomb",
+     "Struggle Bug"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Iron Hands",
+    "species": "Iron Hands",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Glaciate",
+     "Syrup Bomb",
+     "Muddy Water",
+     "Relic Song"
+    ],
+    "ability": "Mirror Armor"
+   },
+   {
+    "label": "Pachirisu",
+    "species": "Pachirisu",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Syrup Bomb",
+     "Precipice Blades",
+     "Relic Song"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   48769,
+   64894,
+   65195,
+   41098
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Round",
+   "p2": "move Leer"
+  },
+  {
+   "p1": "move Syrup Bomb",
+   "p2": "move Syrup Bomb"
+  },
+  {
+   "p1": "move Echoed Voice",
+   "p2": "move Struggle Bug"
+  },
+  {
+   "p2": "switch Iron Hands"
+  },
+  {
+   "p1": "move Relic Song",
+   "p2": "move Relic Song"
+  },
+  {
+   "p1": "move Round",
+   "p2": "move Glaciate"
+  },
+  {
+   "p1": "move Syrup Bomb",
+   "p2": "move Syrup Bomb"
+  },
+  {
+   "p1": "switch Seel",
+   "p2": "switch Pachirisu"
+  },
+  {
+   "p1": "move Breaking Swipe",
+   "p2": "move Precipice Blades"
+  },
+  {
+   "p1": "move Relic Song",
+   "p2": "move Relic Song"
+  },
+  {
+   "p1": "move Syrup Bomb",
+   "p2": "move Syrup Bomb"
+  },
+  {
+   "p1": "move Breaking Swipe",
+   "p2": "move Precipice Blades"
+  },
+  {
+   "p1": "switch Flamigo"
+  },
+  {
+   "p1": "switch Illumise",
+   "p2": "switch Iron Hands"
+  },
+  {
+   "p1": "move Syrup Bomb",
+   "p2": "move Syrup Bomb"
+  },
+  {
+   "p1": "move Springtide Storm",
+   "p2": "move Muddy Water"
+  }
+ ]
+}

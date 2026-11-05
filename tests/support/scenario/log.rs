@@ -1088,9 +1088,11 @@ pub fn extract_decisions_with(
                 // Mirror Armor sent a stat drop back (`-ability|target|Mirror Armor`): on a
                 // target the move damaged, that drop was the move's secondary landing, though
                 // the protocol then shows it on the user or, when the user refuses it too, not
-                // at all.
+                // at all. One in the residual sends back a drop of the residual's own (Syrup
+                // Bomb's Speed drop, Octolock's): no move's secondary (R-M11-75).
                 if ability == "Mirror Armor"
                     && !changes_ability
+                    && !in_residual
                     && let (Some(action), Some(target)) =
                         (out.last_mut(), args.first().and_then(who_from_text))
                     && target != action.user
