@@ -3,10 +3,16 @@ name: nightly-keeper
 # GitHub may delay a scheduled run by hours or drop it under load, and a dropped Nightly slot is
 # coverage lost. Every hour this checks the Nightly: none queued or running, and none started in
 # the last five hours, it dispatches one on `master` (a `workflow_dispatch` the job's token may
-# trigger). The Nightly's own `concurrency` group keeps the runs from overlapping.
+# trigger). The Nightly's own `concurrency` group keeps the runs from overlapping. Its own hourly
+# schedule may be dropped too (none of its first three ran): it also checks as each CI run or
+# Nightly ends, events GitHub does not drop.
 on:
   schedule:
     - cron: '41 * * * *'
+  workflow_run:
+    workflows: [ci, nightly]
+    types: [completed]
+    branches: [master]
   workflow_dispatch:
 
 permissions:
