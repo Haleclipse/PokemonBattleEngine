@@ -98,7 +98,7 @@ ClientSide.prototype.addPokemon = function (details, replaceSlot = -1) {
 export function observers(battle) {
   const clients = OBSERVERS.map(([name, channel]) => ({
     name, channel, client: new ClientBattle(generations), reset: new Set(), copied: new Set(),
-    unresolved: new Set(), zItems: new Set(), hiddenSwaps: new Set(), masks: {worn: new Set(), unmasked: new Set()},
+    unresolved: new Set(), zItems: new Set(), hiddenSwaps: new Set(), masks: {worn: new Set(), unmasked: new Set(), slotItems: new Map()},
     misplaced: new Set(), renewed: new Set(), previews: {p1: {pokes: [], sheet: null}, p2: {pokes: [], sheet: null}, started: false, taken: false},
     moves: {uncompared: new Set(), reset: new Set(), copied: new Set(), fromRequest: new Set(), zPowered: new Set(), previous: null, dancer: null, called: new Set(), lastMove: new Map(), mover: null, moveName: null, stolen: null, flung: null},
     changed: new WeakSet(),
@@ -143,6 +143,7 @@ export function observers(battle) {
           noteFallenTera(client, fallenTera, args);
           client.add(args, kwArgs);
           restoreRevivedTera(client, fallenTera, args, kwArgs);
+          noteSlotItem(client, masks, args);
           restoreOwnSlots(hidden);
           noteShowteam(client, previews, args);
           restoreVolatiles(kept);
@@ -1116,6 +1117,29 @@ function noteIllusionReset(client, reset, args) {
     if (worn) reset.add(worn.originalIdent ?? worn.ident);
   } else {
     reset.delete(`${args[1].slice(0, 2)}: ${args[1].slice(args[1].indexOf(':') + 2)}`);
+  }
+}
+
+/**
+ * The item a slot's Pokémon was seen to take or lose since it came in (`-item`, `-enditem`): an
+ * Illusion's holder that changed items in its disguise (a Trick) keeps what it took when the
+ * Illusion breaks, as the view has it (DESIGN.md §47.0 item 11), while @pkmn/client leaves that on
+ * the disguise's entry and the holder's with the item it knew before — an open team sheet's
+ * (R-M11-61). On `replace`, the holder's entry takes it.
+ */
+function noteSlotItem(client, masks, args) {
+  const position = args[1];
+  if (typeof position !== 'string' || !/^p[1-4][a-d]: /.test(position)) return;
+  const slot = position.slice(0, 3);
+  if (args[0] === 'switch' || args[0] === 'drag') {
+    masks.slotItems.delete(slot);
+  } else if (args[0] === '-item') {
+    masks.slotItems.set(slot, {item: toID(args[2])});
+  } else if (args[0] === '-enditem') {
+    masks.slotItems.set(slot, {item: ''});
+  } else if (args[0] === 'replace' && masks.slotItems.has(slot)) {
+    const holder = client.getPokemon(position);
+    if (holder) holder.item = masks.slotItems.get(slot).item;
   }
 }
 
