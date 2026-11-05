@@ -201,18 +201,22 @@ pub(super) fn replay_pinned(
             .as_array()
             .cloned()
             .unwrap_or_default();
-        // Whether the user's item or ability adds a flinch to this move (King's Rock, Razor
-        // Fang; Gen 5+ Stench, R-M8-102), as the battle stands: the move as the engine edits it
-        // carries the flinch — Gen 2-4 the items only on their list (R-M9-34).
-        let adds_flinch = |who: &Who, move_name: Option<&str>| {
+        // Whether this move can flinch as its user would use it, the battle as it stands: the
+        // move as the engine edits it carries a flinch — its own, or one the user's item or
+        // ability adds (King's Rock, Razor Fang; Gen 5+ Stench, R-M8-102; Gen 2-4 the items only
+        // on their list, R-M9-34) — unless Sheer Force took it away (R-M11-71).
+        let flinches = |who: &Who, move_name: Option<&str>| {
             let state = compiled.engine.state();
-            let (Some(id), Some(def)) = (
-                who_to_id(state, who),
-                move_name.and_then(|name| compiled.dex.move_by_name(name)),
-            ) else {
-                return false;
-            };
-            pokemon_battle_engine::engine::modified_move(state, &compiled.rules, id, def, false)
+            let id = who_to_id(state, who)?;
+            let def = move_name.and_then(|name| compiled.dex.move_by_name(name))?;
+            Some(
+                pokemon_battle_engine::engine::modified_move(
+                    state,
+                    &compiled.rules,
+                    id,
+                    def,
+                    false,
+                )
                 .0
                 .secondaries
                 .iter()
@@ -221,7 +225,8 @@ pub(super) fn replay_pinned(
                         == pokemon_battle_engine::dex::SecondaryEffect::Volatile(
                             VolatileConditionKind::Flinch,
                         )
-                })
+                }),
+            )
         };
         // Gen 1 stats at their bounds as the turn begins (Showdown `modifiedStats`): 999 to raise,
         // 1 to drop (R-M9-42).
@@ -242,8 +247,8 @@ pub(super) fn replay_pinned(
                 .and_then(|stats| stats.get(stat))
                 .is_some_and(|value| if raised { value == 999 } else { value == 1 })
         };
-        let mut decisions = extract_decisions_with(&events, &reading, &adds_flinch, &stat_stuck);
-        attribute_frame_flinches(&mut decisions, oracle_frame, &reading, &adds_flinch);
+        let mut decisions = extract_decisions_with(&events, &reading, &flinches, &stat_stuck);
+        attribute_frame_flinches(&mut decisions, oracle_frame, &reading, &flinches);
         attribute_frame_rage(&mut decisions, oracle_frame);
 
         // A script entry answers whatever the engine is waiting for: the turn's choices, or

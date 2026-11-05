@@ -197,16 +197,17 @@ pub fn extract_entries(events: &[Value], reading: &LogReading) -> Vec<(usize, Wh
 }
 
 pub fn extract_decisions(events: &[Value], reading: &LogReading) -> Vec<ActionOracle> {
-    extract_decisions_with(events, reading, &|_, _| false, &|_, _, _| false)
+    extract_decisions_with(events, reading, &|_, _| None, &|_, _, _| false)
 }
 
-/// `extract_decisions`, knowing whose item or ability gives its moves a flinch of their own
-/// (King's Rock, Razor Fang, Stench): a silent flinch goes to that Pokémon's hit before a later
-/// hit that cannot flinch.
+/// `extract_decisions`, knowing whether a Pokémon's move can flinch as its user would use it
+/// (`flinches`, `None` when it cannot tell): an item or ability gives a move a flinch of its own
+/// (King's Rock, Razor Fang, Stench) or takes the move's away (Sheer Force), so a silent flinch
+/// goes to the hit that could cause it before a later one that cannot.
 pub fn extract_decisions_with(
     events: &[Value],
     reading: &LogReading,
-    adds_flinch: &dyn Fn(&Who, Option<&str>) -> bool,
+    flinches: &dyn Fn(&Who, Option<&str>) -> Option<bool>,
     // Gen 1: whether this Pokémon's stat (`atk` …) reads 999 (`true`: a raise) or 1 (`false`:
     // a drop) — where its change prints an echo the other way (R-M9-42).
     stat_stuck: &dyn Fn(&Who, &str, bool) -> bool,
@@ -1747,7 +1748,7 @@ pub fn extract_decisions_with(
         let victim = out[index].user.clone();
         let (earlier, _) = out.split_at_mut(index);
         if let Some(cause) =
-            flinch_cause(earlier, &victim, reading, adds_flinch).map(|at| &mut earlier[at])
+            flinch_cause(earlier, &victim, reading, flinches).map(|at| &mut earlier[at])
         {
             cause.secondary_applied = true;
             cause
@@ -1758,15 +1759,16 @@ pub fn extract_decisions_with(
     out
 }
 
-/// Which of `actions` flinched `victim`: the last hit on it that can flinch — a flinching
-/// move (the one the action used: Copycat's Bite, R-M8-86), or one its user's item or ability
-/// adds a flinch to (`adds_flinch`: King's Rock only on the Gen 2-4 list, R-M9-34); failing
-/// that, the last hit on it.
+/// Which of `actions` flinched `victim`: the last hit on it that can flinch — the move the
+/// action used (Copycat's Bite, R-M8-86) as its user would use it (`flinches`): its own flinch,
+/// one its user's item or ability adds (King's Rock only on the Gen 2-4 list, R-M9-34), none
+/// under Sheer Force (R-M11-71); by the move's name when that cannot be told. Failing that, the
+/// last hit on it.
 pub(super) fn flinch_cause(
     actions: &[ActionOracle],
     victim: &Who,
     reading: &LogReading,
-    adds_flinch: &dyn Fn(&Who, Option<&str>) -> bool,
+    flinches: &dyn Fn(&Who, Option<&str>) -> Option<bool>,
 ) -> Option<usize> {
     let hit_victim =
         |action: &ActionOracle| action.damages.iter().any(|(target, _)| target == victim);
@@ -1774,10 +1776,13 @@ pub(super) fn flinch_cause(
         .iter()
         .rposition(|action| {
             hit_victim(action)
-                && (action
-                    .used_move()
-                    .is_some_and(|name| reading.flinching_moves.contains(name))
-                    || adds_flinch(&action.user, action.used_move().map(String::as_str)))
+                && flinches(&action.user, action.used_move().map(String::as_str)).unwrap_or_else(
+                    || {
+                        action
+                            .used_move()
+                            .is_some_and(|name| reading.flinching_moves.contains(name))
+                    },
+                )
         })
         .or_else(|| actions.iter().rposition(hit_victim))
 }
@@ -1790,7 +1795,7 @@ pub(super) fn attribute_frame_flinches(
     decisions: &mut [ActionOracle],
     frame: &Value,
     reading: &LogReading,
-    adds_flinch: &dyn Fn(&Who, Option<&str>) -> bool,
+    flinches: &dyn Fn(&Who, Option<&str>) -> Option<bool>,
 ) {
     let mut victims: Vec<Who> = Vec::new();
     for (victim, _) in decisions.iter().flat_map(|action| &action.damages) {
@@ -1840,7 +1845,7 @@ pub(super) fn attribute_frame_flinches(
         }
         let later = &mut decisions[since..];
         if let Some(cause) =
-            flinch_cause(later, &victim, reading, adds_flinch).map(|at| &mut later[at])
+            flinch_cause(later, &victim, reading, flinches).map(|at| &mut later[at])
             && !cause
                 .secondary_on
                 .iter()
