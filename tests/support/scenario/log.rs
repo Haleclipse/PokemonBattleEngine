@@ -305,6 +305,13 @@ pub fn extract_decisions_with(
         let after_ability = ability_announced.take();
         let after_synchronize = synchronizing.take();
         let ability_boosting = ability_stat_change.take();
+        // Gulp Missile spits at the attacker (`-damage|p|…|[from] ability: Gulp Missile`) and an
+        // Arrokuda's catch drops its Defense on the next line (`-unboost|p|def|1`, no `[from]`):
+        // the ability's, not a stat change of the attacker's own move — an Ancient Power's boost
+        // that did not come (R-M11-72).
+        if kind == "damage" && event["from"].as_str() == Some("[from] ability: Gulp Missile") {
+            ability_stat_change = who(&event["pokemon"]);
+        }
         let item_boosting = item_stat_change.take();
         let cotton_down_drops = std::mem::take(&mut cotton_down);
         let berry_eater = ate_berry.take();
