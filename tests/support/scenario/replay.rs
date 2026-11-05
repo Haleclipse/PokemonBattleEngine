@@ -300,7 +300,8 @@ pub(super) fn replay_pinned(
             ];
             // The entrants' confusion berries (hazards on the way in) draw their durations; a
             // Gen 4-5 Frisk entrant its foe first, Trace its foe (probed: which entrants came in).
-            // Entrants sharing a speed draw their order first (R-M8-140).
+            // Entrants sharing a speed draw their order first (R-M8-140), after the replacements
+            // that replace Pokémon sharing a speed draw the order they come in (R-M11-68).
             let berries = entry_berry_durations(&outside_berry_confusion_hints(
                 &compiled,
                 oracle_frame,
@@ -322,7 +323,8 @@ pub(super) fn replay_pinned(
                 let mut probe = restore_with_tape(&compiled, &snapshot, berries.clone());
                 if probe.resolve_forced_switches(choices.clone()).is_ok() {
                     let events = &probe.trace().events()[trace_len..];
-                    entry_tape = entry_tie_tape(&compiled, events, oracle_frame);
+                    entry_tape = replacement_tie_tape(&compiled, events, oracle_frame);
+                    entry_tape.extend(entry_tie_tape(&compiled, events, oracle_frame));
                     if ability_draws {
                         entry_tape.extend(entrant_ability_tape(
                             &compiled,

@@ -1,10 +1,12 @@
 //! Forced replacements (DESIGN.md §30): what each side must send in, the choices checked and
 //! resolved.
 
+use crate::engine::stats::current_handler_speed;
 use crate::engine::{
-    BattleError, ChoiceError, ForcedSwitchChoice, PendingExecution, PendingFaints,
+    BattleError, ChoiceError, ForcedReplacement, ForcedSwitchChoice, PendingExecution,
+    PendingFaints, TraceEvent,
 };
-use crate::ids::SideId;
+use crate::ids::{PokemonId, SideId};
 use crate::state::BattlePhase;
 
 use super::*;
@@ -43,6 +45,7 @@ impl BattleEngine {
             self.state.side_mut(side).refill_mid_turn = None;
         }
         self.state.faint_refills_held = false;
+        let mut placements = Vec::new();
         for (index, choice) in choices.into_iter().enumerate() {
             for replacement in choice.replacements {
                 let slot = requirements[index]
@@ -53,41 +56,54 @@ impl BattleEngine {
                     .ok_or(BattleError::InvalidReplacementPosition(
                         replacement.position,
                     ))?;
-                // One placement path for both kinds of slot: an ordered-out Pokémon is cleaned
-                // up and replaced, an empty slot is filled. Every entrant then runs its
-                // switch-in below in one speed-ordered batch, as Showdown's runSwitch does.
-                // Gen 4 (Showdown `switchIn` with the U-turn / Baton Pass as source effect): the
-                // replacement takes over the user's last move.
-                let passed_move = slot
-                    .outgoing
-                    .filter(|_| self.rules.conditions.self_switch_passes_last_move)
-                    .and_then(|outgoing| self.state.pokemon(outgoing))
-                    .and_then(|outgoing| outgoing.last_move);
-                let mut handover = None;
-                if let Some(outgoing) = slot.outgoing {
-                    self.state.side_mut(choice.side).switch_out = None;
-                    // Showdown `switchIn` → `queue.cancelAction`: a Pokémon Eject Button sent out
-                    // before it acted loses its action, even if a drag brings it back this turn.
-                    if let PendingExecution::Turn { actions, .. } = &mut self.pending {
-                        actions.retain(|action| action.actor != outgoing);
-                    }
-                    self.run_switch_out(outgoing);
-                    handover = self.take_handover(choice.side, outgoing, replacement.pokemon);
-                    self.clear_on_switch(outgoing);
-                }
-                self.place(replacement.position, slot.outgoing, replacement.pokemon)?;
-                if let (Some(outgoing), Some(handover)) = (slot.outgoing, handover) {
-                    self.hand_over(outgoing, replacement.pokemon, handover);
-                }
-                if let Some(move_id) = passed_move
-                    && let Some(incoming) = self.state.pokemon_mut(replacement.pokemon)
-                {
-                    incoming.last_move = Some(move_id);
-                    incoming.last_move_encore = Some(move_id);
-                    incoming.last_move_base = None;
-                }
-                entrants.push(replacement.pokemon);
+                placements.push((choice.side, slot, replacement));
             }
+        }
+        // Showdown sorts the replacements' `instaswitch` actions (`commitChoices` → `queue.sort`)
+        // by the action speed of the Pokémon each replaces, fallen or ordered out: fastest first,
+        // ties drawn. Each entrant takes its slot's party index as it comes in, so on a side
+        // sending two the order picks what an Illusion takes on.
+        let order = self.replacement_order(&placements);
+        placements.sort_by_key(|(_, _, replacement)| {
+            order
+                .iter()
+                .position(|pokemon| *pokemon == replacement.pokemon)
+        });
+        for (side, slot, replacement) in placements {
+            // One placement path for both kinds of slot: an ordered-out Pokémon is cleaned
+            // up and replaced, an empty slot is filled. Every entrant then runs its
+            // switch-in below in one speed-ordered batch, as Showdown's runSwitch does.
+            // Gen 4 (Showdown `switchIn` with the U-turn / Baton Pass as source effect): the
+            // replacement takes over the user's last move.
+            let passed_move = slot
+                .outgoing
+                .filter(|_| self.rules.conditions.self_switch_passes_last_move)
+                .and_then(|outgoing| self.state.pokemon(outgoing))
+                .and_then(|outgoing| outgoing.last_move);
+            let mut handover = None;
+            if let Some(outgoing) = slot.outgoing {
+                self.state.side_mut(side).switch_out = None;
+                // Showdown `switchIn` → `queue.cancelAction`: a Pokémon Eject Button sent out
+                // before it acted loses its action, even if a drag brings it back this turn.
+                if let PendingExecution::Turn { actions, .. } = &mut self.pending {
+                    actions.retain(|action| action.actor != outgoing);
+                }
+                self.run_switch_out(outgoing);
+                handover = self.take_handover(side, outgoing, replacement.pokemon);
+                self.clear_on_switch(outgoing);
+            }
+            self.place(replacement.position, slot.outgoing, replacement.pokemon)?;
+            if let (Some(outgoing), Some(handover)) = (slot.outgoing, handover) {
+                self.hand_over(outgoing, replacement.pokemon, handover);
+            }
+            if let Some(move_id) = passed_move
+                && let Some(incoming) = self.state.pokemon_mut(replacement.pokemon)
+            {
+                incoming.last_move = Some(move_id);
+                incoming.last_move_encore = Some(move_id);
+                incoming.last_move_base = None;
+            }
+            entrants.push(replacement.pokemon);
         }
         // The replacements' `switch` actions end with their `Update`.
         self.run_update(PendingFaints::Processed);
@@ -161,6 +177,30 @@ impl BattleEngine {
             }
         }
         Ok(self.turn_result())
+    }
+
+    /// The order the replacements come in: by the action speed (Trick Room inverted) of the
+    /// Pokémon each replaces — the one ordered out, or the fallen one still at the slot's party
+    /// index — ties drawn (`ReplacementTiesDrawn`).
+    fn replacement_order(
+        &mut self,
+        placements: &[(SideId, ReplacementSlot, ForcedReplacement)],
+    ) -> Vec<PokemonId> {
+        let entries = placements
+            .iter()
+            .map(|(side, slot, replacement)| {
+                let replaced = slot.outgoing.or_else(|| {
+                    let spec = self.rules.topology.spec(slot.position)?;
+                    let side = self.state.side(*side);
+                    side.battle_order.get(spec.slot as usize).copied()
+                });
+                let speed = replaced.map_or(0, |replaced| {
+                    current_handler_speed(&self.state, &self.rules, replaced)
+                });
+                (replacement.pokemon, speed)
+            })
+            .collect();
+        self.tie_ordered(entries, |tied| TraceEvent::ReplacementTiesDrawn { tied })
     }
 
     fn replacement_requirement(&self, side: SideId) -> ReplacementRequirement {

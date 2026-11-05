@@ -1,0 +1,405 @@
+{
+ "schema": 1,
+ "id": "gen6-doubles-the-faster-fallen-slot-is-refilled-first",
+ "notes": [
+  "Gen 6 VGC 2016: Blitzle and a paralyzed Tentacool fall in turn 4, and P2 sends Zorua (Nick79) to Blitzle's slot and Zoroark to Tentacool's. Showdown sorts the replacements' `instaswitch` actions by the speed of the fallen Pokémon each replaces (Tentacool 112, its paralysis gone with the faint, before Blitzle 96): Zoroark comes in first and takes Zorua's look, then Zorua, at index 0, Zoroark's. The engine sent them in choice order: Zorua took Zoroark's look and Zoroark, nothing left behind it, none (DESIGN.md R-M11-68). Minimized from the Nightly battle m9-gen6vgc2016-s371-019"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "doubles",
+  "format": "gen6vgc2016"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Spritzee",
+    "species": "Spritzee",
+    "ability": "Healer",
+    "moves": [
+     "Round"
+    ],
+    "nature": "Jolly",
+    "gender": "F",
+    "shiny": true,
+    "level": 50,
+    "evs": {
+     "hp": 100,
+     "atk": 200,
+     "def": 0,
+     "spa": 188,
+     "spd": 0,
+     "spe": 20
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Deino",
+    "species": "Deino",
+    "ability": "Hustle",
+    "moves": [
+     "Screech",
+     "Secret Power",
+     "Swagger",
+     "Bite"
+    ],
+    "nature": "Gentle",
+    "gender": "F",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 124,
+     "atk": 88,
+     "def": 44,
+     "spa": 252,
+     "spd": 0,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 199
+   },
+   {
+    "label": "Simisear",
+    "species": "Simisear",
+    "ability": "Blaze",
+    "moves": [
+     "Fling"
+    ],
+    "nature": "Adamant",
+    "gender": "M",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 120,
+     "atk": 128,
+     "def": 60,
+     "spa": 4,
+     "spd": 36,
+     "spe": 160
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Lampent",
+    "species": "Lampent",
+    "ability": "Flash Fire",
+    "moves": [
+     "Flame Charge"
+    ],
+    "nature": "Adamant",
+    "gender": "M",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 180,
+     "atk": 84,
+     "def": 0,
+     "spa": 0,
+     "spd": 100,
+     "spe": 144
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 8,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 167
+   },
+   {
+    "label": "Tympole",
+    "species": "Tympole",
+    "ability": "Swift Swim",
+    "moves": [
+     "Rain Dance",
+     "Endeavor",
+     "Surf",
+     "Supersonic"
+    ],
+    "nature": "Relaxed",
+    "gender": "M",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 108,
+     "atk": 172,
+     "def": 80,
+     "spa": 120,
+     "spd": 16,
+     "spe": 12
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Vivillon",
+    "species": "Vivillon-Polar",
+    "ability": "Shield Dust",
+    "moves": [
+     "Iron Defense"
+    ],
+    "nature": "Careful",
+    "gender": "F",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 112,
+     "atk": 124,
+     "def": 112,
+     "spa": 32,
+     "spd": 92,
+     "spe": 36
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 30,
+     "spe": 31
+    }
+   }
+  ],
+  "p2": [
+   {
+    "label": "Zoroark",
+    "species": "Zoroark",
+    "ability": "Illusion",
+    "moves": [
+     "Retaliate"
+    ],
+    "nature": "Careful",
+    "gender": "M",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 64,
+     "atk": 52,
+     "def": 144,
+     "spa": 156,
+     "spd": 0,
+     "spe": 92
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 22,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 74
+   },
+   {
+    "label": "Tentacool",
+    "species": "Tentacool",
+    "ability": "Liquid Ooze",
+    "moves": [
+     "Swagger",
+     "Constrict",
+     "Wrap",
+     "Rest"
+    ],
+    "nature": "Rash",
+    "gender": "F",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 0,
+     "atk": 28,
+     "def": 84,
+     "spa": 212,
+     "spd": 0,
+     "spe": 172
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 187
+   },
+   {
+    "label": "Emboar",
+    "species": "Emboar",
+    "ability": "Reckless",
+    "moves": [
+     "Head Smash"
+    ],
+    "nature": "Mild",
+    "gender": "F",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 252,
+     "atk": 0,
+     "def": 84,
+     "spa": 72,
+     "spd": 4,
+     "spe": 96
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 13
+    }
+   },
+   {
+    "label": "Blitzle",
+    "species": "Blitzle",
+    "ability": "Sap Sipper",
+    "moves": [
+     "Thunderbolt",
+     "Endure",
+     "Magnet Rise",
+     "Light Screen"
+    ],
+    "nature": "Quirky",
+    "gender": "F",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 124,
+     "atk": 0,
+     "def": 0,
+     "spa": 156,
+     "spd": 228,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 6,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Sigilyph",
+    "species": "Sigilyph",
+    "ability": "Wonder Skin",
+    "moves": [
+     "Protect"
+    ],
+    "nature": "Quirky",
+    "gender": "M",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 44,
+     "atk": 4,
+     "def": 92,
+     "spa": 112,
+     "spd": 124,
+     "spe": 132
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 21,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Nick79",
+    "species": "Zorua",
+    "ability": "Illusion",
+    "moves": [
+     "Rest"
+    ],
+    "nature": "Quiet",
+    "gender": "M",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 0,
+     "atk": 0,
+     "def": 172,
+     "spa": 180,
+     "spd": 44,
+     "spe": 112
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 11,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 155
+   }
+  ]
+ },
+ "preview": {
+  "p1": "team 256413",
+  "p2": "team 426153"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   57892,
+   371,
+   1019,
+   31
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Screech 1, move Rain Dance",
+   "p2": "move Thunderbolt 1, move Swagger 2"
+  },
+  {
+   "p1": "move Secret Power 2, move Endeavor 1",
+   "p2": "move Endure, move Constrict 1"
+  },
+  {
+   "p1": "move Swagger 2, move Surf",
+   "p2": "move Magnet Rise, move Wrap 2"
+  },
+  {
+   "p1": "move Bite 1, move Supersonic 2",
+   "p2": "move Light Screen, move Rest"
+  },
+  {
+   "p2": "switch 3, switch 4"
+  }
+ ]
+}

@@ -111,6 +111,12 @@ pub enum TraceEvent {
     SwitchInTiesDrawn {
         tied: Vec<(PokemonId, u32)>,
     },
+    /// Simultaneous replacements come in in the speed order of the Pokémon they replace: these
+    /// entrants drew a SpeedTie decision each, in draw order, with the speed their predecessor
+    /// shares with another's — lets a replay plan the order Showdown sent them in.
+    ReplacementTiesDrawn {
+        tied: Vec<(PokemonId, u32)>,
+    },
     /// A move asked to move a Pokémon's pending action (After You, Quash: `-activate|target|move:
     /// …`); the queue changes once the action is over.
     QueueChangeRequested {
@@ -877,6 +883,7 @@ impl TraceEvent {
             | Self::BeforeMoveResolved { .. }
             | Self::ResidualEffect { .. } => TraceCategory::Flow,
             Self::SwitchInTiesDrawn { .. }
+            | Self::ReplacementTiesDrawn { .. }
             | Self::AccuracyChecked { .. }
             | Self::CriticalChecked { .. }
             | Self::SecondaryEffectRolled { .. }

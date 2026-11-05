@@ -709,6 +709,46 @@ pub(super) fn lead_tie_tape(compiled: &Compiled, initial: Option<&Value>) -> Vec
         .collect()
 }
 
+/// The SpeedTie decisions of the order simultaneous replacements come in (a probe's
+/// `ReplacementTiesDrawn`): tied entrants go in the order the frame's `switch` events name them.
+pub(super) fn replacement_tie_tape(
+    compiled: &Compiled,
+    events: &[TraceEvent],
+    frame: &Value,
+) -> Vec<RandomOverride> {
+    let state = compiled.engine.state();
+    let switched: Vec<PokemonId> = frame["events"]
+        .as_array()
+        .into_iter()
+        .flatten()
+        .filter(|event| event["kind"] == "switch")
+        .filter_map(|event| {
+            let who = serde_json::from_value::<Who>(event["pokemon"].clone()).ok()?;
+            label_to_id(compiled, &who).or_else(|| who_to_id(state, &who))
+        })
+        .collect();
+    let shown_at = |id: PokemonId| switched.iter().position(|s| *s == id).unwrap_or(usize::MAX);
+    events
+        .iter()
+        .filter_map(|event| match event {
+            TraceEvent::ReplacementTiesDrawn { tied } => Some(tied),
+            _ => None,
+        })
+        .flat_map(|tied| {
+            tied.iter().map(|(entrant, speed)| {
+                let mut members: Vec<PokemonId> = tied
+                    .iter()
+                    .filter(|(_, s)| s == speed)
+                    .map(|(id, _)| *id)
+                    .collect();
+                members.sort_by_key(|id| shown_at(*id));
+                let rank = members.iter().position(|id| id == entrant).unwrap_or(0);
+                RandomOverride::raw(RandomRequestKind::SpeedTie, (members.len() - rank) as u64)
+            })
+        })
+        .collect()
+}
+
 /// The SpeedTie decisions of simultaneous replacements (a probe's `SwitchInTiesDrawn`): tied
 /// entrants go in the order the frame first names them, as the leads do. Unplanned, the
 /// decisions fell to the PRNG — and a Trace entrant's optional foe draw, planned next, was

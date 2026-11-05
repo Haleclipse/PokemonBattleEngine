@@ -14,9 +14,23 @@ impl BattleEngine {
     /// everyone else draws nothing, so the PRNG only advances on a real tie. The draws are
     /// traced (`SwitchInTiesDrawn`).
     pub(super) fn speed_ordered(&mut self, pokemon: Vec<PokemonId>) -> Vec<PokemonId> {
-        let mut entries: Vec<(PokemonId, u32, u64)> = pokemon
+        let entries = pokemon
             .into_iter()
-            .map(|id| (id, action_speed(&self.state, &self.rules, id, None), 0))
+            .map(|id| (id, action_speed(&self.state, &self.rules, id, None)))
+            .collect();
+        self.tie_ordered(entries, |tied| TraceEvent::SwitchInTiesDrawn { tied })
+    }
+
+    /// `entries` by their speed, highest first, as `speed_ordered` orders Pokémon: an entry
+    /// sharing its speed draws a SpeedTie decision, the draws traced by `traced`.
+    pub(super) fn tie_ordered(
+        &mut self,
+        entries: Vec<(PokemonId, u32)>,
+        traced: fn(Vec<(PokemonId, u32)>) -> TraceEvent,
+    ) -> Vec<PokemonId> {
+        let mut entries: Vec<(PokemonId, u32, u64)> = entries
+            .into_iter()
+            .map(|(id, speed)| (id, speed, 0))
             .collect();
         // The ties are listed for the trace alone (DESIGN.md §47.5 item 5).
         let listed = self.trace.keeps(crate::engine::TraceCategory::Check);
@@ -36,9 +50,7 @@ impl BattleEngine {
         }
         if !tied.is_empty() {
             self.trace
-                .push_with(crate::engine::TraceCategory::Check, || {
-                    TraceEvent::SwitchInTiesDrawn { tied }
-                });
+                .push_with(crate::engine::TraceCategory::Check, || traced(tied));
         }
         entries.sort_by_key(|entry| std::cmp::Reverse((entry.1, entry.2)));
         entries.into_iter().map(|entry| entry.0).collect()
