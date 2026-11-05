@@ -1,0 +1,76 @@
+{
+ "schema": 1,
+ "id": "gen7-doubles-a-dancer-stopped-by-confusion-leaves-the-dance-for-copycat",
+ "notes": [
+  "Gen 7 doubles: Slowbro's King's Shield first, then Lunala's Teeter Dance confuses its ally Oricorio, whose Dancer copies the dance and hits itself in confusion instead. The dance stays the battle's last move (Bulbapedia, Copycat Gen 5+: a Pokémon prevented from using a move leaves the last move as it was), and Smeargle's Copycat dances it. Showdown's dancer `runMove` cleared the action's active move as its block ended it (`clearActiveMove(true)`), so the action recorded no last move and Copycat failed on King's Shield; the oracle is patched (issues.md I217, DESIGN.md R-M11-74). Hand-written, seed sought with seek.mjs"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Oricorio",
+    "species": "Oricorio",
+    "level": 20,
+    "nature": "Hardy",
+    "moves": [
+     "Splash"
+    ],
+    "ability": "Dancer",
+    "gender": "F"
+   },
+   {
+    "label": "Lunala",
+    "species": "Lunala",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Teeter Dance"
+    ],
+    "ability": "Shadow Shield"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Slowbro",
+    "species": "Slowbro",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "King's Shield"
+    ],
+    "ability": "Own Tempo",
+    "gender": "M"
+   },
+   {
+    "label": "Smeargle",
+    "species": "Smeargle",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Copycat"
+    ],
+    "ability": "Own Tempo",
+    "gender": "M"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Splash, move Teeter Dance",
+   "p2": "move King's Shield, move Copycat"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   3,
+   2,
+   3,
+   4
+  ]
+ }
+}

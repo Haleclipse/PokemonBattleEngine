@@ -37,7 +37,8 @@
 // Dancer dances, and so its draws; I214 (Gen 4 Safeguard stops every confusion berry's confusion) takes
 // the confusion's duration draw away; I215 (an Infiltrator's Max Move effects past Mist and Safeguard)
 // lets a sleep's or a confusion's duration be drawn; I216 (a Gen 3 sun Weather Ball thaws its target)
-// takes the thawed Pokémon's later thaw rolls away.
+// takes the thawed Pokémon's later thaw rolls away; I217 (a Gen 7+ Dancer stopped before its dance
+// leaves the dance the battle's last move) lets a later Copycat call it, with its draws.
 // `SHOWDOWN_UNPATCHED=1` plays Showdown as published: to reproduce a battle recorded before a
 // patch existed, and to check that a patch's scenario fails without it.
 import {Battle, Dex, Pokemon} from '@pkmn/sim';
@@ -3948,5 +3949,31 @@ if (patched) {
       return;
     }
     return onDamagingHit.call(this, damage, target, source, move);
+  };
+}
+
+// I217 — Gen 7+: a Dancer stopped before its dance (its confusion, paralysis …) leaves the battle's
+// last move the dance. Showdown writes `battle.lastMove` only as the action ends (`runAction`'s
+// `clearActiveMove()`), from the active move; the dancer's `runMove` makes its copy the active move
+// (`setActiveMove`) and the block's `clearActiveMove(true)` leaves none, so the dance the action's
+// user did use is never recorded, and a later Copycat calls the move before it. Bulbapedia's
+// Copycat, Gen 5+: "The last move used is now unaffected if a Pokémon tries to use a move but is
+// prevented by a status condition or effect … the last-used move remains what it was before the
+// Pokémon's turn" — the dance (issues.md I217). The patch: a dancer's `runMove` (`externalMove`)
+// that leaves no active move puts back the one before it. Copycat then calls the dance, and draws
+// as it goes (TESTING.md §7).
+if (patched) {
+  const actions = Object.getPrototypeOf(new Battle({formatid: 'gen9customgame'}).actions);
+  const runMove = actions.runMove;
+  actions.runMove = function (moveOrMoveName, pokemon, targetLoc, options) {
+    const battle = this.battle;
+    const {activeMove, activePokemon, activeTarget} = battle;
+    const result = runMove.call(this, moveOrMoveName, pokemon, targetLoc, options);
+    if (options?.externalMove && activeMove && !battle.activeMove) {
+      battle.activeMove = activeMove;
+      battle.activePokemon = activePokemon;
+      battle.activeTarget = activeTarget;
+    }
+    return result;
   };
 }
