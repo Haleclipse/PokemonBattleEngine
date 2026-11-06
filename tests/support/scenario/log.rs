@@ -1055,7 +1055,11 @@ pub fn extract_decisions_with(
                     )
                     && let (Some(action), Some(target)) =
                         (out.last_mut(), args.first().and_then(who_from_text))
-                    && target != action.user
+                    // The move's user: a move sent back at the action's own user (Magic Coat's,
+                    // Magic Bounce's) is its reflector's, so the user takes it in too — a Sap
+                    // Sipper's Grass Whistle a Magic Coat returned (R-M11-78), as the absorbing
+                    // heals below.
+                    && target != *action.called.last().map_or(&action.user, |c| &c.user)
                     && action.move_name.is_some()
                 {
                     action.hit = false;

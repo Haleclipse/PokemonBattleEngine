@@ -1,0 +1,14 @@
+{
+ "schema": 1,
+ "id": "gen5-a-sap-sipper-takes-in-the-grass-whistle-magic-coat-returns",
+ "notes": [
+  "Gen 5 singles: Deerling, with Sap Sipper, uses Grass Whistle on Milotic, whose Magic Coat sends it back; Deerling's Sap Sipper takes it in (`-ability|p1a: Deerling|Sap Sipper|boost`), before any accuracy check. The replay marked a Sap Sipper (Lightning Rod, Storm Drain …) taking a move in only on a Pokémon other than the action's user, so it planned the returned Grass Whistle's accuracy, which nothing asked (DESIGN.md R-M11-78). Hand-written after the Nightly battle m9-gen5ubers-s386-003"
+ ],
+ "battle": {"generation": 5, "mode": "singles", "format": "gen5customgame"},
+ "teams": {
+  "p1": [{"label": "Deerling", "species": "Deerling", "level": 50, "nature": "Hardy", "moves": ["Grass Whistle"], "ability": "Sap Sipper", "gender": "F"}],
+  "p2": [{"label": "Milotic", "species": "Milotic", "level": 50, "nature": "Hardy", "moves": ["Magic Coat"], "ability": "Marvel Scale", "gender": "M"}]
+ },
+ "script": [{"p1": "move Grass Whistle", "p2": "move Magic Coat"}],
+ "random": {"mode": "oracle-guided", "seed": [1, 2, 3, 4]}
+}
