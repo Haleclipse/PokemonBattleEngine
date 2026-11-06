@@ -1089,11 +1089,17 @@ impl<'a> MovePipeline<'a> {
                     .with_before_move(true)
                     .with_lent_priority(lent)
                     .with_external();
-            let _ = dance.execute_called_with(call, move_def, declared, resolved);
+            let danced = dance.execute_called_with(call, move_def, declared, resolved);
             // A dance asks of the queue as any run does (none can yet: no physical dance meets
             // a Shell Trap, R-M11-18).
             let effects = dance.take_effects();
             self.effects.absorb(effects);
+            // The dance's `runMove` ends with its own `AfterMove` (one BeforeMove stopped returns
+            // first): the `onAnyAfterMove` of the field — an Eject Pack its Feather Dance marked
+            // is used at once, before the turn's next action (R-M11-80).
+            if danced.is_ok_and(|execution| !execution.stopped) {
+                self.any_after_move();
+            }
             if !had_rampage && let Some(pokemon) = self.state.pokemon_mut(dancer) {
                 pokemon.volatiles.remove(VolatileConditionKind::Rampage);
             }
