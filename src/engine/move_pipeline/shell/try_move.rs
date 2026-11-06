@@ -209,30 +209,6 @@ impl MovePipeline<'_> {
                 kind: crate::state::FieldConditionKind::EchoedVoice,
             });
         }
-        // Showdown `runEvent('TryMove')`: an active Damp stops Explosion and its kin
-        // (`onAnyTryMove`) — the PP spent, the user standing.
-        if move_def.behavior.stopped_by_damp
-            && let Some(holder) = crate::engine::context::damp_holder(self.state, self.rules)
-        {
-            let ability = self
-                .state
-                .pokemon(holder)
-                .map_or(crate::ids::AbilityId::DAMP, crate::engine::raw_ability);
-            self.trace.push(TraceEvent::MoveFailed {
-                actor,
-                move_id,
-                reason: MoveFailReason::Ability { holder, ability },
-            });
-            self.self_damage_cancelled = true;
-            return Ok(ControlFlow::Break(MoveExecution {
-                actor,
-                move_id,
-                hits: Vec::new(),
-                stopped: false,
-                aborted: false,
-                result: MoveResult::Failed,
-            }));
-        }
         // Shell Trap's `onTryMove` (§15.8): not armed by a foe's physical hit, it stops (`cant`),
         // the PP spent, neither succeeding nor failing.
         if move_def.behavior.needs_armed_trap
@@ -279,6 +255,32 @@ impl MovePipeline<'_> {
                 stopped: false,
                 aborted: false,
                 result: MoveResult::Neither,
+            }));
+        }
+        // Showdown `runEvent('TryMove')`: an active Damp stops Explosion and its kin
+        // (`onAnyTryMove`, priority 0: after a strong weather's, so Desolate Land's or Primordial
+        // Sea's stops a Mind Blown first, Damp unseen, R-M11-76) — the PP spent, the user
+        // standing.
+        if move_def.behavior.stopped_by_damp
+            && let Some(holder) = crate::engine::context::damp_holder(self.state, self.rules)
+        {
+            let ability = self
+                .state
+                .pokemon(holder)
+                .map_or(crate::ids::AbilityId::DAMP, crate::engine::raw_ability);
+            self.trace.push(TraceEvent::MoveFailed {
+                actor,
+                move_id,
+                reason: MoveFailReason::Ability { holder, ability },
+            });
+            self.self_damage_cancelled = true;
+            return Ok(ControlFlow::Break(MoveExecution {
+                actor,
+                move_id,
+                hits: Vec::new(),
+                stopped: false,
+                aborted: false,
+                result: MoveResult::Failed,
             }));
         }
         // Dazzling, Queenly Majesty, Armor Tail (`onFoeTryMove`, priority 0): a foe's move of

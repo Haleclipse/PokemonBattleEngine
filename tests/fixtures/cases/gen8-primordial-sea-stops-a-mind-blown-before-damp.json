@@ -1,0 +1,131 @@
+{
+ "schema": 1,
+ "id": "gen8-primordial-sea-stops-a-mind-blown-before-damp",
+ "notes": [
+  "Gen 8 singles: under Rookidee's Primordial Sea, the Damp Stunfisk uses Mind Blown. The strong weather's `onTryMove` (priority 1) stops it first (`-fail|p1a: Stunfisk|Mind Blown|[from] Primordial Sea`), ahead of Damp's `onAnyTryMove` (priority 0): Damp never shows. The engine checked Damp first, and the observers learned Stunfisk's ability (DESIGN.md R-M11-76). Minimized from the Nightly battle m8-gen8-singles-s1823-010"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Meltan",
+    "species": "Meltan",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Blue Flare",
+     "Fire Blast",
+     "Forest's Curse"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Heatmor",
+    "species": "Heatmor",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Burning Jealousy"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Stunfisk",
+    "species": "Stunfisk",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Mind Blown"
+    ],
+    "ability": "Damp",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Marshadow",
+    "species": "Marshadow",
+    "level": 48,
+    "nature": "Hardy",
+    "moves": [
+     "Brutal Swing",
+     "Bulldoze",
+     "Forest's Curse"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Gardevoir",
+    "species": "Gardevoir",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Earthquake"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Rookidee",
+    "species": "Rookidee",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Max Phantasm"
+    ],
+    "ability": "Primordial Sea",
+    "gender": "F"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   45403,
+   44028,
+   51819,
+   7631
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Blue Flare",
+   "p2": "move Brutal Swing"
+  },
+  {
+   "p1": "move Fire Blast",
+   "p2": "move Bulldoze"
+  },
+  {
+   "p1": "move Forest's Curse",
+   "p2": "move Forest's Curse"
+  },
+  {
+   "p1": "move Blue Flare",
+   "p2": "move Brutal Swing"
+  },
+  {
+   "p1": "switch Heatmor"
+  },
+  {
+   "p1": "move Burning Jealousy",
+   "p2": "move Bulldoze"
+  },
+  {
+   "p2": "switch Gardevoir"
+  },
+  {
+   "p1": "switch Stunfisk",
+   "p2": "switch Rookidee"
+  },
+  {
+   "p1": "move Mind Blown",
+   "p2": "move Max Phantasm"
+  }
+ ]
+}
