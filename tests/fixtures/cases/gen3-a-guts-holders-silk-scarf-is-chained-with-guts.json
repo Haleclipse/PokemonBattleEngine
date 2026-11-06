@@ -1,0 +1,310 @@
+{
+ "schema": 1,
+ "id": "gen3-a-guts-holders-silk-scarf-is-chained-with-guts",
+ "notes": [
+  "Gen 3 Ubers: a paralyzed Guts Machoke holding a Silk Scarf lands a critical Strength on Starmie. Showdown's gen3 Silk Scarf is an `onModifyAtk` `chainModify(1.1)` (priority 1), chained with Guts's 1.5 (priority 5) and applied once: 235 → 388. The engine applied the item apart, after the chain: 235 → 352 → 387, a point short, and no damage roll reproduced the hit (DESIGN.md R-M11-79). Minimized from the cloud Nightly battle m9-gen3ubers-s101600-005"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3ubers"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Machoke",
+    "species": "Machoke",
+    "item": "Silk Scarf",
+    "ability": "Guts",
+    "moves": [
+     "Strength",
+     "Rock Slide",
+     "Revenge",
+     "Protect"
+    ],
+    "nature": "Bashful",
+    "gender": "F",
+    "shiny": true,
+    "level": 92,
+    "evs": {
+     "hp": 224,
+     "atk": 76,
+     "def": 0,
+     "spa": 88,
+     "spd": 0,
+     "spe": 120
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 77
+   },
+   {
+    "label": "Nick27",
+    "species": "Snubbull",
+    "ability": "Run Away",
+    "moves": [
+     "Defense Curl",
+     "Take Down",
+     "Earthquake"
+    ],
+    "nature": "Modest",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 124,
+     "atk": 0,
+     "def": 0,
+     "spa": 44,
+     "spd": 88,
+     "spe": 252
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   }
+  ],
+  "p2": [
+   {
+    "label": "Nick87",
+    "species": "Ponyta",
+    "ability": "Run Away",
+    "moves": [
+     "Strength"
+    ],
+    "nature": "Naive",
+    "gender": "F",
+    "shiny": false,
+    "level": 20,
+    "evs": {
+     "hp": 0,
+     "atk": 96,
+     "def": 0,
+     "spa": 200,
+     "spd": 4,
+     "spe": 208
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 12
+    }
+   },
+   {
+    "label": "Starmie",
+    "species": "Starmie",
+    "ability": "Natural Cure",
+    "moves": [
+     "Recover",
+     "Confuse Ray",
+     "Secret Power",
+     "Camouflage"
+    ],
+    "nature": "Brave",
+    "gender": "",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 0,
+     "atk": 40,
+     "def": 92,
+     "spa": 168,
+     "spd": 132,
+     "spe": 76
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 24,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Nick5",
+    "species": "Oddish",
+    "ability": "Chlorophyll",
+    "moves": [
+     "Giga Drain",
+     "Swords Dance",
+     "Sweet Scent"
+    ],
+    "nature": "Careful",
+    "gender": "F",
+    "shiny": false,
+    "level": 95,
+    "evs": {
+     "hp": 80,
+     "atk": 92,
+     "def": 0,
+     "spa": 96,
+     "spd": 240,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Pupitar",
+    "species": "Pupitar",
+    "ability": "Shed Skin",
+    "moves": [
+     "Rock Smash",
+     "Leer",
+     "Sleep Talk",
+     "Mud-Slap"
+    ],
+    "nature": "Relaxed",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 72,
+     "atk": 56,
+     "def": 252,
+     "spa": 0,
+     "spd": 0,
+     "spe": 128
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 4
+   }
+  ]
+ },
+ "preview": {
+  "p1": "team 236514",
+  "p2": "team 263154"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   40991,
+   101600,
+   1005,
+   31
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Strength",
+   "p2": "move Strength"
+  },
+  {
+   "p2": "switch Starmie"
+  },
+  {
+   "p1": "move Rock Slide",
+   "p2": "move Confuse Ray"
+  },
+  {
+   "p1": "move Revenge",
+   "p2": "move Secret Power"
+  },
+  {
+   "p1": "move Protect",
+   "p2": "move Camouflage"
+  },
+  {
+   "p1": "move Strength",
+   "p2": "move Recover"
+  },
+  {
+   "p1": "move Rock Slide",
+   "p2": "move Confuse Ray"
+  },
+  {
+   "p1": "move Revenge",
+   "p2": "move Secret Power"
+  },
+  {
+   "p1": "switch Nick27",
+   "p2": "switch Nick5"
+  },
+  {
+   "p1": "move Earthquake",
+   "p2": "move Sweet Scent"
+  },
+  {
+   "p1": "move Defense Curl",
+   "p2": "move Giga Drain"
+  },
+  {
+   "p1": "move Take Down",
+   "p2": "move Swords Dance"
+  },
+  {
+   "p1": "move Earthquake",
+   "p2": "move Giga Drain"
+  },
+  {
+   "p2": "switch Starmie"
+  },
+  {
+   "p1": "move Take Down",
+   "p2": "move Confuse Ray"
+  },
+  {
+   "p1": "switch Machoke",
+   "p2": "switch Pupitar"
+  },
+  {
+   "p1": "move Revenge",
+   "p2": "move Sleep Talk"
+  },
+  {
+   "p1": "move Protect",
+   "p2": "move Mud-Slap"
+  },
+  {
+   "p1": "move Strength",
+   "p2": "move Rock Smash"
+  },
+  {
+   "p1": "move Rock Slide",
+   "p2": "move Leer"
+  },
+  {
+   "p1": "move Revenge",
+   "p2": "move Sleep Talk"
+  },
+  {
+   "p2": "switch Starmie"
+  },
+  {
+   "p1": "move Protect",
+   "p2": "move Camouflage"
+  },
+  {
+   "p1": "move Strength",
+   "p2": "move Recover"
+  }
+ ]
+}

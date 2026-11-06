@@ -922,6 +922,26 @@ impl<'a> MovePipeline<'a> {
         // the order (R-M10-65).
         let mut offense_participants =
             self.offense_participants(actor, target, move_def, actor_ability, actor_item);
+        // Gen 3: a type-boosting item multiplies the offensive stat (×1.1, Sea Incense ×1.05):
+        // the gen3 mod's `onModifyAtk` / `onModifySpA` (priority 1), one more `chainModify` of
+        // the chain — a Guts holder's Silk Scarf is chained with the Guts (R-M11-79).
+        if self.rules.damage.type_item_stage == TypeItemStage::OffensiveStat
+            && let Some(item) = actor_item
+            && let Some(boost) = crate::engine::item_behavior(self.rules, item).base_power_boost
+            && boost.filter == effects::items::BoostFilter::MoveType(move_def.move_type)
+        {
+            offense_participants.push((
+                ModifierDescriptor::new(
+                    ModifierStage::OffensiveStat,
+                    ModifierSource::ItemInstance {
+                        holder: actor,
+                        item,
+                    },
+                    1,
+                ),
+                boost.stat_numerator,
+            ));
+        }
         crate::engine::sort_by_showdown_priority(&mut offense_participants);
         let rules = self.rules;
         let on_stat = |descriptor: &ModifierDescriptor| {
@@ -947,29 +967,6 @@ impl<'a> MovePipeline<'a> {
             offense_applications.push((descriptor, before, value.0));
         }
         let mut offense = crate::engine::OffensiveStat(showdown_modify(stat, chain));
-        // Gen 3: a type-boosting item multiplies the offensive stat (×1.1, Sea Incense ×1.05;
-        // Showdown `modify`).
-        if self.rules.damage.type_item_stage == TypeItemStage::OffensiveStat
-            && let Some(item) = actor_item
-            && let Some(boost) = crate::engine::item_behavior(self.rules, item).base_power_boost
-            && boost.filter == effects::items::BoostFilter::MoveType(move_def.move_type)
-        {
-            let before = offense.0;
-            offense =
-                crate::engine::OffensiveStat(showdown_modify(offense.0, boost.stat_numerator));
-            offense_applications.push((
-                ModifierDescriptor::new(
-                    ModifierStage::OffensiveStat,
-                    ModifierSource::ItemInstance {
-                        holder: actor,
-                        item,
-                    },
-                    1,
-                ),
-                before,
-                offense.0,
-            ));
-        }
         // Gen 3-4 Beat Up (its volatile's `ModifyAtk` / `ModifySpA` at priority -101, modifier
         // reset to 1): the member's base Attack, whatever came before.
         let beat_up = self.beat_up_stats(target, move_def);
