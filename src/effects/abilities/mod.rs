@@ -598,17 +598,27 @@ impl AbilityBoost {
                 state
                     .sides
                     .iter()
-                    .flat_map(|s| s.active.iter().flatten().copied())
+                    .flat_map(|s| {
+                        // Gen 3: whoever holds a slot, fainted or not — pokeemerald's
+                        // `ABILITY_ON_FIELD2` reads the abilities of `gBattleMons`, which a faint
+                        // leaves until a replacement comes (the oracle's Gen 3 damage:
+                        // `getAllActive(true)`, issues.md I218). Gen 4+ `allies()` goes by HP
+                        // (R-M8-107).
+                        s.active
+                            .iter()
+                            .zip(&s.fallen)
+                            .filter_map(|(active, fallen)| {
+                                active.or_else(|| {
+                                    (rule == PlusMinusPartners::AnyActiveOpposite)
+                                        .then_some(*fallen)
+                                        .flatten()
+                                })
+                            })
+                    })
                     .filter(|id| *id != holder)
-                    // Gen 3 (`getAllActive`: `!active.fainted`) still counts a Pokémon at 0 HP
-                    // whose faint is not processed yet — the first target a spread move knocked
-                    // out, at the next target's hit (pokeemerald's `ABILITY_ON_FIELD2` reads no
-                    // HP at all); Gen 4+ `allies()` goes by HP (R-M8-107).
                     .filter(|id| {
-                        state.pokemon(*id).is_some_and(|p| !p.is_fainted())
-                            || (rule == PlusMinusPartners::AnyActiveOpposite
-                                && state.faint_queue.contains(id)
-                                && !state.announced_faints.contains(id))
+                        rule == PlusMinusPartners::AnyActiveOpposite
+                            || state.pokemon(*id).is_some_and(|p| !p.is_fainted())
                     })
                     .filter_map(|id| state.pokemon(id))
                     .filter(|p| {

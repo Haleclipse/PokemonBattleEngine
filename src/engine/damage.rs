@@ -107,7 +107,7 @@ pub(crate) fn base_damage(
     match algorithm {
         DamageAlgorithm::Gen1Legacy
         | DamageAlgorithm::Gen2
-        | DamageAlgorithm::Gen4(_)
+        | DamageAlgorithm::Cartridge(_)
         | DamageAlgorithm::Modern => {
             // The broad base equation is shared here; generation-specific critical/stat/random
             // behavior is resolved outside this step. The flat `+ 2` is *not* part of the base:

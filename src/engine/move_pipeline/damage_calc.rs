@@ -317,7 +317,7 @@ impl<'a> MovePipeline<'a> {
             unsupported: Vec::new(),
         };
         let breakdown = match self.rules.damage.algorithm {
-            DamageAlgorithm::Gen4(profile) => self.resolve_cartridge_damage(
+            DamageAlgorithm::Cartridge(profile) => self.resolve_cartridge_damage(
                 pokemon,
                 pokemon,
                 &pseudo_move,
@@ -333,8 +333,8 @@ impl<'a> MovePipeline<'a> {
 
     /// Every `ModifyAtk` / `ModifySpA` participant of the hit, unsorted, with its 4096-based
     /// modifier: the user's ability (`onModifyAtk`, data boosts), the target's (Thick Fat's
-    /// `onSourceModifyAtk`), a Ruin ability, a Paradox volatile, the user's item and its
-    /// species item.
+    /// `onSourceModifyAtk`), a Ruin ability, a Paradox volatile, the user's item, its species
+    /// item and Gen 3's type-boosting item.
     pub(super) fn offense_participants(
         &self,
         actor: PokemonId,
@@ -486,6 +486,26 @@ impl<'a> MovePipeline<'a> {
                             boost.priority,
                         ),
                         modifier,
+                    ));
+                }
+                // Gen 3: a type-boosting item multiplies the attacking stat (×1.1, Sea Incense
+                // ×1.05): the gen3 mod's `onModifyAtk` / `onModifySpA` (priority 1), pokeemerald's
+                // `sHoldEffectToType` in `CalculateBaseDamage` — a Guts holder's Silk Scarf comes
+                // before the Guts (R-M11-79, issues.md I218).
+                if self.rules.damage.type_item_stage == TypeItemStage::OffensiveStat
+                    && let Some(boost) = behavior.base_power_boost
+                    && boost.filter == effects::items::BoostFilter::MoveType(move_def.move_type)
+                {
+                    offense_participants.push((
+                        ModifierDescriptor::new(
+                            ModifierStage::OffensiveStat,
+                            ModifierSource::ItemInstance {
+                                holder: actor,
+                                item,
+                            },
+                            1,
+                        ),
+                        boost.stat_numerator,
                     ));
                 }
             }
@@ -842,7 +862,7 @@ impl<'a> MovePipeline<'a> {
             DamageAlgorithm::Gen1Legacy | DamageAlgorithm::Gen2 => {
                 return self.resolve_legacy_damage(actor, target, move_def, type_effectiveness);
             }
-            DamageAlgorithm::Gen4(profile) => {
+            DamageAlgorithm::Cartridge(profile) => {
                 return self.resolve_cartridge_damage(
                     actor,
                     target,
@@ -922,26 +942,6 @@ impl<'a> MovePipeline<'a> {
         // the order (R-M10-65).
         let mut offense_participants =
             self.offense_participants(actor, target, move_def, actor_ability, actor_item);
-        // Gen 3: a type-boosting item multiplies the offensive stat (×1.1, Sea Incense ×1.05):
-        // the gen3 mod's `onModifyAtk` / `onModifySpA` (priority 1), one more `chainModify` of
-        // the chain — a Guts holder's Silk Scarf is chained with the Guts (R-M11-79).
-        if self.rules.damage.type_item_stage == TypeItemStage::OffensiveStat
-            && let Some(item) = actor_item
-            && let Some(boost) = crate::engine::item_behavior(self.rules, item).base_power_boost
-            && boost.filter == effects::items::BoostFilter::MoveType(move_def.move_type)
-        {
-            offense_participants.push((
-                ModifierDescriptor::new(
-                    ModifierStage::OffensiveStat,
-                    ModifierSource::ItemInstance {
-                        holder: actor,
-                        item,
-                    },
-                    1,
-                ),
-                boost.stat_numerator,
-            ));
-        }
         crate::engine::sort_by_showdown_priority(&mut offense_participants);
         let rules = self.rules;
         let on_stat = |descriptor: &ModifierDescriptor| {

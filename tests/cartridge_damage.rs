@@ -1,8 +1,8 @@
-//! L1 rule tests for Gen 4's damage formula as the cartridge computes it (DESIGN.md R125;
-//! issues.md I14-I20): pokeplatinum multiplies one modifier at a time and floors each, in its
-//! own order, the stat modifiers on the stored stat before its stage. The values pinned here are
-//! the steps a replay's damage-roll search can absorb; each comment gives the cartridge's
-//! arithmetic and what Showdown's chain would have given.
+//! L1 rule tests for Gen 3's and Gen 4's damage formula as the cartridge computes it (DESIGN.md
+//! R125, R-M11-84; issues.md I14-I20, I218): pokeemerald and pokeplatinum multiply one modifier
+//! at a time and floor each, in their own order, the stat modifiers on the stored stat before
+//! its stage. The values pinned here are the steps a replay's damage-roll search can absorb; each
+//! comment gives the cartridge's arithmetic and what Showdown's chain would have given.
 
 use std::sync::Arc;
 
@@ -37,7 +37,20 @@ fn set(species: &str, level: u8, ability: &str, item: Option<&str>, moves: &[&st
 }
 
 fn arena(a: PokemonSet, b: PokemonSet, prepare: impl FnOnce(&mut Vec<PokemonState>)) -> Arena {
-    let generation = Generation::Gen4;
+    arena_in(Generation::Gen4, a, b, prepare)
+}
+
+/// A Gen 3 singles battle of `a` and `b`.
+fn emerald(a: PokemonSet, b: PokemonSet, prepare: impl FnOnce(&mut Vec<PokemonState>)) -> Arena {
+    arena_in(Generation::Gen3, a, b, prepare)
+}
+
+fn arena_in(
+    generation: Generation,
+    a: PokemonSet,
+    b: PokemonSet,
+    prepare: impl FnOnce(&mut Vec<PokemonState>),
+) -> Arena {
     let rules = Arc::new(
         RulesResolver::resolve(&BattleSpec::new(generation, BattleMode::Singles, "custom"))
             .unwrap(),
@@ -290,17 +303,13 @@ fn the_confusion_self_hit_borrows_struggle() {
 
 /// The screen step of Snorlax's Strength on a Reflect-screened Mew of `mew_level` whose partner
 /// stands (doubles): `(from, to)`.
-fn crowded_reflect_step(mew_level: u8) -> (u32, u32) {
+fn crowded_reflect_step(generation: Generation, mew_level: u8) -> (u32, u32) {
     use pokemon_battle_engine::state::SideConditionKind;
     let rules = Arc::new(
-        RulesResolver::resolve(&BattleSpec::new(
-            Generation::Gen4,
-            BattleMode::Doubles,
-            "custom",
-        ))
-        .unwrap(),
+        RulesResolver::resolve(&BattleSpec::new(generation, BattleMode::Doubles, "custom"))
+            .unwrap(),
     );
-    let dex = Arc::new(DexResolver::resolve(Generation::Gen4));
+    let dex = Arc::new(DexResolver::resolve(generation));
     let (mew, partner, lax, chansey) = (A, B, PokemonId(3), PokemonId(4));
     let pokemon = vec![
         build_pokemon(
@@ -392,12 +401,264 @@ fn a_crowded_reflect_takes_two_thirds_floored() {
     // `damage * 2 / 3` when both of the target's side stand (pokeplatinum
     // `BattleSystem_CalcMoveDamage`); Showdown's `chainModify(2, 3)` (2730) rounds instead, one
     // more whenever the damage is one more than a multiple of 3.
-    let steps: Vec<(u32, u32)> = (1..=6).map(crowded_reflect_step).collect();
+    let steps: Vec<(u32, u32)> = (1..=6)
+        .map(|level| crowded_reflect_step(Generation::Gen4, level))
+        .collect();
     for (from, to) in &steps {
         assert_eq!(*to, from * 2 / 3, "{from}");
     }
     assert!(
         steps.iter().any(|(from, _)| from % 3 == 1),
         "no damage that tells the floor from the rounding: {steps:?}"
+    );
+}
+
+#[test]
+fn gen3_a_crowded_reflect_takes_two_of_its_thirds() {
+    // `2 * (damage / 3)` while the target's side counts two (pokeemerald `CalculateBaseDamage`);
+    // Gen 4's `damage * 2 / 3` is one more whenever the damage is two more than a multiple of 3.
+    let steps: Vec<(u32, u32)> = (1..=10)
+        .map(|level| crowded_reflect_step(Generation::Gen3, level))
+        .collect();
+    for (from, to) in &steps {
+        assert_eq!(*to, from / 3 * 2, "{from}");
+    }
+    assert!(
+        steps.iter().any(|(from, _)| from % 3 == 2),
+        "no damage that tells the two floors apart: {steps:?}"
+    );
+}
+
+/// The modifiers of `stage` as (from, to).
+fn values(events: &[TraceEvent], stage: ModifierStage) -> Vec<(u32, u32)> {
+    steps(events, stage)
+        .into_iter()
+        .map(|(_, from, to)| (from, to))
+        .collect()
+}
+
+/// The attacker's stored attacking stat, as the formula's trace has it.
+fn stored_offense(events: &[TraceEvent], attacker: PokemonId) -> u32 {
+    events
+        .iter()
+        .find_map(|event| match event {
+            TraceEvent::OffensiveStatResolved { actor, base, .. } if *actor == attacker => {
+                Some(*base)
+            }
+            _ => None,
+        })
+        .expect("an attacking stat")
+}
+
+/// A draw no hit asks for: a plan that ends with it fails the turn if the engine draws anything
+/// more than the plan before it.
+fn nothing_more() -> RandomOverride {
+    RandomOverride::bool(RandomRequestKind::ConfusionSelfHit, false)
+}
+
+#[test]
+fn gen3_the_type_item_then_guts_multiply_the_stored_attack_in_turn() {
+    // pokeemerald `CalculateBaseDamage`: the Silk Scarf's `(100 + 10) / 100`, floored, then
+    // Guts' `150 / 100`. Showdown's gen3 chains the two (4505 × 6144) and rounds once.
+    let mut arena = emerald(
+        set("Machoke", 50, "Guts", Some("Silk Scarf"), &["Strength"]),
+        set("Snorlax", 50, "Thick Fat", None, &["Harden"]),
+        |pokemon| pokemon[0].status = Some(StatusState::new(NonVolatileStatus::Poison)),
+    );
+    let events = arena.turn(plain_hit()[..2].to_vec());
+    let attack = stored_offense(&events, A);
+    let scarfed = attack * 110 / 100;
+    assert_eq!(
+        values(&events, ModifierStage::OffensiveStat),
+        [(attack, scarfed), (scarfed, scarfed * 150 / 100)]
+    );
+}
+
+#[test]
+fn gen3_thick_fat_halves_the_special_attack_not_the_power() {
+    // `if (defender->ability == ABILITY_THICK_FAT && (type == TYPE_FIRE || type == TYPE_ICE))
+    // spAttack /= 2`: Showdown's gen3 halves Flamethrower's power instead.
+    let mut arena = emerald(
+        set("Mew", 50, "Synchronize", None, &["Flamethrower"]),
+        set("Snorlax", 50, "Thick Fat", None, &["Harden"]),
+        |_| {},
+    );
+    let events = arena.turn(plain_hit());
+    let special_attack = stored_offense(&events, A);
+    assert!(values(&events, ModifierStage::BasePower).is_empty());
+    assert_eq!(
+        steps(&events, ModifierStage::OffensiveStat),
+        [(
+            ModifierSource::AbilityInstance {
+                holder: B,
+                ability: pokemon_battle_engine::ids::AbilityId::THICK_FAT,
+            },
+            special_attack,
+            special_attack / 2
+        )]
+    );
+}
+
+#[test]
+fn gen3_facade_doubles_the_damage_after_the_critical_hit() {
+    // `BattleScript_FacadeDoubleDmg` sets `dmgMultiplier`, which `Cmd_damagecalc` multiplies in
+    // with the critical hit — after the `+ 2`, which doubles too. Showdown's gen3 doubles the
+    // power.
+    let mut arena = emerald(
+        set("Mew", 50, "Synchronize", None, &["Facade"]),
+        set("Snorlax", 50, "Thick Fat", None, &["Harden"]),
+        |pokemon| pokemon[0].status = Some(StatusState::new(NonVolatileStatus::Poison)),
+    );
+    let events = arena.turn(vec![
+        RandomOverride::bool(RandomRequestKind::Critical, true),
+        RandomOverride::range(RandomRequestKind::DamageRoll, 100),
+    ]);
+    assert!(values(&events, ModifierStage::BasePower).is_empty());
+    let (offset, critical) = final_step(&events, "Critical");
+    assert_eq!(critical, offset * 2);
+    assert_eq!(
+        final_step(&events, "DamageMultiplier"),
+        (critical, critical * 2)
+    );
+}
+
+#[test]
+fn gen3_charge_reads_the_moves_data_type() {
+    // `gStatuses3[gBattlerAttacker] & STATUS3_CHARGED_UP && gBattleMoves[gCurrentMove].type ==
+    // TYPE_ELECTRIC`: Thunderbolt doubles after the critical hit, an Electric Hidden Power (a
+    // Normal move by its data) does not. Showdown's gen3 doubles either's power.
+    for (attack, doubled) in [("Thunderbolt", true), ("Hidden Power", false)] {
+        let mut mew = set("Mew", 50, "Synchronize", None, &[attack]);
+        mew.hp_type = Some(pokemon_battle_engine::dex::PokemonType::Electric);
+        let mut arena = emerald(
+            mew,
+            set("Snorlax", 50, "Thick Fat", None, &["Harden"]),
+            |pokemon| {
+                pokemon[0]
+                    .volatiles
+                    .set_marker(pokemon_battle_engine::state::VolatileConditionKind::Charge);
+            },
+        );
+        let tape = if doubled {
+            plain_hit()
+        } else {
+            plain_hit()[..2].to_vec()
+        };
+        let events = arena.turn(tape);
+        let (from, to) = final_step(&events, "DamageMultiplier");
+        assert_eq!(to, if doubled { from * 2 } else { from }, "{attack}");
+    }
+}
+
+#[test]
+fn gen3_a_physical_zero_is_one_before_the_offset() {
+    // A burned level-1 Magikarp's Tackle on a level-100 Shuckle: the base is 0, the burn keeps
+    // it 0, and a physical 0 is 1 (`if (damage == 0) damage = 1`) before the `+ 2`.
+    let mut arena = emerald(
+        set("Magikarp", 1, "Swift Swim", None, &["Tackle"]),
+        set("Shuckle", 100, "Sturdy", None, &["Harden"]),
+        |pokemon| pokemon[0].status = Some(StatusState::new(NonVolatileStatus::Burn)),
+    );
+    let events = arena.turn(accurate(plain_hit()[..2].to_vec()));
+    assert_eq!(final_step(&events, "PhysicalMinimum"), (0, 1));
+    assert_eq!(final_step(&events, "BaseOffset"), (1, 3));
+}
+
+#[test]
+fn gen3_spit_up_is_its_power_times_the_layers_after_the_formula_with_no_draw() {
+    // `Cmd_stockpiletobasedamage`: `CalculateBaseDamage` at Spit Up's own power 100, no critical
+    // hit, times the 2 layers; `typecalc` (STAB); `adjustsetdamage`: no random factor. Showdown's
+    // gen3 has 200 power, a critical hit and a roll.
+    let mut arena = emerald(
+        set("Snorlax", 50, "Thick Fat", None, &["Spit Up"]),
+        set("Mew", 50, "Synchronize", None, &["Harden"]),
+        |pokemon| {
+            pokemon[0].volatiles.add_stockpile_layer();
+            pokemon[0].volatiles.add_stockpile_layer();
+        },
+    );
+    let events = arena.turn(vec![nothing_more()]);
+    assert!(values(&events, ModifierStage::BasePower).is_empty());
+    let (_, offset) = final_step(&events, "BaseOffset");
+    assert_eq!(
+        final_step(&events, "DamageMultiplier"),
+        (offset, offset * 2)
+    );
+    assert_eq!(damage_dealt_by(&events, A), (offset * 2 * 3 / 2) as u16);
+}
+
+#[test]
+fn gen3_future_sight_stores_the_formula_of_its_own_type() {
+    // `Cmd_trysetfutureattack`: `CalculateBaseDamage` with Future Sight's own Psychic type — the
+    // Twisted Spoon raises the Special Attack — and no `typecalc`: no STAB for a Psychic user.
+    // Showdown's gen3 computes a typeless move: no Twisted Spoon.
+    let mut arena = emerald(
+        set(
+            "Mew",
+            50,
+            "Synchronize",
+            Some("Twisted Spoon"),
+            &["Future Sight"],
+        ),
+        set("Snorlax", 50, "Thick Fat", None, &["Harden"]),
+        |_| {},
+    );
+    let events = arena.turn(vec![nothing_more()]);
+    let special_attack = stored_offense(&events, A);
+    assert_eq!(
+        values(&events, ModifierStage::OffensiveStat),
+        [(special_attack, special_attack * 110 / 100)]
+    );
+    let (_, offset) = final_step(&events, "BaseOffset");
+    let stored = arena.engine.state().side(SideId::P2).future_attacks[0].damage;
+    assert_eq!(stored, Some(offset as u16));
+}
+
+#[test]
+fn gen3_the_confusion_self_hit_is_pound_through_the_base_formula() {
+    // `CalculateBaseDamage(attacker, attacker, MOVE_POUND, 0, 40, 0, …)`: Pound's Normal type —
+    // the Silk Scarf raises the Attack — and a burn halves it; then the roll, nothing else.
+    let mut arena = emerald(
+        set("Mew", 50, "Synchronize", Some("Silk Scarf"), &["Harden"]),
+        set("Mew", 45, "Synchronize", None, &["Harden"]),
+        |pokemon| {
+            pokemon[0].volatiles.set_confusion(B, 3);
+            pokemon[0].status = Some(StatusState::new(NonVolatileStatus::Burn));
+        },
+    );
+    let events = arena.turn(vec![
+        RandomOverride::bool(RandomRequestKind::ConfusionSelfHit, true),
+        RandomOverride::range(RandomRequestKind::DamageRoll, 100),
+    ]);
+    let attack = stored_offense(&events, A);
+    assert_eq!(
+        values(&events, ModifierStage::OffensiveStat),
+        [(attack, attack * 110 / 100)]
+    );
+    let (base, burned) = steps(&events, ModifierStage::FinalDamage)
+        .into_iter()
+        .find_map(|(source, from, to)| {
+            (source == ModifierSource::Status(NonVolatileStatus::Burn)).then_some((from, to))
+        })
+        .expect("the burn");
+    assert_eq!(burned, base / 2);
+    assert_eq!(damage_dealt_by(&events, A), (burned + 2) as u16);
+}
+
+#[test]
+fn gen3_earthquake_doubles_on_a_digger_after_the_critical_hit() {
+    // `BattleScript_EffectEarthquake`: `setbyte sDMG_MULTIPLIER, 2` against a Pokémon underground.
+    // Showdown's gen3 doubles in `ModifyDamage`, after STAB and type.
+    let mut arena = emerald(
+        set("Snorlax", 50, "Thick Fat", None, &["Earthquake"]),
+        set("Mew", 50, "Synchronize", None, &["Dig"]),
+        |_| {},
+    );
+    let events = arena.turn(plain_hit()[..2].to_vec());
+    assert!(values(&events, ModifierStage::BasePower).is_empty());
+    let (_, offset) = final_step(&events, "BaseOffset");
+    assert_eq!(
+        final_step(&events, "DamageMultiplier"),
+        (offset, offset * 2)
     );
 }

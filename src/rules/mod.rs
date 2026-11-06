@@ -66,7 +66,7 @@ pub use pp::{CalledMovePressure, MovesSlot, PpRules, PressureReach, SpiteAmount,
 pub use rage::{RageBuild, RageEnd, RageRules};
 pub use rampage::{RampageCounter, RampageRules};
 pub use retaliation::{BideRules, RetaliationRules};
-pub use screens::{ScreenModel, ScreenRules, SideProtectionRules};
+pub use screens::{CrowdedSide, ScreenModel, ScreenRules, SideProtectionRules};
 pub use self_faint::{SelfDestructTiming, SelfFaintRules, SlotHealRules};
 pub use switching::{
     BINDING_LOCK_TURNS, BINDING_LOCK_WEIGHTS, GEN1_PARTIALLY_TRAPPED_TURNS, PursuitDestinyBond,

@@ -49,8 +49,9 @@ impl<'a> MovePipeline<'a> {
 
     /// The move's `onTry` (after targeting, before any hit step): an attack waiting on the
     /// target's slot already makes it fail; otherwise it is foreseen — Gen 2-4 with its damage
-    /// computed now, typeless and never critical (Gen 2-3 on the cartridge without the random
-    /// factor, which the strike draws) — and the move stops there.
+    /// computed now, never critical, typeless but on the Gen 3 cartridge
+    /// (`FutureAttackRules::typed_at_use`), and Gen 2-3 on the cartridge without the random
+    /// factor, which the strike draws — and the move stops there.
     pub(super) fn foresee(
         &mut self,
         actor: PokemonId,
@@ -83,7 +84,9 @@ impl<'a> MovePipeline<'a> {
         };
         let damage = rules.damage_at_use.map(|roll| {
             let mut at_use = move_def.clone();
-            at_use.move_type = PokemonType::Typeless;
+            if !rules.typed_at_use {
+                at_use.move_type = PokemonType::Typeless;
+            }
             at_use.will_crit = Some(false);
             at_use.no_damage_variance = roll != ForeseenRoll::AtUse;
             self.resolve_standard_damage(actor, target, &at_use, 1, Fraction::ONE)

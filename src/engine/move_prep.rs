@@ -196,6 +196,17 @@ pub(crate) fn modified_move_cow<'a>(
         modified.to_mut().accuracy = None;
         modified.to_mut().flags.contact = false;
     }
+    // Spit Up on the Gen 3 cartridge (`Cmd_stockpiletobasedamage`, then `adjustsetdamage`; the
+    // oracle's `cartridgeGen3GetDamage`, issues.md I218): never a critical hit, no random factor
+    // (`CartridgeProfile::stockpile_after_formula`).
+    if move_def.behavior.power_formula == Some(crate::effects::moves::PowerFormula::StockpileLayers)
+        && matches!(rules.damage.algorithm,
+            crate::rules::DamageAlgorithm::Cartridge(profile) if profile.stockpile_after_formula)
+    {
+        let spit_up = modified.to_mut();
+        spit_up.will_crit = Some(false);
+        spit_up.no_damage_variance = true;
+    }
     // Curse (`onModifyMove`): a user that is not a Ghost type uses the other form, aimed where
     // `nonGhostTarget` says (itself).
     if let Some(pattern) = move_def.non_ghost_target

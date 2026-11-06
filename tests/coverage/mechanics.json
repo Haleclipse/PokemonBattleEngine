@@ -3313,7 +3313,7 @@
    ]
   },
   {
-   "id": "damage.gen3_modify_damage_before_random",
+   "id": "damage.gen3_cartridge_algorithm",
    "status": "verified",
    "generations": [
     3
@@ -3321,15 +3321,25 @@
    "singles": true,
    "doubles": true,
    "local_tests": [
-    "gen_3_modify_damage_comes_before_the_random_factor",
-    "showdown_scenarios_replay_frame_by_frame"
+    "gen_3_doubling_comes_after_the_critical_hit_and_before_the_random_factor",
+    "showdown_scenarios_replay_frame_by_frame",
+    "gen3_a_crowded_reflect_takes_two_of_its_thirds",
+    "gen3_the_type_item_then_guts_multiply_the_stored_attack_in_turn",
+    "gen3_thick_fat_halves_the_special_attack_not_the_power",
+    "gen3_facade_doubles_the_damage_after_the_critical_hit",
+    "gen3_charge_reads_the_moves_data_type",
+    "gen3_a_physical_zero_is_one_before_the_offset",
+    "gen3_spit_up_is_its_power_times_the_layers_after_the_formula_with_no_draw",
+    "gen3_future_sight_stores_the_formula_of_its_own_type",
+    "gen3_the_confusion_self_hit_is_pound_through_the_base_formula",
+    "gen3_earthquake_doubles_on_a_digger_after_the_critical_hit"
    ],
    "oracles": [
     "@pkmn/sim"
    ],
    "references": [
-    "DESIGN.md §31.4",
-    "DESIGN.md R41"
+    "DESIGN.md R-M11-84",
+    "issues.md I218"
    ]
   },
   {

@@ -494,10 +494,13 @@ fn gen_4_intimidate_skips_a_substitute_u_turn_just_broke_and_stays_silent() {
 }
 
 #[test]
-fn gen_3_modify_damage_comes_before_the_random_factor() {
-    // Showdown gen3 `modifyDamage`: … type → `ModifyDamage` → `randomizer`; Gen 4 rolls before
-    // STAB and type and runs `ModifyDamage` last.
-    use pokemon_battle_engine::rules::DamageModifierKind::{ModifyDamage, Random};
+fn gen_3_doubling_comes_after_the_critical_hit_and_before_the_random_factor() {
+    // pokeemerald `Cmd_damagecalc`: the critical hit, then `dmgMultiplier`, Charge and Helping
+    // Hand; `Cmd_typecalc`, then `Cmd_adjustnormaldamage` last (issues.md I218). Gen 4 rolls
+    // before STAB and type and runs its type chart's tail last.
+    use pokemon_battle_engine::rules::DamageModifierKind::{
+        Critical, DamageMultiplier, ModifyDamage, Random, Stab,
+    };
     let order = |generation| {
         RulesResolver::resolve(&BattleSpec::new(generation, BattleMode::Singles, "custom"))
             .unwrap()
@@ -508,7 +511,9 @@ fn gen_3_modify_damage_comes_before_the_random_factor() {
         order.iter().position(|k| *k == kind).unwrap()
     };
     let gen3 = order(Generation::Gen3);
-    assert!(at(gen3, ModifyDamage) < at(gen3, Random));
+    assert!(at(gen3, Critical) < at(gen3, DamageMultiplier));
+    assert!(at(gen3, DamageMultiplier) < at(gen3, Stab));
+    assert!(at(gen3, Stab) < at(gen3, Random));
     let gen4 = order(Generation::Gen4);
     assert!(at(gen4, Random) < at(gen4, ModifyDamage));
 }

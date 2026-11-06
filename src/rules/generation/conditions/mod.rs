@@ -332,8 +332,9 @@ pub struct ConditionRules {
     pub minimize_sure_hit: bool,
     /// Where a `minimize` move doubles against a Minimized target: its condition's
     /// `onSourceModifyDamage` in the `ModifyDamage` event (Gen 1 has none in its order, so no
-    /// doubling there), the final damage on the Gen 2 cartridge (issues.md I50), or the power
-    /// on the Gen 4 cartridge (the move's own multiplier, as the oracle's Gen 4 damage has it).
+    /// doubling there), the final damage on the Gen 2 cartridge (issues.md I50), or the move's
+    /// own multiplier on the Gen 3-4 cartridge (Gen 4 the power's, as the oracle's Gen 4 damage
+    /// has it; Gen 3 `dmgMultiplier` after the critical hit, issues.md I218).
     pub minimize_bonus: DamageBonusStage,
     /// How long Rest's sleep lasts (Showdown `statusState.time`, set over the duration the
     /// sleep rolled): Gen 1 2 (the gen1 mod), later 3.
@@ -1065,7 +1066,7 @@ pub(super) fn resolve(generation: Generation) -> ConditionRules {
         leaf_guard_spares_rest: generation == Generation::Gen4,
         minimize_bonus: match generation {
             Generation::Gen2 => DamageBonusStage::AfterRandom,
-            Generation::Gen4 => DamageBonusStage::BasePower,
+            Generation::Gen3 | Generation::Gen4 => DamageBonusStage::BasePower,
             _ => DamageBonusStage::FinalDamage,
         },
         switch_in_order: if generation <= Generation::Gen4 {

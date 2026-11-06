@@ -36,9 +36,11 @@ pub struct HidingRules {
 /// The stage at which a semi-invulnerable target's weakness doubles the damage.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum DamageBonusStage {
-    /// Gen 2 (`onSourceBasePower`), Gen 4 on the cartridge (the move's power multiplier).
+    /// Gen 2 (`onSourceBasePower`); Gen 3-4 on the cartridge, the move's own multiplier — Gen 4
+    /// the power's (`BTLVAR_POWER_MULTI`), Gen 3 `gBattleScripting.dmgMultiplier`, which the
+    /// profile moves after the critical hit (`CartridgeProfile::after_critical`).
     BasePower,
-    /// Gen 3+ (`onSourceModifyDamage`, the last step of the damage formula).
+    /// Gen 5+ (`onSourceModifyDamage`, the last step of the damage formula).
     FinalDamage,
     /// Gen 2 Minimize on the cartridge (pokecrystal `doubleminimizedamage`, after
     /// `damagevariation`): the final damage, the random roll included, doubled, at most 65535
@@ -65,7 +67,7 @@ pub struct TwoTurnRules {
     pub bonus: Fraction,
     /// Where every hiding place's doubling applies, over the move's own
     /// (`TwoTurnSpec::bonus_stage`): Gen 2 (the gen2 mod's conditions all use
-    /// `onSourceBasePower`), Gen 4 on the cartridge (issues.md I17).
+    /// `onSourceBasePower`), Gen 3-4 on the cartridge (issues.md I17, I218).
     pub bonus_stage_override: Option<DamageBonusStage>,
     pub charge: ChargeModel,
     /// Gen 2+: a hiding Pokémon's move at itself misses it as well (Showdown's `Invulnerability`
@@ -187,19 +189,16 @@ const GEN2_TWO_TURN: TwoTurnRules = TwoTurnRules {
 };
 
 /// Gen 3-4 (Showdown `fly` / `bounce` / `dig` / `dive` conditions; the gen4 mod's
-/// `hitStepInvulnerabilityEvent`).
+/// `hitStepInvulnerabilityEvent`). On the cartridge the doubling is the move's own multiplier:
+/// Gen 4's power multiplier (issues.md I17: `BTLVAR_POWER_MULTI` 20 in pokeplatinum's effect
+/// scripts 0146 / 0149 for Gust / Twister, 0147 / 0126 for Earthquake / Magnitude, and for Surf /
+/// Whirlpool against a diver), the first step of the power; Gen 3's `dmgMultiplier` (I218:
+/// pokeemerald's `Cmd_jumpifsemiinvulnerable` scripts set `sDMG_MULTIPLIER` 2), after the
+/// critical hit.
 const GEN3_TWO_TURN: TwoTurnRules = TwoTurnRules {
     reach_everywhere: &[],
-    ..MODERN_TWO_TURN
-};
-
-/// Gen 4 on the cartridge (issues.md I17): the doubling is the move's own power multiplier
-/// (`BTLVAR_POWER_MULTI` 20 in pokeplatinum's effect scripts 0146 / 0149 for Gust / Twister, 0147
-/// / 0126 for Earthquake / Magnitude, and for Surf / Whirlpool against a diver), the first step of
-/// the power.
-const GEN4_TWO_TURN: TwoTurnRules = TwoTurnRules {
     bonus_stage_override: Some(DamageBonusStage::BasePower),
-    ..GEN3_TWO_TURN
+    ..MODERN_TWO_TURN
 };
 
 /// Gen 5+ (Showdown `fly` / `bounce` / `dig` / `dive` conditions).
@@ -234,8 +233,7 @@ pub(super) fn resolve(generation: Generation) -> TwoTurnRules {
     match generation {
         Generation::Gen1 => GEN1_TWO_TURN,
         Generation::Gen2 => GEN2_TWO_TURN,
-        Generation::Gen3 => GEN3_TWO_TURN,
-        Generation::Gen4 => GEN4_TWO_TURN,
+        Generation::Gen3 | Generation::Gen4 => GEN3_TWO_TURN,
         _ => MODERN_TWO_TURN,
     }
 }

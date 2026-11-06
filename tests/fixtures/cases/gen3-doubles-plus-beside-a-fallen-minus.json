@@ -1,0 +1,82 @@
+{
+ "schema": 1,
+ "id": "gen3-doubles-plus-beside-a-fallen-minus",
+ "notes": [
+  "Gen 3 Plus (pokeemerald ABILITY_ON_FIELD2 reads the abilities gBattleMons keeps until a replacement comes; the oracle's Gen 3 damage: getAllActive(true), issues.md I218): Plusle's Thunderbolt is \u00d71.5 beside its Minun, and still once Snorlax's Quick Attack has knocked the Minun out with no one left to take its place \u2014 the same turn and the next"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "doubles",
+  "format": "gen3doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Plusle",
+    "species": "Plusle",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Thunderbolt"
+    ],
+    "ability": "Plus"
+   },
+   {
+    "label": "Minun",
+    "species": "Minun",
+    "level": 5,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Minus"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Quick Attack",
+     "Harden"
+    ],
+    "ability": "Thick Fat"
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Harden"
+    ],
+    "ability": "Natural Cure"
+   }
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Thunderbolt 2, move Harden",
+   "p2": "move Harden, move Harden"
+  },
+  {
+   "p1": "move Thunderbolt 2, move Harden",
+   "p2": "move Quick Attack 2, move Harden"
+  },
+  {
+   "p1": "move Thunderbolt 2, pass",
+   "p2": "move Harden, move Harden"
+  }
+ ],
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ }
+}

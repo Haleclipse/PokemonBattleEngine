@@ -4,7 +4,7 @@
 
 use crate::dex::MoveCategory;
 use crate::ids::PokemonId;
-use crate::rules::{ResolvedRules, ScreenModel};
+use crate::rules::{CrowdedSide, ResolvedRules, ScreenModel};
 use crate::state::{BattleState, SideConditionKind, VolatileConditionKind};
 
 /// Gen 1-2: whether `defender`'s Defense (`physical`) or Special (Defense) counts double — its
@@ -65,16 +65,31 @@ pub(crate) fn damage_modifier(
     if !conditions.contains(screen) && !conditions.contains(SideConditionKind::AuroraVeil) {
         return None;
     }
-    let crowded = if screens.crowded_needs_partner {
-        state.side(side).active.iter().flatten().any(|partner| {
-            *partner != target && state.pokemon(*partner).is_some_and(|p| !p.is_fainted())
-        })
-    } else {
-        rules.topology.active_slots_per_side() > 1
-    };
-    Some(if crowded {
+    Some(if crowded(state, rules, target) {
         screens.crowded_modifier
     } else {
         screens.modifier
     })
+}
+
+/// Whether `target`'s side counts as more than one (`ScreenRules::crowded`): for a screen, and
+/// for the Gen 3 spread modifier.
+pub(crate) fn crowded(state: &BattleState, rules: &ResolvedRules, target: PokemonId) -> bool {
+    let partner = |counts: &dyn Fn(PokemonId) -> bool| {
+        state.pokemon(target).is_some_and(|pokemon| {
+            state
+                .side(pokemon.side)
+                .active
+                .iter()
+                .flatten()
+                .any(|partner| *partner != target && counts(*partner))
+        })
+    };
+    match rules.conditions.screens.crowded {
+        CrowdedSide::PartnerPresent => partner(&|partner| state.not_fainted(partner)),
+        CrowdedSide::PartnerStanding => {
+            partner(&|partner| state.pokemon(partner).is_some_and(|p| !p.is_fainted()))
+        }
+        CrowdedSide::TwoSlots => rules.topology.active_slots_per_side() > 1,
+    }
 }

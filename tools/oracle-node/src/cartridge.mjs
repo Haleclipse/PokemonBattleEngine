@@ -38,7 +38,8 @@
 // the confusion's duration draw away; I215 (an Infiltrator's Max Move effects past Mist and Safeguard)
 // lets a sleep's or a confusion's duration be drawn; I216 (a Gen 3 sun Weather Ball thaws its target)
 // takes the thawed Pokémon's later thaw rolls away; I217 (a Gen 7+ Dancer stopped before its dance
-// leaves the dance the battle's last move) lets a later Copycat call it, with its draws.
+// leaves the dance the battle's last move) lets a later Copycat call it, with its draws; I218 (Gen
+// 3's damage as pokeemerald computes it) takes Spit Up's critical-hit and damage-roll draws away.
 // `SHOWDOWN_UNPATCHED=1` plays Showdown as published: to reproduce a battle recorded before a
 // patch existed, and to check that a patch's scenario fails without it.
 import {Battle, Dex, Pokemon} from '@pkmn/sim';
@@ -3976,4 +3977,208 @@ if (patched) {
     }
     return result;
   };
+}
+
+// I218 — Gen 3 damage (R-M11-84). Showdown's gen3 `getDamage` / `modifyDamage` chain the stat
+// modifiers 4096-based and round once, apply the stages before them, and double Facade, Smelling
+// Salt, Revenge, Pursuit, Weather Ball and the moves that hit a hiding or minimized target in the
+// power or the final damage. pokeemerald (work/pret: `CalculateBaseDamage`, `Cmd_damagecalc`,
+// `Cmd_typecalc`, `ApplyRandomDmgMultiplier`, the scripts' `sDMG_MULTIPLIER`, `Cmd_trydobeatup`,
+// `Cmd_stockpiletobasedamage`, `Cmd_trysetfutureattack`, the confusion self-hit) multiplies one
+// modifier at a time and floors each: the stats' modifiers before their stages (the type item
+// first, then the held items, Thick Fat, Hustle, Plus / Minus — beside any Pokémon in a slot, a
+// fainted one no replacement took the place of too (`ABILITY_ON_FIELD2`) —, Guts; Marvel Scale),
+// the power's (Mud Sport, Water Sport, the pinch abilities), then burn, the screens (`2 × (d / 3)`
+// while the target's side counts two not yet fainted), the spread (the same count), the weather
+// and Flash Fire, + 2, and after the critical hit the
+// doubling (Bulbapedia's DoubleDmg), Charge and Helping Hand, then STAB and the type chart entry
+// by entry, the random factor last. Beat Up adds Helping Hand before its critical hit; Spit Up
+// never lands a critical hit nor draws the random factor; Future Sight and Doom Desire store the
+// formula's damage of their own type, Helping Hand in (the strike draws the factor, I110). The
+// patch lets Showdown run its calculation — events, messages and draws — and returns the
+// cartridge's number from the same power callback, critical hit and damage roll; Spit Up's
+// critical hit and roll are not drawn (TESTING.md §7).
+const GEN3_TYPE_ITEMS = {
+  silkscarf: ['Normal', 10], charcoal: ['Fire', 10], mysticwater: ['Water', 10], seaincense: ['Water', 5],
+  magnet: ['Electric', 10], miracleseed: ['Grass', 10], nevermeltice: ['Ice', 10], blackbelt: ['Fighting', 10],
+  poisonbarb: ['Poison', 10], softsand: ['Ground', 10], sharpbeak: ['Flying', 10], twistedspoon: ['Psychic', 10],
+  silverpowder: ['Bug', 10], hardstone: ['Rock', 10], spelltag: ['Ghost', 10], dragonfang: ['Dragon', 10],
+  blackglasses: ['Dark', 10], metalcoat: ['Steel', 10],
+};
+// `IS_TYPE_PHYSICAL`: the types before `TYPE_MYSTERY`.
+const GEN3_PHYSICAL = new Set(['Normal', 'Fighting', 'Flying', 'Poison', 'Ground', 'Rock', 'Bug', 'Ghost', 'Steel']);
+const GEN3_MINIMIZE_DOUBLED = new Set(['stomp', 'needlearm', 'astonish', 'extrasensory']);
+function cartridgeGen3Damage(source, target, move, seen) {
+  const tr = Math.trunc;
+  const ability = (pokemon, id) => pokemon.hasAbility(id);
+  const item = pokemon => (pokemon.ignoringItem() ? '' : pokemon.getItem().id);
+  const helpingHand = !!source.volatiles['helpinghand'];
+  const variance = damage => (damage ? Math.max(1, tr(damage * (100 - seen.roll) / 100)) : 0);
+  const selfHit = seen.selfHit;
+  const crit = !selfHit && !seen.foreseen && move.id !== 'spitup' && target.getMoveHitData(move).crit;
+  // Beat Up (`Cmd_trydobeatup`): the member's base Attack and level against the target's base
+  // Defense at the move's power, + 2, Helping Hand, then the critical hit and the roll.
+  if (seen.member) {
+    const attack = this.dex.species.get(seen.member.set.species).baseStats.atk;
+    const defense = target.species.baseStats.def;
+    let damage = tr(tr(attack * move.basePower * tr(tr(seen.member.level * 2 / 5) + 2) / defense) / 50) + 2;
+    if (helpingHand) damage = times(damage, 15, 10);
+    if (crit) damage *= 2;
+    return variance(damage);
+  }
+  const data = this.dex.moves.get(seen.foreseen || move.id);
+  // The confusion self-hit is Pound at 40 against the user itself; a foreseen attack is its own
+  // move's type (`futureSightMove`), not the typeless strike Showdown stores.
+  const type = selfHit ? 'Normal' : seen.foreseen ? data.type : move.type === '???' ? 'Normal' : move.type;
+  const physical = GEN3_PHYSICAL.has(type);
+  const weather = selfHit ? '' : this.field.effectiveWeather();
+  const defender = selfHit ? source : target;
+  // The power, and the doubling the cartridge leaves to the damage (`sDMG_MULTIPLIER`).
+  let power = selfHit ? 40 : seen.power;
+  let doubled = false;
+  if (['smellingsalt', 'revenge', 'pursuit', 'weatherball'].includes(move.id)) {
+    doubled = seen.power === data.basePower * 2;
+    power = data.basePower;
+    // The Smelling Salt script hits a Substitute without its doubling (`jumpifstatus2 … SUBSTITUTE`).
+    if (move.id === 'smellingsalt' && target.volatiles['substitute']) doubled = false;
+  }
+  if (move.id === 'facade' && ['psn', 'tox', 'brn', 'par'].includes(source.status)) doubled = true;
+  if (['gust', 'twister'].includes(move.id) && (target.volatiles['fly'] || target.volatiles['bounce'])) doubled = true;
+  if (['earthquake', 'magnitude'].includes(move.id) && target.volatiles['dig']) doubled = true;
+  if (['surf', 'whirlpool'].includes(move.id) && target.volatiles['dive']) doubled = true;
+  if (GEN3_MINIMIZE_DOUBLED.has(move.id) && target.volatiles['minimize']) doubled = true;
+  if (selfHit || seen.foreseen || move.id === 'spitup') doubled = false;
+  // Spit Up (`Cmd_stockpiletobasedamage`): the formula at the move's own power (100 in
+  // `gBattleMoves`; Showdown's data has 0 and a `basePowerCallback`), times the layers after it.
+  const layers = move.id === 'spitup' ? tr(seen.power / 100) : 1;
+  if (move.id === 'spitup') power = 100;
+  const active = this.getAllActive();
+  if (type === 'Electric' && active.some(p => p.volatiles['mudsport'])) power = tr(power / 2);
+  if (type === 'Fire' && active.some(p => p.volatiles['watersport'])) power = tr(power / 2);
+  for (const [id, pinchType] of Object.entries(PINCH)) {
+    if (type === pinchType && ability(source, id) && source.hp <= tr(source.maxhp / 3)) power = times(power, 150, 100);
+  }
+  // The stats: the stored stat through each modifier in turn, floored, before the stage.
+  const held = item(source);
+  const heldType = GEN3_TYPE_ITEMS[held];
+  let attack;
+  let defense;
+  if (physical) {
+    attack = source.storedStats.atk;
+    if (ability(source, 'hugepower') || ability(source, 'purepower')) attack *= 2;
+    if (heldType?.[0] === type) attack = times(attack, 100 + heldType[1], 100);
+    if (held === 'choiceband') attack = times(attack, 150, 100);
+    if (held === 'thickclub' && ['Cubone', 'Marowak'].includes(source.species.name)) attack *= 2;
+    if (ability(source, 'hustle')) attack = times(attack, 150, 100);
+    if (ability(source, 'guts') && source.status) attack = times(attack, 150, 100);
+    defense = defender.storedStats.def;
+    if (item(defender) === 'metalpowder' && defender.species.name === 'Ditto') defense *= 2;
+    if (ability(defender, 'marvelscale') && defender.status) defense = times(defense, 150, 100);
+    if (!selfHit && data.selfdestruct === 'always') defense = tr(defense / 2);
+  } else {
+    attack = source.storedStats.spa;
+    if (heldType?.[0] === type) attack = times(attack, 100 + heldType[1], 100);
+    if (held === 'souldew' && ['Latios', 'Latias'].includes(source.species.name)) attack = times(attack, 150, 100);
+    if (held === 'deepseatooth' && source.species.name === 'Clamperl') attack *= 2;
+    if (held === 'lightball' && source.species.name === 'Pikachu') attack *= 2;
+    if (ability(defender, 'thickfat') && ['Fire', 'Ice'].includes(type)) attack = tr(attack / 2);
+    // Plus / Minus (`ABILITY_ON_FIELD2`): any Pokémon on the field with the other one.
+    const field = id => this.getAllActive(true).some(p => p.hasAbility(id));
+    if ((ability(source, 'plus') && field('minus')) || (ability(source, 'minus') && field('plus'))) {
+      attack = times(attack, 150, 100);
+    }
+    defense = defender.storedStats.spd;
+    const defenderItem = item(defender);
+    if (defenderItem === 'souldew' && ['Latios', 'Latias'].includes(defender.species.name)) defense = times(defense, 150, 100);
+    if (defenderItem === 'deepseascale' && defender.species.name === 'Clamperl') defense *= 2;
+  }
+  let attackStage = source.boosts[physical ? 'atk' : 'spa'];
+  let defenseStage = defender.boosts[physical ? 'def' : 'spd'];
+  if (crit && attackStage < 0) attackStage = 0;
+  if (crit && defenseStage > 0) defenseStage = 0;
+  const level = tr(tr(source.level * 2 / 5) + 2);
+  let damage = tr(tr(staged(attack, attackStage) * power * level / staged(defense, defenseStage)) / 50);
+  // Both defenders standing (`CountAliveMonsInBattle(BATTLE_ALIVE_DEF_SIDE) == 2`).
+  const pair = !selfHit && this.gameType === 'doubles' && defender.side.active.filter(p => p && !p.fainted).length === 2;
+  const screen = !selfHit && !crit && defender.side.getSideCondition(physical ? 'reflect' : 'lightscreen');
+  if (physical) {
+    if (source.status === 'brn' && !ability(source, 'guts')) damage = tr(damage / 2);
+    if (screen) damage = pair ? 2 * tr(damage / 3) : tr(damage / 2);
+    if (pair && data.target === 'allAdjacentFoes') damage = tr(damage / 2);
+    if (!damage) damage = 1;
+  } else {
+    if (screen) damage = pair ? 2 * tr(damage / 3) : tr(damage / 2);
+    if (pair && data.target === 'allAdjacentFoes') damage = tr(damage / 2);
+    if (weather === 'raindance') {
+      if (type === 'Fire') damage = tr(damage / 2);
+      if (type === 'Water') damage = times(damage, 15, 10);
+    }
+    if (move.id === 'solarbeam' && ['raindance', 'sandstorm', 'hail'].includes(weather)) damage = tr(damage / 2);
+    if (weather === 'sunnyday') {
+      if (type === 'Fire') damage = times(damage, 15, 10);
+      if (type === 'Water') damage = tr(damage / 2);
+    }
+    if (source.volatiles['flashfire'] && type === 'Fire') damage = times(damage, 15, 10);
+  }
+  damage += 2;
+  if (selfHit) return variance(damage);
+  // `Cmd_trysetfutureattack`: the formula's damage and Helping Hand, stored; the strike draws.
+  if (seen.foreseen) return helpingHand ? times(damage, 15, 10) : damage;
+  damage *= (crit ? 2 : 1) * (doubled ? 2 : 1) * layers;
+  // Charge reads the move's data type (`gBattleMoves[gCurrentMove].type`).
+  if (move.id !== 'spitup' && source.volatiles['charge'] && data.type === 'Electric') damage *= 2;
+  if (helpingHand) damage = times(damage, 15, 10);
+  // `Cmd_typecalc` (not Struggle): STAB, then the chart entry by entry, 0 -> 1 but for an immunity.
+  if (move.type !== '???') {
+    if (source.hasType(type)) damage = times(damage, 15, 10);
+    const order = CHART_ORDER[type] ?? [];
+    const types = [...new Set(target.getTypes())]
+      .map(defending => [defending, this.dex.getEffectiveness(type, defending)])
+      .filter(([, effect]) => effect)
+      .sort(([a], [b]) => order.indexOf(a) - order.indexOf(b));
+    for (const [, effect] of types) damage = Math.max(1, tr(damage * (effect > 0 ? 20 : 5) / 10));
+  }
+  return move.id === 'spitup' ? damage : variance(damage);
+}
+function cartridgeGen3GetDamage(source, target, move, suppressMessages = false) {
+  const battle = this.battle;
+  const selfHit = typeof move === 'number';
+  const foreseen = !selfHit && move.flags?.futuremove && move.noDamageVariance
+    ? move.name.toLowerCase().replace(/[^a-z0-9]/g, '') : '';
+  const seen = {power: undefined, roll: undefined, member: null, selfHit, foreseen};
+  if (!selfHit && move.id === 'beatup' && move.allies?.length) [seen.member] = move.allies;
+  const spitUp = !selfHit && move.id === 'spitup';
+  if (spitUp) move.willCrit = false;
+  const {runEvent, randomizer} = battle;
+  battle.runEvent = function (eventid, ...rest) {
+    if (eventid === 'BasePower' && seen.power === undefined) [, , , seen.power] = rest;
+    return runEvent.call(this, eventid, ...rest);
+  };
+  battle.randomizer = function (damage) {
+    if (spitUp || foreseen) {
+      seen.roll = 0;
+      return damage;
+    }
+    seen.roll = this.random(16);
+    return this.trunc(this.trunc(damage * (100 - seen.roll)) / 100);
+  };
+  let result;
+  try {
+    result = Object.getPrototypeOf(this).getDamage.call(this, source, target, move, suppressMessages);
+  } finally {
+    battle.runEvent = runEvent;
+    battle.randomizer = randomizer;
+  }
+  if (seen.roll === undefined || typeof result !== 'number') return result;
+  if (selfHit) {
+    seen.power = move;
+    return cartridgeGen3Damage.call(battle, source, source, battle.dex.getActiveMove('pound'), seen);
+  }
+  return cartridgeGen3Damage.call(battle, source, target, move, seen);
+}
+for (const [id, format] of patched ? Object.entries(Dex.data.Rulesets) : []) {
+  if (!/^gen3/.test(id)) continue;
+  format.actions = {...format.actions, getDamage: cartridgeGen3GetDamage};
+  const cached = Dex.formats.get(id);
+  cached.actions = {...cached.actions, getDamage: cartridgeGen3GetDamage};
 }

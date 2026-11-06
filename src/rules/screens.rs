@@ -22,6 +22,21 @@ pub enum ScreenModel {
     DamageModifier,
 }
 
+/// When a screen's side counts as more than one (`ScreenRules::crowded`).
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum CrowdedSide {
+    /// Gen 3 on the cartridge (pokeemerald `CountAliveMonsInBattle(BATTLE_ALIVE_DEF_SIDE) == 2`,
+    /// which reads the absent flags, not the HP; issues.md I218): a partner of the target in its
+    /// slot that has not fainted yet — one a spread move just knocked out still counts at the
+    /// next target's hit (Showdown's `!fainted`, the oracle's Gen 3 damage). The Gen 3 spread
+    /// modifier reads the same count (`DamageRules::spread_only_foes`).
+    PartnerPresent,
+    /// Gen 4 (`target.alliesAndSelf().length > 1`): a partner of the target still standing.
+    PartnerStanding,
+    /// Gen 5+ (`activePerHalf > 1`): whenever the format has two active slots a side.
+    TwoSlots,
+}
+
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct ScreenRules {
     pub model: ScreenModel,
@@ -33,10 +48,8 @@ pub struct ScreenRules {
     /// The modifier when the side counts as more than one: Gen 3-4 `chainModify(2, 3)` (2730),
     /// Gen 5 [2703, 4096], Gen 6+ [2732, 4096].
     pub crowded_modifier: u32,
-    /// Gen 3-4 (`target.alliesAndSelf().length > 1`): crowded when a partner of the target is
-    /// still standing. Gen 5+ (`activePerHalf > 1`): whenever the format has two active slots a
-    /// side.
-    pub crowded_needs_partner: bool,
+    /// When the target's side counts as more than one.
+    pub crowded: CrowdedSide,
     /// Gen 3 Brick Break (`source.side.foe.removeSideCondition`) breaks the screens of its
     /// user's foes; from Gen 4 those of its target's side (`pokemon.side`), a partner's too.
     pub broken_on_user_foes: bool,
@@ -58,7 +71,11 @@ impl ScreenRules {
                 Generation::Gen3 | Generation::Gen4 => 2730,
                 _ => 2732,
             },
-            crowded_needs_partner: matches!(generation, Generation::Gen3 | Generation::Gen4),
+            crowded: match generation {
+                Generation::Gen3 => CrowdedSide::PartnerPresent,
+                Generation::Gen4 => CrowdedSide::PartnerStanding,
+                _ => CrowdedSide::TwoSlots,
+            },
             broken_on_user_foes: matches!(generation, Generation::Gen3),
         }
     }

@@ -24,10 +24,14 @@ pub enum DamageModifierKind {
     /// Gen 4's `ModifyDamagePhase2` (after the critical hit, before the random roll, floored):
     /// Life Orb's ×1.3 lives here in Diamond / Pearl / Platinum.
     ModifyDamagePhase2,
+    /// Gen 3's `Cmd_damagecalc` after the critical hit: the move's own doubling
+    /// (`gBattleScripting.dmgMultiplier`), Charge, Helping Hand — the cartridge profile's
+    /// `after_critical` participants, in its order.
+    DamageMultiplier,
     /// Gen 1-2: the damage before the `+ 2` is clamped to `legacy_clamp_min..=997`.
     LegacyClamp,
-    /// Gen 3 (Showdown gen3 `modifyDamage`): a physical move's damage that burn, spread and
-    /// weather brought down to 0 is raised to 1 before the `+ 2`.
+    /// Gen 3 (pokeemerald `CalculateBaseDamage`): a physical move's damage that burn, the screen
+    /// and the spread brought down to 0 is raised to 1 before the `+ 2`.
     PhysicalMinimum,
     /// Gen 5 (Showdown `modifyDamage`: `gen === 5 && !baseDamage`): a damage of 0 is raised to
     /// 1 before `ModifyDamage`, which may bring it back to 0 (Multiscale's ×0.5 on 1) — and
@@ -42,12 +46,15 @@ pub enum DamageAlgorithm {
     /// at 999 with burn inside the Attack stat, the high-stat rollover, a ×2 critical hit
     /// that ignores every stage unless the attacker is ahead, and `GEN2_DAMAGE_ORDER`.
     Gen2,
-    /// pokeplatinum's `BattleSystem_CalcMoveDamage` (DESIGN.md R125; issues.md I14-I20): the
-    /// power, the attacking and the defending stat each multiplied by one modifier at a time and
-    /// floored, in the profile's order, the stored stats before their stages; then
-    /// `GEN4_DAMAGE_ORDER`, every step floored — Life Orb in the second phase, a dual type's
-    /// multipliers one by one in the type chart's order, a resist berry last.
-    Gen4(&'static crate::rules::CartridgeProfile),
+    /// The cartridge's formula — pokeemerald's `CalculateBaseDamage` and `Cmd_damagecalc` (Gen
+    /// 3, DESIGN.md R-M11-84; issues.md I218), pokeplatinum's `BattleSystem_CalcMoveDamage` (Gen
+    /// 4, DESIGN.md R125; issues.md I14-I20): the power, the attacking and the defending stat
+    /// each multiplied by one modifier at a time and floored, in the profile's order, the stored
+    /// stats before their stages; then the generation's order, every step floored — Gen 3's
+    /// doubling, Charge and Helping Hand after the critical hit, Gen 4's Life Orb in the second
+    /// phase, a dual type's multipliers one by one in the type chart's order, Gen 4's resist
+    /// berry last.
+    Cartridge(&'static crate::rules::CartridgeProfile),
     Modern,
 }
 
@@ -103,10 +110,11 @@ const GEN4_DAMAGE_ORDER: &[DamageModifierKind] = &[
     DamageModifierKind::ModifyDamage,
 ];
 
-/// Gen 3 (Bulbapedia "Damage", Generation III): like Gen 4, but the random factor comes after
-/// STAB, type and the `ModifyDamage` event (Showdown gen3 `modifyDamage`: … types →
-/// `ModifyDamage` → `randomizer`) — Gust / Twister against a Pokémon in the air double before
-/// the roll. Verified against @smogon/calc.
+/// Gen 3 (pokeemerald `CalculateBaseDamage`, `Cmd_damagecalc`, `Cmd_typecalc`,
+/// `Cmd_adjustnormaldamage`; Bulbapedia "Damage", Generation III; issues.md I218): burn, the
+/// screen, the spread and the weather (with Flash Fire) on the raw base, a physical 0 raised to
+/// 1, `+ 2`; the critical hit, then the move's doubling, Charge and Helping Hand; STAB and the
+/// type chart; the random factor last.
 const GEN3_DAMAGE_ORDER: &[DamageModifierKind] = &[
     DamageModifierKind::Burn,
     DamageModifierKind::ModifyDamagePhase1,
@@ -115,9 +123,9 @@ const GEN3_DAMAGE_ORDER: &[DamageModifierKind] = &[
     DamageModifierKind::PhysicalMinimum,
     DamageModifierKind::BaseOffset,
     DamageModifierKind::Critical,
+    DamageModifierKind::DamageMultiplier,
     DamageModifierKind::Stab,
     DamageModifierKind::TypeEffectiveness,
-    DamageModifierKind::ModifyDamage,
     DamageModifierKind::Random,
 ];
 
@@ -168,8 +176,10 @@ pub struct DamageRules {
     /// ½ in Gen 6, ¼ from Gen 7 (`gen > 6 ? 0.25 : 0.5`).
     pub parental_bond_second_hit: Fraction,
     /// Gen 3: only a move aimed at both foes (`allAdjacentFoes`) takes the spread modifier;
-    /// one that also hits the partner (Earthquake, Explosion) does not (Showdown gen3
-    /// `modifyDamage`).
+    /// one that also hits the partner (Earthquake, Explosion) does not — and only while both
+    /// stand on the target's side, however many the move reaches (pokeemerald
+    /// `CalculateBaseDamage`: `MOVE_TARGET_BOTH` and `CountAliveMonsInBattle(BATTLE_ALIVE_DEF_SIDE)
+    /// == 2`).
     pub spread_only_foes: bool,
     pub random_min: u16,
     pub random_max: u16,
@@ -322,7 +332,8 @@ pub enum PsywaveDamage {
 /// Plus / Minus by generation: which Pokémon's ability turns the holder's ×1.5 on.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum PlusMinusPartners {
-    /// Gen 3 (its mod: `getAllActive`): any active Pokémon, a foe too, with the other ability.
+    /// Gen 3 (pokeemerald `ABILITY_ON_FIELD2`): any Pokémon in a slot, a foe too, a fainted one
+    /// a replacement has not taken the place of yet as well, with the other ability.
     AnyActiveOpposite,
     /// Gen 4: a partner with the other ability.
     AlliesOpposite,
@@ -357,8 +368,11 @@ pub(super) fn resolve(generation: Generation) -> DamageRules {
         algorithm: match generation {
             Generation::Gen1 => DamageAlgorithm::Gen1Legacy,
             Generation::Gen2 => DamageAlgorithm::Gen2,
+            Generation::Gen3 => {
+                DamageAlgorithm::Cartridge(&crate::rules::cartridge_damage::GEN3_CARTRIDGE)
+            }
             Generation::Gen4 => {
-                DamageAlgorithm::Gen4(&crate::rules::cartridge_damage::GEN4_CARTRIDGE)
+                DamageAlgorithm::Cartridge(&crate::rules::cartridge_damage::GEN4_CARTRIDGE)
             }
             _ => DamageAlgorithm::Modern,
         },

@@ -175,8 +175,8 @@ fn showdown_modify(value: u32, modifier: u32) -> u32 {
 #[test]
 fn species_items_and_incenses_modify_the_stats_their_generation_names() {
     let wall = || set("Snorlax", &["Harden"], None);
-    // Gen 3 Sea Incense: ×1.05 on Special Attack (chainModify(1.05) = 4300; the other type
-    // items' ×1.1 would be 4505).
+    // Gen 3 Sea Incense: ×1.05 on Special Attack, pokeemerald's `(100 + 5) / 100` floored
+    // (issues.md I218; Showdown's chainModify(1.05) = 4300 rounds; the other type items' ×1.1).
     let mut sea = arena(
         Generation::Gen3,
         set("Mew", &["Surf"], Some("Sea Incense")),
@@ -184,7 +184,7 @@ fn species_items_and_incenses_modify_the_stats_their_generation_names() {
         |_| {},
     );
     let spa = sea.stat(A, |p| p.stats.special_attack);
-    assert_eq!(sea.stats_of_the_hit(false).0, showdown_modify(spa, 4300));
+    assert_eq!(sea.stats_of_the_hit(false).0, spa * 105 / 100);
     // Gen 3 Light Ball: Pikachu's Special Attack only.
     let mut ball = arena(
         Generation::Gen3,

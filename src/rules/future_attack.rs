@@ -26,6 +26,12 @@ pub struct FutureAttackRules {
     /// its random factor drawn where `ForeseenRoll` says. Gen 5+ (`None`): the strike is the
     /// move itself, computed as it strikes.
     pub damage_at_use: Option<ForeseenRoll>,
+    /// Gen 3 on the cartridge (issues.md I218: pokeemerald's `Cmd_trysetfutureattack` calls
+    /// `CalculateBaseDamage` with the move's own type, then Helping Hand): the damage at use
+    /// reads the move's type — a Twisted Spoon boosts Future Sight, a burn halves the physical
+    /// Doom Desire — though no type chart follows. Gen 2 and 4 (Showdown's typeless `moveData`):
+    /// typeless.
+    pub typed_at_use: bool,
     /// Gen 6+: the use returns `NOT_FAIL` (the move succeeded); Gen 2-5 `null` (as failed).
     pub use_succeeds: bool,
     /// Gen 3 on the cartridge (issues.md I111: pokeemerald's `HandleWishPerishSongOnTurnEnd`
@@ -50,6 +56,7 @@ impl FutureAttackRules {
         };
         Self {
             damage_at_use,
+            typed_at_use: matches!(generation, Generation::Gen3),
             use_succeeds: damage_at_use.is_none() && !matches!(generation, Generation::Gen5),
             battler_order: matches!(generation, Generation::Gen3),
             life_orb_after: damage_at_use.is_none(),

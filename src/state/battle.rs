@@ -483,6 +483,15 @@ impl BattleState {
         (index != NO_POKEMON).then_some(usize::from(index))
     }
 
+    /// Showdown's `!pokemon.fainted`: standing, or knocked out with its faint not yet reached
+    /// by `faintMessages` (`announced_faints`) — the first target a spread move knocked out, at
+    /// the next target's hit.
+    pub fn not_fainted(&self, id: PokemonId) -> bool {
+        self.pokemon(id)
+            .is_some_and(|pokemon| !pokemon.is_fainted())
+            || (self.faint_queue.contains(&id) && !self.announced_faints.contains(&id))
+    }
+
     pub fn pokemon(&self, id: PokemonId) -> Option<&PokemonState> {
         self.index_of(id)
             .and_then(|index| self.roster.pokemon.get(index))

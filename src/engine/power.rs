@@ -70,6 +70,11 @@ fn positive_stages(stages: &StatStages) -> u32 {
     .sum()
 }
 
+/// Spit Up's power per Stockpile layer (`PowerFormula::StockpileLayers`; pokeemerald's
+/// `gBattleMoves[MOVE_SPIT_UP].power`, which `CartridgeProfile::stockpile_after_formula`
+/// multiplies by the layers after the formula).
+pub(crate) const STOCKPILE_LAYER_POWER: u16 = 100;
+
 /// What a power formula reads about this use of the move, beyond the battle state.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct MoveUse {
@@ -235,7 +240,9 @@ fn raw_formula_power(
         PowerFormula::Happiness => u32::from(user.happiness) * 10 / 25,
         PowerFormula::PerHit(step) => u32::from(step) * u32::from(usage.hit.max(1)),
         PowerFormula::HiddenPower => u32::from(user.hidden_power_of().1),
-        PowerFormula::StockpileLayers => 100 * u32::from(user.volatiles.stockpile_layers()),
+        PowerFormula::StockpileLayers => {
+            u32::from(STOCKPILE_LAYER_POWER) * u32::from(user.volatiles.stockpile_layers())
+        }
         // Gen 5+: each member's base Attack — of the species its set named (Showdown
         // `move.allies.shift().set.species`), not a forme it took in battle: a Mega Venusaur
         // on the bench hits as Venusaur (R-M11-65).
