@@ -804,6 +804,15 @@ pub(super) fn tape_template(
                 PrimaryEffect::Status(StatusMoveEffect::SetStatus(NonVolatileStatus::Sleep)) => {
                     Some(("status:slp", DurationKind::Sleep))
                 }
+                // Psycho Shift carrying a sleep (a sleeper's Sleep Talk called it): the sleep
+                // it gives rolls its own duration (`setStatus`).
+                PrimaryEffect::Status(StatusMoveEffect::TransferStatus)
+                    if state
+                        .pokemon(actor)
+                        .is_some_and(|p| p.has_status(NonVolatileStatus::Sleep)) =>
+                {
+                    Some(("status:slp", DurationKind::Sleep))
+                }
                 PrimaryEffect::Status(
                     StatusMoveEffect::Volatile(VolatileConditionKind::Confusion)
                     | StatusMoveEffect::StagesThen(

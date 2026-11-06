@@ -1,0 +1,149 @@
+{
+ "schema": 1,
+ "id": "gen4-sleep-talk-psycho-shift-gives-its-sleep-a-duration",
+ "notes": [
+  "A sleeping Meganium's Sleep Talk calls Psycho Shift: the sleep it gives Mismagius rolls its own duration (setStatus) — Mismagius is still asleep three turns on (cloud Nightly 42278963795, minimized)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Mismagius",
+    "species": "Mismagius",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Lovely Kiss",
+     "Metronome",
+     "Grass Whistle",
+     "Psycho Shift"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Nincada",
+    "species": "Nincada",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Hypnosis",
+     "Metronome",
+     "Attract",
+     "Psycho Shift"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Meganium",
+    "species": "Meganium",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Magnitude",
+     "Psycho Shift",
+     "Sleep Talk",
+     "Metronome"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Bagon",
+    "species": "Bagon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Gunk Shot",
+     "Psycho Shift",
+     "Poison Tail",
+     "Metronome"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   64601,
+   34256,
+   26881,
+   54914
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Lovely Kiss",
+   "p2": "move Magnitude"
+  },
+  {
+   "p1": "move Metronome",
+   "p2": "move Psycho Shift"
+  },
+  {
+   "p1": "move Grass Whistle",
+   "p2": "move Sleep Talk"
+  },
+  {
+   "p1": "move Psycho Shift",
+   "p2": "move Metronome"
+  },
+  {
+   "p1": "move Lovely Kiss",
+   "p2": "move Magnitude"
+  },
+  {
+   "p1": "switch Nincada",
+   "p2": "switch Bagon"
+  },
+  {
+   "p1": "move Metronome",
+   "p2": "move Psycho Shift"
+  },
+  {
+   "p1": "move Attract",
+   "p2": "move Poison Tail"
+  },
+  {
+   "p1": "move Psycho Shift",
+   "p2": "move Metronome"
+  },
+  {
+   "p1": "move Hypnosis",
+   "p2": "move Gunk Shot"
+  },
+  {
+   "p1": "move Metronome",
+   "p2": "move Psycho Shift"
+  },
+  {
+   "p1": "switch Mismagius",
+   "p2": "switch Meganium"
+  },
+  {
+   "p1": "move Grass Whistle",
+   "p2": "move Sleep Talk"
+  },
+  {
+   "p1": "move Psycho Shift",
+   "p2": "move Metronome"
+  },
+  {
+   "p1": "move Lovely Kiss",
+   "p2": "move Magnitude"
+  },
+  {
+   "p1": "move Metronome",
+   "p2": "move Psycho Shift"
+  }
+ ]
+}
