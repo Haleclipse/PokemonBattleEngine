@@ -1900,9 +1900,13 @@ pub(super) fn tape_template(
                         _ => contact_reaction,
                     };
                     // A hit on the Substitute asks nothing; but a candidate damage roll that
-                    // breaks it sooner than Showdown did reaches the body here and rolls, so
-                    // the search meets an optional failed roll instead of a desynchronized plan.
-                    if contact_reaction && behind_substitute {
+                    // breaks it sooner than Showdown did — on an earlier hit of the move — reaches
+                    // the body here and rolls, so the search meets an optional failed roll instead
+                    // of a desynchronized plan. The move's first hit on the target has no earlier
+                    // one: it plans nothing, or its optional roll would take the next target's
+                    // draw of the same kind (R-M11-88).
+                    let body_reachable = !behind_substitute || hit_number > 1;
+                    if contact_reaction && behind_substitute && body_reachable {
                         staged.push(
                             Stage::Reaction,
                             RandomOverride::bool(RandomRequestKind::ContactReaction, false)
@@ -1931,7 +1935,9 @@ pub(super) fn tape_template(
                             RandomOverride::bool(RandomRequestKind::ContactReaction, took),
                         );
                     }
-                    if let Some(id) = *target {
+                    if let Some(id) = *target
+                        && body_reachable
+                    {
                         chance_reactions(
                             &mut staged,
                             ChanceReactionHit {
