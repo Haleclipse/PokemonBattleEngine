@@ -36,8 +36,13 @@ impl<'a> BattleContext<'a> {
     }
 
     /// Illusion's `onEnd` (a damaging hit, Neutralizing Gas, Gastro Acid, a new ability): the
-    /// holder is seen as itself (`replace`, `-end|…|Illusion`).
+    /// holder is seen as itself (`replace`, `-end|…|Illusion`) — not while it is being called
+    /// back (`!pokemon.beingCalledBack`): a Pursuit that strikes it as it switches out leaves the
+    /// disguise on.
     pub fn end_illusion(&mut self, pokemon: PokemonId) {
+        if self.is_called_back(pokemon) {
+            return;
+        }
         let lifted = self
             .state
             .pokemon_mut(pokemon)
