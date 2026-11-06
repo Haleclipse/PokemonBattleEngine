@@ -1,0 +1,184 @@
+{
+ "schema": 1,
+ "id": "gen3-doubles-a-perish-song-win-comes-after-the-upkeep",
+ "notes": [
+  "Gen 3 doubles: Politoed uses Magic Coat; at the residual Perish Song's count runs out on Dunsparce, P2's last Pokémon. Showdown's `fieldEvent` calls the count's `end` and moves on without `faintMessages()`: the residual is over and `upkeep` is printed — the turn's volatiles, Magic Coat among them, seen gone — before the faint decides the battle. The engine disclosed the turn's end only when the end-turn phase led anywhere but to a finished battle, and the observers kept Politoed's Magic Coat (DESIGN.md R-M11-83). Minimized from the Nightly battle m8-gen3-doubles-s1844-010"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "doubles",
+  "format": "gen3doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Kangaskhan",
+    "species": "Kangaskhan",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Water Spout",
+     "Perish Song",
+     "Swift",
+     "Magic Coat"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Blastoise",
+    "species": "Blastoise",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Hyper Voice",
+     "Perish Song",
+     "Growl",
+     "Magic Coat"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Farfetch’d",
+    "species": "Farfetch’d",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tail Whip",
+     "Perish Song",
+     "Magic Coat"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Politoed",
+    "species": "Politoed",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Surf",
+     "Magic Coat"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Roselia",
+    "species": "Roselia",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sweet Scent",
+     "Perish Song",
+     "Flash"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Solrock",
+    "species": "Solrock",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tickle",
+     "Perish Song",
+     "Howl",
+     "Magic Coat"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Dragonair",
+    "species": "Dragonair",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Agility",
+     "Perish Song",
+     "Tail Glow",
+     "Magic Coat"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Dunsparce",
+    "species": "Dunsparce",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sharpen",
+     "Perish Song",
+     "Magic Coat"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   49545,
+   36079,
+   62302,
+   39413
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Water Spout, move Hyper Voice",
+   "p2": "move Sweet Scent, move Tickle 1"
+  },
+  {
+   "p1": "move Perish Song, move Perish Song",
+   "p2": "move Perish Song, move Perish Song"
+  },
+  {
+   "p1": "move Swift, move Growl",
+   "p2": "move Flash 2, move Howl"
+  },
+  {
+   "p1": "switch Farfetch’d, move Magic Coat",
+   "p2": "switch Dragonair, move Magic Coat"
+  },
+  {
+   "p1": "move Magic Coat, move Hyper Voice",
+   "p2": "move Magic Coat, move Tickle 1"
+  },
+  {
+   "p1": "pass, switch Kangaskhan",
+   "p2": "pass, switch Roselia"
+  },
+  {
+   "p1": "move Tail Whip, move Perish Song",
+   "p2": "move Agility, move Perish Song"
+  },
+  {
+   "p1": "move Perish Song, move Swift",
+   "p2": "move Perish Song, move Flash 2"
+  },
+  {
+   "p2": "pass, switch Dunsparce"
+  },
+  {
+   "p1": "switch Politoed, move Magic Coat",
+   "p2": "move Tail Glow, move Magic Coat"
+  },
+  {
+   "p1": "move Surf, move Water Spout",
+   "p2": "move Magic Coat, move Sharpen"
+  },
+  {
+   "p1": "pass, switch Farfetch’d"
+  },
+  {
+   "p1": "move Magic Coat, move Perish Song",
+   "p2": "pass, move Perish Song"
+  }
+ ]
+}

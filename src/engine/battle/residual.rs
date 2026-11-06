@@ -189,6 +189,11 @@ impl BattleEngine {
                 faints_waiting = false;
             }
         }
+        // Showdown's `upkeep`, the residual over unless it decided the battle — before the faints
+        // a count that ran out left waiting (R-M11-83).
+        if self.state.outcome.is_none() {
+            self.trace.push(TraceEvent::Upkeep);
+        }
         // No handler ran after that count (Showdown's next `faintMessages`). Gen 1, whose
         // durations are not handlers of the residual, ticks every duration-only effect before
         // those faints settle.

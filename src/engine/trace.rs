@@ -131,6 +131,10 @@ pub enum TraceEvent {
         from: BattlePhase,
         to: BattlePhase,
     },
+    /// The turn's residual is over (Showdown's `upkeep`, printed unless the residual decided the
+    /// battle): faints a count that ran out left waiting settle after it, and may decide it then
+    /// (R-M11-83).
+    Upkeep,
     /// An ability announced itself (`-ability`, `-activate|…|ability: …`, `[from] ability: …`):
     /// everyone sees it (DESIGN.md §47.0 item 12).
     AbilityActivated {
@@ -884,6 +888,7 @@ impl TraceEvent {
             | Self::QueueChangeRequested { .. }
             | Self::ActionsCancelledByFaint { .. }
             | Self::PhaseChanged { .. }
+            | Self::Upkeep
             | Self::BeforeMoveResolved { .. }
             | Self::ResidualEffect { .. } => TraceCategory::Flow,
             Self::SwitchInTiesDrawn { .. }
@@ -1161,10 +1166,7 @@ impl TraceEvent {
                 | Self::PassedOn { .. }
                 | Self::DynamaxStarted { .. }
                 | Self::DynamaxEnded { .. }
-                | Self::PhaseChanged {
-                    from: BattlePhase::EndTurn,
-                    ..
-                }
+                | Self::Upkeep
         )
     }
 
@@ -1582,11 +1584,8 @@ impl TraceEvent {
                 kind,
                 seen: true,
             } => one(Some(Disclosure::VolatileEnded(*target, *kind))),
-            // The turn's end is over (Showdown's `upkeep`), unless the battle ended in it.
-            Self::PhaseChanged {
-                from: BattlePhase::EndTurn,
-                to,
-            } if *to != BattlePhase::Finished => one(Some(Disclosure::TurnEnded)),
+            // The turn's end is over (Showdown's `upkeep`).
+            Self::Upkeep => one(Some(Disclosure::TurnEnded)),
             // Dynamax has events of its own (`-start|p|Dynamax`, `-end|p|Dynamax`).
             Self::DynamaxStarted { pokemon } => one(Some(Disclosure::VolatileStarted(
                 *pokemon,
