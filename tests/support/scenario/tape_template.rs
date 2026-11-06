@@ -73,6 +73,27 @@ pub(super) fn tape_template(
             .then(|| duration_for(Some(actor), DurationKind::Confusion))
             .flatten()
     };
+    // A Z status move's effect comes before its hit steps (Showdown `runZPower` in
+    // `useMoveInner`): Z-Attract's `clearnegativeboost` puts the user's lowered stages back to
+    // 0, and the accuracy the move then checks reads them (R-M11-81).
+    let z_cleared;
+    let state = if oracle.z_status
+        && move_def.is_some_and(|m| {
+            m.z_status == Some(pokemon_battle_engine::dex::ZStatusEffect::ClearNegativeBoost)
+        }) {
+        let mut cleared = state.clone();
+        if let Some(user) = cleared.pokemon_mut(actor) {
+            for stat in pokemon_battle_engine::engine::STAGED_STATS {
+                if user.stages.get(stat) < 0 {
+                    user.stages.set(stat, 0);
+                }
+            }
+        }
+        z_cleared = cleared;
+        &z_cleared
+    } else {
+        state
+    };
     let mut tape = Vec::new();
     let Some(pokemon) = state.pokemon(actor) else {
         return tape;

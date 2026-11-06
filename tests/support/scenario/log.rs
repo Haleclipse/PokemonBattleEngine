@@ -516,12 +516,11 @@ pub fn extract_decisions_with(
                     // (Showdown `useMoveInner`): it is that move, Z-powered — Z-Rest heals as Rest
                     // does (DESIGN.md R-M9-30).
                     let logged = text(&event["move"]);
-                    action.move_name = Some(
-                        event["anim"]
-                            .as_str()
-                            .filter(|anim| logged.strip_prefix("Z-") == Some(*anim))
-                            .map_or(logged.clone(), str::to_owned),
-                    );
+                    let z_anim = event["anim"]
+                        .as_str()
+                        .filter(|anim| logged.strip_prefix("Z-") == Some(*anim));
+                    action.z_status = z_anim.is_some();
+                    action.move_name = Some(z_anim.map_or(logged.clone(), str::to_owned));
                     action.intercepted =
                         std::mem::take(&mut pursuit_intercept) && text(&event["move"]) == "Pursuit";
                     pursuit_held_switch = action.intercepted;

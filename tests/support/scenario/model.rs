@@ -959,6 +959,9 @@ pub(super) fn called_outcomes(action: &ActionOracle, index: usize) -> CalledOutc
 pub struct ActionOracle {
     pub user: Who,
     pub move_name: Option<String>,
+    /// The move was a Z status move (`move|p|Z-Attract|…|[anim]Attract`): its Z effect comes
+    /// before its hit steps.
+    pub z_status: bool,
     /// The user took its move's crash damage (High Jump Kick hitting no target).
     pub crashed: bool,
     /// The `move` event's target: where a single-target move actually went after execution-time
@@ -1179,6 +1182,7 @@ impl ActionOracle {
             hit_count: None,
             missed: Vec::new(),
             immune: Vec::new(),
+            z_status: false,
             crashed: false,
             try_hit_blocked: Vec::new(),
             guarded: Vec::new(),

@@ -1,0 +1,389 @@
+{
+ "schema": 1,
+ "id": "gen7-doubles-z-attract-clears-its-accuracy-drop-first",
+ "notes": [
+  "Gen 7 Doubles OU: Meloetta's Flash lowers Gastrodon's accuracy, then Gastrodon uses Z-Attract on Gogoat. Its Z effect (`clearnegativeboost`, Showdown `runZPower` before the hit steps) puts the accuracy back to 0, and Attract's 100% needs no roll. The replay planned the accuracy on the state before the move, at -1, and left a decision nothing asked (DESIGN.md R-M11-81). Minimized from the Nightly battle m9-gen7doublesou-s397-007"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublesou"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Deoxys",
+    "species": "Deoxys-Defense",
+    "ability": "Pressure",
+    "moves": [
+     "Round"
+    ],
+    "nature": "Gentle",
+    "gender": "",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 0,
+     "atk": 172,
+     "def": 12,
+     "spa": 120,
+     "spd": 0,
+     "spe": 204
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 13,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 24,
+    "hpType": "Water"
+   },
+   {
+    "label": "Nick23",
+    "species": "Chansey",
+    "ability": "Natural Cure",
+    "moves": [
+     "Rock Tomb"
+    ],
+    "nature": "Hardy",
+    "gender": "",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 0,
+     "atk": 44,
+     "def": 76,
+     "spa": 24,
+     "spd": 244,
+     "spe": 120
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 13,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Gogoat",
+    "species": "Gogoat",
+    "ability": "Sap Sipper",
+    "moves": [
+     "Worry Seed",
+     "Razor Leaf"
+    ],
+    "nature": "Calm",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 0,
+     "atk": 60,
+     "def": 72,
+     "spa": 88,
+     "spd": 116,
+     "spe": 172
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 8
+    }
+   },
+   {
+    "label": "Celesteela",
+    "species": "Celesteela",
+    "ability": "Beast Boost",
+    "moves": [
+     "Gyro Ball"
+    ],
+    "nature": "Naive",
+    "gender": "",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 28,
+     "atk": 88,
+     "def": 68,
+     "spa": 252,
+     "spd": 68,
+     "spe": 4
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "hpType": "Grass"
+   },
+   {
+    "label": "Meloetta",
+    "species": "Meloetta",
+    "ability": "Serene Grace",
+    "moves": [
+     "Flash",
+     "Sleep Talk"
+    ],
+    "nature": "Hardy",
+    "gender": "",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 72,
+     "atk": 148,
+     "def": 0,
+     "spa": 88,
+     "spd": 164,
+     "spe": 36
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 16,
+     "spe": 31
+    },
+    "happiness": 41
+   },
+   {
+    "label": "Nick73",
+    "species": "Gothita",
+    "ability": "Frisk",
+    "moves": [
+     "Sleep Talk"
+    ],
+    "nature": "Calm",
+    "gender": "M",
+    "shiny": false,
+    "level": 16,
+    "evs": {
+     "hp": 92,
+     "atk": 60,
+     "def": 0,
+     "spa": 252,
+     "spd": 0,
+     "spe": 104
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 30,
+     "spd": 31,
+     "spe": 31
+    }
+   }
+  ],
+  "p2": [
+   {
+    "label": "Minccino",
+    "species": "Minccino",
+    "ability": "Skill Link",
+    "moves": [
+     "Echoed Voice"
+    ],
+    "nature": "Adamant",
+    "gender": "F",
+    "shiny": false,
+    "level": 9,
+    "evs": {
+     "hp": 52,
+     "atk": 116,
+     "def": 44,
+     "spa": 144,
+     "spd": 32,
+     "spe": 120
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Gastrodon",
+    "species": "Gastrodon-East",
+    "item": "Normalium Z",
+    "ability": "Storm Drain",
+    "moves": [
+     "Waterfall",
+     "Attract"
+    ],
+    "nature": "Relaxed",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 12,
+     "atk": 144,
+     "def": 204,
+     "spa": 120,
+     "spd": 0,
+     "spe": 28
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 86
+   },
+   {
+    "label": "Ducklett",
+    "species": "Ducklett",
+    "ability": "Keen Eye",
+    "moves": [
+     "Pluck"
+    ],
+    "nature": "Adamant",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 228,
+     "atk": 100,
+     "def": 40,
+     "spa": 0,
+     "spd": 140,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Doduo",
+    "species": "Doduo",
+    "ability": "Run Away",
+    "moves": [
+     "Growl",
+     "Supersonic"
+    ],
+    "nature": "Gentle",
+    "gender": "M",
+    "shiny": true,
+    "level": 100,
+    "evs": {
+     "hp": 104,
+     "atk": 116,
+     "def": 68,
+     "spa": 96,
+     "spd": 92,
+     "spe": 32
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Nick44",
+    "species": "Passimian",
+    "ability": "Defiant",
+    "moves": [
+     "Double-Edge"
+    ],
+    "nature": "Serious",
+    "gender": "F",
+    "shiny": true,
+    "level": 100,
+    "evs": {
+     "hp": 200,
+     "atk": 0,
+     "def": 84,
+     "spa": 48,
+     "spd": 144,
+     "spe": 32
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "hpType": "Poison"
+   },
+   {
+    "label": "Nick41",
+    "species": "Axew",
+    "ability": "Rivalry",
+    "moves": [
+     "Rock Tomb"
+    ],
+    "nature": "Docile",
+    "gender": "M",
+    "shiny": true,
+    "level": 100,
+    "evs": {
+     "hp": 40,
+     "atk": 92,
+     "def": 44,
+     "spa": 80,
+     "spd": 164,
+     "spe": 88
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 15,
+     "spe": 31
+    },
+    "happiness": 163
+   }
+  ]
+ },
+ "preview": {
+  "p1": "team 354612",
+  "p2": "team 426513"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   32730,
+   397,
+   1007,
+   31
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Worry Seed 1, move Flash 2",
+   "p2": "move Growl, move Waterfall 1"
+  },
+  {
+   "p1": "move Razor Leaf, move Sleep Talk",
+   "p2": "move Supersonic 2, move 2 1 zmove"
+  }
+ ]
+}
