@@ -418,10 +418,13 @@ impl<'a> MovePipeline<'a> {
         {
             return None;
         }
-        // Gen 2 reads the species they battle as (`species.baseStats`), Gen 3-4 their own
-        // (`set.species`).
+        // The member's base Attack: Gen 2 of the species it battles as (`species.baseStats`),
+        // Gen 3-4 of its own (`set.species`; the party's data on the cartridge). The target's
+        // base Defense, of the species it battles as in every generation — a transformed one's
+        // (`pokemon.species`; pokeemerald `gBattleMons[gBattlerTarget].species`, pokeplatinum
+        // `battleMons[defender].species`).
         let battling = self.rules.damage.beat_up == crate::rules::BeatUpStyle::Gen2;
-        let base = |pokemon: PokemonId| {
+        let base = |pokemon: PokemonId, battling: bool| {
             let pokemon = self.state.pokemon(pokemon)?;
             let species = if battling {
                 crate::engine::species_of(pokemon)
@@ -431,8 +434,8 @@ impl<'a> MovePipeline<'a> {
             let species = self.dex.species_by_id(species?)?;
             Some((species.base_stats, pokemon.level))
         };
-        let (member_stats, level) = base(self.hit_member()?)?;
-        let (target_stats, _) = base(target)?;
+        let (member_stats, level) = base(self.hit_member()?, battling)?;
+        let (target_stats, _) = base(target, true)?;
         Some((
             u32::from(member_stats.attack),
             level,
