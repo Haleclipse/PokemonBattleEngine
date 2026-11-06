@@ -49,8 +49,9 @@ pub enum Disclosure {
         sighting: Sighting,
     },
     /// The Pokémon fainted, in everyone's sight — as the one it is seen as (an Illusion's holder
-    /// that faints in its disguise is seen as the disguise fainting) — and leaves the field.
-    Fainted(PokemonId),
+    /// that faints in its disguise is seen as the disguise fainting) — and leaves the field, seen
+    /// so as it fell.
+    Fainted(PokemonId, Sighting),
     /// A fainted Pokémon off the field was seen brought back, as itself, so (Revival Blessing).
     Revived(PokemonId, Sighting),
     /// The Pokémon was seen cured of its status, as `seen_as` (the disguise an Illusion's holder
@@ -340,8 +341,17 @@ impl Knowledge {
                 }
                 self.ability_back(seen_as);
             }
-            Disclosure::Fainted(pokemon) => {
+            Disclosure::Fainted(pokemon, sighting) => {
                 let seen = self.seen_as(pokemon).unwrap_or(pokemon);
+                // Seen as itself, it is last seen as it fell, as one leaving is (its Tera, which
+                // a Revival Blessing that brings it back finds as it was; R-M11-82). One that fell
+                // in a disguise was not seen: what was seen of it holds (R-M11-50).
+                if seen == pokemon {
+                    match self.sighting_mut(seen) {
+                        Some(last) => *last = sighting,
+                        None => self.sightings.push((seen, sighting)),
+                    }
+                }
                 self.leave_disguised(pokemon);
                 self.moves_leave(pokemon);
                 self.volatiles_leave(pokemon);

@@ -123,7 +123,22 @@ impl BattleEngine {
             }) {
                 weather_back = Some(pokemon);
             }
-            self.trace.push(TraceEvent::Fainted { pokemon, position });
+            let Some(fallen) = self.state.pokemon(pokemon) else {
+                continue;
+            };
+            let sighting = crate::state::Sighting {
+                hp: 0,
+                max_hp: fallen.max_hp,
+                status: None,
+                species: fallen.species,
+                level: fallen.level,
+                terastallized: fallen.terastallized,
+            };
+            self.trace.push(TraceEvent::Fainted {
+                pokemon,
+                position,
+                sighting,
+            });
             // Showdown `faintMessages`: `totalFainted++` first — the Supreme Overlord a fainting
             // gas holder's `End` lets start again counts it — unless the hit loop's end counted
             // it already (`counted`, R-M10-61).

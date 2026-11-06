@@ -856,9 +856,13 @@ pub enum TraceEvent {
         seen_as: PokemonId,
         sighting: crate::state::Sighting,
     },
+    /// The Pokémon fainted where it stood: `sighting` is what observers saw of it as it fell — its
+    /// Tera among it, which the faint takes away (`delete pokemon.terastallized`) while Showdown's
+    /// details keep it, so one Revival Blessing brings back is seen Terastallized (R-M11-82).
     Fainted {
         pokemon: PokemonId,
         position: PositionId,
+        sighting: crate::state::Sighting,
     },
     /// A rule ended the battle at the turn's end (DESIGN.md §45.7); `BattleFinished` follows.
     BattleEndedByRule {
@@ -1203,7 +1207,9 @@ impl TraceEvent {
                 seen_as: *seen_as,
                 sighting: *sighting,
             })),
-            Self::Fainted { pokemon, .. } => one(Some(Disclosure::Fainted(*pokemon))),
+            Self::Fainted {
+                pokemon, sighting, ..
+            } => one(Some(Disclosure::Fainted(*pokemon, *sighting))),
             Self::Revived { pokemon, sighting } => {
                 one(Some(Disclosure::Revived(*pokemon, *sighting)))
             }
