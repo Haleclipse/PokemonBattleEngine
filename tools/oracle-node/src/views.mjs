@@ -142,6 +142,7 @@ export function observers(battle) {
           const asOne = asOneBefore(client, args);
           noteFallenTera(client, fallenTera, args);
           const wornBefore = args[0] === 'replace' ? activeAt(client, args[1]) : null;
+          identifyRevived(client, args, kwArgs);
           client.add(args, kwArgs);
           untangleReplace(client, args, wornBefore);
           restoreRevivedTera(client, fallenTera, args, kwArgs);
@@ -577,6 +578,21 @@ function restoreRevivedTera(client, fallenTera, args, kwArgs) {
   if (args[0] !== '-heal' || kwArgs.from !== 'move: Revival Blessing') return;
   const poke = client.getPokemon(args[1]);
   if (poke && !poke.terastallized && fallenTera.has(poke)) poke.terastallized = fallenTera.get(poke);
+}
+
+/**
+ * Revival Blessing names the Pokémon it brings back by its own name (`-heal|p1: Dondozo|…|[from]
+ * move: Revival Blessing`). One that fell in an Illusion's disguise was never seen under it: its
+ * entry is the team preview's, with no ident, and @pkmn/client's `getPokemon` finds nothing (the
+ * `-heal` threw). The preview entry of that name takes the ident before the line is read.
+ */
+function identifyRevived(client, args, kwArgs) {
+  if (args[0] !== '-heal' || kwArgs.from !== 'move: Revival Blessing') return;
+  if (typeof args[1] !== 'string' || !/^p[1-4]: /.test(args[1]) || client.getPokemon(args[1], true)) return;
+  const side = client[args[1].slice(0, 2)];
+  const name = args[1].slice(4);
+  const entry = side?.team.find(p => !p.originalIdent && p.name === name);
+  if (entry) entry.originalIdent = args[1];
 }
 
 /**

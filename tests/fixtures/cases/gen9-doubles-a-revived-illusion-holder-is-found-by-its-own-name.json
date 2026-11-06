@@ -1,0 +1,159 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-a-revived-illusion-holder-is-found-by-its-own-name",
+ "notes": [
+  "Gen 9 doubles: Dondozo, with Illusion, comes in disguised as Sudowoodo and falls under that name (Healing Wish). Revival Blessing then names it by its own (`-heal|p1: Dondozo|…|[from] move: Revival Blessing`). The foe's and the spectator's @pkmn/client never saw Dondozo but in the team preview: its entry had no ident, `getPokemon` found nothing and the `-heal` threw in the recorder. The preview entry of that name now takes the ident first (`identifyRevived`, DESIGN.md R-M11-77). Shrunk from the Nightly battle m8-gen9-doubles-s1827-018, a generation error"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Inkay",
+    "species": "Inkay",
+    "level": 54,
+    "nature": "Hardy",
+    "moves": [
+     "Fake Tears",
+     "Healing Wish",
+     "Feather Dance",
+     "Revival Blessing"
+    ],
+    "ability": "Berserk"
+   },
+   {
+    "label": "Dondozo",
+    "species": "Dondozo",
+    "level": 45,
+    "nature": "Hardy",
+    "moves": [
+     "Defend Order",
+     "Healing Wish",
+     "Dragon Dance",
+     "Revival Blessing"
+    ],
+    "ability": "Illusion",
+    "item": "Quick Claw"
+   },
+   {
+    "label": "Morpeko",
+    "species": "Morpeko",
+    "level": 52,
+    "nature": "Hardy",
+    "moves": [
+     "Play Nice",
+     "Healing Wish",
+     "Cosmic Power",
+     "Revival Blessing"
+    ],
+    "ability": "Healer"
+   },
+   {
+    "label": "Sudowoodo",
+    "species": "Sudowoodo",
+    "level": 48,
+    "nature": "Hardy",
+    "moves": [
+     "Shift Gear",
+     "Healing Wish",
+     "Noble Roar",
+     "Revival Blessing"
+    ],
+    "ability": "Color Change",
+    "item": "Bright Powder"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Iron Jugulis",
+    "species": "Iron Jugulis",
+    "level": 54,
+    "nature": "Hardy",
+    "moves": [
+     "Confide",
+     "Healing Wish",
+     "Amnesia",
+     "Revival Blessing"
+    ],
+    "ability": "Gale Wings",
+    "item": "Choice Scarf"
+   },
+   {
+    "label": "Spiritomb",
+    "species": "Spiritomb",
+    "level": 54,
+    "nature": "Hardy",
+    "moves": [
+     "Metal Sound",
+     "Healing Wish",
+     "Swords Dance",
+     "Revival Blessing"
+    ],
+    "ability": "Trace",
+    "item": "Grepa Berry"
+   },
+   {
+    "label": "Excadrill",
+    "species": "Excadrill",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Hone Claws",
+     "Healing Wish",
+     "Growth",
+     "Revival Blessing"
+    ],
+    "ability": "Snow Warning",
+    "item": "Love Sweet"
+   },
+   {
+    "label": "Mimikyu",
+    "species": "Mimikyu",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Screech",
+     "Healing Wish",
+     "Decorate",
+     "Revival Blessing"
+    ],
+    "ability": "Grassy Surge"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   56396,
+   30272,
+   60082,
+   42295
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 2, move 2",
+   "p2": "move 1 1, move 2"
+  },
+  {
+   "p1": "switch 3, switch 4",
+   "p2": "pass, switch 3"
+  },
+  {
+   "p1": "move 4, move 4",
+   "p2": "move 1 1, move 4"
+  },
+  {
+   "p1": "switch 3, pass"
+  },
+  {
+   "p2": "pass, switch 3"
+  },
+  {
+   "p1": "pass, switch 4"
+  }
+ ]
+}
