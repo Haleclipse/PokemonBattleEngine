@@ -1,0 +1,184 @@
+{
+ "schema": 1,
+ "id": "gen6-doubles-a-transform-into-a-pokemon-an-illusion-wore-copies-no-oracle",
+ "notes": [
+  "A Misdreavus disguised as Groudon uses V-create; @pkmn/client keeps it on Groudon's entry when the Illusion breaks. Cyndaquil and Noivern later transform into the real Groudon and copy that entry's moves, V-create among them: what the client knows of the copies is no oracle (Nightly 20261107-074847, minimized)"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "doubles",
+  "format": "gen6doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hydreigon",
+    "species": "Hydreigon",
+    "level": 47,
+    "nature": "Hardy",
+    "moves": [
+     "Aeroblast",
+     "Transform",
+     "Razor Leaf",
+     "Poison Fang"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Hitmonchan",
+    "species": "Hitmonchan",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Psycho Cut",
+     "Transform",
+     "Drill Run",
+     "Poison Fang"
+    ],
+    "ability": "Run Away",
+    "item": "Power Anklet"
+   },
+   {
+    "label": "Cyndaquil",
+    "species": "Cyndaquil",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Attack Order",
+     "Transform",
+     "Poison Fang"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Noivern",
+    "species": "Noivern",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Leaf Storm",
+     "Transform",
+     "Poison Fang"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Budew",
+    "species": "Budew",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Diamond Storm"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Misdreavus",
+    "species": "Misdreavus",
+    "level": 54,
+    "nature": "Hardy",
+    "moves": [
+     "V-create",
+     "Transform",
+     "Meteor Mash",
+     "Poison Fang"
+    ],
+    "ability": "Illusion",
+    "gender": "M"
+   },
+   {
+    "label": "Blastoise",
+    "species": "Blastoise",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Close Combat",
+     "Transform",
+     "Superpower",
+     "Poison Fang"
+    ],
+    "ability": "Intimidate",
+    "gender": "F"
+   },
+   {
+    "label": "Groudon",
+    "species": "Groudon",
+    "level": 54,
+    "nature": "Hardy",
+    "moves": [
+     "Fiery Dance",
+     "Transform",
+     "Ancient Power",
+     "Poison Fang"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   62287,
+   59024,
+   21729,
+   16626
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Aeroblast 1, move Psycho Cut 2",
+   "p2": "move Diamond Storm, move V-create 1"
+  },
+  {
+   "p2": "switch Blastoise, pass"
+  },
+  {
+   "p1": "move Transform 1, move Transform 2",
+   "p2": "move Transform 2, move Transform 1"
+  },
+  {
+   "p1": "move 3 1, move 3 2",
+   "p2": "move 3 2, move 3 1"
+  },
+  {
+   "p1": "move Poison Fang 1, move Poison Fang 2",
+   "p2": "move Poison Fang 2, move Poison Fang 1"
+  },
+  {
+   "p1": "move 1 1, move 1 2",
+   "p2": "move 1 2, move 1 1"
+  },
+  {
+   "p2": "pass, switch Groudon"
+  },
+  {
+   "p1": "move Transform 1, move Transform 2",
+   "p2": "move Transform 2, move Transform 1"
+  },
+  {
+   "p1": "move 3 1, move 3 2",
+   "p2": "move 3 2, move 3 1"
+  },
+  {
+   "p1": "switch Cyndaquil, switch Noivern"
+  },
+  {
+   "p1": "move Poison Fang 2, move Poison Fang 2",
+   "p2": "pass, move Poison Fang 2"
+  },
+  {
+   "p1": "move Attack Order 2, move Leaf Storm 2",
+   "p2": "pass, move Fiery Dance 1"
+  },
+  {
+   "p1": "move Transform 2, move Transform 2",
+   "p2": "pass, move Transform 2"
+  }
+ ]
+}

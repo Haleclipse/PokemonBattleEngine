@@ -1315,8 +1315,11 @@ function noteUnresolvedIllusion(client, unresolved, args, twin) {
 }
 
 /**
- * Whether `p` stands transformed into an Illusion's holder the client saw unmasked, into one
- * whose moves the client knows no oracle of (`moves_copied`), into an entry filed apart from
+ * Whether `p` stands transformed into an Illusion's holder the client saw unmasked, into the
+ * Pokémon an Illusion wore (`illusion_worn`: the moves its holder showed in the disguise the client
+ * keeps on that entry, which a Transform into it copies — V-create from a Misdreavus disguised as
+ * Groudon, R-M11-90), into one whose moves the client knows no oracle of (`moves_copied`), into an
+ * entry filed apart from
  * another of its name (`filed_apart`: a disguise's moves the client keeps on the disguise's level,
  * the engine on the one it shows, R-M10-58), or into an entry the client made anew
  * (`entry_renewed`: it forgot the moves the old one knew — a Roselia whose name an Illusion's
@@ -1325,8 +1328,8 @@ function noteUnresolvedIllusion(client, unresolved, args, twin) {
 function transformedIntoNoOracle(p, masks, moves, renewed) {
   const into = p.volatiles?.transform?.pokemon;
   const key = into && (into.originalIdent ?? into.ident);
-  return !!into && (masks.unmasked.has(key) || moves.copied.has(key) || filedApart(into.side, into)
-    || renewed.has(key));
+  return !!into && (masks.unmasked.has(key) || masks.worn.has(key) || moves.copied.has(key)
+    || filedApart(into.side, into) || renewed.has(key));
 }
 
 /** One observer's knowledge, normalized. */
