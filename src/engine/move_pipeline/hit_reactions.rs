@@ -1,7 +1,9 @@
 //! The reactions to a hit that roll a chance after the ordered ones (Showdown `DamagingHit`
 //! handlers without an order, DESIGN.md §21): the holder's Effect Spore, Cursed Body or Cute
-//! Charm, then the attacker's Poison Touch or Toxic Chain (`engine::reactions` says when each
-//! rolls). They roll even when an ordered reaction (Rough Skin, Rocky Helmet) just knocked the
+//! Charm — its ability's, so before its item's unordered reactions (Jaboca Berry: Showdown sorts
+//! the unordered ones as it collects them, the holder's ability before its item, R-M11-89) —
+//! then the attacker's Poison Touch or Toxic Chain (`onSourceDamagingHit`, collected last;
+//! `engine::reactions` says when each rolls). They roll even when an ordered reaction (Rough Skin, Rocky Helmet) just knocked the
 //! attacker out — Showdown marks it fainted only at `faintMessages` — and the effect then finds
 //! nobody to take it; on a holder the hit knocked out they still roll and act. Which of them
 //! roll is settled before the ordered ones run (`engine::ChanceReactors`).
@@ -15,7 +17,8 @@ use super::MovePipeline;
 use crate::engine::BattleContext;
 
 impl<'a> MovePipeline<'a> {
-    pub(super) fn run_chance_reactions(
+    /// The holder's ability's chance reactions: Effect Spore, Cursed Body, Cute Charm.
+    pub(super) fn run_holder_chance_reactions(
         &mut self,
         attacker: PokemonId,
         holder: PokemonId,
@@ -85,6 +88,17 @@ impl<'a> MovePipeline<'a> {
                 ctx.ability_activated(holder, AbilityId::CUTE_CHARM);
             }
         }
+    }
+
+    /// The attacker's chance reaction to its own hit: Poison Touch, Toxic Chain.
+    pub(super) fn run_attacker_chance_reaction(
+        &mut self,
+        attacker: PokemonId,
+        holder: PokemonId,
+        move_def: &ResolvedMove,
+        reactors: crate::engine::ChanceReactors,
+    ) {
+        let chance = crate::engine::HIT_REACTION_CHANCE;
         if let Some((ability, status)) =
             crate::engine::dealt_hit_status(self.state, self.rules, reactors, holder, move_def)
             && self.state.rng.roll_ratio_for(

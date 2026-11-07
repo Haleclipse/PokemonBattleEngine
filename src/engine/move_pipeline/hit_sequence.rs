@@ -1364,23 +1364,37 @@ impl<'a> MovePipeline<'a> {
                 }
             }
         }
-        let mut reactions: Vec<(i16, crate::engine::DamagingHitReactionHandler)> = Vec::new();
+        // `(order, from the item, handler)`.
+        let mut reactions: Vec<(i16, bool, crate::engine::DamagingHitReactionHandler)> = Vec::new();
         if let Some(ordered) = handlers.damaging_hit_reaction {
-            reactions.push((ordered.priority, ordered.handler));
+            reactions.push((ordered.priority, false, ordered.handler));
         }
         if let Some(item) = held_item
             && self.holder_item_answers(move_def)
             && let Some(ordered) =
                 crate::engine::item_behavior(self.rules, item).damaging_hit_reaction
         {
-            reactions.push((ordered.priority, ordered.handler));
+            reactions.push((ordered.priority, true, ordered.handler));
         }
-        reactions.sort_by_key(|(priority, _)| *priority);
-        for (_, handler) in reactions {
+        reactions.sort_by_key(|(priority, _, _)| *priority);
+        // The unordered ones as Showdown collects them: the holder's ability's chance reactions
+        // before its item's (Cursed Body disables before a Jaboca Berry knocks the attacker
+        // out, R-M11-89), the attacker's own last.
+        let mut holder_chances = Some(reactors);
+        for (priority, from_item, handler) in reactions {
+            if from_item
+                && priority == crate::effects::abilities::UNORDERED_REACTION
+                && let Some(reactors) = holder_chances.take()
+            {
+                self.run_holder_chance_reactions(attacker, holder, move_def, damage, reactors);
+            }
             let mut ctx = BattleContext::new(self.state, self.rules, self.trace);
             handler(&mut ctx, hit);
         }
-        self.run_chance_reactions(attacker, holder, move_def, damage, reactors);
+        if let Some(reactors) = holder_chances {
+            self.run_holder_chance_reactions(attacker, holder, move_def, damage, reactors);
+        }
+        self.run_attacker_chance_reaction(attacker, holder, move_def, reactors);
         // Gen 4 Sticky Barb, after the contact abilities (issues.md I100).
         if self
             .rules
