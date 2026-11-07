@@ -366,10 +366,16 @@ pub(crate) fn modified_move_cow<'a>(
     }
     let mut changer = None;
     if let Some(change) = ability_handler(state, rules, pokemon, |b| b.modify_type) {
+        // A Dynamaxed user's move is a Max Move's base: every type changer's `onModifyType` lets
+        // it through whatever its own type (`|| this.activeMove?.isMax`), and its Max Move follows
+        // the new type — a Refrigerate holder's Weather Ball is Max Hailstorm (R-M11-95).
         let own_type = move_def
             .behavior
             .own_type
-            .is_some_and(|own| own.spares_type_changers());
+            .is_some_and(|own| own.spares_type_changers())
+            && !pokemon
+                .volatiles
+                .contains(crate::state::VolatileConditionKind::Dynamax);
         // A Terastallized Tera Blast keeps its Tera type (every Normal-type ability's
         // `onModifyType` names it).
         let tera_blast_terastallized =
