@@ -2691,9 +2691,20 @@ pub(super) fn rampage_length_hint(
                 }) {
                     return 2;
                 }
+                // Its action that turn, by the slot it had then: an Ally Switch later in the turn
+                // (its partner's) has it in the other slot at the boundary (R-M11-96).
+                let before = Who {
+                    slot: frames[index - 1].and_then(slot_in).or(user.slot),
+                    ..user.clone()
+                };
                 let action = decisions
                     .get(index)
-                    .and_then(|actions| actions.iter().find(|action| action.user == user))
+                    .and_then(|actions| {
+                        actions
+                            .iter()
+                            .find(|action| action.user == user)
+                            .or_else(|| actions.iter().find(|action| action.user == before))
+                    })
                     .or(carried.take());
                 if let Some(action) = action {
                     if action.fatigue {

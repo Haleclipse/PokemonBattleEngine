@@ -1,0 +1,144 @@
+{
+ "schema": 1,
+ "id": "gen6-doubles-an-outrage-user-moved-by-ally-switch-keeps-its-length",
+ "notes": [
+  "Masquerain's Outrage draws a length of 3; on its second turn its partner's Ally Switch (by Metronome) moves it to the other slot after it struck. The replay looked for that turn's Outrage under the slot the boundary shows, found none and read a 2 (cloud Nightly 42374641352, minimized)"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "doubles",
+  "format": "gen6doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Masquerain",
+    "species": "Masquerain",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Outrage",
+     "Forest's Curse"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Slowpoke",
+    "species": "Slowpoke",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Rest",
+     "Forest's Curse",
+     "Close Combat",
+     "Metronome"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Chandelure",
+    "species": "Chandelure",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Superpower",
+     "Forest's Curse",
+     "V-create",
+     "Metronome"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Klinklang",
+    "species": "Klinklang",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Flame Charge",
+     "Forest's Curse",
+     "Hammer Arm",
+     "Metronome"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Magcargo",
+    "species": "Magcargo",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Draco Meteor",
+     "Forest's Curse",
+     "Ominous Wind",
+     "Metronome"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   22515,
+   58757,
+   45110,
+   55821
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Outrage, move Rest",
+   "p2": "move Flame Charge 1, move Draco Meteor 2"
+  },
+  {
+   "p1": "move 1, move 2 1",
+   "p2": "move 2 1, move 2 2"
+  },
+  {
+   "p1": "move 1, move 3 2",
+   "p2": "move 3 1, move 3 2"
+  },
+  {
+   "p1": "move Forest's Curse 1, move Metronome",
+   "p2": "move Metronome, move Metronome"
+  },
+  {
+   "p1": "switch Chandelure, move Rest",
+   "p2": "move Flame Charge 1, move Draco Meteor 2"
+  },
+  {
+   "p1": "move Superpower 2, move Forest's Curse 1",
+   "p2": "move Forest's Curse 1, move Forest's Curse 2"
+  },
+  {
+   "p1": "move Forest's Curse 2, move Close Combat 1",
+   "p2": "move Hammer Arm 1, move Ominous Wind 2"
+  },
+  {
+   "p1": "move V-create 2, move Metronome",
+   "p2": "move Metronome, move Metronome"
+  },
+  {
+   "p1": "move Metronome, move Rest",
+   "p2": "move Flame Charge 1, move Draco Meteor 2"
+  },
+  {
+   "p1": "switch Masquerain, move Forest's Curse 1",
+   "p2": "move Forest's Curse 1, move Forest's Curse 2"
+  },
+  {
+   "p1": "move Outrage, move Close Combat 2",
+   "p2": "move Hammer Arm 1, move Ominous Wind 2"
+  },
+  {
+   "p1": "move 1, move 4",
+   "p2": "move 4, move 4"
+  }
+ ]
+}
