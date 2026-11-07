@@ -4042,11 +4042,11 @@ function cartridgeGen3Damage(source, target, move, seen) {
   // The power, and the doubling the cartridge leaves to the damage (`sDMG_MULTIPLIER`).
   let power = selfHit ? 40 : seen.power;
   let doubled = false;
-  if (['smellingsalt', 'revenge', 'pursuit', 'weatherball'].includes(move.id)) {
+  if (['smellingsalts', 'revenge', 'pursuit', 'weatherball'].includes(move.id)) {
     doubled = seen.power === data.basePower * 2;
     power = data.basePower;
     // The Smelling Salt script hits a Substitute without its doubling (`jumpifstatus2 … SUBSTITUTE`).
-    if (move.id === 'smellingsalt' && target.volatiles['substitute']) doubled = false;
+    if (move.id === 'smellingsalts' && target.volatiles['substitute']) doubled = false;
   }
   if (move.id === 'facade' && ['psn', 'tox', 'brn', 'par'].includes(source.status)) doubled = true;
   if (['gust', 'twister'].includes(move.id) && (target.volatiles['fly'] || target.volatiles['bounce'])) doubled = true;

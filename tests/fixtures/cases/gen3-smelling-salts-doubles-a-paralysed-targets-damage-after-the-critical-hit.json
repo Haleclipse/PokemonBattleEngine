@@ -1,0 +1,257 @@
+{
+ "schema": 1,
+ "id": "gen3-smelling-salts-doubles-a-paralysed-targets-damage-after-the-critical-hit",
+ "notes": [
+  "Regice's Smelling Salts on a paralysed Corphish: pokeemerald doubles it with dmgMultiplier after the critical hit, the + 2 doubled too (issues.md I218). The oracle's Gen 3 damage named the move 'smellingsalt', Showdown's id is 'smellingsalts', and doubled the power instead (Nightly 20261107-133902, minimized; re-recorded under the fixed patch)"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "singles",
+  "format": "gen3customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Dewgong",
+    "species": "Dewgong",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Extreme Speed",
+     "Sketch",
+     "Quick Attack",
+     "Metronome"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Corphish",
+    "species": "Corphish",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Frustration",
+     "Sketch",
+     "Ice Ball"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Seaking",
+    "species": "Seaking",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sketch",
+     "Beat Up",
+     "Metronome"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Seviper",
+    "species": "Seviper",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Water Spout"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Nincada",
+    "species": "Nincada",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Flail"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Bagon",
+    "species": "Bagon",
+    "level": 47,
+    "nature": "Hardy",
+    "moves": [
+     "Fury Cutter",
+     "Sketch",
+     "Rollout"
+    ],
+    "ability": "Speed Boost",
+    "gender": "M"
+   },
+   {
+    "label": "Regice",
+    "species": "Regice",
+    "level": 46,
+    "nature": "Hardy",
+    "moves": [
+     "Return",
+     "Sketch",
+     "Smelling Salts",
+     "Metronome"
+    ],
+    "ability": "Cute Charm"
+   },
+   {
+    "label": "Koffing",
+    "species": "Koffing",
+    "level": 48,
+    "nature": "Hardy",
+    "moves": [
+     "Swift",
+     "Sketch",
+     "String Shot"
+    ],
+    "ability": "Rough Skin",
+    "gender": "M"
+   },
+   {
+    "label": "Rhydon",
+    "species": "Rhydon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Growl",
+     "Sketch",
+     "Surf",
+     "Metronome"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   6822,
+   63507,
+   18244,
+   15937
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Extreme Speed",
+   "p2": "move Fury Cutter"
+  },
+  {
+   "p1": "move Sketch",
+   "p2": "move Sketch"
+  },
+  {
+   "p1": "move Metronome",
+   "p2": "move Rollout"
+  },
+  {
+   "p2": "switch Regice"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 4"
+  },
+  {
+   "p1": "move 1",
+   "p2": "switch Koffing"
+  },
+  {
+   "p1": "move Metronome",
+   "p2": "move Swift"
+  },
+  {
+   "p1": "move Extreme Speed",
+   "p2": "move Sketch"
+  },
+  {
+   "p1": "move Quick Attack",
+   "p2": "move Swift"
+  },
+  {
+   "p1": "move Metronome",
+   "p2": "move String Shot"
+  },
+  {
+   "p2": "switch Regice"
+  },
+  {
+   "p1": "switch Corphish",
+   "p2": "switch Rhydon"
+  },
+  {
+   "p1": "move Sketch",
+   "p2": "move Growl"
+  },
+  {
+   "p1": "move Ice Ball",
+   "p2": "move Sketch"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 3"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 4"
+  },
+  {
+   "p1": "switch Dewgong",
+   "p2": "switch Regice"
+  },
+  {
+   "p1": "move Quick Attack",
+   "p2": "move Return"
+  },
+  {
+   "p1": "move Metronome",
+   "p2": "move Sketch"
+  },
+  {
+   "p1": "move Extreme Speed",
+   "p2": "move Metronome"
+  },
+  {
+   "p1": "move Quick Attack",
+   "p2": "move Return"
+  },
+  {
+   "p1": "switch Corphish"
+  },
+  {
+   "p1": "switch Seaking",
+   "p2": "switch Rhydon"
+  },
+  {
+   "p1": "move Sketch",
+   "p2": "move Surf"
+  },
+  {
+   "p1": "move Beat Up",
+   "p2": "move Growl"
+  },
+  {
+   "p1": "move Metronome",
+   "p2": "move Surf"
+  },
+  {
+   "p1": "switch Corphish",
+   "p2": "switch Regice"
+  },
+  {
+   "p1": "move Ice Ball",
+   "p2": "move Return"
+  },
+  {
+   "p1": "move Frustration",
+   "p2": "move Smelling Salts"
+  }
+ ]
+}
