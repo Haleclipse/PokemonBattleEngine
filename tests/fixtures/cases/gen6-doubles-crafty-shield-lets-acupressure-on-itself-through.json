@@ -1,0 +1,170 @@
+{
+ "schema": 1,
+ "id": "gen6-doubles-crafty-shield-lets-acupressure-on-itself-through",
+ "notes": [
+  "Bayleef's Crafty Shield stays up after Bayleef faints; its partner Nidoran-F's Acupressure on itself goes through it (Bulbapedia: an ally can still use Acupressure on itself; issues.md I186, oracle patch) and raises a stat. Showdown's craftyshield reads only the move's target type and stops it (Nightly 20261107-100900, minimized; re-recorded under the patch)"
+ ],
+ "battle": {
+  "generation": 6,
+  "mode": "doubles",
+  "format": "gen6doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Bayleef",
+    "species": "Bayleef",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Rock Climb",
+     "Acupressure",
+     "Vital Throw",
+     "Crafty Shield"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Nidoran-F",
+    "species": "Nidoran-F",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Focus Punch",
+     "Acupressure",
+     "Avalanche",
+     "Crafty Shield"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Farfetch’d",
+    "species": "Farfetch’d",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Revenge",
+     "Acupressure",
+     "Leech Life",
+     "Crafty Shield"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Mandibuzz",
+    "species": "Mandibuzz",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Parabolic Charge",
+     "Acupressure",
+     "Draining Kiss"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Manaphy",
+    "species": "Manaphy",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Dream Eater",
+     "Acupressure",
+     "Drain Punch",
+     "Crafty Shield"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Deerling",
+    "species": "Deerling",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Acupressure",
+     "Horn Leech",
+     "Crafty Shield"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Hitmontop",
+    "species": "Hitmontop",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Absorb",
+     "Outrage"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   11000,
+   21159,
+   49000,
+   3280
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Rock Climb 1, move Focus Punch 2",
+   "p2": "move Parabolic Charge, move Dream Eater 1"
+  },
+  {
+   "p1": "move Acupressure -2, move Acupressure -1",
+   "p2": "move Acupressure -2, move Acupressure -1"
+  },
+  {
+   "p1": "move Vital Throw 1, move Avalanche 2",
+   "p2": "move Draining Kiss 2, move Drain Punch 1"
+  },
+  {
+   "p1": "switch Farfetch’d, move Acupressure -1",
+   "p2": "switch Deerling, move Acupressure -1"
+  },
+  {
+   "p1": "move Acupressure -2, move Avalanche 1",
+   "p2": "move Acupressure -2, move Drain Punch 1"
+  },
+  {
+   "p1": "move Leech Life 2, move Crafty Shield",
+   "p2": "move Horn Leech 2, move Crafty Shield"
+  },
+  {
+   "p1": "move Crafty Shield, move Focus Punch 1",
+   "p2": "move Crafty Shield, move Dream Eater 1"
+  },
+  {
+   "p2": "switch Mandibuzz, pass"
+  },
+  {
+   "p1": "move Revenge 2, move Acupressure -1",
+   "p2": "move Parabolic Charge, move Acupressure -1"
+  },
+  {
+   "p1": "move Acupressure -2, move Avalanche 1",
+   "p2": "move Acupressure -2, move Drain Punch 2"
+  },
+  {
+   "p1": "switch Bayleef, move Crafty Shield",
+   "p2": "switch Hitmontop, move Crafty Shield"
+  },
+  {
+   "p1": "move Vital Throw 2, move Focus Punch 1",
+   "p2": "move Outrage, move Dream Eater 1"
+  },
+  {
+   "p1": "move 4, move 2 -1",
+   "p2": "move 1, move 2 -1"
+  }
+ ]
+}

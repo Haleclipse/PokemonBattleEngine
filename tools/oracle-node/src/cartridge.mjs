@@ -39,7 +39,9 @@
 // lets a sleep's or a confusion's duration be drawn; I216 (a Gen 3 sun Weather Ball thaws its target)
 // takes the thawed Pokémon's later thaw rolls away; I217 (a Gen 7+ Dancer stopped before its dance
 // leaves the dance the battle's last move) lets a later Copycat call it, with its draws; I218 (Gen
-// 3's damage as pokeemerald computes it) takes Spit Up's critical-hit and damage-roll draws away.
+// 3's damage as pokeemerald computes it) takes Spit Up's critical-hit and damage-roll draws away; I186
+// (Crafty Shield lets a move its user uses on itself through) lets an Acupressure on itself draw its
+// stat.
 // `SHOWDOWN_UNPATCHED=1` plays Showdown as published: to reproduce a battle recorded before a
 // patch existed, and to check that a patch's scenario fails without it.
 import {Battle, Dex, Pokemon} from '@pkmn/sim';
@@ -2081,11 +2083,15 @@ if (patched) {
 // Pokémon on its side, not the ones a member uses on the whole party. Showdown's `craftyshield` condition
 // stops any status move but those aimed at `self` or `all`, so an `allies` move (Howl, Jungle Healing, Life
 // Dew, Lunar Blessing) fails on the user and its partner alike. The patch lets `allies` through. No draw.
+// Nor does it stop a move the user uses on itself (Bulbapedia: "an ally can still use Acupressure ... on
+// itself"; R-M11-91): Showdown's check reads the move's target type, and Acupressure's `adjacentAllyOrSelf`
+// aimed at the user fails. The patch lets a move through whose target is its user; the Acupressure that
+// goes ahead draws its stat.
 if (patched) {
   const condition = Dex.data.Moves.craftyshield.condition;
   const tryHit = condition.onTryHit;
   condition.onTryHit = function (target, source, move) {
-    if (move.target === 'allies') return;
+    if (move.target === 'allies' || target === source) return;
     return tryHit.call(this, target, source, move);
   };
 }
