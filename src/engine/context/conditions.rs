@@ -237,9 +237,9 @@ impl<'a> BattleContext<'a> {
         };
         let refused = |named| Some((target, crate::engine::raw_ability(pokemon), named, false));
         if own.blocks_volatiles.contains(&kind)
-            || own.in_forme_blocks.is_some_and(|guard| {
-                guard.volatiles.contains(&kind) && guard.holds(crate::engine::species_of(pokemon))
-            })
+            || own
+                .in_forme_blocks
+                .is_some_and(|guard| guard.volatiles.contains(&kind) && guard.holds(pokemon))
             || own.volatile_guard.is_some_and(|g| !g.allies && covers(&g))
         {
             return refused(true);

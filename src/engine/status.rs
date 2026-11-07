@@ -308,7 +308,9 @@ pub(crate) fn set_status(
             && (handlers.blocks_statuses.contains(&status)
                 || handlers.in_forme_blocks.is_some_and(|guard| {
                     guard.statuses.contains(&status)
-                        && guard.holds(state.pokemon(target).and_then(crate::engine::species_of))
+                        && state
+                            .pokemon(target)
+                            .is_some_and(|pokemon| guard.holds(pokemon))
                 }))
         {
             let reason = StatusBlockReason::Ability(ability);
@@ -539,9 +541,9 @@ pub fn ability_refuses_status(
     let ctx = TrySetStatusContext::new(state, rules, target, status, source);
     handlers.status_immunity == Some(effects::abilities::StatusImmunity::Status(status))
         || handlers.blocks_statuses.contains(&status)
-        || handlers.in_forme_blocks.is_some_and(|guard| {
-            guard.statuses.contains(&status) && guard.holds(crate::engine::species_of(pokemon))
-        })
+        || handlers
+            .in_forme_blocks
+            .is_some_and(|guard| guard.statuses.contains(&status) && guard.holds(pokemon))
         || matches!(
             effects::abilities::try_set_status(handlers, &ctx),
             TrySetStatusResult::Blocked { .. }

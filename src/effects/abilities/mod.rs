@@ -1177,9 +1177,11 @@ pub struct FormeGuard {
 }
 
 impl FormeGuard {
-    /// Whether the guard holds for a Pokémon battling as `battling`.
-    pub fn holds(self, battling: Option<crate::ids::SpeciesId>) -> bool {
-        battling == Some(self.forme)
+    /// Whether the guard holds for `pokemon`: battling as its forme, not by a Transform (Showdown
+    /// `target.species.id !== 'miniormeteor' || target.transformed`; Bulbapedia: a Pokémon that
+    /// transformed into a Meteor Form Minior is not immune to status conditions, R-M11-93).
+    pub fn holds(self, pokemon: &crate::state::PokemonState) -> bool {
+        pokemon.transform.is_none() && crate::engine::species_of(pokemon) == Some(self.forme)
     }
 }
 
