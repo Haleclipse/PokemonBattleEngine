@@ -41,7 +41,8 @@
 // leaves the dance the battle's last move) lets a later Copycat call it, with its draws; I218 (Gen
 // 3's damage as pokeemerald computes it) takes Spit Up's critical-hit and damage-roll draws away; I186
 // (Crafty Shield lets a move its user uses on itself through) lets an Acupressure on itself draw its
-// stat.
+// stat; I219 (a Gen 2 drag's entrant meets the Spikes within the move) moves a speed tie its switch-in
+// sorts into the move.
 // `SHOWDOWN_UNPATCHED=1` plays Showdown as published: to reproduce a battle recorded before a
 // patch existed, and to check that a patch's scenario fails without it.
 import {Battle, Dex, Pokemon} from '@pkmn/sim';
@@ -4187,4 +4188,30 @@ for (const [id, format] of patched ? Object.entries(Dex.data.Rulesets) : []) {
   format.actions = {...format.actions, getDamage: cartridgeGen3GetDamage};
   const cached = Dex.formats.get(id);
   cached.actions = {...cached.actions, getDamage: cartridgeGen3GetDamage};
+}
+
+// I219 — Gen 2 a Pokémon Roar or Whirlwind drags in meets the Spikes within the move. The gen2
+// `moveHit` drags in at once (`dragIn`), but `switchIn` queues the entrant's `runSwitch` (its Spikes)
+// as an action of its own for any generation before 5, after the whole dragging action — the
+// user's `onAfterMoveSelf` residual (poison, burn, Leech Seed) first. pokecrystal's
+// `BattleCommand_ForceSwitch` calls `SpikesDamage` itself, inside the move, and the battle core runs
+// `ResidualDamage` only once the move is over (R-M11-97). The patch runs a Gen 2 drag's queued
+// `runSwitch` at once: a speed tie its `speedSort` breaks is drawn there.
+function cartridgeGen2SwitchIn(pokemon, pos, sourceEffect = null, isDrag) {
+  const result = Object.getPrototypeOf(this).switchIn.call(this, pokemon, pos, sourceEffect, isDrag);
+  if (result && isDrag) {
+    const queue = this.battle.queue;
+    const index = queue.list.findIndex(action => action.choice === 'runSwitch' && action.pokemon === pokemon);
+    if (index >= 0) {
+      queue.list.splice(index, 1);
+      this.runSwitch(pokemon);
+    }
+  }
+  return result;
+}
+for (const [id, format] of patched ? Object.entries(Dex.data.Rulesets) : []) {
+  if (!/^gen2/.test(id)) continue;
+  format.actions = {...format.actions, switchIn: cartridgeGen2SwitchIn};
+  const cached = Dex.formats.get(id);
+  cached.actions = {...cached.actions, switchIn: cartridgeGen2SwitchIn};
 }

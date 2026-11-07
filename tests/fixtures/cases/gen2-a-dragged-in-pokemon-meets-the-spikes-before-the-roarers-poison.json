@@ -1,0 +1,151 @@
+{
+ "schema": 1,
+ "id": "gen2-a-dragged-in-pokemon-meets-the-spikes-before-the-roarers-poison",
+ "notes": [
+  "A poisoned Slowpoke's Roar drags Vaporeon in onto Spikes: pokecrystal's BattleCommand_ForceSwitch calls SpikesDamage within the move, ResidualDamage comes after it — the Spikes before Slowpoke's poison (issues.md I219, oracle patch; Showdown's switchIn queues the entrant's runSwitch after the whole action) (Nightly 20261108-004205, minimized; re-recorded under the patch)"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Slowpoke",
+    "species": "Slowpoke",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Roar",
+     "Minimize",
+     "Whirlwind"
+    ],
+    "gender": "F"
+   },
+   {
+    "label": "Kabuto",
+    "species": "Kabuto",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Metal Claw",
+     "Minimize",
+     "Ancient Power",
+     "Spikes"
+    ],
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Charmeleon",
+    "species": "Charmeleon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Soft-Boiled"
+    ],
+    "gender": "F"
+   },
+   {
+    "label": "Vaporeon",
+    "species": "Vaporeon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Milk Drink",
+     "Minimize",
+     "Thunder Wave",
+     "Spikes"
+    ],
+    "gender": "F"
+   },
+   {
+    "label": "Gligar",
+    "species": "Gligar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sweet Kiss",
+     "Minimize",
+     "Confuse Ray"
+    ],
+    "gender": "M"
+   },
+   {
+    "label": "Cleffa",
+    "species": "Cleffa",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sludge"
+    ],
+    "gender": "F"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   59988,
+   41562,
+   48985,
+   44896
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Roar",
+   "p2": "move Soft-Boiled"
+  },
+  {
+   "p1": "move Whirlwind",
+   "p2": "move Confuse Ray"
+  },
+  {
+   "p1": "move Minimize",
+   "p2": "move Minimize"
+  },
+  {
+   "p1": "switch Kabuto",
+   "p2": "switch Vaporeon"
+  },
+  {
+   "p1": "move Ancient Power",
+   "p2": "move Thunder Wave"
+  },
+  {
+   "p1": "move Spikes",
+   "p2": "move Spikes"
+  },
+  {
+   "p1": "move Metal Claw",
+   "p2": "move Milk Drink"
+  },
+  {
+   "p1": "move Minimize",
+   "p2": "move Minimize"
+  },
+  {
+   "p1": "move Ancient Power",
+   "p2": "move Thunder Wave"
+  },
+  {
+   "p1": "move Spikes",
+   "p2": "move Spikes"
+  },
+  {
+   "p1": "switch Slowpoke",
+   "p2": "switch Gligar"
+  },
+  {
+   "p1": "move Roar",
+   "p2": "move Sweet Kiss"
+  },
+  {
+   "p1": "move Roar",
+   "p2": "move Sludge"
+  }
+ ]
+}
