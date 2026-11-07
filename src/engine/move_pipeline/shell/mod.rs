@@ -1441,6 +1441,9 @@ impl<'a> MovePipeline<'a> {
     /// stopped spends nothing: no status move's Z effect, and the side keeps its Z power
     /// (DESIGN.md R-M9-29).
     fn spend_z_power(&mut self, actor: PokemonId, z: &super::ZMoveExecution) {
+        // An Illusion wears off first (`runMove`: `if (pokemon.illusion)` its `End`; Bulbapedia:
+        // "the illusion wears off immediately before using the Z-Move", R-M11-98).
+        BattleContext::new(self.state, self.rules, self.trace).end_illusion(actor);
         crate::engine::spend_mechanic(
             self.state,
             self.trace,
