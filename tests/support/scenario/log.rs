@@ -958,10 +958,15 @@ pub fn extract_decisions_with(
                     pursuit_intercept = true;
                 }
                 // Bide storing energy (`-activate|user|move: Bide`, Gen 1 `-activate|user|Bide`):
-                // the holder's action, with no move line.
+                // the holder's action, with no move line — but not a biding Dancer's as it starts
+                // to dance: that is its Bide condition's `onBeforeMove` letting the dance go on
+                // (R-M11-94).
                 if matches!(what, "move: Bide" | "Bide")
                     && args.len() == 2
                     && let Some(user) = args.first().and_then(who_from_text)
+                    && !out.last().is_some_and(|action| {
+                        action.danced && action.user == user && action.move_name.is_none()
+                    })
                 {
                     current(&mut out, user).move_name = Some("Bide".into());
                 }

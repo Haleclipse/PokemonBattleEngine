@@ -1,0 +1,83 @@
+{
+ "schema": 1,
+ "id": "gen7-a-biding-dancer-dances-past-its-bide",
+ "notes": [
+  "Hariyama stores Bide; Nihilego's Lunar Dance makes it dance (Lunar Dance fails, nothing to switch to). Bide's onBeforeMove prints -activate|move: Bide and lets the dance go on: that line is not Hariyama's Bide turn (cloud Nightly 42366042083, minimized)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "singles",
+  "format": "gen7customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Nihilego",
+    "species": "Nihilego",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Leech Seed",
+     "Lunar Dance"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Unown",
+    "species": "Unown",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Pay Day"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Yamask",
+    "species": "Yamask",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Lunar Dance"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Hariyama",
+    "species": "Hariyama",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Bide"
+    ],
+    "ability": "Dancer",
+    "gender": "F"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   42697,
+   50247,
+   43429,
+   37012
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Leech Seed",
+   "p2": "move Lunar Dance"
+  },
+  {
+   "p2": "switch Hariyama"
+  },
+  {
+   "p1": "move Lunar Dance",
+   "p2": "move Bide"
+  }
+ ]
+}
