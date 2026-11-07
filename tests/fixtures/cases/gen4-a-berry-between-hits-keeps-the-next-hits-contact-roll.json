@@ -1,0 +1,189 @@
+{
+ "schema": 1,
+ "id": "gen4-a-berry-between-hits-keeps-the-next-hits-contact-roll",
+ "notes": [
+  "Nidorino's Fury Attack on Nidoqueen (Poison Point): its Mago Berry heals it after the first hit, so the second hit takes it from 132 to 125 — damage, and a Poison Point roll. The replay read that hit's damage from the first hit's 105 (nothing dealt, no roll) and lost step with the engine (Nightly 20261108-061825, minimized)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "singles",
+  "format": "gen4ou"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Regice",
+    "species": "Regice",
+    "ability": "Clear Body",
+    "moves": [
+     "Signal Beam",
+     "Avalanche",
+     "Psych Up",
+     "Endure"
+    ],
+    "nature": "Bold",
+    "gender": "",
+    "shiny": false,
+    "level": 54,
+    "evs": {
+     "hp": 0,
+     "atk": 180,
+     "def": 24,
+     "spa": 124,
+     "spd": 180,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 17
+   },
+   {
+    "label": "Manectric",
+    "species": "Manectric",
+    "ability": "Lightning Rod",
+    "moves": [
+     "Thief"
+    ],
+    "nature": "Mild",
+    "gender": "M",
+    "shiny": false,
+    "level": 31,
+    "evs": {
+     "hp": 0,
+     "atk": 116,
+     "def": 44,
+     "spa": 68,
+     "spd": 160,
+     "spe": 120
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 91
+   },
+   {
+    "label": "Nidorino",
+    "species": "Nidorino",
+    "ability": "Rivalry",
+    "moves": [
+     "Fury Attack"
+    ],
+    "nature": "Jolly",
+    "gender": "",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 28,
+     "atk": 0,
+     "def": 96,
+     "spa": 124,
+     "spd": 80,
+     "spe": 180
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   }
+  ],
+  "p2": [
+   {
+    "label": "Nidoqueen",
+    "species": "Nidoqueen",
+    "item": "Mago Berry",
+    "ability": "Poison Point",
+    "moves": [
+     "Defense Curl",
+     "Poison Jab",
+     "Double Kick",
+     "Avalanche"
+    ],
+    "nature": "Modest",
+    "gender": "",
+    "shiny": false,
+    "level": 58,
+    "evs": {
+     "hp": 208,
+     "atk": 0,
+     "def": 80,
+     "spa": 100,
+     "spd": 0,
+     "spe": 120
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 24,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 119
+   }
+  ]
+ },
+ "preview": {
+  "p1": "team 312465",
+  "p2": "team 214635"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   13744,
+   447,
+   1007,
+   31
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Signal Beam",
+   "p2": "move Defense Curl"
+  },
+  {
+   "p1": "move Avalanche",
+   "p2": "move Poison Jab"
+  },
+  {
+   "p1": "move Psych Up",
+   "p2": "move Double Kick"
+  },
+  {
+   "p1": "move Endure",
+   "p2": "move Avalanche"
+  },
+  {
+   "p1": "move Signal Beam",
+   "p2": "move Defense Curl"
+  },
+  {
+   "p1": "switch Manectric"
+  },
+  {
+   "p1": "move Thief",
+   "p2": "move Poison Jab"
+  },
+  {
+   "p1": "switch Nidorino"
+  },
+  {
+   "p1": "move Fury Attack",
+   "p2": "move Double Kick"
+  }
+ ]
+}

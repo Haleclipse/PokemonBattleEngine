@@ -791,6 +791,7 @@ pub fn extract_decisions_with(
                     action.substitute_hits.push(true);
                     action.hit_targets.push(holder.clone());
                     action.hit_hp.push(None);
+                    action.hit_hp_before.push(None);
                     if let Some(holder) = holder {
                         action
                             .substitute_struck
@@ -1360,11 +1361,18 @@ pub fn extract_decisions_with(
                         // the action, no hit (DESIGN.md R-M8-91).
                         action.damages.push((target, hp));
                     } else if from.is_none() && target != action.user {
+                        let before = action
+                            .damages
+                            .iter()
+                            .rev()
+                            .find(|(who, _)| *who == target)
+                            .map(|(_, hp)| *hp);
                         action.damages.push((target.clone(), hp));
                         action.crits.push(take_crit(&mut pending_crits, &target));
                         action.substitute_hits.push(false);
                         action.hit_targets.push(Some(target.clone()));
                         action.hit_hp.push(Some(hp));
+                        action.hit_hp_before.push(before);
                     } else if target != action.user
                         && action.used_move().is_some_and(|name| {
                             from == Some(

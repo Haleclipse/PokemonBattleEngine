@@ -1338,10 +1338,21 @@ pub(super) fn tape_template(
                     // reactions).
                     let before_after = match (*target, index) {
                         (Some(id), Some(i)) => oracle.hit_hp[i].map(|after| {
-                            let before = (0..i)
-                                .rev()
-                                .find(|&j| reached(j) == Some(id) && oracle.hit_hp[j].is_some())
-                                .and_then(|j| oracle.hit_hp[j])
+                            // A berry the `Update` after an earlier hit fed the target counts
+                            // (a Mago Berry between a Fury Attack's hits, R-M11-99).
+                            let before = oracle
+                                .hit_hp_before
+                                .get(i)
+                                .copied()
+                                .flatten()
+                                .or_else(|| {
+                                    (0..i)
+                                        .rev()
+                                        .find(|&j| {
+                                            reached(j) == Some(id) && oracle.hit_hp[j].is_some()
+                                        })
+                                        .and_then(|j| oracle.hit_hp[j])
+                                })
                                 .or_else(|| state.pokemon(id).map(|p| p.hp))
                                 .unwrap_or(after);
                             (before, after)

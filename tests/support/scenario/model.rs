@@ -992,6 +992,10 @@ pub struct ActionOracle {
     pub hit_targets: Vec<Option<Who>>,
     /// Aligned with `crits`: the HP a hit left its target at (none for a Substitute's hit).
     pub hit_hp: Vec<Option<u16>>,
+    /// Aligned with `crits`: the HP the target had as the hit came, as the action's lines last
+    /// showed it — an earlier hit, or a berry the `Update` after it fed the target (R-M11-99); none
+    /// for a Substitute's hit or a target the action has not shown yet.
+    pub hit_hp_before: Vec<Option<u16>>,
     /// `-activate|p|item: Focus Band`: the Pokémon it held, and how many hits had landed before
     /// (the band's hit is the next one; a confusion self-hit or a crash has none).
     pub focus_band_held: Vec<(Who, usize)>,
@@ -1173,6 +1177,7 @@ impl ActionOracle {
             substitute_hits: Vec::new(),
             hit_targets: Vec::new(),
             hit_hp: Vec::new(),
+            hit_hp_before: Vec::new(),
             focus_band_held: Vec::new(),
             focus_sash_held: Vec::new(),
             sturdy_held: Vec::new(),
