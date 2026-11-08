@@ -386,7 +386,10 @@ function cartridgeGen4Damage(source, target, move, seen) {
   if (move.flags['punch'] && ability(source, 'ironfist')) power = times(power, 12, 10);
   // The stats: the stored stat times each modifier, floored, before the stage.
   const sunny = weather === 'sunnyday';
-  const flowerGift = side => sunny && side.active.some(p => p && !p.fainted && p.hasAbility('flowergift'));
+  // Flower Gift (`BattleSystem_CountAbility(…, COUNT_ALIVE_BATTLERS_OUR_SIDE, …)`): a holder on the
+  // side with HP left (`curHP`) — not a Self-Destruct user, whose HP its effect script sets to 0
+  // before `CalcDamage`, though Showdown's `fainted` waits for `faintMessages` (R-M11-115).
+  const flowerGift = side => sunny && side.active.some(p => p && p.hp && p.hasAbility('flowergift'));
   let attack;
   let defense;
   if (physical) {

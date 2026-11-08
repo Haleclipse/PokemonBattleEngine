@@ -1,0 +1,270 @@
+{
+ "schema": 1,
+ "id": "gen4-doubles-a-self-destructing-flower-gift-holder-boosts-nothing",
+ "notes": [
+  "Gen 4 doubles in the sun: Wurmple, holding Flower Gift, Self-Destructs into Suicune, Magikarp and Haunter. pokeplatinum's Self-Destruct script sets the user's HP to 0 before `CalcDamage`, and Flower Gift's boost counts holders with HP left (`COUNT_ALIVE_BATTLERS_OUR_SIDE`): no ×1.5, as the engine has it. The oracle's Gen 4 patch counted the user (`!fainted`). Recorded under the corrected patch (R-M11-115; Nightly m8-gen4-doubles-s1918-017)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "doubles",
+  "format": "gen4doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Suicune",
+    "species": "Suicune",
+    "level": 55,
+    "nature": "Hardy",
+    "moves": [
+     "Moonlight",
+     "Haze",
+     "Supersonic",
+     "Switcheroo"
+    ],
+    "ability": "Drought"
+   },
+   {
+    "label": "Roserade",
+    "species": "Roserade",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sweet Kiss",
+     "Haze",
+     "Teeter Dance",
+     "Switcheroo"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Haunter",
+    "species": "Haunter",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Confuse Ray",
+     "Haze",
+     "Sleep Powder",
+     "Switcheroo"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Cacnea",
+    "species": "Cacnea",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spore",
+     "Haze",
+     "Cotton Spore",
+     "Switcheroo"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Magikarp",
+    "species": "Magikarp",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Magma Storm",
+     "Haze",
+     "Wrap",
+     "Switcheroo"
+    ],
+    "ability": "Run Away",
+    "item": "Kasib Berry",
+    "gender": "F"
+   },
+   {
+    "label": "Stantler",
+    "species": "Stantler",
+    "level": 46,
+    "nature": "Hardy",
+    "moves": [
+     "Sand Tomb",
+     "Haze",
+     "Fire Spin",
+     "Switcheroo"
+    ],
+    "ability": "Run Away",
+    "item": "Wise Glasses",
+    "gender": "F"
+   },
+   {
+    "label": "Infernape",
+    "species": "Infernape",
+    "level": 55,
+    "nature": "Hardy",
+    "moves": [
+     "Bind",
+     "Haze",
+     "Clamp",
+     "Switcheroo"
+    ],
+    "ability": "Trace",
+    "item": "Life Orb",
+    "gender": "M"
+   },
+   {
+    "label": "Wurmple",
+    "species": "Wurmple",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Self-Destruct"
+    ],
+    "ability": "Flower Gift",
+    "gender": "M"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   28128,
+   37203,
+   61146,
+   12243
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Moonlight, move Sweet Kiss 1",
+   "p2": "move Magma Storm 1, move Sand Tomb 2"
+  },
+  {
+   "p1": "move Haze, move Haze",
+   "p2": "move Haze, move Haze"
+  },
+  {
+   "p1": "move Supersonic 2, move Teeter Dance",
+   "p2": "move Wrap 1, move Fire Spin 2"
+  },
+  {
+   "p1": "move Switcheroo 1, move Switcheroo 2",
+   "p2": "move Switcheroo 1, move Switcheroo 2"
+  },
+  {
+   "p1": "move Moonlight, move Sweet Kiss 1",
+   "p2": "move Magma Storm 1, move Sand Tomb 2"
+  },
+  {
+   "p1": "move Haze, move Haze",
+   "p2": "move Haze, move Haze"
+  },
+  {
+   "p1": "move Supersonic 2, move Teeter Dance",
+   "p2": "move Wrap 1, move Fire Spin 2"
+  },
+  {
+   "p1": "move Switcheroo 1, move Switcheroo 2",
+   "p2": "move Switcheroo 1, move Switcheroo 2"
+  },
+  {
+   "p1": "move Moonlight, move Sweet Kiss 1",
+   "p2": "switch Infernape, move Sand Tomb 1"
+  },
+  {
+   "p1": "move Haze, move Haze",
+   "p2": "move Bind 2, move Haze"
+  },
+  {
+   "p1": "move Supersonic 2, move Teeter Dance",
+   "p2": "move Haze, move Fire Spin 1"
+  },
+  {
+   "p1": "move Switcheroo 1, move Switcheroo 2",
+   "p2": "move Clamp 2, move Switcheroo 1"
+  },
+  {
+   "p1": "move Moonlight, move Sweet Kiss 1",
+   "p2": "move Switcheroo 2, move Sand Tomb 1"
+  },
+  {
+   "p1": "move Haze, move Haze",
+   "p2": "move Bind 2, move Haze"
+  },
+  {
+   "p1": "move Supersonic 2, move Teeter Dance",
+   "p2": "move Haze, move Fire Spin 1"
+  },
+  {
+   "p1": "move Switcheroo 1, move Switcheroo 2",
+   "p2": "move Clamp 2, move Switcheroo 1"
+  },
+  {
+   "p1": "pass, switch Haunter"
+  },
+  {
+   "p1": "move Moonlight, move Confuse Ray 1",
+   "p2": "move Switcheroo 2, move Sand Tomb 1"
+  },
+  {
+   "p1": "switch Cacnea, move Haze",
+   "p2": "switch Magikarp, move Haze"
+  },
+  {
+   "p1": "move Haze, move Sleep Powder 2",
+   "p2": "move Magma Storm 2, move Fire Spin 1"
+  },
+  {
+   "p1": "move Cotton Spore 1, move Switcheroo 2",
+   "p2": "move Haze, move Switcheroo 2"
+  },
+  {
+   "p1": "move Switcheroo 1, move Confuse Ray 2",
+   "p2": "move Wrap 1, move Sand Tomb 2"
+  },
+  {
+   "p1": "move Spore 1, move Haze",
+   "p2": "move Switcheroo 1, move Haze"
+  },
+  {
+   "p1": "move Haze, move Sleep Powder 2",
+   "p2": "move Magma Storm 2, move Fire Spin 1"
+  },
+  {
+   "p1": "move Cotton Spore 1, move Switcheroo 2",
+   "p2": "move Haze, move Switcheroo 2"
+  },
+  {
+   "p1": "move Switcheroo 1, move Confuse Ray 2",
+   "p2": "move Wrap 1, move Sand Tomb 2"
+  },
+  {
+   "p1": "move Spore 1, move Haze",
+   "p2": "move Switcheroo 1, move Haze"
+  },
+  {
+   "p1": "switch Suicune, move Sleep Powder 2",
+   "p2": "switch Infernape, move Fire Spin 2"
+  },
+  {
+   "p1": "move Haze, move Switcheroo 1",
+   "p2": "move Bind 1, move Switcheroo 2"
+  },
+  {
+   "p1": "move Supersonic 1, move Confuse Ray 2",
+   "p2": "move Haze, move Sand Tomb 1"
+  },
+  {
+   "p2": "pass, switch Magikarp"
+  },
+  {
+   "p1": "move Haze, move Switcheroo 1",
+   "p2": "switch Wurmple, move Switcheroo 1"
+  },
+  {
+   "p1": "move Moonlight, move Sleep Powder 2",
+   "p2": "move Self-Destruct, move Wrap 1"
+  }
+ ]
+}
