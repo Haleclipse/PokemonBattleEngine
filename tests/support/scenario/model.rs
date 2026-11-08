@@ -992,6 +992,8 @@ pub struct ActionOracle {
     pub hit_targets: Vec<Option<Who>>,
     /// Aligned with `crits`: the HP a hit left its target at (none for a Substitute's hit).
     pub hit_hp: Vec<Option<u16>>,
+    /// `-activate|snatcher|move: Snatch|[of] user`: the Pokémon that took the action's move.
+    pub snatched_by: Option<Who>,
     /// Aligned with `crits`: the HP the target had as the hit came, as the action's lines last
     /// showed it — an earlier hit, or a berry the `Update` after it fed the target (R-M11-99); none
     /// for a Substitute's hit or a target the action has not shown yet.
@@ -1178,6 +1180,7 @@ impl ActionOracle {
             hit_targets: Vec::new(),
             hit_hp: Vec::new(),
             hit_hp_before: Vec::new(),
+            snatched_by: None,
             focus_band_held: Vec::new(),
             focus_sash_held: Vec::new(),
             sturdy_held: Vec::new(),

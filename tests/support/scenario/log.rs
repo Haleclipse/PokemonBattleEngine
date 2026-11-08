@@ -626,13 +626,16 @@ pub fn extract_decisions_with(
                         last.hit = false;
                         continue;
                     }
+                    // The same for the move Snatch took from the action's user, refused its
+                    // snatcher (R-M11-100).
                     if matches!(reason.as_str(), "move: Heal Block" | "move: Gravity")
                         && let Some(last) = out.last_mut()
-                        && last.user == user
+                        && (last.user == user || last.snatched_by.as_ref() == Some(&user))
                         && last.move_name.is_some()
                         && let Some(called) = detail.split('|').nth(1)
                     {
-                        let called = CalledMove::new(user, called.to_string(), None, None, last);
+                        let from = (last.user != user).then(|| "[from] Snatch".to_string());
+                        let called = CalledMove::new(user, called.to_string(), None, from, last);
                         last.called.push(called);
                         last.failed = true;
                         last.hit = false;
@@ -957,6 +960,14 @@ pub fn extract_decisions_with(
                 }
                 if what == "move: Pursuit" {
                     pursuit_intercept = true;
+                }
+                // Snatch taking the move in progress: what its snatcher does with it is this
+                // action's (R-M11-100).
+                if what == "move: Snatch"
+                    && let (Some(action), Some(snatcher)) =
+                        (out.last_mut(), args.first().and_then(who_from_text))
+                {
+                    action.snatched_by = Some(snatcher);
                 }
                 // Bide storing energy (`-activate|user|move: Bide`, Gen 1 `-activate|user|Bide`):
                 // the holder's action, with no move line — but not a biding Dancer's as it starts

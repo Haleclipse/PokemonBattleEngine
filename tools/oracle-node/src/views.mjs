@@ -100,7 +100,7 @@ export function observers(battle) {
     name, channel, client: new ClientBattle(generations), reset: new Set(), copied: new Set(),
     unresolved: new Set(), zItems: new Set(), hiddenSwaps: new Set(), masks: {worn: new Set(), unmasked: new Set(), entryItems: new WeakMap()},
     misplaced: new Set(), renewed: new Set(), previews: {p1: {pokes: [], sheet: null}, p2: {pokes: [], sheet: null}, started: false, taken: false},
-    moves: {uncompared: new Set(), reset: new Set(), copied: new Set(), fromRequest: new Set(), zPowered: new Set(), previous: null, dancer: null, called: new Set(), lastMove: new Map(), mover: null, moveName: null, stolen: null, flung: null},
+    moves: {uncompared: new Set(), reset: new Set(), copied: new Set(), fromRequest: new Set(), zPowered: new Set(), previous: null, dancer: null, called: new Set(), lastMove: new Map(), mover: null, moveName: null, stolen: null, flung: null, snatcher: null},
     changed: new WeakSet(),
     handover: {who: null, used: new Map()},
     fallenTera: new WeakMap(),
@@ -353,7 +353,7 @@ function micleSpent(client, args, kwArgs) {
  * transformed into (which `rememberMove` passes the move on to), before it reads the line.
  */
 function slotsOf(client, args) {
-  if (args[0] !== 'move') return undefined;
+  if (args[0] !== 'move' && !(args[0] === 'cant' && args[3])) return undefined;
   const poke = client.getPokemon(args[1]);
   const slots = new Map();
   for (const p of [poke, poke?.volatiles?.transform?.pokemon]) {
@@ -391,6 +391,7 @@ function noteMoves(client, moves, args, kwArgs, slotsBefore) {
   if (args[0] === '-zpower') {
     moves.zPowered.add(key);
   } else if (args[0] === 'move') {
+    moves.snatcher = null;
     const move = Dex.moves.get(args[2]);
     const drop = id => {
       for (const [p, before] of slotsBefore ?? []) {
@@ -464,7 +465,16 @@ function noteMoves(client, moves, args, kwArgs, slotsBefore) {
       foe?.rememberMove(kwArgs.move, 0);
     } else if (effect === 'sketch' || effect === 'mimic') {
       moves.copied.add(key);
+    } else if (effect === 'snatch') {
+      moves.snatcher = key;
     }
+  } else if (args[0] === 'cant' && args[3] && moves.snatcher === key) {
+    // The move Snatch just took, refused its snatcher (`cant|snatcher|move: Heal Block|Wish`, Heal
+    // Block's `onModifyMove`): the client remembers it as the snatcher's; it is its user's
+    // (R-M11-100).
+    const id = toID(args[3]);
+    if (!slotsBefore?.get(poke)?.has(id)) poke.moveSlots = poke.moveSlots.filter(slot => slot.id !== id);
+    moves.snatcher = null;
   } else if (args[0] === '-start' && toID(args[2]).replace(/^move/, '') === 'mimic') {
     moves.copied.add(key);
   } else if (args[0] === '-heal' && toID(kwArgs.from ?? '') === 'movelunardance') {
