@@ -1253,8 +1253,8 @@ pub(super) fn drive_to_boundary(
                     .is_some_and(|(chosen, _)| chosen != encored)
             });
         // No move was left to choose: the engine's action is Struggle (`BattleState::struggling`,
-        // decided at the choice).
-        let struggling = before.state.struggling.contains(&actor);
+        // decided at the choice) — the user's own, not an action Instruct injected (R-M11-108).
+        let struggling = !decision.instructed && before.state.struggling.contains(&actor);
         let encored = encored.filter(|_| !struggling);
         let move_def = (if struggling {
             Some(MoveId::STRUGGLE)

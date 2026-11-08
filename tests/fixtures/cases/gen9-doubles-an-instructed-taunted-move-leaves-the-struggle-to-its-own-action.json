@@ -1,0 +1,245 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-an-instructed-taunted-move-leaves-the-struggle-to-its-own-action",
+ "notes": [
+  "Gen 9 doubles: Excadrill, taunted with nothing but status moves, is left to Struggle as the turn's choices are made; Groudon's Instruct then has it use its last move again, Psych Up, which the Taunt stops (`cant|…|move: Taunt|Psych Up`), and its own action is the Struggle. The engine's injected action took the Struggle the choice decided (`BattleState::struggling`), and the own action struggled no more (R-M11-108; cloud Nightly 42473932394, m8-gen9-doubles-s102900-009)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Squawkabilly",
+    "species": "Squawkabilly",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Defense Curl",
+     "Clangorous Soul",
+     "Trick"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Basculin",
+    "species": "Basculin",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Roost",
+     "Clangorous Soul",
+     "Baton Pass",
+     "Instruct"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Gible",
+    "species": "Gible",
+    "level": 53,
+    "nature": "Hardy",
+    "moves": [
+     "Throat Chop",
+     "Instruct"
+    ],
+    "ability": "Gorilla Tactics",
+    "gender": "F"
+   },
+   {
+    "label": "Groudon",
+    "species": "Groudon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Pain Split",
+     "Transform",
+     "Grassy Terrain",
+     "Clangorous Soul"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Chi-Yu",
+    "species": "Chi-Yu",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Spite",
+     "Clangorous Soul",
+     "Encore",
+     "Guard Swap"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Minun",
+    "species": "Minun",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tailwind",
+     "Guard Swap",
+     "Imprison",
+     "Clangorous Soul"
+    ],
+    "ability": "Dancer",
+    "gender": "M"
+   },
+   {
+    "label": "Fuecoco",
+    "species": "Fuecoco",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Safeguard",
+     "Guard Swap",
+     "Sandstorm",
+     "Clangorous Soul"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Excadrill",
+    "species": "Excadrill",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Psych Up",
+     "Guard Swap",
+     "Taunt",
+     "Instruct"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   8111,
+   39250,
+   24361,
+   13791
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Defense Curl, move Roost",
+   "p2": "move Spite 1, move Tailwind"
+  },
+  {
+   "p1": "move Clangorous Soul, move Clangorous Soul",
+   "p2": "move Clangorous Soul, move Guard Swap 2"
+  },
+  {
+   "p1": "move Trick 1, move Baton Pass",
+   "p2": "move Encore 1, move Imprison"
+  },
+  {
+   "p1": "pass, switch Gible"
+  },
+  {
+   "p1": "move 1, move 2 2",
+   "p2": "move 1 1, move 1"
+  },
+  {
+   "p2": "pass, switch Fuecoco"
+  },
+  {
+   "p1": "move Clangorous Soul, move Instruct 1",
+   "p2": "move Clangorous Soul, move Guard Swap 2"
+  },
+  {
+   "p1": "switch Basculin, move Instruct 2",
+   "p2": "switch Excadrill, move Sandstorm"
+  },
+  {
+   "p1": "move Baton Pass, move Instruct 1",
+   "p2": "move Taunt 1, move Clangorous Soul"
+  },
+  {
+   "p1": "switch Squawkabilly, pass"
+  },
+  {
+   "p1": "move 1, move 2 2",
+   "p2": "move 4 2, move 1"
+  },
+  {
+   "p1": "switch Basculin, pass"
+  },
+  {
+   "p1": "move Roost, move Instruct 1",
+   "p2": "move Psych Up 1, move Guard Swap 2"
+  },
+  {
+   "p2": "pass, switch Chi-Yu"
+  },
+  {
+   "p1": "move Clangorous Soul, move Instruct 2",
+   "p2": "move Guard Swap 1, move Encore 2"
+  },
+  {
+   "p1": "move Baton Pass, move Instruct 1",
+   "p2": "move Taunt 1, move Guard Swap 2"
+  },
+  {
+   "p1": "switch Groudon, pass"
+  },
+  {
+   "p1": "switch Basculin, move Instruct 2",
+   "p2": "move Instruct 1, move Spite 2"
+  },
+  {
+   "p1": "move Instruct 1, move Instruct 2",
+   "p2": "move Psych Up 1, move Clangorous Soul"
+  },
+  {
+   "p1": "move Roost, move Instruct 1",
+   "p2": "move Guard Swap 2, move Encore 1"
+  },
+  {
+   "p1": "move Instruct 2, move Instruct 1",
+   "p2": "move Taunt 2, move Guard Swap 1"
+  },
+  {
+   "p1": "move 4 2, move 1",
+   "p2": "move 4 2, move 1 1"
+  },
+  {
+   "p1": "move 4 1, move 1",
+   "p2": "move 1 2, pass"
+  },
+  {
+   "p1": "switch Groudon, move Instruct 1",
+   "p2": "move Guard Swap 1, pass"
+  },
+  {
+   "p1": "move Pain Split 1, move Instruct 1",
+   "p2": "move Taunt 2, pass"
+  },
+  {
+   "p1": "move 2 1, move 1",
+   "p2": "move 4 1, pass"
+  },
+  {
+   "p1": "move 3 1, move 1",
+   "p2": "move 1 2, pass"
+  },
+  {
+   "p1": "pass, switch Basculin"
+  },
+  {
+   "p1": "move 4 1, move 3",
+   "p2": "move 1, pass"
+  }
+ ]
+}

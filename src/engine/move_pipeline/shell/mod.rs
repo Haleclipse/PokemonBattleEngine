@@ -571,14 +571,17 @@ impl<'a> MovePipeline<'a> {
         // replaces the chosen move with the encored one this very turn, and the target is
         // chosen anew (`getRandomTarget`: the implicit target of `TargetingRules::resolve`).
         // No move was left to choose (Showdown's request held Struggle alone): the action is
-        // Struggle, at a random adjacent foe, whatever slot it names.
-        let struggling = self
-            .state
-            .struggling
-            .iter()
-            .position(|pokemon| *pokemon == actor)
-            .map(|index| self.state.struggling.remove(index))
-            .is_some();
+        // Struggle, at a random adjacent foe, whatever slot it names. Not an action Instruct
+        // injected: it uses the target's last move (Showdown's `resolveAction` on `lastMove`),
+        // which a Taunt still stops, and leaves the Struggle to the target's own (R-M11-108).
+        let struggling = !self.instructed
+            && self
+                .state
+                .struggling
+                .iter()
+                .position(|pokemon| *pokemon == actor)
+                .map(|index| self.state.struggling.remove(index))
+                .is_some();
         // A move a hard lock holds that the user's slots do not (Outrage, Rollout, a charge …
         // called by Metronome, Copycat or Assist, §42.1) is the action's move whatever slot it
         // named — Showdown's request offers `getLockedMove` alone — and from Gen 4 an Encore

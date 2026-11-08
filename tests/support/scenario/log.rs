@@ -641,9 +641,16 @@ pub fn extract_decisions_with(
                         last.hit = false;
                         continue;
                     }
+                    // An action Instruct injected that does not go ahead (a Taunt stopping the
+                    // repeated status move) is the injected one, not the user's own (R-M11-108).
+                    let instructed = instructed_next.as_ref() == Some(&user);
+                    if instructed {
+                        instructed_next = None;
+                    }
                     let action = current(&mut out, user);
                     action.cant = Some(reason);
                     action.hit = false;
+                    action.instructed |= instructed;
                 }
             }
             "curestatus" if berry_eater.is_some() && berry_eater == who(&event["pokemon"]) => {}

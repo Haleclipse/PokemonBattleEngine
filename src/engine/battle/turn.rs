@@ -546,7 +546,8 @@ impl BattleEngine {
                             action.order.prankster_boosted,
                         )
                         .with_prioritized_by(action.prioritized_by)
-                        .with_original_target(action.original_target);
+                        .with_original_target(action.original_target)
+                        .with_instructed(action.instructed);
                 if let Some(z) = z_move {
                     pipeline = pipeline.with_z_move(z);
                 } else if let Some(max) = max_move {

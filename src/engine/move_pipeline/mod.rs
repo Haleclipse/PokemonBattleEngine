@@ -119,6 +119,9 @@ pub(crate) struct MovePipeline<'a> {
     prioritized_by: Option<crate::ids::MoveId>,
     /// The action's `originalTarget` (`QueuedAction::original_target`), for the outermost move.
     original_target: Option<PokemonId>,
+    /// The action is one Instruct injected (`QueuedAction::instructed`): the target's extra use,
+    /// whose move is its last one — not the Struggle its own action was left to (R-M11-108).
+    instructed: bool,
     /// What this run asks of the queue (Round, a waiting Pledge, Shell Trap), with what the
     /// runs it called asked (`ActionEffects::absorb`).
     effects: ActionEffects,
@@ -300,6 +303,7 @@ impl<'a> MovePipeline<'a> {
             type_changer: None,
             prioritized_by: None,
             original_target: None,
+            instructed: false,
             effects: ActionEffects::default(),
             tera_shell_resisted: Vec::new(),
             self_damage_cancelled: false,
@@ -463,6 +467,12 @@ impl<'a> MovePipeline<'a> {
     /// The action's `originalTarget` (Showdown `getTarget`'s target tracking).
     pub(crate) fn with_original_target(mut self, target: Option<PokemonId>) -> Self {
         self.original_target = target;
+        self
+    }
+
+    /// The action is one Instruct injected (`QueuedAction::instructed`).
+    pub(crate) fn with_instructed(mut self, instructed: bool) -> Self {
+        self.instructed = instructed;
         self
     }
 
