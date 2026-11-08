@@ -1,0 +1,65 @@
+{
+ "schema": 1,
+ "id": "gen7-doubles-a-z-move-from-quick-attack-meets-quick-guard-at-no-priority",
+ "notes": [
+  "Gen 7 doubles: Snorlax's Quick Attack, Z-powered by its Normalium Z, is Breakneck Blitz, ordered at the Z-Move's own priority, 0 — last; Gen 6+ priority at the hit is the action's (`ActionOrderRules::boosted_priority_at_hit`), so Alakazam's Quick Guard does not meet it: nothing broken (no `-zbroken`), full damage. Pins the priority `z_broke_protection` reads: the move's as it meets the guard, not the copy `getActiveZMove` keeps (R-M11-112)."
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 50,
+    "item": "Normalium Z",
+    "moves": [
+     "Quick Attack"
+    ]
+   },
+   {
+    "label": "Chansey",
+    "species": "Chansey",
+    "level": 50,
+    "moves": [
+     "Splash"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Alakazam",
+    "species": "Alakazam",
+    "level": 50,
+    "moves": [
+     "Quick Guard"
+    ]
+   },
+   {
+    "label": "Blissey",
+    "species": "Blissey",
+    "level": 50,
+    "moves": [
+     "Splash"
+    ]
+   }
+  ]
+ },
+ "random": {
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1 2 zmove, move 1",
+   "p2": "move 1, move 1"
+  }
+ ]
+}

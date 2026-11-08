@@ -31,18 +31,13 @@ pub fn fixed_damage(
         // Super Fang, Ruination, Nature's Madness (`getUndynamaxedHP`, DESIGN.md §44.5): a
         // Dynamaxed target's HP reads as it would without the doubling.
         crate::dex::FixedDamage::HalfTargetHp => (foe.undynamaxed_hp(None) / 2).max(1),
-        // Guardian of Alola: three quarters, or a quarter of that through a protection — the
-        // target's own or its side's Mat Block (Showdown's own `-zbroken` in the callback,
-        // DESIGN.md §44.4; its `getUndynamaxedHP()` too, §44.5). The quarter rounds half down
+        // Guardian of Alola: three quarters, or a quarter of that through a protection
+        // (`z_broke_protection`; Showdown's own `-zbroken` in the callback, DESIGN.md §44.4;
+        // its `getUndynamaxedHP()` too, §44.5). The quarter rounds half down
         // (`Math.ceil(hp75 / 4 - 0.5)`: 117 gives 29, R-M8-184).
         crate::dex::FixedDamage::ThreeQuartersTargetHp => {
             let three_quarters = (u32::from(foe.undynamaxed_hp(None)) * 3 / 4).max(1);
-            let protected = foe.volatiles.protect_kind().is_some()
-                || state
-                    .side(foe.side)
-                    .conditions
-                    .contains(crate::state::SideConditionKind::MatBlock);
-            if protected {
+            if z_broke_protection(state, foe, move_def.priority) {
                 ((three_quarters + 1) / 4).max(1) as u16
             } else {
                 three_quarters as u16
@@ -78,6 +73,22 @@ pub fn fixed_damage(
 /// damage, when the move `target`'s side last used and last selected a counterable move (a
 /// Normal or Fighting move with power, not Counter) — `None` (a failure) when neither is, when
 /// only one is (the Desync Clause) or when there is no last damage.
+/// A protection a Z-Move or a Max Move went through, for a quarter of its damage (Showdown's
+/// `zBrokeProtect`, `-zbroken`, DESIGN.md §44.4): the target's own (Protect and its variants),
+/// its side's Mat Block, or its side's Quick Guard against a move with raised priority —
+/// `priority` as the move meets it (Gen 6+ the action's: a Z-Move made from Quick Attack is
+/// ordered at its own 0). Wide Guard never meets one: they strike a single target (R-M11-112).
+pub(crate) fn z_broke_protection(
+    state: &crate::state::BattleState,
+    target: &crate::state::PokemonState,
+    priority: i8,
+) -> bool {
+    let conditions = &state.side(target.side).conditions;
+    target.volatiles.protect_kind().is_some()
+        || conditions.contains(crate::state::SideConditionKind::MatBlock)
+        || (priority > 0 && conditions.contains(crate::state::SideConditionKind::QuickGuard))
+}
+
 pub fn gen1_counter_damage(
     state: &crate::state::BattleState,
     dex: &crate::dex::ResolvedDex,

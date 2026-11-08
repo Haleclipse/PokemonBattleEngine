@@ -1401,14 +1401,15 @@ impl<'a> MovePipeline<'a> {
             ));
         }
         // A Z-Move that reached a protected target: Showdown's `checkMoveBypassesProtect` marks
-        // the hit `bypassProtect`, so Protect does not stop it but the damage is quartered
-        // (`-zbroken`, after `ModifyDamage`, DESIGN.md §44.4).
+        // the hit `bypassProtect`, so the protection does not stop it but the damage is quartered
+        // (`-zbroken`, after `ModifyDamage`, DESIGN.md §44.4) — its side's Mat Block or Quick
+        // Guard too (`z_broke_protection`, R-M11-112).
+        let priority = self.move_priority(move_def);
         if self.z_powered()
             && move_def.category != MoveCategory::Status
-            && self
-                .state
-                .pokemon(target)
-                .is_some_and(|pokemon| pokemon.volatiles.protect_kind().is_some())
+            && self.state.pokemon(target).is_some_and(|pokemon| {
+                crate::engine::z_broke_protection(self.state, pokemon, priority)
+            })
         {
             final_modifiers.push(FinalDamageModifier::chain(
                 ModifierSource::Rule("ZBroken"),
