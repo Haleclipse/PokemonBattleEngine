@@ -1,0 +1,297 @@
+{
+ "schema": 1,
+ "id": "gen2-a-dragged-in-berserk-gene-goes-unused-as-the-poison-ends-the-battle",
+ "notes": [
+  "Gen 2 Ubers: a poisoned Golem's Roar drags in Parasect, holding a Berserk Gene; the poison then knocks Golem out and the battle ends. Gen 2 runs the entrant's switch-in within the move, with no `Update` between (pokecrystal `BattleCommand_ForceSwitch`, the oracle's `cartridgeGen2SwitchIn`, issues.md I219): nothing uses the gene before the battle is decided. The engine had run the Gen 3-4 deferred drag's `Update` first, and Parasect used it (R-M11-103; Nightly m9-gen2ubers-s453-002)"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2ubers"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Horsea",
+    "species": "Horsea",
+    "ability": "",
+    "moves": [
+     "Smokescreen",
+     "Waterfall",
+     "Mimic",
+     "Snore"
+    ],
+    "nature": "",
+    "gender": "M",
+    "shiny": false,
+    "level": 87
+   },
+   {
+    "label": "Nick82",
+    "species": "Cloyster",
+    "ability": "",
+    "moves": [
+     "Whirlpool",
+     "Bubble Beam",
+     "Sleep Talk",
+     "Mimic"
+    ],
+    "nature": "",
+    "gender": "M",
+    "shiny": false,
+    "level": 100
+   },
+   {
+    "label": "Dragonair",
+    "species": "Dragonair",
+    "ability": "",
+    "moves": [
+     "Fire Blast",
+     "Frustration",
+     "Blizzard",
+     "Mimic"
+    ],
+    "nature": "",
+    "gender": "M",
+    "shiny": false,
+    "level": 55,
+    "happiness": 57
+   },
+   {
+    "label": "Golem",
+    "species": "Golem",
+    "ability": "",
+    "moves": [
+     "Sandstorm",
+     "Roar",
+     "Rapid Spin",
+     "Tackle"
+    ],
+    "nature": "",
+    "gender": "M",
+    "shiny": false,
+    "level": 100
+   }
+  ],
+  "p2": [
+   {
+    "label": "Ditto",
+    "species": "Ditto",
+    "ability": "",
+    "moves": [
+     "Transform"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": false,
+    "level": 100
+   },
+   {
+    "label": "Shellder",
+    "species": "Shellder",
+    "ability": "",
+    "moves": [
+     "Aurora Beam",
+     "Toxic",
+     "Endure",
+     "Supersonic"
+    ],
+    "nature": "",
+    "gender": "M",
+    "shiny": false,
+    "level": 100
+   },
+   {
+    "label": "Nick91",
+    "species": "Porygon2",
+    "ability": "",
+    "moves": [
+     "Mimic",
+     "Tri Attack",
+     "Swift",
+     "Hyper Beam"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": false,
+    "level": 100
+   },
+   {
+    "label": "Nick21",
+    "species": "Parasect",
+    "item": "Berserk Gene",
+    "ability": "",
+    "moves": [
+     "Light Screen"
+    ],
+    "nature": "",
+    "gender": "M",
+    "shiny": false,
+    "level": 100
+   }
+  ]
+ },
+ "preview": {
+  "p1": "team 132645",
+  "p2": "team 153462"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   44517,
+   453,
+   1002,
+   31
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Smokescreen",
+   "p2": "move Transform"
+  },
+  {
+   "p1": "move Waterfall",
+   "p2": "move 2"
+  },
+  {
+   "p1": "move Mimic",
+   "p2": "move 3"
+  },
+  {
+   "p1": "move Snore",
+   "p2": "move 4"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Waterfall",
+   "p2": "move 2"
+  },
+  {
+   "p1": "switch Nick82",
+   "p2": "switch Shellder"
+  },
+  {
+   "p1": "move Sleep Talk",
+   "p2": "move Endure"
+  },
+  {
+   "p1": "move Mimic",
+   "p2": "move Supersonic"
+  },
+  {
+   "p1": "move Whirlpool",
+   "p2": "move Aurora Beam"
+  },
+  {
+   "p1": "move Bubble Beam",
+   "p2": "move Toxic"
+  },
+  {
+   "p1": "move Sleep Talk",
+   "p2": "move Endure"
+  },
+  {
+   "p1": "move 4",
+   "p2": "move 4"
+  },
+  {
+   "p1": "switch Horsea",
+   "p2": "switch Ditto"
+  },
+  {
+   "p1": "move Smokescreen",
+   "p2": "move Transform"
+  },
+  {
+   "p1": "move Waterfall",
+   "p2": "move 2"
+  },
+  {
+   "p1": "switch Nick82"
+  },
+  {
+   "p1": "move Sleep Talk",
+   "p2": "move 3"
+  },
+  {
+   "p1": "move Mimic",
+   "p2": "move 4"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Bubble Beam",
+   "p2": "move 2"
+  },
+  {
+   "p1": "switch Dragonair"
+  },
+  {
+   "p1": "switch Golem",
+   "p2": "switch Shellder"
+  },
+  {
+   "p1": "move Rapid Spin",
+   "p2": "move Endure"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Supersonic"
+  },
+  {
+   "p1": "move Sandstorm",
+   "p2": "move Aurora Beam"
+  },
+  {
+   "p1": "move Roar",
+   "p2": "move Toxic"
+  },
+  {
+   "p1": "move Rapid Spin",
+   "p2": "move Swift"
+  },
+  {
+   "p1": "move Tackle",
+   "p2": "move Hyper Beam"
+  },
+  {
+   "p1": "switch Dragonair",
+   "p2": "switch Ditto"
+  },
+  {
+   "p1": "move Fire Blast",
+   "p2": "move Transform"
+  },
+  {
+   "p1": "move Frustration",
+   "p2": "move 2"
+  },
+  {
+   "p2": "switch Nick91"
+  },
+  {
+   "p1": "move Blizzard",
+   "p2": "move Swift"
+  },
+  {
+   "p1": "move Mimic",
+   "p2": "move Hyper Beam"
+  },
+  {
+   "p1": "switch Golem"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Roar",
+   "p2": "move Tri Attack"
+  }
+ ]
+}

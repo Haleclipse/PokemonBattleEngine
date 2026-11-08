@@ -53,9 +53,12 @@ pub struct UpdateRules {
     pub in_move: MoveUpdates,
     /// Gen 7+: right after the weather's `eachEvent('Weather')` in the residual.
     pub after_weather: bool,
-    /// Gen 1-4: a dragged-in Pokémon's switch-in effects wait for their own action (the queued
+    /// Gen 3-4: a dragged-in Pokémon's switch-in effects wait for their own action (the queued
     /// `runSwitch`), after the dragging action's `Update`; from Gen 5 they run at once, with
-    /// no `Update` between (`switchIn` → `runSwitch` for a drag).
+    /// no `Update` between (`switchIn` → `runSwitch` for a drag). So do Gen 2's, within the
+    /// move (pokecrystal's `BattleCommand_ForceSwitch` goes straight on to `SpikesDamage`; the
+    /// oracle's `cartridgeGen2SwitchIn`, issues.md I219): the next `Update` is the action's,
+    /// after the user's residual (R-M11-103).
     pub drag_switch_in_deferred: bool,
 }
 
@@ -82,7 +85,7 @@ impl UpdateRules {
                 generation,
                 Generation::Gen7 | Generation::Gen8 | Generation::Gen9
             ),
-            drag_switch_in_deferred: !modern,
+            drag_switch_in_deferred: matches!(generation, Generation::Gen3 | Generation::Gen4),
         }
     }
 }

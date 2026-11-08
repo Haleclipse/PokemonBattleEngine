@@ -526,7 +526,7 @@ impl BattleEngine {
     /// queue that is still standing is replaced by a random healthy bench Pokémon
     /// (`RandomTarget` decision over the bench in team order); its pending action this turn
     /// is cancelled and any chosen-switch order on it is dropped. The entrants then run their
-    /// switch-in fastest first — in Gen 1-4 as the queued `runSwitch` action, after the dragging
+    /// switch-in fastest first — in Gen 3-4 as the queued `runSwitch` action, after the dragging
     /// action's `Update` (`UpdateRules::drag_switch_in_deferred`).
     pub(super) fn process_drag_queue(&mut self) {
         let queue = std::mem::take(&mut self.state.drag_queue);
