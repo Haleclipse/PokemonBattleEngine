@@ -328,11 +328,13 @@ function cartridgeGen4Damage(source, target, move, seen) {
   const critMul = crit ? (ability(source, 'sniper') ? 3 : 2) : 1;
   const variance = damage => (damage ? Math.max(1, tr(damage * (100 - seen.roll) / 100)) : 0);
   const helpingHand = !!source.volatiles['helpinghand'];
-  // Beat Up (`BtlCmd_BeatUp`): the member's base Attack and level against the target's base
-  // Defense, power 10, the critical hit and Helping Hand, nothing else.
+  // Beat Up (`BtlCmd_BeatUp`): the member's base Attack and level (its party data) against the
+  // target's base Defense, power 10, the critical hit and Helping Hand, nothing else. The target's
+  // is its battle data's (`DEFENDING_MON.species`): a transformed target's is the species it
+  // became (R-M11-111).
   if (seen.member) {
     const attack = this.dex.species.get(seen.member.set.species).baseStats.atk;
-    const defense = this.dex.species.get(target.set.species).baseStats.def;
+    const defense = target.species.baseStats.def;
     let damage = tr(tr(attack * move.basePower * tr(tr(seen.member.level * 2 / 5) + 2) / defense) / 50);
     damage = (damage + 2) * critMul;
     if (helpingHand) damage = times(damage, 15, 10);

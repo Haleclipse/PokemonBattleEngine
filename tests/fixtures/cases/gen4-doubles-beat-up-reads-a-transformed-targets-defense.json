@@ -1,0 +1,238 @@
+{
+ "schema": 1,
+ "id": "gen4-doubles-beat-up-reads-a-transformed-targets-defense",
+ "notes": [
+  "Gen 4 doubles: Politoed, transformed into Pelipper, uses the Beat Up it copied on Weepinbell, itself transformed into Pelipper; Politoed alone hits. pokeplatinum's `BtlCmd_BeatUp` divides by the base Defense of the target's battle data (`DEFENDING_MON.species`: Pelipper's), as the engine does (R-M11-85); the oracle's Gen 4 patch read the target's party species (Weepinbell's). Recorded under the corrected patch (R-M11-111; Nightly m8-gen4-doubles-s1913-000)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "doubles",
+  "format": "gen4doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Hoothoot",
+    "species": "Hoothoot",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Mach Punch",
+     "Transform",
+     "Trump Card",
+     "Swallow"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Umbreon",
+    "species": "Umbreon",
+    "level": 48,
+    "nature": "Hardy",
+    "moves": [
+     "Frustration",
+     "Transform",
+     "Smelling Salts",
+     "Swallow"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Rattata",
+    "species": "Rattata",
+    "level": 47,
+    "nature": "Hardy",
+    "moves": [
+     "Wring Out",
+     "Transform",
+     "Low Kick",
+     "Swallow"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Politoed",
+    "species": "Politoed",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Crush Grip",
+     "Transform",
+     "Wake-Up Slap",
+     "Swallow"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Pelipper",
+    "species": "Pelipper",
+    "level": 47,
+    "nature": "Hardy",
+    "moves": [
+     "Beat Up",
+     "Transform",
+     "Gyro Ball",
+     "Swallow"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Bayleef",
+    "species": "Bayleef",
+    "level": 54,
+    "nature": "Hardy",
+    "moves": [
+     "Payback",
+     "Transform",
+     "Ice Ball",
+     "Swallow"
+    ],
+    "ability": "Run Away",
+    "item": "Razor Fang",
+    "gender": "M"
+   },
+   {
+    "label": "Kakuna",
+    "species": "Kakuna",
+    "level": 54,
+    "nature": "Hardy",
+    "moves": [
+     "Fury Cutter",
+     "Transform",
+     "Rollout",
+     "Swallow"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Weepinbell",
+    "species": "Weepinbell",
+    "level": 55,
+    "nature": "Hardy",
+    "moves": [
+     "Flail",
+     "Transform",
+     "Return",
+     "Swallow"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   12863,
+   1121,
+   30228,
+   53951
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Mach Punch 1, move Frustration 2",
+   "p2": "move Beat Up 1, move Payback 2"
+  },
+  {
+   "p1": "move Transform 1, move Transform 2",
+   "p2": "move Transform 1, move Transform 2"
+  },
+  {
+   "p1": "move 3 1, move 3 2",
+   "p2": "move 3 1, move 3 2"
+  },
+  {
+   "p1": "move Swallow, move Swallow",
+   "p2": "move Swallow, move Swallow"
+  },
+  {
+   "p1": "switch Rattata, move 1 1",
+   "p2": "switch Kakuna, move 1 1"
+  },
+  {
+   "p1": "move Wring Out 2, move Transform 1",
+   "p2": "move Fury Cutter 2, move Transform 1"
+  },
+  {
+   "p1": "move 2 2, move 3 1",
+   "p2": "move 2 2, move 3 1"
+  },
+  {
+   "p1": "move 3 2, move 1",
+   "p2": "move 3 2, move 4"
+  },
+  {
+   "p1": "move 4, move 1",
+   "p2": "move 1, move 1 1"
+  },
+  {
+   "p1": "switch Hoothoot, move 2 1",
+   "p2": "move 1, move 2 2"
+  },
+  {
+   "p1": "move 1 2, move 3 1",
+   "p2": "move 2 1, move 3 2"
+  },
+  {
+   "p1": "move 2 2, move 1",
+   "p2": "move 3 1, move 4"
+  },
+  {
+   "p1": "move 3 1, move 1",
+   "p2": "move 4, move 1 2"
+  },
+  {
+   "p2": "switch Pelipper, pass"
+  },
+  {
+   "p1": "move Swallow, move Transform 2",
+   "p2": "move Beat Up 1, move Transform 2"
+  },
+  {
+   "p1": "switch Rattata, move 3 1",
+   "p2": "switch Weepinbell, move 3 1"
+  },
+  {
+   "p1": "switch Hoothoot, pass"
+  },
+  {
+   "p1": "move 2 1, move 1",
+   "p2": "move 3 1, move 1 2"
+  },
+  {
+   "p1": "switch Politoed, pass"
+  },
+  {
+   "p1": "move 3 2, move 1",
+   "p2": "move 4, move 2 1"
+  },
+  {
+   "p2": "pass, switch Pelipper"
+  },
+  {
+   "p1": "move 4, move 1",
+   "p2": "move 1 2, move 3 1"
+  },
+  {
+   "p1": "move Crush Grip 1, pass",
+   "p2": "move Transform 1, move Swallow"
+  },
+  {
+   "p1": "move 2 2, pass",
+   "p2": "move 3 1, move 1 1"
+  },
+  {
+   "p1": "move 1 1, pass",
+   "p2": "move 2 1, move 4"
+  }
+ ]
+}
