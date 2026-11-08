@@ -1231,10 +1231,21 @@ pub(super) fn drive_to_boundary(
         }
 
         // An Encore that landed before the actor moved overrides its choice (Showdown
-        // `OverrideAction`); the engine uses the Encored move, so the plan does too.
+        // `OverrideAction`); the engine uses the Encored move, so the plan does too. Gen 3 keeps
+        // a lock a caller brought in, which the slots do not hold, and its target with it
+        // (`CallRules::encore_overrides_a_called_lock`, R-M8-137).
         let encored = before
             .state
             .pokemon(actor)
+            .filter(|p| {
+                compiled
+                    .rules
+                    .conditions()
+                    .calls
+                    .encore_overrides_a_called_lock
+                    || p.hard_lock()
+                        .is_none_or(|lock| p.move_slots().iter().any(|m| m.move_id == lock.move_id))
+            })
             .and_then(|p| p.volatiles.encored_move())
             .filter(|encored| {
                 intended

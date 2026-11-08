@@ -1,0 +1,159 @@
+{
+ "schema": 1,
+ "id": "gen3-doubles-an-encored-assist-called-ice-ball-keeps-its-target",
+ "notes": [
+  "Gen 3 doubles: Azurill's Assist calls Ice Ball at Blastoise and rolls on. Next turn Blastoise's Encore holds Azurill to Assist, yet the called lock stands (gen3 `encore_overrides_a_called_lock` off, R-M8-137): Ice Ball goes on at Blastoise, the lock's target, with no foe drawn for it (R-M11-101; Nightly m8-gen3-doubles-s1894-008)"
+ ],
+ "battle": {
+  "generation": 3,
+  "mode": "doubles",
+  "format": "gen3doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Baltoy",
+    "species": "Baltoy",
+    "level": 45,
+    "nature": "Hardy",
+    "moves": [
+     "Mach Punch"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Smoochum",
+    "species": "Smoochum",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Ice Ball"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Goldeen",
+    "species": "Goldeen",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Encore",
+     "Fury Cutter"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Azurill",
+    "species": "Azurill",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Beat Up",
+     "Assist"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Blastoise",
+    "species": "Blastoise",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Hidden Power",
+     "Encore",
+     "Reversal"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Nidoran-F",
+    "species": "Nidoran-F",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Water Spout",
+     "Encore",
+     "Pursuit"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Furret",
+    "species": "Furret",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Assist"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Muk",
+    "species": "Muk",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Eruption",
+     "Encore",
+     "Low Kick",
+     "Assist"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   65309,
+   3869,
+   28856,
+   36678
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Mach Punch 1, move Ice Ball 2",
+   "p2": "move Hidden Power 1, move Water Spout"
+  },
+  {
+   "p1": "switch Goldeen, pass"
+  },
+  {
+   "p1": "move 1 1, move 1",
+   "p2": "move 2 2, move 2 1"
+  },
+  {
+   "p1": "move 2 2, move 1",
+   "p2": "move 3 2, move 3 1"
+  },
+  {
+   "p2": "pass, switch Furret"
+  },
+  {
+   "p1": "switch Azurill, move 1",
+   "p2": "switch Muk, move 1"
+  },
+  {
+   "p2": "pass, switch Blastoise"
+  },
+  {
+   "p1": "move 2, move 1",
+   "p2": "move 4, move 1 2"
+  },
+  {
+   "p1": "pass, switch Goldeen"
+  },
+  {
+   "p1": "move 1, move 1 1",
+   "p2": "move 1, move 2 1"
+  }
+ ]
+}
