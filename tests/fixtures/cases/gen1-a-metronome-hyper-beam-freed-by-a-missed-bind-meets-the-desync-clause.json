@@ -1,0 +1,121 @@
+{
+ "schema": 1,
+ "id": "gen1-a-metronome-hyper-beam-freed-by-a-missed-bind-meets-the-desync-clause",
+ "notes": [
+  "Gen 1: Exeggutor's Metronome calls Hyper Beam, which becomes its side's last selected move (R-M8-72); next turn Arcanine's Bind misses and clears the recharge all the same. The recharging Pokémon acts with its last selected move from its last selected slot (`commitChoices`: `choice.moveid = lastSelectedMove`): Hyper Beam, paid from Metronome's slot, so the Desync Clause Mod ends it with its PP spent and no `move` line. The engine checked the clause for a frozen or sleeping Pokémon's `Fight` alone and ran Metronome again (R-M11-105; Nightly m8-gen1-singles-s1897-003)"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Tentacool",
+    "species": "Tentacool",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Psychic",
+     "Defense Curl",
+     "Bubble Beam",
+     "Metronome"
+    ]
+   },
+   {
+    "label": "Butterfree",
+    "species": "Butterfree",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Wrap"
+    ]
+   },
+   {
+    "label": "Arcanine",
+    "species": "Arcanine",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Bind",
+     "Metronome"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Parasect",
+    "species": "Parasect",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Seismic Toss",
+     "Defense Curl",
+     "Super Fang",
+     "Metronome"
+    ]
+   },
+   {
+    "label": "Exeggutor",
+    "species": "Exeggutor",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Dragon Rage",
+     "Metronome"
+    ]
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   31634,
+   35806,
+   40059,
+   44263
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Psychic",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "move Defense Curl",
+   "p2": "move Defense Curl"
+  },
+  {
+   "p1": "move Bubble Beam",
+   "p2": "move Super Fang"
+  },
+  {
+   "p1": "move Metronome",
+   "p2": "move Metronome"
+  },
+  {
+   "p1": "move Psychic",
+   "p2": "move Seismic Toss"
+  },
+  {
+   "p1": "switch Butterfree"
+  },
+  {
+   "p1": "move Wrap",
+   "p2": "move Super Fang"
+  },
+  {
+   "p1": "switch Arcanine",
+   "p2": "switch Exeggutor"
+  },
+  {
+   "p1": "move Metronome",
+   "p2": "move Metronome"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  }
+ ]
+}

@@ -129,10 +129,12 @@ impl MovePipeline<'_> {
         };
 
         // Gen 1's Desync Clause Mod (the gen1 `runMove`, after the PP): an action chosen as
-        // `Fight` (`BattleState::fight_actors`) is the side's last selected move; when the slot
-        // that paid holds another (a frozen Pokémon that came in after a teammate's pick, the
-        // slot back at the first, thawed by a Fire move), the move ends here — no `move` line,
-        // the after-move residual as for a stopped action (R-M8-150). Any other action is
+        // `Fight` or as the recharge (`BattleState::fight_actors`) is the side's last selected
+        // move; when the slot that paid holds another (a frozen Pokémon that came in after a
+        // teammate's pick, the slot back at the first, thawed by a Fire move; a Hyper Beam
+        // Metronome called, whose recharge a missed Bind cleared: the move Metronome's slot
+        // pays for, R-M11-105), the move ends here — no `move` line, the after-move residual as
+        // for a stopped action (R-M8-150). Any other action is
         // stopped the same way when nothing locks it any more (`!lockedMove`: no hard lock, no
         // charge's release, no Bide, no binding still on the Pokémon it caught) and its move is
         // not the paying slot's — a binding move Mirror Move or Metronome called, whose target

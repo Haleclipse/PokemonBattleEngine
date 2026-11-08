@@ -137,8 +137,9 @@ pub struct BattleState {
     #[serde(with = "crate::snapshot::wire")]
     pub pending_movers: Vec<PokemonId>,
     /// Gen 1: the Pokémon whose action this turn is their side's last selected move, chosen as
-    /// `Fight` (frozen or asleep as the turn began) — the only ones Showdown's Desync Clause Mod
-    /// can stop (`PpRules::desync_clause`, R-M8-150).
+    /// `Fight` (frozen or asleep as the turn began) or as the recharge (`commitChoices` sets
+    /// `choice.moveid = lastSelectedMove` for both) — the only ones Showdown's Desync Clause Mod
+    /// can stop for that move (`PpRules::desync_clause`, R-M8-150, R-M11-105).
     #[serde(with = "crate::snapshot::wire")]
     pub fight_actors: Vec<PokemonId>,
     /// The move slot the action under way chose, and whose action it is (Showdown's

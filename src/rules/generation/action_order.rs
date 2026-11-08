@@ -51,7 +51,8 @@ pub struct ActionOrderRules {
     /// Gen 1 (Showdown gen1 `side.commitChoices`: `choice.moveid = this.lastSelectedMove`; the
     /// cartridge skips the menu and keeps `wPlayerSelectedMove`): a recharging Pokémon's action
     /// is its side's last selected move — Hyper Beam again when a partial-trapping move clears
-    /// the recharge before it acts (R-M8-107).
+    /// the recharge before it acts (R-M8-107); one Metronome called meets the Desync Clause,
+    /// its PP paid from Metronome's slot (`PpRules::desync_clause`, R-M11-105).
     pub recharge_acts_with_last_selected: bool,
     /// Gen 2-3 Quick Claw (Showdown `quickClawRoll`, drawn as the turn starts: 60/256 in Gen 2,
     /// 1/5 in Gen 3): when it succeeds every holder acts at Speed 65535 for the rest of the

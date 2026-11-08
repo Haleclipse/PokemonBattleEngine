@@ -62,8 +62,9 @@ pub struct PpRules {
     pub switch_in_resets_last_selected_slot: bool,
     /// Gen 1 (Showdown's Desync Clause Mod, the gen1 `runMove`): an action uses the side's last
     /// selected move, and when the slot it pays its PP from holds another — a frozen Pokémon
-    /// that came in after a teammate's pick, thawed by a Fire move — it ends there, its PP spent,
-    /// with no `move` line (R-M8-150).
+    /// that came in after a teammate's pick, thawed by a Fire move; a Hyper Beam Metronome
+    /// called, its recharge cleared (R-M11-105) — it ends there, its PP spent, with no `move`
+    /// line (R-M8-150).
     pub desync_clause: bool,
 }
 

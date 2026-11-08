@@ -33,7 +33,8 @@ impl BattleEngine {
         // acts with its side's last selected move, which the recharge turn left as it was; so
         // does a frozen or sleeping one (`sleeping_frozen_act_with_last_selected`: its menu is
         // `Fight` alone, `commitChoices` sets `choice.moveid = lastSelectedMove`) — the move a
-        // Pokémon thawed by a Fire move uses later in the turn (R-M8-145).
+        // Pokémon thawed by a Fire move uses later in the turn (R-M8-145), or one whose recharge
+        // a binding move cleared uses (R-M11-105). Either acts from its last selected slot.
         let order = self.rules.action_order;
         self.state.fight_actors.clear();
         if order.recharge_acts_with_last_selected || order.sleeping_frozen_act_with_last_selected {
@@ -53,9 +54,7 @@ impl BattleEngine {
                     )
                 {
                     *slot = last;
-                    if fight {
-                        self.state.fight_actors.push(action.actor);
-                    }
+                    self.state.fight_actors.push(action.actor);
                 }
             }
         }
