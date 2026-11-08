@@ -650,7 +650,9 @@ impl BattleEngine {
             self.pending = PendingExecution::Start;
             self.set_phase(BattlePhase::ForcedSwitch);
         } else {
-            // The start-of-battle `endTurn`'s rules (Gen 1: two teams that only Transform).
+            // The start-of-battle `endTurn`: the first turn's top (`turn_start_items`), then its
+            // rules (Gen 1: two teams that only Transform).
+            self.turn_start_items();
             self.end_turn_rules();
         }
     }

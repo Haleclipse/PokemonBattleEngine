@@ -167,6 +167,7 @@ impl BattleEngine {
                         }
                     }
                     self.set_phase(BattlePhase::TurnChoice);
+                    self.turn_start_items();
                     self.end_turn_rules();
                 } else {
                     self.next_turn();

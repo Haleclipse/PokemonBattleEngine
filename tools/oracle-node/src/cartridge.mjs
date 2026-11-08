@@ -4215,3 +4215,29 @@ for (const [id, format] of patched ? Object.entries(Dex.data.Rulesets) : []) {
   const cached = Dex.formats.get(id);
   cached.actions = {...cached.actions, switchIn: cartridgeGen2SwitchIn};
 }
+
+// I220 — Gen 2 Berserk Gene at the top of the turn. pokecrystal's `BattleTurn` calls
+// `HandleBerserkGene` before every turn's choices, the player's Pokémon then the enemy's — its only
+// call (`engine/battle/core.asm`): a holder that comes in mid-turn (a switch, Baton Pass, a drag)
+// uses the gene as the next turn starts, and one that faints first never does. Showdown's
+// `onUpdate` uses it at the first `Update` after the holder is in. The patch moves the gene's
+// handler to the start of `endTurn` — p1's active Pokémon, then p2's — run as the item's own event
+// (the confusion's 256 turns ask for it as the source). No draw of its own.
+if (patched) {
+  const gene = Dex.mod('gen2').data.Items.berserkgene;
+  gene.onCartridgeTurnStart = gene.onUpdate;
+  delete gene.onUpdate;
+  const endTurn = Battle.prototype.endTurn;
+  Battle.prototype.endTurn = function (...args) {
+    if (this.gen === 2) {
+      for (const side of this.sides) {
+        for (const pokemon of side.active) {
+          if (pokemon?.hp && pokemon.item === 'berserkgene') {
+            this.singleEvent('CartridgeTurnStart', pokemon.getItem(), pokemon.itemState, pokemon);
+          }
+        }
+      }
+    }
+    return endTurn.apply(this, args);
+  };
+}

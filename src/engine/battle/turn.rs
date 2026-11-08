@@ -3,8 +3,9 @@
 //! the next turn.
 
 use crate::engine::{
-    ActionChoice, ActionStep, BattleError, BattleRequest, EngineStep, MechanicChoice, MovePipeline,
-    PendingExecution, PendingFaints, QueuedAction, SideChoice, TraceEvent,
+    ActionChoice, ActionStep, BattleContext, BattleError, BattleRequest, EngineStep,
+    MechanicChoice, MovePipeline, PendingExecution, PendingFaints, QueuedAction, SideChoice,
+    TraceEvent,
 };
 use crate::ids::{PokemonId, SideId};
 use crate::state::{BattlePhase, VolatileConditionKind};
@@ -668,11 +669,36 @@ impl BattleEngine {
         }
     }
 
+    /// pokecrystal `BattleTurn` → `HandleBerserkGene`, at the top of every turn before the
+    /// choices: an active Pokémon's item with a turn-start effect (Gen 2's Berserk Gene) acts,
+    /// the player's then the enemy's — P1's, then P2's. Showdown's `onUpdate` uses the gene as
+    /// soon as its holder is in, mid-turn too; the oracle's `endTurn` waits as the cartridge
+    /// does (issues.md I220, R-M11-104).
+    pub(super) fn turn_start_items(&mut self) {
+        for side in [SideId::P1, SideId::P2] {
+            for holder in self.state.side(side).active.clone().into_iter().flatten() {
+                if self.state.pokemon(holder).is_none_or(|p| p.is_fainted()) {
+                    continue;
+                }
+                let Some(handler) = crate::engine::held_item(&self.state, &self.rules, holder)
+                    .and_then(|(_, behavior)| behavior.turn_start)
+                else {
+                    continue;
+                };
+                handler(
+                    &mut BattleContext::new(&mut self.state, &self.rules, &mut self.trace),
+                    holder,
+                );
+            }
+        }
+    }
+
     /// The turn boundary (Showdown `endTurn`): every Pokémon on the field starts the coming
     /// turn one turn older (`activeTurns++`) and its event history ages (DESIGN.md §22.8);
     /// each side's faints of the turn become last turn's; the turn's last successful move is
     /// forgotten. Then the rules that end a battle at a turn's end (`end_turn_rules`).
     pub(super) fn next_turn(&mut self) {
+        self.turn_start_items();
         // Showdown `endTurn`'s Dynamax sweep: once the turn is over — after the residual's
         // `Update` and after the replacements a faint asked for (a Pokémon Dynamaxed on its
         // third turn is still so while they come in).

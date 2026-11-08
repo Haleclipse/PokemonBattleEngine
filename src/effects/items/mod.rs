@@ -30,6 +30,11 @@ pub fn booster_energy_start(ctx: &mut BattleContext<'_>, holder: PokemonId) {
     }
     ctx.use_booster_energy(holder);
 }
+
+/// Gen 2 Berserk Gene at the top of the turn (`ItemBehavior::turn_start`).
+pub fn berserk_gene_turn_start(ctx: &mut BattleContext<'_>, holder: PokemonId) {
+    ctx.use_berserk_gene(holder);
+}
 use crate::engine::{
     BattleContext, EffectSource, OffensiveStatContext, OrderedHandler, TryHitContext, TryHitResult,
     TrySetStatusContext, TrySetStatusResult,
@@ -457,6 +462,9 @@ pub struct ItemBehavior {
     pub eat_effect: Option<EatEffect>,
     /// Showdown `onUpdate`: what the item does at an `Update` (DESIGN.md §40).
     pub update: Option<ItemUpdate>,
+    /// What the item does at the top of every turn, before the choices: Gen 2's Berserk Gene
+    /// (pokecrystal `BattleTurn` → `HandleBerserkGene`; Showdown's `onUpdate`, issues.md I220).
+    pub turn_start: Option<SwitchHandler>,
     /// A gem (`onSourceTryPrimaryHit`): the holder's damaging move of this type, as it is about
     /// to strike a target other than the holder, uses the gem up, and that move — every hit, every
     /// target, and nothing after it — gets `DamageRules::gem_boost` (issues.md I10: Showdown's
@@ -618,9 +626,6 @@ pub enum ItemUpdate {
     CureVolatiles,
     /// Booster Energy (`onUpdate`, once its `onStart` ran): `BattleContext::use_booster_energy`.
     BoosterEnergy,
-    /// Gen 2 Berserk Gene (`onUpdate`: `if (pokemon.useItem()) pokemon.addVolatile('confusion')`,
-    /// its `boosts` +2 Attack as it is used): `BattleContext::use_berserk_gene`.
-    BerserkGene,
 }
 
 /// When an `Update` makes the holder eat its berry (`ItemUpdate::Eat`).
@@ -1289,6 +1294,15 @@ const COMPONENTS: &[BehaviorComponent<ItemBehavior>] = &[
             None => &[],
         },
         disable: |h| h.update = None,
+    },
+    BehaviorComponent {
+        // Gen 2 Berserk Gene's `onUpdate`, at the top of the turn as pokecrystal has it
+        // (issues.md I220).
+        source_callbacks: |h| match h.turn_start {
+            Some(_) => &["onUpdate"],
+            None => &[],
+        },
+        disable: |h| h.turn_start = None,
     },
     BehaviorComponent {
         source_callbacks: |h| match h.gem {
@@ -2236,7 +2250,7 @@ pub fn definition(item: ItemId) -> ItemBehavior {
         },
         ItemId::STICKY_BARB => sticky_barb::sticky_barb(),
         ItemId::BERSERK_GENE => ItemBehavior {
-            update: Some(ItemUpdate::BerserkGene),
+            turn_start: Some(berserk_gene_turn_start),
             ..ItemBehavior::default()
         },
         ItemId::BERRY_JUICE => ItemBehavior {

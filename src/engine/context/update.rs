@@ -172,7 +172,6 @@ impl<'a> BattleContext<'a> {
             Some(ItemUpdate::UseToHeal { at, amount }) => self.use_to_heal(holder, at, amount),
             Some(ItemUpdate::CureVolatiles) => self.use_mental_herb(holder),
             Some(ItemUpdate::BoosterEnergy) => self.use_booster_energy(holder),
-            Some(ItemUpdate::BerserkGene) => self.use_berserk_gene(holder),
             // Gen 4's Micle Berry is eaten like the other pinch berries (issues.md I42), though
             // its item's handler is an `onResidual` (`BerryRules::micle`).
             None if berries.micle.eaten_at_update

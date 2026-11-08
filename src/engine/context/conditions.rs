@@ -302,9 +302,10 @@ impl<'a> BattleContext<'a> {
         )
     }
 
-    /// Gen 2 Berserk Gene (`onUpdate`): the holder uses it up — its `boosts`, +2 Attack — and is
-    /// confused by its own doing (`addVolatile('confusion')`, the event's target the source:
-    /// Safeguard does not stop it).
+    /// Gen 2 Berserk Gene at the top of the turn (`ItemBehavior::turn_start`; Showdown's
+    /// `onUpdate`): the holder uses it up — its `boosts`, +2 Attack — and is confused by its own
+    /// doing (`addVolatile('confusion')`, the event's target the source: Safeguard does not stop
+    /// it).
     pub fn use_berserk_gene(&mut self, holder: PokemonId) {
         let item = crate::ids::ItemId::BERSERK_GENE;
         if self.consume_item(holder).is_none() {

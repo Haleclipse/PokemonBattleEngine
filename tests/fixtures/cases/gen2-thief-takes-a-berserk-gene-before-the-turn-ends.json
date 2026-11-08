@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "gen2-thief-takes-a-berserk-gene-before-the-turn-ends",
+ "notes": [
+  "Gen 2: Tauros switches in holding a Berserk Gene and Sneasel's Thief takes it that same turn; as the next turn starts, Sneasel uses the gene — +2 Attack, confused. pokecrystal's `BattleTurn` calls `HandleBerserkGene` before every turn's choices, its only call: the gene waits for the turn's top (R-M11-104, issues.md I220). Showdown's `onUpdate` used it as Tauros came in, and Thief found nothing to take (the oracle's `endTurn` patch)."
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "moves": [
+     "Body Slam"
+    ]
+   },
+   {
+    "label": "Tauros",
+    "species": "Tauros",
+    "level": 100,
+    "item": "Berserk Gene",
+    "moves": [
+     "Body Slam"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Sneasel",
+    "species": "Sneasel",
+    "level": 100,
+    "moves": [
+     "Thief"
+    ]
+   }
+  ]
+ },
+ "random": {
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ },
+ "script": [
+  {
+   "p1": "switch 2",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  }
+ ]
+}
