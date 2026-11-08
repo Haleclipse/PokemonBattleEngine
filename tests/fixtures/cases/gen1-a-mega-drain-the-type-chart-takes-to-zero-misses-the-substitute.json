@@ -1,0 +1,76 @@
+{
+ "schema": 1,
+ "id": "gen1-a-mega-drain-the-type-chart-takes-to-zero-misses-the-substitute",
+ "notes": [
+  "Gen 1: Ditto transforms into a level-7 Zubat; behind Ditto's Substitute, Zubat's critical Mega Drain (Grass at 0.25× on Poison / Flying) comes to 0 damage. pokered's `AdjustDamageForMoveType` makes such a move miss (`wMoveMissed`): the Substitute keeps its 75 HP and Zubat drains nothing. Showdown's gen1 Substitute took the 0 as a hit and drained 1; recorded under the oracle's patch (issues.md I221, R-M11-107; cloud Nightly 42452722117, m9-gen1ou-s102800-014)"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1ou"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Zubat",
+    "species": "Zubat",
+    "ability": "",
+    "moves": [
+     "Rest",
+     "Whirlwind",
+     "Substitute",
+     "Mega Drain"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": false,
+    "level": 7
+   }
+  ],
+  "p2": [
+   {
+    "label": "Ditto",
+    "species": "Ditto",
+    "ability": "",
+    "moves": [
+     "Transform"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": false,
+    "level": 100
+   }
+  ]
+ },
+ "preview": {
+  "p1": "team 123645",
+  "p2": "team 146253"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   10861,
+   102800,
+   1014,
+   31
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Rest",
+   "p2": "move Transform"
+  },
+  {
+   "p1": "move Whirlwind",
+   "p2": "move 2"
+  },
+  {
+   "p1": "move Substitute",
+   "p2": "move 3"
+  },
+  {
+   "p1": "move Mega Drain",
+   "p2": "move 4"
+  }
+ ]
+}

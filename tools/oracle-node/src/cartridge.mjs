@@ -4241,3 +4241,33 @@ if (patched) {
     return endTurn.apply(this, args);
   };
 }
+
+// I221 — Gen 1 a damage the type chart takes to 0 makes the move miss. pokered's
+// `AdjustDamageForMoveType` multiplies the damage by each matching type pair and, "if damage is 0,
+// make the move miss" (`wMoveMissed`): a 2 or 3 at 0.25× misses — no critical-hit or effectiveness
+// message, nothing to the body or its Substitute, no drain, recoil or secondary, and a crash move
+// crashes. Showdown's gen1 `getDamage` returns the 0 ("the move is made to miss", its comment says)
+// and `moveHit` deals it as a hit; a Substitute's `onTryHit` drains 1 off it. The patch takes back
+// the lines the computation wrote and ends the move as an accuracy miss does: `-miss`, no last
+// damage, and `null` to the caller (`moveHit` and the Substitute's `onTryHit` both stop on it).
+// A secondary the 0 would have rolled draws nothing (TESTING.md §7).
+if (patched) {
+  const actions = Dex.mod('gen1').data.Scripts.actions;
+  const getDamage = actions.getDamage;
+  actions.getDamage = function (source, target, move, suppressMessages) {
+    const formula = typeof move === 'object' && move.category !== 'Status' && move.basePower > 0 &&
+      !move.ohko && !move.damageCallback && move.damage == null &&
+      !(move.self?.volatileStatus === 'partialtrappinglock' && move.type === 'Normal' &&
+        target.hasType('Ghost')) &&
+      !(source.volatiles['partialtrappinglock'] &&
+        target === source.volatiles['partialtrappinglock'].locked);
+    const start = this.battle.log.length;
+    const damage = getDamage.call(this, source, target, move, suppressMessages);
+    if (!formula || damage !== 0) return damage;
+    this.battle.log.splice(start);
+    this.battle.attrLastMove('[miss]');
+    this.battle.add('-miss', source);
+    this.battle.lastDamage = 0;
+    return null;
+  };
+}

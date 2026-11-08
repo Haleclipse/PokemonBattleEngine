@@ -43,6 +43,9 @@ pub enum MoveFailReason {
     /// Gen 1's Desync Clause Mod (`PpRules::desync_clause`): the side's last selected move is not
     /// in the slot the action paid from; the move does not go on (`-hint` lines only).
     Desync,
+    /// Gen 1 (`HitRules::zero_damage_misses`): the type chart took the damage to 0, and the move
+    /// misses (`-miss`).
+    ZeroDamage,
 }
 
 /// What the line of an ability change names (`TraceEvent::AbilityChanged`, DESIGN.md §47.0

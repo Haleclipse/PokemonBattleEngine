@@ -192,6 +192,24 @@ impl<'a> MovePipeline<'a> {
                 }
             };
 
+            // Gen 1 (pokered `AdjustDamageForMoveType` sets `wMoveMissed`): a damage the type chart
+            // took to 0 misses — nothing after it, a crash move's crash aside (issues.md I221).
+            if hit_rules.zero_damage_misses
+                && final_damage.0 == 0
+                && binding.is_none()
+                && move_def.fixed_damage.is_none()
+            {
+                if self.rules.conditions.retaliation.gen1_last_damage {
+                    self.state.last_damage = 0;
+                }
+                self.trace.push(TraceEvent::MoveFailed {
+                    actor,
+                    move_id: move_def.id,
+                    reason: crate::engine::MoveFailReason::ZeroDamage,
+                });
+                outcomes.push(HitOutcome::Missed { target });
+                break;
+            }
             // Gen 1 Psywave rolling 0 fails (the Desync Clause Mod: `damageCallback` → `false`);
             // so does a Gen 2 Counter with nothing to strike back at (its `damageCallback`).
             if final_damage.0 == 0

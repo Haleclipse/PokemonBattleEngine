@@ -99,6 +99,11 @@ pub struct HitRules {
     pub multi_hit_weights: [u16; 4],
     /// Gen 1: every hit of a multi-hit move deals the first hit's damage.
     pub same_damage_each_hit: bool,
+    /// Gen 1 (pokered `AdjustDamageForMoveType`: "if damage is 0, make the move miss"): a damage
+    /// the type chart takes to 0 — 2 or 3 at 0.25× — misses: no damage, drain, recoil or
+    /// secondary, and a crash move crashes. Showdown's gen1 `getDamage` returns the 0 as a hit
+    /// (issues.md I221, R-M11-107).
+    pub zero_damage_misses: bool,
     /// Gen 1-2 (the gen1 / gen2 `moveHit`: `!move.multihit || move.lastHit`) and Gen 3
     /// (pokeemerald `BattleScript_MultiHitEnd`'s one `seteffectwithchance`, issues.md I35): a
     /// multi-hit move's secondaries roll on its last hit only (Twineedle's poison), none when the
@@ -260,6 +265,7 @@ pub(super) fn resolve(generation: Generation) -> HitRules {
             [3, 3, 1, 1]
         },
         same_damage_each_hit: generation == Generation::Gen1,
+        zero_damage_misses: generation == Generation::Gen1,
         secondaries_on_last_hit: matches!(
             generation,
             Generation::Gen1 | Generation::Gen2 | Generation::Gen3

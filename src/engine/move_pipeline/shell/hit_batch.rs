@@ -216,10 +216,14 @@ impl MovePipeline<'_> {
                         pokemon_target_count,
                         type_effectiveness,
                     );
-                    // A hit that did nothing (Present healing a full-HP target) lands nothing.
-                    let landed = outcomes
-                        .iter()
-                        .any(|outcome| !matches!(outcome, HitOutcome::NoEffect { .. }));
+                    // A hit that did nothing (Present healing a full-HP target) lands nothing,
+                    // nor does one the type chart took to 0 (Gen 1's miss, issues.md I221).
+                    let landed = outcomes.iter().any(|outcome| {
+                        !matches!(
+                            outcome,
+                            HitOutcome::NoEffect { .. } | HitOutcome::Missed { .. }
+                        )
+                    });
                     any_landed_hit |= landed;
                     self.record_attack(actor, pokemon, move_def, &outcomes);
                     hits.extend(outcomes);
