@@ -25,6 +25,8 @@ impl MovePipeline<'_> {
         // naturally whole-move operations. No move gets to re-implement any part of this.
         let mut hits = Vec::with_capacity(targets.targets.len());
         let mut custom_targets = Vec::new();
+        // The move's own `self` is yet to land (Showdown's `selfDropped`, a property of the move).
+        self.self_dropped = false;
         // A spread move's hit runs stage by stage over every target that passed the gate
         // (`apply_spread_hit`), after all the gates (Showdown checks every target's accuracy
         // before any damage). Gen 1-3 hit each target in full before the next one's gate.

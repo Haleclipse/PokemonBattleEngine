@@ -20,21 +20,25 @@ fn strikes_once(move_def: &ResolvedMove) -> bool {
 }
 
 impl<'a> MovePipeline<'a> {
-    /// A multi-hit move's own `self` (Parental Bond's Close Combat, Diamond Storm) lands on
-    /// every hit, before the hit's secondaries, each with its own roll: Showdown's `selfDrops`
-    /// marks it done (`selfDropped`) only for a single-hit move, whose `self` comes once the
-    /// hits are over (`execute`).
-    fn multi_hit_self(&mut self, actor: PokemonId, target: PokemonId, move_def: &ResolvedMove) {
-        if move_def.multi_strike() {
-            self.apply_secondary_effects(
-                actor,
-                actor,
-                Some(target),
-                move_def,
-                SecondaryTrigger::OnceAfterMove,
-                false,
-            );
+    /// The move's own `self` (Close Combat's drops, Diamond Storm's boost) as a hit goes
+    /// through, on a body or a Substitute (Showdown `selfDrops`): before the hit's secondaries
+    /// and the target's `DamagingHit` reactions — a Mummy that takes the user's Simple comes
+    /// after the drops it doubled (R-M11-102). A multi-hit move's (Parental Bond's Close
+    /// Combat) lands on every hit, each with its own roll; a single-hit move's once
+    /// (`selfDropped`), at its first such hit — a spread move's before any target's
+    /// secondaries.
+    fn move_self(&mut self, actor: PokemonId, target: PokemonId, move_def: &ResolvedMove) {
+        if !move_def.multi_strike() && std::mem::replace(&mut self.self_dropped, true) {
+            return;
         }
+        self.apply_secondary_effects(
+            actor,
+            actor,
+            Some(target),
+            move_def,
+            SecondaryTrigger::OnceAfterMove,
+            false,
+        );
     }
 
     /// Damage primary for one target that passed the hit gate, as a hit sequence (ROADMAP §6.4):
@@ -270,7 +274,7 @@ impl<'a> MovePipeline<'a> {
                     self.item_hit_event(actor, target, move_def, amount.0, type_effectiveness);
                     self.self_clears_hazards(actor, move_def);
                     self.self_loses_type(actor, move_def);
-                    self.multi_hit_self(actor, target, move_def);
+                    self.move_self(actor, target, move_def);
                     self.rampage_self_drop(actor, move_def);
                     self.uproar_self_drop(actor, move_def);
                     self.rage_self_drop(actor, move_def, false);
@@ -325,7 +329,7 @@ impl<'a> MovePipeline<'a> {
                     (HitOutcome::Damaged { target, amount }, amount.0, false)
                 }
                 // Target-directed secondaries do not reach a body behind a Substitute; the
-                // user-directed ones do. The move's own `self` effects still run in `execute`.
+                // user-directed ones do, and so do the move's own `self` effects.
                 // Showdown's Substitute condition recoils and drains off the doll at once.
                 DamageApplication::Substitute { amount, broken, .. } => {
                     // Gen 1: a hit that breaks the doll neither recoils nor drains.
@@ -343,13 +347,16 @@ impl<'a> MovePipeline<'a> {
                     self.substitute_pops_balloon(target);
                     self.self_clears_hazards(actor, move_def);
                     self.self_loses_type(actor, move_def);
-                    self.multi_hit_self(actor, target, move_def);
+                    // Gen 1 (`moveHit`'s `doSelf`; pokered's `.nullifyEffect` zeroes the move's
+                    // effect as the doll breaks): a hit that breaks it leaves the move's `self`
+                    // undone — Hyper Beam owes no recharge — and its user no rage (R-M8-106).
+                    let does_self = !(broken && self.rules.conditions.substitute_gen1);
+                    if does_self {
+                        self.move_self(actor, target, move_def);
+                    }
                     self.rampage_self_drop(actor, move_def);
                     self.uproar_self_drop(actor, move_def);
-                    // Gen 1 (`moveHit`'s `doSelf`; pokered's `.nullifyEffect` zeroes the move's
-                    // effect as the doll breaks): a hit that breaks it leaves its user no rage
-                    // (R-M8-106).
-                    if !(broken && self.rules.conditions.substitute_gen1) {
+                    if does_self {
                         self.rage_self_drop(actor, move_def, true);
                     }
                     self.glaive_rush_self_drop(actor, move_def);
@@ -792,12 +799,13 @@ impl<'a> MovePipeline<'a> {
         }
 
         // 4. The move's `self` effects (`selfDrops`) for each target it reached, a Substitute's
-        // too (only a `false` target is skipped): a Max Move's.
-        for outcome in &outcomes {
+        // too (only a `false` target is skipped): its own `self` once, a Max Move's for each.
+        for (index, outcome) in outcomes.iter().enumerate() {
             if matches!(
                 outcome,
                 Some(HitOutcome::Damaged { .. } | HitOutcome::SubstituteDamaged { .. })
             ) {
+                self.move_self(actor, targets[index].0, move_def);
                 self.max_move_effect(actor, move_def);
             }
         }

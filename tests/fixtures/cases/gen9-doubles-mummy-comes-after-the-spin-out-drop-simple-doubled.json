@@ -1,0 +1,194 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-mummy-comes-after-the-spin-out-drop-simple-doubled",
+ "notes": [
+  "Gen 9 doubles: Raboot's Simple Beam gives Golett Simple; Golett's Spin Out strikes Brambleghast, whose Mummy answers the contact. The move's own Speed drop lands with the hit (Showdown `selfDrops`, before the secondaries and `DamagingHit`): doubled by Simple to -4, then Mummy takes Simple. The engine had dropped a single-hit move's `self` once the hits were over, after Mummy: -2 (R-M11-102; Nightly m8-gen9-doubles-s1895-017)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Raboot",
+    "species": "Raboot",
+    "level": 53,
+    "nature": "Hardy",
+    "moves": [
+     "Fiery Dance",
+     "Simple Beam",
+     "Metal Claw",
+     "Lock-On"
+    ],
+    "ability": "Run Away",
+    "item": "Eject Button",
+    "gender": "M"
+   },
+   {
+    "label": "Magcargo",
+    "species": "Magcargo",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Meteor Mash",
+     "Simple Beam",
+     "Hyperspace Fury",
+     "Lock-On"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Brambleghast",
+    "species": "Brambleghast",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Armor Cannon",
+     "Simple Beam",
+     "Leaf Storm",
+     "Lock-On"
+    ],
+    "ability": "Mummy",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Barboach",
+    "species": "Barboach",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Diamond Storm",
+     "Simple Beam",
+     "Rapid Spin"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Dragalge",
+    "species": "Dragalge",
+    "level": 45,
+    "nature": "Hardy",
+    "moves": [
+     "Charge Beam",
+     "Simple Beam",
+     "Hammer Arm",
+     "Lock-On"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Golett",
+    "species": "Golett",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Overheat",
+     "Simple Beam",
+     "Spin Out",
+     "Lock-On"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Toxapex",
+    "species": "Toxapex",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Flame Charge",
+     "Simple Beam",
+     "Dragon Ascent",
+     "Lock-On"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   29648,
+   23594,
+   28865,
+   59589
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Fiery Dance 1, move Meteor Mash 2",
+   "p2": "move Diamond Storm, move Charge Beam 1"
+  },
+  {
+   "p1": "switch Brambleghast, pass"
+  },
+  {
+   "p1": "move Simple Beam 1, move Simple Beam 2",
+   "p2": "move Simple Beam 2, move Simple Beam 1"
+  },
+  {
+   "p1": "move Leaf Storm 1, move Hyperspace Fury 2",
+   "p2": "move Rapid Spin 2, move Hammer Arm 1"
+  },
+  {
+   "p2": "switch Golett, pass"
+  },
+  {
+   "p1": "move Lock-On 1, move Lock-On 2",
+   "p2": "move Lock-On 2, move Lock-On 1"
+  },
+  {
+   "p1": "move Armor Cannon 1, move Meteor Mash 2",
+   "p2": "move Overheat 2, move Charge Beam 1"
+  },
+  {
+   "p1": "move Simple Beam 1, move Simple Beam 2",
+   "p2": "move Simple Beam 2, move Simple Beam 1"
+  },
+  {
+   "p1": "move Leaf Storm 1, move Hyperspace Fury 2",
+   "p2": "move Spin Out 2, move Hammer Arm 1"
+  },
+  {
+   "p1": "switch Raboot, move Meteor Mash 1",
+   "p2": "switch Toxapex, move Charge Beam 2"
+  },
+  {
+   "p1": "move Fiery Dance 2, move Simple Beam 1",
+   "p2": "move Flame Charge 1, move Simple Beam 2"
+  },
+  {
+   "p1": "move Simple Beam 2, move Hyperspace Fury 1",
+   "p2": "move Simple Beam 1, move Hammer Arm 2"
+  },
+  {
+   "p1": "move Metal Claw 2, move Lock-On 1",
+   "p2": "move Dragon Ascent 1, move Lock-On 2"
+  },
+  {
+   "p1": "move Lock-On 2, move Meteor Mash 1",
+   "p2": "move Lock-On 1, move Charge Beam 2"
+  },
+  {
+   "p1": "pass, switch Brambleghast"
+  },
+  {
+   "p1": "move Fiery Dance 2, move Simple Beam 1",
+   "p2": "move Flame Charge 1, move Simple Beam 2"
+  },
+  {
+   "p2": "pass, switch Golett"
+  },
+  {
+   "p1": "move Simple Beam 2, move Leaf Storm 1",
+   "p2": "move Simple Beam 1, move Spin Out 2"
+  }
+ ]
+}

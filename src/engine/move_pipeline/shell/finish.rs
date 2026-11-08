@@ -100,8 +100,13 @@ impl MovePipeline<'_> {
             BattleContext::new(self.state, self.rules, self.trace)
                 .faint_by_own_move(actor, move_id);
         }
-        // A multi-hit move's lands on every hit instead (`hit_sequence::multi_hit_self`).
-        if any_landed_hit && !broke_gen1_substitute && move_def.multi_hit == MultiHit::Single {
+        // A move whose hits did not carry it (a status move's), once one landed: a damaging
+        // move's lands with its hit (`hit_sequence::move_self`, Showdown `selfDrops`).
+        if any_landed_hit
+            && !broke_gen1_substitute
+            && !move_def.multi_strike()
+            && !self.self_dropped
+        {
             let move_target = targets.pokemon_ids().next();
             self.apply_secondary_effects(
                 actor,
@@ -120,11 +125,11 @@ impl MovePipeline<'_> {
 
         // The hit loop's `faintMessages` (Showdown `hitStepMoveHitLoop`) has reached the faints
         // so far: no longer Pokémon left for `foePokemonLeft`, no longer on the field for the
-        // `Update` below. Announced only here, after the single-hit move's own `self`, which
-        // Showdown lands inside the hit step (`selfDrops`) — Close Combat lowers its user's stats
-        // even as it knocks the last foe out; nothing in between changes a stage — and after
-        // Mind Blown's self damage, inside the loop too. The recoil the engine took with the
-        // hits comes after it: a user that recoil knocked out is still pending (R-M8-166).
+        // `Update` below. Announced only here, after the move's own `self`, which lands with its
+        // hit (`selfDrops`) — Close Combat lowers its user's stats even as it knocks the last
+        // foe out — and after Mind Blown's self damage, inside the loop too. The recoil the
+        // engine took with the hits comes after it: a user that recoil knocked out is still
+        // pending (R-M8-166).
         // Gen 4+ runs the knocked-out Pokémon's `Faint` listeners and the batch's `AfterFaint`
         // there too (R-M10-52).
         BattleContext::new(self.state, self.rules, self.trace)

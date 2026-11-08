@@ -147,6 +147,9 @@ pub(crate) struct MovePipeline<'a> {
     beat_up_members: Vec<PokemonId>,
     /// Dragon Darts split between two targets: the one dart this target takes.
     smart_hit: bool,
+    /// The move's own `self` has landed (Showdown `move.selfDropped`): a single-hit move's
+    /// comes once, at its first hit that went through (`hit_sequence::move_self`).
+    self_dropped: bool,
     /// The gem this move used up (`ItemBehavior::gem`): the move's own power boost, for its
     /// every hit and target and for nothing after it (issues.md I10).
     gem: Option<crate::ids::ItemId>,
@@ -306,6 +309,7 @@ impl<'a> MovePipeline<'a> {
             external: false,
             beat_up_members: Vec::new(),
             smart_hit: false,
+            self_dropped: false,
             gem: None,
             z_move: None,
             z_power: None,

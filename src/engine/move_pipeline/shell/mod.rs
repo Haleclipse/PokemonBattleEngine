@@ -4,7 +4,7 @@
 
 use std::ops::ControlFlow;
 
-use crate::dex::{MultiHit, PrimaryEffect, ResolvedMove, SecondaryTrigger, StatusMoveEffect};
+use crate::dex::{PrimaryEffect, ResolvedMove, SecondaryTrigger, StatusMoveEffect};
 use crate::effects;
 use crate::ids::{MoveId, MoveSlot, PokemonId};
 use crate::rules::{DeclaredTarget, Fraction, MovesSlot, ResolvedRules, ResolvedTarget, Rounding};

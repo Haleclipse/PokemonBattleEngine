@@ -51,7 +51,8 @@ pub enum SecondaryTarget {
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum SecondaryTrigger {
     PerTargetHit,
-    /// The move's own `self` (Close Combat's drops), once after the hits.
+    /// The move's own `self` (Close Combat's drops), as a hit goes through (`selfDrops`): a
+    /// single-hit move's once, a multi-hit move's on every hit.
     OnceAfterMove,
     /// Showdown `selfBoost` (Clanging Scales, Scale Shot): once every hit step is over, when
     /// the move did something (`moveResult`), after the struck targets' item reactions.

@@ -1158,6 +1158,9 @@ pub(super) fn tape_template(
             // Thrash's or Uproar's lock is drawn as the first hit starts it; a later hit (Parental
             // Bond's second) adds the volatile again, which draws nothing (DESIGN.md R281).
             let mut lock_drawn = false;
+            // A single-hit move's own `self` lands with its first hit that went through
+            // (Showdown `selfDropped`).
+            let mut self_planned = false;
             // Cursed Body rolls until it disables the user's move, on whichever target.
             let mut cursed_body_done = false;
             for (target, fate) in &targets {
@@ -1489,22 +1492,7 @@ pub(super) fn tape_template(
                             RandomOverride::range(RandomRequestKind::Duration, turns),
                         );
                     }
-                    // A multi-hit move's own `self` lands on every hit, before the hit's
-                    // secondaries (Showdown `selfDrops`); a single-hit move's once the hits are
-                    // over (below). `selfBoost` never per hit.
                     let multi_hit = move_def.multi_hit != MultiHit::Single;
-                    let per_hit = move_def
-                        .secondaries
-                        .iter()
-                        .enumerate()
-                        .filter(|(_, s)| multi_hit && s.trigger == SecondaryTrigger::OnceAfterMove)
-                        .chain(
-                            move_def
-                                .secondaries
-                                .iter()
-                                .enumerate()
-                                .filter(|(_, s)| s.trigger == SecondaryTrigger::PerTargetHit),
-                        );
                     // A bare `-fail|target` on a target the move dealt nothing: the hit came to
                     // nothing there (Gen 2's `moveHit` returns false — a Counter with nothing to
                     // answer, Present's heal at full HP) before any secondary, King's Rock's flinch
@@ -1535,6 +1523,24 @@ pub(super) fn tape_template(
                             .iter()
                             .any(|(holder, hp)| *holder == id && hp.is_some_and(|hp| hp > 0))
                     });
+                    // The move's own `self` lands with the hit, before its secondaries (Showdown
+                    // `selfDrops`): a multi-hit move's on every hit, a single-hit move's at the
+                    // first that went through — a spread move's before any target's secondaries
+                    // (R-M11-102). `selfBoost` never per hit.
+                    let move_self = multi_hit
+                        || (!came_to_nothing && !std::mem::replace(&mut self_planned, true));
+                    let per_hit = move_def
+                        .secondaries
+                        .iter()
+                        .enumerate()
+                        .filter(|(_, s)| move_self && s.trigger == SecondaryTrigger::OnceAfterMove)
+                        .chain(
+                            move_def
+                                .secondaries
+                                .iter()
+                                .enumerate()
+                                .filter(|(_, s)| s.trigger == SecondaryTrigger::PerTargetHit),
+                        );
                     for (secondary_index, secondary) in per_hit {
                         let past_the_doll =
                             rules.conditions().confusion_secondary_through_substitute
@@ -2046,28 +2052,6 @@ pub(super) fn tape_template(
                     RandomRequestKind::Duration,
                     duration,
                 )));
-            }
-            // The move's own `self` with a chance of its own (Gen 7+ Diamond Storm) rolls once the
-            // hits are over, if one landed: it landed when the user shows the change (without a
-            // landed hit nothing asks).
-            for secondary in move_def.secondaries.iter().filter(|secondary| {
-                secondary.trigger == SecondaryTrigger::OnceAfterMove
-                    && !secondary.shares_roll
-                    && move_def.multi_hit == MultiHit::Single
-            }) {
-                if let pokemon_battle_engine::engine::SecondaryRoll::Chance(..) =
-                    pokemon_battle_engine::engine::secondary_roll(
-                        in_move, rules, actor, actor, move_def, secondary,
-                    )
-                {
-                    let shown = oracle.applied.iter().any(|(who, kind)| {
-                        *who == oracle.user
-                            && matches!(secondary.effect,
-                                SecondaryEffect::StatStage { stat, .. } if stat_changed(kind, stat))
-                    });
-                    let decision = RandomOverride::bool(RandomRequestKind::Secondary, shown);
-                    tape.push(Some(if shown { decision } else { decision.optional() }));
-                }
             }
             // Gen 2-4 crash (`HitRules::crash`): what the move would have dealt its target is
             // computed afresh — a critical-hit check nothing shows (planned as not, the search

@@ -7,6 +7,8 @@
 //!   that has the ability already.
 //! - Mummy gives nothing to an attacker with Mummy already, nor to one the hit's Rocky Helmet
 //!   knocked out (`setAbility` needs HP; the attacker gets its ability back as it faints anyway).
+//! - Mummy takes a Simple attacker's ability only after the move's own drops, which Simple
+//!   doubled (Showdown `selfDrops` before `DamagingHit`, R-M11-102).
 
 use std::sync::Arc;
 
@@ -16,7 +18,7 @@ use pokemon_battle_engine::engine::{ActionChoice, EngineStep, SideChoice, SlotCh
 use pokemon_battle_engine::ids::{MoveSlot, PokemonId, SideId};
 use pokemon_battle_engine::rules::RulesResolver;
 use pokemon_battle_engine::spec::{BattleMode, BattleSpec, Generation};
-use pokemon_battle_engine::state::{BattleState, PokemonState, SideState};
+use pokemon_battle_engine::state::{BattleState, PokemonState, SideState, Stat};
 
 const USER: PokemonId = PokemonId(1);
 const TARGET: PokemonId = PokemonId(2);
@@ -221,4 +223,35 @@ fn mummy_passes_over_a_mummy_and_a_knocked_out_attacker() {
         set("Gyarados", "Intimidate", ["Waterfall"]),
         holder(),
     )));
+}
+
+#[test]
+fn mummy_comes_after_the_drops_a_simple_attacker_doubled() {
+    let events = one_turn(
+        Generation::Gen9,
+        set("Gyarados", "Simple", ["Close Combat"]),
+        set("Snorlax", "Mummy", ["Harden"]),
+    );
+    let drops: Vec<_> = events
+        .iter()
+        .filter_map(|event| match event {
+            TraceEvent::StatChanged {
+                target: USER,
+                stat,
+                to,
+                ..
+            } => Some((*stat, *to)),
+            _ => None,
+        })
+        .collect();
+    assert_eq!(drops, [(Stat::Defense, -2), (Stat::SpecialDefense, -2)]);
+    let mummy = events
+        .iter()
+        .position(|event| matches!(event, TraceEvent::AbilityChanged { pokemon: USER, .. }))
+        .expect("Mummy takes the attacker's ability");
+    assert!(
+        events[mummy..]
+            .iter()
+            .all(|event| !matches!(event, TraceEvent::StatChanged { target: USER, .. }))
+    );
 }
