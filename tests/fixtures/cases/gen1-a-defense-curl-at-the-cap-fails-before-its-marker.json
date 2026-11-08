@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "id": "gen1-a-defense-curl-at-the-cap-fails-before-its-marker",
+ "notes": [
+  "Gen 1: Slowbro's Acid Armor takes its Defense to +6; its Defense Curl then raises nothing and fails (`-fail`) — the gen1 `moveHit` returns as the boost fails, before the move's `volatileStatus`, so Slowbro has no `defensecurl` marker. Gen 2+'s `runMoveEffects` would set it all the same (`StatRules::failed_stages_end_the_move`, R-M11-106)."
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Slowbro",
+    "species": "Slowbro",
+    "level": 100,
+    "moves": [
+     "Acid Armor",
+     "Defense Curl"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Snorlax",
+    "species": "Snorlax",
+    "level": 100,
+    "moves": [
+     "Splash"
+    ]
+   }
+  ]
+ },
+ "random": {
+  "seed": [
+   1,
+   2,
+   3,
+   4
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 1"
+  }
+ ]
+}

@@ -71,6 +71,7 @@ impl<'a> MovePipeline<'a> {
                 .state
                 .pokemon(target)
                 .is_some_and(|p| p.volatiles.contains(VolatileConditionKind::Substitute));
+        let failed_stages_end_the_move = self.rules.stats.failed_stages_end_the_move;
         let mut restarted = false;
         let mut ctx = BattleContext::new(self.state, self.rules, self.trace).with_dex(self.dex);
         let applied = match effect {
@@ -122,6 +123,9 @@ impl<'a> MovePipeline<'a> {
                     matches!(result, crate::engine::StatChangeResult::Applied { .. }) || any
                 });
                 let followed = match follow_up {
+                    // Gen 1: stages that changed nothing fail the move before what follows them
+                    // (`StatRules::failed_stages_end_the_move`, R-M11-106).
+                    _ if !changed && failed_stages_end_the_move => false,
                     // A status that does not take fails the move on this target, the stages
                     // staying changed.
                     FollowUp::Status(status) => matches!(

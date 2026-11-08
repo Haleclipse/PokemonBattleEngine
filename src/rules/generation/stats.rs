@@ -25,6 +25,10 @@ pub struct StatRules {
     /// (`foePokemonLeft`) — after the hit that knocked out its last Pokémon, the move's
     /// `selfBoost` and Fell Stinger's boost change nothing.
     pub boosts_need_foe_pokemon_left: bool,
+    /// Gen 1 (the gen1 `moveHit`: `if (!willBoost) { -fail; return false }`): a status move
+    /// whose stages change nothing fails there, before its `volatileStatus` — a Defense Curl
+    /// or Minimize at the cap leaves no marker. Gen 2+ `runMoveEffects` sets it all the same.
+    pub failed_stages_end_the_move: bool,
     /// Gen 2 (the gen2 `boostBy`): a raise changes nothing once the stat reads 999 — at its
     /// stage, with paralysis, clamped, the species item after (`stats::capped_stat_reading`).
     pub raise_stops_at_cap: bool,
@@ -104,6 +108,7 @@ pub(super) fn resolve(generation: Generation) -> StatRules {
             cap: Some(999),
             modified_stats: generation == Generation::Gen1,
             boosts_need_foe_pokemon_left: false,
+            failed_stages_end_the_move: generation == Generation::Gen1,
             raise_stops_at_cap: generation == Generation::Gen2,
             species_item_stats: if generation == Generation::Gen2 {
                 GEN2_SPECIES_ITEM_STATS
@@ -124,6 +129,7 @@ pub(super) fn resolve(generation: Generation) -> StatRules {
             species_items_read_battling: generation <= Generation::Gen4,
             metal_powder_ignores_transform: generation == Generation::Gen3,
             boosts_need_foe_pokemon_left: generation >= Generation::Gen6,
+            failed_stages_end_the_move: false,
             raise_stops_at_cap: false,
             slowing_items_ignore_suppression: generation == Generation::Gen4,
             unaware_needs_hp: generation >= Generation::Gen5,

@@ -1,0 +1,347 @@
+{
+ "schema": 1,
+ "id": "gen1-a-mirror-move-defense-curl-at-the-cap-leaves-no-marker",
+ "notes": [
+  "Gen 1: Pidgeotto's Harden takes its Defense to +6; its Mirror Move then uses Slowbro's Defense Curl, which raises nothing and fails (`-fail`) before its `volatileStatus` (the gen1 `moveHit`), so no `defensecurl` marker. The engine set it all the same (R-M11-106; Nightly m8-gen1-singles-s1899-005)"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Zapdos",
+    "species": "Zapdos",
+    "level": 54,
+    "nature": "Hardy",
+    "moves": [
+     "Barrage",
+     "Defense Curl",
+     "Bonemerang",
+     "Mirror Move"
+    ]
+   },
+   {
+    "label": "Slowbro",
+    "species": "Slowbro",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Double Kick",
+     "Defense Curl",
+     "Spike Cannon",
+     "Mirror Move"
+    ]
+   }
+  ],
+  "p2": [
+   {
+    "label": "Ponyta",
+    "species": "Ponyta",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Thunderbolt",
+     "String Shot"
+    ]
+   },
+   {
+    "label": "Machamp",
+    "species": "Machamp",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tail Whip",
+     "Defense Curl",
+     "Swift",
+     "Mirror Move"
+    ]
+   },
+   {
+    "label": "Caterpie",
+    "species": "Caterpie",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Surf",
+     "Defense Curl",
+     "Leer",
+     "Mirror Move"
+    ]
+   },
+   {
+    "label": "Kabuto",
+    "species": "Kabuto",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Growl",
+     "Defense Curl",
+     "Solar Beam"
+    ]
+   },
+   {
+    "label": "Poliwag",
+    "species": "Poliwag",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Skull Bash",
+     "Defense Curl",
+     "Dig"
+    ]
+   },
+   {
+    "label": "Pidgeotto",
+    "species": "Pidgeotto",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Razor Wind",
+     "Harden",
+     "Mirror Move"
+    ]
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   20650,
+   19865,
+   61580,
+   27457
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Barrage",
+   "p2": "move Thunderbolt"
+  },
+  {
+   "p1": "move Bonemerang",
+   "p2": "move String Shot"
+  },
+  {
+   "p2": "switch Machamp"
+  },
+  {
+   "p1": "move Barrage",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p1": "move Defense Curl",
+   "p2": "move Defense Curl"
+  },
+  {
+   "p1": "move Bonemerang",
+   "p2": "move Swift"
+  },
+  {
+   "p1": "switch Slowbro",
+   "p2": "switch Caterpie"
+  },
+  {
+   "p1": "move Double Kick",
+   "p2": "move Surf"
+  },
+  {
+   "p1": "move Defense Curl",
+   "p2": "move Defense Curl"
+  },
+  {
+   "p1": "move Spike Cannon",
+   "p2": "move Leer"
+  },
+  {
+   "p1": "move Mirror Move",
+   "p2": "move Mirror Move"
+  },
+  {
+   "p1": "move Double Kick",
+   "p2": "move Surf"
+  },
+  {
+   "p1": "switch Zapdos",
+   "p2": "switch Machamp"
+  },
+  {
+   "p1": "move Bonemerang",
+   "p2": "move Swift"
+  },
+  {
+   "p1": "move Mirror Move",
+   "p2": "move Mirror Move"
+  },
+  {
+   "p1": "move Barrage",
+   "p2": "move Tail Whip"
+  },
+  {
+   "p2": "switch Caterpie"
+  },
+  {
+   "p1": "move Bonemerang",
+   "p2": "move Leer"
+  },
+  {
+   "p2": "switch Kabuto"
+  },
+  {
+   "p1": "move Barrage",
+   "p2": "move Growl"
+  },
+  {
+   "p1": "switch Slowbro",
+   "p2": "switch Poliwag"
+  },
+  {
+   "p1": "move Defense Curl",
+   "p2": "move Defense Curl"
+  },
+  {
+   "p1": "move Spike Cannon",
+   "p2": "move Dig"
+  },
+  {
+   "p1": "move 4",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Defense Curl",
+   "p2": "move Skull Bash"
+  },
+  {
+   "p1": "move Spike Cannon",
+   "p2": "move Dig"
+  },
+  {
+   "p1": "move 4",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "switch Kabuto"
+  },
+  {
+   "p1": "move Defense Curl",
+   "p2": "move Growl"
+  },
+  {
+   "p1": "move Spike Cannon",
+   "p2": "move Defense Curl"
+  },
+  {
+   "p1": "move Mirror Move",
+   "p2": "move Solar Beam"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p2": "switch Poliwag"
+  },
+  {
+   "p1": "move Defense Curl",
+   "p2": "move Skull Bash"
+  },
+  {
+   "p1": "move Spike Cannon",
+   "p2": "move Skull Bash"
+  },
+  {
+   "p1": "move Mirror Move",
+   "p2": "move Dig"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Defense Curl",
+   "p2": "move Skull Bash"
+  },
+  {
+   "p1": "move Spike Cannon",
+   "p2": "move Skull Bash"
+  },
+  {
+   "p2": "switch Pidgeotto"
+  },
+  {
+   "p1": "move Mirror Move",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Double Kick",
+   "p2": "move Mirror Move"
+  },
+  {
+   "p1": "move Defense Curl",
+   "p2": "move Razor Wind"
+  },
+  {
+   "p1": "move Spike Cannon",
+   "p2": "move Razor Wind"
+  },
+  {
+   "p1": "switch Zapdos",
+   "p2": "move Mirror Move"
+  },
+  {
+   "p1": "move Barrage",
+   "p2": "move Razor Wind"
+  },
+  {
+   "p1": "move Defense Curl",
+   "p2": "move Razor Wind"
+  },
+  {
+   "p1": "move Bonemerang",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Mirror Move",
+   "p2": "move Mirror Move"
+  },
+  {
+   "p1": "move Barrage",
+   "p2": "move Razor Wind"
+  },
+  {
+   "p1": "move Defense Curl",
+   "p2": "move Razor Wind"
+  },
+  {
+   "p1": "move Bonemerang",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "switch Slowbro",
+   "p2": "move Mirror Move"
+  },
+  {
+   "p1": "move Mirror Move",
+   "p2": "move Razor Wind"
+  },
+  {
+   "p1": "move Double Kick",
+   "p2": "move Razor Wind"
+  },
+  {
+   "p1": "move Defense Curl",
+   "p2": "move Harden"
+  },
+  {
+   "p1": "move Spike Cannon",
+   "p2": "move Mirror Move"
+  }
+ ]
+}
