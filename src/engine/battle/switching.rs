@@ -574,6 +574,10 @@ impl BattleEngine {
             entrants.push(incoming);
         }
         if !entrants.is_empty() && self.rules.update.drag_switch_in_deferred {
+            // Showdown `runAction`: the dragging action's `clearActiveMove` comes before the
+            // queued `runSwitch` action, so the move's Mold Breaker no longer reaches the entrants
+            // (a Flower Gift Cherrim dragged into the sun changes forme, R-M11-109).
+            self.state.clear_active_move();
             self.run_update(PendingFaints::Processed);
         }
         for pokemon in self.speed_ordered(entrants) {
