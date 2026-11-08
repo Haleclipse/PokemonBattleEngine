@@ -251,6 +251,8 @@ pub fn extract_decisions_with(
     let mut item_stat_change: Option<Who> = None;
     // The Pokémon an Instruct just told to use its move again (`-singleturn|p|move: Instruct`).
     let mut instructed_next: Option<Who> = None;
+    // The Pokémon whose Magic Coat is up this turn (`-singleturn|p|move: Magic Coat`).
+    let mut magic_coat_up: Vec<Who> = Vec::new();
     let mut instructed_chances: Vec<PriorityChance> = Vec::new();
     // Cotton Down's `-ability|holder|Cotton Down` and the stat drops right after it, on any
     // Pokémon: the ability's, not the move's secondary (DESIGN.md R269).
@@ -626,6 +628,26 @@ pub fn extract_decisions_with(
                         last.hit = false;
                         continue;
                     }
+                    // A move Magic Coat sent back, refused its reflector as it is modified
+                    // (`cant|reflector|move: Throat Chop`, a sound move): the action's
+                    // reflection, which fails (R-M11-110). The coat's user has no action of its
+                    // own left this turn; a Pokémon whose own move Throat Chop stops prints the
+                    // same line after the move that chopped it.
+                    if reason == "move: Throat Chop"
+                        && detail.split('|').nth(1).is_none()
+                        && magic_coat_up.contains(&user)
+                        && let Some(last) = out.last_mut()
+                        && last.user != user
+                        && last.move_target.as_ref() == Some(&user)
+                        && let Some(reflected) = last.move_name.clone()
+                    {
+                        let from = Some("[from] Magic Coat".to_string());
+                        let called = CalledMove::new(user, reflected, None, from, last);
+                        last.called.push(called);
+                        last.failed = true;
+                        last.hit = false;
+                        continue;
+                    }
                     // The same for the move Snatch took from the action's user, refused its
                     // snatcher (R-M11-100).
                     if matches!(reason.as_str(), "move: Heal Block" | "move: Gravity")
@@ -843,6 +865,11 @@ pub fn extract_decisions_with(
                 }
             }
             "singleturn" => {
+                if event["move"] == "move: Magic Coat"
+                    && let Some(user) = who(&event["pokemon"])
+                {
+                    magic_coat_up.push(user);
+                }
                 if event["move"] == "move: Instruct" {
                     instructed_next = who(&event["pokemon"]);
                 } else if let (Some(action), Some(user)) = (out.last_mut(), who(&event["pokemon"]))
