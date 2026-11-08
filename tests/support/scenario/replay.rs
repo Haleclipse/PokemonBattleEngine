@@ -1014,10 +1014,10 @@ pub(super) fn drive_to_boundary(
             );
             // The residual's tie decisions: the plan first, then the other orders of the ties the
             // log does not show.
-            let tie_tapes = if ends_turn {
+            let (tie_tapes, weather_ties) = if ends_turn {
                 residual_tie_tapes(compiled, &before.state, oracle_frame)
             } else {
-                vec![Vec::new()]
+                (vec![Vec::new()], Vec::new())
             };
             let build_residual = |rolls: &[Option<u16>], ties: &[RandomOverride]| {
                 let mut residual = resort_ties.clone();
@@ -1042,6 +1042,7 @@ pub(super) fn drive_to_boundary(
                     &strikes,
                     rolls,
                     &moody,
+                    &weather_ties,
                 ));
                 residual.extend(residual_end_berry_tape(
                     &before.state,

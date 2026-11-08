@@ -789,10 +789,10 @@ pub(super) fn residual_tie_tapes(
     compiled: &Compiled,
     state: &BattleState,
     oracle_frame: &Value,
-) -> Vec<Vec<RandomOverride>> {
+) -> (Vec<Vec<RandomOverride>>, Vec<RandomOverride>) {
     let ties = compiled.engine.pending_residual_ties();
     if ties.handlers.is_empty() && ties.durations.is_empty() && ties.weather.is_empty() {
-        return vec![Vec::new()];
+        return (vec![Vec::new()], Vec::new());
     }
     // What each closing event stands for: a residual kind on a Pokémon, or (`None`) the
     // weather's chip on it.
@@ -980,12 +980,10 @@ pub(super) fn residual_tie_tapes(
                 values[*member] = (order.len() - rank) as u64;
             }
         }
-        let mut tape: Vec<RandomOverride> = values
+        values
             .into_iter()
             .map(|value| RandomOverride::raw(RandomRequestKind::SpeedTie, value))
-            .collect();
-        tape.extend(weather.iter().copied());
-        tape
+            .collect::<Vec<RandomOverride>>()
     };
     // The plan, then each group's other orders one group at a time, then their combinations
     // (a handful at most: tied silent handlers come in twos and threes).
@@ -1009,7 +1007,7 @@ pub(super) fn residual_tie_tapes(
             break;
         }
     }
-    tapes
+    (tapes, weather)
 }
 
 /// Every order of `items`.
@@ -1042,8 +1040,18 @@ pub(super) fn residual_tape(
     strikes: &[FutureStrikeOracle],
     rolls: &[Option<u16>],
     moody: &[(PokemonId, ResidualKind, RandomOverride)],
+    weather_ties: &[RandomOverride],
 ) -> Vec<RandomOverride> {
     let mut decisions: Vec<(ResidualScheduleKey, RandomOverride)> = Vec::new();
+    // The weather's targets tied in speed (`residual_tie_tapes`): shuffled as the weather's own
+    // handler runs (its chip's `eachEvent('Weather')`), at its place in the residual — after a
+    // Gen 2 foreseen attack's strike, before its chip (R-M11-114). The engine keys the field's
+    // handler at speed 0.
+    if let Some((order, sub_order)) = rules.residual().key(ResidualKind::Weather) {
+        for (rank, tie) in weather_ties.iter().enumerate() {
+            decisions.push(((order, std::cmp::Reverse(0), sub_order, 0, rank), *tie));
+        }
+    }
     // Moody's and Pickup's draws, by their handler's place: the log's order breaks a tie in speed
     // (`residual_tie_tape` planned it), and one holder's draws keep their own order.
     for (rank, (holder, kind, draw)) in moody.iter().enumerate() {

@@ -1,0 +1,91 @@
+{
+ "schema": 1,
+ "id": "gen2-a-future-sight-strikes-before-the-sandstorm-ties-its-targets",
+ "notes": [
+  "Gen 2: Sandslash's Future Sight strikes Porygon2 at the end of the turn, then the sandstorm chips — Porygon2 and Sandslash tied in speed, so the weather shuffles its targets as it runs, after the strike's damage roll. The replay planned the weather's tie at the residual's start, before the strike (R-M11-114; Nightly m8-gen2-singles-s1918-006)"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Porygon2",
+    "species": "Porygon2",
+    "level": 52,
+    "nature": "Hardy",
+    "moves": [
+     "Harden",
+     "Flash",
+     "Sandstorm"
+    ]
+   },
+   {
+    "label": "Igglybuff",
+    "species": "Igglybuff",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Screech"
+    ],
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Sandslash",
+    "species": "Sandslash",
+    "level": 49,
+    "nature": "Hardy",
+    "moves": [
+     "Feint Attack",
+     "Future Sight",
+     "Sandstorm"
+    ],
+    "gender": "F"
+   },
+   {
+    "label": "Hitmontop",
+    "species": "Hitmontop",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Vine Whip"
+    ]
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   43028,
+   15104,
+   553,
+   45696
+  ]
+ },
+ "script": [
+  {
+   "p1": "switch Igglybuff",
+   "p2": "switch Hitmontop"
+  },
+  {
+   "p1": "switch Porygon2",
+   "p2": "switch Sandslash"
+  },
+  {
+   "p1": "move Flash",
+   "p2": "move Future Sight"
+  },
+  {
+   "p1": "move Sandstorm",
+   "p2": "move Sandstorm"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Feint Attack"
+  }
+ ]
+}
