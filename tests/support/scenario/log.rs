@@ -873,9 +873,12 @@ pub fn extract_decisions_with(
                 if event["move"] == "move: Instruct" {
                     instructed_next = who(&event["pokemon"]);
                 } else if let (Some(action), Some(user)) = (out.last_mut(), who(&event["pokemon"]))
-                    && action.user == user
                 {
-                    action.protected = true;
+                    if action.user == user {
+                        action.protected = true;
+                    } else if action.snatched_by.as_ref() == Some(&user) {
+                        action.snatcher_protected = true;
+                    }
                 }
             }
             "activate" => {

@@ -1088,6 +1088,9 @@ pub struct ActionOracle {
     pub cute_charm_hits: Vec<usize>,
     /// Protect / Detect succeeded (`-singleturn`).
     pub protected: bool,
+    /// The protection the action's snatcher took went up (its `-singleturn`: a Gen 5 Quick Guard
+    /// Snatch took, R-M11-113).
+    pub snatcher_protected: bool,
     /// Asleep, the actor used a `sleepUsable` move (Snore, Sleep Talk): its `cant|p|slp` is
     /// part of this action, which goes ahead (DESIGN.md §42.1).
     pub slept_through: bool,
@@ -1214,6 +1217,7 @@ impl ActionOracle {
             cute_charm: None,
             cute_charm_hits: Vec::new(),
             protected: false,
+            snatcher_protected: false,
             slept_through: false,
             called: Vec::new(),
             cured: None,

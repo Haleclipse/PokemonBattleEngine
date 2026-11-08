@@ -1,0 +1,165 @@
+{
+ "schema": 1,
+ "id": "gen5-doubles-a-snatched-quick-guard-rolls-the-snatchers-stall",
+ "notes": [
+  "Gen 5 doubles: Lunatone used Quick Guard through Assist last turn; now its Snatch takes Latias's Quick Guard, which rolls Lunatone's stall chance (1/2) and goes up (`-singleturn|p1b: Lunatone|Quick Guard`), so Lunatone keeps its `stall`. The replay planned the action's own user's roll only; the snatcher's went unplanned and failed (R-M11-113; cloud Nightly 42509631536, m8-gen5-doubles-s103100-018)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "doubles",
+  "format": "gen5doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Elgyem",
+    "species": "Elgyem",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Tailwind",
+     "Quick Guard",
+     "Pain Split"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Lunatone",
+    "species": "Lunatone",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Snatch",
+     "Quick Guard",
+     "Spite",
+     "Assist"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Musharna",
+    "species": "Musharna",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Roost",
+     "Quick Guard",
+     "Curse",
+     "Assist"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Krookodile",
+    "species": "Krookodile",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Defense Curl",
+     "Quick Guard",
+     "Stealth Rock"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Meowth",
+    "species": "Meowth",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sandstorm",
+     "Torment",
+     "Assist"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Crustle",
+    "species": "Crustle",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Magic Coat",
+     "Quick Guard",
+     "Reflect",
+     "Assist"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Latias",
+    "species": "Latias",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Taunt",
+     "Quick Guard",
+     "Assist"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   11100,
+   56311,
+   57332,
+   8288
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Pain Split 1, move Spite 2",
+   "p2": "move Torment 1, move Reflect"
+  },
+  {
+   "p1": "switch Musharna, move Assist",
+   "p2": "switch Latias, move Assist"
+  },
+  {
+   "p1": "move 4, move 1",
+   "p2": "move 3, move 1"
+  },
+  {
+   "p1": "move 1, move 1",
+   "p2": "move 1 2, move 2"
+  },
+  {
+   "p1": "move 2, move 1",
+   "p2": "move 2, move 3"
+  },
+  {
+   "p1": "switch Elgyem, move Assist",
+   "p2": "switch Meowth, move Assist"
+  },
+  {
+   "p1": "move 1, move 1",
+   "p2": "move 2 1, move 1"
+  },
+  {
+   "p1": "move 1, move 2",
+   "p2": "move 3, move 2"
+  },
+  {
+   "p1": "move Tailwind, move Spite 1",
+   "p2": "move Sandstorm, move Reflect"
+  },
+  {
+   "p1": "switch Musharna, move Assist",
+   "p2": "switch Latias, move Assist"
+  },
+  {
+   "p1": "move Quick Guard, move Snatch",
+   "p2": "move Quick Guard, move Magic Coat"
+  }
+ ]
+}

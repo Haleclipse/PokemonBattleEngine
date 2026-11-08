@@ -1122,6 +1122,27 @@ pub(super) fn tape_template(
                 oracle.protected || !oracle.failed,
             )));
         }
+        // A stalling move Snatch took (a Gen 5 guard): the snatcher's own roll, 1 / its stall
+        // counter, while somebody else — not the action's user, whose action this is — still
+        // acts; it held when the snatcher's `-singleturn` came (R-M11-113).
+        if rolls_stall(rules, move_def)
+            && let Some(snatcher) = oracle
+                .snatched_by
+                .as_ref()
+                .and_then(|who| who_to_id(state, who))
+            && state
+                .pokemon(snatcher)
+                .is_some_and(|p| p.volatiles.stall_counter().is_some())
+            && state
+                .pending_movers
+                .iter()
+                .any(|mover| *mover != snatcher && *mover != actor)
+        {
+            tape.push(Some(RandomOverride::bool(
+                RandomRequestKind::ProtectSuccess,
+                oracle.snatcher_protected,
+            )));
+        }
         if move_def.primary_effect == PrimaryEffect::Damage {
             // Hit sequence per target, in target order: the count is fixed to what Showdown
             // reported (a sequence cut short by a faint reports the hits that landed, which
