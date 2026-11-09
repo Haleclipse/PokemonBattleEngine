@@ -274,8 +274,8 @@ pub fn extract_decisions_with(
     // The Pokémon a switch (not a drag) brought in since the last move: its switch-in is not
     // part of an action.
     let mut entrant: Option<Who> = None;
-    // `-activate|target|move: Pursuit`: the next Pursuit strikes a Pokémon as it switches out.
-    let mut pursuit_intercept = false;
+    // `-activate|target|move: Pursuit`: the next Pursuit strikes this Pokémon as it switches out.
+    let mut pursuit_intercept: Option<Who> = None;
     // A berry Fling threw and the Pokémon it struck, who eats it with no `-enditem` of its own:
     // the thrower's `-enditem|user|X Berry|[from] move: Fling` only follows at the `Update`, so
     // it is read ahead as the move starts.
@@ -532,7 +532,7 @@ pub fn extract_decisions_with(
                     action.z_status = z_anim.is_some();
                     action.move_name = Some(z_anim.map_or(logged.clone(), str::to_owned));
                     action.intercepted =
-                        std::mem::take(&mut pursuit_intercept) && text(&event["move"]) == "Pursuit";
+                        pursuit_intercept.take().is_some() && text(&event["move"]) == "Pursuit";
                     pursuit_held_switch =
                         action.intercepted.then(|| who(&event["target"])).flatten();
                     action.move_target = who(&event["target"]);
@@ -677,6 +677,11 @@ pub fn extract_decisions_with(
                     let instructed = instructed_next.as_ref() == Some(&user);
                     if instructed {
                         instructed_next = None;
+                    }
+                    // An intercepting Pursuit whose user could not move (`cant|user|par`): the
+                    // switch it held up still goes on inside this step (R-M11-118).
+                    if let Some(pursued) = pursuit_intercept.take() {
+                        pursuit_held_switch = Some(pursued);
                     }
                     let action = current(&mut out, user);
                     action.cant = Some(reason);
@@ -1005,7 +1010,7 @@ pub fn extract_decisions_with(
                     action.focus_band_held.push((holder, hits));
                 }
                 if what == "move: Pursuit" {
-                    pursuit_intercept = true;
+                    pursuit_intercept = args.first().and_then(who_from_text);
                 }
                 // Snatch taking the move in progress: what its snatcher does with it is this
                 // action's (R-M11-100).
