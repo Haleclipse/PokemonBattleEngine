@@ -412,6 +412,81 @@ pub(super) fn frisk_draws(
         .collect()
 }
 
+/// Gen 4-5 Frisk starting as the action's move hands it over (R-M11-123): its foe drawn among
+/// two or more (`side.randomFoe()`, a `Sample`) — the one holding the item the action's
+/// `-item||<item>|[from] ability: Frisk|[of] <holder>` line names (`ActionOracle::frisked`), or,
+/// with no line after a Transform that copied Frisk, one holding nothing (optional: the copy
+/// may not have started).
+pub(super) fn handed_over_frisk_draws(
+    rules: &ResolvedRules,
+    dex: &ResolvedDex,
+    state: &BattleState,
+    actor: PokemonId,
+    move_def: Option<&ResolvedMove>,
+    fates: &[(Option<PokemonId>, TargetFate)],
+    oracle: &ActionOracle,
+) -> Vec<RandomOverride> {
+    if !rules.conditions().frisk_one_random_foe {
+        return Vec::new();
+    }
+    let foes_of = |holder: PokemonId| -> Vec<PokemonId> {
+        let Some(side) = state.pokemon(holder).map(|p| p.side.other()) else {
+            return Vec::new();
+        };
+        state
+            .side(side)
+            .active
+            .iter()
+            .flatten()
+            .copied()
+            .filter(|foe| state.pokemon(*foe).is_some_and(|p| !p.is_fainted()))
+            .collect()
+    };
+    let mut draws = Vec::new();
+    let mut named = Vec::new();
+    for (who, item) in &oracle.frisked {
+        let Some(holder) = who_to_id(state, who) else {
+            continue;
+        };
+        named.push(holder);
+        let foes = foes_of(holder);
+        if foes.len() < 2 {
+            continue;
+        }
+        let item = dex.item_by_name(item).map(|item| item.id);
+        let index = foes
+            .iter()
+            .position(|foe| state.pokemon(*foe).and_then(|p| p.held_item) == item)
+            .unwrap_or(0);
+        draws.push(RandomOverride::range(
+            RandomRequestKind::Sample,
+            index as u16,
+        ));
+    }
+    let frisk = pokemon_battle_engine::ids::AbilityId::FRISK;
+    let copied_frisk = move_def.is_some_and(|m| m.id == MoveId::TRANSFORM)
+        && !named.contains(&actor)
+        && state
+            .pokemon(actor)
+            .is_some_and(|user| pokemon_battle_engine::engine::raw_ability(user) != frisk)
+        && fates
+            .iter()
+            .find_map(|(target, fate)| (*fate == TargetFate::Hit).then_some(*target).flatten())
+            .and_then(|target| state.pokemon(target))
+            .is_some_and(|target| pokemon_battle_engine::engine::raw_ability(target) == frisk);
+    if copied_frisk {
+        let foes = foes_of(actor);
+        if foes.len() >= 2
+            && let Some(index) = foes
+                .iter()
+                .position(|foe| state.pokemon(*foe).is_some_and(|p| p.held_item.is_none()))
+        {
+            draws.push(RandomOverride::range(RandomRequestKind::Sample, index as u16).optional());
+        }
+    }
+    draws
+}
+
 /// The entrants' switch-in ability draws (Trace's foe, Frisk's), in the order the engine runs
 /// their switch-ins: fastest first (`engine::entry_speed`), one entrant's own draws in their
 /// order (a Trace that copied Frisk draws for the copy after its own). Both are `Sample`s, so

@@ -2123,6 +2123,10 @@ pub(super) fn tape_template(
             tape.push(Some(decision));
         }
     }
+    // Gen 4-5 Frisk starting as the move hands it over: its foe's draw (R-M11-123).
+    for decision in handed_over_frisk_draws(rules, dex, state, actor, move_def, fates, oracle) {
+        tape.push(Some(decision));
+    }
     // Magician (the user's `onAfterMoveSecondarySelf`, once the move is over): the Pokémon it hit
     // that share a handler speed each draw a SpeedTie decision (Showdown `speedSort`); the one
     // the item came from goes first. Optional: the ability may not run (an item in hand, a gem).

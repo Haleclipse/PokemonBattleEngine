@@ -33,6 +33,21 @@ use crate::support::{capture, compare_json};
 
 use super::*;
 
+/// Whether the action's move hands an ability over, which starts there (Skill Swap, Role Play,
+/// Entrainment, Doodle, Transform; Wandering Spirit's trade): the switch-in abilities' draws
+/// (Forewarn's, Gen 4-5 Frisk's) are the action's.
+fn hands_over_an_ability(action: &ActionOracle) -> bool {
+    action.ability_traded
+        || matches!(
+            action
+                .called
+                .last()
+                .map(|called| called.name.as_str())
+                .or(action.move_name.as_deref()),
+            Some("Skill Swap" | "Role Play" | "Entrainment" | "Doodle" | "Transform")
+        )
+}
+
 pub(super) fn current(out: &mut Vec<ActionOracle>, user: Who) -> &mut ActionOracle {
     let fresh = match out.last() {
         None => true,
@@ -907,17 +922,7 @@ pub fn extract_decisions_with(
                 }
                 if what == "ability: Forewarn"
                     && let Some(action) = out.last_mut()
-                    && (action.ability_traded
-                        || matches!(
-                            action
-                                .called
-                                .last()
-                                .map(|called| called.name.as_str())
-                                .or(action.move_name.as_deref()),
-                            Some(
-                                "Skill Swap" | "Role Play" | "Entrainment" | "Doodle" | "Transform"
-                            )
-                        ))
+                    && hands_over_an_ability(action)
                 {
                     action.forewarned.push(
                         args.iter()
@@ -1811,6 +1816,16 @@ pub fn extract_decisions_with(
                     && let Some(action) = out.last_mut()
                 {
                     action.magician_from = of.clone();
+                }
+                // `-item||<item>|[from] ability: Frisk|[of] holder`: a Gen 4-5 Frisk the action's
+                // move handed over (R-M11-123).
+                if from("[from] ability: Frisk")
+                    && let Some(holder) = of.clone()
+                    && let Some(item) = args.get(1).and_then(Value::as_str)
+                    && let Some(action) = out.last_mut()
+                    && hands_over_an_ability(action)
+                {
+                    action.frisked.push((holder, item.to_string()));
                 }
                 if from("[from] move: Thief")
                     && let Some(target) = of

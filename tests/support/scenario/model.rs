@@ -1161,6 +1161,10 @@ pub struct ActionOracle {
     /// Forewarn|<move>|[of] <foe>` line's arguments. Its draw is the action's; an entrant's is
     /// `entrant_ability_tape`'s.
     pub forewarned: Vec<Vec<String>>,
+    /// Gen 4-5 Frisk naming an item as an ability the action's move handed over starts (Transform
+    /// copying it, R-M11-123): each `-item||<item>|[from] ability: Frisk|[of] <holder>` line's
+    /// holder and item. Its draw is the action's; an entrant's is `entrant_ability_tape`'s.
+    pub frisked: Vec<(Who, String)>,
     /// The Lightning Rod / Storm Drain holder that drew the action's own move
     /// (`-activate|holder|ability: Storm Drain` right after its `move` line, which names the
     /// holder): the target the move was aimed at first is another (R-M11-7).
@@ -1237,6 +1241,7 @@ impl ActionOracle {
             fatigue: false,
             raging_after: None,
             forewarned: Vec::new(),
+            frisked: Vec::new(),
             redirected_by: None,
             danced: false,
             instructed: false,

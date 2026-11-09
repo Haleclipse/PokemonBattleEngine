@@ -1,0 +1,157 @@
+{
+ "schema": 1,
+ "id": "gen5-doubles-frisk-copied-by-transform-draws-its-foe-in-the-move",
+ "notes": [
+  "Gen 5 Doubles: Seaking transforms into Stunky and copies its Frisk, which starts at once (`setAbility`'s `Start`): Gen 5 Frisk draws one of its two foes (`side.randomFoe()`) and names Unown's Black Belt without naming Unown (`-item||Black Belt|[from] ability: Frisk|[of] p2b: Seaking`). The replay planned Frisk's draw for entrants alone, so the engine's Frisk picked itemless Stunky and the observers never learned Seaking's Frisk (R-M11-123; probe130, m8-gen5-doubles-s1943-001)"
+ ],
+ "battle": {
+  "generation": 5,
+  "mode": "doubles",
+  "format": "gen5doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Omastar",
+    "species": "Omastar",
+    "level": 55,
+    "nature": "Hardy",
+    "moves": [
+     "Wood Hammer",
+     "Transform",
+     "Take Down"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Xatu",
+    "species": "Xatu",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Head Charge",
+     "Transform",
+     "Double-Edge"
+    ],
+    "ability": "Imposter",
+    "gender": "M"
+   },
+   {
+    "label": "Unown",
+    "species": "Unown",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Transform"
+    ],
+    "ability": "Run Away",
+    "item": "Black Belt"
+   },
+   {
+    "label": "Stunky",
+    "species": "Stunky",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Transform"
+    ],
+    "ability": "Frisk",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Pansear",
+    "species": "Pansear",
+    "level": 53,
+    "nature": "Hardy",
+    "moves": [
+     "Blast Burn",
+     "Transform",
+     "Roar of Time"
+    ],
+    "ability": "Shed Skin",
+    "gender": "F"
+   },
+   {
+    "label": "Onix",
+    "species": "Onix",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Giga Impact",
+     "Twineedle"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Seaking",
+    "species": "Seaking",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sludge",
+     "Transform",
+     "Relic Song"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Haxorus",
+    "species": "Haxorus",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Transform"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   6794,
+   50716,
+   60070,
+   26922
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1 1, move 1 2",
+   "p2": "move 1 1, move 1 2"
+  },
+  {
+   "p1": "move 2 1, move 1",
+   "p2": "move 1, move 1"
+  },
+  {
+   "p1": "move 3 2, move 3 1",
+   "p2": "move 3 1, move 2 2"
+  },
+  {
+   "p2": "pass, switch Seaking"
+  },
+  {
+   "p1": "move 1, move 1",
+   "p2": "move 1, move 3"
+  },
+  {
+   "p1": "move 1 2, move 1 1",
+   "p2": "move 1 1, move 1 2"
+  },
+  {
+   "p1": "switch Unown, switch Stunky",
+   "p2": "switch Haxorus, pass"
+  },
+  {
+   "p1": "move Transform 2, move Transform 1",
+   "p2": "move Transform 1, move Transform 2"
+  }
+ ]
+}
