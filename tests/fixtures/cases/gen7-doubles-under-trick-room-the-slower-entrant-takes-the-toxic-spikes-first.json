@@ -1,0 +1,441 @@
+{
+ "schema": 1,
+ "id": "gen7-doubles-under-trick-room-the-slower-entrant-takes-the-toxic-spikes-first",
+ "notes": [
+  "Gen 7 Doubles OU: under Trick Room, Floatzel's Surf knocks out Gardevoir and Sealeo together, and P2 sends Necrozma and Weedle into its Toxic Spikes at once. Showdown's `insertChoice` refreshes each entrant's speed with `getActionSpeed` (Trick Room inverted) as its `runSwitch` is queued, so the slower Weedle's `SwitchIn` comes first: it absorbs the Toxic Spikes and Necrozma enters unpoisoned. The engine ordered the entrants by their plain speed (R-M11-120; the R-M11-119 chain Nightly, m9-gen7doublesou-s493-012)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublesou"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Spoink",
+    "species": "Spoink",
+    "ability": "Own Tempo",
+    "moves": [
+     "Shock Wave",
+     "Future Sight",
+     "Light Screen",
+     "Rest"
+    ],
+    "nature": "Rash",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 152,
+     "atk": 96,
+     "def": 0,
+     "spa": 4,
+     "spd": 104,
+     "spe": 152
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 21,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "hpType": "Fighting"
+   },
+   {
+    "label": "Nick35",
+    "species": "Shelmet",
+    "ability": "Shell Armor",
+    "moves": [
+     "Hidden Power",
+     "Endure",
+     "Giga Drain",
+     "Toxic Spikes"
+    ],
+    "nature": "Brave",
+    "gender": "M",
+    "shiny": true,
+    "level": 100,
+    "evs": {
+     "hp": 0,
+     "atk": 0,
+     "def": 80,
+     "spa": 104,
+     "spd": 72,
+     "spe": 252
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 19,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "hpType": "Water"
+   },
+   {
+    "label": "Salazzle",
+    "species": "Salazzle",
+    "ability": "Oblivious",
+    "moves": [
+     "Nasty Plot",
+     "Payback"
+    ],
+    "nature": "Brave",
+    "gender": "",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 148,
+     "atk": 0,
+     "def": 144,
+     "spa": 160,
+     "spd": 0,
+     "spe": 56
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Zigzagoon",
+    "species": "Zigzagoon",
+    "ability": "Gluttony",
+    "moves": [
+     "Sleep Talk"
+    ],
+    "nature": "Modest",
+    "gender": "M",
+    "shiny": false,
+    "level": 4,
+    "evs": {
+     "hp": 72,
+     "atk": 164,
+     "def": 0,
+     "spa": 48,
+     "spd": 224,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 129
+   },
+   {
+    "label": "Floatzel",
+    "species": "Floatzel",
+    "ability": "Water Veil",
+    "moves": [
+     "Rest",
+     "Fury Swipes",
+     "Liquidation",
+     "Surf"
+    ],
+    "nature": "Jolly",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 84,
+     "atk": 28,
+     "def": 124,
+     "spa": 124,
+     "spd": 52,
+     "spe": 96
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 28,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   }
+  ],
+  "p2": [
+   {
+    "label": "Sealeo",
+    "species": "Sealeo",
+    "item": "Sitrus Berry",
+    "ability": "Ice Body",
+    "moves": [
+     "Aurora Beam",
+     "Captivate",
+     "Earthquake",
+     "Yawn"
+    ],
+    "nature": "Adamant",
+    "gender": "F",
+    "shiny": false,
+    "level": 85,
+    "evs": {
+     "hp": 44,
+     "atk": 0,
+     "def": 192,
+     "spa": 96,
+     "spd": 176,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 90
+   },
+   {
+    "label": "Jangmo-o",
+    "species": "Jangmo-o",
+    "ability": "Soundproof",
+    "moves": [
+     "Bulk Up"
+    ],
+    "nature": "Quiet",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 72,
+     "atk": 0,
+     "def": 152,
+     "spa": 16,
+     "spd": 148,
+     "spe": 120
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Nick74",
+    "species": "Weedle",
+    "ability": "Run Away",
+    "moves": [
+     "Poison Sting"
+    ],
+    "nature": "Lonely",
+    "gender": "F",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 4,
+     "atk": 180,
+     "def": 0,
+     "spa": 120,
+     "spd": 128,
+     "spe": 76
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "hpType": "Fire"
+   },
+   {
+    "label": "Drilbur",
+    "species": "Drilbur",
+    "ability": "Mold Breaker",
+    "moves": [
+     "Rock Tomb",
+     "Return"
+    ],
+    "nature": "Jolly",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 100,
+     "atk": 0,
+     "def": 40,
+     "spa": 144,
+     "spd": 104,
+     "spe": 120
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 29,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Necrozma",
+    "species": "Necrozma",
+    "ability": "Prism Armor",
+    "moves": [
+     "Power Gem"
+    ],
+    "nature": "Adamant",
+    "gender": "",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 160,
+     "atk": 32,
+     "def": 16,
+     "spa": 0,
+     "spd": 236,
+     "spe": 64
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 19,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Nick50",
+    "species": "Gardevoir",
+    "ability": "Synchronize",
+    "moves": [
+     "Thunder Punch",
+     "Echoed Voice",
+     "Shadow Sneak",
+     "Trick Room"
+    ],
+    "nature": "Gentle",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 124,
+     "atk": 0,
+     "def": 196,
+     "spa": 0,
+     "spd": 92,
+     "spe": 96
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   }
+  ]
+ },
+ "preview": {
+  "p1": "team 145326",
+  "p2": "team 614253"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   32730,
+   493,
+   1012,
+   31
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Shock Wave 1, move Sleep Talk",
+   "p2": "move Thunder Punch 1, move Aurora Beam 2"
+  },
+  {
+   "p1": "pass, switch 3"
+  },
+  {
+   "p1": "move Future Sight 2, move Fury Swipes 1",
+   "p2": "move Echoed Voice 1, move Captivate"
+  },
+  {
+   "p1": "move Light Screen, move Liquidation 2",
+   "p2": "move Shadow Sneak 2, move Earthquake"
+  },
+  {
+   "p1": "move Rest, move Surf",
+   "p2": "move Trick Room, move Yawn 1"
+  },
+  {
+   "p1": "move Shock Wave 1, move Rest",
+   "p2": "move Thunder Punch 2, move Aurora Beam 1"
+  },
+  {
+   "p1": "switch 4, move Fury Swipes 2",
+   "p2": "switch 3, move Captivate"
+  },
+  {
+   "p1": "move Nasty Plot, move Liquidation 1",
+   "p2": "move Rock Tomb 2, move Earthquake"
+  },
+  {
+   "p1": "move Payback 2, move Surf",
+   "p2": "move Return 1, move Yawn 2"
+  },
+  {
+   "p1": "switch 4, pass",
+   "p2": "switch 3, pass"
+  },
+  {
+   "p1": "move Rest, move Rest",
+   "p2": "move Trick Room, move Aurora Beam 1"
+  },
+  {
+   "p1": "move Shock Wave 1, move Fury Swipes 2",
+   "p2": "move Thunder Punch 2, move Captivate"
+  },
+  {
+   "p1": "move Future Sight 1, move Liquidation 2",
+   "p2": "move Echoed Voice 1, move Earthquake"
+  },
+  {
+   "p1": "switch 5, move Surf",
+   "p2": "switch 4, move Yawn 2"
+  },
+  {
+   "p1": "move Giga Drain 1, move Rest",
+   "p2": "move Bulk Up, move Aurora Beam 1"
+  },
+  {
+   "p2": "switch 4, pass"
+  },
+  {
+   "p1": "move Toxic Spikes, move Fury Swipes 2",
+   "p2": "move Trick Room, move Captivate"
+  },
+  {
+   "p1": "move Hidden Power 1, move Liquidation 2",
+   "p2": "move Thunder Punch 2, move Earthquake"
+  },
+  {
+   "p1": "move Endure, move Surf",
+   "p2": "move Echoed Voice 1, move Yawn 2"
+  },
+  {
+   "p2": "switch 5, switch 6"
+  }
+ ]
+}

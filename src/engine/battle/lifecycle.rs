@@ -4,19 +4,21 @@
 //! with its tie draws, the `Update` event, Gen 3's status berries before a request.
 
 use super::BattleEngine;
-use crate::engine::stats::action_speed;
+use crate::engine::stats::current_handler_speed;
 use crate::engine::{BattleContext, PendingFaints, TraceEvent};
 use crate::ids::PokemonId;
 use crate::state::RandomRequestKind;
 
 impl BattleEngine {
-    /// Fastest first; Pokémon sharing a speed draw one SpeedTie decision each (higher first),
-    /// everyone else draws nothing, so the PRNG only advances on a real tie. The draws are
-    /// traced (`SwitchInTiesDrawn`).
+    /// Fastest first — slowest first under Trick Room: Showdown's `insertChoice` refreshes each
+    /// entrant's `speed` (`getActionSpeed`) as its `runSwitch` is queued, and the `SwitchIn`
+    /// handlers go by it (R-M11-120). Pokémon sharing a speed draw one SpeedTie decision each
+    /// (higher first), everyone else draws nothing, so the PRNG only advances on a real tie.
+    /// The draws are traced (`SwitchInTiesDrawn`).
     pub(super) fn speed_ordered(&mut self, pokemon: Vec<PokemonId>) -> Vec<PokemonId> {
         let entries = pokemon
             .into_iter()
-            .map(|id| (id, action_speed(&self.state, &self.rules, id, None)))
+            .map(|id| (id, current_handler_speed(&self.state, &self.rules, id)))
             .collect();
         self.tie_ordered(entries, |tied| TraceEvent::SwitchInTiesDrawn { tied })
     }
