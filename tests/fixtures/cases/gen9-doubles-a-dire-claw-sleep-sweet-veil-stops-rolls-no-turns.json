@@ -1,0 +1,104 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-a-dire-claw-sleep-sweet-veil-stops-rolls-no-turns",
+ "notes": [
+  "Gen 9 Doubles: Lampent's Dire Claw draws sleep for Torkoal, and Cutiefly's Sweet Veil stops it (`-block|p2b: Torkoal|ability: Sweet Veil|[of] p2a: Cutiefly`): the status is never set, so no sleep duration is drawn. The replay counted the block as the sleep shown and planned its turns as well (R-M11-124; the R-M11-123 chain Nightly, m8-gen9-doubles-s1945-001)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Lampent",
+    "species": "Lampent",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Zap Cannon",
+     "Thunder Fang",
+     "Dire Claw"
+    ],
+    "ability": "Quick Draw",
+    "gender": "M"
+   },
+   {
+    "label": "Regidrago",
+    "species": "Regidrago",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Bounce",
+     "Tri Attack"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Slowpoke",
+    "species": "Slowpoke",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Overheat"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Torkoal",
+    "species": "Torkoal",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Hammer Arm",
+     "Clanging Scales",
+     "Dire Claw"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Cutiefly",
+    "species": "Cutiefly",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Armor Cannon",
+     "Tri Attack"
+    ],
+    "ability": "Sweet Veil",
+    "gender": "M"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   10580,
+   32344,
+   54311,
+   5980
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Zap Cannon 1, move Bounce 2",
+   "p2": "move Overheat 1, move Hammer Arm 2"
+  },
+  {
+   "p2": "switch Cutiefly, pass"
+  },
+  {
+   "p1": "move 2 1, move 1",
+   "p2": "move 1 1, move 2"
+  },
+  {
+   "p1": "move Dire Claw 2, move Tri Attack 1",
+   "p2": "move Tri Attack 2, move Dire Claw 1"
+  }
+ ]
+}

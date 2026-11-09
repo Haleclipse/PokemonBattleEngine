@@ -1802,8 +1802,12 @@ pub(super) fn tape_template(
                                     RandomOverride::range(RandomRequestKind::Sample, pick),
                                 );
                             }
-                            // A sleep it put the target to rolls its duration.
+                            // A sleep it put the target to rolls its duration — not one drawn and
+                            // stopped (Sweet Veil's `-block` shows it, but no `-status`, R-M11-124).
                             if shown.is_some_and(|index| pool[index] == NonVolatileStatus::Sleep)
+                                && oracle.applied.iter().any(|(who, kind)| {
+                                    kind == "status:slp" && who_to_id(state, who) == Some(affected)
+                                })
                                 && let Some(duration) =
                                     duration_for(Some(affected), DurationKind::Sleep)
                             {
