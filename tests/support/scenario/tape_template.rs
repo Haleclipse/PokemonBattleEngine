@@ -1544,6 +1544,30 @@ pub(super) fn tape_template(
                             .iter()
                             .any(|(holder, hp)| *holder == id && hp.is_some_and(|hp| hp > 0))
                     });
+                    // The berries this hit fed the target or the user (`berry_draws`): one the
+                    // move itself stole and ate (Pluck, R-M9-48) or threw (Fling, R-M10-3) draws
+                    // in its `onHit` — ahead of the move's `self` and secondaries (King's Rock's
+                    // flinch, R-M11-119) as of the hit's reactions; any other after the reactions.
+                    let mut berries_after_reactions = Vec::new();
+                    for (who, hits, draw) in &oracle.berry_draws {
+                        let eater = who_to_id(state, who);
+                        if index.is_some_and(|i| i + 1 == *hits)
+                            && (eater == *target || eater == Some(actor))
+                            && !berry_confusions_planned.contains(&eater)
+                            && let Some(decision) = berry_decision(*draw, || {
+                                duration_for(eater, DurationKind::Confusion)
+                            })
+                        {
+                            berry_confusions_planned.push(eater);
+                            if oracle.stolen_berry.as_ref() == Some(who)
+                                || oracle.flung_berry.as_ref() == Some(who)
+                            {
+                                staged.push(Stage::Effect, decision);
+                            } else {
+                                berries_after_reactions.push(decision);
+                            }
+                        }
+                    }
                     // The move's own `self` lands with the hit, before its secondaries (Showdown
                     // `selfDrops`): a multi-hit move's on every hit, a single-hit move's at the
                     // first that went through — a spread move's before any target's secondaries
@@ -2006,27 +2030,8 @@ pub(super) fn tape_template(
                     // A berry the `Update` after this hit fed the target (or the user, hurt by the
                     // hit's reaction) draws after the reactions: a confusion berry's duration,
                     // Starf Berry's stat.
-                    for (who, hits, draw) in &oracle.berry_draws {
-                        let eater = who_to_id(state, who);
-                        if index.is_some_and(|i| i + 1 == *hits)
-                            && (eater == *target || eater == Some(actor))
-                            && !berry_confusions_planned.contains(&eater)
-                            && let Some(decision) = berry_decision(*draw, || {
-                                duration_for(eater, DurationKind::Confusion)
-                            })
-                        {
-                            berry_confusions_planned.push(eater);
-                            // A berry the move itself stole and ate (Pluck, R-M9-48) or threw
-                            // (Fling, R-M10-3) draws in its `onHit`, ahead of the hit's reactions.
-                            let stage = if oracle.stolen_berry.as_ref() == Some(who)
-                                || oracle.flung_berry.as_ref() == Some(who)
-                            {
-                                Stage::Effect
-                            } else {
-                                Stage::Reaction
-                            };
-                            staged.push(stage, decision);
-                        }
+                    for decision in berries_after_reactions {
+                        staged.push(Stage::Reaction, decision);
                     }
                     staged.end_hit();
                 }
