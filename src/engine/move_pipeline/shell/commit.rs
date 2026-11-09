@@ -83,26 +83,7 @@ impl MovePipeline<'_> {
                 own.pp = (own.pp + 1) % 64;
             }
         }
-        // The slot the PP comes off (`PpRules::moves_slot`): the action's, Gen 1's last pick from
-        // the menu, or Gen 4+'s first slot holding the action's move (issues.md I170).
-        let pp_slot = match self.rules.conditions.pp.moves_slot {
-            MovesSlot::TheLastSelected => self
-                .state
-                .pokemon(actor)
-                .map(|p| self.state.side(p.side).last_selected_move_slot)
-                .and_then(|index| MoveSlot::new(index as u8))
-                .unwrap_or(slot),
-            MovesSlot::TheChosen => slot,
-            MovesSlot::TheFirstHoldingIt => self
-                .state
-                .pokemon(actor)
-                .and_then(|p| {
-                    let id = p.move_slots().get(slot.index())?.move_id;
-                    p.move_slots().iter().position(|other| other.move_id == id)
-                })
-                .and_then(|index| MoveSlot::new(index as u8))
-                .unwrap_or(slot),
-        };
+        let pp_slot = self.paying_slot(actor, slot);
         let remaining_pp = {
             let pokemon = self
                 .state
@@ -302,5 +283,28 @@ impl MovePipeline<'_> {
             }
         }
         Ok(ControlFlow::Continue(continuing_lock))
+    }
+
+    /// The slot the PP comes off (`PpRules::moves_slot`): the action's, Gen 1's last pick from
+    /// the menu, or Gen 4+'s first slot holding the action's move (issues.md I170).
+    pub(super) fn paying_slot(&self, actor: PokemonId, slot: MoveSlot) -> MoveSlot {
+        match self.rules.conditions.pp.moves_slot {
+            MovesSlot::TheLastSelected => self
+                .state
+                .pokemon(actor)
+                .map(|p| self.state.side(p.side).last_selected_move_slot)
+                .and_then(|index| MoveSlot::new(index as u8))
+                .unwrap_or(slot),
+            MovesSlot::TheChosen => slot,
+            MovesSlot::TheFirstHoldingIt => self
+                .state
+                .pokemon(actor)
+                .and_then(|p| {
+                    let id = p.move_slots().get(slot.index())?.move_id;
+                    p.move_slots().iter().position(|other| other.move_id == id)
+                })
+                .and_then(|index| MoveSlot::new(index as u8))
+                .unwrap_or(slot),
+        }
     }
 }

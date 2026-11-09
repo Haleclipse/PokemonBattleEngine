@@ -897,7 +897,7 @@ impl<'a> MovePipeline<'a> {
         // Showdown `runMove`: a move with no PP left as its turn comes (Spite or Eerie Spell took
         // it after it was chosen) does not happen — `cant|user|nopp|move`, a failure for Stomping
         // Tantrum, before anything the move itself does (§15.15). A locked turn spends none.
-        if !struggling && self.out_of_pp(actor, move_id) {
+        if !struggling && self.out_of_pp(actor, slot, move_id) {
             self.trace.push(TraceEvent::MoveFailed {
                 actor,
                 move_id,
@@ -1420,8 +1420,11 @@ impl<'a> MovePipeline<'a> {
     /// The encored move's slot when an Encore now locks the actor onto another move than the
     /// one it chose.
     /// Whether `move_id` comes with no PP left on a turn that would spend some (not a two-turn
-    /// move's attack, a hard lock's later turn or Gen 1's binding lock).
-    fn out_of_pp(&self, actor: PokemonId, move_id: MoveId) -> bool {
+    /// move's attack, a hard lock's later turn or Gen 1's binding lock): in the slot that would
+    /// pay (`paying_slot`) — Gen 1's last pick, Gen 2-3's own slot, not the first holding the
+    /// move (a mimicked Strength spent, the slot of the Strength a Transform brought pays on,
+    /// R-M11-122).
+    fn out_of_pp(&self, actor: PokemonId, slot: MoveSlot, move_id: MoveId) -> bool {
         let Some(pokemon) = self.state.pokemon(actor) else {
             return false;
         };
@@ -1432,9 +1435,7 @@ impl<'a> MovePipeline<'a> {
             || pokemon.volatiles.partial_trapping_lock().is_some();
         !locked
             && pokemon
-                .move_slots()
-                .iter()
-                .find(|slot| slot.move_id == move_id)
+                .move_slot(self.paying_slot(actor, slot))
                 .is_some_and(|slot| slot.pp == 0)
     }
 

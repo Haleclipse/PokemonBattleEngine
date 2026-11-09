@@ -1,0 +1,344 @@
+{
+ "schema": 1,
+ "id": "gen1-the-second-strength-pays-once-the-mimicked-one-runs-dry",
+ "notes": [
+  "Gen 1 Ubers: Venusaur, transformed into Onix (Take Down, Earthquake, Mimic, Strength), mimics Strength into its third slot and spends it; then it picks the fourth slot's Strength. The gen1 `runMove` has no `nopp` check and `deductPP` takes the PP off `side.lastSelectedMoveSlot`, so the fourth slot pays and Strength goes out. The engine asked the first slot holding Strength whether any PP was left and stopped the move (`cant nopp`) (R-M11-122; probe125, m9-gen1ubers-s495-002)"
+ ],
+ "battle": {
+  "generation": 1,
+  "mode": "singles",
+  "format": "gen1ubers"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Pikachu",
+    "species": "Pikachu",
+    "ability": "",
+    "moves": [
+     "Seismic Toss",
+     "Mimic",
+     "Thunder Wave"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": false,
+    "level": 37
+   },
+   {
+    "label": "Golbat",
+    "species": "Golbat",
+    "ability": "",
+    "moves": [
+     "Hyper Beam",
+     "Toxic",
+     "Mega Drain",
+     "Razor Wind"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": false,
+    "level": 74
+   },
+   {
+    "label": "Wartortle",
+    "species": "Wartortle",
+    "ability": "",
+    "moves": [
+     "Bide"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": false,
+    "level": 100
+   },
+   {
+    "label": "Growlithe",
+    "species": "Growlithe",
+    "ability": "",
+    "moves": [
+     "Rage"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": false,
+    "level": 59
+   },
+   {
+    "label": "Starmie",
+    "species": "Starmie",
+    "ability": "",
+    "moves": [
+     "Swift"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": false,
+    "level": 51
+   },
+   {
+    "label": "Nick82",
+    "species": "Venusaur",
+    "ability": "",
+    "moves": [
+     "Sleep Powder",
+     "Tackle",
+     "Growth",
+     "Mimic"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": false,
+    "level": 100
+   }
+  ],
+  "p2": [
+   {
+    "label": "Nick68",
+    "species": "Tangela",
+    "ability": "",
+    "moves": [
+     "Mimic",
+     "Vine Whip",
+     "Solar Beam"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": false,
+    "level": 100,
+    "happiness": 241
+   },
+   {
+    "label": "Ditto",
+    "species": "Ditto",
+    "ability": "",
+    "moves": [
+     "Transform"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": false,
+    "level": 100
+   },
+   {
+    "label": "Onix",
+    "species": "Onix",
+    "ability": "",
+    "moves": [
+     "Take Down",
+     "Earthquake",
+     "Mimic",
+     "Strength"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": true,
+    "level": 100,
+    "happiness": 14
+   },
+   {
+    "label": "Gengar",
+    "species": "Gengar",
+    "ability": "",
+    "moves": [
+     "Thunderbolt"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": false,
+    "level": 96
+   }
+  ]
+ },
+ "preview": {
+  "p1": "team 316524",
+  "p2": "team 531624"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   48043,
+   495,
+   1002,
+   31
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Seismic Toss",
+   "p2": "move Mimic"
+  },
+  {
+   "p1": "move Mimic",
+   "p2": "move Vine Whip"
+  },
+  {
+   "p1": "switch 2"
+  },
+  {
+   "p1": "move Mega Drain",
+   "p2": "move Solar Beam"
+  },
+  {
+   "p1": "switch 3",
+   "p2": "move 1"
+  },
+  {
+   "p1": "switch 3"
+  },
+  {
+   "p1": "move Razor Wind",
+   "p2": "move Mimic"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 2"
+  },
+  {
+   "p1": "move Toxic",
+   "p2": "move Solar Beam"
+  },
+  {
+   "p1": "switch 4",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "switch 4"
+  },
+  {
+   "p1": "move Razor Wind",
+   "p2": "move Vine Whip"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 3"
+  },
+  {
+   "p1": "switch 5",
+   "p2": "move 1"
+  },
+  {
+   "p1": "switch 5"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 3",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move Razor Wind",
+   "p2": "move Solar Beam"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 1"
+  },
+  {
+   "p1": "switch 6"
+  },
+  {
+   "p1": "move Growth",
+   "p2": "move Vine Whip"
+  },
+  {
+   "p2": "switch 2"
+  },
+  {
+   "p1": "move Mimic",
+   "p2": "move Transform"
+  },
+  {
+   "p1": "move Sleep Powder",
+   "p2": "switch 3"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 3",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 4",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "switch 3"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 3",
+   "p2": "move 4"
+  },
+  {
+   "p1": "move 1",
+   "p2": "switch 3"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 3",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "switch 3"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 1"
+  },
+  {
+   "p2": "switch 3"
+  },
+  {
+   "p1": "move 3",
+   "p2": "move 2"
+  },
+  {
+   "p1": "move 1",
+   "p2": "switch 4"
+  },
+  {
+   "p1": "move 3",
+   "p2": "move 1"
+  },
+  {
+   "p1": "move 1",
+   "p2": "switch 4"
+  },
+  {
+   "p1": "move 3",
+   "p2": "move 3"
+  },
+  {
+   "p1": "move 2",
+   "p2": "move 4"
+  },
+  {
+   "p2": "switch 4"
+  },
+  {
+   "p1": "move 4",
+   "p2": "move 1"
+  }
+ ]
+}
