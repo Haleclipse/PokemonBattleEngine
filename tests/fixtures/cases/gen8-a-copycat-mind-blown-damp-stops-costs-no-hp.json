@@ -1,0 +1,223 @@
+{
+ "schema": 1,
+ "id": "gen8-a-copycat-mind-blown-damp-stops-costs-no-hp",
+ "notes": [
+  "Gen 8 singles: Palkia's Copycat calls Mind Blown, which Charjabug's Damp stops (`cant|p1a: Charjabug|ability: Damp|Mind Blown|[of] p2a: Palkia`). The failed TryMove clears the called move's `mindBlownRecoil`, and `runMove`'s `AfterMove` runs on that move (`battle.activeMove`), so Palkia loses no HP. The engine waived the self damage in the called move's run but paid it in the action's, which asked its own flag (R-M11-125; probe131, m8-gen8-singles-s1946-000)"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "singles",
+  "format": "gen8customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Machop",
+    "species": "Machop",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Lunar Dance"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Steenee",
+    "species": "Steenee",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Lunar Dance"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Mr. Mime",
+    "species": "Mr. Mime",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Max Wyrmwind",
+     "Lunar Dance"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Meowth",
+    "species": "Meowth",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Max Rockfall",
+     "Copycat"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Charjabug",
+    "species": "Charjabug",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Max Flutterby"
+    ],
+    "ability": "Damp",
+    "gender": "F"
+   },
+   {
+    "label": "Lilligant",
+    "species": "Lilligant",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Lunar Dance"
+    ],
+    "ability": "Run Away"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Dragalge",
+    "species": "Dragalge",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Lunar Dance"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Greedent",
+    "species": "Greedent",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Lunar Dance"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Seismitoad",
+    "species": "Seismitoad",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Copycat"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Fomantis",
+    "species": "Fomantis",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Misty Explosion"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Aegislash",
+    "species": "Aegislash",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Explosion"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Palkia",
+    "species": "Palkia",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Discharge",
+     "Lunar Dance",
+     "Mind Blown",
+     "Copycat"
+    ],
+    "ability": "Run Away"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   31987,
+   56000,
+   29361,
+   56993
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Lunar Dance",
+   "p2": "move Lunar Dance"
+  },
+  {
+   "p1": "switch Steenee",
+   "p2": "switch Greedent"
+  },
+  {
+   "p1": "move Lunar Dance",
+   "p2": "move Lunar Dance"
+  },
+  {
+   "p1": "switch Meowth",
+   "p2": "switch Fomantis"
+  },
+  {
+   "p1": "move Max Rockfall",
+   "p2": "move Misty Explosion"
+  },
+  {
+   "p2": "switch Seismitoad"
+  },
+  {
+   "p1": "move Copycat",
+   "p2": "move Copycat"
+  },
+  {
+   "p1": "switch Mr. Mime",
+   "p2": "switch Aegislash"
+  },
+  {
+   "p1": "move Max Wyrmwind",
+   "p2": "move Explosion"
+  },
+  {
+   "p2": "switch Palkia"
+  },
+  {
+   "p1": "move Lunar Dance",
+   "p2": "move Lunar Dance"
+  },
+  {
+   "p1": "switch Charjabug"
+  },
+  {
+   "p1": "switch Lilligant",
+   "p2": "move Discharge"
+  },
+  {
+   "p1": "move Lunar Dance",
+   "p2": "move Mind Blown"
+  },
+  {
+   "p1": "switch Charjabug"
+  },
+  {
+   "p1": "move Max Flutterby",
+   "p2": "move Copycat"
+  }
+ ]
+}

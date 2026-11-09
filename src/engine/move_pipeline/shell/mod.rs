@@ -177,6 +177,10 @@ impl<'a> MovePipeline<'a> {
                     .with_lent_priority(lent)
                     .with_z_caller(z_call);
             execution = called.execute_called(call)?;
+            // The move the action reports is the called one (Showdown `runMove`'s `AfterMove`
+            // runs on `battle.activeMove`): whether its TryMove waived its after-move self damage
+            // is its own — a Copycat's Mind Blown that Damp stopped owes none (R-M11-125).
+            self.self_damage_cancelled = called.self_damage_cancelled;
             // What the called move asks of the queue is the action's, as the action's own move's
             // would be: a called Pledge that waited for its ally's (Assist's Water Pledge,
             // R-M8-65), a called Round (Me First's, Metronome's, R-M8-86), a Shell Trap a called
