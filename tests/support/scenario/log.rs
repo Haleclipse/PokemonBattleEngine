@@ -238,8 +238,10 @@ pub fn extract_decisions_with(
     // hazards inside that action.
     let mut dragging = false;
     // So does the one whose switch an intercepting Pursuit held up (§15.11): the switch goes on
-    // inside the Pursuit's step — Gen 2-4 even after the Pursuit knocked the Pokémon out.
-    let mut pursuit_held_switch = false;
+    // inside the Pursuit's step — Gen 2-4 even after the Pursuit knocked the Pokémon out. The
+    // Pokémon Pursuit struck: its own position's entrant is that switch, not another one's — a
+    // Gen 5+ switch the knock-out cancelled leaves the next entrant to another action (R-M11-117).
+    let mut pursuit_held_switch: Option<Who> = None;
     let mut pursued_entrant: Option<Who> = None;
     // The holder whose Synchronize just announced it passes a status back.
     let mut synchronizing: Option<Who> = None;
@@ -288,13 +290,19 @@ pub fn extract_decisions_with(
         match kind {
             "switch" => {
                 entrant = who(&event["pokemon"]);
-                pursued_entrant = std::mem::take(&mut pursuit_held_switch)
-                    .then(|| entrant.clone())
-                    .flatten();
+                pursued_entrant = pursuit_held_switch
+                    .take()
+                    .filter(|pursued| {
+                        entrant.as_ref().is_some_and(|entrant| {
+                            entrant.side == pursued.side && entrant.slot == pursued.slot
+                        })
+                    })
+                    .and(entrant.clone());
             }
-            "move" | "cant" | "turn" => {
+            // The turn's end: its replacements are nobody's Pursuit.
+            "move" | "cant" | "turn" | "upkeep" => {
                 entrant = None;
-                pursuit_held_switch = false;
+                pursuit_held_switch = None;
                 pursued_entrant = None;
             }
             _ => {}
@@ -525,7 +533,8 @@ pub fn extract_decisions_with(
                     action.move_name = Some(z_anim.map_or(logged.clone(), str::to_owned));
                     action.intercepted =
                         std::mem::take(&mut pursuit_intercept) && text(&event["move"]) == "Pursuit";
-                    pursuit_held_switch = action.intercepted;
+                    pursuit_held_switch =
+                        action.intercepted.then(|| who(&event["target"])).flatten();
                     action.move_target = who(&event["target"]);
                     action.own_target = who(&event["target"]);
                     if logged == "Fling" {
