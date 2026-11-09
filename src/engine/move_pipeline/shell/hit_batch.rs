@@ -51,6 +51,13 @@ impl MovePipeline<'_> {
         // ends the split (`smartTarget = false`) and both darts go to the other, one dart
         // each when both pass.
         if smart {
+            // The split's first protection or Wonder Guard refusal is silent (`smart_quiet`) —
+            // unless a target out of reach failed the first hit step already (Showdown runs each
+            // step over both targets, so that comes before either target's TryHit).
+            self.smart_quiet = !targets.pokemon_ids().any(|target| {
+                crate::engine::two_turn::dodged_by(self.state, self.rules, actor, target, move_def)
+                    .is_some()
+            });
             let mut passed = Vec::new();
             for target in targets.pokemon_ids() {
                 match self.resolve_hit_gate(actor, target, move_def) {
@@ -58,6 +65,7 @@ impl MovePipeline<'_> {
                     Err(outcome) => hits.push(outcome),
                 }
             }
+            self.smart_quiet = false;
             self.smart_hit = passed.len() > 1;
             for (target, type_effectiveness) in passed {
                 let outcomes =

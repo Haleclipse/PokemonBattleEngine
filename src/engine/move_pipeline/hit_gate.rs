@@ -439,7 +439,9 @@ impl<'a> MovePipeline<'a> {
         Ok(())
     }
 
-    /// Records a block and returns its outcome.
+    /// Records a block and returns its outcome. While Dragon Darts still splits (`smart_quiet`),
+    /// a protection or Wonder Guard turns the target away without a word and ends the split
+    /// (Showdown: their `onTryHit` sets `move.smartTarget` false instead of the line, R-M11-121).
     fn block(
         &mut self,
         actor: PokemonId,
@@ -447,11 +449,21 @@ impl<'a> MovePipeline<'a> {
         move_id: crate::ids::MoveId,
         reason: HitBlockReason,
     ) -> HitOutcome {
+        let quiet = self.smart_quiet
+            && matches!(
+                reason,
+                HitBlockReason::Protect
+                    | HitBlockReason::Ability(crate::ids::AbilityId::WONDER_GUARD)
+            );
+        if quiet {
+            self.smart_quiet = false;
+        }
         self.trace.push(TraceEvent::HitBlocked {
             actor,
             target,
             move_id,
             reason,
+            shown: !quiet,
         });
         HitOutcome::Blocked { target, reason }
     }

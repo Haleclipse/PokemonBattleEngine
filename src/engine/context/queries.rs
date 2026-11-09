@@ -63,6 +63,7 @@ impl<'a> BattleContext<'a> {
             target,
             move_id,
             reason,
+            shown: true,
         });
         true
     }
@@ -87,6 +88,7 @@ impl<'a> BattleContext<'a> {
                 target,
                 move_id,
                 reason: crate::engine::HitBlockReason::Protect,
+                shown: true,
             });
         }
         guarded

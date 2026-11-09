@@ -150,6 +150,9 @@ pub(crate) struct MovePipeline<'a> {
     beat_up_members: Vec<PokemonId>,
     /// Dragon Darts split between two targets: the one dart this target takes.
     smart_hit: bool,
+    /// Dragon Darts still split over its targets' hit gates (Showdown `move.smartTarget`): the
+    /// first protection or Wonder Guard to turn one away does so without a word, and ends it.
+    smart_quiet: bool,
     /// The move's own `self` has landed (Showdown `move.selfDropped`): a single-hit move's
     /// comes once, at its first hit that went through (`hit_sequence::move_self`).
     self_dropped: bool,
@@ -313,6 +316,7 @@ impl<'a> MovePipeline<'a> {
             external: false,
             beat_up_members: Vec::new(),
             smart_hit: false,
+            smart_quiet: false,
             self_dropped: false,
             gem: None,
             z_move: None,

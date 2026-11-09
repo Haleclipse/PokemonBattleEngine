@@ -428,6 +428,10 @@ pub enum TraceEvent {
         target: PokemonId,
         move_id: MoveId,
         reason: HitBlockReason,
+        /// Whether the refusal shows (`-immune`, `-activate`): a protection or Wonder Guard
+        /// turning away one of Dragon Darts' split targets says nothing (Showdown: while
+        /// `smartTarget` holds, R-M11-121).
+        shown: bool,
     },
     AccuracyResolved {
         actor: PokemonId,
@@ -1545,6 +1549,7 @@ impl TraceEvent {
             Self::HitBlocked {
                 target,
                 reason: HitBlockReason::Ability(ability),
+                shown: true,
                 ..
             } => one(Some(Disclosure::AbilityShown(*target, *ability))),
             // Safety Goggles' (`-activate|p|item: Safety Goggles|move`) and Ability Shield's

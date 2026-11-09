@@ -1,0 +1,75 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-dragon-darts-turned-away-by-wonder-guard-shows-nothing",
+ "notes": [
+  "Gen 9 Doubles: Milotic's Dragon Darts aims at Cosmoem, whose Wonder Guard turns it away (`|debug|Wonder Guard immunity: dragondarts`); both darts go to Cresselia. Wonder Guard's `onTryHit` says nothing while the move still splits (`move.smartTarget`), so nobody learns Cosmoem's ability. The engine disclosed it with every Wonder Guard refusal (R-M11-121; the R-M11-119/120 chain Nightly, m8-gen9-doubles-s1936-015)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Meowscarada",
+    "species": "Meowscarada",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Bullet Seed"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   },
+   {
+    "label": "Milotic",
+    "species": "Milotic",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Dragon Darts"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Cresselia",
+    "species": "Cresselia",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Fury Swipes"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Cosmoem",
+    "species": "Cosmoem",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Rock Blast"
+    ],
+    "ability": "Wonder Guard"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   43,
+   26678,
+   4300,
+   45179
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Bullet Seed 1, move Dragon Darts 2",
+   "p2": "move Fury Swipes 1, move Rock Blast 2"
+  }
+ ]
+}
