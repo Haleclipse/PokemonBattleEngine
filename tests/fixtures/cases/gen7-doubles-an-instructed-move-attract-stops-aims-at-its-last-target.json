@@ -1,0 +1,162 @@
+{
+ "schema": 1,
+ "id": "gen7-doubles-an-instructed-move-attract-stops-aims-at-its-last-target",
+ "notes": [
+  "Gen 7 doubles: Rockruff Instructs the infatuated Venipede, whose last move was Endeavor at Rockruff; the injected Endeavor is stopped by Attract (`cant|…|Attract`), and so is Venipede's own Metal Burst. The injected action aims where Endeavor last went (`last_move_target`), so no target is drawn; the replay took Venipede's own choice and planned a random target before the infatuation roll (R-M11-116; cloud Nightly 42554151320, m8-gen7-doubles-s103301-009)"
+ ],
+ "battle": {
+  "generation": 7,
+  "mode": "doubles",
+  "format": "gen7doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Carbink",
+    "species": "Carbink",
+    "level": 53,
+    "nature": "Hardy",
+    "moves": [
+     "Head Charge",
+     "Encore"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Cosmoem",
+    "species": "Cosmoem",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Wild Charge",
+     "Encore",
+     "Wood Hammer",
+     "Instruct"
+    ],
+    "ability": "Run Away",
+    "item": "Wiki Berry"
+   },
+   {
+    "label": "Rockruff",
+    "species": "Rockruff",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Attract",
+     "Instruct"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Grimer",
+    "species": "Grimer",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Mirror Coat",
+     "Encore",
+     "Sonic Boom"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Archeops",
+    "species": "Archeops",
+    "level": 46,
+    "nature": "Hardy",
+    "moves": [
+     "Dragon Rage",
+     "Encore",
+     "Seismic Toss",
+     "Instruct"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Thundurus",
+    "species": "Thundurus",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Psywave",
+     "Encore",
+     "Super Fang",
+     "Instruct"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Venipede",
+    "species": "Venipede",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Metal Burst",
+     "Encore",
+     "Endeavor",
+     "Instruct"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   44886,
+   54529,
+   16264,
+   13599
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Head Charge 1, move Wild Charge 2",
+   "p2": "move Mirror Coat, move Dragon Rage 1"
+  },
+  {
+   "p1": "move Encore 1, move Encore 2",
+   "p2": "move Encore 2, move Encore 1"
+  },
+  {
+   "p1": "move Head Charge 1, move Wood Hammer 2",
+   "p2": "move Sonic Boom 2, move Seismic Toss 1"
+  },
+  {
+   "p2": "switch Thundurus, pass"
+  },
+  {
+   "p1": "move Head Charge 1, move Instruct 2",
+   "p2": "move Instruct 2, move Instruct 1"
+  },
+  {
+   "p1": "move Head Charge 1, move Wild Charge 2",
+   "p2": "move Psywave 2, move Dragon Rage 1"
+  },
+  {
+   "p2": "pass, switch Venipede"
+  },
+  {
+   "p1": "move Encore 1, move Encore 2",
+   "p2": "move Encore 2, move Encore 1"
+  },
+  {
+   "p1": "switch Rockruff, move Wild Charge 1",
+   "p2": "move Super Fang 2, move Endeavor 1"
+  },
+  {
+   "p1": "move Attract 2, move Wild Charge 1",
+   "p2": "move Instruct 2, move Instruct 1"
+  },
+  {
+   "p1": "move Instruct 2, move Wild Charge 2",
+   "p2": "pass, move Metal Burst"
+  }
+ ]
+}

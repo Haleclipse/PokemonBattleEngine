@@ -1287,10 +1287,21 @@ pub(super) fn drive_to_boundary(
                 move_def.is_none_or(|chosen| chosen.id != used.id)
                     && decision.move_name.as_deref() == Some(used.name.as_str())
             });
-        let move_def = engine_used.map(|(used, _)| used).or(move_def);
+        // An action Instruct injected that BeforeMove stopped (a `cant` line, nothing the probe
+        // used at the top level): the target's last move at its last move's target, as the
+        // engine queued it (`BattleContext::instruct`: `last_move_target`, Showdown's
+        // `lastMoveTargetLoc`) — not the Pokémon's own choice for the turn (R-M11-116).
+        let injected = (decision.instructed && engine_used.is_none())
+            .then(|| before.state.pokemon(actor))
+            .flatten()
+            .and_then(|pokemon| {
+                let def = compiled.dex.move_by_id(pokemon.last_move?)?;
+                Some((def, pokemon.last_move_target.map(DeclaredTarget)))
+            });
+        let move_def = engine_used.or(injected).map(|(used, _)| used).or(move_def);
         // Where the action aims: the choice's target, or the injected action's own (Instruct's
         // `lastMoveTargetLoc`).
-        let chosen_target = match engine_used {
+        let chosen_target = match engine_used.or(injected) {
             Some((_, target)) => target,
             None => intended.get(&actor).and_then(|(_, target)| *target),
         };
