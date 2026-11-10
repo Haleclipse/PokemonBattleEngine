@@ -898,10 +898,23 @@ impl<'a> MovePipeline<'a> {
                 result: MoveResult::Failed,
             });
         }
+        // A recharge turn's own action whose recharge already went this turn — a Dancer's dance
+        // stopped by BeforeMove's recharge cleared `mustrecharge` before it: the action is still
+        // Showdown's `recharge` pseudo-move (`onLockMove`), which has no PP (R-M11-131). Gen 1's
+        // recharge turn acts with the last selected move instead.
+        let recharge_spent = !self.external
+            && !self.instructed
+            && !self.rules.action_order.recharge_acts_with_last_selected
+            && self
+                .state
+                .queued_moves
+                .iter()
+                .any(|queued| queued.actor == actor && queued.recharge)
+            && !crate::engine::choice::recharging(self.state, actor);
         // Showdown `runMove`: a move with no PP left as its turn comes (Spite or Eerie Spell took
         // it after it was chosen) does not happen — `cant|user|nopp|move`, a failure for Stomping
         // Tantrum, before anything the move itself does (§15.15). A locked turn spends none.
-        if !struggling && self.out_of_pp(actor, slot, move_id) {
+        if !struggling && (recharge_spent || self.out_of_pp(actor, slot, move_id)) {
             self.trace.push(TraceEvent::MoveFailed {
                 actor,
                 move_id,

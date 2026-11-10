@@ -643,9 +643,12 @@ fn pokemon_diffs(
         let client: Vec<&Value> = seen["moves"].as_array().into_iter().flatten().collect();
         let mut names: Vec<String> = actual.iter().map(|(name, _)| name.clone()).collect();
         let mut expected: Vec<String> = Vec::new();
+        // `cant|p|nopp|recharge` (a recharge turn whose recharge a Dancer's attempt already took,
+        // R-M11-131) has the client remember Showdown's `recharge` pseudo-move: no move it has.
         for id in client
             .iter()
             .filter_map(|slot| slot["id"].as_str())
+            .filter(|id| *id != "recharge")
             .map(move_id)
         {
             // A request's `hiddenpowerdark70` is the `hiddenpower` a line named.

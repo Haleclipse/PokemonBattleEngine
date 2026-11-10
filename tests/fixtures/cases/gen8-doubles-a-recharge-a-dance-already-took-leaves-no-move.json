@@ -1,0 +1,81 @@
+{
+ "schema": 1,
+ "id": "gen8-doubles-a-recharge-a-dance-already-took-leaves-no-move",
+ "notes": [
+  "Gen 8 Doubles: Registeel (Dancer) must recharge after Giga Impact. Kubfu's Clangorous Soul sets its Dancer off, which BeforeMove stops (`cant|p2b: Registeel|recharge`) and which clears `mustrecharge`; Registeel's own action is still Showdown's `recharge` pseudo-move, with no PP (`cant|p2b: Registeel|nopp|recharge`), and Marshtomp's Clangorous Soul then has it dance. The engine ran the action's slot instead, a Giga Impact that knocked Kubfu out (R-M11-131; the R-M11-130 chain Nightly, m8-gen8-doubles-s1954-005)"
+ ],
+ "battle": {
+  "generation": 8,
+  "mode": "doubles",
+  "format": "gen8doublescustomgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Kubfu",
+    "species": "Kubfu",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Poison Jab",
+     "Clangorous Soul"
+    ],
+    "ability": "Run Away",
+    "gender": "F"
+   },
+   {
+    "label": "Marshtomp",
+    "species": "Marshtomp",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Sludge",
+     "Clangorous Soul"
+    ],
+    "ability": "Run Away",
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Petilil",
+    "species": "Petilil",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Eternabeam"
+    ],
+    "ability": "Run Away"
+   },
+   {
+    "label": "Registeel",
+    "species": "Registeel",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Giga Impact"
+    ],
+    "ability": "Dancer"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   45022,
+   63444,
+   59085,
+   17516
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Poison Jab 1, move Sludge 2",
+   "p2": "move Eternabeam 1, move Giga Impact 2"
+  },
+  {
+   "p1": "move 2, move 2",
+   "p2": "move 1, move 1"
+  }
+ ]
+}
