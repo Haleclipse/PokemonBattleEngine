@@ -1,0 +1,453 @@
+{
+ "schema": 1,
+ "id": "gen9-doubles-rocky-helmet-strikes-before-gulp-missile",
+ "notes": [
+  "Gen 9 VGC 2025 Reg I: Tinkatink's Metal Claw strikes Cramorant, which holds Rocky Helmet and has a fish in its mouth: Rocky Helmet's `onDamagingHit` (order 2) comes before Gulp Missile's, which names no order and so sorts last (`compareLeftToRightOrder`: no order counts as 4294967296). The engine gave Gulp Missile order 0 and ran it first, the attacker's HP between the two then off (R-M11-136; cloud Nightly 42863228259, m9-gen9vgc2025regi-s104202-008)"
+ ],
+ "battle": {
+  "generation": 9,
+  "mode": "doubles",
+  "format": "gen9vgc2025regi"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Nick30",
+    "species": "Poltchageist",
+    "item": "Quick Claw",
+    "ability": "Hospitality",
+    "moves": [
+     "Magical Leaf",
+     "Protect",
+     "Iron Defense",
+     "Life Dew"
+    ],
+    "nature": "Hardy",
+    "gender": "",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 92,
+     "atk": 0,
+     "def": 0,
+     "spa": 100,
+     "spd": 204,
+     "spe": 112
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Fighting"
+   },
+   {
+    "label": "Skeledirge",
+    "species": "Skeledirge",
+    "ability": "Unaware",
+    "moves": [
+     "Sunny Day",
+     "Tackle",
+     "Alluring Voice",
+     "Ember"
+    ],
+    "nature": "Modest",
+    "gender": "M",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 180,
+     "atk": 0,
+     "def": 104,
+     "spa": 224,
+     "spd": 0,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 25,
+     "spe": 31
+    },
+    "teraType": "Steel",
+    "hpType": "Fire"
+   },
+   {
+    "label": "Hydrapple",
+    "species": "Hydrapple",
+    "ability": "Regenerator",
+    "moves": [
+     "Fickle Beam"
+    ],
+    "nature": "Adamant",
+    "gender": "M",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 92,
+     "atk": 60,
+     "def": 108,
+     "spa": 0,
+     "spd": 60,
+     "spe": 188
+    },
+    "ivs": {
+     "hp": 24,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Nick24",
+    "species": "Stantler",
+    "ability": "Sap Sipper",
+    "moves": [
+     "Calm Mind"
+    ],
+    "nature": "Adamant",
+    "gender": "M",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 76,
+     "atk": 108,
+     "def": 12,
+     "spa": 64,
+     "spd": 68,
+     "spe": 40
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Stunky",
+    "species": "Stunky",
+    "ability": "Keen Eye",
+    "moves": [
+     "Dark Pulse",
+     "Roar",
+     "Facade"
+    ],
+    "nature": "Naive",
+    "gender": "F",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 0,
+     "atk": 28,
+     "def": 120,
+     "spa": 156,
+     "spd": 96,
+     "spe": 108
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Dark"
+   },
+   {
+    "label": "Tinkatink",
+    "species": "Tinkatink",
+    "ability": "Pickpocket",
+    "moves": [
+     "Metal Claw"
+    ],
+    "nature": "Lax",
+    "gender": "",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 120,
+     "atk": 64,
+     "def": 116,
+     "spa": 4,
+     "spd": 0,
+     "spe": 204
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 0,
+     "spe": 31
+    },
+    "teraType": "Fairy"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Nick70",
+    "species": "Beldum",
+    "ability": "Clear Body",
+    "moves": [
+     "Tera Blast",
+     "Steel Beam"
+    ],
+    "nature": "Bold",
+    "gender": "",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 100,
+     "atk": 0,
+     "def": 200,
+     "spa": 0,
+     "spd": 208,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 21,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Nick67",
+    "species": "Toedscool",
+    "ability": "Mycelium Might",
+    "moves": [
+     "Tera Blast",
+     "Taunt",
+     "Lunge",
+     "Rage Powder"
+    ],
+    "nature": "Lax",
+    "gender": "F",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 180,
+     "atk": 28,
+     "def": 88,
+     "spa": 136,
+     "spd": 76,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 29,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 122,
+    "teraType": "Fighting"
+   },
+   {
+    "label": "Falinks",
+    "species": "Falinks",
+    "ability": "Battle Armor",
+    "moves": [
+     "Megahorn"
+    ],
+    "nature": "Quirky",
+    "gender": "",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 124,
+     "atk": 60,
+     "def": 48,
+     "spa": 224,
+     "spd": 52,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 19,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Dark"
+   },
+   {
+    "label": "Sableye",
+    "species": "Sableye",
+    "ability": "Stall",
+    "moves": [
+     "Giga Impact"
+    ],
+    "nature": "Serious",
+    "gender": "F",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 72,
+     "atk": 228,
+     "def": 0,
+     "spa": 164,
+     "spd": 44,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Ice"
+   },
+   {
+    "label": "Marill",
+    "species": "Marill",
+    "ability": "Huge Power",
+    "moves": [
+     "Grass Knot",
+     "Rain Dance",
+     "Brick Break"
+    ],
+    "nature": "Calm",
+    "gender": "M",
+    "shiny": false,
+    "level": 50,
+    "evs": {
+     "hp": 76,
+     "atk": 0,
+     "def": 88,
+     "spa": 80,
+     "spd": 112,
+     "spe": 152
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 185,
+    "hpType": "Electric"
+   },
+   {
+    "label": "Cramorant",
+    "species": "Cramorant",
+    "item": "Rocky Helmet",
+    "ability": "Gulp Missile",
+    "moves": [
+     "Fury Attack",
+     "Dive"
+    ],
+    "nature": "Sassy",
+    "gender": "F",
+    "shiny": true,
+    "level": 50,
+    "evs": {
+     "hp": 112,
+     "atk": 96,
+     "def": 92,
+     "spa": 32,
+     "spd": 32,
+     "spe": 144
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 3,
+     "spd": 31,
+     "spe": 31
+    },
+    "teraType": "Psychic"
+   }
+  ]
+ },
+ "preview": {
+  "p1": "team 215643",
+  "p2": "team 126543",
+  "open_team_sheets": true
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   890,
+   104202,
+   1008,
+   31
+  ]
+ },
+ "script": [
+  {
+   "p1": "move 1 terastallize, move Magical Leaf 1",
+   "p2": "move 1 1 terastallize, move Tera Blast 2"
+  },
+  {
+   "p1": "move Tackle 2, move Protect",
+   "p2": "move Steel Beam 1, move Taunt 2"
+  },
+  {
+   "p1": "switch 3, move Life Dew",
+   "p2": "switch 3, move Rage Powder"
+  },
+  {
+   "p1": "move Facade 2, move Magical Leaf 1",
+   "p2": "move Fury Attack 1, move Tera Blast 2"
+  },
+  {
+   "p1": "move Dark Pulse 2, move Protect",
+   "p2": "move Dive 1, move Taunt 2"
+  },
+  {
+   "p1": "move 2 1, move 3",
+   "p2": "move 1, move 3 1"
+  },
+  {
+   "p1": "switch 3, move Life Dew",
+   "p2": "switch 3, move Rage Powder"
+  },
+  {
+   "p1": "move Alluring Voice 2, move Magical Leaf 1",
+   "p2": "move Fury Attack 2, move Tera Blast 1"
+  },
+  {
+   "p2": "pass, switch 3"
+  },
+  {
+   "p1": "move Ember 2, move Protect",
+   "p2": "move Dive 2, move Steel Beam 1"
+  },
+  {
+   "p2": "pass, switch 4"
+  },
+  {
+   "p1": "move 1, move 3",
+   "p2": "move 1, move 2"
+  },
+  {
+   "p1": "switch 4, move Life Dew",
+   "p2": "move Dive 2, move Brick Break 1"
+  },
+  {
+   "p1": "move 1 1, move 1 2",
+   "p2": "move 1, move 1 2"
+  }
+ ]
+}

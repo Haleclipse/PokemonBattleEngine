@@ -3362,10 +3362,11 @@ pub fn definition(ability: AbilityId) -> AbilityBehavior {
         },
         AbilityId::GULP_MISSILE => AbilityBehavior {
             gulp_missile: true,
-            damaging_hit_reaction: Some(OrderedHandler {
-                priority: 0,
-                handler: forme_ability::gulp_missile_spit,
-            }),
+            // No `onDamagingHitOrder`: after an ordered reaction, Rocky Helmet's (R-M11-136).
+            damaging_hit_reaction: Some(OrderedHandler::new(
+                UNORDERED_REACTION,
+                forme_ability::gulp_missile_spit,
+            )),
             source_try_primary_hit: Some(forme_ability::gulp_missile_surf),
             ..AbilityBehavior::default()
         },
