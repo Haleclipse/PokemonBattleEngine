@@ -1412,6 +1412,13 @@ pub fn extract_decisions_with(
                         action.damages.push((target, hp));
                         action.cant = Some("confusion".into());
                         action.hit = false;
+                        // A confusion self-hit ends the action with no `cant` line: an action
+                        // Instruct injected ends here, not at the Pokémon's own move after it
+                        // (R-M11-130).
+                        if instructed_next.as_ref() == Some(&action.user) {
+                            instructed_next = None;
+                            action.instructed = true;
+                        }
                     } else if target == action.user
                         && action
                             .used_move()
