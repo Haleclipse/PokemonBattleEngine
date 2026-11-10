@@ -4276,3 +4276,23 @@ if (patched) {
     return null;
   };
 }
+
+// I222 — Gen 4 Trick Room keeps a Pokémon's own handlers ahead of the side and field conditions.
+// The gen4 (and gen3) `getActionSpeed` turns the order around under Trick Room as `-speed`, so a
+// Pokémon's handlers (its ability, item, status, volatiles) sort after every side and field
+// condition's, which have no speed (0): Hypnosis on an Insomnia Ariados behind Safeguard is turned
+// away by Safeguard (`-activate|…|move: Safeguard`), not Insomnia. pokeplatinum's
+// `subscript_fall_asleep` checks Insomnia and Vital Spirit before Safeguard on any field, and Gen
+// 5+ (`10000 - speed`) keeps a Pokémon's handlers first under Trick Room too. The patch: the gen4
+// `getActionSpeed` turns the order around as `10000 - speed` (no 13-bit wrap) — the same order
+// among Pokémon, ahead of the conditions as without Trick Room (TESTING.md §7).
+if (patched) {
+  const pokemon = Dex.mod('gen4').data.Scripts.pokemon;
+  pokemon.getActionSpeed = function () {
+    let speed = this.getStat('spe', false, false);
+    const trickRoom = this.battle.ruleTable.has('twisteddimensionmod') ?
+      !this.battle.field.getPseudoWeather('trickroom') : this.battle.field.getPseudoWeather('trickroom');
+    if (trickRoom) speed = 10000 - speed;
+    return speed;
+  };
+}
