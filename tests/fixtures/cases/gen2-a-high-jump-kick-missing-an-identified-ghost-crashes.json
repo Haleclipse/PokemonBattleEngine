@@ -1,0 +1,178 @@
+{
+ "schema": 1,
+ "id": "gen2-a-high-jump-kick-missing-an-identified-ghost-crashes",
+ "notes": [
+  "Gen 2 singles: Umbreon's Foresight has identified Gengar, and its High Jump Kick misses Gengar. The gen2 `onMoveFail` crashes only when `target.runImmunity('Fighting')` lets the move through — which Foresight's `NegateImmunity` does — so Umbreon takes 1/8 of the damage it would have dealt. The engine read the bare type chart, found Gengar immune and spared the crash (R-M11-126; probe132, m8-gen2-singles-s1949-004)"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2customgame"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Gengar",
+    "species": "Gengar",
+    "level": 55,
+    "nature": "Hardy",
+    "moves": [
+     "Hydro Pump",
+     "Foresight",
+     "Future Sight",
+     "Leech Seed"
+    ],
+    "gender": "F"
+   },
+   {
+    "label": "Vileplume",
+    "species": "Vileplume",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Water Gun",
+     "Foresight",
+     "Waterfall",
+     "Leech Seed"
+    ],
+    "gender": "M"
+   }
+  ],
+  "p2": [
+   {
+    "label": "Bulbasaur",
+    "species": "Bulbasaur",
+    "level": 46,
+    "nature": "Hardy",
+    "moves": [
+     "Scratch",
+     "Foresight",
+     "Megahorn",
+     "Leech Seed"
+    ],
+    "gender": "F"
+   },
+   {
+    "label": "Gligar",
+    "species": "Gligar",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Jump Kick",
+     "Vise Grip",
+     "Leech Seed"
+    ],
+    "gender": "F"
+   },
+   {
+    "label": "Goldeen",
+    "species": "Goldeen",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Pound",
+     "Foresight",
+     "Tackle",
+     "Leech Seed"
+    ],
+    "gender": "F"
+   },
+   {
+    "label": "Umbreon",
+    "species": "Umbreon",
+    "level": 50,
+    "nature": "Hardy",
+    "moves": [
+     "Foresight",
+     "High Jump Kick"
+    ],
+    "gender": "M"
+   }
+  ]
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   24383,
+   64737,
+   26043,
+   54647
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Hydro Pump",
+   "p2": "move Scratch"
+  },
+  {
+   "p1": "move Foresight",
+   "p2": "move Foresight"
+  },
+  {
+   "p1": "move Future Sight",
+   "p2": "move Megahorn"
+  },
+  {
+   "p1": "move Leech Seed",
+   "p2": "move Leech Seed"
+  },
+  {
+   "p1": "move Hydro Pump",
+   "p2": "move Scratch"
+  },
+  {
+   "p2": "switch Gligar"
+  },
+  {
+   "p1": "switch Vileplume",
+   "p2": "switch Goldeen"
+  },
+  {
+   "p1": "move Foresight",
+   "p2": "move Foresight"
+  },
+  {
+   "p1": "move Waterfall",
+   "p2": "move Tackle"
+  },
+  {
+   "p1": "move Leech Seed",
+   "p2": "move Leech Seed"
+  },
+  {
+   "p1": "move Water Gun",
+   "p2": "move Pound"
+  },
+  {
+   "p1": "move Foresight",
+   "p2": "move Foresight"
+  },
+  {
+   "p1": "switch Gengar",
+   "p2": "switch Gligar"
+  },
+  {
+   "p1": "move Future Sight",
+   "p2": "move Vise Grip"
+  },
+  {
+   "p1": "move Leech Seed",
+   "p2": "move Leech Seed"
+  },
+  {
+   "p1": "move Hydro Pump",
+   "p2": "move Jump Kick"
+  },
+  {
+   "p2": "switch Umbreon"
+  },
+  {
+   "p1": "move Foresight",
+   "p2": "move Foresight"
+  },
+  {
+   "p1": "move Future Sight",
+   "p2": "move High Jump Kick"
+  }
+ ]
+}

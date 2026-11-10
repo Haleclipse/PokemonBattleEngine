@@ -1675,7 +1675,10 @@ impl<'a> MovePipeline<'a> {
                     return;
                 };
                 let target_max_hp = self.state.pokemon(target).map_or(0, |p| p.max_hp);
-                let effectiveness = self.type_effectiveness(target, move_def);
+                // The target's immunity as the move meets it (Showdown `runImmunity('Fighting')`,
+                // `getDamage`): a Ghost Foresight identified is no longer immune (R-M11-126).
+                let (effectiveness, _) =
+                    crate::engine::type_immunity(self.state, self.rules, target, move_def);
                 let damage = if effectiveness.is_zero() {
                     if immune_spared {
                         return;
