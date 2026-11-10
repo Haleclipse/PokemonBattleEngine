@@ -17,7 +17,16 @@ export function legalTeam(formatid, draws, prng) {
     if (!sets) break;
     for (const set of sets) {
       const species = dex.species.get(set.species);
-      if (!set.gender && !species.gender) set.gender = prng.sample(['M', 'F']);
+      if (!set.gender && !species.gender) {
+        set.gender = prng.sample(['M', 'F']);
+        // Gen 2: the Attack DV makes the gender (`TeamValidator`: male from the female ratio × 16
+        // up), so a drawn one could make every attempt illegal (an Atk DV of 15 makes every one
+        // male, R-M11-128). The draw stays: a team that drew its gender keeps every later draw.
+        if (dex.gen === 2) {
+          const atkDV = Math.floor((set.ivs?.atk ?? 31) / 2);
+          set.gender = atkDV >= species.genderRatio.F * 16 ? 'M' : 'F';
+        }
+      }
     }
     if (validator.validateTeam(JSON.parse(JSON.stringify(sets)))) continue;
     return sets.map(({name, ...set}) => ({label: name || dex.species.get(set.species).baseSpecies, ...set}));
