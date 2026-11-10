@@ -3564,9 +3564,27 @@ pub(super) struct ShownHolds {
     pub(super) sashes: Vec<PokemonId>,
     pub(super) bands: Vec<PokemonId>,
     pub(super) sturdy: Vec<PokemonId>,
+    /// The Gen 4 sashes the action's Knock Off took (`ActionOracle::focus_sash_knocked_off`):
+    /// held or not, the log is the same (R-M11-129).
+    pub(super) unseen_sashes: Vec<PokemonId>,
 }
 
 impl ShownHolds {
+    /// Whether a candidate's holds (`of`) are the ones the log names, a sash whose hold cannot be
+    /// seen either way.
+    pub(super) fn admits(&self, shown: &ShownHolds) -> bool {
+        let seen = |sashes: &[PokemonId]| -> Vec<PokemonId> {
+            sashes
+                .iter()
+                .copied()
+                .filter(|id| !self.unseen_sashes.contains(id))
+                .collect()
+        };
+        seen(&shown.sashes) == seen(&self.sashes)
+            && shown.bands == self.bands
+            && shown.sturdy == self.sturdy
+    }
+
     /// The holds a candidate's trace shows (its `DamageReduced` by each; Gen 4's sash holds
     /// every hit of the move).
     pub(super) fn of(events: &[TraceEvent]) -> Self {

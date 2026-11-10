@@ -2299,6 +2299,19 @@ pub(super) fn drive_to_boundary(
                 .map(|(holder, _)| holder)
                 .collect()),
             sturdy: ids(decision.sturdy_held.iter().collect()),
+            // Gen 4's sash (`holds_for_the_move`) is used after the move, which a Knock Off took
+            // it from; Gen 5+'s is used as it holds, so one knocked off did not.
+            unseen_sashes: if pokemon_battle_engine::engine::item_behavior(
+                &compiled.rules,
+                pokemon_battle_engine::ids::ItemId::FOCUS_SASH,
+            )
+            .holds_for_the_move
+            .is_some()
+            {
+                ids(decision.focus_sash_knocked_off.iter().collect())
+            } else {
+                Vec::new()
+            },
         }
         .settled();
         let mut unused = None;

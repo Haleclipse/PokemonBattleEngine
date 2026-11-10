@@ -126,7 +126,7 @@ pub(super) fn search_rolls(
         substitutes
             .iter()
             .all(|(id, hp)| substitute_hp(candidate.state(), *id) == *hp)
-            && ShownHolds::of(&candidate.trace().events()[trace_len..]) == *holds
+            && holds.admits(&ShownHolds::of(&candidate.trace().events()[trace_len..]))
             // A deferred doll stood after this action (the log shows it struck, not broken):
             // a roll set that breaks it here leaves the later action that strikes it again
             // hitting the body (R-M8-183).

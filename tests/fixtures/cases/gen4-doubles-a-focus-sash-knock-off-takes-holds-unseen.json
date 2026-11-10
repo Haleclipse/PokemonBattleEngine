@@ -1,0 +1,416 @@
+{
+ "schema": 1,
+ "id": "gen4-doubles-a-focus-sash-knock-off-takes-holds-unseen",
+ "notes": [
+  "Gen 4 Doubles OU: Krabby's Knock Off hits a level 1 Volbeat at full HP holding a Focus Sash. Gen 4's sash holds the move silently (the `focussash` volatile's `onDamage`) and is used once it is over (`onAfterMoveSecondary`), but Knock Off took it first (`-enditem|p2b: Nick30|Focus Sash|[from] move: Knock Off`), so the log never shows the hold. The replay took the missing `-enditem|p|Focus Sash` for no hold and refused every roll under which the engine's sash held, as it did (R-M11-129; probe135, m9-gen4doublesou-s511-014)"
+ ],
+ "battle": {
+  "generation": 4,
+  "mode": "doubles",
+  "format": "gen4doublesou"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Natu",
+    "species": "Natu",
+    "ability": "Early Bird",
+    "moves": [
+     "Toxic",
+     "Psychic",
+     "Air Cutter",
+     "Sleep Talk"
+    ],
+    "nature": "Calm",
+    "gender": "F",
+    "shiny": false,
+    "level": 78,
+    "evs": {
+     "hp": 0,
+     "atk": 0,
+     "def": 96,
+     "spa": 152,
+     "spd": 160,
+     "spe": 100
+    },
+    "ivs": {
+     "hp": 12,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Drifblim",
+    "species": "Drifblim",
+    "ability": "Unburden",
+    "moves": [
+     "Cut",
+     "Will-O-Wisp",
+     "Shock Wave",
+     "Thief"
+    ],
+    "nature": "Gentle",
+    "gender": "M",
+    "shiny": false,
+    "level": 32,
+    "evs": {
+     "hp": 28,
+     "atk": 116,
+     "def": 164,
+     "spa": 104,
+     "spd": 96,
+     "spe": 0
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Krabby",
+    "species": "Krabby",
+    "ability": "Shell Armor",
+    "moves": [
+     "Blizzard",
+     "Knock Off"
+    ],
+    "nature": "Adamant",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 108,
+     "atk": 0,
+     "def": 152,
+     "spa": 0,
+     "spd": 212,
+     "spe": 36
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 80
+   },
+   {
+    "label": "Rhyhorn",
+    "species": "Rhyhorn",
+    "item": "Sticky Barb",
+    "ability": "Lightning Rod",
+    "moves": [
+     "Earth Power",
+     "Fire Blast",
+     "Fire Fang",
+     "Reversal"
+    ],
+    "nature": "Lax",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 164,
+     "atk": 116,
+     "def": 64,
+     "spa": 0,
+     "spd": 0,
+     "spe": 164
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   }
+  ],
+  "p2": [
+   {
+    "label": "Vespiquen",
+    "species": "Vespiquen",
+    "ability": "Pressure",
+    "moves": [
+     "Poison Sting",
+     "Sweet Scent",
+     "Flash",
+     "Defend Order"
+    ],
+    "nature": "Hardy",
+    "gender": "",
+    "shiny": false,
+    "level": 95,
+    "evs": {
+     "hp": 4,
+     "atk": 12,
+     "def": 208,
+     "spa": 52,
+     "spd": 148,
+     "spe": 84
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 16,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Crobat",
+    "species": "Crobat",
+    "ability": "Inner Focus",
+    "moves": [
+     "Swift",
+     "Captivate",
+     "Return",
+     "Snatch"
+    ],
+    "nature": "Naive",
+    "gender": "M",
+    "shiny": false,
+    "level": 39,
+    "evs": {
+     "hp": 48,
+     "atk": 0,
+     "def": 104,
+     "spa": 224,
+     "spd": 28,
+     "spe": 104
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Barboach",
+    "species": "Barboach",
+    "ability": "Anticipation",
+    "moves": [
+     "Earth Power",
+     "Substitute",
+     "Sleep Talk"
+    ],
+    "nature": "Bashful",
+    "gender": "M",
+    "shiny": false,
+    "level": 93,
+    "evs": {
+     "hp": 0,
+     "atk": 176,
+     "def": 28,
+     "spa": 192,
+     "spd": 36,
+     "spe": 76
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Ursaring",
+    "species": "Ursaring",
+    "ability": "Guts",
+    "moves": [
+     "Lick",
+     "Secret Power",
+     "Natural Gift",
+     "Giga Impact"
+    ],
+    "nature": "Hardy",
+    "gender": "M",
+    "shiny": false,
+    "level": 100,
+    "evs": {
+     "hp": 0,
+     "atk": 128,
+     "def": 252,
+     "spa": 0,
+     "spd": 0,
+     "spe": 128
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   },
+   {
+    "label": "Spiritomb",
+    "species": "Spiritomb",
+    "ability": "Pressure",
+    "moves": [
+     "Hyper Beam",
+     "Attract",
+     "Endure",
+     "Dream Eater"
+    ],
+    "nature": "Lax",
+    "gender": "M",
+    "shiny": false,
+    "level": 45,
+    "evs": {
+     "hp": 0,
+     "atk": 0,
+     "def": 252,
+     "spa": 0,
+     "spd": 8,
+     "spe": 248
+    },
+    "ivs": {
+     "hp": 5,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    },
+    "happiness": 135
+   },
+   {
+    "label": "Nick30",
+    "species": "Volbeat",
+    "item": "Focus Sash",
+    "ability": "Swarm",
+    "moves": [
+     "Mimic"
+    ],
+    "nature": "Brave",
+    "gender": "",
+    "shiny": false,
+    "level": 1,
+    "evs": {
+     "hp": 88,
+     "atk": 40,
+     "def": 52,
+     "spa": 0,
+     "spd": 208,
+     "spe": 120
+    },
+    "ivs": {
+     "hp": 31,
+     "atk": 31,
+     "def": 31,
+     "spa": 31,
+     "spd": 31,
+     "spe": 31
+    }
+   }
+  ]
+ },
+ "preview": {
+  "p1": "team 254316",
+  "p2": "team 654213"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   53331,
+   511,
+   1014,
+   31
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Toxic 1, move Cut 2",
+   "p2": "move Poison Sting 1, move Swift"
+  },
+  {
+   "p1": "move Psychic 1, move Will-O-Wisp 2",
+   "p2": "move Sweet Scent, move Captivate"
+  },
+  {
+   "p1": "move Air Cutter, move Shock Wave 1",
+   "p2": "move Flash 2, move Return 1"
+  },
+  {
+   "p1": "move Sleep Talk, move Thief 2",
+   "p2": "move Defend Order, move Snatch"
+  },
+  {
+   "p1": "move Toxic 1, move Cut 2",
+   "p2": "move Poison Sting 2, move Swift"
+  },
+  {
+   "p2": "switch Barboach, pass"
+  },
+  {
+   "p1": "move Psychic 1, move Will-O-Wisp 2",
+   "p2": "move Earth Power 1, move Captivate"
+  },
+  {
+   "p2": "pass, switch Ursaring"
+  },
+  {
+   "p1": "move Air Cutter, move Shock Wave 1",
+   "p2": "move Substitute, move Natural Gift 2"
+  },
+  {
+   "p1": "move Sleep Talk, move Thief 2",
+   "p2": "move Sleep Talk, move Giga Impact 1"
+  },
+  {
+   "p1": "switch Krabby, pass"
+  },
+  {
+   "p1": "switch Rhyhorn, move 1 1",
+   "p2": "switch Spiritomb, move 1"
+  },
+  {
+   "p1": "move Earth Power 2, move Will-O-Wisp 1",
+   "p2": "move Hyper Beam 2, move Secret Power 1"
+  },
+  {
+   "p1": "move Fire Blast 2, move Shock Wave 1",
+   "p2": "move Attract 2, move Natural Gift 1"
+  },
+  {
+   "p1": "move Fire Fang 2, move Thief 1",
+   "p2": "move Endure, move Giga Impact 2"
+  },
+  {
+   "p1": "move Reversal 2, move Cut 1",
+   "p2": "move Dream Eater 1, move Lick 2"
+  },
+  {
+   "p1": "pass, switch Krabby"
+  },
+  {
+   "p1": "move Earth Power 2, move Blizzard",
+   "p2": "move Hyper Beam 1, move Secret Power 2"
+  },
+  {
+   "p2": "switch Barboach, switch Nick30"
+  },
+  {
+   "p1": "move Fire Blast 1, move Knock Off 2",
+   "p2": "move Earth Power 1, move Mimic 2"
+  }
+ ]
+}

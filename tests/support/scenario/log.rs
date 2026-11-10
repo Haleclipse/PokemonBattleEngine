@@ -719,6 +719,17 @@ pub fn extract_decisions_with(
                     action.focus_sash_held.push(holder);
                 }
             }
+            "enditem"
+                if event["args"][1] == "Focus Sash"
+                    && event["args"].get(2).and_then(Value::as_str)
+                        == Some("[from] move: Knock Off") =>
+            {
+                if let (Some(action), Some(holder)) =
+                    (out.last_mut(), event["args"].get(0).and_then(who_from_text))
+                {
+                    action.focus_sash_knocked_off.push(holder);
+                }
+            }
             "curestatus" => {
                 let status = text(&event["status"]);
                 let from = event["from"].as_str().unwrap_or("");
