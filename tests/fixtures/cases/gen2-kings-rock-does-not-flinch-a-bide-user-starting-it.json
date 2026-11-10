@@ -1,0 +1,337 @@
+{
+ "schema": 1,
+ "id": "gen2-kings-rock-does-not-flinch-a-bide-user-starting-it",
+ "notes": [
+  "Gen 2 Ubers: Exeggcute holding King's Rock starts Bide, and the battle ends in that turn's residual. pokecrystal's Bide script returns at `storeenergy` and reaches `kingsrock` (the opponent's flinch) only once the energy is released; Showdown's gen2 King's Rock pushes its flinch onto Bide's self-targeted first use, which flinched Exeggcute itself (seen as the battle ends before the turn's end clears it). Recorded under the I223 patch (R-M11-132; probe136, m9-gen2ubers-s514-002)"
+ ],
+ "battle": {
+  "generation": 2,
+  "mode": "singles",
+  "format": "gen2ubers"
+ },
+ "teams": {
+  "p1": [
+   {
+    "label": "Growlithe",
+    "species": "Growlithe",
+    "ability": "",
+    "moves": [
+     "Agility",
+     "Thrash"
+    ],
+    "nature": "",
+    "gender": "M",
+    "shiny": false,
+    "level": 76
+   },
+   {
+    "label": "Nick78",
+    "species": "Kingdra",
+    "ability": "",
+    "moves": [
+     "Swagger",
+     "Splash",
+     "Toxic"
+    ],
+    "nature": "",
+    "gender": "M",
+    "shiny": false,
+    "level": 46
+   },
+   {
+    "label": "Charizard",
+    "species": "Charizard",
+    "ability": "",
+    "moves": [
+     "Steel Wing",
+     "Dragon Breath",
+     "Leer",
+     "Slash"
+    ],
+    "nature": "",
+    "gender": "M",
+    "shiny": false,
+    "level": 100
+   },
+   {
+    "label": "Slugma",
+    "species": "Slugma",
+    "ability": "",
+    "moves": [
+     "Rock Smash",
+     "Rock Throw",
+     "Harden"
+    ],
+    "nature": "",
+    "gender": "M",
+    "shiny": false,
+    "level": 16,
+    "happiness": 168
+   },
+   {
+    "label": "Nick83",
+    "species": "Butterfree",
+    "ability": "",
+    "moves": [
+     "Harden",
+     "Bide"
+    ],
+    "nature": "",
+    "gender": "M",
+    "shiny": false,
+    "level": 100
+   },
+   {
+    "label": "Croconaw",
+    "species": "Croconaw",
+    "ability": "",
+    "moves": [
+     "Whirlpool",
+     "Blizzard",
+     "Mud-Slap",
+     "Ancient Power"
+    ],
+    "nature": "",
+    "gender": "M",
+    "shiny": false,
+    "level": 57
+   }
+  ],
+  "p2": [
+   {
+    "label": "Nick49",
+    "species": "Marill",
+    "ability": "",
+    "moves": [
+     "Toxic",
+     "Perish Song",
+     "Snore",
+     "Blizzard"
+    ],
+    "nature": "",
+    "gender": "M",
+    "shiny": false,
+    "level": 100
+   },
+   {
+    "label": "Nick71",
+    "species": "Celebi",
+    "ability": "",
+    "moves": [
+     "Snore",
+     "Nightmare",
+     "Return",
+     "Mud-Slap"
+    ],
+    "nature": "",
+    "gender": "",
+    "shiny": false,
+    "level": 100
+   },
+   {
+    "label": "Nick17",
+    "species": "Exeggcute",
+    "item": "King's Rock",
+    "ability": "",
+    "moves": [
+     "Leech Seed",
+     "Attract",
+     "Confusion",
+     "Bide"
+    ],
+    "nature": "",
+    "gender": "M",
+    "shiny": false,
+    "level": 100
+   },
+   {
+    "label": "Nick67",
+    "species": "Flaaffy",
+    "ability": "",
+    "moves": [
+     "Defense Curl",
+     "Thunder",
+     "Thunderbolt",
+     "Body Slam"
+    ],
+    "nature": "",
+    "gender": "M",
+    "shiny": false,
+    "level": 100
+   }
+  ]
+ },
+ "preview": {
+  "p1": "team 613245",
+  "p2": "team 321456"
+ },
+ "random": {
+  "mode": "oracle-guided",
+  "seed": [
+   44517,
+   514,
+   1002,
+   31
+  ]
+ },
+ "script": [
+  {
+   "p1": "move Agility",
+   "p2": "move Toxic"
+  },
+  {
+   "p1": "move Thrash",
+   "p2": "move Perish Song"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 3"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 4"
+  },
+  {
+   "p1": "switch Nick78",
+   "p2": "switch Nick71"
+  },
+  {
+   "p1": "move Swagger",
+   "p2": "move Nightmare"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Return"
+  },
+  {
+   "p1": "move Toxic",
+   "p2": "move Mud-Slap"
+  },
+  {
+   "p1": "switch Growlithe",
+   "p2": "switch Nick49"
+  },
+  {
+   "p1": "move Agility",
+   "p2": "move Toxic"
+  },
+  {
+   "p1": "switch Nick78"
+  },
+  {
+   "p1": "move Swagger",
+   "p2": "move Perish Song"
+  },
+  {
+   "p1": "move Splash",
+   "p2": "move Snore"
+  },
+  {
+   "p1": "move Toxic",
+   "p2": "move Blizzard"
+  },
+  {
+   "p1": "switch Charizard"
+  },
+  {
+   "p1": "switch Slugma",
+   "p2": "switch Nick71"
+  },
+  {
+   "p1": "move Rock Smash",
+   "p2": "move Snore"
+  },
+  {
+   "p1": "move Rock Throw",
+   "p2": "move Nightmare"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Return"
+  },
+  {
+   "p1": "switch Charizard"
+  },
+  {
+   "p1": "move Slash",
+   "p2": "move Mud-Slap"
+  },
+  {
+   "p2": "switch Nick49"
+  },
+  {
+   "p1": "switch Nick83",
+   "p2": "switch Nick17"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Leech Seed"
+  },
+  {
+   "p1": "move Bide",
+   "p2": "move Attract"
+  },
+  {
+   "p1": "move 1",
+   "p2": "move 3"
+  },
+  {
+   "p1": "switch Charizard",
+   "p2": "switch Nick49"
+  },
+  {
+   "p1": "move Steel Wing",
+   "p2": "move Toxic"
+  },
+  {
+   "p1": "move Dragon Breath",
+   "p2": "move Perish Song"
+  },
+  {
+   "p1": "switch Nick83",
+   "p2": "switch Nick67"
+  },
+  {
+   "p1": "move Harden",
+   "p2": "move Defense Curl"
+  },
+  {
+   "p1": "move Bide",
+   "p2": "move Thunder"
+  },
+  {
+   "p1": "switch Charizard"
+  },
+  {
+   "p1": "move Leer",
+   "p2": "move Thunderbolt"
+  },
+  {
+   "p1": "move Slash",
+   "p2": "move Body Slam"
+  },
+  {
+   "p1": "switch Croconaw"
+  },
+  {
+   "p1": "move Whirlpool",
+   "p2": "switch Nick17"
+  },
+  {
+   "p1": "move Blizzard",
+   "p2": "move Leech Seed"
+  },
+  {
+   "p1": "move Mud-Slap",
+   "p2": "move Attract"
+  },
+  {
+   "p1": "move Ancient Power",
+   "p2": "move Confusion"
+  },
+  {
+   "p1": "move Whirlpool",
+   "p2": "move Bide"
+  }
+ ]
+}

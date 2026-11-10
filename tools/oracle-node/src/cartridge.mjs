@@ -4296,3 +4296,30 @@ if (patched) {
     return speed;
   };
 }
+
+// I223 — Gen 2-4 King's Rock (and Gen 4 Razor Fang) does nothing on Bide's first use. The
+// generations' lists name Bide, so the items' `onModifyMove` pushes their flinch onto the use that
+// starts it, a self-targeted move whose secondaries land on the user: it may flinch itself (seen
+// once the battle ends before the turn's end clears the flinch). pokecrystal's Bide script returns
+// at `storeenergy` and reaches `kingsrock` (`BattleCommand_HeldFlinch`, the opponent's flinch) only
+// once the energy is released; pokeemerald and pokeplatinum flinch a target the move damaged. The
+// patch makes that flinch never land on the starting use — still rolled, so no draw changes: a
+// chance of 0 (gen3 / gen4), and in Gen 2, whose `moveHit` reads a 0 as 100 (`secondary.chance ||
+// 100`), 0.1, which its byte scale (`⌊0.1 × 255 / 100⌋`) makes 0 out of 256 (TESTING.md §7).
+if (patched) {
+  for (const [mod, ids, never] of [
+    ['gen2', ['kingsrock'], 0.1], ['gen3', ['kingsrock'], 0], ['gen4', ['kingsrock', 'razorfang'], 0],
+  ]) {
+    for (const id of ids) {
+      const item = Dex.mod(mod).data.Items[id];
+      const modifyMove = item.onModifyMove;
+      item.onModifyMove = function (move, pokemon, target) {
+        modifyMove.call(this, move, pokemon, target);
+        if (move.id !== 'bide' || pokemon?.volatiles['bide']) return;
+        for (const secondary of move.secondaries ?? []) {
+          if (secondary.volatileStatus === 'flinch') secondary.chance = never;
+        }
+      };
+    }
+  }
+}
