@@ -947,10 +947,35 @@ pub(super) fn drive_to_boundary(
                 _ => None,
             });
         if gimmick.is_some() {
+            // A Mega Evolution's new ability starts at once (`formeChange` → `setAbility`'s
+            // `Start`): Mega Alakazam's Trace draws its foe there, as an entrant's does
+            // (`entrant_ability_tape`, R-M11-133).
+            let mut tape = resort_ties;
+            let mut probe_step = probe_step;
+            let mega = probe.trace().events()[trace_len..]
+                .iter()
+                .find_map(|event| match event {
+                    TraceEvent::MegaEvolved { pokemon, .. } => Some(*pokemon),
+                    _ => None,
+                });
+            if let Some(holder) = mega {
+                let draws = entrant_ability_tape(
+                    compiled,
+                    &before.state,
+                    &before.state,
+                    &[holder],
+                    oracle_frame,
+                );
+                if !draws.is_empty() {
+                    tape.extend(draws);
+                    probe = restore_with_tape(compiled, &before, tape.clone());
+                    probe_step = probe.step().expect("step");
+                }
+            }
             steps.push(ReplayedStep {
                 before,
                 log_len: compiled.log.len(),
-                tape: resort_ties,
+                tape,
                 alternatives: Vec::new(),
             });
             compiled.engine = probe;
