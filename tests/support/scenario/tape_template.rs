@@ -3412,18 +3412,21 @@ pub(super) fn substitute_hint(
             hint.push((id, None));
             continue;
         }
-        if decisions[index + 1..]
-            .iter()
-            .any(|later| later.substitute_struck.iter().any(|(who, _)| who == holder))
-        {
+        if decisions[index + 1..].iter().any(|later| {
+            later
+                .substitute_struck
+                .iter()
+                .any(|(who, _)| same_pokemon(who, holder))
+        }) {
             continue;
         }
+        // The holder where it stands at the boundary (an Ally Switch after the hit moves it to
+        // the other slot); one no longer in passed its doll on with Baton Pass, to its slot.
         let side = &oracle_frame["sides"][holder.side];
-        let at_boundary = holder
-            .slot
-            .and_then(|slot| side["active"][slot].as_u64())
+        let at_boundary = frame_member(state, oracle_frame, holder)
+            .or_else(|| frame_member_at_slot(oracle_frame, holder))
             .and_then(|party| {
-                substitute_hp_value(&side["party"][party as usize]["volatiles"]["substitute"])
+                substitute_hp_value(&side["party"][party]["volatiles"]["substitute"])
             });
         let foreseen = if residual_substitute_strike(oracle_frame, holder) {
             match foreseen_strike_damage(state, rules, holder) {
