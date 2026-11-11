@@ -494,14 +494,23 @@ impl BattleEngine {
     /// Whether `kind`'s residual on `holder` is a count running out (Showdown `fieldEvent`: the
     /// handler's `duration` reaches 0, `handler.end` runs and the loop goes on with no
     /// `faintMessages()`, R-M10-66): Roost, Electrify and Powder last the turn, the others have
-    /// one turn left. Gen 2 on, where the durations are handlers of the residual. Uproar and a
-    /// rampage are left out: a callback of theirs may end them too.
+    /// one turn left. Gen 2 on, where the durations are handlers of the residual. Uproar's count
+    /// runs out ahead of its callback where it keeps Showdown's `duration` (`run_uproar`; not the
+    /// cartridge's Gen 3-4 wake). A rampage is left out: its callback may end it too.
     fn count_runs_out(&self, holder: PokemonId, kind: ResidualKind) -> bool {
         if self.rules.residual.durations.is_none() {
             return false;
         }
         let volatile = match kind {
             ResidualKind::Roost | ResidualKind::Electrify | ResidualKind::Powder => return true,
+            ResidualKind::Uproar => {
+                return self.rules.conditions.uproar.wake != crate::rules::UproarWake::Cartridge
+                    && self
+                        .state
+                        .pokemon(holder)
+                        .and_then(|pokemon| pokemon.volatiles.uproar())
+                        .is_some_and(|uproar| uproar.turns == 1);
+            }
             ResidualKind::Taunt => VolatileConditionKind::Taunt,
             ResidualKind::Encore => VolatileConditionKind::Encore,
             ResidualKind::Disable => VolatileConditionKind::Disable,
