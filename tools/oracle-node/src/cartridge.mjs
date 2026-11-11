@@ -4323,3 +4323,26 @@ if (patched) {
     }
   }
 }
+
+// I224 — Gen 3+ Curse by a user that is not a Ghost type fails when none of its three changes can
+// land: Speed at −6, Attack and Defense at +6 (pokeemerald `BattleScript_EffectCurse` jumps to
+// `BattleScript_ButItFailed`; Bulbapedia's Gen III note, which no later generation changes).
+// Showdown's `self` boosts change nothing there and the move still succeeds: no `-fail`, and a
+// Stomping Tantrum after it is not doubled. The patch fails it in `onTryHit`, as I73 does for
+// Gen 2, with the stages the boosts would move after Contrary (the engine's "nothing changed").
+// Failing, the use skips the `selfDrops` roll (`random(100)`), as every failed move does
+// (TESTING.md §7).
+if (patched) {
+  const curses = new Set(['gen3', 'gen4', 'gen5', 'gen6', 'gen7', 'gen8', 'gen9']
+    .map(mod => Dex.mod(mod).data.Moves.curse));
+  for (const curse of curses) {
+    const onTryHit = curse.onTryHit;
+    curse.onTryHit = function (target, source, move) {
+      const sign = source.hasAbility('contrary') ? -1 : 1;
+      const stuck = Object.entries({spe: -1, atk: 1, def: 1}).every(([stat, stages]) =>
+        stages * sign > 0 ? source.boosts[stat] >= 6 : source.boosts[stat] <= -6);
+      if (!source.hasType('Ghost') && stuck) return false;
+      return onTryHit.call(this, target, source, move);
+    };
+  }
+}
