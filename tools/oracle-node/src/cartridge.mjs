@@ -4368,3 +4368,29 @@ if (patched) {
     return handlers;
   };
 }
+
+// I226 — a Z-Move aims as the Z-Move does, not as its base move. Z-Bide is a Breakneck Blitz of
+// 100 power at an adjacent foe (Bulbapedia's base-move table, Smogon's dex: "Any adjacent"), and
+// Showdown's `chooseMove` already takes the Z-Move's target type. Its queue then resolves an
+// action chosen with no target by the base move: `getRandomTarget` gives a Bide its own user, and
+// `getTarget` fails the Breakneck Blitz aimed at its user's own position (`[notarget]`). The patch
+// draws the Z-Move's random target instead, where the queue draws any move's (the draw a target
+// chosen at random makes, as for a move chosen with no target).
+if (patched) {
+  const queue = Object.getPrototypeOf(new Battle({formatid: 'gen7customgame'}).queue);
+  const resolveAction = queue.resolveAction;
+  const aimedElsewhere = ['normal', 'any', 'adjacentFoe', 'adjacentAlly', 'randomNormal'];
+  queue.resolveAction = function (action, midTurn) {
+    const actions = resolveAction.call(this, action, midTurn);
+    const pokemon = action.pokemon;
+    if (action.choice !== 'move' || !action.zmove || action.originalTarget !== pokemon) return actions;
+    const zMove = this.battle.dex.moves.get(action.zmove);
+    if (!aimedElsewhere.includes(zMove.target)) return actions;
+    const target = this.battle.getRandomTarget(pokemon, zMove);
+    if (target) {
+      action.targetLoc = pokemon.getLocOf(target);
+      action.originalTarget = target;
+    }
+    return actions;
+  };
+}
