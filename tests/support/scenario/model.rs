@@ -204,8 +204,9 @@ pub struct Compiled {
     /// its client call them.
     pub names: [Vec<String>; 2],
     /// Party swaps made for this boundary's declared switches, kept only if the switch really
-    /// happens (Gen 1: a faint cancels the rest of the turn, the other side's switch included).
-    pub pending_swaps: Vec<(usize, usize, usize, PokemonId)>,
+    /// happens (Gen 1: a faint cancels the rest of the turn, the other side's switch included):
+    /// side, slot, the newcomer's party index, the newcomer, and whether the swap is made yet.
+    pub pending_swaps: Vec<(usize, usize, usize, PokemonId, bool)>,
     /// A real format's Team Preview (M9.4): every registered Pokémon built, none on the field,
     /// turn 0 — the `team_preview` frame's state.
     pub preview: Option<BattleState>,
@@ -287,7 +288,7 @@ pub(super) fn take_switch_target(
     party.swap(slot, n - 1);
     compiled
         .pending_swaps
-        .push((side.index(), slot, n - 1, target));
+        .push((side.index(), slot, n - 1, target, true));
     target
 }
 
@@ -363,25 +364,47 @@ pub(super) fn residual_drag_tape(
 }
 
 /// Undoes the party swaps of switches that did not happen by the boundary (the engine's trace
-/// since `from` has no `Switched` bringing that Pokémon in) — but for one still queued, the turn
-/// paused for a mid-turn request (an Eject Pack's replacement): it stays pending (R-M8-124).
+/// since `from` has no `Switched` bringing that Pokémon in). One still queued, the turn paused
+/// for a mid-turn request (an Eject Pack's replacement), stays pending unmade: Showdown's party
+/// has not swapped yet, and the replacement's `switch N` counts in the order before it. It is
+/// made once the switch happens, into its slot (R-M8-124, R-M11-142).
 pub(super) fn settle_party_swaps(compiled: &mut Compiled, from: usize) {
     // `from` counts in the battle's log (`Compiled::log`): the boundary's events, every engine's.
     flush_trace(compiled);
     let swaps = std::mem::take(&mut compiled.pending_swaps);
     let queued = compiled.engine.pending_switch_ins();
-    for (side, a, b, incoming) in swaps.into_iter().rev() {
+    for (side, a, b, incoming, made) in swaps.into_iter().rev() {
         if queued.contains(&incoming) {
-            compiled.pending_swaps.insert(0, (side, a, b, incoming));
+            if made {
+                compiled.party[side].swap(a, b);
+            }
+            compiled
+                .pending_swaps
+                .insert(0, (side, a, b, incoming, false));
             continue;
         }
+        let side_id = if side == 0 { SideId::P1 } else { SideId::P2 };
+        let slot = compiled.rules.topology().position(side_id, a as u8);
         let switched_in = compiled.log[from.min(compiled.log.len())..]
             .iter()
-            .any(|event| {
-                matches!(event, TraceEvent::Switched { incoming: pokemon, .. } if *pokemon == incoming)
+            .any(|event| match event {
+                TraceEvent::Switched {
+                    incoming: pokemon,
+                    position,
+                    ..
+                } => *pokemon == incoming && (made || Some(*position) == slot),
+                _ => false,
             });
-        if !switched_in {
-            compiled.party[side].swap(a, b);
+        match (made, switched_in) {
+            (true, false) => compiled.party[side].swap(a, b),
+            // Showdown `switchIn`: the newcomer trades places with the slot's Pokémon.
+            (false, true) => {
+                let party = &mut compiled.party[side];
+                if let Some(at) = party.iter().position(|pokemon| *pokemon == incoming) {
+                    party.swap(a, at);
+                }
+            }
+            _ => {}
         }
     }
 }

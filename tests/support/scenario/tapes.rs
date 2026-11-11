@@ -1658,10 +1658,12 @@ pub(super) fn parse_replacement(
             while let Some(at) = compiled
                 .pending_swaps
                 .iter()
-                .rposition(|&(s, a, _, _)| s == side.index() && a == slot_index)
+                .rposition(|&(s, a, _, _, _)| s == side.index() && a == slot_index)
             {
-                let (_, a, b, _) = compiled.pending_swaps.remove(at);
-                compiled.party[side.index()].swap(a, b);
+                let (_, a, b, _, made) = compiled.pending_swaps.remove(at);
+                if made {
+                    compiled.party[side.index()].swap(a, b);
+                }
             }
         }
     }
