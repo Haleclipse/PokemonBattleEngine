@@ -1,0 +1,87 @@
+{
+  "schema": 1,
+  "id": "gen9-doubles-eject-pack-goes-as-a-final-gambit-that-felled-both-ends",
+  "notes": [
+    "Regigigas's Final Gambit knocks Landorus out, whose Cotton Down lowers Chi-Yu's Speed; with the move's user and target both fainted, Chi-Yu's Eject Pack still goes as the move ends (I225, DESIGN.md R-M11-135)",
+    "promoted from m8-gen9-doubles-s104201-004-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Lapras",
+        "species": "Lapras",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sleep Talk"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Landorus",
+        "species": "Landorus",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Endeavor"
+        ],
+        "ability": "Cotton Down"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Chi-Yu",
+        "species": "Chi-Yu",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Night Shade"
+        ],
+        "ability": "Run Away",
+        "item": "Eject Pack"
+      },
+      {
+        "label": "Regigigas",
+        "species": "Regigigas",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Final Gambit"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Meditite",
+        "species": "Meditite",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Flip Turn"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      49755,
+      12140,
+      33637,
+      10610
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Sleep Talk, move Endeavor 1",
+      "p2": "move Night Shade 1, move Final Gambit 2"
+    }
+  ]
+}

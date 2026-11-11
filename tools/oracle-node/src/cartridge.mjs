@@ -4346,3 +4346,25 @@ if (patched) {
     };
   }
 }
+
+// I225 — the end of a move reaches every Pokémon on the field even when the move's user and its
+// target have both fainted in it. pokeemerald's `Cmd_moveend` runs `MOVEEND_ITEM_EFFECTS_ALL`
+// (`ItemBattleEffects(ITEMEFFECT_MOVE_END)`, every battler's White Herb and berries) on every
+// move, Explosion's too before its user faints. Showdown's `findEventHandlers` collects the
+// field's `onAny` handlers only for an active target or source, so after a Final Gambit or an
+// Explosion that takes its target down, `onAnyAfterMove` (Eject Pack, White Herb, Mirror Herb,
+// Opportunist) waits for the next move, switch-in or residual. The patch adds every active
+// Pokémon's `onAnyAfterMove` handlers in that case. No draw changes.
+if (patched) {
+  const findEventHandlers = Battle.prototype.findEventHandlers;
+  Battle.prototype.findEventHandlers = function (target, eventName, source) {
+    const handlers = findEventHandlers.call(this, target, eventName, source);
+    if (eventName !== 'AfterMove' || !(target instanceof Pokemon) || target.isActive || source?.isActive) {
+      return handlers;
+    }
+    for (const active of this.getAllActive()) {
+      handlers.push(...this.findPokemonEventHandlers(active, 'onAnyAfterMove'));
+    }
+    return handlers;
+  };
+}
