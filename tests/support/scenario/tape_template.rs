@@ -3062,7 +3062,7 @@ pub(super) struct ChanceReactionHit<'a> {
 /// order: the target's Effect Spore or Cursed Body, then the user's Poison Touch / Toxic Chain.
 /// The one that took is the one reported after this hit; the other hits' rolls failed (a later
 /// one changes nothing while the status stays; Cursed Body stops rolling once the move is
-/// disabled). A hit on a Substitute reacts to
+/// disabled for good). A hit on a Substitute reacts to
 /// nothing, but a candidate damage roll that breaks it sooner meets them: optional decisions.
 pub(super) fn chance_reactions(
     staged: &mut StagedTape,
@@ -3182,13 +3182,19 @@ pub(super) fn chance_reactions(
         let took = !behind_substitute
             && oracle
                 .cursed_body
-                .as_ref()
-                .is_some_and(|(after, of)| named(of, target) && reported_after(*after));
+                .iter()
+                .any(|(after, of)| named(of, target) && reported_after(*after));
         push(
             staged,
             RandomOverride::bool(RandomRequestKind::HitReaction, took),
         );
-        *cursed_body_done = took;
+        // Done once the last Disable it reported holds; a Mental Herb curing an earlier one
+        // lets it roll on.
+        *cursed_body_done = took
+            && oracle
+                .cursed_body
+                .last()
+                .is_some_and(|(after, _)| reported_after(*after));
     }
     if pokemon_battle_engine::engine::cute_charm_rolls(
         state, rules, reactors, actor, move_def, dealt,

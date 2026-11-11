@@ -1071,9 +1071,10 @@ pub struct ActionOracle {
     /// The types a `-start|p|typechange|T` line of this action names (Conversion's draw), by
     /// Pokémon; `[silent]` and ability-caused ones left out.
     pub typechanges: Vec<(Who, String)>,
-    /// Cursed Body disabled the actor's move (`-start|user|Disable|…|[from] ability: Cursed
-    /// Body|[of] holder`): how many hits had landed, and whose ability it was.
-    pub cursed_body: Option<(usize, Option<Who>)>,
+    /// Each time Cursed Body disabled the actor's move (`-start|user|Disable|…|[from] ability:
+    /// Cursed Body|[of] holder`): how many hits had landed, and whose ability it was. A Mental
+    /// Herb that cures it lets a later hit's take again.
+    pub cursed_body: Vec<(usize, Option<Who>)>,
     /// The holder's Mummy, Lingering Aroma or Wandering Spirit took the actor's ability
     /// (`-activate|holder|ability: Mummy|user|[ability] …`; Wandering Spirit's
     /// `-activate|user|Skill Swap|…|[of] holder`): how many hits had landed. Its own hit
@@ -1219,7 +1220,7 @@ impl ActionOracle {
             disabled_move: None,
             disabled_slot: None,
             typechanges: Vec::new(),
-            cursed_body: None,
+            cursed_body: Vec::new(),
             ability_taken_after: None,
             ability_traded: false,
             dealt_status: Vec::new(),

@@ -1764,7 +1764,7 @@ pub fn extract_decisions_with(
                                 .strip_prefix("[of] ")
                                 .map(|of| who_from_text(&Value::String(of.to_string())))
                         });
-                        action.cursed_body = Some((action.crits.len(), of.flatten()));
+                        action.cursed_body.push((action.crits.len(), of.flatten()));
                     }
                     // Cute Charm on the user: the target's reaction to the hit.
                     if what == "Attract"
