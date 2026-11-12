@@ -577,8 +577,10 @@ fn pokemon_diffs(
     // ability since is stale. So is the ability a Pokémon took by Transform from one of the
     // observer's own before Gen 7 (`transformed_into_own`): the client copies its own team's,
     // whose ability a request names from Gen 7 alone (`getSwitchRequestData`: `baseAbility`
-    // before), a change since it came in unknown to it (R-M10-40).
+    // before), a change since it came in unknown to it (R-M10-40); and the ability it copied
+    // from an entry the client made anew or filed wrong (`ability_copied_stale`, R-M11-148).
     let swapped_unseen = seen["ability_swapped_unseen"].as_bool().unwrap_or(false)
+        || seen["ability_copied_stale"].as_bool().unwrap_or(false)
         || (seen["transformed_into_own"].as_bool().unwrap_or(false)
             && compiled.engine.omniscient_view().generation()
                 < pokemon_battle_engine::spec::Generation::Gen7);

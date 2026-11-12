@@ -1345,6 +1345,19 @@ function transformedIntoNoOracle(p, masks, moves, renewed) {
     || filedApart(into.side, into) || renewed.has(key));
 }
 
+/**
+ * Whether `p` stands transformed into an entry whose ability the client knows nothing true of:
+ * one it made anew (`entry_renewed`: a Fezandipiti Roar dragged out and back, whose Toxic Chain
+ * the old entry knew), filed wrong (`misplaced`) or apart (`filed_apart`), or an Illusion's
+ * (`illusion_worn`, `illusion_unmasked`). `-transform` copies that entry's ability (R-M11-148).
+ */
+function transformedIntoStale(p, masks, misplaced, renewed) {
+  const into = p.volatiles?.transform?.pokemon;
+  const key = into && (into.originalIdent ?? into.ident);
+  return !!into && (renewed.has(key) || misplaced.has(key) || masks.unmasked.has(key)
+    || masks.worn.has(key) || filedApart(into.side, into));
+}
+
 /** One observer's knowledge, normalized. */
 function view(client, reset, copied, unresolved, zItems, hiddenSwaps, masks, misplaced, renewed, moves, own, previews) {
   return {
@@ -1359,6 +1372,7 @@ function view(client, reset, copied, unresolved, zItems, hiddenSwaps, masks, mis
         boosts_from_own: copied.has(p.originalIdent ?? p.ident),
         item_from_z_move: zItems.has(p.originalIdent ?? p.ident),
         ability_swapped_unseen: hiddenSwaps.has(p.originalIdent ?? p.ident),
+        ability_copied_stale: transformedIntoStale(p, masks, misplaced, renewed),
         illusion_worn: masks.worn.has(p.originalIdent ?? p.ident),
         illusion_unmasked: masks.unmasked.has(p.originalIdent ?? p.ident),
         misplaced: misplaced.has(p.originalIdent ?? p.ident),
