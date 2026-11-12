@@ -1,0 +1,322 @@
+{
+  "schema": 1,
+  "id": "gen4-heatproof-takes-an-eruption-of-power-one-to-zero",
+  "notes": [
+    "Bronzong at 1 HP calls Eruption with Assist on Walrein's Heatproof: the power of 1 halves to 0, and the cartridge's formula still adds 2 and rolls (I228, DESIGN.md R-M11-156)",
+    "promoted from m8-gen4-singles-s105500-012-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "singles",
+    "format": "gen4customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Diglett",
+        "species": "Diglett",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Bug Buzz",
+          "Assist",
+          "Mirror Shot",
+          "Healing Wish"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Ludicolo",
+        "species": "Ludicolo",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Focus Blast",
+          "Assist",
+          "Mud-Slap"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Moltres",
+        "species": "Moltres",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Psychic",
+          "Assist",
+          "Earth Power",
+          "Healing Wish"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Raichu",
+        "species": "Raichu",
+        "level": 45,
+        "nature": "Hardy",
+        "moves": [
+          "Aurora Beam",
+          "Assist",
+          "Rock Smash",
+          "Healing Wish"
+        ],
+        "ability": "Run Away",
+        "item": "Macho Brace",
+        "gender": "M"
+      },
+      {
+        "label": "Makuhita",
+        "species": "Makuhita",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Crush Claw",
+          "Shadow Ball",
+          "Healing Wish"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Walrein",
+        "species": "Walrein",
+        "level": 49,
+        "nature": "Hardy",
+        "moves": [
+          "Bullet Punch",
+          "Assist",
+          "Ice Shard",
+          "Healing Wish"
+        ],
+        "ability": "Heatproof",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Poliwag",
+        "species": "Poliwag",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Extreme Speed",
+          "Assist",
+          "Vacuum Wave",
+          "Healing Wish"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Mr. Mime",
+        "species": "Mr. Mime",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Aqua Jet",
+          "Quick Attack",
+          "Healing Wish"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Entei",
+        "species": "Entei",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Shadow Sneak",
+          "Assist",
+          "Mach Punch",
+          "Healing Wish"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Ninetales",
+        "species": "Ninetales",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Leer",
+          "Assist",
+          "Eruption",
+          "Healing Wish"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Chinchou",
+        "species": "Chinchou",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "String Shot",
+          "Growl",
+          "Healing Wish"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Bronzong",
+        "species": "Bronzong",
+        "level": 51,
+        "nature": "Hardy",
+        "moves": [
+          "Water Spout",
+          "Assist",
+          "Sweet Scent",
+          "Healing Wish"
+        ],
+        "ability": "Color Change"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      41889,
+      3694,
+      34194,
+      16717
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Bug Buzz",
+      "p2": "move Extreme Speed"
+    },
+    {
+      "p1": "move Assist",
+      "p2": "move Assist"
+    },
+    {
+      "p2": "switch Mr. Mime"
+    },
+    {
+      "p1": "move Mirror Shot",
+      "p2": "move Quick Attack"
+    },
+    {
+      "p1": "move Healing Wish",
+      "p2": "move Healing Wish"
+    },
+    {
+      "p1": "switch Ludicolo"
+    },
+    {
+      "p2": "switch Entei"
+    },
+    {
+      "p1": "move Focus Blast",
+      "p2": "move Shadow Sneak"
+    },
+    {
+      "p1": "switch Moltres",
+      "p2": "switch Ninetales"
+    },
+    {
+      "p1": "move Assist",
+      "p2": "move Assist"
+    },
+    {
+      "p1": "move Earth Power",
+      "p2": "move Eruption"
+    },
+    {
+      "p1": "move Healing Wish",
+      "p2": "move Healing Wish"
+    },
+    {
+      "p2": "switch Entei"
+    },
+    {
+      "p1": "switch Ludicolo"
+    },
+    {
+      "p1": "move Focus Blast",
+      "p2": "move Shadow Sneak"
+    },
+    {
+      "p1": "move Assist",
+      "p2": "move Assist"
+    },
+    {
+      "p1": "switch Raichu"
+    },
+    {
+      "p1": "switch Makuhita",
+      "p2": "switch Chinchou"
+    },
+    {
+      "p1": "move Shadow Ball",
+      "p2": "move Growl"
+    },
+    {
+      "p1": "move Healing Wish",
+      "p2": "move Healing Wish"
+    },
+    {
+      "p2": "switch Entei"
+    },
+    {
+      "p1": "switch Raichu"
+    },
+    {
+      "p1": "move Aurora Beam",
+      "p2": "move Shadow Sneak"
+    },
+    {
+      "p1": "move Assist",
+      "p2": "move Assist"
+    },
+    {
+      "p2": "switch Bronzong"
+    },
+    {
+      "p1": "switch Walrein"
+    },
+    {
+      "p1": "move Ice Shard",
+      "p2": "move Sweet Scent"
+    },
+    {
+      "p1": "move Bullet Punch",
+      "p2": "move Water Spout"
+    },
+    {
+      "p1": "move Assist",
+      "p2": "move Assist"
+    },
+    {
+      "p1": "move Ice Shard",
+      "p2": "move Sweet Scent"
+    },
+    {
+      "p1": "move Bullet Punch",
+      "p2": "move Water Spout"
+    },
+    {
+      "p1": "move Assist",
+      "p2": "move Assist"
+    },
+    {
+      "p1": "move Ice Shard",
+      "p2": "move Sweet Scent"
+    },
+    {
+      "p1": "move Bullet Punch",
+      "p2": "move Water Spout"
+    },
+    {
+      "p1": "move Assist",
+      "p2": "move Assist"
+    }
+  ]
+}

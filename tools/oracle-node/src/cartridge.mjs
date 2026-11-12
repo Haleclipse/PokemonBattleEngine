@@ -481,9 +481,12 @@ function cartridgeGetDamage(source, target, move, suppressMessages = false) {
   if (typeof move === 'object' && move.id === 'beatup' && move.allies?.length) [seen.member] = move.allies;
   const heldBefore = target.item;
   const {runEvent, randomizer} = battle;
+  let zeroPower = false;
   battle.runEvent = function (eventid, ...rest) {
     if (eventid === 'BasePower' && seen.power === undefined) [, , , seen.power] = rest;
-    return runEvent.call(this, eventid, ...rest);
+    const out = runEvent.call(this, eventid, ...rest);
+    if (eventid === 'BasePower' && out === 0 && rest[3] > 0) zeroPower = true;
+    return out;
   };
   battle.randomizer = function (damage) {
     seen.roll = this.random(16);
@@ -496,6 +499,12 @@ function cartridgeGetDamage(source, target, move, suppressMessages = false) {
     battle.runEvent = runEvent;
     battle.randomizer = randomizer;
   }
+  // I228 — a power the event halved to 0 (Heatproof on an Eruption of power 1): Showdown's
+  // `getDamage` stops at `if (!basePower) return 0`, before the roll; pokeplatinum's
+  // `BattleSystem_CalcBaseDamage` multiplies the 0 in and returns `damage + 2`, which
+  // `BattleSystem_CalcDamageVariance` rolls (at least 1). The roll is drawn here, where the
+  // formula would have (TESTING.md §7).
+  if (seen.roll === undefined && zeroPower && result === 0) seen.roll = battle.random(16);
   if (seen.roll === undefined || typeof result !== 'number') return result;
   seen.berry = RESIST_BERRIES.has(heldBefore) && !target.item;
   const active = typeof move === 'number' ? battle.dex.getActiveMove('struggle') : move;
