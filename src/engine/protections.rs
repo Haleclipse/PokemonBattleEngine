@@ -1,7 +1,7 @@
 //! What Mist, Safeguard and Lucky Chant stop (DESIGN.md §10.8), and Infiltrator's moves going
 //! through them (Showdown `move.infiltrates`).
 
-use crate::ids::PokemonId;
+use crate::ids::{MoveId, PokemonId};
 use crate::rules::ResolvedRules;
 use crate::state::{BattleState, SideConditionKind, VolatileConditionKind};
 
@@ -37,6 +37,16 @@ impl Culprit {
         target: PokemonId,
     ) -> Self {
         match source {
+            // Sticky Web's drop names a Pokémon as its source (Showdown hands
+            // `getActiveMove('stickyweb')`), but nobody uses the move: Infiltrator's
+            // `onModifyMove` never marks it, and a foe's Mist stops it (R-M11-147).
+            EffectSource::Move { pokemon, move_id }
+                if move_id == MoveId::STICKY_WEB && pokemon != target =>
+            {
+                Self::Another {
+                    infiltrating: false,
+                }
+            }
             EffectSource::Move { pokemon, .. } => Self::by_move(state, rules, pokemon, target),
             EffectSource::Ability { pokemon, .. } | EffectSource::Item { pokemon, .. }
                 if pokemon != target =>
