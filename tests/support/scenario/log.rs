@@ -1419,6 +1419,11 @@ pub fn extract_decisions_with(
                             instructed_next = None;
                             action.instructed = true;
                         }
+                        // An intercepting Pursuit whose user hurt itself instead: the switch it
+                        // held up still goes on inside this step, as after a `cant` (R-M11-118).
+                        if let Some(pursued) = pursuit_intercept.take() {
+                            pursuit_held_switch = Some(pursued);
+                        }
                     } else if target == action.user
                         && action
                             .used_move()
