@@ -553,7 +553,7 @@ pub fn extract_decisions_with(
                     action.move_target = who(&event["target"]);
                     action.own_target = who(&event["target"]);
                     if logged == "Fling" {
-                        action.flung_berry = flung_berry.as_ref().map(|(target, _)| target.clone());
+                        action.flung_berry = flung_berry.clone();
                     }
                     if shell_side_arm.is_some() {
                         action.physical_hint = shell_side_arm;

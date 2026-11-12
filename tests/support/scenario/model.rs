@@ -1163,9 +1163,10 @@ pub struct ActionOracle {
     /// stealeat|[move] Pluck|[of] user`): Pluck's and Bug Bite's `onHit`, so its draw comes before
     /// the hit's `DamagingHit` reactions, not at the `Update` after them (R-M9-48).
     pub stolen_berry: Option<Who>,
-    /// The Pokémon that ate the berry this Fling threw at it (`flung`): eaten in the move's
-    /// `onHit`, so its draws come before the hit's reactions, as a stolen one's (R-M10-3).
-    pub flung_berry: Option<Who>,
+    /// The Pokémon that ate the berry this Fling threw at it (`flung`), and the berry: eaten in
+    /// the move's `onHit`, so its draws come before the hit's reactions, as a stolen one's
+    /// (R-M10-3).
+    pub flung_berry: Option<(Who, String)>,
     /// A Pursuit striking a Pokémon as it switches out (`-activate|target|move: Pursuit` right
     /// before its move line): Gen 3-4 run it without BeforeMove.
     pub intercepted: bool,

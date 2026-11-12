@@ -1592,13 +1592,27 @@ pub(super) fn tape_template(
                         {
                             berry_confusions_planned.push(eater);
                             if oracle.stolen_berry.as_ref() == Some(who)
-                                || oracle.flung_berry.as_ref() == Some(who)
+                                || oracle.flung_berry.as_ref().map(|(eater, _)| eater) == Some(who)
                             {
                                 staged.push(Stage::Effect, decision);
                             } else {
                                 berries_after_reactions.push(decision);
                             }
                         }
+                    }
+                    // A Starf Berry Fling threw at a target the hit knocked out: eaten all the
+                    // same in the move's `onHit`, its stat drawn (`sample`) with no boost to show
+                    // it — `boost` does nothing at 0 HP (R-M11-153).
+                    if let Some((who, berry)) = &oracle.flung_berry
+                        && berry == "Starf Berry"
+                        && *target == who_to_id(state, who)
+                        && index.is_some_and(|i| oracle.hit_hp.get(i) == Some(&Some(0)))
+                        && !oracle.berry_draws.iter().any(|(eater, ..)| eater == who)
+                    {
+                        staged.push(
+                            Stage::Effect,
+                            RandomOverride::range(RandomRequestKind::Sample, 0),
+                        );
                     }
                     // The move's own `self` lands with the hit, before its secondaries (Showdown
                     // `selfDrops`): a multi-hit move's on every hit, a single-hit move's at the
