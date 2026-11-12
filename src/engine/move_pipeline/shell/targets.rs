@@ -156,6 +156,26 @@ impl MovePipeline<'_> {
                 _ => None,
             },
         };
+        // A foreseen attack aimed at a slot whose foe fell (`foreseen_spot`) meets that foe's
+        // Pressure in Gen 3-4, whose cartridges read the target's ability whatever its HP
+        // (R-M11-155).
+        let fallen;
+        let targets = match targets.pokemon_ids().next() {
+            None if move_def.behavior.future_attack
+                && self.rules.conditions.pp.pressure != crate::rules::PressureReach::Targets =>
+            {
+                match self.foreseen_spot(actor, run.declared_target, targets) {
+                    Some((target, ..)) => {
+                        fallen = crate::rules::ResolvedTargets {
+                            targets: vec![crate::rules::ResolvedTarget::Pokemon(target)],
+                        };
+                        &fallen
+                    }
+                    None => targets,
+                }
+            }
+            _ => targets,
+        };
         if let Some(charged) = charged
             && !continuing_lock
             && !continuing_bind

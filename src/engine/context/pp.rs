@@ -267,13 +267,19 @@ pub(crate) fn pressure_holders(
         }
     };
     let spares_side = rules.conditions.pp.pressure == PressureReach::Targets;
+    // Gen 3-4 check the target's ability whatever its HP (pokeemerald `Cmd_ppreduce`,
+    // pokeplatinum `BattleControllerPlayer_DecrementPP`): a foreseen attack aimed at a foe that
+    // fell still meets its Pressure (R-M11-155). From Gen 5 a Pokémon off the field has none
+    // (Showdown `ignoringAbility`).
+    let fallen_count = rules.conditions.pp.pressure != PressureReach::Targets;
     reach
         .into_iter()
         .filter(|id| *id != user)
         .filter(|id| !(spares_side && state.pokemon(*id).is_some_and(|p| p.side == side)))
         .filter(|id| {
             state.pokemon(*id).is_some_and(|p| {
-                !p.is_fainted() && crate::engine::ability_handler(state, rules, p, |b| b.pressure)
+                (fallen_count || !p.is_fainted())
+                    && crate::engine::ability_handler(state, rules, p, |b| b.pressure)
             })
         })
         .collect()

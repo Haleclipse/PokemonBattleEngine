@@ -1,0 +1,129 @@
+{
+  "schema": 1,
+  "id": "gen4-future-sight-at-a-fallen-pressure-user-costs-two-pp",
+  "notes": [
+    "Dusclops faints by its own Memento; Alakazam's Future Sight, aimed at its fallen slot, still meets its Pressure: the cartridge reads the target's ability whatever its HP (DESIGN.md R-M11-155)",
+    "promoted from m9-gen4ou-s601-000-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "singles",
+    "format": "gen4ou"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Dusclops",
+        "species": "Dusclops",
+        "ability": "Pressure",
+        "moves": [
+          "Will-O-Wisp",
+          "Memento"
+        ],
+        "nature": "Docile",
+        "gender": "M",
+        "shiny": true,
+        "level": 100,
+        "evs": {
+          "hp": 164,
+          "atk": 176,
+          "def": 40,
+          "spa": 0,
+          "spd": 0,
+          "spe": 128
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        },
+        "happiness": 37
+      },
+      {
+        "label": "Beautifly",
+        "species": "Beautifly",
+        "ability": "Swarm",
+        "moves": [
+          "Flash"
+        ],
+        "nature": "Jolly",
+        "gender": "M",
+        "shiny": true,
+        "level": 100,
+        "evs": {
+          "hp": 84,
+          "atk": 28,
+          "def": 40,
+          "spa": 104,
+          "spd": 0,
+          "spe": 252
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 6,
+          "spd": 31,
+          "spe": 31
+        }
+      }
+    ],
+    "p2": [
+      {
+        "label": "Alakazam",
+        "species": "Alakazam",
+        "ability": "Synchronize",
+        "moves": [
+          "Trick Room",
+          "Future Sight"
+        ],
+        "nature": "Naughty",
+        "gender": "F",
+        "shiny": false,
+        "level": 100,
+        "evs": {
+          "hp": 0,
+          "atk": 28,
+          "def": 116,
+          "spa": 36,
+          "spd": 120,
+          "spe": 208
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        }
+      }
+    ]
+  },
+  "preview": {
+    "p1": "team 324561",
+    "p2": "team 643215"
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      13744,
+      601,
+      1000,
+      31
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Will-O-Wisp",
+      "p2": "move Trick Room"
+    },
+    {
+      "p1": "move Memento",
+      "p2": "move Future Sight"
+    }
+  ]
+}

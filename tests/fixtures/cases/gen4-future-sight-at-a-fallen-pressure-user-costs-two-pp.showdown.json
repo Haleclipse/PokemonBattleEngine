@@ -1,0 +1,1654 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@pkmn/sim",
+    "version": "0.10.11",
+    "formatid": "gen4ou",
+    "seed": [
+      13744,
+      601,
+      1000,
+      31
+    ]
+  },
+  "frames": [
+    {
+      "schema": 1,
+      "checkpoint": "initial",
+      "turn": 1,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 262,
+              "max_hp": 262,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ghost"
+              ],
+              "ability": "pressure",
+              "item": "",
+              "species": "dusclops",
+              "pp": [
+                24,
+                16
+              ]
+            },
+            {
+              "hp": 282,
+              "max_hp": 282,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "bug",
+                "flying"
+              ],
+              "ability": "swarm",
+              "item": "",
+              "species": "beautifly",
+              "pp": [
+                32
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 251,
+              "max_hp": 251,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "psychic"
+              ],
+              "ability": "synchronize",
+              "item": "",
+              "species": "alakazam",
+              "pp": [
+                8,
+                24
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Dusclops"
+          },
+          "details": "Dusclops, M, shiny",
+          "hp": 262,
+          "max_hp": 262,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Alakazam"
+          },
+          "details": "Alakazam, F",
+          "hp": 251,
+          "max_hp": 251,
+          "status": null
+        },
+        {
+          "kind": "ability",
+          "args": [
+            "p1a: Dusclops",
+            "Pressure"
+          ]
+        },
+        {
+          "kind": "turn",
+          "turn": 1
+        }
+      ],
+      "views": {
+        "version": 7,
+        "p1": {
+          "sides": [
+            {
+              "unresolved_illusion": false,
+              "active": [
+                0
+              ],
+              "team": [
+                {
+                  "ident": "p1: Dusclops",
+                  "species": "Dusclops",
+                  "level": 100,
+                  "gender": "M",
+                  "hp": 262,
+                  "max_hp": 262,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "pressure",
+                  "base_ability": "pressure",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "willowisp",
+                      "pp_used": 0,
+                      "uses_uncompared": false
+                    },
+                    {
+                      "id": "memento",
+                      "pp_used": 0,
+                      "uses_uncompared": false
+                    }
+                  ]
+                },
+                {
+                  "ident": "p1: Beautifly",
+                  "species": "Beautifly",
+                  "level": 100,
+                  "gender": "M",
+                  "hp": 0,
+                  "max_hp": 0,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "",
+                  "base_ability": "",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": []
+                }
+              ],
+              "conditions": []
+            },
+            {
+              "unresolved_illusion": false,
+              "preview": {
+                "pokes": [],
+                "sheet": null
+              },
+              "active": [
+                0
+              ],
+              "team": [
+                {
+                  "ident": "p2: Alakazam",
+                  "species": "Alakazam",
+                  "level": 100,
+                  "gender": "F",
+                  "hp": 100,
+                  "max_hp": 100,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "",
+                  "base_ability": "",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": []
+                }
+              ],
+              "conditions": []
+            }
+          ],
+          "field": {
+            "weather": null,
+            "terrain": null,
+            "pseudo_weather": []
+          }
+        },
+        "p2": {
+          "sides": [
+            {
+              "unresolved_illusion": false,
+              "preview": {
+                "pokes": [],
+                "sheet": null
+              },
+              "active": [
+                0
+              ],
+              "team": [
+                {
+                  "ident": "p1: Dusclops",
+                  "species": "Dusclops",
+                  "level": 100,
+                  "gender": "M",
+                  "hp": 100,
+                  "max_hp": 100,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "pressure",
+                  "base_ability": "pressure",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": []
+                }
+              ],
+              "conditions": []
+            },
+            {
+              "unresolved_illusion": false,
+              "active": [
+                0
+              ],
+              "team": [
+                {
+                  "ident": "p2: Alakazam",
+                  "species": "Alakazam",
+                  "level": 100,
+                  "gender": "F",
+                  "hp": 251,
+                  "max_hp": 251,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "synchronize",
+                  "base_ability": "synchronize",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "trickroom",
+                      "pp_used": 0,
+                      "uses_uncompared": false
+                    },
+                    {
+                      "id": "futuresight",
+                      "pp_used": 0,
+                      "uses_uncompared": false
+                    }
+                  ]
+                }
+              ],
+              "conditions": []
+            }
+          ],
+          "field": {
+            "weather": null,
+            "terrain": null,
+            "pseudo_weather": []
+          }
+        },
+        "spectator": {
+          "sides": [
+            {
+              "unresolved_illusion": false,
+              "preview": {
+                "pokes": [],
+                "sheet": null
+              },
+              "active": [
+                0
+              ],
+              "team": [
+                {
+                  "ident": "p1: Dusclops",
+                  "species": "Dusclops",
+                  "level": 100,
+                  "gender": "M",
+                  "hp": 100,
+                  "max_hp": 100,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "pressure",
+                  "base_ability": "pressure",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": []
+                }
+              ],
+              "conditions": []
+            },
+            {
+              "unresolved_illusion": false,
+              "preview": {
+                "pokes": [],
+                "sheet": null
+              },
+              "active": [
+                0
+              ],
+              "team": [
+                {
+                  "ident": "p2: Alakazam",
+                  "species": "Alakazam",
+                  "level": 100,
+                  "gender": "F",
+                  "hp": 100,
+                  "max_hp": 100,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "",
+                  "base_ability": "",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": []
+                }
+              ],
+              "conditions": []
+            }
+          ],
+          "field": {
+            "weather": null,
+            "terrain": null,
+            "pseudo_weather": []
+          }
+        }
+      }
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_1",
+      "turn": 2,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 262,
+              "max_hp": 262,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ghost"
+              ],
+              "ability": "pressure",
+              "item": "",
+              "species": "dusclops",
+              "pp": [
+                23,
+                16
+              ]
+            },
+            {
+              "hp": 282,
+              "max_hp": 282,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "bug",
+                "flying"
+              ],
+              "ability": "swarm",
+              "item": "",
+              "species": "beautifly",
+              "pp": [
+                32
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 251,
+              "max_hp": 251,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "psychic"
+              ],
+              "ability": "synchronize",
+              "item": "",
+              "species": "alakazam",
+              "pp": [
+                6,
+                24
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {
+          "trickroom": 4
+        },
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Dusclops"
+          },
+          "move": "Will-O-Wisp",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Alakazam"
+          },
+          "from": null
+        },
+        {
+          "kind": "miss",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Dusclops"
+          },
+          "detail": "p2a: Alakazam"
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Alakazam"
+          },
+          "move": "Trick Room",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Alakazam"
+          },
+          "from": null
+        },
+        {
+          "kind": "fieldstart",
+          "args": [
+            "move: Trick Room",
+            "[of] p2a: Alakazam"
+          ]
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 2
+        }
+      ],
+      "views": {
+        "version": 7,
+        "p1": {
+          "sides": [
+            {
+              "unresolved_illusion": false,
+              "active": [
+                0
+              ],
+              "team": [
+                {
+                  "ident": "p1: Dusclops",
+                  "species": "Dusclops",
+                  "level": 100,
+                  "gender": "M",
+                  "hp": 262,
+                  "max_hp": 262,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "pressure",
+                  "base_ability": "pressure",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "willowisp",
+                      "pp_used": 1,
+                      "uses_uncompared": false
+                    },
+                    {
+                      "id": "memento",
+                      "pp_used": 0,
+                      "uses_uncompared": false
+                    }
+                  ]
+                },
+                {
+                  "ident": "p1: Beautifly",
+                  "species": "Beautifly",
+                  "level": 100,
+                  "gender": "M",
+                  "hp": 282,
+                  "max_hp": 282,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "swarm",
+                  "base_ability": "swarm",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "flash",
+                      "pp_used": 0,
+                      "uses_uncompared": false
+                    }
+                  ]
+                }
+              ],
+              "conditions": []
+            },
+            {
+              "unresolved_illusion": false,
+              "active": [
+                0
+              ],
+              "team": [
+                {
+                  "ident": "p2: Alakazam",
+                  "species": "Alakazam",
+                  "level": 100,
+                  "gender": "F",
+                  "hp": 100,
+                  "max_hp": 100,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "",
+                  "base_ability": "",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "trickroom",
+                      "pp_used": 1,
+                      "uses_uncompared": false
+                    }
+                  ]
+                }
+              ],
+              "conditions": []
+            }
+          ],
+          "field": {
+            "weather": null,
+            "terrain": null,
+            "pseudo_weather": [
+              "trickroom"
+            ]
+          }
+        },
+        "p2": {
+          "sides": [
+            {
+              "unresolved_illusion": false,
+              "active": [
+                0
+              ],
+              "team": [
+                {
+                  "ident": "p1: Dusclops",
+                  "species": "Dusclops",
+                  "level": 100,
+                  "gender": "M",
+                  "hp": 100,
+                  "max_hp": 100,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "pressure",
+                  "base_ability": "pressure",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "willowisp",
+                      "pp_used": 1,
+                      "uses_uncompared": false
+                    }
+                  ]
+                }
+              ],
+              "conditions": []
+            },
+            {
+              "unresolved_illusion": false,
+              "active": [
+                0
+              ],
+              "team": [
+                {
+                  "ident": "p2: Alakazam",
+                  "species": "Alakazam",
+                  "level": 100,
+                  "gender": "F",
+                  "hp": 251,
+                  "max_hp": 251,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "synchronize",
+                  "base_ability": "synchronize",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "trickroom",
+                      "pp_used": 2,
+                      "uses_uncompared": false
+                    },
+                    {
+                      "id": "futuresight",
+                      "pp_used": 0,
+                      "uses_uncompared": false
+                    }
+                  ]
+                }
+              ],
+              "conditions": []
+            }
+          ],
+          "field": {
+            "weather": null,
+            "terrain": null,
+            "pseudo_weather": [
+              "trickroom"
+            ]
+          }
+        },
+        "spectator": {
+          "sides": [
+            {
+              "unresolved_illusion": false,
+              "active": [
+                0
+              ],
+              "team": [
+                {
+                  "ident": "p1: Dusclops",
+                  "species": "Dusclops",
+                  "level": 100,
+                  "gender": "M",
+                  "hp": 100,
+                  "max_hp": 100,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "pressure",
+                  "base_ability": "pressure",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "willowisp",
+                      "pp_used": 1,
+                      "uses_uncompared": false
+                    }
+                  ]
+                }
+              ],
+              "conditions": []
+            },
+            {
+              "unresolved_illusion": false,
+              "active": [
+                0
+              ],
+              "team": [
+                {
+                  "ident": "p2: Alakazam",
+                  "species": "Alakazam",
+                  "level": 100,
+                  "gender": "F",
+                  "hp": 100,
+                  "max_hp": 100,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "",
+                  "base_ability": "",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "trickroom",
+                      "pp_used": 1,
+                      "uses_uncompared": false
+                    }
+                  ]
+                }
+              ],
+              "conditions": []
+            }
+          ],
+          "field": {
+            "weather": null,
+            "terrain": null,
+            "pseudo_weather": [
+              "trickroom"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_2",
+      "turn": 2,
+      "request": "forced_switch|wait",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            null
+          ],
+          "party": [
+            {
+              "hp": 0,
+              "max_hp": 262,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ghost"
+              ],
+              "ability": "pressure",
+              "item": "",
+              "species": "dusclops",
+              "pp": [
+                23,
+                15
+              ]
+            },
+            {
+              "hp": 282,
+              "max_hp": 282,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "bug",
+                "flying"
+              ],
+              "ability": "swarm",
+              "item": "",
+              "species": "beautifly",
+              "pp": [
+                32
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0
+          ],
+          "party": [
+            {
+              "hp": 251,
+              "max_hp": 251,
+              "status": null,
+              "boosts": {
+                "attack": -2,
+                "defense": 0,
+                "special_attack": -2,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "psychic"
+              ],
+              "ability": "synchronize",
+              "item": "",
+              "species": "alakazam",
+              "pp": [
+                6,
+                22
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {
+          "trickroom": 3
+        },
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Dusclops"
+          },
+          "move": "Memento",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Alakazam"
+          },
+          "from": null
+        },
+        {
+          "kind": "unboost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Alakazam"
+          },
+          "stat": "atk",
+          "amount": 2
+        },
+        {
+          "kind": "unboost",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Alakazam"
+          },
+          "stat": "spa",
+          "amount": 2
+        },
+        {
+          "kind": "faint",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Dusclops"
+          },
+          "detail": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Alakazam"
+          },
+          "move": "Future Sight",
+          "target": {
+            "side": 0,
+            "slot": null,
+            "name": "Dusclops"
+          },
+          "from": null
+        },
+        {
+          "kind": "start",
+          "args": [
+            "p2a: Alakazam",
+            "Future Sight"
+          ]
+        },
+        {
+          "kind": "residual"
+        }
+      ],
+      "views": {
+        "version": 7,
+        "p1": {
+          "sides": [
+            {
+              "unresolved_illusion": false,
+              "active": [
+                null
+              ],
+              "team": [
+                {
+                  "ident": "p1: Dusclops",
+                  "species": "Dusclops",
+                  "level": 100,
+                  "gender": "M",
+                  "hp": 0,
+                  "max_hp": 100,
+                  "fainted": true,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "pressure",
+                  "base_ability": "pressure",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "willowisp",
+                      "pp_used": 1,
+                      "uses_uncompared": false
+                    },
+                    {
+                      "id": "memento",
+                      "pp_used": 0,
+                      "uses_uncompared": false
+                    }
+                  ]
+                },
+                {
+                  "ident": "p1: Beautifly",
+                  "species": "Beautifly",
+                  "level": 100,
+                  "gender": "M",
+                  "hp": 282,
+                  "max_hp": 282,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "swarm",
+                  "base_ability": "swarm",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "flash",
+                      "pp_used": 0,
+                      "uses_uncompared": false
+                    }
+                  ]
+                }
+              ],
+              "conditions": []
+            },
+            {
+              "unresolved_illusion": false,
+              "active": [
+                0
+              ],
+              "team": [
+                {
+                  "ident": "p2: Alakazam",
+                  "species": "Alakazam",
+                  "level": 100,
+                  "gender": "F",
+                  "hp": 100,
+                  "max_hp": 100,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {
+                    "atk": -2,
+                    "spa": -2
+                  },
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "",
+                  "base_ability": "",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "trickroom",
+                      "pp_used": 1,
+                      "uses_uncompared": false
+                    },
+                    {
+                      "id": "futuresight",
+                      "pp_used": 1,
+                      "uses_uncompared": false
+                    }
+                  ]
+                }
+              ],
+              "conditions": [
+                "futuresight"
+              ]
+            }
+          ],
+          "field": {
+            "weather": null,
+            "terrain": null,
+            "pseudo_weather": [
+              "trickroom"
+            ]
+          }
+        },
+        "p2": {
+          "sides": [
+            {
+              "unresolved_illusion": false,
+              "active": [
+                null
+              ],
+              "team": [
+                {
+                  "ident": "p1: Dusclops",
+                  "species": "Dusclops",
+                  "level": 100,
+                  "gender": "M",
+                  "hp": 0,
+                  "max_hp": 100,
+                  "fainted": true,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "pressure",
+                  "base_ability": "pressure",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "willowisp",
+                      "pp_used": 1,
+                      "uses_uncompared": false
+                    },
+                    {
+                      "id": "memento",
+                      "pp_used": 1,
+                      "uses_uncompared": false
+                    }
+                  ]
+                }
+              ],
+              "conditions": []
+            },
+            {
+              "unresolved_illusion": false,
+              "active": [
+                0
+              ],
+              "team": [
+                {
+                  "ident": "p2: Alakazam",
+                  "species": "Alakazam",
+                  "level": 100,
+                  "gender": "F",
+                  "hp": 251,
+                  "max_hp": 251,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {
+                    "atk": -2,
+                    "spa": -2
+                  },
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "synchronize",
+                  "base_ability": "synchronize",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "trickroom",
+                      "pp_used": 2,
+                      "uses_uncompared": false
+                    },
+                    {
+                      "id": "futuresight",
+                      "pp_used": 0,
+                      "uses_uncompared": false
+                    }
+                  ]
+                }
+              ],
+              "conditions": [
+                "futuresight"
+              ]
+            }
+          ],
+          "field": {
+            "weather": null,
+            "terrain": null,
+            "pseudo_weather": [
+              "trickroom"
+            ]
+          }
+        },
+        "spectator": {
+          "sides": [
+            {
+              "unresolved_illusion": false,
+              "active": [
+                null
+              ],
+              "team": [
+                {
+                  "ident": "p1: Dusclops",
+                  "species": "Dusclops",
+                  "level": 100,
+                  "gender": "M",
+                  "hp": 0,
+                  "max_hp": 100,
+                  "fainted": true,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "pressure",
+                  "base_ability": "pressure",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "willowisp",
+                      "pp_used": 1,
+                      "uses_uncompared": false
+                    },
+                    {
+                      "id": "memento",
+                      "pp_used": 1,
+                      "uses_uncompared": false
+                    }
+                  ]
+                }
+              ],
+              "conditions": []
+            },
+            {
+              "unresolved_illusion": false,
+              "active": [
+                0
+              ],
+              "team": [
+                {
+                  "ident": "p2: Alakazam",
+                  "species": "Alakazam",
+                  "level": 100,
+                  "gender": "F",
+                  "hp": 100,
+                  "max_hp": 100,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {
+                    "atk": -2,
+                    "spa": -2
+                  },
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "",
+                  "base_ability": "",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "trickroom",
+                      "pp_used": 1,
+                      "uses_uncompared": false
+                    },
+                    {
+                      "id": "futuresight",
+                      "pp_used": 1,
+                      "uses_uncompared": false
+                    }
+                  ]
+                }
+              ],
+              "conditions": [
+                "futuresight"
+              ]
+            }
+          ],
+          "field": {
+            "weather": null,
+            "terrain": null,
+            "pseudo_weather": [
+              "trickroom"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "debug_log": "|gametype|singles\n|player|p1|P1||\n|player|p2|P2||\n|gen|4\n|tier|[Gen 4] OU\n|rule|HP Percentage Mod: HP is shown in percentages\n|rule|Beat Up Nicknames Mod: Beat Up will not reveal any party members\n|rule|Endless Battle Clause: Forcing endless battles is banned\n|rule|Species Clause: Limit one of each Pokémon\n|rule|OHKO Clause: OHKO moves are banned\n|rule|Evasion Items Clause: Evasion items are banned\n|rule|Evasion Moves Clause: Evasion moves are banned\n|rule|Evasion Abilities Clause: Evasion abilities are banned\n|rule|Baton Pass Stat Trap Clause: No Baton Passer may have a way to boost stats or trap Pokémon\n|rule|Freeze Clause Mod: Limit one foe frozen\n|rule|Sleep Moves Clause: Sleep-inducing moves are banned\n|\n|teamsize|p1|2\n|teamsize|p2|1\n|start\n|switch|p1a: Dusclops|Dusclops, M, shiny|262/262\n|switch|p2a: Alakazam|Alakazam, F|251/251\n|-ability|p1a: Dusclops|Pressure\n|turn|1\n|\n|move|p1a: Dusclops|Will-O-Wisp|p2a: Alakazam|[miss]\n|-miss|p1a: Dusclops|p2a: Alakazam\n|move|p2a: Alakazam|Trick Room|p2a: Alakazam\n|-fieldstart|move: Trick Room|[of] p2a: Alakazam\n|\n|upkeep\n|turn|2\n|\n|move|p1a: Dusclops|Memento|p2a: Alakazam\n|-unboost|p2a: Alakazam|atk|2\n|-unboost|p2a: Alakazam|spa|2\n|faint|p1a: Dusclops\n|move|p2a: Alakazam|Future Sight|p1: Dusclops\n|-start|p2a: Alakazam|Future Sight\n|\n|upkeep"
+}
