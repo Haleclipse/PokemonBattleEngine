@@ -1063,17 +1063,17 @@ function notePerishBody(client, moves, args, kwArgs) {
 }
 
 /**
- * An item Trick or Switcheroo hands over, or Thief, Covet, Magician or Pickpocket takes, that is
- * used at once (a White Herb on lowered stats, a Seed on its terrain: the item's start, inside
+ * An item Trick or Switcheroo hands over, Bestow gives, or Thief, Covet, Magician or Pickpocket
+ * takes, that is used at once (a White Herb on lowered stats, a Seed on its terrain: the item's start, inside
  * `setItem`): Showdown writes its `-enditem` and what it did before the `-item|p|item|[from] move:
  * Trick` of the handover, which @pkmn/client reads as holding it again. The Pokémon holds nothing.
  * A handover runs from the swap's `-activate`, or a move's `move` line (its user the one Thief,
- * Covet or Magician hands the item, R-M10-59; its target the one Pickpocket does, R-M11-134), to
- * the next one or the next move.
+ * Covet or Magician hands the item, R-M10-59; its target the one Pickpocket or Bestow does,
+ * R-M11-134, R-M11-144), to the next one or the next move.
  */
 function noteUsedOnReceipt(client, handover, args, kwArgs) {
   const swap = ['move: Trick', 'move: Switcheroo'];
-  const take = ['move: Thief', 'move: Covet', 'ability: Magician', 'ability: Pickpocket'];
+  const take = ['move: Thief', 'move: Covet', 'move: Bestow', 'ability: Magician', 'ability: Pickpocket'];
   if (args[0] === 'move' || args[0] === '-activate') {
     const starts = args[0] === '-activate' && swap.includes(args[2]) && kwArgs.of;
     const moves = args[0] === 'move' ? [args[1], args[3]].filter(Boolean).map(ident) : null;
