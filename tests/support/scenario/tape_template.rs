@@ -2009,12 +2009,35 @@ pub(super) fn tape_template(
                     if let Some(id) = *target
                         && body_reachable
                     {
+                        // Wandering Spirit traded on an earlier hit: the target's chance reaction
+                        // is the user's old ability's (Cute Charm), the user's its (R-M11-149).
+                        let traded_state;
+                        let reaction_state = match oracle.ability_taken_after {
+                            Some(after) if oracle.ability_traded && hit >= after => {
+                                let mut traded = in_move.clone();
+                                let abilities = (
+                                    traded.pokemon(actor).map(|p| p.battle_ability()),
+                                    traded.pokemon(id).map(|p| p.battle_ability()),
+                                );
+                                if let (Some(user), Some(holder)) = abilities {
+                                    if let Some(p) = traded.pokemon_mut(actor) {
+                                        p.change_ability(holder);
+                                    }
+                                    if let Some(p) = traded.pokemon_mut(id) {
+                                        p.change_ability(user);
+                                    }
+                                }
+                                traded_state = traded;
+                                &traded_state
+                            }
+                            _ => in_move,
+                        };
                         chance_reactions(
                             &mut staged,
                             ChanceReactionHit {
                                 // The user as the hit lands: Protean's type already its own (a
                                 // Grass type shrugs off Effect Spore's powder, R-M8-180).
-                                state: in_move,
+                                state: reaction_state,
                                 rules,
                                 actor,
                                 target: id,

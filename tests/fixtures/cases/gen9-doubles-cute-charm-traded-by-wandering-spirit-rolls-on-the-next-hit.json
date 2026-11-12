@@ -1,0 +1,123 @@
+{
+  "schema": 1,
+  "id": "gen9-doubles-cute-charm-traded-by-wandering-spirit-rolls-on-the-next-hit",
+  "notes": [
+    "Dunsparce's Fury Swipes: Snivy's Wandering Spirit trades abilities on the first hit, and the Cute Charm Snivy now holds rolls on the second (DESIGN.md R-M11-149)",
+    "promoted from m8-gen9-doubles-s2032-018-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Froakie",
+        "species": "Froakie",
+        "level": 53,
+        "nature": "Hardy",
+        "moves": [
+          "Avalanche",
+          "Focus Punch"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Dunsparce",
+        "species": "Dunsparce",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fury Swipes",
+          "Twin Beam"
+        ],
+        "ability": "Cute Charm",
+        "gender": "M"
+      },
+      {
+        "label": "Sandygast",
+        "species": "Sandygast",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Dragon Darts"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Whiscash",
+        "species": "Whiscash",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Water Shuriken"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Ho-Oh",
+        "species": "Ho-Oh",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Rock Blast",
+          "Population Bomb"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Plusle",
+        "species": "Plusle",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Arm Thrust",
+          "Pin Missile"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Snivy",
+        "species": "Snivy",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Dual Wingbeat"
+        ],
+        "ability": "Wandering Spirit",
+        "item": "Red Card",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      62939,
+      24076,
+      58664,
+      45430
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Avalanche 1, move Fury Swipes 2",
+      "p2": "move Rock Blast 1, move Arm Thrust 2"
+    },
+    {
+      "p1": "move Focus Punch 1, move Twin Beam 2",
+      "p2": "move Population Bomb 1, move Pin Missile 2"
+    },
+    {
+      "p1": "switch Sandygast, move Fury Swipes 1",
+      "p2": "switch Snivy, move Arm Thrust 1"
+    }
+  ]
+}
