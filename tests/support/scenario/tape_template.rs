@@ -1454,12 +1454,28 @@ pub(super) fn tape_template(
                         } else {
                             (dealt, index.and_then(|i| oracle.hit_hp[i]))
                         };
+                        // Behind a Substitute struck again later in the boundary (no hint for
+                        // it), the roll is the search's, with the later ones (R-M11-151).
+                        let deferred_doll = substitute_hp(state, id).is_some()
+                            && substitutes.iter().all(|(doll, _)| *doll != id);
                         staged.push(
                             damage_stage,
-                            RandomOverride::range(
-                                RandomRequestKind::DamageRoll,
-                                psywave_roll(state, rules, actor, id, dealt, after, substitutes),
-                            ),
+                            if deferred_doll {
+                                open_psywave_roll(state.pokemon(actor).map_or(1, |p| p.level))
+                            } else {
+                                RandomOverride::range(
+                                    RandomRequestKind::DamageRoll,
+                                    psywave_roll(
+                                        state,
+                                        rules,
+                                        actor,
+                                        id,
+                                        dealt,
+                                        after,
+                                        substitutes,
+                                    ),
+                                )
+                            },
                         );
                     }
                     // Focus Band (DESIGN.md R196): where it lasts the move (Gen 3-4, issues.md
@@ -3601,6 +3617,32 @@ pub(super) fn open_optional_roll() -> RandomOverride {
 
 pub(super) fn is_open_optional_roll(entry: &Option<RandomOverride>) -> bool {
     entry.is_some_and(|entry| entry == open_optional_roll())
+}
+
+/// The value past which a damage roll marks an open Psywave roll (`open_psywave_roll`).
+const OPEN_PSYWAVE: u16 = 0xff00;
+
+/// Psywave's damage roll left open for the search: its damage hides behind a Substitute that is
+/// struck again later in the boundary, so only the rolls together settle it (R-M11-151). Marked
+/// by a value no roll takes, carrying its user's level; `search_rolls` fills it from Psywave's
+/// own range (`engine::psywave_range`).
+pub(super) fn open_psywave_roll(level: u8) -> RandomOverride {
+    RandomOverride::range(
+        RandomRequestKind::DamageRoll,
+        OPEN_PSYWAVE + u16::from(level),
+    )
+}
+
+/// The user's level an open Psywave roll carries.
+pub(super) fn open_psywave_level(entry: &Option<RandomOverride>) -> Option<u8> {
+    match entry {
+        Some(RandomOverride {
+            kind: RandomRequestKind::DamageRoll,
+            value: pokemon_battle_engine::state::RandomOverrideValue::Range(value),
+            optional: false,
+        }) if *value > OPEN_PSYWAVE => u8::try_from(value - OPEN_PSYWAVE).ok(),
+        _ => None,
+    }
 }
 
 /// The holds on 1 HP an action's log names: whose Focus Sash held (`-enditem|p|Focus Sash`), whose

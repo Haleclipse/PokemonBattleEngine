@@ -52,12 +52,22 @@ pub(super) fn search_rolls(
     unused: &mut Option<String>,
 ) -> RollSearch {
     let damage = compiled.rules.damage();
-    let candidates: Vec<u16> = (damage.random_min..=damage.random_max).collect();
+    // An open Psywave roll ranges over Psywave's own rolls (R-M11-151); any other, the damage
+    // formula's random factor.
+    let (low, high) = template
+        .iter()
+        .find_map(open_psywave_level)
+        .map_or((damage.random_min, damage.random_max), |level| {
+            pokemon_battle_engine::engine::psywave_range(&compiled.rules, level)
+        });
+    let candidates: Vec<u16> = (low..=high).collect();
     let open = template
         .iter()
-        .filter(|entry| entry.is_none() || is_open_optional_roll(entry))
+        .filter(|entry| {
+            entry.is_none() || is_open_optional_roll(entry) || open_psywave_level(entry).is_some()
+        })
         .count();
-    let mut rolls = vec![damage.random_max; open];
+    let mut rolls = vec![high; open];
     let mut seen = Vec::new();
 
     // Gen 1-2 roll no variance for a damage of 1 (Showdown `damage > 1`): the plan cannot know
@@ -80,8 +90,9 @@ pub(super) fn search_rolls(
             .iter()
             .map(|entry| {
                 let optional = is_open_optional_roll(entry);
+                let psywave = open_psywave_level(entry).is_some();
                 match entry {
-                    Some(entry) if !optional => *entry,
+                    Some(entry) if !optional && !psywave => *entry,
                     _ => {
                         let roll = rolls[next];
                         next += 1;
@@ -378,7 +389,7 @@ pub(super) fn search_rolls(
                 }
                 seen.push((roll, dealt));
             }
-            rolls[slot] = best.map_or(damage.random_max, |(_, roll)| roll);
+            rolls[slot] = best.map_or(high, |(_, roll)| roll);
         }
     }
     // Hits on a doll that only their sum settles can need several slots to move at once from
