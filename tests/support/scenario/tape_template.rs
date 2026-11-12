@@ -148,6 +148,17 @@ pub(super) fn tape_template(
                 }
                 NonVolatileStatus::Freeze => {
                     let thawed = oracle.cured.as_deref() == Some("frz") && !oracle.defrosted;
+                    // The freeze checks the move chosen: a caller's, not the move it calls
+                    // (Metronome's Scald thaws nothing, R-M11-150).
+                    let move_def = if oracle.called.is_empty() {
+                        move_def
+                    } else {
+                        oracle
+                            .move_name
+                            .as_deref()
+                            .and_then(|name| dex.moves().iter().find(|m| m.name == name))
+                            .or(move_def)
+                    };
                     // The engine says whether a thaw is rolled here (Gen 2: in the residual; a
                     // `defrost` move from Gen 5: no roll).
                     let rolls = match move_def {

@@ -1,0 +1,419 @@
+{
+  "schema": 1,
+  "id": "gen7-a-frozen-metronome-calling-scald-rolls-to-thaw",
+  "notes": [
+    "Frozen Magneton thaws by the roll before its Metronome calls Scald: the freeze checks the move chosen, not the defrost move it calls (DESIGN.md R-M11-150)",
+    "promoted from m8-gen7-singles-s2036-006-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 7,
+    "mode": "singles",
+    "format": "gen7customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Magneton",
+        "species": "Magneton",
+        "level": 51,
+        "nature": "Hardy",
+        "moves": [
+          "All-Out Pummeling",
+          "Metronome",
+          "Tectonic Rage",
+          "Gastro Acid"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Makuhita",
+        "species": "Makuhita",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Continental Crush",
+          "Metronome",
+          "Acid Downpour",
+          "Gastro Acid"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Sceptile",
+        "species": "Sceptile",
+        "level": 45,
+        "nature": "Hardy",
+        "moves": [
+          "Supersonic Skystrike",
+          "Metronome",
+          "Black Hole Eclipse",
+          "Gastro Acid"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Plusle",
+        "species": "Plusle",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Subzero Slammer",
+          "Metronome",
+          "Shattered Psyche",
+          "Gastro Acid"
+        ],
+        "ability": "Wonder Guard",
+        "gender": "M"
+      },
+      {
+        "label": "Sylveon",
+        "species": "Sylveon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Splintered Stormshards",
+          "Metronome",
+          "Hydro Vortex"
+        ],
+        "ability": "No Guard",
+        "gender": "M"
+      },
+      {
+        "label": "Bounsweet",
+        "species": "Bounsweet",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Metronome",
+          "Twinkle Tackle",
+          "Gastro Acid"
+        ],
+        "ability": "Run Away"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Munchlax",
+        "species": "Munchlax",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Bloom Doom",
+          "Metronome",
+          "Inferno Overdrive",
+          "Gastro Acid"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Crawdaunt",
+        "species": "Crawdaunt",
+        "level": 49,
+        "nature": "Hardy",
+        "moves": [
+          "Never-Ending Nightmare",
+          "Metronome",
+          "Breakneck Blitz",
+          "Gastro Acid"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Zangoose",
+        "species": "Zangoose",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Devastating Drake",
+          "Metronome",
+          "Corkscrew Crash",
+          "Gastro Acid"
+        ],
+        "ability": "Flame Body",
+        "gender": "M"
+      },
+      {
+        "label": "Seismitoad",
+        "species": "Seismitoad",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Savage Spin-Out",
+          "Metronome",
+          "Gigavolt Havoc",
+          "Gastro Acid"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Mothim",
+        "species": "Mothim",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Present",
+          "Metronome",
+          "Seed Bomb",
+          "Gastro Acid"
+        ],
+        "ability": "Run Away"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      36514,
+      61152,
+      32955,
+      33584
+    ]
+  },
+  "script": [
+    {
+      "p1": "move All-Out Pummeling",
+      "p2": "move Bloom Doom"
+    },
+    {
+      "p1": "move Tectonic Rage",
+      "p2": "move Inferno Overdrive"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Metronome"
+    },
+    {
+      "p1": "move Gastro Acid",
+      "p2": "move Gastro Acid"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Metronome"
+    },
+    {
+      "p1": "move Gastro Acid",
+      "p2": "move Gastro Acid"
+    },
+    {
+      "p1": "switch Makuhita",
+      "p2": "switch Crawdaunt"
+    },
+    {
+      "p1": "move Acid Downpour",
+      "p2": "move Breakneck Blitz"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Metronome"
+    },
+    {
+      "p1": "move Gastro Acid",
+      "p2": "move Gastro Acid"
+    },
+    {
+      "p1": "move Continental Crush",
+      "p2": "move Never-Ending Nightmare"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Metronome"
+    },
+    {
+      "p1": "move 4",
+      "p2": "move 1"
+    },
+    {
+      "p1": "switch Magneton"
+    },
+    {
+      "p1": "switch Sceptile",
+      "p2": "switch Munchlax"
+    },
+    {
+      "p1": "move Supersonic Skystrike",
+      "p2": "move Metronome"
+    },
+    {
+      "p1": "move Black Hole Eclipse",
+      "p2": "move Gastro Acid"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Metronome"
+    },
+    {
+      "p2": "switch Crawdaunt"
+    },
+    {
+      "p1": "move Gastro Acid",
+      "p2": "move Gastro Acid"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Metronome"
+    },
+    {
+      "p1": "move Gastro Acid",
+      "p2": "move Gastro Acid"
+    },
+    {
+      "p1": "switch Magneton",
+      "p2": "switch Zangoose"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Corkscrew Crash"
+    },
+    {
+      "p1": "move Gastro Acid",
+      "p2": "move Metronome"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Gastro Acid"
+    },
+    {
+      "p1": "move Gastro Acid",
+      "p2": "move Devastating Drake"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Metronome"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 4"
+    },
+    {
+      "p1": "switch Sceptile",
+      "p2": "switch Crawdaunt"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Metronome"
+    },
+    {
+      "p1": "move Gastro Acid",
+      "p2": "move Gastro Acid"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Metronome"
+    },
+    {
+      "p2": "switch Zangoose"
+    },
+    {
+      "p1": "move Gastro Acid",
+      "p2": "move Gastro Acid"
+    },
+    {
+      "p1": "switch Magneton"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Metronome"
+    },
+    {
+      "p1": "move 4",
+      "p2": "move 1"
+    },
+    {
+      "p1": "switch Plusle",
+      "p2": "switch Seismitoad"
+    },
+    {
+      "p1": "move Shattered Psyche",
+      "p2": "move Gigavolt Havoc"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Metronome"
+    },
+    {
+      "p1": "move Gastro Acid",
+      "p2": "move Gastro Acid"
+    },
+    {
+      "p1": "move Subzero Slammer",
+      "p2": "move Savage Spin-Out"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Metronome"
+    },
+    {
+      "p1": "switch Magneton"
+    },
+    {
+      "p1": "move Gastro Acid",
+      "p2": "move Gastro Acid"
+    },
+    {
+      "p1": "switch Sylveon",
+      "p2": "switch Zangoose"
+    },
+    {
+      "p1": "move Splintered Stormshards",
+      "p2": "move Metronome"
+    },
+    {
+      "p2": "switch Seismitoad"
+    },
+    {
+      "p1": "move Hydro Vortex",
+      "p2": "move Gastro Acid"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Metronome"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 4"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Metronome"
+    },
+    {
+      "p1": "switch Magneton"
+    },
+    {
+      "p1": "move Gastro Acid",
+      "p2": "move Gastro Acid"
+    },
+    {
+      "p1": "switch Bounsweet",
+      "p2": "switch Mothim"
+    },
+    {
+      "p1": "move Twinkle Tackle",
+      "p2": "move Seed Bomb"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Gastro Acid"
+    },
+    {
+      "p1": "move Gastro Acid",
+      "p2": "move Present"
+    },
+    {
+      "p1": "switch Magneton"
+    },
+    {
+      "p1": "move Gastro Acid",
+      "p2": "move Metronome"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Seed Bomb"
+    }
+  ]
+}
