@@ -1069,7 +1069,9 @@ function notePerishBody(client, moves, args, kwArgs) {
  * Trick` of the handover, which @pkmn/client reads as holding it again. The Pokémon holds nothing.
  * A handover runs from the swap's `-activate`, or a move's `move` line (its user the one Thief,
  * Covet or Magician hands the item, R-M10-59; its target the one Pickpocket or Bestow does,
- * R-M11-134, R-M11-144), to the next one or the next move.
+ * R-M11-134, R-M11-144), to the next one or the next move. A berry eaten in it (`[eat]`) is the
+ * Pokémon's own, eaten at the hit's `Update` before the handover: no berry is used inside
+ * `setItem` (R-M11-145).
  */
 function noteUsedOnReceipt(client, handover, args, kwArgs) {
   const swap = ['move: Trick', 'move: Switcheroo'];
@@ -1082,7 +1084,7 @@ function noteUsedOnReceipt(client, handover, args, kwArgs) {
     return;
   }
   if (!handover.who) return;
-  if (args[0] === '-enditem' && !kwArgs.from && handover.who.has(ident(args[1]))) {
+  if (args[0] === '-enditem' && !kwArgs.from && !kwArgs.eat && handover.who.has(ident(args[1]))) {
     handover.used.set(ident(args[1]), args[2]);
   } else if (args[0] === '-item' && [...swap, ...take].includes(kwArgs.from) && handover.used.get(ident(args[1])) === args[2]) {
     const poke = client.getPokemon(args[1]);
