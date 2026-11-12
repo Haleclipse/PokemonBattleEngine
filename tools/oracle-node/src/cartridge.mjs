@@ -4394,3 +4394,22 @@ if (patched) {
     return actions;
   };
 }
+
+// I227 — Metal Burst (Gen 4+) and Comeuppance (Gen 9) deal a whole number: pokeplatinum's
+// `BtlCmd_TryMetalBurst` sets the damage to `lastDamageTaken * 15 / 10` in integer arithmetic.
+// Showdown's `damageCallback` returns `lastDamagedBy.damage * 1.5`, a half for an odd damage
+// taken: HP damage is floored (`clampIntRange`), but a Substitute takes it as it is
+// (`substitute.onTryPrimaryHit`), and keeps the half. The patch floors the callback's damage.
+// No draw changes.
+if (patched) {
+  const moves = new Set(['gen4', 'gen5', 'gen6', 'gen7', 'gen8', 'gen9']
+    .flatMap(mod => ['metalburst', 'comeuppance'].map(id => Dex.mod(mod).data.Moves[id]))
+    .filter(move => move?.damageCallback));
+  for (const move of moves) {
+    const damageCallback = move.damageCallback;
+    move.damageCallback = function (...args) {
+      const damage = damageCallback.apply(this, args);
+      return typeof damage === 'number' ? Math.floor(damage) : damage;
+    };
+  }
+}
