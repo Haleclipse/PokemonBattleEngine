@@ -1146,6 +1146,7 @@ pub fn extract_decisions_with(
                     && action.move_name.is_some()
                 {
                     action.hit = false;
+                    action.absorbed.push(target.clone());
                     action.try_hit_blocked.push(target.clone());
                     action.immune.push(target);
                 }
@@ -1650,6 +1651,7 @@ pub fn extract_decisions_with(
                         // own user (Magic Bounce) is its reflector's, so the user absorbs it too.
                         let mover = action.called.last().map_or(&action.user, |c| &c.user);
                         if absorbed && target != *mover {
+                            action.absorbed.push(target.clone());
                             action.try_hit_blocked.push(target.clone());
                             action.immune.push(target.clone());
                         }
@@ -1725,6 +1727,7 @@ pub fn extract_decisions_with(
                     && action.move_name.is_some()
                 {
                     action.hit = false;
+                    action.absorbed.push(target.clone());
                     action.try_hit_blocked.push(target.clone());
                     action.immune.push(target);
                 }

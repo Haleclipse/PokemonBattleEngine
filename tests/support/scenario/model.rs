@@ -1054,6 +1054,9 @@ pub struct ActionOracle {
     /// The targets among `try_hit_blocked` a guard stopped (`-activate|p|move: Protect`, Max
     /// Guard …): nothing of the target's own showed.
     pub guarded: Vec<Who>,
+    /// The targets among `try_hit_blocked` an absorbing ability took (`-ability|p|Storm
+    /// Drain|boost`, an absorbing heal, Flash Fire): before any status the move would set.
+    pub absorbed: Vec<Who>,
     /// Pokémon dragged in by this action (`drag` events: Roar, Dragon Tail, Red Card), in
     /// order; each names the slot it entered.
     pub dragged_in: Vec<Who>,
@@ -1230,6 +1233,7 @@ impl ActionOracle {
             crashed: false,
             try_hit_blocked: Vec::new(),
             guarded: Vec::new(),
+            absorbed: Vec::new(),
             dragged_in: Vec::new(),
             damages: Vec::new(),
             secondary_applied: false,

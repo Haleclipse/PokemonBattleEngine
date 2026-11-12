@@ -739,8 +739,13 @@ pub(super) fn tape_template(
                     && pokemon_battle_engine::engine::status_type_immune(state, rules, id, status))
                     // Or an ability refusing the status as it is set (Limber, Pastel Veil):
                     // its `-immune … [from] ability:` comes once the move landed (R277) —
-                    // unless a guard (Protect, Max Guard) stopped the move first (R-M8-109).
+                    // unless a guard (Protect, Max Guard) stopped the move first (R-M8-109), or
+                    // an absorbing ability did (a Liquid Voice Sing Storm Drain takes, R-M11-146).
                     || (!oracle
+                        .absorbed
+                        .iter()
+                        .any(|who| who_to_id(state, who) == Some(id))
+                        && !oracle
                         .guarded
                         .iter()
                         .any(|who| who_to_id(state, who) == Some(id))
