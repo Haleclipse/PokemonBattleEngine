@@ -832,11 +832,13 @@ impl BattleEngine {
                         kind: SideConditionKind::StickyWeb,
                         damage: 0,
                     });
-                    // Gen 9: from the entrant's foe in the first slot (an empty slot — its
-                    // Pokémon down — leaves no one to send the drop back to), Gen 6-8 from
-                    // the setter.
+                    // Gen 9: from the entrant's foe in the first slot — one fainted there and
+                    // not yet replaced too (Showdown keeps it in `side.active`: a foe for
+                    // Defiant, nobody Mirror Armor sends the drop back to, R-M11-152) — Gen
+                    // 6-8 from the setter.
                     let from = if self.rules.conditions.sticky_web_drop_from_foe_lead {
-                        self.state.side(side.other()).active[0]
+                        let foes = self.state.side(side.other());
+                        foes.active[0].or_else(|| foes.fallen.first().copied().flatten())
                     } else {
                         Some(source)
                     };
