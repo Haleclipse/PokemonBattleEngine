@@ -95,10 +95,15 @@ impl<'a> BattleContext<'a> {
     }
 
     /// Showdown `runEvent('Invulnerability')` for a field-wide move's `onHitField` (Perish
-    /// Song, Teatime): `pokemon` is out of reach in a semi-invulnerable charge (Fly, Dig …)
-    /// unless No Guard — `user`'s or its own — reaches it.
+    /// Song, Teatime): `pokemon` is out of reach in a semi-invulnerable charge (Fly, Dig …) or
+    /// inside Dondozo (Commander's `commanding`, `onInvulnerability: false`, R-M11-160) unless
+    /// No Guard — `user`'s or its own — reaches it.
     pub fn out_of_reach(&self, user: PokemonId, pokemon: PokemonId) -> bool {
-        self.semi_invulnerable(pokemon)
+        (self.semi_invulnerable(pokemon)
+            || self.state.pokemon(pokemon).is_some_and(|p| {
+                p.volatiles
+                    .contains(crate::state::VolatileConditionKind::Commanding)
+            }))
             && !crate::engine::no_guard(self.state, self.rules, user, pokemon)
     }
 

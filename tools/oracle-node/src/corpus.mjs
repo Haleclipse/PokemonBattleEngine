@@ -92,7 +92,9 @@ function choose(sideId, request) {
   if (!request.active) return 'pass';
   const parts = request.active.map((active, slot) => {
     const me = request.side.pokemon[slot];
-    if (!me || me.condition.endsWith(' fnt')) return 'pass';
+    // A fainted Pokémon passes, and so does a Tatsugiri inside Dondozo (`commanding`): Showdown
+    // passes for it itself, so a move named for it goes to the next slot and runs out of slots.
+    if (!me || me.condition.endsWith(' fnt') || me.commanding) return 'pass';
     if (slot === 0 && battle.turn % switchEvery === 0 && !active.trapped && !active.maybeTrapped) {
       const [n] = healthyBench(request, taken);
       if (n) { taken.add(n); return `switch ${n}`; }

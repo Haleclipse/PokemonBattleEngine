@@ -15,6 +15,10 @@ pub enum SemiInvulnerableKind {
     /// Phantom Force, Shadow Force: gone (their condition's `onInvulnerability` is `false`
     /// outright — no move reaches them through it).
     Vanished,
+    /// Commander: a Tatsugiri inside Dondozo (`commanding`). Not a charging move's place — the
+    /// hit step misses it before asking anything else (`hitStepInvulnerabilityEvent`), and it is
+    /// never `isSemiInvulnerable` (`two_turn::hiding` does not name it).
+    Commanding,
 }
 
 impl SemiInvulnerableKind {
@@ -105,7 +109,7 @@ impl TwoTurnRules {
             SemiInvulnerableKind::Flying => Some(&self.flying),
             SemiInvulnerableKind::Underground => Some(&self.underground),
             SemiInvulnerableKind::Underwater => Some(&self.underwater),
-            SemiInvulnerableKind::Vanished => None,
+            SemiInvulnerableKind::Vanished | SemiInvulnerableKind::Commanding => None,
         }
     }
 

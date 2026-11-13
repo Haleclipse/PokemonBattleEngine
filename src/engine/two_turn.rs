@@ -123,6 +123,16 @@ pub fn dodged_by(
     incoming: &ResolvedMove,
 ) -> Option<SemiInvulnerableKind> {
     let hidden = state.pokemon(target)?;
+    // Commander: a Tatsugiri inside Dondozo is missed before any `Invulnerability` handler is
+    // asked — No Guard, Lock-On and a sure hit do not reach it —, Helping Hand alone excepted
+    // (Showdown `hitStepInvulnerabilityEvent`, R-M11-160).
+    if hidden
+        .volatiles
+        .contains(crate::state::VolatileConditionKind::Commanding)
+    {
+        return (incoming.id != crate::ids::MoveId::HELPING_HAND)
+            .then_some(SemiInvulnerableKind::Commanding);
+    }
     // Sky Drop's user reaches the Pokémon it carries (`onAnyInvulnerability`).
     if hidden.volatiles.sky_dropped_by() == Some(actor) {
         return None;

@@ -1,0 +1,82 @@
+{
+  "schema": 1,
+  "id": "gen9-commander-perish-song-misses-the-tatsugiri",
+  "notes": [
+    "Gen 9 doubles: a foe's Perish Song misses the Tatsugiri inside Dondozo (Showdown's `commanding` condition, `onInvulnerability: false`, which Perish Song's `onHitField` asks): only Dondozo and the foes start counting (R-M11-160)"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Dondozo",
+        "species": "Dondozo",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Harden"
+        ],
+        "gender": "M",
+        "ability": "Unaware"
+      },
+      {
+        "label": "Tatsugiri",
+        "species": "Tatsugiri",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Harden"
+        ],
+        "gender": "M",
+        "ability": "Commander"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Lapras",
+        "species": "Lapras",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Perish Song",
+          "Harden"
+        ],
+        "gender": "M",
+        "ability": "Water Absorb"
+      },
+      {
+        "label": "Snorlax",
+        "species": "Snorlax",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Harden"
+        ],
+        "gender": "M",
+        "ability": "Thick Fat"
+      }
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Harden, pass",
+      "p2": "move Perish Song, move Harden"
+    },
+    {
+      "p1": "move Harden, pass",
+      "p2": "move Harden, move Harden"
+    }
+  ],
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}
