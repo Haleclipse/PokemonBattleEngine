@@ -1,0 +1,281 @@
+{
+  "schema": 1,
+  "id": "gen5-doubles-a-heart-swap-with-a-twin-side-takes-no-oracle-stages",
+  "notes": [
+    "Turn 33: Shaymin Heart Swaps with a Blastoise beside an Illusion twin (two Thundurus once stood on p2's side): the spectator's client had lost Blastoise's Sand Attack drop, so the stages it swaps onto Shaymin are no oracle (boosts_from_own, R-M11-162).",
+    "promoted from m8-gen5-doubles-s2081-019-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 5,
+    "mode": "doubles",
+    "format": "gen5doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Shaymin",
+        "species": "Shaymin",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sand Attack",
+          "Heart Swap",
+          "Agility",
+          "Assist"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Darkrai",
+        "species": "Darkrai",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Cosmic Power",
+          "Heart Swap",
+          "Quiver Dance",
+          "Assist"
+        ],
+        "ability": "Run Away",
+        "item": "Power Anklet"
+      },
+      {
+        "label": "Charizard",
+        "species": "Charizard",
+        "level": 53,
+        "nature": "Hardy",
+        "moves": [
+          "Swords Dance",
+          "Heart Swap",
+          "Acid Armor",
+          "Assist"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Hippowdon",
+        "species": "Hippowdon",
+        "level": 45,
+        "nature": "Hardy",
+        "moves": [
+          "Calm Mind",
+          "Heart Swap",
+          "Growth",
+          "Assist"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Blastoise",
+        "species": "Blastoise",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Screech",
+          "Heart Swap",
+          "Smokescreen",
+          "Assist"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Tepig",
+        "species": "Tepig",
+        "level": 53,
+        "nature": "Hardy",
+        "moves": [
+          "Tail Glow",
+          "Heart Swap",
+          "Fake Tears",
+          "Assist"
+        ],
+        "ability": "Illusion",
+        "gender": "M"
+      },
+      {
+        "label": "Oshawott",
+        "species": "Oshawott",
+        "level": 53,
+        "nature": "Hardy",
+        "moves": [
+          "Memento",
+          "Shift Gear",
+          "Assist"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Thundurus",
+        "species": "Thundurus",
+        "level": 54,
+        "nature": "Hardy",
+        "moves": [
+          "Hone Claws",
+          "Heart Swap",
+          "Dragon Dance",
+          "Assist"
+        ],
+        "ability": "Sand Stream"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      62151,
+      41,
+      20899,
+      26329
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Sand Attack 1, move Cosmic Power",
+      "p2": "move Screech 1, move Tail Glow"
+    },
+    {
+      "p1": "move Agility, move Quiver Dance",
+      "p2": "move Smokescreen 2, move Fake Tears 1"
+    },
+    {
+      "p1": "switch Charizard, move Assist",
+      "p2": "switch Oshawott, move Assist"
+    },
+    {
+      "p1": "move Assist, move Cosmic Power",
+      "p2": "move Assist, move Tail Glow"
+    },
+    {
+      "p1": "move Swords Dance, move Heart Swap 2",
+      "p2": "move Memento 2, move Heart Swap 1"
+    },
+    {
+      "p2": "switch Blastoise, pass"
+    },
+    {
+      "p1": "move Heart Swap 1, move Quiver Dance",
+      "p2": "move Heart Swap 2, move Fake Tears 1"
+    },
+    {
+      "p1": "switch Shaymin, move Assist",
+      "p2": "switch Thundurus, move Assist"
+    },
+    {
+      "p1": "move Agility, move Cosmic Power",
+      "p2": "move Dragon Dance, move Tail Glow"
+    },
+    {
+      "p1": "move Assist, move Heart Swap 2",
+      "p2": "move Assist, move Heart Swap 2"
+    },
+    {
+      "p1": "move Sand Attack 1, move Quiver Dance",
+      "p2": "move Hone Claws, move Fake Tears 1"
+    },
+    {
+      "p1": "switch Charizard, move Assist",
+      "p2": "switch Blastoise, move Assist"
+    },
+    {
+      "p1": "move Heart Swap 2, move Cosmic Power",
+      "p2": "move Heart Swap 2, move Tail Glow"
+    },
+    {
+      "p1": "move Acid Armor, move Heart Swap 1",
+      "p2": "move Smokescreen 1, move Heart Swap 2"
+    },
+    {
+      "p1": "move Assist, move Quiver Dance",
+      "p2": "move Assist, move Fake Tears 1"
+    },
+    {
+      "p1": "switch Shaymin, move Assist",
+      "p2": "switch Thundurus, move Assist"
+    },
+    {
+      "p1": "move Sand Attack 2, move Cosmic Power",
+      "p2": "move Hone Claws, move Tail Glow"
+    },
+    {
+      "p1": "move Heart Swap 1, move Heart Swap 2",
+      "p2": "move Heart Swap 2, move Heart Swap 1"
+    },
+    {
+      "p1": "move Agility, move Quiver Dance",
+      "p2": "move Dragon Dance, move Fake Tears 2"
+    },
+    {
+      "p1": "switch Charizard, move Assist",
+      "p2": "switch Blastoise, move Assist"
+    },
+    {
+      "p1": "move Assist, move Cosmic Power",
+      "p2": "move Assist, move Tail Glow"
+    },
+    {
+      "p1": "move Swords Dance, move Heart Swap 1",
+      "p2": "move Screech 1, move Heart Swap 2"
+    },
+    {
+      "p1": "move Heart Swap 2, move Quiver Dance",
+      "p2": "move Heart Swap 1, move Fake Tears 2"
+    },
+    {
+      "p1": "switch Shaymin, move Assist",
+      "p2": "switch Thundurus, move Assist"
+    },
+    {
+      "p1": "pass, switch Charizard",
+      "p2": "pass, switch Blastoise"
+    },
+    {
+      "p1": "move Agility, move Swords Dance",
+      "p2": "move Dragon Dance, move Screech 1"
+    },
+    {
+      "p1": "move Assist, move Heart Swap 1",
+      "p2": "move Assist, move Heart Swap 2"
+    },
+    {
+      "p1": "move Sand Attack 2, move Acid Armor",
+      "p2": "move Hone Claws, move Smokescreen 1"
+    },
+    {
+      "p1": "switch Hippowdon, move Assist",
+      "p2": "move Heart Swap 2, move Assist"
+    },
+    {
+      "p1": "move Heart Swap 1, move Swords Dance",
+      "p2": "move Dragon Dance, move Screech 1"
+    },
+    {
+      "p1": "move Growth, move Heart Swap 2",
+      "p2": "move Assist, move Heart Swap 2"
+    },
+    {
+      "p1": "move Assist, move Acid Armor",
+      "p2": "move Hone Claws, move Smokescreen 1"
+    },
+    {
+      "p1": "switch Shaymin, move Assist",
+      "p2": "move Heart Swap 2, move Assist"
+    },
+    {
+      "p1": "move Sand Attack 2, move Swords Dance",
+      "p2": "pass, move Screech 1"
+    },
+    {
+      "p1": "pass, switch Hippowdon"
+    },
+    {
+      "p1": "move Heart Swap 2, move Heart Swap 2",
+      "p2": "pass, move Heart Swap 2"
+    }
+  ]
+}

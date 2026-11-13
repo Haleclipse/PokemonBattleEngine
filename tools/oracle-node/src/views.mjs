@@ -126,7 +126,7 @@ export function observers(battle) {
           noteMaskedKnowledge(client, masks, args);
           noteMisplaced(client, misplaced, args);
           const entries = entriesOf(client);
-          noteOwnBoostsCopied(client, name, copied, args);
+          noteOwnBoostsCopied(client, name, copied, unresolved, args);
           const twin = twinOnField(client, args) || fallenTwin(client, args);
           const itemBefore = itemOf(client, args);
           const basesBefore = basesOf(client, args, kwArgs);
@@ -1268,15 +1268,19 @@ function ident(position) {
  * @pkmn/client's own team is no oracle (`tests/support/views.rs`): stages a Pokémon of the other
  * side copies or swaps with one of the player's own (Psych Up, Heart Swap, Spectral Thief…), or
  * takes with the rest as it transforms into one (`-transform|user|target`), are copied from that.
+ * So are the stages of a Pokémon on a side marked `unresolved_illusion`, whose who-is-where is the
+ * client's guess (a Heart Swap with a Blastoise the client lost track of beside a twin, R-M11-162).
  * Such an entry is marked `boosts_from_own` until it leaves the field or its stages are cleared.
  */
-function noteOwnBoostsCopied(client, observer, copied, args) {
+function noteOwnBoostsCopied(client, observer, copied, unresolved, args) {
+  const untrusted = (source, target) => (source.startsWith(observer) && !target.startsWith(observer))
+    || (unresolved.has(source.slice(0, 2)) && !unresolved.has(target.slice(0, 2)));
   if (['-copyboost', '-swapboost'].includes(args[0]) && args[2]) {
     for (const [target, source] of [[args[1], args[2]], [args[2], args[1]]]) {
-      if (source.startsWith(observer) && !target.startsWith(observer)) copied.add(ident(target));
+      if (untrusted(source, target)) copied.add(ident(target));
     }
   } else if (args[0] === '-transform' && args[2]) {
-    if (args[2].startsWith(observer) && !args[1].startsWith(observer)) copied.add(ident(args[1]));
+    if (untrusted(args[2], args[1])) copied.add(ident(args[1]));
   } else if (['-clearallboost'].includes(args[0])) {
     copied.clear();
   } else if (['-clearboost'].includes(args[0])) {

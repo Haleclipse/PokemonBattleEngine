@@ -495,7 +495,7 @@ fn pokemon_diffs(
     let gen1 = compiled.engine.omniscient_view().generation()
         == pokemon_battle_engine::spec::Generation::Gen1;
     // Stages copied from one of the observer's own (Psych Up …), which @pkmn/client's own team
-    // has not right (`views.mjs`).
+    // has not right, or from a side whose Illusion it guessed at (`views.mjs`, R-M11-162).
     let copied = seen["boosts_from_own"].as_bool().unwrap_or(false);
     for (stat, id) in STATS {
         if (gen1 && stat == Stat::SpecialDefense) || copied {
