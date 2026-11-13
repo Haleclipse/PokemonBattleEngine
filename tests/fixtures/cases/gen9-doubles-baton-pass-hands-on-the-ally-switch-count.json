@@ -1,0 +1,186 @@
+{
+  "schema": 1,
+  "id": "gen9-doubles-baton-pass-hands-on-the-ally-switch-count",
+  "notes": [
+    "Turn 9: Snorlax uses Ally Switch through Copycat; turn 10 its Baton Pass hands the allyswitch volatile (duration 2, not noCopy) on to Dragonite (R-M11-159).",
+    "promoted from m8-gen9-doubles-s105900-007-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Ampharos",
+        "species": "Ampharos",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Poison Gas",
+          "Copycat",
+          "Poison Powder",
+          "Salt Cure"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Tyranitar",
+        "species": "Tyranitar",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Ally Switch",
+          "Copycat",
+          "Salt Cure"
+        ],
+        "ability": "Intimidate",
+        "gender": "M"
+      },
+      {
+        "label": "Snorlax",
+        "species": "Snorlax",
+        "level": 52,
+        "nature": "Hardy",
+        "moves": [
+          "Baton Pass",
+          "Salt Cure",
+          "Defense Curl",
+          "Copycat"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Dragonite",
+        "species": "Dragonite",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Roost"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Raichu",
+        "species": "Raichu",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Encore",
+          "Salt Cure",
+          "Throat Chop",
+          "Copycat"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Makuhita",
+        "species": "Makuhita",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Spite",
+          "Salt Cure",
+          "Pain Split",
+          "Copycat"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Bastiodon",
+        "species": "Bastiodon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tailwind",
+          "Salt Cure",
+          "Grassy Terrain",
+          "Copycat"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Litten",
+        "species": "Litten",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Salt Cure",
+          "Safeguard",
+          "Copycat"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      6092,
+      10164,
+      47286,
+      51559
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Poison Gas, move Ally Switch",
+      "p2": "move Encore 1, move Spite 2"
+    },
+    {
+      "p1": "move 1, move 2",
+      "p2": "move 2 1, move 2 2"
+    },
+    {
+      "p1": "move Poison Powder 1, move Ally Switch",
+      "p2": "move Throat Chop 1, move Pain Split 2"
+    },
+    {
+      "p1": "move Salt Cure 2, move Ally Switch",
+      "p2": "move Copycat, move Copycat"
+    },
+    {
+      "p1": "move 1, move 1",
+      "p2": "move 1 1, move 1 2"
+    },
+    {
+      "p2": "switch 3, switch 4"
+    },
+    {
+      "p1": "switch 3, move Salt Cure 1",
+      "p2": "move Salt Cure 1, move Salt Cure 2"
+    },
+    {
+      "p1": "move Salt Cure 2, move Salt Cure 1",
+      "p2": "move Grassy Terrain, move Safeguard"
+    },
+    {
+      "p1": "move Defense Curl, move Salt Cure 2",
+      "p2": "move Copycat, move Copycat"
+    },
+    {
+      "p1": "pass, switch 3"
+    },
+    {
+      "p1": "move Copycat, move Ally Switch",
+      "p2": "move Tailwind, pass"
+    },
+    {
+      "p1": "move Baton Pass, move Copycat",
+      "p2": "move Salt Cure 1, pass"
+    },
+    {
+      "p1": "switch 4, pass"
+    }
+  ]
+}

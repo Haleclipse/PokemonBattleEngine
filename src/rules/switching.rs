@@ -82,7 +82,8 @@ pub const GEN1_PARTIALLY_TRAPPED_TURNS: u8 = 2;
 /// the others), Minimize's mark, Autotomize (Gen 6+ lowers `weighthg`, never handed on), Flash
 /// Fire's boost; Gen 3-4's `substitutebroken` marker and Gen 6-7's `toxic` sure-hit (the gen4
 /// conditions, the gen7 mod). Gen 2-4 hand Mean Look's links on (the gen4 conditions' `trapped`
-/// / `trapper`: `noCopy: false`).
+/// / `trapper`: `noCopy: false`), and Gen 9 its Ally Switch count (`allyswitch` is not `noCopy`:
+/// a Baton Pass the turn after Ally Switch hands its `duration: 2` on, R-M11-159).
 const NOT_PASSED_GEN2: &[VolatileConditionKind] = &[
     // Glaive Rush's drawback (`noCopy`, §15.20).
     VolatileConditionKind::GlaiveRush,
@@ -101,7 +102,6 @@ const NOT_PASSED_GEN2: &[VolatileConditionKind] = &[
     VolatileConditionKind::MagicCoat,
     VolatileConditionKind::Snatch,
     VolatileConditionKind::MeFirst,
-    VolatileConditionKind::AllySwitch,
     VolatileConditionKind::Yawn,
     VolatileConditionKind::Nightmare,
     VolatileConditionKind::SaltCure,
@@ -144,7 +144,6 @@ const NOT_PASSED_GEN3_4: &[VolatileConditionKind] = &[
     VolatileConditionKind::MagicCoat,
     VolatileConditionKind::Snatch,
     VolatileConditionKind::MeFirst,
-    VolatileConditionKind::AllySwitch,
     VolatileConditionKind::Yawn,
     VolatileConditionKind::Nightmare,
     VolatileConditionKind::SaltCure,
@@ -183,7 +182,6 @@ const NOT_PASSED_GEN5: &[VolatileConditionKind] = &[
     VolatileConditionKind::MagicCoat,
     VolatileConditionKind::Snatch,
     VolatileConditionKind::MeFirst,
-    VolatileConditionKind::AllySwitch,
     VolatileConditionKind::Yawn,
     VolatileConditionKind::Nightmare,
     VolatileConditionKind::SaltCure,
@@ -225,7 +223,6 @@ const NOT_PASSED: &[VolatileConditionKind] = &[
     VolatileConditionKind::MagicCoat,
     VolatileConditionKind::Snatch,
     VolatileConditionKind::MeFirst,
-    VolatileConditionKind::AllySwitch,
     VolatileConditionKind::Yawn,
     VolatileConditionKind::Nightmare,
     VolatileConditionKind::SaltCure,

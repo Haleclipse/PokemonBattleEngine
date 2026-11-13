@@ -144,6 +144,8 @@ const KINDS: &[V] = &[
     V::MustRecharge,
     V::ChoiceLock,
     V::FollowMe,
+    // Gen 9's Ally Switch count outlasts its turn (`duration: 2`): a Baton Pass can meet it.
+    V::AllySwitch,
     V::TwoTurnMove,
     V::PartiallyTrapped,
     V::Ingrain,
