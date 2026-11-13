@@ -164,6 +164,10 @@ impl<'a> MovePipeline<'a> {
             // Whether this hit was a critical hit (Showdown `getMoveHitData(move).crit`): a
             // repeated damage (Gen 1) rolls none.
             let mut critical = false;
+            // The hit's own type effectiveness (Showdown `modifyDamage` writes
+            // `getMoveHitData(move).typeMod` on each hit it computes): what Enigma Berry and
+            // Weakness Policy read — a hit after Ice Face broke is super effective again.
+            let mut hit_effectiveness = type_effectiveness;
             let final_damage = match (binding, first_damage) {
                 (Some(amount), _) => amount,
                 (None, Some(amount)) if hit_rules.same_damage_each_hit => amount,
@@ -179,6 +183,7 @@ impl<'a> MovePipeline<'a> {
                     } else {
                         type_effectiveness
                     };
+                    hit_effectiveness = effectiveness;
                     let breakdown = self.resolve_standard_damage(
                         actor,
                         target,
@@ -289,7 +294,7 @@ impl<'a> MovePipeline<'a> {
                     self.hit_takes_item(actor, target, move_def);
                     self.struck_volatile_reactions(actor, target, move_def);
                     self.target_hit_event(actor, target, critical, false);
-                    self.item_hit_event(actor, target, move_def, amount.0, type_effectiveness);
+                    self.item_hit_event(actor, target, move_def, amount.0, hit_effectiveness);
                     self.self_clears_hazards(actor, move_def);
                     self.self_loses_type(actor, move_def);
                     self.move_self(actor, target, move_def);
@@ -338,7 +343,7 @@ impl<'a> MovePipeline<'a> {
                         target,
                         move_def,
                         (amount.0, earlier),
-                        type_effectiveness,
+                        hit_effectiveness,
                     );
                     if !after_hit_first {
                         self.after_hit(actor, target, move_def, true);
