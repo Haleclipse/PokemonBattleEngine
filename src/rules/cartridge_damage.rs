@@ -28,7 +28,7 @@ pub enum CartridgeStep {
 /// The cartridge's order (`DamageAlgorithm::Cartridge`).
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct CartridgeProfile {
-    /// The power. Gen 4: `BTLVAR_POWER_MULTI` (Reckless's ×12/10 is one), Helping Hand,
+    /// The power. Gen 4: `BTLVAR_POWER_MULTI` (Reckless's ×12/10 is one), Charge, Helping Hand,
     /// Technician, the attacker's item, Thick Fat, Mud Sport / Water Sport, the pinch abilities,
     /// Heatproof, Dry Skin, Rivalry, Iron Fist. Gen 3: Mud Sport / Water Sport, the pinch
     /// abilities.
@@ -132,6 +132,8 @@ pub(crate) const GEN4_CARTRIDGE: CartridgeProfile = CartridgeProfile {
     power: &[
         Move,
         Ability(AbilityId::RECKLESS),
+        // `MOVE_EFFECT_CHARGE` on an Electric move: ×2 right after `powerMul` (R-M11-161).
+        Volatile(VolatileConditionKind::Charge),
         Volatile(VolatileConditionKind::HelpingHand),
         Ability(AbilityId::TECHNICIAN),
         Item,
