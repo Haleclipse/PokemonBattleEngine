@@ -228,7 +228,9 @@ impl BattleContext<'_> {
     fn neutralizing_gas_ended(&mut self, holder: PokemonId) {
         // The others on the field — not a gas holder whose own `End` has run (`ending`: one the
         // same hit knocked out, processed just before; Showdown has it off the field already),
-        // which neither keeps the rest suppressed nor starts again.
+        // which neither keeps the rest suppressed nor starts again; nor a Pokémon whose faint
+        // `faintMessages` took before this one (`counted`: Showdown's `fainted`, left out of
+        // `getAllActive` — a Final Gambit user's Intimidate does not start again, R-M11-158).
         let others: Vec<PokemonId> = self
             .active_pokemon()
             .into_iter()
@@ -238,6 +240,11 @@ impl BattleContext<'_> {
                         .state
                         .pokemon(*other)
                         .is_some_and(|pokemon| !pokemon.ability_state.ending)
+                    && !self
+                        .state
+                        .faint_causes
+                        .iter()
+                        .any(|cause| cause.target == *other && cause.counted)
             })
             .collect();
         if others.iter().any(|other| {
