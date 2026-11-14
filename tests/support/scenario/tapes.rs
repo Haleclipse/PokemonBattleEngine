@@ -214,16 +214,21 @@ pub(super) fn lead_ability_tape(
             }
         } else if kind == "transform" {
             // Imposter's copy as the leads come in (`-transform|USER|TARGET`): a lead whose
-            // Trace looks after it sees the ability the user took (DESIGN.md R-M9-23).
+            // Trace looks after it sees the ability the user took (DESIGN.md R-M9-23), and one
+            // whose Forewarn looks after it the moves it took (R-M11-163).
             if let (Some(user), Some(target)) = (
                 args.first().and_then(|text| id(text)),
                 args.get(1).and_then(|text| id(text)),
-            ) && let Some(ability) = seen
-                .pokemon(target)
-                .map(pokemon_battle_engine::engine::raw_ability)
-                && let Some(pokemon) = seen.pokemon_mut(user)
+            ) && let Some((ability, moves)) = seen.pokemon(target).map(|target| {
+                (
+                    pokemon_battle_engine::engine::raw_ability(target),
+                    target.move_slots().to_vec(),
+                )
+            }) && let Some(pokemon) = seen.pokemon_mut(user)
             {
                 pokemon.change_ability(ability);
+                pokemon.moves = moves;
+                pokemon.move_overlay = None;
             }
         } else if kind == "activate"
             && let Some((holder, draw)) = forewarn_draw(compiled, &seen, &args)

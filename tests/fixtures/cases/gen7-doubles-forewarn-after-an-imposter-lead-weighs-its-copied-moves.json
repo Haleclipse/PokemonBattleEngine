@@ -1,0 +1,191 @@
+{
+  "schema": 1,
+  "id": "gen7-doubles-forewarn-after-an-imposter-lead-weighs-its-copied-moves",
+  "notes": [
+    "Leads: Buizel's Imposter copies Primarina, then Primarina's Forewarn draws between Gliscor's Zing Zap and Iron Head; the transformed Buizel's moves (Primarina's, at most 70) are not among the candidates (R-M11-163).",
+    "promoted from m8-gen7-doubles-s2085-005-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 7,
+    "mode": "doubles",
+    "format": "gen7doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Delibird",
+        "species": "Delibird",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Zen Headbutt",
+          "Toxic Thread",
+          "Heart Stamp",
+          "Odor Sleuth"
+        ],
+        "ability": "Rough Skin",
+        "gender": "M"
+      },
+      {
+        "label": "Primarina",
+        "species": "Primarina",
+        "level": 49,
+        "nature": "Hardy",
+        "moves": [
+          "Needle Arm",
+          "Toxic Thread",
+          "Headbutt",
+          "Odor Sleuth"
+        ],
+        "ability": "Forewarn",
+        "gender": "F"
+      },
+      {
+        "label": "Jangmo-o",
+        "species": "Jangmo-o",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Astonish",
+          "Toxic Thread",
+          "Bone Club",
+          "Odor Sleuth"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Braixen",
+        "species": "Braixen",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Stomp",
+          "Toxic Thread",
+          "Icicle Crash",
+          "Odor Sleuth"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Buizel",
+        "species": "Buizel",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Extrasensory",
+          "Toxic Thread",
+          "Rock Slide",
+          "Odor Sleuth"
+        ],
+        "ability": "Imposter",
+        "gender": "M"
+      },
+      {
+        "label": "Gliscor",
+        "species": "Gliscor",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Zing Zap",
+          "Toxic Thread",
+          "Iron Head",
+          "Odor Sleuth"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Gardevoir",
+        "species": "Gardevoir",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Hyper Fang",
+          "Toxic Thread",
+          "Dragon Rush"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Aurorus",
+        "species": "Aurorus",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Steamroller",
+          "Odor Sleuth"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      47045,
+      6123,
+      64768,
+      52079
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1 1, move 1 2",
+      "p2": "move 1 1, move 1 2"
+    },
+    {
+      "p1": "move Toxic Thread 1, move Toxic Thread 2",
+      "p2": "move Toxic Thread 1, move Toxic Thread 2"
+    },
+    {
+      "p1": "move 3 1, move 3 2",
+      "p2": "move 3 1, move 3 2"
+    },
+    {
+      "p1": "pass, switch Jangmo-o"
+    },
+    {
+      "p1": "move Odor Sleuth 1, move Odor Sleuth 2",
+      "p2": "move Odor Sleuth 1, move Odor Sleuth 2"
+    },
+    {
+      "p2": "switch Gardevoir, pass"
+    },
+    {
+      "p1": "move Zen Headbutt 1, move Astonish 2",
+      "p2": "move Hyper Fang 1, move Zing Zap 2"
+    },
+    {
+      "p1": "switch Braixen, pass"
+    },
+    {
+      "p1": "move Toxic Thread 1, move Toxic Thread 2",
+      "p2": "move Toxic Thread 1, move Toxic Thread 2"
+    },
+    {
+      "p1": "move Icicle Crash 1, move Bone Club 2",
+      "p2": "move Dragon Rush 1, move Iron Head 2"
+    },
+    {
+      "p1": "move Odor Sleuth 1, move Odor Sleuth 2",
+      "p2": "switch Aurorus, move Odor Sleuth 1"
+    },
+    {
+      "p2": "pass, switch Gardevoir"
+    },
+    {
+      "p1": "move Stomp 1, move Astonish 2",
+      "p2": "move Odor Sleuth 2, move Hyper Fang 1"
+    },
+    {
+      "p1": "pass, move Toxic Thread 1",
+      "p2": "move Steamroller 2, move Toxic Thread 2"
+    }
+  ]
+}
