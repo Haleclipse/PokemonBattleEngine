@@ -69,8 +69,8 @@ fn battle(
     prepare(&mut pokemon);
     let side = |team: &Vec<PokemonId>| {
         let mut side = SideState::new(team.clone(), slots);
-        for slot in 0..slots {
-            side.active[slot] = team.get(slot).copied();
+        for (slot, active) in side.active.iter_mut().enumerate().take(slots) {
+            *active = team.get(slot).copied();
         }
         side
     };
