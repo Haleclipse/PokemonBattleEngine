@@ -4422,3 +4422,38 @@ if (patched) {
     };
   }
 }
+
+// I229 — Gen 3+ one-hit KO moves on a semi-invulnerable target. pokeemerald `Cmd_tryKO` and
+// pokeplatinum `BtlCmd_TryOHKOMove` compare the levels, and scale the accuracy by their
+// difference, whatever reached the target — No Guard, Lock-On, Fissure on a Pokémon underground
+// (Bulbapedia: from Generation III a one-hit KO move fails on a higher-level target, No Guard and
+// Lock-On only take the accuracy check away). Showdown's accuracy step (gen3 `tryMoveHit`, gen4
+// and the base `hitStepAccuracy`) skips the level check, the level's accuracy and the type
+// immunity for a target that `isSemiInvulnerable`. The patch has `isSemiInvulnerable` answer
+// false in that step for a one-hit KO move. A level that fails now ends it with `-immune` before
+// the accuracy roll, which it no longer draws (TESTING.md §7), as the engine.
+if (patched) {
+  // The battle whose accuracy step is weighing a one-hit KO move now, if any.
+  let ohkoBattle = null;
+  const isSemiInvulnerable = Pokemon.prototype.isSemiInvulnerable;
+  Pokemon.prototype.isSemiInvulnerable = function () {
+    if (ohkoBattle === this.battle) return false;
+    return isSemiInvulnerable.call(this);
+  };
+  const levelChecked = (actions, name) => {
+    const step = actions[name];
+    actions[name] = function (target, pokemon, move, ...rest) {
+      if (!move?.ohko || this.battle.gen < 3) return step.call(this, target, pokemon, move, ...rest);
+      const outer = ohkoBattle;
+      ohkoBattle = this.battle;
+      try {
+        return step.call(this, target, pokemon, move, ...rest);
+      } finally {
+        ohkoBattle = outer;
+      }
+    };
+  };
+  levelChecked(Object.getPrototypeOf(new Battle({formatid: 'gen9customgame'}).actions), 'hitStepAccuracy');
+  levelChecked(Dex.mod('gen4').data.Scripts.actions, 'hitStepAccuracy');
+  levelChecked(Dex.mod('gen3').data.Scripts.actions, 'tryMoveHit');
+}

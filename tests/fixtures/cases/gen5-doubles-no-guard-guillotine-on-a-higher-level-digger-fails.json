@@ -1,0 +1,119 @@
+{
+  "schema": 1,
+  "id": "gen5-doubles-no-guard-guillotine-on-a-higher-level-digger-fails",
+  "notes": [
+    "Turn 4: a level 46 Wartortle with No Guard uses Guillotine on a level 50 Petilil underground: the cartridge checks the levels whatever reached the target, so it fails (I229, R-M11-164).",
+    "promoted from m8-gen5-doubles-s2086-000-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 5,
+    "mode": "doubles",
+    "format": "gen5doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Petilil",
+        "species": "Petilil",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Skull Bash",
+          "Sheer Cold",
+          "Dig"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Simisage",
+        "species": "Simisage",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Shadow Force",
+          "Dive"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Lumineon",
+        "species": "Lumineon",
+        "level": 49,
+        "nature": "Hardy",
+        "moves": [
+          "Rock Slide",
+          "Horn Drill"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Jynx",
+        "species": "Jynx",
+        "level": 46,
+        "nature": "Hardy",
+        "moves": [
+          "Heart Stamp",
+          "Fissure"
+        ],
+        "ability": "Frisk"
+      },
+      {
+        "label": "Froslass",
+        "species": "Froslass",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Hyper Fang",
+          "Sheer Cold"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Wartortle",
+        "species": "Wartortle",
+        "level": 46,
+        "nature": "Hardy",
+        "moves": [
+          "Stomp",
+          "Guillotine"
+        ],
+        "ability": "No Guard",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      18138,
+      42650,
+      10678,
+      7212
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Skull Bash 1, move Shadow Force 2",
+      "p2": "move Rock Slide, move Heart Stamp 1"
+    },
+    {
+      "p1": "move 2 1, move 1",
+      "p2": "move 2 2, move 2 1"
+    },
+    {
+      "p2": "switch Froslass, switch Wartortle"
+    },
+    {
+      "p1": "move Dig 2, move Dive 1",
+      "p2": "move Hyper Fang 2, move Stomp 1"
+    },
+    {
+      "p1": "move 1, move 1",
+      "p2": "move 2 2, move 2 1"
+    }
+  ]
+}
