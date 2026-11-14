@@ -793,6 +793,19 @@ pub fn extract_decisions_with(
                         continue;
                     }
                 }
+                // Woken by the berry a Fling just threw at it (a Chesto Berry: `[msg]` like a
+                // wake-up of its own, before the thrower's `-enditem`), as an Aspear Berry's thaw
+                // above: the frame checks it, no action of its own (R-M11-167).
+                if status == "slp"
+                    && let Some(cured) = who(&event["pokemon"])
+                    && let Some(action) = out.last()
+                    && action.user != cured
+                    && action.move_name.as_deref() == Some("Fling")
+                    && action.damages.iter().any(|(who, _)| *who == cured)
+                    && flung(&events[position + 1..], &event["pokemon"]).is_some()
+                {
+                    continue;
+                }
                 // A wake-up or thaw of its own says `[msg]`; a `[silent]` cure is an effect's (Gen 1
                 // Haze curing the foe, R-M8-93).
                 let by_effect = announced_cure
