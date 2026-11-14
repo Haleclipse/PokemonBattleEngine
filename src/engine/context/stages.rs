@@ -171,7 +171,7 @@ impl<'a> BattleContext<'a> {
         }
 
         // TryBoost, in Showdown's handler order: the item first (Clear Amulet's
-        // `onTryBoostPriority` 1), then the ability — Mirror Armor's return of a drop included —
+        // `onTryBoostPriority` 1), then the abilities — Mirror Armor's return of a drop included —
         // and Mist, a side's handler, last: Showdown sorts a Pokémon's handlers before a side's at
         // the same priority, a side having no speed (issues.md I9).
         // Each refusal with the Pokémon whose ability or item refused it (a Flower Veil an ally's)
@@ -185,34 +185,38 @@ impl<'a> BattleContext<'a> {
             let by_item = item
                 .and_then(|item| crate::engine::item_behavior(self.rules, item).try_stat_change)
                 .and_then(|handler| refused(handler(&ctx), request.target));
-            by_item
-                .or_else(|| {
-                    handlers
-                        .try_stat_change
-                        .and_then(|handler| refused(handler(&ctx), request.target))
-                })
-                // Showdown `onAllyTryBoost` (Flower Veil), the target's own included: the faster
-                // holder's first (`speedSort`, R-M10-53).
-                .or_else(|| {
-                    let mut holders: Vec<_> = crate::engine::allied_ability_holders(
-                        self.state,
-                        self.rules,
-                        request.target,
-                    )
+            // The target's own `onTryBoost` (Clear Body …) and every `onAllyTryBoost` (Flower
+            // Veil, the target's own included) share one priority: the faster holder's first
+            // (`speedSort`, R-M10-53) — a faster ally's Flower Veil before a Grass type's own Clear
+            // Body (R-M11-166). A tie keeps the target's own first (Showdown shuffles it;
+            // unmodelled).
+            by_item.or_else(|| {
+                let own = handlers
+                    .try_stat_change
+                    .map(|handler| (request.target, handler));
+                let mut holders: Vec<_> = own
                     .into_iter()
-                    .filter_map(|(holder, behavior)| {
-                        behavior
-                            .ally_try_stat_change
-                            .map(|handler| (holder, handler))
-                    })
-                    .collect();
-                    holders.sort_by_key(|(holder, _)| {
-                        std::cmp::Reverse(crate::engine::stats::handler_speed(self.state, *holder))
-                    });
-                    holders
+                    .chain(
+                        crate::engine::allied_ability_holders(
+                            self.state,
+                            self.rules,
+                            request.target,
+                        )
                         .into_iter()
-                        .find_map(|(holder, handler)| refused(handler(&ctx), holder))
-                })
+                        .filter_map(|(holder, behavior)| {
+                            behavior
+                                .ally_try_stat_change
+                                .map(|handler| (holder, handler))
+                        }),
+                    )
+                    .collect();
+                holders.sort_by_key(|(holder, _)| {
+                    std::cmp::Reverse(crate::engine::stats::handler_speed(self.state, *holder))
+                });
+                holders
+                    .into_iter()
+                    .find_map(|(holder, handler)| refused(handler(&ctx), holder))
+            })
         };
         if let Some((reason, shown, holder)) = refusal {
             let shown_by = shown

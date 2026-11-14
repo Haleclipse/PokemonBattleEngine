@@ -1,0 +1,104 @@
+{
+  "schema": 1,
+  "id": "gen8-doubles-a-faster-flower-veil-ally-blocks-before-clear-body",
+  "notes": [
+    "Turn 2: Appletun (Clear Body, Grass) switches into Sticky Web beside a faster Persian with Flower Veil: the TryBoost handlers sort by speed, so Persian's Flower Veil blocks the drop before Appletun's Clear Body (R-M11-166).",
+    "promoted from m8-gen8-doubles-s2098-017-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 8,
+    "mode": "doubles",
+    "format": "gen8doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Trubbish",
+        "species": "Trubbish",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sticky Web"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Persian",
+        "species": "Persian",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Blizzard",
+          "Sticky Web"
+        ],
+        "ability": "Flower Veil",
+        "gender": "M"
+      },
+      {
+        "label": "Appletun",
+        "species": "Appletun",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Stun Spore"
+        ],
+        "ability": "Clear Body",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Latias",
+        "species": "Latias",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sticky Web"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Arctovish",
+        "species": "Arctovish",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sweet Kiss",
+          "Sticky Web"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Sigilyph",
+        "species": "Sigilyph",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Supersonic"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      29484,
+      17633,
+      15988,
+      4445
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Sticky Web, move Sticky Web",
+      "p2": "move Sticky Web, move Sticky Web"
+    },
+    {
+      "p1": "switch Appletun, move Blizzard",
+      "p2": "switch Sigilyph, move Sweet Kiss 2"
+    }
+  ]
+}
