@@ -4457,3 +4457,21 @@ if (patched) {
   levelChecked(Dex.mod('gen4').data.Scripts.actions, 'hitStepAccuracy');
   levelChecked(Dex.mod('gen3').data.Scripts.actions, 'tryMoveHit');
 }
+
+// I230 — An Illusion holder that comes in while its Illusion is suppressed (a foe's Neutralizing
+// Gas) wears no disguise: Bulbapedia (Illusion) has the illusion gone whenever the Ability is
+// suppressed, and the engine sets none. Showdown keeps a holder's `illusion` when it is called back
+// (`!pokemon.beingCalledBack` in Illusion's `onEnd`) and clears it only in Illusion's own
+// `onBeforeSwitchIn`, which the suppression skips, so the holder comes back in under the disguise
+// it last wore (a Sinistcha as the Drednaw it was before, R-M11-171). The patch clears the
+// holder's `illusion` as `BeforeSwitchIn` begins; Illusion's handler, where it runs, sets it anew
+// as before. No draw changes.
+if (patched) {
+  const runEvent = Battle.prototype.runEvent;
+  Battle.prototype.runEvent = function (eventid, target, ...rest) {
+    if (eventid === 'BeforeSwitchIn' && target instanceof Pokemon && target.illusion) {
+      target.illusion = null;
+    }
+    return runEvent.call(this, eventid, target, ...rest);
+  };
+}

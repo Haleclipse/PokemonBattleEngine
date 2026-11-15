@@ -1,0 +1,208 @@
+{
+  "schema": 1,
+  "id": "gen9-singles-a-gassed-illusion-comes-in-undisguised",
+  "notes": [
+    "Turn 16: Sinistcha, last in as a Drednaw, comes in again while Marill's Neutralizing Gas suppresses its Illusion: it wears no disguise (I230, R-M11-171).",
+    "promoted from m8-gen9-singles-s2134-008-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Venonat",
+        "species": "Venonat",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Leafage"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Rayquaza",
+        "species": "Rayquaza",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Gigaton Hammer",
+          "Teleport"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Luvdisc",
+        "species": "Luvdisc",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Floral Healing",
+          "Defense Curl"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Marill",
+        "species": "Marill",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Shore Up"
+        ],
+        "ability": "Neutralizing Gas",
+        "gender": "F"
+      },
+      {
+        "label": "Grumpig",
+        "species": "Grumpig",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Morning Sun"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Sinistcha",
+        "species": "Sinistcha",
+        "level": 53,
+        "nature": "Hardy",
+        "moves": [
+          "Sleep Powder",
+          "Wide Guard",
+          "Hypnosis"
+        ],
+        "ability": "Illusion"
+      },
+      {
+        "label": "Ralts",
+        "species": "Ralts",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Dark Void"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Rolycoly",
+        "species": "Rolycoly",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sing",
+          "Dragon Tail"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Drednaw",
+        "species": "Drednaw",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Roar"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      11641,
+      25817,
+      6866,
+      50223
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Leafage",
+      "p2": "move Hypnosis"
+    },
+    {
+      "p1": "switch Rayquaza",
+      "p2": "switch Ralts"
+    },
+    {
+      "p1": "move Gigaton Hammer",
+      "p2": "move Dark Void"
+    },
+    {
+      "p2": "switch Sinistcha"
+    },
+    {
+      "p1": "switch Venonat",
+      "p2": "switch Rolycoly"
+    },
+    {
+      "p1": "move Leafage",
+      "p2": "move Dragon Tail"
+    },
+    {
+      "p1": "move Floral Healing",
+      "p2": "move Sing"
+    },
+    {
+      "p1": "switch Rayquaza",
+      "p2": "switch Sinistcha"
+    },
+    {
+      "p1": "move Teleport",
+      "p2": "move Hypnosis"
+    },
+    {
+      "p1": "switch Luvdisc"
+    },
+    {
+      "p1": "switch Rayquaza",
+      "p2": "switch Rolycoly"
+    },
+    {
+      "p1": "move Gigaton Hammer",
+      "p2": "move Sing"
+    },
+    {
+      "p2": "switch Sinistcha"
+    },
+    {
+      "p1": "move Teleport",
+      "p2": "move Wide Guard"
+    },
+    {
+      "p1": "switch Luvdisc"
+    },
+    {
+      "p1": "move Defense Curl",
+      "p2": "move Hypnosis"
+    },
+    {
+      "p1": "move Floral Healing",
+      "p2": "move Sleep Powder"
+    },
+    {
+      "p1": "switch Venonat",
+      "p2": "switch Drednaw"
+    },
+    {
+      "p1": "move Leafage",
+      "p2": "move Roar"
+    },
+    {
+      "p1": "switch Luvdisc",
+      "p2": "switch Sinistcha"
+    }
+  ]
+}
