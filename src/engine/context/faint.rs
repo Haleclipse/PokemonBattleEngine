@@ -269,7 +269,8 @@ impl<'a> BattleContext<'a> {
     /// Showdown `side.foePokemonLeft()` for `pokemon`'s side: a foe team member still standing,
     /// or one whose faint `faintMessages` has not reached yet (`pokemonLeft` drops only there:
     /// once a move's hits are over, `announce_knocked_out` / `announce_faints`, or as the engine
-    /// processes it).
+    /// processes it) — counted (`count_faint`) is reached: a knocked-out Neutralizing Gas
+    /// holder's faint is, by the time its gas starts the abilities again (R-M11-170).
     pub fn foe_pokemon_left(&self, pokemon: PokemonId) -> bool {
         let Some(side) = self.side_of(pokemon) else {
             return false;
@@ -277,7 +278,12 @@ impl<'a> BattleContext<'a> {
         self.state.side(side.other()).team.iter().any(|member| {
             !self.is_fainted(*member)
                 || (self.state.faint_queue.contains(member)
-                    && !self.state.announced_faints.contains(member))
+                    && !self.state.announced_faints.contains(member)
+                    && !self
+                        .state
+                        .faint_causes
+                        .iter()
+                        .any(|cause| cause.target == *member && cause.counted))
         })
     }
 

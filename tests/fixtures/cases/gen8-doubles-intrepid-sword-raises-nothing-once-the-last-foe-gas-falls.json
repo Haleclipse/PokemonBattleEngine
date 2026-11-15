@@ -1,0 +1,187 @@
+{
+  "schema": 1,
+  "id": "gen8-doubles-intrepid-sword-raises-nothing-once-the-last-foe-gas-falls",
+  "notes": [
+    "Turn 12: Hyper Beam knocks out Jirachi, p1's last Pokemon, whose Neutralizing Gas ends and starts Electrike's Intrepid Sword again; with no foe Pokemon left (pokemonLeft already dropped) the Gen 6+ boost does nothing (R-M11-170).",
+    "promoted from m8-gen8-doubles-s2130-019-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 8,
+    "mode": "doubles",
+    "format": "gen8doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Charizard",
+        "species": "Charizard",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Double-Edge",
+          "Magic Powder",
+          "Head Charge"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Steenee",
+        "species": "Steenee",
+        "level": 49,
+        "nature": "Hardy",
+        "moves": [
+          "Submission",
+          "Magic Powder",
+          "Wood Hammer"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Goldeen",
+        "species": "Goldeen",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Magic Powder",
+          "Parabolic Charge"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Jirachi",
+        "species": "Jirachi",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Giga Drain",
+          "Magic Powder",
+          "Dream Eater",
+          "Lock-On"
+        ],
+        "ability": "Neutralizing Gas"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Dratini",
+        "species": "Dratini",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Draining Kiss"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Electrike",
+        "species": "Electrike",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Mega Drain",
+          "Magic Powder",
+          "Drain Punch",
+          "Lock-On"
+        ],
+        "ability": "Intrepid Sword",
+        "gender": "F"
+      },
+      {
+        "label": "Lileep",
+        "species": "Lileep",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Horn Leech",
+          "Magic Powder",
+          "Leech Life"
+        ],
+        "ability": "Huge Power",
+        "gender": "F"
+      },
+      {
+        "label": "Magmortar",
+        "species": "Magmortar",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Hyper Beam",
+          "Roar of Time"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      35904,
+      16102,
+      49327,
+      1765
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Double-Edge 1, move Submission 2",
+      "p2": "move Draining Kiss 1, move Mega Drain 2"
+    },
+    {
+      "p2": "switch Lileep, pass"
+    },
+    {
+      "p1": "move Magic Powder 1, move Magic Powder 2",
+      "p2": "move Magic Powder 1, move Magic Powder 2"
+    },
+    {
+      "p1": "move Head Charge 1, move Wood Hammer 2",
+      "p2": "move Leech Life 1, move Drain Punch 2"
+    },
+    {
+      "p1": "move Double-Edge 1, move Submission 2",
+      "p2": "move Horn Leech 1, move Mega Drain 2"
+    },
+    {
+      "p1": "switch Goldeen, pass"
+    },
+    {
+      "p1": "move Magic Powder 1, move Magic Powder 2",
+      "p2": "move Magic Powder 1, move Magic Powder 2"
+    },
+    {
+      "p1": "move Parabolic Charge, move Wood Hammer 1",
+      "p2": "move Leech Life 1, move Drain Punch 2"
+    },
+    {
+      "p1": "switch Jirachi, pass"
+    },
+    {
+      "p1": "move Lock-On 2, pass",
+      "p2": "switch Magmortar, move Lock-On 1"
+    },
+    {
+      "p1": "move Magic Powder 2, pass",
+      "p2": "move Hyper Beam 1, move Magic Powder 1"
+    },
+    {
+      "p1": "move 3 1, pass",
+      "p2": "move 1, move 3 1"
+    },
+    {
+      "p1": "move Lock-On 2, pass",
+      "p2": "move Roar of Time 1, move Lock-On 1"
+    },
+    {
+      "p1": "move 1 1, pass",
+      "p2": "move 1, move 1 1"
+    },
+    {
+      "p1": "move Magic Powder 2, pass",
+      "p2": "move Hyper Beam 1, move Magic Powder 1"
+    }
+  ]
+}
