@@ -1,0 +1,80 @@
+{
+  "schema": 1,
+  "id": "gen9-singles-an-instructed-raging-fury-leaves-the-chosen-uproar-its-own",
+  "notes": [
+    "Turn 4: Floette's Instruct has Sunkern repeat Raging Fury; Sunkern's own chosen Uproar then runs as its own move, its PP spent (I231, R-M11-172).",
+    "promoted from m8-gen9-singles-s2135-003-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Sunkern",
+        "species": "Sunkern",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Raging Fury",
+          "Uproar"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Magcargo",
+        "species": "Magcargo",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Wood Hammer",
+          "Crabhammer"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Floette",
+        "species": "Floette",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Instruct"
+        ],
+        "ability": "Run Away"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      57828,
+      48233,
+      18320,
+      10751
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Raging Fury",
+      "p2": "move Crabhammer"
+    },
+    {
+      "p1": "move Raging Fury",
+      "p2": "move Wood Hammer"
+    },
+    {
+      "p1": "move Raging Fury",
+      "p2": "switch Floette"
+    },
+    {
+      "p1": "move Uproar",
+      "p2": "move Instruct"
+    }
+  ]
+}

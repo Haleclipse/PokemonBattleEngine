@@ -45,7 +45,7 @@
 // sorts into the move.
 // `SHOWDOWN_UNPATCHED=1` plays Showdown as published: to reproduce a battle recorded before a
 // patch existed, and to check that a patch's scenario fails without it.
-import {Battle, Dex, Pokemon} from '@pkmn/sim';
+import {Battle, Dex, Pokemon, toID} from '@pkmn/sim';
 
 const patched = !process.env.SHOWDOWN_UNPATCHED;
 
@@ -4473,5 +4473,40 @@ if (patched) {
       target.illusion = null;
     }
     return runEvent.call(this, eventid, target, ...rest);
+  };
+}
+
+// I231 — Gen 7+ a move a Pokémon chose, run after Instruct had it repeat a rampage (Raging Fury,
+// Outrage …) earlier that turn, is its own move, used normally. Bulbapedia (Instruct): the target
+// repeats its last move as a separate action, "then later on when its natural turn order comes up,
+// it can use its newly selected move normally" — its PP spent, the move its own; the engine does
+// so. Showdown's `runMove` asks `getLockedMove()` only to skip the PP: the instructed rampage's
+// `lockedmove` answers with Raging Fury, so the chosen Uproar runs with no PP spent and
+// `[from] lockedmove` (which also keeps it off the observers' known moves). The patch has
+// `getLockedMove()` answer nothing within the `runMove` of a chosen move that is not the one the
+// lock names. No draw changes.
+if (patched) {
+  // The Pokémon and the move a `runMove` is running for, if any.
+  let running = null;
+  const getLockedMove = Pokemon.prototype.getLockedMove;
+  Pokemon.prototype.getLockedMove = function () {
+    const locked = getLockedMove.call(this);
+    if (locked && running && running.pokemon === this && running.move !== locked) return null;
+    return locked;
+  };
+  const actions = Object.getPrototypeOf(new Battle({formatid: 'gen9customgame'}).actions);
+  const runMove = actions.runMove;
+  actions.runMove = function (moveOrMoveName, pokemon, targetLoc, options, ...rest) {
+    if (this.battle.gen < 7 || options?.externalMove || options?.sourceEffect) {
+      return runMove.call(this, moveOrMoveName, pokemon, targetLoc, options, ...rest);
+    }
+    const outer = running;
+    const id = typeof moveOrMoveName === 'string' ? toID(moveOrMoveName) : moveOrMoveName.id;
+    running = {pokemon, move: id};
+    try {
+      return runMove.call(this, moveOrMoveName, pokemon, targetLoc, options, ...rest);
+    } finally {
+      running = outer;
+    }
   };
 }
