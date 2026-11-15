@@ -4510,3 +4510,24 @@ if (patched) {
     }
   };
 }
+
+// I232 — Gen 4 Micle Berry and a move whose accuracy check the weather overrides. pokeplatinum
+// runs `BattleControllerPlayer_CheckMoveHitAccuracy` (which clears `moveEffectsData.micleBerry`
+// for any move with an accuracy in its data) before `BattleControllerPlayer_CheckMoveHitOverrides`
+// (which then makes Thunder in rain, Blizzard in hail, hit): the berry's boost is used up there
+// too. Showdown's gen4 Thunder and Blizzard set `move.accuracy = true` in `onModifyMove`, so its
+// accuracy step never runs `ModifyAccuracy`, and the I42 handler keeps the boost for the next move.
+// The patch uses it up as the accuracy step begins for a move whose own accuracy is a number but
+// stands at `true` now. No draw.
+if (patched) {
+  const actions = Dex.mod('gen4').data.Scripts.actions;
+  const step = actions.hitStepAccuracy;
+  actions.hitStepAccuracy = function (targets, pokemon, move, ...rest) {
+    if (this.battle.gen === 4 && move.accuracy === true && pokemon.volatiles['micleberry'] &&
+      typeof this.dex.moves.get(move.id).accuracy === 'number') {
+      this.battle.add('-enditem', pokemon, 'Micle Berry');
+      pokemon.removeVolatile('micleberry');
+    }
+    return step.call(this, targets, pokemon, move, ...rest);
+  };
+}
