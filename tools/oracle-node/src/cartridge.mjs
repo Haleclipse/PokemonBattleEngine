@@ -4531,3 +4531,18 @@ if (patched) {
     return step.call(this, targets, pokemon, move, ...rest);
   };
 }
+
+// I233 — Gen 4 Focus Sash lasts the move it was armed for. pokeplatinum's focus item is armed for
+// the move in progress (`focusItemActivated`, the engine's `ArmedFocusItem`), and nothing of it
+// outlives that move. Showdown's gen4 sash adds a `focussash` condition at `onTryHit` and takes it
+// away in its `onAfterMoveSecondary`, which a move that fails after TryHit never reaches (a Cotton
+// Spore against a Speed already at −6), so the condition stays until the turn's residual — in the
+// frames, and, would the turn end first (a win), for good. The patch takes the condition away as
+// the move ends too (`onAnyAfterMove`, after `onAfterMoveSecondary` has used the sash up where it
+// held). No draw.
+if (patched) {
+  const condition = Dex.mod('gen4').data.Items.focussash.condition;
+  condition.onAnyAfterMove = function () {
+    this.effectState.target.removeVolatile('focussash');
+  };
+}

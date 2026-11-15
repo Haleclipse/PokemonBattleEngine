@@ -1,0 +1,270 @@
+{
+  "schema": 1,
+  "id": "gen4-doubles-a-focus-sash-armed-for-a-failed-move-ends-with-it",
+  "notes": [
+    "Turn 30: Forretress's Cotton Spore at a full-HP Corphish with a Focus Sash fails (Speed already at -6) and the battle ends that turn: the sash armed for the move is gone with the move (I233, R-M11-177).",
+    "promoted from m8-gen4-doubles-s2145-016-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "doubles",
+    "format": "gen4doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Wynaut",
+        "species": "Wynaut",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Swagger",
+          "Healing Wish"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Murkrow",
+        "species": "Murkrow",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Stun Spore",
+          "Healing Wish"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Cranidos",
+        "species": "Cranidos",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Thunder Wave",
+          "Healing Wish",
+          "U-turn",
+          "Sketch"
+        ],
+        "ability": "Hustle",
+        "gender": "M"
+      },
+      {
+        "label": "Corphish",
+        "species": "Corphish",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Synthesis",
+          "Healing Wish",
+          "Morning Sun",
+          "Sketch"
+        ],
+        "ability": "Run Away",
+        "item": "Focus Sash",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Shelgon",
+        "species": "Shelgon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Moonlight",
+          "Healing Wish",
+          "Sweet Kiss",
+          "Sketch"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Politoed",
+        "species": "Politoed",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Confuse Ray",
+          "Healing Wish"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Makuhita",
+        "species": "Makuhita",
+        "level": 46,
+        "nature": "Hardy",
+        "moves": [
+          "Supersonic",
+          "Healing Wish",
+          "Sleep Powder",
+          "Sketch"
+        ],
+        "ability": "Run Away",
+        "item": "Flame Orb",
+        "gender": "M"
+      },
+      {
+        "label": "Forretress",
+        "species": "Forretress",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Spore",
+          "Healing Wish",
+          "Cotton Spore",
+          "Sketch"
+        ],
+        "ability": "Early Bird",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      27202,
+      4632,
+      21934,
+      61217
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Swagger 1, move Stun Spore 2",
+      "p2": "move Moonlight, move Confuse Ray 1"
+    },
+    {
+      "p1": "move Healing Wish, move Healing Wish",
+      "p2": "move Healing Wish, move Healing Wish"
+    },
+    {
+      "p1": "pass, switch Cranidos"
+    },
+    {
+      "p1": "switch Corphish, pass"
+    },
+    {
+      "p2": "pass, switch Makuhita"
+    },
+    {
+      "p1": "move Morning Sun, move U-turn 1",
+      "p2": "move Sweet Kiss 2, move Sleep Powder 1"
+    },
+    {
+      "p1": "move Sketch 2, move Sketch 1",
+      "p2": "move Sketch 2, move Sketch 1"
+    },
+    {
+      "p2": "switch Forretress, pass"
+    },
+    {
+      "p1": "move Synthesis, move Healing Wish",
+      "p2": "move Spore 2, move Healing Wish"
+    },
+    {
+      "p1": "move Healing Wish, move U-turn 2",
+      "p2": "move Healing Wish, move Sleep Powder 1"
+    },
+    {
+      "p1": "move Morning Sun, move Thunder Wave 1",
+      "p2": "move Cotton Spore 2, move Supersonic 1"
+    },
+    {
+      "p1": "move Sketch 2, move Healing Wish",
+      "p2": "move Sketch 2, move Healing Wish"
+    },
+    {
+      "p1": "move Synthesis, move U-turn 1",
+      "p2": "move Cotton Spore 1, move Sleep Powder 2"
+    },
+    {
+      "p1": "move Healing Wish, move Thunder Wave 2",
+      "p2": "move Spore 1, move Supersonic 2"
+    },
+    {
+      "p1": "move Synthesis, move Thunder Wave 1",
+      "p2": "move Spore 2, pass"
+    },
+    {
+      "p1": "move Healing Wish, move Healing Wish",
+      "p2": "move Healing Wish, pass"
+    },
+    {
+      "p1": "move Morning Sun, move U-turn 1",
+      "p2": "move Cotton Spore 1, pass"
+    },
+    {
+      "p1": "move Sketch 1, move Thunder Wave 1",
+      "p2": "move Spore 2, pass"
+    },
+    {
+      "p1": "move Healing Wish, move U-turn 1",
+      "p2": "move Cotton Spore 1, pass"
+    },
+    {
+      "p1": "move Morning Sun, move Thunder Wave 1",
+      "p2": "move Spore 2, pass"
+    },
+    {
+      "p1": "move 4 1, move 2",
+      "p2": "move 2, pass"
+    },
+    {
+      "p1": "move Synthesis, move U-turn 1",
+      "p2": "move Cotton Spore 1, pass"
+    },
+    {
+      "p1": "move 4 1, move 3 1",
+      "p2": "move 3 1, pass"
+    },
+    {
+      "p1": "move Synthesis, move Thunder Wave 1",
+      "p2": "move Spore 2, pass"
+    },
+    {
+      "p1": "move Morning Sun, move U-turn 1",
+      "p2": "move Cotton Spore 1, pass"
+    },
+    {
+      "p1": "move 4 1, move 1 1",
+      "p2": "move 1 2, pass"
+    },
+    {
+      "p1": "move Synthesis, move Healing Wish",
+      "p2": "move Healing Wish, pass"
+    },
+    {
+      "p1": "move Healing Wish, move U-turn 1",
+      "p2": "move Cotton Spore 1, pass"
+    },
+    {
+      "p1": "move 4 1, move 2",
+      "p2": "move 2, pass"
+    },
+    {
+      "p1": "move Healing Wish, move Thunder Wave 1",
+      "p2": "move Spore 2, pass"
+    },
+    {
+      "p1": "move 4 1, move 3 1",
+      "p2": "move 3 1, pass"
+    },
+    {
+      "p1": "move Synthesis, move Thunder Wave 1",
+      "p2": "move Spore 2, pass"
+    },
+    {
+      "p1": "move Healing Wish, move U-turn 1",
+      "p2": "move Cotton Spore 1, pass"
+    },
+    {
+      "p1": "move 4 1, move 3 1",
+      "p2": "move 3 1, pass"
+    }
+  ]
+}
