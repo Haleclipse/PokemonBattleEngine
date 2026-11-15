@@ -1003,6 +1003,8 @@ pub struct ActionOracle {
     pub fail_named_the_move: bool,
     /// Showdown `cant` reason (par / slp / frz / flinch), or `confusion` for a self-hit.
     pub cant: Option<String>,
+    /// The holder a TryMove stopper's `cant|holder|ability: Damp|move|[of] user` names.
+    pub cant_holder: Option<Who>,
     pub hit: bool,
     /// One entry per hit that reached the target (HP or Substitute): was it a critical hit?
     pub crits: Vec<bool>,
@@ -1213,6 +1215,7 @@ impl ActionOracle {
             mimicked: None,
             fail_named_the_move: false,
             cant: None,
+            cant_holder: None,
             hit: true,
             crits: Vec::new(),
             substitute_hits: Vec::new(),

@@ -61,14 +61,12 @@ impl<'a> BattleContext<'a> {
     }
 }
 
-/// The active Pokémon whose Damp stops the move, if any: Showdown's `runEvent('TryMove')` runs the
-/// `onAnyTryMove` handlers by their holder's speed (`speedSort`), so the fastest holder's line
-/// names it — the user's own Damp too, after a faster one's (R-M11-35). Holders tied in speed
-/// keep the field's order (Showdown shuffles them, which the engine does not draw for).
-pub(crate) fn damp_holder(
+/// The active Pokémon whose Damp is in force, with their handler speed, in the field's order
+/// (Showdown's `onAny…` handlers: the active, not fainted Pokémon).
+pub fn damp_holders(
     state: &crate::state::BattleState,
     rules: &crate::rules::ResolvedRules,
-) -> Option<PokemonId> {
+) -> Vec<(PokemonId, u32)> {
     [SideId::P1, SideId::P2]
         .into_iter()
         .flat_map(|side| state.side(side).active.iter().flatten().copied())
@@ -77,5 +75,45 @@ pub(crate) fn damp_holder(
                 !p.is_fainted() && crate::engine::ability_handler(state, rules, p, |b| b.damp)
             })
         })
-        .min_by_key(|id| std::cmp::Reverse(crate::engine::stats::handler_speed(state, *id)))
+        .map(|id| (id, crate::engine::stats::handler_speed(state, id)))
+        .collect()
+}
+
+/// The fastest active Pokémon whose Damp is in force, if any (asking, not stopping a move: no
+/// draw).
+pub(crate) fn damp_holder(
+    state: &crate::state::BattleState,
+    rules: &crate::rules::ResolvedRules,
+) -> Option<PokemonId> {
+    damp_holders(state, rules)
+        .into_iter()
+        .min_by_key(|(_, speed)| std::cmp::Reverse(*speed))
+        .map(|(id, _)| id)
+}
+
+/// The active Pokémon whose Damp stops the move: Showdown's `runEvent('TryMove')` runs the
+/// `onAnyTryMove` handlers by their holder's speed (`speedSort`), so the fastest holder's line
+/// names it — the user's own Damp too, after a faster one's (R-M11-35). Holders sharing a handler
+/// speed are shuffled: each draws a `SpeedTie`, in the field's order, as Snatch's do — a Ditto
+/// transformed into a Poliwhirl ties with it (R-M11-173).
+pub(crate) fn damp_stopper(
+    state: &mut crate::state::BattleState,
+    rules: &crate::rules::ResolvedRules,
+) -> Option<PokemonId> {
+    let holders = damp_holders(state, rules);
+    let mut keyed: Vec<(PokemonId, u32, u64)> = holders
+        .iter()
+        .map(|&(id, speed)| {
+            let tie = if holders.iter().filter(|(_, other)| *other == speed).count() > 1 {
+                state
+                    .rng
+                    .next_u64_for(crate::state::RandomRequestKind::SpeedTie)
+            } else {
+                0
+            };
+            (id, speed, tie)
+        })
+        .collect();
+    keyed.sort_by_key(|(_, speed, tie)| std::cmp::Reverse((*speed, *tie)));
+    keyed.first().map(|(id, ..)| *id)
 }

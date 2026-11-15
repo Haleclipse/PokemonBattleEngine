@@ -262,7 +262,7 @@ impl MovePipeline<'_> {
         // Sea's stops a Mind Blown first, Damp unseen, R-M11-76) — the PP spent, the user
         // standing.
         if move_def.behavior.stopped_by_damp
-            && let Some(holder) = crate::engine::context::damp_holder(self.state, self.rules)
+            && let Some(holder) = crate::engine::context::damp_stopper(self.state, self.rules)
         {
             let ability = self
                 .state

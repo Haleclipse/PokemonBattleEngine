@@ -590,6 +590,7 @@ pub fn extract_decisions_with(
                     && action.move_name.is_some()
                 {
                     action.cant = Some(stopper.to_string());
+                    action.cant_holder = who(&event["pokemon"]);
                     action.hit = false;
                 } else if let Some(user) = who(&event["pokemon"])
                     && let Some(action) = out.last_mut()

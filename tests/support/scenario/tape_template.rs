@@ -315,6 +315,24 @@ pub(super) fn tape_template(
     if cant.is_some_and(|reason| {
         reason == "nopp" || reason == "move: Powder" || TRY_MOVE_STOPPERS.contains(&reason)
     }) {
+        // Damp's holders sharing a handler speed draw a SpeedTie each, in the field's order
+        // (`damp_stopper`); the one the `cant` line names draws the larger (R-M11-173).
+        if cant == Some("ability: Damp")
+            && let Some(named) = oracle
+                .cant_holder
+                .as_ref()
+                .and_then(|who| who_to_id(state, who))
+        {
+            let holders = pokemon_battle_engine::engine::damp_holders(state, rules);
+            for &(id, speed) in &holders {
+                if holders.iter().filter(|(_, other)| *other == speed).count() > 1 {
+                    let rank = if id == named { 2 } else { 1 };
+                    tape.push(Some(
+                        RandomOverride::raw(RandomRequestKind::SpeedTie, rank).optional(),
+                    ));
+                }
+            }
+        }
         return tape;
     }
     // Snatch (`onAnyPrepareHit`): the holders sharing a handler speed draw a SpeedTie each, in

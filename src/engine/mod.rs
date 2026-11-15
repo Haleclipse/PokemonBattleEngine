@@ -73,7 +73,9 @@ pub use context::{
     AfterHit, AfterHitHandler, DamageResolutionHandler, DamagingHit, DamagingHitReactionHandler,
     ModifyStatChangeHandler, StatChangeContext, TryStatChangeHandler,
 };
-pub use context::{DrainedHeal, FormeChangeKind, HealDrain, uproar_wakes_before_move};
+pub use context::{
+    DrainedHeal, FormeChangeKind, HealDrain, damp_holders, uproar_wakes_before_move,
+};
 pub(crate) use damage::showdown_modify;
 pub use damage::{
     AccuracyChance, CriticalHit, DamageAmount, DamageApplication, DamageBreakdown, DefensiveStat,
