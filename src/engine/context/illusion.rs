@@ -38,9 +38,11 @@ impl<'a> BattleContext<'a> {
     /// Illusion's `onEnd` (a damaging hit, Neutralizing Gas, Gastro Acid, a new ability): the
     /// holder is seen as itself (`replace`, `-end|…|Illusion`) — not while it is being called
     /// back (`!pokemon.beingCalledBack`): a Pursuit that strikes it as it switches out leaves the
-    /// disguise on.
+    /// disguise on. A U-turn user's, an Eject Button holder's … `BeforeSwitchOut` runs before any
+    /// `switchIn` sets the flag (Showdown `runAction`, the Pokémon marked to skip it later): the
+    /// Pursuit there breaks the disguise (R-M11-174).
     pub fn end_illusion(&mut self, pokemon: PokemonId) {
-        if self.is_called_back(pokemon) {
+        if self.is_called_back(pokemon) && !self.state.skip_before_switch_out.contains(&pokemon) {
             return;
         }
         let lifted = self
