@@ -1306,6 +1306,23 @@ pub(super) const TRY_MOVE_STOPPERS: [&str; 4] = [
     "ability: Armor Tail",
 ];
 
+/// The berries whose eating cures a non-volatile status (`-curestatus` follows the `[eat]`):
+/// Gen 3+ and Gen 2's.
+pub(super) const STATUS_CURING_BERRIES: [&str; 12] = [
+    "Cheri Berry",
+    "Chesto Berry",
+    "Pecha Berry",
+    "Rawst Berry",
+    "Aspear Berry",
+    "Lum Berry",
+    "PRZ Cure Berry",
+    "PSN Cure Berry",
+    "Burnt Berry",
+    "Ice Berry",
+    "Mint Berry",
+    "Miracle Berry",
+];
+
 /// The berries that confuse a holder whose nature dislikes them.
 pub(super) const CONFUSION_BERRIES: [&str; 5] = [
     "Figy Berry",

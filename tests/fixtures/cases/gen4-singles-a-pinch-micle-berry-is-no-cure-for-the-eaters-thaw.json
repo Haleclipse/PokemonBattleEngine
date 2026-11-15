@@ -1,0 +1,258 @@
+{
+  "schema": 1,
+  "id": "gen4-singles-a-pinch-micle-berry-is-no-cure-for-the-eaters-thaw",
+  "notes": [
+    "Turn 16: Jirachi's Ice Punch freezes Electrike, which eats its Micle Berry at the pinch; the -curestatus frz that follows is Electrike's own thaw as its turn starts, not the berry's (R-M11-175).",
+    "promoted from m9-gen4ubers-s700-006-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "singles",
+    "format": "gen4ubers"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Ho-Oh",
+        "species": "Ho-Oh",
+        "ability": "Pressure",
+        "moves": [
+          "Recover",
+          "Thunder",
+          "Return",
+          "Brave Bird"
+        ],
+        "nature": "Rash",
+        "gender": "",
+        "shiny": false,
+        "level": 100,
+        "evs": {
+          "hp": 84,
+          "atk": 132,
+          "def": 164,
+          "spa": 32,
+          "spd": 0,
+          "spe": 96
+        },
+        "ivs": {
+          "hp": 6,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        },
+        "happiness": 167
+      },
+      {
+        "label": "Jirachi",
+        "species": "Jirachi",
+        "ability": "Serene Grace",
+        "moves": [
+          "Ice Punch",
+          "Natural Gift",
+          "Frustration",
+          "Trick Room"
+        ],
+        "nature": "Calm",
+        "gender": "",
+        "shiny": false,
+        "level": 100,
+        "evs": {
+          "hp": 120,
+          "atk": 0,
+          "def": 124,
+          "spa": 88,
+          "spd": 52,
+          "spe": 124
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        },
+        "happiness": 180
+      }
+    ],
+    "p2": [
+      {
+        "label": "Moltres",
+        "species": "Moltres",
+        "item": "Rawst Berry",
+        "ability": "Pressure",
+        "moves": [
+          "Natural Gift",
+          "Overheat",
+          "Mud-Slap",
+          "Secret Power"
+        ],
+        "nature": "Mild",
+        "gender": "",
+        "shiny": false,
+        "level": 100,
+        "evs": {
+          "hp": 0,
+          "atk": 140,
+          "def": 168,
+          "spa": 0,
+          "spd": 120,
+          "spe": 80
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 8,
+          "spd": 31,
+          "spe": 31
+        }
+      },
+      {
+        "label": "Graveler",
+        "species": "Graveler",
+        "ability": "Sturdy",
+        "moves": [
+          "Strength",
+          "Rock Slide",
+          "Substitute",
+          "Rest"
+        ],
+        "nature": "Docile",
+        "gender": "F",
+        "shiny": false,
+        "level": 72,
+        "evs": {
+          "hp": 252,
+          "atk": 0,
+          "def": 0,
+          "spa": 0,
+          "spd": 252,
+          "spe": 4
+        },
+        "ivs": {
+          "hp": 4,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        },
+        "happiness": 62
+      },
+      {
+        "label": "Electrike",
+        "species": "Electrike",
+        "item": "Micle Berry",
+        "ability": "Static",
+        "moves": [
+          "Body Slam"
+        ],
+        "nature": "Calm",
+        "gender": "M",
+        "shiny": false,
+        "level": 100,
+        "evs": {
+          "hp": 72,
+          "atk": 76,
+          "def": 0,
+          "spa": 108,
+          "spd": 0,
+          "spe": 252
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 15,
+          "spd": 31,
+          "spe": 31
+        }
+      }
+    ]
+  },
+  "preview": {
+    "p1": "team 623154",
+    "p2": "team 645231"
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      37465,
+      700,
+      1006,
+      31
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Recover",
+      "p2": "move Natural Gift"
+    },
+    {
+      "p1": "move Thunder",
+      "p2": "move Overheat"
+    },
+    {
+      "p1": "move Return",
+      "p2": "move Mud-Slap"
+    },
+    {
+      "p1": "move Brave Bird",
+      "p2": "move Secret Power"
+    },
+    {
+      "p1": "switch Jirachi",
+      "p2": "switch Graveler"
+    },
+    {
+      "p1": "move Ice Punch",
+      "p2": "move Strength"
+    },
+    {
+      "p1": "move Natural Gift",
+      "p2": "move Rock Slide"
+    },
+    {
+      "p1": "move Frustration",
+      "p2": "move Substitute"
+    },
+    {
+      "p1": "move Trick Room",
+      "p2": "move Rest"
+    },
+    {
+      "p1": "switch Ho-Oh",
+      "p2": "switch Moltres"
+    },
+    {
+      "p1": "move Recover",
+      "p2": "move Natural Gift"
+    },
+    {
+      "p1": "move Thunder",
+      "p2": "move Overheat"
+    },
+    {
+      "p1": "move Return",
+      "p2": "move Mud-Slap"
+    },
+    {
+      "p2": "switch Graveler"
+    },
+    {
+      "p1": "move Brave Bird",
+      "p2": "move Rest"
+    },
+    {
+      "p1": "switch Jirachi",
+      "p2": "switch Electrike"
+    },
+    {
+      "p1": "move Ice Punch",
+      "p2": "move Body Slam"
+    }
+  ]
+}

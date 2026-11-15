@@ -707,7 +707,11 @@ pub fn extract_decisions_with(
             }
             "curestatus" if berry_eater.is_some() && berry_eater == who(&event["pokemon"]) => {}
             "enditem" if berry_eaten(event).is_some() => {
-                ate_berry = berry_eaten(event).map(|(eater, _)| eater);
+                // Only a berry that cures a status: the `-curestatus` after a Micle Berry
+                // eaten at a pinch is the eater's own thaw as its action starts (R-M11-175).
+                ate_berry = berry_eaten(event)
+                    .filter(|(_, berry)| STATUS_CURING_BERRIES.contains(&berry.as_str()))
+                    .map(|(eater, _)| eater);
             }
             // A Focus Sash that held (no `[from]`: one taken by Knock Off or a thief says so).
             "enditem" if event["args"].get(2).is_none() && event["args"][1] != "Focus Sash" => {
