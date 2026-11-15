@@ -1532,7 +1532,9 @@ pub fn extract_decisions_with(
             {
                 ability_stat_change = ability_boosting;
             }
-            "unboost" if cotton_down_drops => cotton_down = true,
+            // Cotton Down's drops on everyone else, a Contrary Pokémon's turned into a raise
+            // (`-boost`) mid-run (R-M11-169).
+            "boost" | "unboost" if cotton_down_drops => cotton_down = true,
             // Gen 1's raise of a stat at 999 (a drop of one at 1) prints the change and then its
             // echo the other way by 1 (the gen1 `boost`): the echo is the same change's, no effect
             // of its own — not an Aurora Beam drop after a Rage boost (R-M9-42).
