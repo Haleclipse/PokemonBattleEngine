@@ -1,0 +1,180 @@
+{
+  "schema": 1,
+  "id": "gen6-doubles-acupressure-into-a-traced-motor-drive-draws-no-stat",
+  "notes": [
+    "Turn 13: under Ion Deluge, Gligar's Acupressure is Electric and the ally Cubone's traced Motor Drive takes it in (Speed +1): Acupressure never draws its stat (R-M11-168).",
+    "promoted from m8-gen6-doubles-s106800-002-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 6,
+    "mode": "doubles",
+    "format": "gen6doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Cubone",
+        "species": "Cubone",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Astonish",
+          "Acupressure",
+          "Rolling Kick",
+          "Ion Deluge"
+        ],
+        "ability": "Trace",
+        "gender": "M"
+      },
+      {
+        "label": "Hydreigon",
+        "species": "Hydreigon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Iron Head",
+          "Acupressure",
+          "Zen Headbutt",
+          "Ion Deluge"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Gligar",
+        "species": "Gligar",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Hyper Fang",
+          "Acupressure",
+          "Needle Arm"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Heatran",
+        "species": "Heatran",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Dragon Rush",
+          "Acupressure",
+          "Headbutt"
+        ],
+        "ability": "Prankster",
+        "gender": "M"
+      },
+      {
+        "label": "Kyogre",
+        "species": "Kyogre",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Waterfall",
+          "Acupressure",
+          "Stomp"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Lugia",
+        "species": "Lugia",
+        "level": 46,
+        "nature": "Hardy",
+        "moves": [
+          "Growl",
+          "Acupressure",
+          "Precipice Blades",
+          "Ion Deluge"
+        ],
+        "ability": "Motor Drive"
+      },
+      {
+        "label": "Diancie",
+        "species": "Diancie",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Origin Pulse"
+        ],
+        "ability": "Run Away"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      20751,
+      33855,
+      12541,
+      50286
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Astonish 1, move Iron Head 2",
+      "p2": "move Dragon Rush 1, move Waterfall 2"
+    },
+    {
+      "p1": "move Acupressure -2, move Acupressure -1",
+      "p2": "move Acupressure -2, move Acupressure -1"
+    },
+    {
+      "p1": "move Rolling Kick 1, move Zen Headbutt 2",
+      "p2": "move Headbutt 1, move Stomp 2"
+    },
+    {
+      "p1": "move Astonish 1, move Iron Head 2",
+      "p2": "move Dragon Rush 1, move Waterfall 2"
+    },
+    {
+      "p1": "move Acupressure -2, move Acupressure -1",
+      "p2": "move Acupressure -2, move Acupressure -1"
+    },
+    {
+      "p1": "move Rolling Kick 1, move Zen Headbutt 2",
+      "p2": "move Headbutt 1, move Stomp 2"
+    },
+    {
+      "p2": "pass, switch Lugia"
+    },
+    {
+      "p1": "switch Gligar, move Iron Head 1",
+      "p2": "switch Diancie, move Growl"
+    },
+    {
+      "p2": "switch Heatran, pass"
+    },
+    {
+      "p1": "move Hyper Fang 2, move Acupressure -1",
+      "p2": "move Dragon Rush 1, move Acupressure -1"
+    },
+    {
+      "p1": "move Acupressure -2, move Zen Headbutt 1",
+      "p2": "move Acupressure -2, move Precipice Blades"
+    },
+    {
+      "p1": "move Needle Arm 2, move Ion Deluge",
+      "p2": "move Headbutt 2, move Ion Deluge"
+    },
+    {
+      "p1": "move Acupressure -2, move Zen Headbutt 1",
+      "p2": "move Acupressure -2, move Precipice Blades"
+    },
+    {
+      "p1": "move Needle Arm 2, move Ion Deluge",
+      "p2": "move Headbutt 2, move Ion Deluge"
+    },
+    {
+      "p1": "pass, switch Cubone"
+    },
+    {
+      "p1": "move Acupressure -2, move Ion Deluge",
+      "p2": "move Headbutt 2, move Ion Deluge"
+    }
+  ]
+}

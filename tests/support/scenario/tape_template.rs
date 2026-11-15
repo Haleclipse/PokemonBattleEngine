@@ -1069,7 +1069,9 @@ pub(super) fn tape_template(
             )));
         }
         // Acupressure: the stat `sample` drew (R166) — on its snatcher, when another Pokémon
-        // took it over (Snatch uses it anew, at its own default target: itself).
+        // took it over (Snatch uses it anew, at its own default target: itself). Not on a target
+        // whose ability took the move in (an Electric one under Ion Deluge into Motor Drive):
+        // the raise that follows is the ability's, and no stat is drawn (R-M11-168).
         if move_def.id == MoveId::ACUPRESSURE
             && let Some(victim) = taker.or_else(|| {
                 targets.first().and_then(|(target, _)| *target).or_else(|| {
@@ -1079,6 +1081,10 @@ pub(super) fn tape_template(
                         .and_then(|who| who_to_id(state, who))
                 })
             })
+            && !oracle
+                .absorbed
+                .iter()
+                .any(|who| who_to_id(state, who) == Some(victim))
         {
             tape.extend(acupressure_tape(state, victim, oracle));
         }
