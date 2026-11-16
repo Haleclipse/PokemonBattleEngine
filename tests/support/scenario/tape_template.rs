@@ -1462,6 +1462,13 @@ pub(super) fn tape_template(
                     } else if move_def.fixed_damage
                         == Some(pokemon_battle_engine::dex::FixedDamage::Psywave)
                         && let Some(id) = *target
+                        // A range of one value asks the engine nothing: a level 1 user's Gen 2
+                        // `random(1, 1)` (R-M11-182).
+                        && let (min, max) = pokemon_battle_engine::engine::psywave_range(
+                            rules,
+                            state.pokemon(actor).map_or(1, |p| p.level),
+                        )
+                        && min < max
                     {
                         // Psywave's damage is the roll: read back from the HP it took — or, a
                         // hold on 1 HP the log names (a Focus Band, a Focus Sash, Sturdy), the

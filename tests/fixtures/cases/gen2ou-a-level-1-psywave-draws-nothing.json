@@ -1,0 +1,263 @@
+{
+  "schema": 1,
+  "id": "gen2ou-a-level-1-psywave-draws-nothing",
+  "notes": [
+    "Koffing at level 1 uses Psywave on Zubat's Substitute: Gen 2's random(1, 1) can only deal 1, so the engine asks for no damage roll and the replay plans none (DESIGN.md R-M11-182)",
+    "promoted from m9-gen2ou-s735-000-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 2,
+    "mode": "singles",
+    "format": "gen2ou"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Hoppip",
+        "species": "Hoppip",
+        "ability": "",
+        "moves": [
+          "Sweet Scent",
+          "Giga Drain",
+          "Sleep Talk",
+          "Headbutt"
+        ],
+        "nature": "",
+        "gender": "M",
+        "shiny": false,
+        "level": 100,
+        "happiness": 44
+      },
+      {
+        "label": "Nick7",
+        "species": "Jumpluff",
+        "ability": "",
+        "moves": [
+          "Pay Day",
+          "Swagger",
+          "Leech Seed",
+          "Protect"
+        ],
+        "nature": "",
+        "gender": "M",
+        "shiny": false,
+        "level": 100
+      },
+      {
+        "label": "Muk",
+        "species": "Muk",
+        "ability": "",
+        "moves": [
+          "Thunder"
+        ],
+        "nature": "",
+        "gender": "M",
+        "shiny": false,
+        "level": 100,
+        "happiness": 241
+      },
+      {
+        "label": "Nick59",
+        "species": "Shellder",
+        "ability": "",
+        "moves": [
+          "Rage"
+        ],
+        "nature": "",
+        "gender": "M",
+        "shiny": false,
+        "level": 100
+      },
+      {
+        "label": "Koffing",
+        "species": "Koffing",
+        "ability": "",
+        "moves": [
+          "Psywave"
+        ],
+        "nature": "",
+        "gender": "M",
+        "shiny": false,
+        "level": 1
+      }
+    ],
+    "p2": [
+      {
+        "label": "Gastly",
+        "species": "Gastly",
+        "ability": "",
+        "moves": [
+          "Thunder",
+          "Psych Up",
+          "Confuse Ray",
+          "Swagger"
+        ],
+        "nature": "",
+        "gender": "M",
+        "shiny": false,
+        "level": 100
+      },
+      {
+        "label": "Lanturn",
+        "species": "Lanturn",
+        "ability": "",
+        "moves": [
+          "Swagger",
+          "Toxic",
+          "Ice Beam",
+          "Waterfall"
+        ],
+        "nature": "",
+        "gender": "M",
+        "shiny": false,
+        "level": 61
+      },
+      {
+        "label": "Zubat",
+        "species": "Zubat",
+        "ability": "",
+        "moves": [
+          "Return",
+          "Substitute"
+        ],
+        "nature": "",
+        "gender": "M",
+        "shiny": false,
+        "level": 1,
+        "happiness": 31
+      }
+    ]
+  },
+  "preview": {
+    "p1": "team 245361",
+    "p2": "team 126543"
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      11822,
+      735,
+      1000,
+      31
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Sweet Scent",
+      "p2": "move Thunder"
+    },
+    {
+      "p1": "move Giga Drain",
+      "p2": "move Psych Up"
+    },
+    {
+      "p1": "move Sleep Talk",
+      "p2": "move Confuse Ray"
+    },
+    {
+      "p1": "move Headbutt",
+      "p2": "move Swagger"
+    },
+    {
+      "p1": "move Sweet Scent",
+      "p2": "move Thunder"
+    },
+    {
+      "p1": "move Giga Drain",
+      "p2": "move Psych Up"
+    },
+    {
+      "p1": "move Sleep Talk",
+      "p2": "move Confuse Ray"
+    },
+    {
+      "p1": "switch Nick7",
+      "p2": "switch Lanturn"
+    },
+    {
+      "p1": "move Protect",
+      "p2": "move Waterfall"
+    },
+    {
+      "p1": "move Pay Day",
+      "p2": "move Swagger"
+    },
+    {
+      "p1": "move Swagger",
+      "p2": "move Toxic"
+    },
+    {
+      "p1": "move Leech Seed",
+      "p2": "move Ice Beam"
+    },
+    {
+      "p1": "move Protect",
+      "p2": "move Waterfall"
+    },
+    {
+      "p1": "move Pay Day",
+      "p2": "move Swagger"
+    },
+    {
+      "p1": "move Swagger",
+      "p2": "move Toxic"
+    },
+    {
+      "p1": "switch Hoppip",
+      "p2": "switch Gastly"
+    },
+    {
+      "p1": "move Sleep Talk",
+      "p2": "move Confuse Ray"
+    },
+    {
+      "p1": "switch Nick7"
+    },
+    {
+      "p1": "move Protect",
+      "p2": "move Swagger"
+    },
+    {
+      "p1": "move Pay Day",
+      "p2": "move Thunder"
+    },
+    {
+      "p1": "move Swagger",
+      "p2": "move Psych Up"
+    },
+    {
+      "p1": "move Leech Seed",
+      "p2": "move Confuse Ray"
+    },
+    {
+      "p1": "switch Muk"
+    },
+    {
+      "p1": "move Thunder",
+      "p2": "move Swagger"
+    },
+    {
+      "p2": "switch Lanturn"
+    },
+    {
+      "p1": "switch Nick59",
+      "p2": "move Toxic"
+    },
+    {
+      "p1": "move Rage",
+      "p2": "move Ice Beam"
+    },
+    {
+      "p1": "switch Muk",
+      "p2": "switch Zubat"
+    },
+    {
+      "p1": "switch Koffing",
+      "p2": "move Return"
+    },
+    {
+      "p1": "move Psywave",
+      "p2": "move Substitute"
+    }
+  ]
+}
