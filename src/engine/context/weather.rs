@@ -201,12 +201,22 @@ impl<'a> BattleContext<'a> {
     }
 
     /// The strong weathers' holders' `onAnySetWeather`: while one is up, no other weather starts
-    /// (a weather move fails, a weather ability does not activate).
+    /// (a weather move fails, a weather ability does not activate) — kept off by an active holder
+    /// still standing. Showdown finds `onAny` handlers among `alliesAndSelf()` / `foes()`, which
+    /// pass over a Pokémon at 0 HP: Sand Spit hit by the move that knocked the Primordial Sea
+    /// holder out starts its sandstorm.
     pub fn strong_weather_up(&self) -> bool {
-        self.state
-            .field
-            .weather
-            .is_some_and(|weather| weather.strong)
+        let Some(weather) = self.state.field.weather.filter(|weather| weather.strong) else {
+            return false;
+        };
+        self.active_pokemon().into_iter().any(|id| {
+            self.state.pokemon(id).is_some_and(|pokemon| {
+                !pokemon.is_fainted()
+                    && crate::engine::ability_handler(self.state, self.rules, pokemon, |b| {
+                        b.strong_weather
+                    }) == Some(weather.kind)
+            })
+        })
     }
 
     /// A strong weather's `onEnd` as `leaving` leaves the field (switched, dragged out or down):

@@ -1,0 +1,129 @@
+{
+  "schema": 1,
+  "id": "gen8-doubles-a-primordial-sea-holder-at-zero-hp-does-not-stop-sand-spit",
+  "notes": [
+    "Chandelure's Origin Pulse knocks out Zubat, the Primordial Sea holder, and hits Tangrowth, whose Sand Spit starts a sandstorm: a holder at 0 HP no longer keeps another weather off, and fainting it leaves the sandstorm (DESIGN.md R-M11-179)",
+    "promoted from m8-gen8-doubles-s2167-011-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 8,
+    "mode": "doubles",
+    "format": "gen8doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Tangrowth",
+        "species": "Tangrowth",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Perish Song"
+        ],
+        "ability": "Sand Spit",
+        "gender": "F"
+      },
+      {
+        "label": "Quagsire",
+        "species": "Quagsire",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Grass Knot",
+          "Toxic Spikes",
+          "Dragon Energy",
+          "Perish Song"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Zubat",
+        "species": "Zubat",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Rising Voltage",
+          "Toxic Spikes",
+          "Heat Crash"
+        ],
+        "ability": "Primordial Sea",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Type: Null",
+        "species": "Type: Null",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Perish Song"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Linoone",
+        "species": "Linoone",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Core Enforcer",
+          "Toxic Spikes",
+          "Leer",
+          "Perish Song"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Chandelure",
+        "species": "Chandelure",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Snarl",
+          "Toxic Spikes",
+          "Origin Pulse"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      4545,
+      1594,
+      63291,
+      23559
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Perish Song, move Perish Song",
+      "p2": "move Perish Song, move Perish Song"
+    },
+    {
+      "p1": "switch Zubat, move Grass Knot 1",
+      "p2": "switch Chandelure, move Core Enforcer"
+    },
+    {
+      "p1": "move Rising Voltage 2, move Toxic Spikes",
+      "p2": "move Snarl, move Toxic Spikes"
+    },
+    {
+      "p1": "move Toxic Spikes, move Dragon Energy",
+      "p2": "move Toxic Spikes, move Leer"
+    },
+    {
+      "p1": "pass, switch Tangrowth",
+      "p2": "pass, switch Type: Null"
+    },
+    {
+      "p1": "move Heat Crash 1, move Perish Song",
+      "p2": "move Origin Pulse, move Perish Song"
+    }
+  ]
+}
