@@ -1144,6 +1144,16 @@ pub fn extract_decisions_with(
                 let changes_ability = args
                     .iter()
                     .any(|arg| arg.as_str().is_some_and(|arg| arg.starts_with("[from]")));
+                // One a move gave (Entrainment): a sleep it is in counts down by it from here on
+                // (R-M11-181).
+                if args.iter().any(|arg| {
+                    arg.as_str()
+                        .is_some_and(|arg| arg.starts_with("[from] move: "))
+                }) && let (Some(action), Some(who)) =
+                    (out.last_mut(), args.first().and_then(who_from_text))
+                {
+                    action.abilities_set.push((who, ability.to_string()));
+                }
                 if !changes_ability
                     && matches!(
                         ability,

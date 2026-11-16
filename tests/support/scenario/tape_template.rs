@@ -3018,13 +3018,23 @@ pub(super) fn sleep_duration_hint(
                 }
                 break;
             };
+            // An ability a move gave it earlier this turn (Entrainment before its BeforeMove)
+            // counts over the one the frame before the turn shows (R-M11-181).
+            let step = decisions[..position]
+                .iter()
+                .flat_map(|earlier| &earlier.abilities_set)
+                .rfind(|(who, _)| same(who))
+                .map_or_else(
+                    || step_at(t),
+                    |(_, ability)| if ability == "Early Bird" { 2 } else { 1 },
+                );
             // A turn it slept through counts before what the action then did: a Sleep Talk
             // that calls Rest sleeps anew after its BeforeMove took the turn (R-M11-32).
             let slept_here = same(&action.user)
                 && (action.cant.as_deref() == Some("slp") || action.slept_through);
             if slept_here {
                 cants += 1;
-                taken += step_at(t);
+                taken += step;
                 skipped = if action.slept_through { skipped + 1 } else { 0 };
             }
             // Put to sleep again, or cured by another's move (Purify): the first sleep ended
@@ -3047,15 +3057,11 @@ pub(super) fn sleep_duration_hint(
                 .iter()
                 .any(|(who, kind)| same(who) && kind == "uproar:slp")
             {
-                return Some(
-                    (taken + step_at(t) + 1)
-                        .max(at_least)
-                        .clamp(min_time, max_time),
-                );
+                return Some((taken + step + 1).max(at_least).clamp(min_time, max_time));
             }
             if action.cured.as_deref() == Some("slp") {
                 // Early Bird's range may reach past the generation's maximum.
-                return Some((taken + step_at(t)).min(max_time.max(cants + 1)));
+                return Some((taken + step).min(max_time.max(cants + 1)));
             }
         }
     }

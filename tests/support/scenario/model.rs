@@ -1072,6 +1072,9 @@ pub struct ActionOracle {
     /// how many hits had landed when it showed (a multi-hit move rolls after every hit);
     /// `usize::MAX` for a flinch, which only the victim's later `cant` shows.
     pub secondary_on: Vec<(Who, String, usize)>,
+    /// The abilities a move gave Pokémon, in log order (`-ability|p|New|…|[from] move: …`:
+    /// Entrainment, Role Play, Simple Beam …).
+    pub abilities_set: Vec<(Who, String)>,
     /// The Pokémon the actor's Magician took an item from (`-item|actor|…|[from] ability:
     /// Magician|[of] target`).
     pub magician_from: Option<Who>,
@@ -1242,6 +1245,7 @@ impl ActionOracle {
             damages: Vec::new(),
             secondary_applied: false,
             secondary_on: Vec::new(),
+            abilities_set: Vec::new(),
             magician_from: None,
             contact_status: None,
             contact_status_after_hits: 0,
