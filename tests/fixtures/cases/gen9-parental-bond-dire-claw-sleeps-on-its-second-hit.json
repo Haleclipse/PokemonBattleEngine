@@ -1,0 +1,145 @@
+{
+  "schema": 1,
+  "id": "gen9-parental-bond-dire-claw-sleeps-on-its-second-hit",
+  "notes": [
+    "Oranguru's Parental Bond Dire Claw misses its chance on the first hit and puts Palossand to sleep on the second: the sleep's duration is the second hit's roll, after its critical-hit check (DESIGN.md R-M11-178)",
+    "promoted from m8-gen9-singles-s2154-006-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Ariados",
+        "species": "Ariados",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Memento"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Slowpoke",
+        "species": "Slowpoke",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Dire Claw",
+          "Dragon Dance",
+          "Tri Attack"
+        ],
+        "ability": "Wonder Guard",
+        "gender": "M"
+      },
+      {
+        "label": "Oranguru",
+        "species": "Oranguru",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Scary Face",
+          "Dire Claw"
+        ],
+        "ability": "Parental Bond",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Toedscruel",
+        "species": "Toedscruel",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tearful Look",
+          "Dire Claw",
+          "Work Up",
+          "Tri Attack"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Toxel",
+        "species": "Toxel",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tri Attack"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Palossand",
+        "species": "Palossand",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fire Pledge",
+          "Dire Claw"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      1480,
+      33946,
+      48832,
+      33946
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Memento",
+      "p2": "move Tearful Look"
+    },
+    {
+      "p1": "switch Slowpoke"
+    },
+    {
+      "p1": "move Dire Claw",
+      "p2": "move Dire Claw"
+    },
+    {
+      "p1": "move Dragon Dance",
+      "p2": "move Work Up"
+    },
+    {
+      "p1": "move Tri Attack",
+      "p2": "move Tri Attack"
+    },
+    {
+      "p1": "move Dire Claw",
+      "p2": "move Dire Claw"
+    },
+    {
+      "p2": "switch Toxel"
+    },
+    {
+      "p1": "move Tri Attack",
+      "p2": "move Tri Attack"
+    },
+    {
+      "p1": "switch Oranguru",
+      "p2": "switch Palossand"
+    },
+    {
+      "p1": "move Scary Face",
+      "p2": "move Fire Pledge"
+    },
+    {
+      "p1": "move Dire Claw",
+      "p2": "move Dire Claw"
+    }
+  ]
+}
