@@ -736,7 +736,8 @@ pub(super) fn lead_order(compiled: &Compiled, initial: Option<&Value>) -> Vec<Po
 }
 
 /// Where each Pokémon is first named among a frame's events (switches aside): the leads in the
-/// initial frame, simultaneous entrants in their replacements' frame.
+/// initial frame, simultaneous entrants in their replacements' frame. The Pokémon a Trace copies
+/// from (its line's `[of]`) does nothing there: a lead tied with it is not behind it (R-M11-180).
 pub(super) fn first_named_at(
     compiled: &Compiled,
     initial: Option<&Value>,
@@ -749,9 +750,15 @@ pub(super) fn first_named_at(
     let mut named: Vec<PokemonId> = Vec::new();
     for event in events.iter().filter(|event| event["kind"] != "switch") {
         let args = event["args"].as_array().cloned().unwrap_or_default();
+        let traced = args
+            .iter()
+            .any(|arg| arg.as_str() == Some("[from] ability: Trace"));
         let whos = std::iter::once(serde_json::from_value::<Who>(event["pokemon"].clone()).ok())
             .chain(args.iter().map(|arg| {
                 let text = arg.as_str()?;
+                if traced && text.starts_with("[of] ") {
+                    return None;
+                }
                 who_from_text(&Value::from(text.strip_prefix("[of] ").unwrap_or(text)))
             }))
             .flatten();

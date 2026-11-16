@@ -1,0 +1,250 @@
+{
+  "schema": 1,
+  "id": "gen3-doubles-a-traced-lead-tied-in-speed-is-not-ahead",
+  "notes": [
+    "Sandslash traces Nincada's Drizzle as the leads come in; Nincada and Octillery tie in speed and Octillery's Drought comes first, so Nincada's Drizzle leaves the rain: the Pokémon a Trace copies from is not named ahead of a lead it ties with (DESIGN.md R-M11-180)",
+    "promoted from m8-gen3-doubles-s2174-010-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 3,
+    "mode": "doubles",
+    "format": "gen3doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Qwilfish",
+        "species": "Qwilfish",
+        "level": 52,
+        "nature": "Hardy",
+        "moves": [
+          "Return",
+          "Minimize",
+          "Eruption",
+          "Conversion 2"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Nincada",
+        "species": "Nincada",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Beat Up",
+          "Minimize",
+          "Flail"
+        ],
+        "ability": "Drizzle",
+        "gender": "M"
+      },
+      {
+        "label": "Pidgeotto",
+        "species": "Pidgeotto",
+        "level": 46,
+        "nature": "Hardy",
+        "moves": [
+          "Water Spout",
+          "Minimize",
+          "Sweet Scent",
+          "Conversion 2"
+        ],
+        "ability": "Sand Stream",
+        "item": "Iapapa Berry",
+        "gender": "F"
+      },
+      {
+        "label": "Armaldo",
+        "species": "Armaldo",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Growl",
+          "Minimize",
+          "Leer",
+          "Conversion 2"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Octillery",
+        "species": "Octillery",
+        "level": 51,
+        "nature": "Hardy",
+        "moves": [
+          "String Shot",
+          "Minimize",
+          "Surf",
+          "Conversion 2"
+        ],
+        "ability": "Drought",
+        "gender": "M"
+      },
+      {
+        "label": "Sandslash",
+        "species": "Sandslash",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Swift",
+          "Minimize",
+          "Hyper Voice",
+          "Conversion 2"
+        ],
+        "ability": "Trace",
+        "gender": "M"
+      },
+      {
+        "label": "Oddish",
+        "species": "Oddish",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tail Whip",
+          "Minimize",
+          "Scary Face",
+          "Conversion 2"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Torkoal",
+        "species": "Torkoal",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tickle",
+          "Minimize",
+          "Screech",
+          "Conversion 2"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      28496,
+      50270,
+      11425,
+      30068
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Return 1, move Beat Up 2",
+      "p2": "move String Shot, move Swift"
+    },
+    {
+      "p1": "move Minimize, move Minimize",
+      "p2": "move Minimize, move Minimize"
+    },
+    {
+      "p1": "move Eruption, move Flail 1",
+      "p2": "move Surf, move Hyper Voice"
+    },
+    {
+      "p1": "pass, switch Pidgeotto"
+    },
+    {
+      "p1": "switch Armaldo, move Conversion 2 2",
+      "p2": "move Conversion 2 1, move Conversion 2 2"
+    },
+    {
+      "p1": "move Conversion 2 1, move Water Spout",
+      "p2": "move String Shot, move Swift"
+    },
+    {
+      "p1": "move Growl, move Minimize",
+      "p2": "move Minimize, move Minimize"
+    },
+    {
+      "p2": "switch Oddish, pass"
+    },
+    {
+      "p1": "move Minimize, move Sweet Scent",
+      "p2": "move Scary Face 1, move Hyper Voice"
+    },
+    {
+      "p1": "switch Qwilfish, move Conversion 2 2",
+      "p2": "move Conversion 2 2, move Conversion 2 1"
+    },
+    {
+      "p1": "move Eruption, move Water Spout",
+      "p2": "move Tail Whip, move Swift"
+    },
+    {
+      "p2": "pass, switch Torkoal"
+    },
+    {
+      "p1": "move Conversion 2 1, move Minimize",
+      "p2": "move Minimize, move Minimize"
+    },
+    {
+      "p1": "move Return 2, move Sweet Scent",
+      "p2": "move Scary Face 2, move Screech 1"
+    },
+    {
+      "p1": "switch Armaldo, move Conversion 2 1",
+      "p2": "move Conversion 2 2, move Conversion 2 1"
+    },
+    {
+      "p1": "move Minimize, move Water Spout",
+      "p2": "move Tail Whip, move Tickle 2"
+    },
+    {
+      "p1": "move Leer, move Minimize",
+      "p2": "move Minimize, move Minimize"
+    },
+    {
+      "p1": "move Conversion 2 2, move Sweet Scent",
+      "p2": "move Scary Face 1, move Screech 2"
+    },
+    {
+      "p1": "switch Qwilfish, move Conversion 2 1",
+      "p2": "move Conversion 2 1, move Conversion 2 2"
+    },
+    {
+      "p1": "switch Armaldo, pass"
+    },
+    {
+      "p1": "move Minimize, move Minimize",
+      "p2": "move Minimize, move Minimize"
+    },
+    {
+      "p1": "move Leer, move Sweet Scent",
+      "p2": "move Scary Face 2, move Screech 1"
+    },
+    {
+      "p1": "move Conversion 2 2, move Conversion 2 1",
+      "p2": "move Conversion 2 2, move Conversion 2 1"
+    },
+    {
+      "p1": "move Growl, move Water Spout",
+      "p2": "move Tail Whip, move Tickle 2"
+    },
+    {
+      "p1": "move Minimize, move Minimize",
+      "p2": "move Minimize, move Minimize"
+    },
+    {
+      "p1": "move Leer, move Sweet Scent",
+      "p2": "move Scary Face 1, move Screech 2"
+    },
+    {
+      "p1": "move Leer, move Sweet Scent",
+      "p2": "move Scary Face 2, move Screech 1"
+    },
+    {
+      "p1": "move Minimize, pass",
+      "p2": "move Minimize, pass"
+    }
+  ]
+}
