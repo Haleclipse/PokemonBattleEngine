@@ -1538,6 +1538,20 @@ pub fn extract_decisions_with(
                         // ability: Rough Skin|[of] …`): the action's own HP commits on its
                         // user. Residual drains come after the `residual` marker and are
                         // skipped above.
+                        // A knock-out the move dealt its user after the hits (R-M11-185).
+                        if hp == 0
+                            && (from.is_some_and(|f| {
+                                f.eq_ignore_ascii_case("[from] recoil")
+                                    || f.contains("item: Life Orb")
+                            }) || action.used_move().is_some_and(|name| {
+                                from == Some(
+                                    format!("[from] {}", pokemon_battle_engine::data::to_id(name))
+                                        .as_str(),
+                                )
+                            }))
+                        {
+                            action.fell_after_move = true;
+                        }
                         action.damages.push((target, hp));
                     }
                 }

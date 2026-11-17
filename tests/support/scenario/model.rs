@@ -987,6 +987,9 @@ pub struct ActionOracle {
     pub z_status: bool,
     /// The user took its move's crash damage (High Jump Kick hitting no target).
     pub crashed: bool,
+    /// The user fell to what its move dealt it after the hits (recoil, Life Orb, Mind Blown's
+    /// self damage), which cuts no hit sequence short.
+    pub fell_after_move: bool,
     /// The `move` event's target: where a single-target move actually went after execution-time
     /// retargeting (Follow Me, Lightning Rod, a fainted target).
     pub move_target: Option<Who>,
@@ -1238,6 +1241,7 @@ impl ActionOracle {
             immune: Vec::new(),
             z_status: false,
             crashed: false,
+            fell_after_move: false,
             try_hit_blocked: Vec::new(),
             guarded: Vec::new(),
             absorbed: Vec::new(),

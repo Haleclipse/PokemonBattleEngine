@@ -2144,7 +2144,8 @@ pub(super) fn tape_template(
                 }
                 // A `multiaccuracy` sequence cut short with both sides standing missed its next
                 // hit (nothing shows it but the hit count) — unless a hit's reaction put the user
-                // to sleep, which stops the sequence before the check (DESIGN.md R263).
+                // to sleep, which stops the sequence before the check (DESIGN.md R263). A user
+                // its Life Orb knocked out after the hits stood through them (R-M11-185).
                 if move_def.multi_accuracy
                     && let MultiHit::Fixed(count) = move_def.multi_hit
                     && landed < u16::from(count)
@@ -2152,7 +2153,7 @@ pub(super) fn tape_template(
                     && rolls_later_accuracy(*target)
                     && !oracle.damages.iter().any(|(who, hp)| {
                         *hp == 0
-                            && (*who == oracle.user
+                            && ((*who == oracle.user && !oracle.fell_after_move)
                                 || target.is_some_and(|id| who_to_id(state, who) == Some(id)))
                     })
                 {
