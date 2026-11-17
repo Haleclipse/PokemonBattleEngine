@@ -1610,6 +1610,9 @@ pub(super) fn own_action_follows(rest: &[Value], thawed: &Who) -> bool {
                 return who_from_text(&event["args"][0]).as_ref() == Some(thawed);
             }
             "turn" | "upkeep" | "residual" | "switch" | "drag" => return false,
+            // A note to the reader names no one: Wonder Room's on the Body Press the thawed
+            // Pokémon is about to use (R-M11-183).
+            "hint" => {}
             _ => {
                 let about_it = is(&event["pokemon"])
                     || who_from_text(&event["args"][0]).as_ref() == Some(thawed);
