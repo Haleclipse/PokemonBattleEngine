@@ -2437,12 +2437,22 @@ pub(super) fn drive_to_boundary(
         // Gen 1: a roll that broke a Substitute leaves `lastDamage` uncapped, which only a later
         // Bide release, Counter or binding lock's next turn shows: the roll sets leaving another
         // value are an open choice, taken where the replay was told to (`OpenChoices`, R-M8-102).
+        // So does a roll on a doll left standing that the boundary frame no longer shows (its
+        // holder fainted to poison by then): no HP of it pins the roll (R-M11-184).
+        let unseen_dolls: Vec<PokemonId> = decision
+            .substitute_struck
+            .iter()
+            .filter(|(_, broken)| !broken)
+            .filter_map(|(holder, _)| who_to_id(&before.state, holder))
+            .filter(|id| substitutes.iter().all(|(doll, _)| doll != id) && !deferred.contains(id))
+            .collect();
         if compiled.rules.conditions().retaliation.gen1_last_damage
             && let Some((engine, _, tape)) = &search.chosen
-            && broke_a_doll(&before.state, engine.state())
+            && (broke_a_doll(&before.state, engine.state()) || !unseen_dolls.is_empty())
             && last_damage_read_later(boundary_frames, turn_index)
         {
-            let others = other_last_damages(compiled, &before, trace_len, tape, engine);
+            let others =
+                other_last_damages(compiled, &before, trace_len, tape, engine, &unseen_dolls);
             if !others.is_empty() {
                 let choice = report.open_choices.met.len();
                 report.open_choices.met.push(others.len());

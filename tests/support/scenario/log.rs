@@ -2329,13 +2329,15 @@ pub(super) fn last_damage_read_later(frames: &[Option<&Value>], from: usize) -> 
 
 /// Gen 1's open choice after a roll that broke a Substitute (`OpenChoices`, R-M8-102): the
 /// other roll sets that reproduce the action as well as `chosen` — the same HP commits and
-/// Substitutes, the plan used up — but leave another `lastDamage`, one per value.
+/// Substitutes, the plan used up — but leave another `lastDamage`, one per value. The dolls in
+/// `unseen` (left standing, gone from the boundary frame, R-M11-184) may end at any HP.
 pub(super) fn other_last_damages(
     compiled: &Compiled,
     before: &BattleSnapshot,
     trace_len: usize,
     tape: &[RandomOverride],
     chosen: &BattleEngine,
+    unseen: &[PokemonId],
 ) -> Vec<Vec<RandomOverride>> {
     let damage = compiled.rules.damage();
     let dolls = |engine: &BattleEngine| {
@@ -2343,6 +2345,7 @@ pub(super) fn other_last_damages(
         state
             .all_pokemon()
             .iter()
+            .filter(|pokemon| !unseen.contains(&pokemon.id()))
             .map(|pokemon| substitute_hp(state, pokemon.id()))
             .collect::<Vec<_>>()
     };
