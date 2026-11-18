@@ -463,12 +463,30 @@ pub(crate) fn resolve(
             seen: true,
         });
     }
+    if choice_lock_refuses(state, rules, actor, move_def.id) {
+        return CanMoveResult::Blocked(BeforeMoveBlockReason::ChoiceLock);
+    }
+
+    CanMoveResult::Allow
+}
+
+/// Whether a Choice item's lock (Gen 7+, `choicelock.onBeforeMove`) or Gorilla Tactics' refuses
+/// `move_id` at BeforeMove: a lock onto another move, its item held as a Choice item and not
+/// set aside, or the ability running. The replay asks the same (a lock Magic Room held back,
+/// in force again once the room ended, R-M11-190).
+pub fn choice_lock_refuses(
+    state: &BattleState,
+    rules: &ResolvedRules,
+    actor: PokemonId,
+    move_id: crate::ids::MoveId,
+) -> bool {
     let locks = state.pokemon(actor).map(|pokemon| {
         [
             pokemon
                 .volatiles
                 .choice_locked_move()
                 .filter(|_| rules.conditions.items.choice_lock_before_move)
+                .filter(|_| super::holds_choice_item(rules, pokemon))
                 .filter(|_| super::held_item_of(state, rules, pokemon).is_some()),
             pokemon
                 .ability_state
@@ -481,20 +499,14 @@ pub(crate) fn resolve(
     // (`choicelock.onBeforeMove`'s `!pokemon.volatiles['dynamax']`; Gorilla Tactics' skips every
     // Max Move, §44.5).
     let z_powered = state.active_move.is_some_and(|active| active.z_powered);
-    let dynamaxed = super::dynamaxed(state, actor);
-    if !z_powered
-        && !dynamaxed
+    !z_powered
+        && !super::dynamaxed(state, actor)
         && locks
             .into_iter()
             .flatten()
             .flatten()
-            .any(|locked| locked != move_def.id)
-        && move_def.id != crate::ids::MoveId::STRUGGLE
-    {
-        return CanMoveResult::Blocked(BeforeMoveBlockReason::ChoiceLock);
-    }
-
-    CanMoveResult::Allow
+            .any(|locked| locked != move_id)
+        && move_id != crate::ids::MoveId::STRUGGLE
 }
 
 /// Gen 1: a fully paralysed or self-hitting user drops its binding lock

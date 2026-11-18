@@ -267,6 +267,16 @@ pub(super) fn tape_template(
                 return tape;
             }
         }
+        // 5. A Choice item's lock (Gen 7+) or Gorilla Tactics' refuses any other move (`move
+        //    …|[still]`, `-fail`): nothing more is drawn — a lock Magic Room held back, in force
+        //    again once the room ended (R-M11-190).
+        if oracle.failed
+            && oracle.called.is_empty()
+            && let Some(def) = move_def
+            && pokemon_battle_engine::engine::choice_lock_refuses(state, rules, actor, def.id)
+        {
+            return tape;
+        }
     }
     // The moves this action called, one after another (Metronome, or Copycat copying a
     // Metronome, §42.1): each caller's draw among its candidates, in the callers' order, whose

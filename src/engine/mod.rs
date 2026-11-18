@@ -56,7 +56,9 @@ pub use battle::{
     ActionOrderPreview, BattleEngine, DurationHandler, ReplacementRequirement, ReplacementSlot,
     ResidualTies, SeenPokemon, SideView, TurnResult, fractional_priority,
 };
-pub use before_move::{BeforeMoveBlockReason, CanMoveResult, rolls_full_paralysis};
+pub use before_move::{
+    BeforeMoveBlockReason, CanMoveResult, choice_lock_refuses, rolls_full_paralysis,
+};
 pub use choice::{
     ActionChoice, ActorOptions, ChoiceError, ChoiceOptions, ForcedReplacement, ForcedSwitchChoice,
     MaxMoveOption, MechanicChoice, MechanicOptions, MoveOption, ReviveChoice, SideChoice,
