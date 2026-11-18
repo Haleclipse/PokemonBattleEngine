@@ -131,7 +131,9 @@ pub fn called_z_move(
 /// `getActiveMaxMove`, DESIGN.md §44.5): the Max Move of the move's type as it will be used
 /// (its own and the ability's type changes have run), the base move's category and priority,
 /// the power the engine's table gives (`ResolvedMove::max_power`, the move's data first). `None`
-/// when the holder is not Dynamaxed or the move has no Max version.
+/// when the holder is not Dynamaxed or the move has no Max version. The category is the base
+/// move's data one: only `ModifyType` runs before `getActiveMaxMove`, not the move's own
+/// `onModifyMove` — Photon Geyser's Max Mindstorm stays special (R-M11-186).
 pub fn max_move_execution(
     state: &BattleState,
     dex: &crate::dex::ResolvedDex,
@@ -152,7 +154,9 @@ pub fn max_move_execution(
         // The Max Move takes the base move's power and category (`getActiveMaxMove`; the three
         // G-Max moves with a power of their own are not in the snapshots — no Gigantamax). A
         // status move is Max Guard, which keeps its own.
-        def.category = base.category;
+        def.category = dex
+            .move_by_id(base.id)
+            .map_or(base.category, |data| data.category);
         // A Max Move converting a Max Move gives 0 power (Showdown's `getDamage`: "Hacked Max
         // Moves have 0 base power, even if you Dynamax"), so the hit is the minimum.
         def.base_power = if base.is_max { 0 } else { base.max_power? };
