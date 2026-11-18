@@ -1494,16 +1494,26 @@ impl<'a> MovePipeline<'a> {
         }
     }
 
+    /// Whether `z` is the Z-Move of Weather Ball's weather type (`used_z_move`): its line names
+    /// the Weather Ball (`[from] move: Weather Ball`, R-M11-192).
+    fn weather_ball_z(&self, z: &super::ZMoveExecution) -> bool {
+        self.dex.move_by_id(z.base).is_some_and(|base| {
+            base.behavior.own_type == Some(crate::effects::moves::OwnType::Weather)
+                && base.move_type != z.move_def.move_type
+        })
+    }
+
     /// The action's move `move_id` as its lines show it (`TraceEvent::MoveUsed::own_move`): the
-    /// move itself, or the one a status Z-Move or a signature one was made from (`zMoveFrom`);
-    /// none for Struggle, and a generic Z-Move or a Max Move, which hide theirs.
+    /// move itself, or the one a status Z-Move or a signature one was made from (`zMoveFrom`),
+    /// or the Weather Ball a Z-Move of its weather's type names; none for Struggle, and another
+    /// generic Z-Move or a Max Move, which hide theirs.
     fn shown_own_move(&self, move_id: MoveId) -> Option<MoveId> {
         if move_id == MoveId::STRUGGLE || self.max_base.is_some() {
             return None;
         }
         match &self.z_power {
             None => Some(move_id),
-            Some(z) if z.move_def.id == z.base => Some(z.base),
+            Some(z) if z.move_def.id == z.base || self.weather_ball_z(z) => Some(z.base),
             Some(z) => z
                 .move_def
                 .z_crystal

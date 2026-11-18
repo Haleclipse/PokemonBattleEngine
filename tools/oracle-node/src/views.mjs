@@ -428,6 +428,15 @@ function noteMoves(client, moves, args, kwArgs, slotsBefore) {
     moves.lastMove.set(key, move.id);
     const zPowered = moves.zPowered.has(key);
     moves.zPowered.delete(key);
+    // A Weather Ball Z-powered with Normalium Z runs as the Z-Move of its weather's type, its
+    // line naming the Weather Ball (`[from] move: Weather Ball`, Showdown `useMoveInner`): the
+    // client takes it for a call — no use of Weather Ball, no crystal. It is the Pokémon's own
+    // Weather Ball, PP paid, and the crystal Normalium Z (R-M11-192).
+    if (move.isZ && zPowered && caller?.id === 'weatherball') {
+      moves.called.delete(key);
+      poke.rememberMove('Weather Ball', 1);
+      poke.item = 'normaliumz';
+    }
     const from = move.isZ ? Dex.items.get(move.isZ).zMoveFrom : undefined;
     if ((move.isZ && zPowered && !from) || (move.isMax && poke.volatiles.dynamax)) {
       drop(move.id);

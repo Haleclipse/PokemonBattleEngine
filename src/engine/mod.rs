@@ -88,7 +88,8 @@ pub(crate) use execution::PendingExecution;
 pub use execution::{BattleRequest, BattleSnapshot, EngineStep};
 pub(crate) use gimmicks::spend_mechanic;
 pub use gimmicks::{
-    called_z_move, can_dynamax, max_move_execution, max_move_for, run_z_power, z_move_execution,
+    called_z_move, can_dynamax, max_move_execution, max_move_for, run_z_power, used_z_move,
+    z_move_execution,
 };
 pub(crate) use held_item::{fling_item, ignores_items, natural_gift_berry, sets_any_item_aside};
 pub use held_item::{

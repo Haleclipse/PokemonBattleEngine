@@ -502,7 +502,7 @@ impl BattleEngine {
                                 self.dex.move_by_id(slot_state.move_id).cloned()
                             });
                         base.and_then(|base| {
-                            crate::engine::z_move_execution(
+                            crate::engine::used_z_move(
                                 &self.state,
                                 &self.rules,
                                 &self.dex,

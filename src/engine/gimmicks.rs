@@ -96,6 +96,35 @@ pub fn z_move_execution(
     }
 }
 
+/// The Z-Move the holder's move becomes as it is used (Showdown `useMoveInner`): Weather Ball
+/// used directly runs its own `ModifyType` first, so a Normalium Z makes it the Z-Move of its
+/// weather's type (Bulbapedia: Breakneck Blitz turns into it; not a Weather Ball a Z-Sleep Talk
+/// calls, `called_z_move`). The choices still name the Normal one (`z_move_execution`,
+/// R-M11-192).
+pub fn used_z_move(
+    state: &BattleState,
+    rules: &ResolvedRules,
+    dex: &crate::dex::ResolvedDex,
+    holder: PokemonId,
+    base: &ResolvedMove,
+) -> Option<ZMoveExecution> {
+    let mut z = z_move_execution(state, rules, dex, holder, base)?;
+    if z.move_def.id != base.id
+        && base.behavior.own_type == Some(crate::effects::moves::OwnType::Weather)
+        && let Some(move_type) = super::move_prep::weather_ball_type(state, rules, holder)
+        && let Some(retyped) = dex
+            .z_move_of_type(move_type)
+            .and_then(|id| dex.move_by_id(id))
+    {
+        let mut def = retyped.clone();
+        def.base_power = z.move_def.base_power;
+        def.category = z.move_def.category;
+        def.priority = z.move_def.priority;
+        z.move_def = def;
+    }
+    Some(z)
+}
+
 /// Showdown `getActiveZMove` for a damaging move a Z status move called (`useMoveInner`:
 /// `move.category !== 'Status' && sourceEffect.isZ` — Z-Nature Power's Tri Attack, a
 /// Z-Metronome's draw): the holder's signature Z-Move when its crystal is made from that move

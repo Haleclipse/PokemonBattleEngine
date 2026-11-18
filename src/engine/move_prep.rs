@@ -90,6 +90,24 @@ pub fn prepared_move(
     move_def
 }
 
+/// Weather Ball's type in the weather `user` meets (its own `onModifyType`): `None` outside
+/// sun, rain, sand and hail / snow — Delta Stream's winds change nothing (Weather Ball's lists
+/// do not name them).
+pub(crate) fn weather_ball_type(
+    state: &crate::state::BattleState,
+    rules: &crate::rules::ResolvedRules,
+    user: crate::ids::PokemonId,
+) -> Option<crate::dex::PokemonType> {
+    use crate::dex::PokemonType;
+    Some(match weather_for(state, rules, user)? {
+        crate::state::WeatherKind::Sun => PokemonType::Fire,
+        crate::state::WeatherKind::Rain => PokemonType::Water,
+        crate::state::WeatherKind::Sandstorm => PokemonType::Rock,
+        crate::state::WeatherKind::Snow => PokemonType::Ice,
+        crate::state::WeatherKind::StrongWinds => return None,
+    })
+}
+
 /// The move as `user` uses it right now (Showdown `ModifyType` / `ModifyMove` as it starts):
 /// the move's own type and category (Weather Ball, Revelation Dance, Hidden Power, Gen 2-4
 /// Beat Up), then the user's ability retyping it (Aerilate …, Liquid Voice, Normalize) — the
@@ -119,18 +137,8 @@ pub(crate) fn modified_move_cow<'a>(
     match move_def.behavior.own_type {
         None => {}
         Some(OwnType::Weather) => {
-            // Delta Stream's winds change nothing (Weather Ball's lists do not name them).
-            let weather = weather_for(state, rules, user)
-                .filter(|kind| *kind != crate::state::WeatherKind::StrongWinds);
-            if let Some(weather) = weather {
-                modified.to_mut().move_type = match weather {
-                    crate::state::WeatherKind::Sun => PokemonType::Fire,
-                    crate::state::WeatherKind::Rain => PokemonType::Water,
-                    crate::state::WeatherKind::Sandstorm => PokemonType::Rock,
-                    crate::state::WeatherKind::Snow | crate::state::WeatherKind::StrongWinds => {
-                        PokemonType::Ice
-                    }
-                };
+            if let Some(move_type) = weather_ball_type(state, rules, user) {
+                modified.to_mut().move_type = move_type;
                 modified.to_mut().base_power = modified.base_power.saturating_mul(2);
             }
         }
