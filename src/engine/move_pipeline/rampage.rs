@@ -105,7 +105,9 @@ impl<'a> MovePipeline<'a> {
             RampageCounter::Cartridge => {
                 if rules.protect_cancels && protected {
                     ctx.end_rampage(actor, false);
-                } else if (blocked(HitBlockReason::TypeImmunity) || self.type_immune_target_guarded)
+                } else if (blocked(HitBlockReason::TypeImmunity)
+                    || self.type_immune_target_guarded
+                    || self.semi_invulnerable_immune)
                     && let Some(rampage) = self
                         .state
                         .pokemon_mut(actor)

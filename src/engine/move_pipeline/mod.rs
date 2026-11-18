@@ -181,6 +181,9 @@ pub(crate) struct MovePipeline<'a> {
     /// `targetNotAffected`): Thrash's and Uproar's turn failed as against any immune target,
     /// though the block shows Wonder Guard (R-M8-135).
     type_immune_target_guarded: bool,
+    /// Gen 4 (`HitRules::type_chart_past_semi_invulnerable`): a target the move missed in the
+    /// air / underground is immune to it — Thrash's and Uproar's turn failed (R-M11-194).
+    semi_invulnerable_immune: bool,
     /// The Z-Move this action runs in place of its slot's move (DESIGN.md §44.4): the resolved
     /// move (the Z-Move, or the powered base move for a status one) and what its power does.
     z_move: Option<ZMoveExecution>,
@@ -332,6 +335,7 @@ impl<'a> MovePipeline<'a> {
             continuing_lock: false,
             immune_target_missed: false,
             type_immune_target_guarded: false,
+            semi_invulnerable_immune: false,
             call: None,
             bounced: false,
             outermost: None,

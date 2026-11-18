@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "id": "gen3-doubles-a-thrash-missing-a-flying-ghost-keeps-the-lock",
+  "notes": [
+    "Gen 3: Articuno's locked Thrash draws Gengar in the air (Fly); pokeemerald's accuracycheck misses it before typecalc, a plain miss, so the lock goes on into the next turn (oracle patch I61; DESIGN.md R-M11-194)",
+    "promoted from gen3-doubles-probe-thrash-misses-a-flying-ghost (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 3,
+    "mode": "doubles",
+    "format": "gen3doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Articuno",
+        "species": "Articuno",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Thrash"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Skiploom",
+        "species": "Skiploom",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Teleport"
+        ],
+        "ability": "Run Away"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Relicanth",
+        "species": "Relicanth",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Teleport"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Gengar",
+        "species": "Gengar",
+        "level": 100,
+        "nature": "Hardy",
+        "moves": [
+          "Teleport",
+          "Fly"
+        ],
+        "ability": "Run Away"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      7,
+      22410,
+      61493,
+      11510
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1, move 1",
+      "p2": "move 1, move 1"
+    },
+    {
+      "p1": "move 1, move 1",
+      "p2": "move 1, move 2 1"
+    },
+    {
+      "p1": "move 1, move 1",
+      "p2": "move 1, move 1"
+    }
+  ]
+}

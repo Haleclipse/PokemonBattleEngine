@@ -1,0 +1,116 @@
+{
+  "schema": 1,
+  "id": "gen4-doubles-a-thrash-missing-a-flying-ghost-fails-the-lock",
+  "notes": [
+    "Gen 4: Articuno's locked Thrash draws Gengar in the air (Fly) and misses; pokeplatinum still runs the type chart past a semi-invulnerable miss, so the Normal move is a type immunity and the lock ends silently at the end of the turn: no confusion, and Articuno keeps its Lum Berry (DESIGN.md R-M11-194)",
+    "promoted from m8-gen4-doubles-s109001-004-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "doubles",
+    "format": "gen4doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Articuno",
+        "species": "Articuno",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Thrash"
+        ],
+        "ability": "Run Away",
+        "item": "Lum Berry"
+      },
+      {
+        "label": "Skiploom",
+        "species": "Skiploom",
+        "level": 54,
+        "nature": "Hardy",
+        "moves": [
+          "Petal Dance",
+          "Uproar"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Cranidos",
+        "species": "Cranidos",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Wing Attack"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Relicanth",
+        "species": "Relicanth",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Peck",
+          "Teleport"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Jynx",
+        "species": "Jynx",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Teleport",
+          "Gust"
+        ],
+        "ability": "No Guard"
+      },
+      {
+        "label": "Gengar",
+        "species": "Gengar",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fly"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      39270,
+      22410,
+      61493,
+      11510
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Thrash, move Petal Dance",
+      "p2": "move Wing Attack 1, move Peck 2"
+    },
+    {
+      "p2": "switch Jynx, pass"
+    },
+    {
+      "p1": "move 1, move 1",
+      "p2": "move 1, move 2"
+    },
+    {
+      "p2": "pass, switch Gengar"
+    },
+    {
+      "p1": "move 1, move 2",
+      "p2": "move 2 1, move 1 2"
+    }
+  ]
+}

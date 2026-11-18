@@ -69,6 +69,14 @@ impl<'a> MovePipeline<'a> {
             move_id: move_def.id,
             kind,
         });
+        // Gen 4 checks the type chart all the same: an immune target makes the move a failure
+        // (`noEffect`) — Thrash's and Uproar's turn (R-M11-194).
+        if self.rules.hits.type_chart_past_semi_invulnerable
+            && type_immunity(self.state, self.rules, target, move_def).1
+                == Some(HitBlockReason::TypeImmunity)
+        {
+            self.semi_invulnerable_immune = true;
+        }
         Err(HitOutcome::Missed { target })
     }
 

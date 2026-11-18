@@ -1303,7 +1303,9 @@ if (patched) {
 // before Disable: 10.12); a later hit leaves the count alone and a miss does not stop it; at 0 the
 // lock ends and confuses its user unless it is confused already. A turn the move failed — full
 // paralysis, a flinch, a confusion self-hit, love, Disable, Taunt, Imprison, Gen 4 Gravity, or a
-// type immunity — ends it silently at the end of the turn; Gen 3's Protect ends it at once, and a
+// type immunity (Gen 4's even on a target in the air or underground, which `CheckTypeChart` still
+// sees; Gen 3's `accuracycheck` misses that target before `typecalc`, and a miss is no failure) —
+// ends it silently at the end of the turn; Gen 3's Protect ends it at once, and a
 // Gen 3 user put to sleep or frozen loses it; a Gen 4 user asleep at the end of a turn the lock
 // does not end loses it (`SetupNextTurn`). Showdown keeps a hidden length and restarts a visible
 // `duration` on every hit, so a miss or an immunity ends the lock (with confusion on its last
@@ -1314,6 +1316,10 @@ if (patched) {
 // `onMoveFail`. User's standing decision (2026-10-01): an exception to the RNG rule — a lock that
 // goes on after a miss draws its random targets and its confusion on other turns than Showdown's.
 const RAMPAGE_MOVES = ['thrash', 'petaldance', 'outrage'];
+// Gen 3's `accuracycheck` (`AccuracyCalcHelper`) jumps past `typecalc` when the target is in the air,
+// underground, or underwater: the move missed, whatever the type chart says (I61, I63).
+const missedPastTypeChart = (battle, target, source, move) =>
+  battle.gen === 3 && battle.runEvent('Invulnerability', target, source, move) === false;
 const rampageFailed = Symbol('rampageFailed');
 function failRampageWhenStopped(effect, callback, gens) {
   if (!effect?.[callback] || effect[callback][rampageFailed]) return;
@@ -1368,7 +1374,7 @@ for (const mod of patched ? ['gen3', 'gen4'] : []) {
       if (!lock || !target) return;
       if (this.gen === 3 && target.volatiles['protect']) {
         delete source.volatiles['lockedmove'];
-      } else if (!target.runImmunity(move.type)) {
+      } else if (!target.runImmunity(move.type) && !missedPastTypeChart(this, target, source, move)) {
         lock.failed = true;
       }
     };
@@ -1382,8 +1388,9 @@ for (const mod of patched ? ['gen3', 'gen4'] : []) {
 // `subscript_yawn`, `BattleContext_MoveFailed`). The move wakes nobody; the holder's turn-end step
 // (10.11) wakes every active Pokémon asleep, in battler order, then counts the uproar down and
 // ends it at 0 or after a turn its move failed (full paralysis, a confusion self-hit, a type
-// immunity; Gen 4 also a flinch, love, Disable, Taunt, Imprison, Gravity); a sleeping Pokémon about
-// to move wakes while an uproar goes on. A Soundproof Pokémon is out of it: it may fall asleep and
+// immunity — not Gen 3's on a target in the air or underground, a miss as in I61; Gen 4 also a
+// flinch, love, Disable, Taunt, Imprison, Gravity); a sleeping Pokémon about to move wakes while
+// an uproar goes on. A Soundproof Pokémon is out of it: it may fall asleep and
 // is not woken. Gen 3's flinch, love, Disable, Taunt, Imprison, Protect, and a holder put to sleep
 // or frozen end it at once, silently (`CancelMultiTurnMoves`). Yawn fails while an uproar keeps its
 // target awake. Showdown wakes every sleeper as the move hits, keeps everyone awake, and lets the
@@ -1476,7 +1483,7 @@ for (const mod of patched ? ['gen3', 'gen4'] : []) {
     if (!state || !target) return;
     if (this.gen === 3 && target.volatiles['protect']) {
       delete source.volatiles['uproar'];
-    } else if (!target.runImmunity(move.type)) {
+    } else if (!target.runImmunity(move.type) && !missedPastTypeChart(this, target, source, move)) {
       state.failed = true;
     }
   };

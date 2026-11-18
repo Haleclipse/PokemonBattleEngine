@@ -1,0 +1,3173 @@
+{
+  "schema": 1,
+  "provenance": {
+    "engine": "@pkmn/sim",
+    "version": "0.10.11",
+    "formatid": "gen3doublescustomgame",
+    "seed": [
+      7,
+      22410,
+      61493,
+      11510
+    ]
+  },
+  "frames": [
+    {
+      "schema": 1,
+      "checkpoint": "initial",
+      "turn": 1,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0,
+            1
+          ],
+          "party": [
+            {
+              "hp": 165,
+              "max_hp": 165,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ice",
+                "flying"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "species": "articuno",
+              "pp": [
+                32
+              ]
+            },
+            {
+              "hp": 130,
+              "max_hp": 130,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "grass",
+                "flying"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "species": "skiploom",
+              "pp": [
+                32
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0,
+            1
+          ],
+          "party": [
+            {
+              "hp": 175,
+              "max_hp": 175,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "water",
+                "rock"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "species": "relicanth",
+              "pp": [
+                32
+              ]
+            },
+            {
+              "hp": 261,
+              "max_hp": 261,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ghost",
+                "poison"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "species": "gengar",
+              "pp": [
+                32,
+                24
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Articuno"
+          },
+          "details": "Articuno, L50",
+          "hp": 165,
+          "max_hp": 165,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 0,
+            "slot": 1,
+            "name": "Skiploom"
+          },
+          "details": "Skiploom, L50, M",
+          "hp": 130,
+          "max_hp": 130,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Relicanth"
+          },
+          "details": "Relicanth, L50, F",
+          "hp": 175,
+          "max_hp": 175,
+          "status": null
+        },
+        {
+          "kind": "switch",
+          "pokemon": {
+            "side": 1,
+            "slot": 1,
+            "name": "Gengar"
+          },
+          "details": "Gengar, F",
+          "hp": 261,
+          "max_hp": 261,
+          "status": null
+        },
+        {
+          "kind": "turn",
+          "turn": 1
+        }
+      ],
+      "views": {
+        "version": 7,
+        "p1": {
+          "sides": [
+            {
+              "unresolved_illusion": false,
+              "active": [
+                0,
+                1
+              ],
+              "team": [
+                {
+                  "ident": "p1: Articuno",
+                  "species": "Articuno",
+                  "level": 50,
+                  "gender": "N",
+                  "hp": 165,
+                  "max_hp": 165,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "runaway",
+                  "base_ability": "runaway",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "thrash",
+                      "pp_used": 0,
+                      "uses_uncompared": false
+                    }
+                  ]
+                },
+                {
+                  "ident": "p1: Skiploom",
+                  "species": "Skiploom",
+                  "level": 50,
+                  "gender": "M",
+                  "hp": 130,
+                  "max_hp": 130,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "runaway",
+                  "base_ability": "runaway",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "teleport",
+                      "pp_used": 0,
+                      "uses_uncompared": false
+                    }
+                  ]
+                }
+              ],
+              "conditions": []
+            },
+            {
+              "unresolved_illusion": false,
+              "preview": {
+                "pokes": [],
+                "sheet": null
+              },
+              "active": [
+                0,
+                1
+              ],
+              "team": [
+                {
+                  "ident": "p2: Relicanth",
+                  "species": "Relicanth",
+                  "level": 50,
+                  "gender": "F",
+                  "hp": 175,
+                  "max_hp": 175,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "",
+                  "base_ability": "",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": []
+                },
+                {
+                  "ident": "p2: Gengar",
+                  "species": "Gengar",
+                  "level": 100,
+                  "gender": "F",
+                  "hp": 261,
+                  "max_hp": 261,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "",
+                  "base_ability": "",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": []
+                }
+              ],
+              "conditions": []
+            }
+          ],
+          "field": {
+            "weather": null,
+            "terrain": null,
+            "pseudo_weather": []
+          }
+        },
+        "p2": {
+          "sides": [
+            {
+              "unresolved_illusion": false,
+              "preview": {
+                "pokes": [],
+                "sheet": null
+              },
+              "active": [
+                0,
+                1
+              ],
+              "team": [
+                {
+                  "ident": "p1: Articuno",
+                  "species": "Articuno",
+                  "level": 50,
+                  "gender": "N",
+                  "hp": 165,
+                  "max_hp": 165,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "",
+                  "base_ability": "",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": []
+                },
+                {
+                  "ident": "p1: Skiploom",
+                  "species": "Skiploom",
+                  "level": 50,
+                  "gender": "M",
+                  "hp": 130,
+                  "max_hp": 130,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "",
+                  "base_ability": "",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": []
+                }
+              ],
+              "conditions": []
+            },
+            {
+              "unresolved_illusion": false,
+              "active": [
+                0,
+                1
+              ],
+              "team": [
+                {
+                  "ident": "p2: Relicanth",
+                  "species": "Relicanth",
+                  "level": 50,
+                  "gender": "F",
+                  "hp": 175,
+                  "max_hp": 175,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "runaway",
+                  "base_ability": "runaway",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "teleport",
+                      "pp_used": 0,
+                      "uses_uncompared": false
+                    }
+                  ]
+                },
+                {
+                  "ident": "p2: Gengar",
+                  "species": "Gengar",
+                  "level": 100,
+                  "gender": "F",
+                  "hp": 261,
+                  "max_hp": 261,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "runaway",
+                  "base_ability": "runaway",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "teleport",
+                      "pp_used": 0,
+                      "uses_uncompared": false
+                    },
+                    {
+                      "id": "fly",
+                      "pp_used": 0,
+                      "uses_uncompared": false
+                    }
+                  ]
+                }
+              ],
+              "conditions": []
+            }
+          ],
+          "field": {
+            "weather": null,
+            "terrain": null,
+            "pseudo_weather": []
+          }
+        },
+        "spectator": {
+          "sides": [
+            {
+              "unresolved_illusion": false,
+              "preview": {
+                "pokes": [],
+                "sheet": null
+              },
+              "active": [
+                0,
+                1
+              ],
+              "team": [
+                {
+                  "ident": "p1: Articuno",
+                  "species": "Articuno",
+                  "level": 50,
+                  "gender": "N",
+                  "hp": 165,
+                  "max_hp": 165,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "",
+                  "base_ability": "",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": []
+                },
+                {
+                  "ident": "p1: Skiploom",
+                  "species": "Skiploom",
+                  "level": 50,
+                  "gender": "M",
+                  "hp": 130,
+                  "max_hp": 130,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "",
+                  "base_ability": "",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": []
+                }
+              ],
+              "conditions": []
+            },
+            {
+              "unresolved_illusion": false,
+              "preview": {
+                "pokes": [],
+                "sheet": null
+              },
+              "active": [
+                0,
+                1
+              ],
+              "team": [
+                {
+                  "ident": "p2: Relicanth",
+                  "species": "Relicanth",
+                  "level": 50,
+                  "gender": "F",
+                  "hp": 175,
+                  "max_hp": 175,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "",
+                  "base_ability": "",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": []
+                },
+                {
+                  "ident": "p2: Gengar",
+                  "species": "Gengar",
+                  "level": 100,
+                  "gender": "F",
+                  "hp": 261,
+                  "max_hp": 261,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "",
+                  "base_ability": "",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": []
+                }
+              ],
+              "conditions": []
+            }
+          ],
+          "field": {
+            "weather": null,
+            "terrain": null,
+            "pseudo_weather": []
+          }
+        }
+      }
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_1",
+      "turn": 2,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0,
+            1
+          ],
+          "party": [
+            {
+              "hp": 165,
+              "max_hp": 165,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "lockedmove": 2
+              },
+              "types": [
+                "ice",
+                "flying"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "species": "articuno",
+              "pp": [
+                31
+              ]
+            },
+            {
+              "hp": 130,
+              "max_hp": 130,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "grass",
+                "flying"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "species": "skiploom",
+              "pp": [
+                31
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0,
+            1
+          ],
+          "party": [
+            {
+              "hp": 163,
+              "max_hp": 175,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "water",
+                "rock"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "species": "relicanth",
+              "pp": [
+                31
+              ]
+            },
+            {
+              "hp": 261,
+              "max_hp": 261,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ghost",
+                "poison"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "species": "gengar",
+              "pp": [
+                31,
+                24
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 1,
+            "name": "Gengar"
+          },
+          "move": "Teleport",
+          "target": {
+            "side": 1,
+            "slot": 1,
+            "name": "Gengar"
+          },
+          "from": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Articuno"
+          },
+          "move": "Thrash",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Relicanth"
+          },
+          "from": null
+        },
+        {
+          "kind": "resisted",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Relicanth"
+          },
+          "detail": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Relicanth"
+          },
+          "hp": 163,
+          "max_hp": 175,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 1,
+            "name": "Skiploom"
+          },
+          "move": "Teleport",
+          "target": {
+            "side": 0,
+            "slot": 1,
+            "name": "Skiploom"
+          },
+          "from": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Relicanth"
+          },
+          "move": "Teleport",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Relicanth"
+          },
+          "from": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 2
+        }
+      ],
+      "views": {
+        "version": 7,
+        "p1": {
+          "sides": [
+            {
+              "unresolved_illusion": false,
+              "active": [
+                0,
+                1
+              ],
+              "team": [
+                {
+                  "ident": "p1: Articuno",
+                  "species": "Articuno",
+                  "level": 50,
+                  "gender": "N",
+                  "hp": 165,
+                  "max_hp": 165,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "runaway",
+                  "base_ability": "runaway",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": []
+                },
+                {
+                  "ident": "p1: Skiploom",
+                  "species": "Skiploom",
+                  "level": 50,
+                  "gender": "M",
+                  "hp": 130,
+                  "max_hp": 130,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "runaway",
+                  "base_ability": "runaway",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "teleport",
+                      "pp_used": 1,
+                      "uses_uncompared": false
+                    }
+                  ]
+                }
+              ],
+              "conditions": []
+            },
+            {
+              "unresolved_illusion": false,
+              "active": [
+                0,
+                1
+              ],
+              "team": [
+                {
+                  "ident": "p2: Relicanth",
+                  "species": "Relicanth",
+                  "level": 50,
+                  "gender": "F",
+                  "hp": 163,
+                  "max_hp": 175,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "",
+                  "base_ability": "",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "teleport",
+                      "pp_used": 1,
+                      "uses_uncompared": false
+                    }
+                  ]
+                },
+                {
+                  "ident": "p2: Gengar",
+                  "species": "Gengar",
+                  "level": 100,
+                  "gender": "F",
+                  "hp": 261,
+                  "max_hp": 261,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "",
+                  "base_ability": "",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "teleport",
+                      "pp_used": 1,
+                      "uses_uncompared": false
+                    }
+                  ]
+                }
+              ],
+              "conditions": []
+            }
+          ],
+          "field": {
+            "weather": null,
+            "terrain": null,
+            "pseudo_weather": []
+          }
+        },
+        "p2": {
+          "sides": [
+            {
+              "unresolved_illusion": false,
+              "active": [
+                0,
+                1
+              ],
+              "team": [
+                {
+                  "ident": "p1: Articuno",
+                  "species": "Articuno",
+                  "level": 50,
+                  "gender": "N",
+                  "hp": 165,
+                  "max_hp": 165,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "",
+                  "base_ability": "",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "thrash",
+                      "pp_used": 1,
+                      "uses_uncompared": false
+                    }
+                  ]
+                },
+                {
+                  "ident": "p1: Skiploom",
+                  "species": "Skiploom",
+                  "level": 50,
+                  "gender": "M",
+                  "hp": 130,
+                  "max_hp": 130,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "",
+                  "base_ability": "",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "teleport",
+                      "pp_used": 1,
+                      "uses_uncompared": false
+                    }
+                  ]
+                }
+              ],
+              "conditions": []
+            },
+            {
+              "unresolved_illusion": false,
+              "active": [
+                0,
+                1
+              ],
+              "team": [
+                {
+                  "ident": "p2: Relicanth",
+                  "species": "Relicanth",
+                  "level": 50,
+                  "gender": "F",
+                  "hp": 163,
+                  "max_hp": 175,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "runaway",
+                  "base_ability": "runaway",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "teleport",
+                      "pp_used": 1,
+                      "uses_uncompared": false
+                    }
+                  ]
+                },
+                {
+                  "ident": "p2: Gengar",
+                  "species": "Gengar",
+                  "level": 100,
+                  "gender": "F",
+                  "hp": 261,
+                  "max_hp": 261,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "runaway",
+                  "base_ability": "runaway",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "teleport",
+                      "pp_used": 1,
+                      "uses_uncompared": false
+                    },
+                    {
+                      "id": "fly",
+                      "pp_used": 0,
+                      "uses_uncompared": false
+                    }
+                  ]
+                }
+              ],
+              "conditions": []
+            }
+          ],
+          "field": {
+            "weather": null,
+            "terrain": null,
+            "pseudo_weather": []
+          }
+        },
+        "spectator": {
+          "sides": [
+            {
+              "unresolved_illusion": false,
+              "active": [
+                0,
+                1
+              ],
+              "team": [
+                {
+                  "ident": "p1: Articuno",
+                  "species": "Articuno",
+                  "level": 50,
+                  "gender": "N",
+                  "hp": 165,
+                  "max_hp": 165,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "",
+                  "base_ability": "",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "thrash",
+                      "pp_used": 1,
+                      "uses_uncompared": false
+                    }
+                  ]
+                },
+                {
+                  "ident": "p1: Skiploom",
+                  "species": "Skiploom",
+                  "level": 50,
+                  "gender": "M",
+                  "hp": 130,
+                  "max_hp": 130,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "",
+                  "base_ability": "",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "teleport",
+                      "pp_used": 1,
+                      "uses_uncompared": false
+                    }
+                  ]
+                }
+              ],
+              "conditions": []
+            },
+            {
+              "unresolved_illusion": false,
+              "active": [
+                0,
+                1
+              ],
+              "team": [
+                {
+                  "ident": "p2: Relicanth",
+                  "species": "Relicanth",
+                  "level": 50,
+                  "gender": "F",
+                  "hp": 163,
+                  "max_hp": 175,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "",
+                  "base_ability": "",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "teleport",
+                      "pp_used": 1,
+                      "uses_uncompared": false
+                    }
+                  ]
+                },
+                {
+                  "ident": "p2: Gengar",
+                  "species": "Gengar",
+                  "level": 100,
+                  "gender": "F",
+                  "hp": 261,
+                  "max_hp": 261,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "",
+                  "base_ability": "",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "teleport",
+                      "pp_used": 1,
+                      "uses_uncompared": false
+                    }
+                  ]
+                }
+              ],
+              "conditions": []
+            }
+          ],
+          "field": {
+            "weather": null,
+            "terrain": null,
+            "pseudo_weather": []
+          }
+        }
+      }
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_2",
+      "turn": 3,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0,
+            1
+          ],
+          "party": [
+            {
+              "hp": 165,
+              "max_hp": 165,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "lockedmove": 1
+              },
+              "types": [
+                "ice",
+                "flying"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "species": "articuno",
+              "pp": [
+                30
+              ]
+            },
+            {
+              "hp": 130,
+              "max_hp": 130,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "grass",
+                "flying"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "species": "skiploom",
+              "pp": [
+                30
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0,
+            1
+          ],
+          "party": [
+            {
+              "hp": 163,
+              "max_hp": 175,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "water",
+                "rock"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "species": "relicanth",
+              "pp": [
+                30
+              ]
+            },
+            {
+              "hp": 261,
+              "max_hp": 261,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "twoturnmove": 1,
+                "fly": 1
+              },
+              "types": [
+                "ghost",
+                "poison"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "species": "gengar",
+              "pp": [
+                31,
+                23
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 1,
+            "name": "Gengar"
+          },
+          "move": "Fly",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Articuno"
+          },
+          "from": null
+        },
+        {
+          "kind": "prepare",
+          "pokemon": {
+            "side": 1,
+            "slot": 1,
+            "name": "Gengar"
+          },
+          "move": "Fly"
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Articuno"
+          },
+          "move": "Thrash",
+          "target": {
+            "side": 1,
+            "slot": 1,
+            "name": "Gengar"
+          },
+          "from": "[from] lockedmove"
+        },
+        {
+          "kind": "miss",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Articuno"
+          },
+          "detail": "p2b: Gengar"
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 1,
+            "name": "Skiploom"
+          },
+          "move": "Teleport",
+          "target": {
+            "side": 0,
+            "slot": 1,
+            "name": "Skiploom"
+          },
+          "from": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Relicanth"
+          },
+          "move": "Teleport",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Relicanth"
+          },
+          "from": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "turn",
+          "turn": 3
+        }
+      ],
+      "views": {
+        "version": 7,
+        "p1": {
+          "sides": [
+            {
+              "unresolved_illusion": false,
+              "active": [
+                0,
+                1
+              ],
+              "team": [
+                {
+                  "ident": "p1: Articuno",
+                  "species": "Articuno",
+                  "level": 50,
+                  "gender": "N",
+                  "hp": 165,
+                  "max_hp": 165,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "runaway",
+                  "base_ability": "runaway",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": []
+                },
+                {
+                  "ident": "p1: Skiploom",
+                  "species": "Skiploom",
+                  "level": 50,
+                  "gender": "M",
+                  "hp": 130,
+                  "max_hp": 130,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "runaway",
+                  "base_ability": "runaway",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "teleport",
+                      "pp_used": 2,
+                      "uses_uncompared": false
+                    }
+                  ]
+                }
+              ],
+              "conditions": []
+            },
+            {
+              "unresolved_illusion": false,
+              "active": [
+                0,
+                1
+              ],
+              "team": [
+                {
+                  "ident": "p2: Relicanth",
+                  "species": "Relicanth",
+                  "level": 50,
+                  "gender": "F",
+                  "hp": 163,
+                  "max_hp": 175,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "",
+                  "base_ability": "",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "teleport",
+                      "pp_used": 2,
+                      "uses_uncompared": false
+                    }
+                  ]
+                },
+                {
+                  "ident": "p2: Gengar",
+                  "species": "Gengar",
+                  "level": 100,
+                  "gender": "F",
+                  "hp": 261,
+                  "max_hp": 261,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "",
+                  "base_ability": "",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "teleport",
+                      "pp_used": 1,
+                      "uses_uncompared": false
+                    },
+                    {
+                      "id": "fly",
+                      "pp_used": 1,
+                      "uses_uncompared": false
+                    }
+                  ]
+                }
+              ],
+              "conditions": []
+            }
+          ],
+          "field": {
+            "weather": null,
+            "terrain": null,
+            "pseudo_weather": []
+          }
+        },
+        "p2": {
+          "sides": [
+            {
+              "unresolved_illusion": false,
+              "active": [
+                0,
+                1
+              ],
+              "team": [
+                {
+                  "ident": "p1: Articuno",
+                  "species": "Articuno",
+                  "level": 50,
+                  "gender": "N",
+                  "hp": 165,
+                  "max_hp": 165,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "",
+                  "base_ability": "",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "thrash",
+                      "pp_used": 1,
+                      "uses_uncompared": false
+                    }
+                  ]
+                },
+                {
+                  "ident": "p1: Skiploom",
+                  "species": "Skiploom",
+                  "level": 50,
+                  "gender": "M",
+                  "hp": 130,
+                  "max_hp": 130,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "",
+                  "base_ability": "",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "teleport",
+                      "pp_used": 2,
+                      "uses_uncompared": false
+                    }
+                  ]
+                }
+              ],
+              "conditions": []
+            },
+            {
+              "unresolved_illusion": false,
+              "active": [
+                0,
+                1
+              ],
+              "team": [
+                {
+                  "ident": "p2: Relicanth",
+                  "species": "Relicanth",
+                  "level": 50,
+                  "gender": "F",
+                  "hp": 163,
+                  "max_hp": 175,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "runaway",
+                  "base_ability": "runaway",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "teleport",
+                      "pp_used": 2,
+                      "uses_uncompared": false
+                    }
+                  ]
+                },
+                {
+                  "ident": "p2: Gengar",
+                  "species": "Gengar",
+                  "level": 100,
+                  "gender": "F",
+                  "hp": 261,
+                  "max_hp": 261,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "runaway",
+                  "base_ability": "runaway",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": []
+                }
+              ],
+              "conditions": []
+            }
+          ],
+          "field": {
+            "weather": null,
+            "terrain": null,
+            "pseudo_weather": []
+          }
+        },
+        "spectator": {
+          "sides": [
+            {
+              "unresolved_illusion": false,
+              "active": [
+                0,
+                1
+              ],
+              "team": [
+                {
+                  "ident": "p1: Articuno",
+                  "species": "Articuno",
+                  "level": 50,
+                  "gender": "N",
+                  "hp": 165,
+                  "max_hp": 165,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "",
+                  "base_ability": "",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "thrash",
+                      "pp_used": 1,
+                      "uses_uncompared": false
+                    }
+                  ]
+                },
+                {
+                  "ident": "p1: Skiploom",
+                  "species": "Skiploom",
+                  "level": 50,
+                  "gender": "M",
+                  "hp": 130,
+                  "max_hp": 130,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "",
+                  "base_ability": "",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "teleport",
+                      "pp_used": 2,
+                      "uses_uncompared": false
+                    }
+                  ]
+                }
+              ],
+              "conditions": []
+            },
+            {
+              "unresolved_illusion": false,
+              "active": [
+                0,
+                1
+              ],
+              "team": [
+                {
+                  "ident": "p2: Relicanth",
+                  "species": "Relicanth",
+                  "level": 50,
+                  "gender": "F",
+                  "hp": 163,
+                  "max_hp": 175,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "",
+                  "base_ability": "",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "teleport",
+                      "pp_used": 2,
+                      "uses_uncompared": false
+                    }
+                  ]
+                },
+                {
+                  "ident": "p2: Gengar",
+                  "species": "Gengar",
+                  "level": 100,
+                  "gender": "F",
+                  "hp": 261,
+                  "max_hp": 261,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "",
+                  "base_ability": "",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "teleport",
+                      "pp_used": 1,
+                      "uses_uncompared": false
+                    },
+                    {
+                      "id": "fly",
+                      "pp_used": 1,
+                      "uses_uncompared": false
+                    }
+                  ]
+                }
+              ],
+              "conditions": []
+            }
+          ],
+          "field": {
+            "weather": null,
+            "terrain": null,
+            "pseudo_weather": []
+          }
+        }
+      }
+    },
+    {
+      "schema": 1,
+      "checkpoint": "boundary_3",
+      "turn": 4,
+      "request": "turn_choices|turn_choices",
+      "outcome": null,
+      "sides": [
+        {
+          "active": [
+            0,
+            1
+          ],
+          "party": [
+            {
+              "hp": 94,
+              "max_hp": 165,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {
+                "confusion": 4
+              },
+              "types": [
+                "ice",
+                "flying"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "species": "articuno",
+              "pp": [
+                30
+              ]
+            },
+            {
+              "hp": 130,
+              "max_hp": 130,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "grass",
+                "flying"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "species": "skiploom",
+              "pp": [
+                29
+              ]
+            }
+          ],
+          "conditions": {}
+        },
+        {
+          "active": [
+            0,
+            1
+          ],
+          "party": [
+            {
+              "hp": 150,
+              "max_hp": 175,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "water",
+                "rock"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "species": "relicanth",
+              "pp": [
+                29
+              ]
+            },
+            {
+              "hp": 261,
+              "max_hp": 261,
+              "status": null,
+              "boosts": {
+                "attack": 0,
+                "defense": 0,
+                "special_attack": 0,
+                "special_defense": 0,
+                "speed": 0,
+                "accuracy": 0,
+                "evasion": 0
+              },
+              "volatiles": {},
+              "types": [
+                "ghost",
+                "poison"
+              ],
+              "ability": "runaway",
+              "item": "",
+              "species": "gengar",
+              "pp": [
+                31,
+                23
+              ]
+            }
+          ],
+          "conditions": {}
+        }
+      ],
+      "field": {
+        "conditions": {},
+        "weather": null,
+        "terrain": null
+      },
+      "events": [
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 1,
+            "name": "Gengar"
+          },
+          "move": "Fly",
+          "target": {
+            "side": 0,
+            "slot": 0,
+            "name": "Articuno"
+          },
+          "from": "[from] lockedmove"
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 0,
+            "slot": 0,
+            "name": "Articuno"
+          },
+          "hp": 94,
+          "max_hp": 165,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 0,
+            "name": "Articuno"
+          },
+          "move": "Thrash",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Relicanth"
+          },
+          "from": "[from] lockedmove"
+        },
+        {
+          "kind": "resisted",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Relicanth"
+          },
+          "detail": null
+        },
+        {
+          "kind": "damage",
+          "pokemon": {
+            "side": 1,
+            "slot": 0,
+            "name": "Relicanth"
+          },
+          "hp": 150,
+          "max_hp": 175,
+          "status": null,
+          "from": null,
+          "of": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 0,
+            "slot": 1,
+            "name": "Skiploom"
+          },
+          "move": "Teleport",
+          "target": {
+            "side": 0,
+            "slot": 1,
+            "name": "Skiploom"
+          },
+          "from": null
+        },
+        {
+          "kind": "move",
+          "user": {
+            "side": 1,
+            "slot": 0,
+            "name": "Relicanth"
+          },
+          "move": "Teleport",
+          "target": {
+            "side": 1,
+            "slot": 0,
+            "name": "Relicanth"
+          },
+          "from": null
+        },
+        {
+          "kind": "residual"
+        },
+        {
+          "kind": "start",
+          "args": [
+            "p1a: Articuno",
+            "confusion",
+            "[fatigue]"
+          ]
+        },
+        {
+          "kind": "turn",
+          "turn": 4
+        }
+      ],
+      "views": {
+        "version": 7,
+        "p1": {
+          "sides": [
+            {
+              "unresolved_illusion": false,
+              "active": [
+                0,
+                1
+              ],
+              "team": [
+                {
+                  "ident": "p1: Articuno",
+                  "species": "Articuno",
+                  "level": 50,
+                  "gender": "N",
+                  "hp": 94,
+                  "max_hp": 165,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "runaway",
+                  "base_ability": "runaway",
+                  "volatiles": [
+                    "confusion"
+                  ],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "thrash",
+                      "pp_used": 2,
+                      "uses_uncompared": false
+                    }
+                  ]
+                },
+                {
+                  "ident": "p1: Skiploom",
+                  "species": "Skiploom",
+                  "level": 50,
+                  "gender": "M",
+                  "hp": 130,
+                  "max_hp": 130,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "runaway",
+                  "base_ability": "runaway",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "teleport",
+                      "pp_used": 3,
+                      "uses_uncompared": false
+                    }
+                  ]
+                }
+              ],
+              "conditions": []
+            },
+            {
+              "unresolved_illusion": false,
+              "active": [
+                0,
+                1
+              ],
+              "team": [
+                {
+                  "ident": "p2: Relicanth",
+                  "species": "Relicanth",
+                  "level": 50,
+                  "gender": "F",
+                  "hp": 150,
+                  "max_hp": 175,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "",
+                  "base_ability": "",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "teleport",
+                      "pp_used": 3,
+                      "uses_uncompared": false
+                    }
+                  ]
+                },
+                {
+                  "ident": "p2: Gengar",
+                  "species": "Gengar",
+                  "level": 100,
+                  "gender": "F",
+                  "hp": 261,
+                  "max_hp": 261,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "",
+                  "base_ability": "",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "teleport",
+                      "pp_used": 1,
+                      "uses_uncompared": false
+                    },
+                    {
+                      "id": "fly",
+                      "pp_used": 1,
+                      "uses_uncompared": false
+                    }
+                  ]
+                }
+              ],
+              "conditions": []
+            }
+          ],
+          "field": {
+            "weather": null,
+            "terrain": null,
+            "pseudo_weather": []
+          }
+        },
+        "p2": {
+          "sides": [
+            {
+              "unresolved_illusion": false,
+              "active": [
+                0,
+                1
+              ],
+              "team": [
+                {
+                  "ident": "p1: Articuno",
+                  "species": "Articuno",
+                  "level": 50,
+                  "gender": "N",
+                  "hp": 94,
+                  "max_hp": 165,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "",
+                  "base_ability": "",
+                  "volatiles": [
+                    "confusion"
+                  ],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "thrash",
+                      "pp_used": 1,
+                      "uses_uncompared": false
+                    }
+                  ]
+                },
+                {
+                  "ident": "p1: Skiploom",
+                  "species": "Skiploom",
+                  "level": 50,
+                  "gender": "M",
+                  "hp": 130,
+                  "max_hp": 130,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "",
+                  "base_ability": "",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "teleport",
+                      "pp_used": 3,
+                      "uses_uncompared": false
+                    }
+                  ]
+                }
+              ],
+              "conditions": []
+            },
+            {
+              "unresolved_illusion": false,
+              "active": [
+                0,
+                1
+              ],
+              "team": [
+                {
+                  "ident": "p2: Relicanth",
+                  "species": "Relicanth",
+                  "level": 50,
+                  "gender": "F",
+                  "hp": 150,
+                  "max_hp": 175,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "runaway",
+                  "base_ability": "runaway",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "teleport",
+                      "pp_used": 3,
+                      "uses_uncompared": false
+                    }
+                  ]
+                },
+                {
+                  "ident": "p2: Gengar",
+                  "species": "Gengar",
+                  "level": 100,
+                  "gender": "F",
+                  "hp": 261,
+                  "max_hp": 261,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "runaway",
+                  "base_ability": "runaway",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "teleport",
+                      "pp_used": 1,
+                      "uses_uncompared": false
+                    },
+                    {
+                      "id": "fly",
+                      "pp_used": 1,
+                      "uses_uncompared": false
+                    }
+                  ]
+                }
+              ],
+              "conditions": []
+            }
+          ],
+          "field": {
+            "weather": null,
+            "terrain": null,
+            "pseudo_weather": []
+          }
+        },
+        "spectator": {
+          "sides": [
+            {
+              "unresolved_illusion": false,
+              "active": [
+                0,
+                1
+              ],
+              "team": [
+                {
+                  "ident": "p1: Articuno",
+                  "species": "Articuno",
+                  "level": 50,
+                  "gender": "N",
+                  "hp": 94,
+                  "max_hp": 165,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "",
+                  "base_ability": "",
+                  "volatiles": [
+                    "confusion"
+                  ],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "thrash",
+                      "pp_used": 1,
+                      "uses_uncompared": false
+                    }
+                  ]
+                },
+                {
+                  "ident": "p1: Skiploom",
+                  "species": "Skiploom",
+                  "level": 50,
+                  "gender": "M",
+                  "hp": 130,
+                  "max_hp": 130,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "",
+                  "base_ability": "",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "teleport",
+                      "pp_used": 3,
+                      "uses_uncompared": false
+                    }
+                  ]
+                }
+              ],
+              "conditions": []
+            },
+            {
+              "unresolved_illusion": false,
+              "active": [
+                0,
+                1
+              ],
+              "team": [
+                {
+                  "ident": "p2: Relicanth",
+                  "species": "Relicanth",
+                  "level": 50,
+                  "gender": "F",
+                  "hp": 150,
+                  "max_hp": 175,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "",
+                  "base_ability": "",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "teleport",
+                      "pp_used": 3,
+                      "uses_uncompared": false
+                    }
+                  ]
+                },
+                {
+                  "ident": "p2: Gengar",
+                  "species": "Gengar",
+                  "level": 100,
+                  "gender": "F",
+                  "hp": 261,
+                  "max_hp": 261,
+                  "fainted": false,
+                  "status": null,
+                  "boosts": {},
+                  "item": "",
+                  "item_effect": "",
+                  "last_item": "",
+                  "ability": "",
+                  "base_ability": "",
+                  "volatiles": [],
+                  "terastallized": null,
+                  "illusion_reset": false,
+                  "boosts_from_own": false,
+                  "item_from_z_move": false,
+                  "ability_swapped_unseen": false,
+                  "ability_copied_stale": false,
+                  "illusion_worn": false,
+                  "illusion_unmasked": false,
+                  "misplaced": false,
+                  "entry_renewed": false,
+                  "moves_copied": false,
+                  "moves_from_request": false,
+                  "filed_apart": false,
+                  "transformed": false,
+                  "transformed_into_own": false,
+                  "uses_uncompared": false,
+                  "moves": [
+                    {
+                      "id": "teleport",
+                      "pp_used": 1,
+                      "uses_uncompared": false
+                    },
+                    {
+                      "id": "fly",
+                      "pp_used": 1,
+                      "uses_uncompared": false
+                    }
+                  ]
+                }
+              ],
+              "conditions": []
+            }
+          ],
+          "field": {
+            "weather": null,
+            "terrain": null,
+            "pseudo_weather": []
+          }
+        }
+      }
+    }
+  ],
+  "debug_log": "|gametype|doubles\n|player|p1|P1||\n|player|p2|P2||\n|gen|3\n|tier|[Gen 3] Doubles Custom Game\n|rule|HP Percentage Mod: HP is shown in percentages\n|\n|teamsize|p1|2\n|teamsize|p2|2\n|start\n|switch|p1a: Articuno|Articuno, L50|165/165\n|switch|p1b: Skiploom|Skiploom, L50, M|130/130\n|switch|p2a: Relicanth|Relicanth, L50, F|175/175\n|switch|p2b: Gengar|Gengar, F|261/261\n|turn|1\n|\n|move|p2b: Gengar|Teleport|p2b: Gengar\n|move|p1a: Articuno|Thrash|p2a: Relicanth\n|-resisted|p2a: Relicanth\n|-damage|p2a: Relicanth|163/175\n|move|p1b: Skiploom|Teleport|p1b: Skiploom\n|move|p2a: Relicanth|Teleport|p2a: Relicanth\n|\n|upkeep\n|turn|2\n|\n|move|p2b: Gengar|Fly||[still]\n|-prepare|p2b: Gengar|Fly\n|move|p1a: Articuno|Thrash|p2b: Gengar|[from] lockedmove|[miss]\n|-miss|p1a: Articuno|p2b: Gengar\n|move|p1b: Skiploom|Teleport|p1b: Skiploom\n|move|p2a: Relicanth|Teleport|p2a: Relicanth\n|\n|upkeep\n|turn|3\n|\n|move|p2b: Gengar|Fly|p1a: Articuno|[from] lockedmove\n|-damage|p1a: Articuno|94/165\n|move|p1a: Articuno|Thrash|p2a: Relicanth|[from] lockedmove\n|-resisted|p2a: Relicanth\n|-damage|p2a: Relicanth|150/175\n|debug|move failed because it did nothing\n|move|p1b: Skiploom|Teleport|p1b: Skiploom\n|move|p2a: Relicanth|Teleport|p2a: Relicanth\n|\n|-start|p1a: Articuno|confusion|[fatigue]\n|upkeep\n|turn|4"
+}

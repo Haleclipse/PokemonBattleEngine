@@ -104,6 +104,12 @@ pub struct HitRules {
     /// secondary, and a crash move crashes. Showdown's gen1 `getDamage` returns the 0 as a hit
     /// (issues.md I221, R-M11-107).
     pub zero_damage_misses: bool,
+    /// Gen 4 (pokeplatinum `BattleControllerPlayer_TryMove`: `CheckMoveHitOverrides` only marks a
+    /// target in the air / underground `MOVE_STATUS_SEMI_INVULNERABLE`, and `CheckTypeChart` still
+    /// runs and sets `noEffect`): a move that misses such a target it has no effect on failed for
+    /// `BattleContext_MoveFailed` — Thrash's and Uproar's turn too. Gen 3's `accuracycheck` jumps
+    /// past `typecalc` (issues.md I61, R-M11-194).
+    pub type_chart_past_semi_invulnerable: bool,
     /// Gen 1-2 (the gen1 / gen2 `moveHit`: `!move.multihit || move.lastHit`) and Gen 3
     /// (pokeemerald `BattleScript_MultiHitEnd`'s one `seteffectwithchance`, issues.md I35): a
     /// multi-hit move's secondaries roll on its last hit only (Twineedle's poison), none when the
@@ -266,6 +272,7 @@ pub(super) fn resolve(generation: Generation) -> HitRules {
         },
         same_damage_each_hit: generation == Generation::Gen1,
         zero_damage_misses: generation == Generation::Gen1,
+        type_chart_past_semi_invulnerable: generation == Generation::Gen4,
         secondaries_on_last_hit: matches!(
             generation,
             Generation::Gen1 | Generation::Gen2 | Generation::Gen3

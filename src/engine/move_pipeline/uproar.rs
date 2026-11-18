@@ -60,6 +60,7 @@ impl<'a> MovePipeline<'a> {
             BattleContext::new(self.state, self.rules, self.trace).cancel_uproar(actor);
         } else if rules.immunity_fails
             && (self.type_immune_target_guarded
+                || self.semi_invulnerable_immune
                 || execution.hits.iter().any(|hit| {
                     matches!(
                         hit,
