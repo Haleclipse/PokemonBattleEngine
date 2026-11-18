@@ -320,6 +320,16 @@ pub fn extract_decisions_with(
                 pursuit_held_switch = None;
                 pursued_entrant = None;
             }
+            // Bide's release (`-end|user|move: Bide`, no `move` line) starts its holder's action
+            // too: a confusion berry the release fed an entrant is the action's (R-M11-193).
+            "end"
+                if matches!(event["args"][1].as_str(), Some("move: Bide" | "Bide"))
+                    && event["args"][2].as_str() != Some("[silent]") =>
+            {
+                entrant = None;
+                pursuit_held_switch = None;
+                pursued_entrant = None;
+            }
             _ => {}
         }
         if kind == "move" {
