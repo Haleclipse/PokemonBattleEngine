@@ -2411,9 +2411,19 @@ pub(super) fn confusion_hint_after(
         let ticks = confusion_ticks(&later[..=replaced], victim);
         return Some((ticks + 1).max(u16::from(rules.status().lifecycle.confusion_time_min)));
     }
+    // Confused afresh by a later action this turn (a Teeter Dance after a Persim Berry cured
+    // this one): the frame shows that confusion; this one ended before it, as the events up to
+    // its first end tell (R-M11-187).
+    let reconfused = later.iter().position(|action| {
+        action
+            .applied
+            .iter()
+            .any(|(who, kind)| same_pokemon(who, victim) && kind == "start:confusion")
+    });
+    let later = reconfused.map_or(later, |at| &later[..at]);
     let later_ticks = confusion_ticks(later, victim);
     // Off the field (the victim fell, no one in its place yet) shows no confusion.
-    let at_boundary = member.and_then(|member| {
+    let at_boundary = member.filter(|_| reconfused.is_none()).and_then(|member| {
         oracle_frame["sides"][victim.side]["party"][member]["volatiles"]["confusion"].as_u64()
     });
     match at_boundary {
@@ -2426,6 +2436,7 @@ pub(super) fn confusion_hint_after(
                     && event["args"][1] == "confusion"
                     && who_from_text(&event["args"][0])
                         .is_some_and(|who| same_pokemon(&who, victim))
+                    && (reconfused.is_none() || ended.is_none())
                 {
                     ended = Some(index);
                 }
