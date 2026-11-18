@@ -1,0 +1,165 @@
+{
+  "schema": 1,
+  "id": "gen5-doubles-a-yawn-sleep-after-an-ally-switch-is-the-sleepers-own",
+  "notes": [
+    "Druddigon, yawning, Ally Switches into the slot Slugma held as the turn began and falls asleep in the residual; the sleep's duration counts Druddigon's own ability, not Slugma's Early Bird: it wakes on its second turn (DESIGN.md R-M11-189)",
+    "promoted from m8-gen5-doubles-s2234-004-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 5,
+    "mode": "doubles",
+    "format": "gen5doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Sandshrew",
+        "species": "Sandshrew",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Mega Drain",
+          "Yawn",
+          "Dream Eater",
+          "Ally Switch"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Crawdaunt",
+        "species": "Crawdaunt",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Leech Life",
+          "Yawn",
+          "Twineedle",
+          "Ally Switch"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Snubbull",
+        "species": "Snubbull",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Cross Poison",
+          "Yawn",
+          "Sludge Bomb",
+          "Ally Switch"
+        ],
+        "ability": "Lightning Rod",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Slugma",
+        "species": "Slugma",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Poison Sting",
+          "Yawn",
+          "Sludge"
+        ],
+        "ability": "Early Bird",
+        "gender": "F"
+      },
+      {
+        "label": "Deino",
+        "species": "Deino",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Gunk Shot",
+          "Yawn",
+          "Poison Tail",
+          "Ally Switch"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Druddigon",
+        "species": "Druddigon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Poison Jab",
+          "Yawn",
+          "Volt Tackle",
+          "Ally Switch"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Minun",
+        "species": "Minun",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Yawn",
+          "Wild Charge",
+          "Ally Switch"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      27538,
+      41680,
+      22219,
+      3144
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Mega Drain 1, move Leech Life 2",
+      "p2": "move Poison Sting 1, move Gunk Shot 2"
+    },
+    {
+      "p1": "move Yawn 1, move Yawn 2",
+      "p2": "move Yawn 1, move Yawn 2"
+    },
+    {
+      "p1": "move Dream Eater 1, move Twineedle 2",
+      "p2": "move Sludge 1, move Poison Tail 2"
+    },
+    {
+      "p1": "switch Snubbull, move Ally Switch",
+      "p2": "switch Druddigon, move Ally Switch"
+    },
+    {
+      "p1": "move Ally Switch, move Leech Life 1",
+      "p2": "move Ally Switch, move Gunk Shot 1"
+    },
+    {
+      "p1": "move 2 2, move 3 1",
+      "p2": "move 2 2, move 3 1"
+    },
+    {
+      "p2": "switch Slugma, pass"
+    },
+    {
+      "p1": "switch Sandshrew, move Ally Switch",
+      "p2": "switch Minun, move Ally Switch"
+    },
+    {
+      "p1": "move 3 2, move 1 1",
+      "p2": "move 2 2, move 1 1"
+    },
+    {
+      "p1": "move Ally Switch, move Yawn 2",
+      "p2": "move Ally Switch, move Yawn 2"
+    }
+  ]
+}

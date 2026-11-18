@@ -3092,15 +3092,16 @@ pub(super) fn sleep_duration_hint(
 /// How much each BeforeMove takes off `victim`'s sleep (Early Bird: 2), turn by turn: as the
 /// engine has it now for this turn, and for a later one as the frame before it
 /// (`boundary_frames[t - 1]`) shows the Pokémon — its ability (a Skill Swap during the sleep),
-/// Gastro Acid, and a Neutralizing Gas on the field.
+/// Gastro Acid, and a Neutralizing Gas on the field. `id` is the sleeper in `state`, as the
+/// caller names it.
 pub(super) fn sleep_steps<'a>(
     state: &'a BattleState,
     rules: &'a ResolvedRules,
     victim: &'a Who,
+    id: Option<PokemonId>,
     turn: usize,
     boundary_frames: &'a [Option<&'a Value>],
 ) -> impl Fn(usize) -> u16 + 'a {
-    let id = who_to_id(state, victim);
     let pokemon = id.and_then(|id| state.pokemon(id));
     let now = pokemon.is_some_and(|p| {
         pokemon_battle_engine::engine::ability_active(state, rules, p)

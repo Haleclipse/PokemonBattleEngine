@@ -861,10 +861,13 @@ pub(super) fn drive_to_boundary(
                 lifecycle.sleep_usable_turns_come_back,
                 u16::from(lifecycle.sleep_time_min),
                 u16::from(lifecycle.sleep_time_max),
+                // The sleeper by name: the residual names it in the slot it ended the turn in,
+                // which another may have held as the turn began (an Ally Switch, R-M11-189).
                 &sleep_steps(
                     compiled.engine.state(),
                     &compiled.rules,
                     who,
+                    label_to_id(compiled, who).or_else(|| who_to_id(compiled.engine.state(), who)),
                     turn_index,
                     boundary_frames,
                 ),
@@ -1755,6 +1758,7 @@ pub(super) fn drive_to_boundary(
                             &before.state,
                             &compiled.rules,
                             who,
+                            who_to_id(&before.state, who),
                             turn_index,
                             boundary_frames,
                         ),
