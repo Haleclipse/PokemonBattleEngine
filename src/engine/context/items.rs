@@ -450,12 +450,20 @@ impl<'a> BattleContext<'a> {
     /// Magician (`onAfterMoveSecondarySelf`) after `holder`'s damaging move: the Pokémon it hit
     /// (`move.hitTargets`, Substitutes too) fastest first by their handler speed — Pokémon that
     /// share one draw a SpeedTie decision each (Showdown `speedSort`) — and the first whose item
-    /// it can take gives it up. Returns whether it took one.
+    /// it can take gives it up. Returns whether it took one. One the move knocked out had its
+    /// faint handled first (`faintMessages` at the end of the hit loop): `clearVolatile` →
+    /// `setSpecies(baseSpecies)` left its speed at its own stored Speed, no stages (R-M11-188).
     pub fn magician(&mut self, holder: PokemonId, hit: &[PokemonId], move_id: MoveId) -> bool {
         let mut order: Vec<(PokemonId, u32, u64)> = hit
             .iter()
             .filter(|target| **target != holder)
-            .map(|target| (*target, self.state.handler_speed(*target), 0))
+            .map(|target| {
+                let speed = match self.state.pokemon(*target) {
+                    Some(pokemon) if pokemon.is_fainted() => u32::from(pokemon.stats.speed),
+                    _ => self.state.handler_speed(*target),
+                };
+                (*target, speed, 0)
+            })
             .collect();
         for index in 0..order.len() {
             let speed = order[index].1;
