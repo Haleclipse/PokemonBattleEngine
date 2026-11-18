@@ -495,6 +495,9 @@ impl<'a> MovePipeline<'a> {
                 move_id: call.move_id,
                 reason: MoveFailReason::BeforeMove(reason),
             });
+            // Its `runMove`'s `MoveAborted` too: a dancer charging a two-turn move that hurt
+            // itself in confusion as it danced starts that move over (R-M11-191).
+            self.move_aborted(call.user, reason);
             return Ok(MoveExecution {
                 actor: call.user,
                 move_id: call.move_id,
@@ -515,6 +518,55 @@ impl<'a> MovePipeline<'a> {
             resolved,
             struggling: false,
         })
+    }
+
+    /// Showdown's `MoveAborted` after a BeforeMove check stopped `actor`'s move (an action's or a
+    /// dance's full `runMove`): Bide and a two-turn move in progress end.
+    fn move_aborted(&mut self, actor: PokemonId, reason: crate::engine::BeforeMoveBlockReason) {
+        // Gen 2+ Bide's `onMoveAborted`: stopped, the holder lets it go (§15.10); Gen 1 only
+        // after a full paralysis or a confusion self-hit (the gen1 `par` / `confusion`;
+        // pokered `MonHurtItselfOrFullyParalysed` clears `STORING_ENERGY`).
+        if !self.rules.conditions.retaliation.bide.gen1
+            || matches!(
+                reason,
+                crate::engine::BeforeMoveBlockReason::Paralysis
+                    | crate::engine::BeforeMoveBlockReason::Confusion
+            )
+        {
+            // Gen 1's has no `onEnd`: gone with no word; Gen 2+'s `-end … [silent]`.
+            let mut ctx = BattleContext::new(self.state, self.rules, self.trace);
+            if self.rules.conditions.retaliation.bide.gen1 {
+                ctx.end_volatile_unseen(actor, VolatileConditionKind::Bide);
+            } else {
+                ctx.end_volatile(actor, VolatileConditionKind::Bide);
+            }
+        }
+        // Showdown `MoveAborted`: a two-turn move in progress is dropped (the user comes back
+        // within reach, the lock is gone). Gen 1 (`ChargeModel::Gen1`): only full paralysis,
+        // Disable and a confusion self-hit drop it, and only the self-hit brings Fly / Dig's
+        // user back within reach.
+        use crate::engine::BeforeMoveBlockReason as Reason;
+        let (drops_charge, drops_hiding) = if self.rules.two_turn.gen1() {
+            (
+                matches!(
+                    reason,
+                    Reason::Paralysis | Reason::Disabled | Reason::Confusion
+                ),
+                reason == Reason::Confusion,
+            )
+        } else {
+            (true, false)
+        };
+        let mut ctx = BattleContext::new(self.state, self.rules, self.trace);
+        if drops_charge {
+            // Sky Drop's `twoturnmove` `onEnd` ends the `skydrop` volatile with it.
+            if ctx.end_volatile(actor, VolatileConditionKind::TwoTurnMove) {
+                ctx.end_sky_drop(actor);
+            }
+        }
+        if drops_hiding {
+            ctx.end_volatile(actor, VolatileConditionKind::Invulnerability);
+        }
     }
 
     /// Showdown's `BeforeMove` event for `actor`'s move, an action's or a dance's full `runMove`:
@@ -807,50 +859,7 @@ impl<'a> MovePipeline<'a> {
                 pokemon.last_move_encore = None;
                 pokemon.last_move_base = None;
             }
-            // Gen 2+ Bide's `onMoveAborted`: stopped, the holder lets it go (§15.10); Gen 1 only
-            // after a full paralysis or a confusion self-hit (the gen1 `par` / `confusion`;
-            // pokered `MonHurtItselfOrFullyParalysed` clears `STORING_ENERGY`).
-            if !self.rules.conditions.retaliation.bide.gen1
-                || matches!(
-                    reason,
-                    crate::engine::BeforeMoveBlockReason::Paralysis
-                        | crate::engine::BeforeMoveBlockReason::Confusion
-                )
-            {
-                // Gen 1's has no `onEnd`: gone with no word; Gen 2+'s `-end … [silent]`.
-                let mut ctx = BattleContext::new(self.state, self.rules, self.trace);
-                if self.rules.conditions.retaliation.bide.gen1 {
-                    ctx.end_volatile_unseen(actor, VolatileConditionKind::Bide);
-                } else {
-                    ctx.end_volatile(actor, VolatileConditionKind::Bide);
-                }
-            }
-            // Showdown `MoveAborted`: a two-turn move in progress is dropped (the user comes
-            // back within reach, the lock is gone). Gen 1 (`ChargeModel::Gen1`): only full
-            // paralysis, Disable and a confusion self-hit drop it, and only the self-hit brings
-            // Fly / Dig's user back within reach.
-            use crate::engine::BeforeMoveBlockReason as Reason;
-            let (drops_charge, drops_hiding) = if self.rules.two_turn.gen1() {
-                (
-                    matches!(
-                        reason,
-                        Reason::Paralysis | Reason::Disabled | Reason::Confusion
-                    ),
-                    reason == Reason::Confusion,
-                )
-            } else {
-                (true, false)
-            };
-            let mut ctx = BattleContext::new(self.state, self.rules, self.trace);
-            if drops_charge {
-                // Sky Drop's `twoturnmove` `onEnd` ends the `skydrop` volatile with it.
-                if ctx.end_volatile(actor, VolatileConditionKind::TwoTurnMove) {
-                    ctx.end_sky_drop(actor);
-                }
-            }
-            if drops_hiding {
-                ctx.end_volatile(actor, VolatileConditionKind::Invulnerability);
-            }
+            self.move_aborted(actor, reason);
             self.recharged = reason == crate::engine::BeforeMoveBlockReason::Recharge;
             // Showdown's BeforeMove handlers return `false` (the move failed, for Stomping
             // Tantrum) — except the recharge turn's `null`: there was nothing to choose.
