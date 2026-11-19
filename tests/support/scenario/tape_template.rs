@@ -713,14 +713,16 @@ pub(super) fn tape_template(
         }
         // Whether an accuracy decision is drawn against a target: the engine's own chance with
         // the current accuracy / evasion stages (Muddy Water's accuracy drop makes a 100 %
-        // move miss-able), not the move's base accuracy.
-        let rolls_accuracy = |target: Option<PokemonId>| match target {
-            Some(id) => accuracy_in_move(state, rules, actor, id, move_def) < 10_000,
-            None => {
-                !pokemon_battle_engine::engine::sure_hit(state, rules, actor, move_def)
-                    && move_def.accuracy.is_some_and(|accuracy| accuracy < 100)
-            }
-        };
+        // move miss-able), not the move's base accuracy — of the Pokémon checking it with its
+        // move (a spread move some targets sent back: the user at the others, R-M11-198).
+        let rolls_accuracy =
+            |actor: PokemonId, move_def: &ResolvedMove, target: Option<PokemonId>| match target {
+                Some(id) => accuracy_in_move(state, rules, actor, id, move_def) < 10_000,
+                None => {
+                    !pokemon_battle_engine::engine::sure_hit(state, rules, actor, move_def)
+                        && move_def.accuracy.is_some_and(|accuracy| accuracy < 100)
+                }
+            };
         // A `multiaccuracy` move's checks after the first: on the state the first check left
         // (Micle Berry's boost and a Lock-On on the target used up, `engine::spend_accuracy_check`).
         let rolls_later_accuracy = |target: Option<PokemonId>| match target {
@@ -731,17 +733,20 @@ pub(super) fn tape_template(
                 );
                 accuracy_in_move(&after, rules, actor, id, move_def) < 10_000
             }
-            None => rolls_accuracy(None),
+            None => rolls_accuracy(actor, move_def, None),
         };
         // A target that did not take the move (`Immune`: a type immunity, or a TryHit block such
         // as Protect or an absorbing ability) may still have drawn an accuracy decision, by the
         // generation's hit-step order (engine `HitStepOrder`): Gen 4 rolls accuracy before
         // TryHit, Gen 3 even before reporting a type immunity (a hit then meets TryHit, so a
         // TryHit block means the roll hit). Returns the decision's value.
-        let accuracy_before_block = |target: Option<PokemonId>| -> Option<bool> {
+        let accuracy_before_block = |actor: PokemonId,
+                                     move_def: &ResolvedMove,
+                                     target: Option<PokemonId>|
+         -> Option<bool> {
             let id = target?;
             if pokemon_battle_engine::engine::ohko_blocked(state, rules, actor, id, move_def)
-                || !rolls_accuracy(target)
+                || !rolls_accuracy(actor, move_def, target)
             {
                 return None;
             }
@@ -908,7 +913,7 @@ pub(super) fn tape_template(
                     None => &oracle.applied[..],
                 };
                 if *fate == TargetFate::Immune {
-                    if let Some(hit) = accuracy_before_block(*target) {
+                    if let Some(hit) = accuracy_before_block(actor, move_def, *target) {
                         tape.push(Some(RandomOverride::bool(RandomRequestKind::Accuracy, hit)));
                     }
                 } else if *fate != TargetFate::Dodged
@@ -1263,7 +1268,7 @@ pub(super) fn tape_template(
                 });
                 match fate {
                     TargetFate::Immune => {
-                        if let Some(hit) = accuracy_before_block(*target) {
+                        if let Some(hit) = accuracy_before_block(actor, move_def, *target) {
                             staged.push(
                                 Stage::Gate,
                                 RandomOverride::bool(RandomRequestKind::Accuracy, hit),

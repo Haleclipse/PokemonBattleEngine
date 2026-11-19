@@ -1,0 +1,170 @@
+{
+  "schema": 1,
+  "id": "gen5-doubles-a-poison-gas-magic-bounce-sends-back-skips-a-sure-check",
+  "notes": [
+    "Gen 5 doubles: Tangrowth, +1 accuracy from Coil, uses Poison Gas on Ekans and Ambipom; Ambipom's Magic Bounce sends it back, and the user's own check at Ekans is Tangrowth's at over 100 %, which draws nothing — not the reflector's (DESIGN.md R-M11-198)",
+    "promoted from m8-gen5-doubles-s2277-010-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 5,
+    "mode": "doubles",
+    "format": "gen5doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Ekans",
+        "species": "Ekans",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Smelling Salts",
+          "Poison Powder",
+          "Cotton Guard",
+          "Poison Gas"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Ambipom",
+        "species": "Ambipom",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Quiver Dance",
+          "Poison Powder",
+          "Rock Polish",
+          "Poison Gas"
+        ],
+        "ability": "Magic Bounce",
+        "gender": "M"
+      },
+      {
+        "label": "Uxie",
+        "species": "Uxie",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Howl",
+          "Poison Powder",
+          "Bulk Up",
+          "Poison Gas"
+        ],
+        "ability": "Run Away"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Musharna",
+        "species": "Musharna",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Defend Order",
+          "Poison Powder",
+          "Tail Glow",
+          "Poison Gas"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Jellicent",
+        "species": "Jellicent",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Amnesia",
+          "Poison Powder",
+          "Sharpen",
+          "Poison Gas"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Scolipede",
+        "species": "Scolipede",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Poison Powder",
+          "Work Up"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Tangrowth",
+        "species": "Tangrowth",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Coil",
+          "Poison Gas"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      32837,
+      2475,
+      60372,
+      30745
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Poison Powder 2, move Poison Powder 1",
+      "p2": "move Poison Powder 1, move Poison Powder 2"
+    },
+    {
+      "p1": "move Cotton Guard, move Rock Polish",
+      "p2": "move Tail Glow, move Sharpen"
+    },
+    {
+      "p1": "move Poison Gas, move Poison Gas",
+      "p2": "move Poison Gas, move Poison Gas"
+    },
+    {
+      "p1": "switch Uxie, move Quiver Dance",
+      "p2": "move Defend Order, move Amnesia"
+    },
+    {
+      "p1": "move Howl, move Poison Powder 2",
+      "p2": "move Poison Powder 1, move Poison Powder 2"
+    },
+    {
+      "p1": "move Poison Powder 1, move Rock Polish",
+      "p2": "move Tail Glow, move Sharpen"
+    },
+    {
+      "p1": "move Bulk Up, move Poison Gas",
+      "p2": "move Poison Gas, move Poison Gas"
+    },
+    {
+      "p1": "move Poison Gas, move Quiver Dance",
+      "p2": "move Defend Order, move Amnesia"
+    },
+    {
+      "p1": "switch Ekans, move Poison Powder 2",
+      "p2": "switch Scolipede, move Poison Powder 1"
+    },
+    {
+      "p2": "pass, switch Tangrowth"
+    },
+    {
+      "p1": "move Smelling Salts 2, move Rock Polish",
+      "p2": "move Poison Powder 1, move Coil"
+    },
+    {
+      "p1": "move Poison Powder 1, move Poison Gas",
+      "p2": "move Work Up, move Poison Gas"
+    }
+  ]
+}
