@@ -1131,7 +1131,9 @@ pub fn extract_decisions_with(
                         | "item: Safety Goggles"
                 ) && let (Some(action), Some(target)) =
                     (out.last_mut(), args.first().and_then(who_from_text))
-                    && target != action.user
+                    // The move's user: a move sent back at the action's own user is its
+                    // reflector's, so the user's Safety Goggles stop it too (R-M11-195).
+                    && target != *action.called.last().map_or(&action.user, |c| &c.user)
                 {
                     action.guarded.push(target.clone());
                     action.try_hit_blocked.push(target.clone());
