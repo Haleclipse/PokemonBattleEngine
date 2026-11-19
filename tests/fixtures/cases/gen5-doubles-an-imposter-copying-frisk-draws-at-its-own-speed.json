@@ -1,0 +1,136 @@
+{
+  "schema": 1,
+  "id": "gen5-doubles-an-imposter-copying-frisk-draws-at-its-own-speed",
+  "notes": [
+    "Gen 5 doubles: after the Lunar Dance faints, Simisage (Imposter) and Clamperl (Frisk) come in together; Simisage transforms into Clamperl and its copied Frisk draws first, at the Speed it came in with, not the one it now shares with its target, and finds Clamperl holding nothing; Clamperl's Frisk then names Simisage's Nanab Berry (DESIGN.md R-M11-199)",
+    "promoted from m8-gen5-doubles-s2278-012-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 5,
+    "mode": "doubles",
+    "format": "gen5doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Exeggcute",
+        "species": "Exeggcute",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Pursuit",
+          "Lunar Dance"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Beldum",
+        "species": "Beldum",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Hex",
+          "Lunar Dance"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Simisage",
+        "species": "Simisage",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Heat Crash"
+        ],
+        "ability": "Imposter",
+        "item": "Nanab Berry",
+        "gender": "F"
+      },
+      {
+        "label": "Swadloon",
+        "species": "Swadloon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Heavy Slam"
+        ],
+        "ability": "Run Away",
+        "item": "Zoom Lens",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Oddish",
+        "species": "Oddish",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Echoed Voice",
+          "Lunar Dance"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Zorua",
+        "species": "Zorua",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Wake-Up Slap",
+          "Lunar Dance"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Sunkern",
+        "species": "Sunkern",
+        "level": 48,
+        "nature": "Hardy",
+        "moves": [
+          "Trump Card"
+        ],
+        "ability": "Run Away",
+        "item": "Salac Berry",
+        "gender": "F"
+      },
+      {
+        "label": "Clamperl",
+        "species": "Clamperl",
+        "level": 46,
+        "nature": "Hardy",
+        "moves": [
+          "Smelling Salts"
+        ],
+        "ability": "Frisk",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      64879,
+      60571,
+      12165,
+      33497
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Pursuit 1, move Hex 2",
+      "p2": "move Echoed Voice 1, move Wake-Up Slap 2"
+    },
+    {
+      "p1": "move Lunar Dance, move Lunar Dance",
+      "p2": "move Lunar Dance, move Lunar Dance"
+    },
+    {
+      "p1": "switch Simisage, switch Swadloon",
+      "p2": "switch Sunkern, switch Clamperl"
+    }
+  ]
+}

@@ -511,9 +511,17 @@ pub(super) fn entrant_ability_tape(
             .partition(|(holder, _)| entrants.contains(holder));
     entering.extend(frisk_draws(compiled, state, entrants, oracle_frame));
     entering.extend(forewarn_draws(compiled, state, entrants, oracle_frame));
+    // The engine orders them as they come in, before any switch-in runs: an Imposter the step
+    // left transformed had its own Speed then, not its target's (R-M11-199).
+    let mut at_entry = state.clone();
+    for entrant in entrants {
+        if let Some(pokemon) = at_entry.pokemon_mut(*entrant) {
+            pokemon.transform = None;
+        }
+    }
     entering.sort_by_key(|(holder, _)| {
         std::cmp::Reverse(pokemon_battle_engine::engine::entry_speed(
-            state,
+            &at_entry,
             &compiled.rules,
             *holder,
         ))
