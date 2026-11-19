@@ -1763,11 +1763,16 @@ pub fn extract_decisions_with(
                             .secondary_on
                             .push((target.clone(), label.clone(), hits));
                     }
-                    if target == action.user && !entry {
+                    // Nor is an item's on the user (Mirror Herb copying the Maranga Berry its
+                    // hit fed the target): no Ancient Power boost of its own (R-M11-200).
+                    let users_item = item_stat && target == action.user;
+                    if target == action.user && !entry && !users_item {
                         let hits = action.crits.len();
                         action.user_applied_hits.push((label.clone(), hits));
                     }
-                    action.applied.push((target, label));
+                    if !users_item {
+                        action.applied.push((target, label));
+                    }
                 }
             }
             "start" => {

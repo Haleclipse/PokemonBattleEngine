@@ -1,0 +1,106 @@
+{
+  "schema": 1,
+  "id": "gen9-a-mirror-herb-copy-after-ancient-power-is-not-its-boost",
+  "notes": [
+    "Gen 9: Larvitar's Ancient Power feeds Quilladin its Maranga Berry (+1 Special Defense) and Larvitar's Mirror Herb copies it; the user's item boost is no Ancient Power boost, so its 10 % roll missed (DESIGN.md R-M11-200)",
+    "promoted from m8-gen9-singles-s109401-013-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Larvitar",
+        "species": "Larvitar",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Ancient Power",
+          "Psycho Boost",
+          "Shed Tail"
+        ],
+        "ability": "Run Away",
+        "item": "Mirror Herb",
+        "gender": "F"
+      },
+      {
+        "label": "Manaphy",
+        "species": "Manaphy",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Flame Charge"
+        ],
+        "ability": "Run Away"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Charjabug",
+        "species": "Charjabug",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Shed Tail"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Quilladin",
+        "species": "Quilladin",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Shed Tail"
+        ],
+        "ability": "Run Away",
+        "item": "Maranga Berry",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      17477,
+      28208,
+      33265,
+      10977
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Psycho Boost",
+      "p2": "move Shed Tail"
+    },
+    {
+      "p2": "switch Quilladin"
+    },
+    {
+      "p1": "move Shed Tail",
+      "p2": "move Shed Tail"
+    },
+    {
+      "p1": "switch Manaphy"
+    },
+    {
+      "p1": "move Flame Charge",
+      "p2": "move Shed Tail"
+    },
+    {
+      "p2": "switch Charjabug"
+    },
+    {
+      "p1": "switch Larvitar",
+      "p2": "switch Quilladin"
+    },
+    {
+      "p1": "move Ancient Power",
+      "p2": "move Shed Tail"
+    }
+  ]
+}
