@@ -561,8 +561,9 @@ impl<'a> MovePipeline<'a> {
     /// Magic Coat and Magic Bounce (`onTryHit`, priorities 2 and 1): a reflectable move aimed at
     /// a Pokémon wearing the coat — or holding the ability — is used again against its user.
     /// Only the target's own: a partner reflects a move aimed at its side alone
-    /// (`reflect_side_move`, DESIGN.md R-M8-77). True when the move was taken over (the caller's
-    /// hit loop ends and the called move runs, §42.8).
+    /// (`reflect_side_move`, DESIGN.md R-M8-77). From Gen 5 a hiding target sends nothing back
+    /// (`CallRules::hiding_holder_stops_reflection`). True when the move was taken over (the
+    /// caller's hit loop ends and the called move runs, §42.8).
     fn reflect_move(
         &mut self,
         actor: PokemonId,
@@ -570,6 +571,14 @@ impl<'a> MovePipeline<'a> {
         move_def: &ResolvedMove,
     ) -> bool {
         if actor == target || !self.reflectable(move_def) {
+            return false;
+        }
+        if self.rules.conditions.calls.hiding_holder_stops_reflection
+            && self
+                .state
+                .pokemon(target)
+                .is_some_and(|holder| crate::engine::two_turn::hiding(holder).is_some())
+        {
             return false;
         }
         let Some(coat) = self.reflection_of(target) else {

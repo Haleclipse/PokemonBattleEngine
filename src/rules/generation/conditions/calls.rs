@@ -41,6 +41,11 @@ pub struct CallRules {
     /// partner reflects: a move aimed at a Pokémon is the target's own (`onTryHit`, DESIGN.md
     /// R-M8-77).
     pub hiding_first_stops_side_reflection: bool,
+    /// Gen 5+ (Magic Coat's and Magic Bounce's `onTryHit` return for a semi-invulnerable
+    /// `target`; the gen4 mod's Magic Coat, which Gen 3 inherits, has no such check): a hiding
+    /// Pokémon a reflectable move still reaches — a Poison type's Toxic, No Guard, Lock-On — does
+    /// not send it back (DESIGN.md R-M11-197).
+    pub hiding_holder_stops_reflection: bool,
     /// Gen 3-4: a Pokémon that takes another's move over (Magic Coat, Snatch) pays one PP when
     /// that Pokémon has Pressure, whatever its side (pokeemerald `PressurePPLose`, pokeplatinum
     /// `BattleSystem_DecPPForPressure`; Showdown's gen4 Snatch, which Gen 3 inherits, but not its

@@ -941,6 +941,7 @@ pub(super) fn resolve(generation: Generation) -> ConditionRules {
                 Generation::Gen3 | Generation::Gen4
             ),
             hiding_first_stops_side_reflection: generation >= Generation::Gen6,
+            hiding_holder_stops_reflection: generation >= Generation::Gen5,
             taker_pays_pressure: match generation {
                 Generation::Gen3 => Some(PressurePaidFrom::TheTakingMove),
                 Generation::Gen4 => Some(PressurePaidFrom::TheChosenMove),
