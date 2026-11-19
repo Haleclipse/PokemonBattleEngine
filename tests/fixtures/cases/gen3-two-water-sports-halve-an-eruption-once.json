@@ -1,0 +1,158 @@
+{
+  "schema": 1,
+  "id": "gen3-two-water-sports-halve-an-eruption-once",
+  "notes": [
+    "Gen 3: Phanpy at 2/149 HP uses Eruption (power 2) while it and Furret both hold Water Sport; pokeemerald halves the power once for any holder (1) and returns damage + 2, so Furret takes 1, where Showdown's two halvings bring the power to 0 and getDamage returns 0 (oracle patch I228 in Gen 3; DESIGN.md R-M11-196)",
+    "promoted from m8-gen3-singles-s2274-019-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 3,
+    "mode": "singles",
+    "format": "gen3customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Natu",
+        "species": "Natu",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Reversal",
+          "Block",
+          "Hidden Power"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Salamence",
+        "species": "Salamence",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Water Sport"
+        ],
+        "ability": "Drought",
+        "gender": "M"
+      },
+      {
+        "label": "Phanpy",
+        "species": "Phanpy",
+        "level": 45,
+        "nature": "Hardy",
+        "moves": [
+          "Eruption",
+          "Block",
+          "Return",
+          "Water Sport"
+        ],
+        "ability": "Hyper Cutter",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Furret",
+        "species": "Furret",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Hyper Voice",
+          "Block",
+          "Swift",
+          "Water Sport"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Totodile",
+        "species": "Totodile",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Leer",
+          "Block",
+          "Growl",
+          "Water Sport"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      11717,
+      14231,
+      52154,
+      45880
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Reversal",
+      "p2": "move Hyper Voice"
+    },
+    {
+      "p1": "move Block",
+      "p2": "move Block"
+    },
+    {
+      "p1": "move Hidden Power",
+      "p2": "move Swift"
+    },
+    {
+      "p1": "switch Salamence"
+    },
+    {
+      "p1": "move Water Sport",
+      "p2": "move Water Sport"
+    },
+    {
+      "p1": "switch Phanpy",
+      "p2": "switch Totodile"
+    },
+    {
+      "p1": "move Eruption",
+      "p2": "move Leer"
+    },
+    {
+      "p1": "move Block",
+      "p2": "move Block"
+    },
+    {
+      "p1": "move Return",
+      "p2": "move Growl"
+    },
+    {
+      "p1": "move Water Sport",
+      "p2": "move Water Sport"
+    },
+    {
+      "p1": "move Eruption",
+      "p2": "move Leer"
+    },
+    {
+      "p1": "move Block",
+      "p2": "move Block"
+    },
+    {
+      "p1": "move Return",
+      "p2": "move Growl"
+    },
+    {
+      "p2": "switch Furret"
+    },
+    {
+      "p1": "move Water Sport",
+      "p2": "move Water Sport"
+    },
+    {
+      "p1": "move Eruption",
+      "p2": "move Hyper Voice"
+    }
+  ]
+}

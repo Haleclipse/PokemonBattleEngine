@@ -4178,9 +4178,12 @@ function cartridgeGen3GetDamage(source, target, move, suppressMessages = false) 
   const spitUp = !selfHit && move.id === 'spitup';
   if (spitUp) move.willCrit = false;
   const {runEvent, randomizer} = battle;
+  let zeroPower = false;
   battle.runEvent = function (eventid, ...rest) {
     if (eventid === 'BasePower' && seen.power === undefined) [, , , seen.power] = rest;
-    return runEvent.call(this, eventid, ...rest);
+    const out = runEvent.call(this, eventid, ...rest);
+    if (eventid === 'BasePower' && out === 0 && rest[3] > 0) zeroPower = true;
+    return out;
   };
   battle.randomizer = function (damage) {
     if (spitUp || foreseen) {
@@ -4197,6 +4200,12 @@ function cartridgeGen3GetDamage(source, target, move, suppressMessages = false) 
     battle.runEvent = runEvent;
     battle.randomizer = randomizer;
   }
+  // A power the event brought to 0 (two Water Sport holders on an Eruption of power 2, each
+  // halving it): Showdown's `getDamage` stops at `if (!basePower) return 0`, before the roll;
+  // pokeemerald halves the power once for any holder and returns `damage + 2`, which
+  // `ApplyRandomDmgMultiplier` rolls — I228's case in Gen 3 (R-M11-196). The roll is drawn here,
+  // where the formula would have (TESTING.md §7).
+  if (seen.roll === undefined && zeroPower && result === 0) seen.roll = battle.random(16);
   if (seen.roll === undefined || typeof result !== 'number') return result;
   if (selfHit) {
     seen.power = move;
