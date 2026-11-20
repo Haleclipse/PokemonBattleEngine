@@ -1,0 +1,256 @@
+{
+  "schema": 1,
+  "id": "gen7-a-mirror-move-spends-the-micle-berry-before-the-move-it-calls",
+  "notes": [
+    "Gen 7: Nidoqueen ate its Micle Berry; its Mirror Move (aimed at a foe) runs the Accuracy event first and spends the boost there, so the Double Hit it calls checks its plain 90 % (DESIGN.md R-M11-202)",
+    "promoted from m8-gen7-singles-s109800-007-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 7,
+    "mode": "singles",
+    "format": "gen7customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Wurmple",
+        "species": "Wurmple",
+        "level": 54,
+        "nature": "Hardy",
+        "moves": [
+          "Attract",
+          "Dual Chop",
+          "Mirror Move"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Jangmo-o",
+        "species": "Jangmo-o",
+        "level": 53,
+        "nature": "Hardy",
+        "moves": [
+          "Fury Attack",
+          "Rock Blast"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Crobat",
+        "species": "Crobat",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Arm Thrust",
+          "Bullet Seed",
+          "Mirror Move"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Smeargle",
+        "species": "Smeargle",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Water Shuriken"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Machop",
+        "species": "Machop",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Double Hit",
+          "Mirror Move"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Barboach",
+        "species": "Barboach",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Bone Rush",
+          "Gear Grind",
+          "Mirror Move"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Eevee",
+        "species": "Eevee",
+        "level": 48,
+        "nature": "Hardy",
+        "moves": [
+          "Triple Kick",
+          "Tail Slap",
+          "Mirror Move"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Magnemite",
+        "species": "Magnemite",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Spike Cannon"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Nidoqueen",
+        "species": "Nidoqueen",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Double Slap",
+          "Toxic",
+          "Mirror Move"
+        ],
+        "ability": "Run Away",
+        "item": "Micle Berry"
+      },
+      {
+        "label": "Muk",
+        "species": "Muk",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Guardian of Alola"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      5770,
+      5705,
+      19223,
+      50378
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Attract",
+      "p2": "move Bone Rush"
+    },
+    {
+      "p1": "move Dual Chop",
+      "p2": "move Gear Grind"
+    },
+    {
+      "p1": "switch Jangmo-o",
+      "p2": "switch Eevee"
+    },
+    {
+      "p1": "move Fury Attack",
+      "p2": "move Triple Kick"
+    },
+    {
+      "p1": "switch Wurmple",
+      "p2": "switch Barboach"
+    },
+    {
+      "p1": "move Dual Chop",
+      "p2": "move Gear Grind"
+    },
+    {
+      "p1": "move Mirror Move",
+      "p2": "move Mirror Move"
+    },
+    {
+      "p1": "switch Jangmo-o"
+    },
+    {
+      "p1": "move Fury Attack",
+      "p2": "move Bone Rush"
+    },
+    {
+      "p1": "switch Crobat",
+      "p2": "switch Eevee"
+    },
+    {
+      "p1": "move Bullet Seed",
+      "p2": "move Tail Slap"
+    },
+    {
+      "p1": "move Mirror Move",
+      "p2": "move Mirror Move"
+    },
+    {
+      "p1": "switch Jangmo-o",
+      "p2": "switch Barboach"
+    },
+    {
+      "p1": "move Fury Attack",
+      "p2": "move Bone Rush"
+    },
+    {
+      "p2": "switch Eevee"
+    },
+    {
+      "p1": "move Rock Blast",
+      "p2": "move Tail Slap"
+    },
+    {
+      "p2": "switch Magnemite"
+    },
+    {
+      "p1": "switch Smeargle",
+      "p2": "switch Muk"
+    },
+    {
+      "p1": "move Water Shuriken",
+      "p2": "move Guardian of Alola"
+    },
+    {
+      "p1": "switch Crobat",
+      "p2": "switch Nidoqueen"
+    },
+    {
+      "p1": "move Bullet Seed",
+      "p2": "move Toxic"
+    },
+    {
+      "p1": "move Arm Thrust",
+      "p2": "move Double Slap"
+    },
+    {
+      "p1": "switch Smeargle",
+      "p2": "switch Muk"
+    },
+    {
+      "p1": "switch Machop",
+      "p2": "switch Nidoqueen"
+    },
+    {
+      "p1": "move Double Hit",
+      "p2": "move Toxic"
+    },
+    {
+      "p1": "move Double Hit",
+      "p2": "move Toxic"
+    },
+    {
+      "p1": "move Mirror Move",
+      "p2": "move Mirror Move"
+    }
+  ]
+}

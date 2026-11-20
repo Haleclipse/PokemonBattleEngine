@@ -94,6 +94,32 @@ pub(super) fn tape_template(
     } else {
         state
     };
+    // A move the user's own move called checks its accuracy after the caller's: a caller that
+    // runs the `Accuracy` event itself (Gen 5+ Mirror Move, Me First: not a status move on its
+    // user) spent the user's Micle Berry there (`-enditem|user|Micle Berry` before the called
+    // move's line), so the called move's chance has no boost (R-M11-202).
+    let micle_spent;
+    let state = if let Some(caller) = oracle
+        .called
+        .first()
+        .filter(|called| called.user == oracle.user)
+        .and(oracle.move_name.as_deref())
+        .and_then(|name| dex.moves().iter().find(|m| m.name == name))
+    {
+        let mut spent = state.clone();
+        if pokemon_battle_engine::engine::spend_accuracy_check(
+            &mut spent, rules, actor, actor, caller,
+        )
+        .micle_berry
+        {
+            micle_spent = spent;
+            &micle_spent
+        } else {
+            state
+        }
+    } else {
+        state
+    };
     let mut tape = Vec::new();
     let Some(pokemon) = state.pokemon(actor) else {
         return tape;
