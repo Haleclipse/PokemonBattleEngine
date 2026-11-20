@@ -10,7 +10,8 @@
 use crate::ids::{PokemonId, SideId};
 use crate::rules::{DurationEffect, UNORDERED_SLOT_SUB_ORDER, UNORDERED_VOLATILE_SUB_ORDER};
 use crate::state::{
-    FieldConditionKind, SideCondition, SideConditionKind, SlotHealKind, VolatileConditionKind,
+    FieldConditionKind, SideCondition, SideConditionKind, SlotHealKind, TerrainKind,
+    VolatileConditionKind,
 };
 
 use super::BattleEngine;
@@ -25,7 +26,10 @@ pub enum DurationHandler {
     ChargeHiding(PokemonId),
     Side(SideId, SideConditionKind),
     Field(FieldConditionKind),
-    Terrain,
+    /// The terrain on the field as the residual started: one that replaced it within the
+    /// residual (a Seed Sower that Future Sight's strike set off) had no handler gathered, and
+    /// the replaced one counts down no more (issues.md I234, R-M11-201).
+    Terrain(TerrainKind),
     /// Gen 4-7 Healing Wish / Lunar Dance waiting on a slot (`side`, `slot`).
     SlotHeal(SideId, usize, SlotHealKind),
 }
@@ -117,10 +121,10 @@ impl BattleEngine {
                 speed: 0,
             });
         }
-        if self.state.field.terrain.is_some() {
+        if let Some(terrain) = self.state.field.terrain {
             let (order, sub_order) = rules.duration_key(DurationEffect::Terrain);
             handlers.push(DurationInstance {
-                handler: DurationHandler::Terrain,
+                handler: DurationHandler::Terrain(terrain.kind),
                 order,
                 sub_order,
                 speed: 0,
@@ -220,7 +224,10 @@ impl BattleEngine {
                 }
                 ended
             }
-            DurationHandler::Terrain => {
+            DurationHandler::Terrain(kind) => {
+                if self.state.field.terrain.map(|terrain| terrain.kind) != Some(kind) {
+                    return None;
+                }
                 let (terrain, ended) = self.state.field.count_down_terrain()?;
                 if ended {
                     self.trace.push(TraceEvent::TerrainChanged {

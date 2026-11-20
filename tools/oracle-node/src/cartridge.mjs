@@ -4562,3 +4562,24 @@ if (patched) {
     this.effectState.target.removeVolatile('focussash');
   };
 }
+
+// I234 — A terrain or weather another replaced counts down no more. Showdown's residual `fieldEvent`
+// gathers its handlers as the residual starts, and runs a handler's `duration--` (ending the effect at 0)
+// before it checks that the handler's state is still the field's: an Electric Terrain due to end this
+// turn that a Seed Sower replaced within the residual (Future Sight's strike) still reaches 0, and its end,
+// `clearTerrain()`, clears the new Grassy Terrain at once. The user's decision (2026-11-20): a terrain
+// lasts its turns however it is set and overwrites the old one (Bulbapedia, Terrain), so the replaced one
+// counts down no more — a presumption from the turn count's semantics, not cartridge-verified. The patch
+// takes the `duration` off the state a successful `setTerrain` / `setWeather` replaces. No draw.
+if (patched) {
+  const field = Object.getPrototypeOf(new Battle({formatid: 'gen9customgame'}).field);
+  for (const [set, key] of [['setTerrain', 'terrainState'], ['setWeather', 'weatherState']]) {
+    const original = field[set];
+    field[set] = function (...args) {
+      const previous = this[key];
+      const result = original.apply(this, args);
+      if (result && this[key] !== previous) delete previous.duration;
+      return result;
+    };
+  }
+}

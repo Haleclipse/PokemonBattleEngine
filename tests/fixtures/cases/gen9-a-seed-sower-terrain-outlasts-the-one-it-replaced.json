@@ -1,0 +1,159 @@
+{
+  "schema": 1,
+  "id": "gen9-a-seed-sower-terrain-outlasts-the-one-it-replaced",
+  "notes": [
+    "Gen 9: Hadron Engine's Electric Terrain is due to end this turn when Future Sight's strike sets off Vivillon's Seed Sower within the residual; the replaced terrain counts down no more and the new Grassy Terrain, set after the residual's handlers were gathered, keeps all five turns (oracle patch I234; DESIGN.md R-M11-201)",
+    "promoted from m8-gen9-singles-s2287-016-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Litwick",
+        "species": "Litwick",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Clear Smog",
+          "Psyshock"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Golett",
+        "species": "Golett",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Water Gun",
+          "Stuff Cheeks",
+          "Grass Pledge"
+        ],
+        "ability": "Run Away",
+        "item": "Occa Berry"
+      },
+      {
+        "label": "Emboar",
+        "species": "Emboar",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Future Sight",
+          "Recycle"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Kirlia",
+        "species": "Kirlia",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fairy Wind"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Gholdengo",
+        "species": "Gholdengo",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Behemoth Blade",
+          "Mighty Cleave",
+          "Recycle"
+        ],
+        "ability": "Hadron Engine"
+      },
+      {
+        "label": "Vivillon",
+        "species": "Vivillon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Smart Strike"
+        ],
+        "ability": "Seed Sower",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      54305,
+      29962,
+      55440,
+      64113
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Clear Smog",
+      "p2": "move Behemoth Blade"
+    },
+    {
+      "p1": "move Psyshock",
+      "p2": "move Mighty Cleave"
+    },
+    {
+      "p1": "switch Golett",
+      "p2": "switch Vivillon"
+    },
+    {
+      "p1": "switch Litwick",
+      "p2": "switch Gholdengo"
+    },
+    {
+      "p1": "move Clear Smog",
+      "p2": "move Behemoth Blade"
+    },
+    {
+      "p1": "switch Golett"
+    },
+    {
+      "p1": "move Water Gun",
+      "p2": "move Behemoth Blade"
+    },
+    {
+      "p1": "move Stuff Cheeks",
+      "p2": "move Mighty Cleave"
+    },
+    {
+      "p1": "switch Emboar",
+      "p2": "switch Vivillon"
+    },
+    {
+      "p1": "switch Golett",
+      "p2": "switch Gholdengo"
+    },
+    {
+      "p1": "move Grass Pledge",
+      "p2": "move Behemoth Blade"
+    },
+    {
+      "p1": "switch Emboar"
+    },
+    {
+      "p1": "move Future Sight",
+      "p2": "move Mighty Cleave"
+    },
+    {
+      "p1": "move Recycle",
+      "p2": "move Recycle"
+    },
+    {
+      "p1": "switch Kirlia",
+      "p2": "switch Vivillon"
+    }
+  ]
+}
