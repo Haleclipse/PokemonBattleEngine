@@ -163,9 +163,17 @@ impl MovePipeline<'_> {
             && !struggling)
             .then(|| self.shown_own_move(move_id))
             .flatten();
+        // A damaging move a Z status move called runs as its Z-Move, which its line names: a
+        // Z-Sleep Talk shows the Never-Ending Nightmare, not the Shadow Claw it was made from
+        // (R-M11-205).
+        let used = if self.call.is_some() && self.z_call && self.z_powered {
+            move_def.id
+        } else {
+            move_id
+        };
         self.trace.push(TraceEvent::MoveUsed {
             actor,
-            move_id,
+            move_id: used,
             declared_target,
             called_by: self.call.map(|frame| frame.source),
             own_move,

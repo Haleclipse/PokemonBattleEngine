@@ -1567,7 +1567,21 @@ pub(super) fn called_draw_index(
                 == pokemon_battle_engine::data::to_id(called)
         })
         .map(|move_def| move_def.id)?;
-    Some(candidates.iter().position(|id| *id == called_id)? as u16)
+    if let Some(index) = candidates.iter().position(|id| *id == called_id) {
+        return Some(index as u16);
+    }
+    // A damaging move a Z status move called goes as its Z-Move, and its line names that
+    // (`getActiveZMove`: a Z-Sleep Talk's Shadow Claw is Never-Ending Nightmare, R-M11-205).
+    candidates
+        .iter()
+        .position(|id| {
+            dex.move_by_id(*id)
+                .and_then(|base| {
+                    pokemon_battle_engine::engine::called_z_move(state, dex, actor, base)
+                })
+                .is_some_and(|z| z.id == called_id)
+        })
+        .map(|index| index as u16)
 }
 
 /// The draws of an action's chain of called moves: for each caller in turn (the action's own
