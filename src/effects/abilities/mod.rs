@@ -2623,7 +2623,7 @@ fn plus_minus(other: AbilityId) -> AbilityBehavior {
 /// A Ruin ability: `stat` of every Pokémon without it is ×0.75 in a damage calculation.
 fn ruin(stat: crate::state::Stat) -> AbilityBehavior {
     AbilityBehavior {
-        switch_in: Some(entry_effects::announce),
+        switch_in: Some(entry_effects::announce_unless_suppressed),
         ruin: Some(stat),
         ..AbilityBehavior::default()
     }
@@ -4038,12 +4038,12 @@ pub fn definition(ability: AbilityId) -> AbilityBehavior {
             ..AbilityBehavior::default()
         },
         AbilityId::DARK_AURA => AbilityBehavior {
-            switch_in: Some(entry_effects::announce),
+            switch_in: Some(entry_effects::announce_unless_suppressed),
             aura: Some(crate::dex::PokemonType::Dark),
             ..AbilityBehavior::default()
         },
         AbilityId::FAIRY_AURA => AbilityBehavior {
-            switch_in: Some(entry_effects::announce),
+            switch_in: Some(entry_effects::announce_unless_suppressed),
             aura: Some(crate::dex::PokemonType::Fairy),
             ..AbilityBehavior::default()
         },

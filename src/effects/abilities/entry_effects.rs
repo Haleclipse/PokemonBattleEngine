@@ -8,12 +8,23 @@ use crate::ids::{AbilityId, PokemonId};
 use crate::state::{Stat, VolatileConditionKind};
 
 /// An ability that announces itself and does nothing else as it starts (Showdown
-/// `this.add('-ability', pokemon, …)`): Dark Aura, Fairy Aura, Aura Break, the Ruin abilities and
-/// Comatose as it starts (`onStart`), Air Lock and Cloud Nine as the holder enters the field
-/// (`onSwitchIn`: not when it gets the ability, nor as Neutralizing Gas ends) — R-M10-39.
+/// `this.add('-ability', pokemon, …)`): Aura Break and Comatose as it starts (`onStart`; the
+/// Ruin abilities and Dark Aura / Fairy Aura: `announce_unless_suppressed`), Air Lock and Cloud
+/// Nine as the holder enters the field (`onSwitchIn`: not when it gets the ability, nor as
+/// Neutralizing Gas ends) — R-M10-39.
 pub fn announce(ctx: &mut BattleContext<'_>, holder: PokemonId) {
     if let Some(ability) = ctx.ability_of(holder) {
         ctx.ability_activated(holder, ability);
+    }
+}
+
+/// The Ruin abilities and Dark Aura / Fairy Aura announce themselves as they start unless a
+/// move that ignores abilities is under way (Showdown `if (this.suppressingAbility(pokemon))
+/// return;`): one a Mold Breaker's Roar drags in comes in unannounced, its effect in force all
+/// the same (R-M11-206).
+pub fn announce_unless_suppressed(ctx: &mut BattleContext<'_>, holder: PokemonId) {
+    if !ctx.suppressing_ability(holder) {
+        announce(ctx, holder);
     }
 }
 

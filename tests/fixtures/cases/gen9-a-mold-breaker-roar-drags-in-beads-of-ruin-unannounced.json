@@ -1,0 +1,294 @@
+{
+  "schema": 1,
+  "id": "gen9-a-mold-breaker-roar-drags-in-beads-of-ruin-unannounced",
+  "notes": [
+    "Gen 9: Kingambit (Mold Breaker) roars and drags in Sandygast; a move that ignores abilities is under way as it comes in, so its Beads of Ruin starts unannounced and the foe does not learn it (DESIGN.md R-M11-206)",
+    "promoted from m8-gen9-singles-s2301-000-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Mightyena",
+        "species": "Mightyena",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sleep Powder",
+          "Relic Song",
+          "Sing",
+          "Revival Blessing"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Ditto",
+        "species": "Ditto",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Dark Void",
+          "Relic Song",
+          "Hypnosis"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Victreebel",
+        "species": "Victreebel",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Life Dew",
+          "Relic Song",
+          "Howl",
+          "Revival Blessing"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Kingambit",
+        "species": "Kingambit",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Circle Throw",
+          "Roar"
+        ],
+        "ability": "Mold Breaker",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Sandy Shocks",
+        "species": "Sandy Shocks",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Thunder Wave",
+          "Relic Song",
+          "Swagger",
+          "Revival Blessing"
+        ],
+        "ability": "Quick Draw"
+      },
+      {
+        "label": "Dragapult",
+        "species": "Dragapult",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Flatter",
+          "Relic Song",
+          "Sweet Kiss"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Sandygast",
+        "species": "Sandygast",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Confuse Ray"
+        ],
+        "ability": "Beads of Ruin",
+        "gender": "M"
+      },
+      {
+        "label": "Salandit",
+        "species": "Salandit",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Flame Wheel"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      22013,
+      35383,
+      11475,
+      46701
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Sleep Powder",
+      "p2": "move Thunder Wave"
+    },
+    {
+      "p1": "move Relic Song",
+      "p2": "move Relic Song"
+    },
+    {
+      "p1": "move Sing",
+      "p2": "move Swagger"
+    },
+    {
+      "p1": "move Revival Blessing",
+      "p2": "move Revival Blessing"
+    },
+    {
+      "p1": "switch Ditto",
+      "p2": "switch Dragapult"
+    },
+    {
+      "p1": "move Dark Void",
+      "p2": "move Flatter"
+    },
+    {
+      "p1": "move Relic Song",
+      "p2": "move Relic Song"
+    },
+    {
+      "p1": "move Hypnosis",
+      "p2": "move Sweet Kiss"
+    },
+    {
+      "p1": "switch Mightyena",
+      "p2": "switch Sandy Shocks"
+    },
+    {
+      "p1": "move Relic Song",
+      "p2": "move Relic Song"
+    },
+    {
+      "p1": "move Sing",
+      "p2": "move Swagger"
+    },
+    {
+      "p1": "switch Ditto",
+      "p2": "switch Dragapult"
+    },
+    {
+      "p1": "move Dark Void",
+      "p2": "move Flatter"
+    },
+    {
+      "p1": "move Relic Song",
+      "p2": "move Relic Song"
+    },
+    {
+      "p1": "switch Mightyena"
+    },
+    {
+      "p1": "move Sing",
+      "p2": "move Sweet Kiss"
+    },
+    {
+      "p1": "move Sleep Powder",
+      "p2": "move Flatter"
+    },
+    {
+      "p1": "switch Victreebel",
+      "p2": "switch Sandy Shocks"
+    },
+    {
+      "p1": "move Life Dew",
+      "p2": "move Relic Song"
+    },
+    {
+      "p1": "move Howl",
+      "p2": "move Thunder Wave"
+    },
+    {
+      "p1": "move Revival Blessing",
+      "p2": "move Relic Song"
+    },
+    {
+      "p1": "switch Ditto"
+    },
+    {
+      "p1": "switch Ditto",
+      "p2": "switch Dragapult"
+    },
+    {
+      "p1": "move Hypnosis",
+      "p2": "move Sweet Kiss"
+    },
+    {
+      "p1": "move Dark Void",
+      "p2": "move Flatter"
+    },
+    {
+      "p1": "move Relic Song",
+      "p2": "move Relic Song"
+    },
+    {
+      "p1": "switch Victreebel"
+    },
+    {
+      "p1": "move Howl",
+      "p2": "move Sweet Kiss"
+    },
+    {
+      "p1": "switch Mightyena",
+      "p2": "switch Sandy Shocks"
+    },
+    {
+      "p1": "move Sleep Powder",
+      "p2": "move Thunder Wave"
+    },
+    {
+      "p1": "move Relic Song",
+      "p2": "move Relic Song"
+    },
+    {
+      "p1": "move Sing",
+      "p2": "move Swagger"
+    },
+    {
+      "p1": "move Sleep Powder",
+      "p2": "move Thunder Wave"
+    },
+    {
+      "p1": "switch Victreebel",
+      "p2": "switch Dragapult"
+    },
+    {
+      "p1": "move Relic Song",
+      "p2": "move Relic Song"
+    },
+    {
+      "p1": "move Howl",
+      "p2": "move Sweet Kiss"
+    },
+    {
+      "p1": "move Life Dew",
+      "p2": "move Flatter"
+    },
+    {
+      "p1": "move Relic Song",
+      "p2": "move Relic Song"
+    },
+    {
+      "p1": "switch Mightyena"
+    },
+    {
+      "p1": "switch Kingambit",
+      "p2": "switch Sandy Shocks"
+    },
+    {
+      "p1": "move Circle Throw",
+      "p2": "move Swagger"
+    },
+    {
+      "p1": "move Roar",
+      "p2": "move Flame Wheel"
+    }
+  ]
+}
