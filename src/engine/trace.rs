@@ -1151,7 +1151,7 @@ impl TraceEvent {
                 | Self::MoveFailed {
                     reason: MoveFailReason::NoPp
                         | MoveFailReason::Ability { .. }
-                        | MoveFailReason::BeforeMove(BeforeMoveBlockReason::LostFocus),
+                        | MoveFailReason::BeforeMove(_),
                     ..
                 }
                 | Self::MoveFailed {
@@ -1467,12 +1467,17 @@ impl TraceEvent {
                 ..
             } => [None, None],
             Self::MoveUsed { actor, .. } => one(Some(Disclosure::Acted(*actor))),
+            // `cant|p|nopp|move`: the move named, and an action (the client's `cantUseMove`
+            // clears the move-long volatiles: a recharge's, R-M11-207).
             Self::MovedWithoutPp { actor, move_id }
             | Self::MoveFailed {
                 actor,
                 move_id,
                 reason: MoveFailReason::NoPp,
-            } => one(Some(Disclosure::MoveShown(*actor, *move_id))),
+            } => [
+                Some(Disclosure::MoveShown(*actor, *move_id)),
+                Some(Disclosure::Acted(*actor)),
+            ],
             // A `cant` naming the action's move; any `cant` is an action (Sky Drop's carried
             // Pokémon and Commander's Tatsugiri stay silent, and a confused Pokémon hitting
             // itself shows `-activate|p|confusion`, no `cant`).
@@ -1516,6 +1521,24 @@ impl TraceEvent {
                     VolatileConditionKind::FocusPunch,
                 )),
             ],
+            // A BeforeMove that stopped a dance (a full `runMove`, no `BeforeMoveResolved`:
+            // `cant|dancer|recharge` …) is an action too, as the client's `cantUseMove` reads it:
+            // the move-long volatiles go (a recharge's, R-M11-207). The same exceptions as an own
+            // action's: no `cant` line.
+            Self::MoveFailed {
+                actor,
+                reason: MoveFailReason::BeforeMove(reason),
+                ..
+            } if !matches!(
+                reason,
+                BeforeMoveBlockReason::SkyDropped
+                    | BeforeMoveBlockReason::Commanding
+                    | BeforeMoveBlockReason::Confusion
+                    | BeforeMoveBlockReason::WakingTurn
+            ) =>
+            {
+                one(Some(Disclosure::Acted(*actor)))
+            }
             // Shell Trap not sprung (`onTryMove`: `cant|p|Shell Trap|Shell Trap`): the trap is
             // seen gone the same way, though it too lasts the turn.
             Self::MoveFailed {

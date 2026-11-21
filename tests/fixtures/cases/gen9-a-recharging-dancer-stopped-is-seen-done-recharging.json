@@ -1,0 +1,135 @@
+{
+  "schema": 1,
+  "id": "gen9-a-recharging-dancer-stopped-is-seen-done-recharging",
+  "notes": [
+    "Gen 9: Iron Thorns (Dancer) must recharge after Blast Burn when Salamence's Clangorous Soul sets off its dance; the recharge stops the dance (cant|recharge) and its own turn shows cant|nopp|recharge: both lines are actions the foe sees, so the recharge is gone from the foe's view (DESIGN.md R-M11-207)",
+    "promoted from m8-gen9-singles-s110301-000-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Thwackey",
+        "species": "Thwackey",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Drain Punch",
+          "Clangorous Soul"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Porygon",
+        "species": "Porygon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Clangorous Soul"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Iron Thorns",
+        "species": "Iron Thorns",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Blast Burn"
+        ],
+        "ability": "Dancer"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Drifblim",
+        "species": "Drifblim",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Hyper Beam"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Scrafty",
+        "species": "Scrafty",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Ivy Cudgel"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Salamence",
+        "species": "Salamence",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Psycho Cut",
+          "Clangorous Soul"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      39991,
+      31846,
+      53409,
+      57676
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Drain Punch",
+      "p2": "move Hyper Beam"
+    },
+    {
+      "p1": "move 2",
+      "p2": "move 1"
+    },
+    {
+      "p1": "switch Porygon",
+      "p2": "switch Scrafty"
+    },
+    {
+      "p1": "switch Thwackey",
+      "p2": "switch Drifblim"
+    },
+    {
+      "p1": "move Drain Punch",
+      "p2": "move Hyper Beam"
+    },
+    {
+      "p1": "switch Porygon"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "switch Iron Thorns",
+      "p2": "switch Salamence"
+    },
+    {
+      "p1": "move Blast Burn",
+      "p2": "move Psycho Cut"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 2"
+    }
+  ]
+}
