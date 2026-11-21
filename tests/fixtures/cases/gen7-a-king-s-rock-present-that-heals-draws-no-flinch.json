@@ -1,0 +1,382 @@
+{
+  "schema": 1,
+  "id": "gen7-a-king-s-rock-present-that-heals-draws-no-flinch",
+  "notes": [
+    "Gen 7: Seismitoad's King's Rock Present heals Ditto; the item's flinch asks for damage, which a heal does not inflict, so no flinch is drawn and Ditto goes on to use Belly Drum (oracle patch I235; DESIGN.md R-M11-203)",
+    "promoted from m8-gen7-singles-s2293-011-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 7,
+    "mode": "singles",
+    "format": "gen7customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Metagross",
+        "species": "Metagross",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Devastating Drake",
+          "Assist",
+          "Shattered Psyche",
+          "Belly Drum"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Jynx",
+        "species": "Jynx",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Tectonic Rage",
+          "Corkscrew Crash",
+          "Belly Drum"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Mienfoo",
+        "species": "Mienfoo",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Leafage",
+          "Assist",
+          "Egg Bomb",
+          "Belly Drum"
+        ],
+        "ability": "Slow Start",
+        "gender": "F"
+      },
+      {
+        "label": "Squirtle",
+        "species": "Squirtle",
+        "level": 46,
+        "nature": "Hardy",
+        "moves": [
+          "Pay Day",
+          "Seed Bomb",
+          "Belly Drum"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Larvitar",
+        "species": "Larvitar",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Fling",
+          "Assist",
+          "Rock Throw",
+          "Belly Drum"
+        ],
+        "ability": "Run Away",
+        "item": "Quick Powder",
+        "gender": "M"
+      },
+      {
+        "label": "Seismitoad",
+        "species": "Seismitoad",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Natural Gift",
+          "Assist",
+          "Present",
+          "Belly Drum"
+        ],
+        "ability": "Run Away",
+        "item": "King's Rock",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Wailmer",
+        "species": "Wailmer",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Magnet Bomb",
+          "Assist",
+          "Floral Healing",
+          "Belly Drum"
+        ],
+        "ability": "Run Away",
+        "item": "Black Sludge",
+        "gender": "F"
+      },
+      {
+        "label": "Ursaring",
+        "species": "Ursaring",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Heal Pulse",
+          "Assist",
+          "Tri Attack",
+          "Belly Drum"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Aromatisse",
+        "species": "Aromatisse",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Roost",
+          "Ally Switch",
+          "Belly Drum"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Shellder",
+        "species": "Shellder",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Whirlwind",
+          "Assist",
+          "Roar",
+          "Belly Drum"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Combusken",
+        "species": "Combusken",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Circle Throw",
+          "Assist",
+          "Dragon Tail",
+          "Belly Drum"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Ditto",
+        "species": "Ditto",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Fusion Flare",
+          "Assist",
+          "Sacred Fire",
+          "Belly Drum"
+        ],
+        "ability": "Hustle"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      45225,
+      11921,
+      43495,
+      28365
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Devastating Drake",
+      "p2": "move Magnet Bomb"
+    },
+    {
+      "p1": "move Shattered Psyche",
+      "p2": "move Assist"
+    },
+    {
+      "p1": "move Assist",
+      "p2": "move Floral Healing"
+    },
+    {
+      "p2": "switch Ursaring"
+    },
+    {
+      "p1": "move Assist",
+      "p2": "move Heal Pulse"
+    },
+    {
+      "p1": "move Belly Drum",
+      "p2": "move Assist"
+    },
+    {
+      "p1": "move Assist",
+      "p2": "move Tri Attack"
+    },
+    {
+      "p2": "switch Aromatisse"
+    },
+    {
+      "p1": "switch Jynx",
+      "p2": "switch Shellder"
+    },
+    {
+      "p1": "move Belly Drum",
+      "p2": "move Belly Drum"
+    },
+    {
+      "p1": "move Tectonic Rage",
+      "p2": "move Whirlwind"
+    },
+    {
+      "p1": "move Assist",
+      "p2": "move Assist"
+    },
+    {
+      "p1": "move Egg Bomb",
+      "p2": "move Roar"
+    },
+    {
+      "p1": "move Natural Gift",
+      "p2": "move Whirlwind"
+    },
+    {
+      "p1": "move Assist",
+      "p2": "move Assist"
+    },
+    {
+      "p1": "switch Metagross",
+      "p2": "switch Aromatisse"
+    },
+    {
+      "p1": "move Assist",
+      "p2": "move Ally Switch"
+    },
+    {
+      "p1": "move Belly Drum",
+      "p2": "move Belly Drum"
+    },
+    {
+      "p1": "move Assist",
+      "p2": "move Roost"
+    },
+    {
+      "p2": "switch Shellder"
+    },
+    {
+      "p1": "move Belly Drum",
+      "p2": "move Assist"
+    },
+    {
+      "p1": "move Assist",
+      "p2": "move Roar"
+    },
+    {
+      "p1": "switch Larvitar",
+      "p2": "switch Ditto"
+    },
+    {
+      "p1": "move Assist",
+      "p2": "move Assist"
+    },
+    {
+      "p1": "move Rock Throw",
+      "p2": "move Sacred Fire"
+    },
+    {
+      "p1": "move Belly Drum",
+      "p2": "move Belly Drum"
+    },
+    {
+      "p1": "move Fling",
+      "p2": "move Fusion Flare"
+    },
+    {
+      "p1": "move Assist",
+      "p2": "move Assist"
+    },
+    {
+      "p1": "move Rock Throw",
+      "p2": "move Sacred Fire"
+    },
+    {
+      "p1": "switch Mienfoo"
+    },
+    {
+      "p1": "move Belly Drum",
+      "p2": "move Belly Drum"
+    },
+    {
+      "p1": "switch Jynx",
+      "p2": "switch Combusken"
+    },
+    {
+      "p1": "move Corkscrew Crash",
+      "p2": "move Circle Throw"
+    },
+    {
+      "p1": "switch Mienfoo"
+    },
+    {
+      "p1": "move Assist",
+      "p2": "move Assist"
+    },
+    {
+      "p1": "move Egg Bomb",
+      "p2": "move Dragon Tail"
+    },
+    {
+      "p1": "switch Squirtle"
+    },
+    {
+      "p1": "move Belly Drum",
+      "p2": "move Belly Drum"
+    },
+    {
+      "p1": "move Pay Day",
+      "p2": "move Circle Throw"
+    },
+    {
+      "p1": "switch Seismitoad"
+    },
+    {
+      "p1": "move Assist",
+      "p2": "move Assist"
+    },
+    {
+      "p2": "switch Ditto"
+    },
+    {
+      "p1": "move Present",
+      "p2": "move Sacred Fire"
+    },
+    {
+      "p1": "switch Metagross",
+      "p2": "move Belly Drum"
+    },
+    {
+      "p1": "move Belly Drum",
+      "p2": "move Fusion Flare"
+    },
+    {
+      "p1": "move Assist",
+      "p2": "move Assist"
+    },
+    {
+      "p1": "move Belly Drum",
+      "p2": "move Sacred Fire"
+    },
+    {
+      "p1": "switch Seismitoad"
+    },
+    {
+      "p1": "move Present",
+      "p2": "move Belly Drum"
+    }
+  ]
+}

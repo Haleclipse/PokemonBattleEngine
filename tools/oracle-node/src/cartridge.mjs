@@ -4583,3 +4583,26 @@ if (patched) {
     };
   }
 }
+
+// I235 — Gen 5+ King's Rock and Razor Fang leave a hit that heals instead alone. Showdown's `onModifyMove` gives
+// every move that is not a status move a 10 % flinch, and the hit's secondaries roll it: a Present that heals (the
+// move stays physical; its own `onModifyMove`, first, sets `move.heal`) and a Pollen Puff on an ally included. The
+// games' item text asks for damage (Bulbapedia, King's Rock: Black and White "When the holder inflicts damage, the
+// target may flinch."), which a heal does not inflict, and the engine draws no flinch there (R-M11-203); Razor Fang
+// shares the handler. The patch has the items leave those two alone: one draw fewer (TESTING.md §7).
+if (patched) {
+  const seen = new Set();
+  for (const mod of ['gen5', 'gen6', 'gen7', 'gen8', 'gen9']) {
+    for (const id of ['kingsrock', 'razorfang']) {
+      const item = Dex.mod(mod).data.Items[id];
+      if (!item?.onModifyMove || seen.has(item)) continue;
+      seen.add(item);
+      const onModifyMove = item.onModifyMove;
+      item.onModifyMove = function (move, pokemon, target, ...rest) {
+        if ((move.id === 'present' && move.heal) ||
+          (move.id === 'pollenpuff' && target && pokemon.isAlly(target))) return;
+        return onModifyMove.call(this, move, pokemon, target, ...rest);
+      };
+    }
+  }
+}
