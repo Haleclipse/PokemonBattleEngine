@@ -1,0 +1,188 @@
+{
+  "schema": 1,
+  "id": "gen6-a-red-card-drags-out-a-lock-whose-confusion-wore-off",
+  "notes": [
+    "Gen 6: Donphan's confusion wears off as its locked Outrage begins; Spewpa's Red Card drags it out after AfterMove showed no fatigue, so the lock drew 3 turns, not 2 (DESIGN.md R-M11-209)",
+    "promoted from m8-gen6-singles-s2319-006-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 6,
+    "mode": "singles",
+    "format": "gen6customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Dewgong",
+        "species": "Dewgong",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Revenge",
+          "Telekinesis",
+          "Parabolic Charge"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Breloom",
+        "species": "Breloom",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Mega Drain",
+          "Telekinesis",
+          "Teleport"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Tyrunt",
+        "species": "Tyrunt",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Absorb",
+          "Telekinesis"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Scraggy",
+        "species": "Scraggy",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Leech Life",
+          "Teleport"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Spewpa",
+        "species": "Spewpa",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Dream Eater"
+        ],
+        "ability": "Run Away",
+        "item": "Red Card",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Donphan",
+        "species": "Donphan",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Thrash",
+          "Outrage",
+          "Teleport"
+        ],
+        "ability": "Run Away",
+        "item": "King's Rock",
+        "gender": "M"
+      },
+      {
+        "label": "Mienfoo",
+        "species": "Mienfoo",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Uproar"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Hariyama",
+        "species": "Hariyama",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Blaze Kick"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      33736,
+      2645,
+      22651,
+      31385
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Revenge",
+      "p2": "move Thrash"
+    },
+    {
+      "p1": "move Telekinesis",
+      "p2": "move Thrash"
+    },
+    {
+      "p1": "move Parabolic Charge",
+      "p2": "move Thrash"
+    },
+    {
+      "p1": "switch Breloom"
+    },
+    {
+      "p1": "move Teleport",
+      "p2": "move Teleport"
+    },
+    {
+      "p1": "move Mega Drain",
+      "p2": "move Thrash"
+    },
+    {
+      "p1": "move Telekinesis",
+      "p2": "move Thrash"
+    },
+    {
+      "p1": "switch Tyrunt"
+    },
+    {
+      "p1": "switch Scraggy",
+      "p2": "move Thrash"
+    },
+    {
+      "p1": "move Leech Life",
+      "p2": "move Teleport"
+    },
+    {
+      "p1": "move Teleport",
+      "p2": "move Thrash"
+    },
+    {
+      "p1": "switch Tyrunt"
+    },
+    {
+      "p1": "move Absorb",
+      "p2": "move Thrash"
+    },
+    {
+      "p1": "move Telekinesis",
+      "p2": "move Outrage"
+    },
+    {
+      "p1": "switch Spewpa"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    }
+  ]
+}

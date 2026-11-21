@@ -2775,6 +2775,28 @@ pub(super) fn binding_lock_hint(oracle_frame: &Value, user: &Who) -> u16 {
     }
 }
 
+/// Whether `who`'s confusion wore off in `frame`'s events before its own move line (Showdown's
+/// `confusion.onBeforeMove`: `-end|p|confusion` as its action begins).
+fn confusion_wore_off(frame: &Value, who: &Who) -> bool {
+    for event in frame["events"].as_array().into_iter().flatten() {
+        if event["kind"] == "move"
+            && serde_json::from_value::<Who>(event["user"].clone())
+                .ok()
+                .as_ref()
+                == Some(who)
+        {
+            return false;
+        }
+        if event["kind"] == "end"
+            && event["args"][1] == "confusion"
+            && who_from_text(&event["args"][0]).as_ref() == Some(who)
+        {
+            return true;
+        }
+    }
+    false
+}
+
 /// The `volatiles` of `who` in a boundary frame.
 pub(super) fn frame_volatiles<'a>(frame: &'a Value, who: &Who) -> Option<&'a Value> {
     frame_pokemon(frame, who).map(|pokemon| &pokemon["volatiles"])
@@ -2922,10 +2944,14 @@ pub(super) fn rampage_length_hint(
                     }) || (member.is_none()
                         && in_slot(*frame) != in_slot(frames[index - 1]));
                     if gone {
+                        // (A confusion that wore off as the action began, `-end|user|confusion`
+                        // before its move line, no longer stood at AfterMove: a 2 would have
+                        // shown its fatigue, R-M11-209.)
                         let confused_before = frames[index - 1].is_some_and(|frame| {
                             user_in(frame, who, member)
                                 .is_some_and(|p| p["volatiles"].get("confusion").is_some())
-                        });
+                        }) && !frame
+                            .is_some_and(|frame| confusion_wore_off(frame, &user));
                         return if confused_before { 2 } else { 3 };
                     }
                     let landed = action.damages.iter().any(|(target, _)| *target != user)
