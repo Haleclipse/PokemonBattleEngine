@@ -183,16 +183,18 @@ pub fn powder_holds(
     if crate::engine::types_of(state, rules, p).contains(crate::dex::PokemonType::Grass) {
         return None;
     }
-    if let Some((item, behavior)) = held_item(state, rules, pokemon)
-        && behavior.weather_and_powder_immune
-    {
-        return Some(EffectSource::Item { pokemon, item });
-    }
+    // Overcoat (`onTryHitPriority` 1) before Safety Goggles (default priority): a holder of both
+    // shows its ability (R-M11-210).
     if ability_handler(state, rules, p, |b| b.weather_and_powder_immune) {
         return Some(EffectSource::Ability {
             pokemon,
             ability: crate::engine::raw_ability(p),
         });
+    }
+    if let Some((item, behavior)) = held_item(state, rules, pokemon)
+        && behavior.weather_and_powder_immune
+    {
+        return Some(EffectSource::Item { pokemon, item });
     }
     None
 }
