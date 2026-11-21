@@ -227,16 +227,29 @@ pub(crate) fn holders_try_hit(
     target: crate::ids::PokemonId,
     move_def: &crate::dex::ResolvedMove,
 ) -> Option<HitBlockReason> {
-    let pokemon = state.pokemon(target)?;
-    let mut ctx = TryHitContext::new(state, rules, user, target, move_def);
-    if let TryHitResult::Blocked(reason) =
-        crate::effects::abilities::try_hit(ability_handlers(state, rules, pokemon), &mut ctx)
-    {
+    if let Some(reason) = ability_try_hit(state, rules, user, target, move_def) {
         return Some(reason);
     }
     let (_, item) = held_item(state, rules, target)?;
     let mut ctx = TryHitContext::new(state, rules, user, target, move_def);
     match crate::effects::items::try_hit(item, &mut ctx) {
+        TryHitResult::Blocked(reason) => Some(reason),
+        _ => None,
+    }
+}
+
+/// The TryHit event of the target's ability alone (`holders_try_hit`'s first half): Showdown
+/// sorts an ability's handler before an item's of the same priority.
+pub(crate) fn ability_try_hit(
+    state: &crate::state::BattleState,
+    rules: &crate::rules::ResolvedRules,
+    user: crate::ids::PokemonId,
+    target: crate::ids::PokemonId,
+    move_def: &crate::dex::ResolvedMove,
+) -> Option<HitBlockReason> {
+    let pokemon = state.pokemon(target)?;
+    let mut ctx = TryHitContext::new(state, rules, user, target, move_def);
+    match crate::effects::abilities::try_hit(ability_handlers(state, rules, pokemon), &mut ctx) {
         TryHitResult::Blocked(reason) => Some(reason),
         _ => None,
     }

@@ -1008,21 +1008,25 @@ impl<'a> MovePipeline<'a> {
             return Some(HitBlockReason::Ability(ability));
         }
 
-        // Overcoat and Safety Goggles (`onTryHit`): no accuracy check follows. The Grass
-        // type's powder immunity is the TryImmunity step's, after the abilities
-        // (`powder_immunity_step`).
-        if move_def.flags.powder
-            && target != actor
-            && let Some(by) = crate::engine::powder_holds(self.state, self.rules, target)
-        {
-            return Some(match by {
-                EffectSource::Ability { ability, .. } => HitBlockReason::Ability(ability),
-                EffectSource::Item { item, .. } => HitBlockReason::Item(item),
-                _ => HitBlockReason::Powder,
-            });
+        // Overcoat and Safety Goggles (`onTryHit`): no accuracy check follows. Overcoat
+        // (`onTryHitPriority` 1) comes before the holder's other handlers; Safety Goggles, an item
+        // at the default priority, after every ability's (a Sap Sipper holder takes a Stun Spore
+        // in first, R-M11-204). The Grass type's powder immunity is the TryImmunity step's, after
+        // the abilities (`powder_immunity_step`).
+        let powder = if move_def.flags.powder && target != actor {
+            crate::engine::powder_holds(self.state, self.rules, target)
+        } else {
+            None
+        };
+        match powder {
+            Some(EffectSource::Ability { ability, .. }) => Some(HitBlockReason::Ability(ability)),
+            Some(EffectSource::Item { item, .. }) => Some(
+                crate::engine::ability_try_hit(self.state, self.rules, actor, target, move_def)
+                    .unwrap_or(HitBlockReason::Item(item)),
+            ),
+            Some(_) => Some(HitBlockReason::Powder),
+            None => crate::engine::holders_try_hit(self.state, self.rules, actor, target, move_def),
         }
-
-        crate::engine::holders_try_hit(self.state, self.rules, actor, target, move_def)
     }
 
     pub(super) fn type_effectiveness(
