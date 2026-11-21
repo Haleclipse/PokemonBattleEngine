@@ -1,0 +1,132 @@
+{
+  "schema": 1,
+  "id": "gen7-doubles-a-competitive-rise-leaves-a-special-attack-at-minus-six-capped",
+  "notes": [
+    "Gen 7 doubles: Eevee's Noble Roar lowers Jynx's Attack and Special Attack, its Special Attack at -6; the move's stat changes are capped from the stages they began with, so after Competitive's rise from the Attack drop the Special Attack drop changes nothing and Competitive does not rise again (DESIGN.md R-M11-208)",
+    "promoted from m8-gen7-doubles-s2303-003-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 7,
+    "mode": "doubles",
+    "format": "gen7doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Salazzle",
+        "species": "Salazzle",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Harden",
+          "Grudge",
+          "Topsy-Turvy"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Jynx",
+        "species": "Jynx",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Flash",
+          "Howl",
+          "Topsy-Turvy"
+        ],
+        "ability": "Competitive"
+      },
+      {
+        "label": "Dunsparce",
+        "species": "Dunsparce",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Play Nice",
+          "Topsy-Turvy"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Bellossom",
+        "species": "Bellossom",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Feather Dance",
+          "Grudge",
+          "Topsy-Turvy"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Eevee",
+        "species": "Eevee",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Acid Armor",
+          "Noble Roar",
+          "Topsy-Turvy"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Murkrow",
+        "species": "Murkrow",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Double Team",
+          "Topsy-Turvy"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      28254,
+      6580,
+      1206,
+      46707
+    ]
+  },
+  "script": [
+    {
+      "p1": "switch Dunsparce, move Howl",
+      "p2": "switch Murkrow, move Noble Roar 1"
+    },
+    {
+      "p1": "move Play Nice 2, move Howl",
+      "p2": "move Double Team, move Noble Roar 2"
+    },
+    {
+      "p1": "move Topsy-Turvy 2, move Howl",
+      "p2": "move Topsy-Turvy 2, move Noble Roar 1"
+    },
+    {
+      "p1": "switch Salazzle, move Topsy-Turvy 1",
+      "p2": "switch Bellossom, move Topsy-Turvy 2"
+    },
+    {
+      "p1": "move Grudge, move Howl",
+      "p2": "move Grudge, move Noble Roar 2"
+    },
+    {
+      "p1": "move Topsy-Turvy 2, move Flash 1",
+      "p2": "move Topsy-Turvy 2, move Acid Armor"
+    },
+    {
+      "p1": "move Harden, move Howl",
+      "p2": "move Feather Dance 1, move Noble Roar 2"
+    }
+  ]
+}

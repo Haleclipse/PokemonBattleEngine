@@ -69,6 +69,36 @@ impl<'a> BattleContext<'a> {
     /// Request → Resolve → Commit for a stat stage change, in Showdown's `boost()` order:
     /// ChangeBoost (Contrary / Simple rewrite the stages) → cap to ±6 → TryBoost (Clear Body
     /// refuses, Mirror Armor sends the drop back) → commit.
+    /// Several stat changes of one effect at once (Showdown's single `boost()` call: Noble Roar's
+    /// Attack and Special Attack): each capped to ±6 from the stages the call began with
+    /// (`getCappedBoost` before the loop), whatever a reaction to an earlier one did meanwhile —
+    /// a Competitive holder's Special Attack at −6 stays put after its rise (R-M11-208). Whether
+    /// any of them moved.
+    pub fn try_change_stat_stages(
+        &mut self,
+        target: PokemonId,
+        source: EffectSource,
+        cause: crate::engine::StatChangeCause,
+        changes: impl IntoIterator<Item = (Stat, i8)>,
+    ) -> bool {
+        let start = self.state.pokemon(target).map(|pokemon| pokemon.stages);
+        let outer = self.boost_batch.take();
+        self.boost_batch = start.map(|start| (target, source, start));
+        let mut changed = false;
+        for (stat, stages) in changes {
+            let result = self.try_change_stat_stage(StatChangeRequest {
+                target,
+                stat,
+                stages,
+                source,
+                cause,
+            });
+            changed |= matches!(result, StatChangeResult::Applied { .. });
+        }
+        self.boost_batch = outer;
+        changed
+    }
+
     pub fn try_change_stat_stage(&mut self, request: StatChangeRequest) -> StatChangeResult {
         let result = self.change_stat_stage_resolved(request);
         // Showdown `runEvent('AfterBoost')` of the holder's item, after its ability's (which
@@ -145,7 +175,16 @@ impl<'a> BattleContext<'a> {
             }
         }
 
-        // Cap: what can still move within ±6.
+        // Cap: what can still move within ±6 — from the stages a batch began with, for one of
+        // its own changes (`try_change_stat_stages`), and then from where the stage is now
+        // (Showdown's `boostBy`).
+        if let Some((_, _, start)) = self
+            .boost_batch
+            .filter(|(target, source, _)| *target == request.target && *source == request.source)
+        {
+            let begun = start.get(request.stat);
+            request.stages = (begun + request.stages).clamp(-6, 6) - begun;
+        }
         let to = (from + request.stages).clamp(-6, 6);
         if from == to {
             return StatChangeResult::Blocked(StatChangeBlockReason::NoChange);

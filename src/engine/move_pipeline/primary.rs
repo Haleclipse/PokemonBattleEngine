@@ -96,32 +96,24 @@ impl<'a> MovePipeline<'a> {
                 } else {
                     1
                 };
-                let changed = stages.iter().fold(false, |any, (stat, delta)| {
-                    let result = ctx.try_change_stat_stage(crate::engine::StatChangeRequest {
-                        target,
-                        stat: *stat,
-                        stages: *delta * factor,
-                        source,
-                        cause: crate::engine::StatChangeCause::Move,
-                    });
-                    matches!(result, crate::engine::StatChangeResult::Applied { .. }) || any
-                });
+                let changed = ctx.try_change_stat_stages(
+                    target,
+                    source,
+                    crate::engine::StatChangeCause::Move,
+                    stages.iter().map(|(stat, delta)| (*stat, *delta * factor)),
+                );
                 if changed {
                     self.cut_foe_status_stats_again(actor);
                 }
                 changed
             }
             StatusMoveEffect::StagesThen(stages, follow_up) => {
-                let changed = stages.iter().fold(false, |any, (stat, delta)| {
-                    let result = ctx.try_change_stat_stage(crate::engine::StatChangeRequest {
-                        target,
-                        stat: *stat,
-                        stages: *delta,
-                        source,
-                        cause: crate::engine::StatChangeCause::Move,
-                    });
-                    matches!(result, crate::engine::StatChangeResult::Applied { .. }) || any
-                });
+                let changed = ctx.try_change_stat_stages(
+                    target,
+                    source,
+                    crate::engine::StatChangeCause::Move,
+                    stages.iter().copied(),
+                );
                 let followed = match follow_up {
                     // Gen 1: stages that changed nothing fail the move before what follows them
                     // (`StatRules::failed_stages_end_the_move`, R-M11-106).

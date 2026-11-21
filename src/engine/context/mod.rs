@@ -301,6 +301,9 @@ pub struct BattleContext<'a> {
     /// The dex, where the caller has it (a custom primary): what a move does to the Pokémon
     /// using it (a semi-invulnerable charge).
     dex: Option<&'a crate::dex::ResolvedDex>,
+    /// A move's stat changes under way as one `boost()` (`try_change_stat_stages`): its target,
+    /// its source and the stages it began with, which cap each of its changes (R-M11-208).
+    boost_batch: Option<(PokemonId, EffectSource, crate::state::StatStages)>,
 }
 
 impl<'a> BattleContext<'a> {
@@ -326,6 +329,7 @@ impl<'a> BattleContext<'a> {
             rules,
             trace,
             dex: None,
+            boost_batch: None,
         }
     }
 
