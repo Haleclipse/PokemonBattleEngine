@@ -2376,6 +2376,28 @@ pub(super) fn drive_to_boundary(
                     break;
                 }
             }
+        } else if !deferred.is_empty() {
+            // On a Substitute a later action of the boundary strikes, the doll's HP is all that
+            // shows the power: the other bands that fit are alternatives too, for the backtrack
+            // below to take (R-M11-216).
+            for variant in present_bands(&template, move_def.as_ref()) {
+                let other = search_rolls(
+                    compiled,
+                    &before,
+                    trace_len,
+                    &variant,
+                    &expected,
+                    &hits,
+                    &substitutes,
+                    &deferred,
+                    &holds,
+                    &mut None,
+                );
+                if let Some((_, _, tape)) = other.chosen {
+                    search.alternatives.push(tape);
+                    search.alternatives.extend(other.alternatives);
+                }
+            }
         }
         // Nothing fits: an earlier action of the boundary may have left a Substitute this one
         // strikes with the wrong HP. Retry it with its other HP values (latest first),
