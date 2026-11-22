@@ -731,19 +731,27 @@ impl<'a> MovePipeline<'a> {
         boosts
     }
 
-    /// Quark Drive's or Protosynthesis's volatile raising `pokemon`'s `stat` in this damage
-    /// calculation (×5325 / 4096 at `priority`: 5 for Attack / Special Attack, 6 for the
-    /// defenses) — not while `pokemon`'s ability is ignored (its handlers ask `ignoringAbility()`:
-    /// Neutralizing Gas leaves the volatile in place).
-    /// Whether `actor`'s Flash Fire boost applies to `move_def` (a Fire move).
+    /// Whether `actor`'s Flash Fire boost applies to `move_def` (a Fire move): its volatile — from
+    /// Gen 5 while the ability still runs (the base condition's `attacker.hasAbility('flashfire')`:
+    /// Neutralizing Gas leaves the volatile in place but turns the boost off, R-M11-211; the gen4
+    /// mod's `onModifyDamagePhase1` asks nothing more).
     pub(super) fn flash_fire_boosts(&self, actor: PokemonId, move_def: &ResolvedMove) -> bool {
+        let needs_ability =
+            self.rules.conditions.flash_fire.boost == crate::rules::FlashFireBoost::OffensiveStat;
         move_def.move_type == crate::dex::PokemonType::Fire
             && self.state.pokemon(actor).is_some_and(|p| {
                 p.volatiles
                     .contains(crate::state::VolatileConditionKind::FlashFire)
+                    && (!needs_ability
+                        || crate::engine::ability_active(self.state, self.rules, p)
+                            == Some(crate::ids::AbilityId::FLASH_FIRE))
             })
     }
 
+    /// Quark Drive's or Protosynthesis's volatile raising `pokemon`'s `stat` in this damage
+    /// calculation (×5325 / 4096 at `priority`: 5 for Attack / Special Attack, 6 for the
+    /// defenses) — not while `pokemon`'s ability is ignored (its handlers ask `ignoringAbility()`:
+    /// Neutralizing Gas leaves the volatile in place).
     fn paradox_boost(
         &self,
         pokemon: PokemonId,

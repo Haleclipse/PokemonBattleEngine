@@ -1,0 +1,511 @@
+{
+  "schema": 1,
+  "id": "gen9ubers-neutralizing-gas-turns-off-a-flash-fire-boost",
+  "notes": [
+    "Gen 9 Ubers: Typhlosion took a Fire move in with Flash Fire, then Weezing's Neutralizing Gas comes in; the flashfire volatile stays, but its boost asks attacker.hasAbility('flashfire'), so Typhlosion's Lava Plume is not raised (DESIGN.md R-M11-211)",
+    "promoted from m9-gen9ubers-s891-017-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9ubers"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Weezing",
+        "species": "Weezing",
+        "ability": "Neutralizing Gas",
+        "moves": [
+          "Sludge"
+        ],
+        "nature": "Brave",
+        "gender": "M",
+        "shiny": false,
+        "level": 100,
+        "evs": {
+          "hp": 80,
+          "atk": 32,
+          "def": 128,
+          "spa": 12,
+          "spd": 184,
+          "spe": 72
+        },
+        "ivs": {
+          "hp": 16,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        }
+      },
+      {
+        "label": "Persian",
+        "species": "Persian-Alola",
+        "ability": "Technician",
+        "moves": [
+          "Rest",
+          "Scratch",
+          "Charm",
+          "Tera Blast"
+        ],
+        "nature": "Bashful",
+        "gender": "M",
+        "shiny": false,
+        "level": 100,
+        "evs": {
+          "hp": 0,
+          "atk": 216,
+          "def": 40,
+          "spa": 228,
+          "spd": 24,
+          "spe": 0
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 8,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        },
+        "teraType": "Poison"
+      },
+      {
+        "label": "Vivillon",
+        "species": "Vivillon-Garden",
+        "ability": "Compound Eyes",
+        "moves": [
+          "Toxic",
+          "Confuse Ray",
+          "Rain Dance",
+          "Poison Powder"
+        ],
+        "nature": "Jolly",
+        "gender": "M",
+        "shiny": false,
+        "level": 67,
+        "evs": {
+          "hp": 32,
+          "atk": 176,
+          "def": 64,
+          "spa": 0,
+          "spd": 0,
+          "spe": 236
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        },
+        "teraType": "Grass"
+      },
+      {
+        "label": "Lokix",
+        "species": "Lokix",
+        "ability": "Tinted Lens",
+        "moves": [
+          "Protect"
+        ],
+        "nature": "Rash",
+        "gender": "F",
+        "shiny": false,
+        "level": 100,
+        "evs": {
+          "hp": 0,
+          "atk": 160,
+          "def": 212,
+          "spa": 100,
+          "spd": 36,
+          "spe": 0
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        },
+        "happiness": 163
+      },
+      {
+        "label": "Flareon",
+        "species": "Flareon",
+        "ability": "Flash Fire",
+        "moves": [
+          "Heal Bell",
+          "Fire Fang",
+          "Flare Blitz",
+          "Endeavor"
+        ],
+        "nature": "Bashful",
+        "gender": "M",
+        "shiny": true,
+        "level": 94,
+        "evs": {
+          "hp": 24,
+          "atk": 0,
+          "def": 52,
+          "spa": 48,
+          "spd": 252,
+          "spe": 132
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 30,
+          "spd": 31,
+          "spe": 31
+        },
+        "teraType": "Electric"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Nick45",
+        "species": "Sandshrew",
+        "ability": "Sand Veil",
+        "moves": [
+          "Night Slash"
+        ],
+        "nature": "Modest",
+        "gender": "M",
+        "shiny": false,
+        "level": 100,
+        "evs": {
+          "hp": 116,
+          "atk": 12,
+          "def": 236,
+          "spa": 120,
+          "spd": 0,
+          "spe": 24
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        },
+        "teraType": "Poison",
+        "hpType": "Ground"
+      },
+      {
+        "label": "Milcery",
+        "species": "Milcery",
+        "ability": "Aroma Veil",
+        "moves": [
+          "Baby-Doll Eyes"
+        ],
+        "nature": "Serious",
+        "gender": "",
+        "shiny": false,
+        "level": 63,
+        "evs": {
+          "hp": 96,
+          "atk": 68,
+          "def": 148,
+          "spa": 0,
+          "spd": 0,
+          "spe": 196
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        },
+        "teraType": "Bug"
+      },
+      {
+        "label": "Typhlosion",
+        "species": "Typhlosion",
+        "ability": "Flash Fire",
+        "moves": [
+          "Mega Punch",
+          "Swagger",
+          "Lava Plume",
+          "Brick Break"
+        ],
+        "nature": "Modest",
+        "gender": "F",
+        "shiny": false,
+        "level": 100,
+        "evs": {
+          "hp": 252,
+          "atk": 0,
+          "def": 80,
+          "spa": 0,
+          "spd": 36,
+          "spe": 140
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        },
+        "happiness": 185,
+        "teraType": "Steel"
+      },
+      {
+        "label": "Piplup",
+        "species": "Piplup",
+        "ability": "Torrent",
+        "moves": [
+          "Liquidation",
+          "Chilling Water",
+          "Confide",
+          "Water Gun"
+        ],
+        "nature": "Careful",
+        "gender": "M",
+        "shiny": false,
+        "level": 22,
+        "evs": {
+          "hp": 108,
+          "atk": 124,
+          "def": 32,
+          "spa": 208,
+          "spd": 20,
+          "spe": 16
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 29
+        },
+        "teraType": "Psychic"
+      },
+      {
+        "label": "Beldum",
+        "species": "Beldum",
+        "ability": "Light Metal",
+        "moves": [
+          "Steel Beam",
+          "Tackle"
+        ],
+        "nature": "Jolly",
+        "gender": "",
+        "shiny": false,
+        "level": 42,
+        "evs": {
+          "hp": 120,
+          "atk": 96,
+          "def": 108,
+          "spa": 164,
+          "spd": 0,
+          "spe": 20
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 19,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        },
+        "teraType": "Ice"
+      },
+      {
+        "label": "Nick91",
+        "species": "Oricorio",
+        "ability": "Dancer",
+        "moves": [
+          "Calm Mind",
+          "Round",
+          "Acrobatics",
+          "Safeguard"
+        ],
+        "nature": "Calm",
+        "gender": "F",
+        "shiny": false,
+        "level": 62,
+        "evs": {
+          "hp": 88,
+          "atk": 64,
+          "def": 132,
+          "spa": 0,
+          "spd": 224,
+          "spe": 0
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        },
+        "teraType": "Steel"
+      }
+    ]
+  },
+  "preview": {
+    "p1": "team 325146",
+    "p2": "team 463512"
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      19835,
+      891,
+      1017,
+      31
+    ]
+  },
+  "script": [
+    {
+      "p1": "move 1 terastallize",
+      "p2": "move 1 terastallize"
+    },
+    {
+      "p1": "move Confuse Ray",
+      "p2": "move Chilling Water"
+    },
+    {
+      "p1": "move Rain Dance",
+      "p2": "move Confide"
+    },
+    {
+      "p1": "move Poison Powder",
+      "p2": "move Water Gun"
+    },
+    {
+      "p1": "move Toxic",
+      "p2": "move Liquidation"
+    },
+    {
+      "p2": "switch 2"
+    },
+    {
+      "p1": "move Confuse Ray",
+      "p2": "move Round"
+    },
+    {
+      "p1": "switch 2",
+      "p2": "switch 3"
+    },
+    {
+      "p1": "move Charm",
+      "p2": "move Lava Plume"
+    },
+    {
+      "p1": "move Tera Blast",
+      "p2": "move Brick Break"
+    },
+    {
+      "p1": "move Rest",
+      "p2": "move Mega Punch"
+    },
+    {
+      "p1": "move Scratch",
+      "p2": "move Swagger"
+    },
+    {
+      "p1": "move Charm",
+      "p2": "move Lava Plume"
+    },
+    {
+      "p1": "move Tera Blast",
+      "p2": "move Brick Break"
+    },
+    {
+      "p1": "switch 2",
+      "p2": "switch 3"
+    },
+    {
+      "p1": "move Toxic",
+      "p2": "move Calm Mind"
+    },
+    {
+      "p1": "move Confuse Ray",
+      "p2": "move Round"
+    },
+    {
+      "p1": "move Rain Dance",
+      "p2": "move Acrobatics"
+    },
+    {
+      "p1": "move Poison Powder",
+      "p2": "move Safeguard"
+    },
+    {
+      "p1": "move Toxic",
+      "p2": "move Calm Mind"
+    },
+    {
+      "p2": "switch 3"
+    },
+    {
+      "p1": "switch 2",
+      "p2": "switch 4"
+    },
+    {
+      "p1": "move Charm",
+      "p2": "move Steel Beam"
+    },
+    {
+      "p1": "move Tera Blast",
+      "p2": "move Tackle"
+    },
+    {
+      "p2": "switch 4"
+    },
+    {
+      "p1": "move Rest",
+      "p2": "move Mega Punch"
+    },
+    {
+      "p1": "switch 2"
+    },
+    {
+      "p1": "move Rain Dance",
+      "p2": "move Lava Plume"
+    },
+    {
+      "p1": "switch 3"
+    },
+    {
+      "p1": "move Endeavor",
+      "p2": "move Brick Break"
+    },
+    {
+      "p1": "move Flare Blitz",
+      "p2": "move Lava Plume"
+    },
+    {
+      "p1": "move Endeavor",
+      "p2": "move Brick Break"
+    },
+    {
+      "p1": "move Heal Bell",
+      "p2": "move Mega Punch"
+    },
+    {
+      "p1": "move Fire Fang",
+      "p2": "move Swagger"
+    },
+    {
+      "p1": "switch 4"
+    },
+    {
+      "p1": "move Sludge",
+      "p2": "move Lava Plume"
+    }
+  ]
+}
