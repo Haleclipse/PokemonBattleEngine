@@ -61,6 +61,10 @@ pub fn execute(
         return Err(ConditionApplyError::Immune);
     }
     ctx.set_sleep_turns(user, ctx.rules().conditions().rest_sleep_turns);
+    // A renewed sleep is the user's own from now on (Sleep Clause, R-M11-212).
+    if renewed {
+        ctx.mark_sleep_self_inflicted(user);
+    }
     ctx.apply_heal(HealRequest {
         target: user,
         amount: max_hp,

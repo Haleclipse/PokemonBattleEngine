@@ -33,4 +33,20 @@ impl<'a> BattleContext<'a> {
             status.sleep_turns_rolled = Some(turns);
         }
     }
+
+    /// The sleep is now `target`'s own doing (Showdown's gen2 `rest.onHit`: `statusState.source =
+    /// target`, over a sleep another put it in too): Sleep Clause no longer counts it
+    /// (R-M11-212).
+    pub fn mark_sleep_self_inflicted(&mut self, target: PokemonId) {
+        if let Some(pokemon) = self.state.pokemon_mut(target) {
+            let side = pokemon.side;
+            if let Some(status) = pokemon
+                .status
+                .as_mut()
+                .filter(|status| status.kind == NonVolatileStatus::Sleep)
+            {
+                status.inflicted_by = Some(side);
+            }
+        }
+    }
 }
