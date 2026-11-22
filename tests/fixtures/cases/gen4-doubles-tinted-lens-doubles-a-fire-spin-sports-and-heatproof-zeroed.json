@@ -1,0 +1,85 @@
+{
+  "schema": 1,
+  "id": "gen4-doubles-tinted-lens-doubles-a-fire-spin-sports-and-heatproof-zeroed",
+  "notes": [
+    "Gen 4 doubles: four Water Sport holders and Heatproof bring Shinx's Fire Spin to power 0; the cartridge still reads the type chart, so Tinted Lens doubles the resisted hit to 2 (DESIGN.md R-M11-214)",
+    "promoted from m8-gen4-doubles-s111000-016-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "doubles",
+    "format": "gen4doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Shinx",
+        "species": "Shinx",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Water Sport",
+          "Fire Spin"
+        ],
+        "ability": "Tinted Lens",
+        "gender": "M"
+      },
+      {
+        "label": "Manaphy",
+        "species": "Manaphy",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Water Sport",
+          "Clamp"
+        ],
+        "ability": "Run Away"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Rhydon",
+        "species": "Rhydon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Water Sport",
+          "Toxic"
+        ],
+        "ability": "Heatproof",
+        "gender": "M"
+      },
+      {
+        "label": "Phanpy",
+        "species": "Phanpy",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Water Sport",
+          "Sludge Bomb"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      46731,
+      37717,
+      23124,
+      16769
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Water Sport, move Water Sport",
+      "p2": "move Water Sport, move Water Sport"
+    },
+    {
+      "p1": "move Fire Spin 1, move Clamp 2",
+      "p2": "move Toxic 1, move Sludge Bomb 2"
+    }
+  ]
+}

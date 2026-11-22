@@ -475,6 +475,18 @@ function cartridgeGen4Damage(source, target, move, seen) {
   if (seen.berry) damage = divide(damage, 2);
   return Math.max(1, damage);
 }
+// I228's power of 0 stops Showdown's `getDamage` before `modifyDamage`, which sets the hit's
+// `typeMod` and announces the effectiveness and the critical hit. The cartridges' type chart
+// and messages do not look at the power: Tinted Lens still doubles a resisted hit, Filter and
+// the Expert Belt still read a super-effective one (R-M11-214).
+function zeroPowerEffectiveness(battle, target, move, suppressMessages) {
+  const hit = target.getMoveHitData(move);
+  hit.typeMod = battle.clampIntRange(target.runEffectiveness(move), -6, 6);
+  if (suppressMessages) return;
+  if (hit.typeMod > 0) battle.add('-supereffective', target);
+  if (hit.typeMod < 0) battle.add('-resisted', target);
+  if (hit.crit) battle.add('-crit', target);
+}
 function cartridgeGetDamage(source, target, move, suppressMessages = false) {
   const battle = this.battle;
   const seen = {power: undefined, roll: undefined, berry: false, member: null, selfHit: typeof move === 'number'};
@@ -504,7 +516,10 @@ function cartridgeGetDamage(source, target, move, suppressMessages = false) {
   // `BattleSystem_CalcBaseDamage` multiplies the 0 in and returns `damage + 2`, which
   // `BattleSystem_CalcDamageVariance` rolls (at least 1). The roll is drawn here, where the
   // formula would have (TESTING.md §7).
-  if (seen.roll === undefined && zeroPower && result === 0) seen.roll = battle.random(16);
+  if (seen.roll === undefined && zeroPower && result === 0) {
+    seen.roll = battle.random(16);
+    if (!seen.selfHit) zeroPowerEffectiveness(battle, target, move, suppressMessages);
+  }
   if (seen.roll === undefined || typeof result !== 'number') return result;
   seen.berry = RESIST_BERRIES.has(heldBefore) && !target.item;
   const active = typeof move === 'number' ? battle.dex.getActiveMove('struggle') : move;
@@ -4205,7 +4220,10 @@ function cartridgeGen3GetDamage(source, target, move, suppressMessages = false) 
   // pokeemerald halves the power once for any holder and returns `damage + 2`, which
   // `ApplyRandomDmgMultiplier` rolls — I228's case in Gen 3 (R-M11-196). The roll is drawn here,
   // where the formula would have (TESTING.md §7).
-  if (seen.roll === undefined && zeroPower && result === 0) seen.roll = battle.random(16);
+  if (seen.roll === undefined && zeroPower && result === 0) {
+    seen.roll = battle.random(16);
+    if (!selfHit) zeroPowerEffectiveness(battle, target, move, suppressMessages);
+  }
   if (seen.roll === undefined || typeof result !== 'number') return result;
   if (selfHit) {
     seen.power = move;
