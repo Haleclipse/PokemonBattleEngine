@@ -346,6 +346,7 @@ impl BattleEngine {
             if self.rules.update.before_replacement {
                 self.run_update(PendingFaints::Processed);
             }
+            self.residual_emergency_exits();
             self.check_fainted();
 
             let requirements = self.replacement_requirements();

@@ -113,6 +113,9 @@ pub struct BattleEngine {
     /// anything in it runs, empty outside it — the residual never stops at a request boundary
     /// (R-M9-46).
     residual_speeds: Vec<(PokemonId, u32)>,
+    /// The active Pokémon's HP as the residual began, kept for its Emergency Exit checks, which
+    /// wait for the `Update` after it (`residual_emergency_exits`, R-M11-213); empty otherwise.
+    residual_hp_before: Vec<(PokemonId, u16)>,
 }
 
 impl BattleEngine {
@@ -233,6 +236,7 @@ impl BattleEngine {
                 trace,
                 pending: PendingExecution::Idle,
                 residual_speeds: Vec::new(),
+                residual_hp_before: Vec::new(),
             };
             engine.handed_back("create_new");
             Ok(engine)
@@ -281,6 +285,7 @@ impl BattleEngine {
                 trace: BattleTrace::with_mode(mode),
                 pending: snapshot.pending,
                 residual_speeds: Vec::new(),
+                residual_hp_before: Vec::new(),
             })
         }
     );
@@ -296,6 +301,7 @@ impl BattleEngine {
         self.pending.clone_from(&snapshot.pending);
         self.trace = BattleTrace::with_mode(self.trace.mode());
         self.residual_speeds.clear();
+        self.residual_hp_before.clear();
         Ok(())
     }
 

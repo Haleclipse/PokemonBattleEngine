@@ -1,0 +1,307 @@
+{
+  "schema": 1,
+  "id": "gen9-an-oran-berry-in-the-update-keeps-emergency-exit-from-the-residual",
+  "notes": [
+    "Gen 9: poison takes Kyurem (Emergency Exit) from 119/200 to 94 in the residual; its Oran Berry, eaten in the Update after it, brings it back to 104 before the residual's Emergency Exit check, which then finds it over half: no exit, the ability unseen (DESIGN.md R-M11-213)",
+    "promoted from m8-gen9-singles-s2341-014-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "singles",
+    "format": "gen9customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Dunsparce",
+        "species": "Dunsparce",
+        "level": 48,
+        "nature": "Hardy",
+        "moves": [
+          "Bleakwind Storm",
+          "Toxic Thread",
+          "Hurricane"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Clawitzer",
+        "species": "Clawitzer",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Blizzard",
+          "Toxic Thread",
+          "Wildbolt Storm"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Exeggcute",
+        "species": "Exeggcute",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Thunder",
+          "Toxic Thread",
+          "Cotton Spore"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Passimian",
+        "species": "Passimian",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Freezing Glare",
+          "Toxic Thread",
+          "Powder Snow"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Kyurem",
+        "species": "Kyurem",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Ice Fang",
+          "Toxic Thread",
+          "Freeze-Dry"
+        ],
+        "ability": "Emergency Exit",
+        "item": "Oran Berry"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Zangoose",
+        "species": "Zangoose",
+        "level": 54,
+        "nature": "Hardy",
+        "moves": [
+          "Coaching",
+          "Toxic Thread",
+          "Aromatic Mist"
+        ],
+        "ability": "Run Away",
+        "item": "Sitrus Berry",
+        "gender": "M"
+      },
+      {
+        "label": "Krookodile",
+        "species": "Krookodile",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Poison Tail",
+          "Toxic Thread",
+          "Poison Sting"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Blitzle",
+        "species": "Blitzle",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sludge",
+          "Toxic Thread",
+          "Sludge Wave"
+        ],
+        "ability": "Parental Bond",
+        "gender": "M"
+      },
+      {
+        "label": "Gouging Fire",
+        "species": "Gouging Fire",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Sludge Bomb",
+          "Toxic Thread",
+          "Cross Poison"
+        ],
+        "ability": "Run Away",
+        "item": "Iron Ball"
+      },
+      {
+        "label": "Dondozo",
+        "species": "Dondozo",
+        "level": 48,
+        "nature": "Hardy",
+        "moves": [
+          "Gunk Shot",
+          "Toxic Thread",
+          "Poison Jab"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      18518,
+      37075,
+      55746,
+      53502
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Bleakwind Storm",
+      "p2": "move Coaching"
+    },
+    {
+      "p1": "move Toxic Thread",
+      "p2": "move Toxic Thread"
+    },
+    {
+      "p1": "move Hurricane",
+      "p2": "move Aromatic Mist"
+    },
+    {
+      "p1": "move Bleakwind Storm",
+      "p2": "move Coaching"
+    },
+    {
+      "p1": "move Toxic Thread",
+      "p2": "move Toxic Thread"
+    },
+    {
+      "p1": "move Hurricane",
+      "p2": "move Aromatic Mist"
+    },
+    {
+      "p2": "switch Krookodile"
+    },
+    {
+      "p1": "move Bleakwind Storm",
+      "p2": "move Poison Tail"
+    },
+    {
+      "p1": "switch Clawitzer",
+      "p2": "switch Blitzle"
+    },
+    {
+      "p1": "move Toxic Thread",
+      "p2": "move Toxic Thread"
+    },
+    {
+      "p1": "move Wildbolt Storm",
+      "p2": "move Sludge Wave"
+    },
+    {
+      "p1": "move Blizzard",
+      "p2": "move Sludge"
+    },
+    {
+      "p2": "switch Krookodile"
+    },
+    {
+      "p1": "move Toxic Thread",
+      "p2": "move Toxic Thread"
+    },
+    {
+      "p1": "move Wildbolt Storm",
+      "p2": "move Poison Sting"
+    },
+    {
+      "p1": "switch Dunsparce"
+    },
+    {
+      "p1": "move Bleakwind Storm",
+      "p2": "move Poison Tail"
+    },
+    {
+      "p1": "switch Exeggcute"
+    },
+    {
+      "p1": "move Toxic Thread",
+      "p2": "move Toxic Thread"
+    },
+    {
+      "p1": "switch Passimian",
+      "p2": "switch Gouging Fire"
+    },
+    {
+      "p1": "move Powder Snow",
+      "p2": "move Cross Poison"
+    },
+    {
+      "p1": "move Freezing Glare",
+      "p2": "move Sludge Bomb"
+    },
+    {
+      "p1": "move Toxic Thread",
+      "p2": "move Toxic Thread"
+    },
+    {
+      "p1": "move Powder Snow",
+      "p2": "move Cross Poison"
+    },
+    {
+      "p1": "move Freezing Glare",
+      "p2": "move Sludge Bomb"
+    },
+    {
+      "p1": "switch Exeggcute",
+      "p2": "switch Krookodile"
+    },
+    {
+      "p1": "move Thunder",
+      "p2": "move Poison Tail"
+    },
+    {
+      "p1": "move Toxic Thread",
+      "p2": "move Toxic Thread"
+    },
+    {
+      "p2": "switch Gouging Fire"
+    },
+    {
+      "p1": "move Cotton Spore",
+      "p2": "move Cross Poison"
+    },
+    {
+      "p1": "move Thunder",
+      "p2": "move Sludge Bomb"
+    },
+    {
+      "p1": "switch Passimian"
+    },
+    {
+      "p1": "move Toxic Thread",
+      "p2": "move Toxic Thread"
+    },
+    {
+      "p1": "move Freezing Glare",
+      "p2": "move Sludge Bomb"
+    },
+    {
+      "p1": "switch Kyurem",
+      "p2": "switch Dondozo"
+    },
+    {
+      "p1": "move Ice Fang",
+      "p2": "move Toxic Thread"
+    },
+    {
+      "p1": "move Toxic Thread",
+      "p2": "move Poison Jab"
+    },
+    {
+      "p1": "move Freeze-Dry",
+      "p2": "move Gunk Shot"
+    }
+  ]
+}

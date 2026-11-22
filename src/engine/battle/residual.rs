@@ -228,6 +228,15 @@ impl BattleEngine {
         if !durations_ticked {
             self.expire_conditions_end_turn(positioned);
         }
+        // Its Emergency Exit checks wait for the `Update` after it (`residual_emergency_exits`).
+        self.residual_hp_before = hp_before;
+    }
+
+    /// The residual's Emergency Exit checks (Showdown's Gen 5+ `residualPokemon` loop), after the
+    /// drags, the faints and the `Update` that follow the residual: a berry eaten there can lift
+    /// a holder back over half its HP (R-M11-213).
+    pub(super) fn residual_emergency_exits(&mut self) {
+        let hp_before = std::mem::take(&mut self.residual_hp_before);
         let mut ctx = BattleContext::new(&mut self.state, &self.rules, &mut self.trace);
         let mut exited = false;
         for (pokemon, before) in hp_before {
