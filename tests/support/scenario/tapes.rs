@@ -589,23 +589,34 @@ pub(super) fn trace_draws(
         who_from_text(&Value::from(text))
             .and_then(|who| label_to_id(compiled, &who).or_else(|| who_to_id(state, &who)))
     };
-    let mut seen = state.clone();
-    let mut tape = Vec::new();
-    for event in oracle_frame["events"]
+    let lines: Vec<Vec<&str>> = oracle_frame["events"]
         .as_array()
         .into_iter()
         .flatten()
         .filter(|event| event["kind"] == "ability")
+        .map(|event| {
+            event["args"]
+                .as_array()
+                .into_iter()
+                .flatten()
+                .filter_map(Value::as_str)
+                .collect::<Vec<_>>()
+        })
+        .filter(|args| args.contains(&"[from] ability: Trace"))
+        .collect();
+    let mut seen = state.clone();
+    // A holder whose line comes later still holds Trace as the earlier ones look — no foe to
+    // copy (`notrace`) — whatever it copied by the end of the step (R-M11-218).
+    for holder in lines
+        .iter()
+        .filter_map(|args| args.first().and_then(|text| id(text)))
     {
-        let args: Vec<&str> = event["args"]
-            .as_array()
-            .into_iter()
-            .flatten()
-            .filter_map(Value::as_str)
-            .collect();
-        if !args.contains(&"[from] ability: Trace") {
-            continue;
+        if let Some(pokemon) = seen.pokemon_mut(holder) {
+            pokemon.change_ability(pokemon_battle_engine::ids::AbilityId::TRACE);
         }
+    }
+    let mut tape = Vec::new();
+    for args in lines {
         let (Some(holder), Some(foe)) = (
             args.first().and_then(|text| id(text)),
             args.iter()

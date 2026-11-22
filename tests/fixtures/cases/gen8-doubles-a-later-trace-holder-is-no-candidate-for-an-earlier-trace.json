@@ -1,0 +1,132 @@
+{
+  "schema": 1,
+  "id": "gen8-doubles-a-later-trace-holder-is-no-candidate-for-an-earlier-trace",
+  "notes": [
+    "Gen 8 doubles: Exploud comes in with Imposter, becomes Ditto and Traces Vespiquen's Plus while the incoming Ditto still holds Trace (notrace), so it draws no foe; Ditto's Trace then draws Jangmo-o's Run Away (DESIGN.md R-M11-218)",
+    "promoted from m8-gen8-doubles-s2361-009-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 8,
+    "mode": "doubles",
+    "format": "gen8doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Remoraid",
+        "species": "Remoraid",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Discharge",
+          "Lunar Dance"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Groudon",
+        "species": "Groudon",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Bulldoze",
+          "Lunar Dance"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Jangmo-o",
+        "species": "Jangmo-o",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Boomburst"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Exploud",
+        "species": "Exploud",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Bounce"
+        ],
+        "ability": "Imposter",
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Combusken",
+        "species": "Combusken",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Force Palm"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Vespiquen",
+        "species": "Vespiquen",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Lick"
+        ],
+        "ability": "Plus"
+      },
+      {
+        "label": "Cursola",
+        "species": "Cursola",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Lunar Dance"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Ditto",
+        "species": "Ditto",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Thunder Shock"
+        ],
+        "ability": "Trace"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      4898,
+      47138,
+      65020,
+      62078
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Discharge, move Bulldoze",
+      "p2": "move Force Palm 1, move Lick 2"
+    },
+    {
+      "p2": "switch Cursola, pass"
+    },
+    {
+      "p1": "move Lunar Dance, move Lunar Dance",
+      "p2": "move Lunar Dance, move Lick 1"
+    },
+    {
+      "p1": "switch Jangmo-o, switch Exploud",
+      "p2": "switch Ditto, pass"
+    }
+  ]
+}
