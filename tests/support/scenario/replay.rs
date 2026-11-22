@@ -2399,6 +2399,36 @@ pub(super) fn drive_to_boundary(
                 }
             }
         }
+        // A Z status move's call names its Z-Move, which several candidates may stand for (a
+        // Z-Assist's Body Slam, Giga Impact and Round are all Breakneck Blitz): the others
+        // (R-M11-219).
+        if search.chosen.is_none() {
+            let choices = called_draw_choices(
+                &before.state,
+                &compiled.rules,
+                &compiled.dex,
+                actor,
+                &decision,
+            );
+            for variant in called_z_variants(&template, &choices) {
+                let retry = search_rolls(
+                    compiled,
+                    &before,
+                    trace_len,
+                    &variant,
+                    &expected,
+                    &hits,
+                    &substitutes,
+                    &deferred,
+                    &holds,
+                    &mut unused,
+                );
+                if retry.chosen.is_some() {
+                    search = retry;
+                    break;
+                }
+            }
+        }
         // Nothing fits: an earlier action of the boundary may have left a Substitute this one
         // strikes with the wrong HP. Retry it with its other HP values (latest first),
         // replaying the steps after it with the tapes they used, then search this one again.

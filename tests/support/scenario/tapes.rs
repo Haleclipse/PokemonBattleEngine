@@ -1818,6 +1818,34 @@ pub(super) fn present_bands(
         .collect()
 }
 
+/// The plans with a called draw replaced by another place its line may stand for
+/// (`called_draw_choices`: a Z-Move line names what several candidates turn into), for a plan the
+/// first place fits nothing. The called draws are the template's first `Sample`s, in order
+/// (`tape_template`: only BeforeMove's checks come before them) (R-M11-219).
+pub(super) fn called_z_variants(
+    template: &[Option<RandomOverride>],
+    choices: &[Vec<u16>],
+) -> Vec<Vec<Option<RandomOverride>>> {
+    let samples: Vec<usize> = template
+        .iter()
+        .enumerate()
+        .filter(|(_, entry)| {
+            entry.is_some_and(|decision| decision.kind == RandomRequestKind::Sample)
+        })
+        .map(|(index, _)| index)
+        .take(choices.len())
+        .collect();
+    let mut variants = Vec::new();
+    for (at, places) in samples.iter().zip(choices) {
+        for place in places.iter().skip(1) {
+            let mut variant = template.to_vec();
+            variant[*at] = Some(RandomOverride::range(RandomRequestKind::Sample, *place));
+            variants.push(variant);
+        }
+    }
+    variants
+}
+
 /// The Psywave roll that deals what Showdown's log shows: the HP the target lost (nothing: a
 /// Gen 1 roll of 0), read back through the generation's formula; a knock-out takes the smallest
 /// roll that reaches it.

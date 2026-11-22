@@ -1537,18 +1537,35 @@ pub(super) fn called_draw_index(
     caller: &str,
     called: &str,
 ) -> Option<u16> {
+    called_draw_indices(state, rules, dex, actor, caller, called)
+        .first()
+        .copied()
+}
+
+/// Every place in the caller's candidate table the called move's line may stand for, the one
+/// `called_draw_index` takes first: one, but for a Z-Move line, which names what several
+/// candidates turn into (R-M11-219).
+fn called_draw_indices(
+    state: &BattleState,
+    rules: &ResolvedRules,
+    dex: &ResolvedDex,
+    actor: PokemonId,
+    caller: &str,
+    called: &str,
+) -> Vec<u16> {
     let candidates = match caller {
         "Metronome" => {
             pokemon_battle_engine::engine::metronome_candidates(state, rules, dex, actor)
         }
         "Assist" => pokemon_battle_engine::engine::assist_candidates(state, rules, dex, actor),
-        "Sleep Talk" => {
-            pokemon_battle_engine::engine::sleep_talk_candidates(dex, state.pokemon(actor)?)
-        }
-        _ => return None,
+        "Sleep Talk" => match state.pokemon(actor) {
+            Some(pokemon) => pokemon_battle_engine::engine::sleep_talk_candidates(dex, pokemon),
+            None => return Vec::new(),
+        },
+        _ => return Vec::new(),
     };
     if candidates.len() < 2 {
-        return None;
+        return Vec::new();
     }
     // A sound move Throat Chop refused, unnamed: any sound move among the candidates does the
     // same — refused before its `move` line, nothing drawn (R-M8-148).
@@ -1556,32 +1573,67 @@ pub(super) fn called_draw_index(
         return candidates
             .iter()
             .position(|id| dex.move_by_id(*id).is_some_and(|m| m.flags.sound))
-            .map(|index| index as u16);
+            .map(|index| index as u16)
+            .into_iter()
+            .collect();
     }
     // By id: a `move` line names the move, Gen 3 Sleep Talk's `cant … nopp` its id.
-    let called_id = dex
+    let Some(called_id) = dex
         .moves()
         .iter()
         .find(|move_def| {
             pokemon_battle_engine::data::to_id(&move_def.name)
                 == pokemon_battle_engine::data::to_id(called)
         })
-        .map(|move_def| move_def.id)?;
+        .map(|move_def| move_def.id)
+    else {
+        return Vec::new();
+    };
     if let Some(index) = candidates.iter().position(|id| *id == called_id) {
-        return Some(index as u16);
+        return vec![index as u16];
     }
     // A damaging move a Z status move called goes as its Z-Move, and its line names that
-    // (`getActiveZMove`: a Z-Sleep Talk's Shadow Claw is Never-Ending Nightmare, R-M11-205).
+    // (`getActiveZMove`: a Z-Sleep Talk's Shadow Claw is Never-Ending Nightmare, R-M11-205) —
+    // as it does for every candidate of its type (a Z-Assist's Body Slam, Giga Impact and Round
+    // are all Breakneck Blitz).
     candidates
         .iter()
-        .position(|id| {
-            dex.move_by_id(*id)
+        .enumerate()
+        .filter(|(_, id)| {
+            dex.move_by_id(**id)
                 .and_then(|base| {
                     pokemon_battle_engine::engine::called_z_move(state, dex, actor, base)
                 })
                 .is_some_and(|z| z.id == called_id)
         })
-        .map(|index| index as u16)
+        .map(|(index, _)| index as u16)
+        .collect()
+}
+
+/// For each draw `called_draws` plans, every place its line may stand for (`called_draw_indices`):
+/// the replay tries the others when the first fits nothing (R-M11-219).
+pub(super) fn called_draw_choices(
+    state: &BattleState,
+    rules: &ResolvedRules,
+    dex: &ResolvedDex,
+    actor: PokemonId,
+    oracle: &ActionOracle,
+) -> Vec<Vec<u16>> {
+    let mut choices = Vec::new();
+    let mut callers: Vec<String> = Vec::new();
+    if let Some(name) = oracle.move_name.clone() {
+        callers.push(name);
+    }
+    for index in 0..oracle.called.len() {
+        let caller = callers[index].clone();
+        let called = oracle.called[index].name.clone();
+        let indices = called_draw_indices(state, rules, dex, actor, &caller, &called);
+        if !indices.is_empty() {
+            choices.push(indices);
+        }
+        callers.push(called);
+    }
+    choices
 }
 
 /// The draws of an action's chain of called moves: for each caller in turn (the action's own
