@@ -38,6 +38,16 @@ impl<'a> BattleContext<'a> {
         } else {
             (Some(drawn), 0)
         };
+        // Bide, a Normal move, uses a Normal Gem up as it starts: "Bide, Focus Punch, and
+        // damaging moves with a charging turn consume the Gem at the first stage of the move"
+        // (Bulbapedia, Gem). Its fixed damage takes no boost, and the release uses no gem
+        // (`MovePipeline::use_gem`, R-M11-217).
+        if let Some(item) = crate::engine::held_item_id(self.state, self.rules, user)
+            && crate::engine::item_behavior(self.rules, item).gem
+                == Some(crate::dex::PokemonType::Normal)
+        {
+            self.consume_item(user);
+        }
         if let Some(pokemon) = self.state.pokemon_mut(user) {
             pokemon.volatiles.start_bide(turns, time, rules.traps);
         }

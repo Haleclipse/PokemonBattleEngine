@@ -192,23 +192,6 @@ for (const mod of patched ? ['gen5', 'gen6', 'gen7', 'gen8', 'gen9'] : []) {
   condition.gemEndsWithStrike = true;
 }
 
-// I10, continued: Bide's release (Gen 5+) is struck from the volatile's `onBeforeMove`, which then
-// stops the move: no `onAfterMove` ends the gem the release used, which would outlast it into the
-// turn's frames (DESIGN.md R-M8-132). The volatile ends with the release. Gen 5-9 share the object.
-for (const mod of patched ? ['gen5', 'gen6', 'gen7', 'gen8', 'gen9'] : []) {
-  const condition = Dex.mod(mod).data.Moves.bide.condition;
-  if (condition.gemEndsWithRelease) continue;
-  const onBeforeMove = condition.onBeforeMove;
-  condition.onBeforeMove = function (pokemon, target, move) {
-    try {
-      return onBeforeMove.call(this, pokemon, target, move);
-    } finally {
-      pokemon.removeVolatile('gem');
-    }
-  };
-  condition.gemEndsWithRelease = true;
-}
-
 // I11 — Gen 3 one-hit KO accuracy. pokeemerald `Cmd_tryKO` hits when `Random() % 100 + 1 <
 // chance`, one point less than Showdown's `randomChance(chance, 100)` (Gen 4's
 // `BtlCmd_TryOHKOMove` is `% 100 <`, as Showdown). A last `Accuracy` handler on the Gen 3 formats
@@ -4622,5 +4605,39 @@ if (patched) {
         return onModifyMove.call(this, move, pokemon, target, ...rest);
       };
     }
+  }
+}
+// I236 — Gen 5+ Bide uses a Normal Gem up as it starts. Showdown's gem (`onSourceTryPrimaryHit`) skips a move on
+// its user, so Bide's first turn keeps it; the release, run through `tryMoveHit` past the hit steps, uses it before
+// `getDamage` even finds a Ghost-type target immune. Bulbapedia (Gem): "Bide, Focus Punch, and damaging moves with
+// a charging turn consume the Gem at the first stage of the move"; fixed damage takes no boost. The patch has
+// Bide's volatile use the gem of its type as it starts (`-enditem … [from] gem` before `-start`) and the gems
+// leave Bide's release alone, as the engine does (R-M11-217); the release, using no gem, leaves no `gem` volatile
+// for R-M8-132's wrapper to end, and that wrapper is gone. It changes no draw (TESTING.md §7).
+if (patched) {
+  const seen = new Set();
+  for (const mod of ['gen5', 'gen6', 'gen7', 'gen8', 'gen9']) {
+    const {Items, Moves} = Dex.mod(mod).data;
+    for (const item of Object.values(Items)) {
+      if (!item.isGem || !item.onSourceTryPrimaryHit || seen.has(item)) continue;
+      seen.add(item);
+      const onSourceTryPrimaryHit = item.onSourceTryPrimaryHit;
+      item.onSourceTryPrimaryHit = function (target, source, move, ...rest) {
+        if (move.id === 'bide') return;
+        return onSourceTryPrimaryHit.call(this, target, source, move, ...rest);
+      };
+    }
+    const condition = Moves.bide?.condition;
+    if (!condition?.onStart || seen.has(condition)) continue;
+    seen.add(condition);
+    const onStart = condition.onStart;
+    condition.onStart = function (pokemon, ...rest) {
+      const move = this.activeMove?.id === 'bide' ? this.activeMove : null;
+      const item = pokemon.getItem();
+      if (item.isGem && item.name === `${move?.type ?? 'Normal'} Gem` && !pokemon.ignoringItem()) {
+        pokemon.useItem();
+      }
+      return onStart.call(this, pokemon, ...rest);
+    };
   }
 }

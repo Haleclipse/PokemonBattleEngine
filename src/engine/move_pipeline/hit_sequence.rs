@@ -540,7 +540,9 @@ impl<'a> MovePipeline<'a> {
     /// Showdown's gem (`onSourceTryPrimaryHit`, `useItem`): a damaging move of the gem's type
     /// about to strike another Pokémon uses the user's gem up (`-enditem … [from] gem`); the
     /// move keeps its boost (`gem`). A gem may go even at 0 HP (`useItem`), but the user must be
-    /// on the field. The Pledges never use one (`move.flags['pledgecombo']`, DESIGN.md R-M8-62).
+    /// on the field. The Pledges never use one (`move.flags['pledgecombo']`, DESIGN.md R-M8-62),
+    /// nor does Bide's release: Bide used its gem as it started (`BattleContext::start_bide`,
+    /// R-M11-217).
     fn use_gem(&mut self, actor: PokemonId, target: PokemonId, move_def: &ResolvedMove) {
         let Some(item) = crate::engine::held_item_id(self.state, self.rules, actor) else {
             return;
@@ -548,6 +550,7 @@ impl<'a> MovePipeline<'a> {
         if target == actor
             || move_def.category == crate::dex::MoveCategory::Status
             || move_def.flags.pledge_combo
+            || move_def.fixed_damage == Some(crate::dex::FixedDamage::Bide)
             || crate::engine::item_behavior(self.rules, item).gem != Some(move_def.move_type)
             || self
                 .state

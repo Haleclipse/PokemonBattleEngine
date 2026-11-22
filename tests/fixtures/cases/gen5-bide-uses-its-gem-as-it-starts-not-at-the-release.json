@@ -1,8 +1,8 @@
 {
  "schema": 1,
- "id": "gen5-bide-release-uses-a-gem",
+ "id": "gen5-bide-uses-its-gem-as-it-starts-not-at-the-release",
  "notes": [
-  "Gen 5: Snorlax's Bide release uses its Normal Gem and knocks Hitmonlee out, ending the battle mid-turn: the gem volatile ends with the release — struck from Bide's onBeforeMove, which stops the move, so no onAfterMove ends it (I10 continued, DESIGN.md R-M8-132)"
+  "Gen 5: Snorlax starts Bide holding a Normal Gem, which goes at Bide's first stage (Bulbapedia, Gem: \"Bide, Focus Punch, and damaging moves with a charging turn consume the Gem at the first stage of the move\"); the release that knocks Hitmonlee out, ending the battle mid-turn, uses none (DESIGN.md R-M11-217; until then the release used it, R-M8-132)"
  ],
  "battle": {
   "generation": 5,
