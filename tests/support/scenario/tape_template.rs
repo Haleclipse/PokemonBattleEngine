@@ -1303,34 +1303,31 @@ pub(super) fn tape_template(
                         continue;
                     }
                     TargetFate::Dodged => continue,
-                    TargetFate::Miss => {
+                    TargetFate::Miss | TargetFate::Hit => {
                         if accuracy_draws(&accuracy_state, rules, actor, *target, move_def) {
                             staged.push(
                                 Stage::Gate,
-                                RandomOverride::bool(RandomRequestKind::Accuracy, false),
+                                RandomOverride::bool(
+                                    RandomRequestKind::Accuracy,
+                                    *fate == TargetFate::Hit,
+                                ),
                             );
                         }
-                        continue;
-                    }
-                    TargetFate::Hit => {
-                        if accuracy_draws(&accuracy_state, rules, actor, *target, move_def) {
-                            staged.push(
-                                Stage::Gate,
-                                RandomOverride::bool(RandomRequestKind::Accuracy, true),
+                        // A miss spent the check too: Micle Berry's `-enditem` comes before the
+                        // `-miss`, and the next target rolls the plain accuracy (R-M11-215).
+                        if let Some(id) = target {
+                            pokemon_battle_engine::engine::spend_accuracy_check(
+                                &mut accuracy_state,
+                                rules,
+                                actor,
+                                *id,
+                                move_def,
                             );
                         }
+                        if *fate == TargetFate::Miss {
+                            continue;
+                        }
                     }
-                }
-                if let Some(id) = target
-                    && matches!(fate, TargetFate::Hit | TargetFate::Miss)
-                {
-                    pokemon_battle_engine::engine::spend_accuracy_check(
-                        &mut accuracy_state,
-                        rules,
-                        actor,
-                        *id,
-                        move_def,
-                    );
                 }
                 // Present's heal, Pollen Puff on an ally: no critical hit, no damage roll.
                 let drawn = move_def.behavior.random_power.map(|random| {
