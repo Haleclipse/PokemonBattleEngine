@@ -1,0 +1,70 @@
+{
+  "schema": 1,
+  "id": "gen7-a-transformed-zygarde-with-a-copied-power-construct-stays-quiet",
+  "notes": [
+    "Gen 7 singles: Zygarde transforms into Nidorino and takes its Power Construct; below half HP at the turn's end it makes no Complete forme and shows no Power Construct, as the handler returns on pokemon.transformed (DESIGN.md R-M11-222)",
+    "promoted from m8-gen7-singles-s111600-002-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 7,
+    "mode": "singles",
+    "format": "gen7customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Zygarde",
+        "species": "Zygarde",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Head Charge",
+          "Transform",
+          "Brave Bird"
+        ],
+        "ability": "Run Away"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Nidorino",
+        "species": "Nidorino",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fury Swipes",
+          "Transform",
+          "Double Slap"
+        ],
+        "ability": "Power Construct"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      62731,
+      22488,
+      30563,
+      13870
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Head Charge",
+      "p2": "move Fury Swipes"
+    },
+    {
+      "p1": "move Transform",
+      "p2": "move Transform"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 3"
+    },
+    {
+      "p1": "move 3",
+      "p2": "move 3"
+    }
+  ]
+}

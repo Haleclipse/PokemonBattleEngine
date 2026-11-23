@@ -144,6 +144,13 @@ pub fn residual(ctx: &mut BattleContext<'_>, holder: PokemonId) {
     if hp == 0 || !rule.answers(Some(own)) {
         return;
     }
+    // A holder that transformed changes nothing: Power Construct, Schooling, Shields Down and Zen
+    // Mode return on `pokemon.transformed`, and Hunger Switch asks the species it battles as,
+    // which is no longer its own (a Zygarde that took a foe's Power Construct by Transform,
+    // R-M11-222).
+    if ctx.has_transformed(holder) {
+        return;
+    }
     // Hunger Switch: `|| pokemon.terastallized` — a Terastallized Morpeko keeps its forme
     // (DESIGN.md R-M9-20).
     if matches!(rule.rule, SelfFormeRule::Toggle { .. }) && ctx.terastallized(holder) {
