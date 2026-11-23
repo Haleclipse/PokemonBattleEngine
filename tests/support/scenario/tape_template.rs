@@ -246,12 +246,15 @@ pub(super) fn tape_template(
                 {
                     tape.push(Some(decision));
                 }
-                // A berry the self-hit's `Update` fed it: Starf Berry's stat (DESIGN.md R281).
+                // A berry the self-hit's `Update` fed it: Starf Berry's stat (DESIGN.md R281) —
+                // or another Pokémon, when the self-hit knocked out the Unnerve holder that held
+                // its confusion berry back (R-M11-220).
                 for (who, _, draw) in &oracle.berry_draws {
-                    if who_to_id(state, who) == Some(actor)
-                        && let Some(decision) = berry_decision(*draw, || {
-                            duration_for(Some(actor), DurationKind::Confusion)
-                        })
+                    let Some(eater) = who_to_id(state, who) else {
+                        continue;
+                    };
+                    if let Some(decision) =
+                        berry_decision(*draw, || duration_for(Some(eater), DurationKind::Confusion))
                     {
                         tape.push(Some(decision));
                     }
