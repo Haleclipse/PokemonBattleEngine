@@ -161,6 +161,14 @@ pub(crate) fn resolve(
     if rules.conditions.recharge_check == RechargeCheck::First && recharge(state, trace, actor) {
         return CanMoveResult::Blocked(BeforeMoveBlockReason::Recharge);
     }
+    // A recharging Pokémon's action is the recharge (Showdown's `recharge` pseudo-move,
+    // pokeemerald's locked `gCurrentMove`), whatever move was chosen: sleep stops it as it
+    // would any move but Snore and Sleep Talk, and no move thaws it (R-M11-221).
+    let recharging = state.pokemon(actor).is_some_and(|pokemon| {
+        pokemon
+            .volatiles
+            .contains(VolatileConditionKind::MustRecharge)
+    });
 
     // Gen 6 Stance Change (priority 11, after the recharge's volatile): the forme for the move
     // the Pokémon is about to try, before sleep or paralysis can stop it (DESIGN.md §43.4).
@@ -198,7 +206,7 @@ pub(crate) fn resolve(
                     .unwrap_or(1)
                     .saturating_sub(step);
                 if remaining > 0 {
-                    let sleep_usable = move_def.flags.sleep_usable;
+                    let sleep_usable = move_def.flags.sleep_usable && !recharging;
                     if let Some(pokemon) = state.pokemon_mut(actor)
                         && let Some(status) = &mut pokemon.status
                     {
@@ -215,7 +223,7 @@ pub(crate) fn resolve(
                     }
                     // Snore, Sleep Talk (`sleepUsable`): `cant|user|slp`, then the move goes
                     // on to the other checks (DESIGN.md §42.1).
-                    if !move_def.flags.sleep_usable {
+                    if !sleep_usable {
                         return CanMoveResult::Blocked(BeforeMoveBlockReason::Sleep);
                     }
                     trace.push(TraceEvent::MovesWhileAsleep { actor });
@@ -237,7 +245,8 @@ pub(crate) fn resolve(
                     );
                 if thaws {
                     BattleContext::new(state, rules, trace).cure_status(actor, CureReason::Thawed);
-                } else if !(super::defrost_move_for(state, rules, actor, move_def)
+                } else if !(!recharging
+                    && super::defrost_move_for(state, rules, actor, move_def)
                     && lifecycle.defrost_user != crate::rules::DefrostUser::Never)
                 {
                     return CanMoveResult::Blocked(BeforeMoveBlockReason::Freeze);
