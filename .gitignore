@@ -1,6 +1,7 @@
 # Rust
 /target/
 /stable-api/target/
+/bridge/target/
 Cargo.lock.bak
 
 # Node oracle tooling (development only)
@@ -44,3 +45,14 @@ CLAUDE.local.md
 .env.*
 *.pem
 *.key
+
+# Web client
+/web/node_modules/
+/web/dist/
+/web/.env
+/web/.env.*
+
+# Extracted game art is local-only. Relative URLs in the committed manifest
+# resolve only after these binaries are supplied (see web/README.md).
+/web/public/converted/*
+!/web/public/converted/README.md

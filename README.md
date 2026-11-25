@@ -86,3 +86,7 @@ cargo run --example singles_turn
 本项目以 [GNU General Public License v3.0 only](LICENSE) 发布。`data/` 与 `tests/fixtures/` 中的数据来自 Pokémon Showdown（MIT）、`@smogon/calc`（MIT）与 PokéAPI（BSD-3-Clause），见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
 
 Pokémon 及宝可梦名称是任天堂、Creatures 与 GAME FREAK 的商标；本项目与它们无关，也未获其认可。
+
+## 前端
+
+`web/` 是本地对战界面，`bridge/` 把稳定 API 收成只监听本机的 JSON。伤害和合法性仍由本引擎计算。运行方式、主题和模型配置见 [web/README.md](web/README.md)。美术二进制不随仓库发布。
