@@ -4641,3 +4641,34 @@ if (patched) {
     };
   }
 }
+// I237 — Gen 5+ the hits after the first of a `multiaccuracy` move (Triple Kick, Triple Axel, Population Bomb)
+// check accuracy as the first did. Showdown's `hitStepMoveHitLoop` divides the move's accuracy by the stage table
+// before `ModifyAccuracy`, and `runEvent` applies a chained modifier only to a whole number: at a stage that leaves a
+// fraction (90 at accuracy -1: 67.5) Gravity, Compound Eyes, Wide Lens and the rest are dropped. pokeemerald's
+// `BattleScript_TripleKickLoop` runs the same `accuracycheck` for every hit; the user's decision (2026-11-25) takes
+// that for every generation, as the engine has it. The patch gives those hits `hitStepAccuracy`'s formula: the move's
+// accuracy through `ModifyAccuracy`, then the stages (R-M11-223). The draw stays; its chance may change
+// (TESTING.md §7).
+if (patched) {
+  const runEvent = Battle.prototype.runEvent;
+  Battle.prototype.runEvent = function (eventid, target, source, effect, relayVar, ...rest) {
+    if (eventid !== 'ModifyAccuracy' || this.gen < 5 || !effect?.multiaccuracy || !(effect.hit > 1) ||
+      typeof effect.accuracy !== 'number' || typeof relayVar !== 'number') {
+      return runEvent.call(this, eventid, target, source, effect, relayVar, ...rest);
+    }
+    let accuracy = runEvent.call(this, eventid, target, source, effect, effect.accuracy, ...rest);
+    if (typeof accuracy !== 'number') return accuracy;
+    let boost = 0;
+    if (!effect.ignoreAccuracy) {
+      const boosts = runEvent.call(this, 'ModifyBoost', source, null, null, {...source.boosts});
+      boost = this.clampIntRange(boosts['accuracy'], -6, 6);
+    }
+    if (!effect.ignoreEvasion) {
+      const boosts = runEvent.call(this, 'ModifyBoost', target, null, null, {...target.boosts});
+      boost = this.clampIntRange(boost - boosts['evasion'], -6, 6);
+    }
+    if (boost > 0) accuracy = this.trunc(accuracy * (3 + boost) / 3);
+    else if (boost < 0) accuracy = this.trunc(accuracy * 3 / (3 - boost));
+    return accuracy;
+  };
+}
