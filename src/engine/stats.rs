@@ -250,6 +250,13 @@ pub(crate) fn action_speed(
     pokemon: PokemonId,
     quick_claw: Option<bool>,
 ) -> u32 {
+    // A Pokémon that fainted keeps its action in the queue at its own stored Speed alone:
+    // Showdown's `getStat` finds no handler on a Pokémon no longer active (no paralysis, item,
+    // ability or Tailwind) and `clearVolatile` dropped its stages, so a Gen 8+ re-sort may put
+    // its dead action ahead of slower Pokémon's (R-M11-226).
+    if let Some(fainted) = state.pokemon(pokemon).filter(|p| p.is_fainted()) {
+        return u32::from(fainted.own_stats().speed).max(1);
+    }
     let rolled = quick_claw.unwrap_or(state.quick_claw_roll);
     if rolled
         && rules.action_order.quick_claw_turn_roll.is_some()
