@@ -935,6 +935,16 @@ impl BattleEngine {
                 pokemon.volatiles.clear_on_switch()
             })
             .unwrap_or_default();
+        // `setSpecies` (from `clearVolatile`) sets `pokemon.speed` back to the stored Speed: a
+        // Pokémon that comes back mid-turn orders its handlers there (a Lightning Rod or Storm
+        // Drain it traces) until the next `updateSpeed`, not at its last stint's (R-M11-228).
+        if let Some(speed) = self
+            .state
+            .pokemon(pokemon_id)
+            .map(|pokemon| u32::from(pokemon.own_stats().speed))
+        {
+            self.state.set_handler_speed(pokemon_id, speed);
+        }
         for kind in expired {
             self.trace.push(TraceEvent::VolatileEnded {
                 target: pokemon_id,

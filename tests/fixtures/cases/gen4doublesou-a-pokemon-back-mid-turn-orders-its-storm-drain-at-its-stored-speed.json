@@ -1,0 +1,361 @@
+{
+  "schema": 1,
+  "id": "gen4doublesou-a-pokemon-back-mid-turn-orders-its-storm-drain-at-its-stored-speed",
+  "notes": [
+    "Gen 4 Doubles OU: Porygon2 comes back in mid-turn and traces Shellos's Storm Drain; its handlers order at its stored Speed (Showdown's setSpecies resets pokemon.speed as it left), ahead of Shellos, so it draws its ally Illumise's Water Pulse (DESIGN.md R-M11-228)",
+    "promoted from m9-gen4doublesou-s959-007-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "doubles",
+    "format": "gen4doublesou"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Yanma",
+        "species": "Yanma",
+        "ability": "Speed Boost",
+        "moves": [
+          "Substitute",
+          "Protect",
+          "Reversal",
+          "Attract"
+        ],
+        "nature": "Rash",
+        "gender": "F",
+        "shiny": false,
+        "level": 95,
+        "evs": {
+          "hp": 68,
+          "atk": 44,
+          "def": 0,
+          "spa": 144,
+          "spd": 0,
+          "spe": 252
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        }
+      },
+      {
+        "label": "Illumise",
+        "species": "Illumise",
+        "ability": "Oblivious",
+        "moves": [
+          "Aerial Ace",
+          "Toxic",
+          "Ice Punch",
+          "Water Pulse"
+        ],
+        "nature": "Docile",
+        "gender": "",
+        "shiny": false,
+        "level": 100,
+        "evs": {
+          "hp": 44,
+          "atk": 252,
+          "def": 96,
+          "spa": 0,
+          "spd": 116,
+          "spe": 0
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        }
+      },
+      {
+        "label": "Porygon2",
+        "species": "Porygon2",
+        "ability": "Trace",
+        "moves": [
+          "Shadow Ball",
+          "Signal Beam",
+          "Ice Beam"
+        ],
+        "nature": "Modest",
+        "gender": "",
+        "shiny": false,
+        "level": 85,
+        "evs": {
+          "hp": 40,
+          "atk": 0,
+          "def": 156,
+          "spa": 92,
+          "spd": 204,
+          "spe": 16
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 14
+        }
+      }
+    ],
+    "p2": [
+      {
+        "label": "Delcatty",
+        "species": "Delcatty",
+        "ability": "Cute Charm",
+        "moves": [
+          "Sing",
+          "Captivate",
+          "Ice Beam",
+          "Sleep Talk"
+        ],
+        "nature": "Modest",
+        "gender": "M",
+        "shiny": false,
+        "level": 96,
+        "evs": {
+          "hp": 64,
+          "atk": 168,
+          "def": 40,
+          "spa": 176,
+          "spd": 0,
+          "spe": 60
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        }
+      },
+      {
+        "label": "Mareep",
+        "species": "Mareep",
+        "ability": "Static",
+        "moves": [
+          "Double-Edge",
+          "Shock Wave",
+          "Attract",
+          "Defense Curl"
+        ],
+        "nature": "Naive",
+        "gender": "M",
+        "shiny": false,
+        "level": 100,
+        "evs": {
+          "hp": 0,
+          "atk": 0,
+          "def": 176,
+          "spa": 68,
+          "spd": 252,
+          "spe": 12
+        },
+        "ivs": {
+          "hp": 4,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        }
+      },
+      {
+        "label": "Wurmple",
+        "species": "Wurmple",
+        "ability": "Shield Dust",
+        "moves": [
+          "Poison Sting",
+          "String Shot"
+        ],
+        "nature": "Sassy",
+        "gender": "F",
+        "shiny": false,
+        "level": 100,
+        "evs": {
+          "hp": 40,
+          "atk": 68,
+          "def": 0,
+          "spa": 252,
+          "spd": 124,
+          "spe": 24
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 23,
+          "spd": 31,
+          "spe": 31
+        }
+      },
+      {
+        "label": "Nick65",
+        "species": "Shellos",
+        "ability": "Storm Drain",
+        "moves": [
+          "Snore",
+          "Substitute"
+        ],
+        "nature": "Hardy",
+        "gender": "F",
+        "shiny": false,
+        "level": 85,
+        "evs": {
+          "hp": 80,
+          "atk": 40,
+          "def": 32,
+          "spa": 168,
+          "spd": 0,
+          "spe": 188
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 4
+        }
+      },
+      {
+        "label": "Nick17",
+        "species": "Illumise",
+        "ability": "Tinted Lens",
+        "moves": [
+          "Bug Buzz",
+          "Tackle",
+          "Secret Power"
+        ],
+        "nature": "Gentle",
+        "gender": "",
+        "shiny": false,
+        "level": 100,
+        "evs": {
+          "hp": 0,
+          "atk": 212,
+          "def": 116,
+          "spa": 64,
+          "spd": 84,
+          "spe": 32
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 31,
+          "spa": 31,
+          "spd": 31,
+          "spe": 21
+        }
+      },
+      {
+        "label": "Pachirisu",
+        "species": "Pachirisu",
+        "ability": "Run Away",
+        "moves": [
+          "Attract"
+        ],
+        "nature": "Quirky",
+        "gender": "M",
+        "shiny": false,
+        "level": 100,
+        "evs": {
+          "hp": 40,
+          "atk": 136,
+          "def": 252,
+          "spa": 0,
+          "spd": 0,
+          "spe": 80
+        },
+        "ivs": {
+          "hp": 31,
+          "atk": 31,
+          "def": 29,
+          "spa": 31,
+          "spd": 31,
+          "spe": 31
+        }
+      }
+    ]
+  },
+  "preview": {
+    "p1": "team 523461",
+    "p2": "team 412356"
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      53331,
+      959,
+      1007,
+      31
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Substitute, move Aerial Ace 1",
+      "p2": "move Sing 1, move Double-Edge 2"
+    },
+    {
+      "p1": "move Protect, move Toxic 2",
+      "p2": "move Captivate, move Shock Wave 1"
+    },
+    {
+      "p1": "move Reversal 1, move Ice Punch 2",
+      "p2": "move Ice Beam 2, move Attract 1"
+    },
+    {
+      "p1": "switch Porygon2, move Water Pulse 1",
+      "p2": "switch Wurmple, move Defense Curl"
+    },
+    {
+      "p1": "move Ice Beam 2, move Aerial Ace 1",
+      "p2": "move String Shot, move Double-Edge 2"
+    },
+    {
+      "p2": "pass, switch Delcatty"
+    },
+    {
+      "p1": "move Shadow Ball 2, move Toxic 1",
+      "p2": "move Poison Sting 1, move Captivate"
+    },
+    {
+      "p2": "switch Nick65, pass"
+    },
+    {
+      "p1": "move Signal Beam 2, move Ice Punch 1",
+      "p2": "move Snore 2, move Ice Beam 1"
+    },
+    {
+      "p1": "switch Yanma, move Water Pulse 2",
+      "p2": "switch Nick17, move Sleep Talk"
+    },
+    {
+      "p1": "move Reversal 1, move Aerial Ace 2",
+      "p2": "move Tackle 2, move Sing 1"
+    },
+    {
+      "p1": "move Attract 1, move Toxic 2",
+      "p2": "move Secret Power 2, move Captivate"
+    },
+    {
+      "p1": "move Substitute, move Ice Punch 1",
+      "p2": "move Bug Buzz 1, move Ice Beam 2"
+    },
+    {
+      "p2": "pass, switch Nick65"
+    },
+    {
+      "p1": "switch Porygon2, move Water Pulse 2",
+      "p2": "switch Pachirisu, move Substitute"
+    }
+  ]
+}
