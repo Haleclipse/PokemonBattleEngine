@@ -1,0 +1,158 @@
+{
+  "schema": 1,
+  "id": "gen3-doubles-a-soundproof-ghost-stopping-an-uproar-fails-nothing",
+  "notes": [
+    "Gen 3 doubles: Swablu's locked Uproar meets Shedinja's Soundproof, which pokeemerald's Cmd_attackcanceler checks before Cmd_typecalc sets targetNotAffected: the Ghost type's immunity behind it fails nothing and the uproar runs its turns (DESIGN.md R-M11-227)",
+    "promoted from m8-gen3-doubles-s2399-015-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 3,
+    "mode": "doubles",
+    "format": "gen3doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Mareep",
+        "species": "Mareep",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Blizzard",
+          "Transform",
+          "Powder Snow",
+          "Lock-On"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Aerodactyl",
+        "species": "Aerodactyl",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Ice Punch",
+          "Transform",
+          "Take Down",
+          "Lock-On"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Torkoal",
+        "species": "Torkoal",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Double-Edge"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Shedinja",
+        "species": "Shedinja",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Submission"
+        ],
+        "ability": "Soundproof"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Breloom",
+        "species": "Breloom",
+        "level": 49,
+        "nature": "Hardy",
+        "moves": [
+          "Signal Beam",
+          "Transform",
+          "Dynamic Punch",
+          "Lock-On"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Bayleef",
+        "species": "Bayleef",
+        "level": 49,
+        "nature": "Hardy",
+        "moves": [
+          "Water Pulse",
+          "Transform",
+          "Confusion",
+          "Lock-On"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Swablu",
+        "species": "Swablu",
+        "level": 48,
+        "nature": "Hardy",
+        "moves": [
+          "Dizzy Punch",
+          "Transform",
+          "Uproar"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      30951,
+      36763,
+      42393,
+      58867
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Blizzard, move Ice Punch 1",
+      "p2": "move Signal Beam 1, move Water Pulse 2"
+    },
+    {
+      "p1": "move Transform 2, move Transform 1",
+      "p2": "move Transform 1, move Transform 2"
+    },
+    {
+      "p1": "move 3 2, move 3 1",
+      "p2": "move 3, move 3 1"
+    },
+    {
+      "p1": "move Lock-On 2, move Lock-On 1",
+      "p2": "move Lock-On 2, move Lock-On 1"
+    },
+    {
+      "p1": "move 1 2, move 1 1",
+      "p2": "move 1, move 1 2"
+    },
+    {
+      "p2": "switch Swablu, pass"
+    },
+    {
+      "p1": "move Transform 2, move Transform 1",
+      "p2": "move Transform 1, move Transform 2"
+    },
+    {
+      "p1": "move 3 2, move 3",
+      "p2": "move 3, move 3 1"
+    },
+    {
+      "p1": "switch Torkoal, pass"
+    },
+    {
+      "p1": "switch Shedinja, move 1",
+      "p2": "move 1, move 4 2"
+    }
+  ]
+}

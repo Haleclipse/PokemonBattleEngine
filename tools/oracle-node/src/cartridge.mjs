@@ -1476,12 +1476,18 @@ for (const mod of patched ? ['gen3', 'gen4'] : []) {
       if (this.gen === 3 && ['slp', 'frz'].includes(status.id)) delete target.volatiles['uproar'];
     },
   };
+  // A Gen 3 Soundproof target stops the move in `Cmd_attackcanceler` (`ABILITYEFFECT_MOVES_BLOCK`)
+  // before `Cmd_typecalc` can set `targetNotAffected`: a Ghost type's immunity behind it fails
+  // nothing. pokeplatinum checks the type chart first (`TRY_MOVE_STATE_CHECK_TYPE_CHART` before
+  // `TRY_MOVE_STATE_TRIGGER_IMMUNITY_ABILITIES`), so Gen 4's still does (R-M11-227).
+  const soundproofFirst = (battle, target) => battle.gen === 3 && target.hasAbility('soundproof');
   uproar.onMoveFail = function (target, source, move) {
     const state = source.volatiles['uproar'];
     if (!state || !target) return;
     if (this.gen === 3 && target.volatiles['protect']) {
       delete source.volatiles['uproar'];
-    } else if (!target.runImmunity(move.type) && !missedPastTypeChart(this, target, source, move)) {
+    } else if (!target.runImmunity(move.type) && !missedPastTypeChart(this, target, source, move) &&
+      !soundproofFirst(this, target)) {
       state.failed = true;
     }
   };
