@@ -1720,7 +1720,16 @@ impl<'a> MovePipeline<'a> {
                 crate::engine::SelfDamageRecipient::FoeSubstitute(foe) => {
                     (foe, crate::engine::DamageKind::Move, false)
                 }
-                crate::engine::SelfDamageRecipient::Nothing => return,
+                crate::engine::SelfDamageRecipient::Nothing => {
+                    // The crash strikes nothing but is the last damage all the same, as the
+                    // confusion self-hit is (pokered sets `wDamage` to 1 before applying it;
+                    // `directDamage` sets `lastDamage` before it looks at the Substitutes): a Bide
+                    // stores it, a Counter answers it (R-M11-224).
+                    if self.rules.conditions.retaliation.gen1_last_damage {
+                        self.state.last_damage = amount;
+                    }
+                    return;
+                }
             };
         let mut ctx = BattleContext::new(self.state, self.rules, self.trace);
         ctx.apply_damage(crate::engine::DamageRequest {

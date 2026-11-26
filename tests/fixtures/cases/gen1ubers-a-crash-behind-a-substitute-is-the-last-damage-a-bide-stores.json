@@ -1,0 +1,257 @@
+{
+  "schema": 1,
+  "id": "gen1ubers-a-crash-behind-a-substitute-is-the-last-damage-a-bide-stores",
+  "notes": [
+    "Gen 1 Ubers: Hitmonlee behind its Substitute crashes its High Jump Kick on Gastly, which has none: no HP is lost, but the 1 is the last damage (pokered's wDamage), which Gastly's Bide stores and releases as 2 on the Substitute (DESIGN.md R-M11-224)",
+    "promoted from m9-gen1ubers-s953-008-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 1,
+    "mode": "singles",
+    "format": "gen1ubers"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Magmar",
+        "species": "Magmar",
+        "ability": "",
+        "moves": [
+          "Mega Kick",
+          "Submission",
+          "Skull Bash"
+        ],
+        "nature": "",
+        "gender": "",
+        "shiny": false,
+        "level": 62
+      },
+      {
+        "label": "Mankey",
+        "species": "Mankey",
+        "ability": "",
+        "moves": [
+          "Skull Bash",
+          "Low Kick",
+          "Rage"
+        ],
+        "nature": "",
+        "gender": "",
+        "shiny": false,
+        "level": 100
+      },
+      {
+        "label": "Rattata",
+        "species": "Rattata",
+        "ability": "",
+        "moves": [
+          "Quick Attack"
+        ],
+        "nature": "",
+        "gender": "",
+        "shiny": false,
+        "level": 43,
+        "happiness": 91
+      },
+      {
+        "label": "Hitmonlee",
+        "species": "Hitmonlee",
+        "ability": "",
+        "moves": [
+          "High Jump Kick",
+          "Metronome",
+          "Jump Kick",
+          "Substitute"
+        ],
+        "nature": "",
+        "gender": "",
+        "shiny": false,
+        "level": 100,
+        "happiness": 59
+      },
+      {
+        "label": "Nick35",
+        "species": "Zapdos",
+        "ability": "",
+        "moves": [
+          "Sky Attack"
+        ],
+        "nature": "",
+        "gender": "",
+        "shiny": false,
+        "level": 100,
+        "happiness": 225
+      }
+    ],
+    "p2": [
+      {
+        "label": "Lapras",
+        "species": "Lapras",
+        "ability": "",
+        "moves": [
+          "Rage"
+        ],
+        "nature": "",
+        "gender": "",
+        "shiny": false,
+        "level": 100
+      },
+      {
+        "label": "Gastly",
+        "species": "Gastly",
+        "ability": "",
+        "moves": [
+          "Bide",
+          "Hypnosis"
+        ],
+        "nature": "",
+        "gender": "",
+        "shiny": false,
+        "level": 100
+      },
+      {
+        "label": "Dragonite",
+        "species": "Dragonite",
+        "ability": "",
+        "moves": [
+          "Skull Bash",
+          "Wrap",
+          "Take Down",
+          "Body Slam"
+        ],
+        "nature": "",
+        "gender": "",
+        "shiny": false,
+        "level": 100,
+        "happiness": 222
+      }
+    ]
+  },
+  "preview": {
+    "p1": "team 645312",
+    "p2": "team 134265"
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      48043,
+      953,
+      1008,
+      31
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Mega Kick",
+      "p2": "move Rage"
+    },
+    {
+      "p1": "move Submission",
+      "p2": "move Rage"
+    },
+    {
+      "p1": "move Skull Bash",
+      "p2": "move Rage"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move Mega Kick",
+      "p2": "move Rage"
+    },
+    {
+      "p1": "switch Mankey"
+    },
+    {
+      "p1": "move Low Kick",
+      "p2": "move Rage"
+    },
+    {
+      "p1": "switch Rattata",
+      "p2": "move Rage"
+    },
+    {
+      "p1": "switch Mankey"
+    },
+    {
+      "p1": "move Rage",
+      "p2": "move Rage"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "switch Hitmonlee"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Rage"
+    },
+    {
+      "p1": "move Jump Kick",
+      "p2": "move Rage"
+    },
+    {
+      "p2": "switch Gastly"
+    },
+    {
+      "p1": "move Substitute",
+      "p2": "move Bide"
+    },
+    {
+      "p1": "switch Nick35",
+      "p2": "switch Dragonite"
+    },
+    {
+      "p1": "move Sky Attack",
+      "p2": "move Wrap"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move Sky Attack",
+      "p2": "move Body Slam"
+    },
+    {
+      "p1": "move Sky Attack",
+      "p2": "move Skull Bash"
+    },
+    {
+      "p1": "move Sky Attack",
+      "p2": "move Wrap"
+    },
+    {
+      "p1": "move Sky Attack",
+      "p2": "move Take Down"
+    },
+    {
+      "p1": "switch Hitmonlee",
+      "p2": "switch Gastly"
+    },
+    {
+      "p1": "move Jump Kick",
+      "p2": "move Hypnosis"
+    },
+    {
+      "p1": "move Substitute",
+      "p2": "move Bide"
+    },
+    {
+      "p1": "move High Jump Kick",
+      "p2": "move Bide"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Bide"
+    }
+  ]
+}
