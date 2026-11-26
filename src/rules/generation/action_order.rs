@@ -83,6 +83,11 @@ pub struct ActionOrderRules {
     pub boosted_priority_at_hit: bool,
     /// Where Quash sends the target's action (DESIGN.md §42.4).
     pub quash: QuashOrder,
+    /// Gen 5+ `getActionSpeed`: the speed every speed sort reads is kept to 13 bits, and Trick
+    /// Room makes it `10000 - speed` first — a Pokémon at 1809 Speed or more wraps round to the
+    /// top under Trick Room, as on the cartridge. Gen 4's Trick Room negates the speed instead
+    /// (R-M11-225).
+    pub speed_wraps: bool,
 }
 
 /// Where Quash sends the target's pending action.
@@ -137,5 +142,6 @@ pub(super) fn resolve(generation: Generation) -> ActionOrderRules {
         } else {
             QuashOrder::End
         },
+        speed_wraps: generation >= Generation::Gen5,
     }
 }

@@ -270,7 +270,10 @@ impl BattleEngine {
                     tie_break: action.order.tie_break,
                 });
             }
-            ActionQueue::sort_actions(actions, trick_room);
+            ActionQueue::sort_actions(
+                actions,
+                crate::engine::action::SpeedOrder::of(trick_room, &self.rules.action_order),
+            );
             self.trace.push(TraceEvent::ActionQueueReordered {
                 reason: crate::engine::QueueReorderReason::DynamicSpeed,
             });
@@ -839,7 +842,10 @@ impl BattleEngine {
                     ),
                 })
                 .collect();
-            ActionQueue::sort_actions(&mut queued, trick_room);
+            ActionQueue::sort_actions(
+                &mut queued,
+                crate::engine::action::SpeedOrder::of(trick_room, &self.rules.action_order),
+            );
             let mut order: Vec<Vec<PokemonId>> = Vec::new();
             let mut last_key = None;
             for action in &queued {
@@ -952,7 +958,10 @@ impl BattleEngine {
             });
         }
 
-        queue.sort_with_trick_room(trick_room);
+        queue.sort_by_speed(crate::engine::action::SpeedOrder::of(
+            trick_room,
+            &self.rules.action_order,
+        ));
         Ok(queue)
     }
 }

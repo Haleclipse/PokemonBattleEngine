@@ -36,13 +36,45 @@ impl ActionOrder {
     }
 }
 
+/// How speed orders a bracket (Showdown `getActionSpeed`): fastest first; Gen 4's Trick Room,
+/// slowest first; or Gen 5+'s 13-bit speed — `10000 - speed` under Trick Room — fastest first
+/// (`ActionOrderRules::speed_wraps`, R-M11-225).
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum SpeedOrder {
+    Fastest,
+    Slowest,
+    Wrapped { trick_room: bool },
+}
+
+impl SpeedOrder {
+    /// The order the field and the generation make.
+    pub(crate) fn of(trick_room: bool, rules: &crate::rules::ActionOrderRules) -> Self {
+        match (rules.speed_wraps, trick_room) {
+            (true, trick_room) => Self::Wrapped { trick_room },
+            (false, true) => Self::Slowest,
+            (false, false) => Self::Fastest,
+        }
+    }
+
+    /// Showdown's `trunc(speed, 13)` (`(speed >>> 0) % 2 ** 13`) of the speed, or of `10000 -
+    /// speed` under Trick Room: Speed 1809 wraps to 8191, the top, and 1808 to 0.
+    pub(crate) fn wrap(speed: u32, trick_room: bool) -> u32 {
+        let speed = if trick_room {
+            10_000 - i64::from(speed)
+        } else {
+            i64::from(speed)
+        };
+        (speed as u32) % 8192
+    }
+}
+
 /// The queue's comparison (`sort_actions`' own): `Less` means `left` runs first. The keys
 /// count *down* — a higher action priority, move priority or speed acts earlier — except in
-/// Trick Room (and a Gen 4 delayed move) where speed counts up.
+/// Gen 4's Trick Room (and a Gen 4 delayed move) where speed counts up.
 pub(crate) fn compare_orders(
     left: &ActionOrder,
     right: &ActionOrder,
-    trick_room: bool,
+    order: SpeedOrder,
 ) -> std::cmp::Ordering {
     right
         .action_priority
@@ -54,10 +86,15 @@ pub(crate) fn compare_orders(
             // side's flag speaks for both.
             if left.fastest_first {
                 right.speed.cmp(&left.speed)
-            } else if trick_room || left.slowest_first {
+            } else if left.slowest_first {
                 left.speed.cmp(&right.speed)
             } else {
-                right.speed.cmp(&left.speed)
+                match order {
+                    SpeedOrder::Fastest => right.speed.cmp(&left.speed),
+                    SpeedOrder::Slowest => left.speed.cmp(&right.speed),
+                    SpeedOrder::Wrapped { trick_room } => SpeedOrder::wrap(right.speed, trick_room)
+                        .cmp(&SpeedOrder::wrap(left.speed, trick_room)),
+                }
             }
         })
         .then_with(|| right.tie_break.cmp(&left.tie_break))
@@ -65,8 +102,8 @@ pub(crate) fn compare_orders(
 
 /// Whether `left`'s action runs before `right`'s (Showdown's `comparePriority` > 0, for
 /// `insertChoice`'s place among tied actions).
-pub(crate) fn order_before(left: &ActionOrder, right: &ActionOrder, trick_room: bool) -> bool {
-    compare_orders(left, right, trick_room) == std::cmp::Ordering::Less
+pub(crate) fn order_before(left: &ActionOrder, right: &ActionOrder, order: SpeedOrder) -> bool {
+    compare_orders(left, right, order) == std::cmp::Ordering::Less
 }
 
 /// A chance to act first within the priority bracket (DESIGN.md §12.4), one
@@ -199,14 +236,15 @@ impl ActionQueue {
         self.actions.push(action);
     }
 
-    /// Action class and move priority are always descending. Trick Room only reverses the speed
-    /// comparison inside an equal-priority bracket; it does not reverse switches or move priority.
-    pub fn sort_with_trick_room(&mut self, trick_room: bool) {
-        Self::sort_actions(&mut self.actions, trick_room);
+    /// Action class and move priority are always descending. Trick Room only changes the speed
+    /// comparison inside an equal-priority bracket (`SpeedOrder`); it does not reverse switches
+    /// or move priority.
+    pub fn sort_by_speed(&mut self, order: SpeedOrder) {
+        Self::sort_actions(&mut self.actions, order);
     }
 
-    pub(crate) fn sort_actions(actions: &mut [QueuedAction], trick_room: bool) {
-        actions.sort_by(|left, right| compare_orders(&left.order, &right.order, trick_room));
+    pub(crate) fn sort_actions(actions: &mut [QueuedAction], order: SpeedOrder) {
+        actions.sort_by(|left, right| compare_orders(&left.order, &right.order, order));
     }
 
     pub fn as_slice(&self) -> &[QueuedAction] {

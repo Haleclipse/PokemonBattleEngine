@@ -108,9 +108,12 @@ impl BattleEngine {
         };
         let mut action = actions[index].clone();
         action.order = self.refreshed_order(&action);
-        let trick_room = self.state.field.contains(FieldConditionKind::TrickRoom);
+        let order = crate::engine::action::SpeedOrder::of(
+            self.state.field.contains(FieldConditionKind::TrickRoom),
+            &self.rules.action_order,
+        );
         let earlier = |left: &ActionOrder, right: &ActionOrder| {
-            crate::engine::action::order_before(left, right, trick_room)
+            crate::engine::action::order_before(left, right, order)
         };
         let PendingExecution::Turn { actions, .. } = &mut self.pending else {
             return;

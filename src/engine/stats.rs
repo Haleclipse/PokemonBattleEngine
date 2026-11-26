@@ -267,18 +267,21 @@ pub(crate) fn handler_speed(state: &BattleState, pokemon: PokemonId) -> u32 {
     state.handler_speed(pokemon)
 }
 
-/// Showdown `getActionSpeed` now: the action speed, inverted under Trick Room — what
-/// `updateSpeed` stores, and what the residual orders by (it refreshes the speed as it starts).
+/// Showdown `getActionSpeed` now: the action speed, inverted under Trick Room — Gen 5+ kept to
+/// 13 bits (`SpeedOrder::wrap`, R-M11-225) — what `updateSpeed` stores, and what the residual
+/// orders by (it refreshes the speed as it starts).
 pub(crate) fn current_handler_speed(
     state: &BattleState,
     rules: &ResolvedRules,
     pokemon: PokemonId,
 ) -> u32 {
     let speed = action_speed(state, rules, pokemon, None);
-    if state
+    let trick_room = state
         .field
-        .contains(crate::state::FieldConditionKind::TrickRoom)
-    {
+        .contains(crate::state::FieldConditionKind::TrickRoom);
+    if rules.action_order.speed_wraps {
+        crate::engine::action::SpeedOrder::wrap(speed, trick_room)
+    } else if trick_room {
         10_000u32.saturating_sub(speed)
     } else {
         speed
