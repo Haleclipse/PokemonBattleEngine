@@ -742,10 +742,22 @@ pub fn extract_decisions_with(
                     action.focus_sash_held.push(holder);
                 }
             }
+            // Taken by the action's Knock Off, Thief or Covet (`-enditem|p|Focus Sash|[silent]|[from]
+            // move: Thief`, R-M11-230).
             "enditem"
                 if event["args"][1] == "Focus Sash"
-                    && event["args"].get(2).and_then(Value::as_str)
-                        == Some("[from] move: Knock Off") =>
+                    && event["args"].as_array().is_some_and(|args| {
+                        args.iter().any(|arg| {
+                            matches!(
+                                arg.as_str(),
+                                Some(
+                                    "[from] move: Knock Off"
+                                        | "[from] move: Thief"
+                                        | "[from] move: Covet"
+                                )
+                            )
+                        })
+                    }) =>
             {
                 if let (Some(action), Some(holder)) =
                     (out.last_mut(), event["args"].get(0).and_then(who_from_text))

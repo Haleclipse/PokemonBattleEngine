@@ -3788,7 +3788,7 @@ pub(super) struct ShownHolds {
     pub(super) sashes: Vec<PokemonId>,
     pub(super) bands: Vec<PokemonId>,
     pub(super) sturdy: Vec<PokemonId>,
-    /// The Gen 4 sashes the action's Knock Off took (`ActionOracle::focus_sash_knocked_off`):
+    /// The Gen 4 sashes the action's Knock Off, Thief or Covet took (`ActionOracle::focus_sash_knocked_off`):
     /// held or not, the log is the same (R-M11-129).
     pub(super) unseen_sashes: Vec<PokemonId>,
 }

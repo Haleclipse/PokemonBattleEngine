@@ -1032,9 +1032,9 @@ pub struct ActionOracle {
     /// `-enditem|p|Focus Sash`: the Pokémon whose sash held (a roll that leaves a holder at full
     /// HP on 1 by itself shows the same HP and keeps the sash).
     pub focus_sash_held: Vec<Who>,
-    /// `-enditem|p|Focus Sash|[from] move: Knock Off`: a sash the action's Knock Off took. Gen 4's
-    /// holds silently through the move and is used once it is over (`AfterMoveSecondary`), which
-    /// finds it gone: whether it held cannot be seen (R-M11-129).
+    /// `-enditem|p|Focus Sash|[from] move: Knock Off`: a sash the action's Knock Off took — or its
+    /// Thief or Covet (R-M11-230). Gen 4's holds silently through the move and is used once it is
+    /// over (`AfterMoveSecondary`), which finds it gone: whether it held cannot be seen (R-M11-129).
     pub focus_sash_knocked_off: Vec<Who>,
     /// `-ability|p|Sturdy` (no `[from]`: an OHKO move it stops is `-immune|p|[from] ability:
     /// Sturdy`): the Pokémon Sturdy left on 1 from full HP.
