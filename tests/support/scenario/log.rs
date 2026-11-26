@@ -379,13 +379,21 @@ pub fn extract_decisions_with(
             })
         {
             // A confusion berry Fling threw: no `-enditem` of the eater's own, its heal names it
-            // (the throw hurt the target, so there is always a heal).
+            // (when it heals: a throw an Ice Face took leaves the target at full HP, below).
             confusion_berry = who(&event["pokemon"]);
         }
+        // A confusion berry Fling threw at a Pokémon at full HP heals nothing, so no heal names
+        // it: the struck Pokémon's confusion is the berry's all the same (an Ice Face that took
+        // the throw, R-M11-229).
+        let flung_confusion = flung_berry
+            .as_ref()
+            .filter(|(_, berry)| CONFUSION_BERRIES.contains(&berry.as_str()))
+            .map(|(target, _)| target.clone());
         if kind == "start"
             && !in_residual
             && event["args"][1] == "confusion"
             && let Some(eater) = confusion_berry_eater
+                .or(flung_confusion)
                 .filter(|eater| who_from_text(&event["args"][0]).as_ref() == Some(eater))
         {
             if entrant.as_ref() != Some(&eater)
