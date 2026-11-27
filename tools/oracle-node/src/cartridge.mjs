@@ -4678,3 +4678,23 @@ if (patched) {
     return accuracy;
   };
 }
+// I238 — Magician steals nothing with a Present that heals or a Pollen Puff on an ally. Showdown's
+// `onAfterMoveSecondarySelf` takes an item from any of the move's `hitTargets` once it is not a status move;
+// Present stays physical when it heals (`move.heal`), Pollen Puff special when it heals an ally. Bulbapedia
+// (Magician): it "activates when its user hits a target with a damaging move", and Present "activates only if the
+// move deals damage" — a heal deals none, nor Pollen Puff's on an ally, as the engine has it (R-M11-232). The patch
+// has Magician leave those two alone. It changes no draw (TESTING.md §7).
+if (patched) {
+  const seen = new Set();
+  for (const mod of ['gen6', 'gen7', 'gen8', 'gen9']) {
+    const ability = Dex.mod(mod).data.Abilities.magician;
+    if (!ability?.onAfterMoveSecondarySelf || seen.has(ability)) continue;
+    seen.add(ability);
+    const onAfterMoveSecondarySelf = ability.onAfterMoveSecondarySelf;
+    ability.onAfterMoveSecondarySelf = function (source, target, move, ...rest) {
+      if (move && ((move.id === 'present' && move.heal) ||
+        (move.id === 'pollenpuff' && target && source.isAlly(target)))) return;
+      return onAfterMoveSecondarySelf.call(this, source, target, move, ...rest);
+    };
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "schema": 1,
+  "id": "gen8-doubles-a-magician-present-that-heals-steals-nothing",
+  "notes": [
+    "Gen 8 doubles: Bunnelby's Present heals Marshtomp; Magician steals only with a hit that deals damage (Bulbapedia: Present activates it only if the move deals damage), so Marshtomp keeps its Fossilized Bird (DESIGN.md R-M11-232)",
+    "promoted from m8-gen8-doubles-s2434-009-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 8,
+    "mode": "doubles",
+    "format": "gen8doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Skarmory",
+        "species": "Skarmory",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Psychic Fangs",
+          "Leafage",
+          "Baneful Bunker"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Krookodile",
+        "species": "Krookodile",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Pay Day",
+          "Seed Bomb",
+          "Baneful Bunker"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Bunnelby",
+        "species": "Bunnelby",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Present",
+          "Baneful Bunker"
+        ],
+        "ability": "Magician",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Marshtomp",
+        "species": "Marshtomp",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Baton Pass",
+          "Pain Split",
+          "Baneful Bunker"
+        ],
+        "ability": "Run Away",
+        "item": "Fossilized Bird",
+        "gender": "M"
+      },
+      {
+        "label": "Buneary",
+        "species": "Buneary",
+        "level": 54,
+        "nature": "Hardy",
+        "moves": [
+          "Heal Pulse",
+          "Floral Healing",
+          "Baneful Bunker"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Wingull",
+        "species": "Wingull",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Defense Curl",
+          "Roost",
+          "Baneful Bunker"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Abra",
+        "species": "Abra",
+        "level": 53,
+        "nature": "Hardy",
+        "moves": [
+          "Tri Attack",
+          "Ally Switch",
+          "Baneful Bunker"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      49910,
+      28363,
+      48557,
+      40726
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Psychic Fangs 1, move Pay Day 2",
+      "p2": "move Baton Pass, move Heal Pulse 1"
+    },
+    {
+      "p2": "switch Wingull, pass"
+    },
+    {
+      "p1": "move Leafage 1, move Seed Bomb 2",
+      "p2": "move Roost, move Floral Healing 2"
+    },
+    {
+      "p1": "move Baneful Bunker, move Baneful Bunker",
+      "p2": "move Baneful Bunker, move Baneful Bunker"
+    },
+    {
+      "p1": "move Psychic Fangs 1, move Pay Day 2",
+      "p2": "move Defense Curl, move Heal Pulse 1"
+    },
+    {
+      "p2": "switch Marshtomp, pass"
+    },
+    {
+      "p1": "move Leafage 1, move Seed Bomb 2",
+      "p2": "move Pain Split 2, move Floral Healing 1"
+    },
+    {
+      "p2": "pass, switch Abra"
+    },
+    {
+      "p1": "switch Bunnelby, move Baneful Bunker",
+      "p2": "move Baneful Bunker, move Baneful Bunker"
+    },
+    {
+      "p1": "move Baneful Bunker, move Pay Day 1",
+      "p2": "move Baton Pass, move Tri Attack 2"
+    },
+    {
+      "p1": "move Present 2, move Seed Bomb 1",
+      "p2": "move Pain Split 1, move Ally Switch"
+    }
+  ]
+}
