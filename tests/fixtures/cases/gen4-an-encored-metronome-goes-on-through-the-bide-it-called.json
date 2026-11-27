@@ -1,0 +1,102 @@
+{
+  "schema": 1,
+  "id": "gen4-an-encored-metronome-goes-on-through-the-bide-it-called",
+  "notes": [
+    "Gen 4 singles: Onix, encored into Metronome, has Metronome call Bide; on Bide's storing turn the Encore's Metronome goes on and calls Super Fang — pokeplatinum takes the encored move first and its Bide check prints the storing and returns to the move (DESIGN.md R-M11-233)",
+    "promoted from m8-gen4-singles-s2437-015-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 4,
+    "mode": "singles",
+    "format": "gen4customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Onix",
+        "species": "Onix",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Pin Missile",
+          "Metronome",
+          "Comet Punch",
+          "Camouflage"
+        ],
+        "ability": "Poison Point",
+        "item": "Destiny Knot",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Chimchar",
+        "species": "Chimchar",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Chatter",
+          "Metronome",
+          "Dizzy Punch",
+          "Camouflage"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Snorlax",
+        "species": "Snorlax",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Avalanche"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      26316,
+      44476,
+      1735,
+      53518
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Pin Missile",
+      "p2": "move Chatter"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Metronome"
+    },
+    {
+      "p1": "move Comet Punch",
+      "p2": "move Dizzy Punch"
+    },
+    {
+      "p1": "move Camouflage",
+      "p2": "move Camouflage"
+    },
+    {
+      "p1": "move Pin Missile",
+      "p2": "move Chatter"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Metronome"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Dizzy Punch"
+    },
+    {
+      "p1": "move 1",
+      "p2": "switch Snorlax"
+    }
+  ]
+}

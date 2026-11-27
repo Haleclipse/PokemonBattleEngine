@@ -882,7 +882,7 @@ impl<'a> MovePipeline<'a> {
             });
         }
         // Bide's volatile past its first turn (`onBeforeMove`, `beforeMoveCallback`, §15.10).
-        if let Some(execution) = self.bide_turn(actor, move_id) {
+        if let Some(execution) = self.bide_turn(actor, move_id, overridden) {
             return Ok(execution);
         }
         // Gen 5+ Focus Punch's `beforeMoveCallback` (§15.8): a user that lost its focus does

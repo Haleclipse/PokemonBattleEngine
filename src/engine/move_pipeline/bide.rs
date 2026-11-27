@@ -19,7 +19,12 @@ impl<'a> MovePipeline<'a> {
     /// always a random foe — with a Normal physical contact hit of twice the store, through the
     /// hit steps only in Gen 2-3 (`BideRules`). Either way the move counts as failed (Showdown
     /// `moveThisTurnResult = false`), no PP is spent and the turn leaves no last move.
-    pub(super) fn bide_turn(&mut self, actor: PokemonId, move_id: MoveId) -> Option<MoveExecution> {
+    pub(super) fn bide_turn(
+        &mut self,
+        actor: PokemonId,
+        move_id: MoveId,
+        overridden: bool,
+    ) -> Option<MoveExecution> {
         let rules = self.rules.conditions.retaliation.bide;
         let last_damage = self.state.last_damage;
         let bide = self.state.pokemon_mut(actor)?.volatiles.bide_mut()?;
@@ -31,6 +36,14 @@ impl<'a> MovePipeline<'a> {
             bide.turns == Some(1)
         };
         let bide = *bide;
+        // A storing turn an Encore turned into another move (the Metronome that called Bide):
+        // the volatile's `onBeforeMove` lets the action through and no `beforeMoveCallback` of
+        // Bide's stops it — the move goes on, as pokeplatinum's `CHECK_STATUS_STATE_BIDE` prints
+        // the storing and returns to the move the Encore chose (R-M11-233). Without an Encore the
+        // action is Bide's lock, whatever called it.
+        if overridden && !release && !rules.gen1 {
+            return None;
+        }
         // Storing, the volatile's `onBeforeMove` lets the action through and the move's
         // `beforeMoveCallback` stops it; the release is the volatile's `onBeforeMove` refusing it
         // (`MoveAborted` runs).
