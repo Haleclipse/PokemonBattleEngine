@@ -38,9 +38,10 @@ impl BattleEngine {
             {
                 continue;
             }
-            // The move the action uses (Showdown `chooseMove` takes `getLockedMove`): a recharge,
-            // a charge's second turn, a rampage … in place of the slot named, so a recharging
-            // Pokémon that named Pursuit marks nobody (R-M8-105).
+            // The move the action uses (Showdown `chooseMove` takes `getLockedMove` or
+            // `getSemiLockedMove`): a recharge, a charge's second turn, a rampage, Gen 1-2 Bide …
+            // in place of the slot named, so a recharging Pokémon that named Pursuit marks nobody
+            // (R-M8-105), nor a biding one (R-M11-238).
             if pokemon
                 .volatiles
                 .contains(VolatileConditionKind::MustRecharge)
@@ -49,6 +50,7 @@ impl BattleEngine {
             }
             let Some(move_def) = pokemon
                 .locked_move()
+                .or_else(|| pokemon.semi_locked_move())
                 .or_else(|| pokemon.move_slot(slot).map(|slot| slot.move_id))
                 .and_then(|move_id| self.dex.move_by_id(move_id))
                 .filter(|move_def| move_def.behavior.marks_pursuit)

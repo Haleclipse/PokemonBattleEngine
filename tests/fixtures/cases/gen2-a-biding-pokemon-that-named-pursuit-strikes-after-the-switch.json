@@ -1,0 +1,269 @@
+{
+  "schema": 1,
+  "id": "gen2-a-biding-pokemon-that-named-pursuit-strikes-after-the-switch",
+  "notes": [
+    "Moltres, biding, names its first move Pursuit; the action is Bide's, so Marill's switch goes first and the release strikes the Sandslash that came in (DESIGN.md R-M11-238)",
+    "promoted from m8-gen2-singles-s113801-012-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 2,
+    "mode": "singles",
+    "format": "gen2customgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Hitmonlee",
+        "species": "Hitmonlee",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Return",
+          "Spider Web",
+          "Flail",
+          "Metronome"
+        ]
+      },
+      {
+        "label": "Suicune",
+        "species": "Suicune",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Hidden Power",
+          "Spider Web",
+          "Metronome"
+        ]
+      },
+      {
+        "label": "Venonat",
+        "species": "Venonat",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Beat Up",
+          "Spider Web",
+          "Fury Cutter",
+          "Metronome"
+        ],
+        "gender": "F"
+      },
+      {
+        "label": "Moltres",
+        "species": "Moltres",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Pursuit",
+          "Spider Web",
+          "Rollout",
+          "Metronome"
+        ]
+      },
+      {
+        "label": "Scizor",
+        "species": "Scizor",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Reversal"
+        ],
+        "gender": "M"
+      },
+      {
+        "label": "Wigglytuff",
+        "species": "Wigglytuff",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Future Sight"
+        ],
+        "gender": "F"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Celebi",
+        "species": "Celebi",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Hydro Pump",
+          "Spider Web",
+          "Waterfall",
+          "Metronome"
+        ]
+      },
+      {
+        "label": "Zubat",
+        "species": "Zubat",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Feint Attack",
+          "Spider Web",
+          "Mega Kick",
+          "Metronome"
+        ],
+        "gender": "M"
+      },
+      {
+        "label": "Phanpy",
+        "species": "Phanpy",
+        "level": 47,
+        "nature": "Hardy",
+        "moves": [
+          "Vise Grip",
+          "Spider Web",
+          "Pound",
+          "Metronome"
+        ],
+        "gender": "M"
+      },
+      {
+        "label": "Marill",
+        "species": "Marill",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Rapid Spin",
+          "Spider Web",
+          "Metronome"
+        ],
+        "gender": "M"
+      },
+      {
+        "label": "Sandslash",
+        "species": "Sandslash",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "High Jump Kick"
+        ],
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      10018,
+      26010,
+      55137,
+      35986
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Return",
+      "p2": "move Hydro Pump"
+    },
+    {
+      "p1": "move Spider Web",
+      "p2": "move Spider Web"
+    },
+    {
+      "p1": "move Flail",
+      "p2": "move Waterfall"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Metronome"
+    },
+    {
+      "p1": "switch Suicune"
+    },
+    {
+      "p1": "switch Venonat",
+      "p2": "switch Zubat"
+    },
+    {
+      "p1": "move Beat Up",
+      "p2": "move Feint Attack"
+    },
+    {
+      "p1": "move Spider Web",
+      "p2": "move Spider Web"
+    },
+    {
+      "p1": "move Fury Cutter",
+      "p2": "move Mega Kick"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Metronome"
+    },
+    {
+      "p1": "move Beat Up",
+      "p2": "move Feint Attack"
+    },
+    {
+      "p2": "switch Celebi"
+    },
+    {
+      "p1": "move Fury Cutter",
+      "p2": "move Waterfall"
+    },
+    {
+      "p1": "switch Suicune"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Metronome"
+    },
+    {
+      "p1": "move Hidden Power",
+      "p2": "move Hydro Pump"
+    },
+    {
+      "p1": "switch Moltres",
+      "p2": "switch Phanpy"
+    },
+    {
+      "p1": "move Spider Web",
+      "p2": "move Spider Web"
+    },
+    {
+      "p1": "move Rollout",
+      "p2": "move Pound"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 4"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 2"
+    },
+    {
+      "p2": "switch Celebi"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 3"
+    },
+    {
+      "p2": "switch Marill"
+    },
+    {
+      "p1": "move Metronome",
+      "p2": "move Metronome"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 1"
+    },
+    {
+      "p1": "move 1",
+      "p2": "move 2"
+    },
+    {
+      "p1": "move 1",
+      "p2": "switch Sandslash"
+    }
+  ]
+}
