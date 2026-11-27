@@ -214,6 +214,17 @@ impl<'a> MovePipeline<'a> {
         // switches out runs `useMove` alone (`skips_before_move`) and fires none of them — a
         // Charge it follows stays (R-M8-168).
         let after_move_events = !self.skips_before_move;
+        // Gen 4 (pokeplatinum `BattleControllerPlayer_AfterMoveEffects`): the switch-in check
+        // (`AFTER_MOVE_EFFECT_TRIGGER_SWITCH_IN_EFFECTS`) comes before the held items' — an
+        // Intimidate a Role Play gained lowers a White Herb holder's Attack before the herb looks
+        // (`AFTER_MOVE_EFFECT_HELD_ITEM_STATUS`), not after the next move (R-M11-237).
+        if after_move_events
+            && !execution.stopped
+            && self.rules.conditions.ability_change.start_new
+                == crate::rules::StartNewAbility::Unannounced
+        {
+            BattleContext::new(self.state, self.rules, self.trace).announce_unannounced();
+        }
         // Showdown `runEvent('AfterMove')` (`runMove`, once the move is over, its faints still
         // pending): the `onAnyAfterMove` of the abilities and held items on the field.
         if after_move_events && !execution.stopped {
@@ -350,9 +361,9 @@ impl<'a> MovePipeline<'a> {
             });
             self.dancers_dance(actor, execution.move_id, active_target);
         }
-        // Gen 4 (pokeplatinum `BattleControllerPlayer_MoveEnd` → `BattleSystem_TriggerEffectOnSwitch`):
-        // an ability gained during the move starts now, unless its kind of switch-in effect was
-        // announced this stint already.
+        // Gen 4 (pokeplatinum `BattleControllerPlayer_MoveEnd` → `BattleSystem_TriggerEffectOnSwitch`,
+        // its second check after the after-move effects' one): an ability gained during the move
+        // starts now, unless its kind of switch-in effect was announced this stint already.
         if self.rules.conditions.ability_change.start_new
             == crate::rules::StartNewAbility::Unannounced
         {
