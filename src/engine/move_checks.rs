@@ -221,8 +221,8 @@ pub fn prankster_immune(
 /// The TryHit event of the target's own ability and item (Good as Gold, Lightning Rod …):
 /// the reason one of them refuses `move_def` from `user`, if one does. The hit gate runs it
 /// after the side's protections; a field move that runs TryHit per Pokémon (Perish Song's
-/// `onHitField`) runs it alone.
-pub(crate) fn holders_try_hit(
+/// `onHitField`) runs it alone. Shared with the replay driver.
+pub fn holders_try_hit(
     state: &crate::state::BattleState,
     rules: &crate::rules::ResolvedRules,
     user: crate::ids::PokemonId,
