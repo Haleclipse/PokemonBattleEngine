@@ -4698,3 +4698,21 @@ if (patched) {
     };
   }
 }
+// I239 — Gen 8+ a Healing Wish or Lunar Dance an Ally Switch passed over waits on. Showdown's `runEvent` sets the
+// running handler's `effectState.target` to its holder, a slot condition's too: the `Swap` an Ally Switch runs
+// leaves the wish's state pointing at the Pokémon swapped in, and `fieldEvent`'s check that a state is still where
+// it belongs then looks for a volatile of that name and skips the wish's `onSwitchIn` for good — a hurt Pokémon
+// switched into the position later is not healed. Bulbapedia (Healing Wish, Generation VIII onwards): a pending wish
+// "will only activate when a new Pokémon is placed in that position", by switching in or Ally Switch, as the engine
+// has it (R-M11-235). The patch gives the side's slot conditions their side back as the swap ends. No draw.
+if (patched) {
+  const swapPosition = Battle.prototype.swapPosition;
+  Battle.prototype.swapPosition = function (pokemon, ...rest) {
+    const side = pokemon.side;
+    const result = swapPosition.call(this, pokemon, ...rest);
+    for (const slot of side.slotConditions) {
+      for (const state of Object.values(slot)) state.target = side;
+    }
+    return result;
+  };
+}
