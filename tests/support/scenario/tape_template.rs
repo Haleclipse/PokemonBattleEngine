@@ -3288,8 +3288,14 @@ pub(super) fn chance_reactions(
     };
     let mut reactors = pokemon_battle_engine::engine::chance_reactors(state, rules, actor, target);
     // Core Enforcer's `onHit` runs before the hit's `DamagingHit` (`runMoveEffects`): an
-    // ability it suppresses reacts to nothing.
+    // ability it suppresses reacts to nothing — but not on a holder the hit knocked out, whose
+    // `gastroacid` `addVolatile` refuses at 0 HP (Cursed Body still rolls, R-M11-231).
+    let knocked_out = oracle
+        .damages
+        .iter()
+        .any(|(who, hp)| *hp == 0 && who_to_id(state, who) == Some(target));
     if !behind_substitute
+        && !knocked_out
         && move_def.behavior.hit_or_sub
             == Some(pokemon_battle_engine::effects::moves::HitOrSubEffect::SuppressAbilityOfMoved)
         && pokemon_battle_engine::engine::core_enforcer_suppresses(state, rules, target)
