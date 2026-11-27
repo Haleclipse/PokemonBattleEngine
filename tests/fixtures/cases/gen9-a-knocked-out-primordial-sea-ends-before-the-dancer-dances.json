@@ -1,0 +1,123 @@
+{
+  "schema": 1,
+  "id": "gen9-a-knocked-out-primordial-sea-ends-before-the-dancer-dances",
+  "notes": [
+    "A Revelation Dance knocks out the Primordial Sea holder; its faint at the hit loop's end clears the rain, so the Dancer's Fire-type copy hits (DESIGN.md R-M11-234)",
+    "promoted from m8-gen9-doubles-s113500-007-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Basculin",
+        "species": "Basculin",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Psyshock",
+          "Revelation Dance"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Seviper",
+        "species": "Seviper",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Fire Pledge",
+          "Psystrike"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Magmortar",
+        "species": "Magmortar",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Judgment"
+        ],
+        "ability": "Dancer",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Trumbeak",
+        "species": "Trumbeak",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Branch Poke",
+          "Mega Punch"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Slakoth",
+        "species": "Slakoth",
+        "level": 55,
+        "nature": "Hardy",
+        "moves": [
+          "Mighty Cleave",
+          "Thief"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      },
+      {
+        "label": "Sudowoodo",
+        "species": "Sudowoodo",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Shadow Punch",
+          "Psychic Fangs"
+        ],
+        "ability": "Primordial Sea",
+        "gender": "F"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      40707,
+      1418,
+      37131,
+      42381
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Psyshock 1, move Fire Pledge 2",
+      "p2": "move Branch Poke 1, move Mighty Cleave 2"
+    },
+    {
+      "p1": "move Revelation Dance 1, move Psystrike 2",
+      "p2": "move Mega Punch 1, move Thief 2"
+    },
+    {
+      "p2": "switch Sudowoodo, pass"
+    },
+    {
+      "p1": "move Psyshock 1, move Fire Pledge 2",
+      "p2": "move Shadow Punch 1, move Mighty Cleave 2"
+    },
+    {
+      "p1": "pass, switch Magmortar"
+    },
+    {
+      "p1": "move Revelation Dance 1, move Judgment 2",
+      "p2": "move Psychic Fangs 1, move Thief 2"
+    }
+  ]
+}

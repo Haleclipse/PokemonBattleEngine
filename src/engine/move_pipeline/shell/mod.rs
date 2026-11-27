@@ -1059,7 +1059,10 @@ impl<'a> MovePipeline<'a> {
         // the later-started first, R-M8-182).
         dancers.sort_by(|a, b| a.1.cmp(&b.1).then_with(|| b.2.cmp(&a.2)));
         for (dancer, _, _) in dancers {
-            // Showdown's `faintMessages()` between the dances: one that fell skips its turn.
+            // Showdown's `faintMessages()` between the dances: one that fell skips its turn, and
+            // a strong weather whose holder a recoil knocked out is gone (R-M11-234).
+            BattleContext::new(self.state, self.rules, self.trace)
+                .knocked_out_strong_weather_ends();
             if self
                 .state
                 .pokemon(dancer)

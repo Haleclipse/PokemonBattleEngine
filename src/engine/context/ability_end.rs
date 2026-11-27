@@ -176,6 +176,36 @@ impl BattleContext<'_> {
         }
     }
 
+    /// Showdown `faintMessages` taking a knocked-out Desolate Land / Primordial Sea / Delta
+    /// Stream holder's faint (its ability's `End`): the weather passes on or ends now — at the
+    /// hit loop's end, so the move's Dancers dance it under the sky it left (R-M11-234) — not at
+    /// the action's end with the rest of its faint, whose `End` then finds the weather gone.
+    pub(crate) fn knocked_out_strong_weather_ends(&mut self) {
+        let holders: Vec<PokemonId> = self
+            .state
+            .faint_queue
+            .iter()
+            .copied()
+            .filter(|holder| {
+                self.state
+                    .active_position(*holder, &self.rules.topology)
+                    .is_some()
+                    && self.state.pokemon(*holder).is_some_and(|pokemon| {
+                        pokemon.hp == 0
+                            && crate::engine::ability_behavior(
+                                self.rules,
+                                crate::engine::raw_ability(pokemon),
+                            )
+                            .strong_weather
+                            .is_some()
+                    })
+            })
+            .collect();
+        for holder in holders {
+            self.strong_weather_holder_left(holder);
+        }
+    }
+
     /// One knocked-out gas ends, as `faintMessages` takes it: a holder another knocked-out gas
     /// still covers returns early, the last one starts the rest again. Each is done either way —
     /// gone in Showdown, `ending` here, so its faint's `End` later finds nothing to do.

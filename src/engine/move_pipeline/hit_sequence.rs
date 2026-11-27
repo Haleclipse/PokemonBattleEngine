@@ -456,10 +456,11 @@ impl<'a> MovePipeline<'a> {
         self.hit = 1;
         self.hit_count = 1;
         // `faintMessages` at the hit loop's end: the knocked-out Pokémon's Destiny Bond and
-        // Grudge (Gen 4+), then a knocked-out gas holder's gas, end here.
+        // Grudge (Gen 4+), then a knocked-out gas holder's gas and strong weather, end here.
         let mut ctx = BattleContext::new(self.state, self.rules, self.trace);
         ctx.knocked_out_bonds();
         ctx.knocked_out_gas_ends();
+        ctx.knocked_out_strong_weather_ends();
         // Struggle from Gen 4 (`struggleRecoil`, after the hit loop): a quarter of the user's max
         // HP once a hit landed — on the body or a Substitute, whatever it dealt (an Endure at 1
         // HP takes nothing).
@@ -903,10 +904,11 @@ impl<'a> MovePipeline<'a> {
                 .run_update(PendingFaints::Pending);
         }
         // `faintMessages` at the hit loop's end: the knocked-out Pokémon's Destiny Bond and
-        // Grudge (Gen 4+), then a knocked-out gas holder's gas, end here.
+        // Grudge (Gen 4+), then a knocked-out gas holder's gas and strong weather, end here.
         let mut ctx = BattleContext::new(self.state, self.rules, self.trace);
         ctx.knocked_out_bonds();
         ctx.knocked_out_gas_ends();
+        ctx.knocked_out_strong_weather_ends();
 
         if dealt_total > 0 && move_def.recoil.is_some() {
             let user_hp = self.state.pokemon(actor).map_or(0, |p| p.hp);
