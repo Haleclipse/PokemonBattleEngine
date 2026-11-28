@@ -247,8 +247,26 @@ pub(super) fn replay_pinned(
                 .and_then(|stats| stats.get(stat))
                 .is_some_and(|value| if raised { value == 999 } else { value == 1 })
         };
+        // A recharge a Pokémon carries into the boundary (a freeze kept it from its recharge
+        // turn), for the Gen 1 flinch that clears it (R-M11-239).
+        let recharging = |who: &Who| {
+            let state = compiled.engine.state();
+            who_to_id(state, who)
+                .and_then(|id| state.pokemon(id))
+                .is_some_and(|pokemon| {
+                    pokemon
+                        .volatiles
+                        .contains(VolatileConditionKind::MustRecharge)
+                })
+        };
         let mut decisions = extract_decisions_with(&events, &reading, &flinches, &stat_stuck);
-        attribute_frame_flinches(&mut decisions, oracle_frame, &reading, &flinches);
+        attribute_frame_flinches(
+            &mut decisions,
+            oracle_frame,
+            &reading,
+            &flinches,
+            &recharging,
+        );
         attribute_frame_rage(&mut decisions, oracle_frame);
 
         // A script entry answers whatever the engine is waiting for: the turn's choices, or

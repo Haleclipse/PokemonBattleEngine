@@ -2009,6 +2009,8 @@ pub(super) fn attribute_frame_flinches(
     frame: &Value,
     reading: &LogReading,
     flinches: &dyn Fn(&Who, Option<&str>) -> Option<bool>,
+    // Whether this Pokémon began the boundary with a recharge to spend (`mustrecharge`).
+    recharging: &dyn Fn(&Who) -> bool,
 ) {
     let mut victims: Vec<Who> = Vec::new();
     for (victim, _) in decisions.iter().flat_map(|action| &action.damages) {
@@ -2037,15 +2039,21 @@ pub(super) fn attribute_frame_flinches(
         // Gen 1: a flinch clears the recharge the victim's own recharge move left this boundary
         // (`flinch.onStart`): the frame shows no `mustrecharge` after a later flinching hit. A
         // recharge the move never left (a knock-out, a miss) makes the flinch as invisible as it
-        // is to a Pokémon that already moved (R-M8-105).
+        // is to a Pokémon that already moved (R-M8-105). So does one it began the boundary with
+        // and did not spend: a freeze or sleep stops its action before the recharge turn would
+        // (Gen 1 `onBeforeMovePriority` 12 and 10 against 7), and the recharge waits (R-M11-239).
+        let recharge_left = decisions[..since].iter().any(|action| {
+            action.user == victim
+                && action
+                    .used_move()
+                    .is_some_and(|name| reading.recharge_moves.contains(name))
+        }) || (recharging(&victim)
+            && !decisions
+                .iter()
+                .any(|action| action.user == victim && action.cant.as_deref() == Some("recharge")));
         let recharge_cleared = reading.flinch_clears_recharge
             && volatiles.is_some_and(|volatiles| volatiles.get("mustrecharge").is_none())
-            && decisions[..since].iter().any(|action| {
-                action.user == victim
-                    && action
-                        .used_move()
-                        .is_some_and(|name| reading.recharge_moves.contains(name))
-            })
+            && recharge_left
             && decisions[since..].iter().any(|action| {
                 action.damages.iter().any(|(target, _)| *target == victim)
                     && action
