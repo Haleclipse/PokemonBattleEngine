@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "id": "gen9-an-instructed-move-an-encore-chose-strikes-the-slot-it-struck",
+  "notes": [
+    "Conkeldurr chose Stockpile and the Encore made it Throat Chop on Pecharunt; Instruct repeats the Throat Chop at Pecharunt's slot (issues.md I241; DESIGN.md R-M11-242)",
+    "promoted from m8-gen9-doubles-s114200-003-min (tools/minimize.py, tools/promote.py)"
+  ],
+  "battle": {
+    "generation": 9,
+    "mode": "doubles",
+    "format": "gen9doublescustomgame"
+  },
+  "teams": {
+    "p1": [
+      {
+        "label": "Magcargo",
+        "species": "Magcargo",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Trick",
+          "Instruct",
+          "Ally Switch",
+          "Stockpile"
+        ],
+        "ability": "Run Away",
+        "gender": "F"
+      },
+      {
+        "label": "Conkeldurr",
+        "species": "Conkeldurr",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Roost",
+          "Instruct",
+          "Throat Chop",
+          "Stockpile"
+        ],
+        "ability": "Run Away",
+        "gender": "M"
+      }
+    ],
+    "p2": [
+      {
+        "label": "Iron Jugulis",
+        "species": "Iron Jugulis",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Encore",
+          "Instruct",
+          "Stealth Rock"
+        ],
+        "ability": "Run Away"
+      },
+      {
+        "label": "Pecharunt",
+        "species": "Pecharunt",
+        "level": 50,
+        "nature": "Hardy",
+        "moves": [
+          "Grassy Terrain",
+          "Instruct",
+          "Pain Split"
+        ],
+        "ability": "Run Away"
+      }
+    ]
+  },
+  "random": {
+    "mode": "oracle-guided",
+    "seed": [
+      63965,
+      49375,
+      33873,
+      19060
+    ]
+  },
+  "script": [
+    {
+      "p1": "move Ally Switch, move Throat Chop 1",
+      "p2": "move Stealth Rock, move Pain Split 2"
+    },
+    {
+      "p1": "move 4, move 1 1",
+      "p2": "move 1 1, move 1"
+    },
+    {
+      "p1": "move 3 2, move 2 1",
+      "p2": "move 2 2, move 2 1"
+    }
+  ]
+}

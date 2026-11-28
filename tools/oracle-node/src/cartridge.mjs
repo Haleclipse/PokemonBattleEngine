@@ -4736,3 +4736,45 @@ if (patched) {
     return faintMessages.apply(this, args);
   };
 }
+// I241 — Instruct repeats a move an Encore chose at the slot that move struck. `runMove` draws the encored move's
+// target afresh (`getRandomTarget`) but `moveUsed` keeps the chosen move's `targetLoc` as `lastMoveTargetLoc`: a
+// Stockpile chosen (its user's own location) and encored into Throat Chop leaves the user's location, and Instruct's
+// repeat, finding its user there, has no target. Bulbapedia (Instruct): "The instructed move will target the same
+// Pokémon slot as the previously used move", as the engine has it (R-M11-242). The patch keeps, beside
+// `lastMoveTargetLoc`, the struck target's location once an `OverrideAction` replaced the move, and has Instruct
+// read that; a locked move's release still aims where the action did (R-M9-26, R-M10-20). No draw.
+if (patched) {
+  const runEvent = Battle.prototype.runEvent;
+  Battle.prototype.runEvent = function (eventid, target, ...rest) {
+    const result = runEvent.call(this, eventid, target, ...rest);
+    if (eventid === 'OverrideAction' && target instanceof Pokemon) {
+      target.m.overriddenTo = result && result !== true ? toID(result) : undefined;
+    }
+    return result;
+  };
+  const moveUsed = Pokemon.prototype.moveUsed;
+  Pokemon.prototype.moveUsed = function (move, targetLoc, ...rest) {
+    const struck = this.battle.activeTarget;
+    this.m.instructLoc = this.m.overriddenTo && this.m.overriddenTo === move?.id && struck ?
+      this.getLocOf(struck) : targetLoc;
+    this.m.overriddenTo = undefined;
+    return moveUsed.call(this, move, targetLoc, ...rest);
+  };
+  const seen = new Set();
+  for (const mod of ['gen7', 'gen8', 'gen9']) {
+    const instruct = Dex.mod(mod).data.Moves.instruct;
+    if (!instruct?.onHit || seen.has(instruct)) continue;
+    seen.add(instruct);
+    const onHit = instruct.onHit;
+    instruct.onHit = function (target, ...rest) {
+      if (target?.m?.instructLoc === undefined) return onHit.call(this, target, ...rest);
+      const kept = target.lastMoveTargetLoc;
+      target.lastMoveTargetLoc = target.m.instructLoc;
+      try {
+        return onHit.call(this, target, ...rest);
+      } finally {
+        target.lastMoveTargetLoc = kept;
+      }
+    };
+  }
+}
