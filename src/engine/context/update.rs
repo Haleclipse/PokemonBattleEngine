@@ -18,7 +18,9 @@ use crate::rules::HpShare;
 /// says which Showdown has done.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub(crate) enum PendingFaints {
-    /// The step's faints are still pending (after a hit, after the weather's chip).
+    /// The step's faints are still pending (after a hit, after the weather's chip) — save one a
+    /// `damage(…, instafaint)` took at once (`faintMessages(true)`, announced: a Gen 3-4 Liquid
+    /// Ooze's), whose Pokémon is off the field by then, its infatuation over (R-M11-241).
     Pending,
     /// Showdown has processed them (after an action).
     Processed,
@@ -56,11 +58,10 @@ impl<'a> BattleContext<'a> {
             .iter()
             .flat_map(|side| side.active.iter().flatten().copied())
             .filter(|id| match faints {
-                PendingFaints::Pending => true,
                 PendingFaints::Processed => {
                     self.state.pokemon(*id).is_some_and(|p| !p.is_fainted())
                 }
-                PendingFaints::Announced => {
+                PendingFaints::Pending | PendingFaints::Announced => {
                     self.state.pokemon(*id).is_some_and(|p| !p.is_fainted())
                         || !self.state.announced_faints.contains(id)
                 }
