@@ -4716,3 +4716,23 @@ if (patched) {
     return result;
   };
 }
+// I240 — Gen 5-6 an Illusion broken by the damaging hit that knocks its holder out, though a reaction knocked the
+// attacker out first. The gen6 mod's Rocky Helmet, Rough Skin, Iron Barbs, Aftermath, Jaboca and Rowap Berry deal
+// their damage with `instafaint`, and their `DamagingHit` order comes before Illusion's: the attacker's faint and
+// the holder's queued one are taken at once (`faintMessages(true)`), Illusion's `onFaint` drops the disguise
+// silently, and Illusion's own `onDamagingHit` finds its holder off the field — the foe sees the disguise faint.
+// Bulbapedia (Illusion): the illusion disappears when the holder "takes damage from a damaging move", as the engine
+// has it (R-M11-240). The patch has a `faintMessages` run inside the `DamagingHit` of a hit on a disguised holder
+// whose faint it holds end the illusion first, as Illusion's handler would. No draw.
+if (patched) {
+  const faintMessages = Battle.prototype.faintMessages;
+  Battle.prototype.faintMessages = function (...args) {
+    const holder = this.event?.id === 'DamagingHit' ? this.event.target : null;
+    if (holder instanceof Pokemon && holder.illusion && holder.isActive && !holder.ignoringAbility() &&
+      this.faintQueue.some(entry => entry.target === holder)) {
+      this.singleEvent('End', this.dex.abilities.get('Illusion'), holder.abilityState, holder,
+        this.event.source, this.event.effect);
+    }
+    return faintMessages.apply(this, args);
+  };
+}
